@@ -384,7 +384,7 @@ public final class UtilsKt {
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
-    public static final java.lang.Object resolveApiUrl(@org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.String> r30) throws java.lang.Exception {
+    public static final java.lang.Object resolveApiUrl(@org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.String> r30) {
         /*
             Method dump skipped, instruction units count: 454
             To view this dump add '--comments-level debug' option
