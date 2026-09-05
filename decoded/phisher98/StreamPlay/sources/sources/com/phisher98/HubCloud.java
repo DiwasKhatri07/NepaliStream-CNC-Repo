@@ -1,0 +1,151 @@
+package com.phisher98;
+
+import com.lagradost.cloudstream3.SubtitleFile;
+import com.lagradost.cloudstream3.utils.ExtractorApi;
+import com.lagradost.cloudstream3.utils.ExtractorLink;
+import com.lagradost.cloudstream3.utils.Qualities;
+import java.net.URI;
+import kotlin.Metadata;
+import kotlin.Result;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.EmptyCoroutineContext;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.SourceDebugExtension;
+import kotlinx.coroutines.BuildersKt;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: compiled from: Extractors.kt */
+/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/StreamPlay/classes.dex */
+@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\b\u0016\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00052\b\u0010\u0013\u001a\u0004\u0018\u00010\u00052\u0012\u0010\u0014\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u00110\u00152\u0012\u0010\u0017\u001a\u000e\u0012\u0004\u0012\u00020\u0018\u0012\u0004\u0012\u00020\u00110\u0015H\u0096@¢\u0006\u0002\u0010\u0019J\u0012\u0010\u001a\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u0005H\u0002J\u0010\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u0012\u001a\u00020\u0005H\u0002J\u0010\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u0005H\u0002R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u001a\u0010\b\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\u0007\"\u0004\b\n\u0010\u000bR\u0014\u0010\f\u001a\u00020\rX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000f¨\u0006 "}, d2 = {"Lcom/phisher98/HubCloud;", "Lcom/lagradost/cloudstream3/utils/ExtractorApi;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "mainUrl", "getMainUrl", "setMainUrl", "(Ljava/lang/String;)V", "requiresReferer", "", "getRequiresReferer", "()Z", "getUrl", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getIndexQuality", "", "str", "getBaseUrl", "cleanTitle", "title", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/HubCloud\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,4003:1\n1#2:4004\n2068#3:4005\n1960#3,3:4006\n2069#3:4009\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/HubCloud\n*L\n1065#1:4005\n1069#1:4006,3\n1065#1:4009\n*E\n"})
+public class HubCloud extends ExtractorApi {
+    private final boolean requiresReferer;
+
+    @NotNull
+    private final String name = "Hub-Cloud";
+
+    @NotNull
+    private String mainUrl = (String) BuildersKt.runBlockingK(EmptyCoroutineContext.INSTANCE, new HubCloud$mainUrl$1(null));
+
+    /* JADX INFO: renamed from: com.phisher98.HubCloud$getUrl$1 */
+    /* JADX INFO: compiled from: Extractors.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.HubCloud", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10}, l = {1038, 1053, 1076, 1086, 1096, 1105, 1111, 1129, 1139, 1149, 1159}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "$this$getUrl_u24lambda_u242", "$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "href", "$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "href", "document", "size", "header", "headerDetails", "labelExtras", "$this$forEach$iv", "element$iv", "element", "link", "text", "blocked", "label", "quality", "$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "href", "document", "size", "header", "headerDetails", "labelExtras", "$this$forEach$iv", "element$iv", "element", "link", "text", "blocked", "label", "quality", "$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "href", "document", "size", "header", "headerDetails", "labelExtras", "$this$forEach$iv", "element$iv", "element", "link", "text", "blocked", "label", "quality", "$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "href", "document", "size", "header", "headerDetails", "labelExtras", "$this$forEach$iv", "element$iv", "element", "link", "text", "blocked", "label", "quality", "$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "href", "document", "size", "header", "headerDetails", "labelExtras", "$this$forEach$iv", "element$iv", "element", "link", "text", "blocked", "label", "resp", "dlink", "quality", "$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "href", "document", "size", "header", "headerDetails", "labelExtras", "$this$forEach$iv", "element$iv", "element", "link", "text", "blocked", "label", "base", "finalUrl", "quality", "$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "href", "document", "size", "header", "headerDetails", "labelExtras", "$this$forEach$iv", "element$iv", "element", "link", "text", "blocked", "label", "quality", "$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "href", "document", "size", "header", "headerDetails", "labelExtras", "$this$forEach$iv", "element$iv", "element", "link", "text", "blocked", "label", "quality", "$this", "url", "referer", "subtitleCallback", "callback", "tag", "uri", "realUrl", "baseUrl", "href", "document", "size", "header", "headerDetails", "labelExtras", "$this$forEach$iv", "element$iv", "element", "link", "text", "blocked", "label", "quality"}, nl = {1039, 1054, 1075, 1085, 1095, 1106, 1110, 1128, 1138, 1148, 1158}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0"}, v = 2)
+    static final class C00341 extends ContinuationImpl {
+        int I$0;
+        Object L$0;
+        Object L$1;
+        Object L$10;
+        Object L$11;
+        Object L$12;
+        Object L$13;
+        Object L$14;
+        Object L$15;
+        Object L$16;
+        Object L$17;
+        Object L$18;
+        Object L$19;
+        Object L$2;
+        Object L$20;
+        Object L$21;
+        Object L$22;
+        Object L$23;
+        Object L$24;
+        Object L$25;
+        Object L$3;
+        Object L$4;
+        Object L$5;
+        Object L$6;
+        Object L$7;
+        Object L$8;
+        Object L$9;
+        int label;
+        /* synthetic */ Object result;
+
+        C00341(Continuation<? super C00341> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return HubCloud.getUrl$suspendImpl(HubCloud.this, null, null, null, null, (Continuation) this);
+        }
+    }
+
+    @Nullable
+    public Object getUrl(@NotNull String str, @Nullable String str2, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
+        return getUrl$suspendImpl(this, str, str2, function1, function2, continuation);
+    }
+
+    @NotNull
+    public String getName() {
+        return this.name;
+    }
+
+    @NotNull
+    public String getMainUrl() {
+        return this.mainUrl;
+    }
+
+    public void setMainUrl(@NotNull String str) {
+        this.mainUrl = str;
+    }
+
+    public boolean getRequiresReferer() {
+        return this.requiresReferer;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:145:0x0a95  */
+    /* JADX WARN: Code duplicated, block: B:148:0x0abd A[LOOP:0: B:143:0x0a8f->B:148:0x0abd, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:275:0x0aba A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:192:0x0ff6 -> B:236:0x14fb). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:221:0x1340 -> B:222:0x135b). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:223:0x1377 -> B:236:0x14fb). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:235:0x14dd -> B:236:0x14fb). Please report as a decompilation issue!!! */
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        */
+    static /* synthetic */ java.lang.Object getUrl$suspendImpl(com.phisher98.HubCloud r59, java.lang.String r60, java.lang.String r61, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r62, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r63, kotlin.coroutines.Continuation<? super kotlin.Unit> r64) {
+        /*
+            Method dump skipped, instruction units count: 5466
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.phisher98.HubCloud.getUrl$suspendImpl(com.phisher98.HubCloud, java.lang.String, java.lang.String, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
+    }
+
+    private final int getIndexQuality(String str) {
+        return ExtractorsKt.extractIndexQuality(str, Qualities.P2160.getValue());
+    }
+
+    private final String getBaseUrl(String url) {
+        Object obj;
+        try {
+            Result.Companion companion = Result.Companion;
+            HubCloud hubCloud = this;
+            URI it = new URI(url);
+            obj = Result.constructor-impl(it.getScheme() + "://" + it.getHost());
+        } catch (Throwable th) {
+            Result.Companion companion2 = Result.Companion;
+            obj = Result.constructor-impl(ResultKt.createFailure(th));
+        }
+        if (Result.isFailure-impl(obj)) {
+            obj = "";
+        }
+        return (String) obj;
+    }
+
+    private final String cleanTitle(String title) {
+        return ExtractorsKt.extractCleanTitle(title);
+    }
+}

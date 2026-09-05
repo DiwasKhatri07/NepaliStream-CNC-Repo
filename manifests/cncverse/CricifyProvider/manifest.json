@@ -1,0 +1,6 @@
+{
+  "requiresResources": true,
+  "version": 65,
+  "pluginClassName": "com.cncverse.CricifyPlugin",
+  "name": "CricifyProvider"
+}

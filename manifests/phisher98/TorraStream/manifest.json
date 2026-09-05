@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.phisher98.TorraStreamProvider",
+  "name": "TorraStream",
+  "version": 92,
+  "requiresResources": true
+}

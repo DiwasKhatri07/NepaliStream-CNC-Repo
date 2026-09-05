@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.likdev256.MovieHUBProviderPlugin",
+  "name": "MassTamilanProvider",
+  "version": 7,
+  "requiresResources": false
+}

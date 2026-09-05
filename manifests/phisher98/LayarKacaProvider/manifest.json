@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.layarKacaProvider.LayarKacaProviderPlugin",
+  "name": "LayarKacaProvider",
+  "version": 7,
+  "requiresResources": false
+}

@@ -1,0 +1,68 @@
+package com.phisher98.cloudplay;
+
+import com.lagradost.cloudstream3.SearchResponse;
+import java.util.List;
+import kotlin.Metadata;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
+import kotlin.jvm.functions.Function2;
+
+/* JADX INFO: compiled from: CloudPlayProvider.kt */
+/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/CloudPlay/classes.dex */
+@Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "subStream", "Lcom/phisher98/cloudplay/CloudPlay$CloudPlayStream;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+@DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay$fetchChannels$allShows$1", f = "CloudPlayProvider.kt", i = {0}, l = {180}, m = "invokeSuspend", n = {"subStream"}, nl = {-1}, s = {"L$0"}, v = 2)
+final class CloudPlay$fetchChannels$allShows$1 extends SuspendLambda implements Function2<CloudPlay.CloudPlayStream, Continuation<? super List<? extends SearchResponse>>, Object> {
+    final /* synthetic */ String $fallbackLogo;
+    /* synthetic */ Object L$0;
+    int label;
+    final /* synthetic */ CloudPlay this$0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    CloudPlay$fetchChannels$allShows$1(CloudPlay cloudPlay, String str, Continuation<? super CloudPlay$fetchChannels$allShows$1> continuation) {
+        super(2, continuation);
+        this.this$0 = cloudPlay;
+        this.$fallbackLogo = str;
+    }
+
+    public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+        Continuation<Unit> cloudPlay$fetchChannels$allShows$1 = new CloudPlay$fetchChannels$allShows$1(this.this$0, this.$fallbackLogo, continuation);
+        cloudPlay$fetchChannels$allShows$1.L$0 = obj;
+        return cloudPlay$fetchChannels$allShows$1;
+    }
+
+    public final Object invoke(CloudPlay.CloudPlayStream cloudPlayStream, Continuation<? super List<? extends SearchResponse>> continuation) {
+        return create(cloudPlayStream, continuation).invokeSuspend(Unit.INSTANCE);
+    }
+
+    public final Object invokeSuspend(Object $result) {
+        CloudPlay.CloudPlayStream subStream = (CloudPlay.CloudPlayStream) this.L$0;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (this.label) {
+            case 0:
+                ResultKt.throwOnFailure($result);
+                CloudPlay cloudPlay = this.this$0;
+                String url = subStream.getUrl();
+                String logo = subStream.getLogo();
+                if (logo == null) {
+                    logo = this.$fallbackLogo;
+                }
+                this.L$0 = SpillingKt.nullOutSpilledVariable(subStream);
+                this.label = 1;
+                Object objFetchChannels = cloudPlay.fetchChannels(url, logo, (Continuation) this);
+                if (objFetchChannels == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                return objFetchChannels;
+            case 1:
+                ResultKt.throwOnFailure($result);
+                return $result;
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+    }
+}

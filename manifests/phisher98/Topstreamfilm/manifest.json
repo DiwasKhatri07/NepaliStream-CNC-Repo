@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Topstreamfilm.TopstreamfilmPlugin",
+  "name": "Topstreamfilm",
+  "version": 7,
+  "requiresResources": false
+}

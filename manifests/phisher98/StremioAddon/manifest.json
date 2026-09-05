@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.phisher98.StremioAddonProvider",
+  "name": "StremioAddon",
+  "version": 13,
+  "requiresResources": true
+}

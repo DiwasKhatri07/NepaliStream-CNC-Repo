@@ -1,0 +1,101 @@
+package com.anidb;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import kotlin.Metadata;
+import kotlin.collections.CollectionsKt;
+import kotlin.jvm.functions.Function1;
+import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.text.StringsKt;
+import okhttp3.Interceptor;
+import okhttp3.Request;
+import okhttp3.Response;
+import org.jetbrains.annotations.NotNull;
+
+/* JADX INFO: compiled from: AniDb.kt */
+/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/AniDb/classes.dex */
+@Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0016¨\u0006\b"}, d2 = {"Lcom/anidb/AniDbCFBypassInterceptor;", "Lokhttp3/Interceptor;", "<init>", "()V", "intercept", "Lokhttp3/Response;", "chain", "Lokhttp3/Interceptor$Chain;", "AniDb"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nAniDb.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniDb.kt\ncom/anidb/AniDbCFBypassInterceptor\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,437:1\n1739#2:438\n1814#2,3:439\n777#2:442\n873#2,2:443\n1739#2:445\n1814#2,3:446\n777#2:449\n873#2,2:450\n*S KotlinDebug\n*F\n+ 1 AniDb.kt\ncom/anidb/AniDbCFBypassInterceptor\n*L\n59#1:438\n59#1:439,3\n60#1:442\n60#1:443,2\n61#1:445\n61#1:446,3\n61#1:449\n61#1:450,2\n*E\n"})
+public final class AniDbCFBypassInterceptor implements Interceptor {
+
+    @NotNull
+    public static final AniDbCFBypassInterceptor INSTANCE = new AniDbCFBypassInterceptor();
+
+    private AniDbCFBypassInterceptor() {
+    }
+
+    /* JADX WARN: Code duplicated, block: B:34:0x00f0  */
+    /* JADX WARN: Code duplicated, block: B:56:0x00f3 A[SYNTHETIC] */
+    @NotNull
+    public Response intercept(@NotNull Interceptor.Chain chain) {
+        Request original;
+        String savedUa;
+        String savedCookies;
+        boolean z;
+        Request original2 = chain.request();
+        Request.Builder builder = original2.newBuilder().removeHeader("X-Requested-With").header("sec-ch-ua-mobile", "?1").header("sec-ch-ua-platform", "\"Android\"");
+        String savedUa2 = AniDbPlugin.INSTANCE.getCfUserAgent();
+        if (savedUa2.length() > 0) {
+            builder.header("User-Agent", savedUa2);
+        }
+        String savedCookies2 = AniDbPlugin.INSTANCE.getCfCookies();
+        if (savedCookies2.length() > 0) {
+            String existingCookie = original2.header("Cookie");
+            if (existingCookie == null) {
+                existingCookie = "";
+            }
+            Iterable $this$map$iv = StringsKt.split$default(existingCookie, new String[]{";"}, false, 0, 6, (Object) null);
+            Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+            for (Object item$iv$iv : $this$map$iv) {
+                String it = (String) item$iv$iv;
+                destination$iv$iv.add(StringsKt.trim(it).toString());
+            }
+            Iterable $this$filter$iv = (List) destination$iv$iv;
+            Collection destination$iv$iv2 = new ArrayList();
+            for (Object element$iv$iv : $this$filter$iv) {
+                String it2 = (String) element$iv$iv;
+                if (it2.length() > 0) {
+                    original = original2;
+                    savedUa = savedUa2;
+                    savedCookies = savedCookies2;
+                    z = StringsKt.startsWith$default(it2, "cf_clearance=", false, 2, (Object) null) ? false : true;
+                    if (z) {
+                        destination$iv$iv2.add(element$iv$iv);
+                    }
+                    original2 = original;
+                    savedUa2 = savedUa;
+                    savedCookies2 = savedCookies;
+                } else {
+                    original = original2;
+                    savedUa = savedUa2;
+                    savedCookies = savedCookies2;
+                }
+                if (z) {
+                    destination$iv$iv2.add(element$iv$iv);
+                }
+                original2 = original;
+                savedUa2 = savedUa;
+                savedCookies2 = savedCookies;
+            }
+            List base = (List) destination$iv$iv2;
+            Iterable $this$map$iv2 = StringsKt.split$default(savedCookies2, new String[]{";"}, false, 0, 6, (Object) null);
+            Collection destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv2, 10));
+            for (Object item$iv$iv2 : $this$map$iv2) {
+                String it3 = (String) item$iv$iv2;
+                destination$iv$iv3.add(StringsKt.trim(it3).toString());
+            }
+            Iterable $this$filter$iv2 = (List) destination$iv$iv3;
+            Collection destination$iv$iv4 = new ArrayList();
+            for (Object element$iv$iv2 : $this$filter$iv2) {
+                String it4 = (String) element$iv$iv2;
+                if (it4.length() > 0) {
+                    destination$iv$iv4.add(element$iv$iv2);
+                }
+            }
+            List fresh = (List) destination$iv$iv4;
+            builder.header("Cookie", CollectionsKt.joinToString$default(CollectionsKt.distinct(CollectionsKt.plus(base, fresh)), "; ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) null, 62, (Object) null));
+        }
+        return chain.proceed(builder.build());
+    }
+}

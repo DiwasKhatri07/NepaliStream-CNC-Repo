@@ -1,0 +1,6 @@
+{
+  "requiresResources": true,
+  "version": 108,
+  "pluginClassName": "com.horis.cncverse.CNCVersePlugin",
+  "name": "CNC Verse"
+}

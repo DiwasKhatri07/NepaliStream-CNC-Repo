@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.phisher98.MultiMoviesProviderPlugin",
+  "name": "MultiMoviesProvider",
+  "version": 51,
+  "requiresResources": false
+}

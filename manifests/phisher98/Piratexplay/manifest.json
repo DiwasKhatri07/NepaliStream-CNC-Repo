@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.piratexplay.PiratexplayProvider",
+  "name": "Piratexplay",
+  "version": 3,
+  "requiresResources": false
+}

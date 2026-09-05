@@ -1,0 +1,698 @@
+[
+  {
+    "source": "cncverse",
+    "file": "AniKoto.cs3",
+    "sha256": "a4f9dd580d475e62dad9227dec7def8a0ab98d19e16517fe84431c2e9b4bcfea",
+    "bytes": 53651
+  },
+  {
+    "source": "cncverse",
+    "file": "AnimeSuge.cs3",
+    "sha256": "685f6a40deb90ce109dbf8facd6839ecf43f8e7e500b348d8968bf5b375e1a8d",
+    "bytes": 40332
+  },
+  {
+    "source": "cncverse",
+    "file": "BilibiliProvider.cs3",
+    "sha256": "c4cc08aa660e0bfc1f1b3292f8b0ccb6231ffa472c69bab5c32c42d8e333e7e2",
+    "bytes": 89980
+  },
+  {
+    "source": "cncverse",
+    "file": "CNC Verse Mobile.cs3",
+    "sha256": "f61308115dd05f28b4004d0af09f028c28361abdeac2964a70dd429518068df4",
+    "bytes": 91447
+  },
+  {
+    "source": "cncverse",
+    "file": "CNC Verse.cs3",
+    "sha256": "b72e7802bb68ecab7a599a1a744cd52321d230256485ba3125413b725e42a0b1",
+    "bytes": 98583
+  },
+  {
+    "source": "cncverse",
+    "file": "CastleTvProvider.cs3",
+    "sha256": "bdbac0422d99d59ba1003ca67ebb79bb298d1302f5a47e7008c5476fd3ec2094",
+    "bytes": 72477
+  },
+  {
+    "source": "cncverse",
+    "file": "CineTvProvider.cs3",
+    "sha256": "0a59709a808d0d11de15a2ed28e74a7f3b798cdcbba8b212fd726c6e3096fa62",
+    "bytes": 45669
+  },
+  {
+    "source": "cncverse",
+    "file": "CricifyProvider.cs3",
+    "sha256": "1f223766f7ab77a22b249efe4b2d039e680c2b6b8524931e92b7fa4a6987232d",
+    "bytes": 103016
+  },
+  {
+    "source": "cncverse",
+    "file": "DesiSerialsProvider.cs3",
+    "sha256": "478f86173ffc9631613331b45bde3e2f40ccdaf3e5b93b00bf16afb1cc4e4844",
+    "bytes": 44240
+  },
+  {
+    "source": "cncverse",
+    "file": "DoFlixProvider.cs3",
+    "sha256": "6135e98ee48ba721b606085bb9fbe17396257ed9aef217b1b9b0ea67c6f676f9",
+    "bytes": 70351
+  },
+  {
+    "source": "cncverse",
+    "file": "EinthusanProvider.cs3",
+    "sha256": "10b8d7f421c65f26456da731e5d478a575ff6af9dfa21380fc33c59bb093778c",
+    "bytes": 25511
+  },
+  {
+    "source": "cncverse",
+    "file": "GoldenAudiobook.cs3",
+    "sha256": "2136b88b99355fcf80a23b42e55db40c0617020c49556375fce54450f034cae1",
+    "bytes": 23438
+  },
+  {
+    "source": "cncverse",
+    "file": "HDOProvider.cs3",
+    "sha256": "7b81a4d40e4482fe048af4eb255d45e6611c00b7113704a59f16e9e7d3c8f0e6",
+    "bytes": 32367
+  },
+  {
+    "source": "cncverse",
+    "file": "HDrezkaProvider.cs3",
+    "sha256": "a98b53958834abe6ad7742482007159393640475865fadf0b761032efe21c962",
+    "bytes": 44700
+  },
+  {
+    "source": "cncverse",
+    "file": "LibriVoxAudiobook.cs3",
+    "sha256": "a7495992ab770ae33cd109c21782e90fb5a638df8c85dd020c93c1a55b225ead",
+    "bytes": 21033
+  },
+  {
+    "source": "cncverse",
+    "file": "LivXowProvider.cs3",
+    "sha256": "f2a0c1991155f28efc2fe3ef255d3d76752818cc633cd762bd0b46636e530dc6",
+    "bytes": 112856
+  },
+  {
+    "source": "cncverse",
+    "file": "M3UPlaylistPlayerProvider.cs3",
+    "sha256": "8ec8df619b40f7fc5df18ad69320749b776ebc2fec1a375b71845b8bdbb74c07",
+    "bytes": 51164
+  },
+  {
+    "source": "cncverse",
+    "file": "MLSBDProvider.cs3",
+    "sha256": "0c9e1df2b81b11396de7ed58f07a5a0ae8479d23a3b3035f5df4eb155bb86819",
+    "bytes": 56818
+  },
+  {
+    "source": "cncverse",
+    "file": "MovieBoxProvider.cs3",
+    "sha256": "ad242e2a3eacf2bdda7817c00720e8cf00273068b307c9f3d54b463c878c1416",
+    "bytes": 84105
+  },
+  {
+    "source": "cncverse",
+    "file": "MovieBoxProviderIN.cs3",
+    "sha256": "0c0bce1ac01fd2c3a28048e8a2427bb6317ab5ed7e91d4b8d4dd03befce08ac2",
+    "bytes": 81093
+  },
+  {
+    "source": "cncverse",
+    "file": "MovieLinkBDProvider.cs3",
+    "sha256": "1a1f41d9a00e2fdc7674b9d4bb2d31379d6cf9c3720f72e1cc484172d638bd4f",
+    "bytes": 57939
+  },
+  {
+    "source": "cncverse",
+    "file": "MoviezwapProvider.cs3",
+    "sha256": "3307257e0de0ee86ee57742ef130b263d614088083bba53e9facdfed9f13c410",
+    "bytes": 25483
+  },
+  {
+    "source": "cncverse",
+    "file": "PikashowProvider.cs3",
+    "sha256": "9f40b775192fbb65c7c9e9d0f43db0236f1c72333157af672793cdf2ef1cb751",
+    "bytes": 67270
+  },
+  {
+    "source": "cncverse",
+    "file": "PlayFyProvider.cs3",
+    "sha256": "133635f59ab7dc5b3e9d9c678fea99c4a4fc7986cb3c38bd680f99d61c858192",
+    "bytes": 93351
+  },
+  {
+    "source": "cncverse",
+    "file": "PlayZTVProvider.cs3",
+    "sha256": "80e4656cdab5f70f4384adef3a46f9cd1f0e37755c577faa348dd5cba6ad8c90",
+    "bytes": 97677
+  },
+  {
+    "source": "cncverse",
+    "file": "RadioIndiaProvider.cs3",
+    "sha256": "a11ac1ffb4fb3c78adc67eecf59add4e7dff75cb60041417208536e6c9643413",
+    "bytes": 21661
+  },
+  {
+    "source": "cncverse",
+    "file": "Rtally.cs3",
+    "sha256": "50dc308a2f2a3d4f539e315a2cd0efa91dddcdf02cdaf559b57f16b74d3be271",
+    "bytes": 28551
+  },
+  {
+    "source": "cncverse",
+    "file": "SKTechProvider.cs3",
+    "sha256": "9931d60045b03fd862ee9182b548adcf7c255ed29ce27fb48c4533d07eb5fdf9",
+    "bytes": 112453
+  },
+  {
+    "source": "cncverse",
+    "file": "SportzxProvider.cs3",
+    "sha256": "094a5af60e39a0c837856e92e3e1c9c74dd968cdc9bc995b853f5f588d5ab834",
+    "bytes": 110106
+  },
+  {
+    "source": "cncverse",
+    "file": "StreamFlixProvider.cs3",
+    "sha256": "26b8a2528f22d8a83a65bd27d85d62ccbbbf3eb40d220863ac45634aae177f08",
+    "bytes": 51280
+  },
+  {
+    "source": "cncverse",
+    "file": "SubscriptionManager.cs3",
+    "sha256": "45bbf0b5b2f1b0177ce2e331b511187ea0bbda68a58c5d2373c03a37e69072d0",
+    "bytes": 17434
+  },
+  {
+    "source": "cncverse",
+    "file": "TamilDhoolProvider.cs3",
+    "sha256": "05bd33a046a28362db72d9942fc004d7f93a926115a7e8b91fcbd80dc1485b7a",
+    "bytes": 35156
+  },
+  {
+    "source": "cncverse",
+    "file": "TamilUltraProvider.cs3",
+    "sha256": "06db8adafa5cd07d2be618d3adf4f60c444dd0491cc58e146ddbc5c26377ea91",
+    "bytes": 21036
+  },
+  {
+    "source": "cncverse",
+    "file": "Tamilian.cs3",
+    "sha256": "88d3e7604720a84d4fb797ae8ae166742ec02242f388c5efa85427598381702e",
+    "bytes": 22747
+  },
+  {
+    "source": "cncverse",
+    "file": "Watch32.cs3",
+    "sha256": "0ab795d24c40936d792d6b9626a25906b17fe7b59e6cceb1b9297f8f0230c475",
+    "bytes": 36443
+  },
+  {
+    "source": "cncverse",
+    "file": "XonProvider.cs3",
+    "sha256": "50e4b23d731080a37d909de0782dce0cc39bb04318d41782e2c5ec16848a51cb",
+    "bytes": 49036
+  },
+  {
+    "source": "phisher98",
+    "file": "AllMovieLandProvider.cs3",
+    "sha256": "938e5d6b1a41f3f625384a9cd559811b63528da0c3cc26c8adca2efbf0cc65c9",
+    "bytes": 57618
+  },
+  {
+    "source": "phisher98",
+    "file": "AllWish.cs3",
+    "sha256": "1b7f96405266a60a7a034078e309e01df8546f7a4b53aadcee3676325edd9d23",
+    "bytes": 42513
+  },
+  {
+    "source": "phisher98",
+    "file": "AniDb.cs3",
+    "sha256": "f55bcd9c78e760d7d95b0b2f8e238590fecc149c40d1c8db5b86bf2618690b1f",
+    "bytes": 57260
+  },
+  {
+    "source": "phisher98",
+    "file": "AniKoto.cs3",
+    "sha256": "6032aeba37c8e4b02f74d0d400daab2c4bf2a587b738ebdc8db24b77a7a2f39f",
+    "bytes": 41595
+  },
+  {
+    "source": "phisher98",
+    "file": "Anichi.cs3",
+    "sha256": "edffd82ed108cb1aed018e4dfe27792ee6c991d62eb39e2be82d4bd9c9f6129f",
+    "bytes": 137615
+  },
+  {
+    "source": "phisher98",
+    "file": "Anikage.cs3",
+    "sha256": "0cbfc8519878cf511280d4bac043db97893d5593434a5f182656ad2271ecc12f",
+    "bytes": 32272
+  },
+  {
+    "source": "phisher98",
+    "file": "Anilight.cs3",
+    "sha256": "1bd5a7bd3445a1857ccdfe279a17541578c4d31f53b2f522b8132dba6aced45d",
+    "bytes": 31962
+  },
+  {
+    "source": "phisher98",
+    "file": "AnimeCloud.cs3",
+    "sha256": "23355a2123f0f508a1ea78cfb44884beea2e01a2496af7c1380a32181fa76168",
+    "bytes": 36446
+  },
+  {
+    "source": "phisher98",
+    "file": "AnimeDekhoProvider.cs3",
+    "sha256": "1a3e251259366d77c4d344838945a01551e129b2220ea875b7b5bbde56b41e42",
+    "bytes": 71904
+  },
+  {
+    "source": "phisher98",
+    "file": "AnimePahe.cs3",
+    "sha256": "296fa807b5ecc16e6373e12de9d0eacd47dd6582e0ba3cfa826e30d1a0d373fe",
+    "bytes": 80124
+  },
+  {
+    "source": "phisher98",
+    "file": "Animeav1.cs3",
+    "sha256": "abd1f614a6fcaa904018a89c9be5f627df5b0c2747edf00adf4448bd43796b55",
+    "bytes": 18762
+  },
+  {
+    "source": "phisher98",
+    "file": "Animedubhindi.cs3",
+    "sha256": "0e29656081b2f3724c710251a2375a5aecd0e895834ff61d82ed3a242b2b01a8",
+    "bytes": 46941
+  },
+  {
+    "source": "phisher98",
+    "file": "Animekhor.cs3",
+    "sha256": "9166a524178b73e13801e979704eb84dd386d681bc4e2fb242ede42b78394cf7",
+    "bytes": 24940
+  },
+  {
+    "source": "phisher98",
+    "file": "Animenosub.cs3",
+    "sha256": "27951ad8676c4a06762644dd6b0078c25ace96cdb3fa494dd8f828cb465a23f5",
+    "bytes": 18312
+  },
+  {
+    "source": "phisher98",
+    "file": "Animesalt.cs3",
+    "sha256": "df1ef3fdb23f5a3888cbb8ed54ba51bcf6390f60277646affbe62d59ab5341ed",
+    "bytes": 41222
+  },
+  {
+    "source": "phisher98",
+    "file": "Animexin.cs3",
+    "sha256": "368b952b05b60756fd1176523027398d8caa050921c58a5e4b5dcd59b24833b1",
+    "bytes": 42827
+  },
+  {
+    "source": "phisher98",
+    "file": "Anineko.cs3",
+    "sha256": "7f3578983d71fe69243f71b23ef255b6472fe5913cdbc6f27bfa757391290674",
+    "bytes": 31551
+  },
+  {
+    "source": "phisher98",
+    "file": "Aniworld.cs3",
+    "sha256": "38d4cd01623811166119f5dc4edb1861c71bccb9f6addb9dc94a7c78411f815f",
+    "bytes": 54288
+  },
+  {
+    "source": "phisher98",
+    "file": "Anizone.cs3",
+    "sha256": "4f8705c8acdaf5b7975327020c70865512778109ce8087998df1bba83d482fe9",
+    "bytes": 25850
+  },
+  {
+    "source": "phisher98",
+    "file": "BanglaPlex.cs3",
+    "sha256": "bf743da9a389d1a128300690ebd2f85aabfdf8d118ebc34c80522ddef39004be",
+    "bytes": 21092
+  },
+  {
+    "source": "phisher98",
+    "file": "Cinefreak.cs3",
+    "sha256": "2cf6022d6d5fce3e6c8495c4f96ebbf3cfb18014ce9135f50750cd7a2e74ace0",
+    "bytes": 68488
+  },
+  {
+    "source": "phisher98",
+    "file": "Cinemacity.cs3",
+    "sha256": "bea9543a8949f6e395e47fd381ce2780c4069ee67d493dfc414bd7bf151ebb4c",
+    "bytes": 99746
+  },
+  {
+    "source": "phisher98",
+    "file": "CloudPlay.cs3",
+    "sha256": "7c68d19bf4129261666385fc8e4679b8579627794ea239eaef5ee1761e5cef74",
+    "bytes": 31014
+  },
+  {
+    "source": "phisher98",
+    "file": "Coflix.cs3",
+    "sha256": "be4d2c3655e0b75b5eb49dc353644320730f21c1e11375aafee657f94a51b20a",
+    "bytes": 27965
+  },
+  {
+    "source": "phisher98",
+    "file": "Desicinemas.cs3",
+    "sha256": "1144ec4fc9e99c9609c11401a9d48066a9d28547ad21f6609a5fdebfcf701e4b",
+    "bytes": 40071
+  },
+  {
+    "source": "phisher98",
+    "file": "Donghuastream.cs3",
+    "sha256": "fce2d8f4147d04a3a336bb749bf6c9dc8707d7957ca6ebe5df29fd8e55b27c50",
+    "bytes": 38044
+  },
+  {
+    "source": "phisher98",
+    "file": "DoraBash.cs3",
+    "sha256": "515dfaf49d551f52aa8f1b86883eff371ba50cb63a1f3f910603ba94283a4d2c",
+    "bytes": 81255
+  },
+  {
+    "source": "phisher98",
+    "file": "DudeFilms.cs3",
+    "sha256": "01fb32e6349bc6279f7f4534c34ddba8e06bd20f84908c1c3da1296638dfe410",
+    "bytes": 63909
+  },
+  {
+    "source": "phisher98",
+    "file": "Fibwatch.cs3",
+    "sha256": "876f64640841ad6834279c93f7f7c2107065525109be12bb7cb4d56bf8def2d9",
+    "bytes": 42333
+  },
+  {
+    "source": "phisher98",
+    "file": "Fivemovierulz.cs3",
+    "sha256": "8cf683d823bf8407ac531e8f9eedb94f96da36443f1c9075a6ac2c5c11683d49",
+    "bytes": 12073
+  },
+  {
+    "source": "phisher98",
+    "file": "FourKHDHub.cs3",
+    "sha256": "d4defff18809ab57a5617a83ebd8ca836ac4f502bef693024e79558bec9cebc9",
+    "bytes": 66777
+  },
+  {
+    "source": "phisher98",
+    "file": "Goojara.cs3",
+    "sha256": "71213b075e1093734d71cfbc0db512f1b0ba6fbfed782aea6be409f557fe0534",
+    "bytes": 43751
+  },
+  {
+    "source": "phisher98",
+    "file": "HDhub4u.cs3",
+    "sha256": "50d0828d50fb33aece00ce9224ca81a29b21bbbeefc0202c8f8fba2020ac9824",
+    "bytes": 79859
+  },
+  {
+    "source": "phisher98",
+    "file": "Hdmovie2.cs3",
+    "sha256": "ffafeebb74fdbd9e4412dc02d9f158ff628862994bbf98eddaba1d1fa55a82ae",
+    "bytes": 42972
+  },
+  {
+    "source": "phisher98",
+    "file": "Hindmoviez.cs3",
+    "sha256": "af66876bb1f2a3a9c3f3997fab8421148de0866dff76326f488bbd291f5bf4a4",
+    "bytes": 58849
+  },
+  {
+    "source": "phisher98",
+    "file": "IPTVPlayer.cs3",
+    "sha256": "a9134c26bffd1651182088ca5448f3d292a7dfab67118bb94d230862b5b625ec",
+    "bytes": 19380
+  },
+  {
+    "source": "phisher98",
+    "file": "IStreamFlare.cs3",
+    "sha256": "6a430ca6345604ccdce9a140e724f427f2618f6d3be11aff82d97fa7e0b44812",
+    "bytes": 48783
+  },
+  {
+    "source": "phisher98",
+    "file": "IdlixProvider.cs3",
+    "sha256": "05d1d8dc927ce463b43f4e22c2a5f162d11ca4e88c04848b5f641a08d4d57604",
+    "bytes": 57068
+  },
+  {
+    "source": "phisher98",
+    "file": "Jellyfin.cs3",
+    "sha256": "1f11cec270a46c55ac1a122d3c2f4ca48c30a919d09db2b27ae616d69cd9a0be",
+    "bytes": 63049
+  },
+  {
+    "source": "phisher98",
+    "file": "Kartoons.cs3",
+    "sha256": "ac39954c2b51df86de2cc33fbd7c5b63a6099a2111adfbb1a7c7381e740d41ef",
+    "bytes": 81683
+  },
+  {
+    "source": "phisher98",
+    "file": "Kickassanime.cs3",
+    "sha256": "e4c484041f02fd723a8424454c79ea4fb9710de080f87017e2866ecfca50b439",
+    "bytes": 59945
+  },
+  {
+    "source": "phisher98",
+    "file": "KisskhProvider.cs3",
+    "sha256": "2af599bb6e6209c3a230c6de5b7adb6f2ac1db63a8580791cd89e3ed679e1e6c",
+    "bytes": 39518
+  },
+  {
+    "source": "phisher98",
+    "file": "Latanime.cs3",
+    "sha256": "d2bf1900d866520e12f67db70c1cd7297048413f3cdc4ff5f1dddb7fd4a4c892",
+    "bytes": 13866
+  },
+  {
+    "source": "phisher98",
+    "file": "LayarKacaProvider.cs3",
+    "sha256": "381bce83a9f0918f47200c79011c1a234f6988ffb6a0434d9bf9321c59a6477e",
+    "bytes": 20771
+  },
+  {
+    "source": "phisher98",
+    "file": "MPlayerProvider.cs3",
+    "sha256": "9c2349243e36509d4cefc9ac2584eaf97b47b8d639368e30e0aaf0c5334d232d",
+    "bytes": 93211
+  },
+  {
+    "source": "phisher98",
+    "file": "MassTamilanProvider.cs3",
+    "sha256": "c53b4c1d7c2bf728da719a891c6d785e10fa62a23033a8d70b00cae862f1e105",
+    "bytes": 16688
+  },
+  {
+    "source": "phisher98",
+    "file": "Megakino.cs3",
+    "sha256": "46b029d95853072d01a502c43ed21773fbe97c918769028c059750da13efc708",
+    "bytes": 19557
+  },
+  {
+    "source": "phisher98",
+    "file": "Microtv.cs3",
+    "sha256": "1ebb7bdaa826bd24b479962b45910c30ee62b6f404d91012bcace54de0e1c14c",
+    "bytes": 37644
+  },
+  {
+    "source": "phisher98",
+    "file": "MovieBlast.cs3",
+    "sha256": "67f5f346b488726afee888d264548ebccd7d85ac033612b963e6ac9b4fb3742e",
+    "bytes": 31999
+  },
+  {
+    "source": "phisher98",
+    "file": "MovieBoxProvider.cs3",
+    "sha256": "43e4593be338e8c1ebe10ab9043e19cb2c9b79e64dea2c40b5e38d6f84a344e9",
+    "bytes": 72427
+  },
+  {
+    "source": "phisher98",
+    "file": "Movies4u.cs3",
+    "sha256": "180f514663941a478b667175020ec3d6380c6c9a5f064257d12f6a1d83d50d91",
+    "bytes": 74778
+  },
+  {
+    "source": "phisher98",
+    "file": "MultiMoviesProvider.cs3",
+    "sha256": "0a53f177fa302eea81a4f9cac4eaf3dba09f98c4783529b7692512bd3b98b6d2",
+    "bytes": 45938
+  },
+  {
+    "source": "phisher98",
+    "file": "Netcinez.cs3",
+    "sha256": "cf1b5ed7cbc9229f5e251e1a22f72a23e8ca031a182b4418289ae5709dc9cc95",
+    "bytes": 15238
+  },
+  {
+    "source": "phisher98",
+    "file": "OHLI24.cs3",
+    "sha256": "a99cb184b1dfdec744e2839fd63cd5b99326231fc0538eaf821f29a15f8b8038",
+    "bytes": 19196
+  },
+  {
+    "source": "phisher98",
+    "file": "OnePace.cs3",
+    "sha256": "25074252da91ed1719a9e117f76e58674b26c459f641f4c7a71b29c3bfef777c",
+    "bytes": 40363
+  },
+  {
+    "source": "phisher98",
+    "file": "OneTouchTV.cs3",
+    "sha256": "1ae90439081467764ed3a5eab0a37ecea8eb8dcc0b43aef68ba5ab1e723ae82c",
+    "bytes": 62863
+  },
+  {
+    "source": "phisher98",
+    "file": "Pencurimovie.cs3",
+    "sha256": "ce94a7d34b4520fb36e0fdace9014408990b8b0c97a87afdc23241fc0b2bc1f4",
+    "bytes": 13755
+  },
+  {
+    "source": "phisher98",
+    "file": "Pinoymoviepedia.cs3",
+    "sha256": "d6d22e1d0371c49873d4f3b1285b24d9a20797e51c7d09f969bd4d98007e871f",
+    "bytes": 21472
+  },
+  {
+    "source": "phisher98",
+    "file": "Piratexplay.cs3",
+    "sha256": "28f5b8bacff77ceac00a89f9a1d02625321f7f4a2bf655619db7df96270efcf3",
+    "bytes": 65121
+  },
+  {
+    "source": "phisher98",
+    "file": "Pmsm.cs3",
+    "sha256": "2d4f3873425e67c58894504937a60409ba80e80117b68ea9734e8ef22307cb33",
+    "bytes": 25298
+  },
+  {
+    "source": "phisher98",
+    "file": "PublicSportsIPTV.cs3",
+    "sha256": "91856834cf500a6ec1d9ffda20d711f538932f3de0e4303e8a791ea9ee93c0d2",
+    "bytes": 23602
+  },
+  {
+    "source": "phisher98",
+    "file": "QuickIPTV.cs3",
+    "sha256": "279e8ecf1d131275f6282f3a46c7ea3e470f3f236281decd4a687dc89d849d93",
+    "bytes": 23200
+  },
+  {
+    "source": "phisher98",
+    "file": "RingZ.cs3",
+    "sha256": "20df2851ca1e77e47a87225a3647e7f9a87848eb31e3059186e69b3e8d5fc1ec",
+    "bytes": 29597
+  },
+  {
+    "source": "phisher98",
+    "file": "ShowBox.cs3",
+    "sha256": "c791efdbfbcd2eb03a998315e5763660b2acfda3686a0e905a092210d8e74d1f",
+    "bytes": 116163
+  },
+  {
+    "source": "phisher98",
+    "file": "StreamPlay.cs3",
+    "sha256": "8d730150de33e906799ae04fc4127914de0b0ee7dac7b8d783e6cd775588500f",
+    "bytes": 1021429
+  },
+  {
+    "source": "phisher98",
+    "file": "StremioAddon.cs3",
+    "sha256": "88c88a841709168f09c97921b79a0d0bd4b0e250ee2e47b8bd6d6b2a7338eb4a",
+    "bytes": 75036
+  },
+  {
+    "source": "phisher98",
+    "file": "StremioX.cs3",
+    "sha256": "387938598de507621f6479590e67ec6feba749a0caf79c911a64426e0e291558",
+    "bytes": 172666
+  },
+  {
+    "source": "phisher98",
+    "file": "SuperStream.cs3",
+    "sha256": "b1a26ba759658a5f240c394cfc539a224592a816e48cb0766f0e7937fb28a6c8",
+    "bytes": 129897
+  },
+  {
+    "source": "phisher98",
+    "file": "Tamilblasters.cs3",
+    "sha256": "a8b79e4485117dffe7adce936b5b981a022858548ffff5272c859637d66df525",
+    "bytes": 20153
+  },
+  {
+    "source": "phisher98",
+    "file": "ToonHub.cs3",
+    "sha256": "8f885826750e5ae841fd0f6ca8729fe437c2871a82a2ff1ada9870858ebe59ef",
+    "bytes": 26235
+  },
+  {
+    "source": "phisher98",
+    "file": "ToonTales.cs3",
+    "sha256": "67dffdda7680420b48b7320bdfca53ea8d840cfe89aa19db44bbb85a99da35c5",
+    "bytes": 9983
+  },
+  {
+    "source": "phisher98",
+    "file": "Toonstream.cs3",
+    "sha256": "e5a34be0acfc064ee72bb3245fb8498dab61ce0718da30664d70576737a00b89",
+    "bytes": 37703
+  },
+  {
+    "source": "phisher98",
+    "file": "Topcartoons.cs3",
+    "sha256": "843e8a77399207f12c073260a233c6d950ba13fc53ef6138adb1af8c51bd37fa",
+    "bytes": 10124
+  },
+  {
+    "source": "phisher98",
+    "file": "Topstreamfilm.cs3",
+    "sha256": "bfbad61a9af089f95809f62331acbd3bb9723a1b9559652dfacc77a9ca63fa04",
+    "bytes": 17186
+  },
+  {
+    "source": "phisher98",
+    "file": "TorraStream.cs3",
+    "sha256": "e6f6a4d9910dbc4b775d7ddafb6c3a262e31942a430d853b5a41a392205450f8",
+    "bytes": 192127
+  },
+  {
+    "source": "phisher98",
+    "file": "UHDmoviesProvider.cs3",
+    "sha256": "c61672a5b588621d090a625b1f48e0216f28cc3c322759b5f6e59ac0c957b20a",
+    "bytes": 52055
+  },
+  {
+    "source": "phisher98",
+    "file": "Ultima.cs3",
+    "sha256": "5081f87ebc4e8b2c9d66b7b7713d38deb730508fb856802dec3b0a5c07f7078a",
+    "bytes": 171784
+  },
+  {
+    "source": "phisher98",
+    "file": "XDMovies.cs3",
+    "sha256": "de84fe12d4df51393ff49955b1569a9a79118077568a4d115cd3271d547fbb5d",
+    "bytes": 115006
+  },
+  {
+    "source": "phisher98",
+    "file": "YTS.cs3",
+    "sha256": "bdeb0095477d98fc074d0f1bda55c94039a0bfe221e7c7adad191f722540c47b",
+    "bytes": 15727
+  },
+  {
+    "source": "phisher98",
+    "file": "Zinkmovies.cs3",
+    "sha256": "b5d9983bd87728ab91d61d88becb003b2bde94ac83ce901dea790969fa25cd9a",
+    "bytes": 68058
+  }
+]

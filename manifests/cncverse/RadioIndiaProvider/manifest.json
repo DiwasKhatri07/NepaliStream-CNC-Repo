@@ -1,0 +1,6 @@
+{
+  "requiresResources": false,
+  "version": 31,
+  "pluginClassName": "com.cncverse.radioindia.RadioIndiaProviderPlugin",
+  "name": "RadioIndiaProvider"
+}

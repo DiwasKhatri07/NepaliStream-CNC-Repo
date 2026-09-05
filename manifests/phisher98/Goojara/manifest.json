@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Goojara.GoojaraProvider",
+  "name": "Goojara",
+  "version": 3,
+  "requiresResources": false
+}

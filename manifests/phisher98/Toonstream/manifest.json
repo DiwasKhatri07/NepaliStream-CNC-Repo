@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Toonstream.ToonstreamProvider",
+  "name": "Toonstream",
+  "version": 7,
+  "requiresResources": false
+}

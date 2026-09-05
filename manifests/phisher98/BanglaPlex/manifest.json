@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.BanglaPlex.BanglaPlexProvider",
+  "name": "BanglaPlex",
+  "version": 6,
+  "requiresResources": false
+}

@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.phisher98.XDMoviesProvider",
+  "name": "XDMovies",
+  "version": 12,
+  "requiresResources": true
+}

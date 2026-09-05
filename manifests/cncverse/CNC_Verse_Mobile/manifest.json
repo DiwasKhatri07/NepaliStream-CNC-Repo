@@ -1,0 +1,6 @@
+{
+  "requiresResources": true,
+  "version": 8,
+  "pluginClassName": "com.horis.cncverse.CNCVersePlugin",
+  "name": "CNC Verse Mobile"
+}

@@ -1,0 +1,6 @@
+{
+  "requiresResources": true,
+  "version": 14,
+  "pluginClassName": "com.cncverse.LivXowPlugin",
+  "name": "LivXowProvider"
+}

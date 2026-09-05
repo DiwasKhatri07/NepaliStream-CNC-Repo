@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.animedubhindi.AnimedubhindiProvider",
+  "name": "Animedubhindi",
+  "version": 5,
+  "requiresResources": false
+}

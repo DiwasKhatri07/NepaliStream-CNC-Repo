@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.DoraBash.DoraBashProvider",
+  "name": "DoraBash",
+  "version": 11,
+  "requiresResources": false
+}

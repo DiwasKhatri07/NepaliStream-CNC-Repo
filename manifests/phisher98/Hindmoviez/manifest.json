@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.hindmoviez.HindmoviezPlugin",
+  "name": "Hindmoviez",
+  "version": 15,
+  "requiresResources": false
+}

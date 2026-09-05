@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Kartoons.KartoonsPlugin",
+  "name": "Kartoons",
+  "version": 2,
+  "requiresResources": true
+}

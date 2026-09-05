@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.idlix.IdlixProviderPlugin",
+  "name": "IdlixProvider",
+  "version": 14,
+  "requiresResources": false
+}

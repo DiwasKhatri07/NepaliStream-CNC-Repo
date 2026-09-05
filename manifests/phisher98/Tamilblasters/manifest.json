@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.tamilblasters.TamilblastersPlugin",
+  "name": "Tamilblasters",
+  "version": 8,
+  "requiresResources": false
+}

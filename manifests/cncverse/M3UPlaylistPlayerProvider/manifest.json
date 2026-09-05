@@ -1,0 +1,6 @@
+{
+  "requiresResources": false,
+  "version": 15,
+  "pluginClassName": "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayerPlugin",
+  "name": "M3UPlaylistPlayerProvider"
+}

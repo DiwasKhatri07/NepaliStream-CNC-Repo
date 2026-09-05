@@ -1,0 +1,6 @@
+{
+  "requiresResources": false,
+  "version": 38,
+  "pluginClassName": "com.cncverse.CastleTvProviderPlugin",
+  "name": "CastleTvProvider"
+}

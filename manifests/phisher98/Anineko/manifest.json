@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.anineko.AninekoPlugin",
+  "name": "Anineko",
+  "version": 3,
+  "requiresResources": false
+}

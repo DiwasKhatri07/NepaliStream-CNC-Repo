@@ -1,0 +1,6 @@
+{
+  "requiresResources": false,
+  "version": 33,
+  "pluginClassName": "com.cncverse.Xon",
+  "name": "XonProvider"
+}

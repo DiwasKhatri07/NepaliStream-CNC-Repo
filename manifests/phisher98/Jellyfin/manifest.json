@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.phisher98.JellyfinPlugin",
+  "name": "Jellyfin",
+  "version": 4,
+  "requiresResources": true
+}

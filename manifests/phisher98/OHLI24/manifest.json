@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.ohli24.OHLI24Plugin",
+  "name": "OHLI24",
+  "version": 5,
+  "requiresResources": false
+}

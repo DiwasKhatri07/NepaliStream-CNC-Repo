@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.PublicSportsIPTV.PublicSportsIPTVProvider",
+  "name": "PublicSportsIPTV",
+  "version": 3,
+  "requiresResources": false
+}

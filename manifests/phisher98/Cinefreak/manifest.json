@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.cinefreak.CinefreakPlugin",
+  "name": "Cinefreak",
+  "version": 11,
+  "requiresResources": false
+}

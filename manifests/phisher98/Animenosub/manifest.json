@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Animenosub.AnimenosubProvider",
+  "name": "Animenosub",
+  "version": 9,
+  "requiresResources": false
+}

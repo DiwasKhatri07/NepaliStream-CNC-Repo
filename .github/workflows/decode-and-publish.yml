@@ -1,0 +1,51 @@
+name: Update and decode CloudStream builds
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: decode-and-publish
+  cancel-in-progress: true
+
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout NepaliStream CNC Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install JADX
+        run: |
+          curl -L --fail --silent --show-error https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip -o /tmp/jadx.zip
+          unzip -q /tmp/jadx.zip -d /tmp/jadx
+          echo "/tmp/jadx/bin" >> "$GITHUB_PATH"
+
+      - name: Pull current public builds branches
+        run: python scripts/update_sources.py
+
+      - name: Decode .cs3 archives and generate Kotlin metadata
+        run: python scripts/decode_sources.py
+
+      - name: Publish changed decoded layers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sources decoded kotlin manifests resources decoded-index.json
+          if git diff --cached --quiet; then
+            echo "No upstream changes detected."
+          else
+            git commit -m "Auto-update decoded CloudStream builds"
+            git push
+          fi

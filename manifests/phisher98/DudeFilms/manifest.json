@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.dudefilms.DudefilmsPlugin",
+  "name": "DudeFilms",
+  "version": 9,
+  "requiresResources": false
+}

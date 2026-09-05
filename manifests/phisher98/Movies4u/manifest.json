@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.movies4u.Movies4uProvider",
+  "name": "Movies4u",
+  "version": 12,
+  "requiresResources": false
+}

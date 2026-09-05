@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Animexin.AnimexinPlugin",
+  "name": "Animexin",
+  "version": 13,
+  "requiresResources": true
+}

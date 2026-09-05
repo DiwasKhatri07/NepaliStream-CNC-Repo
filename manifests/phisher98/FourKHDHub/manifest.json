@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.fourKHDHub.FourKHDHubProvider",
+  "name": "FourKHDHub",
+  "version": 36,
+  "requiresResources": false
+}

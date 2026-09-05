@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.kickassanime.KickassanimePlugin",
+  "name": "Kickassanime",
+  "version": 25,
+  "requiresResources": false
+}

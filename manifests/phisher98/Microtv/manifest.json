@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Microtv.MicrotvProvider",
+  "name": "Microtv",
+  "version": 1,
+  "requiresResources": false
+}

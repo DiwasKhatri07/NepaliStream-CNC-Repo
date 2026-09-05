@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.MovieBlast.MovieBlastProvider",
+  "name": "MovieBlast",
+  "version": 3,
+  "requiresResources": false
+}

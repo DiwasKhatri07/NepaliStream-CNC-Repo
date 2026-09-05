@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.anidb.AniDbPlugin",
+  "name": "AniDb",
+  "version": 13,
+  "requiresResources": true
+}

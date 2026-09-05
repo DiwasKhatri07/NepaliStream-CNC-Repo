@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.latanime.LatanimeProvider",
+  "name": "Latanime",
+  "version": 3,
+  "requiresResources": false
+}

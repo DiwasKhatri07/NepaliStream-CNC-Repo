@@ -1,0 +1,6 @@
+{
+  "requiresResources": true,
+  "version": 35,
+  "pluginClassName": "com.cncverse.PlayZTVPlugin",
+  "name": "PlayZTVProvider"
+}

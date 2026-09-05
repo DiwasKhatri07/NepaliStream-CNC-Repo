@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.YTS.YTSProvider",
+  "name": "YTS",
+  "version": 9,
+  "requiresResources": false
+}

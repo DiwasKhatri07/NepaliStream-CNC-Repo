@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Pinoymoviepedia.PinoymoviepediaProvider",
+  "name": "Pinoymoviepedia",
+  "version": 3,
+  "requiresResources": false
+}

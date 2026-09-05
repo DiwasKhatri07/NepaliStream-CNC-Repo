@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Donghuastream.DonghuastreamProvider",
+  "name": "Donghuastream",
+  "version": 19,
+  "requiresResources": false
+}

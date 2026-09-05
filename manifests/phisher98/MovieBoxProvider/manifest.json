@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.MovieBox.MovieBoxProviderPlugin",
+  "name": "MovieBoxProvider",
+  "version": 26,
+  "requiresResources": true
+}

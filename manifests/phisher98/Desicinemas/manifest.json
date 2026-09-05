@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Desicinemas.DesicinemasPlugin",
+  "name": "Desicinemas",
+  "version": 14,
+  "requiresResources": false
+}

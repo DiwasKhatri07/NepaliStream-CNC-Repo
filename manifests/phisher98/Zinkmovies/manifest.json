@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.zinkmovies.ZinkmoviesPlugin",
+  "name": "Zinkmovies",
+  "version": 6,
+  "requiresResources": false
+}

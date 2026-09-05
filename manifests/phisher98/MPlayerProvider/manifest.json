@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.MPlayer.MPlayerPlugin",
+  "name": "MPlayerProvider",
+  "version": 7,
+  "requiresResources": false
+}

@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Pencurimovie.PencurimovieProvider",
+  "name": "Pencurimovie",
+  "version": 6,
+  "requiresResources": false
+}

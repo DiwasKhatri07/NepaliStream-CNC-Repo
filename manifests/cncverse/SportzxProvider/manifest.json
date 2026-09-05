@@ -1,0 +1,6 @@
+{
+  "requiresResources": true,
+  "version": 19,
+  "pluginClassName": "com.cncverse.SportzxPlugin",
+  "name": "SportzxProvider"
+}

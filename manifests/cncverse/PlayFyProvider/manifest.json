@@ -1,0 +1,6 @@
+{
+  "requiresResources": true,
+  "version": 8,
+  "pluginClassName": "com.cncverse.PlayFyPlugin",
+  "name": "PlayFyProvider"
+}

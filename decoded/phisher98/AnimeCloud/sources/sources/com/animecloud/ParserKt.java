@@ -1,0 +1,112 @@
+package com.animecloud;
+
+import com.lagradost.cloudstream3.SubtitleFile;
+import com.lagradost.cloudstream3.utils.ExtractorApiKt;
+import com.lagradost.cloudstream3.utils.ExtractorLink;
+import kotlin.Metadata;
+import kotlin.ResultKt;
+import kotlin.Unit;
+import kotlin.coroutines.Continuation;
+import kotlin.coroutines.CoroutineContext;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.coroutines.jvm.internal.ContinuationImpl;
+import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SpillingKt;
+import kotlin.jvm.functions.Function1;
+import kotlinx.coroutines.BuildersKt;
+import kotlinx.coroutines.CoroutineScopeKt;
+import kotlinx.coroutines.CoroutineStart;
+import kotlinx.coroutines.Dispatchers;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+/* JADX INFO: compiled from: Parser.kt */
+/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/AnimeCloud/classes.dex */
+@Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u001a^\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00032\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u00072\u0012\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\u00010\u00072\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u0003H\u0086@¢\u0006\u0002\u0010\f¨\u0006\r"}, d2 = {"loadSourceNameExtractor", "", "source", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "quality", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "AnimeCloud"}, k = 2, mv = {2, 4, 0}, xi = 48)
+public final class ParserKt {
+
+    /* JADX INFO: renamed from: com.animecloud.ParserKt$loadSourceNameExtractor$1 */
+    /* JADX INFO: compiled from: Parser.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.animecloud.ParserKt", f = "Parser.kt", i = {0, 0, 0, 0, 0, 0}, l = {165}, m = "loadSourceNameExtractor", n = {"source", "url", "referer", "subtitleCallback", "callback", "quality"}, nl = {182}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    static final class C00091 extends ContinuationImpl {
+        Object L$0;
+        Object L$1;
+        Object L$2;
+        Object L$3;
+        Object L$4;
+        Object L$5;
+        int label;
+        /* synthetic */ Object result;
+
+        C00091(Continuation<? super C00091> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return ParserKt.loadSourceNameExtractor(null, null, null, null, null, null, (Continuation) this);
+        }
+    }
+
+    /* JADX WARN: Code duplicated, block: B:7:0x0014  */
+    @Nullable
+    public static final Object loadSourceNameExtractor(@NotNull final String source, @NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull final Function1<? super ExtractorLink, Unit> function2, @Nullable final String quality, @NotNull Continuation<? super Unit> continuation) {
+        C00091 c00091;
+        if (continuation instanceof C00091) {
+            c00091 = (C00091) continuation;
+            if ((c00091.label & Integer.MIN_VALUE) != 0) {
+                c00091.label -= Integer.MIN_VALUE;
+            } else {
+                c00091 = new C00091(continuation);
+            }
+        } else {
+            c00091 = new C00091(continuation);
+        }
+        Object $result = c00091.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (c00091.label) {
+            case 0:
+                ResultKt.throwOnFailure($result);
+                Function1 function3 = new Function1() { // from class: com.animecloud.ParserKt$$ExternalSyntheticLambda0
+                    public final Object invoke(Object obj) {
+                        return ParserKt.loadSourceNameExtractor$lambda$0(function2, source, quality, (ExtractorLink) obj);
+                    }
+                };
+                c00091.L$0 = SpillingKt.nullOutSpilledVariable(source);
+                c00091.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00091.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                c00091.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c00091.L$4 = SpillingKt.nullOutSpilledVariable(function2);
+                c00091.L$5 = SpillingKt.nullOutSpilledVariable(quality);
+                c00091.label = 1;
+                if (ExtractorApiKt.loadExtractor(url, referer, function1, function3, c00091) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                break;
+            case 1:
+                ResultKt.throwOnFailure($result);
+                break;
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+        return Unit.INSTANCE;
+    }
+
+    public static /* synthetic */ Object loadSourceNameExtractor$default(String str, String str2, String str3, Function1 function1, Function1 function2, String str4, Continuation continuation, int i, Object obj) {
+        if ((i & 4) != 0) {
+            str3 = null;
+        }
+        if ((i & 32) != 0) {
+            str4 = null;
+        }
+        return loadSourceNameExtractor(str, str2, str3, function1, function2, str4, continuation);
+    }
+
+    static final Unit loadSourceNameExtractor$lambda$0(Function1 $callback, String $source, String $quality, ExtractorLink link) {
+        BuildersKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), (CoroutineContext) null, (CoroutineStart) null, new ParserKt$loadSourceNameExtractor$2$1($callback, $source, link, $quality, null), 3, (Object) null);
+        return Unit.INSTANCE;
+    }
+}

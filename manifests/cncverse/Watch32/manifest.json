@@ -1,0 +1,6 @@
+{
+  "requiresResources": false,
+  "version": 32,
+  "pluginClassName": "com.cncverse.Watch32Plugin",
+  "name": "Watch32"
+}

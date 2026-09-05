@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Fibwatch.FibwatchPlugin",
+  "name": "Fibwatch",
+  "version": 9,
+  "requiresResources": false
+}

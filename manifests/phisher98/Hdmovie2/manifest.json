@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Hdmovie2.Hdmovie2Plugin",
+  "name": "Hdmovie2",
+  "version": 3,
+  "requiresResources": false
+}

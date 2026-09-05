@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.RingZ.RingZProvider",
+  "name": "RingZ",
+  "version": 10,
+  "requiresResources": false
+}

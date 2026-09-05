@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Anichi.AnichiPlugin",
+  "name": "Anichi",
+  "version": 24,
+  "requiresResources": false
+}

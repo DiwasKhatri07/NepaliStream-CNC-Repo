@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Netcinez.NetcinezProvider",
+  "name": "Netcinez",
+  "version": 3,
+  "requiresResources": false
+}

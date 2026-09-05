@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.OneTouchTV.OneTouchTVPlugin",
+  "name": "OneTouchTV",
+  "version": 3,
+  "requiresResources": false
+}

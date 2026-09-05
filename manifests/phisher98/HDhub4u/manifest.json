@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.hdhub4u.HDhub4uPlugin",
+  "name": "HDhub4u",
+  "version": 52,
+  "requiresResources": false
+}

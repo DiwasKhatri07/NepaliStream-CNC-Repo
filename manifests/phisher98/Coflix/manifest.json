@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Coflix.CoflixProvider",
+  "name": "Coflix",
+  "version": 17,
+  "requiresResources": false
+}

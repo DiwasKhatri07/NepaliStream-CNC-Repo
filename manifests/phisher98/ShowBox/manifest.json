@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.phisher98.SuperStreamPlugin",
+  "name": "ShowBox",
+  "version": 6,
+  "requiresResources": true
+}

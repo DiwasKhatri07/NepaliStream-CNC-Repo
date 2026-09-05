@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.phisher98.AnimePaheProviderPlugin",
+  "name": "AnimePahe",
+  "version": 34,
+  "requiresResources": true
+}

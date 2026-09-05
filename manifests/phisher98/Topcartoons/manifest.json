@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.Topcartoons.TopcartoonsProvider",
+  "name": "Topcartoons",
+  "version": 3,
+  "requiresResources": false
+}

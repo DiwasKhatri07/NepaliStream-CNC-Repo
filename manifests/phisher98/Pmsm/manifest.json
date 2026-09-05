@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.pmsm.PmsmPlugin",
+  "name": "Pmsm",
+  "version": 4,
+  "requiresResources": false
+}

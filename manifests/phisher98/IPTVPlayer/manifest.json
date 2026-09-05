@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.phisher98.IPTVPlayerPlugin",
+  "name": "IPTVPlayer",
+  "version": 7,
+  "requiresResources": false
+}

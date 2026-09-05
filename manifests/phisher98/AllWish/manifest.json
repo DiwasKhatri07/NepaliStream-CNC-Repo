@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.allwish.AllWishPlugin",
+  "name": "AllWish",
+  "version": 15,
+  "requiresResources": false
+}

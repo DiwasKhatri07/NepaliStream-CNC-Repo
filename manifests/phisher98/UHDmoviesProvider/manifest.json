@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.phisher98.UHDmoviesProviderPlugin",
+  "name": "UHDmoviesProvider",
+  "version": 38,
+  "requiresResources": false
+}

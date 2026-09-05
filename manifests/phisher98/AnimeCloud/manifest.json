@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.animecloud.AnimecloudProvider",
+  "name": "AnimeCloud",
+  "version": 9,
+  "requiresResources": false
+}

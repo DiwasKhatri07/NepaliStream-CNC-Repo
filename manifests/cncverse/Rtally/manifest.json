@@ -1,0 +1,6 @@
+{
+  "requiresResources": false,
+  "version": 47,
+  "pluginClassName": "com.cncverse.RtallyPlugin",
+  "name": "Rtally"
+}

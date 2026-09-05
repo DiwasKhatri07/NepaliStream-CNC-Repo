@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.phisher98.QuickIPTVPlugin",
+  "name": "QuickIPTV",
+  "version": 6,
+  "requiresResources": false
+}

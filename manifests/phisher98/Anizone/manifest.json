@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.ycngmn.AnizonePlugin",
+  "name": "Anizone",
+  "version": 5,
+  "requiresResources": true
+}

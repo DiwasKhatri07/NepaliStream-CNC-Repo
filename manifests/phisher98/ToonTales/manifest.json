@@ -1,0 +1,6 @@
+{
+  "pluginClassName": "com.ToonTales.ToonTalesProvider",
+  "name": "ToonTales",
+  "version": 3,
+  "requiresResources": false
+}
