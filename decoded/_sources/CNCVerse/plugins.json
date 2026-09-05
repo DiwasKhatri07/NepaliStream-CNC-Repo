@@ -377,10 +377,10 @@
     },
     {
         "iconUrl": "https://github.com/NivinCNC/CNCVerse-Cloud-Stream-Extension/raw/refs/heads/master/Logos/MovieBoxProvider/icon.png",
-        "fileHash": "sha256-ad242e2a3eacf2bdda7817c00720e8cf00273068b307c9f3d54b463c878c1416",
+        "fileHash": "sha256-5ddbfba13f10d1bb92df74d475c6c04a7c11dc108a91d72230a33aa71352b98c",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/NivinCNC/CNCVerse-Cloud-Stream-Extension",
-        "fileSize": 84105,
+        "fileSize": 82602,
         "status": 1,
         "language": "ta",
         "authors": [
@@ -390,7 +390,7 @@
             "Movie",
             "TvSeries"
         ],
-        "version": 46,
+        "version": 47,
         "internalName": "MovieBoxProvider",
         "description": "Multi Language Movies and Series Provider",
         "url": "https://raw.githubusercontent.com/NivinCNC/CNCVerse-Cloud-Stream-Extension/builds/MovieBoxProvider.cs3",
@@ -398,10 +398,10 @@
     },
     {
         "iconUrl": "https://github.com/NivinCNC/CNCVerse-Cloud-Stream-Extension/raw/refs/heads/master/Logos/MovieBoxProviderIN/icon.png",
-        "fileHash": "sha256-0c0bce1ac01fd2c3a28048e8a2427bb6317ab5ed7e91d4b8d4dd03befce08ac2",
+        "fileHash": "sha256-d27ad09e5d22ab02fa61b88ec974ac957fb8164ac8e5126d4effc4f44817645c",
         "apiVersion": 1,
         "repositoryUrl": "https://github.com/NivinCNC/CNCVerse-Cloud-Stream-Extension",
-        "fileSize": 81093,
+        "fileSize": 80505,
         "status": 1,
         "language": "ta",
         "authors": [
@@ -411,7 +411,7 @@
             "Movie",
             "TvSeries"
         ],
-        "version": 48,
+        "version": 49,
         "internalName": "MovieBoxProviderIN",
         "description": "Multi Language Movies and Series Provider (Local homepage based on region)",
         "url": "https://raw.githubusercontent.com/NivinCNC/CNCVerse-Cloud-Stream-Extension/builds/MovieBoxProviderIN.cs3",

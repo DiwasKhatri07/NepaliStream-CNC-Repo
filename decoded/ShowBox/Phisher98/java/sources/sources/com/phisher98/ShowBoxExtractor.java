@@ -1,6 +1,5 @@
 package com.phisher98;
 
-import android.content.SharedPreferences;
 import com.lagradost.cloudstream3.MainActivityKt;
 import com.lagradost.cloudstream3.ParCollectionsKt;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
@@ -231,10 +230,8 @@ public final class ShowBoxExtractor extends ShowBox {
         }
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
     private ShowBoxExtractor() {
-        SharedPreferences sharedPreferences = null;
-        super(sharedPreferences, 1, sharedPreferences);
+        super(null, 1, null);
     }
 
     public static /* synthetic */ Object invokeInternalSource$default(ShowBoxExtractor showBoxExtractor, Integer num, Integer num2, Integer num3, Integer num4, String str, Function1 function1, Function1 function2, Continuation continuation, int i, Object obj) {

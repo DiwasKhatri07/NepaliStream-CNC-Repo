@@ -81,6 +81,8 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SourceDebugExtension;
 import kotlin.random.Random;
 import kotlin.text.Charsets;
+import kotlin.text.MatchResult;
+import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
@@ -91,8 +93,8 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: MovieBoxProviderIN.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/MovieBoxProviderIN/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u008c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0012\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010$\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 T2\u00020\u0001:\u0002TUB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u0005H\u0002J\u0019\u0010\u001f\u001a\u00020\u00052\n\b\u0002\u0010 \u001a\u0004\u0018\u00010!H\u0002¢\u0006\u0002\u0010\"J\u0006\u0010%\u001a\u00020\u0005J\u0006\u0010+\u001a\u00020,J>\u0010-\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u00052\b\u0010/\u001a\u0004\u0018\u00010\u00052\b\u00100\u001a\u0004\u0018\u00010\u00052\u0006\u00101\u001a\u00020\u00052\b\u00102\u001a\u0004\u0018\u00010\u00052\u0006\u00103\u001a\u00020!H\u0003JS\u00104\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u00052\b\u0010/\u001a\u0004\u0018\u00010\u00052\b\u00100\u001a\u0004\u0018\u00010\u00052\u0006\u00101\u001a\u00020\u00052\n\b\u0002\u00102\u001a\u0004\u0018\u00010\u00052\b\b\u0002\u00105\u001a\u00020\u000e2\n\b\u0002\u0010 \u001a\u0004\u0018\u00010!H\u0002¢\u0006\u0002\u00106J\u001e\u00107\u001a\u0002082\u0006\u00109\u001a\u00020:2\u0006\u0010;\u001a\u00020<H\u0096@¢\u0006\u0002\u0010=J\u001e\u0010>\u001a\u00020?2\u0006\u0010@\u001a\u00020\u00052\u0006\u00109\u001a\u00020:H\u0096@¢\u0006\u0002\u0010AJ\u0016\u0010B\u001a\u00020C2\u0006\u00101\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010DJF\u0010E\u001a\u00020\u000e2\u0006\u0010F\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u000e2\u0012\u0010H\u001a\u000e\u0012\u0004\u0012\u00020J\u0012\u0004\u0012\u00020K0I2\u0012\u0010L\u001a\u000e\u0012\u0004\u0012\u00020M\u0012\u0004\u0012\u00020K0IH\u0096@¢\u0006\u0002\u0010NJ\b\u0010O\u001a\u00020KH\u0002J\b\u0010P\u001a\u00020KH\u0002J\u0010\u0010Q\u001a\u00020K2\u0006\u00101\u001a\u00020\u0005H\u0002J\u0018\u0010R\u001a\u0004\u0018\u00010\u00052\u0006\u0010S\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010DR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010&\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u0007R \u0010(\u001a\u0014\u0012\u0004\u0012\u00020\u0005\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050*0)X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006V"}, d2 = {"Lcom/cncverse/MovieBoxProviderIN;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "secretKeyDefault", "secretKeyAlt", "md5", "input", "", "reverseString", "generateXClientToken", "hardcodedTimestamp", "", "(Ljava/lang/Long;)Ljava/lang/String;", "random", "Ljava/security/SecureRandom;", "generateDeviceId", "deviceId", "getDeviceId", "brandModels", "", "", "randomBrandModel", "Lcom/cncverse/MovieBoxProviderIN$BrandModel;", "buildCanonicalString", "method", "accept", "contentType", "url", "body", "timestamp", "generateXTrSignature", "useAltKey", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Long;)Ljava/lang/String;", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "fetchAnonymousToken", "ua", "Companion", "BrandModel", "MovieBoxProviderIN_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nMovieBoxProviderIN.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProviderIN.kt\ncom/cncverse/MovieBoxProviderIN\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 6 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,1408:1\n1642#2,10:1409\n1915#2:1419\n1642#2,10:1420\n1915#2:1430\n1916#2:1432\n1652#2:1433\n1642#2,10:1434\n1915#2:1444\n1916#2:1446\n1652#2:1447\n1642#2,10:1448\n1915#2:1458\n1916#2:1460\n1652#2:1461\n1916#2:1463\n1652#2:1464\n1642#2,10:1465\n1915#2:1475\n1916#2:1477\n1652#2:1478\n1696#2,8:1479\n1586#2:1487\n1661#2,3:1488\n1915#2,2:1491\n1915#2:1493\n1916#2:1501\n1915#2:1503\n296#2,2:1504\n1916#2:1513\n1915#2:1515\n1915#2,2:1516\n1916#2:1518\n1#3:1431\n1#3:1445\n1#3:1459\n1#3:1462\n1#3:1476\n1#3:1506\n383#4,7:1494\n221#5:1502\n222#5:1514\n437#6:1507\n513#6,5:1508\n*S KotlinDebug\n*F\n+ 1 MovieBoxProviderIN.kt\ncom/cncverse/MovieBoxProviderIN\n*L\n252#1:1409,10\n252#1:1419\n261#1:1420,10\n261#1:1430\n261#1:1432\n261#1:1433\n263#1:1434,10\n263#1:1444\n263#1:1446\n263#1:1447\n265#1:1448,10\n265#1:1458\n265#1:1460\n265#1:1461\n252#1:1463\n252#1:1464\n412#1:1465,10\n412#1:1475\n412#1:1477\n412#1:1478\n424#1:1479,8\n428#1:1487\n428#1:1488,3\n472#1:1491,2\n499#1:1493\n499#1:1501\n514#1:1503\n516#1:1504,2\n514#1:1513\n851#1:1515\n853#1:1516,2\n851#1:1518\n261#1:1431\n263#1:1445\n265#1:1459\n252#1:1462\n412#1:1476\n503#1:1494,7\n513#1:1502\n513#1:1514\n533#1:1507\n533#1:1508,5\n*E\n"})
+@Metadata(d1 = {"\u0000\u0094\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u0012\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010$\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u0000 Z2\u00020\u0001:\u0002Z[B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u0005H\u0002J\u0019\u0010\u001f\u001a\u00020\u00052\n\b\u0002\u0010 \u001a\u0004\u0018\u00010!H\u0002¢\u0006\u0002\u0010\"J\u0006\u0010%\u001a\u00020\u0005J\u0006\u0010-\u001a\u00020.J>\u0010/\u001a\u00020\u00052\u0006\u00100\u001a\u00020\u00052\b\u00101\u001a\u0004\u0018\u00010\u00052\b\u00102\u001a\u0004\u0018\u00010\u00052\u0006\u00103\u001a\u00020\u00052\b\u00104\u001a\u0004\u0018\u00010\u00052\u0006\u00105\u001a\u00020!H\u0003JS\u00106\u001a\u00020\u00052\u0006\u00100\u001a\u00020\u00052\b\u00101\u001a\u0004\u0018\u00010\u00052\b\u00102\u001a\u0004\u0018\u00010\u00052\u0006\u00103\u001a\u00020\u00052\n\b\u0002\u00104\u001a\u0004\u0018\u00010\u00052\b\b\u0002\u00107\u001a\u00020\u000e2\n\b\u0002\u0010 \u001a\u0004\u0018\u00010!H\u0002¢\u0006\u0002\u00108J\u0012\u00109\u001a\u0004\u0018\u00010\u00052\u0006\u0010:\u001a\u00020\u0005H\u0002J\u001e\u0010;\u001a\u00020<2\u0006\u0010=\u001a\u00020>2\u0006\u0010?\u001a\u00020@H\u0096@¢\u0006\u0002\u0010AJ\u001c\u0010B\u001a\b\u0012\u0004\u0012\u00020C0,2\u0006\u0010D\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010EJ\u001e\u0010B\u001a\u00020F2\u0006\u0010D\u001a\u00020\u00052\u0006\u0010=\u001a\u00020>H\u0096@¢\u0006\u0002\u0010GJ\u0016\u0010H\u001a\u00020I2\u0006\u00103\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010EJF\u0010J\u001a\u00020\u000e2\u0006\u0010K\u001a\u00020\u00052\u0006\u0010L\u001a\u00020\u000e2\u0012\u0010M\u001a\u000e\u0012\u0004\u0012\u00020O\u0012\u0004\u0012\u00020P0N2\u0012\u0010Q\u001a\u000e\u0012\u0004\u0012\u00020R\u0012\u0004\u0012\u00020P0NH\u0096@¢\u0006\u0002\u0010SJ\b\u0010T\u001a\u00020PH\u0002J\b\u0010U\u001a\u00020PH\u0002J\u0010\u0010V\u001a\u00020P2\u0006\u00103\u001a\u00020\u0005H\u0002J\u001a\u0010W\u001a\u0004\u0018\u00010\u00052\b\b\u0002\u0010X\u001a\u00020\u000eH\u0082@¢\u0006\u0002\u0010YR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010&\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u0007R\u0010\u0010(\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020!X\u0082\u000e¢\u0006\u0002\n\u0000R \u0010*\u001a\u0014\u0012\u0004\u0012\u00020\u0005\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050,0+X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\\"}, d2 = {"Lcom/cncverse/MovieBoxProviderIN;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "secretKeyDefault", "secretKeyAlt", "md5", "input", "", "reverseString", "generateXClientToken", "hardcodedTimestamp", "", "(Ljava/lang/Long;)Ljava/lang/String;", "random", "Ljava/security/SecureRandom;", "generateDeviceId", "deviceId", "getDeviceId", "cachedGuestToken", "tokenLastFetchMs", "brandModels", "", "", "randomBrandModel", "Lcom/cncverse/MovieBoxProviderIN$BrandModel;", "buildCanonicalString", "method", "accept", "contentType", "url", "body", "timestamp", "generateXTrSignature", "useAltKey", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Long;)Ljava/lang/String;", "extractPolicyResource", "cookie", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/SearchResponseList;", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "fetchAnonymousToken", "forceRefresh", "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "BrandModel", "MovieBoxProviderIN_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nMovieBoxProviderIN.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProviderIN.kt\ncom/cncverse/MovieBoxProviderIN\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 6 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,1466:1\n1642#2,10:1467\n1915#2:1477\n1642#2,10:1478\n1915#2:1488\n1916#2:1490\n1652#2:1491\n1642#2,10:1492\n1915#2:1502\n1916#2:1504\n1652#2:1505\n1642#2,10:1506\n1915#2:1516\n1916#2:1518\n1652#2:1519\n1916#2:1521\n1652#2:1522\n1642#2,10:1523\n1915#2:1533\n1916#2:1535\n1652#2:1536\n1696#2,8:1537\n1586#2:1545\n1661#2,3:1546\n1915#2,2:1549\n1915#2:1551\n1916#2:1559\n1915#2:1561\n296#2,2:1562\n1916#2:1571\n1915#2:1573\n1915#2,2:1574\n1916#2:1576\n1#3:1489\n1#3:1503\n1#3:1517\n1#3:1520\n1#3:1534\n1#3:1564\n383#4,7:1552\n221#5:1560\n222#5:1572\n437#6:1565\n513#6,5:1566\n*S KotlinDebug\n*F\n+ 1 MovieBoxProviderIN.kt\ncom/cncverse/MovieBoxProviderIN\n*L\n270#1:1467,10\n270#1:1477\n279#1:1478,10\n279#1:1488\n279#1:1490\n279#1:1491\n281#1:1492,10\n281#1:1502\n281#1:1504\n281#1:1505\n283#1:1506,10\n283#1:1516\n283#1:1518\n283#1:1519\n270#1:1521\n270#1:1522\n435#1:1523,10\n435#1:1533\n435#1:1535\n435#1:1536\n447#1:1537,8\n451#1:1545\n451#1:1546,3\n495#1:1549,2\n522#1:1551\n522#1:1559\n537#1:1561\n539#1:1562,2\n537#1:1571\n893#1:1573\n895#1:1574,2\n893#1:1576\n279#1:1489\n281#1:1503\n283#1:1517\n270#1:1520\n435#1:1534\n526#1:1552,7\n536#1:1560\n536#1:1572\n556#1:1565\n556#1:1566,5\n*E\n"})
 public final class MovieBoxProviderIN extends MainAPI {
     private static final long BROWSER_DEBOUNCE_MS = 10000;
 
@@ -104,14 +106,15 @@ public final class MovieBoxProviderIN extends MainAPI {
     private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
 
     @Nullable
-    private static volatile String bearerToken;
-
-    @Nullable
     private static Context context;
     private static volatile boolean csGuardWasEverActive;
     private static volatile long lastBrowserOpenMs;
     private static volatile boolean subscriptionPopupShown;
     private static volatile boolean telegramPopupShown;
+
+    @Nullable
+    private volatile String cachedGuestToken;
+    private volatile long tokenLastFetchMs;
 
     @NotNull
     private String mainUrl = "https://api3.aoneroom.com";
@@ -144,13 +147,14 @@ public final class MovieBoxProviderIN extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieBoxProviderIN$fetchAnonymousToken$1 */
     /* JADX INFO: compiled from: MovieBoxProviderIN.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0, 0, 0, 0, 0}, l = {1145}, m = "fetchAnonymousToken", n = {"ua", "pingUrl", "xct", "sig", "headers"}, nl = {1146}, s = {"L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0, 0, 0, 0, 0, 0}, l = {1197}, m = "fetchAnonymousToken", n = {"tokenUrl", "xClientToken", "xTrSignature", "headers", "forceRefresh", "now"}, nl = {1198}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "J$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
+        long J$0;
         Object L$0;
         Object L$1;
         Object L$2;
         Object L$3;
-        Object L$4;
+        boolean Z$0;
         int label;
         /* synthetic */ Object result;
 
@@ -162,14 +166,14 @@ public final class MovieBoxProviderIN extends MainAPI {
         public final Object invokeSuspend(@NotNull Object obj) {
             this.result = obj;
             this.label |= Integer.MIN_VALUE;
-            return MovieBoxProviderIN.this.fetchAnonymousToken(null, (Continuation) this);
+            return MovieBoxProviderIN.this.fetchAnonymousToken(false, (Continuation) this);
         }
     }
 
     /* JADX INFO: renamed from: com.cncverse.MovieBoxProviderIN$getMainPage$1 */
     /* JADX INFO: compiled from: MovieBoxProviderIN.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0, 0, 0, 0, 0, 0}, l = {225}, m = "getMainPage", n = {"request", "url", "xClientToken", "xTrSignature", "headers", "page"}, nl = {226}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0, 0, 0, 0, 0, 0}, l = {243}, m = "getMainPage", n = {"request", "url", "xClientToken", "xTrSignature", "headers", "page"}, nl = {244}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -195,10 +199,9 @@ public final class MovieBoxProviderIN extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieBoxProviderIN$load$1 */
     /* JADX INFO: compiled from: MovieBoxProviderIN.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {364, 378, 447, 453, 461, 489, 565, 580}, m = "load", n = {"url", "brand", "model", "ua", "clientInfo", "id", "finalUrl", "xClientToken", "xTrSignature", "versionCode", "url", "brand", "model", "ua", "clientInfo", "id", "finalUrl", "xClientToken", "xTrSignature", "token", "headers", "versionCode", "url", "brand", "model", "ua", "clientInfo", "id", "finalUrl", "xClientToken", "xTrSignature", "token", "headers", "response", "xUser", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "versionCode", "subjectType", "url", "brand", "model", "ua", "clientInfo", "id", "finalUrl", "xClientToken", "xTrSignature", "token", "headers", "response", "xUser", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "versionCode", "subjectType", "url", "brand", "model", "ua", "clientInfo", "id", "finalUrl", "xClientToken", "xTrSignature", "token", "headers", "response", "xUser", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "versionCode", "subjectType", "url", "brand", "model", "ua", "clientInfo", "id", "finalUrl", "xClientToken", "xTrSignature", "token", "headers", "response", "xUser", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "meta", "metaVideos", "Poster", "Background", "Description", "IMDBRating", "allSubjectIds", "episodeMap", "subjectId", "seasonUrl", "seasonSig", "seasonHeaders", "versionCode", "subjectType", "url", "brand", "model", "ua", "clientInfo", "id", "finalUrl", "xClientToken", "xTrSignature", "token", "headers", "response", "xUser", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "meta", "metaVideos", "Poster", "Background", "Description", "IMDBRating", "allSubjectIds", "episodeMap", "episodes", "versionCode", "subjectType", "url", "brand", "model", "ua", "clientInfo", "id", "finalUrl", "xClientToken", "xTrSignature", "token", "headers", "response", "xUser", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "meta", "metaVideos", "Poster", "Background", "Description", "IMDBRating", "versionCode", "subjectType"}, nl = {366, 379, 454, 461, 462, 490, 580, -1}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "L$42", "L$43", "L$44", "L$45", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "L$41", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9}, l = {382, 401, 403, 408, 470, 476, 484, 512, 588, 603}, m = "load", n = {"url", "id", "finalUrl", "url", "id", "finalUrl", "guestTok", "xClientToken", "xTrSignature", "headers", "url", "id", "finalUrl", "guestTok", "xClientToken", "xTrSignature", "headers", "response", "url", "id", "finalUrl", "guestTok", "xClientToken", "xTrSignature", "headers", "response", "retrySig", "url", "id", "finalUrl", "guestTok", "xClientToken", "xTrSignature", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "subjectType", "url", "id", "finalUrl", "guestTok", "xClientToken", "xTrSignature", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "subjectType", "url", "id", "finalUrl", "guestTok", "xClientToken", "xTrSignature", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "subjectType", "url", "id", "finalUrl", "guestTok", "xClientToken", "xTrSignature", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "meta", "metaVideos", "Poster", "Background", "Description", "IMDBRating", "allSubjectIds", "episodeMap", "subjectId", "seasonUrl", "seasonSig", "seasonHeaders", "subjectType", "url", "id", "finalUrl", "guestTok", "xClientToken", "xTrSignature", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "meta", "metaVideos", "Poster", "Background", "Description", "IMDBRating", "allSubjectIds", "episodeMap", "episodes", "subjectType", "url", "id", "finalUrl", "guestTok", "xClientToken", "xTrSignature", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "meta", "metaVideos", "Poster", "Background", "Description", "IMDBRating", "subjectType"}, nl = {383, 402, 404, 412, 477, 484, 485, 513, 603, -1}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$37", "L$38", "L$39", "L$40", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "I$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
-        int I$1;
         Object L$0;
         Object L$1;
         Object L$10;
@@ -235,11 +238,6 @@ public final class MovieBoxProviderIN extends MainAPI {
         Object L$39;
         Object L$4;
         Object L$40;
-        Object L$41;
-        Object L$42;
-        Object L$43;
-        Object L$44;
-        Object L$45;
         Object L$5;
         Object L$6;
         Object L$7;
@@ -263,7 +261,7 @@ public final class MovieBoxProviderIN extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieBoxProviderIN$loadLinks$1 */
     /* JADX INFO: compiled from: MovieBoxProviderIN.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10}, l = {642, 656, 693, 720, 739, 774, 785, 806, 818, 844, 861}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "isCasting", "versionCode", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "cachedToken", "subjectHeaders", "isCasting", "versionCode", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "cachedToken", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "token", "isCasting", "versionCode", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "cachedToken", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "token", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "isCasting", "versionCode", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "cachedToken", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "token", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "stream", "streamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "id", "quality", "isCasting", "versionCode", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "cachedToken", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "token", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "stream", "streamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "id", "quality", "subLink", "xClientToken", "xTrSignature", "headers", "isCasting", "versionCode", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "cachedToken", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "token", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "stream", "streamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "id", "quality", "subLink", "xClientToken", "xTrSignature", "headers", "subResponse", "subRoot", "extCaptions", "caption", "captionUrl", "lang", "isCasting", "versionCode", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "cachedToken", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "token", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "stream", "streamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "id", "quality", "subLink", "xClientToken", "xTrSignature", "headers", "subResponse", "subRoot", "extCaptions", "subLink1", "xClientToken1", "xTrSignature1", "headers1", "isCasting", "versionCode", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "cachedToken", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "token", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "stream", "streamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "id", "quality", "subLink", "xClientToken", "xTrSignature", "headers", "subResponse", "subRoot", "extCaptions", "subLink1", "xClientToken1", "xTrSignature1", "headers1", "subResponse1", "subRoot1", "extCaptions1", "caption", "captionUrl", "lang", "isCasting", "versionCode", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "cachedToken", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "token", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "fallbackUrl", "fallbackHeaders", "isCasting", "versionCode", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "ua", "clientInfo", "parts", "originalSubjectId", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "cachedToken", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "token", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "fallbackUrl", "fallbackHeaders", "fallbackResponse", "fallbackRoot", "detectors", "$this$forEach$iv", "element$iv", "detector", "$this$forEach$iv", "element$iv", "video", "se", "link", "ep", "isCasting", "versionCode", "season", "episode", "$i$f$forEach", "$i$a$-forEach-MovieBoxProviderIN$loadLinks$5", "$i$f$forEach", "$i$a$-forEach-MovieBoxProviderIN$loadLinks$5$1", "quality"}, nl = {643, 657, 697, 721, 738, 775, 784, 808, 817, 846, 860}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "Z$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "Z$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "Z$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "L$41", "L$42", "L$43", "L$44", "Z$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "L$41", "L$42", "L$43", "L$44", "L$45", "L$46", "L$47", "L$49", "L$50", "L$51", "Z$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "L$41", "L$42", "L$43", "L$44", "L$45", "L$46", "L$47", "L$48", "L$49", "L$50", "L$51", "Z$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "L$41", "L$42", "L$43", "L$44", "L$45", "L$46", "L$47", "L$48", "L$49", "L$50", "L$51", "L$52", "L$53", "L$54", "L$56", "L$57", "L$58", "Z$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "Z$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$39", "L$40", "L$41", "L$43", "L$44", "L$45", "L$46", "L$47", "Z$0", "I$0", "I$1", "I$2", "I$3", "I$4", "I$5", "I$6", "I$7"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11}, l = {659, 677, 679, 684, 744, 778, 816, 827, 848, 860, 886, 906}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "subjectResponse", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "subjectResponse", "retrySig", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "stream", "streamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "id", "quality", "resolvedUrl", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "stream", "streamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "id", "quality", "resolvedUrl", "subLink", "xClientToken", "xTrSignature", "headers", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "stream", "streamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "id", "quality", "resolvedUrl", "subLink", "xClientToken", "xTrSignature", "headers", "subResponse", "subRoot", "extCaptions", "caption", "captionUrl", "lang", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "stream", "streamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "id", "quality", "resolvedUrl", "subLink", "xClientToken", "xTrSignature", "headers", "subResponse", "subRoot", "extCaptions", "subLink1", "xClientToken1", "xTrSignature1", "headers1", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "stream", "streamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "id", "quality", "resolvedUrl", "subLink", "xClientToken", "xTrSignature", "headers", "subResponse", "subRoot", "extCaptions", "subLink1", "xClientToken1", "xTrSignature1", "headers1", "subResponse1", "subRoot1", "extCaptions1", "caption", "captionUrl", "lang", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "fallbackUrl", "fallbackHeaders", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "brand", "model", "parts", "originalSubjectId", "token", "subjectUrl", "subjectXClientToken", "subjectXTrSignature", "subjectHeaders", "subjectResponse", "mapper", "subjectIds", "originalLanguageName", "xUserHeader", "subjectId", "language", "url", "xClientToken", "xTrSignature", "headers", "response", "responseBody", "root", "playData", "streams", "fallbackUrl", "fallbackHeaders", "fallbackResponse", "fallbackRoot", "detectors", "$this$forEach$iv", "element$iv", "detector", "$this$forEach$iv", "element$iv", "video", "se", "link", "ep", "isCasting", "season", "episode", "$i$f$forEach", "$i$a$-forEach-MovieBoxProviderIN$loadLinks$5", "$i$f$forEach", "$i$a$-forEach-MovieBoxProviderIN$loadLinks$5$1", "quality"}, nl = {660, 678, 680, 688, 745, 777, 817, 826, 850, 859, 888, 905}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "L$41", "L$42", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "L$41", "L$42", "L$43", "L$44", "L$45", "L$47", "L$48", "L$49", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "L$41", "L$42", "L$43", "L$44", "L$45", "L$46", "L$47", "L$48", "L$49", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "L$40", "L$41", "L$42", "L$43", "L$44", "L$45", "L$46", "L$47", "L$48", "L$49", "L$50", "L$51", "L$52", "L$54", "L$55", "L$56", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$36", "L$37", "L$38", "L$40", "L$41", "L$42", "L$43", "L$44", "Z$0", "I$0", "I$1", "I$2", "I$3", "I$4", "I$5", "I$6"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -272,7 +270,6 @@ public final class MovieBoxProviderIN extends MainAPI {
         int I$4;
         int I$5;
         int I$6;
-        int I$7;
         Object L$0;
         Object L$1;
         Object L$10;
@@ -327,8 +324,6 @@ public final class MovieBoxProviderIN extends MainAPI {
         Object L$55;
         Object L$56;
         Object L$57;
-        Object L$58;
-        Object L$59;
         Object L$6;
         Object L$7;
         Object L$8;
@@ -352,14 +347,32 @@ public final class MovieBoxProviderIN extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieBoxProviderIN$search$1 */
     /* JADX INFO: compiled from: MovieBoxProviderIN.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {296, 311}, m = "search", n = {"query", "brand", "model", "ua", "clientInfo", "url", "jsonBody", "xClientToken", "xTrSignature", "page", "versionCode", "query", "brand", "model", "ua", "clientInfo", "url", "jsonBody", "xClientToken", "xTrSignature", "token", "headers", "requestBody", "page", "versionCode"}, nl = {297, 317}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0}, l = {304}, m = "search", n = {"query"}, nl = {-1}, s = {"L$0"}, v = 2)
     static final class C00071 extends ContinuationImpl {
+        Object L$0;
+        int label;
+        /* synthetic */ Object result;
+
+        C00071(Continuation<? super C00071> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return MovieBoxProviderIN.this.search(null, (Continuation) this);
+        }
+    }
+
+    /* JADX INFO: renamed from: com.cncverse.MovieBoxProviderIN$search$2 */
+    /* JADX INFO: compiled from: MovieBoxProviderIN.kt */
+    @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN", f = "MovieBoxProviderIN.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {312, 327, 334, 339}, m = "search", n = {"query", "url", "jsonBody", "xClientToken", "xTrSignature", "page", "query", "url", "jsonBody", "xClientToken", "xTrSignature", "guestTok", "headers", "requestBody", "page", "query", "url", "jsonBody", "xClientToken", "xTrSignature", "guestTok", "headers", "requestBody", "response", "page", "query", "url", "jsonBody", "xClientToken", "xTrSignature", "guestTok", "headers", "requestBody", "response", "retrySig", "page"}, nl = {314, 333, 335, 343}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "I$0"}, v = 2)
+    static final class C00082 extends ContinuationImpl {
         int I$0;
-        int I$1;
         Object L$0;
         Object L$1;
-        Object L$10;
-        Object L$11;
         Object L$2;
         Object L$3;
         Object L$4;
@@ -371,7 +384,7 @@ public final class MovieBoxProviderIN extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00071(Continuation<? super C00071> continuation) {
+        C00082(Continuation<? super C00082> continuation) {
             super(continuation);
         }
 
@@ -384,8 +397,8 @@ public final class MovieBoxProviderIN extends MainAPI {
     }
 
     /* JADX INFO: compiled from: MovieBoxProviderIN.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\t\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000R\u001c\u0010\u0018\u001a\u0004\u0018\u00010\u0012X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u001a\"\u0004\b\u001b\u0010\u001c¨\u0006\u001d"}, d2 = {"Lcom/cncverse/MovieBoxProviderIN$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "bearerToken", "getBearerToken", "()Ljava/lang/String;", "setBearerToken", "(Ljava/lang/String;)V", "MovieBoxProviderIN_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nMovieBoxProviderIN.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProviderIN.kt\ncom/cncverse/MovieBoxProviderIN$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1408:1\n1#2:1409\n*E\n"})
+    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/cncverse/MovieBoxProviderIN$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "MovieBoxProviderIN_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @SourceDebugExtension({"SMAP\nMovieBoxProviderIN.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProviderIN.kt\ncom/cncverse/MovieBoxProviderIN$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1466:1\n1#2:1467\n*E\n"})
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -452,15 +465,6 @@ public final class MovieBoxProviderIN extends MainAPI {
 
         public final void setContext(@Nullable Context context) {
             MovieBoxProviderIN.context = context;
-        }
-
-        @Nullable
-        public final String getBearerToken() {
-            return MovieBoxProviderIN.bearerToken;
-        }
-
-        public final void setBearerToken(@Nullable String str) {
-            MovieBoxProviderIN.bearerToken = str;
         }
     }
 
@@ -716,6 +720,32 @@ public final class MovieBoxProviderIN extends MainAPI {
         byte[] signature = mac.doFinal(bytes);
         String signatureB64 = MainAPIKt.base64Encode(signature);
         return timestamp + "|2|" + signatureB64;
+    }
+
+    private final String extractPolicyResource(String cookie) {
+        List groupValues;
+        String rawB64;
+        JsonNode jsonNode;
+        JsonNode jsonNode2;
+        try {
+            MatchResult matchResultFind$default = Regex.find$default(new Regex("CloudFront-Policy=([^;]+)"), cookie, 0, 2, (Object) null);
+            if (matchResultFind$default != null && (groupValues = matchResultFind$default.getGroupValues()) != null && (rawB64 = (String) groupValues.get(1)) != null) {
+                int rem = rawB64.length() % 4;
+                String padded = rem > 0 ? rawB64 + StringsKt.repeat("=", 4 - rem) : rawB64;
+                String normalized = StringsKt.replace$default(StringsKt.replace$default(padded, '-', '+', false, 4, (Object) null), '_', '/', false, 4, (Object) null);
+                byte[] decodedBytes = MainAPIKt.base64DecodeArray(normalized);
+                String json = new String(decodedBytes, Charsets.UTF_8);
+                JsonNode root = MainAPIKt.getMapper().readTree(json);
+                JsonNode jsonNode3 = root.get("Statement");
+                if (jsonNode3 == null || (jsonNode = jsonNode3.get(0)) == null || (jsonNode2 = jsonNode.get("Resource")) == null) {
+                    return null;
+                }
+                return jsonNode2.asText();
+            }
+            return null;
+        } catch (Exception e) {
+            return null;
+        }
     }
 
     /* JADX WARN: Code duplicated, block: B:118:0x03d5  */
@@ -1036,67 +1066,11 @@ public final class MovieBoxProviderIN extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code duplicated, block: B:32:0x021a  */
-    /* JADX WARN: Code duplicated, block: B:34:0x021d  */
-    /* JADX WARN: Code duplicated, block: B:39:0x0233  */
-    /* JADX WARN: Code duplicated, block: B:41:0x0237  */
-    /* JADX WARN: Code duplicated, block: B:42:0x0254  */
-    /* JADX WARN: Code duplicated, block: B:45:0x033c A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:46:0x033d  */
-    /* JADX WARN: Code duplicated, block: B:49:0x036c  */
-    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Code duplicated, block: B:80:0x0404  */
-    /* JADX WARN: Code duplicated, block: B:81:0x0409  */
-    /* JADX WARN: Code duplicated, block: B:83:0x040d  */
-    /* JADX WARN: Code duplicated, block: B:84:0x0412  */
-    /* JADX WARN: Code duplicated, block: B:85:0x0417  */
-    /* JADX WARN: Code duplicated, block: B:94:0x046d A[ADDED_TO_REGION, REMOVE] */
+    /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
-    public Object search(@NotNull String query, int page, @NotNull Continuation<? super SearchResponseList> continuation) {
+    public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
         C00071 c00071;
-        String jsonBody;
-        String brand;
-        String xClientToken;
-        Object $result;
-        String clientInfo;
-        Object obj;
-        String model;
-        String ua;
-        String url;
-        String ua2;
-        String model2;
-        String token;
-        String clientInfo2;
-        String xClientToken2;
-        int versionCode;
-        String query2;
-        String xTrSignature;
-        Object objFetchAnonymousToken;
-        String clientInfo3;
-        String model3;
-        String xClientToken3;
-        int versionCode2;
-        String query3;
-        String str;
-        boolean z;
-        Map $this$search_u24lambda_u240;
-        String str2;
-        Map $this$search_u24lambda_u241;
-        Object obj2;
-        Object objPost$default;
-        String clientInfo4;
-        String token2;
-        String jsonBody2;
-        JsonNode jsonNode;
-        Boolean bool;
-        JsonNode<JsonNode> results;
-        String title;
-        String id;
-        String ua3;
-        JsonNode jsonNode2;
-        int subjectType;
-        TvType tvType;
-        int page2 = page;
+        Object objSearch;
         if (continuation instanceof C00071) {
             c00071 = (C00071) continuation;
             if ((c00071.label & Integer.MIN_VALUE) != 0) {
@@ -1107,134 +1081,306 @@ public final class MovieBoxProviderIN extends MainAPI {
         } else {
             c00071 = new C00071(continuation);
         }
-        C00071 c00072 = c00071;
-        Object $result2 = c00072.result;
+        Object $result = c00071.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00072.label) {
+        switch (c00071.label) {
             case 0:
-                ResultKt.throwOnFailure($result2);
+                ResultKt.throwOnFailure($result);
+                c00071.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c00071.label = 1;
+                objSearch = search(query, 1, c00071);
+                if (objSearch == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                break;
+            case 1:
+                ResultKt.throwOnFailure($result);
+                objSearch = $result;
+                break;
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+        return ((SearchResponseList) objSearch).getItems();
+    }
+
+    /* JADX WARN: Code duplicated, block: B:100:0x0518  */
+    /* JADX WARN: Code duplicated, block: B:109:0x056c A[ADDED_TO_REGION, REMOVE] */
+    /* JADX WARN: Code duplicated, block: B:30:0x0264  */
+    /* JADX WARN: Code duplicated, block: B:32:0x0267  */
+    /* JADX WARN: Code duplicated, block: B:33:0x0280  */
+    /* JADX WARN: Code duplicated, block: B:36:0x0314 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:37:0x0315  */
+    /* JADX WARN: Code duplicated, block: B:40:0x0331  */
+    /* JADX WARN: Code duplicated, block: B:46:0x036e A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:47:0x036f  */
+    /* JADX WARN: Code duplicated, block: B:50:0x0384  */
+    /* JADX WARN: Code duplicated, block: B:54:0x038d  */
+    /* JADX WARN: Code duplicated, block: B:56:0x0390  */
+    /* JADX WARN: Code duplicated, block: B:58:0x0428 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:59:0x0429  */
+    /* JADX WARN: Code duplicated, block: B:61:0x0448  */
+    /* JADX WARN: Code duplicated, block: B:64:0x0473  */
+    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
+    /* JADX WARN: Code duplicated, block: B:95:0x0505  */
+    /* JADX WARN: Code duplicated, block: B:96:0x050a  */
+    /* JADX WARN: Code duplicated, block: B:98:0x050e  */
+    /* JADX WARN: Code duplicated, block: B:99:0x0513  */
+    @Nullable
+    public Object search(@NotNull String query, int page, @NotNull Continuation<? super SearchResponseList> continuation) {
+        C00082 c00082;
+        String xClientToken;
+        char c;
+        char c2;
+        char c3;
+        Object $result;
+        Object $result2;
+        Object objFetchAnonymousToken$default;
+        String query2;
+        String url;
+        String xClientToken2;
+        String url2;
+        int page2;
+        String guestTok;
+        Map headers;
+        String str;
+        boolean z;
+        String str2;
+        Object obj;
+        RequestBody requestBody;
+        String str3;
+        Object obj2;
+        Object obj3;
+        Map headers2;
+        Object obj4;
+        Object objPost$default;
+        String url3;
+        C00082 c00083;
+        int page3;
+        String query3;
+        String query4;
+        String guestTok2;
+        Object obj5;
+        String xClientToken3;
+        String xClientToken4;
+        RequestBody requestBody2;
+        NiceResponse response;
+        String query5;
+        Object objFetchAnonymousToken;
+        String query6;
+        RequestBody requestBody3;
+        NiceResponse response2;
+        String xTrSignature;
+        String xClientToken5;
+        int page4;
+        String xTrSignature2;
+        String jsonBody;
+        String query7;
+        String guestTok3;
+        String str4;
+        boolean z2;
+        String url4;
+        int page5;
+        Object objPost$default2;
+        String guestTok4;
+        String jsonBody2;
+        String url5;
+        Map headers3;
+        String query8;
+        String xTrSignature3;
+        String xClientToken6;
+        int page6;
+        RequestBody requestBody4;
+        JsonNode jsonNode;
+        Boolean bool;
+        JsonNode<JsonNode> results;
+        String title;
+        String id;
+        ObjectMapper mapper;
+        JsonNode jsonNode2;
+        int subjectType;
+        TvType tvType;
+        if (continuation instanceof C00082) {
+            c00082 = (C00082) continuation;
+            if ((c00082.label & Integer.MIN_VALUE) != 0) {
+                c00082.label -= Integer.MIN_VALUE;
+            } else {
+                c00082 = new C00082(continuation);
+            }
+        } else {
+            c00082 = new C00082(continuation);
+        }
+        C00082 c00084 = c00082;
+        Object $result3 = c00084.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (c00084.label) {
+            case 0:
+                ResultKt.throwOnFailure($result3);
                 if (INSTANCE.isCsGuardBlocked()) {
                     INSTANCE.showCsGuardToast(context);
                     return MainAPIKt.newSearchResponseList$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
                 }
-                BrandModel brandModelRandomBrandModel = randomBrandModel();
-                String brand2 = brandModelRandomBrandModel.getBrand();
-                String model4 = brandModelRandomBrandModel.getModel();
-                String ua4 = "com.community.oneroom/50020042 (Linux; U; Android 13; en_US; " + brand2 + "; Build/TQ3A.230901.001; Cronet/145.0.7582.0)";
-                String clientInfo5 = "{\"package_name\":\"com.community.oneroom\",\"version_name\":\"3.0.13.0325.03\",\"version_code\":50020042,\"os\":\"android\",\"os_version\":\"13\",\"install_ch\":\"ps\",\"device_id\":\"" + this.deviceId + "\",\"install_store\":\"ps\",\"gaid\":\"1b2212c1-dadf-43c3-a0c8-bd6ce48ae22d\",\"brand\":\"" + brand2 + "\",\"model\":\"" + model4 + "\",\"system_language\":\"en\",\"net\":\"NETWORK_WIFI\",\"region\":\"US\",\"timezone\":\"Asia/Calcutta\",\"sp_code\":\"\",\"X-Play-Mode\":\"1\",\"X-Idle-Data\":\"1\",\"X-Family-Mode\":\"0\",\"X-Content-Mode\":\"0\"}";
-                String url2 = getMainUrl() + "/wefeed-mobile-bff/subject-api/search/v2";
-                jsonBody = "{\"page\": " + page2 + ", \"perPage\": 20, \"keyword\": \"" + query + "\"}";
-                brand = brand2;
-                xClientToken = generateXClientToken$default(this, null, 1, null);
-                $result = $result2;
-                clientInfo = clientInfo5;
-                String xTrSignature2 = generateXTrSignature$default(this, "POST", "application/json", "application/json; charset=utf-8", url2, jsonBody, false, null, 96, null);
-                String str3 = bearerToken;
-                if (str3 == null) {
-                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                    c00072.L$1 = SpillingKt.nullOutSpilledVariable(brand);
-                    c00072.L$2 = SpillingKt.nullOutSpilledVariable(model4);
-                    c00072.L$3 = ua4;
-                    c00072.L$4 = clientInfo;
-                    c00072.L$5 = url2;
-                    c00072.L$6 = jsonBody;
-                    c00072.L$7 = xClientToken;
-                    c00072.L$8 = xTrSignature2;
-                    c00072.I$0 = page2;
-                    c00072.I$1 = 50020042;
-                    c00072.label = 1;
-                    objFetchAnonymousToken = fetchAnonymousToken(ua4, c00072);
-                    obj = coroutine_suspended;
-                    if (objFetchAnonymousToken == obj) {
-                        return obj;
-                    }
-                    clientInfo3 = url2;
-                    ua = ua4;
-                    model3 = model4;
-                    xClientToken3 = xTrSignature2;
-                    versionCode2 = 50020042;
-                    query3 = query;
-                    String str4 = clientInfo;
-                    clientInfo2 = clientInfo3;
-                    url = str4;
-                    model2 = model3;
-                    ua2 = xClientToken;
-                    model = xClientToken3;
-                    xClientToken2 = jsonBody;
-                    versionCode = versionCode2;
-                    token = (String) objFetchAnonymousToken;
-                    query2 = query3;
-                    xTrSignature = brand;
-                } else {
-                    obj = coroutine_suspended;
-                    model = xTrSignature2;
-                    ua = ua4;
-                    url = clientInfo;
-                    ua2 = xClientToken;
-                    model2 = model4;
-                    token = str3;
-                    clientInfo2 = url2;
-                    xClientToken2 = jsonBody;
-                    versionCode = 50020042;
-                    query2 = query;
-                    xTrSignature = brand;
+                String url6 = getMainUrl() + "/wefeed-mobile-bff/subject-api/search/v2";
+                xClientToken = "{\"page\": " + page + ", \"perPage\": 20, \"keyword\": \"" + query + "\"}";
+                String xClientToken7 = generateXClientToken$default(this, null, 1, null);
+                c = 2;
+                c2 = 4;
+                c3 = 3;
+                $result = $result3;
+                $result2 = "x-tr-signature";
+                String xTrSignature4 = generateXTrSignature$default(this, "POST", "application/json", "application/json; charset=utf-8", url6, xClientToken, false, null, 96, null);
+                c00084.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c00084.L$1 = url6;
+                c00084.L$2 = xClientToken;
+                c00084.L$3 = xClientToken7;
+                c00084.L$4 = xTrSignature4;
+                c00084.I$0 = page;
+                c00084.label = 1;
+                objFetchAnonymousToken$default = fetchAnonymousToken$default(this, false, c00084, 1, null);
+                if (objFetchAnonymousToken$default == coroutine_suspended) {
+                    return coroutine_suspended;
                 }
-                str = token;
+                query2 = query;
+                url = url6;
+                xClientToken2 = xClientToken7;
+                url2 = xTrSignature4;
+                page2 = page;
+                guestTok = (String) objFetchAnonymousToken$default;
+                Pair[] pairArr = new Pair[8];
+                pairArr[0] = TuplesKt.to("user-agent", "com.community.mbox.in/50020042 (Linux; U; Android 16; en_IN; sdk_gphone64_x86_64; Build/BP22.250325.006; Cronet/133.0.6876.3)");
+                pairArr[1] = TuplesKt.to("accept", "application/json");
+                pairArr[c] = TuplesKt.to("content-type", "application/json; charset=utf-8");
+                pairArr[c3] = TuplesKt.to("connection", "keep-alive");
+                pairArr[c2] = TuplesKt.to("x-client-token", xClientToken2);
+                pairArr[5] = TuplesKt.to($result2, url2);
+                pairArr[6] = TuplesKt.to("x-client-info", "{\"package_name\":\"com.community.mbox.in\",\"version_name\":\"3.0.03.0529.03\",\"version_code\":50020042,\"os\":\"android\",\"os_version\":\"16\",\"device_id\":\"" + this.deviceId + "\",\"install_store\":\"ps\",\"gaid\":\"d7578036d13336cc\",\"brand\":\"google\",\"model\":\"" + randomBrandModel() + "\",\"system_language\":\"en\",\"net\":\"NETWORK_WIFI\",\"region\":\"IN\",\"timezone\":\"Asia/Calcutta\",\"sp_code\":\"\"}");
+                pairArr[7] = TuplesKt.to("x-client-status", "0");
+                headers = MapsKt.mutableMapOf(pairArr);
+                str = guestTok;
                 if (str != null || StringsKt.isBlank(str)) {
                     z = true;
                 } else {
                     z = false;
                 }
-                if (!z) {
-                    bearerToken = token;
-                }
-                $this$search_u24lambda_u240 = MapsKt.createMapBuilder();
-                str2 = token;
-                if (str2 != null || StringsKt.isBlank(str2)) {
-                    $this$search_u24lambda_u241 = $this$search_u24lambda_u240;
+                if (z) {
+                    str2 = r15;
+                    obj = r2;
                 } else {
-                    $this$search_u24lambda_u241 = $this$search_u24lambda_u240;
-                    $this$search_u24lambda_u241.put("Authorization", "Bearer " + token);
+                    str2 = "Bearer ";
+                    obj = "Authorization";
+                    headers.put(obj, str2 + guestTok);
                 }
-                $this$search_u24lambda_u241.put("user-agent", ua);
-                $this$search_u24lambda_u241.put("accept", "application/json");
-                $this$search_u24lambda_u241.put("content-type", "application/json; charset=utf-8");
-                obj2 = obj;
-                $this$search_u24lambda_u241.put("connection", "keep-alive");
-                $this$search_u24lambda_u241.put("x-client-token", ua2);
-                $this$search_u24lambda_u241.put("x-tr-signature", model);
-                $this$search_u24lambda_u241.put("x-client-info", url);
-                $this$search_u24lambda_u241.put("x-client-status", "0");
-                Map headers = MapsKt.build($this$search_u24lambda_u240);
-                RequestBody requestBody = RequestBody.Companion.create(xClientToken2, MediaType.Companion.get("application/json; charset=utf-8"));
+                requestBody = RequestBody.Companion.create(xClientToken, MediaType.Companion.get("application/json; charset=utf-8"));
                 Requests app = MainActivityKt.getApp();
-                c00072.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                c00072.L$1 = SpillingKt.nullOutSpilledVariable(xTrSignature);
-                c00072.L$2 = SpillingKt.nullOutSpilledVariable(model2);
-                c00072.L$3 = SpillingKt.nullOutSpilledVariable(ua);
-                c00072.L$4 = SpillingKt.nullOutSpilledVariable(url);
-                c00072.L$5 = SpillingKt.nullOutSpilledVariable(clientInfo2);
-                c00072.L$6 = SpillingKt.nullOutSpilledVariable(xClientToken2);
-                c00072.L$7 = SpillingKt.nullOutSpilledVariable(ua2);
-                c00072.L$8 = SpillingKt.nullOutSpilledVariable(model);
-                c00072.L$9 = SpillingKt.nullOutSpilledVariable(token);
-                c00072.L$10 = SpillingKt.nullOutSpilledVariable(headers);
-                c00072.L$11 = SpillingKt.nullOutSpilledVariable(requestBody);
-                c00072.I$0 = page2;
-                c00072.I$1 = versionCode;
-                c00072.label = 2;
-                objPost$default = Requests.post$default(app, clientInfo2, headers, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00072, 65276, (Object) null);
-                if (objPost$default == obj2) {
-                    return obj2;
+                c00084.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00084.L$1 = url;
+                c00084.L$2 = xClientToken;
+                c00084.L$3 = SpillingKt.nullOutSpilledVariable(xClientToken2);
+                c00084.L$4 = SpillingKt.nullOutSpilledVariable(url2);
+                c00084.L$5 = SpillingKt.nullOutSpilledVariable(guestTok);
+                c00084.L$6 = headers;
+                c00084.L$7 = requestBody;
+                c00084.I$0 = page2;
+                c00084.label = 2;
+                str3 = str2;
+                obj2 = $result2;
+                obj3 = coroutine_suspended;
+                headers2 = headers;
+                String url7 = url;
+                obj4 = obj;
+                objPost$default = Requests.post$default(app, url7, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00084, 65276, (Object) null);
+                url3 = url7;
+                c00083 = c00084;
+                if (objPost$default == obj3) {
+                    return obj3;
                 }
-                $result2 = objPost$default;
-                clientInfo4 = url;
-                token2 = ua;
-                jsonBody2 = query2;
-                NiceResponse response = (NiceResponse) $result2;
+                String str5 = url2;
+                page3 = page2;
+                query3 = query2;
+                query4 = str5;
+                guestTok2 = guestTok;
+                obj5 = objPost$default;
+                xClientToken3 = xClientToken2;
+                xClientToken4 = xClientToken;
+                requestBody2 = requestBody;
+                response = (NiceResponse) obj5;
+                query5 = query3;
+                if (response.getCode() != 441 || response.getCode() == 401) {
+                    c00083.L$0 = SpillingKt.nullOutSpilledVariable(query5);
+                    c00083.L$1 = url3;
+                    c00083.L$2 = xClientToken4;
+                    c00083.L$3 = SpillingKt.nullOutSpilledVariable(xClientToken3);
+                    c00083.L$4 = SpillingKt.nullOutSpilledVariable(query4);
+                    c00083.L$5 = SpillingKt.nullOutSpilledVariable(guestTok2);
+                    c00083.L$6 = headers2;
+                    c00083.L$7 = requestBody2;
+                    c00083.L$8 = response;
+                    c00083.I$0 = page3;
+                    c00083.label = 3;
+                    objFetchAnonymousToken = fetchAnonymousToken(true, c00083);
+                    if (objFetchAnonymousToken == obj3) {
+                        return obj3;
+                    }
+                    query6 = query5;
+                    requestBody3 = requestBody2;
+                    response2 = response;
+                    xTrSignature = query4;
+                    xClientToken5 = xClientToken3;
+                    page4 = page3;
+                    xTrSignature2 = url3;
+                    jsonBody = xClientToken4;
+                    guestTok3 = (String) objFetchAnonymousToken;
+                    str4 = guestTok3;
+                    if (str4 != null || StringsKt.isBlank(str4)) {
+                        z2 = true;
+                    } else {
+                        z2 = false;
+                    }
+                    if (z2) {
+                        response = response2;
+                        query7 = query6;
+                    } else {
+                        headers2.put(obj4, str3 + guestTok3);
+                        String retrySig = generateXTrSignature$default(this, "POST", "application/json", "application/json; charset=utf-8", xTrSignature2, jsonBody, false, null, 96, null);
+                        headers2.put(obj2, retrySig);
+                        Requests app2 = MainActivityKt.getApp();
+                        c00083.L$0 = SpillingKt.nullOutSpilledVariable(query6);
+                        c00083.L$1 = SpillingKt.nullOutSpilledVariable(xTrSignature2);
+                        c00083.L$2 = SpillingKt.nullOutSpilledVariable(jsonBody);
+                        c00083.L$3 = SpillingKt.nullOutSpilledVariable(xClientToken5);
+                        c00083.L$4 = SpillingKt.nullOutSpilledVariable(xTrSignature);
+                        c00083.L$5 = SpillingKt.nullOutSpilledVariable(guestTok3);
+                        c00083.L$6 = SpillingKt.nullOutSpilledVariable(headers2);
+                        c00083.L$7 = SpillingKt.nullOutSpilledVariable(requestBody3);
+                        c00083.L$8 = SpillingKt.nullOutSpilledVariable(response2);
+                        c00083.L$9 = SpillingKt.nullOutSpilledVariable(retrySig);
+                        c00083.I$0 = page4;
+                        c00083.label = 4;
+                        C00082 c00085 = c00083;
+                        url4 = xTrSignature2;
+                        page5 = page4;
+                        objPost$default2 = Requests.post$default(app2, url4, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00085, 65276, (Object) null);
+                        if (objPost$default2 == obj3) {
+                            return obj3;
+                        }
+                        guestTok4 = guestTok3;
+                        jsonBody2 = jsonBody;
+                        url5 = url4;
+                        headers3 = headers2;
+                        query8 = query6;
+                        xTrSignature3 = xTrSignature;
+                        xClientToken6 = xClientToken5;
+                        $result3 = objPost$default2;
+                        page6 = page5;
+                        requestBody4 = requestBody3;
+                        query7 = query8;
+                        response = (NiceResponse) $result3;
+                    }
+                } else {
+                    query7 = query5;
+                }
                 String responseBody = response.getBody().string();
-                ObjectMapper mapper = ExtensionsKt.jacksonObjectMapper();
-                JsonNode root = mapper.readTree(responseBody);
+                ObjectMapper mapper2 = ExtensionsKt.jacksonObjectMapper();
+                JsonNode root = mapper2.readTree(responseBody);
                 jsonNode = root.get("data");
                 if (jsonNode != null || (results = jsonNode.get("results")) == null) {
                     bool = null;
@@ -1242,24 +1388,23 @@ public final class MovieBoxProviderIN extends MainAPI {
                 }
                 List searchList = new ArrayList();
                 for (JsonNode result : results) {
-                    results = results;
-                    clientInfo4 = clientInfo4;
+                    responseBody = responseBody;
                     JsonNode<JsonNode> subjects = result.get("subjects");
                     if (subjects != null) {
                         for (final JsonNode subject : subjects) {
-                            result = result;
                             subjects = subjects;
+                            query7 = query7;
                             JsonNode jsonNode3 = subject.get("title");
                             if (jsonNode3 == null || (title = jsonNode3.asText()) == null) {
-                                token2 = token2;
+                                mapper2 = mapper2;
                             } else {
                                 JsonNode jsonNode4 = subject.get("subjectId");
                                 if (jsonNode4 == null || (id = jsonNode4.asText()) == null) {
-                                    token2 = token2;
+                                    mapper2 = mapper2;
                                 } else {
                                     JsonNode jsonNode5 = subject.get("cover");
                                     if (jsonNode5 != null) {
-                                        ua3 = token2;
+                                        mapper = mapper2;
                                         JsonNode jsonNode6 = jsonNode5.get("url");
                                         final String coverImg = jsonNode6 != null ? jsonNode6.asText() : null;
                                         jsonNode2 = subject.get("subjectType");
@@ -1281,13 +1426,13 @@ public final class MovieBoxProviderIN extends MainAPI {
                                         }
                                         TvType type = tvType;
                                         searchList.add(MainAPIKt.newMovieSearchResponse$default(this, title, id, type, false, new Function1() { // from class: com.cncverse.MovieBoxProviderIN$$ExternalSyntheticLambda3
-                                            public final Object invoke(Object obj3) {
-                                                return MovieBoxProviderIN.search$lambda$1(coverImg, subject, (MovieSearchResponse) obj3);
+                                            public final Object invoke(Object obj6) {
+                                                return MovieBoxProviderIN.search$lambda$0(coverImg, subject, (MovieSearchResponse) obj6);
                                             }
                                         }, 8, (Object) null));
-                                        token2 = ua3;
+                                        mapper2 = mapper;
                                     } else {
-                                        ua3 = token2;
+                                        mapper = mapper2;
                                     }
                                     jsonNode2 = subject.get("subjectType");
                                     if (jsonNode2 != null) {
@@ -1308,11 +1453,11 @@ public final class MovieBoxProviderIN extends MainAPI {
                                     }
                                     TvType type2 = tvType;
                                     searchList.add(MainAPIKt.newMovieSearchResponse$default(this, title, id, type2, false, new Function1() { // from class: com.cncverse.MovieBoxProviderIN$$ExternalSyntheticLambda3
-                                        public final Object invoke(Object obj3) {
-                                            return MovieBoxProviderIN.search$lambda$1(coverImg, subject, (MovieSearchResponse) obj3);
+                                        public final Object invoke(Object obj6) {
+                                            return MovieBoxProviderIN.search$lambda$0(coverImg, subject, (MovieSearchResponse) obj6);
                                         }
                                     }, 8, (Object) null));
-                                    token2 = ua3;
+                                    mapper2 = mapper;
                                 }
                             }
                         }
@@ -1320,95 +1465,157 @@ public final class MovieBoxProviderIN extends MainAPI {
                 }
                 return MainAPIKt.toNewSearchResponseList$default(searchList, (Boolean) null, 1, (Object) null);
             case 1:
-                int versionCode3 = c00072.I$1;
-                int page3 = c00072.I$0;
-                String xTrSignature3 = (String) c00072.L$8;
-                String xClientToken4 = (String) c00072.L$7;
-                jsonBody = (String) c00072.L$6;
-                String url3 = (String) c00072.L$5;
-                String clientInfo6 = (String) c00072.L$4;
-                ua = (String) c00072.L$3;
-                model3 = (String) c00072.L$2;
-                String brand3 = (String) c00072.L$1;
-                query3 = (String) c00072.L$0;
-                ResultKt.throwOnFailure($result2);
-                brand = brand3;
-                $result = $result2;
-                page2 = page3;
-                clientInfo = clientInfo6;
-                obj = coroutine_suspended;
-                xClientToken = xClientToken4;
-                clientInfo3 = url3;
-                xClientToken3 = xTrSignature3;
-                versionCode2 = versionCode3;
-                objFetchAnonymousToken = $result;
-                String str5 = clientInfo;
-                clientInfo2 = clientInfo3;
-                url = str5;
-                model2 = model3;
-                ua2 = xClientToken;
-                model = xClientToken3;
-                xClientToken2 = jsonBody;
-                versionCode = versionCode2;
-                token = (String) objFetchAnonymousToken;
-                query2 = query3;
-                xTrSignature = brand;
-                str = token;
+                page2 = c00084.I$0;
+                url2 = (String) c00084.L$4;
+                String xClientToken8 = (String) c00084.L$3;
+                String jsonBody3 = (String) c00084.L$2;
+                url = (String) c00084.L$1;
+                query2 = (String) c00084.L$0;
+                ResultKt.throwOnFailure($result3);
+                xClientToken2 = xClientToken8;
+                xClientToken = jsonBody3;
+                objFetchAnonymousToken$default = $result3;
+                $result = objFetchAnonymousToken$default;
+                c = 2;
+                c2 = 4;
+                c3 = 3;
+                $result2 = "x-tr-signature";
+                guestTok = (String) objFetchAnonymousToken$default;
+                Pair[] pairArr2 = new Pair[8];
+                pairArr2[0] = TuplesKt.to("user-agent", "com.community.mbox.in/50020042 (Linux; U; Android 16; en_IN; sdk_gphone64_x86_64; Build/BP22.250325.006; Cronet/133.0.6876.3)");
+                pairArr2[1] = TuplesKt.to("accept", "application/json");
+                pairArr2[c] = TuplesKt.to("content-type", "application/json; charset=utf-8");
+                pairArr2[c3] = TuplesKt.to("connection", "keep-alive");
+                pairArr2[c2] = TuplesKt.to("x-client-token", xClientToken2);
+                pairArr2[5] = TuplesKt.to($result2, url2);
+                pairArr2[6] = TuplesKt.to("x-client-info", "{\"package_name\":\"com.community.mbox.in\",\"version_name\":\"3.0.03.0529.03\",\"version_code\":50020042,\"os\":\"android\",\"os_version\":\"16\",\"device_id\":\"" + this.deviceId + "\",\"install_store\":\"ps\",\"gaid\":\"d7578036d13336cc\",\"brand\":\"google\",\"model\":\"" + randomBrandModel() + "\",\"system_language\":\"en\",\"net\":\"NETWORK_WIFI\",\"region\":\"IN\",\"timezone\":\"Asia/Calcutta\",\"sp_code\":\"\"}");
+                pairArr2[7] = TuplesKt.to("x-client-status", "0");
+                headers = MapsKt.mutableMapOf(pairArr2);
+                str = guestTok;
                 if (str != null) {
                     z = true;
                 } else {
                     z = true;
                 }
-                if (!z) {
-                    bearerToken = token;
-                }
-                $this$search_u24lambda_u240 = MapsKt.createMapBuilder();
-                str2 = token;
-                if (str2 != null || StringsKt.isBlank(str2)) {
-                    $this$search_u24lambda_u241 = $this$search_u24lambda_u240;
-                    $this$search_u24lambda_u241.put("Authorization", "Bearer " + token);
+                if (z) {
+                    str2 = "Bearer ";
+                    obj = "Authorization";
+                    headers.put(obj, str2 + guestTok);
                 } else {
-                    $this$search_u24lambda_u241 = $this$search_u24lambda_u240;
+                    str2 = r15;
+                    obj = r2;
                 }
-                $this$search_u24lambda_u241.put("user-agent", ua);
-                $this$search_u24lambda_u241.put("accept", "application/json");
-                $this$search_u24lambda_u241.put("content-type", "application/json; charset=utf-8");
-                obj2 = obj;
-                $this$search_u24lambda_u241.put("connection", "keep-alive");
-                $this$search_u24lambda_u241.put("x-client-token", ua2);
-                $this$search_u24lambda_u241.put("x-tr-signature", model);
-                $this$search_u24lambda_u241.put("x-client-info", url);
-                $this$search_u24lambda_u241.put("x-client-status", "0");
-                Map headers2 = MapsKt.build($this$search_u24lambda_u240);
-                RequestBody requestBody2 = RequestBody.Companion.create(xClientToken2, MediaType.Companion.get("application/json; charset=utf-8"));
-                Requests app2 = MainActivityKt.getApp();
-                c00072.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                c00072.L$1 = SpillingKt.nullOutSpilledVariable(xTrSignature);
-                c00072.L$2 = SpillingKt.nullOutSpilledVariable(model2);
-                c00072.L$3 = SpillingKt.nullOutSpilledVariable(ua);
-                c00072.L$4 = SpillingKt.nullOutSpilledVariable(url);
-                c00072.L$5 = SpillingKt.nullOutSpilledVariable(clientInfo2);
-                c00072.L$6 = SpillingKt.nullOutSpilledVariable(xClientToken2);
-                c00072.L$7 = SpillingKt.nullOutSpilledVariable(ua2);
-                c00072.L$8 = SpillingKt.nullOutSpilledVariable(model);
-                c00072.L$9 = SpillingKt.nullOutSpilledVariable(token);
-                c00072.L$10 = SpillingKt.nullOutSpilledVariable(headers2);
-                c00072.L$11 = SpillingKt.nullOutSpilledVariable(requestBody2);
-                c00072.I$0 = page2;
-                c00072.I$1 = versionCode;
-                c00072.label = 2;
-                objPost$default = Requests.post$default(app2, clientInfo2, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00072, 65276, (Object) null);
-                if (objPost$default == obj2) {
-                    return obj2;
+                requestBody = RequestBody.Companion.create(xClientToken, MediaType.Companion.get("application/json; charset=utf-8"));
+                Requests app3 = MainActivityKt.getApp();
+                c00084.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00084.L$1 = url;
+                c00084.L$2 = xClientToken;
+                c00084.L$3 = SpillingKt.nullOutSpilledVariable(xClientToken2);
+                c00084.L$4 = SpillingKt.nullOutSpilledVariable(url2);
+                c00084.L$5 = SpillingKt.nullOutSpilledVariable(guestTok);
+                c00084.L$6 = headers;
+                c00084.L$7 = requestBody;
+                c00084.I$0 = page2;
+                c00084.label = 2;
+                str3 = str2;
+                obj2 = $result2;
+                obj3 = coroutine_suspended;
+                headers2 = headers;
+                String url8 = url;
+                obj4 = obj;
+                objPost$default = Requests.post$default(app3, url8, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00084, 65276, (Object) null);
+                url3 = url8;
+                c00083 = c00084;
+                if (objPost$default == obj3) {
+                    return obj3;
                 }
-                $result2 = objPost$default;
-                clientInfo4 = url;
-                token2 = ua;
-                jsonBody2 = query2;
-                NiceResponse response2 = (NiceResponse) $result2;
-                String responseBody2 = response2.getBody().string();
-                ObjectMapper mapper2 = ExtensionsKt.jacksonObjectMapper();
-                JsonNode root2 = mapper2.readTree(responseBody2);
+                String str6 = url2;
+                page3 = page2;
+                query3 = query2;
+                query4 = str6;
+                guestTok2 = guestTok;
+                obj5 = objPost$default;
+                xClientToken3 = xClientToken2;
+                xClientToken4 = xClientToken;
+                requestBody2 = requestBody;
+                response = (NiceResponse) obj5;
+                query5 = query3;
+                if (response.getCode() != 441) {
+                    break;
+                }
+                c00083.L$0 = SpillingKt.nullOutSpilledVariable(query5);
+                c00083.L$1 = url3;
+                c00083.L$2 = xClientToken4;
+                c00083.L$3 = SpillingKt.nullOutSpilledVariable(xClientToken3);
+                c00083.L$4 = SpillingKt.nullOutSpilledVariable(query4);
+                c00083.L$5 = SpillingKt.nullOutSpilledVariable(guestTok2);
+                c00083.L$6 = headers2;
+                c00083.L$7 = requestBody2;
+                c00083.L$8 = response;
+                c00083.I$0 = page3;
+                c00083.label = 3;
+                objFetchAnonymousToken = fetchAnonymousToken(true, c00083);
+                if (objFetchAnonymousToken == obj3) {
+                    return obj3;
+                }
+                query6 = query5;
+                requestBody3 = requestBody2;
+                response2 = response;
+                xTrSignature = query4;
+                xClientToken5 = xClientToken3;
+                page4 = page3;
+                xTrSignature2 = url3;
+                jsonBody = xClientToken4;
+                guestTok3 = (String) objFetchAnonymousToken;
+                str4 = guestTok3;
+                if (str4 != null) {
+                    z2 = true;
+                } else {
+                    z2 = true;
+                }
+                if (z2) {
+                    headers2.put(obj4, str3 + guestTok3);
+                    String retrySig2 = generateXTrSignature$default(this, "POST", "application/json", "application/json; charset=utf-8", xTrSignature2, jsonBody, false, null, 96, null);
+                    headers2.put(obj2, retrySig2);
+                    Requests app4 = MainActivityKt.getApp();
+                    c00083.L$0 = SpillingKt.nullOutSpilledVariable(query6);
+                    c00083.L$1 = SpillingKt.nullOutSpilledVariable(xTrSignature2);
+                    c00083.L$2 = SpillingKt.nullOutSpilledVariable(jsonBody);
+                    c00083.L$3 = SpillingKt.nullOutSpilledVariable(xClientToken5);
+                    c00083.L$4 = SpillingKt.nullOutSpilledVariable(xTrSignature);
+                    c00083.L$5 = SpillingKt.nullOutSpilledVariable(guestTok3);
+                    c00083.L$6 = SpillingKt.nullOutSpilledVariable(headers2);
+                    c00083.L$7 = SpillingKt.nullOutSpilledVariable(requestBody3);
+                    c00083.L$8 = SpillingKt.nullOutSpilledVariable(response2);
+                    c00083.L$9 = SpillingKt.nullOutSpilledVariable(retrySig2);
+                    c00083.I$0 = page4;
+                    c00083.label = 4;
+                    C00082 c00086 = c00083;
+                    url4 = xTrSignature2;
+                    page5 = page4;
+                    objPost$default2 = Requests.post$default(app4, url4, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00086, 65276, (Object) null);
+                    if (objPost$default2 == obj3) {
+                        return obj3;
+                    }
+                    guestTok4 = guestTok3;
+                    jsonBody2 = jsonBody;
+                    url5 = url4;
+                    headers3 = headers2;
+                    query8 = query6;
+                    xTrSignature3 = xTrSignature;
+                    xClientToken6 = xClientToken5;
+                    $result3 = objPost$default2;
+                    page6 = page5;
+                    requestBody4 = requestBody3;
+                    query7 = query8;
+                    response = (NiceResponse) $result3;
+                } else {
+                    response = response2;
+                    query7 = query6;
+                }
+                String responseBody2 = response.getBody().string();
+                ObjectMapper mapper3 = ExtensionsKt.jacksonObjectMapper();
+                JsonNode root2 = mapper3.readTree(responseBody2);
                 jsonNode = root2.get("data");
                 if (jsonNode != null) {
                     bool = null;
@@ -1417,18 +1624,214 @@ public final class MovieBoxProviderIN extends MainAPI {
                 }
                 return MainAPIKt.newSearchResponseList$default(CollectionsKt.emptyList(), bool, 2, bool);
             case 2:
-                int i = c00072.I$1;
-                int i2 = c00072.I$0;
-                clientInfo4 = (String) c00072.L$4;
-                token2 = (String) c00072.L$3;
-                String query4 = (String) c00072.L$0;
-                ResultKt.throwOnFailure($result2);
-                jsonBody2 = query4;
-                NiceResponse response3 = (NiceResponse) $result2;
-                String responseBody3 = response3.getBody().string();
-                ObjectMapper mapper3 = ExtensionsKt.jacksonObjectMapper();
-                JsonNode root3 = mapper3.readTree(responseBody3);
+                int page7 = c00084.I$0;
+                RequestBody requestBody5 = (RequestBody) c00084.L$7;
+                Map headers4 = (Map) c00084.L$6;
+                String guestTok5 = (String) c00084.L$5;
+                query4 = (String) c00084.L$4;
+                String xClientToken9 = (String) c00084.L$3;
+                String jsonBody4 = (String) c00084.L$2;
+                String url9 = (String) c00084.L$1;
+                query3 = (String) c00084.L$0;
+                ResultKt.throwOnFailure($result3);
+                obj2 = "x-tr-signature";
+                guestTok2 = guestTok5;
+                obj5 = $result3;
+                obj4 = "Authorization";
+                c00083 = c00084;
+                str3 = "Bearer ";
+                url3 = url9;
+                xClientToken3 = xClientToken9;
+                xClientToken4 = jsonBody4;
+                obj3 = coroutine_suspended;
+                requestBody2 = requestBody5;
+                headers2 = headers4;
+                page3 = page7;
+                response = (NiceResponse) obj5;
+                query5 = query3;
+                if (response.getCode() != 441) {
+                    break;
+                }
+                c00083.L$0 = SpillingKt.nullOutSpilledVariable(query5);
+                c00083.L$1 = url3;
+                c00083.L$2 = xClientToken4;
+                c00083.L$3 = SpillingKt.nullOutSpilledVariable(xClientToken3);
+                c00083.L$4 = SpillingKt.nullOutSpilledVariable(query4);
+                c00083.L$5 = SpillingKt.nullOutSpilledVariable(guestTok2);
+                c00083.L$6 = headers2;
+                c00083.L$7 = requestBody2;
+                c00083.L$8 = response;
+                c00083.I$0 = page3;
+                c00083.label = 3;
+                objFetchAnonymousToken = fetchAnonymousToken(true, c00083);
+                if (objFetchAnonymousToken == obj3) {
+                    return obj3;
+                }
+                query6 = query5;
+                requestBody3 = requestBody2;
+                response2 = response;
+                xTrSignature = query4;
+                xClientToken5 = xClientToken3;
+                page4 = page3;
+                xTrSignature2 = url3;
+                jsonBody = xClientToken4;
+                guestTok3 = (String) objFetchAnonymousToken;
+                str4 = guestTok3;
+                if (str4 != null) {
+                    z2 = true;
+                } else {
+                    z2 = true;
+                }
+                if (z2) {
+                    headers2.put(obj4, str3 + guestTok3);
+                    String retrySig3 = generateXTrSignature$default(this, "POST", "application/json", "application/json; charset=utf-8", xTrSignature2, jsonBody, false, null, 96, null);
+                    headers2.put(obj2, retrySig3);
+                    Requests app5 = MainActivityKt.getApp();
+                    c00083.L$0 = SpillingKt.nullOutSpilledVariable(query6);
+                    c00083.L$1 = SpillingKt.nullOutSpilledVariable(xTrSignature2);
+                    c00083.L$2 = SpillingKt.nullOutSpilledVariable(jsonBody);
+                    c00083.L$3 = SpillingKt.nullOutSpilledVariable(xClientToken5);
+                    c00083.L$4 = SpillingKt.nullOutSpilledVariable(xTrSignature);
+                    c00083.L$5 = SpillingKt.nullOutSpilledVariable(guestTok3);
+                    c00083.L$6 = SpillingKt.nullOutSpilledVariable(headers2);
+                    c00083.L$7 = SpillingKt.nullOutSpilledVariable(requestBody3);
+                    c00083.L$8 = SpillingKt.nullOutSpilledVariable(response2);
+                    c00083.L$9 = SpillingKt.nullOutSpilledVariable(retrySig3);
+                    c00083.I$0 = page4;
+                    c00083.label = 4;
+                    C00082 c00087 = c00083;
+                    url4 = xTrSignature2;
+                    page5 = page4;
+                    objPost$default2 = Requests.post$default(app5, url4, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00087, 65276, (Object) null);
+                    if (objPost$default2 == obj3) {
+                        return obj3;
+                    }
+                    guestTok4 = guestTok3;
+                    jsonBody2 = jsonBody;
+                    url5 = url4;
+                    headers3 = headers2;
+                    query8 = query6;
+                    xTrSignature3 = xTrSignature;
+                    xClientToken6 = xClientToken5;
+                    $result3 = objPost$default2;
+                    page6 = page5;
+                    requestBody4 = requestBody3;
+                    query7 = query8;
+                    response = (NiceResponse) $result3;
+                } else {
+                    response = response2;
+                    query7 = query6;
+                }
+                String responseBody3 = response.getBody().string();
+                ObjectMapper mapper4 = ExtensionsKt.jacksonObjectMapper();
+                JsonNode root3 = mapper4.readTree(responseBody3);
                 jsonNode = root3.get("data");
+                if (jsonNode != null) {
+                    bool = null;
+                } else {
+                    bool = null;
+                }
+                return MainAPIKt.newSearchResponseList$default(CollectionsKt.emptyList(), bool, 2, bool);
+            case 3:
+                int page8 = c00084.I$0;
+                NiceResponse response3 = (NiceResponse) c00084.L$8;
+                RequestBody requestBody6 = (RequestBody) c00084.L$7;
+                Map headers5 = (Map) c00084.L$6;
+                String xTrSignature5 = (String) c00084.L$4;
+                String xClientToken10 = (String) c00084.L$3;
+                String jsonBody5 = (String) c00084.L$2;
+                String url10 = (String) c00084.L$1;
+                String query9 = (String) c00084.L$0;
+                ResultKt.throwOnFailure($result3);
+                query6 = query9;
+                obj2 = "x-tr-signature";
+                xTrSignature = xTrSignature5;
+                response2 = response3;
+                xClientToken5 = xClientToken10;
+                objFetchAnonymousToken = $result3;
+                obj3 = coroutine_suspended;
+                xTrSignature2 = url10;
+                obj4 = "Authorization";
+                headers2 = headers5;
+                c00083 = c00084;
+                str3 = "Bearer ";
+                page4 = page8;
+                requestBody3 = requestBody6;
+                jsonBody = jsonBody5;
+                guestTok3 = (String) objFetchAnonymousToken;
+                str4 = guestTok3;
+                if (str4 != null) {
+                    z2 = true;
+                } else {
+                    z2 = true;
+                }
+                if (z2) {
+                    headers2.put(obj4, str3 + guestTok3);
+                    String retrySig4 = generateXTrSignature$default(this, "POST", "application/json", "application/json; charset=utf-8", xTrSignature2, jsonBody, false, null, 96, null);
+                    headers2.put(obj2, retrySig4);
+                    Requests app6 = MainActivityKt.getApp();
+                    c00083.L$0 = SpillingKt.nullOutSpilledVariable(query6);
+                    c00083.L$1 = SpillingKt.nullOutSpilledVariable(xTrSignature2);
+                    c00083.L$2 = SpillingKt.nullOutSpilledVariable(jsonBody);
+                    c00083.L$3 = SpillingKt.nullOutSpilledVariable(xClientToken5);
+                    c00083.L$4 = SpillingKt.nullOutSpilledVariable(xTrSignature);
+                    c00083.L$5 = SpillingKt.nullOutSpilledVariable(guestTok3);
+                    c00083.L$6 = SpillingKt.nullOutSpilledVariable(headers2);
+                    c00083.L$7 = SpillingKt.nullOutSpilledVariable(requestBody3);
+                    c00083.L$8 = SpillingKt.nullOutSpilledVariable(response2);
+                    c00083.L$9 = SpillingKt.nullOutSpilledVariable(retrySig4);
+                    c00083.I$0 = page4;
+                    c00083.label = 4;
+                    C00082 c00088 = c00083;
+                    url4 = xTrSignature2;
+                    page5 = page4;
+                    objPost$default2 = Requests.post$default(app6, url4, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00088, 65276, (Object) null);
+                    if (objPost$default2 == obj3) {
+                        return obj3;
+                    }
+                    guestTok4 = guestTok3;
+                    jsonBody2 = jsonBody;
+                    url5 = url4;
+                    headers3 = headers2;
+                    query8 = query6;
+                    xTrSignature3 = xTrSignature;
+                    xClientToken6 = xClientToken5;
+                    $result3 = objPost$default2;
+                    page6 = page5;
+                    requestBody4 = requestBody3;
+                    query7 = query8;
+                    response = (NiceResponse) $result3;
+                } else {
+                    response = response2;
+                    query7 = query6;
+                }
+                String responseBody4 = response.getBody().string();
+                ObjectMapper mapper5 = ExtensionsKt.jacksonObjectMapper();
+                JsonNode root4 = mapper5.readTree(responseBody4);
+                jsonNode = root4.get("data");
+                if (jsonNode != null) {
+                    bool = null;
+                } else {
+                    bool = null;
+                }
+                return MainAPIKt.newSearchResponseList$default(CollectionsKt.emptyList(), bool, 2, bool);
+            case 4:
+                page6 = c00084.I$0;
+                requestBody4 = (RequestBody) c00084.L$7;
+                headers3 = (Map) c00084.L$6;
+                guestTok4 = (String) c00084.L$5;
+                xTrSignature3 = (String) c00084.L$4;
+                xClientToken6 = (String) c00084.L$3;
+                jsonBody2 = (String) c00084.L$2;
+                url5 = (String) c00084.L$1;
+                query8 = (String) c00084.L$0;
+                ResultKt.throwOnFailure($result3);
+                query7 = query8;
+                response = (NiceResponse) $result3;
+                String responseBody5 = response.getBody().string();
+                ObjectMapper mapper6 = ExtensionsKt.jacksonObjectMapper();
+                JsonNode root5 = mapper6.readTree(responseBody5);
+                jsonNode = root5.get("data");
                 if (jsonNode != null) {
                     bool = null;
                 } else {
@@ -1441,7 +1844,7 @@ public final class MovieBoxProviderIN extends MainAPI {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit search$lambda$1(String $coverImg, JsonNode $subject, MovieSearchResponse $this$newMovieSearchResponse) {
+    public static final Unit search$lambda$0(String $coverImg, JsonNode $subject, MovieSearchResponse $this$newMovieSearchResponse) {
         $this$newMovieSearchResponse.setPosterUrl($coverImg);
         Score.Companion companion = Score.Companion;
         JsonNode jsonNode = $subject.get("imdbRatingValue");
@@ -1449,35 +1852,35 @@ public final class MovieBoxProviderIN extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code duplicated, block: B:159:0x0bf3  */
-    /* JADX WARN: Code duplicated, block: B:298:0x117a  */
-    /* JADX WARN: Code duplicated, block: B:300:0x1314 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:301:0x1315  */
-    /* JADX WARN: Code duplicated, block: B:304:0x136c  */
-    /* JADX WARN: Code duplicated, block: B:306:0x1382  */
-    /* JADX WARN: Code duplicated, block: B:307:0x138b  */
-    /* JADX WARN: Code duplicated, block: B:309:0x1390  */
-    /* JADX WARN: Code duplicated, block: B:336:0x1436 A[ADDED_TO_REGION, REMOVE] */
-    /* JADX WARN: Code duplicated, block: B:338:0x143d  */
-    /* JADX WARN: Code duplicated, block: B:498:0x0bf9 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:159:0x0b70  */
+    /* JADX WARN: Code duplicated, block: B:160:0x0b79  */
+    /* JADX WARN: Code duplicated, block: B:296:0x10a6  */
+    /* JADX WARN: Code duplicated, block: B:298:0x1212 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:299:0x1213  */
+    /* JADX WARN: Code duplicated, block: B:302:0x125b  */
+    /* JADX WARN: Code duplicated, block: B:304:0x1271  */
+    /* JADX WARN: Code duplicated, block: B:305:0x127a  */
+    /* JADX WARN: Code duplicated, block: B:307:0x127f  */
+    /* JADX WARN: Code duplicated, block: B:334:0x1321 A[ADDED_TO_REGION, REMOVE] */
+    /* JADX WARN: Code duplicated, block: B:336:0x1328  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:301:0x1315 -> B:302:0x135e). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:299:0x1213 -> B:300:0x124e). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
-    public java.lang.Object load(@org.jetbrains.annotations.NotNull java.lang.String r124, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r125) {
+    public java.lang.Object load(@org.jetbrains.annotations.NotNull java.lang.String r112, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r113) {
         /*
-            Method dump skipped, instruction units count: 6810
+            Method dump skipped, instruction units count: 6442
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.cncverse.MovieBoxProviderIN.load(java.lang.String, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit load$lambda$8$0$5(String $epName, int $seasonNumber, int $episodeNumber, String $epThumb, String $epDesc, Integer $runtime, String $aired, Episode $this$newEpisode) {
+    public static final Unit load$lambda$7$0$5(String $epName, int $seasonNumber, int $episodeNumber, String $epThumb, String $epDesc, Integer $runtime, String $aired, Episode $this$newEpisode) {
         $this$newEpisode.setName($epName);
         $this$newEpisode.setSeason(Integer.valueOf($seasonNumber));
         $this$newEpisode.setEpisode(Integer.valueOf($episodeNumber));
@@ -1489,7 +1892,7 @@ public final class MovieBoxProviderIN extends MainAPI {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit load$lambda$9(String $coverUrl, Episode $this$newEpisode) {
+    public static final Unit load$lambda$8(String $coverUrl, Episode $this$newEpisode) {
         $this$newEpisode.setName("Episode 1");
         $this$newEpisode.setSeason(1);
         $this$newEpisode.setEpisode(1);
@@ -1497,12 +1900,12 @@ public final class MovieBoxProviderIN extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: renamed from: com.cncverse.MovieBoxProviderIN$load$7 */
+    /* JADX INFO: renamed from: com.cncverse.MovieBoxProviderIN$load$6 */
     /* JADX INFO: compiled from: MovieBoxProviderIN.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN$load$7", f = "MovieBoxProviderIN.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nMovieBoxProviderIN.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProviderIN.kt\ncom/cncverse/MovieBoxProviderIN$load$7\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1408:1\n1#2:1409\n*E\n"})
-    static final class C00037 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN$load$6", f = "MovieBoxProviderIN.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    @SourceDebugExtension({"SMAP\nMovieBoxProviderIN.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProviderIN.kt\ncom/cncverse/MovieBoxProviderIN$load$6\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1466:1\n1#2:1467\n*E\n"})
+    static final class C00036 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $Background;
         final /* synthetic */ String $Description;
         final /* synthetic */ String $IMDBRating;
@@ -1522,7 +1925,7 @@ public final class MovieBoxProviderIN extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00037(String str, String str2, String str3, String str4, String str5, String str6, String str7, Integer num, List<String> list, List<ActorData> list2, String str8, Integer num2, Integer num3, String str9, Integer num4, Continuation<? super C00037> continuation) {
+        C00036(String str, String str2, String str3, String str4, String str5, String str6, String str7, Integer num, List<String> list, List<ActorData> list2, String str8, Integer num2, Integer num3, String str9, Integer num4, Continuation<? super C00036> continuation) {
             super(2, continuation);
             this.$coverUrl = str;
             this.$Poster = str2;
@@ -1542,9 +1945,9 @@ public final class MovieBoxProviderIN extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00037 = new C00037(this.$coverUrl, this.$Poster, this.$Background, this.$backgroundUrl, this.$logoUrl, this.$Description, this.$description, this.$year, this.$tags, this.$actors, this.$IMDBRating, this.$imdbRating, this.$durationMinutes, this.$imdbId, this.$tmdbId, continuation);
-            c00037.L$0 = obj;
-            return c00037;
+            Continuation<Unit> c00036 = new C00036(this.$coverUrl, this.$Poster, this.$Background, this.$backgroundUrl, this.$logoUrl, this.$Description, this.$description, this.$year, this.$tags, this.$actors, this.$IMDBRating, this.$imdbRating, this.$durationMinutes, this.$imdbId, this.$tmdbId, continuation);
+            c00036.L$0 = obj;
+            return c00036;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -1601,12 +2004,12 @@ public final class MovieBoxProviderIN extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.MovieBoxProviderIN$load$8 */
+    /* JADX INFO: renamed from: com.cncverse.MovieBoxProviderIN$load$7 */
     /* JADX INFO: compiled from: MovieBoxProviderIN.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN$load$8", f = "MovieBoxProviderIN.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nMovieBoxProviderIN.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProviderIN.kt\ncom/cncverse/MovieBoxProviderIN$load$8\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1408:1\n1#2:1409\n*E\n"})
-    static final class C00048 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.MovieBoxProviderIN$load$7", f = "MovieBoxProviderIN.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    @SourceDebugExtension({"SMAP\nMovieBoxProviderIN.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProviderIN.kt\ncom/cncverse/MovieBoxProviderIN$load$7\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1466:1\n1#2:1467\n*E\n"})
+    static final class C00047 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $Background;
         final /* synthetic */ String $Description;
         final /* synthetic */ String $IMDBRating;
@@ -1626,7 +2029,7 @@ public final class MovieBoxProviderIN extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00048(String str, String str2, String str3, String str4, String str5, String str6, String str7, Integer num, List<String> list, List<ActorData> list2, String str8, Integer num2, Integer num3, String str9, Integer num4, Continuation<? super C00048> continuation) {
+        C00047(String str, String str2, String str3, String str4, String str5, String str6, String str7, Integer num, List<String> list, List<ActorData> list2, String str8, Integer num2, Integer num3, String str9, Integer num4, Continuation<? super C00047> continuation) {
             super(2, continuation);
             this.$coverUrl = str;
             this.$Poster = str2;
@@ -1646,9 +2049,9 @@ public final class MovieBoxProviderIN extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00048 = new C00048(this.$coverUrl, this.$Poster, this.$Background, this.$backgroundUrl, this.$logoUrl, this.$Description, this.$description, this.$year, this.$tags, this.$actors, this.$IMDBRating, this.$imdbRating, this.$durationMinutes, this.$imdbId, this.$tmdbId, continuation);
-            c00048.L$0 = obj;
-            return c00048;
+            Continuation<Unit> c00047 = new C00047(this.$coverUrl, this.$Poster, this.$Background, this.$backgroundUrl, this.$logoUrl, this.$Description, this.$description, this.$year, this.$tags, this.$actors, this.$IMDBRating, this.$imdbRating, this.$durationMinutes, this.$imdbId, this.$tmdbId, continuation);
+            c00047.L$0 = obj;
+            return c00047;
         }
 
         public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
@@ -1705,18 +2108,21 @@ public final class MovieBoxProviderIN extends MainAPI {
         }
     }
 
+    /* JADX WARN: Unreachable blocks removed: 2, instructions: 10 */
+    /* JADX WARN: Unreachable blocks removed: 2, instructions: 22 */
     /* JADX WARN: Unreachable blocks removed: 2, instructions: 24 */
-    /* JADX WARN: Unreachable blocks removed: 2, instructions: 4 */
+    /* JADX WARN: Unreachable blocks removed: 2, instructions: 25 */
+    /* JADX WARN: Unreachable blocks removed: 2, instructions: 8 */
     /*  JADX ERROR: JadxRuntimeException in pass: BlockProcessor
-        jadx.core.utils.exceptions.JadxRuntimeException: Unreachable block: B:1127:0x4ade
+        jadx.core.utils.exceptions.JadxRuntimeException: Unreachable block: B:1048:0x43c1
         	at jadx.core.dex.visitors.blocks.BlockProcessor.checkForUnreachableBlocks(BlockProcessor.java:143)
         	at jadx.core.dex.visitors.blocks.BlockProcessor.processBlocksTree(BlockProcessor.java:58)
         	at jadx.core.dex.visitors.blocks.BlockProcessor.visit(BlockProcessor.java:50)
         */
     @org.jetbrains.annotations.Nullable
-    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r117, boolean r118, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r119, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r120, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r121) {
+    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r124, boolean r125, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r126, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r127, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r128) {
         /*
-            Method dump skipped, instruction units count: 21592
+            Method dump skipped, instruction units count: 19116
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.cncverse.MovieBoxProviderIN.loadLinks(java.lang.String, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
@@ -1760,7 +2166,7 @@ public final class MovieBoxProviderIN extends MainAPI {
             switch (this.label) {
                 case 0:
                     ResultKt.throwOnFailure($result);
-                    $this$newExtractorLink.setHeaders(MapsKt.mapOf(TuplesKt.to("Referer", MovieBoxProviderIN.this.getMainUrl())));
+                    $this$newExtractorLink.setHeaders(MapsKt.mapOf(new Pair[]{TuplesKt.to("Referer", MovieBoxProviderIN.this.getMainUrl()), TuplesKt.to("User-Agent", "com.community.mbox.in/50020126 (Linux; U; Android 14; en_IN; Pixel 8; Build/UD1A.230803.041; Cronet/145.0.7582.0)")}));
                     if (this.$quality != null) {
                         $this$newExtractorLink.setQuality(this.$quality.intValue());
                     }
@@ -2065,11 +2471,23 @@ public final class MovieBoxProviderIN extends MainAPI {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Unreachable blocks removed: 2, instructions: 5 */
-    public final Object fetchAnonymousToken(String ua, Continuation<? super String> continuation) {
+    /* JADX WARN: Code duplicated, block: B:46:0x0184  */
+    /* JADX WARN: Code duplicated, block: B:48:0x0187 A[Catch: Exception -> 0x01b4, TryCatch #5 {Exception -> 0x01b4, blocks: (B:40:0x016a, B:42:0x017b, B:48:0x0187, B:50:0x0197, B:52:0x019e, B:54:0x01a3, B:58:0x01ad), top: B:85:0x016a }] */
+    /* JADX WARN: Code duplicated, block: B:50:0x0197 A[Catch: Exception -> 0x01b4, TryCatch #5 {Exception -> 0x01b4, blocks: (B:40:0x016a, B:42:0x017b, B:48:0x0187, B:50:0x0197, B:52:0x019e, B:54:0x01a3, B:58:0x01ad), top: B:85:0x016a }] */
+    /* JADX WARN: Code duplicated, block: B:51:0x019c  */
+    /* JADX WARN: Code duplicated, block: B:56:0x01a9  */
+    /* JADX WARN: Code duplicated, block: B:58:0x01ad A[Catch: Exception -> 0x01b4, TRY_LEAVE, TryCatch #5 {Exception -> 0x01b4, blocks: (B:40:0x016a, B:42:0x017b, B:48:0x0187, B:50:0x0197, B:52:0x019e, B:54:0x01a3, B:58:0x01ad), top: B:85:0x016a }] */
+    /* JADX WARN: Code duplicated, block: B:7:0x001c  */
+    public final Object fetchAnonymousToken(boolean forceRefresh, Continuation<? super String> continuation) {
         C00001 c00001;
-        Object obj;
+        long now;
+        long now2;
+        String xUserHeader;
+        String str;
+        boolean z;
+        JsonNode jsonNode;
+        String tok;
+        String str2;
         if (continuation instanceof C00001) {
             c00001 = (C00001) continuation;
             if ((c00001.label & Integer.MIN_VALUE) != 0) {
@@ -2086,71 +2504,118 @@ public final class MovieBoxProviderIN extends MainAPI {
         switch (c00002.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                now = System.currentTimeMillis();
+                if (!forceRefresh && this.cachedGuestToken != null && now - this.tokenLastFetchMs < 3600000) {
+                    return this.cachedGuestToken;
+                }
                 try {
-                    String pingUrl = getMainUrl() + "/wefeed-mobile-bff/tab/ranking-list?tabId=0&categoryType=4516404531735022304&page=1&perPage=1";
-                    String xct = generateXClientToken$default(this, null, 1, null);
-                    obj = null;
+                    String xClientToken = generateXClientToken(Boxing.boxLong(now));
                     try {
-                        String sig = generateXTrSignature$default(this, "GET", "application/json", "application/json", pingUrl, null, false, null, 112, null);
-                        Pair[] pairArr = new Pair[7];
                         try {
-                            pairArr[0] = TuplesKt.to("user-agent", ua);
-                            pairArr[1] = TuplesKt.to("accept", "application/json");
-                            pairArr[2] = TuplesKt.to("content-type", "application/json");
-                            pairArr[3] = TuplesKt.to("x-client-token", xct);
-                            pairArr[4] = TuplesKt.to("x-tr-signature", sig);
-                            pairArr[5] = TuplesKt.to("x-client-info", "{\"package_name\":\"com.community.oneroom\",\"version_name\":\"3.0.13.0325.03\",\"version_code\":50020088,\"os\":\"android\",\"os_version\":\"13\",\"device_id\":\"" + this.deviceId + "\",\"install_store\":\"ps\",\"system_language\":\"en\",\"net\":\"NETWORK_WIFI\",\"region\":\"US\",\"timezone\":\"Asia/Calcutta\",\"sp_code\":\"\"}");
-                            pairArr[6] = TuplesKt.to("x-client-status", "0");
-                            Map headers = MapsKt.mapOf(pairArr);
+                            String xTrSignature = generateXTrSignature$default(this, "GET", "application/json", "application/json", "https://apig.inmoviebox.com/wefeed-mobile-bff/tab/ranking-list?tabId=0&categoryType=4516404531735022304&page=1&perPage=1", null, false, Boxing.boxLong(now), 48, null);
+                            Map headers = MapsKt.mapOf(new Pair[]{TuplesKt.to("user-agent", "com.community.mbox.in/50020042 (Linux; U; Android 16; en_IN; sdk_gphone64_x86_64; Build/BP22.250325.006; Cronet/133.0.6876.3)"), TuplesKt.to("accept", "application/json"), TuplesKt.to("content-type", "application/json"), TuplesKt.to("x-client-token", xClientToken), TuplesKt.to("x-tr-signature", xTrSignature), TuplesKt.to("x-client-info", "{\"package_name\":\"com.community.mbox.in\",\"version_name\":\"3.0.03.0529.03\",\"version_code\":50020042,\"os\":\"android\",\"os_version\":\"16\",\"device_id\":\"" + this.deviceId + "\",\"install_store\":\"ps\",\"gaid\":\"d7578036d13336cc\",\"brand\":\"google\",\"model\":\"SM-S918B\",\"system_language\":\"en\",\"net\":\"NETWORK_WIFI\",\"region\":\"IN\",\"timezone\":\"Asia/Calcutta\",\"sp_code\":\"\"}"), TuplesKt.to("x-client-status", "0")});
                             Requests app = MainActivityKt.getApp();
-                            c00002.L$0 = SpillingKt.nullOutSpilledVariable(ua);
-                            c00002.L$1 = SpillingKt.nullOutSpilledVariable(pingUrl);
-                            c00002.L$2 = SpillingKt.nullOutSpilledVariable(xct);
-                            c00002.L$3 = SpillingKt.nullOutSpilledVariable(sig);
-                            c00002.L$4 = SpillingKt.nullOutSpilledVariable(headers);
-                            c00002.label = 1;
+                            c00002.L$0 = SpillingKt.nullOutSpilledVariable("https://apig.inmoviebox.com/wefeed-mobile-bff/tab/ranking-list?tabId=0&categoryType=4516404531735022304&page=1&perPage=1");
+                            c00002.L$1 = SpillingKt.nullOutSpilledVariable(xClientToken);
+                            c00002.L$2 = SpillingKt.nullOutSpilledVariable(xTrSignature);
+                            c00002.L$3 = SpillingKt.nullOutSpilledVariable(headers);
+                            c00002.Z$0 = forceRefresh;
+                            now2 = now;
                             try {
-                                Object obj2 = Requests.get$default(app, pingUrl, headers, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00002, 4092, (Object) null);
-                                if (obj2 == coroutine_suspended) {
-                                    return coroutine_suspended;
+                                c00002.J$0 = now2;
+                                c00002.label = 1;
+                                try {
+                                    Object obj = Requests.get$default(app, "https://apig.inmoviebox.com/wefeed-mobile-bff/tab/ranking-list?tabId=0&categoryType=4516404531735022304&page=1&perPage=1", headers, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00002, 4092, (Object) null);
+                                    if (obj == coroutine_suspended) {
+                                        return coroutine_suspended;
+                                    }
+                                    $result = obj;
+                                    try {
+                                        NiceResponse res = (NiceResponse) $result;
+                                        xUserHeader = res.getHeaders().get("x-user");
+                                        str = xUserHeader;
+                                        if (str != null || StringsKt.isBlank(str)) {
+                                            z = true;
+                                        } else {
+                                            z = false;
+                                        }
+                                        if (!z) {
+                                            ObjectMapper mapper = ExtensionsKt.jacksonObjectMapper();
+                                            jsonNode = mapper.readTree(xUserHeader).get("token");
+                                            if (jsonNode != null) {
+                                                tok = jsonNode.asText();
+                                            } else {
+                                                tok = null;
+                                            }
+                                            str2 = tok;
+                                            if (!(str2 != null || StringsKt.isBlank(str2))) {
+                                                this.cachedGuestToken = tok;
+                                                this.tokenLastFetchMs = now2;
+                                                return tok;
+                                            }
+                                        }
+                                    } catch (Exception e) {
+                                        now = now2;
+                                    }
+                                    return null;
+                                } catch (Exception e2) {
+                                    now = now2;
+                                    return null;
                                 }
-                                $result = obj2;
-                            } catch (Exception e) {
-                                return null;
+                            } catch (Exception e3) {
+                                now = now2;
                             }
-                        } catch (Exception e2) {
-                            return obj;
+                        } catch (Exception e4) {
+                            now = now;
                         }
-                        break;
-                    } catch (Exception e3) {
+                    } catch (Exception e5) {
+                        now = now;
                     }
-                } catch (Exception e4) {
-                    obj = null;
+                } catch (Exception e6) {
                 }
                 break;
             case 1:
+                now = c00002.J$0;
+                boolean z2 = c00002.Z$0;
                 try {
                     ResultKt.throwOnFailure($result);
-                    obj = null;
-                } catch (Exception e5) {
+                    now2 = now;
+                    NiceResponse res2 = (NiceResponse) $result;
+                    xUserHeader = res2.getHeaders().get("x-user");
+                    str = xUserHeader;
+                    if (str != null) {
+                        z = true;
+                    } else {
+                        z = true;
+                    }
+                    if (!z) {
+                        ObjectMapper mapper2 = ExtensionsKt.jacksonObjectMapper();
+                        jsonNode = mapper2.readTree(xUserHeader).get("token");
+                        if (jsonNode != null) {
+                            tok = jsonNode.asText();
+                        } else {
+                            tok = null;
+                        }
+                        str2 = tok;
+                        if (!(str2 != null || StringsKt.isBlank(str2))) {
+                            this.cachedGuestToken = tok;
+                            this.tokenLastFetchMs = now2;
+                            return tok;
+                        }
+                    }
+                } catch (Exception e7) {
                     return null;
                 }
-                break;
+                return null;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-        try {
-            NiceResponse resp = (NiceResponse) $result;
-            String xUser = resp.getHeaders().get("x-user");
-            String str = xUser;
-            if (str == null || StringsKt.isBlank(str)) {
-                return obj;
-            }
-            JsonNode json = ExtensionsKt.jacksonObjectMapper().readTree(xUser);
-            JsonNode jsonNode = json.get("token");
-            return jsonNode != null ? jsonNode.asText() : obj;
-        } catch (Exception e6) {
-            return obj;
+    }
+
+    static /* synthetic */ Object fetchAnonymousToken$default(MovieBoxProviderIN movieBoxProviderIN, boolean z, Continuation continuation, int i, Object obj) {
+        if ((i & 1) != 0) {
+            z = false;
         }
+        return movieBoxProviderIN.fetchAnonymousToken(z, continuation);
     }
 }

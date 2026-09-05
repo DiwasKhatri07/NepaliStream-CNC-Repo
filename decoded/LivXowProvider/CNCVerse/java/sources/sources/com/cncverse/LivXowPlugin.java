@@ -40,7 +40,7 @@ public final class LivXowPlugin extends Plugin {
         LivXowProvider.INSTANCE.setContext(context);
         LivXowLiveEventsProvider.INSTANCE.setContext(context);
         String displayTitle = null;
-        registerMainAPI(new LivXowLiveEventsProvider(displayTitle, displayTitle, 3, displayTitle));
+        registerMainAPI(new LivXowLiveEventsProvider(null, null, 3, null));
         registerMainAPI(new LivXowLiveEventsProvider("🎬LivXow Highlights", "highlights.txt"));
         final List categoryProviders = (List) BuildersKt.runBlocking$default((CoroutineContext) null, new LivXowPlugin$load$categoryProviders$1(null), 1, (Object) null);
         List $this$filter$iv = categoryProviders;

@@ -3191,11 +3191,10 @@ public final class MovieBoxProvider extends MainAPI {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:312:0x1616 -> B:404:0x1642). Please report as a decompilation issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:344:0x1816 -> B:388:0x1843). Please report as a decompilation issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:359:0x18e9 -> B:360:0x18f3). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+            java.lang.StackOverflowError
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
             */
         public final java.lang.Object invokeSuspend(java.lang.Object r88) {
             /*

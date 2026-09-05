@@ -1778,7 +1778,7 @@ public class DisneyStudioProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x011c -> B:18:0x0127). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:730)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     public final java.lang.Object getEpisodes(java.lang.String r28, java.lang.String r29, java.lang.String r30, int r31, kotlin.coroutines.Continuation<? super java.util.List<com.lagradost.cloudstream3.Episode>> r32) {
@@ -1816,7 +1816,7 @@ public class DisneyStudioProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:83:0x0452  */
     /* JADX WARN: Code duplicated, block: B:85:0x04b2 A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:86:0x04b3  */
-    static /* synthetic */ Object loadLinks$suspendImpl(DisneyStudioProvider $this, String data, boolean isCasting, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Boolean> continuation) throws Exception {
+    static /* synthetic */ Object loadLinks$suspendImpl(DisneyStudioProvider $this, String data, boolean isCasting, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Boolean> continuation) {
         C00061 c00061;
         String data2;
         Function1<? super ExtractorLink, Unit> function3;

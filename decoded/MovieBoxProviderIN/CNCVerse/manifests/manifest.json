@@ -1,6 +1,6 @@
 {
   "requiresResources": false,
-  "version": 48,
+  "version": 49,
   "pluginClassName": "com.cncverse.MovieBoxProviderINPlugin",
   "name": "MovieBoxProviderIN"
 }

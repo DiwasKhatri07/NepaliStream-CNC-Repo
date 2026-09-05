@@ -472,8 +472,8 @@
     "file": "decoded/MovieBoxProvider/CNCVerse/MovieBoxProvider.cs3",
     "source": "CNCVerse",
     "plugin": "MovieBoxProvider",
-    "sha256": "ad242e2a3eacf2bdda7817c00720e8cf00273068b307c9f3d54b463c878c1416",
-    "bytes": 84105
+    "sha256": "5ddbfba13f10d1bb92df74d475c6c04a7c11dc108a91d72230a33aa71352b98c",
+    "bytes": 82602
   },
   {
     "file": "decoded/MovieBoxProvider/Phisher98/MovieBoxProvider.cs3",
@@ -486,8 +486,8 @@
     "file": "decoded/MovieBoxProviderIN/CNCVerse/MovieBoxProviderIN.cs3",
     "source": "CNCVerse",
     "plugin": "MovieBoxProviderIN",
-    "sha256": "0c0bce1ac01fd2c3a28048e8a2427bb6317ab5ed7e91d4b8d4dd03befce08ac2",
-    "bytes": 81093
+    "sha256": "d27ad09e5d22ab02fa61b88ec974ac957fb8164ac8e5126d4effc4f44817645c",
+    "bytes": 80505
   },
   {
     "file": "decoded/MovieLinkBDProvider/CNCVerse/MovieLinkBDProvider.cs3",

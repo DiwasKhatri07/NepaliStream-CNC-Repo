@@ -2227,11 +2227,10 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         /* JADX WARN: Code duplicated, block: B:32:0x0170 A[LOOP:0: B:30:0x016a->B:32:0x0170, LOOP_END] */
         /* JADX WARN: Code duplicated, block: B:7:0x0018  */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x012b -> B:20:0x0137). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+            java.lang.StackOverflowError
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
             */
         @org.jetbrains.annotations.Nullable
         public final java.lang.Object search(@org.jetbrains.annotations.NotNull java.lang.String r33, @org.jetbrains.annotations.NotNull com.phisher98.StreamPlayStremioCatelog r34, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.util.List<? extends com.lagradost.cloudstream3.SearchResponse>> r35) {

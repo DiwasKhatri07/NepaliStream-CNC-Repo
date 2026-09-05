@@ -2,6 +2,7 @@ package com.cncverse;
 
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.ResultKt;
 import kotlin.TuplesKt;
 import kotlin.Unit;
@@ -45,7 +46,7 @@ final class MovieBoxProviderIN$loadLinks$5$1$1 extends SuspendLambda implements 
         switch (this.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                $this$newExtractorLink.setHeaders(MapsKt.mapOf(TuplesKt.to("Referer", this.this$0.getMainUrl())));
+                $this$newExtractorLink.setHeaders(MapsKt.mapOf(new Pair[]{TuplesKt.to("Referer", this.this$0.getMainUrl()), TuplesKt.to("User-Agent", "com.community.mbox.in/50020126 (Linux; U; Android 14; en_IN; Pixel 8; Build/UD1A.230803.041; Cronet/145.0.7582.0)")}));
                 $this$newExtractorLink.setQuality(this.$quality);
                 return Unit.INSTANCE;
             default:
