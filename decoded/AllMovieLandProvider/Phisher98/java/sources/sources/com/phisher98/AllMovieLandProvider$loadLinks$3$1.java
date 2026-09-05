@@ -65,11 +65,10 @@ final class AllMovieLandProvider$loadLinks$3$1 extends SuspendLambda implements 
     /* JADX WARN: Code duplicated, block: B:118:0x049b A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:119:0x049c  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:119:0x049c -> B:120:0x04b5). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     public final java.lang.Object invokeSuspend(java.lang.Object r38) {
         /*

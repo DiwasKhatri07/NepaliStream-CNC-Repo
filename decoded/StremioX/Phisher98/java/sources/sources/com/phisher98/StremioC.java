@@ -2080,11 +2080,13 @@ public final class StremioC extends MainAPI {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x012a -> B:27:0x0135). Please report as a decompilation issue!!! */
         /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
             java.lang.StackOverflowError
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextBlockInIfSuccessorChain(IfRegionMaker.java:646)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIfNodeInfo(IfRegionMaker.java:620)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIf(IfRegionMaker.java:602)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.mergeNestedIfNodes(IfRegionMaker.java:409)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:68)
+            	at java.base/java.util.Collections.eq(Collections.java:5475)
+            	at java.base/java.util.Collections$SingletonList.contains(Collections.java:4956)
+            	at jadx.core.utils.BlockUtils.isPathExists(BlockUtils.java:842)
+            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.isCandidateForOutBlock(IfRegionMaker.java:303)
+            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.findOutBlock(IfRegionMaker.java:267)
+            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.restructureIf(IfRegionMaker.java:191)
+            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:82)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
             	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
@@ -3101,8 +3103,6 @@ public final class StremioC extends MainAPI {
             	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-            	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
             */
         public final java.lang.Object invokeSuspend(java.lang.Object r31) {
             /*
