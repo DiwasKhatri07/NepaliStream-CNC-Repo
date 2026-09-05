@@ -94,7 +94,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {2266, 2272, 2344}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "lang", "epQuery", "$this$withPermit$iv", "$completion", "lang", "epQuery", "responseText", "$completion$iv", "$this$safeAmap_u24lambda_u240$iv", "$this$safeAmap_u24default$iv", "episodeLinks", "concurrency$iv"}, nl = {2267, 2276, 2345}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "I$0"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 7 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2348\n624#3,13:2269\n638#3,2:2305\n640#3,3:2308\n643#3,6:2334\n761#3:2347\n93#4,2:2282\n63#4:2284\n64#4,15:2286\n95#4,2:2303\n93#4,2:2311\n63#4:2313\n64#4,15:2315\n95#4,2:2332\n1#5:2285\n1#5:2307\n1#5:2314\n50#6:2301\n43#6:2302\n50#6:2330\n43#6:2331\n1880#7,5:2340\n1899#7,2:2345\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2348,2\n634#2:2282,2\n634#2:2284\n634#2:2286,15\n634#2:2303,2\n642#2:2311,2\n642#2:2313\n642#2:2315,15\n642#2:2332,2\n634#2:2285\n642#2:2314\n634#2:2301\n634#2:2302\n642#2:2330\n642#2:2331\n648#2:2340,5\n648#2:2345,2\n*E\n"})
-    public static final class C01191 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C01211 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ String $dubtype$inlined;
         final /* synthetic */ String $ephash$inlined;
@@ -120,7 +120,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C01191(Semaphore semaphore, Object obj, Continuation continuation, boolean z, String str, String str2, Integer num, String str3, Map map, String str4, Function1 function1, Function1 function2) {
+        public C01211(Semaphore semaphore, Object obj, Continuation continuation, boolean z, String str, String str2, Integer num, String str3, Map map, String str4, Function1 function1, Function1 function2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -136,7 +136,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01191(this.$semaphore, this.$item, continuation, this.$isMovie$inlined, this.$dubtype$inlined, this.$id$inlined, this.$episode$inlined, this.$ephash$inlined, this.$headers$inlined, this.$privatereferer$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+            return new C01211(this.$semaphore, this.$item, continuation, this.$isMovie$inlined, this.$dubtype$inlined, this.$id$inlined, this.$episode$inlined, this.$ephash$inlined, this.$headers$inlined, this.$privatereferer$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -346,7 +346,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                                                                     try {
                                                                         Result.Companion companion5 = Result.Companion;
                                                                         try {
-                                                                            C0121xd854210f c0121xd854210f = new C0121xd854210f(7, $this$safeAmap_u24default$iv, null, lang2, this.$subtitleCallback$inlined, this.$callback$inlined, this.$headers$inlined);
+                                                                            C0123xd854210f c0123xd854210f = new C0123xd854210f(7, $this$safeAmap_u24default$iv, null, lang2, this.$subtitleCallback$inlined, this.$callback$inlined, this.$headers$inlined);
                                                                             this.L$0 = $this$withPermit$iv;
                                                                             this.L$1 = obj2;
                                                                             this.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
@@ -359,7 +359,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                                                                             this.L$9 = SpillingKt.nullOutSpilledVariable(sourceUrls);
                                                                             this.I$0 = 7;
                                                                             this.label = 3;
-                                                                            objCoroutineScope = CoroutineScopeKt.coroutineScope(c0121xd854210f, this);
+                                                                            objCoroutineScope = CoroutineScopeKt.coroutineScope(c0123xd854210f, this);
                                                                             if (objCoroutineScope == coroutine_suspended) {
                                                                                 return coroutine_suspended;
                                                                             }
@@ -532,7 +532,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                                                     } else {
                                                         Iterable $this$safeAmap_u24default$iv2 = sourceUrls;
                                                         Result.Companion companion10 = Result.Companion;
-                                                        C0121xd854210f c0121xd854210f2 = new C0121xd854210f(7, $this$safeAmap_u24default$iv2, null, lang2, this.$subtitleCallback$inlined, this.$callback$inlined, this.$headers$inlined);
+                                                        C0123xd854210f c0123xd854210f2 = new C0123xd854210f(7, $this$safeAmap_u24default$iv2, null, lang2, this.$subtitleCallback$inlined, this.$callback$inlined, this.$headers$inlined);
                                                         this.L$0 = $this$withPermit$iv;
                                                         this.L$1 = obj2;
                                                         this.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
@@ -545,7 +545,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                                                         this.L$9 = SpillingKt.nullOutSpilledVariable(sourceUrls);
                                                         this.I$0 = 7;
                                                         this.label = 3;
-                                                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0121xd854210f2, this);
+                                                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0123xd854210f2, this);
                                                         if (objCoroutineScope == coroutine_suspended) {
                                                             return coroutine_suspended;
                                                         }
@@ -699,7 +699,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                                             } else {
                                                 Iterable $this$safeAmap_u24default$iv3 = sourceUrls;
                                                 Result.Companion companion15 = Result.Companion;
-                                                C0121xd854210f c0121xd854210f3 = new C0121xd854210f(7, $this$safeAmap_u24default$iv3, null, lang2, this.$subtitleCallback$inlined, this.$callback$inlined, this.$headers$inlined);
+                                                C0123xd854210f c0123xd854210f3 = new C0123xd854210f(7, $this$safeAmap_u24default$iv3, null, lang2, this.$subtitleCallback$inlined, this.$callback$inlined, this.$headers$inlined);
                                                 this.L$0 = $this$withPermit$iv;
                                                 this.L$1 = obj2;
                                                 this.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
@@ -712,7 +712,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                                                 this.L$9 = SpillingKt.nullOutSpilledVariable(sourceUrls);
                                                 this.I$0 = 7;
                                                 this.label = 3;
-                                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0121xd854210f3, this);
+                                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0123xd854210f3, this);
                                                 if (objCoroutineScope == coroutine_suspended) {
                                                     return coroutine_suspended;
                                                 }
@@ -918,7 +918,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                     } else {
                         Iterable $this$safeAmap_u24default$iv4 = sourceUrls;
                         Result.Companion companion110 = Result.Companion;
-                        C0121xd854210f c0121xd854210f4 = new C0121xd854210f(7, $this$safeAmap_u24default$iv4, null, lang2, this.$subtitleCallback$inlined, this.$callback$inlined, this.$headers$inlined);
+                        C0123xd854210f c0123xd854210f4 = new C0123xd854210f(7, $this$safeAmap_u24default$iv4, null, lang2, this.$subtitleCallback$inlined, this.$callback$inlined, this.$headers$inlined);
                         this.L$0 = $this$withPermit$iv;
                         this.L$1 = obj2;
                         this.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
@@ -931,7 +931,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                         this.L$9 = SpillingKt.nullOutSpilledVariable(sourceUrls);
                         this.I$0 = 7;
                         this.label = 3;
-                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0121xd854210f4, this);
+                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0123xd854210f4, this);
                         if (objCoroutineScope == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1080,7 +1080,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                             } else {
                                 Iterable $this$safeAmap_u24default$iv5 = sourceUrls;
                                 Result.Companion companion115 = Result.Companion;
-                                C0121xd854210f c0121xd854210f5 = new C0121xd854210f(7, $this$safeAmap_u24default$iv5, null, lang2, this.$subtitleCallback$inlined, this.$callback$inlined, this.$headers$inlined);
+                                C0123xd854210f c0123xd854210f5 = new C0123xd854210f(7, $this$safeAmap_u24default$iv5, null, lang2, this.$subtitleCallback$inlined, this.$callback$inlined, this.$headers$inlined);
                                 this.L$0 = $this$withPermit$iv;
                                 this.L$1 = obj2;
                                 this.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
@@ -1093,7 +1093,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                                 this.L$9 = SpillingKt.nullOutSpilledVariable(sourceUrls);
                                 this.I$0 = 7;
                                 this.label = 3;
-                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0121xd854210f5, this);
+                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0123xd854210f5, this);
                                 if (objCoroutineScope == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -1182,7 +1182,7 @@ public final class StreamPlayExtractor$invokeAnichi$$inlined$safeAmap$default$1 
                     CoroutineScope $this$coroutineScope2 = $this$coroutineScope;
                     Collection destination$iv$iv2 = destination$iv$iv;
                     $this$coroutineScope = $this$coroutineScope2;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01191(semaphore, item$iv$iv, null, this.$isMovie$inlined, this.$dubtype$inlined, this.$id$inlined, this.$episode$inlined, this.$ephash$inlined, this.$headers$inlined, this.$privatereferer$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01211(semaphore, item$iv$iv, null, this.$isMovie$inlined, this.$dubtype$inlined, this.$id$inlined, this.$episode$inlined, this.$ephash$inlined, this.$headers$inlined, this.$privatereferer$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
                     $this$map$iv = $this$map$iv;
                     destination$iv$iv = destination$iv$iv2;
                 }

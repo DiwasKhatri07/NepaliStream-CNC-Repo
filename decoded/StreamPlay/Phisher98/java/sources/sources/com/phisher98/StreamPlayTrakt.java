@@ -64,7 +64,7 @@ public final class StreamPlayTrakt extends TraktProvider {
     /* JADX INFO: compiled from: StreamPlayTrakt.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayTrakt", f = "StreamPlayTrakt.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {48, 92}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "jsonObj", "title", "year", "imdbIdRaw", "season", "episode", "tmdbId", "isAsian", "isBollywood", "jpTitle", "orgTitle", "type", "$this$loadLinks_u24lambda_u248", "isCasting", "isAnime", "isMovie", "data", "subtitleCallback", "callback", "jsonObj", "title", "year", "imdbIdRaw", "season", "episode", "tmdbId", "isAsian", "isBollywood", "jpTitle", "orgTitle", "type", "linkData", "tmdbData", "isCasting", "isAnime", "isMovie"}, nl = {49, -1}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "Z$0", "I$0", "I$1"}, v = 2)
-    static final class C02691 extends ContinuationImpl {
+    static final class C02701 extends ContinuationImpl {
         int I$0;
         int I$1;
         Object L$0;
@@ -88,7 +88,7 @@ public final class StreamPlayTrakt extends TraktProvider {
         int label;
         /* synthetic */ Object result;
 
-        C02691(Continuation<? super C02691> continuation) {
+        C02701(Continuation<? super C02701> continuation) {
             super(continuation);
         }
 
@@ -178,7 +178,7 @@ public final class StreamPlayTrakt extends TraktProvider {
     /* JADX WARN: Unreachable blocks removed: 2, instructions: 8 */
     @Nullable
     public Object loadLinks(@NotNull String str, boolean z, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
-        C02691 c02691;
+        C02701 c02701;
         String str2;
         Object obj;
         String strOptString;
@@ -244,20 +244,20 @@ public final class StreamPlayTrakt extends TraktProvider {
         Ref.ObjectRef objectRef17;
         String strOptString4;
         String strOptString5;
-        if (continuation instanceof C02691) {
-            c02691 = (C02691) continuation;
-            if ((c02691.label & Integer.MIN_VALUE) != 0) {
-                c02691.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02701) {
+            c02701 = (C02701) continuation;
+            if ((c02701.label & Integer.MIN_VALUE) != 0) {
+                c02701.label -= Integer.MIN_VALUE;
             } else {
-                c02691 = new C02691(continuation);
+                c02701 = new C02701(continuation);
             }
         } else {
-            c02691 = new C02691(continuation);
+            c02701 = new C02701(continuation);
         }
-        C02691 c02692 = c02691;
-        Object objLoadLinks = c02692.result;
+        C02701 c02702 = c02701;
+        Object objLoadLinks = c02702.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02692.label) {
+        switch (c02702.label) {
             case 0:
                 ResultKt.throwOnFailure(objLoadLinks);
                 try {
@@ -353,50 +353,50 @@ public final class StreamPlayTrakt extends TraktProvider {
                         try {
                             Requests app = MainActivityKt.getApp();
                             String str11 = "https://api.themoviedb.org/3/find/" + str10 + "?api_key=98ae14df2b8d8f8f8136499daf79f0e0&external_source=imdb_id&language=en-US";
-                            c02692.L$0 = SpillingKt.nullOutSpilledVariable(str2);
-                            c02692.L$1 = function1;
-                            c02692.L$2 = function2;
-                            c02692.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject3);
-                            c02692.L$4 = objectRef18;
-                            c02692.L$5 = num8;
-                            c02692.L$6 = str10;
+                            c02702.L$0 = SpillingKt.nullOutSpilledVariable(str2);
+                            c02702.L$1 = function1;
+                            c02702.L$2 = function2;
+                            c02702.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject3);
+                            c02702.L$4 = objectRef18;
+                            c02702.L$5 = num8;
+                            c02702.L$6 = str10;
                             try {
-                                c02692.L$7 = num9;
+                                c02702.L$7 = num9;
                                 num9 = num9;
                                 try {
-                                    c02692.L$8 = num10;
+                                    c02702.L$8 = num10;
                                     num10 = num10;
                                     try {
-                                        c02692.L$9 = objectRef;
+                                        c02702.L$9 = objectRef;
                                         objectRef = objectRef;
                                         try {
-                                            c02692.L$10 = booleanRef7;
+                                            c02702.L$10 = booleanRef7;
                                             booleanRef7 = booleanRef7;
                                             try {
-                                                c02692.L$11 = booleanRef8;
+                                                c02702.L$11 = booleanRef8;
                                                 booleanRef8 = booleanRef8;
                                                 try {
-                                                    c02692.L$12 = objectRef19;
+                                                    c02702.L$12 = objectRef19;
                                                     objectRef19 = objectRef19;
                                                     try {
-                                                        c02692.L$13 = objectRef20;
+                                                        c02702.L$13 = objectRef20;
                                                         objectRef20 = objectRef20;
                                                         try {
-                                                            c02692.L$14 = objectRef21;
-                                                            c02692.L$15 = SpillingKt.nullOutSpilledVariable(streamPlayTrakt2);
+                                                            c02702.L$14 = objectRef21;
+                                                            c02702.L$15 = SpillingKt.nullOutSpilledVariable(streamPlayTrakt2);
                                                             objectRef21 = objectRef21;
-                                                            c02692.Z$0 = z;
-                                                            c02692.I$0 = zOptBoolean ? 1 : 0;
+                                                            c02702.Z$0 = z;
+                                                            c02702.I$0 = zOptBoolean ? 1 : 0;
                                                             try {
-                                                                c02692.I$1 = i5;
-                                                                c02692.label = 1;
+                                                                c02702.I$1 = i5;
+                                                                c02702.label = 1;
                                                                 str3 = str10;
                                                                 str5 = "name";
                                                                 str6 = "title";
                                                                 obj2 = coroutine_suspended;
                                                                 try {
-                                                                    objLoadLinks = Requests.get$default(app, str11, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02692, 4094, (Object) null);
-                                                                    c02692 = c02692;
+                                                                    objLoadLinks = Requests.get$default(app, str11, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02702, 4094, (Object) null);
+                                                                    c02702 = c02702;
                                                                     if (objLoadLinks == obj2) {
                                                                         return obj2;
                                                                     }
@@ -503,28 +503,28 @@ public final class StreamPlayTrakt extends TraktProvider {
                                                                                                     StreamPlay.LinkData linkData = new StreamPlay.LinkData(num11, str8, null, str12, num4, num5, null, null, null, str13, num6, str14, z4, null, null, null, str15, null, null, z6, z7, false, null, null, false, Boxing.boxBoolean(z5), 31908292, null);
                                                                                                     String json = AppUtils.INSTANCE.toJson(linkData);
                                                                                                     StreamPlay streamPlay = new StreamPlay(this.sharedPref);
-                                                                                                    c02692.L$0 = SpillingKt.nullOutSpilledVariable(str4);
-                                                                                                    c02692.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                                                                                                    c02692.L$2 = SpillingKt.nullOutSpilledVariable(function6);
-                                                                                                    c02692.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
-                                                                                                    c02692.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
-                                                                                                    c02692.L$5 = SpillingKt.nullOutSpilledVariable(num6);
-                                                                                                    c02692.L$6 = SpillingKt.nullOutSpilledVariable(str8);
-                                                                                                    c02692.L$7 = SpillingKt.nullOutSpilledVariable(num4);
-                                                                                                    c02692.L$8 = SpillingKt.nullOutSpilledVariable(num5);
-                                                                                                    c02692.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
-                                                                                                    c02692.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
-                                                                                                    c02692.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
-                                                                                                    c02692.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
-                                                                                                    c02692.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
-                                                                                                    c02692.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
-                                                                                                    c02692.L$15 = SpillingKt.nullOutSpilledVariable(linkData);
-                                                                                                    c02692.L$16 = SpillingKt.nullOutSpilledVariable(json);
-                                                                                                    c02692.Z$0 = z3;
-                                                                                                    c02692.I$0 = i3;
-                                                                                                    c02692.I$1 = i2;
-                                                                                                    c02692.label = 2;
-                                                                                                    objLoadLinks = streamPlay.loadLinks(json, z3, function5, function6, c02692);
+                                                                                                    c02702.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                                                                                                    c02702.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                                                                                                    c02702.L$2 = SpillingKt.nullOutSpilledVariable(function6);
+                                                                                                    c02702.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
+                                                                                                    c02702.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
+                                                                                                    c02702.L$5 = SpillingKt.nullOutSpilledVariable(num6);
+                                                                                                    c02702.L$6 = SpillingKt.nullOutSpilledVariable(str8);
+                                                                                                    c02702.L$7 = SpillingKt.nullOutSpilledVariable(num4);
+                                                                                                    c02702.L$8 = SpillingKt.nullOutSpilledVariable(num5);
+                                                                                                    c02702.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
+                                                                                                    c02702.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
+                                                                                                    c02702.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
+                                                                                                    c02702.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
+                                                                                                    c02702.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
+                                                                                                    c02702.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
+                                                                                                    c02702.L$15 = SpillingKt.nullOutSpilledVariable(linkData);
+                                                                                                    c02702.L$16 = SpillingKt.nullOutSpilledVariable(json);
+                                                                                                    c02702.Z$0 = z3;
+                                                                                                    c02702.I$0 = i3;
+                                                                                                    c02702.I$1 = i2;
+                                                                                                    c02702.label = 2;
+                                                                                                    objLoadLinks = streamPlay.loadLinks(json, z3, function5, function6, c02702);
                                                                                                     if (objLoadLinks == obj2) {
                                                                                                         return obj2;
                                                                                                     }
@@ -637,28 +637,28 @@ public final class StreamPlayTrakt extends TraktProvider {
                                                                                             StreamPlay.LinkData linkData2 = new StreamPlay.LinkData(num12, str8, null, str16, num4, num5, null, null, null, str17, num6, str18, z4, null, null, null, str19, null, null, z8, z9, false, null, null, false, Boxing.boxBoolean(z5), 31908292, null);
                                                                                             String json2 = AppUtils.INSTANCE.toJson(linkData2);
                                                                                             StreamPlay streamPlay2 = new StreamPlay(this.sharedPref);
-                                                                                            c02692.L$0 = SpillingKt.nullOutSpilledVariable(str4);
-                                                                                            c02692.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                                                                                            c02692.L$2 = SpillingKt.nullOutSpilledVariable(function6);
-                                                                                            c02692.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
-                                                                                            c02692.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
-                                                                                            c02692.L$5 = SpillingKt.nullOutSpilledVariable(num6);
-                                                                                            c02692.L$6 = SpillingKt.nullOutSpilledVariable(str8);
-                                                                                            c02692.L$7 = SpillingKt.nullOutSpilledVariable(num4);
-                                                                                            c02692.L$8 = SpillingKt.nullOutSpilledVariable(num5);
-                                                                                            c02692.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
-                                                                                            c02692.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
-                                                                                            c02692.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
-                                                                                            c02692.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
-                                                                                            c02692.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
-                                                                                            c02692.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
-                                                                                            c02692.L$15 = SpillingKt.nullOutSpilledVariable(linkData2);
-                                                                                            c02692.L$16 = SpillingKt.nullOutSpilledVariable(json2);
-                                                                                            c02692.Z$0 = z3;
-                                                                                            c02692.I$0 = i3;
-                                                                                            c02692.I$1 = i2;
-                                                                                            c02692.label = 2;
-                                                                                            objLoadLinks = streamPlay2.loadLinks(json2, z3, function5, function6, c02692);
+                                                                                            c02702.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                                                                                            c02702.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                                                                                            c02702.L$2 = SpillingKt.nullOutSpilledVariable(function6);
+                                                                                            c02702.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
+                                                                                            c02702.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
+                                                                                            c02702.L$5 = SpillingKt.nullOutSpilledVariable(num6);
+                                                                                            c02702.L$6 = SpillingKt.nullOutSpilledVariable(str8);
+                                                                                            c02702.L$7 = SpillingKt.nullOutSpilledVariable(num4);
+                                                                                            c02702.L$8 = SpillingKt.nullOutSpilledVariable(num5);
+                                                                                            c02702.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
+                                                                                            c02702.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
+                                                                                            c02702.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
+                                                                                            c02702.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
+                                                                                            c02702.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
+                                                                                            c02702.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
+                                                                                            c02702.L$15 = SpillingKt.nullOutSpilledVariable(linkData2);
+                                                                                            c02702.L$16 = SpillingKt.nullOutSpilledVariable(json2);
+                                                                                            c02702.Z$0 = z3;
+                                                                                            c02702.I$0 = i3;
+                                                                                            c02702.I$1 = i2;
+                                                                                            c02702.label = 2;
+                                                                                            objLoadLinks = streamPlay2.loadLinks(json2, z3, function5, function6, c02702);
                                                                                             if (objLoadLinks == obj2) {
                                                                                                 return obj2;
                                                                                             }
@@ -745,28 +745,28 @@ public final class StreamPlayTrakt extends TraktProvider {
                                                                                 StreamPlay.LinkData linkData3 = new StreamPlay.LinkData(num13, str8, null, str110, num4, num5, null, null, null, str111, num6, str112, z4, null, null, null, str113, null, null, z10, z11, false, null, null, false, Boxing.boxBoolean(z5), 31908292, null);
                                                                                 String json3 = AppUtils.INSTANCE.toJson(linkData3);
                                                                                 StreamPlay streamPlay3 = new StreamPlay(this.sharedPref);
-                                                                                c02692.L$0 = SpillingKt.nullOutSpilledVariable(str4);
-                                                                                c02692.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                                                                                c02692.L$2 = SpillingKt.nullOutSpilledVariable(function6);
-                                                                                c02692.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
-                                                                                c02692.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
-                                                                                c02692.L$5 = SpillingKt.nullOutSpilledVariable(num6);
-                                                                                c02692.L$6 = SpillingKt.nullOutSpilledVariable(str8);
-                                                                                c02692.L$7 = SpillingKt.nullOutSpilledVariable(num4);
-                                                                                c02692.L$8 = SpillingKt.nullOutSpilledVariable(num5);
-                                                                                c02692.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
-                                                                                c02692.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
-                                                                                c02692.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
-                                                                                c02692.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
-                                                                                c02692.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
-                                                                                c02692.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
-                                                                                c02692.L$15 = SpillingKt.nullOutSpilledVariable(linkData3);
-                                                                                c02692.L$16 = SpillingKt.nullOutSpilledVariable(json3);
-                                                                                c02692.Z$0 = z3;
-                                                                                c02692.I$0 = i3;
-                                                                                c02692.I$1 = i2;
-                                                                                c02692.label = 2;
-                                                                                objLoadLinks = streamPlay3.loadLinks(json3, z3, function5, function6, c02692);
+                                                                                c02702.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                                                                                c02702.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                                                                                c02702.L$2 = SpillingKt.nullOutSpilledVariable(function6);
+                                                                                c02702.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
+                                                                                c02702.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
+                                                                                c02702.L$5 = SpillingKt.nullOutSpilledVariable(num6);
+                                                                                c02702.L$6 = SpillingKt.nullOutSpilledVariable(str8);
+                                                                                c02702.L$7 = SpillingKt.nullOutSpilledVariable(num4);
+                                                                                c02702.L$8 = SpillingKt.nullOutSpilledVariable(num5);
+                                                                                c02702.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
+                                                                                c02702.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
+                                                                                c02702.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
+                                                                                c02702.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
+                                                                                c02702.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
+                                                                                c02702.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
+                                                                                c02702.L$15 = SpillingKt.nullOutSpilledVariable(linkData3);
+                                                                                c02702.L$16 = SpillingKt.nullOutSpilledVariable(json3);
+                                                                                c02702.Z$0 = z3;
+                                                                                c02702.I$0 = i3;
+                                                                                c02702.I$1 = i2;
+                                                                                c02702.label = 2;
+                                                                                objLoadLinks = streamPlay3.loadLinks(json3, z3, function5, function6, c02702);
                                                                                 if (objLoadLinks == obj2) {
                                                                                     return obj2;
                                                                                 }
@@ -882,7 +882,7 @@ public final class StreamPlayTrakt extends TraktProvider {
                                                                     return objLoadLinks;
                                                                 } catch (Throwable th9) {
                                                                     th = th9;
-                                                                    c02692 = c02692;
+                                                                    c02702 = c02702;
                                                                     num = num9;
                                                                     num2 = num10;
                                                                     str4 = str;
@@ -943,28 +943,28 @@ public final class StreamPlayTrakt extends TraktProvider {
                                                                     StreamPlay.LinkData linkData4 = new StreamPlay.LinkData(num14, str8, null, str114, num4, num5, null, null, null, str115, num6, str116, z4, null, null, null, str117, null, null, z12, z13, false, null, null, false, Boxing.boxBoolean(z5), 31908292, null);
                                                                     String json4 = AppUtils.INSTANCE.toJson(linkData4);
                                                                     StreamPlay streamPlay4 = new StreamPlay(this.sharedPref);
-                                                                    c02692.L$0 = SpillingKt.nullOutSpilledVariable(str4);
-                                                                    c02692.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                                                                    c02692.L$2 = SpillingKt.nullOutSpilledVariable(function6);
-                                                                    c02692.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
-                                                                    c02692.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
-                                                                    c02692.L$5 = SpillingKt.nullOutSpilledVariable(num6);
-                                                                    c02692.L$6 = SpillingKt.nullOutSpilledVariable(str8);
-                                                                    c02692.L$7 = SpillingKt.nullOutSpilledVariable(num4);
-                                                                    c02692.L$8 = SpillingKt.nullOutSpilledVariable(num5);
-                                                                    c02692.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
-                                                                    c02692.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
-                                                                    c02692.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
-                                                                    c02692.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
-                                                                    c02692.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
-                                                                    c02692.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
-                                                                    c02692.L$15 = SpillingKt.nullOutSpilledVariable(linkData4);
-                                                                    c02692.L$16 = SpillingKt.nullOutSpilledVariable(json4);
-                                                                    c02692.Z$0 = z3;
-                                                                    c02692.I$0 = i3;
-                                                                    c02692.I$1 = i2;
-                                                                    c02692.label = 2;
-                                                                    objLoadLinks = streamPlay4.loadLinks(json4, z3, function5, function6, c02692);
+                                                                    c02702.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                                                                    c02702.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                                                                    c02702.L$2 = SpillingKt.nullOutSpilledVariable(function6);
+                                                                    c02702.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
+                                                                    c02702.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
+                                                                    c02702.L$5 = SpillingKt.nullOutSpilledVariable(num6);
+                                                                    c02702.L$6 = SpillingKt.nullOutSpilledVariable(str8);
+                                                                    c02702.L$7 = SpillingKt.nullOutSpilledVariable(num4);
+                                                                    c02702.L$8 = SpillingKt.nullOutSpilledVariable(num5);
+                                                                    c02702.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
+                                                                    c02702.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
+                                                                    c02702.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
+                                                                    c02702.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
+                                                                    c02702.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
+                                                                    c02702.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
+                                                                    c02702.L$15 = SpillingKt.nullOutSpilledVariable(linkData4);
+                                                                    c02702.L$16 = SpillingKt.nullOutSpilledVariable(json4);
+                                                                    c02702.Z$0 = z3;
+                                                                    c02702.I$0 = i3;
+                                                                    c02702.I$1 = i2;
+                                                                    c02702.label = 2;
+                                                                    objLoadLinks = streamPlay4.loadLinks(json4, z3, function5, function6, c02702);
                                                                     if (objLoadLinks == obj2) {
                                                                         return obj2;
                                                                     }
@@ -1243,51 +1243,51 @@ public final class StreamPlayTrakt extends TraktProvider {
                 StreamPlay.LinkData linkData5 = new StreamPlay.LinkData(num15, str8, null, str118, num4, num5, null, null, null, str119, num6, str1110, z4, null, null, null, str1111, null, null, z14, z15, false, null, null, false, Boxing.boxBoolean(z5), 31908292, null);
                 String json5 = AppUtils.INSTANCE.toJson(linkData5);
                 StreamPlay streamPlay5 = new StreamPlay(this.sharedPref);
-                c02692.L$0 = SpillingKt.nullOutSpilledVariable(str4);
-                c02692.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                c02692.L$2 = SpillingKt.nullOutSpilledVariable(function6);
-                c02692.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
-                c02692.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
-                c02692.L$5 = SpillingKt.nullOutSpilledVariable(num6);
-                c02692.L$6 = SpillingKt.nullOutSpilledVariable(str8);
-                c02692.L$7 = SpillingKt.nullOutSpilledVariable(num4);
-                c02692.L$8 = SpillingKt.nullOutSpilledVariable(num5);
-                c02692.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
-                c02692.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
-                c02692.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
-                c02692.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
-                c02692.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
-                c02692.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
-                c02692.L$15 = SpillingKt.nullOutSpilledVariable(linkData5);
-                c02692.L$16 = SpillingKt.nullOutSpilledVariable(json5);
-                c02692.Z$0 = z3;
-                c02692.I$0 = i3;
-                c02692.I$1 = i2;
-                c02692.label = 2;
-                objLoadLinks = streamPlay5.loadLinks(json5, z3, function5, function6, c02692);
+                c02702.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                c02702.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                c02702.L$2 = SpillingKt.nullOutSpilledVariable(function6);
+                c02702.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
+                c02702.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
+                c02702.L$5 = SpillingKt.nullOutSpilledVariable(num6);
+                c02702.L$6 = SpillingKt.nullOutSpilledVariable(str8);
+                c02702.L$7 = SpillingKt.nullOutSpilledVariable(num4);
+                c02702.L$8 = SpillingKt.nullOutSpilledVariable(num5);
+                c02702.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
+                c02702.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
+                c02702.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
+                c02702.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
+                c02702.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
+                c02702.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
+                c02702.L$15 = SpillingKt.nullOutSpilledVariable(linkData5);
+                c02702.L$16 = SpillingKt.nullOutSpilledVariable(json5);
+                c02702.Z$0 = z3;
+                c02702.I$0 = i3;
+                c02702.I$1 = i2;
+                c02702.label = 2;
+                objLoadLinks = streamPlay5.loadLinks(json5, z3, function5, function6, c02702);
                 if (objLoadLinks == obj2) {
                     return obj2;
                 }
                 return objLoadLinks;
             case 1:
-                i2 = c02692.I$1;
-                i = c02692.I$0;
-                z2 = c02692.Z$0;
-                objectRef4 = (Ref.ObjectRef) c02692.L$14;
-                objectRef3 = (Ref.ObjectRef) c02692.L$13;
-                objectRef2 = (Ref.ObjectRef) c02692.L$12;
-                booleanRef2 = (Ref.BooleanRef) c02692.L$11;
-                booleanRef = (Ref.BooleanRef) c02692.L$10;
-                Ref.ObjectRef objectRef22 = (Ref.ObjectRef) c02692.L$9;
-                num2 = (Integer) c02692.L$8;
-                num = (Integer) c02692.L$7;
-                str7 = (String) c02692.L$6;
-                num3 = (Integer) c02692.L$5;
-                objectRef5 = (Ref.ObjectRef) c02692.L$4;
-                jSONObject = (JSONObject) c02692.L$3;
-                function4 = (Function1) c02692.L$2;
-                function3 = (Function1) c02692.L$1;
-                str4 = (String) c02692.L$0;
+                i2 = c02702.I$1;
+                i = c02702.I$0;
+                z2 = c02702.Z$0;
+                objectRef4 = (Ref.ObjectRef) c02702.L$14;
+                objectRef3 = (Ref.ObjectRef) c02702.L$13;
+                objectRef2 = (Ref.ObjectRef) c02702.L$12;
+                booleanRef2 = (Ref.BooleanRef) c02702.L$11;
+                booleanRef = (Ref.BooleanRef) c02702.L$10;
+                Ref.ObjectRef objectRef22 = (Ref.ObjectRef) c02702.L$9;
+                num2 = (Integer) c02702.L$8;
+                num = (Integer) c02702.L$7;
+                str7 = (String) c02702.L$6;
+                num3 = (Integer) c02702.L$5;
+                objectRef5 = (Ref.ObjectRef) c02702.L$4;
+                jSONObject = (JSONObject) c02702.L$3;
+                function4 = (Function1) c02702.L$2;
+                function3 = (Function1) c02702.L$1;
+                str4 = (String) c02702.L$0;
                 try {
                     ResultKt.throwOnFailure(objLoadLinks);
                     obj2 = coroutine_suspended;
@@ -1408,28 +1408,28 @@ public final class StreamPlayTrakt extends TraktProvider {
                         StreamPlay.LinkData linkData6 = new StreamPlay.LinkData(num16, str8, null, str1112, num4, num5, null, null, null, str1113, num6, str1114, z4, null, null, null, str1115, null, null, z16, z17, false, null, null, false, Boxing.boxBoolean(z5), 31908292, null);
                         String json6 = AppUtils.INSTANCE.toJson(linkData6);
                         StreamPlay streamPlay6 = new StreamPlay(this.sharedPref);
-                        c02692.L$0 = SpillingKt.nullOutSpilledVariable(str4);
-                        c02692.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                        c02692.L$2 = SpillingKt.nullOutSpilledVariable(function6);
-                        c02692.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
-                        c02692.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
-                        c02692.L$5 = SpillingKt.nullOutSpilledVariable(num6);
-                        c02692.L$6 = SpillingKt.nullOutSpilledVariable(str8);
-                        c02692.L$7 = SpillingKt.nullOutSpilledVariable(num4);
-                        c02692.L$8 = SpillingKt.nullOutSpilledVariable(num5);
-                        c02692.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
-                        c02692.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
-                        c02692.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
-                        c02692.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
-                        c02692.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
-                        c02692.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
-                        c02692.L$15 = SpillingKt.nullOutSpilledVariable(linkData6);
-                        c02692.L$16 = SpillingKt.nullOutSpilledVariable(json6);
-                        c02692.Z$0 = z3;
-                        c02692.I$0 = i3;
-                        c02692.I$1 = i2;
-                        c02692.label = 2;
-                        objLoadLinks = streamPlay6.loadLinks(json6, z3, function5, function6, c02692);
+                        c02702.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                        c02702.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                        c02702.L$2 = SpillingKt.nullOutSpilledVariable(function6);
+                        c02702.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
+                        c02702.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
+                        c02702.L$5 = SpillingKt.nullOutSpilledVariable(num6);
+                        c02702.L$6 = SpillingKt.nullOutSpilledVariable(str8);
+                        c02702.L$7 = SpillingKt.nullOutSpilledVariable(num4);
+                        c02702.L$8 = SpillingKt.nullOutSpilledVariable(num5);
+                        c02702.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
+                        c02702.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
+                        c02702.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
+                        c02702.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
+                        c02702.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
+                        c02702.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
+                        c02702.L$15 = SpillingKt.nullOutSpilledVariable(linkData6);
+                        c02702.L$16 = SpillingKt.nullOutSpilledVariable(json6);
+                        c02702.Z$0 = z3;
+                        c02702.I$0 = i3;
+                        c02702.I$1 = i2;
+                        c02702.label = 2;
+                        objLoadLinks = streamPlay6.loadLinks(json6, z3, function5, function6, c02702);
                         if (objLoadLinks == obj2) {
                             return obj2;
                         }
@@ -1536,28 +1536,28 @@ public final class StreamPlayTrakt extends TraktProvider {
                         StreamPlay.LinkData linkData7 = new StreamPlay.LinkData(num17, str8, null, str1116, num4, num5, null, null, null, str1117, num6, str1118, z4, null, null, null, str1119, null, null, z18, z19, false, null, null, false, Boxing.boxBoolean(z5), 31908292, null);
                         String json7 = AppUtils.INSTANCE.toJson(linkData7);
                         StreamPlay streamPlay7 = new StreamPlay(this.sharedPref);
-                        c02692.L$0 = SpillingKt.nullOutSpilledVariable(str4);
-                        c02692.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                        c02692.L$2 = SpillingKt.nullOutSpilledVariable(function6);
-                        c02692.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
-                        c02692.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
-                        c02692.L$5 = SpillingKt.nullOutSpilledVariable(num6);
-                        c02692.L$6 = SpillingKt.nullOutSpilledVariable(str8);
-                        c02692.L$7 = SpillingKt.nullOutSpilledVariable(num4);
-                        c02692.L$8 = SpillingKt.nullOutSpilledVariable(num5);
-                        c02692.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
-                        c02692.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
-                        c02692.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
-                        c02692.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
-                        c02692.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
-                        c02692.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
-                        c02692.L$15 = SpillingKt.nullOutSpilledVariable(linkData7);
-                        c02692.L$16 = SpillingKt.nullOutSpilledVariable(json7);
-                        c02692.Z$0 = z3;
-                        c02692.I$0 = i3;
-                        c02692.I$1 = i2;
-                        c02692.label = 2;
-                        objLoadLinks = streamPlay7.loadLinks(json7, z3, function5, function6, c02692);
+                        c02702.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                        c02702.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                        c02702.L$2 = SpillingKt.nullOutSpilledVariable(function6);
+                        c02702.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
+                        c02702.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
+                        c02702.L$5 = SpillingKt.nullOutSpilledVariable(num6);
+                        c02702.L$6 = SpillingKt.nullOutSpilledVariable(str8);
+                        c02702.L$7 = SpillingKt.nullOutSpilledVariable(num4);
+                        c02702.L$8 = SpillingKt.nullOutSpilledVariable(num5);
+                        c02702.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
+                        c02702.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
+                        c02702.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
+                        c02702.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
+                        c02702.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
+                        c02702.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
+                        c02702.L$15 = SpillingKt.nullOutSpilledVariable(linkData7);
+                        c02702.L$16 = SpillingKt.nullOutSpilledVariable(json7);
+                        c02702.Z$0 = z3;
+                        c02702.I$0 = i3;
+                        c02702.I$1 = i2;
+                        c02702.label = 2;
+                        objLoadLinks = streamPlay7.loadLinks(json7, z3, function5, function6, c02702);
                         if (objLoadLinks == obj2) {
                             return obj2;
                         }
@@ -1611,28 +1611,28 @@ public final class StreamPlayTrakt extends TraktProvider {
                     StreamPlay.LinkData linkData8 = new StreamPlay.LinkData(num18, str8, null, str11110, num4, num5, null, null, null, str11111, num6, str11112, z4, null, null, null, str11113, null, null, z110, z111, false, null, null, false, Boxing.boxBoolean(z5), 31908292, null);
                     String json8 = AppUtils.INSTANCE.toJson(linkData8);
                     StreamPlay streamPlay8 = new StreamPlay(this.sharedPref);
-                    c02692.L$0 = SpillingKt.nullOutSpilledVariable(str4);
-                    c02692.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                    c02692.L$2 = SpillingKt.nullOutSpilledVariable(function6);
-                    c02692.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
-                    c02692.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
-                    c02692.L$5 = SpillingKt.nullOutSpilledVariable(num6);
-                    c02692.L$6 = SpillingKt.nullOutSpilledVariable(str8);
-                    c02692.L$7 = SpillingKt.nullOutSpilledVariable(num4);
-                    c02692.L$8 = SpillingKt.nullOutSpilledVariable(num5);
-                    c02692.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
-                    c02692.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
-                    c02692.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
-                    c02692.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
-                    c02692.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
-                    c02692.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
-                    c02692.L$15 = SpillingKt.nullOutSpilledVariable(linkData8);
-                    c02692.L$16 = SpillingKt.nullOutSpilledVariable(json8);
-                    c02692.Z$0 = z3;
-                    c02692.I$0 = i3;
-                    c02692.I$1 = i2;
-                    c02692.label = 2;
-                    objLoadLinks = streamPlay8.loadLinks(json8, z3, function5, function6, c02692);
+                    c02702.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                    c02702.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                    c02702.L$2 = SpillingKt.nullOutSpilledVariable(function6);
+                    c02702.L$3 = SpillingKt.nullOutSpilledVariable(jSONObject);
+                    c02702.L$4 = SpillingKt.nullOutSpilledVariable(objectRef12);
+                    c02702.L$5 = SpillingKt.nullOutSpilledVariable(num6);
+                    c02702.L$6 = SpillingKt.nullOutSpilledVariable(str8);
+                    c02702.L$7 = SpillingKt.nullOutSpilledVariable(num4);
+                    c02702.L$8 = SpillingKt.nullOutSpilledVariable(num5);
+                    c02702.L$9 = SpillingKt.nullOutSpilledVariable(objectRef8);
+                    c02702.L$10 = SpillingKt.nullOutSpilledVariable(booleanRef5);
+                    c02702.L$11 = SpillingKt.nullOutSpilledVariable(booleanRef6);
+                    c02702.L$12 = SpillingKt.nullOutSpilledVariable(objectRef9);
+                    c02702.L$13 = SpillingKt.nullOutSpilledVariable(objectRef10);
+                    c02702.L$14 = SpillingKt.nullOutSpilledVariable(objectRef11);
+                    c02702.L$15 = SpillingKt.nullOutSpilledVariable(linkData8);
+                    c02702.L$16 = SpillingKt.nullOutSpilledVariable(json8);
+                    c02702.Z$0 = z3;
+                    c02702.I$0 = i3;
+                    c02702.I$1 = i2;
+                    c02702.label = 2;
+                    objLoadLinks = streamPlay8.loadLinks(json8, z3, function5, function6, c02702);
                     if (objLoadLinks == obj2) {
                         return obj2;
                     }
@@ -1640,9 +1640,9 @@ public final class StreamPlayTrakt extends TraktProvider {
                 }
                 return objLoadLinks;
             case 2:
-                int i6 = c02692.I$1;
-                int i7 = c02692.I$0;
-                boolean z20 = c02692.Z$0;
+                int i6 = c02702.I$1;
+                int i7 = c02702.I$0;
+                boolean z20 = c02702.Z$0;
                 ResultKt.throwOnFailure(objLoadLinks);
                 return objLoadLinks;
             default:

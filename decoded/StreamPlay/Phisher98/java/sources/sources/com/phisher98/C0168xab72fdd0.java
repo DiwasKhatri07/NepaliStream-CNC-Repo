@@ -40,7 +40,7 @@ import kotlinx.coroutines.sync.SemaphoreKt;
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\b\u00028\u00000\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeKickAssAnime$$inlined$safeAmap$default$1", f = "StreamPlayExtractor.kt", i = {0, 0}, l = {1898}, m = "invokeSuspend", n = {"$this$coroutineScope", "semaphore"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
 @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n1739#2:2266\n1814#2,3:2267\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1\n*L\n1887#1:2266\n1887#1:2267,3\n*E\n"})
-public final class C0166xab72fdd0 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Object>>, Object> {
+public final class C0168xab72fdd0 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Object>>, Object> {
     final /* synthetic */ Function1 $callback$inlined;
     final /* synthetic */ int $concurrency;
     final /* synthetic */ Integer $episode$inlined;
@@ -52,7 +52,7 @@ public final class C0166xab72fdd0 extends SuspendLambda implements Function2<Cor
     int label;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public C0166xab72fdd0(int i, Iterable iterable, Continuation continuation, Ref.ObjectRef objectRef, Integer num, Function1 function1, Function1 function2) {
+    public C0168xab72fdd0(int i, Iterable iterable, Continuation continuation, Ref.ObjectRef objectRef, Integer num, Function1 function1, Function1 function2) {
         super(2, continuation);
         this.$concurrency = i;
         this.$this_runCatching = iterable;
@@ -63,9 +63,9 @@ public final class C0166xab72fdd0 extends SuspendLambda implements Function2<Cor
     }
 
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Continuation<Unit> c0166xab72fdd0 = new C0166xab72fdd0(this.$concurrency, this.$this_runCatching, continuation, this.$slug$inlined, this.$episode$inlined, this.$callback$inlined, this.$subtitleCallback$inlined);
-        c0166xab72fdd0.L$0 = obj;
-        return c0166xab72fdd0;
+        Continuation<Unit> c0168xab72fdd0 = new C0168xab72fdd0(this.$concurrency, this.$this_runCatching, continuation, this.$slug$inlined, this.$episode$inlined, this.$callback$inlined, this.$subtitleCallback$inlined);
+        c0168xab72fdd0.L$0 = obj;
+        return c0168xab72fdd0;
     }
 
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super List<? extends Object>> continuation) {
@@ -285,7 +285,7 @@ public final class C0166xab72fdd0 extends SuspendLambda implements Function2<Cor
                                             try {
                                                 Result.Companion companion = Result.Companion;
                                                 try {
-                                                    C0168xa086f69d c0168xa086f69d = new C0168xa086f69d(7, $this$safeAmap_u24default$iv, null, this.$callback$inlined, this.$subtitleCallback$inlined);
+                                                    C0170xa086f69d c0170xa086f69d = new C0170xa086f69d(7, $this$safeAmap_u24default$iv, null, this.$callback$inlined, this.$subtitleCallback$inlined);
                                                     this.L$0 = $this$withPermit$iv2;
                                                     this.L$1 = obj;
                                                     int i4 = i3;
@@ -302,7 +302,7 @@ public final class C0166xab72fdd0 extends SuspendLambda implements Function2<Cor
                                                         this.L$11 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv);
                                                         this.I$0 = 7;
                                                         this.label = 4;
-                                                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0168xa086f69d, this);
+                                                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0170xa086f69d, this);
                                                         if (objCoroutineScope == coroutine_suspended) {
                                                             return coroutine_suspended;
                                                         }

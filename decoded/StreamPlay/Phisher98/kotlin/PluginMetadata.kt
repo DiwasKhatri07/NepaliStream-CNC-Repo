@@ -4,7 +4,7 @@ package nepali.stream.decoded.streamplay
 object PluginMetadata {
     const val name: String = "StreamPlay"
     const val originalPluginClass: String = "com.phisher98.StreamPlayPlugin"
-    const val version: Int = 662
+    const val version: Int = 663
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

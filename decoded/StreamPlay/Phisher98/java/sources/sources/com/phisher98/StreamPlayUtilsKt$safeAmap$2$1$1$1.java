@@ -22,7 +22,7 @@ import kotlinx.coroutines.sync.Semaphore;
 public final class StreamPlayUtilsKt$safeAmap$2$1$1$1<B> extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super B>, Object> {
 
     /* JADX INFO: renamed from: $f */
-    final /* synthetic */ Function2<A, Continuation<? super B>, Object> f51$f;
+    final /* synthetic */ Function2<A, Continuation<? super B>, Object> f52$f;
     final /* synthetic */ A $item;
     final /* synthetic */ Semaphore $semaphore;
     Object L$0;
@@ -35,12 +35,12 @@ public final class StreamPlayUtilsKt$safeAmap$2$1$1$1<B> extends SuspendLambda i
     public StreamPlayUtilsKt$safeAmap$2$1$1$1(Semaphore semaphore, Function2<? super A, ? super Continuation<? super B>, ? extends Object> function2, A a, Continuation<? super StreamPlayUtilsKt$safeAmap$2$1$1$1> continuation) {
         super(2, continuation);
         this.$semaphore = semaphore;
-        this.f51$f = function2;
+        this.f52$f = function2;
         this.$item = a;
     }
 
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        return new StreamPlayUtilsKt$safeAmap$2$1$1$1<>(this.$semaphore, this.f51$f, this.$item, continuation);
+        return new StreamPlayUtilsKt$safeAmap$2$1$1$1<>(this.$semaphore, this.f52$f, this.$item, continuation);
     }
 
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super B> continuation) {
@@ -63,7 +63,7 @@ public final class StreamPlayUtilsKt$safeAmap$2$1$1$1<B> extends SuspendLambda i
             case 0:
                 ResultKt.throwOnFailure($result);
                 Semaphore $this$withPermit$iv4 = this.$semaphore;
-                function2 = this.f51$f;
+                function2 = this.f52$f;
                 obj = this.$item;
                 this.L$0 = $this$withPermit$iv4;
                 this.L$1 = function2;
@@ -141,7 +141,7 @@ public final class StreamPlayUtilsKt$safeAmap$2$1$1$1<B> extends SuspendLambda i
 
     public final Object invokeSuspend$$forInline(Object $result) {
         Semaphore $this$withPermit$iv = this.$semaphore;
-        Function2<A, Continuation<? super B>, Object> function2 = this.f51$f;
+        Function2<A, Continuation<? super B>, Object> function2 = this.f52$f;
         Object obj = this.$item;
         $this$withPermit$iv.acquire((Continuation) this);
         Object objInvoke = null;

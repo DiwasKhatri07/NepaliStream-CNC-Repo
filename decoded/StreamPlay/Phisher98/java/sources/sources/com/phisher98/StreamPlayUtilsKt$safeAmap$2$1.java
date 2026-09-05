@@ -32,7 +32,7 @@ public final class StreamPlayUtilsKt$safeAmap$2$1<B> extends SuspendLambda imple
     final /* synthetic */ int $concurrency;
 
     /* JADX INFO: renamed from: $f */
-    final /* synthetic */ Function2<A, Continuation<? super B>, Object> f50$f;
+    final /* synthetic */ Function2<A, Continuation<? super B>, Object> f51$f;
     final /* synthetic */ Iterable<A> $this_runCatching;
     private /* synthetic */ Object L$0;
     Object L$1;
@@ -44,11 +44,11 @@ public final class StreamPlayUtilsKt$safeAmap$2$1<B> extends SuspendLambda imple
         super(2, continuation);
         this.$concurrency = i;
         this.$this_runCatching = iterable;
-        this.f50$f = function2;
+        this.f51$f = function2;
     }
 
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Continuation<Unit> streamPlayUtilsKt$safeAmap$2$1 = new StreamPlayUtilsKt$safeAmap$2$1<>(this.$concurrency, this.$this_runCatching, this.f50$f, continuation);
+        Continuation<Unit> streamPlayUtilsKt$safeAmap$2$1 = new StreamPlayUtilsKt$safeAmap$2$1<>(this.$concurrency, this.$this_runCatching, this.f51$f, continuation);
         streamPlayUtilsKt$safeAmap$2$1.L$0 = obj;
         return streamPlayUtilsKt$safeAmap$2$1;
     }
@@ -66,7 +66,7 @@ public final class StreamPlayUtilsKt$safeAmap$2$1<B> extends SuspendLambda imple
                 ResultKt.throwOnFailure($result);
                 Semaphore semaphore = SemaphoreKt.Semaphore$default(this.$concurrency, 0, 2, (Object) null);
                 Iterable $this$map$iv = this.$this_runCatching;
-                Function2<A, Continuation<? super B>, Object> function2 = this.f50$f;
+                Function2<A, Continuation<? super B>, Object> function2 = this.f51$f;
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new StreamPlayUtilsKt$safeAmap$2$1$1$1(semaphore, function2, item$iv$iv, null), 2, (Object) null));
@@ -94,7 +94,7 @@ public final class StreamPlayUtilsKt$safeAmap$2$1<B> extends SuspendLambda imple
         CoroutineScope $this$coroutineScope = (CoroutineScope) this.L$0;
         Semaphore semaphore = SemaphoreKt.Semaphore$default(this.$concurrency, 0, 2, (Object) null);
         Iterable $this$map$iv = this.$this_runCatching;
-        Function2<A, Continuation<? super B>, Object> function2 = this.f50$f;
+        Function2<A, Continuation<? super B>, Object> function2 = this.f51$f;
         Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
         for (Object item$iv$iv : $this$map$iv) {
             destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new StreamPlayUtilsKt$safeAmap$2$1$1$1(semaphore, function2, item$iv$iv, null), 2, (Object) null));

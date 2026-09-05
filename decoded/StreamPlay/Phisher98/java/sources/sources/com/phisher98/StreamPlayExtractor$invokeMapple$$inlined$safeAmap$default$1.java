@@ -92,7 +92,7 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2}, l = {2266, 2275, 2287}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "sourceId", "sourceName", "streamUrl", "$this$withPermit$iv", "$completion", "sourceId", "sourceName", "streamUrl", "m3u8", "streamRes"}, nl = {2267, 2276, 2292}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$5", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2300\n2110#3,7:2269\n2118#3,12:2281\n2130#3,3:2294\n2135#3,2:2298\n73#4,5:2276\n2068#5:2293\n2069#5:2297\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2300,2\n2116#2:2276,5\n2129#2:2293\n2129#2:2297\n*E\n"})
-    public static final class C01751 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C01771 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $base$inlined;
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ String $finalToken$inlined;
@@ -115,7 +115,7 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C01751(Semaphore semaphore, Object obj, Continuation continuation, String str, Integer num, String str2, String str3, String str4, String str5, Map map, Function1 function1, Ref.BooleanRef booleanRef) {
+        public C01771(Semaphore semaphore, Object obj, Continuation continuation, String str, Integer num, String str2, String str3, String str4, String str5, Map map, Function1 function1, Ref.BooleanRef booleanRef) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -131,7 +131,7 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01751(this.$semaphore, this.$item, continuation, this.$base$inlined, this.$tmdbId$inlined, this.$mediaType$inlined, this.$tvSlug$inlined, this.$requestToken$inlined, this.$finalToken$inlined, this.$headers$inlined, this.$callback$inlined, this.$foundStreams$inlined);
+            return new C01771(this.$semaphore, this.$item, continuation, this.$base$inlined, this.$tmdbId$inlined, this.$mediaType$inlined, this.$tvSlug$inlined, this.$requestToken$inlined, this.$finalToken$inlined, this.$headers$inlined, this.$callback$inlined, this.$foundStreams$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -191,18 +191,18 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
             int $i$f$withPermit3;
             Unit unit;
             Iterable $this$forEach$iv;
-            C01751 c01751 = this;
+            C01771 c01771 = this;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             try {
-                switch (c01751.label) {
+                switch (c01771.label) {
                     case 0:
                         ResultKt.throwOnFailure($result);
-                        Semaphore $this$withPermit$iv4 = c01751.$semaphore;
-                        obj = c01751.$item;
-                        c01751.L$0 = $this$withPermit$iv4;
-                        c01751.L$1 = obj;
-                        c01751.label = 1;
-                        if ($this$withPermit$iv4.acquire((Continuation) c01751) == coroutine_suspended) {
+                        Semaphore $this$withPermit$iv4 = c01771.$semaphore;
+                        obj = c01771.$item;
+                        c01771.L$0 = $this$withPermit$iv4;
+                        c01771.L$1 = obj;
+                        c01771.label = 1;
+                        if ($this$withPermit$iv4.acquire((Continuation) c01771) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         $i$f$withPermit = 0;
@@ -211,28 +211,28 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                         try {
                             try {
                                 Pair pair = (Pair) obj;
-                                $completion = (Continuation) c01751;
+                                $completion = (Continuation) c01771;
                                 i2 = 0;
                                 sourceId = (String) pair.component1();
                                 sourceName = (String) pair.component2();
                                 try {
-                                    streamUrl = c01751.$base$inlined + "/api/stream?mediaId=" + c01751.$tmdbId$inlined.intValue() + "&mediaType=" + c01751.$mediaType$inlined + "&tv_slug=" + c01751.$tvSlug$inlined + "&source=" + sourceId + "&apikey=mptv_sk_a8f29c4e7b3d1f&requestToken=" + c01751.$requestToken$inlined + "&token=" + c01751.$finalToken$inlined;
+                                    streamUrl = c01771.$base$inlined + "/api/stream?mediaId=" + c01771.$tmdbId$inlined.intValue() + "&mediaType=" + c01771.$mediaType$inlined + "&tv_slug=" + c01771.$tvSlug$inlined + "&source=" + sourceId + "&apikey=mptv_sk_a8f29c4e7b3d1f&requestToken=" + c01771.$requestToken$inlined + "&token=" + c01771.$finalToken$inlined;
                                     Requests app = MainActivityKt.getApp();
-                                    Map map = c01751.$headers$inlined;
-                                    c01751.L$0 = $this$withPermit$iv2;
-                                    c01751.L$1 = obj;
-                                    c01751.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                    c01751.L$3 = SpillingKt.nullOutSpilledVariable(sourceId);
-                                    c01751.L$4 = sourceName;
-                                    c01751.L$5 = SpillingKt.nullOutSpilledVariable(streamUrl);
-                                    c01751.label = 2;
+                                    Map map = c01771.$headers$inlined;
+                                    c01771.L$0 = $this$withPermit$iv2;
+                                    c01771.L$1 = obj;
+                                    c01771.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                    c01771.L$3 = SpillingKt.nullOutSpilledVariable(sourceId);
+                                    c01771.L$4 = sourceName;
+                                    c01771.L$5 = SpillingKt.nullOutSpilledVariable(streamUrl);
+                                    c01771.label = 2;
                                     obj3 = obj;
                                     $this$withPermit$iv3 = $this$withPermit$iv2;
                                     sourceId4 = sourceId;
                                     z = true;
                                     try {
                                         obj4 = Requests.get$default(app, streamUrl, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 10L, (Interceptor) null, false, (ResponseParser) null, this, 3836, (Object) null);
-                                        c01751 = this;
+                                        c01771 = this;
                                         if (obj4 == coroutine_suspended) {
                                             return coroutine_suspended;
                                         }
@@ -285,18 +285,18 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                                                             String upperCase = sourceName2.toUpperCase(Locale.ROOT);
                                                             Intrinsics.checkNotNullExpressionValue(upperCase, "toUpperCase(...)");
                                                             String string = sbAppend2.append(upperCase).append(']').toString();
-                                                            String str2 = c01751.$base$inlined + '/';
-                                                            Map map2 = c01751.$headers$inlined;
-                                                            c01751.L$0 = $this$withPermit$iv;
-                                                            c01751.L$1 = obj2;
-                                                            c01751.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                                            c01751.L$3 = SpillingKt.nullOutSpilledVariable(sourceId4);
-                                                            c01751.L$4 = SpillingKt.nullOutSpilledVariable(sourceName2);
-                                                            c01751.L$5 = SpillingKt.nullOutSpilledVariable(sourceId5);
-                                                            c01751.L$6 = SpillingKt.nullOutSpilledVariable(m3u9);
-                                                            c01751.L$7 = SpillingKt.nullOutSpilledVariable(streamRes);
-                                                            c01751.label = 3;
-                                                            objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, string, m3u9, str2, (Integer) null, map2, (String) null, c01751, 40, (Object) null);
+                                                            String str2 = c01771.$base$inlined + '/';
+                                                            Map map2 = c01771.$headers$inlined;
+                                                            c01771.L$0 = $this$withPermit$iv;
+                                                            c01771.L$1 = obj2;
+                                                            c01771.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                                            c01771.L$3 = SpillingKt.nullOutSpilledVariable(sourceId4);
+                                                            c01771.L$4 = SpillingKt.nullOutSpilledVariable(sourceName2);
+                                                            c01771.L$5 = SpillingKt.nullOutSpilledVariable(sourceId5);
+                                                            c01771.L$6 = SpillingKt.nullOutSpilledVariable(m3u9);
+                                                            c01771.L$7 = SpillingKt.nullOutSpilledVariable(streamRes);
+                                                            c01771.label = 3;
+                                                            objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, string, m3u9, str2, (Integer) null, map2, (String) null, c01771, 40, (Object) null);
                                                             if (objGenerateM3u8$default == coroutine_suspended) {
                                                                 return coroutine_suspended;
                                                             }
@@ -313,8 +313,8 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                                                                     Iterable $this$forEach$iv2 = $this$forEach$iv;
                                                                     int $i$f$withPermit4 = $i$f$withPermit3;
                                                                     try {
-                                                                        c01751.$callback$inlined.invoke(it);
-                                                                        c01751.$foundStreams$inlined.element = true;
+                                                                        c01771.$callback$inlined.invoke(it);
+                                                                        c01771.$foundStreams$inlined.element = true;
                                                                         $this$forEach$iv = $this$forEach$iv2;
                                                                         $i$f$withPermit3 = $i$f$withPermit4;
                                                                     } catch (Exception e) {
@@ -406,32 +406,32 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                         }
                         break;
                     case 1:
-                        obj = c01751.L$1;
-                        $this$withPermit$iv2 = (Semaphore) c01751.L$0;
+                        obj = c01771.L$1;
+                        $this$withPermit$iv2 = (Semaphore) c01771.L$0;
                         ResultKt.throwOnFailure($result);
                         $i$f$withPermit = 0;
                         i = 0;
                         Pair pair2 = (Pair) obj;
-                        $completion = (Continuation) c01751;
+                        $completion = (Continuation) c01771;
                         i2 = 0;
                         sourceId = (String) pair2.component1();
                         sourceName = (String) pair2.component2();
-                        streamUrl = c01751.$base$inlined + "/api/stream?mediaId=" + c01751.$tmdbId$inlined.intValue() + "&mediaType=" + c01751.$mediaType$inlined + "&tv_slug=" + c01751.$tvSlug$inlined + "&source=" + sourceId + "&apikey=mptv_sk_a8f29c4e7b3d1f&requestToken=" + c01751.$requestToken$inlined + "&token=" + c01751.$finalToken$inlined;
+                        streamUrl = c01771.$base$inlined + "/api/stream?mediaId=" + c01771.$tmdbId$inlined.intValue() + "&mediaType=" + c01771.$mediaType$inlined + "&tv_slug=" + c01771.$tvSlug$inlined + "&source=" + sourceId + "&apikey=mptv_sk_a8f29c4e7b3d1f&requestToken=" + c01771.$requestToken$inlined + "&token=" + c01771.$finalToken$inlined;
                         Requests app2 = MainActivityKt.getApp();
-                        Map map3 = c01751.$headers$inlined;
-                        c01751.L$0 = $this$withPermit$iv2;
-                        c01751.L$1 = obj;
-                        c01751.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                        c01751.L$3 = SpillingKt.nullOutSpilledVariable(sourceId);
-                        c01751.L$4 = sourceName;
-                        c01751.L$5 = SpillingKt.nullOutSpilledVariable(streamUrl);
-                        c01751.label = 2;
+                        Map map3 = c01771.$headers$inlined;
+                        c01771.L$0 = $this$withPermit$iv2;
+                        c01771.L$1 = obj;
+                        c01771.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                        c01771.L$3 = SpillingKt.nullOutSpilledVariable(sourceId);
+                        c01771.L$4 = sourceName;
+                        c01771.L$5 = SpillingKt.nullOutSpilledVariable(streamUrl);
+                        c01771.label = 2;
                         obj3 = obj;
                         $this$withPermit$iv3 = $this$withPermit$iv2;
                         sourceId4 = sourceId;
                         z = true;
                         obj4 = Requests.get$default(app2, streamUrl, map3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 10L, (Interceptor) null, false, (ResponseParser) null, this, 3836, (Object) null);
-                        c01751 = this;
+                        c01771 = this;
                         if (obj4 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -484,18 +484,18 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                                 String upperCase2 = sourceName2.toUpperCase(Locale.ROOT);
                                 Intrinsics.checkNotNullExpressionValue(upperCase2, "toUpperCase(...)");
                                 String string2 = sbAppend5.append(upperCase2).append(']').toString();
-                                String str3 = c01751.$base$inlined + '/';
-                                Map map4 = c01751.$headers$inlined;
-                                c01751.L$0 = $this$withPermit$iv;
-                                c01751.L$1 = obj2;
-                                c01751.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                c01751.L$3 = SpillingKt.nullOutSpilledVariable(sourceId4);
-                                c01751.L$4 = SpillingKt.nullOutSpilledVariable(sourceName2);
-                                c01751.L$5 = SpillingKt.nullOutSpilledVariable(sourceId5);
-                                c01751.L$6 = SpillingKt.nullOutSpilledVariable(m3u9);
-                                c01751.L$7 = SpillingKt.nullOutSpilledVariable(streamRes);
-                                c01751.label = 3;
-                                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion2, string2, m3u9, str3, (Integer) null, map4, (String) null, c01751, 40, (Object) null);
+                                String str3 = c01771.$base$inlined + '/';
+                                Map map4 = c01771.$headers$inlined;
+                                c01771.L$0 = $this$withPermit$iv;
+                                c01771.L$1 = obj2;
+                                c01771.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                c01771.L$3 = SpillingKt.nullOutSpilledVariable(sourceId4);
+                                c01771.L$4 = SpillingKt.nullOutSpilledVariable(sourceName2);
+                                c01771.L$5 = SpillingKt.nullOutSpilledVariable(sourceId5);
+                                c01771.L$6 = SpillingKt.nullOutSpilledVariable(m3u9);
+                                c01771.L$7 = SpillingKt.nullOutSpilledVariable(streamRes);
+                                c01771.label = 3;
+                                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion2, string2, m3u9, str3, (Integer) null, map4, (String) null, c01771, 40, (Object) null);
                                 if (objGenerateM3u8$default == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -510,8 +510,8 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                                     ExtractorLink it2 = (ExtractorLink) element$iv;
                                     Iterable $this$forEach$iv3 = $this$forEach$iv;
                                     int $i$f$withPermit5 = $i$f$withPermit3;
-                                    c01751.$callback$inlined.invoke(it2);
-                                    c01751.$foundStreams$inlined.element = true;
+                                    c01771.$callback$inlined.invoke(it2);
+                                    c01771.$foundStreams$inlined.element = true;
                                     $this$forEach$iv = $this$forEach$iv3;
                                     $i$f$withPermit3 = $i$f$withPermit5;
                                 }
@@ -526,12 +526,12 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                         $this$withPermit$iv.release();
                         return unit;
                     case 2:
-                        String streamUrl2 = (String) c01751.L$5;
-                        sourceId2 = (String) c01751.L$4;
-                        sourceId3 = (String) c01751.L$3;
-                        $completion2 = (Continuation) c01751.L$2;
-                        obj2 = c01751.L$1;
-                        $this$withPermit$iv = (Semaphore) c01751.L$0;
+                        String streamUrl2 = (String) c01771.L$5;
+                        sourceId2 = (String) c01771.L$4;
+                        sourceId3 = (String) c01771.L$3;
+                        $completion2 = (Continuation) c01771.L$2;
+                        obj2 = c01771.L$1;
+                        $this$withPermit$iv = (Semaphore) c01771.L$0;
                         try {
                             ResultKt.throwOnFailure($result);
                             $i$f$withPermit = 0;
@@ -588,18 +588,18 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                                     String upperCase3 = sourceName2.toUpperCase(Locale.ROOT);
                                     Intrinsics.checkNotNullExpressionValue(upperCase3, "toUpperCase(...)");
                                     String string3 = sbAppend8.append(upperCase3).append(']').toString();
-                                    String str4 = c01751.$base$inlined + '/';
-                                    Map map5 = c01751.$headers$inlined;
-                                    c01751.L$0 = $this$withPermit$iv;
-                                    c01751.L$1 = obj2;
-                                    c01751.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                    c01751.L$3 = SpillingKt.nullOutSpilledVariable(sourceId4);
-                                    c01751.L$4 = SpillingKt.nullOutSpilledVariable(sourceName2);
-                                    c01751.L$5 = SpillingKt.nullOutSpilledVariable(sourceId5);
-                                    c01751.L$6 = SpillingKt.nullOutSpilledVariable(m3u9);
-                                    c01751.L$7 = SpillingKt.nullOutSpilledVariable(streamRes);
-                                    c01751.label = 3;
-                                    objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion3, string3, m3u9, str4, (Integer) null, map5, (String) null, c01751, 40, (Object) null);
+                                    String str4 = c01771.$base$inlined + '/';
+                                    Map map5 = c01771.$headers$inlined;
+                                    c01771.L$0 = $this$withPermit$iv;
+                                    c01771.L$1 = obj2;
+                                    c01771.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                    c01771.L$3 = SpillingKt.nullOutSpilledVariable(sourceId4);
+                                    c01771.L$4 = SpillingKt.nullOutSpilledVariable(sourceName2);
+                                    c01771.L$5 = SpillingKt.nullOutSpilledVariable(sourceId5);
+                                    c01771.L$6 = SpillingKt.nullOutSpilledVariable(m3u9);
+                                    c01771.L$7 = SpillingKt.nullOutSpilledVariable(streamRes);
+                                    c01771.label = 3;
+                                    objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion3, string3, m3u9, str4, (Integer) null, map5, (String) null, c01771, 40, (Object) null);
                                     if (objGenerateM3u8$default == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -614,8 +614,8 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                                         ExtractorLink it3 = (ExtractorLink) element$iv;
                                         Iterable $this$forEach$iv4 = $this$forEach$iv;
                                         int $i$f$withPermit6 = $i$f$withPermit3;
-                                        c01751.$callback$inlined.invoke(it3);
-                                        c01751.$foundStreams$inlined.element = true;
+                                        c01771.$callback$inlined.invoke(it3);
+                                        c01771.$foundStreams$inlined.element = true;
                                         $this$forEach$iv = $this$forEach$iv4;
                                         $i$f$withPermit3 = $i$f$withPermit6;
                                     }
@@ -645,11 +645,11 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                         $i$f$withPermit3 = 0;
                         i3 = 0;
                         $i$f$withPermit2 = 0;
-                        sourceId2 = (String) c01751.L$4;
-                        sourceId3 = (String) c01751.L$3;
-                        $completion2 = (Continuation) c01751.L$2;
-                        obj2 = c01751.L$1;
-                        $this$withPermit$iv = (Semaphore) c01751.L$0;
+                        sourceId2 = (String) c01771.L$4;
+                        sourceId3 = (String) c01771.L$3;
+                        $completion2 = (Continuation) c01771.L$2;
+                        obj2 = c01771.L$1;
+                        $this$withPermit$iv = (Semaphore) c01771.L$0;
                         try {
                             ResultKt.throwOnFailure($result);
                             objGenerateM3u8$default = $result;
@@ -658,8 +658,8 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                                 ExtractorLink it4 = (ExtractorLink) element$iv;
                                 Iterable $this$forEach$iv5 = $this$forEach$iv;
                                 int $i$f$withPermit7 = $i$f$withPermit3;
-                                c01751.$callback$inlined.invoke(it4);
-                                c01751.$foundStreams$inlined.element = true;
+                                c01771.$callback$inlined.invoke(it4);
+                                c01771.$foundStreams$inlined.element = true;
                                 $this$forEach$iv = $this$forEach$iv5;
                                 $i$f$withPermit3 = $i$f$withPermit7;
                             }
@@ -696,7 +696,7 @@ public final class StreamPlayExtractor$invokeMapple$$inlined$safeAmap$default$1 
                     CoroutineScope $this$coroutineScope2 = $this$coroutineScope;
                     Collection destination$iv$iv2 = destination$iv$iv;
                     $this$coroutineScope = $this$coroutineScope2;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01751(semaphore, item$iv$iv, null, this.$base$inlined, this.$tmdbId$inlined, this.$mediaType$inlined, this.$tvSlug$inlined, this.$requestToken$inlined, this.$finalToken$inlined, this.$headers$inlined, this.$callback$inlined, this.$foundStreams$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01771(semaphore, item$iv$iv, null, this.$base$inlined, this.$tmdbId$inlined, this.$mediaType$inlined, this.$tvSlug$inlined, this.$requestToken$inlined, this.$finalToken$inlined, this.$headers$inlined, this.$callback$inlined, this.$foundStreams$inlined), 2, (Object) null));
                     $this$map$iv = $this$map$iv;
                     destination$iv$iv = destination$iv$iv2;
                 }

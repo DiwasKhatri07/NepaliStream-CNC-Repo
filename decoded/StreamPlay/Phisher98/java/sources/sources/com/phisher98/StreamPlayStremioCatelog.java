@@ -89,14 +89,14 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0}, l = {414}, m = "fetchCinemetaMeta", n = {"imdbId", "type", "mediaType"}, nl = {416}, s = {"L$0", "L$1", "L$2"}, v = 2)
-    static final class C02551 extends ContinuationImpl {
+    static final class C02561 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C02551(Continuation<? super C02551> continuation) {
+        C02561(Continuation<? super C02561> continuation) {
             super(continuation);
         }
 
@@ -112,7 +112,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {60, 65}, m = "getMainPage", n = {"request", "page", "pageSize", "skip", "request", "manifest", "lists", "page", "pageSize", "skip"}, nl = {61, 77}, s = {"L$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "I$0", "I$1", "I$2"}, v = 2)
-    static final class C02561 extends ContinuationImpl {
+    static final class C02571 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -122,7 +122,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C02561(Continuation<? super C02561> continuation) {
+        C02571(Continuation<? super C02571> continuation) {
             super(continuation);
         }
 
@@ -138,13 +138,13 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0}, l = {392}, m = "kitsuToImdb", n = {"kitsuId", "id"}, nl = {395}, s = {"L$0", "L$1"}, v = 2)
-    static final class C02581 extends ContinuationImpl {
+    static final class C02591 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C02581(Continuation<? super C02581> continuation) {
+        C02591(Continuation<? super C02591> continuation) {
             super(continuation);
         }
 
@@ -160,7 +160,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3}, l = {96, 102, 106, 115}, m = "load", n = {"url", "url", "res", "encodedId", "url", "res", "encodedId", "response", "url", "res", "encodedId", "response", "entry"}, nl = {97, 103, 107, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
-    static final class C02591 extends ContinuationImpl {
+    static final class C02601 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -169,7 +169,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C02591(Continuation<? super C02591> continuation) {
+        C02601(Continuation<? super C02601> continuation) {
             super(continuation);
         }
 
@@ -185,7 +185,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {126, 128, 149}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "res", "isCasting", "data", "subtitleCallback", "callback", "res", "imdb", "it", "isCasting", "data", "subtitleCallback", "callback", "res", "imdb", "cinemeta", "resolved", "disabledProviderIds", "providersList", "stremioAddons", "authToken", "isCasting"}, nl = {127, 127, 182}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0"}, v = 2)
-    static final class C02601 extends ContinuationImpl {
+    static final class C02611 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -201,7 +201,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C02601(Continuation<? super C02601> continuation) {
+        C02611(Continuation<? super C02611> continuation) {
             super(continuation);
         }
 
@@ -217,14 +217,14 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 1, 1, 1}, l = {84, 86}, m = "search", n = {"query", "query", "res", "list"}, nl = {452, 89}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
-    static final class C02631 extends ContinuationImpl {
+    static final class C02641 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C02631(Continuation<? super C02631> continuation) {
+        C02641(Continuation<? super C02641> continuation) {
             super(continuation);
         }
 
@@ -240,14 +240,14 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0}, l = {377}, m = "tmdbToImdb", n = {"tmdbId", "type", "mediaType"}, nl = {380}, s = {"L$0", "L$1", "L$2"}, v = 2)
-    static final class C02651 extends ContinuationImpl {
+    static final class C02661 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C02651(Continuation<? super C02651> continuation) {
+        C02661(Continuation<? super C02661> continuation) {
             super(continuation);
         }
 
@@ -308,10 +308,10 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
-        C02561 c02561;
+        C02571 c02571;
         boolean z;
         Object obj;
-        C02561 c02562;
+        C02571 c02572;
         int page2;
         Object obj2;
         MainPageRequest request2;
@@ -325,19 +325,19 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         Manifest manifest2;
         int page3;
         MainPageRequest request3;
-        if (continuation instanceof C02561) {
-            c02561 = (C02561) continuation;
-            if ((c02561.label & Integer.MIN_VALUE) != 0) {
-                c02561.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02571) {
+            c02571 = (C02571) continuation;
+            if ((c02571.label & Integer.MIN_VALUE) != 0) {
+                c02571.label -= Integer.MIN_VALUE;
             } else {
-                c02561 = new C02561(continuation);
+                c02571 = new C02571(continuation);
             }
         } else {
-            c02561 = new C02561(continuation);
+            c02571 = new C02571(continuation);
         }
-        Object $result = c02561.result;
+        Object $result = c02571.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02561.label) {
+        switch (c02571.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (getMainUrl().length() == 0) {
@@ -347,16 +347,16 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 int skip = (page - 1) * 100;
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + "/manifest.json";
-                c02561.L$0 = SpillingKt.nullOutSpilledVariable(request);
-                c02561.I$0 = page;
-                c02561.I$1 = 100;
-                c02561.I$2 = skip;
-                c02561.label = 1;
+                c02571.L$0 = SpillingKt.nullOutSpilledVariable(request);
+                c02571.I$0 = page;
+                c02571.I$1 = 100;
+                c02571.I$2 = skip;
+                c02571.label = 1;
                 z = true;
-                C02561 c02563 = c02561;
+                C02571 c02573 = c02571;
                 obj = coroutine_suspended;
-                Object obj3 = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02563, 4094, (Object) null);
-                c02562 = c02563;
+                Object obj3 = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02573, 4094, (Object) null);
+                c02572 = c02573;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -378,15 +378,15 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 manifest = (Manifest) safe;
                 lists = new ArrayList();
                 if (manifest != null && (catalogs = manifest.getCatalogs()) != null) {
-                    C02572 c02572 = new C02572(pageSize2, lists, null);
-                    c02562.L$0 = SpillingKt.nullOutSpilledVariable(request2);
-                    c02562.L$1 = SpillingKt.nullOutSpilledVariable(manifest);
-                    c02562.L$2 = lists;
-                    c02562.I$0 = page2;
-                    c02562.I$1 = pageSize;
-                    c02562.I$2 = pageSize2;
-                    c02562.label = 2;
-                    objAmap = ParCollectionsKt.amap(catalogs, c02572, c02562);
+                    C02582 c02582 = new C02582(pageSize2, lists, null);
+                    c02572.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                    c02572.L$1 = SpillingKt.nullOutSpilledVariable(manifest);
+                    c02572.L$2 = lists;
+                    c02572.I$0 = page2;
+                    c02572.I$1 = pageSize;
+                    c02572.I$2 = pageSize2;
+                    c02572.label = 2;
+                    objAmap = ParCollectionsKt.amap(catalogs, c02582, c02572);
                     if (objAmap == obj) {
                         return obj;
                     }
@@ -398,14 +398,14 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 }
                 return MainAPIKt.newHomePageResponse(lists, Boxing.boxBoolean(z));
             case 1:
-                pageSize2 = c02561.I$2;
-                pageSize = c02561.I$1;
-                int page4 = c02561.I$0;
-                request2 = (MainPageRequest) c02561.L$0;
+                pageSize2 = c02571.I$2;
+                pageSize = c02571.I$1;
+                int page4 = c02571.I$0;
+                request2 = (MainPageRequest) c02571.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 z = true;
-                c02562 = c02561;
+                c02572 = c02571;
                 page2 = page4;
                 obj2 = $result;
                 NiceResponse this_$iv2 = (NiceResponse) obj2;
@@ -415,15 +415,15 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 manifest = (Manifest) safe;
                 lists = new ArrayList();
                 if (manifest != null) {
-                    C02572 c02573 = new C02572(pageSize2, lists, null);
-                    c02562.L$0 = SpillingKt.nullOutSpilledVariable(request2);
-                    c02562.L$1 = SpillingKt.nullOutSpilledVariable(manifest);
-                    c02562.L$2 = lists;
-                    c02562.I$0 = page2;
-                    c02562.I$1 = pageSize;
-                    c02562.I$2 = pageSize2;
-                    c02562.label = 2;
-                    objAmap = ParCollectionsKt.amap(catalogs, c02573, c02562);
+                    C02582 c02583 = new C02582(pageSize2, lists, null);
+                    c02572.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                    c02572.L$1 = SpillingKt.nullOutSpilledVariable(manifest);
+                    c02572.L$2 = lists;
+                    c02572.I$0 = page2;
+                    c02572.I$1 = pageSize;
+                    c02572.I$2 = pageSize2;
+                    c02572.label = 2;
+                    objAmap = ParCollectionsKt.amap(catalogs, c02583, c02572);
                     if (objAmap == obj) {
                         return obj;
                     }
@@ -435,12 +435,12 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 }
                 return MainAPIKt.newHomePageResponse(lists, Boxing.boxBoolean(z));
             case 2:
-                int i = c02561.I$2;
-                int i2 = c02561.I$1;
-                page3 = c02561.I$0;
-                List lists2 = (List) c02561.L$2;
-                manifest2 = (Manifest) c02561.L$1;
-                request3 = (MainPageRequest) c02561.L$0;
+                int i = c02571.I$2;
+                int i2 = c02571.I$1;
+                page3 = c02571.I$0;
+                List lists2 = (List) c02571.L$2;
+                manifest2 = (Manifest) c02571.L$1;
+                request3 = (MainPageRequest) c02571.L$0;
                 ResultKt.throwOnFailure($result);
                 lists = lists2;
                 z = true;
@@ -454,23 +454,23 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "catalog", "Lcom/phisher98/StreamPlayStremioCatelog$Catalog;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$getMainPage$2", f = "StreamPlayStremioCatelog.kt", i = {0}, l = {66}, m = "invokeSuspend", n = {"catalog"}, nl = {69}, s = {"L$0"}, v = 2)
-    static final class C02572 extends SuspendLambda implements Function2<Catalog, Continuation<? super Unit>, Object> {
+    static final class C02582 extends SuspendLambda implements Function2<Catalog, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<HomePageList> $lists;
         final /* synthetic */ int $skip;
         /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C02572(int i, List<HomePageList> list, Continuation<? super C02572> continuation) {
+        C02582(int i, List<HomePageList> list, Continuation<? super C02582> continuation) {
             super(2, continuation);
             this.$skip = i;
             this.$lists = list;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c02572 = StreamPlayStremioCatelog.this.new C02572(this.$skip, this.$lists, continuation);
-            c02572.L$0 = obj;
-            return c02572;
+            Continuation<Unit> c02582 = StreamPlayStremioCatelog.this.new C02582(this.$skip, this.$lists, continuation);
+            c02582.L$0 = obj;
+            return c02582;
         }
 
         public final Object invoke(Catalog catalog, Continuation<? super Unit> continuation) {
@@ -512,7 +512,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
-        C02631 c02631;
+        C02641 c02641;
         Object obj;
         Object obj2;
         String query2;
@@ -522,30 +522,30 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         List<Catalog> catalogs;
         Object objAmap;
         String query3;
-        if (continuation instanceof C02631) {
-            c02631 = (C02631) continuation;
-            if ((c02631.label & Integer.MIN_VALUE) != 0) {
-                c02631.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02641) {
+            c02641 = (C02641) continuation;
+            if ((c02641.label & Integer.MIN_VALUE) != 0) {
+                c02641.label -= Integer.MIN_VALUE;
             } else {
-                c02631 = new C02631(continuation);
+                c02641 = new C02641(continuation);
             }
         } else {
-            c02631 = new C02631(continuation);
+            c02641 = new C02641(continuation);
         }
-        C02631 c02632 = c02631;
-        Object $result = c02632.result;
+        C02641 c02642 = c02641;
+        Object $result = c02642.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02632.label) {
+        switch (c02642.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 setMainUrl(StreamPlayUtilsKt.fixSourceUrl(getMainUrl()));
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + "/manifest.json";
-                c02632.L$0 = query;
-                c02632.label = 1;
+                c02642.L$0 = query;
+                c02642.label = 1;
                 obj = coroutine_suspended;
-                Object obj3 = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02632, 4094, (Object) null);
-                c02632 = c02632;
+                Object obj3 = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02642, 4094, (Object) null);
+                c02642 = c02642;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -564,12 +564,12 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 res = (Manifest) safe;
                 list = new ArrayList();
                 if (res != null && (catalogs = res.getCatalogs()) != null) {
-                    C02642 c02642 = new C02642(list, query2, this, null);
-                    c02632.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                    c02632.L$1 = SpillingKt.nullOutSpilledVariable(res);
-                    c02632.L$2 = list;
-                    c02632.label = 2;
-                    objAmap = ParCollectionsKt.amap(catalogs, c02642, c02632);
+                    C02652 c02652 = new C02652(list, query2, this, null);
+                    c02642.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                    c02642.L$1 = SpillingKt.nullOutSpilledVariable(res);
+                    c02642.L$2 = list;
+                    c02642.label = 2;
+                    objAmap = ParCollectionsKt.amap(catalogs, c02652, c02642);
                     if (objAmap == obj) {
                         return obj;
                     }
@@ -578,7 +578,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 }
                 return CollectionsKt.distinct(list);
             case 1:
-                String query4 = (String) c02632.L$0;
+                String query4 = (String) c02642.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 query2 = query4;
@@ -590,12 +590,12 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 res = (Manifest) safe;
                 list = new ArrayList();
                 if (res != null) {
-                    C02642 c02643 = new C02642(list, query2, this, null);
-                    c02632.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                    c02632.L$1 = SpillingKt.nullOutSpilledVariable(res);
-                    c02632.L$2 = list;
-                    c02632.label = 2;
-                    objAmap = ParCollectionsKt.amap(catalogs, c02643, c02632);
+                    C02652 c02653 = new C02652(list, query2, this, null);
+                    c02642.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                    c02642.L$1 = SpillingKt.nullOutSpilledVariable(res);
+                    c02642.L$2 = list;
+                    c02642.label = 2;
+                    objAmap = ParCollectionsKt.amap(catalogs, c02653, c02642);
                     if (objAmap == obj) {
                         return obj;
                     }
@@ -604,8 +604,8 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 }
                 return CollectionsKt.distinct(list);
             case 2:
-                list = (List) c02632.L$2;
-                query3 = (String) c02632.L$0;
+                list = (List) c02642.L$2;
+                query3 = (String) c02642.L$0;
                 ResultKt.throwOnFailure($result);
                 return CollectionsKt.distinct(list);
             default:
@@ -617,7 +617,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "catalog", "Lcom/phisher98/StreamPlayStremioCatelog$Catalog;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$search$2", f = "StreamPlayStremioCatelog.kt", i = {0}, l = {87}, m = "invokeSuspend", n = {"catalog"}, nl = {-1}, s = {"L$0"}, v = 2)
-    static final class C02642 extends SuspendLambda implements Function2<Catalog, Continuation<? super Boolean>, Object> {
+    static final class C02652 extends SuspendLambda implements Function2<Catalog, Continuation<? super Boolean>, Object> {
         final /* synthetic */ List<SearchResponse> $list;
         final /* synthetic */ String $query;
         /* synthetic */ Object L$0;
@@ -626,7 +626,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         final /* synthetic */ StreamPlayStremioCatelog this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C02642(List<SearchResponse> list, String str, StreamPlayStremioCatelog streamPlayStremioCatelog, Continuation<? super C02642> continuation) {
+        C02652(List<SearchResponse> list, String str, StreamPlayStremioCatelog streamPlayStremioCatelog, Continuation<? super C02652> continuation) {
             super(2, continuation);
             this.$list = list;
             this.$query = str;
@@ -634,9 +634,9 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c02642 = new C02642(this.$list, this.$query, this.this$0, continuation);
-            c02642.L$0 = obj;
-            return c02642;
+            Continuation<Unit> c02652 = new C02652(this.$list, this.$query, this.this$0, continuation);
+            c02652.L$0 = obj;
+            return c02652;
         }
 
         public final Object invoke(Catalog catalog, Continuation<? super Boolean> continuation) {
@@ -701,7 +701,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:99:0x0383  */
     @Nullable
     public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) {
-        C02591 c02591;
+        C02601 c02601;
         Object obj;
         int i;
         String str;
@@ -741,35 +741,35 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         CatalogEntry it2;
         Object safe2;
         CatalogResponse catalogResponse;
-        if (continuation instanceof C02591) {
-            c02591 = (C02591) continuation;
-            if ((c02591.label & Integer.MIN_VALUE) != 0) {
-                c02591.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02601) {
+            c02601 = (C02601) continuation;
+            if ((c02601.label & Integer.MIN_VALUE) != 0) {
+                c02601.label -= Integer.MIN_VALUE;
             } else {
-                c02591 = new C02591(continuation);
+                c02601 = new C02601(continuation);
             }
         } else {
-            c02591 = new C02591(continuation);
+            c02601 = new C02601(continuation);
         }
-        C02591 c02592 = c02591;
-        Object $result2 = c02592.result;
+        C02601 c02602 = c02601;
+        Object $result2 = c02602.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02592.label) {
+        switch (c02602.label) {
             case 0:
                 ResultKt.throwOnFailure($result2);
                 if (!StringsKt.startsWith$default(url, "{", false, 2, (Object) null)) {
                     Requests app = MainActivityKt.getApp();
-                    c02592.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                    c02592.label = 1;
+                    c02602.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                    c02602.label = 1;
                     obj = coroutine_suspended;
                     i = 2;
                     str = ".json";
-                    obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02592, 4094, (Object) null);
+                    obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02602, 4094, (Object) null);
                     if (obj2 == obj) {
-                        c02592 = c02592;
+                        c02602 = c02602;
                         return obj;
                     }
-                    c02592 = c02592;
+                    c02602 = c02602;
                     $result = url;
                     String json = ((NiceResponse) obj2).getText();
                     metaJson = new JSONObject(json).getJSONObject("meta").toString();
@@ -881,16 +881,16 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 Requests app2 = MainActivityKt.getApp();
                 String str3 = str;
                 String str4 = getMainUrl() + "/meta/" + res.getType() + '/' + encodedId + str3;
-                c02592.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c02592.L$1 = res;
-                c02592.L$2 = encodedId;
-                c02592.label = i;
-                C02591 c02593 = c02592;
+                c02602.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c02602.L$1 = res;
+                c02602.L$2 = encodedId;
+                c02602.label = i;
+                C02601 c02603 = c02602;
                 res2 = res;
                 catalogEntry2 = catalogEntry;
                 encodedId2 = str3;
-                $result2 = Requests.get$default(app2, str4, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02593, 4094, (Object) null);
-                c02592 = c02593;
+                $result2 = Requests.get$default(app2, str4, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02603, 4094, (Object) null);
+                c02602 = c02603;
                 if ($result2 == obj) {
                     return obj;
                 }
@@ -911,16 +911,16 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 if (response == null) {
                     Requests app3 = MainActivityKt.getApp();
                     String encodedId6 = "https://v3-cinemeta.strem.io/meta/" + res3.getType() + '/' + encodedId3 + encodedId2;
-                    c02592.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                    c02592.L$1 = res3;
-                    c02592.L$2 = SpillingKt.nullOutSpilledVariable(encodedId3);
-                    c02592.L$3 = SpillingKt.nullOutSpilledVariable(response);
-                    c02592.label = 3;
+                    c02602.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                    c02602.L$1 = res3;
+                    c02602.L$2 = SpillingKt.nullOutSpilledVariable(encodedId3);
+                    c02602.L$3 = SpillingKt.nullOutSpilledVariable(response);
+                    c02602.label = 3;
                     encodedId5 = encodedId3;
                     res5 = res3;
-                    C02591 c02594 = c02592;
-                    $result2 = Requests.get$default(app3, encodedId6, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02594, 4094, (Object) null);
-                    c02592 = c02594;
+                    C02601 c02604 = c02602;
+                    $result2 = Requests.get$default(app3, encodedId6, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02604, 4094, (Object) null);
+                    c02602 = c02604;
                     if ($result2 == obj) {
                         return obj;
                     }
@@ -983,19 +983,19 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                     entry = catalogEntry3;
                 }
                 String id = res4.getId();
-                c02592.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                c02592.L$1 = SpillingKt.nullOutSpilledVariable(res4);
-                c02592.L$2 = SpillingKt.nullOutSpilledVariable(encodedId4);
-                c02592.L$3 = SpillingKt.nullOutSpilledVariable(response2);
-                c02592.L$4 = SpillingKt.nullOutSpilledVariable(entry);
-                c02592.label = 4;
-                loadResponse = entry.toLoadResponse(this, id, c02592);
+                c02602.L$0 = SpillingKt.nullOutSpilledVariable(url4);
+                c02602.L$1 = SpillingKt.nullOutSpilledVariable(res4);
+                c02602.L$2 = SpillingKt.nullOutSpilledVariable(encodedId4);
+                c02602.L$3 = SpillingKt.nullOutSpilledVariable(response2);
+                c02602.L$4 = SpillingKt.nullOutSpilledVariable(entry);
+                c02602.label = 4;
+                loadResponse = entry.toLoadResponse(this, id, c02602);
                 if (loadResponse == obj) {
                     return obj;
                 }
                 return loadResponse;
             case 1:
-                String url5 = (String) c02592.L$0;
+                String url5 = (String) c02602.L$0;
                 ResultKt.throwOnFailure($result2);
                 obj = coroutine_suspended;
                 str = ".json";
@@ -1036,16 +1036,16 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 Requests app4 = MainActivityKt.getApp();
                 String str6 = str;
                 String str7 = getMainUrl() + "/meta/" + res.getType() + '/' + encodedId + str6;
-                c02592.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c02592.L$1 = res;
-                c02592.L$2 = encodedId;
-                c02592.label = i;
-                C02591 c02595 = c02592;
+                c02602.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c02602.L$1 = res;
+                c02602.L$2 = encodedId;
+                c02602.label = i;
+                C02601 c02605 = c02602;
                 res2 = res;
                 catalogEntry2 = catalogEntry;
                 encodedId2 = str6;
-                $result2 = Requests.get$default(app4, str7, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02595, 4094, (Object) null);
-                c02592 = c02595;
+                $result2 = Requests.get$default(app4, str7, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02605, 4094, (Object) null);
+                c02602 = c02605;
                 if ($result2 == obj) {
                     return obj;
                 }
@@ -1060,16 +1060,16 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 if (response == null) {
                     Requests app5 = MainActivityKt.getApp();
                     String encodedId8 = "https://v3-cinemeta.strem.io/meta/" + res3.getType() + '/' + encodedId3 + encodedId2;
-                    c02592.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                    c02592.L$1 = res3;
-                    c02592.L$2 = SpillingKt.nullOutSpilledVariable(encodedId3);
-                    c02592.L$3 = SpillingKt.nullOutSpilledVariable(response);
-                    c02592.label = 3;
+                    c02602.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                    c02602.L$1 = res3;
+                    c02602.L$2 = SpillingKt.nullOutSpilledVariable(encodedId3);
+                    c02602.L$3 = SpillingKt.nullOutSpilledVariable(response);
+                    c02602.label = 3;
                     encodedId5 = encodedId3;
                     res5 = res3;
-                    C02591 c02596 = c02592;
-                    $result2 = Requests.get$default(app5, encodedId8, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02596, 4094, (Object) null);
-                    c02592 = c02596;
+                    C02601 c02606 = c02602;
+                    $result2 = Requests.get$default(app5, encodedId8, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02606, 4094, (Object) null);
+                    c02602 = c02606;
                     if ($result2 == obj) {
                         return obj;
                     }
@@ -1126,21 +1126,21 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                     entry = catalogEntry3;
                 }
                 String id2 = res4.getId();
-                c02592.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                c02592.L$1 = SpillingKt.nullOutSpilledVariable(res4);
-                c02592.L$2 = SpillingKt.nullOutSpilledVariable(encodedId4);
-                c02592.L$3 = SpillingKt.nullOutSpilledVariable(response2);
-                c02592.L$4 = SpillingKt.nullOutSpilledVariable(entry);
-                c02592.label = 4;
-                loadResponse = entry.toLoadResponse(this, id2, c02592);
+                c02602.L$0 = SpillingKt.nullOutSpilledVariable(url4);
+                c02602.L$1 = SpillingKt.nullOutSpilledVariable(res4);
+                c02602.L$2 = SpillingKt.nullOutSpilledVariable(encodedId4);
+                c02602.L$3 = SpillingKt.nullOutSpilledVariable(response2);
+                c02602.L$4 = SpillingKt.nullOutSpilledVariable(entry);
+                c02602.label = 4;
+                loadResponse = entry.toLoadResponse(this, id2, c02602);
                 if (loadResponse == obj) {
                     return obj;
                 }
                 return loadResponse;
             case 2:
-                String encodedId10 = (String) c02592.L$2;
-                CatalogEntry res8 = (CatalogEntry) c02592.L$1;
-                String url6 = (String) c02592.L$0;
+                String encodedId10 = (String) c02602.L$2;
+                CatalogEntry res8 = (CatalogEntry) c02602.L$1;
+                String url6 = (String) c02602.L$0;
                 ResultKt.throwOnFailure($result2);
                 obj = coroutine_suspended;
                 encodedId2 = ".json";
@@ -1156,16 +1156,16 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 if (response == null) {
                     Requests app6 = MainActivityKt.getApp();
                     String encodedId11 = "https://v3-cinemeta.strem.io/meta/" + res3.getType() + '/' + encodedId3 + encodedId2;
-                    c02592.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                    c02592.L$1 = res3;
-                    c02592.L$2 = SpillingKt.nullOutSpilledVariable(encodedId3);
-                    c02592.L$3 = SpillingKt.nullOutSpilledVariable(response);
-                    c02592.label = 3;
+                    c02602.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                    c02602.L$1 = res3;
+                    c02602.L$2 = SpillingKt.nullOutSpilledVariable(encodedId3);
+                    c02602.L$3 = SpillingKt.nullOutSpilledVariable(response);
+                    c02602.label = 3;
                     encodedId5 = encodedId3;
                     res5 = res3;
-                    C02591 c02597 = c02592;
-                    $result2 = Requests.get$default(app6, encodedId11, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02597, 4094, (Object) null);
-                    c02592 = c02597;
+                    C02601 c02607 = c02602;
+                    $result2 = Requests.get$default(app6, encodedId11, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02607, 4094, (Object) null);
+                    c02602 = c02607;
                     if ($result2 == obj) {
                         return obj;
                     }
@@ -1222,21 +1222,21 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                     entry = catalogEntry3;
                 }
                 String id3 = res4.getId();
-                c02592.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                c02592.L$1 = SpillingKt.nullOutSpilledVariable(res4);
-                c02592.L$2 = SpillingKt.nullOutSpilledVariable(encodedId4);
-                c02592.L$3 = SpillingKt.nullOutSpilledVariable(response2);
-                c02592.L$4 = SpillingKt.nullOutSpilledVariable(entry);
-                c02592.label = 4;
-                loadResponse = entry.toLoadResponse(this, id3, c02592);
+                c02602.L$0 = SpillingKt.nullOutSpilledVariable(url4);
+                c02602.L$1 = SpillingKt.nullOutSpilledVariable(res4);
+                c02602.L$2 = SpillingKt.nullOutSpilledVariable(encodedId4);
+                c02602.L$3 = SpillingKt.nullOutSpilledVariable(response2);
+                c02602.L$4 = SpillingKt.nullOutSpilledVariable(entry);
+                c02602.label = 4;
+                loadResponse = entry.toLoadResponse(this, id3, c02602);
                 if (loadResponse == obj) {
                     return obj;
                 }
                 return loadResponse;
             case 3:
-                encodedId4 = (String) c02592.L$2;
-                res4 = (CatalogEntry) c02592.L$1;
-                url4 = (String) c02592.L$0;
+                encodedId4 = (String) c02602.L$2;
+                res4 = (CatalogEntry) c02602.L$1;
+                url4 = (String) c02602.L$0;
                 ResultKt.throwOnFailure($result2);
                 obj = coroutine_suspended;
                 catalogEntry2 = null;
@@ -1282,13 +1282,13 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                     entry = catalogEntry3;
                 }
                 String id4 = res4.getId();
-                c02592.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                c02592.L$1 = SpillingKt.nullOutSpilledVariable(res4);
-                c02592.L$2 = SpillingKt.nullOutSpilledVariable(encodedId4);
-                c02592.L$3 = SpillingKt.nullOutSpilledVariable(response2);
-                c02592.L$4 = SpillingKt.nullOutSpilledVariable(entry);
-                c02592.label = 4;
-                loadResponse = entry.toLoadResponse(this, id4, c02592);
+                c02602.L$0 = SpillingKt.nullOutSpilledVariable(url4);
+                c02602.L$1 = SpillingKt.nullOutSpilledVariable(res4);
+                c02602.L$2 = SpillingKt.nullOutSpilledVariable(encodedId4);
+                c02602.L$3 = SpillingKt.nullOutSpilledVariable(response2);
+                c02602.L$4 = SpillingKt.nullOutSpilledVariable(entry);
+                c02602.label = 4;
+                loadResponse = entry.toLoadResponse(this, id4, c02602);
                 if (loadResponse == obj) {
                     return obj;
                 }
@@ -1319,7 +1319,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     @RequiresApi(26)
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
-        C02601 c02601;
+        C02611 c02611;
         Object obj;
         Object objDecodeFromString;
         Function1<? super SubtitleFile, Unit> function3;
@@ -1357,20 +1357,20 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         Function1[] function1Arr;
         Provider it2;
         Set<String> stringSet;
-        if (continuation instanceof C02601) {
-            c02601 = (C02601) continuation;
-            if ((c02601.label & Integer.MIN_VALUE) != 0) {
-                c02601.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02611) {
+            c02611 = (C02611) continuation;
+            if ((c02611.label & Integer.MIN_VALUE) != 0) {
+                c02611.label -= Integer.MIN_VALUE;
             } else {
-                c02601 = new C02601(continuation);
+                c02611 = new C02611(continuation);
             }
         } else {
-            c02601 = new C02601(continuation);
+            c02611 = new C02611(continuation);
         }
-        C02601 c02602 = c02601;
-        Object $result = c02602.result;
+        C02611 c02612 = c02611;
+        Object $result = c02612.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02602.label) {
+        switch (c02612.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 AppUtils appUtils = AppUtils.INSTANCE;
@@ -1418,15 +1418,15 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                     });
                 }
                 LoadData res3 = (LoadData) objDecodeFromString;
-                c02602.L$0 = SpillingKt.nullOutSpilledVariable(data);
+                c02612.L$0 = SpillingKt.nullOutSpilledVariable(data);
                 function3 = function1;
-                c02602.L$1 = function3;
+                c02612.L$1 = function3;
                 function4 = function2;
-                c02602.L$2 = function4;
-                c02602.L$3 = res3;
-                c02602.Z$0 = isCasting;
-                c02602.label = 1;
-                Object objResolveImdbId = resolveImdbId(res3, c02602);
+                c02612.L$2 = function4;
+                c02612.L$3 = res3;
+                c02612.Z$0 = isCasting;
+                c02612.label = 1;
+                Object objResolveImdbId = resolveImdbId(res3, c02612);
                 if (objResolveImdbId == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -1437,15 +1437,15 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 imdb = (String) obj2;
                 if (imdb != null) {
                     String type = res.getType();
-                    c02602.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                    c02602.L$1 = function3;
-                    c02602.L$2 = function4;
-                    c02602.L$3 = res;
-                    c02602.L$4 = imdb;
-                    c02602.L$5 = SpillingKt.nullOutSpilledVariable(imdb);
-                    c02602.Z$0 = isCasting2;
-                    c02602.label = 2;
-                    objFetchCinemetaMeta = fetchCinemetaMeta(imdb, type, c02602);
+                    c02612.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                    c02612.L$1 = function3;
+                    c02612.L$2 = function4;
+                    c02612.L$3 = res;
+                    c02612.L$4 = imdb;
+                    c02612.L$5 = SpillingKt.nullOutSpilledVariable(imdb);
+                    c02612.Z$0 = isCasting2;
+                    c02612.label = 2;
+                    objFetchCinemetaMeta = fetchCinemetaMeta(imdb, type, c02612);
                     if (objFetchCinemetaMeta == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1500,8 +1500,8 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 Collection<Function1<Continuation<? super Unit>, Object>> collectionValues = StreamPlayStremioAddonSettings.INSTANCE.getDynamicStremioMap(this.sharedPref, imdb5, resolved.getSeason(), resolved.getEpisode(), function10, function7).values();
                 authToken = StreamPlayExtractor.INSTANCE.getToken();
                 spreadBuilder = new SpreadBuilder(4);
-                spreadBuilder.add(new C02612(imdb4, resolved, function8, null));
-                spreadBuilder.add(new C02623(imdb4, res4, function8, null));
+                spreadBuilder.add(new C02622(imdb4, resolved, function8, null));
+                spreadBuilder.add(new C02633(imdb4, res4, function8, null));
                 $this$map$iv = providersList;
                 disabledProviderIds2 = disabledProviderIds;
                 destination$iv$iv2 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
@@ -1527,29 +1527,29 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 spreadBuilder3.addSpread($this$toTypedArray$iv.toArray(new Function1[0]));
                 spreadBuilder3.addSpread(collectionValues.toArray(new Function1[0]));
                 function1Arr = (Function1[]) spreadBuilder3.toArray(new Function1[spreadBuilder3.size()]);
-                c02602.L$0 = SpillingKt.nullOutSpilledVariable(it);
-                c02602.L$1 = SpillingKt.nullOutSpilledVariable(function8);
-                c02602.L$2 = SpillingKt.nullOutSpilledVariable(function7);
-                c02602.L$3 = SpillingKt.nullOutSpilledVariable(res4);
-                c02602.L$4 = SpillingKt.nullOutSpilledVariable(imdb4);
-                c02602.L$5 = SpillingKt.nullOutSpilledVariable(cinemeta);
-                c02602.L$6 = SpillingKt.nullOutSpilledVariable(resolved);
-                c02602.L$7 = SpillingKt.nullOutSpilledVariable(disabledProviderIds2);
-                c02602.L$8 = SpillingKt.nullOutSpilledVariable(providersList);
-                c02602.L$9 = SpillingKt.nullOutSpilledVariable(collectionValues);
-                c02602.L$10 = SpillingKt.nullOutSpilledVariable(authToken);
-                c02602.Z$0 = isCasting3;
-                c02602.label = 3;
-                if (StreamPlayUtilsKt.runLimitedAsync(10, function1Arr, c02602) == coroutine_suspended) {
+                c02612.L$0 = SpillingKt.nullOutSpilledVariable(it);
+                c02612.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                c02612.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                c02612.L$3 = SpillingKt.nullOutSpilledVariable(res4);
+                c02612.L$4 = SpillingKt.nullOutSpilledVariable(imdb4);
+                c02612.L$5 = SpillingKt.nullOutSpilledVariable(cinemeta);
+                c02612.L$6 = SpillingKt.nullOutSpilledVariable(resolved);
+                c02612.L$7 = SpillingKt.nullOutSpilledVariable(disabledProviderIds2);
+                c02612.L$8 = SpillingKt.nullOutSpilledVariable(providersList);
+                c02612.L$9 = SpillingKt.nullOutSpilledVariable(collectionValues);
+                c02612.L$10 = SpillingKt.nullOutSpilledVariable(authToken);
+                c02612.Z$0 = isCasting3;
+                c02612.label = 3;
+                if (StreamPlayUtilsKt.runLimitedAsync(10, function1Arr, c02612) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return Boxing.boxBoolean(true);
             case 1:
-                isCasting2 = c02602.Z$0;
-                LoadData res5 = (LoadData) c02602.L$3;
-                function4 = (Function1) c02602.L$2;
-                Function1<? super SubtitleFile, Unit> function13 = (Function1) c02602.L$1;
-                data2 = (String) c02602.L$0;
+                isCasting2 = c02612.Z$0;
+                LoadData res5 = (LoadData) c02612.L$3;
+                function4 = (Function1) c02612.L$2;
+                Function1<? super SubtitleFile, Unit> function13 = (Function1) c02612.L$1;
+                data2 = (String) c02612.L$0;
                 ResultKt.throwOnFailure($result);
                 res = res5;
                 function3 = function13;
@@ -1557,15 +1557,15 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 imdb = (String) obj2;
                 if (imdb != null) {
                     String type2 = res.getType();
-                    c02602.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                    c02602.L$1 = function3;
-                    c02602.L$2 = function4;
-                    c02602.L$3 = res;
-                    c02602.L$4 = imdb;
-                    c02602.L$5 = SpillingKt.nullOutSpilledVariable(imdb);
-                    c02602.Z$0 = isCasting2;
-                    c02602.label = 2;
-                    objFetchCinemetaMeta = fetchCinemetaMeta(imdb, type2, c02602);
+                    c02612.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                    c02612.L$1 = function3;
+                    c02612.L$2 = function4;
+                    c02612.L$3 = res;
+                    c02612.L$4 = imdb;
+                    c02612.L$5 = SpillingKt.nullOutSpilledVariable(imdb);
+                    c02612.Z$0 = isCasting2;
+                    c02612.label = 2;
+                    objFetchCinemetaMeta = fetchCinemetaMeta(imdb, type2, c02612);
                     if (objFetchCinemetaMeta == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1622,8 +1622,8 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 Collection<Function1<Continuation<? super Unit>, Object>> collectionValues2 = StreamPlayStremioAddonSettings.INSTANCE.getDynamicStremioMap(this.sharedPref, imdb7, resolved.getSeason(), resolved.getEpisode(), function15, function7).values();
                 authToken = StreamPlayExtractor.INSTANCE.getToken();
                 spreadBuilder = new SpreadBuilder(4);
-                spreadBuilder.add(new C02612(imdb4, resolved, function8, null));
-                spreadBuilder.add(new C02623(imdb4, res6, function8, null));
+                spreadBuilder.add(new C02622(imdb4, resolved, function8, null));
+                spreadBuilder.add(new C02633(imdb4, res6, function8, null));
                 $this$map$iv = providersList2;
                 disabledProviderIds2 = disabledProviderIds;
                 destination$iv$iv2 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
@@ -1649,30 +1649,30 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 spreadBuilder5.addSpread($this$toTypedArray$iv2.toArray(new Function1[0]));
                 spreadBuilder5.addSpread(collectionValues2.toArray(new Function1[0]));
                 function1Arr = (Function1[]) spreadBuilder5.toArray(new Function1[spreadBuilder5.size()]);
-                c02602.L$0 = SpillingKt.nullOutSpilledVariable(it);
-                c02602.L$1 = SpillingKt.nullOutSpilledVariable(function8);
-                c02602.L$2 = SpillingKt.nullOutSpilledVariable(function7);
-                c02602.L$3 = SpillingKt.nullOutSpilledVariable(res6);
-                c02602.L$4 = SpillingKt.nullOutSpilledVariable(imdb4);
-                c02602.L$5 = SpillingKt.nullOutSpilledVariable(cinemeta);
-                c02602.L$6 = SpillingKt.nullOutSpilledVariable(resolved);
-                c02602.L$7 = SpillingKt.nullOutSpilledVariable(disabledProviderIds2);
-                c02602.L$8 = SpillingKt.nullOutSpilledVariable(providersList2);
-                c02602.L$9 = SpillingKt.nullOutSpilledVariable(collectionValues2);
-                c02602.L$10 = SpillingKt.nullOutSpilledVariable(authToken);
-                c02602.Z$0 = isCasting3;
-                c02602.label = 3;
-                if (StreamPlayUtilsKt.runLimitedAsync(10, function1Arr, c02602) == coroutine_suspended) {
+                c02612.L$0 = SpillingKt.nullOutSpilledVariable(it);
+                c02612.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                c02612.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                c02612.L$3 = SpillingKt.nullOutSpilledVariable(res6);
+                c02612.L$4 = SpillingKt.nullOutSpilledVariable(imdb4);
+                c02612.L$5 = SpillingKt.nullOutSpilledVariable(cinemeta);
+                c02612.L$6 = SpillingKt.nullOutSpilledVariable(resolved);
+                c02612.L$7 = SpillingKt.nullOutSpilledVariable(disabledProviderIds2);
+                c02612.L$8 = SpillingKt.nullOutSpilledVariable(providersList2);
+                c02612.L$9 = SpillingKt.nullOutSpilledVariable(collectionValues2);
+                c02612.L$10 = SpillingKt.nullOutSpilledVariable(authToken);
+                c02612.Z$0 = isCasting3;
+                c02612.label = 3;
+                if (StreamPlayUtilsKt.runLimitedAsync(10, function1Arr, c02612) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return Boxing.boxBoolean(true);
             case 2:
-                boolean isCasting5 = c02602.Z$0;
-                imdb3 = (String) c02602.L$4;
-                res = (LoadData) c02602.L$3;
-                function6 = (Function1) c02602.L$2;
-                function5 = (Function1) c02602.L$1;
-                it = (String) c02602.L$0;
+                boolean isCasting5 = c02612.Z$0;
+                imdb3 = (String) c02612.L$4;
+                res = (LoadData) c02612.L$3;
+                function6 = (Function1) c02612.L$2;
+                function5 = (Function1) c02612.L$1;
+                it = (String) c02612.L$0;
                 ResultKt.throwOnFailure($result);
                 isCasting4 = isCasting5;
                 objFetchCinemetaMeta = $result;
@@ -1717,8 +1717,8 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 Collection<Function1<Continuation<? super Unit>, Object>> collectionValues3 = StreamPlayStremioAddonSettings.INSTANCE.getDynamicStremioMap(this.sharedPref, imdb9, resolved.getSeason(), resolved.getEpisode(), function19, function7).values();
                 authToken = StreamPlayExtractor.INSTANCE.getToken();
                 spreadBuilder = new SpreadBuilder(4);
-                spreadBuilder.add(new C02612(imdb4, resolved, function8, null));
-                spreadBuilder.add(new C02623(imdb4, res7, function8, null));
+                spreadBuilder.add(new C02622(imdb4, resolved, function8, null));
+                spreadBuilder.add(new C02633(imdb4, res7, function8, null));
                 $this$map$iv = providersList3;
                 disabledProviderIds2 = disabledProviderIds;
                 destination$iv$iv2 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
@@ -1744,25 +1744,25 @@ public final class StreamPlayStremioCatelog extends MainAPI {
                 spreadBuilder7.addSpread($this$toTypedArray$iv3.toArray(new Function1[0]));
                 spreadBuilder7.addSpread(collectionValues3.toArray(new Function1[0]));
                 function1Arr = (Function1[]) spreadBuilder7.toArray(new Function1[spreadBuilder7.size()]);
-                c02602.L$0 = SpillingKt.nullOutSpilledVariable(it);
-                c02602.L$1 = SpillingKt.nullOutSpilledVariable(function8);
-                c02602.L$2 = SpillingKt.nullOutSpilledVariable(function7);
-                c02602.L$3 = SpillingKt.nullOutSpilledVariable(res7);
-                c02602.L$4 = SpillingKt.nullOutSpilledVariable(imdb4);
-                c02602.L$5 = SpillingKt.nullOutSpilledVariable(cinemeta);
-                c02602.L$6 = SpillingKt.nullOutSpilledVariable(resolved);
-                c02602.L$7 = SpillingKt.nullOutSpilledVariable(disabledProviderIds2);
-                c02602.L$8 = SpillingKt.nullOutSpilledVariable(providersList3);
-                c02602.L$9 = SpillingKt.nullOutSpilledVariable(collectionValues3);
-                c02602.L$10 = SpillingKt.nullOutSpilledVariable(authToken);
-                c02602.Z$0 = isCasting3;
-                c02602.label = 3;
-                if (StreamPlayUtilsKt.runLimitedAsync(10, function1Arr, c02602) == coroutine_suspended) {
+                c02612.L$0 = SpillingKt.nullOutSpilledVariable(it);
+                c02612.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                c02612.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                c02612.L$3 = SpillingKt.nullOutSpilledVariable(res7);
+                c02612.L$4 = SpillingKt.nullOutSpilledVariable(imdb4);
+                c02612.L$5 = SpillingKt.nullOutSpilledVariable(cinemeta);
+                c02612.L$6 = SpillingKt.nullOutSpilledVariable(resolved);
+                c02612.L$7 = SpillingKt.nullOutSpilledVariable(disabledProviderIds2);
+                c02612.L$8 = SpillingKt.nullOutSpilledVariable(providersList3);
+                c02612.L$9 = SpillingKt.nullOutSpilledVariable(collectionValues3);
+                c02612.L$10 = SpillingKt.nullOutSpilledVariable(authToken);
+                c02612.Z$0 = isCasting3;
+                c02612.label = 3;
+                if (StreamPlayUtilsKt.runLimitedAsync(10, function1Arr, c02612) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return Boxing.boxBoolean(true);
             case 3:
-                boolean z = c02602.Z$0;
+                boolean z = c02612.Z$0;
                 ResultKt.throwOnFailure($result);
                 return Boxing.boxBoolean(true);
             default:
@@ -1774,14 +1774,14 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$loadLinks$2", f = "StreamPlayStremioCatelog.kt", i = {}, l = {152}, m = "invokeSuspend", n = {}, nl = {153}, s = {}, v = 2)
-    static final class C02612 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    static final class C02622 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ String $imdb;
         final /* synthetic */ LoadData $resolved;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C02612(String str, LoadData loadData, Function1<? super SubtitleFile, Unit> function1, Continuation<? super C02612> continuation) {
+        C02622(String str, LoadData loadData, Function1<? super SubtitleFile, Unit> function1, Continuation<? super C02622> continuation) {
             super(1, continuation);
             this.$imdb = str;
             this.$resolved = loadData;
@@ -1789,7 +1789,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C02612(this.$imdb, this.$resolved, this.$subtitleCallback, continuation);
+            return new C02622(this.$imdb, this.$resolved, this.$subtitleCallback, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -1823,14 +1823,14 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$loadLinks$3", f = "StreamPlayStremioCatelog.kt", i = {}, l = {159}, m = "invokeSuspend", n = {}, nl = {160}, s = {}, v = 2)
-    static final class C02623 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    static final class C02633 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ String $imdb;
         final /* synthetic */ LoadData $res;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C02623(String str, LoadData loadData, Function1<? super SubtitleFile, Unit> function1, Continuation<? super C02623> continuation) {
+        C02633(String str, LoadData loadData, Function1<? super SubtitleFile, Unit> function1, Continuation<? super C02633> continuation) {
             super(1, continuation);
             this.$imdb = str;
             this.$res = loadData;
@@ -1838,7 +1838,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C02623(this.$imdb, this.$res, this.$subtitleCallback, continuation);
+            return new C02633(this.$imdb, this.$res, this.$subtitleCallback, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -2227,10 +2227,11 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         /* JADX WARN: Code duplicated, block: B:32:0x0170 A[LOOP:0: B:30:0x016a->B:32:0x0170, LOOP_END] */
         /* JADX WARN: Code duplicated, block: B:7:0x0018  */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x012b -> B:20:0x0137). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-            java.lang.StackOverflowError
-            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
             */
         @org.jetbrains.annotations.Nullable
         public final java.lang.Object search(@org.jetbrains.annotations.NotNull java.lang.String r33, @org.jetbrains.annotations.NotNull com.phisher98.StreamPlayStremioCatelog r34, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.util.List<? extends com.lagradost.cloudstream3.SearchResponse>> r35) {
@@ -2969,31 +2970,31 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public final Object tmdbToImdb(@NotNull String tmdbId, @Nullable String type, @NotNull Continuation<? super String> continuation) {
-        C02651 c02651;
+        C02661 c02661;
         Object safe;
-        if (continuation instanceof C02651) {
-            c02651 = (C02651) continuation;
-            if ((c02651.label & Integer.MIN_VALUE) != 0) {
-                c02651.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02661) {
+            c02661 = (C02661) continuation;
+            if ((c02661.label & Integer.MIN_VALUE) != 0) {
+                c02661.label -= Integer.MIN_VALUE;
             } else {
-                c02651 = new C02651(continuation);
+                c02661 = new C02661(continuation);
             }
         } else {
-            c02651 = new C02651(continuation);
+            c02661 = new C02661(continuation);
         }
-        C02651 c02652 = c02651;
-        Object $result = c02652.result;
+        C02661 c02662 = c02661;
+        Object $result = c02662.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02652.label) {
+        switch (c02662.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String mediaType = Intrinsics.areEqual(type, "series") ? "tv" : "movie";
                 Map mapMapOf = MapsKt.mapOf(TuplesKt.to("api_key", "98ae14df2b8d8f8f8136499daf79f0e0"));
-                c02652.L$0 = SpillingKt.nullOutSpilledVariable(tmdbId);
-                c02652.L$1 = SpillingKt.nullOutSpilledVariable(type);
-                c02652.L$2 = SpillingKt.nullOutSpilledVariable(mediaType);
-                c02652.label = 1;
-                $result = Requests.get$default(MainActivityKt.getApp(), "https://api.themoviedb.org/3/" + mediaType + '/' + tmdbId + "/external_ids", (Map) null, (String) null, mapMapOf, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02652, 4086, (Object) null);
+                c02662.L$0 = SpillingKt.nullOutSpilledVariable(tmdbId);
+                c02662.L$1 = SpillingKt.nullOutSpilledVariable(type);
+                c02662.L$2 = SpillingKt.nullOutSpilledVariable(mediaType);
+                c02662.label = 1;
+                $result = Requests.get$default(MainActivityKt.getApp(), "https://api.themoviedb.org/3/" + mediaType + '/' + tmdbId + "/external_ids", (Map) null, (String) null, mapMapOf, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02662, 4086, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -3077,32 +3078,32 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public final Object kitsuToImdb(@NotNull String kitsuId, @NotNull Continuation<? super String> continuation) {
-        C02581 c02581;
+        C02591 c02591;
         Object safe;
         AniZipMappings mappings;
-        if (continuation instanceof C02581) {
-            c02581 = (C02581) continuation;
-            if ((c02581.label & Integer.MIN_VALUE) != 0) {
-                c02581.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02591) {
+            c02591 = (C02591) continuation;
+            if ((c02591.label & Integer.MIN_VALUE) != 0) {
+                c02591.label -= Integer.MIN_VALUE;
             } else {
-                c02581 = new C02581(continuation);
+                c02591 = new C02591(continuation);
             }
         } else {
-            c02581 = new C02581(continuation);
+            c02591 = new C02591(continuation);
         }
-        C02581 c02582 = c02581;
-        Object $result = c02582.result;
+        C02591 c02592 = c02591;
+        Object $result = c02592.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02582.label) {
+        switch (c02592.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String id = StringsKt.removePrefix(kitsuId, "kitsu:");
                 Requests app = MainActivityKt.getApp();
                 Map mapMapOf = MapsKt.mapOf(TuplesKt.to("kitsu_id", id));
-                c02582.L$0 = SpillingKt.nullOutSpilledVariable(kitsuId);
-                c02582.L$1 = SpillingKt.nullOutSpilledVariable(id);
-                c02582.label = 1;
-                $result = Requests.get$default(app, "https://api.ani.zip/mappings", (Map) null, (String) null, mapMapOf, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02582, 4086, (Object) null);
+                c02592.L$0 = SpillingKt.nullOutSpilledVariable(kitsuId);
+                c02592.L$1 = SpillingKt.nullOutSpilledVariable(id);
+                c02592.label = 1;
+                $result = Requests.get$default(app, "https://api.ani.zip/mappings", (Map) null, (String) null, mapMapOf, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02592, 4086, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -3241,7 +3242,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public final Object fetchCinemetaMeta(@NotNull String imdbId, @Nullable String type, @NotNull Continuation<? super CinemetaMetaData> continuation) {
-        C02551 c02551;
+        C02561 c02561;
         Object safe;
         CinemetaMeta it;
         Integer intOrNull;
@@ -3249,28 +3250,28 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         CinemetaLink cinemetaLink;
         String id;
         CinemetaLink link;
-        if (continuation instanceof C02551) {
-            c02551 = (C02551) continuation;
-            if ((c02551.label & Integer.MIN_VALUE) != 0) {
-                c02551.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02561) {
+            c02561 = (C02561) continuation;
+            if ((c02561.label & Integer.MIN_VALUE) != 0) {
+                c02561.label -= Integer.MIN_VALUE;
             } else {
-                c02551 = new C02551(continuation);
+                c02561 = new C02561(continuation);
             }
         } else {
-            c02551 = new C02551(continuation);
+            c02561 = new C02561(continuation);
         }
-        C02551 c02552 = c02551;
-        Object $result = c02552.result;
+        C02561 c02562 = c02561;
+        Object $result = c02562.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02552.label) {
+        switch (c02562.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String mediaType = Intrinsics.areEqual(type, "series") ? "series" : "movie";
-                c02552.L$0 = SpillingKt.nullOutSpilledVariable(imdbId);
-                c02552.L$1 = SpillingKt.nullOutSpilledVariable(type);
-                c02552.L$2 = SpillingKt.nullOutSpilledVariable(mediaType);
-                c02552.label = 1;
-                $result = Requests.get$default(MainActivityKt.getApp(), "https://v3-cinemeta.strem.io/meta/" + mediaType + '/' + imdbId + ".json", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02552, 4094, (Object) null);
+                c02562.L$0 = SpillingKt.nullOutSpilledVariable(imdbId);
+                c02562.L$1 = SpillingKt.nullOutSpilledVariable(type);
+                c02562.L$2 = SpillingKt.nullOutSpilledVariable(mediaType);
+                c02562.label = 1;
+                $result = Requests.get$default(MainActivityKt.getApp(), "https://v3-cinemeta.strem.io/meta/" + mediaType + '/' + imdbId + ".json", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02562, 4094, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }

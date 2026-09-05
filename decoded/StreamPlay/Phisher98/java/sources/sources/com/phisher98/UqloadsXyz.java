@@ -29,7 +29,7 @@ public final class UqloadsXyz extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.UqloadsXyz", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {2047, 2050, 2075}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "response", "iframe", "url", "referer", "subtitleCallback", "callback", "response", "iframe", "script", "regex", "links", "$this$forEach$iv", "element$iv", "m3u8"}, nl = {2048, 2058, 2079}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12"}, v = 2)
-    static final class C03041 extends ContinuationImpl {
+    static final class C03051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -46,7 +46,7 @@ public final class UqloadsXyz extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C03041(Continuation<? super C03041> continuation) {
+        C03051(Continuation<? super C03051> continuation) {
             super(continuation);
         }
 

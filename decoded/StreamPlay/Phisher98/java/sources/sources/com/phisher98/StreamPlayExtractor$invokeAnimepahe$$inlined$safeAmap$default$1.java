@@ -74,7 +74,7 @@ public final class StreamPlayExtractor$invokeAnimepahe$$inlined$safeAmap$default
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeAnimepahe$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {2266, 2286}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "it", "dubText", "type", "qualityRegex", "text", "match", "href", "source", "quality"}, nl = {2267, 2296}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2297\n930#3,28:2269\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n*L\n1889#1:2266,3\n1889#1:2297,2\n*E\n"})
-    public static final class C01291 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C01311 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ String $dubtype$inlined;
         final /* synthetic */ boolean $isMovie$inlined;
@@ -96,7 +96,7 @@ public final class StreamPlayExtractor$invokeAnimepahe$$inlined$safeAmap$default
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C01291(Semaphore semaphore, Object obj, Continuation continuation, boolean z, String str, Function1 function1, Function1 function2) {
+        public C01311(Semaphore semaphore, Object obj, Continuation continuation, boolean z, String str, Function1 function1, Function1 function2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -107,7 +107,7 @@ public final class StreamPlayExtractor$invokeAnimepahe$$inlined$safeAmap$default
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01291(this.$semaphore, this.$item, continuation, this.$isMovie$inlined, this.$dubtype$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+            return new C01311(this.$semaphore, this.$item, continuation, this.$isMovie$inlined, this.$dubtype$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -366,7 +366,7 @@ public final class StreamPlayExtractor$invokeAnimepahe$$inlined$safeAmap$default
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01291(semaphore, item$iv$iv, null, this.$isMovie$inlined, this.$dubtype$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01311(semaphore, item$iv$iv, null, this.$isMovie$inlined, this.$dubtype$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
                     destination$iv$iv = destination$iv$iv2;
                 }
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);

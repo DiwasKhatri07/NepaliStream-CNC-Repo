@@ -43,7 +43,7 @@ import okhttp3.RequestBody;
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\b\u00028\u00000\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeAllMovieland$lambda$0$$inlined$safeAmap$default$1", f = "StreamPlayExtractor.kt", i = {0, 0}, l = {1898}, m = "invokeSuspend", n = {"$this$coroutineScope", "semaphore"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
 @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n1739#2:2266\n1814#2,3:2267\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1\n*L\n1887#1:2266\n1887#1:2267,3\n*E\n"})
-public final class C0116x74a3699c extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Result<? extends Unit>>>, Object> {
+public final class C0118x74a3699c extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Result<? extends Unit>>>, Object> {
     final /* synthetic */ Function1 $callback$inlined;
     final /* synthetic */ int $concurrency;
     final /* synthetic */ Map $headers$inlined;
@@ -55,7 +55,7 @@ public final class C0116x74a3699c extends SuspendLambda implements Function2<Cor
     int label;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public C0116x74a3699c(int i, Iterable iterable, Continuation continuation, StreamPlayExtractor streamPlayExtractor, String str, Map map, Function1 function1) {
+    public C0118x74a3699c(int i, Iterable iterable, Continuation continuation, StreamPlayExtractor streamPlayExtractor, String str, Map map, Function1 function1) {
         super(2, continuation);
         this.$concurrency = i;
         this.$this_runCatching = iterable;
@@ -66,9 +66,9 @@ public final class C0116x74a3699c extends SuspendLambda implements Function2<Cor
     }
 
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Continuation<Unit> c0116x74a3699c = new C0116x74a3699c(this.$concurrency, this.$this_runCatching, continuation, this.$this_runCatching$inlined, this.$host$inlined, this.$headers$inlined, this.$callback$inlined);
-        c0116x74a3699c.L$0 = obj;
-        return c0116x74a3699c;
+        Continuation<Unit> c0118x74a3699c = new C0118x74a3699c(this.$concurrency, this.$this_runCatching, continuation, this.$this_runCatching$inlined, this.$host$inlined, this.$headers$inlined, this.$callback$inlined);
+        c0118x74a3699c.L$0 = obj;
+        return c0118x74a3699c;
     }
 
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super List<? extends Result<? extends Unit>>> continuation) {

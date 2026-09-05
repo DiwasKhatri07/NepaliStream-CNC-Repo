@@ -59,7 +59,7 @@ final class StreamPlayUtilsKt$loadDisplaySourceNameExtractor$2$1 extends Suspend
                 String str4 = str3 == null ? "" : str3;
                 this.L$0 = function2;
                 this.label = 1;
-                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default(str2, str4, this.$link.getUrl(), (ExtractorLinkType) null, new C02861(this.$quality, this.$link, null), (Continuation) this, 8, (Object) null);
+                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default(str2, str4, this.$link.getUrl(), (ExtractorLinkType) null, new C02871(this.$quality, this.$link, null), (Continuation) this, 8, (Object) null);
                 if (objNewExtractorLink$default == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -82,23 +82,23 @@ final class StreamPlayUtilsKt$loadDisplaySourceNameExtractor$2$1 extends Suspend
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt$loadDisplaySourceNameExtractor$2$1$1", f = "StreamPlayUtils.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C02861 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C02871 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ ExtractorLink $link;
         final /* synthetic */ Integer $quality;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C02861(Integer num, ExtractorLink extractorLink, Continuation<? super C02861> continuation) {
+        C02871(Integer num, ExtractorLink extractorLink, Continuation<? super C02871> continuation) {
             super(2, continuation);
             this.$quality = num;
             this.$link = extractorLink;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c02861 = new C02861(this.$quality, this.$link, continuation);
-            c02861.L$0 = obj;
-            return c02861;
+            Continuation<Unit> c02871 = new C02871(this.$quality, this.$link, continuation);
+            c02871.L$0 = obj;
+            return c02871;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

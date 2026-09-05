@@ -42,15 +42,15 @@ import org.json.JSONObject;
 
 /* JADX INFO: compiled from: MovieBoxProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/MovieBoxProvider/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0006\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\u001a\u0015\u0010\u0000\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0002\u0010\u0004\u001a\u0010\u0010\u0005\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u0003H\u0002\u001a:\u0010\u0007\u001a\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0012\u0006\u0012\u0004\u0018\u00010\u00030\b2\u0006\u0010\t\u001a\u00020\u00032\b\u0010\n\u001a\u0004\u0018\u00010\u00012\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0082@¢\u0006\u0002\u0010\r\u001a:\u0010\u000e\u001a\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0012\u0006\u0012\u0004\u0018\u00010\u00030\b2\u0006\u0010\u000f\u001a\u00020\u00032\b\u0010\n\u001a\u0004\u0018\u00010\u00012\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0082@¢\u0006\u0002\u0010\r\u001a\u0018\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00032\u0006\u0010\u0013\u001a\u00020\u0003H\u0002\u001a\u0010\u0010\u0014\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u0003H\u0002\u001a\"\u0010\u0015\u001a\u0004\u0018\u00010\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u00032\u0006\u0010\u0018\u001a\u00020\u0019H\u0082@¢\u0006\u0002\u0010\u001a\u001a<\u0010\u001b\u001a\u0004\u0018\u00010\u00032\u0006\u0010\u001c\u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u00032\u0006\u0010\u0018\u001a\u00020\u00192\b\u0010\u001e\u001a\u0004\u0018\u00010\u00012\b\u0010\u001f\u001a\u0004\u0018\u00010\u0003H\u0086@¢\u0006\u0002\u0010 ¨\u0006!"}, d2 = {"getHighestQuality", "", "input", "", "(Ljava/lang/String;)Ljava/lang/Integer;", "cleanTitle", "s", "identifyID", "Lkotlin/Pair;", "title", "year", "imdbRatingValue", "", "(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Double;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "searchAndPick", "normTitle", "tokenEquals", "", "a", "b", "normalize", "fetchMetaData", "Lcom/fasterxml/jackson/databind/JsonNode;", "imdbId", "type", "Lcom/lagradost/cloudstream3/TvType;", "(Ljava/lang/String;Lcom/lagradost/cloudstream3/TvType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchTmdbLogoUrl", "tmdbAPI", "apiKey", "tmdbId", "appLangCode", "(Ljava/lang/String;Ljava/lang/String;Lcom/lagradost/cloudstream3/TvType;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "MovieBoxProvider"}, k = 2, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nMovieBoxProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProviderKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1211:1\n777#2:1212\n873#2,2:1213\n777#2:1215\n873#2,2:1216\n777#2:1218\n873#2,2:1219\n1#3:1221\n*S KotlinDebug\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProviderKt\n*L\n1046#1:1212\n1046#1:1213,2\n1105#1:1215\n1105#1:1216,2\n1106#1:1218\n1106#1:1219,2\n*E\n"})
+@Metadata(d1 = {"\u00008\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0006\n\u0002\b\u0004\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\u001a\u0017\u0010\u0000\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\u0002¢\u0006\u0002\u0010\u0004\u001a\u0010\u0010\u0005\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u0003H\u0002\u001a:\u0010\u0007\u001a\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0012\u0006\u0012\u0004\u0018\u00010\u00030\b2\u0006\u0010\t\u001a\u00020\u00032\b\u0010\n\u001a\u0004\u0018\u00010\u00012\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0082@¢\u0006\u0002\u0010\r\u001a:\u0010\u000e\u001a\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0012\u0006\u0012\u0004\u0018\u00010\u00030\b2\u0006\u0010\u000f\u001a\u00020\u00032\b\u0010\n\u001a\u0004\u0018\u00010\u00012\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0082@¢\u0006\u0002\u0010\r\u001a\u0018\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00020\u00032\u0006\u0010\u0013\u001a\u00020\u0003H\u0002\u001a\u0010\u0010\u0014\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u0003H\u0002\u001a\"\u0010\u0015\u001a\u0004\u0018\u00010\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u00032\u0006\u0010\u0018\u001a\u00020\u0019H\u0082@¢\u0006\u0002\u0010\u001a\u001a<\u0010\u001b\u001a\u0004\u0018\u00010\u00032\u0006\u0010\u001c\u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u00032\u0006\u0010\u0018\u001a\u00020\u00192\b\u0010\u001e\u001a\u0004\u0018\u00010\u00012\b\u0010\u001f\u001a\u0004\u0018\u00010\u0003H\u0082@¢\u0006\u0002\u0010 ¨\u0006!"}, d2 = {"getHighestQuality", "", "input", "", "(Ljava/lang/String;)Ljava/lang/Integer;", "cleanTitle", "s", "identifyID", "Lkotlin/Pair;", "title", "year", "imdbRatingValue", "", "(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Double;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "searchAndPick", "normTitle", "tokenEquals", "", "a", "b", "normalize", "fetchMetaData", "Lcom/fasterxml/jackson/databind/JsonNode;", "imdbId", "type", "Lcom/lagradost/cloudstream3/TvType;", "(Ljava/lang/String;Lcom/lagradost/cloudstream3/TvType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchTmdbLogoUrl", "tmdbAPI", "apiKey", "tmdbId", "appLangCode", "(Ljava/lang/String;Ljava/lang/String;Lcom/lagradost/cloudstream3/TvType;Ljava/lang/Integer;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "MovieBoxProvider"}, k = 2, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nMovieBoxProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProviderKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1185:1\n777#2:1186\n873#2,2:1187\n777#2:1189\n873#2,2:1190\n777#2:1192\n873#2,2:1193\n1#3:1195\n*S KotlinDebug\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProviderKt\n*L\n1020#1:1186\n1020#1:1187,2\n1079#1:1189\n1079#1:1190,2\n1080#1:1192\n1080#1:1193,2\n*E\n"})
 public final class MovieBoxProviderKt {
 
     /* JADX INFO: renamed from: com.MovieBox.MovieBoxProviderKt$fetchMetaData$1 */
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBox.MovieBoxProviderKt", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0}, l = {1131}, m = "fetchMetaData", n = {"imdbId", "type", "metaType", "url"}, nl = {1132}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
-    static final class C00081 extends ContinuationImpl {
+    @DebugMetadata(c = "com.MovieBox.MovieBoxProviderKt", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0}, l = {1105}, m = "fetchMetaData", n = {"imdbId", "type", "metaType", "url"}, nl = {1106}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
+    static final class C00091 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -58,7 +58,7 @@ public final class MovieBoxProviderKt {
         int label;
         /* synthetic */ Object result;
 
-        C00081(Continuation<? super C00081> continuation) {
+        C00091(Continuation<? super C00091> continuation) {
             super(continuation);
         }
 
@@ -73,8 +73,8 @@ public final class MovieBoxProviderKt {
     /* JADX INFO: renamed from: com.MovieBox.MovieBoxProviderKt$fetchTmdbLogoUrl$1 */
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBox.MovieBoxProviderKt", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0, 0, 0}, l = {1153}, m = "fetchTmdbLogoUrl", n = {"tmdbAPI", "apiKey", "type", "tmdbId", "appLangCode", "url"}, nl = {1153}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    static final class C00091 extends ContinuationImpl {
+    @DebugMetadata(c = "com.MovieBox.MovieBoxProviderKt", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0, 0, 0}, l = {1127}, m = "fetchTmdbLogoUrl", n = {"tmdbAPI", "apiKey", "type", "tmdbId", "appLangCode", "url"}, nl = {1127}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    static final class C00101 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -84,7 +84,7 @@ public final class MovieBoxProviderKt {
         int label;
         /* synthetic */ Object result;
 
-        C00091(Continuation<? super C00091> continuation) {
+        C00101(Continuation<? super C00101> continuation) {
             super(continuation);
         }
 
@@ -99,8 +99,8 @@ public final class MovieBoxProviderKt {
     /* JADX INFO: renamed from: com.MovieBox.MovieBoxProviderKt$identifyID$1 */
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBox.MovieBoxProviderKt", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0}, l = {993}, m = "identifyID", n = {"title", "year", "imdbRatingValue", "normTitle"}, nl = {994}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
-    static final class C00101 extends ContinuationImpl {
+    @DebugMetadata(c = "com.MovieBox.MovieBoxProviderKt", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0}, l = {967}, m = "identifyID", n = {"title", "year", "imdbRatingValue", "normTitle"}, nl = {968}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
+    static final class C00111 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -108,7 +108,7 @@ public final class MovieBoxProviderKt {
         int label;
         /* synthetic */ Object result;
 
-        C00101(Continuation<? super C00101> continuation) {
+        C00111(Continuation<? super C00111> continuation) {
             super(continuation);
         }
 
@@ -123,8 +123,8 @@ public final class MovieBoxProviderKt {
     /* JADX INFO: renamed from: com.MovieBox.MovieBoxProviderKt$searchAndPick$1 */
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBox.MovieBoxProviderKt", f = "MovieBoxProvider.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {1016, 1019, 1020, 1097}, m = "searchAndPick", n = {"normTitle", "year", "imdbRatingValue", "normTitle", "year", "imdbRatingValue", "multiResults", "normTitle", "year", "imdbRatingValue", "multiResults", "normTitle", "year", "imdbRatingValue", "multiResults", "searchQueues", "bestId", "detailKind", "detailUrl", "bestScore", "bestIsTv"}, nl = {1018, 1018, 1018, 1098}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "D$0", "I$0"}, v = 2)
-    static final class C00111 extends ContinuationImpl {
+    @DebugMetadata(c = "com.MovieBox.MovieBoxProviderKt", f = "MovieBoxProvider.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {990, 993, 994, 1071}, m = "searchAndPick", n = {"normTitle", "year", "imdbRatingValue", "normTitle", "year", "imdbRatingValue", "multiResults", "normTitle", "year", "imdbRatingValue", "multiResults", "normTitle", "year", "imdbRatingValue", "multiResults", "searchQueues", "bestId", "detailKind", "detailUrl", "bestScore", "bestIsTv"}, nl = {992, 992, 992, 1072}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "D$0", "I$0"}, v = 2)
+    static final class C00121 extends ContinuationImpl {
         double D$0;
         int I$0;
         Object L$0;
@@ -138,7 +138,7 @@ public final class MovieBoxProviderKt {
         int label;
         /* synthetic */ Object result;
 
-        C00111(Continuation<? super C00111> continuation) {
+        C00121(Continuation<? super C00121> continuation) {
             super(continuation);
         }
 
@@ -150,8 +150,8 @@ public final class MovieBoxProviderKt {
         }
     }
 
-    @Nullable
-    public static final Integer getHighestQuality(@NotNull String input) {
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Integer getHighestQuality(String input) {
         List<Pair> qualities = CollectionsKt.listOf(new Pair[]{TuplesKt.to("2160", Integer.valueOf(Qualities.P2160.getValue())), TuplesKt.to("1440", Integer.valueOf(Qualities.P1440.getValue())), TuplesKt.to("1080", Integer.valueOf(Qualities.P1080.getValue())), TuplesKt.to("720", Integer.valueOf(Qualities.P720.getValue())), TuplesKt.to("480", Integer.valueOf(Qualities.P480.getValue())), TuplesKt.to("360", Integer.valueOf(Qualities.P360.getValue())), TuplesKt.to("240", Integer.valueOf(Qualities.P240.getValue()))});
         for (Pair pair : qualities) {
             String label = (String) pair.component1();
@@ -172,30 +172,30 @@ public final class MovieBoxProviderKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     public static final Object identifyID(String title, Integer year, Double imdbRatingValue, Continuation<? super Pair<Integer, String>> continuation) throws JSONException {
-        C00101 c00101;
+        C00111 c00111;
         Object objSearchAndPick;
-        if (continuation instanceof C00101) {
-            c00101 = (C00101) continuation;
-            if ((c00101.label & Integer.MIN_VALUE) != 0) {
-                c00101.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00111) {
+            c00111 = (C00111) continuation;
+            if ((c00111.label & Integer.MIN_VALUE) != 0) {
+                c00111.label -= Integer.MIN_VALUE;
             } else {
-                c00101 = new C00101(continuation);
+                c00111 = new C00111(continuation);
             }
         } else {
-            c00101 = new C00101(continuation);
+            c00111 = new C00111(continuation);
         }
-        Object $result = c00101.result;
+        Object $result = c00111.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00101.label) {
+        switch (c00111.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String normTitle = normalize(title);
-                c00101.L$0 = SpillingKt.nullOutSpilledVariable(title);
-                c00101.L$1 = SpillingKt.nullOutSpilledVariable(year);
-                c00101.L$2 = SpillingKt.nullOutSpilledVariable(imdbRatingValue);
-                c00101.L$3 = SpillingKt.nullOutSpilledVariable(normTitle);
-                c00101.label = 1;
-                objSearchAndPick = searchAndPick(normTitle, year, imdbRatingValue, c00101);
+                c00111.L$0 = SpillingKt.nullOutSpilledVariable(title);
+                c00111.L$1 = SpillingKt.nullOutSpilledVariable(year);
+                c00111.L$2 = SpillingKt.nullOutSpilledVariable(imdbRatingValue);
+                c00111.L$3 = SpillingKt.nullOutSpilledVariable(normTitle);
+                c00111.label = 1;
+                objSearchAndPick = searchAndPick(normTitle, year, imdbRatingValue, c00111);
                 if (objSearchAndPick == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -267,7 +267,7 @@ public final class MovieBoxProviderKt {
     /* JADX WARN: Type inference failed for: r4v50 */
     /* JADX WARN: Type inference failed for: r4v51 */
     public static final Object searchAndPick(String str, Integer num, Double d, Continuation<? super Pair<Integer, String>> continuation) throws JSONException {
-        C00111 c00111;
+        C00121 c00121;
         Object obj;
         Double d2;
         JSONArray jSONArray;
@@ -320,29 +320,29 @@ public final class MovieBoxProviderKt {
         String strOptString3;
         String str10 = str;
         Integer num3 = num;
-        if (continuation instanceof C00111) {
-            c00111 = (C00111) continuation;
-            if ((c00111.label & Integer.MIN_VALUE) != 0) {
-                c00111.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00121) {
+            c00121 = (C00121) continuation;
+            if ((c00121.label & Integer.MIN_VALUE) != 0) {
+                c00121.label -= Integer.MIN_VALUE;
             } else {
-                c00111 = new C00111(continuation);
+                c00121 = new C00121(continuation);
             }
         } else {
-            c00111 = new C00111(continuation);
+            c00121 = new C00121(continuation);
         }
-        Object obj4 = c00111.result;
+        Object obj4 = c00121.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         String str11 = "multi";
         String str12 = "movie";
-        switch (c00111.label) {
+        switch (c00121.label) {
             case 0:
                 ResultKt.throwOnFailure(obj4);
                 String str13 = "&query=" + str10 + (num3 != null ? "&year=" + num3.intValue() : "");
-                c00111.L$0 = str10;
-                c00111.L$1 = num3;
-                c00111.L$2 = d;
-                c00111.label = 1;
-                Object objSearchAndPick$doSearch3 = searchAndPick$doSearch("search/multi", str13, c00111);
+                c00121.L$0 = str10;
+                c00121.L$1 = num3;
+                c00121.L$2 = d;
+                c00121.label = 1;
+                Object objSearchAndPick$doSearch3 = searchAndPick$doSearch("search/multi", str13, c00121);
                 if (objSearchAndPick$doSearch3 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -358,16 +358,16 @@ public final class MovieBoxProviderKt {
                     str2 = "";
                 }
                 String string = sbAppend.append(str2).toString();
-                c00111.L$0 = str10;
-                c00111.L$1 = num3;
-                c00111.L$2 = d2;
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray);
-                c00111.L$4 = pairArr;
-                c00111.L$5 = pairArr;
-                c00111.L$6 = "tv";
-                c00111.I$0 = 1;
-                c00111.label = 2;
-                objSearchAndPick$doSearch = searchAndPick$doSearch("search/tv", string, c00111);
+                c00121.L$0 = str10;
+                c00121.L$1 = num3;
+                c00121.L$2 = d2;
+                c00121.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray);
+                c00121.L$4 = pairArr;
+                c00121.L$5 = pairArr;
+                c00121.L$6 = "tv";
+                c00121.I$0 = 1;
+                c00121.label = 2;
+                objSearchAndPick$doSearch = searchAndPick$doSearch("search/tv", string, c00121);
                 if (objSearchAndPick$doSearch == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -384,16 +384,16 @@ public final class MovieBoxProviderKt {
                     str4 = "";
                 }
                 String string2 = sbAppend2.append(str4).toString();
-                c00111.L$0 = str10;
-                c00111.L$1 = num3;
-                c00111.L$2 = d3;
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray);
-                c00111.L$4 = pairArr2;
-                c00111.L$5 = pairArr2;
-                c00111.L$6 = "movie";
-                c00111.I$0 = 2;
-                c00111.label = 3;
-                objSearchAndPick$doSearch2 = searchAndPick$doSearch("search/movie", string2, c00111);
+                c00121.L$0 = str10;
+                c00121.L$1 = num3;
+                c00121.L$2 = d3;
+                c00121.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray);
+                c00121.L$4 = pairArr2;
+                c00121.L$5 = pairArr2;
+                c00121.L$6 = "movie";
+                c00121.I$0 = 2;
+                c00121.label = 3;
+                objSearchAndPick$doSearch2 = searchAndPick$doSearch("search/movie", string2, c00121);
                 if (objSearchAndPick$doSearch2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -544,20 +544,20 @@ public final class MovieBoxProviderKt {
                 String str16 = r4 != 0 ? "tv" : str15;
                 String str17 = "https://api.themoviedb.org/3/" + str16 + '/' + numBoxInt.intValue() + "?api_key=1865f43a0549ca50d341dd9ab8b29f49&append_to_response=external_ids";
                 Requests app = MainActivityKt.getApp();
-                c00111.L$0 = SpillingKt.nullOutSpilledVariable(str14);
-                c00111.L$1 = SpillingKt.nullOutSpilledVariable(num3);
-                c00111.L$2 = SpillingKt.nullOutSpilledVariable(d4);
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray2);
-                c00111.L$4 = SpillingKt.nullOutSpilledVariable(list3);
-                c00111.L$5 = numBoxInt;
-                c00111.L$6 = SpillingKt.nullOutSpilledVariable(str16);
-                c00111.L$7 = SpillingKt.nullOutSpilledVariable(str17);
-                c00111.D$0 = d5;
-                c00111.I$0 = r4;
-                c00111.label = 4;
+                c00121.L$0 = SpillingKt.nullOutSpilledVariable(str14);
+                c00121.L$1 = SpillingKt.nullOutSpilledVariable(num3);
+                c00121.L$2 = SpillingKt.nullOutSpilledVariable(d4);
+                c00121.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray2);
+                c00121.L$4 = SpillingKt.nullOutSpilledVariable(list3);
+                c00121.L$5 = numBoxInt;
+                c00121.L$6 = SpillingKt.nullOutSpilledVariable(str16);
+                c00121.L$7 = SpillingKt.nullOutSpilledVariable(str17);
+                c00121.D$0 = d5;
+                c00121.I$0 = r4;
+                c00121.label = 4;
                 Integer num4 = numBoxInt;
                 str6 = null;
-                obj4 = Requests.get$default(app, str17, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00111, 4094, (Object) null);
+                obj4 = Requests.get$default(app, str17, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00121, 4094, (Object) null);
                 if (obj4 == obj7) {
                     return obj7;
                 }
@@ -570,9 +570,9 @@ public final class MovieBoxProviderKt {
                 }
                 return new Pair(num2, strOptString3);
             case 1:
-                d2 = (Double) c00111.L$2;
-                num3 = (Integer) c00111.L$1;
-                str10 = (String) c00111.L$0;
+                d2 = (Double) c00121.L$2;
+                num3 = (Integer) c00121.L$1;
+                str10 = (String) c00121.L$0;
                 ResultKt.throwOnFailure(obj4);
                 obj = obj4;
                 jSONArray = (JSONArray) obj;
@@ -585,16 +585,16 @@ public final class MovieBoxProviderKt {
                     str2 = "";
                 }
                 String string3 = sbAppend3.append(str2).toString();
-                c00111.L$0 = str10;
-                c00111.L$1 = num3;
-                c00111.L$2 = d2;
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray);
-                c00111.L$4 = pairArr;
-                c00111.L$5 = pairArr;
-                c00111.L$6 = "tv";
-                c00111.I$0 = 1;
-                c00111.label = 2;
-                objSearchAndPick$doSearch = searchAndPick$doSearch("search/tv", string3, c00111);
+                c00121.L$0 = str10;
+                c00121.L$1 = num3;
+                c00121.L$2 = d2;
+                c00121.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray);
+                c00121.L$4 = pairArr;
+                c00121.L$5 = pairArr;
+                c00121.L$6 = "tv";
+                c00121.I$0 = 1;
+                c00121.label = 2;
+                objSearchAndPick$doSearch = searchAndPick$doSearch("search/tv", string3, c00121);
                 if (objSearchAndPick$doSearch == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -611,16 +611,16 @@ public final class MovieBoxProviderKt {
                     str4 = "";
                 }
                 String string4 = sbAppend4.append(str4).toString();
-                c00111.L$0 = str10;
-                c00111.L$1 = num3;
-                c00111.L$2 = d3;
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray);
-                c00111.L$4 = pairArr2;
-                c00111.L$5 = pairArr2;
-                c00111.L$6 = "movie";
-                c00111.I$0 = 2;
-                c00111.label = 3;
-                objSearchAndPick$doSearch2 = searchAndPick$doSearch("search/movie", string4, c00111);
+                c00121.L$0 = str10;
+                c00121.L$1 = num3;
+                c00121.L$2 = d3;
+                c00121.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray);
+                c00121.L$4 = pairArr2;
+                c00121.L$5 = pairArr2;
+                c00121.L$6 = "movie";
+                c00121.I$0 = 2;
+                c00121.label = 3;
+                objSearchAndPick$doSearch2 = searchAndPick$doSearch("search/movie", string4, c00121);
                 if (objSearchAndPick$doSearch2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -771,14 +771,14 @@ public final class MovieBoxProviderKt {
                 }
                 return new Pair(obj3, obj3);
             case 2:
-                int i7 = c00111.I$0;
-                String str20 = (String) c00111.L$6;
-                Pair[] pairArr4 = (Pair[]) c00111.L$5;
-                Pair[] pairArr5 = (Pair[]) c00111.L$4;
-                jSONArray = (JSONArray) c00111.L$3;
-                Double d6 = (Double) c00111.L$2;
-                num3 = (Integer) c00111.L$1;
-                str10 = (String) c00111.L$0;
+                int i7 = c00121.I$0;
+                String str20 = (String) c00121.L$6;
+                Pair[] pairArr4 = (Pair[]) c00121.L$5;
+                Pair[] pairArr5 = (Pair[]) c00121.L$4;
+                jSONArray = (JSONArray) c00121.L$3;
+                Double d6 = (Double) c00121.L$2;
+                num3 = (Integer) c00121.L$1;
+                str10 = (String) c00121.L$0;
                 ResultKt.throwOnFailure(obj4);
                 str3 = str20;
                 d3 = d6;
@@ -794,16 +794,16 @@ public final class MovieBoxProviderKt {
                     str4 = "";
                 }
                 String string5 = sbAppend5.append(str4).toString();
-                c00111.L$0 = str10;
-                c00111.L$1 = num3;
-                c00111.L$2 = d3;
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray);
-                c00111.L$4 = pairArr2;
-                c00111.L$5 = pairArr2;
-                c00111.L$6 = "movie";
-                c00111.I$0 = 2;
-                c00111.label = 3;
-                objSearchAndPick$doSearch2 = searchAndPick$doSearch("search/movie", string5, c00111);
+                c00121.L$0 = str10;
+                c00121.L$1 = num3;
+                c00121.L$2 = d3;
+                c00121.L$3 = SpillingKt.nullOutSpilledVariable(jSONArray);
+                c00121.L$4 = pairArr2;
+                c00121.L$5 = pairArr2;
+                c00121.L$6 = "movie";
+                c00121.I$0 = 2;
+                c00121.label = 3;
+                objSearchAndPick$doSearch2 = searchAndPick$doSearch("search/movie", string5, c00121);
                 if (objSearchAndPick$doSearch2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -954,14 +954,14 @@ public final class MovieBoxProviderKt {
                 }
                 return new Pair(obj3, obj3);
             case 3:
-                i2 = c00111.I$0;
-                str5 = (String) c00111.L$6;
-                pairArr3 = (Pair[]) c00111.L$5;
-                pairArr2 = (Pair[]) c00111.L$4;
-                JSONArray jSONArray4 = (JSONArray) c00111.L$3;
-                Double d7 = (Double) c00111.L$2;
-                num3 = (Integer) c00111.L$1;
-                str10 = (String) c00111.L$0;
+                i2 = c00121.I$0;
+                str5 = (String) c00121.L$6;
+                pairArr3 = (Pair[]) c00121.L$5;
+                pairArr2 = (Pair[]) c00121.L$4;
+                JSONArray jSONArray4 = (JSONArray) c00121.L$3;
+                Double d7 = (Double) c00121.L$2;
+                num3 = (Integer) c00121.L$1;
+                str10 = (String) c00121.L$0;
                 ResultKt.throwOnFailure(obj4);
                 objSearchAndPick$doSearch2 = obj4;
                 jSONArray2 = jSONArray4;
@@ -1108,9 +1108,9 @@ public final class MovieBoxProviderKt {
                 }
                 return new Pair(obj3, obj3);
             case 4:
-                int i10 = c00111.I$0;
-                double d8 = c00111.D$0;
-                num2 = (Integer) c00111.L$5;
+                int i10 = c00121.I$0;
+                double d8 = c00121.D$0;
+                num2 = (Integer) c00121.L$5;
                 ResultKt.throwOnFailure(obj4);
                 str6 = null;
                 jSONObjectOptJSONObject = new JSONObject(((NiceResponse) obj4).getText()).optJSONObject("external_ids");
@@ -1213,21 +1213,21 @@ public final class MovieBoxProviderKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     public static final Object fetchMetaData(String imdbId, TvType type, Continuation<? super JsonNode> continuation) {
-        C00081 c00081;
-        if (continuation instanceof C00081) {
-            c00081 = (C00081) continuation;
-            if ((c00081.label & Integer.MIN_VALUE) != 0) {
-                c00081.label -= Integer.MIN_VALUE;
+        C00091 c00091;
+        if (continuation instanceof C00091) {
+            c00091 = (C00091) continuation;
+            if ((c00091.label & Integer.MIN_VALUE) != 0) {
+                c00091.label -= Integer.MIN_VALUE;
             } else {
-                c00081 = new C00081(continuation);
+                c00091 = new C00091(continuation);
             }
         } else {
-            c00081 = new C00081(continuation);
+            c00091 = new C00091(continuation);
         }
-        C00081 c00082 = c00081;
-        Object $result = c00082.result;
+        C00091 c00092 = c00091;
+        Object $result = c00092.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00082.label) {
+        switch (c00092.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String str = imdbId;
@@ -1238,13 +1238,13 @@ public final class MovieBoxProviderKt {
                 String url = "https://v3-cinemeta.strem.io/meta/" + metaType + '/' + imdbId + ".json";
                 try {
                     Requests app = MainActivityKt.getApp();
-                    c00082.L$0 = SpillingKt.nullOutSpilledVariable(imdbId);
-                    c00082.L$1 = SpillingKt.nullOutSpilledVariable(type);
-                    c00082.L$2 = SpillingKt.nullOutSpilledVariable(metaType);
-                    c00082.L$3 = SpillingKt.nullOutSpilledVariable(url);
-                    c00082.label = 1;
+                    c00092.L$0 = SpillingKt.nullOutSpilledVariable(imdbId);
+                    c00092.L$1 = SpillingKt.nullOutSpilledVariable(type);
+                    c00092.L$2 = SpillingKt.nullOutSpilledVariable(metaType);
+                    c00092.L$3 = SpillingKt.nullOutSpilledVariable(url);
+                    c00092.label = 1;
                     try {
-                        Object obj = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 4094, (Object) null);
+                        Object obj = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 4094, (Object) null);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1275,6 +1275,7 @@ public final class MovieBoxProviderKt {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code duplicated, block: B:101:0x0232 A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:110:0x01d0 A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:114:0x01de A[SYNTHETIC] */
@@ -1307,9 +1308,8 @@ public final class MovieBoxProviderKt {
     /* JADX WARN: Code duplicated, block: B:96:0x0222  */
     /* JADX WARN: Code duplicated, block: B:98:0x0229 A[DONT_INVERT] */
     /* JADX WARN: Code duplicated, block: B:99:0x022b  */
-    @Nullable
-    public static final Object fetchTmdbLogoUrl(@NotNull String tmdbAPI, @NotNull String apiKey, @NotNull TvType type, @Nullable Integer tmdbId, @Nullable String appLangCode, @NotNull Continuation<? super String> continuation) {
-        C00091 c00091;
+    public static final Object fetchTmdbLogoUrl(String tmdbAPI, String apiKey, TvType type, Integer tmdbId, String appLangCode, Continuation<? super String> continuation) {
+        C00101 c00101;
         String appLangCode2;
         Object obj;
         JSONObject json;
@@ -1330,20 +1330,20 @@ public final class MovieBoxProviderKt {
         String l;
         String string;
         String tmdbAPI3 = tmdbAPI;
-        if (continuation instanceof C00091) {
-            c00091 = (C00091) continuation;
-            if ((c00091.label & Integer.MIN_VALUE) != 0) {
-                c00091.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00101) {
+            c00101 = (C00101) continuation;
+            if ((c00101.label & Integer.MIN_VALUE) != 0) {
+                c00101.label -= Integer.MIN_VALUE;
             } else {
-                c00091 = new C00091(continuation);
+                c00101 = new C00101(continuation);
             }
         } else {
-            c00091 = new C00091(continuation);
+            c00101 = new C00101(continuation);
         }
-        C00091 c00092 = c00091;
-        Object $result = c00092.result;
+        C00101 c00102 = c00101;
+        Object $result = c00102.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00092.label) {
+        switch (c00102.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (tmdbId == null) {
@@ -1353,15 +1353,15 @@ public final class MovieBoxProviderKt {
                 try {
                     Result.Companion companion = Result.Companion;
                     Requests app = MainActivityKt.getApp();
-                    c00092.L$0 = SpillingKt.nullOutSpilledVariable(tmdbAPI3);
-                    c00092.L$1 = SpillingKt.nullOutSpilledVariable(apiKey);
-                    c00092.L$2 = SpillingKt.nullOutSpilledVariable(type);
-                    c00092.L$3 = SpillingKt.nullOutSpilledVariable(tmdbId);
-                    c00092.L$4 = appLangCode;
-                    c00092.L$5 = SpillingKt.nullOutSpilledVariable(url);
-                    c00092.label = 1;
+                    c00102.L$0 = SpillingKt.nullOutSpilledVariable(tmdbAPI3);
+                    c00102.L$1 = SpillingKt.nullOutSpilledVariable(apiKey);
+                    c00102.L$2 = SpillingKt.nullOutSpilledVariable(type);
+                    c00102.L$3 = SpillingKt.nullOutSpilledVariable(tmdbId);
+                    c00102.L$4 = appLangCode;
+                    c00102.L$5 = SpillingKt.nullOutSpilledVariable(url);
+                    c00102.label = 1;
                     try {
-                        Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 4094, (Object) null);
+                        Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00102, 4094, (Object) null);
                         if (obj2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1536,8 +1536,8 @@ public final class MovieBoxProviderKt {
                 }
                 break;
             case 1:
-                appLangCode2 = (String) c00092.L$4;
-                tmdbAPI3 = (String) c00092.L$0;
+                appLangCode2 = (String) c00102.L$4;
+                tmdbAPI3 = (String) c00102.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     obj = Result.constructor-impl(new JSONObject(((NiceResponse) $result).getText()));

@@ -479,8 +479,8 @@
     "file": "decoded/MovieBoxProvider/Phisher98/MovieBoxProvider.cs3",
     "source": "Phisher98",
     "plugin": "MovieBoxProvider",
-    "sha256": "43e4593be338e8c1ebe10ab9043e19cb2c9b79e64dea2c40b5e38d6f84a344e9",
-    "bytes": 72427
+    "sha256": "c7be20e879907b8fb926f2d1ca82981e3198da0b80cb9c7e4822c62c8549b8ac",
+    "bytes": 75841
   },
   {
     "file": "decoded/MovieBoxProviderIN/CNCVerse/MovieBoxProviderIN.cs3",
@@ -661,8 +661,8 @@
     "file": "decoded/StreamPlay/Phisher98/StreamPlay.cs3",
     "source": "Phisher98",
     "plugin": "StreamPlay",
-    "sha256": "8d730150de33e906799ae04fc4127914de0b0ee7dac7b8d783e6cd775588500f",
-    "bytes": 1021429
+    "sha256": "43f7c44f3d556d29bc0313233759fe36d3464246ba852d4585568b533410687d",
+    "bytes": 1051619
   },
   {
     "file": "decoded/StremioAddon/Phisher98/StremioAddon.cs3",

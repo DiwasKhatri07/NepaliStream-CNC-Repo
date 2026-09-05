@@ -47,7 +47,7 @@ final class ProvidersListKt$providers$2$33 extends SuspendLambda implements Func
                 this.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                 this.L$2 = SpillingKt.nullOutSpilledVariable(function2);
                 this.label = 1;
-                if (StreamPlayExtractor.INSTANCE.invokeMovieBox(res.getTitle(), res.getSeason(), res.getEpisode(), function1, function2, (Continuation) this) == coroutine_suspended) {
+                if (StreamPlayExtractor.INSTANCE.invokeMovieBox(res.getTitle(), res.getSeason(), res.getEpisode(), res.getYear(), res.getOrgTitle(), function1, function2, (Continuation) this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 break;

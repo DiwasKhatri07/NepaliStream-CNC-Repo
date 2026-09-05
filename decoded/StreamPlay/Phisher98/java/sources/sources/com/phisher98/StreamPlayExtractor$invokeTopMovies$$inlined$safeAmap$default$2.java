@@ -74,7 +74,7 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default$2$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3}, l = {2266, 2269, 2283, 2288}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "detailPageUrl", "$this$invokeTopMovies_u24lambda_u245_u240", "$this$withPermit$iv", "$completion", "detailPageUrl", "episodeLink", "detailPageDocument", "$this$withPermit$iv", "$completion", "detailPageUrl", "finalLink", "episodeLink", "detailPageDocument"}, nl = {2267, 2269, 2285, 2295}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$0", "L$2", "L$3", "L$4", "L$5", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2296\n2327#3:2269\n2326#3,9:2271\n2336#3,14:2282\n1#4:2270\n296#5,2:2280\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2296,2\n2330#2:2280,2\n*E\n"})
-    public static final class C02121 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C02131 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Integer $episode$inlined;
         final /* synthetic */ Object $item;
@@ -91,7 +91,7 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C02121(Semaphore semaphore, Object obj, Continuation continuation, String str, Function1 function1, Function1 function2, Integer num) {
+        public C02131(Semaphore semaphore, Object obj, Continuation continuation, String str, Function1 function1, Function1 function2, Integer num) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -102,7 +102,7 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C02121(this.$semaphore, this.$item, continuation, this.$topmoviesAPI$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$episode$inlined);
+            return new C02131(this.$semaphore, this.$item, continuation, this.$topmoviesAPI$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$episode$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -169,19 +169,19 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
             Object objLoadSourceNameExtractor$default;
             Object obj8;
             String str7;
-            C02121 c02121 = this;
+            C02131 c02131 = this;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             try {
                 try {
-                    switch (c02121.label) {
+                    switch (c02131.label) {
                         case 0:
                             ResultKt.throwOnFailure(obj);
-                            Semaphore semaphore7 = c02121.$semaphore;
-                            Object obj9 = c02121.$item;
-                            c02121.L$0 = semaphore7;
-                            c02121.L$1 = obj9;
-                            c02121.label = 1;
-                            if (semaphore7.acquire((Continuation) c02121) == coroutine_suspended) {
+                            Semaphore semaphore7 = c02131.$semaphore;
+                            Object obj9 = c02131.$item;
+                            c02131.L$0 = semaphore7;
+                            c02131.L$1 = obj9;
+                            c02131.label = 1;
+                            if (semaphore7.acquire((Continuation) c02131) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                             obj4 = obj9;
@@ -189,21 +189,21 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                             semaphore2 = semaphore7;
                             i2 = 0;
                             try {
-                                continuation = (Continuation) c02121;
+                                continuation = (Continuation) c02131;
                                 str = (String) obj4;
                                 StreamPlayExtractor streamPlayExtractor = StreamPlayExtractor.INSTANCE;
                                 try {
                                     Result.Companion companion = Result.Companion;
-                                    c02121.L$0 = semaphore2;
-                                    c02121.L$1 = obj4;
-                                    c02121.L$2 = SpillingKt.nullOutSpilledVariable(continuation);
-                                    c02121.L$3 = SpillingKt.nullOutSpilledVariable(str);
-                                    c02121.L$4 = SpillingKt.nullOutSpilledVariable(streamPlayExtractor);
-                                    c02121.label = 2;
+                                    c02131.L$0 = semaphore2;
+                                    c02131.L$1 = obj4;
+                                    c02131.L$2 = SpillingKt.nullOutSpilledVariable(continuation);
+                                    c02131.L$3 = SpillingKt.nullOutSpilledVariable(str);
+                                    c02131.L$4 = SpillingKt.nullOutSpilledVariable(streamPlayExtractor);
+                                    c02131.label = 2;
                                     semaphore3 = semaphore2;
                                     try {
                                         objSafeGet$default = StreamPlayUtilsKt.safeGet$default(str, null, null, null, null, false, 0, this, 126, null);
-                                        c02121 = this;
+                                        c02131 = this;
                                         if (objSafeGet$default == coroutine_suspended) {
                                             return coroutine_suspended;
                                         }
@@ -243,7 +243,7 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                                                         i6 = i3;
                                                         try {
                                                             try {
-                                                                regex = new Regex(".*Episode\\s+" + c02121.$episode$inlined + ".*", RegexOption.IGNORE_CASE);
+                                                                regex = new Regex(".*Episode\\s+" + c02131.$episode$inlined + ".*", RegexOption.IGNORE_CASE);
                                                                 if (!regex.matches(strText)) {
                                                                     document = document2;
                                                                     i3 = i6;
@@ -275,14 +275,14 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                                                                 regex = null;
                                                                 regex = null;
                                                                 if (StringsKt.contains$default(str3, "unblockedgames", false, 2, (Object) null)) {
-                                                                    c02121.L$0 = semaphore;
-                                                                    c02121.L$1 = obj2;
-                                                                    c02121.L$2 = SpillingKt.nullOutSpilledVariable(continuation2);
-                                                                    c02121.L$3 = SpillingKt.nullOutSpilledVariable(str2);
-                                                                    c02121.L$4 = SpillingKt.nullOutSpilledVariable(str3);
-                                                                    c02121.L$5 = SpillingKt.nullOutSpilledVariable(document2);
-                                                                    c02121.label = 3;
-                                                                    objBypassHrefli = StreamPlayUtilsKt.bypassHrefli(str3, c02121);
+                                                                    c02131.L$0 = semaphore;
+                                                                    c02131.L$1 = obj2;
+                                                                    c02131.L$2 = SpillingKt.nullOutSpilledVariable(continuation2);
+                                                                    c02131.L$3 = SpillingKt.nullOutSpilledVariable(str2);
+                                                                    c02131.L$4 = SpillingKt.nullOutSpilledVariable(str3);
+                                                                    c02131.L$5 = SpillingKt.nullOutSpilledVariable(document2);
+                                                                    c02131.label = 3;
+                                                                    objBypassHrefli = StreamPlayUtilsKt.bypassHrefli(str3, c02131);
                                                                     if (objBypassHrefli == coroutine_suspended) {
                                                                         return coroutine_suspended;
                                                                     }
@@ -319,21 +319,21 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                                                                     obj7 = obj2;
                                                                 }
                                                                 try {
-                                                                    String str8 = c02121.$topmoviesAPI$inlined + '/';
-                                                                    Function1 function1 = c02121.$subtitleCallback$inlined;
-                                                                    Function1 function2 = c02121.$callback$inlined;
-                                                                    c02121.L$0 = semaphore5;
-                                                                    c02121.L$1 = obj7;
-                                                                    c02121.L$2 = SpillingKt.nullOutSpilledVariable(continuation3);
-                                                                    c02121.L$3 = SpillingKt.nullOutSpilledVariable(str6);
-                                                                    c02121.L$4 = SpillingKt.nullOutSpilledVariable(str4);
-                                                                    c02121.L$5 = SpillingKt.nullOutSpilledVariable(str5);
-                                                                    c02121.L$6 = SpillingKt.nullOutSpilledVariable(document2);
-                                                                    c02121.label = 4;
+                                                                    String str8 = c02131.$topmoviesAPI$inlined + '/';
+                                                                    Function1 function1 = c02131.$subtitleCallback$inlined;
+                                                                    Function1 function2 = c02131.$callback$inlined;
+                                                                    c02131.L$0 = semaphore5;
+                                                                    c02131.L$1 = obj7;
+                                                                    c02131.L$2 = SpillingKt.nullOutSpilledVariable(continuation3);
+                                                                    c02131.L$3 = SpillingKt.nullOutSpilledVariable(str6);
+                                                                    c02131.L$4 = SpillingKt.nullOutSpilledVariable(str4);
+                                                                    c02131.L$5 = SpillingKt.nullOutSpilledVariable(str5);
+                                                                    c02131.L$6 = SpillingKt.nullOutSpilledVariable(document2);
+                                                                    c02131.label = 4;
                                                                     semaphore6 = semaphore5;
                                                                     Object obj10 = obj7;
                                                                     try {
-                                                                        objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("TopMovies", str4, str8, function1, function2, null, null, c02121, 96, null);
+                                                                        objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("TopMovies", str4, str8, function1, function2, null, null, c02131, 96, null);
                                                                         if (objLoadSourceNameExtractor$default == coroutine_suspended) {
                                                                             return coroutine_suspended;
                                                                         }
@@ -383,7 +383,7 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                                         return obj3;
                                     } catch (Throwable th6) {
                                         th = th6;
-                                        c02121 = this;
+                                        c02131 = this;
                                         str2 = str;
                                         i3 = i;
                                         obj2 = obj4;
@@ -407,7 +407,7 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                                                     strText = ((Element) next).text();
                                                     document2 = document;
                                                     i6 = i3;
-                                                    regex = new Regex(".*Episode\\s+" + c02121.$episode$inlined + ".*", RegexOption.IGNORE_CASE);
+                                                    regex = new Regex(".*Episode\\s+" + c02131.$episode$inlined + ".*", RegexOption.IGNORE_CASE);
                                                     if (!regex.matches(strText)) {
                                                         document = document2;
                                                         i3 = i6;
@@ -450,26 +450,26 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                             }
                             break;
                         case 1:
-                            Object obj11 = c02121.L$1;
-                            Semaphore semaphore11 = (Semaphore) c02121.L$0;
+                            Object obj11 = c02131.L$1;
+                            Semaphore semaphore11 = (Semaphore) c02131.L$0;
                             ResultKt.throwOnFailure(obj);
                             i = 0;
                             obj4 = obj11;
                             semaphore2 = semaphore11;
                             i2 = 0;
-                            continuation = (Continuation) c02121;
+                            continuation = (Continuation) c02131;
                             str = (String) obj4;
                             StreamPlayExtractor streamPlayExtractor2 = StreamPlayExtractor.INSTANCE;
                             Result.Companion companion4 = Result.Companion;
-                            c02121.L$0 = semaphore2;
-                            c02121.L$1 = obj4;
-                            c02121.L$2 = SpillingKt.nullOutSpilledVariable(continuation);
-                            c02121.L$3 = SpillingKt.nullOutSpilledVariable(str);
-                            c02121.L$4 = SpillingKt.nullOutSpilledVariable(streamPlayExtractor2);
-                            c02121.label = 2;
+                            c02131.L$0 = semaphore2;
+                            c02131.L$1 = obj4;
+                            c02131.L$2 = SpillingKt.nullOutSpilledVariable(continuation);
+                            c02131.L$3 = SpillingKt.nullOutSpilledVariable(str);
+                            c02131.L$4 = SpillingKt.nullOutSpilledVariable(streamPlayExtractor2);
+                            c02131.label = 2;
                             semaphore3 = semaphore2;
                             objSafeGet$default = StreamPlayUtilsKt.safeGet$default(str, null, null, null, null, false, 0, this, 126, null);
-                            c02121 = this;
+                            c02131 = this;
                             if (objSafeGet$default == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -497,7 +497,7 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                                         strText = ((Element) next).text();
                                         document2 = document;
                                         i6 = i3;
-                                        regex = new Regex(".*Episode\\s+" + c02121.$episode$inlined + ".*", RegexOption.IGNORE_CASE);
+                                        regex = new Regex(".*Episode\\s+" + c02131.$episode$inlined + ".*", RegexOption.IGNORE_CASE);
                                         if (!regex.matches(strText)) {
                                             document = document2;
                                             i3 = i6;
@@ -519,10 +519,10 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                             i3 = 0;
                             i4 = 0;
                             i5 = 0;
-                            str2 = (String) c02121.L$3;
-                            continuation2 = (Continuation) c02121.L$2;
-                            obj5 = c02121.L$1;
-                            semaphore4 = (Semaphore) c02121.L$0;
+                            str2 = (String) c02131.L$3;
+                            continuation2 = (Continuation) c02131.L$2;
+                            obj5 = c02131.L$1;
+                            semaphore4 = (Semaphore) c02131.L$0;
                             try {
                                 ResultKt.throwOnFailure(obj);
                                 i2 = 0;
@@ -551,7 +551,7 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                                             strText = ((Element) next).text();
                                             document2 = document;
                                             i6 = i3;
-                                            regex = new Regex(".*Episode\\s+" + c02121.$episode$inlined + ".*", RegexOption.IGNORE_CASE);
+                                            regex = new Regex(".*Episode\\s+" + c02131.$episode$inlined + ".*", RegexOption.IGNORE_CASE);
                                             if (!regex.matches(strText)) {
                                                 document = document2;
                                                 i3 = i6;
@@ -584,7 +584,7 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                                         strText = ((Element) next).text();
                                         document2 = document;
                                         i6 = i3;
-                                        regex = new Regex(".*Episode\\s+" + c02121.$episode$inlined + ".*", RegexOption.IGNORE_CASE);
+                                        regex = new Regex(".*Episode\\s+" + c02131.$episode$inlined + ".*", RegexOption.IGNORE_CASE);
                                         if (!regex.matches(strText)) {
                                             document = document2;
                                             i3 = i6;
@@ -605,12 +605,12 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                         case 3:
                             i9 = 0;
                             i4 = 0;
-                            Document document3 = (Document) c02121.L$5;
-                            str3 = (String) c02121.L$4;
-                            str2 = (String) c02121.L$3;
-                            continuation2 = (Continuation) c02121.L$2;
-                            obj2 = c02121.L$1;
-                            semaphore = (Semaphore) c02121.L$0;
+                            Document document3 = (Document) c02131.L$5;
+                            str3 = (String) c02131.L$4;
+                            str2 = (String) c02131.L$3;
+                            continuation2 = (Continuation) c02131.L$2;
+                            obj2 = c02131.L$1;
+                            semaphore = (Semaphore) c02131.L$0;
                             ResultKt.throwOnFailure(obj);
                             document2 = document3;
                             regex = null;
@@ -631,20 +631,20 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                                 continuation3 = continuation2;
                                 obj7 = obj2;
                                 regex = regex;
-                                String str9 = c02121.$topmoviesAPI$inlined + '/';
-                                Function1 function3 = c02121.$subtitleCallback$inlined;
-                                Function1 function4 = c02121.$callback$inlined;
-                                c02121.L$0 = semaphore5;
-                                c02121.L$1 = obj7;
-                                c02121.L$2 = SpillingKt.nullOutSpilledVariable(continuation3);
-                                c02121.L$3 = SpillingKt.nullOutSpilledVariable(str6);
-                                c02121.L$4 = SpillingKt.nullOutSpilledVariable(str4);
-                                c02121.L$5 = SpillingKt.nullOutSpilledVariable(str5);
-                                c02121.L$6 = SpillingKt.nullOutSpilledVariable(document2);
-                                c02121.label = 4;
+                                String str9 = c02131.$topmoviesAPI$inlined + '/';
+                                Function1 function3 = c02131.$subtitleCallback$inlined;
+                                Function1 function4 = c02131.$callback$inlined;
+                                c02131.L$0 = semaphore5;
+                                c02131.L$1 = obj7;
+                                c02131.L$2 = SpillingKt.nullOutSpilledVariable(continuation3);
+                                c02131.L$3 = SpillingKt.nullOutSpilledVariable(str6);
+                                c02131.L$4 = SpillingKt.nullOutSpilledVariable(str4);
+                                c02131.L$5 = SpillingKt.nullOutSpilledVariable(str5);
+                                c02131.L$6 = SpillingKt.nullOutSpilledVariable(document2);
+                                c02131.label = 4;
                                 semaphore6 = semaphore5;
                                 Object obj12 = obj7;
-                                objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("TopMovies", str4, str9, function3, function4, null, null, c02121, 96, null);
+                                objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("TopMovies", str4, str9, function3, function4, null, null, c02131, 96, null);
                                 if (objLoadSourceNameExtractor$default == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -655,8 +655,8 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                             semaphore.release();
                             return obj3;
                         case 4:
-                            Object obj13 = c02121.L$1;
-                            semaphore = (Semaphore) c02121.L$0;
+                            Object obj13 = c02131.L$1;
+                            semaphore = (Semaphore) c02131.L$0;
                             ResultKt.throwOnFailure(obj);
                             i6 = 0;
                             obj8 = obj;
@@ -688,7 +688,7 @@ public final class StreamPlayExtractor$invokeTopMovies$$inlined$safeAmap$default
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02121(semaphore, item$iv$iv, null, this.$topmoviesAPI$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$episode$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02131(semaphore, item$iv$iv, null, this.$topmoviesAPI$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$episode$inlined), 2, (Object) null));
                     destination$iv$iv = destination$iv$iv2;
                 }
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);

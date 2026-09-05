@@ -2,6 +2,7 @@ package com.MovieBox;
 
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.ResultKt;
 import kotlin.TuplesKt;
 import kotlin.Unit;
@@ -45,7 +46,7 @@ final class MovieBoxProvider$loadLinks$2$2$1$1 extends SuspendLambda implements 
         switch (this.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                $this$newExtractorLink.setHeaders(MapsKt.mapOf(TuplesKt.to("Referer", this.this$0.getMainUrl())));
+                $this$newExtractorLink.setHeaders(MapsKt.mapOf(new Pair[]{TuplesKt.to("Referer", this.this$0.getMainUrl() + '/'), TuplesKt.to("User-Agent", this.this$0.modernUserAgent)}));
                 $this$newExtractorLink.setQuality(this.$quality);
                 return Unit.INSTANCE;
             default:

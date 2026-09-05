@@ -175,7 +175,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4}, l = {102, 106, 110, 113, 118}, m = "bypassHrefli", n = {"url", "host", "url", "host", "res", "formUrl", "formData", "url", "host", "res", "formUrl", "formData", "url", "host", "res", "formUrl", "formData", "skToken", "url", "host", "res", "formUrl", "formData", "skToken", "driveUrl"}, nl = {103, 107, 111, 117, 119}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
-    static final class C02701 extends ContinuationImpl {
+    static final class C02711 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -186,7 +186,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02701(Continuation<? super C02701> continuation) {
+        C02711(Continuation<? super C02711> continuation) {
             super(continuation);
         }
 
@@ -202,7 +202,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6}, l = {1645, 1674, 1693, 1770, 1786, 1801, 1807}, m = "bypassXD", n = {"url", "url", "redirect", "baseUrl", "code", "fingerprint", "mouseData", "baseHeaders", "url", "redirect", "baseUrl", "code", "fingerprint", "mouseData", "baseHeaders", "sessionJson", "sessionId", "cookieHeaders", "url", "redirect", "baseUrl", "code", "fingerprint", "mouseData", "baseHeaders", "sessionJson", "sessionId", "cookieHeaders", "rebindJson", "rebindToken", "wsBaseUrl", "visibleTimeDone", "okHttpClient", "wsRequest", "heartbeatJob", "webSocket", "url", "redirect", "baseUrl", "code", "fingerprint", "mouseData", "baseHeaders", "sessionJson", "sessionId", "cookieHeaders", "rebindJson", "rebindToken", "wsBaseUrl", "visibleTimeDone", "okHttpClient", "wsRequest", "heartbeatJob", "webSocket", "finalToken", "attempt", "url", "redirect", "baseUrl", "code", "fingerprint", "mouseData", "baseHeaders", "sessionJson", "sessionId", "cookieHeaders", "rebindJson", "rebindToken", "wsBaseUrl", "visibleTimeDone", "okHttpClient", "wsRequest", "heartbeatJob", "webSocket", "finalToken", "attempt", "url", "redirect", "baseUrl", "code", "fingerprint", "mouseData", "baseHeaders", "sessionJson", "sessionId", "cookieHeaders", "rebindJson", "rebindToken", "wsBaseUrl", "visibleTimeDone", "okHttpClient", "wsRequest", "heartbeatJob", "webSocket", "finalToken", "token"}, nl = {1646, 1682, 1697, 1774, 1796, 1802, 1811}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19"}, v = 2)
-    static final class C02711 extends ContinuationImpl {
+    static final class C02721 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -229,7 +229,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02711(Continuation<? super C02711> continuation) {
+        C02721(Continuation<? super C02721> continuation) {
             super(continuation);
         }
 
@@ -245,7 +245,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {140, 142, 143}, m = "convertTmdbToAnimeId", n = {"title", "date", "airedDate", "type", "sDate", "sAiredDate", "year", "airedYear", "season", "airedSeason", "title", "date", "airedDate", "type", "sDate", "sAiredDate", "year", "airedYear", "season", "airedSeason", "title", "date", "airedDate", "type", "sDate", "sAiredDate", "year", "airedYear", "season", "airedSeason", "ids"}, nl = {150, 143, 150}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10"}, v = 2)
-    static final class C02731 extends ContinuationImpl {
+    static final class C02741 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -260,7 +260,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02731(Continuation<? super C02731> continuation) {
+        C02741(Continuation<? super C02741> continuation) {
             super(continuation);
         }
 
@@ -276,13 +276,13 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0}, l = {329}, m = "extractMdrive", n = {"url", "regex"}, nl = {330}, s = {"L$0", "L$1"}, v = 2)
-    static final class C02741 extends ContinuationImpl {
+    static final class C02751 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C02741(Continuation<? super C02741> continuation) {
+        C02751(Continuation<? super C02751> continuation) {
             super(continuation);
         }
 
@@ -298,7 +298,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 0, 0}, l = {1365}, m = "fetchTmdbLogoUrl", n = {"tmdbAPI", "apiKey", "type", "tmdbId", "appLangCode", "url"}, nl = {1365}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    static final class C02751 extends ContinuationImpl {
+    static final class C02761 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -308,7 +308,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02751(Continuation<? super C02751> continuation) {
+        C02761(Continuation<? super C02761> continuation) {
             super(continuation);
         }
 
@@ -324,7 +324,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {1435, 1453}, m = "getHindMoviezLinks", n = {"source", "url", "subtitleCallback", "callback", "source", "url", "subtitleCallback", "callback", "response", "doc", "name", "fileSize", "extractedSpecs", "quality"}, nl = {1436, 1511}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0"}, v = 2)
-    static final class C02761 extends ContinuationImpl {
+    static final class C02771 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -338,7 +338,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02761(Continuation<? super C02761> continuation) {
+        C02771(Continuation<? super C02771> continuation) {
             super(continuation);
         }
 
@@ -354,7 +354,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {1083, 1098}, m = "getRedirectLinks", n = {"url", "url", "doc", "regex", "combinedString", "decodedString", "jsonObject", "encodedurl", "data", "wphttp1"}, nl = {1084, 1098}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
-    static final class C02791 extends ContinuationImpl {
+    static final class C02801 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -367,7 +367,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02791(Continuation<? super C02791> continuation) {
+        C02801(Continuation<? super C02801> continuation) {
             super(continuation);
         }
 
@@ -383,7 +383,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 0}, l = {1920}, m = "hindmoviezsignHShare", n = {"rawId", "domain", "pageDoc", "encoded", "ajaxUrl"}, nl = {1926}, s = {"L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
-    static final class C02801 extends ContinuationImpl {
+    static final class C02811 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -392,7 +392,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02801(Continuation<? super C02801> continuation) {
+        C02811(Continuation<? super C02811> continuation) {
             super(continuation);
         }
 
@@ -408,7 +408,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {570, 573, 585, 595}, m = "invokeExternalSource", n = {"mediaId", "type", "season", "episode", "callback", "token", "thirdAPI", "fourthAPI", "seasonSlug", "episodeSlug", "headers", "mediaId", "type", "season", "episode", "callback", "token", "thirdAPI", "fourthAPI", "seasonSlug", "episodeSlug", "headers", "shareKey", "mediaId", "type", "season", "episode", "callback", "token", "thirdAPI", "fourthAPI", "seasonSlug", "episodeSlug", "headers", "shareKey", "shareRes", "parentId", "mediaId", "type", "season", "episode", "callback", "token", "thirdAPI", "fourthAPI", "seasonSlug", "episodeSlug", "headers", "shareKey", "shareRes", "fids"}, nl = {571, 574, 589, 661}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "J$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13"}, v = 2)
-    static final class C02821 extends ContinuationImpl {
+    static final class C02831 extends ContinuationImpl {
         long J$0;
         Object L$0;
         Object L$1;
@@ -427,7 +427,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02821(Continuation<? super C02821> continuation) {
+        C02831(Continuation<? super C02831> continuation) {
             super(continuation);
         }
 
@@ -443,7 +443,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {259}, m = "loadDisplaySourceNameExtractor", n = {"sourceName", "displayName", "url", "referer", "subtitleCallback", "callback", "quality"}, nl = {276}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
-    static final class C02851 extends ContinuationImpl {
+    static final class C02861 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -454,7 +454,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02851(Continuation<? super C02851> continuation) {
+        C02861(Continuation<? super C02861> continuation) {
             super(continuation);
         }
 
@@ -470,7 +470,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {218}, m = "loadSourceNameExtractor", n = {"source", "url", "referer", "subtitleCallback", "callback", "quality", "size", "provider", "sizePart"}, nl = {247}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
-    static final class C02871 extends ContinuationImpl {
+    static final class C02881 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -483,7 +483,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02871(Continuation<? super C02871> continuation) {
+        C02881(Continuation<? super C02881> continuation) {
             super(continuation);
         }
 
@@ -499,7 +499,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2}, l = {2097, 2102, 2106}, m = "retry", n = {"block", "times", "delayMs", "it", "block", "times", "delayMs", "it", "block", "times", "delayMs"}, nl = {2096, 2103, 2105}, s = {"L$0", "I$0", "J$0", "I$3", "L$0", "I$0", "J$0", "I$3", "L$0", "I$0", "J$0"}, v = 2)
-    static final class C02891<T> extends ContinuationImpl {
+    static final class C02901<T> extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -509,7 +509,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02891(Continuation<? super C02891> continuation) {
+        C02901(Continuation<? super C02901> continuation) {
             super(continuation);
         }
 
@@ -526,7 +526,7 @@ public final class StreamPlayUtilsKt {
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 176)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0}, l = {1884}, m = "safeAmap", n = {"$this$safeAmap", "f", "$this$safeAmap_u24lambda_u240", "concurrency"}, nl = {1899}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$1\n*L\n1#1,2265:1\n*E\n"})
-    static final class C02911<A, B> extends ContinuationImpl {
+    static final class C02921<A, B> extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -534,7 +534,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02911(Continuation<? super C02911> continuation) {
+        C02921(Continuation<? super C02921> continuation) {
             super(continuation);
         }
 
@@ -551,7 +551,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {2266, 1823}, m = "safeGet", n = {"url", "headers", "referer", "timeout", "interceptor", "$this$withPermit$iv", "allowRedirects", "cacheTime", "url", "headers", "referer", "timeout", "interceptor", "$this$withPermit$iv", "allowRedirects", "cacheTime"}, nl = {2267, 1831}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "I$0"}, v = 2)
-    static final class C02921 extends ContinuationImpl {
+    static final class C02931 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -563,7 +563,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02921(Continuation<? super C02921> continuation) {
+        C02931(Continuation<? super C02931> continuation) {
             super(continuation);
         }
 
@@ -579,7 +579,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {189}, m = "tmdbToAnimeId", n = {"title", "year", "season", "type", "query", "variables", "data"}, nl = {190}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
-    static final class C02931 extends ContinuationImpl {
+    static final class C02941 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -590,7 +590,7 @@ public final class StreamPlayUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C02931(Continuation<? super C02931> continuation) {
+        C02941(Continuation<? super C02941> continuation) {
             super(continuation);
         }
 
@@ -606,12 +606,12 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0}, l = {1309}, m = "yflixDecode", n = {"text"}, nl = {1310}, s = {"L$0"}, v = 2)
-    static final class C02941 extends ContinuationImpl {
+    static final class C02951 extends ContinuationImpl {
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C02941(Continuation<? super C02941> continuation) {
+        C02951(Continuation<? super C02951> continuation) {
             super(continuation);
         }
 
@@ -627,13 +627,13 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt", f = "StreamPlayUtils.kt", i = {0, 0}, l = {1322}, m = "yflixDecodeReverse", n = {"text", "jsonBody"}, nl = {1325}, s = {"L$0", "L$1"}, v = 2)
-    static final class C02951 extends ContinuationImpl {
+    static final class C02961 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C02951(Continuation<? super C02951> continuation) {
+        C02961(Continuation<? super C02961> continuation) {
             super(continuation);
         }
 
@@ -814,19 +814,19 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     @Nullable
     public static final Object bypassHrefli(@NotNull String url, @NotNull Continuation<? super String> continuation) {
-        C02701 c02701;
+        C02711 c02711;
         int i;
         Object obj;
-        C02701 c02702;
+        C02711 c02712;
         String url2;
         String host;
         String host2;
-        C02701 c02703;
+        C02711 c02713;
         String formUrl;
         String formUrl2;
         Map<String, String> mapBypassHrefli$getFormData;
         String host3;
-        C02701 c02704;
+        C02711 c02714;
         String formUrl3;
         Map<String, String> map;
         String host4;
@@ -839,37 +839,37 @@ public final class StreamPlayUtilsKt {
         Map<String, String> map2;
         String skToken2;
         Document res2;
-        C02701 c02705;
+        C02711 c02715;
         Element elementSelectFirst2;
         String driveUrl;
         Requests app;
         String strAttr;
         String path;
-        if (continuation instanceof C02701) {
-            c02701 = (C02701) continuation;
-            if ((c02701.label & Integer.MIN_VALUE) != 0) {
-                c02701.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02711) {
+            c02711 = (C02711) continuation;
+            if ((c02711.label & Integer.MIN_VALUE) != 0) {
+                c02711.label -= Integer.MIN_VALUE;
             } else {
-                c02701 = new C02701(continuation);
+                c02711 = new C02711(continuation);
             }
         } else {
-            c02701 = new C02701(continuation);
+            c02711 = new C02711(continuation);
         }
-        Object $result = c02701.result;
+        Object $result = c02711.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02701.label) {
+        switch (c02711.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String host6 = getBaseUrl(url);
                 Requests app2 = MainActivityKt.getApp();
-                c02701.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c02701.L$1 = host6;
-                c02701.label = 1;
+                c02711.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c02711.L$1 = host6;
+                c02711.label = 1;
                 i = 2;
-                C02701 c02706 = c02701;
+                C02711 c02716 = c02711;
                 obj = coroutine_suspended;
-                $result = Requests.get$default(app2, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02706, 4094, (Object) null);
-                c02702 = c02706;
+                $result = Requests.get$default(app2, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02716, 4094, (Object) null);
+                c02712 = c02716;
                 if ($result == obj) {
                     return obj;
                 }
@@ -879,16 +879,16 @@ public final class StreamPlayUtilsKt {
                 String formUrl4 = bypassHrefli$getFormUrl(res3);
                 Map<String, String> mapBypassHrefli$getFormData2 = bypassHrefli$getFormData(res3);
                 Requests app3 = MainActivityKt.getApp();
-                c02702.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c02702.L$1 = host;
-                c02702.L$2 = SpillingKt.nullOutSpilledVariable(res3);
-                c02702.L$3 = SpillingKt.nullOutSpilledVariable(formUrl4);
-                c02702.L$4 = SpillingKt.nullOutSpilledVariable(mapBypassHrefli$getFormData2);
-                c02702.label = i;
+                c02712.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c02712.L$1 = host;
+                c02712.L$2 = SpillingKt.nullOutSpilledVariable(res3);
+                c02712.L$3 = SpillingKt.nullOutSpilledVariable(formUrl4);
+                c02712.L$4 = SpillingKt.nullOutSpilledVariable(mapBypassHrefli$getFormData2);
+                c02712.label = i;
                 host2 = host;
-                C02701 c02707 = c02702;
-                $result = Requests.post$default(app3, formUrl4, (Map) null, (String) null, (Map) null, (Map) null, mapBypassHrefli$getFormData2, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02707, 65502, (Object) null);
-                c02703 = c02707;
+                C02711 c02717 = c02712;
+                $result = Requests.post$default(app3, formUrl4, (Map) null, (String) null, (Map) null, (Map) null, mapBypassHrefli$getFormData2, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02717, 65502, (Object) null);
+                c02713 = c02717;
                 if ($result == obj) {
                     return obj;
                 }
@@ -897,16 +897,16 @@ public final class StreamPlayUtilsKt {
                 formUrl2 = bypassHrefli$getFormUrl(res4);
                 mapBypassHrefli$getFormData = bypassHrefli$getFormData(res4);
                 Requests app4 = MainActivityKt.getApp();
-                c02703.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c02703.L$1 = formUrl;
-                c02703.L$2 = SpillingKt.nullOutSpilledVariable(res4);
-                c02703.L$3 = SpillingKt.nullOutSpilledVariable(formUrl2);
-                c02703.L$4 = mapBypassHrefli$getFormData;
-                c02703.label = 3;
-                C02701 c02708 = c02703;
+                c02713.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c02713.L$1 = formUrl;
+                c02713.L$2 = SpillingKt.nullOutSpilledVariable(res4);
+                c02713.L$3 = SpillingKt.nullOutSpilledVariable(formUrl2);
+                c02713.L$4 = mapBypassHrefli$getFormData;
+                c02713.label = 3;
+                C02711 c02718 = c02713;
                 host3 = formUrl;
-                $result = Requests.post$default(app4, formUrl2, (Map) null, (String) null, (Map) null, (Map) null, mapBypassHrefli$getFormData, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02708, 65502, (Object) null);
-                c02704 = c02708;
+                $result = Requests.post$default(app4, formUrl2, (Map) null, (String) null, (Map) null, (Map) null, mapBypassHrefli$getFormData, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02718, 65502, (Object) null);
+                c02714 = c02718;
                 if ($result == obj) {
                     return obj;
                 }
@@ -923,20 +923,20 @@ public final class StreamPlayUtilsKt {
                     skToken = StringsKt.substringBefore$default(strSubstringAfter$default, "\"", (String) null, i, (Object) null);
                     if (skToken != null) {
                         Map mapMapOf = MapsKt.mapOf(TuplesKt.to(skToken, String.valueOf(map.get("_wp_http2"))));
-                        c02704.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c02704.L$1 = SpillingKt.nullOutSpilledVariable(host4);
-                        c02704.L$2 = SpillingKt.nullOutSpilledVariable(res);
-                        c02704.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
-                        c02704.L$4 = SpillingKt.nullOutSpilledVariable(map);
-                        c02704.L$5 = SpillingKt.nullOutSpilledVariable(skToken);
-                        c02704.label = 4;
-                        C02701 c02709 = c02704;
+                        c02714.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c02714.L$1 = SpillingKt.nullOutSpilledVariable(host4);
+                        c02714.L$2 = SpillingKt.nullOutSpilledVariable(res);
+                        c02714.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
+                        c02714.L$4 = SpillingKt.nullOutSpilledVariable(map);
+                        c02714.L$5 = SpillingKt.nullOutSpilledVariable(skToken);
+                        c02714.label = 4;
+                        C02711 c02719 = c02714;
                         host5 = host4;
                         map2 = map;
                         skToken2 = skToken;
                         res2 = res;
-                        $result = Requests.get$default(MainActivityKt.getApp(), host4 + "?go=" + skToken, (Map) null, (String) null, (Map) null, mapMapOf, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02709, 4078, (Object) null);
-                        c02705 = c02709;
+                        $result = Requests.get$default(MainActivityKt.getApp(), host4 + "?go=" + skToken, (Map) null, (String) null, (Map) null, mapMapOf, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02719, 4078, (Object) null);
+                        c02715 = c02719;
                         if ($result == obj) {
                             return obj;
                         }
@@ -950,15 +950,15 @@ public final class StreamPlayUtilsKt {
                         if (driveUrl == null) {
                             return null;
                         }
-                        c02705.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c02705.L$1 = SpillingKt.nullOutSpilledVariable(host5);
-                        c02705.L$2 = SpillingKt.nullOutSpilledVariable(res2);
-                        c02705.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
-                        c02705.L$4 = SpillingKt.nullOutSpilledVariable(map2);
-                        c02705.L$5 = SpillingKt.nullOutSpilledVariable(skToken2);
-                        c02705.L$6 = driveUrl;
-                        c02705.label = 5;
-                        $result = Requests.get$default(app, driveUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02705, 4094, (Object) null);
+                        c02715.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c02715.L$1 = SpillingKt.nullOutSpilledVariable(host5);
+                        c02715.L$2 = SpillingKt.nullOutSpilledVariable(res2);
+                        c02715.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
+                        c02715.L$4 = SpillingKt.nullOutSpilledVariable(map2);
+                        c02715.L$5 = SpillingKt.nullOutSpilledVariable(skToken2);
+                        c02715.L$6 = driveUrl;
+                        c02715.label = 5;
+                        $result = Requests.get$default(app, driveUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02715, 4094, (Object) null);
                         if ($result == obj) {
                             return obj;
                         }
@@ -971,10 +971,10 @@ public final class StreamPlayUtilsKt {
                 }
                 return null;
             case 1:
-                host = (String) c02701.L$1;
-                String url3 = (String) c02701.L$0;
+                host = (String) c02711.L$1;
+                String url3 = (String) c02711.L$0;
                 ResultKt.throwOnFailure($result);
-                c02702 = c02701;
+                c02712 = c02711;
                 obj = coroutine_suspended;
                 url2 = url3;
                 i = 2;
@@ -982,16 +982,16 @@ public final class StreamPlayUtilsKt {
                 String formUrl5 = bypassHrefli$getFormUrl(res5);
                 Map<String, String> mapBypassHrefli$getFormData3 = bypassHrefli$getFormData(res5);
                 Requests app5 = MainActivityKt.getApp();
-                c02702.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c02702.L$1 = host;
-                c02702.L$2 = SpillingKt.nullOutSpilledVariable(res5);
-                c02702.L$3 = SpillingKt.nullOutSpilledVariable(formUrl5);
-                c02702.L$4 = SpillingKt.nullOutSpilledVariable(mapBypassHrefli$getFormData3);
-                c02702.label = i;
+                c02712.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c02712.L$1 = host;
+                c02712.L$2 = SpillingKt.nullOutSpilledVariable(res5);
+                c02712.L$3 = SpillingKt.nullOutSpilledVariable(formUrl5);
+                c02712.L$4 = SpillingKt.nullOutSpilledVariable(mapBypassHrefli$getFormData3);
+                c02712.label = i;
                 host2 = host;
-                C02701 c027010 = c02702;
-                $result = Requests.post$default(app5, formUrl5, (Map) null, (String) null, (Map) null, (Map) null, mapBypassHrefli$getFormData3, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027010, 65502, (Object) null);
-                c02703 = c027010;
+                C02711 c027110 = c02712;
+                $result = Requests.post$default(app5, formUrl5, (Map) null, (String) null, (Map) null, (Map) null, mapBypassHrefli$getFormData3, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027110, 65502, (Object) null);
+                c02713 = c027110;
                 if ($result == obj) {
                     return obj;
                 }
@@ -1000,16 +1000,16 @@ public final class StreamPlayUtilsKt {
                 formUrl2 = bypassHrefli$getFormUrl(res6);
                 mapBypassHrefli$getFormData = bypassHrefli$getFormData(res6);
                 Requests app6 = MainActivityKt.getApp();
-                c02703.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c02703.L$1 = formUrl;
-                c02703.L$2 = SpillingKt.nullOutSpilledVariable(res6);
-                c02703.L$3 = SpillingKt.nullOutSpilledVariable(formUrl2);
-                c02703.L$4 = mapBypassHrefli$getFormData;
-                c02703.label = 3;
-                C02701 c027011 = c02703;
+                c02713.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c02713.L$1 = formUrl;
+                c02713.L$2 = SpillingKt.nullOutSpilledVariable(res6);
+                c02713.L$3 = SpillingKt.nullOutSpilledVariable(formUrl2);
+                c02713.L$4 = mapBypassHrefli$getFormData;
+                c02713.label = 3;
+                C02711 c027111 = c02713;
                 host3 = formUrl;
-                $result = Requests.post$default(app6, formUrl2, (Map) null, (String) null, (Map) null, (Map) null, mapBypassHrefli$getFormData, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027011, 65502, (Object) null);
-                c02704 = c027011;
+                $result = Requests.post$default(app6, formUrl2, (Map) null, (String) null, (Map) null, (Map) null, mapBypassHrefli$getFormData, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027111, 65502, (Object) null);
+                c02714 = c027111;
                 if ($result == obj) {
                     return obj;
                 }
@@ -1026,20 +1026,20 @@ public final class StreamPlayUtilsKt {
                     skToken = StringsKt.substringBefore$default(strSubstringAfter$default, "\"", (String) null, i, (Object) null);
                     if (skToken != null) {
                         Map mapMapOf2 = MapsKt.mapOf(TuplesKt.to(skToken, String.valueOf(map.get("_wp_http2"))));
-                        c02704.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c02704.L$1 = SpillingKt.nullOutSpilledVariable(host4);
-                        c02704.L$2 = SpillingKt.nullOutSpilledVariable(res);
-                        c02704.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
-                        c02704.L$4 = SpillingKt.nullOutSpilledVariable(map);
-                        c02704.L$5 = SpillingKt.nullOutSpilledVariable(skToken);
-                        c02704.label = 4;
-                        C02701 c027012 = c02704;
+                        c02714.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c02714.L$1 = SpillingKt.nullOutSpilledVariable(host4);
+                        c02714.L$2 = SpillingKt.nullOutSpilledVariable(res);
+                        c02714.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
+                        c02714.L$4 = SpillingKt.nullOutSpilledVariable(map);
+                        c02714.L$5 = SpillingKt.nullOutSpilledVariable(skToken);
+                        c02714.label = 4;
+                        C02711 c027112 = c02714;
                         host5 = host4;
                         map2 = map;
                         skToken2 = skToken;
                         res2 = res;
-                        $result = Requests.get$default(MainActivityKt.getApp(), host4 + "?go=" + skToken, (Map) null, (String) null, (Map) null, mapMapOf2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027012, 4078, (Object) null);
-                        c02705 = c027012;
+                        $result = Requests.get$default(MainActivityKt.getApp(), host4 + "?go=" + skToken, (Map) null, (String) null, (Map) null, mapMapOf2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027112, 4078, (Object) null);
+                        c02715 = c027112;
                         if ($result == obj) {
                             return obj;
                         }
@@ -1053,15 +1053,15 @@ public final class StreamPlayUtilsKt {
                         if (driveUrl == null) {
                             return null;
                         }
-                        c02705.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c02705.L$1 = SpillingKt.nullOutSpilledVariable(host5);
-                        c02705.L$2 = SpillingKt.nullOutSpilledVariable(res2);
-                        c02705.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
-                        c02705.L$4 = SpillingKt.nullOutSpilledVariable(map2);
-                        c02705.L$5 = SpillingKt.nullOutSpilledVariable(skToken2);
-                        c02705.L$6 = driveUrl;
-                        c02705.label = 5;
-                        $result = Requests.get$default(app, driveUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02705, 4094, (Object) null);
+                        c02715.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c02715.L$1 = SpillingKt.nullOutSpilledVariable(host5);
+                        c02715.L$2 = SpillingKt.nullOutSpilledVariable(res2);
+                        c02715.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
+                        c02715.L$4 = SpillingKt.nullOutSpilledVariable(map2);
+                        c02715.L$5 = SpillingKt.nullOutSpilledVariable(skToken2);
+                        c02715.L$6 = driveUrl;
+                        c02715.label = 5;
+                        $result = Requests.get$default(app, driveUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02715, 4094, (Object) null);
                         if ($result == obj) {
                             return obj;
                         }
@@ -1074,28 +1074,28 @@ public final class StreamPlayUtilsKt {
                 }
                 return null;
             case 2:
-                String host7 = (String) c02701.L$1;
-                String url4 = (String) c02701.L$0;
+                String host7 = (String) c02711.L$1;
+                String url4 = (String) c02711.L$0;
                 ResultKt.throwOnFailure($result);
                 url2 = url4;
                 i = 2;
-                c02703 = c02701;
+                c02713 = c02711;
                 obj = coroutine_suspended;
                 formUrl = host7;
                 Document res7 = ((NiceResponse) $result).getDocument();
                 formUrl2 = bypassHrefli$getFormUrl(res7);
                 mapBypassHrefli$getFormData = bypassHrefli$getFormData(res7);
                 Requests app7 = MainActivityKt.getApp();
-                c02703.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c02703.L$1 = formUrl;
-                c02703.L$2 = SpillingKt.nullOutSpilledVariable(res7);
-                c02703.L$3 = SpillingKt.nullOutSpilledVariable(formUrl2);
-                c02703.L$4 = mapBypassHrefli$getFormData;
-                c02703.label = 3;
-                C02701 c027013 = c02703;
+                c02713.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c02713.L$1 = formUrl;
+                c02713.L$2 = SpillingKt.nullOutSpilledVariable(res7);
+                c02713.L$3 = SpillingKt.nullOutSpilledVariable(formUrl2);
+                c02713.L$4 = mapBypassHrefli$getFormData;
+                c02713.label = 3;
+                C02711 c027113 = c02713;
                 host3 = formUrl;
-                $result = Requests.post$default(app7, formUrl2, (Map) null, (String) null, (Map) null, (Map) null, mapBypassHrefli$getFormData, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027013, 65502, (Object) null);
-                c02704 = c027013;
+                $result = Requests.post$default(app7, formUrl2, (Map) null, (String) null, (Map) null, (Map) null, mapBypassHrefli$getFormData, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027113, 65502, (Object) null);
+                c02714 = c027113;
                 if ($result == obj) {
                     return obj;
                 }
@@ -1112,20 +1112,20 @@ public final class StreamPlayUtilsKt {
                     skToken = StringsKt.substringBefore$default(strSubstringAfter$default, "\"", (String) null, i, (Object) null);
                     if (skToken != null) {
                         Map mapMapOf3 = MapsKt.mapOf(TuplesKt.to(skToken, String.valueOf(map.get("_wp_http2"))));
-                        c02704.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c02704.L$1 = SpillingKt.nullOutSpilledVariable(host4);
-                        c02704.L$2 = SpillingKt.nullOutSpilledVariable(res);
-                        c02704.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
-                        c02704.L$4 = SpillingKt.nullOutSpilledVariable(map);
-                        c02704.L$5 = SpillingKt.nullOutSpilledVariable(skToken);
-                        c02704.label = 4;
-                        C02701 c027014 = c02704;
+                        c02714.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c02714.L$1 = SpillingKt.nullOutSpilledVariable(host4);
+                        c02714.L$2 = SpillingKt.nullOutSpilledVariable(res);
+                        c02714.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
+                        c02714.L$4 = SpillingKt.nullOutSpilledVariable(map);
+                        c02714.L$5 = SpillingKt.nullOutSpilledVariable(skToken);
+                        c02714.label = 4;
+                        C02711 c027114 = c02714;
                         host5 = host4;
                         map2 = map;
                         skToken2 = skToken;
                         res2 = res;
-                        $result = Requests.get$default(MainActivityKt.getApp(), host4 + "?go=" + skToken, (Map) null, (String) null, (Map) null, mapMapOf3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027014, 4078, (Object) null);
-                        c02705 = c027014;
+                        $result = Requests.get$default(MainActivityKt.getApp(), host4 + "?go=" + skToken, (Map) null, (String) null, (Map) null, mapMapOf3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027114, 4078, (Object) null);
+                        c02715 = c027114;
                         if ($result == obj) {
                             return obj;
                         }
@@ -1139,15 +1139,15 @@ public final class StreamPlayUtilsKt {
                         if (driveUrl == null) {
                             return null;
                         }
-                        c02705.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c02705.L$1 = SpillingKt.nullOutSpilledVariable(host5);
-                        c02705.L$2 = SpillingKt.nullOutSpilledVariable(res2);
-                        c02705.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
-                        c02705.L$4 = SpillingKt.nullOutSpilledVariable(map2);
-                        c02705.L$5 = SpillingKt.nullOutSpilledVariable(skToken2);
-                        c02705.L$6 = driveUrl;
-                        c02705.label = 5;
-                        $result = Requests.get$default(app, driveUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02705, 4094, (Object) null);
+                        c02715.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c02715.L$1 = SpillingKt.nullOutSpilledVariable(host5);
+                        c02715.L$2 = SpillingKt.nullOutSpilledVariable(res2);
+                        c02715.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
+                        c02715.L$4 = SpillingKt.nullOutSpilledVariable(map2);
+                        c02715.L$5 = SpillingKt.nullOutSpilledVariable(skToken2);
+                        c02715.L$6 = driveUrl;
+                        c02715.label = 5;
+                        $result = Requests.get$default(app, driveUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02715, 4094, (Object) null);
                         if ($result == obj) {
                             return obj;
                         }
@@ -1160,12 +1160,12 @@ public final class StreamPlayUtilsKt {
                 }
                 return null;
             case 3:
-                Map<String, String> map3 = (Map) c02701.L$4;
-                String formUrl6 = (String) c02701.L$3;
-                String host8 = (String) c02701.L$1;
-                String url5 = (String) c02701.L$0;
+                Map<String, String> map3 = (Map) c02711.L$4;
+                String formUrl6 = (String) c02711.L$3;
+                String host8 = (String) c02711.L$1;
+                String url5 = (String) c02711.L$0;
                 ResultKt.throwOnFailure($result);
-                c02704 = c02701;
+                c02714 = c02711;
                 obj = coroutine_suspended;
                 map = map3;
                 formUrl3 = formUrl6;
@@ -1182,20 +1182,20 @@ public final class StreamPlayUtilsKt {
                     skToken = StringsKt.substringBefore$default(strSubstringAfter$default, "\"", (String) null, i, (Object) null);
                     if (skToken != null) {
                         Map mapMapOf4 = MapsKt.mapOf(TuplesKt.to(skToken, String.valueOf(map.get("_wp_http2"))));
-                        c02704.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c02704.L$1 = SpillingKt.nullOutSpilledVariable(host4);
-                        c02704.L$2 = SpillingKt.nullOutSpilledVariable(res);
-                        c02704.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
-                        c02704.L$4 = SpillingKt.nullOutSpilledVariable(map);
-                        c02704.L$5 = SpillingKt.nullOutSpilledVariable(skToken);
-                        c02704.label = 4;
-                        C02701 c027015 = c02704;
+                        c02714.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c02714.L$1 = SpillingKt.nullOutSpilledVariable(host4);
+                        c02714.L$2 = SpillingKt.nullOutSpilledVariable(res);
+                        c02714.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
+                        c02714.L$4 = SpillingKt.nullOutSpilledVariable(map);
+                        c02714.L$5 = SpillingKt.nullOutSpilledVariable(skToken);
+                        c02714.label = 4;
+                        C02711 c027115 = c02714;
                         host5 = host4;
                         map2 = map;
                         skToken2 = skToken;
                         res2 = res;
-                        $result = Requests.get$default(MainActivityKt.getApp(), host4 + "?go=" + skToken, (Map) null, (String) null, (Map) null, mapMapOf4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027015, 4078, (Object) null);
-                        c02705 = c027015;
+                        $result = Requests.get$default(MainActivityKt.getApp(), host4 + "?go=" + skToken, (Map) null, (String) null, (Map) null, mapMapOf4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c027115, 4078, (Object) null);
+                        c02715 = c027115;
                         if ($result == obj) {
                             return obj;
                         }
@@ -1209,15 +1209,15 @@ public final class StreamPlayUtilsKt {
                         if (driveUrl == null) {
                             return null;
                         }
-                        c02705.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c02705.L$1 = SpillingKt.nullOutSpilledVariable(host5);
-                        c02705.L$2 = SpillingKt.nullOutSpilledVariable(res2);
-                        c02705.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
-                        c02705.L$4 = SpillingKt.nullOutSpilledVariable(map2);
-                        c02705.L$5 = SpillingKt.nullOutSpilledVariable(skToken2);
-                        c02705.L$6 = driveUrl;
-                        c02705.label = 5;
-                        $result = Requests.get$default(app, driveUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02705, 4094, (Object) null);
+                        c02715.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c02715.L$1 = SpillingKt.nullOutSpilledVariable(host5);
+                        c02715.L$2 = SpillingKt.nullOutSpilledVariable(res2);
+                        c02715.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
+                        c02715.L$4 = SpillingKt.nullOutSpilledVariable(map2);
+                        c02715.L$5 = SpillingKt.nullOutSpilledVariable(skToken2);
+                        c02715.L$6 = driveUrl;
+                        c02715.label = 5;
+                        $result = Requests.get$default(app, driveUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02715, 4094, (Object) null);
                         if ($result == obj) {
                             return obj;
                         }
@@ -1230,12 +1230,12 @@ public final class StreamPlayUtilsKt {
                 }
                 return null;
             case 4:
-                String skToken3 = (String) c02701.L$5;
-                Map<String, String> map4 = (Map) c02701.L$4;
-                String formUrl7 = (String) c02701.L$3;
-                Document res8 = (Document) c02701.L$2;
-                String host9 = (String) c02701.L$1;
-                String url6 = (String) c02701.L$0;
+                String skToken3 = (String) c02711.L$5;
+                Map<String, String> map4 = (Map) c02711.L$4;
+                String formUrl7 = (String) c02711.L$3;
+                Document res8 = (Document) c02711.L$2;
+                String host9 = (String) c02711.L$1;
+                String url6 = (String) c02711.L$0;
                 ResultKt.throwOnFailure($result);
                 skToken2 = skToken3;
                 map2 = map4;
@@ -1244,7 +1244,7 @@ public final class StreamPlayUtilsKt {
                 host5 = host9;
                 url2 = url6;
                 i = 2;
-                c02705 = c02701;
+                c02715 = c02711;
                 obj = coroutine_suspended;
                 elementSelectFirst2 = ((NiceResponse) $result).getDocument().selectFirst("meta[http-equiv=refresh]");
                 if (elementSelectFirst2 != null) {
@@ -1256,15 +1256,15 @@ public final class StreamPlayUtilsKt {
                 if (driveUrl == null) {
                     return null;
                 }
-                c02705.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c02705.L$1 = SpillingKt.nullOutSpilledVariable(host5);
-                c02705.L$2 = SpillingKt.nullOutSpilledVariable(res2);
-                c02705.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
-                c02705.L$4 = SpillingKt.nullOutSpilledVariable(map2);
-                c02705.L$5 = SpillingKt.nullOutSpilledVariable(skToken2);
-                c02705.L$6 = driveUrl;
-                c02705.label = 5;
-                $result = Requests.get$default(app, driveUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02705, 4094, (Object) null);
+                c02715.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c02715.L$1 = SpillingKt.nullOutSpilledVariable(host5);
+                c02715.L$2 = SpillingKt.nullOutSpilledVariable(res2);
+                c02715.L$3 = SpillingKt.nullOutSpilledVariable(formUrl3);
+                c02715.L$4 = SpillingKt.nullOutSpilledVariable(map2);
+                c02715.L$5 = SpillingKt.nullOutSpilledVariable(skToken2);
+                c02715.L$6 = driveUrl;
+                c02715.label = 5;
+                $result = Requests.get$default(app, driveUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02715, 4094, (Object) null);
                 if ($result == obj) {
                     return obj;
                 }
@@ -1274,7 +1274,7 @@ public final class StreamPlayUtilsKt {
                 }
                 return fixUrl(path, getBaseUrl(driveUrl));
             case 5:
-                driveUrl = (String) c02701.L$6;
+                driveUrl = (String) c02711.L$6;
                 ResultKt.throwOnFailure($result);
                 i = 2;
                 path = StringsKt.substringBefore$default(StringsKt.substringAfter$default(((NiceResponse) $result).getText(), "replace(\"", (String) null, i, (Object) null), "\")", (String) null, i, (Object) null);
@@ -1306,7 +1306,7 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public static final Object convertTmdbToAnimeId(@Nullable String title, @Nullable String date, @Nullable String airedDate, @NotNull TvType type, @NotNull Continuation<? super AniIds> continuation) {
-        C02731 c02731;
+        C02741 c02741;
         Object objTmdbToAnimeId;
         String date2;
         List sDate;
@@ -1322,19 +1322,19 @@ public final class StreamPlayUtilsKt {
         String str4;
         String title2 = title;
         TvType type2 = type;
-        if (continuation instanceof C02731) {
-            c02731 = (C02731) continuation;
-            if ((c02731.label & Integer.MIN_VALUE) != 0) {
-                c02731.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02741) {
+            c02741 = (C02741) continuation;
+            if ((c02741.label & Integer.MIN_VALUE) != 0) {
+                c02741.label -= Integer.MIN_VALUE;
             } else {
-                c02731 = new C02731(continuation);
+                c02741 = new C02741(continuation);
             }
         } else {
-            c02731 = new C02731(continuation);
+            c02741 = new C02741(continuation);
         }
-        Object $result = c02731.result;
+        Object $result = c02741.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02731.label) {
+        switch (c02741.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Integer intOrNull = null;
@@ -1348,32 +1348,32 @@ public final class StreamPlayUtilsKt {
                 }
                 String airedSeason3 = getSeason(intOrNull);
                 if (type2 == TvType.AnimeMovie) {
-                    c02731.L$0 = SpillingKt.nullOutSpilledVariable(title2);
-                    c02731.L$1 = SpillingKt.nullOutSpilledVariable(date);
-                    c02731.L$2 = SpillingKt.nullOutSpilledVariable(airedDate);
-                    c02731.L$3 = SpillingKt.nullOutSpilledVariable(type2);
-                    c02731.L$4 = SpillingKt.nullOutSpilledVariable(sDate3);
-                    c02731.L$5 = SpillingKt.nullOutSpilledVariable(sAiredDate);
-                    c02731.L$6 = SpillingKt.nullOutSpilledVariable(year3);
-                    c02731.L$7 = SpillingKt.nullOutSpilledVariable(airedYear);
-                    c02731.L$8 = SpillingKt.nullOutSpilledVariable(season2);
-                    c02731.L$9 = SpillingKt.nullOutSpilledVariable(airedSeason3);
-                    c02731.label = 1;
-                    Object objTmdbToAnimeId2 = tmdbToAnimeId(title2, airedYear, "", type2, c02731);
+                    c02741.L$0 = SpillingKt.nullOutSpilledVariable(title2);
+                    c02741.L$1 = SpillingKt.nullOutSpilledVariable(date);
+                    c02741.L$2 = SpillingKt.nullOutSpilledVariable(airedDate);
+                    c02741.L$3 = SpillingKt.nullOutSpilledVariable(type2);
+                    c02741.L$4 = SpillingKt.nullOutSpilledVariable(sDate3);
+                    c02741.L$5 = SpillingKt.nullOutSpilledVariable(sAiredDate);
+                    c02741.L$6 = SpillingKt.nullOutSpilledVariable(year3);
+                    c02741.L$7 = SpillingKt.nullOutSpilledVariable(airedYear);
+                    c02741.L$8 = SpillingKt.nullOutSpilledVariable(season2);
+                    c02741.L$9 = SpillingKt.nullOutSpilledVariable(airedSeason3);
+                    c02741.label = 1;
+                    Object objTmdbToAnimeId2 = tmdbToAnimeId(title2, airedYear, "", type2, c02741);
                     return objTmdbToAnimeId2 == coroutine_suspended ? coroutine_suspended : objTmdbToAnimeId2;
                 }
-                c02731.L$0 = title2;
-                c02731.L$1 = SpillingKt.nullOutSpilledVariable(date);
-                c02731.L$2 = SpillingKt.nullOutSpilledVariable(airedDate);
-                c02731.L$3 = type2;
-                c02731.L$4 = SpillingKt.nullOutSpilledVariable(sDate3);
-                c02731.L$5 = SpillingKt.nullOutSpilledVariable(sAiredDate);
-                c02731.L$6 = SpillingKt.nullOutSpilledVariable(year3);
-                c02731.L$7 = airedYear;
-                c02731.L$8 = SpillingKt.nullOutSpilledVariable(season2);
-                c02731.L$9 = airedSeason3;
-                c02731.label = 2;
-                objTmdbToAnimeId = tmdbToAnimeId(title2, year3, season2, type2, c02731);
+                c02741.L$0 = title2;
+                c02741.L$1 = SpillingKt.nullOutSpilledVariable(date);
+                c02741.L$2 = SpillingKt.nullOutSpilledVariable(airedDate);
+                c02741.L$3 = type2;
+                c02741.L$4 = SpillingKt.nullOutSpilledVariable(sDate3);
+                c02741.L$5 = SpillingKt.nullOutSpilledVariable(sAiredDate);
+                c02741.L$6 = SpillingKt.nullOutSpilledVariable(year3);
+                c02741.L$7 = airedYear;
+                c02741.L$8 = SpillingKt.nullOutSpilledVariable(season2);
+                c02741.L$9 = airedSeason3;
+                c02741.label = 2;
+                objTmdbToAnimeId = tmdbToAnimeId(title2, year3, season2, type2, c02741);
                 if (objTmdbToAnimeId == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -1390,16 +1390,16 @@ public final class StreamPlayUtilsKt {
                 ResultKt.throwOnFailure($result);
                 return $result;
             case 2:
-                airedSeason = (String) c02731.L$9;
-                airedSeason2 = (String) c02731.L$8;
-                year2 = (Integer) c02731.L$7;
-                year = (Integer) c02731.L$6;
-                sDate2 = (List) c02731.L$5;
-                List sDate4 = (List) c02731.L$4;
-                type2 = (TvType) c02731.L$3;
-                season = (String) c02731.L$2;
-                date2 = (String) c02731.L$1;
-                title2 = (String) c02731.L$0;
+                airedSeason = (String) c02741.L$9;
+                airedSeason2 = (String) c02741.L$8;
+                year2 = (Integer) c02741.L$7;
+                year = (Integer) c02741.L$6;
+                sDate2 = (List) c02741.L$5;
+                List sDate4 = (List) c02741.L$4;
+                type2 = (TvType) c02741.L$3;
+                season = (String) c02741.L$2;
+                date2 = (String) c02741.L$1;
+                title2 = (String) c02741.L$0;
                 ResultKt.throwOnFailure($result);
                 sDate = sDate4;
                 objTmdbToAnimeId = $result;
@@ -1414,19 +1414,19 @@ public final class StreamPlayUtilsKt {
         if (ids.getId() != null || ids.getIdMal() != null) {
             return ids;
         }
-        c02731.L$0 = SpillingKt.nullOutSpilledVariable(title2);
-        c02731.L$1 = SpillingKt.nullOutSpilledVariable(date2);
-        c02731.L$2 = SpillingKt.nullOutSpilledVariable(season);
-        c02731.L$3 = SpillingKt.nullOutSpilledVariable(type2);
-        c02731.L$4 = SpillingKt.nullOutSpilledVariable(sDate);
-        c02731.L$5 = SpillingKt.nullOutSpilledVariable(sDate2);
-        c02731.L$6 = SpillingKt.nullOutSpilledVariable(year);
-        c02731.L$7 = SpillingKt.nullOutSpilledVariable(year2);
-        c02731.L$8 = SpillingKt.nullOutSpilledVariable(airedSeason2);
-        c02731.L$9 = SpillingKt.nullOutSpilledVariable(airedSeason);
-        c02731.L$10 = SpillingKt.nullOutSpilledVariable(ids);
-        c02731.label = 3;
-        Object objTmdbToAnimeId3 = tmdbToAnimeId(title2, year2, airedSeason, type2, c02731);
+        c02741.L$0 = SpillingKt.nullOutSpilledVariable(title2);
+        c02741.L$1 = SpillingKt.nullOutSpilledVariable(date2);
+        c02741.L$2 = SpillingKt.nullOutSpilledVariable(season);
+        c02741.L$3 = SpillingKt.nullOutSpilledVariable(type2);
+        c02741.L$4 = SpillingKt.nullOutSpilledVariable(sDate);
+        c02741.L$5 = SpillingKt.nullOutSpilledVariable(sDate2);
+        c02741.L$6 = SpillingKt.nullOutSpilledVariable(year);
+        c02741.L$7 = SpillingKt.nullOutSpilledVariable(year2);
+        c02741.L$8 = SpillingKt.nullOutSpilledVariable(airedSeason2);
+        c02741.L$9 = SpillingKt.nullOutSpilledVariable(airedSeason);
+        c02741.L$10 = SpillingKt.nullOutSpilledVariable(ids);
+        c02741.label = 3;
+        Object objTmdbToAnimeId3 = tmdbToAnimeId(title2, year2, airedSeason, type2, c02741);
         return objTmdbToAnimeId3 == coroutine_suspended ? coroutine_suspended : objTmdbToAnimeId3;
     }
 
@@ -1434,26 +1434,26 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     @Nullable
     public static final Object tmdbToAnimeId(@Nullable String title, @Nullable Integer year, @Nullable String season, @NotNull TvType type, @NotNull Continuation<? super AniIds> continuation) {
-        C02931 c02931;
+        C02941 c02941;
         boolean z;
         Object safe;
         AniData data;
         AniPage page;
         ArrayList<AniMedia> media;
-        if (continuation instanceof C02931) {
-            c02931 = (C02931) continuation;
-            if ((c02931.label & Integer.MIN_VALUE) != 0) {
-                c02931.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02941) {
+            c02941 = (C02941) continuation;
+            if ((c02941.label & Integer.MIN_VALUE) != 0) {
+                c02941.label -= Integer.MIN_VALUE;
             } else {
-                c02931 = new C02931(continuation);
+                c02941 = new C02941(continuation);
             }
         } else {
-            c02931 = new C02931(continuation);
+            c02941 = new C02941(continuation);
         }
-        C02931 c02932 = c02931;
-        Object $result = c02932.result;
+        C02941 c02942 = c02941;
+        Object $result = c02942.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02932.label) {
+        switch (c02942.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String query = StringsKt.trim("query (\n  $page: Int = 1\n  $search: String\n  $sort: [MediaSort] = [POPULARITY_DESC, SCORE_DESC]\n  $type: MediaType\n  $seasonYear: Int\n  $format: [MediaFormat]\n) {\n  Page(page: $page, perPage: 20) {\n    media(\n      search: $search\n      sort: $sort\n      type: $type\n      seasonYear: $seasonYear\n      format_in: $format\n    ) {\n      id\n      idMal\n    }\n  }\n}").toString();
@@ -1481,15 +1481,15 @@ public final class StreamPlayUtilsKt {
                 LinkedHashMap variables = result$iv;
                 RequestBody data2 = RequestBody.Companion.create(AppUtils.INSTANCE.toJson(MapsKt.mapOf(new Pair[]{TuplesKt.to("query", query), TuplesKt.to("variables", variables)})), MediaType.Companion.parse("application/json;charset=utf-8"));
                 Requests app = MainActivityKt.getApp();
-                c02932.L$0 = SpillingKt.nullOutSpilledVariable(title);
-                c02932.L$1 = SpillingKt.nullOutSpilledVariable(year);
-                c02932.L$2 = SpillingKt.nullOutSpilledVariable(season);
-                c02932.L$3 = SpillingKt.nullOutSpilledVariable(type);
-                c02932.L$4 = SpillingKt.nullOutSpilledVariable(query);
-                c02932.L$5 = SpillingKt.nullOutSpilledVariable(variables);
-                c02932.L$6 = SpillingKt.nullOutSpilledVariable(data2);
-                c02932.label = 1;
-                $result = Requests.post$default(app, StreamPlay.anilistAPI, (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, data2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02932, 65278, (Object) null);
+                c02942.L$0 = SpillingKt.nullOutSpilledVariable(title);
+                c02942.L$1 = SpillingKt.nullOutSpilledVariable(year);
+                c02942.L$2 = SpillingKt.nullOutSpilledVariable(season);
+                c02942.L$3 = SpillingKt.nullOutSpilledVariable(type);
+                c02942.L$4 = SpillingKt.nullOutSpilledVariable(query);
+                c02942.L$5 = SpillingKt.nullOutSpilledVariable(variables);
+                c02942.L$6 = SpillingKt.nullOutSpilledVariable(data2);
+                c02942.label = 1;
+                $result = Requests.post$default(app, StreamPlay.anilistAPI, (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, data2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02942, 65278, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -1532,20 +1532,20 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     @Nullable
     public static final Object loadSourceNameExtractor(@NotNull String source, @NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull final Function1<? super ExtractorLink, Unit> function2, @Nullable final Integer quality, @NotNull String size, @NotNull Continuation<? super Unit> continuation) {
-        C02871 c02871;
-        if (continuation instanceof C02871) {
-            c02871 = (C02871) continuation;
-            if ((c02871.label & Integer.MIN_VALUE) != 0) {
-                c02871.label -= Integer.MIN_VALUE;
+        C02881 c02881;
+        if (continuation instanceof C02881) {
+            c02881 = (C02881) continuation;
+            if ((c02881.label & Integer.MIN_VALUE) != 0) {
+                c02881.label -= Integer.MIN_VALUE;
             } else {
-                c02871 = new C02871(continuation);
+                c02881 = new C02881(continuation);
             }
         } else {
-            c02871 = new C02871(continuation);
+            c02881 = new C02881(continuation);
         }
-        Object $result = c02871.result;
+        Object $result = c02881.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02871.label) {
+        switch (c02881.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 final String provider = StringsKt.trim(source).toString();
@@ -1559,17 +1559,17 @@ public final class StreamPlayUtilsKt {
                         return StreamPlayUtilsKt.loadSourceNameExtractor$lambda$2(function2, provider, sizePart, quality, (ExtractorLink) obj);
                     }
                 };
-                c02871.L$0 = SpillingKt.nullOutSpilledVariable(source);
-                c02871.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c02871.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                c02871.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                c02871.L$4 = SpillingKt.nullOutSpilledVariable(function2);
-                c02871.L$5 = SpillingKt.nullOutSpilledVariable(quality);
-                c02871.L$6 = SpillingKt.nullOutSpilledVariable(size);
-                c02871.L$7 = SpillingKt.nullOutSpilledVariable(provider);
-                c02871.L$8 = SpillingKt.nullOutSpilledVariable(sizePart);
-                c02871.label = 1;
-                if (ExtractorApiKt.loadExtractor(url, referer, function1, function3, c02871) == coroutine_suspended) {
+                c02881.L$0 = SpillingKt.nullOutSpilledVariable(source);
+                c02881.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c02881.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                c02881.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c02881.L$4 = SpillingKt.nullOutSpilledVariable(function2);
+                c02881.L$5 = SpillingKt.nullOutSpilledVariable(quality);
+                c02881.L$6 = SpillingKt.nullOutSpilledVariable(size);
+                c02881.L$7 = SpillingKt.nullOutSpilledVariable(provider);
+                c02881.L$8 = SpillingKt.nullOutSpilledVariable(sizePart);
+                c02881.label = 1;
+                if (ExtractorApiKt.loadExtractor(url, referer, function1, function3, c02881) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 break;
@@ -1603,20 +1603,20 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public static final Object loadDisplaySourceNameExtractor(@Nullable final String sourceName, @Nullable final String displayName, @NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull final Function1<? super ExtractorLink, Unit> function2, @Nullable final Integer quality, @NotNull Continuation<? super Unit> continuation) {
-        C02851 c02851;
-        if (continuation instanceof C02851) {
-            c02851 = (C02851) continuation;
-            if ((c02851.label & Integer.MIN_VALUE) != 0) {
-                c02851.label -= Integer.MIN_VALUE;
+        C02861 c02861;
+        if (continuation instanceof C02861) {
+            c02861 = (C02861) continuation;
+            if ((c02861.label & Integer.MIN_VALUE) != 0) {
+                c02861.label -= Integer.MIN_VALUE;
             } else {
-                c02851 = new C02851(continuation);
+                c02861 = new C02861(continuation);
             }
         } else {
-            c02851 = new C02851(continuation);
+            c02861 = new C02861(continuation);
         }
-        Object $result = c02851.result;
+        Object $result = c02861.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02851.label) {
+        switch (c02861.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Function1 function3 = new Function1() { // from class: com.phisher98.StreamPlayUtilsKt$$ExternalSyntheticLambda8
@@ -1624,15 +1624,15 @@ public final class StreamPlayUtilsKt {
                         return StreamPlayUtilsKt.loadDisplaySourceNameExtractor$lambda$0(function2, sourceName, displayName, quality, (ExtractorLink) obj);
                     }
                 };
-                c02851.L$0 = SpillingKt.nullOutSpilledVariable(sourceName);
-                c02851.L$1 = SpillingKt.nullOutSpilledVariable(displayName);
-                c02851.L$2 = SpillingKt.nullOutSpilledVariable(url);
-                c02851.L$3 = SpillingKt.nullOutSpilledVariable(referer);
-                c02851.L$4 = SpillingKt.nullOutSpilledVariable(function1);
-                c02851.L$5 = SpillingKt.nullOutSpilledVariable(function2);
-                c02851.L$6 = SpillingKt.nullOutSpilledVariable(quality);
-                c02851.label = 1;
-                if (ExtractorApiKt.loadExtractor(url, referer, function1, function3, c02851) == coroutine_suspended) {
+                c02861.L$0 = SpillingKt.nullOutSpilledVariable(sourceName);
+                c02861.L$1 = SpillingKt.nullOutSpilledVariable(displayName);
+                c02861.L$2 = SpillingKt.nullOutSpilledVariable(url);
+                c02861.L$3 = SpillingKt.nullOutSpilledVariable(referer);
+                c02861.L$4 = SpillingKt.nullOutSpilledVariable(function1);
+                c02861.L$5 = SpillingKt.nullOutSpilledVariable(function2);
+                c02861.L$6 = SpillingKt.nullOutSpilledVariable(quality);
+                c02861.label = 1;
+                if (ExtractorApiKt.loadExtractor(url, referer, function1, function3, c02861) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 break;
@@ -1777,36 +1777,36 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     @Nullable
     public static final Object extractMdrive(@NotNull String url, @NotNull Continuation<? super List<String>> continuation) {
-        C02741 c02741;
+        C02751 c02751;
         Regex regex;
         Iterable $this$mapNotNull$iv;
         Collection destination$iv$iv;
         String href;
         String str;
-        if (continuation instanceof C02741) {
-            c02741 = (C02741) continuation;
-            if ((c02741.label & Integer.MIN_VALUE) != 0) {
-                c02741.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02751) {
+            c02751 = (C02751) continuation;
+            if ((c02751.label & Integer.MIN_VALUE) != 0) {
+                c02751.label -= Integer.MIN_VALUE;
             } else {
-                c02741 = new C02741(continuation);
+                c02751 = new C02751(continuation);
             }
         } else {
-            c02741 = new C02741(continuation);
+            c02751 = new C02751(continuation);
         }
-        C02741 c02742 = c02741;
-        Object $result = c02742.result;
+        C02751 c02752 = c02751;
+        Object $result = c02752.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02742.label) {
+        switch (c02752.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Regex regex2 = new Regex("hubcloud|gdflix|gdlink", RegexOption.IGNORE_CASE);
                 try {
                     Requests app = MainActivityKt.getApp();
-                    c02742.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                    c02742.L$1 = regex2;
-                    c02742.label = 1;
+                    c02752.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                    c02752.L$1 = regex2;
+                    c02752.label = 1;
                     try {
-                        Object obj = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02742, 4094, (Object) null);
+                        Object obj = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02752, 4094, (Object) null);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1846,7 +1846,7 @@ public final class StreamPlayUtilsKt {
                 }
                 break;
             case 1:
-                regex = (Regex) c02742.L$1;
+                regex = (Regex) c02752.L$1;
                 try {
                     ResultKt.throwOnFailure($result);
                     $this$mapNotNull$iv = ((NiceResponse) $result).getDocument().select("a[href]");
@@ -1958,7 +1958,7 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:99:0x04f7  */
     @Nullable
     public static final Object invokeExternalSource(@Nullable Integer mediaId, @Nullable Integer type, @Nullable Integer season, @Nullable Integer episode, @NotNull Function1<? super ExtractorLink, Unit> function1, @Nullable String token, @NotNull Continuation<? super Unit> continuation) {
-        C02821 c02821;
+        C02831 c02831;
         Object obj;
         String str;
         String token2;
@@ -2010,7 +2010,7 @@ public final class StreamPlayUtilsKt {
         String token4;
         Function1<? super ExtractorLink, Unit> function4;
         String seasonSlug4;
-        C02832 c02832;
+        C02842 c02842;
         Object safe3;
         ExternalResponse externalResponse2;
         ExternalResponse.Data shareRes5;
@@ -2020,20 +2020,20 @@ public final class StreamPlayUtilsKt {
         int $i$f$filter;
         ExternalResponse.Data shareRes6;
         Function1<? super ExtractorLink, Unit> function6;
-        if (continuation instanceof C02821) {
-            c02821 = (C02821) continuation;
-            if ((c02821.label & Integer.MIN_VALUE) != 0) {
-                c02821.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02831) {
+            c02831 = (C02831) continuation;
+            if ((c02831.label & Integer.MIN_VALUE) != 0) {
+                c02831.label -= Integer.MIN_VALUE;
             } else {
-                c02821 = new C02821(continuation);
+                c02831 = new C02831(continuation);
             }
         } else {
-            c02821 = new C02821(continuation);
+            c02831 = new C02831(continuation);
         }
-        C02821 c02822 = c02821;
-        Object $result = c02822.result;
+        C02831 c02832 = c02831;
+        Object $result = c02832.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02822.label) {
+        switch (c02832.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Pair<String, String> episodeSlug3 = getEpisodeSlug(season, episode);
@@ -2042,22 +2042,22 @@ public final class StreamPlayUtilsKt {
                 Map headers4 = MapsKt.mapOf(TuplesKt.to("Accept-Language", "en"));
                 Requests app = MainActivityKt.getApp();
                 String str3 = StreamPlay.fourthAPI + "/index/share_link?id=" + mediaId + "&type=" + type;
-                c02822.L$0 = SpillingKt.nullOutSpilledVariable(mediaId);
-                c02822.L$1 = SpillingKt.nullOutSpilledVariable(type);
-                c02822.L$2 = season;
-                c02822.L$3 = SpillingKt.nullOutSpilledVariable(episode);
-                c02822.L$4 = function1;
-                c02822.L$5 = token;
-                c02822.L$6 = StreamPlay.thrirdAPI;
-                c02822.L$7 = SpillingKt.nullOutSpilledVariable(StreamPlay.fourthAPI);
-                c02822.L$8 = seasonSlug5;
-                c02822.L$9 = episodeSlug4;
-                c02822.L$10 = headers4;
-                c02822.label = 1;
+                c02832.L$0 = SpillingKt.nullOutSpilledVariable(mediaId);
+                c02832.L$1 = SpillingKt.nullOutSpilledVariable(type);
+                c02832.L$2 = season;
+                c02832.L$3 = SpillingKt.nullOutSpilledVariable(episode);
+                c02832.L$4 = function1;
+                c02832.L$5 = token;
+                c02832.L$6 = StreamPlay.thrirdAPI;
+                c02832.L$7 = SpillingKt.nullOutSpilledVariable(StreamPlay.fourthAPI);
+                c02832.L$8 = seasonSlug5;
+                c02832.L$9 = episodeSlug4;
+                c02832.L$10 = headers4;
+                c02832.label = 1;
                 obj = coroutine_suspended;
                 str = "/file/file_share_list?share_key=";
-                Object obj3 = Requests.get$default(app, str3, headers4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02822, 4092, (Object) null);
-                c02822 = c02822;
+                Object obj3 = Requests.get$default(app, str3, headers4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02832, 4092, (Object) null);
+                c02832 = c02832;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -2088,31 +2088,31 @@ public final class StreamPlayUtilsKt {
                     return Unit.INSTANCE;
                 }
                 String str4 = str;
-                c02822.L$0 = SpillingKt.nullOutSpilledVariable(mediaId2);
-                c02822.L$1 = SpillingKt.nullOutSpilledVariable(type2);
-                c02822.L$2 = season2;
-                c02822.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
-                c02822.L$4 = function2;
-                c02822.L$5 = token2;
-                c02822.L$6 = thirdAPI;
-                c02822.L$7 = SpillingKt.nullOutSpilledVariable(fourthAPI);
-                c02822.L$8 = fourthAPI2;
-                c02822.L$9 = seasonSlug;
-                c02822.L$10 = headers;
-                c02822.L$11 = shareKey;
-                c02822.label = 2;
+                c02832.L$0 = SpillingKt.nullOutSpilledVariable(mediaId2);
+                c02832.L$1 = SpillingKt.nullOutSpilledVariable(type2);
+                c02832.L$2 = season2;
+                c02832.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
+                c02832.L$4 = function2;
+                c02832.L$5 = token2;
+                c02832.L$6 = thirdAPI;
+                c02832.L$7 = SpillingKt.nullOutSpilledVariable(fourthAPI);
+                c02832.L$8 = fourthAPI2;
+                c02832.L$9 = seasonSlug;
+                c02832.L$10 = headers;
+                c02832.L$11 = shareKey;
+                c02832.label = 2;
                 String token5 = token2;
                 Function1<? super ExtractorLink, Unit> function7 = function2;
                 Map headers5 = headers;
                 String episodeSlug5 = seasonSlug;
                 String seasonSlug6 = fourthAPI2;
                 String thirdAPI4 = thirdAPI;
-                C02821 c02823 = c02822;
+                C02831 c02833 = c02832;
                 arrayList = null;
                 season3 = season2;
                 str2 = str4;
-                $result = Requests.get$default(MainActivityKt.getApp(), thirdAPI + str4 + shareKey, headers5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02823, 4092, (Object) null);
-                c02822 = c02823;
+                $result = Requests.get$default(MainActivityKt.getApp(), thirdAPI + str4 + shareKey, headers5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02833, 4092, (Object) null);
+                c02832 = c02833;
                 if ($result == obj) {
                     return obj;
                 }
@@ -2168,21 +2168,21 @@ public final class StreamPlayUtilsKt {
                         ExternalResponse.Data.FileList fileList4 = (ExternalResponse.Data.FileList) next;
                         if (fileList4 != null && (fid = fileList4.getFid()) != null) {
                             long parentId = fid.longValue();
-                            c02822.L$0 = SpillingKt.nullOutSpilledVariable(mediaId2);
-                            c02822.L$1 = SpillingKt.nullOutSpilledVariable(type2);
-                            c02822.L$2 = SpillingKt.nullOutSpilledVariable(season3);
-                            c02822.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
-                            c02822.L$4 = function3;
-                            c02822.L$5 = token3;
-                            c02822.L$6 = thirdAPI2;
-                            c02822.L$7 = SpillingKt.nullOutSpilledVariable(fourthAPI);
-                            c02822.L$8 = fourthAPI3;
-                            c02822.L$9 = seasonSlug2;
-                            c02822.L$10 = SpillingKt.nullOutSpilledVariable(headers2);
-                            c02822.L$11 = episodeSlug;
-                            c02822.L$12 = SpillingKt.nullOutSpilledVariable(shareRes2);
-                            c02822.J$0 = parentId;
-                            c02822.label = 3;
+                            c02832.L$0 = SpillingKt.nullOutSpilledVariable(mediaId2);
+                            c02832.L$1 = SpillingKt.nullOutSpilledVariable(type2);
+                            c02832.L$2 = SpillingKt.nullOutSpilledVariable(season3);
+                            c02832.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
+                            c02832.L$4 = function3;
+                            c02832.L$5 = token3;
+                            c02832.L$6 = thirdAPI2;
+                            c02832.L$7 = SpillingKt.nullOutSpilledVariable(fourthAPI);
+                            c02832.L$8 = fourthAPI3;
+                            c02832.L$9 = seasonSlug2;
+                            c02832.L$10 = SpillingKt.nullOutSpilledVariable(headers2);
+                            c02832.L$11 = episodeSlug;
+                            c02832.L$12 = SpillingKt.nullOutSpilledVariable(shareRes2);
+                            c02832.J$0 = parentId;
+                            c02832.label = 3;
                             String token6 = token3;
                             Function1<? super ExtractorLink, Unit> function8 = function3;
                             Map headers6 = headers2;
@@ -2190,9 +2190,9 @@ public final class StreamPlayUtilsKt {
                             String episodeSlug6 = seasonSlug2;
                             String seasonSlug7 = fourthAPI3;
                             String thirdAPI5 = thirdAPI2;
-                            C02821 c02824 = c02822;
-                            $result = Requests.get$default(MainActivityKt.getApp(), thirdAPI2 + str2 + episodeSlug + "&parent_id=" + parentId + "&page=1", headers6, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02824, 4092, (Object) null);
-                            c02822 = c02824;
+                            C02831 c02834 = c02832;
+                            $result = Requests.get$default(MainActivityKt.getApp(), thirdAPI2 + str2 + episodeSlug + "&parent_id=" + parentId + "&page=1", headers6, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02834, 4092, (Object) null);
+                            c02832 = c02834;
                             if ($result == obj) {
                                 return obj;
                             }
@@ -2296,38 +2296,38 @@ public final class StreamPlayUtilsKt {
                 String token7 = token3;
                 String shareKey4 = shareKey2;
                 String thirdAPI6 = thirdAPI3;
-                c02832 = new C02832(token7, thirdAPI6, shareKey4, function9, null);
-                c02822.L$0 = SpillingKt.nullOutSpilledVariable(mediaId3);
-                c02822.L$1 = SpillingKt.nullOutSpilledVariable(type2);
-                c02822.L$2 = SpillingKt.nullOutSpilledVariable(season4);
-                c02822.L$3 = SpillingKt.nullOutSpilledVariable(episode3);
-                c02822.L$4 = SpillingKt.nullOutSpilledVariable(function9);
-                c02822.L$5 = SpillingKt.nullOutSpilledVariable(token7);
-                c02822.L$6 = SpillingKt.nullOutSpilledVariable(thirdAPI6);
-                c02822.L$7 = SpillingKt.nullOutSpilledVariable(fourthAPI4);
-                c02822.L$8 = SpillingKt.nullOutSpilledVariable(seasonSlug3);
-                c02822.L$9 = SpillingKt.nullOutSpilledVariable(episodeSlug2);
-                c02822.L$10 = SpillingKt.nullOutSpilledVariable(headers2);
-                c02822.L$11 = SpillingKt.nullOutSpilledVariable(shareKey4);
-                c02822.L$12 = SpillingKt.nullOutSpilledVariable(shareRes3);
-                c02822.L$13 = SpillingKt.nullOutSpilledVariable(fileList);
-                c02822.label = 4;
-                if (ParCollectionsKt.amapIndexed(fileList, c02832, c02822) == obj) {
+                c02842 = new C02842(token7, thirdAPI6, shareKey4, function9, null);
+                c02832.L$0 = SpillingKt.nullOutSpilledVariable(mediaId3);
+                c02832.L$1 = SpillingKt.nullOutSpilledVariable(type2);
+                c02832.L$2 = SpillingKt.nullOutSpilledVariable(season4);
+                c02832.L$3 = SpillingKt.nullOutSpilledVariable(episode3);
+                c02832.L$4 = SpillingKt.nullOutSpilledVariable(function9);
+                c02832.L$5 = SpillingKt.nullOutSpilledVariable(token7);
+                c02832.L$6 = SpillingKt.nullOutSpilledVariable(thirdAPI6);
+                c02832.L$7 = SpillingKt.nullOutSpilledVariable(fourthAPI4);
+                c02832.L$8 = SpillingKt.nullOutSpilledVariable(seasonSlug3);
+                c02832.L$9 = SpillingKt.nullOutSpilledVariable(episodeSlug2);
+                c02832.L$10 = SpillingKt.nullOutSpilledVariable(headers2);
+                c02832.L$11 = SpillingKt.nullOutSpilledVariable(shareKey4);
+                c02832.L$12 = SpillingKt.nullOutSpilledVariable(shareRes3);
+                c02832.L$13 = SpillingKt.nullOutSpilledVariable(fileList);
+                c02832.label = 4;
+                if (ParCollectionsKt.amapIndexed(fileList, c02842, c02832) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 1:
-                Map headers7 = (Map) c02822.L$10;
-                String episodeSlug7 = (String) c02822.L$9;
-                String seasonSlug8 = (String) c02822.L$8;
-                String fourthAPI6 = (String) c02822.L$7;
-                thirdAPI = (String) c02822.L$6;
-                String token8 = (String) c02822.L$5;
-                Function1<? super ExtractorLink, Unit> function10 = (Function1) c02822.L$4;
-                Integer episode4 = (Integer) c02822.L$3;
-                Integer season5 = (Integer) c02822.L$2;
-                Integer type3 = (Integer) c02822.L$1;
-                Integer mediaId4 = (Integer) c02822.L$0;
+                Map headers7 = (Map) c02832.L$10;
+                String episodeSlug7 = (String) c02832.L$9;
+                String seasonSlug8 = (String) c02832.L$8;
+                String fourthAPI6 = (String) c02832.L$7;
+                thirdAPI = (String) c02832.L$6;
+                String token8 = (String) c02832.L$5;
+                Function1<? super ExtractorLink, Unit> function10 = (Function1) c02832.L$4;
+                Integer episode4 = (Integer) c02832.L$3;
+                Integer season5 = (Integer) c02832.L$2;
+                Integer type3 = (Integer) c02832.L$1;
+                Integer mediaId4 = (Integer) c02832.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 str = "/file/file_share_list?share_key=";
@@ -2351,18 +2351,18 @@ public final class StreamPlayUtilsKt {
                 }
                 return Unit.INSTANCE;
             case 2:
-                String shareKey5 = (String) c02822.L$11;
-                headers2 = (Map) c02822.L$10;
-                String episodeSlug8 = (String) c02822.L$9;
-                String seasonSlug9 = (String) c02822.L$8;
-                String fourthAPI7 = (String) c02822.L$7;
-                thirdAPI2 = (String) c02822.L$6;
-                String token9 = (String) c02822.L$5;
-                Function1<? super ExtractorLink, Unit> function11 = (Function1) c02822.L$4;
-                Integer episode5 = (Integer) c02822.L$3;
-                Integer season6 = (Integer) c02822.L$2;
-                Integer type4 = (Integer) c02822.L$1;
-                Integer mediaId5 = (Integer) c02822.L$0;
+                String shareKey5 = (String) c02832.L$11;
+                headers2 = (Map) c02832.L$10;
+                String episodeSlug8 = (String) c02832.L$9;
+                String seasonSlug9 = (String) c02832.L$8;
+                String fourthAPI7 = (String) c02832.L$7;
+                thirdAPI2 = (String) c02832.L$6;
+                String token9 = (String) c02832.L$5;
+                Function1<? super ExtractorLink, Unit> function11 = (Function1) c02832.L$4;
+                Integer episode5 = (Integer) c02832.L$3;
+                Integer season6 = (Integer) c02832.L$2;
+                Integer type4 = (Integer) c02832.L$1;
+                Integer mediaId5 = (Integer) c02832.L$0;
                 ResultKt.throwOnFailure($result);
                 mediaId2 = mediaId5;
                 obj = coroutine_suspended;
@@ -2386,20 +2386,20 @@ public final class StreamPlayUtilsKt {
                 }
                 return Unit.INSTANCE;
             case 3:
-                long j = c02822.J$0;
-                shareRes4 = (ExternalResponse.Data) c02822.L$12;
-                shareKey2 = (String) c02822.L$11;
-                headers3 = (Map) c02822.L$10;
-                episodeSlug2 = (String) c02822.L$9;
-                seasonSlug4 = (String) c02822.L$8;
-                fourthAPI5 = (String) c02822.L$7;
-                thirdAPI3 = (String) c02822.L$6;
-                token4 = (String) c02822.L$5;
-                function4 = (Function1) c02822.L$4;
-                Integer episode6 = (Integer) c02822.L$3;
-                Integer season7 = (Integer) c02822.L$2;
-                Integer type5 = (Integer) c02822.L$1;
-                Integer mediaId6 = (Integer) c02822.L$0;
+                long j = c02832.J$0;
+                shareRes4 = (ExternalResponse.Data) c02832.L$12;
+                shareKey2 = (String) c02832.L$11;
+                headers3 = (Map) c02832.L$10;
+                episodeSlug2 = (String) c02832.L$9;
+                seasonSlug4 = (String) c02832.L$8;
+                fourthAPI5 = (String) c02832.L$7;
+                thirdAPI3 = (String) c02832.L$6;
+                token4 = (String) c02832.L$5;
+                function4 = (Function1) c02832.L$4;
+                Integer episode6 = (Integer) c02832.L$3;
+                Integer season7 = (Integer) c02832.L$2;
+                Integer type5 = (Integer) c02832.L$1;
+                Integer mediaId6 = (Integer) c02832.L$0;
                 ResultKt.throwOnFailure($result);
                 type2 = type5;
                 season3 = season7;
@@ -2436,23 +2436,23 @@ public final class StreamPlayUtilsKt {
                 String token10 = token3;
                 String shareKey6 = shareKey2;
                 String thirdAPI7 = thirdAPI3;
-                c02832 = new C02832(token10, thirdAPI7, shareKey6, function12, null);
-                c02822.L$0 = SpillingKt.nullOutSpilledVariable(mediaId3);
-                c02822.L$1 = SpillingKt.nullOutSpilledVariable(type2);
-                c02822.L$2 = SpillingKt.nullOutSpilledVariable(season4);
-                c02822.L$3 = SpillingKt.nullOutSpilledVariable(episode3);
-                c02822.L$4 = SpillingKt.nullOutSpilledVariable(function12);
-                c02822.L$5 = SpillingKt.nullOutSpilledVariable(token10);
-                c02822.L$6 = SpillingKt.nullOutSpilledVariable(thirdAPI7);
-                c02822.L$7 = SpillingKt.nullOutSpilledVariable(fourthAPI4);
-                c02822.L$8 = SpillingKt.nullOutSpilledVariable(seasonSlug3);
-                c02822.L$9 = SpillingKt.nullOutSpilledVariable(episodeSlug2);
-                c02822.L$10 = SpillingKt.nullOutSpilledVariable(headers2);
-                c02822.L$11 = SpillingKt.nullOutSpilledVariable(shareKey6);
-                c02822.L$12 = SpillingKt.nullOutSpilledVariable(shareRes3);
-                c02822.L$13 = SpillingKt.nullOutSpilledVariable(fileList);
-                c02822.label = 4;
-                if (ParCollectionsKt.amapIndexed(fileList, c02832, c02822) == obj) {
+                c02842 = new C02842(token10, thirdAPI7, shareKey6, function12, null);
+                c02832.L$0 = SpillingKt.nullOutSpilledVariable(mediaId3);
+                c02832.L$1 = SpillingKt.nullOutSpilledVariable(type2);
+                c02832.L$2 = SpillingKt.nullOutSpilledVariable(season4);
+                c02832.L$3 = SpillingKt.nullOutSpilledVariable(episode3);
+                c02832.L$4 = SpillingKt.nullOutSpilledVariable(function12);
+                c02832.L$5 = SpillingKt.nullOutSpilledVariable(token10);
+                c02832.L$6 = SpillingKt.nullOutSpilledVariable(thirdAPI7);
+                c02832.L$7 = SpillingKt.nullOutSpilledVariable(fourthAPI4);
+                c02832.L$8 = SpillingKt.nullOutSpilledVariable(seasonSlug3);
+                c02832.L$9 = SpillingKt.nullOutSpilledVariable(episodeSlug2);
+                c02832.L$10 = SpillingKt.nullOutSpilledVariable(headers2);
+                c02832.L$11 = SpillingKt.nullOutSpilledVariable(shareKey6);
+                c02832.L$12 = SpillingKt.nullOutSpilledVariable(shareRes3);
+                c02832.L$13 = SpillingKt.nullOutSpilledVariable(fileList);
+                c02832.label = 4;
+                if (ParCollectionsKt.amapIndexed(fileList, c02842, c02832) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
@@ -2488,7 +2488,7 @@ public final class StreamPlayUtilsKt {
     @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u0005H\n"}, d2 = {"<anonymous>", "", "index", "", "fileList", "Lcom/phisher98/ExternalResponse$Data$FileList;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt$invokeExternalSource$2", f = "StreamPlayUtils.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {598, 648}, m = "invokeSuspend", n = {"fileList", "superToken", "index", "fileList", "superToken", "player", "json", "htmlContent", "document", "sourcesWithQualities", "sourcesJsonArray", "jsonObject", "$this$forEach$iv", "element$iv", "it", "element$iv", "source", "format", "label", "$this$forEach$iv", "parsedSources", "index"}, nl = {601, 647}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$12", "L$13", "L$15", "L$16", "L$17", "L$18", "L$20", "L$21", "I$0"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$invokeExternalSource$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,2265:1\n2068#2:2266\n2069#2:2268\n2068#2,2:2269\n2068#2:2271\n2068#2,2:2295\n2069#2:2297\n1#3:2267\n1#3:2275\n93#4,2:2272\n63#4:2274\n64#4,15:2276\n95#4,2:2293\n50#5:2291\n43#5:2292\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$invokeExternalSource$2\n*L\n614#1:2266\n614#1:2268\n629#1:2269,2\n639#1:2271\n641#1:2295,2\n639#1:2297\n640#1:2275\n640#1:2272,2\n640#1:2274\n640#1:2276,15\n640#1:2293,2\n640#1:2291\n640#1:2292\n*E\n"})
-    static final class C02832 extends SuspendLambda implements Function3<Integer, ExternalResponse.Data.FileList, Continuation<? super Unit>, Object> {
+    static final class C02842 extends SuspendLambda implements Function3<Integer, ExternalResponse.Data.FileList, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $shareKey;
         final /* synthetic */ String $thirdAPI;
@@ -2519,7 +2519,7 @@ public final class StreamPlayUtilsKt {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C02832(String str, String str2, String str3, Function1<? super ExtractorLink, Unit> function1, Continuation<? super C02832> continuation) {
+        C02842(String str, String str2, String str3, Function1<? super ExtractorLink, Unit> function1, Continuation<? super C02842> continuation) {
             super(3, continuation);
             this.$token = str;
             this.$thirdAPI = str2;
@@ -2528,10 +2528,10 @@ public final class StreamPlayUtilsKt {
         }
 
         public final Object invoke(int i, ExternalResponse.Data.FileList fileList, Continuation<? super Unit> continuation) {
-            C02832 c02832 = new C02832(this.$token, this.$thirdAPI, this.$shareKey, this.$callback, continuation);
-            c02832.I$0 = i;
-            c02832.L$0 = fileList;
-            return c02832.invokeSuspend(Unit.INSTANCE);
+            C02842 c02842 = new C02842(this.$token, this.$thirdAPI, this.$shareKey, this.$callback, continuation);
+            c02842.I$0 = i;
+            c02842.L$0 = fileList;
+            return c02842.invokeSuspend(Unit.INSTANCE);
         }
 
         public /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2, Object obj3) {
@@ -2562,7 +2562,7 @@ public final class StreamPlayUtilsKt {
                 Method dump skipped, instruction units count: 1492
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayUtilsKt.C02832.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayUtilsKt.C02842.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
@@ -3242,10 +3242,10 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:97:0x0130 A[SYNTHETIC] */
     @Nullable
     public static final Object getRedirectLinks(@NotNull String url, @NotNull Continuation<? super String> continuation) {
-        C02791 c02791;
+        C02801 c02801;
         int i;
         String str;
-        C02791 c02792;
+        C02801 c02802;
         Object obj;
         String url2;
         String doc;
@@ -3274,29 +3274,29 @@ public final class StreamPlayUtilsKt {
         String directlink;
         String str5;
         boolean z2;
-        if (continuation instanceof C02791) {
-            c02791 = (C02791) continuation;
-            if ((c02791.label & Integer.MIN_VALUE) != 0) {
-                c02791.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02801) {
+            c02801 = (C02801) continuation;
+            if ((c02801.label & Integer.MIN_VALUE) != 0) {
+                c02801.label -= Integer.MIN_VALUE;
             } else {
-                c02791 = new C02791(continuation);
+                c02801 = new C02801(continuation);
             }
         } else {
-            c02791 = new C02791(continuation);
+            c02801 = new C02801(continuation);
         }
-        C02791 c02793 = c02791;
-        Object $result = c02793.result;
+        C02801 c02803 = c02801;
+        Object $result = c02803.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02793.label) {
+        switch (c02803.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
-                c02793.L$0 = url;
-                c02793.label = 1;
+                c02803.L$0 = url;
+                c02803.label = 1;
                 i = 0;
                 str = "";
-                Object obj4 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02793, 4094, (Object) null);
-                c02792 = c02793;
+                Object obj4 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02803, 4094, (Object) null);
+                c02802 = c02803;
                 if (obj4 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -3342,20 +3342,20 @@ public final class StreamPlayUtilsKt {
                         Result.Companion companion = Result.Companion;
                         Requests app2 = MainActivityKt.getApp();
                         String string = StringsKt.trim(wphttp1 + "?re=" + data).toString();
-                        c02792.L$0 = url2;
-                        c02792.L$1 = SpillingKt.nullOutSpilledVariable(doc);
-                        c02792.L$2 = SpillingKt.nullOutSpilledVariable(regex2);
-                        c02792.L$3 = SpillingKt.nullOutSpilledVariable(combinedString);
-                        c02792.L$4 = SpillingKt.nullOutSpilledVariable(decodedString);
-                        c02792.L$5 = SpillingKt.nullOutSpilledVariable(jsonObject);
-                        c02792.L$6 = encodedurl;
-                        c02792.L$7 = SpillingKt.nullOutSpilledVariable(data);
-                        c02792.L$8 = SpillingKt.nullOutSpilledVariable(wphttp1);
-                        c02792.label = 2;
+                        c02802.L$0 = url2;
+                        c02802.L$1 = SpillingKt.nullOutSpilledVariable(doc);
+                        c02802.L$2 = SpillingKt.nullOutSpilledVariable(regex2);
+                        c02802.L$3 = SpillingKt.nullOutSpilledVariable(combinedString);
+                        c02802.L$4 = SpillingKt.nullOutSpilledVariable(decodedString);
+                        c02802.L$5 = SpillingKt.nullOutSpilledVariable(jsonObject);
+                        c02802.L$6 = encodedurl;
+                        c02802.L$7 = SpillingKt.nullOutSpilledVariable(data);
+                        c02802.L$8 = SpillingKt.nullOutSpilledVariable(wphttp1);
+                        c02802.label = 2;
                         url4 = url2;
                         str3 = str2;
                         try {
-                            $result = Requests.get$default(app2, string, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02792, 4094, (Object) null);
+                            $result = Requests.get$default(app2, string, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02802, 4094, (Object) null);
                             if ($result == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -3446,11 +3446,11 @@ public final class StreamPlayUtilsKt {
                 break;
                 break;
             case 1:
-                String url5 = (String) c02793.L$0;
+                String url5 = (String) c02803.L$0;
                 ResultKt.throwOnFailure($result);
                 str = "";
                 i = 0;
-                c02792 = c02793;
+                c02802 = c02803;
                 url2 = url5;
                 obj = $result;
                 doc = ((NiceResponse) obj).toString();
@@ -3498,19 +3498,19 @@ public final class StreamPlayUtilsKt {
                 Result.Companion companion4 = Result.Companion;
                 Requests app3 = MainActivityKt.getApp();
                 String string2 = StringsKt.trim(wphttp2 + "?re=" + data2).toString();
-                c02792.L$0 = url2;
-                c02792.L$1 = SpillingKt.nullOutSpilledVariable(doc);
-                c02792.L$2 = SpillingKt.nullOutSpilledVariable(regex2);
-                c02792.L$3 = SpillingKt.nullOutSpilledVariable(combinedString);
-                c02792.L$4 = SpillingKt.nullOutSpilledVariable(decodedString2);
-                c02792.L$5 = SpillingKt.nullOutSpilledVariable(jsonObject2);
-                c02792.L$6 = encodedurl;
-                c02792.L$7 = SpillingKt.nullOutSpilledVariable(data2);
-                c02792.L$8 = SpillingKt.nullOutSpilledVariable(wphttp2);
-                c02792.label = 2;
+                c02802.L$0 = url2;
+                c02802.L$1 = SpillingKt.nullOutSpilledVariable(doc);
+                c02802.L$2 = SpillingKt.nullOutSpilledVariable(regex2);
+                c02802.L$3 = SpillingKt.nullOutSpilledVariable(combinedString);
+                c02802.L$4 = SpillingKt.nullOutSpilledVariable(decodedString2);
+                c02802.L$5 = SpillingKt.nullOutSpilledVariable(jsonObject2);
+                c02802.L$6 = encodedurl;
+                c02802.L$7 = SpillingKt.nullOutSpilledVariable(data2);
+                c02802.L$8 = SpillingKt.nullOutSpilledVariable(wphttp2);
+                c02802.label = 2;
                 url4 = url2;
                 str3 = str2;
-                $result = Requests.get$default(app3, string2, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02792, 4094, (Object) null);
+                $result = Requests.get$default(app3, string2, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02802, 4094, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -3537,11 +3537,11 @@ public final class StreamPlayUtilsKt {
                 }
                 return directlink;
             case 2:
-                encodedurl2 = (String) c02793.L$6;
-                combinedString2 = (String) c02793.L$3;
-                regex4 = (Regex) c02793.L$2;
-                doc2 = (String) c02793.L$1;
-                url3 = (String) c02793.L$0;
+                encodedurl2 = (String) c02803.L$6;
+                combinedString2 = (String) c02803.L$3;
+                regex4 = (Regex) c02803.L$2;
+                doc2 = (String) c02803.L$1;
+                url3 = (String) c02803.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     str3 = "";
@@ -3812,7 +3812,7 @@ public final class StreamPlayUtilsKt {
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt$runLimitedAsync$2", f = "StreamPlayUtils.kt", i = {0, 1, 1, 1}, l = {1270, 1286}, m = "invokeSuspend", n = {"$this$coroutineScope", "$this$coroutineScope", "e", "semaphore"}, nl = {1271, 1287}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$runLimitedAsync$2\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,2265:1\n12746#2:2266\n13093#2,3:2267\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$runLimitedAsync$2\n*L\n1275#1:2266\n1275#1:2267,3\n*E\n"})
-    static final class C02902 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Object>, Object> {
+    static final class C02912 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Object>, Object> {
         final /* synthetic */ int $concurrency;
         final /* synthetic */ Function1<Continuation<? super Unit>, Object>[] $tasks;
         private /* synthetic */ Object L$0;
@@ -3821,16 +3821,16 @@ public final class StreamPlayUtilsKt {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C02902(int i, Function1<? super Continuation<? super Unit>, ? extends Object>[] function1Arr, Continuation<? super C02902> continuation) {
+        C02912(int i, Function1<? super Continuation<? super Unit>, ? extends Object>[] function1Arr, Continuation<? super C02912> continuation) {
             super(2, continuation);
             this.$concurrency = i;
             this.$tasks = function1Arr;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c02902 = new C02902(this.$concurrency, this.$tasks, continuation);
-            c02902.L$0 = obj;
-            return c02902;
+            Continuation<Unit> c02912 = new C02912(this.$concurrency, this.$tasks, continuation);
+            c02912.L$0 = obj;
+            return c02912;
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<Object> continuation) {
@@ -3885,7 +3885,7 @@ public final class StreamPlayUtilsKt {
 
     @Nullable
     public static final Object runLimitedAsync(int concurrency, @NotNull Function1<? super Continuation<? super Unit>, ? extends Object>[] function1Arr, @NotNull Continuation<Object> continuation) {
-        return CoroutineScopeKt.coroutineScope(new C02902(concurrency, function1Arr, null), continuation);
+        return CoroutineScopeKt.coroutineScope(new C02912(concurrency, function1Arr, null), continuation);
     }
 
     @NotNull
@@ -3907,30 +3907,30 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     @Nullable
     public static final Object yflixDecode(@Nullable String text, @NotNull Continuation<? super String> continuation) {
-        C02941 c02941;
-        if (continuation instanceof C02941) {
-            c02941 = (C02941) continuation;
-            if ((c02941.label & Integer.MIN_VALUE) != 0) {
-                c02941.label -= Integer.MIN_VALUE;
+        C02951 c02951;
+        if (continuation instanceof C02951) {
+            c02951 = (C02951) continuation;
+            if ((c02951.label & Integer.MIN_VALUE) != 0) {
+                c02951.label -= Integer.MIN_VALUE;
             } else {
-                c02941 = new C02941(continuation);
+                c02951 = new C02951(continuation);
             }
         } else {
-            c02941 = new C02941(continuation);
+            c02951 = new C02951(continuation);
         }
-        C02941 c02942 = c02941;
-        Object $result = c02942.result;
+        C02951 c02952 = c02951;
+        Object $result = c02952.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02942.label) {
+        switch (c02952.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 try {
                     Requests app = MainActivityKt.getApp();
                     String str = "https://enc-dec.app/api/enc-movies-flix?text=" + text;
-                    c02942.L$0 = SpillingKt.nullOutSpilledVariable(text);
-                    c02942.label = 1;
+                    c02952.L$0 = SpillingKt.nullOutSpilledVariable(text);
+                    c02952.label = 1;
                     try {
-                        $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02942, 4094, (Object) null);
+                        $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02952, 4094, (Object) null);
                         if ($result == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -3962,32 +3962,32 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     @Nullable
     public static final Object yflixDecodeReverse(@NotNull String text, @NotNull Continuation<? super String> continuation) {
-        C02951 c02951;
-        if (continuation instanceof C02951) {
-            c02951 = (C02951) continuation;
-            if ((c02951.label & Integer.MIN_VALUE) != 0) {
-                c02951.label -= Integer.MIN_VALUE;
+        C02961 c02961;
+        if (continuation instanceof C02961) {
+            c02961 = (C02961) continuation;
+            if ((c02961.label & Integer.MIN_VALUE) != 0) {
+                c02961.label -= Integer.MIN_VALUE;
             } else {
-                c02951 = new C02951(continuation);
+                c02961 = new C02961(continuation);
             }
         } else {
-            c02951 = new C02951(continuation);
+            c02961 = new C02961(continuation);
         }
-        C02951 c02952 = c02951;
-        Object $result = c02952.result;
+        C02961 c02962 = c02961;
+        Object $result = c02962.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02952.label) {
+        switch (c02962.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 RequestBody jsonBody = RequestBody.Companion.create("{\"text\":\"" + text + "\"}", JSON);
                 try {
                     Requests app = MainActivityKt.getApp();
                     try {
-                        c02952.L$0 = SpillingKt.nullOutSpilledVariable(text);
-                        c02952.L$1 = SpillingKt.nullOutSpilledVariable(jsonBody);
-                        c02952.label = 1;
+                        c02962.L$0 = SpillingKt.nullOutSpilledVariable(text);
+                        c02962.L$1 = SpillingKt.nullOutSpilledVariable(jsonBody);
+                        c02962.label = 1;
                         try {
-                            $result = Requests.post$default(app, "https://enc-dec.app/api/dec-movies-flix", (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, jsonBody, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02952, 65278, (Object) null);
+                            $result = Requests.post$default(app, "https://enc-dec.app/api/dec-movies-flix", (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, jsonBody, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02962, 65278, (Object) null);
                             if ($result == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -4080,7 +4080,7 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:98:0x023b  */
     @Nullable
     public static final Object fetchTmdbLogoUrl(@NotNull String tmdbAPI, @NotNull String apiKey, @NotNull TvType type, @Nullable Integer tmdbId, @Nullable String appLangCode, @NotNull Continuation<? super String> continuation) {
-        C02751 c02751;
+        C02761 c02761;
         String tmdbAPI2;
         String appLangCode2;
         String apiKey2;
@@ -4104,20 +4104,20 @@ public final class StreamPlayUtilsKt {
         String tmdbAPI3;
         String l;
         String string;
-        if (continuation instanceof C02751) {
-            c02751 = (C02751) continuation;
-            if ((c02751.label & Integer.MIN_VALUE) != 0) {
-                c02751.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02761) {
+            c02761 = (C02761) continuation;
+            if ((c02761.label & Integer.MIN_VALUE) != 0) {
+                c02761.label -= Integer.MIN_VALUE;
             } else {
-                c02751 = new C02751(continuation);
+                c02761 = new C02761(continuation);
             }
         } else {
-            c02751 = new C02751(continuation);
+            c02761 = new C02761(continuation);
         }
-        C02751 c02752 = c02751;
-        Object $result = c02752.result;
+        C02761 c02762 = c02761;
+        Object $result = c02762.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02752.label) {
+        switch (c02762.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (tmdbId == null) {
@@ -4127,16 +4127,16 @@ public final class StreamPlayUtilsKt {
                 try {
                     Result.Companion companion = Result.Companion;
                     Requests app = MainActivityKt.getApp();
-                    c02752.L$0 = SpillingKt.nullOutSpilledVariable(tmdbAPI);
-                    c02752.L$1 = SpillingKt.nullOutSpilledVariable(apiKey);
-                    c02752.L$2 = SpillingKt.nullOutSpilledVariable(type);
-                    c02752.L$3 = SpillingKt.nullOutSpilledVariable(tmdbId);
-                    c02752.L$4 = appLangCode;
-                    c02752.L$5 = SpillingKt.nullOutSpilledVariable(url);
-                    c02752.label = 1;
+                    c02762.L$0 = SpillingKt.nullOutSpilledVariable(tmdbAPI);
+                    c02762.L$1 = SpillingKt.nullOutSpilledVariable(apiKey);
+                    c02762.L$2 = SpillingKt.nullOutSpilledVariable(type);
+                    c02762.L$3 = SpillingKt.nullOutSpilledVariable(tmdbId);
+                    c02762.L$4 = appLangCode;
+                    c02762.L$5 = SpillingKt.nullOutSpilledVariable(url);
+                    c02762.label = 1;
                     tmdbAPI2 = null;
                     try {
-                        Object obj3 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02752, 4094, (Object) null);
+                        Object obj3 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02762, 4094, (Object) null);
                         if (obj3 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -4324,8 +4324,8 @@ public final class StreamPlayUtilsKt {
                 }
                 break;
             case 1:
-                appLangCode2 = (String) c02752.L$4;
-                String tmdbAPI4 = (String) c02752.L$0;
+                appLangCode2 = (String) c02762.L$4;
+                String tmdbAPI4 = (String) c02762.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     apiKey2 = tmdbAPI4;
@@ -4550,10 +4550,10 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     @Nullable
     public static final Object getHindMoviezLinks(@NotNull String source, @NotNull String url, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C02761 c02761;
+        C02771 c02771;
         Object obj;
         char c;
-        C02761 c02762;
+        C02771 c02772;
         String source2;
         Function1<? super SubtitleFile, Unit> function3;
         Function1<? super ExtractorLink, Unit> function4;
@@ -4568,32 +4568,32 @@ public final class StreamPlayUtilsKt {
         String strSubstringAfter$default;
         String strText2;
         String strSubstringAfter$default2;
-        if (continuation instanceof C02761) {
-            c02761 = (C02761) continuation;
-            if ((c02761.label & Integer.MIN_VALUE) != 0) {
-                c02761.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02771) {
+            c02771 = (C02771) continuation;
+            if ((c02771.label & Integer.MIN_VALUE) != 0) {
+                c02771.label -= Integer.MIN_VALUE;
             } else {
-                c02761 = new C02761(continuation);
+                c02771 = new C02771(continuation);
             }
         } else {
-            c02761 = new C02761(continuation);
+            c02771 = new C02771(continuation);
         }
-        Object $result2 = c02761.result;
+        Object $result2 = c02771.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02761.label) {
+        switch (c02771.label) {
             case 0:
                 ResultKt.throwOnFailure($result2);
                 Requests app = MainActivityKt.getApp();
-                c02761.L$0 = source;
-                c02761.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c02761.L$2 = function1;
-                c02761.L$3 = function2;
-                c02761.label = 1;
-                C02761 c02763 = c02761;
+                c02771.L$0 = source;
+                c02771.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c02771.L$2 = function1;
+                c02771.L$3 = function2;
+                c02771.label = 1;
+                C02771 c02773 = c02771;
                 obj = coroutine_suspended;
                 c = 1;
-                Object obj3 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c02763, 3838, (Object) null);
-                c02762 = c02763;
+                Object obj3 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c02773, 3838, (Object) null);
+                c02772 = c02773;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -4623,35 +4623,35 @@ public final class StreamPlayUtilsKt {
                 String extractedSpecs = buildExtractedTitle(extractSpecs(name));
                 int quality = getIndexQuality(name);
                 function1Arr = new Function1[2];
-                C02772 c02772 = new C02772(doc, source2, extractedSpecs, fileSize, function3, function4, response, quality, null);
+                C02782 c02782 = new C02782(doc, source2, extractedSpecs, fileSize, function3, function4, response, quality, null);
                 Function1<? super SubtitleFile, Unit> function5 = function3;
                 Function1<? super ExtractorLink, Unit> function6 = function4;
-                function1Arr[0] = c02772;
+                function1Arr[0] = c02782;
                 String extractedSpecs2 = source2;
                 String fileSize2 = fileSize;
-                function1Arr[c] = new C02783(doc, function6, extractedSpecs2, extractedSpecs, fileSize2, quality, null);
-                c02762.L$0 = SpillingKt.nullOutSpilledVariable(extractedSpecs2);
-                c02762.L$1 = SpillingKt.nullOutSpilledVariable($result);
-                c02762.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                c02762.L$3 = SpillingKt.nullOutSpilledVariable(function6);
-                c02762.L$4 = SpillingKt.nullOutSpilledVariable(response);
-                c02762.L$5 = SpillingKt.nullOutSpilledVariable(doc);
-                c02762.L$6 = SpillingKt.nullOutSpilledVariable(name);
-                c02762.L$7 = SpillingKt.nullOutSpilledVariable(fileSize2);
-                c02762.L$8 = SpillingKt.nullOutSpilledVariable(extractedSpecs);
-                c02762.I$0 = quality;
-                c02762.label = 2;
-                if (ParCollectionsKt.runAllAsync(function1Arr, c02762) == obj) {
+                function1Arr[c] = new C02793(doc, function6, extractedSpecs2, extractedSpecs, fileSize2, quality, null);
+                c02772.L$0 = SpillingKt.nullOutSpilledVariable(extractedSpecs2);
+                c02772.L$1 = SpillingKt.nullOutSpilledVariable($result);
+                c02772.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                c02772.L$3 = SpillingKt.nullOutSpilledVariable(function6);
+                c02772.L$4 = SpillingKt.nullOutSpilledVariable(response);
+                c02772.L$5 = SpillingKt.nullOutSpilledVariable(doc);
+                c02772.L$6 = SpillingKt.nullOutSpilledVariable(name);
+                c02772.L$7 = SpillingKt.nullOutSpilledVariable(fileSize2);
+                c02772.L$8 = SpillingKt.nullOutSpilledVariable(extractedSpecs);
+                c02772.I$0 = quality;
+                c02772.label = 2;
+                if (ParCollectionsKt.runAllAsync(function1Arr, c02772) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 1:
-                Function1<? super ExtractorLink, Unit> function7 = (Function1) c02761.L$3;
-                Function1<? super SubtitleFile, Unit> function8 = (Function1) c02761.L$2;
-                Object url2 = (String) c02761.L$1;
-                String source3 = (String) c02761.L$0;
+                Function1<? super ExtractorLink, Unit> function7 = (Function1) c02771.L$3;
+                Function1<? super SubtitleFile, Unit> function8 = (Function1) c02771.L$2;
+                Object url2 = (String) c02771.L$1;
+                String source3 = (String) c02771.L$0;
                 ResultKt.throwOnFailure($result2);
-                c02762 = c02761;
+                c02772 = c02771;
                 obj = coroutine_suspended;
                 function4 = function7;
                 function3 = function8;
@@ -4681,30 +4681,30 @@ public final class StreamPlayUtilsKt {
                 String extractedSpecs3 = buildExtractedTitle(extractSpecs(name2));
                 int quality2 = getIndexQuality(name2);
                 function1Arr = new Function1[2];
-                C02772 c02773 = new C02772(doc2, source2, extractedSpecs3, fileSize, function3, function4, response2, quality2, null);
+                C02782 c02783 = new C02782(doc2, source2, extractedSpecs3, fileSize, function3, function4, response2, quality2, null);
                 Function1<? super SubtitleFile, Unit> function9 = function3;
                 Function1<? super ExtractorLink, Unit> function10 = function4;
-                function1Arr[0] = c02773;
+                function1Arr[0] = c02783;
                 String extractedSpecs4 = source2;
                 String fileSize3 = fileSize;
-                function1Arr[c] = new C02783(doc2, function10, extractedSpecs4, extractedSpecs3, fileSize3, quality2, null);
-                c02762.L$0 = SpillingKt.nullOutSpilledVariable(extractedSpecs4);
-                c02762.L$1 = SpillingKt.nullOutSpilledVariable($result);
-                c02762.L$2 = SpillingKt.nullOutSpilledVariable(function9);
-                c02762.L$3 = SpillingKt.nullOutSpilledVariable(function10);
-                c02762.L$4 = SpillingKt.nullOutSpilledVariable(response2);
-                c02762.L$5 = SpillingKt.nullOutSpilledVariable(doc2);
-                c02762.L$6 = SpillingKt.nullOutSpilledVariable(name2);
-                c02762.L$7 = SpillingKt.nullOutSpilledVariable(fileSize3);
-                c02762.L$8 = SpillingKt.nullOutSpilledVariable(extractedSpecs3);
-                c02762.I$0 = quality2;
-                c02762.label = 2;
-                if (ParCollectionsKt.runAllAsync(function1Arr, c02762) == obj) {
+                function1Arr[c] = new C02793(doc2, function10, extractedSpecs4, extractedSpecs3, fileSize3, quality2, null);
+                c02772.L$0 = SpillingKt.nullOutSpilledVariable(extractedSpecs4);
+                c02772.L$1 = SpillingKt.nullOutSpilledVariable($result);
+                c02772.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                c02772.L$3 = SpillingKt.nullOutSpilledVariable(function10);
+                c02772.L$4 = SpillingKt.nullOutSpilledVariable(response2);
+                c02772.L$5 = SpillingKt.nullOutSpilledVariable(doc2);
+                c02772.L$6 = SpillingKt.nullOutSpilledVariable(name2);
+                c02772.L$7 = SpillingKt.nullOutSpilledVariable(fileSize3);
+                c02772.L$8 = SpillingKt.nullOutSpilledVariable(extractedSpecs3);
+                c02772.I$0 = quality2;
+                c02772.label = 2;
+                if (ParCollectionsKt.runAllAsync(function1Arr, c02772) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 2:
-                int i = c02761.I$0;
+                int i = c02771.I$0;
                 ResultKt.throwOnFailure($result2);
                 return Unit.INSTANCE;
             default:
@@ -4717,7 +4717,7 @@ public final class StreamPlayUtilsKt {
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt$getHindMoviezLinks$2", f = "StreamPlayUtils.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {1462, 1471, 1482}, m = "invokeSuspend", n = {"redirectUrls", "$this$forEach$iv", "element$iv", "redirectUrl", "redirectUrls", "$this$forEach$iv", "element$iv", "redirectUrl", "redirectUrls", "$this$forEach$iv", "element$iv", "redirectUrl", "redirectDoc", "$this$forEach$iv", "element$iv", "btn", "href"}, nl = {1468, 1475, 1481}, s = {"L$0", "L$1", "L$9", "L$10", "L$0", "L$1", "L$9", "L$10", "L$0", "L$1", "L$9", "L$10", "L$11", "L$12", "L$14", "L$15", "L$16"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$getHindMoviezLinks$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,2265:1\n1795#2,10:2266\n2068#2:2276\n2069#2:2279\n1805#2:2280\n2068#2:2281\n2068#2,2:2282\n2069#2:2284\n1#3:2277\n1#3:2278\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$getHindMoviezLinks$2\n*L\n1458#1:2266,10\n1458#1:2276\n1458#1:2279\n1458#1:2280\n1460#1:2281\n1477#1:2282,2\n1460#1:2284\n1458#1:2278\n*E\n"})
-    static final class C02772 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    static final class C02782 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Document $doc;
         final /* synthetic */ String $extractedSpecs;
@@ -4748,7 +4748,7 @@ public final class StreamPlayUtilsKt {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C02772(Document document, String str, String str2, String str3, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, NiceResponse niceResponse, int i, Continuation<? super C02772> continuation) {
+        C02782(Document document, String str, String str2, String str3, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, NiceResponse niceResponse, int i, Continuation<? super C02782> continuation) {
             super(1, continuation);
             this.$doc = document;
             this.$source = str;
@@ -4761,7 +4761,7 @@ public final class StreamPlayUtilsKt {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C02772(this.$doc, this.$source, this.$extractedSpecs, this.$fileSize, this.$subtitleCallback, this.$callback, this.$response, this.$quality, continuation);
+            return new C02782(this.$doc, this.$source, this.$extractedSpecs, this.$fileSize, this.$subtitleCallback, this.$callback, this.$response, this.$quality, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -4784,7 +4784,7 @@ public final class StreamPlayUtilsKt {
                 Method dump skipped, instruction units count: 1012
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayUtilsKt.C02772.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayUtilsKt.C02782.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
@@ -4792,7 +4792,7 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt$getHindMoviezLinks$3", f = "StreamPlayUtils.kt", i = {0}, l = {1500}, m = "invokeSuspend", n = {"hCloudUrl"}, nl = {1499}, s = {"L$0"}, v = 2)
-    static final class C02783 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    static final class C02793 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Document $doc;
         final /* synthetic */ String $extractedSpecs;
@@ -4804,7 +4804,7 @@ public final class StreamPlayUtilsKt {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C02783(Document document, Function1<? super ExtractorLink, Unit> function1, String str, String str2, String str3, int i, Continuation<? super C02783> continuation) {
+        C02793(Document document, Function1<? super ExtractorLink, Unit> function1, String str, String str2, String str3, int i, Continuation<? super C02793> continuation) {
             super(1, continuation);
             this.$doc = document;
             this.$callback = function1;
@@ -4815,7 +4815,7 @@ public final class StreamPlayUtilsKt {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C02783(this.$doc, this.$callback, this.$source, this.$extractedSpecs, this.$fileSize, this.$quality, continuation);
+            return new C02793(this.$doc, this.$callback, this.$source, this.$extractedSpecs, this.$fileSize, this.$quality, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -5023,18 +5023,18 @@ public final class StreamPlayUtilsKt {
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayUtilsKt$bypassXD$2", f = "StreamPlayUtils.kt", i = {}, l = {1770}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
-    static final class C02722 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    static final class C02732 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ CompletableDeferred<Unit> $visibleTimeDone;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C02722(CompletableDeferred<Unit> completableDeferred, Continuation<? super C02722> continuation) {
+        C02732(CompletableDeferred<Unit> completableDeferred, Continuation<? super C02732> continuation) {
             super(2, continuation);
             this.$visibleTimeDone = completableDeferred;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C02722(this.$visibleTimeDone, continuation);
+            return new C02732(this.$visibleTimeDone, continuation);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -5071,7 +5071,7 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     @Nullable
     public static final Object safeGet(@NotNull String url, @Nullable Map<String, String> map, @Nullable String referer, @Nullable Long timeout, @Nullable Interceptor interceptor, boolean allowRedirects, int cacheTime, @NotNull Continuation<? super NiceResponse> continuation) throws Throwable {
-        C02921 c02921;
+        C02931 c02931;
         int $i$f$withPermit;
         Map<String, String> map2;
         String referer2;
@@ -5086,33 +5086,33 @@ public final class StreamPlayUtilsKt {
         long jLongValue;
         Semaphore $this$withPermit$iv2;
         Object obj;
-        if (continuation instanceof C02921) {
-            c02921 = (C02921) continuation;
-            if ((c02921.label & Integer.MIN_VALUE) != 0) {
-                c02921.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02931) {
+            c02931 = (C02931) continuation;
+            if ((c02931.label & Integer.MIN_VALUE) != 0) {
+                c02931.label -= Integer.MIN_VALUE;
             } else {
-                c02921 = new C02921(continuation);
+                c02931 = new C02931(continuation);
             }
         } else {
-            c02921 = new C02921(continuation);
+            c02931 = new C02931(continuation);
         }
-        C02921 c02922 = c02921;
-        Object $result = c02922.result;
+        C02931 c02932 = c02931;
+        Object $result = c02932.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02922.label) {
+        switch (c02932.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Semaphore $this$withPermit$iv3 = appGlobalSemaphore;
-                c02922.L$0 = url;
-                c02922.L$1 = map;
-                c02922.L$2 = referer;
-                c02922.L$3 = timeout;
-                c02922.L$4 = interceptor;
-                c02922.L$5 = $this$withPermit$iv3;
-                c02922.Z$0 = allowRedirects;
-                c02922.I$0 = cacheTime;
-                c02922.label = 1;
-                if ($this$withPermit$iv3.acquire(c02922) == coroutine_suspended) {
+                c02932.L$0 = url;
+                c02932.L$1 = map;
+                c02932.L$2 = referer;
+                c02932.L$3 = timeout;
+                c02932.L$4 = interceptor;
+                c02932.L$5 = $this$withPermit$iv3;
+                c02932.Z$0 = allowRedirects;
+                c02932.I$0 = cacheTime;
+                c02932.label = 1;
+                if ($this$withPermit$iv3.acquire(c02932) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 $i$f$withPermit = 0;
@@ -5146,18 +5146,18 @@ public final class StreamPlayUtilsKt {
                     if (!allowRedirects2) {
                         z = false;
                     }
-                    c02922.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c02922.L$1 = SpillingKt.nullOutSpilledVariable(map2);
-                    c02922.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c02922.L$3 = SpillingKt.nullOutSpilledVariable(timeout2);
-                    c02922.L$4 = SpillingKt.nullOutSpilledVariable(interceptor2);
-                    c02922.L$5 = $this$withPermit$iv;
-                    c02922.Z$0 = allowRedirects2;
-                    c02922.I$0 = $i$f$withPermit2;
-                    c02922.label = 2;
+                    c02932.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c02932.L$1 = SpillingKt.nullOutSpilledVariable(map2);
+                    c02932.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c02932.L$3 = SpillingKt.nullOutSpilledVariable(timeout2);
+                    c02932.L$4 = SpillingKt.nullOutSpilledVariable(interceptor2);
+                    c02932.L$5 = $this$withPermit$iv;
+                    c02932.Z$0 = allowRedirects2;
+                    c02932.I$0 = $i$f$withPermit2;
+                    c02932.label = 2;
                     $this$withPermit$iv2 = $this$withPermit$iv;
                     try {
-                        obj = Requests.get$default(app, url2, mapEmptyMap, referer2, (Map) null, (Map) null, z, $i$f$withPermit2, (TimeUnit) null, jLongValue, interceptor2, false, (ResponseParser) null, c02922, 3224, (Object) null);
+                        obj = Requests.get$default(app, url2, mapEmptyMap, referer2, (Map) null, (Map) null, z, $i$f$withPermit2, (TimeUnit) null, jLongValue, interceptor2, false, (ResponseParser) null, c02932, 3224, (Object) null);
                         if (obj == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -5184,14 +5184,14 @@ public final class StreamPlayUtilsKt {
                 break;
                 break;
             case 1:
-                $i$f$withPermit2 = c02922.I$0;
-                boolean allowRedirects3 = c02922.Z$0;
-                Semaphore $this$withPermit$iv4 = (Semaphore) c02922.L$5;
-                interceptor2 = (Interceptor) c02922.L$4;
-                Long timeout3 = (Long) c02922.L$3;
-                String referer3 = (String) c02922.L$2;
-                Map<String, String> map3 = (Map) c02922.L$1;
-                url2 = (String) c02922.L$0;
+                $i$f$withPermit2 = c02932.I$0;
+                boolean allowRedirects3 = c02932.Z$0;
+                Semaphore $this$withPermit$iv4 = (Semaphore) c02932.L$5;
+                interceptor2 = (Interceptor) c02932.L$4;
+                Long timeout3 = (Long) c02932.L$3;
+                String referer3 = (String) c02932.L$2;
+                Map<String, String> map3 = (Map) c02932.L$1;
+                url2 = (String) c02932.L$0;
                 ResultKt.throwOnFailure($result);
                 $i$f$withPermit = 0;
                 allowRedirects2 = allowRedirects3;
@@ -5215,17 +5215,17 @@ public final class StreamPlayUtilsKt {
                 if (!allowRedirects2) {
                     z = false;
                 }
-                c02922.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c02922.L$1 = SpillingKt.nullOutSpilledVariable(map2);
-                c02922.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c02922.L$3 = SpillingKt.nullOutSpilledVariable(timeout2);
-                c02922.L$4 = SpillingKt.nullOutSpilledVariable(interceptor2);
-                c02922.L$5 = $this$withPermit$iv;
-                c02922.Z$0 = allowRedirects2;
-                c02922.I$0 = $i$f$withPermit2;
-                c02922.label = 2;
+                c02932.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c02932.L$1 = SpillingKt.nullOutSpilledVariable(map2);
+                c02932.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c02932.L$3 = SpillingKt.nullOutSpilledVariable(timeout2);
+                c02932.L$4 = SpillingKt.nullOutSpilledVariable(interceptor2);
+                c02932.L$5 = $this$withPermit$iv;
+                c02932.Z$0 = allowRedirects2;
+                c02932.I$0 = $i$f$withPermit2;
+                c02932.label = 2;
                 $this$withPermit$iv2 = $this$withPermit$iv;
-                obj = Requests.get$default(app2, url2, mapEmptyMap, referer2, (Map) null, (Map) null, z, $i$f$withPermit2, (TimeUnit) null, jLongValue, interceptor2, false, (ResponseParser) null, c02922, 3224, (Object) null);
+                obj = Requests.get$default(app2, url2, mapEmptyMap, referer2, (Map) null, (Map) null, z, $i$f$withPermit2, (TimeUnit) null, jLongValue, interceptor2, false, (ResponseParser) null, c02932, 3224, (Object) null);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -5235,9 +5235,9 @@ public final class StreamPlayUtilsKt {
                 $this$withPermit$iv.release();
                 return niceResponse2;
             case 2:
-                int i = c02922.I$0;
-                boolean z2 = c02922.Z$0;
-                $this$withPermit$iv = (Semaphore) c02922.L$5;
+                int i = c02932.I$0;
+                boolean z2 = c02932.Z$0;
+                $this$withPermit$iv = (Semaphore) c02932.L$5;
                 try {
                     ResultKt.throwOnFailure($result);
                     NiceResponse niceResponse3 = (NiceResponse) $result;
@@ -5352,33 +5352,33 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public static final <A, B> Object safeAmap(@NotNull Iterable<? extends A> iterable, int concurrency, @NotNull Function2<? super A, ? super Continuation<? super B>, ? extends Object> function2, @NotNull Continuation<? super Result<? extends List<? extends B>>> continuation) {
-        C02911 c02911;
+        C02921 c02921;
         Throwable th;
         Object objCoroutineScope;
-        if (continuation instanceof C02911) {
-            c02911 = (C02911) continuation;
-            if ((c02911.label & Integer.MIN_VALUE) != 0) {
-                c02911.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02921) {
+            c02921 = (C02921) continuation;
+            if ((c02921.label & Integer.MIN_VALUE) != 0) {
+                c02921.label -= Integer.MIN_VALUE;
             } else {
-                c02911 = new C02911(continuation);
+                c02921 = new C02921(continuation);
             }
         } else {
-            c02911 = new C02911(continuation);
+            c02921 = new C02921(continuation);
         }
-        Object $result = c02911.result;
+        Object $result = c02921.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02911.label) {
+        switch (c02921.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 try {
                     Result.Companion companion = Result.Companion;
                     StreamPlayUtilsKt$safeAmap$2$1 streamPlayUtilsKt$safeAmap$2$1 = new StreamPlayUtilsKt$safeAmap$2$1(concurrency, iterable, function2, null);
-                    c02911.L$0 = SpillingKt.nullOutSpilledVariable(iterable);
-                    c02911.L$1 = SpillingKt.nullOutSpilledVariable(function2);
-                    c02911.L$2 = SpillingKt.nullOutSpilledVariable(iterable);
-                    c02911.I$0 = concurrency;
-                    c02911.label = 1;
-                    objCoroutineScope = CoroutineScopeKt.coroutineScope(streamPlayUtilsKt$safeAmap$2$1, c02911);
+                    c02921.L$0 = SpillingKt.nullOutSpilledVariable(iterable);
+                    c02921.L$1 = SpillingKt.nullOutSpilledVariable(function2);
+                    c02921.L$2 = SpillingKt.nullOutSpilledVariable(iterable);
+                    c02921.I$0 = concurrency;
+                    c02921.label = 1;
+                    objCoroutineScope = CoroutineScopeKt.coroutineScope(streamPlayUtilsKt$safeAmap$2$1, c02921);
                     return objCoroutineScope == coroutine_suspended ? coroutine_suspended : Result.constructor-impl((List) objCoroutineScope);
                 } catch (Throwable th2) {
                     th = th2;
@@ -5386,7 +5386,7 @@ public final class StreamPlayUtilsKt {
                     return Result.constructor-impl(ResultKt.createFailure(th));
                 }
             case 1:
-                int concurrency2 = c02911.I$0;
+                int concurrency2 = c02921.I$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     objCoroutineScope = $result;
@@ -5443,7 +5443,7 @@ public final class StreamPlayUtilsKt {
     /* JADX WARN: Code duplicated, block: B:94:0x0264 A[Catch: Exception -> 0x0280, TRY_ENTER, TRY_LEAVE, TryCatch #4 {Exception -> 0x0280, blocks: (B:85:0x024b, B:94:0x0264), top: B:117:0x024b }] */
     @Nullable
     public static final Object hindmoviezsignHShare(@NotNull String rawId, @NotNull String domain, @NotNull Document pageDoc, @NotNull Continuation<? super String> continuation) {
-        C02801 c02801;
+        C02811 c02811;
         String str;
         String domain2;
         String encoded;
@@ -5461,20 +5461,20 @@ public final class StreamPlayUtilsKt {
         StreamPlayHindmoviezSignResponse response;
         StreamPlayHindmoviezSignData data;
         String url;
-        if (continuation instanceof C02801) {
-            c02801 = (C02801) continuation;
-            if ((c02801.label & Integer.MIN_VALUE) != 0) {
-                c02801.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C02811) {
+            c02811 = (C02811) continuation;
+            if ((c02811.label & Integer.MIN_VALUE) != 0) {
+                c02811.label -= Integer.MIN_VALUE;
             } else {
-                c02801 = new C02801(continuation);
+                c02811 = new C02811(continuation);
             }
         } else {
-            c02801 = new C02801(continuation);
+            c02811 = new C02811(continuation);
         }
-        C02801 c02802 = c02801;
-        Object $result = c02802.result;
+        C02811 c02812 = c02811;
+        Object $result = c02812.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02802.label) {
+        switch (c02812.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String encoded2 = hindmoviezbase64Url(rawId);
@@ -5499,16 +5499,16 @@ public final class StreamPlayUtilsKt {
                 try {
                     Requests app = MainActivityKt.getApp();
                     Map mapMapOf = MapsKt.mapOf(new Pair[]{TuplesKt.to("action", "hindshare_sign"), TuplesKt.to("d", encoded2)});
-                    c02802.L$0 = SpillingKt.nullOutSpilledVariable(rawId);
-                    c02802.L$1 = domain;
-                    c02802.L$2 = SpillingKt.nullOutSpilledVariable(pageDoc);
-                    c02802.L$3 = encoded2;
-                    c02802.L$4 = SpillingKt.nullOutSpilledVariable(ajaxUrl4);
-                    c02802.label = 1;
+                    c02812.L$0 = SpillingKt.nullOutSpilledVariable(rawId);
+                    c02812.L$1 = domain;
+                    c02812.L$2 = SpillingKt.nullOutSpilledVariable(pageDoc);
+                    c02812.L$3 = encoded2;
+                    c02812.L$4 = SpillingKt.nullOutSpilledVariable(ajaxUrl4);
+                    c02812.label = 1;
                     str2 = null;
                     str3 = "/dl/";
                     try {
-                        Object objPost$default = Requests.post$default(app, ajaxUrl4, (Map) null, (String) null, (Map) null, (Map) null, mapMapOf, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02802, 65502, (Object) null);
+                        Object objPost$default = Requests.post$default(app, ajaxUrl4, (Map) null, (String) null, (Map) null, (Map) null, mapMapOf, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02812, 65502, (Object) null);
                         if (objPost$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -5655,9 +5655,9 @@ public final class StreamPlayUtilsKt {
                 break;
                 break;
             case 1:
-                ajaxUrl = (String) c02802.L$4;
-                encoded = (String) c02802.L$3;
-                String domain3 = (String) c02802.L$1;
+                ajaxUrl = (String) c02812.L$4;
+                encoded = (String) c02812.L$3;
+                String domain3 = (String) c02812.L$1;
                 try {
                     ResultKt.throwOnFailure($result);
                     str3 = "/dl/";

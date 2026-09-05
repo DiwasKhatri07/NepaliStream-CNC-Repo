@@ -77,8 +77,8 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {2266, 2269, 2278, 2303}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "matchUrl", "$this$withPermit$iv", "$completion", "matchUrl", "detailDoc", "$this$safeAmap_u24default$iv", "content", "$completion$iv", "$this$safeAmap_u24lambda_u240$iv", "concurrency$iv", "$this$withPermit$iv", "$completion", "matchUrl", "detailDoc", "$this$safeAmap_u24default$iv", "content", "$completion$iv", "$this$safeAmap_u24lambda_u240$iv", "concurrency$iv"}, nl = {2267, 2270, 2279, 2304}, s = {"L$0", "L$0", "L$2", "L$3", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2307\n5228#3,5:2269\n5246#3:2281\n5244#3,2:2282\n5250#3:2306\n1880#4,5:2274\n1899#4,2:2279\n1880#4,5:2299\n1899#4,2:2304\n1795#5,10:2284\n2068#5:2294\n2069#5:2297\n1805#5:2298\n1#6:2295\n1#6:2296\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2307,2\n5232#2:2274,5\n5232#2:2279,2\n5246#2:2299,5\n5246#2:2304,2\n5245#2:2284,10\n5245#2:2294\n5245#2:2297\n5245#2:2298\n5245#2:2296\n*E\n"})
-    public static final class C02371 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Object>, Object> {
+    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2307\n5469#3,5:2269\n5487#3:2281\n5485#3,2:2282\n5491#3:2306\n1880#4,5:2274\n1899#4,2:2279\n1880#4,5:2299\n1899#4,2:2304\n1795#5,10:2284\n2068#5:2294\n2069#5:2297\n1805#5:2298\n1#6:2295\n1#6:2296\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2307,2\n5473#2:2274,5\n5473#2:2279,2\n5487#2:2299,5\n5487#2:2304,2\n5486#2:2284,10\n5486#2:2294\n5486#2:2297\n5486#2:2298\n5486#2:2296\n*E\n"})
+    public static final class C02381 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Object>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Integer $episode$inlined;
         final /* synthetic */ Object $item;
@@ -98,7 +98,7 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C02371(Semaphore semaphore, Object obj, Continuation continuation, Integer num, Integer num2, Function1 function1, Function1 function2) {
+        public C02381(Semaphore semaphore, Object obj, Continuation continuation, Integer num, Integer num2, Function1 function1, Function1 function2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -109,7 +109,7 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C02371(this.$semaphore, this.$item, continuation, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+            return new C02381(this.$semaphore, this.$item, continuation, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Object> continuation) {
@@ -146,7 +146,7 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
             Object obj4;
             Semaphore $this$withPermit$iv6;
             Object obj5;
-            C02371 c02371;
+            C02381 c02381;
             Continuation $completion2;
             Object obj6;
             String matchUrl2;
@@ -192,7 +192,7 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
                                 $this$withPermit$iv6 = $this$withPermit$iv5;
                                 try {
                                     obj5 = Requests.get$default(app, matchUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, this, 4094, (Object) null);
-                                    c02371 = this;
+                                    c02381 = this;
                                     if (obj5 == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -205,7 +205,7 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
                                         content = detailDoc.selectFirst("div.wp-content");
                                         if (content == null) {
                                             unit = Unit.INSTANCE;
-                                        } else if (c02371.$season$inlined != null || c02371.$episode$inlined == null) {
+                                        } else if (c02381.$season$inlined != null || c02381.$episode$inlined == null) {
                                             $this$mapNotNull$iv = content.select("div.movie-button-container a.movie-simple-button");
                                             $i$f$mapNotNull = 0;
                                             destination$iv$iv = new ArrayList();
@@ -227,19 +227,19 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
                                             try {
                                                 Result.Companion companion = Result.Companion;
                                                 try {
-                                                    C0240x4a5f1dca c0240x4a5f1dca = new C0240x4a5f1dca(7, $this$safeAmap_u24default$iv, null, c02371.$subtitleCallback$inlined, c02371.$callback$inlined);
-                                                    c02371.L$0 = $this$withPermit$iv4;
-                                                    c02371.L$1 = obj6;
-                                                    c02371.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
-                                                    c02371.L$3 = SpillingKt.nullOutSpilledVariable(matchUrl2);
-                                                    c02371.L$4 = SpillingKt.nullOutSpilledVariable(detailDoc);
-                                                    c02371.L$5 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv);
-                                                    c02371.L$6 = SpillingKt.nullOutSpilledVariable(content);
-                                                    c02371.L$7 = SpillingKt.nullOutSpilledVariable(this);
-                                                    c02371.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv);
-                                                    c02371.I$0 = 7;
-                                                    c02371.label = 4;
-                                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0240x4a5f1dca, c02371);
+                                                    C0241x4a5f1dca c0241x4a5f1dca = new C0241x4a5f1dca(7, $this$safeAmap_u24default$iv, null, c02381.$subtitleCallback$inlined, c02381.$callback$inlined);
+                                                    c02381.L$0 = $this$withPermit$iv4;
+                                                    c02381.L$1 = obj6;
+                                                    c02381.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
+                                                    c02381.L$3 = SpillingKt.nullOutSpilledVariable(matchUrl2);
+                                                    c02381.L$4 = SpillingKt.nullOutSpilledVariable(detailDoc);
+                                                    c02381.L$5 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv);
+                                                    c02381.L$6 = SpillingKt.nullOutSpilledVariable(content);
+                                                    c02381.L$7 = SpillingKt.nullOutSpilledVariable(this);
+                                                    c02381.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv);
+                                                    c02381.I$0 = 7;
+                                                    c02381.label = 4;
+                                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0241x4a5f1dca, c02381);
                                                     if (objCoroutineScope == coroutine_suspended) {
                                                         return coroutine_suspended;
                                                     }
@@ -270,23 +270,23 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
                                                 $i$f$withPermit = $i$f$withPermit2;
                                             }
                                         } else {
-                                            Iterable $this$safeAmap_u24default$iv2 = StreamPlayExtractor.INSTANCE.extractSeasonLinks(content, c02371.$season$inlined.intValue());
+                                            Iterable $this$safeAmap_u24default$iv2 = StreamPlayExtractor.INSTANCE.extractSeasonLinks(content, c02381.$season$inlined.intValue());
                                             try {
                                                 Result.Companion companion4 = Result.Companion;
                                                 try {
-                                                    C0239x4a5f1dc9 c0239x4a5f1dc9 = new C0239x4a5f1dc9(7, $this$safeAmap_u24default$iv2, null, c02371.$subtitleCallback$inlined, c02371.$callback$inlined, c02371.$episode$inlined);
-                                                    c02371.L$0 = $this$withPermit$iv4;
-                                                    c02371.L$1 = obj6;
-                                                    c02371.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
-                                                    c02371.L$3 = SpillingKt.nullOutSpilledVariable(matchUrl2);
-                                                    c02371.L$4 = SpillingKt.nullOutSpilledVariable(detailDoc);
-                                                    c02371.L$5 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv2);
-                                                    c02371.L$6 = SpillingKt.nullOutSpilledVariable(content);
-                                                    c02371.L$7 = SpillingKt.nullOutSpilledVariable(this);
-                                                    c02371.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv2);
-                                                    c02371.I$0 = 7;
-                                                    c02371.label = 3;
-                                                    objCoroutineScope2 = CoroutineScopeKt.coroutineScope(c0239x4a5f1dc9, c02371);
+                                                    C0240x4a5f1dc9 c0240x4a5f1dc9 = new C0240x4a5f1dc9(7, $this$safeAmap_u24default$iv2, null, c02381.$subtitleCallback$inlined, c02381.$callback$inlined, c02381.$episode$inlined);
+                                                    c02381.L$0 = $this$withPermit$iv4;
+                                                    c02381.L$1 = obj6;
+                                                    c02381.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
+                                                    c02381.L$3 = SpillingKt.nullOutSpilledVariable(matchUrl2);
+                                                    c02381.L$4 = SpillingKt.nullOutSpilledVariable(detailDoc);
+                                                    c02381.L$5 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv2);
+                                                    c02381.L$6 = SpillingKt.nullOutSpilledVariable(content);
+                                                    c02381.L$7 = SpillingKt.nullOutSpilledVariable(this);
+                                                    c02381.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv2);
+                                                    c02381.I$0 = 7;
+                                                    c02381.label = 3;
+                                                    objCoroutineScope2 = CoroutineScopeKt.coroutineScope(c0240x4a5f1dc9, c02381);
                                                     if (objCoroutineScope2 == coroutine_suspended) {
                                                         return coroutine_suspended;
                                                     }
@@ -373,7 +373,7 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
                             obj4 = obj3;
                             $this$withPermit$iv6 = $this$withPermit$iv5;
                             obj5 = Requests.get$default(app2, matchUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, this, 4094, (Object) null);
-                            c02371 = this;
+                            c02381 = this;
                             if (obj5 == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -384,7 +384,7 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
                             detailDoc = ((NiceResponse) obj5).getDocument();
                             content = detailDoc.selectFirst("div.wp-content");
                             if (content == null) {
-                                if (c02371.$season$inlined != null) {
+                                if (c02381.$season$inlined != null) {
                                 }
                                 $this$mapNotNull$iv = content.select("div.movie-button-container a.movie-simple-button");
                                 $i$f$mapNotNull = 0;
@@ -405,19 +405,19 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
                                 }
                                 Iterable $this$safeAmap_u24default$iv3 = (List) destination$iv$iv;
                                 Result.Companion companion7 = Result.Companion;
-                                C0240x4a5f1dca c0240x4a5f1dca2 = new C0240x4a5f1dca(7, $this$safeAmap_u24default$iv3, null, c02371.$subtitleCallback$inlined, c02371.$callback$inlined);
-                                c02371.L$0 = $this$withPermit$iv4;
-                                c02371.L$1 = obj6;
-                                c02371.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
-                                c02371.L$3 = SpillingKt.nullOutSpilledVariable(matchUrl2);
-                                c02371.L$4 = SpillingKt.nullOutSpilledVariable(detailDoc);
-                                c02371.L$5 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv3);
-                                c02371.L$6 = SpillingKt.nullOutSpilledVariable(content);
-                                c02371.L$7 = SpillingKt.nullOutSpilledVariable(this);
-                                c02371.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv3);
-                                c02371.I$0 = 7;
-                                c02371.label = 4;
-                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0240x4a5f1dca2, c02371);
+                                C0241x4a5f1dca c0241x4a5f1dca2 = new C0241x4a5f1dca(7, $this$safeAmap_u24default$iv3, null, c02381.$subtitleCallback$inlined, c02381.$callback$inlined);
+                                c02381.L$0 = $this$withPermit$iv4;
+                                c02381.L$1 = obj6;
+                                c02381.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
+                                c02381.L$3 = SpillingKt.nullOutSpilledVariable(matchUrl2);
+                                c02381.L$4 = SpillingKt.nullOutSpilledVariable(detailDoc);
+                                c02381.L$5 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv3);
+                                c02381.L$6 = SpillingKt.nullOutSpilledVariable(content);
+                                c02381.L$7 = SpillingKt.nullOutSpilledVariable(this);
+                                c02381.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv3);
+                                c02381.I$0 = 7;
+                                c02381.label = 4;
+                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0241x4a5f1dca2, c02381);
                                 if (objCoroutineScope == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -446,12 +446,12 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
                                 obj6 = obj2;
                                 $this$withPermit$iv4 = $this$withPermit$iv2;
                                 obj5 = $result;
-                                c02371 = this;
+                                c02381 = this;
                                 matchUrl2 = matchUrl3;
                                 detailDoc = ((NiceResponse) obj5).getDocument();
                                 content = detailDoc.selectFirst("div.wp-content");
                                 if (content == null) {
-                                    if (c02371.$season$inlined != null) {
+                                    if (c02381.$season$inlined != null) {
                                     }
                                     $this$mapNotNull$iv = content.select("div.movie-button-container a.movie-simple-button");
                                     $i$f$mapNotNull = 0;
@@ -472,19 +472,19 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
                                     }
                                     Iterable $this$safeAmap_u24default$iv4 = (List) destination$iv$iv;
                                     Result.Companion companion8 = Result.Companion;
-                                    C0240x4a5f1dca c0240x4a5f1dca3 = new C0240x4a5f1dca(7, $this$safeAmap_u24default$iv4, null, c02371.$subtitleCallback$inlined, c02371.$callback$inlined);
-                                    c02371.L$0 = $this$withPermit$iv4;
-                                    c02371.L$1 = obj6;
-                                    c02371.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
-                                    c02371.L$3 = SpillingKt.nullOutSpilledVariable(matchUrl2);
-                                    c02371.L$4 = SpillingKt.nullOutSpilledVariable(detailDoc);
-                                    c02371.L$5 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv4);
-                                    c02371.L$6 = SpillingKt.nullOutSpilledVariable(content);
-                                    c02371.L$7 = SpillingKt.nullOutSpilledVariable(this);
-                                    c02371.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv4);
-                                    c02371.I$0 = 7;
-                                    c02371.label = 4;
-                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0240x4a5f1dca3, c02371);
+                                    C0241x4a5f1dca c0241x4a5f1dca3 = new C0241x4a5f1dca(7, $this$safeAmap_u24default$iv4, null, c02381.$subtitleCallback$inlined, c02381.$callback$inlined);
+                                    c02381.L$0 = $this$withPermit$iv4;
+                                    c02381.L$1 = obj6;
+                                    c02381.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
+                                    c02381.L$3 = SpillingKt.nullOutSpilledVariable(matchUrl2);
+                                    c02381.L$4 = SpillingKt.nullOutSpilledVariable(detailDoc);
+                                    c02381.L$5 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv4);
+                                    c02381.L$6 = SpillingKt.nullOutSpilledVariable(content);
+                                    c02381.L$7 = SpillingKt.nullOutSpilledVariable(this);
+                                    c02381.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv4);
+                                    c02381.I$0 = 7;
+                                    c02381.label = 4;
+                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0241x4a5f1dca3, c02381);
                                     if (objCoroutineScope == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -588,7 +588,7 @@ public final class StreamPlayExtractor$invokeZinkmovies$$inlined$safeAmap$defaul
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02371(semaphore, item$iv$iv, null, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02381(semaphore, item$iv$iv, null, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
                     destination$iv$iv = destination$iv$iv2;
                 }
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);

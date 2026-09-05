@@ -69,8 +69,8 @@ public final class StreamPlayExtractor$invokePeachify$$inlined$safeAmap$default$
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokePeachify$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {2266, 2270, 2276, 2324}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "server", "url", "text", "$this$withPermit$iv", "$completion", "server", "url", "text", "jsonResponse", "$this$withPermit$iv", "$completion", "server", "url", "text", "json", "provider", "sources", "jsonResponse", "src", "rawUrl", "dub", "srcType", "srcHeaders", "finalUrl", "proxyHeaders", "finalOrigin", "finalReferer", "finalUA", "name", "type", "i", "quality", "isProxy"}, nl = {2267, 2272, 2277, 2323}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$5", "L$0", "L$2", "L$3", "L$4", "L$5", "L$7", "L$0", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "I$2", "I$3"}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2335\n5470#3,4:2269\n5474#3,61:2274\n1#4:2273\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n*L\n1889#1:2266,3\n1889#1:2335,2\n*E\n"})
-    public static final class C01981 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2335\n5711#3,4:2269\n5715#3,61:2274\n1#4:2273\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n*L\n1889#1:2266,3\n1889#1:2335,2\n*E\n"})
+    public static final class C01991 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Integer $episode$inlined;
         final /* synthetic */ Map $headers$inlined;
@@ -109,7 +109,7 @@ public final class StreamPlayExtractor$invokePeachify$$inlined$safeAmap$default$
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C01981(Semaphore semaphore, Object obj, Continuation continuation, Integer num, Integer num2, Integer num3, Map map, String str, Function1 function1) {
+        public C01991(Semaphore semaphore, Object obj, Continuation continuation, Integer num, Integer num2, Integer num3, Map map, String str, Function1 function1) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -122,7 +122,7 @@ public final class StreamPlayExtractor$invokePeachify$$inlined$safeAmap$default$
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01981(this.$semaphore, this.$item, continuation, this.$season$inlined, this.$tmdbId$inlined, this.$episode$inlined, this.$headers$inlined, this.$peachifyBaseAPI$inlined, this.$callback$inlined);
+            return new C01991(this.$semaphore, this.$item, continuation, this.$season$inlined, this.$tmdbId$inlined, this.$episode$inlined, this.$headers$inlined, this.$peachifyBaseAPI$inlined, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -147,7 +147,7 @@ public final class StreamPlayExtractor$invokePeachify$$inlined$safeAmap$default$
                 Method dump skipped, instruction units count: 2330
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokePeachify$$inlined$safeAmap$default$1.C01981.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokePeachify$$inlined$safeAmap$default$1.C01991.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
@@ -163,7 +163,7 @@ public final class StreamPlayExtractor$invokePeachify$$inlined$safeAmap$default$
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01981(semaphore, item$iv$iv, null, this.$season$inlined, this.$tmdbId$inlined, this.$episode$inlined, this.$headers$inlined, this.$peachifyBaseAPI$inlined, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01991(semaphore, item$iv$iv, null, this.$season$inlined, this.$tmdbId$inlined, this.$episode$inlined, this.$headers$inlined, this.$peachifyBaseAPI$inlined, this.$callback$inlined), 2, (Object) null));
                     $this$map$iv = $this$map$iv;
                     destination$iv$iv = destination$iv$iv2;
                 }

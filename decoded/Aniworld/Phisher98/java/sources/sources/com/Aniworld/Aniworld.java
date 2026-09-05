@@ -831,11 +831,10 @@ public class Aniworld extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:80:0x0348  */
     /* JADX WARN: Code duplicated, block: B:85:0x0364  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:180:0x0685 -> B:181:0x06a2). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached at block B:217:0x0785
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     static /* synthetic */ java.lang.Object load$suspendImpl(com.Aniworld.Aniworld r52, java.lang.String r53, kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r54) {
         /*

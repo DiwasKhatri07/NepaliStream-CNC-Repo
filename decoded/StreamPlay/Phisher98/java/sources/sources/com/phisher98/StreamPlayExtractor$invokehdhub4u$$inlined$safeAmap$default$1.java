@@ -65,7 +65,7 @@ public final class StreamPlayExtractor$invokehdhub4u$$inlined$safeAmap$default$1
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokehdhub4u$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9}, l = {2266, 2269, 2277, 2280, 2302, 2304, 2326, 2328, 2341, 2342}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "el", "$this$withPermit$iv", "$completion", "el", "doc", "qualityLinks", "linkEl", "resolvedLink", "$this$invokehdhub4u_u24lambda_u243_u240", "$this$withPermit$iv", "$completion", "el", "doc", "qualityLinks", "linkEl", "resolvedLink", "resolvedWatch", "$this$withPermit$iv", "$completion", "el", "doc", "episodeRegex", "h3s", "h3", "episodeLink", "watchLink", "episodeNum", "links", "href", "$this$withPermit$iv", "$completion", "el", "doc", "episodeRegex", "h3s", "h3", "episodeLink", "watchLink", "episodeNum", "links", "href", "resolved", "$this$invokehdhub4u_u24lambda_u243_u243_u240", "$this$withPermit$iv", "$completion", "el", "doc", "episodeRegex", "h3s", "h3", "episodeLink", "watchLink", "episodeNum", "links", "href", "resolved", "element$iv", "$this$forEach$iv", "episodeDoc", "resolvedLink", "$this$invokehdhub4u_u24lambda_u243_u243_u242_u240", "$this$withPermit$iv", "$completion", "el", "doc", "episodeRegex", "h3s", "h3", "episodeLink", "watchLink", "episodeNum", "links", "href", "resolved", "element$iv", "$this$forEach$iv", "episodeDoc", "resolvedLink", "resolvedWatch", "$this$withPermit$iv", "$completion", "el", "doc", "episodeRegex", "h3s", "h3", "episodeLink", "watchLink", "episodeNum", "links", "watchHref", "$this$withPermit$iv", "$completion", "el", "doc", "episodeRegex", "h3s", "h3", "episodeLink", "watchLink", "episodeNum", "links", "watchHref", "resolvedWatch"}, nl = {2267, 2271, 2277, 2289, 2304, 2304, 2326, 2335, 2340, 2349}, s = {"L$0", "L$0", "L$2", "L$3", "L$0", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$0", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$16", "L$17", "L$18", "L$19", "L$20", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$16", "L$17", "L$18", "L$19", "L$20", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2354\n3558#3,9:2269\n3567#3,30:2279\n3597#3:2323\n3598#3,11:2325\n3609#3,17:2337\n1#4:2278\n1#4:2320\n1795#5,10:2309\n2068#5:2319\n2069#5:2321\n1805#5:2322\n2068#5:2324\n2069#5:2336\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2354,2\n3596#2:2320\n3596#2:2309,10\n3596#2:2319\n3596#2:2321\n3596#2:2322\n3597#2:2324\n3597#2:2336\n*E\n"})
-    public static final class C02431 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C02441 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Integer $episode$inlined;
         final /* synthetic */ Object $item;
@@ -96,7 +96,7 @@ public final class StreamPlayExtractor$invokehdhub4u$$inlined$safeAmap$default$1
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C02431(Semaphore semaphore, Object obj, Continuation continuation, Integer num, Function1 function1, Function1 function2, Integer num2) {
+        public C02441(Semaphore semaphore, Object obj, Continuation continuation, Integer num, Function1 function1, Function1 function2, Integer num2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -107,7 +107,7 @@ public final class StreamPlayExtractor$invokehdhub4u$$inlined$safeAmap$default$1
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C02431(this.$semaphore, this.$item, continuation, this.$season$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$episode$inlined);
+            return new C02441(this.$semaphore, this.$item, continuation, this.$season$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$episode$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -138,7 +138,7 @@ public final class StreamPlayExtractor$invokehdhub4u$$inlined$safeAmap$default$1
                 Method dump skipped, instruction units count: 4010
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokehdhub4u$$inlined$safeAmap$default$1.C02431.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokehdhub4u$$inlined$safeAmap$default$1.C02441.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
@@ -154,7 +154,7 @@ public final class StreamPlayExtractor$invokehdhub4u$$inlined$safeAmap$default$1
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02431(semaphore, item$iv$iv, null, this.$season$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$episode$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02441(semaphore, item$iv$iv, null, this.$season$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$episode$inlined), 2, (Object) null));
                     destination$iv$iv = destination$iv$iv2;
                 }
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);

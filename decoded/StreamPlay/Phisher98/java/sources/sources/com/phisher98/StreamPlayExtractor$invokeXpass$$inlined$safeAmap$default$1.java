@@ -60,8 +60,8 @@ public final class StreamPlayExtractor$invokeXpass$$inlined$safeAmap$default$1 e
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeXpass$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {2266, 2272, 2294, 2302}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "name", "url", "fullUrl", "$this$invokeXpass_u24lambda_u240_u240", "$this$withPermit$iv", "$completion", "name", "url", "fullUrl", "source", "sources", "json", "file", "type", "sourceCount", "i", "isM3u8", "$this$withPermit$iv", "$completion", "name", "url", "fullUrl", "source", "sources", "json", "file", "type", "sourceCount", "i", "isM3u8"}, nl = {2267, 2272, 2298, 2301}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "I$1", "I$2", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "I$1", "I$2"}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2313\n5046#3,4:2269\n5051#3,25:2274\n5077#3,12:2301\n1#4:2273\n2068#5,2:2299\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2313,2\n5075#2:2299,2\n*E\n"})
-    public static final class C02351 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2313\n5287#3,4:2269\n5292#3,25:2274\n5318#3,12:2301\n1#4:2273\n2068#5,2:2299\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2313,2\n5316#2:2299,2\n*E\n"})
+    public static final class C02361 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $baseRef$inlined;
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Object $item;
@@ -84,7 +84,7 @@ public final class StreamPlayExtractor$invokeXpass$$inlined$safeAmap$default$1 e
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C02351(Semaphore semaphore, Object obj, Continuation continuation, String str, Function1 function1) {
+        public C02361(Semaphore semaphore, Object obj, Continuation continuation, String str, Function1 function1) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -93,7 +93,7 @@ public final class StreamPlayExtractor$invokeXpass$$inlined$safeAmap$default$1 e
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C02351(this.$semaphore, this.$item, continuation, this.$baseRef$inlined, this.$callback$inlined);
+            return new C02361(this.$semaphore, this.$item, continuation, this.$baseRef$inlined, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -131,7 +131,7 @@ public final class StreamPlayExtractor$invokeXpass$$inlined$safeAmap$default$1 e
                 Method dump skipped, instruction units count: 1738
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokeXpass$$inlined$safeAmap$default$1.C02351.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokeXpass$$inlined$safeAmap$default$1.C02361.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
@@ -146,7 +146,7 @@ public final class StreamPlayExtractor$invokeXpass$$inlined$safeAmap$default$1 e
                 Iterable $this$map$iv = this.$this_runCatching;
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
-                    destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02351(semaphore, item$iv$iv, null, this.$baseRef$inlined, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02361(semaphore, item$iv$iv, null, this.$baseRef$inlined, this.$callback$inlined), 2, (Object) null));
                 }
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);
                 this.L$1 = SpillingKt.nullOutSpilledVariable(semaphore);

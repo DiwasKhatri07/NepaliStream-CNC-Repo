@@ -36,7 +36,7 @@ import org.jsoup.nodes.Element;
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\b\u00028\u00000\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeHindmoviez$lambda$1$$inlined$safeAmap$default$2", f = "StreamPlayExtractor.kt", i = {0, 0}, l = {1898}, m = "invokeSuspend", n = {"$this$coroutineScope", "semaphore"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
 @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n1739#2:2266\n1814#2,3:2267\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1\n*L\n1887#1:2266\n1887#1:2267,3\n*E\n"})
-public final class C0165x3343ef77 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Unit>>, Object> {
+public final class C0167x3343ef77 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Unit>>, Object> {
     final /* synthetic */ Function1 $callback$inlined;
     final /* synthetic */ int $concurrency;
     final /* synthetic */ Integer $episode$inlined;
@@ -48,7 +48,7 @@ public final class C0165x3343ef77 extends SuspendLambda implements Function2<Cor
     int label;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public C0165x3343ef77(int i, Iterable iterable, Continuation continuation, Integer num, Integer num2, Function1 function1, Function1 function2) {
+    public C0167x3343ef77(int i, Iterable iterable, Continuation continuation, Integer num, Integer num2, Function1 function1, Function1 function2) {
         super(2, continuation);
         this.$concurrency = i;
         this.$this_runCatching = iterable;
@@ -59,9 +59,9 @@ public final class C0165x3343ef77 extends SuspendLambda implements Function2<Cor
     }
 
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Continuation<Unit> c0165x3343ef77 = new C0165x3343ef77(this.$concurrency, this.$this_runCatching, continuation, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
-        c0165x3343ef77.L$0 = obj;
-        return c0165x3343ef77;
+        Continuation<Unit> c0167x3343ef77 = new C0167x3343ef77(this.$concurrency, this.$this_runCatching, continuation, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+        c0167x3343ef77.L$0 = obj;
+        return c0167x3343ef77;
     }
 
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super List<? extends Unit>> continuation) {
@@ -72,7 +72,7 @@ public final class C0165x3343ef77 extends SuspendLambda implements Function2<Cor
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeHindmoviez$lambda$1$$inlined$safeAmap$default$2$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3}, l = {2266, 2280, 2293, 2297}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "btn", "headerText", "$this$withPermit$iv", "$completion", "btn", "episodeDoc", "headerText", "href", "baseurl", "rawId", "$this$withPermit$iv", "$completion", "btn", "episodeDoc", "episodeLink", "headerText"}, nl = {2267, 2281, 2286, 2298}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2299\n4615#3,3:2269\n4614#3,15:2272\n4629#3,11:2288\n1#4:2287\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n*L\n1889#1:2266,3\n1889#1:2299,2\n*E\n"})
+    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2299\n4856#3,3:2269\n4855#3,15:2272\n4870#3,11:2288\n1#4:2287\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n*L\n1889#1:2266,3\n1889#1:2299,2\n*E\n"})
     public static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Integer $episode$inlined;

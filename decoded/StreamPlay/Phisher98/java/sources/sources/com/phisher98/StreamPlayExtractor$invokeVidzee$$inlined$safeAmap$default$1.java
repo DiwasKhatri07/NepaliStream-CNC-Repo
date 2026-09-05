@@ -71,7 +71,7 @@ public final class StreamPlayExtractor$invokeVidzee$$inlined$safeAmap$default$1 
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeVidzee$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {2266, 2276, 2314, 2337}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "apiUrl", "sr", "$this$withPermit$iv", "$completion", "apiUrl", "response", "json", "globalHeaders", "urls", "obj", "encryptedLink", "name", "type", "lang", "flag", "finalUrl", "headersMap", "referer", "displayName", "sr", "i", "$this$withPermit$iv", "$completion", "apiUrl", "response", "json", "globalHeaders", "urls", "subs", "sub", "subLang", "subUrl", "sr", "i"}, nl = {2267, 2277, 2313, 2333}, s = {"L$0", "L$0", "L$2", "L$3", "I$0", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "I$0", "I$1", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "I$1"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 Iterators.kt\nkotlin/collections/CollectionsKt__IteratorsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2344\n2158#3,13:2269\n2171#3,2:2283\n2173#3,58:2286\n32#4:2282\n33#4:2285\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2344,2\n2170#2:2282\n2170#2:2285\n*E\n"})
-    public static final class C02271 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C02281 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ String $defaultReferer$inlined;
         final /* synthetic */ Integer $episode$inlined;
@@ -106,7 +106,7 @@ public final class StreamPlayExtractor$invokeVidzee$$inlined$safeAmap$default$1 
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C02271(Semaphore semaphore, Object obj, Continuation continuation, Integer num, Integer num2, Integer num3, byte[] bArr, String str, Function1 function1, Function1 function2) {
+        public C02281(Semaphore semaphore, Object obj, Continuation continuation, Integer num, Integer num2, Integer num3, byte[] bArr, String str, Function1 function1, Function1 function2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -120,7 +120,7 @@ public final class StreamPlayExtractor$invokeVidzee$$inlined$safeAmap$default$1 
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C02271(this.$semaphore, this.$item, continuation, this.$season$inlined, this.$id$inlined, this.$episode$inlined, this.$keyBytes$inlined, this.$defaultReferer$inlined, this.$callback$inlined, this.$subtitleCallback$inlined);
+            return new C02281(this.$semaphore, this.$item, continuation, this.$season$inlined, this.$id$inlined, this.$episode$inlined, this.$keyBytes$inlined, this.$defaultReferer$inlined, this.$callback$inlined, this.$subtitleCallback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -153,7 +153,7 @@ public final class StreamPlayExtractor$invokeVidzee$$inlined$safeAmap$default$1 
                 Method dump skipped, instruction units count: 2632
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokeVidzee$$inlined$safeAmap$default$1.C02271.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokeVidzee$$inlined$safeAmap$default$1.C02281.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
@@ -169,7 +169,7 @@ public final class StreamPlayExtractor$invokeVidzee$$inlined$safeAmap$default$1 
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02271(semaphore, item$iv$iv, null, this.$season$inlined, this.$id$inlined, this.$episode$inlined, this.$keyBytes$inlined, this.$defaultReferer$inlined, this.$callback$inlined, this.$subtitleCallback$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02281(semaphore, item$iv$iv, null, this.$season$inlined, this.$id$inlined, this.$episode$inlined, this.$keyBytes$inlined, this.$defaultReferer$inlined, this.$callback$inlined, this.$subtitleCallback$inlined), 2, (Object) null));
                     $this$map$iv = $this$map$iv;
                     destination$iv$iv = destination$iv$iv2;
                 }

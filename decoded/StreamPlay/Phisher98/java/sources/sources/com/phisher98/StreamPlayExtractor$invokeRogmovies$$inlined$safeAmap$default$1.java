@@ -66,7 +66,7 @@ public final class StreamPlayExtractor$invokeRogmovies$$inlined$safeAmap$default
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeRogmovies$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {2266, 2270, 2295}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "page", "$this$invokeRogmovies_u24lambda_u246_u240", "$this$withPermit$iv", "$completion", "page", "$this$forEach$iv", "sources", "doc", "element$iv", "source"}, nl = {2267, 2269, 2302}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$0", "L$2", "L$3", "L$4", "L$6", "L$7", "L$8", "L$9"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2305\n2598#3,6:2269\n2604#3:2289\n2605#3:2293\n2606#3,8:2295\n2614#3:2304\n1795#4,10:2275\n2068#4:2285\n2069#4:2287\n1805#4:2288\n777#4:2290\n873#4,2:2291\n2068#4:2294\n2069#4:2303\n1#5:2286\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2305,2\n2603#2:2275,10\n2603#2:2285\n2603#2:2287\n2603#2:2288\n2604#2:2290\n2604#2:2291,2\n2605#2:2294\n2605#2:2303\n2603#2:2286\n*E\n"})
-    public static final class C02031 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C02041 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $api$inlined;
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Map $headers$inlined;
@@ -86,7 +86,7 @@ public final class StreamPlayExtractor$invokeRogmovies$$inlined$safeAmap$default
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C02031(Semaphore semaphore, Object obj, Continuation continuation, Map map, String str, Function1 function1, Function1 function2) {
+        public C02041(Semaphore semaphore, Object obj, Continuation continuation, Map map, String str, Function1 function1, Function1 function2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -97,7 +97,7 @@ public final class StreamPlayExtractor$invokeRogmovies$$inlined$safeAmap$default
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C02031(this.$semaphore, this.$item, continuation, this.$headers$inlined, this.$api$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+            return new C02041(this.$semaphore, this.$item, continuation, this.$headers$inlined, this.$api$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -119,7 +119,7 @@ public final class StreamPlayExtractor$invokeRogmovies$$inlined$safeAmap$default
                 Method dump skipped, instruction units count: 794
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokeRogmovies$$inlined$safeAmap$default$1.C02031.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokeRogmovies$$inlined$safeAmap$default$1.C02041.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
@@ -135,7 +135,7 @@ public final class StreamPlayExtractor$invokeRogmovies$$inlined$safeAmap$default
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02031(semaphore, item$iv$iv, null, this.$headers$inlined, this.$api$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02041(semaphore, item$iv$iv, null, this.$headers$inlined, this.$api$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
                     destination$iv$iv = destination$iv$iv2;
                 }
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);

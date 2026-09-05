@@ -54,7 +54,7 @@ public final class Vidora extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Vidora", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {2427, 2432, 2453, 2468, 2475}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "embedUrl", "url", "referer", "subtitleCallback", "callback", "embedUrl", "pageResponse", "iframeElement", "iframeUrl", "url", "referer", "subtitleCallback", "callback", "embedUrl", "pageResponse", "iframeElement", "headers", "scriptData", "m3u8Url", "url", "referer", "subtitleCallback", "callback", "embedUrl", "pageResponse", "iframeElement", "headers", "scriptData", "m3u8Url", "resolver", "url", "referer", "subtitleCallback", "callback", "embedUrl", "pageResponse", "iframeElement", "headers", "scriptData", "m3u8Url", "resolver", "interceptedUrl"}, nl = {2429, 2441, 2458, 2472, 2479}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11"}, v = 2)
-    static final class C03101 extends ContinuationImpl {
+    static final class C03111 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -70,7 +70,7 @@ public final class Vidora extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C03101(Continuation<? super C03101> continuation) {
+        C03111(Continuation<? super C03111> continuation) {
             super(continuation);
         }
 
@@ -127,7 +127,7 @@ public final class Vidora extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:86:0x04d5  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C03101 c03101;
+        C03111 c03111;
         Vidora vidora;
         char c;
         Object obj;
@@ -187,38 +187,38 @@ public final class Vidora extends ExtractorApi {
         Map headers3;
         String referer7;
         int $i$f$forEach;
-        if (continuation instanceof C03101) {
-            c03101 = (C03101) continuation;
-            if ((c03101.label & Integer.MIN_VALUE) != 0) {
-                c03101.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C03111) {
+            c03111 = (C03111) continuation;
+            if ((c03111.label & Integer.MIN_VALUE) != 0) {
+                c03111.label -= Integer.MIN_VALUE;
                 vidora = this;
             } else {
                 vidora = this;
-                c03101 = vidora.new C03101(continuation);
+                c03111 = vidora.new C03111(continuation);
             }
         } else {
             vidora = this;
-            c03101 = vidora.new C03101(continuation);
+            c03111 = vidora.new C03111(continuation);
         }
-        C03101 c03102 = c03101;
-        Object $result2 = c03102.result;
+        C03111 c03112 = c03111;
+        Object $result2 = c03112.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c03102.label) {
+        switch (c03112.label) {
             case 0:
                 ResultKt.throwOnFailure($result2);
                 String embedUrl5 = StringsKt.replace$default(url, "/download/", "/e/", false, 4, (Object) null);
                 Requests app = MainActivityKt.getApp();
-                c03102.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c03102.L$1 = referer;
-                c03102.L$2 = SpillingKt.nullOutSpilledVariable(function1);
-                c03102.L$3 = function2;
-                c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl5);
-                c03102.label = 1;
+                c03112.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c03112.L$1 = referer;
+                c03112.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                c03112.L$3 = function2;
+                c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl5);
+                c03112.label = 1;
                 c = 0;
                 obj = coroutine_suspended;
                 i = 2;
-                Object obj5 = Requests.get$default(app, embedUrl5, (Map) null, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03102, 4090, (Object) null);
-                c03102 = c03102;
+                Object obj5 = Requests.get$default(app, embedUrl5, (Map) null, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03112, 4090, (Object) null);
+                c03112 = c03112;
                 if (obj5 == obj) {
                     return obj;
                 }
@@ -238,20 +238,20 @@ public final class Vidora extends ExtractorApi {
                     pairArr[1] = TuplesKt.to("Sec-Fetch-Dest", "iframe");
                     Map mapMapOf = MapsKt.mapOf(pairArr);
                     String url5 = pageResponse.getUrl();
-                    c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c03102.L$1 = referer2;
-                    c03102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                    c03102.L$3 = function4;
-                    c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
-                    c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                    c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement);
-                    c03102.L$7 = SpillingKt.nullOutSpilledVariable(iframeUrl);
-                    c03102.label = i;
+                    c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c03112.L$1 = referer2;
+                    c03112.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                    c03112.L$3 = function4;
+                    c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
+                    c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                    c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement);
+                    c03112.L$7 = SpillingKt.nullOutSpilledVariable(iframeUrl);
+                    c03112.label = i;
                     function6 = function4;
                     referer4 = referer2;
-                    C03101 c03103 = c03102;
-                    obj3 = Requests.get$default(app2, iframeUrl, mapMapOf, url5, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03103, 4088, (Object) null);
-                    c03102 = c03103;
+                    C03111 c03113 = c03112;
+                    obj3 = Requests.get$default(app2, iframeUrl, mapMapOf, url5, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03113, 4088, (Object) null);
+                    c03112 = c03113;
                     if (obj3 == obj) {
                         return obj;
                     }
@@ -309,18 +309,18 @@ public final class Vidora extends ExtractorApi {
                     M3u8Helper.Companion companion = M3u8Helper.Companion;
                     String name = vidora.getName();
                     String mainUrl = vidora.getMainUrl();
-                    c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c03102.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                    c03102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                    c03102.L$3 = function5;
-                    c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
-                    c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                    c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
-                    c03102.L$7 = SpillingKt.nullOutSpilledVariable(headers);
-                    c03102.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
-                    c03102.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url3);
-                    c03102.label = 3;
-                    $result2 = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8Url3, mainUrl, (Integer) null, headers, (String) null, c03102, 40, (Object) null);
+                    c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c03112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                    c03112.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                    c03112.L$3 = function5;
+                    c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
+                    c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                    c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
+                    c03112.L$7 = SpillingKt.nullOutSpilledVariable(headers);
+                    c03112.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
+                    c03112.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url3);
+                    c03112.label = 3;
+                    $result2 = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8Url3, mainUrl, (Integer) null, headers, (String) null, c03112, 40, (Object) null);
                     if ($result2 == obj) {
                         return obj;
                     }
@@ -334,23 +334,23 @@ public final class Vidora extends ExtractorApi {
                 m3u8Url2 = m3u8Url;
                 headers2 = headers;
                 resolver = new WebViewResolver(new Regex("(m3u8|master\\.txt)"), CollectionsKt.listOf(new Regex("(m3u8|master\\.txt)")), (String) null, false, (String) null, (Function1) null, 15000L, 52, (DefaultConstructorMarker) null);
-                c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03102.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                c03102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c03102.L$3 = function5;
-                c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
-                c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
-                c03102.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
-                c03102.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
-                c03102.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
-                c03102.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
-                c03102.label = 4;
-                C03101 c03104 = c03102;
+                c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                c03112.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c03112.L$3 = function5;
+                c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
+                c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
+                c03112.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
+                c03112.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
+                c03112.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
+                c03112.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
+                c03112.label = 4;
+                C03111 c03114 = c03112;
                 function9 = function5;
                 referer6 = referer3;
-                obj4 = Requests.get$default(MainActivityKt.getApp(), pageResponse.getUrl(), (Map) null, referer6, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) resolver, false, (ResponseParser) null, c03104, 3578, (Object) null);
-                c03102 = c03104;
+                obj4 = Requests.get$default(MainActivityKt.getApp(), pageResponse.getUrl(), (Map) null, referer6, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) resolver, false, (ResponseParser) null, c03114, 3578, (Object) null);
+                c03112 = c03114;
                 if (obj4 == obj) {
                     return obj;
                 }
@@ -368,20 +368,20 @@ public final class Vidora extends ExtractorApi {
                     M3u8Helper.Companion companion2 = M3u8Helper.Companion;
                     String name2 = vidora.getName();
                     String mainUrl2 = vidora.getMainUrl();
-                    c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c03102.L$1 = SpillingKt.nullOutSpilledVariable($result);
-                    c03102.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                    c03102.L$3 = function10;
-                    c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl3);
-                    c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                    c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
-                    c03102.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
-                    c03102.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
-                    c03102.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
-                    c03102.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
-                    c03102.L$11 = SpillingKt.nullOutSpilledVariable(interceptedUrl);
-                    c03102.label = 5;
-                    objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion2, name2, interceptedUrl, mainUrl2, (Integer) null, (Map) null, (String) null, c03102, 56, (Object) null);
+                    c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c03112.L$1 = SpillingKt.nullOutSpilledVariable($result);
+                    c03112.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                    c03112.L$3 = function10;
+                    c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl3);
+                    c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                    c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
+                    c03112.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
+                    c03112.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
+                    c03112.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
+                    c03112.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
+                    c03112.L$11 = SpillingKt.nullOutSpilledVariable(interceptedUrl);
+                    c03112.label = 5;
+                    objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion2, name2, interceptedUrl, mainUrl2, (Integer) null, (Map) null, (String) null, c03112, 56, (Object) null);
                     if (objGenerateM3u8$default == obj) {
                         return obj;
                     }
@@ -406,11 +406,11 @@ public final class Vidora extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 1:
-                String embedUrl6 = (String) c03102.L$4;
-                Function1<? super ExtractorLink, Unit> function15 = (Function1) c03102.L$3;
-                Function1<? super SubtitleFile, Unit> function16 = (Function1) c03102.L$2;
-                String referer8 = (String) c03102.L$1;
-                String url6 = (String) c03102.L$0;
+                String embedUrl6 = (String) c03112.L$4;
+                Function1<? super ExtractorLink, Unit> function15 = (Function1) c03112.L$3;
+                Function1<? super SubtitleFile, Unit> function16 = (Function1) c03112.L$2;
+                String referer8 = (String) c03112.L$1;
+                String url6 = (String) c03112.L$0;
                 ResultKt.throwOnFailure($result2);
                 obj2 = $result2;
                 obj = coroutine_suspended;
@@ -431,20 +431,20 @@ public final class Vidora extends ExtractorApi {
                     pairArr3[1] = TuplesKt.to("Sec-Fetch-Dest", "iframe");
                     Map mapMapOf2 = MapsKt.mapOf(pairArr3);
                     String url7 = pageResponse.getUrl();
-                    c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c03102.L$1 = referer2;
-                    c03102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                    c03102.L$3 = function4;
-                    c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
-                    c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                    c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement);
-                    c03102.L$7 = SpillingKt.nullOutSpilledVariable(iframeUrl2);
-                    c03102.label = i;
+                    c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c03112.L$1 = referer2;
+                    c03112.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                    c03112.L$3 = function4;
+                    c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
+                    c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                    c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement);
+                    c03112.L$7 = SpillingKt.nullOutSpilledVariable(iframeUrl2);
+                    c03112.label = i;
                     function6 = function4;
                     referer4 = referer2;
-                    C03101 c03105 = c03102;
-                    obj3 = Requests.get$default(app3, iframeUrl2, mapMapOf2, url7, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03105, 4088, (Object) null);
-                    c03102 = c03105;
+                    C03111 c03115 = c03112;
+                    obj3 = Requests.get$default(app3, iframeUrl2, mapMapOf2, url7, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03115, 4088, (Object) null);
+                    c03112 = c03115;
                     if (obj3 == obj) {
                         return obj;
                     }
@@ -502,18 +502,18 @@ public final class Vidora extends ExtractorApi {
                     M3u8Helper.Companion companion3 = M3u8Helper.Companion;
                     String name3 = vidora.getName();
                     String mainUrl3 = vidora.getMainUrl();
-                    c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c03102.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                    c03102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                    c03102.L$3 = function5;
-                    c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
-                    c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                    c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
-                    c03102.L$7 = SpillingKt.nullOutSpilledVariable(headers);
-                    c03102.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
-                    c03102.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url4);
-                    c03102.label = 3;
-                    $result2 = M3u8Helper.Companion.generateM3u8$default(companion3, name3, m3u8Url4, mainUrl3, (Integer) null, headers, (String) null, c03102, 40, (Object) null);
+                    c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c03112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                    c03112.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                    c03112.L$3 = function5;
+                    c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
+                    c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                    c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
+                    c03112.L$7 = SpillingKt.nullOutSpilledVariable(headers);
+                    c03112.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
+                    c03112.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url4);
+                    c03112.label = 3;
+                    $result2 = M3u8Helper.Companion.generateM3u8$default(companion3, name3, m3u8Url4, mainUrl3, (Integer) null, headers, (String) null, c03112, 40, (Object) null);
                     if ($result2 == obj) {
                         return obj;
                     }
@@ -527,23 +527,23 @@ public final class Vidora extends ExtractorApi {
                 m3u8Url2 = m3u8Url;
                 headers2 = headers;
                 resolver = new WebViewResolver(new Regex("(m3u8|master\\.txt)"), CollectionsKt.listOf(new Regex("(m3u8|master\\.txt)")), (String) null, false, (String) null, (Function1) null, 15000L, 52, (DefaultConstructorMarker) null);
-                c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03102.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                c03102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c03102.L$3 = function5;
-                c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
-                c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
-                c03102.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
-                c03102.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
-                c03102.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
-                c03102.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
-                c03102.label = 4;
-                C03101 c03106 = c03102;
+                c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                c03112.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c03112.L$3 = function5;
+                c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
+                c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
+                c03112.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
+                c03112.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
+                c03112.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
+                c03112.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
+                c03112.label = 4;
+                C03111 c03116 = c03112;
                 function9 = function5;
                 referer6 = referer3;
-                obj4 = Requests.get$default(MainActivityKt.getApp(), pageResponse.getUrl(), (Map) null, referer6, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) resolver, false, (ResponseParser) null, c03106, 3578, (Object) null);
-                c03102 = c03106;
+                obj4 = Requests.get$default(MainActivityKt.getApp(), pageResponse.getUrl(), (Map) null, referer6, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) resolver, false, (ResponseParser) null, c03116, 3578, (Object) null);
+                c03112 = c03116;
                 if (obj4 == obj) {
                     return obj;
                 }
@@ -561,20 +561,20 @@ public final class Vidora extends ExtractorApi {
                     M3u8Helper.Companion companion4 = M3u8Helper.Companion;
                     String name4 = vidora.getName();
                     String mainUrl4 = vidora.getMainUrl();
-                    c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c03102.L$1 = SpillingKt.nullOutSpilledVariable($result);
-                    c03102.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                    c03102.L$3 = function10;
-                    c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl3);
-                    c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                    c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
-                    c03102.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
-                    c03102.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
-                    c03102.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
-                    c03102.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
-                    c03102.L$11 = SpillingKt.nullOutSpilledVariable(interceptedUrl);
-                    c03102.label = 5;
-                    objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion4, name4, interceptedUrl, mainUrl4, (Integer) null, (Map) null, (String) null, c03102, 56, (Object) null);
+                    c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c03112.L$1 = SpillingKt.nullOutSpilledVariable($result);
+                    c03112.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                    c03112.L$3 = function10;
+                    c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl3);
+                    c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                    c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
+                    c03112.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
+                    c03112.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
+                    c03112.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
+                    c03112.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
+                    c03112.L$11 = SpillingKt.nullOutSpilledVariable(interceptedUrl);
+                    c03112.label = 5;
+                    objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion4, name4, interceptedUrl, mainUrl4, (Integer) null, (Map) null, (String) null, c03112, 56, (Object) null);
                     if (objGenerateM3u8$default == obj) {
                         return obj;
                     }
@@ -599,12 +599,12 @@ public final class Vidora extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 2:
-                iframeElement3 = (Element) c03102.L$6;
-                embedUrl2 = (String) c03102.L$4;
-                function8 = (Function1) c03102.L$3;
-                function7 = (Function1) c03102.L$2;
-                referer5 = (String) c03102.L$1;
-                url3 = (String) c03102.L$0;
+                iframeElement3 = (Element) c03112.L$6;
+                embedUrl2 = (String) c03112.L$4;
+                function8 = (Function1) c03112.L$3;
+                function7 = (Function1) c03112.L$2;
+                referer5 = (String) c03112.L$1;
+                url3 = (String) c03112.L$0;
                 ResultKt.throwOnFailure($result2);
                 obj = coroutine_suspended;
                 c = 0;
@@ -653,18 +653,18 @@ public final class Vidora extends ExtractorApi {
                     M3u8Helper.Companion companion5 = M3u8Helper.Companion;
                     String name5 = vidora.getName();
                     String mainUrl5 = vidora.getMainUrl();
-                    c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c03102.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                    c03102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                    c03102.L$3 = function5;
-                    c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
-                    c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                    c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
-                    c03102.L$7 = SpillingKt.nullOutSpilledVariable(headers);
-                    c03102.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
-                    c03102.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url5);
-                    c03102.label = 3;
-                    $result2 = M3u8Helper.Companion.generateM3u8$default(companion5, name5, m3u8Url5, mainUrl5, (Integer) null, headers, (String) null, c03102, 40, (Object) null);
+                    c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c03112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                    c03112.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                    c03112.L$3 = function5;
+                    c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
+                    c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                    c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
+                    c03112.L$7 = SpillingKt.nullOutSpilledVariable(headers);
+                    c03112.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
+                    c03112.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url5);
+                    c03112.label = 3;
+                    $result2 = M3u8Helper.Companion.generateM3u8$default(companion5, name5, m3u8Url5, mainUrl5, (Integer) null, headers, (String) null, c03112, 40, (Object) null);
                     if ($result2 == obj) {
                         return obj;
                     }
@@ -678,23 +678,23 @@ public final class Vidora extends ExtractorApi {
                 m3u8Url2 = m3u8Url;
                 headers2 = headers;
                 resolver = new WebViewResolver(new Regex("(m3u8|master\\.txt)"), CollectionsKt.listOf(new Regex("(m3u8|master\\.txt)")), (String) null, false, (String) null, (Function1) null, 15000L, 52, (DefaultConstructorMarker) null);
-                c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03102.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                c03102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c03102.L$3 = function5;
-                c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
-                c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
-                c03102.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
-                c03102.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
-                c03102.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
-                c03102.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
-                c03102.label = 4;
-                C03101 c03107 = c03102;
+                c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                c03112.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c03112.L$3 = function5;
+                c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl);
+                c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
+                c03112.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
+                c03112.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
+                c03112.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
+                c03112.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
+                c03112.label = 4;
+                C03111 c03117 = c03112;
                 function9 = function5;
                 referer6 = referer3;
-                obj4 = Requests.get$default(MainActivityKt.getApp(), pageResponse.getUrl(), (Map) null, referer6, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) resolver, false, (ResponseParser) null, c03107, 3578, (Object) null);
-                c03102 = c03107;
+                obj4 = Requests.get$default(MainActivityKt.getApp(), pageResponse.getUrl(), (Map) null, referer6, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) resolver, false, (ResponseParser) null, c03117, 3578, (Object) null);
+                c03112 = c03117;
                 if (obj4 == obj) {
                     return obj;
                 }
@@ -712,20 +712,20 @@ public final class Vidora extends ExtractorApi {
                     M3u8Helper.Companion companion6 = M3u8Helper.Companion;
                     String name6 = vidora.getName();
                     String mainUrl6 = vidora.getMainUrl();
-                    c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c03102.L$1 = SpillingKt.nullOutSpilledVariable($result);
-                    c03102.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                    c03102.L$3 = function10;
-                    c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl3);
-                    c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                    c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
-                    c03102.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
-                    c03102.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
-                    c03102.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
-                    c03102.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
-                    c03102.L$11 = SpillingKt.nullOutSpilledVariable(interceptedUrl);
-                    c03102.label = 5;
-                    objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion6, name6, interceptedUrl, mainUrl6, (Integer) null, (Map) null, (String) null, c03102, 56, (Object) null);
+                    c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c03112.L$1 = SpillingKt.nullOutSpilledVariable($result);
+                    c03112.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                    c03112.L$3 = function10;
+                    c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl3);
+                    c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                    c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
+                    c03112.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
+                    c03112.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
+                    c03112.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
+                    c03112.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
+                    c03112.L$11 = SpillingKt.nullOutSpilledVariable(interceptedUrl);
+                    c03112.label = 5;
+                    objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion6, name6, interceptedUrl, mainUrl6, (Integer) null, (Map) null, (String) null, c03112, 56, (Object) null);
                     if (objGenerateM3u8$default == obj) {
                         return obj;
                     }
@@ -750,7 +750,7 @@ public final class Vidora extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 3:
-                function12 = (Function1) c03102.L$3;
+                function12 = (Function1) c03112.L$3;
                 ResultKt.throwOnFailure($result2);
                 Iterable $this$forEach$iv7 = (Iterable) $result2;
                 while (r14.hasNext()) {
@@ -758,17 +758,17 @@ public final class Vidora extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 4:
-                WebViewResolver resolver2 = (WebViewResolver) c03102.L$10;
-                String m3u8Url6 = (String) c03102.L$9;
-                String scriptData3 = (String) c03102.L$8;
-                Map headers4 = (Map) c03102.L$7;
-                Element iframeElement5 = (Element) c03102.L$6;
-                NiceResponse pageResponse3 = (NiceResponse) c03102.L$5;
-                embedUrl3 = (String) c03102.L$4;
-                function10 = (Function1) c03102.L$3;
-                function11 = (Function1) c03102.L$2;
-                String referer9 = (String) c03102.L$1;
-                String url8 = (String) c03102.L$0;
+                WebViewResolver resolver2 = (WebViewResolver) c03112.L$10;
+                String m3u8Url6 = (String) c03112.L$9;
+                String scriptData3 = (String) c03112.L$8;
+                Map headers4 = (Map) c03112.L$7;
+                Element iframeElement5 = (Element) c03112.L$6;
+                NiceResponse pageResponse3 = (NiceResponse) c03112.L$5;
+                embedUrl3 = (String) c03112.L$4;
+                function10 = (Function1) c03112.L$3;
+                function11 = (Function1) c03112.L$2;
+                String referer9 = (String) c03112.L$1;
+                String url8 = (String) c03112.L$0;
                 ResultKt.throwOnFailure($result2);
                 obj = coroutine_suspended;
                 resolver = resolver2;
@@ -790,20 +790,20 @@ public final class Vidora extends ExtractorApi {
                     M3u8Helper.Companion companion7 = M3u8Helper.Companion;
                     String name7 = vidora.getName();
                     String mainUrl7 = vidora.getMainUrl();
-                    c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c03102.L$1 = SpillingKt.nullOutSpilledVariable($result);
-                    c03102.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                    c03102.L$3 = function10;
-                    c03102.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl3);
-                    c03102.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
-                    c03102.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
-                    c03102.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
-                    c03102.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
-                    c03102.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
-                    c03102.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
-                    c03102.L$11 = SpillingKt.nullOutSpilledVariable(interceptedUrl);
-                    c03102.label = 5;
-                    objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion7, name7, interceptedUrl, mainUrl7, (Integer) null, (Map) null, (String) null, c03102, 56, (Object) null);
+                    c03112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c03112.L$1 = SpillingKt.nullOutSpilledVariable($result);
+                    c03112.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                    c03112.L$3 = function10;
+                    c03112.L$4 = SpillingKt.nullOutSpilledVariable(embedUrl3);
+                    c03112.L$5 = SpillingKt.nullOutSpilledVariable(pageResponse);
+                    c03112.L$6 = SpillingKt.nullOutSpilledVariable(iframeElement2);
+                    c03112.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
+                    c03112.L$8 = SpillingKt.nullOutSpilledVariable(scriptData);
+                    c03112.L$9 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
+                    c03112.L$10 = SpillingKt.nullOutSpilledVariable(resolver);
+                    c03112.L$11 = SpillingKt.nullOutSpilledVariable(interceptedUrl);
+                    c03112.label = 5;
+                    objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion7, name7, interceptedUrl, mainUrl7, (Integer) null, (Map) null, (String) null, c03112, 56, (Object) null);
                     if (objGenerateM3u8$default == obj) {
                         return obj;
                     }
@@ -828,16 +828,16 @@ public final class Vidora extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 5:
-                String m3u8Url7 = (String) c03102.L$9;
-                scriptData2 = (String) c03102.L$8;
-                headers3 = (Map) c03102.L$7;
-                iframeElement4 = (Element) c03102.L$6;
-                pageResponse2 = (NiceResponse) c03102.L$5;
-                embedUrl4 = (String) c03102.L$4;
-                function13 = (Function1) c03102.L$3;
-                function14 = (Function1) c03102.L$2;
-                referer7 = (String) c03102.L$1;
-                url4 = (String) c03102.L$0;
+                String m3u8Url7 = (String) c03112.L$9;
+                scriptData2 = (String) c03112.L$8;
+                headers3 = (Map) c03112.L$7;
+                iframeElement4 = (Element) c03112.L$6;
+                pageResponse2 = (NiceResponse) c03112.L$5;
+                embedUrl4 = (String) c03112.L$4;
+                function13 = (Function1) c03112.L$3;
+                function14 = (Function1) c03112.L$2;
+                referer7 = (String) c03112.L$1;
+                url4 = (String) c03112.L$0;
                 ResultKt.throwOnFailure($result2);
                 m3u8Url2 = m3u8Url7;
                 objGenerateM3u8$default = $result2;

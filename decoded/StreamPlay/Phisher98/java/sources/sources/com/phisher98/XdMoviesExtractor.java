@@ -32,7 +32,7 @@ public final class XdMoviesExtractor extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.XdMoviesExtractor", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {2499, 2500}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "redirect"}, nl = {2500, 2501}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
-    static final class C03131 extends ContinuationImpl {
+    static final class C03141 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -41,7 +41,7 @@ public final class XdMoviesExtractor extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C03131(Continuation<? super C03131> continuation) {
+        C03141(Continuation<? super C03141> continuation) {
             super(continuation);
         }
 
@@ -74,30 +74,30 @@ public final class XdMoviesExtractor extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) throws Throwable {
-        C03131 c03131;
+        C03141 c03141;
         Object objBypassXD;
         String redirect;
-        if (continuation instanceof C03131) {
-            c03131 = (C03131) continuation;
-            if ((c03131.label & Integer.MIN_VALUE) != 0) {
-                c03131.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C03141) {
+            c03141 = (C03141) continuation;
+            if ((c03141.label & Integer.MIN_VALUE) != 0) {
+                c03141.label -= Integer.MIN_VALUE;
             } else {
-                c03131 = new C03131(continuation);
+                c03141 = new C03141(continuation);
             }
         } else {
-            c03131 = new C03131(continuation);
+            c03141 = new C03141(continuation);
         }
-        Object $result = c03131.result;
+        Object $result = c03141.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c03131.label) {
+        switch (c03141.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                c03131.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c03131.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c03131.L$2 = function1;
-                c03131.L$3 = function2;
-                c03131.label = 1;
-                objBypassXD = StreamPlayUtilsKt.bypassXD(url, c03131);
+                c03141.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c03141.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c03141.L$2 = function1;
+                c03141.L$3 = function2;
+                c03141.label = 1;
+                objBypassXD = StreamPlayUtilsKt.bypassXD(url, c03141);
                 if (objBypassXD == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -105,34 +105,34 @@ public final class XdMoviesExtractor extends ExtractorApi {
                 if (redirect == null) {
                     return Unit.INSTANCE;
                 }
-                c03131.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c03131.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c03131.L$2 = SpillingKt.nullOutSpilledVariable(function1);
-                c03131.L$3 = SpillingKt.nullOutSpilledVariable(function2);
-                c03131.L$4 = SpillingKt.nullOutSpilledVariable(redirect);
-                c03131.label = 2;
-                if (ExtractorApiKt.loadExtractor(redirect, "HubCloud", function1, function2, c03131) == coroutine_suspended) {
+                c03141.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c03141.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c03141.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                c03141.L$3 = SpillingKt.nullOutSpilledVariable(function2);
+                c03141.L$4 = SpillingKt.nullOutSpilledVariable(redirect);
+                c03141.label = 2;
+                if (ExtractorApiKt.loadExtractor(redirect, "HubCloud", function1, function2, c03141) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return Unit.INSTANCE;
             case 1:
-                function2 = (Function1) c03131.L$3;
-                function1 = (Function1) c03131.L$2;
-                referer = (String) c03131.L$1;
-                url = (String) c03131.L$0;
+                function2 = (Function1) c03141.L$3;
+                function1 = (Function1) c03141.L$2;
+                referer = (String) c03141.L$1;
+                url = (String) c03141.L$0;
                 ResultKt.throwOnFailure($result);
                 objBypassXD = $result;
                 redirect = (String) objBypassXD;
                 if (redirect == null) {
                     return Unit.INSTANCE;
                 }
-                c03131.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c03131.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c03131.L$2 = SpillingKt.nullOutSpilledVariable(function1);
-                c03131.L$3 = SpillingKt.nullOutSpilledVariable(function2);
-                c03131.L$4 = SpillingKt.nullOutSpilledVariable(redirect);
-                c03131.label = 2;
-                if (ExtractorApiKt.loadExtractor(redirect, "HubCloud", function1, function2, c03131) == coroutine_suspended) {
+                c03141.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c03141.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c03141.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                c03141.L$3 = SpillingKt.nullOutSpilledVariable(function2);
+                c03141.L$4 = SpillingKt.nullOutSpilledVariable(redirect);
+                c03141.label = 2;
+                if (ExtractorApiKt.loadExtractor(redirect, "HubCloud", function1, function2, c03141) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return Unit.INSTANCE;

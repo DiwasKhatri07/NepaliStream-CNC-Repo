@@ -1,8 +1,8 @@
 package com.phisher98;
 
-import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import kotlin.Metadata;
+import kotlin.Pair;
 import kotlin.ResultKt;
 import kotlin.TuplesKt;
 import kotlin.Unit;
@@ -18,20 +18,20 @@ import kotlin.jvm.functions.Function2;
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeMovieBox$2$1", f = "StreamPlayExtractor.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
 final class StreamPlayExtractor$invokeMovieBox$2$1 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
-    final /* synthetic */ int $quality;
+    final /* synthetic */ Integer $quality;
     final /* synthetic */ String $signCookie;
     private /* synthetic */ Object L$0;
     int label;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    StreamPlayExtractor$invokeMovieBox$2$1(String str, int i, Continuation<? super StreamPlayExtractor$invokeMovieBox$2$1> continuation) {
+    StreamPlayExtractor$invokeMovieBox$2$1(Integer num, String str, Continuation<? super StreamPlayExtractor$invokeMovieBox$2$1> continuation) {
         super(2, continuation);
+        this.$quality = num;
         this.$signCookie = str;
-        this.$quality = i;
     }
 
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Continuation<Unit> streamPlayExtractor$invokeMovieBox$2$1 = new StreamPlayExtractor$invokeMovieBox$2$1(this.$signCookie, this.$quality, continuation);
+        Continuation<Unit> streamPlayExtractor$invokeMovieBox$2$1 = new StreamPlayExtractor$invokeMovieBox$2$1(this.$quality, this.$signCookie, continuation);
         streamPlayExtractor$invokeMovieBox$2$1.L$0 = obj;
         return streamPlayExtractor$invokeMovieBox$2$1;
     }
@@ -46,8 +46,13 @@ final class StreamPlayExtractor$invokeMovieBox$2$1 extends SuspendLambda impleme
         switch (this.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                $this$newExtractorLink.setHeaders(MapsKt.plus(MapsKt.mapOf(TuplesKt.to("Referer", StreamPlay.movieBox)), this.$signCookie != null ? MapsKt.mapOf(TuplesKt.to("Cookie", this.$signCookie)) : MapsKt.emptyMap()));
-                $this$newExtractorLink.setQuality(ExtractorApiKt.getQualityFromName(String.valueOf(this.$quality)));
+                $this$newExtractorLink.setHeaders(MapsKt.mapOf(new Pair[]{TuplesKt.to("Referer", "https://api3.aoneroom.com/"), TuplesKt.to("User-Agent", StreamPlayExtractor.movieboxUserAgent)}));
+                if (this.$quality != null) {
+                    $this$newExtractorLink.setQuality(this.$quality.intValue());
+                }
+                if (this.$signCookie != null) {
+                    $this$newExtractorLink.setHeaders(MapsKt.plus($this$newExtractorLink.getHeaders(), MapsKt.mapOf(TuplesKt.to("Cookie", this.$signCookie))));
+                }
                 return Unit.INSTANCE;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

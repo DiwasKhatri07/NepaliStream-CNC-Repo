@@ -42,7 +42,7 @@ import org.jsoup.nodes.Element;
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\b\u00028\u00000\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeMoviesdrive$$inlined$safeAmap$default$2", f = "StreamPlayExtractor.kt", i = {0, 0}, l = {1898}, m = "invokeSuspend", n = {"$this$coroutineScope", "semaphore"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
 @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n1739#2:2266\n1814#2,3:2267\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1\n*L\n1887#1:2266\n1887#1:2267,3\n*E\n"})
-public final class C0188x6223a047 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Unit>>, Object> {
+public final class C0189x6223a047 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Unit>>, Object> {
     final /* synthetic */ Function1 $callback$inlined;
     final /* synthetic */ int $concurrency;
     final /* synthetic */ String $sep$inlined;
@@ -53,7 +53,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
     int label;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public C0188x6223a047(int i, Iterable iterable, Continuation continuation, String str, Function1 function1, Function1 function2) {
+    public C0189x6223a047(int i, Iterable iterable, Continuation continuation, String str, Function1 function1, Function1 function2) {
         super(2, continuation);
         this.$concurrency = i;
         this.$this_runCatching = iterable;
@@ -63,9 +63,9 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
     }
 
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Continuation<Unit> c0188x6223a047 = new C0188x6223a047(this.$concurrency, this.$this_runCatching, continuation, this.$sep$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
-        c0188x6223a047.L$0 = obj;
-        return c0188x6223a047;
+        Continuation<Unit> c0189x6223a047 = new C0189x6223a047(this.$concurrency, this.$this_runCatching, continuation, this.$sep$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+        c0189x6223a047.L$0 = obj;
+        return c0189x6223a047;
     }
 
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super List<? extends Unit>> continuation) {
@@ -261,7 +261,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                                                 String source3 = source2;
                                                                 try {
                                                                     try {
-                                                                        C0190x7b2613ed c0190x7b2613ed = new C0190x7b2613ed(7, $this$safeAmap_u24default$iv, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
+                                                                        C0191x7b2613ed c0191x7b2613ed = new C0191x7b2613ed(7, $this$safeAmap_u24default$iv, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
                                                                         anonymousClass1.L$0 = $this$withPermit$iv;
                                                                         anonymousClass1.L$1 = obj2;
                                                                         str4 = href4;
@@ -279,7 +279,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                                                             anonymousClass1.L$12 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv);
                                                                             anonymousClass1.I$0 = 7;
                                                                             anonymousClass1.label = 3;
-                                                                            objCoroutineScope = CoroutineScopeKt.coroutineScope(c0190x7b2613ed, anonymousClass1);
+                                                                            objCoroutineScope = CoroutineScopeKt.coroutineScope(c0191x7b2613ed, anonymousClass1);
                                                                             if (objCoroutineScope == coroutine_suspended) {
                                                                                 return coroutine_suspended;
                                                                             }
@@ -361,7 +361,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                                         List $this$safeAmap_u24default$iv2 = linklist;
                                                         Result.Companion companion4 = Result.Companion;
                                                         String source4 = source2;
-                                                        C0190x7b2613ed c0190x7b2613ed2 = new C0190x7b2613ed(7, $this$safeAmap_u24default$iv2, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
+                                                        C0191x7b2613ed c0191x7b2613ed2 = new C0191x7b2613ed(7, $this$safeAmap_u24default$iv2, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
                                                         anonymousClass1.L$0 = $this$withPermit$iv;
                                                         anonymousClass1.L$1 = obj2;
                                                         str4 = href4;
@@ -378,7 +378,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                                         anonymousClass1.L$12 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv2);
                                                         anonymousClass1.I$0 = 7;
                                                         anonymousClass1.label = 3;
-                                                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0190x7b2613ed2, anonymousClass1);
+                                                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0191x7b2613ed2, anonymousClass1);
                                                         if (objCoroutineScope == coroutine_suspended) {
                                                             return coroutine_suspended;
                                                         }
@@ -470,7 +470,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                         List $this$safeAmap_u24default$iv3 = linklist;
                                         Result.Companion companion5 = Result.Companion;
                                         String source5 = source2;
-                                        C0190x7b2613ed c0190x7b2613ed3 = new C0190x7b2613ed(7, $this$safeAmap_u24default$iv3, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
+                                        C0191x7b2613ed c0191x7b2613ed3 = new C0191x7b2613ed(7, $this$safeAmap_u24default$iv3, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
                                         anonymousClass1.L$0 = $this$withPermit$iv;
                                         anonymousClass1.L$1 = obj2;
                                         str4 = href4;
@@ -487,7 +487,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                         anonymousClass1.L$12 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv3);
                                         anonymousClass1.I$0 = 7;
                                         anonymousClass1.label = 3;
-                                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0190x7b2613ed3, anonymousClass1);
+                                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0191x7b2613ed3, anonymousClass1);
                                         if (objCoroutineScope == coroutine_suspended) {
                                             return coroutine_suspended;
                                         }
@@ -520,7 +520,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                         List $this$safeAmap_u24default$iv4 = linklist;
                                         Result.Companion companion6 = Result.Companion;
                                         String source6 = source2;
-                                        C0190x7b2613ed c0190x7b2613ed4 = new C0190x7b2613ed(7, $this$safeAmap_u24default$iv4, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
+                                        C0191x7b2613ed c0191x7b2613ed4 = new C0191x7b2613ed(7, $this$safeAmap_u24default$iv4, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
                                         anonymousClass1.L$0 = $this$withPermit$iv;
                                         anonymousClass1.L$1 = obj2;
                                         str4 = href4;
@@ -537,7 +537,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                         anonymousClass1.L$12 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv4);
                                         anonymousClass1.I$0 = 7;
                                         anonymousClass1.label = 3;
-                                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0190x7b2613ed4, anonymousClass1);
+                                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0191x7b2613ed4, anonymousClass1);
                                         if (objCoroutineScope == coroutine_suspended) {
                                             return coroutine_suspended;
                                         }
@@ -623,7 +623,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                     List $this$safeAmap_u24default$iv5 = linklist;
                                     Result.Companion companion7 = Result.Companion;
                                     String source7 = source2;
-                                    C0190x7b2613ed c0190x7b2613ed5 = new C0190x7b2613ed(7, $this$safeAmap_u24default$iv5, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
+                                    C0191x7b2613ed c0191x7b2613ed5 = new C0191x7b2613ed(7, $this$safeAmap_u24default$iv5, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
                                     anonymousClass1.L$0 = $this$withPermit$iv;
                                     anonymousClass1.L$1 = obj2;
                                     str4 = href4;
@@ -640,7 +640,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                     anonymousClass1.L$12 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv5);
                                     anonymousClass1.I$0 = 7;
                                     anonymousClass1.label = 3;
-                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0190x7b2613ed5, anonymousClass1);
+                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0191x7b2613ed5, anonymousClass1);
                                     if (objCoroutineScope == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -673,7 +673,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                     List $this$safeAmap_u24default$iv6 = linklist;
                                     Result.Companion companion8 = Result.Companion;
                                     String source8 = source2;
-                                    C0190x7b2613ed c0190x7b2613ed6 = new C0190x7b2613ed(7, $this$safeAmap_u24default$iv6, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
+                                    C0191x7b2613ed c0191x7b2613ed6 = new C0191x7b2613ed(7, $this$safeAmap_u24default$iv6, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
                                     anonymousClass1.L$0 = $this$withPermit$iv;
                                     anonymousClass1.L$1 = obj2;
                                     str4 = href4;
@@ -690,7 +690,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                     anonymousClass1.L$12 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv6);
                                     anonymousClass1.I$0 = 7;
                                     anonymousClass1.label = 3;
-                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0190x7b2613ed6, anonymousClass1);
+                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0191x7b2613ed6, anonymousClass1);
                                     if (objCoroutineScope == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -760,7 +760,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                     List $this$safeAmap_u24default$iv7 = linklist;
                                     Result.Companion companion9 = Result.Companion;
                                     String source9 = source2;
-                                    C0190x7b2613ed c0190x7b2613ed7 = new C0190x7b2613ed(7, $this$safeAmap_u24default$iv7, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
+                                    C0191x7b2613ed c0191x7b2613ed7 = new C0191x7b2613ed(7, $this$safeAmap_u24default$iv7, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
                                     anonymousClass1.L$0 = $this$withPermit$iv;
                                     anonymousClass1.L$1 = obj2;
                                     str4 = href4;
@@ -777,7 +777,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                     anonymousClass1.L$12 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv7);
                                     anonymousClass1.I$0 = 7;
                                     anonymousClass1.label = 3;
-                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0190x7b2613ed7, anonymousClass1);
+                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0191x7b2613ed7, anonymousClass1);
                                     if (objCoroutineScope == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -810,7 +810,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                     List $this$safeAmap_u24default$iv8 = linklist;
                                     Result.Companion companion10 = Result.Companion;
                                     String source10 = source2;
-                                    C0190x7b2613ed c0190x7b2613ed8 = new C0190x7b2613ed(7, $this$safeAmap_u24default$iv8, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
+                                    C0191x7b2613ed c0191x7b2613ed8 = new C0191x7b2613ed(7, $this$safeAmap_u24default$iv8, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
                                     anonymousClass1.L$0 = $this$withPermit$iv;
                                     anonymousClass1.L$1 = obj2;
                                     str4 = href4;
@@ -827,7 +827,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                     anonymousClass1.L$12 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv8);
                                     anonymousClass1.I$0 = 7;
                                     anonymousClass1.label = 3;
-                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0190x7b2613ed8, anonymousClass1);
+                                    objCoroutineScope = CoroutineScopeKt.coroutineScope(c0191x7b2613ed8, anonymousClass1);
                                     if (objCoroutineScope == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -882,7 +882,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                 List $this$safeAmap_u24default$iv9 = linklist;
                                 Result.Companion companion11 = Result.Companion;
                                 String source11 = source2;
-                                C0190x7b2613ed c0190x7b2613ed9 = new C0190x7b2613ed(7, $this$safeAmap_u24default$iv9, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
+                                C0191x7b2613ed c0191x7b2613ed9 = new C0191x7b2613ed(7, $this$safeAmap_u24default$iv9, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
                                 anonymousClass1.L$0 = $this$withPermit$iv;
                                 anonymousClass1.L$1 = obj2;
                                 str4 = href4;
@@ -899,7 +899,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                 anonymousClass1.L$12 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv9);
                                 anonymousClass1.I$0 = 7;
                                 anonymousClass1.label = 3;
-                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0190x7b2613ed9, anonymousClass1);
+                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0191x7b2613ed9, anonymousClass1);
                                 if (objCoroutineScope == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -932,7 +932,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                 List $this$safeAmap_u24default$iv10 = linklist;
                                 Result.Companion companion12 = Result.Companion;
                                 String source12 = source2;
-                                C0190x7b2613ed c0190x7b2613ed10 = new C0190x7b2613ed(7, $this$safeAmap_u24default$iv10, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
+                                C0191x7b2613ed c0191x7b2613ed10 = new C0191x7b2613ed(7, $this$safeAmap_u24default$iv10, null, anonymousClass1.$subtitleCallback$inlined, anonymousClass1.$callback$inlined);
                                 anonymousClass1.L$0 = $this$withPermit$iv;
                                 anonymousClass1.L$1 = obj2;
                                 str4 = href4;
@@ -949,7 +949,7 @@ public final class C0188x6223a047 extends SuspendLambda implements Function2<Cor
                                 anonymousClass1.L$12 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv10);
                                 anonymousClass1.I$0 = 7;
                                 anonymousClass1.label = 3;
-                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0190x7b2613ed10, anonymousClass1);
+                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0191x7b2613ed10, anonymousClass1);
                                 if (objCoroutineScope == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }

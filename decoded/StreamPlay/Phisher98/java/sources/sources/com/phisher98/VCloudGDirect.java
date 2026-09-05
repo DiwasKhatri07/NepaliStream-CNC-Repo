@@ -45,7 +45,7 @@ public final class VCloudGDirect extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.VCloudGDirect", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {296, 303}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "source"}, nl = {297, 302}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
-    static final class C03071 extends ContinuationImpl {
+    static final class C03081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -55,7 +55,7 @@ public final class VCloudGDirect extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C03071(Continuation<? super C03071> continuation) {
+        C03081(Continuation<? super C03081> continuation) {
             super(continuation);
         }
 
@@ -89,7 +89,7 @@ public final class VCloudGDirect extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C03071 c03071;
+        C03081 c03081;
         Object obj;
         Object obj2;
         String url2;
@@ -102,31 +102,31 @@ public final class VCloudGDirect extends ExtractorApi {
         Object objNewExtractorLink$default;
         Object obj3;
         Function1<? super ExtractorLink, Unit> function5;
-        if (continuation instanceof C03071) {
-            c03071 = (C03071) continuation;
-            if ((c03071.label & Integer.MIN_VALUE) != 0) {
-                c03071.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C03081) {
+            c03081 = (C03081) continuation;
+            if ((c03081.label & Integer.MIN_VALUE) != 0) {
+                c03081.label -= Integer.MIN_VALUE;
             } else {
-                c03071 = new C03071(continuation);
+                c03081 = new C03081(continuation);
             }
         } else {
-            c03071 = new C03071(continuation);
+            c03081 = new C03081(continuation);
         }
-        C03071 c03072 = c03071;
-        Object $result = c03072.result;
+        C03081 c03082 = c03081;
+        Object $result = c03082.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c03072.label) {
+        switch (c03082.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
-                c03072.L$0 = url;
-                c03072.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c03072.L$2 = SpillingKt.nullOutSpilledVariable(function1);
-                c03072.L$3 = function2;
-                c03072.label = 1;
+                c03082.L$0 = url;
+                c03082.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c03082.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                c03082.L$3 = function2;
+                c03082.label = 1;
                 obj = coroutine_suspended;
-                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03072, 4094, (Object) null);
-                c03072 = c03072;
+                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03082, 4094, (Object) null);
+                c03082 = c03082;
                 if (obj2 == obj) {
                     return obj;
                 }
@@ -143,15 +143,15 @@ public final class VCloudGDirect extends ExtractorApi {
                     Log.INSTANCE.e("Error:", "Failed to extract video link from " + url2);
                     return Unit.INSTANCE;
                 }
-                C03082 c03082 = new C03082(source, null);
-                c03072.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03072.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c03072.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c03072.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                c03072.L$4 = SpillingKt.nullOutSpilledVariable(source);
-                c03072.L$5 = function4;
-                c03072.label = 2;
-                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("V-Cloud GD 10 Gbps", "V-Cloud GD 10 Gbps", source, (ExtractorLinkType) null, c03082, c03072, 8, (Object) null);
+                C03092 c03092 = new C03092(source, null);
+                c03082.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03082.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c03082.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c03082.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                c03082.L$4 = SpillingKt.nullOutSpilledVariable(source);
+                c03082.L$5 = function4;
+                c03082.label = 2;
+                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("V-Cloud GD 10 Gbps", "V-Cloud GD 10 Gbps", source, (ExtractorLinkType) null, c03092, c03082, 8, (Object) null);
                 if (objNewExtractorLink$default == obj) {
                     return obj;
                 }
@@ -160,10 +160,10 @@ public final class VCloudGDirect extends ExtractorApi {
                 function5.invoke(obj3);
                 return Unit.INSTANCE;
             case 1:
-                Function1<? super ExtractorLink, Unit> function6 = (Function1) c03072.L$3;
-                Function1<? super SubtitleFile, Unit> function7 = (Function1) c03072.L$2;
-                String referer3 = (String) c03072.L$1;
-                String url3 = (String) c03072.L$0;
+                Function1<? super ExtractorLink, Unit> function6 = (Function1) c03082.L$3;
+                Function1<? super SubtitleFile, Unit> function7 = (Function1) c03082.L$2;
+                String referer3 = (String) c03082.L$1;
+                String url3 = (String) c03082.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 function4 = function6;
@@ -182,15 +182,15 @@ public final class VCloudGDirect extends ExtractorApi {
                     Log.INSTANCE.e("Error:", "Failed to extract video link from " + url2);
                     return Unit.INSTANCE;
                 }
-                C03082 c03083 = new C03082(source, null);
-                c03072.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03072.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c03072.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c03072.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                c03072.L$4 = SpillingKt.nullOutSpilledVariable(source);
-                c03072.L$5 = function4;
-                c03072.label = 2;
-                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("V-Cloud GD 10 Gbps", "V-Cloud GD 10 Gbps", source, (ExtractorLinkType) null, c03083, c03072, 8, (Object) null);
+                C03092 c03093 = new C03092(source, null);
+                c03082.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03082.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c03082.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c03082.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                c03082.L$4 = SpillingKt.nullOutSpilledVariable(source);
+                c03082.L$5 = function4;
+                c03082.label = 2;
+                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("V-Cloud GD 10 Gbps", "V-Cloud GD 10 Gbps", source, (ExtractorLinkType) null, c03093, c03082, 8, (Object) null);
                 if (objNewExtractorLink$default == obj) {
                     return obj;
                 }
@@ -199,7 +199,7 @@ public final class VCloudGDirect extends ExtractorApi {
                 function5.invoke(obj3);
                 return Unit.INSTANCE;
             case 2:
-                function5 = (Function1) c03072.L$5;
+                function5 = (Function1) c03082.L$5;
                 ResultKt.throwOnFailure($result);
                 obj3 = $result;
                 function5.invoke(obj3);
@@ -213,21 +213,21 @@ public final class VCloudGDirect extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.VCloudGDirect$getUrl$2", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C03082 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C03092 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $source;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C03082(String str, Continuation<? super C03082> continuation) {
+        C03092(String str, Continuation<? super C03092> continuation) {
             super(2, continuation);
             this.$source = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c03082 = new C03082(this.$source, continuation);
-            c03082.L$0 = obj;
-            return c03082;
+            Continuation<Unit> c03092 = new C03092(this.$source, continuation);
+            c03092.L$0 = obj;
+            return c03092;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

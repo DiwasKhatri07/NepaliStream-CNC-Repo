@@ -74,8 +74,8 @@ public final class StreamPlayExtractor$invokeGoated$$inlined$safeAmap$default$1 
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeGoated$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {2266, 2298, 2386}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "provider", "dParam", "encodedDParam", "payloadJson", "$this$withPermit$iv", "$completion", "provider", "dParam", "encodedDParam", "streamRes", "payloadJson", "streamData", "streams", "stream", "encryptedUrl", "quality", "finalUrl", "rawServerName", "serverName", "hasAuto", "isM3u8"}, nl = {2267, 2310, 2385}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "I$0", "I$1"}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 6 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 7 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 8 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2395\n5924#3,24:2269\n5948#3,19:2294\n5967#3,10:2318\n5979#3,4:2351\n5984#3,33:2358\n6028#3,4:2391\n1#4:2293\n1#4:2331\n73#5,5:2313\n93#6,2:2328\n63#6:2330\n64#6,15:2332\n95#6,2:2349\n50#7:2347\n43#7:2348\n1960#8,3:2355\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2395,2\n5976#2:2331\n5966#2:2313,5\n5976#2:2328,2\n5976#2:2330\n5976#2:2332,15\n5976#2:2349,2\n5976#2:2347\n5976#2:2348\n5982#2:2355,3\n*E\n"})
-    public static final class C01541 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 6 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 7 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 8 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2395\n6165#3,24:2269\n6189#3,19:2294\n6208#3,10:2318\n6220#3,4:2351\n6225#3,33:2358\n6269#3,4:2391\n1#4:2293\n1#4:2331\n73#5,5:2313\n93#6,2:2328\n63#6:2330\n64#6,15:2332\n95#6,2:2349\n50#7:2347\n43#7:2348\n1960#8,3:2355\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2395,2\n6217#2:2331\n6207#2:2313,5\n6217#2:2328,2\n6217#2:2330\n6217#2:2332,15\n6217#2:2349,2\n6217#2:2347\n6217#2:2348\n6223#2:2355,3\n*E\n"})
+    public static final class C01561 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ byte[] $actualKey$inlined;
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Integer $episode$inlined;
@@ -110,7 +110,7 @@ public final class StreamPlayExtractor$invokeGoated$$inlined$safeAmap$default$1 
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C01541(Semaphore semaphore, Object obj, Continuation continuation, byte[] bArr, String str, String str2, String str3, Function1 function1, boolean z, Integer num, Integer num2, Integer num3) {
+        public C01561(Semaphore semaphore, Object obj, Continuation continuation, byte[] bArr, String str, String str2, String str3, Function1 function1, boolean z, Integer num, Integer num2, Integer num3) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -126,7 +126,7 @@ public final class StreamPlayExtractor$invokeGoated$$inlined$safeAmap$default$1 
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01541(this.$semaphore, this.$item, continuation, this.$actualKey$inlined, this.$sessionJwt$inlined, this.$sessionIp$inlined, this.$refererPath$inlined, this.$callback$inlined, this.$isTv$inlined, this.$tmdbId$inlined, this.$season$inlined, this.$episode$inlined);
+            return new C01561(this.$semaphore, this.$item, continuation, this.$actualKey$inlined, this.$sessionJwt$inlined, this.$sessionIp$inlined, this.$refererPath$inlined, this.$callback$inlined, this.$isTv$inlined, this.$tmdbId$inlined, this.$season$inlined, this.$episode$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -178,7 +178,7 @@ public final class StreamPlayExtractor$invokeGoated$$inlined$safeAmap$default$1 
                 Method dump skipped, instruction units count: 2312
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokeGoated$$inlined$safeAmap$default$1.C01541.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayExtractor$invokeGoated$$inlined$safeAmap$default$1.C01561.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
@@ -196,7 +196,7 @@ public final class StreamPlayExtractor$invokeGoated$$inlined$safeAmap$default$1 
                     CoroutineScope $this$coroutineScope2 = $this$coroutineScope;
                     Collection destination$iv$iv2 = destination$iv$iv;
                     $this$coroutineScope = $this$coroutineScope2;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01541(semaphore, item$iv$iv, null, this.$actualKey$inlined, this.$sessionJwt$inlined, this.$sessionIp$inlined, this.$refererPath$inlined, this.$callback$inlined, this.$isTv$inlined, this.$tmdbId$inlined, this.$season$inlined, this.$episode$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01561(semaphore, item$iv$iv, null, this.$actualKey$inlined, this.$sessionJwt$inlined, this.$sessionIp$inlined, this.$refererPath$inlined, this.$callback$inlined, this.$isTv$inlined, this.$tmdbId$inlined, this.$season$inlined, this.$episode$inlined), 2, (Object) null));
                     $this$map$iv = $this$map$iv;
                     destination$iv$iv = destination$iv$iv2;
                 }

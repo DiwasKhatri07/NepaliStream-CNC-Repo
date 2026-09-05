@@ -62,7 +62,7 @@ public final class StreamPlayExtractor$invoke4khdhub$$inlined$safeAmap$default$1
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invoke4khdhub$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 2, 2, 2, 2}, l = {2266, 2269, 2270}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "href", "$this$withPermit$iv", "$completion", "href", "source"}, nl = {2267, 2270, 2271}, s = {"L$0", "L$0", "L$2", "L$3", "L$0", "L$2", "L$3", "L$4"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2272\n3434#3,3:2269\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n*L\n1889#1:2266,3\n1889#1:2272,2\n*E\n"})
-    public static final class C01121 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C01141 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Object $item;
         final /* synthetic */ Semaphore $semaphore;
@@ -75,7 +75,7 @@ public final class StreamPlayExtractor$invoke4khdhub$$inlined$safeAmap$default$1
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C01121(Semaphore semaphore, Object obj, Continuation continuation, Function1 function1, Function1 function2) {
+        public C01141(Semaphore semaphore, Object obj, Continuation continuation, Function1 function1, Function1 function2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -84,7 +84,7 @@ public final class StreamPlayExtractor$invoke4khdhub$$inlined$safeAmap$default$1
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01121(this.$semaphore, this.$item, continuation, this.$subtitleCallback$inlined, this.$callback$inlined);
+            return new C01141(this.$semaphore, this.$item, continuation, this.$subtitleCallback$inlined, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -310,7 +310,7 @@ public final class StreamPlayExtractor$invoke4khdhub$$inlined$safeAmap$default$1
                 Iterable $this$map$iv = this.$this_runCatching;
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
-                    destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01121(semaphore, item$iv$iv, null, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01141(semaphore, item$iv$iv, null, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
                 }
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);
                 this.L$1 = SpillingKt.nullOutSpilledVariable(semaphore);

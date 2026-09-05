@@ -71,8 +71,8 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {2266, 2269, 2279, 2287}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "entry", "$this$withPermit$iv", "$completion", "entry", "pageDoc", "buttons", "$this$safeAmap_u24default$iv", "$completion$iv", "$this$safeAmap_u24lambda_u240$iv", "concurrency$iv", "$this$withPermit$iv", "$completion", "entry", "pageDoc", "buttons", "$this$safeAmap_u24default$iv", "$completion$iv", "$this$safeAmap_u24lambda_u240$iv", "concurrency$iv"}, nl = {2267, 2270, 2280, 2288}, s = {"L$0", "L$0", "L$2", "L$3", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2291\n4589#3,6:2269\n4613#3:2282\n4640#3:2290\n1880#4,5:2275\n1899#4,2:2280\n1880#4,5:2283\n1899#4,2:2288\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2291,2\n4594#2:2275,5\n4594#2:2280,2\n4613#2:2283,5\n4613#2:2288,2\n*E\n"})
-    public static final class C01621 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Result<? extends List<? extends Unit>>>, Object> {
+    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2291\n4830#3,6:2269\n4854#3:2282\n4881#3:2290\n1880#4,5:2275\n1899#4,2:2280\n1880#4,5:2283\n1899#4,2:2288\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2291,2\n4835#2:2275,5\n4835#2:2280,2\n4854#2:2283,5\n4854#2:2288,2\n*E\n"})
+    public static final class C01641 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Result<? extends List<? extends Unit>>>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Integer $episode$inlined;
         final /* synthetic */ Object $item;
@@ -92,7 +92,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C01621(Semaphore semaphore, Object obj, Continuation continuation, Integer num, Function1 function1, Function1 function2, Integer num2) {
+        public C01641(Semaphore semaphore, Object obj, Continuation continuation, Integer num, Function1 function1, Function1 function2, Integer num2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -103,7 +103,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01621(this.$semaphore, this.$item, continuation, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$season$inlined);
+            return new C01641(this.$semaphore, this.$item, continuation, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$season$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Result<? extends List<? extends Unit>>> continuation) {
@@ -187,7 +187,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                                     try {
                                         Result.Companion companion = Result.Companion;
                                         try {
-                                            C0164x3343ef76 c0164x3343ef76 = new C0164x3343ef76(7, $this$safeAmap_u24default$iv, null, this.$subtitleCallback$inlined, this.$callback$inlined);
+                                            C0166x3343ef76 c0166x3343ef76 = new C0166x3343ef76(7, $this$safeAmap_u24default$iv, null, this.$subtitleCallback$inlined, this.$callback$inlined);
                                             this.L$0 = $this$withPermit$iv5;
                                             this.L$1 = obj4;
                                             try {
@@ -200,7 +200,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                                                 this.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv);
                                                 this.I$0 = 7;
                                                 this.label = 3;
-                                                objCoroutineScope2 = CoroutineScopeKt.coroutineScope(c0164x3343ef76, this);
+                                                objCoroutineScope2 = CoroutineScopeKt.coroutineScope(c0166x3343ef76, this);
                                                 if (objCoroutineScope2 == coroutine_suspended) {
                                                     return coroutine_suspended;
                                                 }
@@ -227,7 +227,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                                         try {
                                             Result.Companion companion3 = Result.Companion;
                                             try {
-                                                C0165x3343ef77 c0165x3343ef77 = new C0165x3343ef77(7, $this$safeAmap_u24default$iv2, null, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+                                                C0167x3343ef77 c0167x3343ef77 = new C0167x3343ef77(7, $this$safeAmap_u24default$iv2, null, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
                                                 this.L$0 = $this$withPermit$iv5;
                                                 this.L$1 = obj4;
                                                 this.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
@@ -239,7 +239,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                                                 this.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv2);
                                                 this.I$0 = 7;
                                                 this.label = 4;
-                                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0165x3343ef77, this);
+                                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0167x3343ef77, this);
                                                 if (objCoroutineScope == coroutine_suspended) {
                                                     return coroutine_suspended;
                                                 }
@@ -323,7 +323,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                         if (this.$episode$inlined == null) {
                             Iterable $this$safeAmap_u24default$iv3 = iterableSelect;
                             Result.Companion companion5 = Result.Companion;
-                            C0164x3343ef76 c0164x3343ef77 = new C0164x3343ef76(7, $this$safeAmap_u24default$iv3, null, this.$subtitleCallback$inlined, this.$callback$inlined);
+                            C0166x3343ef76 c0166x3343ef77 = new C0166x3343ef76(7, $this$safeAmap_u24default$iv3, null, this.$subtitleCallback$inlined, this.$callback$inlined);
                             this.L$0 = $this$withPermit$iv5;
                             this.L$1 = obj4;
                             this.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
@@ -335,7 +335,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                             this.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv3);
                             this.I$0 = 7;
                             this.label = 3;
-                            objCoroutineScope2 = CoroutineScopeKt.coroutineScope(c0164x3343ef77, this);
+                            objCoroutineScope2 = CoroutineScopeKt.coroutineScope(c0166x3343ef77, this);
                             if (objCoroutineScope2 == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -348,7 +348,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                         }
                         Iterable $this$safeAmap_u24default$iv4 = iterableSelect;
                         Result.Companion companion6 = Result.Companion;
-                        C0165x3343ef77 c0165x3343ef78 = new C0165x3343ef77(7, $this$safeAmap_u24default$iv4, null, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+                        C0167x3343ef77 c0167x3343ef78 = new C0167x3343ef77(7, $this$safeAmap_u24default$iv4, null, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
                         this.L$0 = $this$withPermit$iv5;
                         this.L$1 = obj4;
                         this.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
@@ -360,7 +360,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                         this.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv4);
                         this.I$0 = 7;
                         this.label = 4;
-                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0165x3343ef78, this);
+                        objCoroutineScope = CoroutineScopeKt.coroutineScope(c0167x3343ef78, this);
                         if (objCoroutineScope == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -393,7 +393,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                                 if (this.$episode$inlined == null) {
                                     Iterable $this$safeAmap_u24default$iv5 = iterableSelect;
                                     Result.Companion companion7 = Result.Companion;
-                                    C0164x3343ef76 c0164x3343ef78 = new C0164x3343ef76(7, $this$safeAmap_u24default$iv5, null, this.$subtitleCallback$inlined, this.$callback$inlined);
+                                    C0166x3343ef76 c0166x3343ef78 = new C0166x3343ef76(7, $this$safeAmap_u24default$iv5, null, this.$subtitleCallback$inlined, this.$callback$inlined);
                                     this.L$0 = $this$withPermit$iv5;
                                     this.L$1 = obj4;
                                     this.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
@@ -405,7 +405,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                                     this.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv5);
                                     this.I$0 = 7;
                                     this.label = 3;
-                                    objCoroutineScope2 = CoroutineScopeKt.coroutineScope(c0164x3343ef78, this);
+                                    objCoroutineScope2 = CoroutineScopeKt.coroutineScope(c0166x3343ef78, this);
                                     if (objCoroutineScope2 == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -418,7 +418,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                                 }
                                 Iterable $this$safeAmap_u24default$iv6 = iterableSelect;
                                 Result.Companion companion8 = Result.Companion;
-                                C0165x3343ef77 c0165x3343ef79 = new C0165x3343ef77(7, $this$safeAmap_u24default$iv6, null, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+                                C0167x3343ef77 c0167x3343ef79 = new C0167x3343ef77(7, $this$safeAmap_u24default$iv6, null, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
                                 this.L$0 = $this$withPermit$iv5;
                                 this.L$1 = obj4;
                                 this.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
@@ -430,7 +430,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                                 this.L$8 = SpillingKt.nullOutSpilledVariable($this$safeAmap_u24default$iv6);
                                 this.I$0 = 7;
                                 this.label = 4;
-                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0165x3343ef79, this);
+                                objCoroutineScope = CoroutineScopeKt.coroutineScope(c0167x3343ef79, this);
                                 if (objCoroutineScope == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -516,7 +516,7 @@ public final class StreamPlayExtractor$invokeHindmoviez$$inlined$safeAmap$defaul
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01621(semaphore, item$iv$iv, null, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$season$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01641(semaphore, item$iv$iv, null, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined, this.$season$inlined), 2, (Object) null));
                     destination$iv$iv = destination$iv$iv2;
                 }
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);

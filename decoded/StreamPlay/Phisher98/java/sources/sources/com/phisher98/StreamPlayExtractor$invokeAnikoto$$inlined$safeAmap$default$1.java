@@ -92,8 +92,8 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
     /* JADX INFO: compiled from: StreamPlayUtils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {2266, 2270, 2310}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "linkId", "serverName", "serverType", "encodedId", "$this$withPermit$iv", "$completion", "linkId", "serverName", "serverType", "encodedId", "serverJson", "embedUrl"}, nl = {2267, 2273, 2311}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2312\n5731#3,6:2269\n5737#3,14:2298\n93#4,2:2275\n63#4:2277\n64#4,15:2279\n95#4,2:2296\n1#5:2278\n50#6:2294\n43#6:2295\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2312,2\n5736#2:2275,2\n5736#2:2277\n5736#2:2279,15\n5736#2:2296,2\n5736#2:2278\n5736#2:2294\n5736#2:2295\n*E\n"})
-    public static final class C01261 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2312\n5972#3,6:2269\n5978#3,14:2298\n93#4,2:2275\n63#4:2277\n64#4,15:2279\n95#4,2:2296\n1#5:2278\n50#6:2294\n43#6:2295\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1889#1:2266,3\n1889#1:2312,2\n5977#2:2275,2\n5977#2:2277\n5977#2:2279,15\n5977#2:2296,2\n5977#2:2278\n5977#2:2294\n5977#2:2295\n*E\n"})
+    public static final class C01281 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map $ajaxHeaders$inlined;
         final /* synthetic */ String $anikotoAPI$inlined;
         final /* synthetic */ String $animeUrl$inlined;
@@ -113,7 +113,7 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C01261(Semaphore semaphore, Object obj, Continuation continuation, String str, Map map, String str2, Function1 function1, Function1 function2) {
+        public C01281(Semaphore semaphore, Object obj, Continuation continuation, String str, Map map, String str2, Function1 function1, Function1 function2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -125,7 +125,7 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01261(this.$semaphore, this.$item, continuation, this.$anikotoAPI$inlined, this.$ajaxHeaders$inlined, this.$animeUrl$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+            return new C01281(this.$semaphore, this.$item, continuation, this.$anikotoAPI$inlined, this.$ajaxHeaders$inlined, this.$animeUrl$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -190,18 +190,18 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
             Object obj11;
             Object objLoadSourceNameExtractor$default;
             Object obj12;
-            C01261 c01261 = this;
+            C01281 c01281 = this;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             try {
-                switch (c01261.label) {
+                switch (c01281.label) {
                     case 0:
                         ResultKt.throwOnFailure($result);
-                        Semaphore $this$withPermit$iv6 = c01261.$semaphore;
-                        obj = c01261.$item;
-                        c01261.L$0 = $this$withPermit$iv6;
-                        c01261.L$1 = obj;
-                        c01261.label = 1;
-                        if ($this$withPermit$iv6.acquire((Continuation) c01261) == coroutine_suspended) {
+                        Semaphore $this$withPermit$iv6 = c01281.$semaphore;
+                        obj = c01281.$item;
+                        c01281.L$0 = $this$withPermit$iv6;
+                        c01281.L$1 = obj;
+                        c01281.label = 1;
+                        if ($this$withPermit$iv6.acquire((Continuation) c01281) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         $i$f$withPermit = 0;
@@ -209,7 +209,7 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                         i = 0;
                         try {
                             try {
-                                $completion = (Continuation) c01261;
+                                $completion = (Continuation) c01281;
                                 Triple triple = (Triple) obj;
                                 i3 = 0;
                                 String linkId3 = (String) triple.component1();
@@ -217,19 +217,19 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                                 serverType = (String) triple.component3();
                                 String encodedId2 = URLEncoder.encode(linkId3, "UTF-8");
                                 Requests app = MainActivityKt.getApp();
-                                String str2 = c01261.$anikotoAPI$inlined + "/ajax/server?get=" + encodedId2;
+                                String str2 = c01281.$anikotoAPI$inlined + "/ajax/server?get=" + encodedId2;
                                 try {
-                                    Map map = c01261.$ajaxHeaders$inlined;
-                                    String str3 = c01261.$animeUrl$inlined;
-                                    c01261.L$0 = $this$withPermit$iv2;
-                                    c01261.L$1 = obj;
+                                    Map map = c01281.$ajaxHeaders$inlined;
+                                    String str3 = c01281.$animeUrl$inlined;
+                                    c01281.L$0 = $this$withPermit$iv2;
+                                    c01281.L$1 = obj;
                                     try {
-                                        c01261.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                        c01261.L$3 = SpillingKt.nullOutSpilledVariable(linkId3);
-                                        c01261.L$4 = serverName3;
-                                        c01261.L$5 = serverType;
-                                        c01261.L$6 = SpillingKt.nullOutSpilledVariable(encodedId2);
-                                        c01261.label = 2;
+                                        c01281.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                        c01281.L$3 = SpillingKt.nullOutSpilledVariable(linkId3);
+                                        c01281.L$4 = serverName3;
+                                        c01281.L$5 = serverType;
+                                        c01281.L$6 = SpillingKt.nullOutSpilledVariable(encodedId2);
+                                        c01281.label = 2;
                                         $this$withPermit$iv4 = $this$withPermit$iv2;
                                         serverName = serverName3;
                                         encodedId = encodedId2;
@@ -238,7 +238,7 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                                         obj4 = coroutine_suspended;
                                         try {
                                             obj5 = Requests.get$default(app, str2, map, str3, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, this, 4088, (Object) null);
-                                            c01261 = this;
+                                            c01281 = this;
                                             if (obj5 == obj4) {
                                                 return obj4;
                                             }
@@ -372,7 +372,7 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                                                                     } else {
                                                                         embedUrl = null;
                                                                         if (StringsKt.startsWith$default(embedUrl2, "/", false, 2, (Object) null)) {
-                                                                            str = c01261.$anikotoAPI$inlined + embedUrl2;
+                                                                            str = c01281.$anikotoAPI$inlined + embedUrl2;
                                                                         } else {
                                                                             str = embedUrl2;
                                                                         }
@@ -380,21 +380,21 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                                                                     String embedUrl3 = str;
                                                                     Log.INSTANCE.d("Anikoto", "embedUrl: " + embedUrl3 + " [" + linkId2 + '/' + serverName2 + ']');
                                                                     String str4 = "Anikoto [" + linkId2 + ']';
-                                                                    String str5 = c01261.$anikotoAPI$inlined + '/';
-                                                                    Function1 function1 = c01261.$subtitleCallback$inlined;
-                                                                    Function1 function2 = c01261.$callback$inlined;
-                                                                    c01261.L$0 = $this$withPermit$iv5;
-                                                                    c01261.L$1 = obj6;
-                                                                    c01261.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
-                                                                    c01261.L$3 = SpillingKt.nullOutSpilledVariable(linkId);
-                                                                    c01261.L$4 = SpillingKt.nullOutSpilledVariable(linkId2);
-                                                                    c01261.L$5 = SpillingKt.nullOutSpilledVariable(serverName2);
-                                                                    c01261.L$6 = SpillingKt.nullOutSpilledVariable(encodedId);
-                                                                    c01261.L$7 = SpillingKt.nullOutSpilledVariable(serverJson);
-                                                                    c01261.L$8 = SpillingKt.nullOutSpilledVariable(embedUrl3);
-                                                                    c01261.label = 3;
+                                                                    String str5 = c01281.$anikotoAPI$inlined + '/';
+                                                                    Function1 function1 = c01281.$subtitleCallback$inlined;
+                                                                    Function1 function2 = c01281.$callback$inlined;
+                                                                    c01281.L$0 = $this$withPermit$iv5;
+                                                                    c01281.L$1 = obj6;
+                                                                    c01281.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
+                                                                    c01281.L$3 = SpillingKt.nullOutSpilledVariable(linkId);
+                                                                    c01281.L$4 = SpillingKt.nullOutSpilledVariable(linkId2);
+                                                                    c01281.L$5 = SpillingKt.nullOutSpilledVariable(serverName2);
+                                                                    c01281.L$6 = SpillingKt.nullOutSpilledVariable(encodedId);
+                                                                    c01281.L$7 = SpillingKt.nullOutSpilledVariable(serverJson);
+                                                                    c01281.L$8 = SpillingKt.nullOutSpilledVariable(embedUrl3);
+                                                                    c01281.label = 3;
                                                                     obj11 = obj8;
-                                                                    objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default(str4, embedUrl3, str5, function1, function2, null, null, c01261, 96, null);
+                                                                    objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default(str4, embedUrl3, str5, function1, function2, null, null, c01281, 96, null);
                                                                     if (objLoadSourceNameExtractor$default == obj11) {
                                                                         return obj11;
                                                                     }
@@ -436,7 +436,7 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                                                             } else {
                                                                 embedUrl = null;
                                                                 if (StringsKt.startsWith$default(embedUrl2, "/", false, 2, (Object) null)) {
-                                                                    str = c01261.$anikotoAPI$inlined + embedUrl2;
+                                                                    str = c01281.$anikotoAPI$inlined + embedUrl2;
                                                                 } else {
                                                                     str = embedUrl2;
                                                                 }
@@ -444,21 +444,21 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                                                             String embedUrl4 = str;
                                                             Log.INSTANCE.d("Anikoto", "embedUrl: " + embedUrl4 + " [" + linkId2 + '/' + serverName2 + ']');
                                                             String str6 = "Anikoto [" + linkId2 + ']';
-                                                            String str7 = c01261.$anikotoAPI$inlined + '/';
-                                                            Function1 function3 = c01261.$subtitleCallback$inlined;
-                                                            Function1 function4 = c01261.$callback$inlined;
-                                                            c01261.L$0 = $this$withPermit$iv5;
-                                                            c01261.L$1 = obj6;
-                                                            c01261.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
-                                                            c01261.L$3 = SpillingKt.nullOutSpilledVariable(linkId);
-                                                            c01261.L$4 = SpillingKt.nullOutSpilledVariable(linkId2);
-                                                            c01261.L$5 = SpillingKt.nullOutSpilledVariable(serverName2);
-                                                            c01261.L$6 = SpillingKt.nullOutSpilledVariable(encodedId);
-                                                            c01261.L$7 = SpillingKt.nullOutSpilledVariable(serverJson);
-                                                            c01261.L$8 = SpillingKt.nullOutSpilledVariable(embedUrl4);
-                                                            c01261.label = 3;
+                                                            String str7 = c01281.$anikotoAPI$inlined + '/';
+                                                            Function1 function3 = c01281.$subtitleCallback$inlined;
+                                                            Function1 function4 = c01281.$callback$inlined;
+                                                            c01281.L$0 = $this$withPermit$iv5;
+                                                            c01281.L$1 = obj6;
+                                                            c01281.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
+                                                            c01281.L$3 = SpillingKt.nullOutSpilledVariable(linkId);
+                                                            c01281.L$4 = SpillingKt.nullOutSpilledVariable(linkId2);
+                                                            c01281.L$5 = SpillingKt.nullOutSpilledVariable(serverName2);
+                                                            c01281.L$6 = SpillingKt.nullOutSpilledVariable(encodedId);
+                                                            c01281.L$7 = SpillingKt.nullOutSpilledVariable(serverJson);
+                                                            c01281.L$8 = SpillingKt.nullOutSpilledVariable(embedUrl4);
+                                                            c01281.label = 3;
                                                             obj11 = obj8;
-                                                            objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default(str6, embedUrl4, str7, function3, function4, null, null, c01261, 96, null);
+                                                            objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default(str6, embedUrl4, str7, function3, function4, null, null, c01281, 96, null);
                                                             if (objLoadSourceNameExtractor$default == obj11) {
                                                                 return obj11;
                                                             }
@@ -528,12 +528,12 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                         }
                         break;
                     case 1:
-                        obj = c01261.L$1;
-                        $this$withPermit$iv2 = (Semaphore) c01261.L$0;
+                        obj = c01281.L$1;
+                        $this$withPermit$iv2 = (Semaphore) c01281.L$0;
                         ResultKt.throwOnFailure($result);
                         $i$f$withPermit = 0;
                         i = 0;
-                        $completion = (Continuation) c01261;
+                        $completion = (Continuation) c01281;
                         Triple triple2 = (Triple) obj;
                         i3 = 0;
                         String linkId4 = (String) triple2.component1();
@@ -541,17 +541,17 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                         serverType = (String) triple2.component3();
                         String encodedId3 = URLEncoder.encode(linkId4, "UTF-8");
                         Requests app2 = MainActivityKt.getApp();
-                        String str8 = c01261.$anikotoAPI$inlined + "/ajax/server?get=" + encodedId3;
-                        Map map2 = c01261.$ajaxHeaders$inlined;
-                        String str9 = c01261.$animeUrl$inlined;
-                        c01261.L$0 = $this$withPermit$iv2;
-                        c01261.L$1 = obj;
-                        c01261.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                        c01261.L$3 = SpillingKt.nullOutSpilledVariable(linkId4);
-                        c01261.L$4 = serverName4;
-                        c01261.L$5 = serverType;
-                        c01261.L$6 = SpillingKt.nullOutSpilledVariable(encodedId3);
-                        c01261.label = 2;
+                        String str8 = c01281.$anikotoAPI$inlined + "/ajax/server?get=" + encodedId3;
+                        Map map2 = c01281.$ajaxHeaders$inlined;
+                        String str9 = c01281.$animeUrl$inlined;
+                        c01281.L$0 = $this$withPermit$iv2;
+                        c01281.L$1 = obj;
+                        c01281.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                        c01281.L$3 = SpillingKt.nullOutSpilledVariable(linkId4);
+                        c01281.L$4 = serverName4;
+                        c01281.L$5 = serverType;
+                        c01281.L$6 = SpillingKt.nullOutSpilledVariable(encodedId3);
+                        c01281.label = 2;
                         $this$withPermit$iv4 = $this$withPermit$iv2;
                         serverName = serverName4;
                         encodedId = encodedId3;
@@ -559,7 +559,7 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                         linkId = linkId4;
                         obj4 = coroutine_suspended;
                         obj5 = Requests.get$default(app2, str8, map2, str9, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, this, 4088, (Object) null);
-                        c01261 = this;
+                        c01281 = this;
                         if (obj5 == obj4) {
                             return obj4;
                         }
@@ -606,13 +606,13 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                         $this$withPermit$iv5.release();
                         return obj10;
                     case 2:
-                        String encodedId4 = (String) c01261.L$6;
-                        String serverType2 = (String) c01261.L$5;
-                        String serverName5 = (String) c01261.L$4;
-                        String linkId5 = (String) c01261.L$3;
-                        $completion2 = (Continuation) c01261.L$2;
-                        obj6 = c01261.L$1;
-                        $this$withPermit$iv5 = (Semaphore) c01261.L$0;
+                        String encodedId4 = (String) c01281.L$6;
+                        String serverType2 = (String) c01281.L$5;
+                        String serverName5 = (String) c01281.L$4;
+                        String linkId5 = (String) c01281.L$3;
+                        $completion2 = (Continuation) c01281.L$2;
+                        obj6 = c01281.L$1;
+                        $this$withPermit$iv5 = (Semaphore) c01281.L$0;
                         try {
                             ResultKt.throwOnFailure($result);
                             i3 = 0;
@@ -678,8 +678,8 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                     case 3:
                         $i$f$withPermit2 = 0;
                         i2 = 0;
-                        obj2 = c01261.L$1;
-                        $this$withPermit$iv3 = (Semaphore) c01261.L$0;
+                        obj2 = c01281.L$1;
+                        $this$withPermit$iv3 = (Semaphore) c01281.L$0;
                         try {
                             ResultKt.throwOnFailure($result);
                             obj12 = $result;
@@ -715,7 +715,7 @@ public final class StreamPlayExtractor$invokeAnikoto$$inlined$safeAmap$default$1
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01261(semaphore, item$iv$iv, null, this.$anikotoAPI$inlined, this.$ajaxHeaders$inlined, this.$animeUrl$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01281(semaphore, item$iv$iv, null, this.$anikotoAPI$inlined, this.$ajaxHeaders$inlined, this.$animeUrl$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
                     $this$map$iv = $this$map$iv;
                     destination$iv$iv = destination$iv$iv2;
                 }

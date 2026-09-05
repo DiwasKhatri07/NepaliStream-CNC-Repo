@@ -207,17 +207,17 @@ public final class SettingsFragment extends DialogFragment {
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setUserAgentString("Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Mobile Safari/537.36");
         CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true);
-        webView.setWebViewClient(new C03161(webView));
+        webView.setWebViewClient(new C03171(webView));
     }
 
     /* JADX INFO: renamed from: com.phisher98.settings.SettingsFragment$setupWebView$1 */
     /* JADX INFO: compiled from: SettingsFragment.kt */
     @Metadata(d1 = {"\u0000\u001d\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000*\u0001\u0000\b\n\u0018\u00002\u00020\u0001J\u001c\u0010\u0002\u001a\u00020\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016¨\u0006\b"}, d2 = {"com/phisher98/settings/SettingsFragment$setupWebView$1", "Landroid/webkit/WebViewClient;", "onPageFinished", "", "view", "Landroid/webkit/WebView;", "url", "", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
     @SourceDebugExtension({"SMAP\nSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsFragment.kt\ncom/phisher98/settings/SettingsFragment$setupWebView$1\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,197:1\n184#2,2:198\n*S KotlinDebug\n*F\n+ 1 SettingsFragment.kt\ncom/phisher98/settings/SettingsFragment$setupWebView$1\n*L\n167#1:198,2\n*E\n"})
-    public static final class C03161 extends WebViewClient {
+    public static final class C03171 extends WebViewClient {
         final /* synthetic */ WebView $webView;
 
-        C03161(WebView $webView) {
+        C03171(WebView $webView) {
             this.$webView = $webView;
         }
 
@@ -234,7 +234,7 @@ public final class SettingsFragment extends DialogFragment {
                 view.evaluateJavascript("(function() { return document.body.scrollHeight; })();", new ValueCallback() { // from class: com.phisher98.settings.SettingsFragment$setupWebView$1$$ExternalSyntheticLambda0
                     @Override // android.webkit.ValueCallback
                     public final void onReceiveValue(Object obj) {
-                        SettingsFragment.C03161.onPageFinished$lambda$0(settingsFragment, view, (String) obj);
+                        SettingsFragment.C03171.onPageFinished$lambda$0(settingsFragment, view, (String) obj);
                     }
                 });
             }
@@ -273,7 +273,7 @@ public final class SettingsFragment extends DialogFragment {
                 activity.runOnUiThread(new Runnable() { // from class: com.phisher98.settings.SettingsFragment$setupWebView$1$$ExternalSyntheticLambda2
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SettingsFragment.C03161.onPageFinished$lambda$3(settingsFragment2, finalToken, webView);
+                        SettingsFragment.C03171.onPageFinished$lambda$3(settingsFragment2, finalToken, webView);
                     }
                 });
             }
