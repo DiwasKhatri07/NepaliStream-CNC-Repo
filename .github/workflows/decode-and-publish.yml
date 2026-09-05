@@ -43,7 +43,10 @@ jobs:
         run: |
           curl -L --fail --silent --show-error https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip -o /tmp/jadx.zip
           unzip -q /tmp/jadx.zip -d /tmp/jadx
-          echo "/tmp/jadx/bin" >> "$GITHUB_PATH"
+          JADX_BIN=$(find /tmp/jadx -type f -name jadx -printf '%h\n' | head -1)
+          test -n "$JADX_BIN"
+          chmod +x "$JADX_BIN/jadx"
+          echo "$JADX_BIN" >> "$GITHUB_PATH"
           jadx --version
 
       - name: Pull both public builds branches
