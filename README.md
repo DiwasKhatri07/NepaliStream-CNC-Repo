@@ -6,6 +6,11 @@
 [![Latest commit](https://img.shields.io/github/last-commit/DiwasKhatri07/NepaliStream-CNC-Repo?logo=github)](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/commits/master)
 [![Repository size](https://img.shields.io/github/repo-size/DiwasKhatri07/NepaliStream-CNC-Repo?logo=github)](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo)
 [![Automation](https://img.shields.io/github/actions/workflow/status/DiwasKhatri07/NepaliStream-CNC-Repo/decode-and-publish.yml?label=automation&logo=githubactions)](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/workflows/decode-and-publish.yml)
+[![5-minute monitor](https://img.shields.io/github/actions/workflow/status/DiwasKhatri07/NepaliStream-CNC-Repo/status-monitor.yml?label=5-min%20monitor&logo=githubactions)](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/workflows/status-monitor.yml)
+[![Public repository](https://img.shields.io/badge/repository-public-success?logo=github)](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo)
+[![Decoded archives](https://img.shields.io/badge/decoded%20archives-116-2ea44f?logo=files)](decoded/)
+[![Kotlin metadata](https://img.shields.io/badge/Kotlin%20metadata-116-7f52ff?logo=kotlin)](decoded/)
+[![Sources](https://img.shields.io/badge/sources-2-0366d6?logo=github)](decoded/_sources/)
 
 ## What it is
 
@@ -82,6 +87,25 @@ The source repositories do not provide a guaranteed webhook into this repository
 
 Every UTC day, the workflow updates [`logs/update-log.md`](logs/update-log.md) with the date, workflow run ID, trigger, archive count, Kotlin count, manifest count, and decompiled source count. The workflow summary is also visible inside each Actions run.
 
+## Five-minute live monitor
+
+The separate [`5-Minute Status Monitor`](.github/workflows/status-monitor.yml) runs every five minutes. It does not re-decode files. It reads the checked-in `decoded/` tree and publishes the latest health snapshot to [`STATUS.md`](STATUS.md) and machine-readable [`stats.json`](stats.json).
+
+The monitor records the last update time in UTC, latest decode workflow ID/status/conclusion, `.cs3` archive count, Kotlin file count and line count, decompiled Java file count and line count, total code lines, and comment lines. This gives the repository a lightweight live dashboard without starting the expensive decoder every five minutes.
+
+### Current statistics
+
+| Statistic | Where it is updated |
+|---|---|
+| Last monitor update time | [`STATUS.md`](STATUS.md) |
+| Latest decode run and health | [`STATUS.md`](STATUS.md) |
+| Kotlin file and line count | [`stats.json`](stats.json) |
+| Java file and line count | [`stats.json`](stats.json) |
+| Comment-line count | [`stats.json`](stats.json) |
+| Daily history | [`logs/update-log.md`](logs/update-log.md) |
+
+The monitor commits only `STATUS.md` and `stats.json`, while the decoder workflow commits decoded build changes and the daily log. Both workflows use separate concurrency groups.
+
 ## How to access files
 
 Browse online:
@@ -93,6 +117,8 @@ Browse online:
 - [Scripts](scripts/)
 - [Actions runs](../../actions)
 - [Daily update log](logs/update-log.md)
+- [Live status dashboard](STATUS.md)
+- [Machine-readable statistics](stats.json)
 
 Clone locally:
 
@@ -115,6 +141,7 @@ A `.cs3` archive contains compiled Android DEX bytecode, not the original Kotlin
 - The decoder is deterministic and rebuilds generated layers per plugin.
 - Layout validation runs before the automated push.
 - Workflow concurrency prevents overlapping update pushes.
+- The five-minute monitor reports health and code statistics without re-decoding.
 - The workflow has a 30-minute timeout and writes a run summary.
 - No secrets are required because both upstream repositories are public.
 

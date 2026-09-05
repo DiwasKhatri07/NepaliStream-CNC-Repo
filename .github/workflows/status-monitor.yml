@@ -1,0 +1,91 @@
+name: 5-Minute Status Monitor
+
+run-name: Repository health snapshot · ${{ github.event_name }}
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: status-monitor
+  cancel-in-progress: true
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  monitor:
+    name: Count code and publish status
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate health and code statistics
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p logs
+          UPDATED_UTC=$(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          CS3_FILES=$(find decoded -type f -name '*.cs3' | wc -l)
+          KOTLIN_FILES=$(find decoded -type f -name '*.kt' | wc -l)
+          KOTLIN_LINES=$(find decoded -type f -name '*.kt' -print0 | xargs -0r cat | wc -l)
+          JAVA_FILES=$(find decoded -type f -name '*.java' | wc -l)
+          JAVA_LINES=$(find decoded -type f -name '*.java' -print0 | xargs -0r cat | wc -l)
+          COMMENT_LINES=$(find decoded -type f \( -name '*.kt' -o -name '*.java' \) -print0 | xargs -0r grep -E '^[[:space:]]*(//|/\*|\*|\*/)' | wc -l || true)
+          TOTAL_CODE_LINES=$((KOTLIN_LINES + JAVA_LINES))
+          LATEST=$(gh run list --workflow decode-and-publish.yml --limit 1 --json databaseId,status,conclusion,createdAt,updatedAt,url --jq '.[0] // {}')
+          LATEST_ID=$(echo "$LATEST" | jq -r '.databaseId // "none"')
+          LATEST_STATUS=$(echo "$LATEST" | jq -r '.status // "unknown"')
+          LATEST_CONCLUSION=$(echo "$LATEST" | jq -r '.conclusion // "pending"')
+          LATEST_URL=$(echo "$LATEST" | jq -r '.url // ""')
+          cat > STATUS.md <<EOF
+          # NepaliStream CNC Repo — live status
+
+          > Automatically refreshed every 5 minutes by [5-Minute Status Monitor](.github/workflows/status-monitor.yml).
+
+          | Metric | Value |
+          |---|---:|
+          | Last monitor update (UTC) | $UPDATED_UTC |
+          | Latest decode workflow | [$LATEST_ID]($LATEST_URL) |
+          | Latest workflow status | **$LATEST_STATUS** |
+          | Latest workflow conclusion | **$LATEST_CONCLUSION** |
+          | Decoded `.cs3` archives | $CS3_FILES |
+          | Kotlin files | $KOTLIN_FILES |
+          | Kotlin lines | $KOTLIN_LINES |
+          | Decompiled Java files | $JAVA_FILES |
+          | Decompiled Java lines | $JAVA_LINES |
+          | Total code lines | $TOTAL_CODE_LINES |
+          | Comment lines | $COMMENT_LINES |
+
+          The counters are generated from the checked-in `decoded/` folder. A monitor update is informational and does not re-decode upstream archives.
+          EOF
+          jq -n --arg updated "$UPDATED_UTC" --argjson cs3 "$CS3_FILES" --argjson kotlin_files "$KOTLIN_FILES" --argjson kotlin_lines "$KOTLIN_LINES" --argjson java_files "$JAVA_FILES" --argjson java_lines "$JAVA_LINES" --argjson comments "$COMMENT_LINES" --argjson total "$TOTAL_CODE_LINES" --arg latest_id "$LATEST_ID" --arg latest_status "$LATEST_STATUS" --arg latest_conclusion "$LATEST_CONCLUSION" '{updated_utc:$updated,latest_decode_run:$latest_id,latest_decode_status:$latest_status,latest_decode_conclusion:$latest_conclusion,cs3_archives:$cs3,kotlin_files:$kotlin_files,kotlin_lines:$kotlin_lines,java_files:$java_files,java_lines:$java_lines,total_code_lines:$total,comment_lines:$comments}' > stats.json
+          {
+            echo '## 5-minute monitor snapshot'
+            echo "Updated: $UPDATED_UTC"
+            echo "- CS3 archives: $CS3_FILES"
+            echo "- Kotlin: $KOTLIN_FILES files / $KOTLIN_LINES lines"
+            echo "- Decompiled Java: $JAVA_FILES files / $JAVA_LINES lines"
+            echo "- Total code lines: $TOTAL_CODE_LINES"
+            echo "- Comment lines: $COMMENT_LINES"
+            echo "- Latest decode run: $LATEST_ID ($LATEST_STATUS / $LATEST_CONCLUSION)"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit and push status snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add STATUS.md stats.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Update five-minute repository status"
+          git pull --rebase origin master
+          git push origin HEAD:master

@@ -62,9 +62,9 @@ jobs:
             echo '| Metric | Count |'
             echo '|---|---:|'
             echo "| Decoded `.cs3` archives | $(find decoded -type f -name '*.cs3' | wc -l) |"
-            echo "| Kotlin metadata files | $(find kotlin -name 'PluginMetadata.kt' | wc -l) |"
-            echo "| Manifest files | $(find manifests -name '*.json' | wc -l) |"
-            echo "| Decompiled Java files | $(find java -name '*.java' | wc -l) |"
+            echo "| Kotlin metadata files | $(find decoded -name 'PluginMetadata.kt' | wc -l) |"
+            echo "| Manifest files | $(find decoded -name 'manifest.json' | wc -l) |"
+            echo "| Decompiled Java files | $(find decoded -name '*.java' | wc -l) |"
             echo ''
             echo 'Sources: CNCVerse builds + Phisher98 builds'
             echo 'Maintainer: Diwas Khatri'
