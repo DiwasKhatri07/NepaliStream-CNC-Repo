@@ -45,7 +45,7 @@ jobs:
       - name: Pull both public builds branches
         run: python auto-pusher.py
 
-      - name: Decode all root-level CS3 archives
+      - name: Decode all organized CS3 archives
         run: python decoder.py
 
       - name: Validate organization and generated index
@@ -61,7 +61,7 @@ jobs:
             echo ''
             echo '| Metric | Count |'
             echo '|---|---:|'
-            echo "| Root `.cs3` archives | $(find . -maxdepth 1 -name '*.cs3' | wc -l) |"
+            echo "| Decoded `.cs3` archives | $(find decoded -type f -name '*.cs3' | wc -l) |"
             echo "| Kotlin metadata files | $(find kotlin -name 'PluginMetadata.kt' | wc -l) |"
             echo "| Manifest files | $(find manifests -name '*.json' | wc -l) |"
             echo "| Decompiled Java files | $(find java -name '*.java' | wc -l) |"
