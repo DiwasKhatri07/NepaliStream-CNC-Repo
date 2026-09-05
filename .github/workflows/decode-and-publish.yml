@@ -1,7 +1,15 @@
 name: Auto Decode and Push Builds
 
+run-name: Decode and publish mixed builds · ${{ github.event_name }}
+
 on:
   workflow_dispatch:
+    inputs:
+      force_refresh:
+        description: 'Refresh both upstream builds even when no source change is detected'
+        required: false
+        default: true
+        type: boolean
   schedule:
     - cron: '17 * * * *'
 
@@ -12,35 +20,73 @@ concurrency:
   group: auto-decode-and-push
   cancel-in-progress: true
 
+env:
+  PYTHONUNBUFFERED: '1'
+
 jobs:
   decode-and-push:
+    name: Pull, decode, organize, validate, push
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout NepaliStream CNC Repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Set up Python
+
+      - name: Set up Python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: pip
+
       - name: Install JADX
         run: |
           curl -L --fail --silent --show-error https://github.com/skylot/jadx/releases/download/v1.5.6/jadx-1.5.6.zip -o /tmp/jadx.zip
           unzip -q /tmp/jadx.zip -d /tmp/jadx
           echo "/tmp/jadx/bin" >> "$GITHUB_PATH"
-      - name: Auto-pull both public builds branches
+          jadx --version
+
+      - name: Pull both public builds branches
         run: python auto-pusher.py
-      - name: Decode every root-level CS3 file
+
+      - name: Decode all root-level CS3 archives
         run: python decoder.py
-      - name: Commit and push changed decoded files
+
+      - name: Validate organization and generated index
+        run: python scripts/validate_layout.py
+
+      - name: Write workflow summary
+        run: |
+          {
+            echo '## NepaliStream CNC Repo update'
+            echo ''
+            echo '| Metric | Count |'
+            echo '|---|---:|'
+            echo "| Root `.cs3` archives | $(find . -maxdepth 1 -name '*.cs3' | wc -l) |"
+            echo "| Kotlin metadata files | $(find kotlin -name 'PluginMetadata.kt' | wc -l) |"
+            echo "| Manifest files | $(find manifests -name '*.json' | wc -l) |"
+            echo "| Decompiled Java files | $(find java -name '*.java' | wc -l) |"
+            echo ''
+            echo 'Sources: CNCVerse builds + Phisher98 builds'
+            echo 'Maintainer: Diwas Khatri'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload validation index
+        uses: actions/upload-artifact@v4
+        with:
+          name: decoded-index-${{ github.run_number }}
+          path: decoded-index.json
+          retention-days: 14
+
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
+          git add -A
           if git diff --cached --quiet; then
-            echo "No upstream changes detected."
+            echo 'No upstream changes detected; nothing to push.'
           else
             git commit -m "Auto-update mixed decoded builds"
-            git push
+            git push origin HEAD:master
           fi
