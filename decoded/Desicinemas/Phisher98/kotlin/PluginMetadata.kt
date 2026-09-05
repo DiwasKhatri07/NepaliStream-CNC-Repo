@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.desicinemas
+package nepali.stream.decoded.desicinemas
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

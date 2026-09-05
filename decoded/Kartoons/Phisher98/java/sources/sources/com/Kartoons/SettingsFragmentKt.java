@@ -14,7 +14,7 @@ import com.lagradost.cloudstream3.plugins.Plugin;
 import kotlin.Metadata;
 
 /* JADX INFO: compiled from: SettingsFragment.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/Kartoons/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Kartoons/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u001a\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a \u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0002¨\u0006\b"}, d2 = {"setupSaveRestart", "", "view", "Landroid/view/View;", "fragment", "Lcom/google/android/material/bottomsheet/BottomSheetDialogFragment;", "plugin", "Lcom/lagradost/cloudstream3/plugins/Plugin;", "Kartoons"}, k = 2, mv = {2, 4, 0}, xi = 48)
 public final class SettingsFragmentKt {
     /* JADX INFO: Access modifiers changed from: private */

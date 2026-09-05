@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.movieboxprovider
+package nepali.stream.decoded.movieboxprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

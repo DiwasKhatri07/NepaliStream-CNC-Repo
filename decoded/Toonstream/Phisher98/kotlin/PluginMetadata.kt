@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.toonstream
+package nepali.stream.decoded.toonstream
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

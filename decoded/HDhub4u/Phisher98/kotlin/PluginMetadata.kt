@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.hdhub4u
+package nepali.stream.decoded.hdhub4u
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.animenosub
+package nepali.stream.decoded.animenosub
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

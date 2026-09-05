@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.istreamflare
+package nepali.stream.decoded.istreamflare
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

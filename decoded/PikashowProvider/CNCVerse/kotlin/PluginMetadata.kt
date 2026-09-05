@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.pikashowprovider
+package nepali.stream.decoded.pikashowprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

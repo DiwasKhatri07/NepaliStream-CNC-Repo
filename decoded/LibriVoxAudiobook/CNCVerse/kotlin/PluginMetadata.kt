@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.librivoxaudiobook
+package nepali.stream.decoded.librivoxaudiobook
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

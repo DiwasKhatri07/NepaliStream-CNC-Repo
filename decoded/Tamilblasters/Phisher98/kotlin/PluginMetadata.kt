@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.tamilblasters
+package nepali.stream.decoded.tamilblasters
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

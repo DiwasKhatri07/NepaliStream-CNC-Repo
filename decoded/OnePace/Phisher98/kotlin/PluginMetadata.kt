@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.onepace
+package nepali.stream.decoded.onepace
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

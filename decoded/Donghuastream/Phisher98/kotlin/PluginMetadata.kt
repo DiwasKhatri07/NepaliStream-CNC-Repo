@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.donghuastream
+package nepali.stream.decoded.donghuastream
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

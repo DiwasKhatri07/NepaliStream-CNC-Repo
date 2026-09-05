@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.iptvplayer
+package nepali.stream.decoded.iptvplayer
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

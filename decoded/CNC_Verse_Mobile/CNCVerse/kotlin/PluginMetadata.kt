@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.cnc_verse_mobile
+package nepali.stream.decoded.cnc_verse_mobile
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.yts
+package nepali.stream.decoded.yts
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

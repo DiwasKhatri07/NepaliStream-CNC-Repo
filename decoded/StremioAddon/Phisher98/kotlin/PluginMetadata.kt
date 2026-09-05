@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.stremioaddon
+package nepali.stream.decoded.stremioaddon
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

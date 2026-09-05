@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.pencurimovie
+package nepali.stream.decoded.pencurimovie
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

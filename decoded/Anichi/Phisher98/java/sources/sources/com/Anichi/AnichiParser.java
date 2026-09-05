@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: AnichiParser.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/Anichi/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Anichi/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b)\bÆ\u0002\u0018\u00002\u00020\u0001:&\u0004\u0005\u0006\u0007\b\t\n\u000b\f\r\u000e\u000f\u0010\u0011\u0012\u0013\u0014\u0015\u0016\u0017\u0018\u0019\u001a\u001b\u001c\u001d\u001e\u001f !\"#$%&'()B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003¨\u0006*"}, d2 = {"Lcom/Anichi/AnichiParser;", "", "<init>", "()V", "AnichiLoadData", "JikanData", "JikanResponse", "IdMal", "MediaAni", "DataAni", "CoverImage", "AniMedia", "Title", "AniPage", "AniData", "AniSearch", "AkIframe", "Stream", "PortData", "Subtitles", "Links", "Headers", "AnichiVideoApiResponse", "Data", "Shows", "EdgesCard", "CharacterImage", "CharacterName", "Characters", "Edges", "AvailableEpisodes", "AiredStart", "Season", "AnichiQuery", "Detail", "DetailShow", "AvailableEpisodesDetail", "LinksQuery", "LinkData", "Episode", "SourceUrls", "Downloads", "Anichi"}, k = 1, mv = {2, 4, 0}, xi = 48)
 public final class AnichiParser {
 

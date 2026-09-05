@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.tamildhoolprovider
+package nepali.stream.decoded.tamildhoolprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

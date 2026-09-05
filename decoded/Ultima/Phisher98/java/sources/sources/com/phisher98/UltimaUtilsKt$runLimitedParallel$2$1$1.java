@@ -15,7 +15,7 @@ import kotlinx.coroutines.sync.Semaphore;
 
 /* JADX INFO: Add missing generic type declarations: [T] */
 /* JADX INFO: compiled from: UltimaUtils.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/Ultima/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Ultima/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\b\n\u0002\b\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0002H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "T", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.phisher98.UltimaUtilsKt$runLimitedParallel$2$1$1", f = "UltimaUtils.kt", i = {0, 1}, l = {230, 185}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv"}, nl = {231, 232}, s = {"L$0", "L$0"}, v = 2)
 @SourceDebugExtension({"SMAP\nUltimaUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UltimaUtils.kt\ncom/phisher98/UltimaUtilsKt$runLimitedParallel$2$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n*L\n1#1,229:1\n81#2,6:230\n*S KotlinDebug\n*F\n+ 1 UltimaUtils.kt\ncom/phisher98/UltimaUtilsKt$runLimitedParallel$2$1$1\n*L\n185#1:230,6\n*E\n"})

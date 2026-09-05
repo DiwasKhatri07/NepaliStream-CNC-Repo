@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.zinkmovies
+package nepali.stream.decoded.zinkmovies
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

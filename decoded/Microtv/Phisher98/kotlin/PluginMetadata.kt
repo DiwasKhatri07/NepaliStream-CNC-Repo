@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.microtv
+package nepali.stream.decoded.microtv
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

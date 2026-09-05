@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.coflix
+package nepali.stream.decoded.coflix
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.torrastream
+package nepali.stream.decoded.torrastream
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

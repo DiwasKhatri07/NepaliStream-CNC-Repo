@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.kisskhprovider
+package nepali.stream.decoded.kisskhprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

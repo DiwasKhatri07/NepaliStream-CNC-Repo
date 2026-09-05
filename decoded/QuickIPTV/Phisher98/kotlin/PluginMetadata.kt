@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.quickiptv
+package nepali.stream.decoded.quickiptv
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

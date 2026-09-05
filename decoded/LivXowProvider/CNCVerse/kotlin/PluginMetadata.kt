@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.livxowprovider
+package nepali.stream.decoded.livxowprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

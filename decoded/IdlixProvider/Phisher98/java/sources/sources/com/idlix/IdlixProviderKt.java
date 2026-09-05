@@ -14,7 +14,7 @@ import kotlin.text.RegexOption;
 import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: IdlixProvider.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/IdlixProvider/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/IdlixProvider/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\u001a\u0012\u0010\u0000\u001a\u0004\u0018\u00010\u00012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003¨\u0006\u0004"}, d2 = {"getSearchQuality", "Lcom/lagradost/cloudstream3/SearchQuality;", "check", "", "IdlixProvider"}, k = 2, mv = {2, 4, 0}, xi = 48)
 public final class IdlixProviderKt {
     @Nullable

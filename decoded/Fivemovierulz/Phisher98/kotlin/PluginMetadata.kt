@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.fivemovierulz
+package nepali.stream.decoded.fivemovierulz
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

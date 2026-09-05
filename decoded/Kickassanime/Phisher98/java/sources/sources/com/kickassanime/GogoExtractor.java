@@ -43,7 +43,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jsoup.nodes.Document;
 
 /* JADX INFO: compiled from: GogoExtractor.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/Kickassanime/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Kickassanime/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\bÆ\u0002\u0018\u00002\u00020\u0001:\u0002\u001c\u001dB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u0002J*\u0010\u0007\u001a\u00020\u00052\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u00052\b\b\u0002\u0010\u000b\u001a\u00020\fH\u0002Jr\u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000e2\u0006\u0010\u0010\u001a\u00020\u00052\u0006\u0010\u0011\u001a\u00020\u00052\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u000f0\u00132\b\u0010\t\u001a\u0004\u0018\u00010\u00052\b\u0010\u0015\u001a\u0004\u0018\u00010\u00052\b\u0010\u0016\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0017\u001a\u00020\f2\u0006\u0010\u0018\u001a\u00020\f2\n\b\u0002\u0010\u0019\u001a\u0004\u0018\u00010\u001aH\u0086@¢\u0006\u0002\u0010\u001b¨\u0006\u001e"}, d2 = {"Lcom/kickassanime/GogoExtractor;", "", "<init>", "()V", "getKey", "", "id", "cryptoHandler", "string", "iv", "secretKeyString", "encrypt", "", "extractVidstream", "Lcom/lagradost/cloudstream3/mvvm/Resource;", "", "iframeUrl", "mainApiName", "callback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "secretKey", "secretDecryptKey", "isUsingAdaptiveKeys", "isUsingAdaptiveData", "iframeDocument", "Lorg/jsoup/nodes/Document;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZLorg/jsoup/nodes/Document;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "GogoSources", "GogoSource", "Kickassanime"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @SourceDebugExtension({"SMAP\nGogoExtractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 GogoExtractor.kt\ncom/kickassanime/GogoExtractor\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,169:1\n990#2:170\n1065#2,3:171\n*S KotlinDebug\n*F\n+ 1 GogoExtractor.kt\ncom/kickassanime/GogoExtractor\n*L\n29#1:170\n29#1:171,3\n*E\n"})
 public final class GogoExtractor {
@@ -182,10 +182,11 @@ public final class GogoExtractor {
         /* JADX WARN: Code duplicated, block: B:99:0x04b2  */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:102:0x0526 -> B:103:0x053f). Please report as a decompilation issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:114:0x0614 -> B:115:0x062c). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-            java.lang.StackOverflowError
-            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
             */
         public final java.lang.Object invokeSuspend(java.lang.Object r37) {
             /*

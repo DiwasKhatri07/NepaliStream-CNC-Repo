@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.layarkacaprovider
+package nepali.stream.decoded.layarkacaprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

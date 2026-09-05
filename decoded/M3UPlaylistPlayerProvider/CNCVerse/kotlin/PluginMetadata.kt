@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.m3uplaylistplayerprovider
+package nepali.stream.decoded.m3uplaylistplayerprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

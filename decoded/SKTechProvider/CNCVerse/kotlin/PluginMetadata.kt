@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.sktechprovider
+package nepali.stream.decoded.sktechprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

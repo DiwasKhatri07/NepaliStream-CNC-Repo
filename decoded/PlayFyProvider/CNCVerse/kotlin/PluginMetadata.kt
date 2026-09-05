@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.playfyprovider
+package nepali.stream.decoded.playfyprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

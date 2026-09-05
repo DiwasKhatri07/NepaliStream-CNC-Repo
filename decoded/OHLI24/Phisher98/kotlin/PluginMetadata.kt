@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.ohli24
+package nepali.stream.decoded.ohli24
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

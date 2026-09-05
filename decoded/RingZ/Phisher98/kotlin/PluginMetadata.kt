@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.ringz
+package nepali.stream.decoded.ringz
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

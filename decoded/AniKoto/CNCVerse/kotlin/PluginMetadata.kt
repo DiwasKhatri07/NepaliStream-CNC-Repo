@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.anikoto
+package nepali.stream.decoded.anikoto
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

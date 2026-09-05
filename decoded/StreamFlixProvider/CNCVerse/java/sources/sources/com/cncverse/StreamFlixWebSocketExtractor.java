@@ -52,7 +52,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: StreamFlixWebSocketExtractor.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/cncverse/StreamFlixProvider/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamFlixProvider/CNCVerse/java/classes.dex */
 @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0007\u0018\u00002\u00020\u0001:\u0004\u000e\u000f\u0010\u0011B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J8\u0010\u0006\u001a\u001a\u0012\u0004\u0012\u00020\b\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\t0\u00070\u00072\u0006\u0010\n\u001a\u00020\u000b2\b\b\u0002\u0010\f\u001a\u00020\bH\u0086@¢\u0006\u0002\u0010\rR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lcom/cncverse/StreamFlixWebSocketExtractor;", "", "<init>", "()V", "client", "Lokhttp3/OkHttpClient;", "getEpisodesFromWebSocket", "", "", "Lcom/cncverse/StreamFlixWebSocketExtractor$EpisodeData;", "movieKey", "", "totalSeasons", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "WebSocketRequest", "WebSocketData", "WebSocketBody", "EpisodeData", "StreamFlixProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
 public final class StreamFlixWebSocketExtractor {
 

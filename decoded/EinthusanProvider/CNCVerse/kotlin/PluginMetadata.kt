@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.einthusanprovider
+package nepali.stream.decoded.einthusanprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

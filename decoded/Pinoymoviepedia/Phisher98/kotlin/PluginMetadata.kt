@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.pinoymoviepedia
+package nepali.stream.decoded.pinoymoviepedia
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

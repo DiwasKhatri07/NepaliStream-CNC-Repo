@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.cinetvprovider
+package nepali.stream.decoded.cinetvprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

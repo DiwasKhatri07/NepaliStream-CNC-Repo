@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.animepahe
+package nepali.stream.decoded.animepahe
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

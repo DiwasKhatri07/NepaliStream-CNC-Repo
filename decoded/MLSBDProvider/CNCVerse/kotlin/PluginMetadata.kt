@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.mlsbdprovider
+package nepali.stream.decoded.mlsbdprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

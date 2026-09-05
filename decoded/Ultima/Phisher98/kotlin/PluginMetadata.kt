@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.ultima
+package nepali.stream.decoded.ultima
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

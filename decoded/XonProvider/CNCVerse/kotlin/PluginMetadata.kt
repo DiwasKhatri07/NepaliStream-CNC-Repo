@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.xonprovider
+package nepali.stream.decoded.xonprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

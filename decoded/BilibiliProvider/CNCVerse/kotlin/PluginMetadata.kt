@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.bilibiliprovider
+package nepali.stream.decoded.bilibiliprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

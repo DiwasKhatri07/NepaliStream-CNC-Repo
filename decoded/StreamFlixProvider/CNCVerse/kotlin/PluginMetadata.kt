@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.streamflixprovider
+package nepali.stream.decoded.streamflixprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

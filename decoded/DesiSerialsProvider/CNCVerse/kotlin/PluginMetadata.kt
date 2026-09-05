@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.desiserialsprovider
+package nepali.stream.decoded.desiserialsprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.stremiox
+package nepali.stream.decoded.stremiox
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

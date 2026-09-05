@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: AniworldPlugin.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/Aniworld/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Aniworld/Phisher98/java/classes.dex */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.Aniworld.AniworldPlugin$ByseSX", f = "AniworldPlugin.kt", i = {0, 0, 0, 0}, l = {62}, m = "getDetails", n = {"mainUrl", "base", "code", "url"}, nl = {199}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
 final class AniworldPlugin$ByseSX$getDetails$1 extends ContinuationImpl {

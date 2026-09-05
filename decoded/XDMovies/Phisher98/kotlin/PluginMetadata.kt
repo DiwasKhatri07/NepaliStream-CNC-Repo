@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.xdmovies
+package nepali.stream.decoded.xdmovies
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.idlixprovider
+package nepali.stream.decoded.idlixprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

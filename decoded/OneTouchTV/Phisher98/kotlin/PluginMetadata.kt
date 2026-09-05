@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.onetouchtv
+package nepali.stream.decoded.onetouchtv
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.publicsportsiptv
+package nepali.stream.decoded.publicsportsiptv
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

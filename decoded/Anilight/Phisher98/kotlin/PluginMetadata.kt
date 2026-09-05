@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.anilight
+package nepali.stream.decoded.anilight
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

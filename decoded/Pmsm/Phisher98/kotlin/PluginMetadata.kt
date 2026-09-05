@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.pmsm
+package nepali.stream.decoded.pmsm
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

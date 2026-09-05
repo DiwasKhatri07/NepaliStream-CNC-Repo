@@ -12,7 +12,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.SourceDebugExtension;
 
 /* JADX INFO: compiled from: StreamPlayExtractor.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/StreamPlay/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeAnichi$2$1$1", f = "StreamPlayExtractor.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {654, 670, 686, 701, 710, 722, 738, 753}, m = "invokeSuspend", n = {"sourceUrl", "host", "sourceUrl", "fixedLink", "host", "sourceUrl", "decoded", "fixedLink", "sourceUrl", "decoded", "fixedLink", "links", "$this$forEach$iv", "element$iv", "server", "host", "sourceUrl", "decoded", "fixedLink", "links", "$this$forEach$iv", "element$iv", "server", "host", "sourceUrl", "decoded", "fixedLink", "links", "$this$forEach$iv", "element$iv", "server", "host", "sourceUrl", "decoded", "fixedLink", "links", "$this$forEach$iv", "element$iv", "server", "host", "endpoint", "sourceUrl", "decoded", "fixedLink", "links", "$this$forEach$iv", "element$iv", "server", "host", "$this$forEach$iv", "element$iv", "sub", "src", "langName"}, nl = {662, 679, 687, 705, 720, 721, 742, 754}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$10", "L$11", "L$12", "L$13", "L$0", "L$1", "L$2", "L$3", "L$4", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$17", "L$18"}, v = 2)
 @SourceDebugExtension({"SMAP\nStreamPlayExtractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor$invokeAnichi$2$1$1\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,6034:1\n73#2,5:6035\n2068#3:6040\n2068#3,2:6041\n2068#3,2:6043\n2068#3,2:6045\n2069#3:6047\n*S KotlinDebug\n*F\n+ 1 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor$invokeAnichi$2$1$1\n*L\n687#1:6035,5\n694#1:6040\n705#1:6041,2\n742#1:6043,2\n746#1:6045,2\n694#1:6047\n*E\n"})
@@ -91,11 +91,10 @@ final class StreamPlayExtractor$invokeAnichi$2$1$1 extends SuspendLambda impleme
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:128:0x079d -> B:129:0x07c1). Please report as a decompilation issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:132:0x07f3 -> B:133:0x0800). Please report as a decompilation issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:69:0x042c -> B:133:0x0800). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     public final java.lang.Object invokeSuspend(java.lang.Object r40) {
         /*

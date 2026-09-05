@@ -13,7 +13,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 
 /* JADX INFO: compiled from: CloudPlayProvider.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/CloudPlay/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/CloudPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "stream", "Lcom/phisher98/cloudplay/CloudPlay$CloudPlayStream;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay$search$allChannels$1", f = "CloudPlayProvider.kt", i = {0}, l = {271}, m = "invokeSuspend", n = {"stream"}, nl = {-1}, s = {"L$0"}, v = 2)
 final class CloudPlay$search$allChannels$1 extends SuspendLambda implements Function2<CloudPlay.CloudPlayStream, Continuation<? super List<? extends SearchResponse>>, Object> {

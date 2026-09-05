@@ -11,7 +11,7 @@ import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 
 /* JADX INFO: compiled from: Anichi.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/Anichi/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Anichi/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/Anichi/AnilistAPIResponse$anilistMedia;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.Anichi.Anichi$load$2$anilistDeferred$1", f = "Anichi.kt", i = {0}, l = {245}, m = "invokeSuspend", n = {"aniId"}, nl = {247}, s = {"I$0"}, v = 2)
 final class Anichi$load$2$anilistDeferred$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super AnilistAPIResponse.anilistMedia>, Object> {

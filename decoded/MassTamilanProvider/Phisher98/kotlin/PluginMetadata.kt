@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.masstamilanprovider
+package nepali.stream.decoded.masstamilanprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

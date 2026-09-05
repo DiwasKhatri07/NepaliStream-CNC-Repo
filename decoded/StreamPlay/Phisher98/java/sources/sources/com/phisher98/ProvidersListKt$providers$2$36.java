@@ -14,7 +14,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function6;
 
 /* JADX INFO: compiled from: ProvidersList.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/StreamPlay/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\"\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00010\u00052\u0012\u0010\u0007\u001a\u000e\u0012\u0004\u0012\u00020\b\u0012\u0004\u0012\u00020\u00010\u00052\u0006\u0010\t\u001a\u00020\n2\u0006\u0010\t\u001a\u00020\nH\n"}, d2 = {"<anonymous>", "", "res", "Lcom/phisher98/StreamPlay$LinkData;", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "<unused var>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.phisher98.ProvidersListKt$providers$2$36", f = "ProvidersList.kt", i = {0, 0, 0}, l = {280}, m = "invokeSuspend", n = {"res", "subtitleCallback", "callback"}, nl = {281}, s = {"L$0", "L$1", "L$2"}, v = 2)
 final class ProvidersListKt$providers$2$36 extends SuspendLambda implements Function6<StreamPlay.LinkData, Function1<? super SubtitleFile, ? extends Unit>, Function1<? super ExtractorLink, ? extends Unit>, String, String, Continuation<? super Unit>, Object> {

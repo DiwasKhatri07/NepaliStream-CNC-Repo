@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.netcinez
+package nepali.stream.decoded.netcinez
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

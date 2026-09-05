@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.topstreamfilm
+package nepali.stream.decoded.topstreamfilm
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.goojara
+package nepali.stream.decoded.goojara
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

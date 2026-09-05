@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.subscriptionmanager
+package nepali.stream.decoded.subscriptionmanager
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

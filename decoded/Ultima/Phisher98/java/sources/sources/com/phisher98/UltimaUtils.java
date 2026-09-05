@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: UltimaUtils.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/Ultima/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Ultima/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\bÆ\u0002\u0018\u00002\u00020\u0001:\u0003\u0007\b\tB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¨\u0006\n"}, d2 = {"Lcom/phisher98/UltimaUtils;", "", "<init>", "()V", "getAllProviders", "", "Lcom/lagradost/cloudstream3/MainAPI;", "SectionInfo", "ExtensionInfo", "MediaProviderState", "Ultima"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @SourceDebugExtension({"SMAP\nUltimaUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UltimaUtils.kt\ncom/phisher98/UltimaUtils\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,229:1\n812#2,12:230\n812#2,12:254\n812#2,12:278\n4253#3,12:242\n4253#3,12:266\n*S KotlinDebug\n*F\n+ 1 UltimaUtils.kt\ncom/phisher98/UltimaUtils\n*L\n29#1:230,12\n43#1:254,12\n57#1:278,12\n32#1:242,12\n46#1:266,12\n*E\n"})
 public final class UltimaUtils {

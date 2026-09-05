@@ -17,7 +17,7 @@ import kotlin.text.RegexOption;
 import kotlin.text.StringsKt;
 
 /* JADX INFO: compiled from: Extractors.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/UHDmoviesProvider/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/UHDmoviesProvider/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\u001a\u0010\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0001H\u0002\u001a\u0010\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0001H\u0002¨\u0006\u0004"}, d2 = {"removeLeadingIndex", "", "title", "cleanTitle", "UHDmoviesProvider"}, k = 2, mv = {2, 4, 0}, xi = 48)
 @SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/ExtractorsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,274:1\n1960#2,3:275\n777#2:278\n873#2,2:279\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/ExtractorsKt\n*L\n254#1:275,3\n270#1:278\n270#1:279,2\n*E\n"})
 public final class ExtractorsKt {

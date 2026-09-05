@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.radioindiaprovider
+package nepali.stream.decoded.radioindiaprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

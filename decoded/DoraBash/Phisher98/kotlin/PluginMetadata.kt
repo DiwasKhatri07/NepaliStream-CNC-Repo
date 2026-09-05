@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.dorabash
+package nepali.stream.decoded.dorabash
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

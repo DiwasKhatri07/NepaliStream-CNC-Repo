@@ -19,7 +19,7 @@ import kotlin.jvm.internal.SourceDebugExtension;
 import kotlinx.coroutines.CoroutineScope;
 
 /* JADX INFO: compiled from: Kartoons.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/phisher98/Kartoons/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Kartoons/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/Kartoons/SeasonEpisodes;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.Kartoons.Kartoons$fetchSeasonDetailsForShow$2$1$1", f = "Kartoons.kt", i = {0}, l = {508}, m = "invokeSuspend", n = {"seasonUrl"}, nl = {509}, s = {"L$0"}, v = 2)
 @SourceDebugExtension({"SMAP\nKartoons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Kartoons.kt\ncom/Kartoons/Kartoons$fetchSeasonDetailsForShow$2$1$1\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,527:1\n104#2,5:528\n*S KotlinDebug\n*F\n+ 1 Kartoons.kt\ncom/Kartoons/Kartoons$fetchSeasonDetailsForShow$2$1$1\n*L\n509#1:528,5\n*E\n"})

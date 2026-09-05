@@ -16,7 +16,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 
 /* JADX INFO: compiled from: Tamilian.kt */
-/* JADX INFO: loaded from: /home/ubuntu/work/NepaliStream-CNC-Repo/decoded/cncverse/Tamilian/classes.dex */
+/* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Tamilian/CNCVerse/java/classes.dex */
 @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 3, 0}, xi = 48)
 @DebugMetadata(c = "com.Tamilian.Tamilian$loadLinks$3$1", f = "Tamilian.kt", i = {}, l = {93}, m = "invokeSuspend", n = {}, nl = {92}, s = {}, v = 2)
 final class Tamilian$loadLinks$3$1 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {

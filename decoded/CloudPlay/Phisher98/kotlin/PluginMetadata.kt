@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.cloudplay
+package nepali.stream.decoded.cloudplay
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

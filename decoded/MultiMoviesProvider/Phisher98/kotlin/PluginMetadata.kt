@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.multimoviesprovider
+package nepali.stream.decoded.multimoviesprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

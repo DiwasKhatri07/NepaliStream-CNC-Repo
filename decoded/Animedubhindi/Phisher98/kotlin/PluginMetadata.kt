@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.animedubhindi
+package nepali.stream.decoded.animedubhindi
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

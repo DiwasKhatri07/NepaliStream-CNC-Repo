@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.cricifyprovider
+package nepali.stream.decoded.cricifyprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.banglaplex
+package nepali.stream.decoded.banglaplex
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

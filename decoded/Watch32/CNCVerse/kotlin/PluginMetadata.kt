@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.watch32
+package nepali.stream.decoded.watch32
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

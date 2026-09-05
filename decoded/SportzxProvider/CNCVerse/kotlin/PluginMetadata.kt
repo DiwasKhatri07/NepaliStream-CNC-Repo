@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.sportzxprovider
+package nepali.stream.decoded.sportzxprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

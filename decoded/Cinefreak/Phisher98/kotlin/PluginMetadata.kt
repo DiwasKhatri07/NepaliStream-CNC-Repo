@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.cinefreak
+package nepali.stream.decoded.cinefreak
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

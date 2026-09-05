@@ -163,14 +163,14 @@
   {
     "file": "decoded/CNC_Verse/CNCVerse/CNC Verse.cs3",
     "source": "CNCVerse",
-    "plugin": "CNC_Verse",
+    "plugin": "CNC Verse",
     "sha256": "b72e7802bb68ecab7a599a1a744cd52321d230256485ba3125413b725e42a0b1",
     "bytes": 98583
   },
   {
     "file": "decoded/CNC_Verse_Mobile/CNCVerse/CNC Verse Mobile.cs3",
     "source": "CNCVerse",
-    "plugin": "CNC_Verse_Mobile",
+    "plugin": "CNC Verse Mobile",
     "sha256": "f61308115dd05f28b4004d0af09f028c28361abdeac2964a70dd429518068df4",
     "bytes": 91447
   },

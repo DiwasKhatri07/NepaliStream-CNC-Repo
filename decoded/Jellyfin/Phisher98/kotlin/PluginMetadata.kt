@@ -1,4 +1,4 @@
-package nepali.stream.decoded.phisher98.jellyfin
+package nepali.stream.decoded.jellyfin
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

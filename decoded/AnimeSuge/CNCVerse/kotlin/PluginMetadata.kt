@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.animesuge
+package nepali.stream.decoded.animesuge
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {

@@ -1,4 +1,4 @@
-package nepali.stream.decoded.cncverse.doflixprovider
+package nepali.stream.decoded.doflixprovider
 
 /** Metadata reconstructed from the published .cs3 manifest. */
 object PluginMetadata {
