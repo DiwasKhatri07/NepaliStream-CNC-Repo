@@ -46,6 +46,7 @@ jobs:
           JADX_BIN=$(find /tmp/jadx -type f -name jadx -printf '%h\n' | head -1)
           test -n "$JADX_BIN"
           chmod +x "$JADX_BIN/jadx"
+          export PATH="$JADX_BIN:$PATH"
           echo "$JADX_BIN" >> "$GITHUB_PATH"
           jadx --version
 
