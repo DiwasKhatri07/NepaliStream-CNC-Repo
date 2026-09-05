@@ -53,6 +53,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.MagicApiIntrinsics;
+import kotlin.jvm.internal.Ref;
 import kotlin.jvm.internal.Reflection;
 import kotlin.jvm.internal.SourceDebugExtension;
 import kotlin.reflect.KType;
@@ -70,7 +71,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: IStreamFlare.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/IStreamFlare/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 =2\u00020\u0001:\u0001=B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010 \u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J\f\u0010(\u001a\u00020)*\u00020*H\u0002J\u001c\u0010+\u001a\b\u0012\u0004\u0012\u00020)0\u001e2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-J\u001c\u0010.\u001a\b\u0012\u0004\u0012\u00020)0\u001e2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-J\u0016\u0010/\u001a\u0002002\u0006\u00101\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-JF\u00102\u001a\u00020\u000e2\u0006\u00103\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u000e2\u0012\u00105\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u000208062\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020806H\u0096@¢\u0006\u0002\u0010;J\u0016\u0010<\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010-R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0014\u0010\u0016\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0010R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!¨\u0006>"}, d2 = {"Lcom/IStreamFlare/IStreamFlare;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/IStreamFlare/HomeRes;", "quickSearch", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getDecodedJson", "Companion", "IStreamFlare"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nIStreamFlare.kt\nKotlin\n*S Kotlin\n*F\n+ 1 IStreamFlare.kt\ncom/IStreamFlare/IStreamFlare\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,581:1\n63#2:582\n64#2,15:584\n63#2:601\n64#2,15:603\n63#2:624\n64#2,15:626\n63#2:643\n64#2,15:645\n93#2,2:666\n63#2:668\n64#2,15:670\n95#2,2:687\n63#2:689\n64#2,15:691\n63#2:708\n64#2,15:710\n63#2:727\n64#2,15:729\n63#2:747\n64#2,15:749\n63#2:766\n64#2,15:768\n63#2:786\n64#2,15:788\n63#2:808\n64#2,15:810\n63#2:827\n64#2,15:829\n63#2:846\n64#2,15:848\n1#3:583\n1#3:602\n1#3:625\n1#3:644\n1#3:669\n1#3:690\n1#3:709\n1#3:728\n1#3:746\n1#3:748\n1#3:767\n1#3:787\n1#3:809\n1#3:828\n1#3:847\n1#3:866\n50#4:599\n43#4:600\n50#4:618\n43#4:619\n50#4:641\n43#4:642\n50#4:660\n43#4:661\n50#4:685\n43#4:686\n50#4:706\n43#4:707\n50#4:725\n43#4:726\n50#4:744\n43#4:745\n50#4:764\n43#4:765\n50#4:783\n43#4:784\n50#4:803\n43#4:804\n50#4:825\n43#4:826\n50#4:844\n43#4:845\n50#4:863\n43#4:864\n1739#5:620\n1814#5,3:621\n1739#5:662\n1814#5,3:663\n2068#5:785\n2068#5,2:805\n2069#5:807\n2068#5:865\n2069#5:867\n*S KotlinDebug\n*F\n+ 1 IStreamFlare.kt\ncom/IStreamFlare/IStreamFlare\n*L\n97#1:582\n97#1:584,15\n109#1:601\n109#1:603,15\n172#1:624\n172#1:626,15\n183#1:643\n183#1:645,15\n197#1:666,2\n197#1:668\n197#1:670,15\n197#1:687,2\n236#1:689\n236#1:691,15\n248#1:708\n248#1:710,15\n264#1:727\n264#1:729,15\n283#1:747\n283#1:749,15\n309#1:766\n309#1:768,15\n334#1:786\n334#1:788,15\n489#1:808\n489#1:810,15\n499#1:827\n499#1:829,15\n562#1:846\n562#1:848,15\n97#1:583\n109#1:602\n172#1:625\n183#1:644\n197#1:669\n236#1:690\n248#1:709\n264#1:728\n283#1:748\n309#1:767\n334#1:787\n489#1:809\n499#1:828\n562#1:847\n97#1:599\n97#1:600\n109#1:618\n109#1:619\n172#1:641\n172#1:642\n183#1:660\n183#1:661\n197#1:685\n197#1:686\n236#1:706\n236#1:707\n248#1:725\n248#1:726\n264#1:744\n264#1:745\n283#1:764\n283#1:765\n309#1:783\n309#1:784\n334#1:803\n334#1:804\n489#1:825\n489#1:826\n499#1:844\n499#1:845\n562#1:863\n562#1:864\n114#1:620\n114#1:621,3\n188#1:662\n188#1:663,3\n314#1:785\n339#1:805,2\n314#1:807\n436#1:865\n436#1:867\n*E\n"})
+@SourceDebugExtension({"SMAP\nIStreamFlare.kt\nKotlin\n*S Kotlin\n*F\n+ 1 IStreamFlare.kt\ncom/IStreamFlare/IStreamFlare\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,622:1\n63#2:623\n64#2,15:625\n63#2:642\n64#2,15:644\n63#2:665\n64#2,15:667\n63#2:684\n64#2,15:686\n93#2,2:707\n63#2:709\n64#2,15:711\n95#2,2:728\n63#2:730\n64#2,15:732\n63#2:749\n64#2,15:751\n63#2:768\n64#2,15:770\n63#2:788\n64#2,15:790\n63#2:807\n64#2,15:809\n63#2:827\n64#2,15:829\n63#2:850\n64#2,15:852\n63#2:869\n64#2,15:871\n63#2:888\n64#2,15:890\n63#2:907\n64#2,15:909\n63#2:926\n64#2,15:928\n1#3:624\n1#3:643\n1#3:666\n1#3:685\n1#3:710\n1#3:731\n1#3:750\n1#3:769\n1#3:787\n1#3:789\n1#3:808\n1#3:828\n1#3:849\n1#3:851\n1#3:870\n1#3:889\n1#3:908\n1#3:927\n1#3:946\n50#4:640\n43#4:641\n50#4:659\n43#4:660\n50#4:682\n43#4:683\n50#4:701\n43#4:702\n50#4:726\n43#4:727\n50#4:747\n43#4:748\n50#4:766\n43#4:767\n50#4:785\n43#4:786\n50#4:805\n43#4:806\n50#4:824\n43#4:825\n50#4:844\n43#4:845\n50#4:867\n43#4:868\n50#4:886\n43#4:887\n50#4:905\n43#4:906\n50#4:924\n43#4:925\n50#4:943\n43#4:944\n1739#5:661\n1814#5,3:662\n1739#5:703\n1814#5,3:704\n2068#5:826\n2068#5,2:846\n2069#5:848\n2068#5:945\n2069#5:947\n*S KotlinDebug\n*F\n+ 1 IStreamFlare.kt\ncom/IStreamFlare/IStreamFlare\n*L\n97#1:623\n97#1:625,15\n109#1:642\n109#1:644,15\n172#1:665\n172#1:667,15\n183#1:684\n183#1:686,15\n197#1:707,2\n197#1:709\n197#1:711,15\n197#1:728,2\n236#1:730\n236#1:732,15\n248#1:749\n248#1:751,15\n264#1:768\n264#1:770,15\n283#1:788\n283#1:790,15\n309#1:807\n309#1:809,15\n334#1:827\n334#1:829,15\n500#1:850\n500#1:852,15\n512#1:869\n512#1:871,15\n522#1:888\n522#1:890,15\n532#1:907\n532#1:909,15\n603#1:926\n603#1:928,15\n97#1:624\n109#1:643\n172#1:666\n183#1:685\n197#1:710\n236#1:731\n248#1:750\n264#1:769\n283#1:789\n309#1:808\n334#1:828\n500#1:851\n512#1:870\n522#1:889\n532#1:908\n603#1:927\n97#1:640\n97#1:641\n109#1:659\n109#1:660\n172#1:682\n172#1:683\n183#1:701\n183#1:702\n197#1:726\n197#1:727\n236#1:747\n236#1:748\n248#1:766\n248#1:767\n264#1:785\n264#1:786\n283#1:805\n283#1:806\n309#1:824\n309#1:825\n334#1:844\n334#1:845\n500#1:867\n500#1:868\n512#1:886\n512#1:887\n522#1:905\n522#1:906\n532#1:924\n532#1:925\n603#1:943\n603#1:944\n114#1:661\n114#1:662,3\n188#1:703\n188#1:704,3\n314#1:826\n339#1:846,2\n314#1:848\n436#1:945\n436#1:947\n*E\n"})
 public final class IStreamFlare extends MainAPI {
 
     @NotNull
@@ -87,7 +88,7 @@ public final class IStreamFlare extends MainAPI {
     private static final Map<String, String> headers = MapsKt.mapOf(new Pair[]{TuplesKt.to("User-Agent", USER_AGENT), TuplesKt.to("x-api-key", "kC7V1f8QRaZyvYnh")});
 
     @NotNull
-    private String mainUrl = "https://stream.hippitunes.pro";
+    private String mainUrl = "https://guten.hippitunes.pro";
 
     @NotNull
     private String name = "IStreamFlare";
@@ -107,7 +108,7 @@ public final class IStreamFlare extends MainAPI {
     /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$getDecodedJson$1 */
     /* JADX INFO: compiled from: IStreamFlare.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0}, l = {554}, m = "getDecodedJson", n = {"url"}, nl = {557}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0}, l = {595}, m = "getDecodedJson", n = {"url"}, nl = {598}, s = {"L$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -196,7 +197,7 @@ public final class IStreamFlare extends MainAPI {
     /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$loadLinks$1 */
     /* JADX INFO: compiled from: IStreamFlare.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 6}, l = {487, 491, 497, 501, 508, 523, 532}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "decodedJson", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "decodedJson", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "type", "isCasting"}, nl = {488, 492, 498, 502, 507, 524, 531}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8}, l = {514, 520, 524, 530, 534, 541, 558, 563, 573}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "jsonString", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "decodedJson", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "decodedJson", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "extractor", "linkFound", "isCasting", "data", "subtitleCallback", "callback", "extractor", "linkFound", "isCasting", "data", "subtitleCallback", "callback", "type", "isCasting"}, nl = {515, 521, 525, 531, 535, 540, 562, 565, 572}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -509,7 +510,7 @@ public final class IStreamFlare extends MainAPI {
         }
         final String quality = strSubstringBefore$default;
         LoadDataObject loadData = new LoadDataObject($this$toSearchResult.getId(), $this$toSearchResult.getTMDB_ID(), $this$toSearchResult.getContent_type(), $this$toSearchResult.getUrl());
-        return MainAPIKt.newMovieSearchResponse$default(this, title, AppUtils.INSTANCE.toJson(loadData), TvType.Movie, false, new Function1() { // from class: com.IStreamFlare.IStreamFlare$$ExternalSyntheticLambda0
+        return MainAPIKt.newMovieSearchResponse$default(this, title, AppUtils.INSTANCE.toJson(loadData), TvType.Movie, false, new Function1() { // from class: com.IStreamFlare.IStreamFlare$$ExternalSyntheticLambda1
             public final Object invoke(Object obj) {
                 return IStreamFlare.toSearchResult$lambda$0(posterUrl, quality, (MovieSearchResponse) obj);
             }
@@ -1050,53 +1051,86 @@ public final class IStreamFlare extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:101:0x02b2  */
-    /* JADX WARN: Code duplicated, block: B:111:0x02ce A[Catch: Exception -> 0x02ea, TryCatch #8 {Exception -> 0x02ea, blocks: (B:99:0x02ac, B:102:0x02b3, B:112:0x02e7, B:111:0x02ce, B:110:0x02c8, B:98:0x02a2, B:105:0x02b9), top: B:166:0x02a2, inners: #15 }] */
-    /* JADX WARN: Code duplicated, block: B:123:0x0324 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:124:0x0325  */
-    /* JADX WARN: Code duplicated, block: B:172:0x015a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:176:0x027d A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:178:0x0193 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:180:0x02b9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:41:0x018a  */
-    /* JADX WARN: Code duplicated, block: B:42:0x018c  */
-    /* JADX WARN: Code duplicated, block: B:54:0x01af A[Catch: Exception -> 0x01cd, TRY_ENTER, TRY_LEAVE, TryCatch #2 {Exception -> 0x01cd, blocks: (B:26:0x011d, B:32:0x0153, B:39:0x0184, B:43:0x018d, B:54:0x01af, B:38:0x0179, B:31:0x0149, B:28:0x0124, B:35:0x015a), top: B:156:0x011d, inners: #10, #11 }] */
-    /* JADX WARN: Code duplicated, block: B:66:0x01ff A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:67:0x0200  */
-    /* JADX WARN: Code duplicated, block: B:7:0x0020  */
-    /* JADX WARN: Code duplicated, block: B:89:0x027a  */
+    /* JADX WARN: Code duplicated, block: B:119:0x0328 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:120:0x0329  */
+    /* JADX WARN: Code duplicated, block: B:136:0x0392  */
+    /* JADX WARN: Code duplicated, block: B:148:0x03ce  */
+    /* JADX WARN: Code duplicated, block: B:158:0x03ea A[Catch: Exception -> 0x0402, TryCatch #24 {Exception -> 0x0402, blocks: (B:146:0x03c8, B:149:0x03cf, B:159:0x03ff, B:158:0x03ea, B:157:0x03e4, B:145:0x03be, B:152:0x03d5), top: B:288:0x03be, inners: #26 }] */
+    /* JADX WARN: Code duplicated, block: B:168:0x0438 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:169:0x0439  */
+    /* JADX WARN: Code duplicated, block: B:185:0x04a4  */
+    /* JADX WARN: Code duplicated, block: B:197:0x04e0  */
+    /* JADX WARN: Code duplicated, block: B:207:0x04fc A[Catch: Exception -> 0x0514, TryCatch #17 {Exception -> 0x0514, blocks: (B:195:0x04da, B:198:0x04e1, B:208:0x0511, B:207:0x04fc, B:206:0x04f6, B:194:0x04d0, B:201:0x04e7), top: B:281:0x04d0, inners: #25 }] */
+    /* JADX WARN: Code duplicated, block: B:217:0x054a A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:218:0x054b  */
+    /* JADX WARN: Code duplicated, block: B:235:0x05eb  */
+    /* JADX WARN: Code duplicated, block: B:237:0x0615 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:238:0x0616  */
+    /* JADX WARN: Code duplicated, block: B:269:0x0397 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:279:0x04a9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:290:0x03d5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:292:0x04e7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:294:0x01cd A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:44:0x01c6  */
+    /* JADX WARN: Code duplicated, block: B:54:0x01e2 A[Catch: Exception -> 0x0246, TryCatch #22 {Exception -> 0x0246, blocks: (B:29:0x0169, B:35:0x0192, B:42:0x01c0, B:45:0x01c7, B:55:0x01fa, B:58:0x0204, B:60:0x020a, B:65:0x0218, B:67:0x021e, B:68:0x022b, B:70:0x0231, B:72:0x023b, B:54:0x01e2, B:53:0x01dc, B:41:0x01b5, B:34:0x0188, B:38:0x0199, B:31:0x0170, B:48:0x01cd), top: B:285:0x0169, inners: #8, #13, #24 }] */
+    /* JADX WARN: Code duplicated, block: B:58:0x0204 A[Catch: Exception -> 0x0246, TRY_ENTER, TryCatch #22 {Exception -> 0x0246, blocks: (B:29:0x0169, B:35:0x0192, B:42:0x01c0, B:45:0x01c7, B:55:0x01fa, B:58:0x0204, B:60:0x020a, B:65:0x0218, B:67:0x021e, B:68:0x022b, B:70:0x0231, B:72:0x023b, B:54:0x01e2, B:53:0x01dc, B:41:0x01b5, B:34:0x0188, B:38:0x0199, B:31:0x0170, B:48:0x01cd), top: B:285:0x0169, inners: #8, #13, #24 }] */
+    /* JADX WARN: Code duplicated, block: B:63:0x0214  */
+    /* JADX WARN: Code duplicated, block: B:68:0x022b A[Catch: Exception -> 0x0246, TryCatch #22 {Exception -> 0x0246, blocks: (B:29:0x0169, B:35:0x0192, B:42:0x01c0, B:45:0x01c7, B:55:0x01fa, B:58:0x0204, B:60:0x020a, B:65:0x0218, B:67:0x021e, B:68:0x022b, B:70:0x0231, B:72:0x023b, B:54:0x01e2, B:53:0x01dc, B:41:0x01b5, B:34:0x0188, B:38:0x0199, B:31:0x0170, B:48:0x01cd), top: B:285:0x0169, inners: #8, #13, #24 }] */
+    /* JADX WARN: Code duplicated, block: B:70:0x0231 A[Catch: Exception -> 0x0246, TryCatch #22 {Exception -> 0x0246, blocks: (B:29:0x0169, B:35:0x0192, B:42:0x01c0, B:45:0x01c7, B:55:0x01fa, B:58:0x0204, B:60:0x020a, B:65:0x0218, B:67:0x021e, B:68:0x022b, B:70:0x0231, B:72:0x023b, B:54:0x01e2, B:53:0x01dc, B:41:0x01b5, B:34:0x0188, B:38:0x0199, B:31:0x0170, B:48:0x01cd), top: B:285:0x0169, inners: #8, #13, #24 }] */
+    /* JADX WARN: Code duplicated, block: B:74:0x0244  */
+    /* JADX WARN: Code duplicated, block: B:7:0x0022  */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
         C00061 c00061;
         Object obj;
-        Function1<? super ExtractorLink, Unit> function3;
-        Function1<? super SubtitleFile, Unit> function4;
-        Function1<? super ExtractorLink, Unit> function5;
-        Object obj2;
-        Function1<? super SubtitleFile, Unit> function6;
-        Function1<? super ExtractorLink, Unit> function7;
-        Function1<? super ExtractorLink, Unit> function8;
-        boolean isCasting2;
-        Object obj3;
-        boolean isCasting3;
-        Object obj4;
-        String decodedJson;
-        String data2;
+        String strAsText;
+        String jsonString;
+        List listEmptyList;
         List links;
-        Object obj5;
-        Object obj6;
-        DeserializationStrategy deserializationStrategy;
+        Object obj2;
         Object objDecodeFromString;
-        String decodedJson2;
-        String data3;
-        String decodedJson3;
-        List links2;
-        Object obj7;
-        DeserializationStrategy deserializationStrategy2;
+        Object obj3;
+        DeserializationStrategy deserializationStrategy;
         Object objDecodeFromString2;
-        String data4 = data;
-        Function1<? super SubtitleFile, Unit> function9 = function1;
-        Function1<? super ExtractorLink, Unit> function10 = function2;
+        JsonNode root;
+        JsonNode jsonNode;
+        boolean z;
+        boolean z2;
+        Object obj4;
+        Function1<? super ExtractorLink, Unit> function3;
+        String data2;
+        Function1<? super SubtitleFile, Unit> function4;
+        Istreamcdn extractor;
+        Ref.BooleanRef linkFound;
+        boolean isCasting2;
+        Object obj5;
+        Function1<? super SubtitleFile, Unit> function5;
+        Function1<? super ExtractorLink, Unit> function6;
+        Object decodedJson;
+        Object decodedJson2;
+        String decodedJson3;
+        String decodedJson4;
+        String data3;
+        List listEmptyList2;
+        List links2;
+        Object obj6;
+        DeserializationStrategy deserializationStrategy2;
+        Object objDecodeFromString3;
+        String decodedJson5;
+        String decodedJson6;
+        String data4;
+        List listEmptyList3;
+        List links3;
+        Object obj7;
+        DeserializationStrategy deserializationStrategy3;
+        Object objDecodeFromString4;
+        String data5;
+        Istreamcdn extractor2;
+        Function1<? super ExtractorLink, Unit> function7;
+        String data6 = data;
+        boolean isCasting3 = isCasting;
+        Function1<? super SubtitleFile, Unit> function8 = function1;
+        final Function1<? super ExtractorLink, Unit> function9 = function2;
         if (continuation instanceof C00061) {
             c00061 = (C00061) continuation;
             if ((c00061.label & Integer.MIN_VALUE) != 0) {
@@ -1110,500 +1144,776 @@ public final class IStreamFlare extends MainAPI {
         C00061 c00062 = c00061;
         Object $result = c00062.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        boolean z = true;
         switch (c00062.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (StringsKt.contains(data4, "getMoviePlayLinks", true)) {
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                    c00062.L$1 = function9;
-                    c00062.L$2 = function10;
-                    c00062.Z$0 = isCasting;
-                    c00062.label = 1;
-                    Object decodedJson4 = getDecodedJson(data4, c00062);
-                    if (decodedJson4 == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    isCasting3 = isCasting;
-                    obj4 = decodedJson4;
-                    decodedJson = (String) obj4;
+                String it = StringsKt.trim(data6).toString();
+                obj = "kotlinx.serialization.serializer.simple";
+                if (StringsKt.startsWith$default(it, "{", false, 2, (Object) null) || StringsKt.startsWith$default(it, "[", false, 2, (Object) null)) {
                     try {
                         AppUtils appUtils = AppUtils.INSTANCE;
                         try {
                             Result.Companion companion = Result.Companion;
-                            KType kTypeTypeOf = Reflection.typeOf(List.class, KTypeProjection.Companion.invariant(Reflection.typeOf(StreamLinks.class)));
-                            MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                            obj5 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf));
+                            KType kTypeTypeOf = Reflection.typeOf(JsonNode.class);
+                            MagicApiIntrinsics.voidMagicApiCall(obj);
+                            obj3 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf));
                         } catch (Throwable th) {
                             Result.Companion companion2 = Result.Companion;
-                            obj5 = Result.constructor-impl(ResultKt.createFailure(th));
+                            obj3 = Result.constructor-impl(ResultKt.createFailure(th));
                         }
-                        if (Result.exceptionOrNull-impl(obj5) != null) {
-                            try {
-                                Result.Companion companion3 = Result.Companion;
-                                obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(List.class), (List) null, 2, (Object) null));
-                            } catch (Throwable th2) {
-                                Result.Companion companion4 = Result.Companion;
-                                obj5 = Result.constructor-impl(ResultKt.createFailure(th2));
+                        if (Result.exceptionOrNull-impl(obj3) == null) {
+                            if (Result.isFailure-impl(obj3)) {
+                                obj3 = null;
                             }
-                        }
-                        if (Result.isFailure-impl(obj5)) {
-                            obj6 = null;
-                        } else {
-                            obj6 = obj5;
-                        }
-                        deserializationStrategy = (KSerializer) obj6;
-                        if (deserializationStrategy != null) {
-                            try {
-                                objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, decodedJson);
-                                data2 = data4;
-                            } catch (SerializationException e) {
+                            deserializationStrategy = (KSerializer) obj3;
+                            if (deserializationStrategy != null) {
                                 try {
+                                    objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy, data);
+                                } catch (SerializationException e) {
                                     ArchComponentExtKt.logError(e);
                                     ObjectMapper $this$readValue$iv$iv = MainAPIKt.getMapper();
-                                    data2 = data4;
-                                    try {
-                                        objDecodeFromString = $this$readValue$iv$iv.readValue(decodedJson, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$1
-                                        });
-                                    } catch (Exception e2) {
-                                        links = CollectionsKt.emptyList();
-                                    }
-                                } catch (Exception e3) {
-                                    data2 = data4;
-                                    links = CollectionsKt.emptyList();
+                                    objDecodeFromString2 = $this$readValue$iv$iv.readValue(data, new TypeReference<JsonNode>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$1
+                                    });
+                                } catch (Throwable th2) {
+                                    ObjectMapper $this$readValue$iv$iv2 = MainAPIKt.getMapper();
+                                    objDecodeFromString2 = $this$readValue$iv$iv2.readValue(data, new TypeReference<JsonNode>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$1
+                                    });
                                 }
-                            } catch (Throwable th3) {
-                                ObjectMapper $this$readValue$iv$iv2 = MainAPIKt.getMapper();
-                                data2 = data4;
-                                objDecodeFromString = $this$readValue$iv$iv2.readValue(decodedJson, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$1
+                            } else {
+                                ObjectMapper $this$readValue$iv$iv3 = MainAPIKt.getMapper();
+                                objDecodeFromString2 = $this$readValue$iv$iv3.readValue(data, new TypeReference<JsonNode>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$1
                                 });
                             }
-                            links = (List) objDecodeFromString;
-                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson);
-                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(links);
-                            c00062.Z$0 = isCasting3;
-                            c00062.label = 2;
-                            if (loadLinks$processLinks(function10, this, function9, links, c00062) == coroutine_suspended) {
-                                return coroutine_suspended;
+                            root = (JsonNode) objDecodeFromString2;
+                            if (!root.has("encrypted")) {
+                                jsonNode = root.get("encrypted");
+                                if (jsonNode == null && jsonNode.asBoolean()) {
+                                    z = true;
+                                } else {
+                                    z = false;
+                                }
+                                if (!z && root.has("data")) {
+                                    strAsText = IStreamFlareParserKt.decryptPayload(root.get("data").asText());
+                                } else if (root.has("data")) {
+                                    strAsText = data6;
+                                } else {
+                                    strAsText = data6;
+                                }
+                            } else if (root.has("data") || !root.get("data").isTextual()) {
+                                strAsText = data6;
+                            } else {
+                                strAsText = root.get("data").asText();
                             }
-                            z = true;
                         } else {
-                            ObjectMapper $this$readValue$iv$iv3 = MainAPIKt.getMapper();
-                            data2 = data4;
-                            objDecodeFromString = $this$readValue$iv$iv3.readValue(decodedJson, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$1
-                            });
-                            links = (List) objDecodeFromString;
-                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson);
-                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(links);
-                            c00062.Z$0 = isCasting3;
-                            c00062.label = 2;
-                            if (loadLinks$processLinks(function10, this, function9, links, c00062) == coroutine_suspended) {
-                                return coroutine_suspended;
+                            try {
+                                Result.Companion companion3 = Result.Companion;
+                                obj3 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(JsonNode.class), (List) null, 2, (Object) null));
+                            } catch (Throwable th3) {
+                                Result.Companion companion4 = Result.Companion;
+                                obj3 = Result.constructor-impl(ResultKt.createFailure(th3));
                             }
-                            z = true;
+                            if (Result.isFailure-impl(obj3)) {
+                                obj3 = null;
+                            }
+                            deserializationStrategy = (KSerializer) obj3;
+                            if (deserializationStrategy != null) {
+                                objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy, data);
+                            } else {
+                                ObjectMapper $this$readValue$iv$iv4 = MainAPIKt.getMapper();
+                                objDecodeFromString2 = $this$readValue$iv$iv4.readValue(data, new TypeReference<JsonNode>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$1
+                                });
+                            }
+                            root = (JsonNode) objDecodeFromString2;
+                            if (!root.has("encrypted")) {
+                                jsonNode = root.get("encrypted");
+                                if (jsonNode == null) {
+                                    z = false;
+                                } else {
+                                    z = false;
+                                }
+                                if (!z) {
+                                    if (root.has("data")) {
+                                        strAsText = data6;
+                                    } else {
+                                        strAsText = data6;
+                                    }
+                                } else if (root.has("data")) {
+                                    strAsText = data6;
+                                } else {
+                                    strAsText = data6;
+                                }
+                            } else if (root.has("data")) {
+                                strAsText = data6;
+                            } else {
+                                strAsText = data6;
+                            }
                         }
-                    } catch (Exception e4) {
-                        data2 = data4;
+                    } catch (Exception e2) {
+                        strAsText = data6;
                     }
-                    break;
-                } else if (StringsKt.contains(data4, "getEpisodePlayLinks", true)) {
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                    c00062.L$1 = function9;
-                    c00062.L$2 = function10;
-                    c00062.Z$0 = isCasting;
-                    c00062.label = 3;
-                    Object decodedJson5 = getDecodedJson(data4, c00062);
-                    if (decodedJson5 == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    isCasting2 = isCasting;
-                    obj3 = decodedJson5;
-                    decodedJson2 = (String) obj3;
+                    String jsonString2 = strAsText;
                     try {
                         AppUtils appUtils2 = AppUtils.INSTANCE;
                         try {
                             Result.Companion companion5 = Result.Companion;
-                            data3 = data4;
-                            try {
-                                KType kTypeTypeOf2 = Reflection.typeOf(List.class, KTypeProjection.Companion.invariant(Reflection.typeOf(StreamLinks.class)));
-                                MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                                obj7 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf2));
-                                break;
-                            } catch (Throwable th4) {
-                                th = th4;
-                                try {
-                                    Result.Companion companion6 = Result.Companion;
-                                    obj7 = Result.constructor-impl(ResultKt.createFailure(th));
-                                } catch (Exception e5) {
-                                    decodedJson3 = decodedJson2;
-                                    links2 = CollectionsKt.emptyList();
-                                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson3);
-                                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(links2);
-                                    c00062.Z$0 = isCasting2;
-                                    c00062.label = 4;
-                                    if (loadLinks$processLinks(function10, this, function9, links2, c00062) == coroutine_suspended) {
-                                        return coroutine_suspended;
-                                    }
-                                    z = true;
-                                    return Boxing.boxBoolean(z);
-                                }
-                            }
-                        } catch (Throwable th5) {
-                            th = th5;
-                            data3 = data4;
+                            KType kTypeTypeOf2 = Reflection.typeOf(List.class, KTypeProjection.Companion.invariant(Reflection.typeOf(StreamLinks.class)));
+                            MagicApiIntrinsics.voidMagicApiCall(obj);
+                            obj2 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf2));
+                        } catch (Throwable th4) {
+                            Result.Companion companion6 = Result.Companion;
+                            obj2 = Result.constructor-impl(ResultKt.createFailure(th4));
                         }
-                        if (Result.exceptionOrNull-impl(obj7) != null) {
-                            decodedJson3 = decodedJson2;
+                        if (Result.exceptionOrNull-impl(obj2) == null) {
+                            jsonString = jsonString2;
                         } else {
                             try {
                                 Result.Companion companion7 = Result.Companion;
-                                decodedJson3 = decodedJson2;
+                                jsonString = jsonString2;
+                                try {
+                                    obj2 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(List.class), (List) null, 2, (Object) null));
+                                    break;
+                                } catch (Throwable th5) {
+                                    th = th5;
+                                    try {
+                                        Result.Companion companion8 = Result.Companion;
+                                        obj2 = Result.constructor-impl(ResultKt.createFailure(th));
+                                    } catch (Exception e3) {
+                                        listEmptyList = CollectionsKt.emptyList();
+                                    }
+                                }
+                            } catch (Throwable th6) {
+                                th = th6;
+                                jsonString = jsonString2;
+                            }
+                        }
+                        if (Result.isFailure-impl(obj2)) {
+                            obj2 = null;
+                        }
+                        DeserializationStrategy deserializationStrategy4 = (KSerializer) obj2;
+                        if (deserializationStrategy4 != null) {
+                            try {
+                                objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy4, jsonString2);
+                            } catch (SerializationException e4) {
+                                ArchComponentExtKt.logError(e4);
+                                ObjectMapper $this$readValue$iv$iv5 = MainAPIKt.getMapper();
+                                objDecodeFromString = $this$readValue$iv$iv5.readValue(jsonString2, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$2
+                                });
+                            } catch (Throwable th7) {
+                                ObjectMapper $this$readValue$iv$iv6 = MainAPIKt.getMapper();
+                                objDecodeFromString = $this$readValue$iv$iv6.readValue(jsonString2, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$2
+                                });
+                            }
+                            listEmptyList = (List) objDecodeFromString;
+                            links = listEmptyList;
+                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(jsonString);
+                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(links);
+                            c00062.Z$0 = isCasting3;
+                            c00062.label = 1;
+                            if (loadLinks$processLinks(function9, this, function8, links, c00062) == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                            z2 = true;
+                        } else {
+                            ObjectMapper $this$readValue$iv$iv7 = MainAPIKt.getMapper();
+                            objDecodeFromString = $this$readValue$iv$iv7.readValue(jsonString2, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$2
+                            });
+                            listEmptyList = (List) objDecodeFromString;
+                            links = listEmptyList;
+                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(jsonString);
+                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(links);
+                            c00062.Z$0 = isCasting3;
+                            c00062.label = 1;
+                            if (loadLinks$processLinks(function9, this, function8, links, c00062) == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                            z2 = true;
+                        }
+                    } catch (Exception e5) {
+                        jsonString = jsonString2;
+                    }
+                    break;
+                } else if (StringsKt.contains(data6, "getMoviePlayLinks", true)) {
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00062.L$1 = function8;
+                    c00062.L$2 = function9;
+                    c00062.Z$0 = isCasting3;
+                    c00062.label = 2;
+                    decodedJson2 = getDecodedJson(data6, c00062);
+                    if (decodedJson2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    decodedJson3 = (String) decodedJson2;
+                    try {
+                        AppUtils appUtils3 = AppUtils.INSTANCE;
+                        try {
+                            Result.Companion companion9 = Result.Companion;
+                            KType kTypeTypeOf3 = Reflection.typeOf(List.class, KTypeProjection.Companion.invariant(Reflection.typeOf(StreamLinks.class)));
+                            MagicApiIntrinsics.voidMagicApiCall(obj);
+                            obj6 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf3));
+                        } catch (Throwable th8) {
+                            Result.Companion companion10 = Result.Companion;
+                            obj6 = Result.constructor-impl(ResultKt.createFailure(th8));
+                        }
+                        if (Result.exceptionOrNull-impl(obj6) != null) {
+                            decodedJson4 = decodedJson3;
+                            data3 = data6;
+                        } else {
+                            try {
+                                Result.Companion companion11 = Result.Companion;
+                                decodedJson4 = decodedJson3;
+                                data3 = data6;
+                                try {
+                                    obj6 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(List.class), (List) null, 2, (Object) null));
+                                    break;
+                                } catch (Throwable th9) {
+                                    th = th9;
+                                    try {
+                                        Result.Companion companion12 = Result.Companion;
+                                        obj6 = Result.constructor-impl(ResultKt.createFailure(th));
+                                    } catch (Exception e6) {
+                                        listEmptyList2 = CollectionsKt.emptyList();
+                                    }
+                                }
+                            } catch (Throwable th10) {
+                                th = th10;
+                                decodedJson4 = decodedJson3;
+                                data3 = data6;
+                            }
+                        }
+                        if (Result.isFailure-impl(obj6)) {
+                            obj6 = null;
+                        }
+                        deserializationStrategy2 = (KSerializer) obj6;
+                        if (deserializationStrategy2 != null) {
+                            try {
+                                objDecodeFromString3 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, decodedJson3);
+                            } catch (SerializationException e7) {
+                                ArchComponentExtKt.logError(e7);
+                                ObjectMapper $this$readValue$iv$iv8 = MainAPIKt.getMapper();
+                                objDecodeFromString3 = $this$readValue$iv$iv8.readValue(decodedJson3, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$3
+                                });
+                            } catch (Throwable th11) {
+                                ObjectMapper $this$readValue$iv$iv9 = MainAPIKt.getMapper();
+                                objDecodeFromString3 = $this$readValue$iv$iv9.readValue(decodedJson3, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$3
+                                });
+                            }
+                            listEmptyList2 = (List) objDecodeFromString3;
+                            links2 = listEmptyList2;
+                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson4);
+                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(links2);
+                            c00062.Z$0 = isCasting3;
+                            c00062.label = 3;
+                            if (loadLinks$processLinks(function9, this, function8, links2, c00062) == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                            z2 = true;
+                        } else {
+                            ObjectMapper $this$readValue$iv$iv10 = MainAPIKt.getMapper();
+                            objDecodeFromString3 = $this$readValue$iv$iv10.readValue(decodedJson3, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$3
+                            });
+                            listEmptyList2 = (List) objDecodeFromString3;
+                            links2 = listEmptyList2;
+                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson4);
+                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(links2);
+                            c00062.Z$0 = isCasting3;
+                            c00062.label = 3;
+                            if (loadLinks$processLinks(function9, this, function8, links2, c00062) == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                            z2 = true;
+                        }
+                    } catch (Exception e8) {
+                        decodedJson4 = decodedJson3;
+                        data3 = data6;
+                        listEmptyList2 = CollectionsKt.emptyList();
+                        links2 = listEmptyList2;
+                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson4);
+                        c00062.L$4 = SpillingKt.nullOutSpilledVariable(links2);
+                        c00062.Z$0 = isCasting3;
+                        c00062.label = 3;
+                        if (loadLinks$processLinks(function9, this, function8, links2, c00062) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        z2 = true;
+                        return Boxing.boxBoolean(z2);
+                    }
+                    break;
+                } else if (StringsKt.contains(data6, "getEpisodePlayLinks", true)) {
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00062.L$1 = function8;
+                    c00062.L$2 = function9;
+                    c00062.Z$0 = isCasting3;
+                    c00062.label = 4;
+                    decodedJson = getDecodedJson(data6, c00062);
+                    if (decodedJson == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    decodedJson5 = (String) decodedJson;
+                    try {
+                        AppUtils appUtils4 = AppUtils.INSTANCE;
+                        try {
+                            Result.Companion companion13 = Result.Companion;
+                            KType kTypeTypeOf4 = Reflection.typeOf(List.class, KTypeProjection.Companion.invariant(Reflection.typeOf(StreamLinks.class)));
+                            MagicApiIntrinsics.voidMagicApiCall(obj);
+                            obj7 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf4));
+                        } catch (Throwable th12) {
+                            Result.Companion companion14 = Result.Companion;
+                            obj7 = Result.constructor-impl(ResultKt.createFailure(th12));
+                        }
+                        if (Result.exceptionOrNull-impl(obj7) != null) {
+                            decodedJson6 = decodedJson5;
+                            data4 = data6;
+                        } else {
+                            try {
+                                Result.Companion companion15 = Result.Companion;
+                                decodedJson6 = decodedJson5;
+                                data4 = data6;
                                 try {
                                     obj7 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(List.class), (List) null, 2, (Object) null));
                                     break;
-                                } catch (Throwable th6) {
-                                    th = th6;
+                                } catch (Throwable th13) {
+                                    th = th13;
                                     try {
-                                        Result.Companion companion8 = Result.Companion;
+                                        Result.Companion companion16 = Result.Companion;
                                         obj7 = Result.constructor-impl(ResultKt.createFailure(th));
-                                    } catch (Exception e6) {
-                                        links2 = CollectionsKt.emptyList();
+                                    } catch (Exception e9) {
+                                        listEmptyList3 = CollectionsKt.emptyList();
                                     }
                                 }
-                            } catch (Throwable th7) {
-                                th = th7;
-                                decodedJson3 = decodedJson2;
+                            } catch (Throwable th14) {
+                                th = th14;
+                                decodedJson6 = decodedJson5;
+                                data4 = data6;
                             }
                         }
                         if (Result.isFailure-impl(obj7)) {
                             obj7 = null;
                         }
-                        deserializationStrategy2 = (KSerializer) obj7;
-                        if (deserializationStrategy2 != null) {
+                        deserializationStrategy3 = (KSerializer) obj7;
+                        if (deserializationStrategy3 != null) {
                             try {
-                                objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, decodedJson2);
-                            } catch (SerializationException e7) {
-                                ArchComponentExtKt.logError(e7);
-                                ObjectMapper $this$readValue$iv$iv4 = MainAPIKt.getMapper();
-                                objDecodeFromString2 = $this$readValue$iv$iv4.readValue(decodedJson2, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$2
+                                objDecodeFromString4 = MainAPIKt.getJson().decodeFromString(deserializationStrategy3, decodedJson5);
+                            } catch (SerializationException e10) {
+                                ArchComponentExtKt.logError(e10);
+                                ObjectMapper $this$readValue$iv$iv11 = MainAPIKt.getMapper();
+                                objDecodeFromString4 = $this$readValue$iv$iv11.readValue(decodedJson5, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$4
                                 });
-                            } catch (Throwable th8) {
-                                ObjectMapper $this$readValue$iv$iv5 = MainAPIKt.getMapper();
-                                objDecodeFromString2 = $this$readValue$iv$iv5.readValue(decodedJson2, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$2
+                            } catch (Throwable th15) {
+                                ObjectMapper $this$readValue$iv$iv12 = MainAPIKt.getMapper();
+                                objDecodeFromString4 = $this$readValue$iv$iv12.readValue(decodedJson5, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$4
                                 });
                             }
-                            links2 = (List) objDecodeFromString2;
-                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson3);
-                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(links2);
-                            c00062.Z$0 = isCasting2;
-                            c00062.label = 4;
-                            if (loadLinks$processLinks(function10, this, function9, links2, c00062) == coroutine_suspended) {
+                            listEmptyList3 = (List) objDecodeFromString4;
+                            links3 = listEmptyList3;
+                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson6);
+                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(links3);
+                            c00062.Z$0 = isCasting3;
+                            c00062.label = 5;
+                            if (loadLinks$processLinks(function9, this, function8, links3, c00062) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            z = true;
+                            z2 = true;
                         } else {
-                            ObjectMapper $this$readValue$iv$iv6 = MainAPIKt.getMapper();
-                            objDecodeFromString2 = $this$readValue$iv$iv6.readValue(decodedJson2, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$2
+                            ObjectMapper $this$readValue$iv$iv13 = MainAPIKt.getMapper();
+                            objDecodeFromString4 = $this$readValue$iv$iv13.readValue(decodedJson5, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$4
                             });
-                            links2 = (List) objDecodeFromString2;
-                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson3);
-                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(links2);
-                            c00062.Z$0 = isCasting2;
-                            c00062.label = 4;
-                            if (loadLinks$processLinks(function10, this, function9, links2, c00062) == coroutine_suspended) {
+                            listEmptyList3 = (List) objDecodeFromString4;
+                            links3 = listEmptyList3;
+                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson6);
+                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(links3);
+                            c00062.Z$0 = isCasting3;
+                            c00062.label = 5;
+                            if (loadLinks$processLinks(function9, this, function8, links3, c00062) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            z = true;
+                            z2 = true;
                         }
-                    } catch (Exception e8) {
-                        data3 = data4;
-                        decodedJson3 = decodedJson2;
+                    } catch (Exception e11) {
+                        decodedJson6 = decodedJson5;
+                        data4 = data6;
                     }
                     break;
-                } else if (StringsKt.contains(data4, "x7flix", true)) {
+                } else if (StringsKt.contains(data6, "x7flix", true)) {
                     String name = getName();
                     String name2 = getName();
                     ExtractorLinkType extractorLinkType = ExtractorLinkType.M3U8;
-                    C00072 c00072 = new C00072(data4, null);
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                    c00062.L$3 = function10;
-                    c00062.Z$0 = isCasting;
-                    c00062.label = 5;
-                    Object objNewExtractorLink = ExtractorApiKt.newExtractorLink(name2, name, data4, extractorLinkType, c00072, c00062);
+                    C00073 c00073 = new C00073(data6, null);
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00062.L$3 = function9;
+                    c00062.Z$0 = isCasting3;
+                    c00062.label = 6;
+                    Object objNewExtractorLink = ExtractorApiKt.newExtractorLink(name2, name, data6, extractorLinkType, c00073, c00062);
                     if (objNewExtractorLink == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    obj2 = objNewExtractorLink;
+                    obj5 = objNewExtractorLink;
+                    function5 = function8;
                     function6 = function9;
-                    function7 = function10;
-                    function8 = function7;
-                    function7.invoke(obj2);
-                    z = true;
-                } else if (StringsKt.contains(data4, ".php?id=", true)) {
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                    c00062.Z$0 = isCasting;
-                    c00062.label = 6;
-                    if (ExtractorApiKt.loadExtractor(data4, function9, function10, c00062) == coroutine_suspended) {
+                    function9.invoke(obj5);
+                    z2 = true;
+                } else if (StringsKt.contains(data6, ".php?id=", true)) {
+                    Istreamcdn extractor3 = new Istreamcdn();
+                    final Ref.BooleanRef linkFound2 = new Ref.BooleanRef();
+                    Function1<? super ExtractorLink, Unit> function10 = new Function1() { // from class: com.IStreamFlare.IStreamFlare$$ExternalSyntheticLambda3
+                        public final Object invoke(Object obj8) {
+                            return IStreamFlare.loadLinks$lambda$2(linkFound2, function9, (ExtractorLink) obj8);
+                        }
+                    };
+                    c00062.L$0 = data6;
+                    c00062.L$1 = function8;
+                    c00062.L$2 = function9;
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(extractor3);
+                    c00062.L$4 = linkFound2;
+                    c00062.Z$0 = isCasting3;
+                    c00062.label = 7;
+                    data2 = data;
+                    if (extractor3.getUrl(data2, null, function8, function10, c00062) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    function4 = function9;
-                    function5 = function10;
-                    z = true;
-                } else if (StringsKt.startsWith$default(data4, "http", false, 2, (Object) null)) {
-                    z = true;
-                    ExtractorLinkType type = StringsKt.contains(data4, ".m3u8", true) ? ExtractorLinkType.M3U8 : ExtractorApiKt.getINFER_TYPE();
+                    function4 = function1;
+                    extractor = extractor3;
+                    linkFound = linkFound2;
+                    isCasting2 = isCasting3;
+                    if (!linkFound.element) {
+                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(function4);
+                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(extractor);
+                        c00062.L$4 = SpillingKt.nullOutSpilledVariable(linkFound);
+                        c00062.Z$0 = isCasting2;
+                        c00062.label = 8;
+                        if (ExtractorApiKt.loadExtractor(data2, function4, function9, c00062) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        Istreamcdn istreamcdn = extractor;
+                        data5 = data2;
+                        extractor2 = istreamcdn;
+                        function7 = function9;
+                        data2 = data5;
+                    }
+                    z2 = true;
+                } else if (StringsKt.startsWith$default(data6, "http", false, 2, (Object) null)) {
+                    ExtractorLinkType type = StringsKt.contains(data6, ".m3u8", true) ? ExtractorLinkType.M3U8 : ExtractorApiKt.getINFER_TYPE();
                     String name3 = getName();
                     String name4 = getName();
-                    C00083 c00083 = new C00083(null);
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
+                    C00085 c00085 = new C00085(null);
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function1);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
                     c00062.L$3 = SpillingKt.nullOutSpilledVariable(type);
-                    c00062.L$4 = function10;
-                    c00062.Z$0 = isCasting;
-                    c00062.label = 7;
-                    Object objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name4, name3, data4, type, c00083, c00062);
+                    c00062.L$4 = function9;
+                    c00062.Z$0 = isCasting3;
+                    c00062.label = 9;
+                    Object objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name4, name3, data, type, c00085, c00062);
                     if (objNewExtractorLink2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    obj = objNewExtractorLink2;
-                    function3 = function10;
-                    function3.invoke(obj);
+                    obj4 = objNewExtractorLink2;
+                    function3 = function9;
+                    function9.invoke(obj4);
+                    z2 = true;
                 } else {
-                    z = false;
+                    z2 = false;
                 }
-                return Boxing.boxBoolean(z);
+                return Boxing.boxBoolean(z2);
             case 1:
                 boolean isCasting4 = c00062.Z$0;
-                Function1<? super ExtractorLink, Unit> function11 = (Function1) c00062.L$2;
-                function9 = (Function1) c00062.L$1;
-                data4 = (String) c00062.L$0;
                 ResultKt.throwOnFailure($result);
-                function10 = function11;
-                isCasting3 = isCasting4;
-                obj4 = $result;
-                decodedJson = (String) obj4;
-                AppUtils appUtils3 = AppUtils.INSTANCE;
-                Result.Companion companion9 = Result.Companion;
-                KType kTypeTypeOf3 = Reflection.typeOf(List.class, KTypeProjection.Companion.invariant(Reflection.typeOf(StreamLinks.class)));
-                MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                obj5 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf3));
-                if (Result.exceptionOrNull-impl(obj5) != null) {
-                    Result.Companion companion10 = Result.Companion;
-                    obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(List.class), (List) null, 2, (Object) null));
-                    break;
-                }
-                if (Result.isFailure-impl(obj5)) {
-                    obj6 = null;
-                } else {
-                    obj6 = obj5;
-                }
-                deserializationStrategy = (KSerializer) obj6;
-                if (deserializationStrategy != null) {
-                    objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, decodedJson);
-                    data2 = data4;
-                    links = (List) objDecodeFromString;
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson);
-                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(links);
-                    c00062.Z$0 = isCasting3;
-                    c00062.label = 2;
-                    if (loadLinks$processLinks(function10, this, function9, links, c00062) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    z = true;
-                } else {
-                    ObjectMapper $this$readValue$iv$iv7 = MainAPIKt.getMapper();
-                    data2 = data4;
-                    objDecodeFromString = $this$readValue$iv$iv7.readValue(decodedJson, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$1
-                    });
-                    links = (List) objDecodeFromString;
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson);
-                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(links);
-                    c00062.Z$0 = isCasting3;
-                    c00062.label = 2;
-                    if (loadLinks$processLinks(function10, this, function9, links, c00062) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    z = true;
-                }
-                return Boxing.boxBoolean(z);
+                z2 = true;
+                return Boxing.boxBoolean(z2);
             case 2:
                 boolean isCasting5 = c00062.Z$0;
+                Function1<? super ExtractorLink, Unit> function11 = (Function1) c00062.L$2;
+                Function1<? super SubtitleFile, Unit> function12 = (Function1) c00062.L$1;
+                data6 = (String) c00062.L$0;
                 ResultKt.throwOnFailure($result);
-                z = true;
-                return Boxing.boxBoolean(z);
+                function9 = function11;
+                obj = "kotlinx.serialization.serializer.simple";
+                function8 = function12;
+                isCasting3 = isCasting5;
+                decodedJson2 = $result;
+                decodedJson3 = (String) decodedJson2;
+                AppUtils appUtils5 = AppUtils.INSTANCE;
+                Result.Companion companion17 = Result.Companion;
+                KType kTypeTypeOf5 = Reflection.typeOf(List.class, KTypeProjection.Companion.invariant(Reflection.typeOf(StreamLinks.class)));
+                MagicApiIntrinsics.voidMagicApiCall(obj);
+                obj6 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf5));
+                if (Result.exceptionOrNull-impl(obj6) != null) {
+                    Result.Companion companion18 = Result.Companion;
+                    decodedJson4 = decodedJson3;
+                    data3 = data6;
+                    obj6 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(List.class), (List) null, 2, (Object) null));
+                    break;
+                } else {
+                    decodedJson4 = decodedJson3;
+                    data3 = data6;
+                }
+                if (Result.isFailure-impl(obj6)) {
+                    obj6 = null;
+                }
+                deserializationStrategy2 = (KSerializer) obj6;
+                if (deserializationStrategy2 != null) {
+                    objDecodeFromString3 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, decodedJson3);
+                    listEmptyList2 = (List) objDecodeFromString3;
+                    links2 = listEmptyList2;
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson4);
+                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(links2);
+                    c00062.Z$0 = isCasting3;
+                    c00062.label = 3;
+                    if (loadLinks$processLinks(function9, this, function8, links2, c00062) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    z2 = true;
+                } else {
+                    ObjectMapper $this$readValue$iv$iv14 = MainAPIKt.getMapper();
+                    objDecodeFromString3 = $this$readValue$iv$iv14.readValue(decodedJson3, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$3
+                    });
+                    listEmptyList2 = (List) objDecodeFromString3;
+                    links2 = listEmptyList2;
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson4);
+                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(links2);
+                    c00062.Z$0 = isCasting3;
+                    c00062.label = 3;
+                    if (loadLinks$processLinks(function9, this, function8, links2, c00062) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    z2 = true;
+                }
+                return Boxing.boxBoolean(z2);
             case 3:
                 boolean isCasting6 = c00062.Z$0;
-                Function1<? super ExtractorLink, Unit> function12 = (Function1) c00062.L$2;
-                function9 = (Function1) c00062.L$1;
-                data4 = (String) c00062.L$0;
                 ResultKt.throwOnFailure($result);
-                function10 = function12;
-                isCasting2 = isCasting6;
-                obj3 = $result;
-                decodedJson2 = (String) obj3;
-                AppUtils appUtils4 = AppUtils.INSTANCE;
-                Result.Companion companion11 = Result.Companion;
-                data3 = data4;
-                KType kTypeTypeOf4 = Reflection.typeOf(List.class, KTypeProjection.Companion.invariant(Reflection.typeOf(StreamLinks.class)));
-                MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                obj7 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf4));
+                z2 = true;
+                return Boxing.boxBoolean(z2);
+            case 4:
+                boolean isCasting7 = c00062.Z$0;
+                Function1<? super ExtractorLink, Unit> function13 = (Function1) c00062.L$2;
+                Function1<? super SubtitleFile, Unit> function14 = (Function1) c00062.L$1;
+                data6 = (String) c00062.L$0;
+                ResultKt.throwOnFailure($result);
+                function9 = function13;
+                obj = "kotlinx.serialization.serializer.simple";
+                function8 = function14;
+                isCasting3 = isCasting7;
+                decodedJson = $result;
+                decodedJson5 = (String) decodedJson;
+                AppUtils appUtils6 = AppUtils.INSTANCE;
+                Result.Companion companion19 = Result.Companion;
+                KType kTypeTypeOf6 = Reflection.typeOf(List.class, KTypeProjection.Companion.invariant(Reflection.typeOf(StreamLinks.class)));
+                MagicApiIntrinsics.voidMagicApiCall(obj);
+                obj7 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf6));
                 if (Result.exceptionOrNull-impl(obj7) != null) {
-                    Result.Companion companion12 = Result.Companion;
-                    decodedJson3 = decodedJson2;
+                    Result.Companion companion110 = Result.Companion;
+                    decodedJson6 = decodedJson5;
+                    data4 = data6;
                     obj7 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(List.class), (List) null, 2, (Object) null));
                     break;
                 } else {
-                    decodedJson3 = decodedJson2;
+                    decodedJson6 = decodedJson5;
+                    data4 = data6;
                 }
                 if (Result.isFailure-impl(obj7)) {
                     obj7 = null;
                 }
-                deserializationStrategy2 = (KSerializer) obj7;
-                if (deserializationStrategy2 != null) {
-                    objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, decodedJson2);
-                    links2 = (List) objDecodeFromString2;
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson3);
-                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(links2);
-                    c00062.Z$0 = isCasting2;
-                    c00062.label = 4;
-                    if (loadLinks$processLinks(function10, this, function9, links2, c00062) == coroutine_suspended) {
+                deserializationStrategy3 = (KSerializer) obj7;
+                if (deserializationStrategy3 != null) {
+                    objDecodeFromString4 = MainAPIKt.getJson().decodeFromString(deserializationStrategy3, decodedJson5);
+                    listEmptyList3 = (List) objDecodeFromString4;
+                    links3 = listEmptyList3;
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson6);
+                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(links3);
+                    c00062.Z$0 = isCasting3;
+                    c00062.label = 5;
+                    if (loadLinks$processLinks(function9, this, function8, links3, c00062) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    z = true;
+                    z2 = true;
                 } else {
-                    ObjectMapper $this$readValue$iv$iv8 = MainAPIKt.getMapper();
-                    objDecodeFromString2 = $this$readValue$iv$iv8.readValue(decodedJson2, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$2
+                    ObjectMapper $this$readValue$iv$iv15 = MainAPIKt.getMapper();
+                    objDecodeFromString4 = $this$readValue$iv$iv15.readValue(decodedJson5, new TypeReference<List<? extends StreamLinks>>() { // from class: com.IStreamFlare.IStreamFlare$loadLinks$$inlined$parseJson$4
                     });
-                    links2 = (List) objDecodeFromString2;
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson3);
-                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(links2);
-                    c00062.Z$0 = isCasting2;
-                    c00062.label = 4;
-                    if (loadLinks$processLinks(function10, this, function9, links2, c00062) == coroutine_suspended) {
+                    listEmptyList3 = (List) objDecodeFromString4;
+                    links3 = listEmptyList3;
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(decodedJson6);
+                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(links3);
+                    c00062.Z$0 = isCasting3;
+                    c00062.label = 5;
+                    if (loadLinks$processLinks(function9, this, function8, links3, c00062) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    z = true;
+                    z2 = true;
                 }
-                return Boxing.boxBoolean(z);
-            case 4:
-                boolean isCasting7 = c00062.Z$0;
-                ResultKt.throwOnFailure($result);
-                z = true;
-                return Boxing.boxBoolean(z);
+                return Boxing.boxBoolean(z2);
             case 5:
                 boolean isCasting8 = c00062.Z$0;
-                function7 = (Function1) c00062.L$3;
-                function8 = (Function1) c00062.L$2;
-                function6 = (Function1) c00062.L$1;
                 ResultKt.throwOnFailure($result);
-                obj2 = $result;
-                function7.invoke(obj2);
-                z = true;
-                return Boxing.boxBoolean(z);
+                z2 = true;
+                return Boxing.boxBoolean(z2);
             case 6:
                 boolean isCasting9 = c00062.Z$0;
-                function5 = (Function1) c00062.L$2;
-                function4 = (Function1) c00062.L$1;
+                Function1<? super ExtractorLink, Unit> function15 = (Function1) c00062.L$3;
+                function6 = (Function1) c00062.L$2;
+                function5 = (Function1) c00062.L$1;
                 ResultKt.throwOnFailure($result);
-                z = true;
-                return Boxing.boxBoolean(z);
+                function9 = function15;
+                obj5 = $result;
+                function9.invoke(obj5);
+                z2 = true;
+                return Boxing.boxBoolean(z2);
             case 7:
-                boolean z2 = c00062.Z$0;
-                function3 = (Function1) c00062.L$4;
+                isCasting2 = c00062.Z$0;
+                linkFound = (Ref.BooleanRef) c00062.L$4;
+                Istreamcdn extractor4 = (Istreamcdn) c00062.L$3;
+                Function1<? super ExtractorLink, Unit> function16 = (Function1) c00062.L$2;
+                function4 = (Function1) c00062.L$1;
+                String data7 = (String) c00062.L$0;
                 ResultKt.throwOnFailure($result);
-                obj = $result;
-                function3.invoke(obj);
-                return Boxing.boxBoolean(z);
+                extractor = extractor4;
+                data2 = data7;
+                function9 = function16;
+                if (!linkFound.element) {
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(extractor);
+                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(linkFound);
+                    c00062.Z$0 = isCasting2;
+                    c00062.label = 8;
+                    if (ExtractorApiKt.loadExtractor(data2, function4, function9, c00062) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    Istreamcdn istreamcdn2 = extractor;
+                    data5 = data2;
+                    extractor2 = istreamcdn2;
+                    function7 = function9;
+                    data2 = data5;
+                }
+                z2 = true;
+                return Boxing.boxBoolean(z2);
+            case 8:
+                boolean isCasting10 = c00062.Z$0;
+                extractor2 = (Istreamcdn) c00062.L$3;
+                function7 = (Function1) c00062.L$2;
+                data5 = (String) c00062.L$0;
+                ResultKt.throwOnFailure($result);
+                data2 = data5;
+                z2 = true;
+                return Boxing.boxBoolean(z2);
+            case 9:
+                boolean z3 = c00062.Z$0;
+                Function1<? super ExtractorLink, Unit> function17 = (Function1) c00062.L$4;
+                function3 = (Function1) c00062.L$2;
+                ResultKt.throwOnFailure($result);
+                function9 = function17;
+                obj4 = $result;
+                function9.invoke(obj4);
+                z2 = true;
+                return Boxing.boxBoolean(z2);
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code duplicated, block: B:18:0x00d3  */
-    /* JADX WARN: Code duplicated, block: B:22:0x00fd  */
-    /* JADX WARN: Code duplicated, block: B:24:0x0109  */
-    /* JADX WARN: Code duplicated, block: B:27:0x015c A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:28:0x015d  */
-    /* JADX WARN: Code duplicated, block: B:30:0x0177  */
-    /* JADX WARN: Code duplicated, block: B:32:0x018b  */
-    /* JADX WARN: Code duplicated, block: B:34:0x01c3 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:35:0x01c4  */
-    /* JADX WARN: Code duplicated, block: B:37:0x01e3  */
-    /* JADX WARN: Code duplicated, block: B:39:0x01f4  */
-    /* JADX WARN: Code duplicated, block: B:40:0x01f7  */
-    /* JADX WARN: Code duplicated, block: B:43:0x020a  */
-    /* JADX WARN: Code duplicated, block: B:46:0x025e A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:47:0x025f  */
-    /* JADX WARN: Code duplicated, block: B:50:0x028c A[LOOP:0: B:16:0x00cd->B:50:0x028c, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:57:0x00ea A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:19:0x0106  */
+    /* JADX WARN: Code duplicated, block: B:23:0x0130  */
+    /* JADX WARN: Code duplicated, block: B:25:0x013c  */
+    /* JADX WARN: Code duplicated, block: B:28:0x0188 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:29:0x0189  */
+    /* JADX WARN: Code duplicated, block: B:31:0x01a7  */
+    /* JADX WARN: Code duplicated, block: B:33:0x01b8  */
+    /* JADX WARN: Code duplicated, block: B:35:0x0207 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:36:0x0208  */
+    /* JADX WARN: Code duplicated, block: B:39:0x0225  */
+    /* JADX WARN: Code duplicated, block: B:41:0x0268 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:42:0x0269  */
+    /* JADX WARN: Code duplicated, block: B:44:0x027f  */
+    /* JADX WARN: Code duplicated, block: B:45:0x0295  */
+    /* JADX WARN: Code duplicated, block: B:47:0x02a9  */
+    /* JADX WARN: Code duplicated, block: B:48:0x02ac  */
+    /* JADX WARN: Code duplicated, block: B:51:0x02be  */
+    /* JADX WARN: Code duplicated, block: B:54:0x0311 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:55:0x0312  */
+    /* JADX WARN: Code duplicated, block: B:58:0x033b A[LOOP:0: B:17:0x0100->B:58:0x033b, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:65:0x011d A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:47:0x025f -> B:48:0x0275). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:44:0x027f -> B:57:0x0334). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:55:0x0312 -> B:56:0x0325). Please report as a decompilation issue!!! */
     /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached at block B:35:0x01c4
+        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached at block B:39:0x0225
         	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
         	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
         	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
-    public static final java.lang.Object loadLinks$processLinks(kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r20, com.IStreamFlare.IStreamFlare r21, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r22, java.util.List<com.IStreamFlare.StreamLinks> r23, kotlin.coroutines.Continuation<? super kotlin.Unit> r24) {
+    public static final java.lang.Object loadLinks$processLinks(kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r21, com.IStreamFlare.IStreamFlare r22, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r23, java.util.List<com.IStreamFlare.StreamLinks> r24, kotlin.coroutines.Continuation<? super kotlin.Unit> r25) {
         /*
-            Method dump skipped, instruction units count: 678
+            Method dump skipped, instruction units count: 852
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.IStreamFlare.IStreamFlare.loadLinks$processLinks(kotlin.jvm.functions.Function1, com.IStreamFlare.IStreamFlare, kotlin.jvm.functions.Function1, java.util.List, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
-    /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$loadLinks$2 */
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit loadLinks$processLinks$lambda$0$1(Ref.BooleanRef $linkFound, Function1 $callback, ExtractorLink extractorLink) {
+        $linkFound.element = true;
+        $callback.invoke(extractorLink);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$loadLinks$3 */
     /* JADX INFO: compiled from: IStreamFlare.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare$loadLinks$2", f = "IStreamFlare.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00072 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare$loadLinks$3", f = "IStreamFlare.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00073 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $data;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00072(String str, Continuation<? super C00072> continuation) {
+        C00073(String str, Continuation<? super C00073> continuation) {
             super(2, continuation);
             this.$data = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00072 = new C00072(this.$data, continuation);
-            c00072.L$0 = obj;
-            return c00072;
+            Continuation<Unit> c00073 = new C00073(this.$data, continuation);
+            c00073.L$0 = obj;
+            return c00073;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -1625,22 +1935,28 @@ public final class IStreamFlare extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$loadLinks$3 */
+    static final Unit loadLinks$lambda$2(Ref.BooleanRef $linkFound, Function1 $callback, ExtractorLink it) {
+        $linkFound.element = true;
+        $callback.invoke(it);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$loadLinks$5 */
     /* JADX INFO: compiled from: IStreamFlare.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare$loadLinks$3", f = "IStreamFlare.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00083 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare$loadLinks$5", f = "IStreamFlare.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00085 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         private /* synthetic */ Object L$0;
         int label;
 
-        C00083(Continuation<? super C00083> continuation) {
+        C00085(Continuation<? super C00085> continuation) {
             super(2, continuation);
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00083 = new C00083(continuation);
-            c00083.L$0 = obj;
-            return c00083;
+            Continuation<Unit> c00085 = new C00085(continuation);
+            c00085.L$0 = obj;
+            return c00085;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

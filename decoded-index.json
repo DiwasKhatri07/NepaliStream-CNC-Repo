@@ -73,8 +73,8 @@
     "file": "decoded/AnimePahe/Phisher98/AnimePahe.cs3",
     "source": "Phisher98",
     "plugin": "AnimePahe",
-    "sha256": "296fa807b5ecc16e6373e12de9d0eacd47dd6582e0ba3cfa826e30d1a0d373fe",
-    "bytes": 80124
+    "sha256": "38680cb66778ce1b0b69cfd5be4e7c76499797fc1b156a79bbb8e7d33d21836d",
+    "bytes": 81187
   },
   {
     "file": "decoded/AnimeSuge/CNCVerse/AnimeSuge.cs3",
@@ -353,8 +353,8 @@
     "file": "decoded/IStreamFlare/Phisher98/IStreamFlare.cs3",
     "source": "Phisher98",
     "plugin": "IStreamFlare",
-    "sha256": "6a430ca6345604ccdce9a140e724f427f2618f6d3be11aff82d97fa7e0b44812",
-    "bytes": 48783
+    "sha256": "7a1d85e93eb10d69cc3d7434874cac64890f0fedef5b6d04cadaadebfee5e702",
+    "bytes": 50212
   },
   {
     "file": "decoded/IdlixProvider/Phisher98/IdlixProvider.cs3",

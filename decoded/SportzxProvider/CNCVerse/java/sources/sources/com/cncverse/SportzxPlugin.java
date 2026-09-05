@@ -57,7 +57,8 @@ public final class SportzxPlugin extends Plugin {
         Pair pair;
         SportzxLiveEventsProvider.INSTANCE.setContext(context);
         SportzxProvider.INSTANCE.setContext(context);
-        registerMainAPI(new SportzxLiveEventsProvider(null, null, 3, null));
+        String str = null;
+        registerMainAPI(new SportzxLiveEventsProvider(str, str, 3, str));
         registerMainAPI(new SportzxLiveEventsProvider("🎬SportzX Highlights", "highlights.json"));
         this.iptvProviders = (List) BuildersKt.runBlocking$default((CoroutineContext) null, new C00081(null), 1, (Object) null);
         Iterable $this$mapNotNull$iv = this.iptvProviders;

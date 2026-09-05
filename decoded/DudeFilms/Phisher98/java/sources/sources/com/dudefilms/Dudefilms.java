@@ -475,10 +475,11 @@ public final class Dudefilms extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:169:0x088f -> B:170:0x08b3). Please report as a decompilation issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:192:0x09ab -> B:193:0x09c7). Please report as a decompilation issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:202:0x0a59 -> B:203:0x0a63). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-        java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
     @org.jetbrains.annotations.Nullable
     public java.lang.Object load(@org.jetbrains.annotations.NotNull java.lang.String r65, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r66) {

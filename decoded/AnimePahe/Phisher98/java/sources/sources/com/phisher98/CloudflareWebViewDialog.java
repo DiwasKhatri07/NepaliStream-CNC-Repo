@@ -530,7 +530,7 @@ public final class CloudflareWebViewDialog extends BottomSheetDialogFragment {
                 if (url != null) {
                     try {
                         Result.Companion companion = Result.Companion;
-                        C00113 c00113 = this;
+                        C00123 c00123 = this;
                         Url uri = URLUtilsKt.Url(url);
                         obj = Result.constructor-impl(CookieManager.getInstance().getCookie(uri.getProtocol().getName() + "://" + uri.getHost()));
                     } catch (Throwable th) {

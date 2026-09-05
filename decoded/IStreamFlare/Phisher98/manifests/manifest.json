@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.IStreamFlare.IStreamFlareProvider",
   "name": "IStreamFlare",
-  "version": 2,
+  "version": 3,
   "requiresResources": false
 }

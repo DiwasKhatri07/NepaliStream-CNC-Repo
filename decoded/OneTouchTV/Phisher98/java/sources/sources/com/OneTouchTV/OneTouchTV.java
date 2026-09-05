@@ -5959,11 +5959,10 @@ public final class OneTouchTV extends MainAPI {
             /* JADX WARN: Code duplicated, block: B:24:0x0051 A[SYNTHETIC] */
             /* JADX WARN: Code duplicated, block: B:26:? A[LOOP:0: B:8:0x0032->B:26:?, LOOP_END, SYNTHETIC] */
             /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x006b -> B:20:0x0072). Please report as a decompilation issue!!! */
-            /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-                jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached at block B:19:0x006b
-                	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-                	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-                	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+            /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+                java.lang.StackOverflowError
+                	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+                	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
                 */
             public final java.lang.Object invokeSuspend(java.lang.Object r14) {
                 /*

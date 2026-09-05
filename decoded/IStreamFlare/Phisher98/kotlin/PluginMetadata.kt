@@ -4,7 +4,7 @@ package nepali.stream.decoded.istreamflare
 object PluginMetadata {
     const val name: String = "IStreamFlare"
     const val originalPluginClass: String = "com.IStreamFlare.IStreamFlareProvider"
-    const val version: Int = 2
+    const val version: Int = 3
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

@@ -15,5 +15,6 @@ public final class IStreamFlareProvider extends BasePlugin {
         registerExtractorAPI(new Istreamjam());
         registerExtractorAPI(new Iasbase());
         registerExtractorAPI(new Neuroflare());
+        registerExtractorAPI(new Exposeworld());
     }
 }

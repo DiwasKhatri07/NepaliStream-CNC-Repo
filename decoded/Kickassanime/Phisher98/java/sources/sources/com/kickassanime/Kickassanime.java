@@ -1285,14 +1285,15 @@ public final class Kickassanime extends MainAPI {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:179:0x0cb1 -> B:180:0x0cc2). Please report as a decompilation issue!!! */
         /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
             java.lang.StackOverflowError
-            	at jadx.core.utils.BlockUtils.blockContains(BlockUtils.java:164)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.checkInsnsInline(IfRegionMaker.java:697)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIfNodeInfo(IfRegionMaker.java:628)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIf(IfRegionMaker.java:602)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.mergeNestedIfNodes(IfRegionMaker.java:409)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:68)
+            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.isCandidateForOutBlock(IfRegionMaker.java:288)
+            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.findOutBlock(IfRegionMaker.java:267)
+            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.restructureIf(IfRegionMaker.java:191)
+            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:82)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
+            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
+            	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
+            	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
             	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
@@ -2307,7 +2308,6 @@ public final class Kickassanime extends MainAPI {
             	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
             */
         public final java.lang.Object invokeSuspend(java.lang.Object r67) {
             /*

@@ -4,7 +4,7 @@ package nepali.stream.decoded.animepahe
 object PluginMetadata {
     const val name: String = "AnimePahe"
     const val originalPluginClass: String = "com.phisher98.AnimePaheProviderPlugin"
-    const val version: Int = 34
+    const val version: Int = 36
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

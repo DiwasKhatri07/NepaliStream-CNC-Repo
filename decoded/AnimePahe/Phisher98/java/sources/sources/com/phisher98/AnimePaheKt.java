@@ -32,24 +32,24 @@ public final class AnimePaheKt {
     /* JADX INFO: renamed from: com.phisher98.AnimePaheKt$showCFBypassDialogAndWait$2 */
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.AnimePaheKt$showCFBypassDialogAndWait$2", f = "AnimePahe.kt", i = {0}, l = {544}, m = "invokeSuspend", n = {"$this$withContext"}, nl = {544}, s = {"L$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePaheKt$showCFBypassDialogAndWait$2\n+ 2 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n*L\n1#1,543:1\n433#2,10:544\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePaheKt$showCFBypassDialogAndWait$2\n*L\n52#1:544,10\n*E\n"})
-    static final class C00082 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
+    @DebugMetadata(c = "com.phisher98.AnimePaheKt$showCFBypassDialogAndWait$2", f = "AnimePahe.kt", i = {0}, l = {582}, m = "invokeSuspend", n = {"$this$withContext"}, nl = {582}, s = {"L$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePaheKt$showCFBypassDialogAndWait$2\n+ 2 CancellableContinuation.kt\nkotlinx/coroutines/CancellableContinuationKt\n*L\n1#1,581:1\n433#2,10:582\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePaheKt$showCFBypassDialogAndWait$2\n*L\n78#1:582,10\n*E\n"})
+    static final class C00092 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
         final /* synthetic */ String $url;
         private /* synthetic */ Object L$0;
         Object L$1;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00082(String str, Continuation<? super C00082> continuation) {
+        C00092(String str, Continuation<? super C00092> continuation) {
             super(2, continuation);
             this.$url = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00082 = new C00082(this.$url, continuation);
-            c00082.L$0 = obj;
-            return c00082;
+            Continuation<Unit> c00092 = new C00092(this.$url, continuation);
+            c00092.L$0 = obj;
+            return c00092;
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Boolean> continuation) {
@@ -84,7 +84,7 @@ public final class AnimePaheKt {
                             }
 
                             public final void invoke(boolean success) {
-                                AnimePaheKt.C00082.invokeSuspend$lambda$0$safeResume(resumed, continuation, success);
+                                AnimePaheKt.C00092.invokeSuspend$lambda$0$safeResume(resumed, continuation, success);
                             }
                         }, false, 4, null);
                         continuation.invokeOnCancellation(new Function1<Throwable, Unit>() { // from class: com.phisher98.AnimePaheKt$showCFBypassDialogAndWait$2$1$1
@@ -144,6 +144,6 @@ public final class AnimePaheKt {
 
     @Nullable
     public static final Object showCFBypassDialogAndWait(@NotNull String url, @NotNull Continuation<? super Boolean> continuation) {
-        return BuildersKt.withContext(Dispatchers.getMain(), new C00082(url, null), continuation);
+        return BuildersKt.withContext(Dispatchers.getMain(), new C00092(url, null), continuation);
     }
 }

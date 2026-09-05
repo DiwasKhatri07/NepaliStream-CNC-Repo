@@ -124,12 +124,8 @@ public final class AnikotoExtractorsKt {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:202:0x0942 -> B:203:0x0954). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at java.base/java.util.HashMap.hash(HashMap.java:338)
-        	at java.base/java.util.HashMap.getNode(HashMap.java:568)
-        	at java.base/java.util.HashMap.containsKey(HashMap.java:594)
-        	at java.base/java.util.HashSet.contains(HashSet.java:205)
-        	at jadx.core.dex.visitors.regions.maker.RegionStack.containsExit(RegionStack.java:106)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:130)
+        	at jadx.core.dex.attributes.AttrNode.contains(AttrNode.java:98)
+        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:82)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
@@ -1147,6 +1143,10 @@ public final class AnikotoExtractorsKt {
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
+        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
+        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
+        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object extractMegaPlayUrl(@org.jetbrains.annotations.NotNull java.lang.String r39, @org.jetbrains.annotations.Nullable java.lang.String r40, @org.jetbrains.annotations.NotNull java.lang.String r41, @org.jetbrains.annotations.NotNull java.lang.String r42, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r43, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r44, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r45) {
