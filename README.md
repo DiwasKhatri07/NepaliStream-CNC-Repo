@@ -60,14 +60,14 @@ This structure keeps duplicate plugin names safely separated by **source folders
 
 The workflow is [`Auto Decode and Push Builds`](.github/workflows/decode-and-publish.yml).
 
-It runs hourly and also supports manual execution from:
+It runs every **30 minutes** and also supports manual execution from:
 
 **GitHub → Actions → Auto Decode and Push Builds → Run workflow**
 
 Each run performs these stages:
 
 1. Checks out the repository.
-2. Installs Python and the pinned JADX release.
+2. Uses the runner's built-in Python and installs the pinned JADX release directly at `/tmp/jadx/bin/jadx`.
 3. Pulls both public upstream `builds` branches.
 4. Stores each archive at `decoded/<plugin>/<source>/<plugin>.cs3`.
 5. Extracts each manifest and Android resource directory.
@@ -78,7 +78,9 @@ Each run performs these stages:
 10. Writes a GitHub Actions summary and uploads the index as an artifact.
 11. Commits and pushes only if files changed.
 
-The source repositories do not provide a guaranteed webhook into this repository, so the hourly schedule is the reliable automatic detector. Manual dispatch is available for immediate updates.
+The source repositories do not provide a guaranteed webhook into this repository, so the 30-minute schedule is the reliable automatic detector. Manual dispatch is available for immediate updates.
+
+Every UTC day, the workflow updates [`logs/update-log.md`](logs/update-log.md) with the date, workflow run ID, trigger, archive count, Kotlin count, manifest count, and decompiled source count. The workflow summary is also visible inside each Actions run.
 
 ## How to access files
 
@@ -90,6 +92,7 @@ Browse online:
 - [Root auto-pusher](auto-pusher.py)
 - [Scripts](scripts/)
 - [Actions runs](../../actions)
+- [Daily update log](logs/update-log.md)
 
 Clone locally:
 
@@ -114,6 +117,19 @@ A `.cs3` archive contains compiled Android DEX bytecode, not the original Kotlin
 - Workflow concurrency prevents overlapping update pushes.
 - The workflow has a 30-minute timeout and writes a run summary.
 - No secrets are required because both upstream repositories are public.
+
+## Automation history and troubleshooting
+
+The workflow is deliberately split into small visible stages: source pull, archive decoding, metadata generation, validation, summary creation, artifact upload, and push. A failure stops before publishing incomplete output. The repository uses a fixed JADX archive layout and invokes `/tmp/jadx/bin/jadx` directly, avoiding PATH timing issues between GitHub Actions steps. Python dependency caching is not used because the scripts use only the Python standard library and the repository has no `requirements.txt` or `pyproject.toml`.
+
+If an update fails, open the failed run from [Actions](../../actions), read the first red step, and run the equivalent local checks:
+
+```bash
+python3 scripts/validate_layout.py
+python3 scripts/write_update_log.py
+```
+
+The workflow also uses concurrency control so a second 30-minute run cannot publish over an active run.
 
 ## License and redistribution
 
