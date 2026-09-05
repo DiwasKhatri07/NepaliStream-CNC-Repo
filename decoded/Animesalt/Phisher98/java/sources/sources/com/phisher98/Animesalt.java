@@ -413,10 +413,11 @@ public final class Animesalt extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:95:0x04c1  */
     /* JADX WARN: Code duplicated, block: B:97:0x04c9  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:91:0x0482 -> B:92:0x04a2). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-        java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
     @org.jetbrains.annotations.Nullable
     public java.lang.Object load(@org.jetbrains.annotations.NotNull java.lang.String r54, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r55) {

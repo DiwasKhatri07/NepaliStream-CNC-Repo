@@ -1132,12 +1132,13 @@ public final class MlsbdProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:86:0x04bb -> B:87:0x04d4). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.attributes.AttributeStorage.add(AttributeStorage.java:53)
-        	at jadx.core.dex.attributes.AttrNode.add(AttrNode.java:21)
-        	at jadx.core.dex.regions.conditions.Compare.<init>(Compare.java:12)
-        	at jadx.core.dex.regions.conditions.IfCondition.fromIfNode(IfCondition.java:73)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.makeIfInfo(IfRegionMaker.java:161)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:64)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:712)
+        	at jadx.core.utils.BlockUtils.isPathExists(BlockUtils.java:845)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.isCandidateForOutBlock(IfRegionMaker.java:303)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.findOutBlock(IfRegionMaker.java:267)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.restructureIf(IfRegionMaker.java:191)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:82)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
@@ -2154,7 +2155,6 @@ public final class MlsbdProvider extends MainAPI {
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
         */
     @org.jetbrains.annotations.Nullable
     public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r39, boolean r40, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r41, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r42, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r43) {
