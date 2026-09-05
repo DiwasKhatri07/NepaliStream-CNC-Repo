@@ -1,80 +1,72 @@
 # NepaliStream CNC Repo
 
-> Automated decoded build archive and Kotlin-oriented inspection workspace for selected CloudStream extension repositories.
+> Mixed root-level CloudStream `.cs3` build archive with automatic decoding and GitHub Actions publishing.
 
-[![Decode and publish](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/workflows/decode-and-publish.yml/badge.svg)](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/workflows/decode-and-publish.yml)
+[![Auto Decode and Push Builds](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/workflows/decode-and-publish.yml/badge.svg)](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/workflows/decode-and-publish.yml)
 
-## About
+## Developer credits
 
-**NepaliStream CNC Repo** tracks published `.cs3` build artifacts from two public upstream build branches, preserves their manifests and resources, and generates JADX source approximations plus Kotlin metadata indexes. The repository is maintained by **Diwas Khatri**.
+**Maintainer:** Diwas Khatri
 
-### Developer credits
+**Upstream sources:**
 
-- **Project maintainer:** Diwas Khatri
-- **CNCVerse upstream:** [NivinCNC/CNCVerse-Cloud-Stream-Extension](https://github.com/NivinCNC/CNCVerse-Cloud-Stream-Extension/tree/builds)
-- **Phisher98 upstream:** [phisher98/cloudstream-extensions-phisher](https://github.com/phisher98/cloudstream-extensions-phisher/tree/builds)
-- **Decompiler:** [JADX](https://github.com/skylot/jadx)
+- [NivinCNC/CNCVerse-Cloud-Stream-Extension — builds](https://github.com/NivinCNC/CNCVerse-Cloud-Stream-Extension/tree/builds)
+- [phisher98/cloudstream-extensions-phisher — builds](https://github.com/phisher98/cloudstream-extensions-phisher/tree/builds)
 
-Upstream authors and provider authors remain credited in their original metadata. This repository does not claim ownership of upstream code, trademarks, provider implementations, or third-party assets.
+**Decoder:** [JADX](https://github.com/skylot/jadx)
 
-## What is included
+## Flat repository layout
 
-| Directory | Purpose |
+All provider archives are mixed into the **repository root**. There is no `decoded/cncverse` or `decoded/phisher98` nesting.
+
+| Path | Purpose |
 |---|---|
-| `sources/cncverse/` | Current `.cs3` files from the CNCVerse `builds` branch |
-| `sources/phisher98/` | Current `.cs3` files from the Phisher98 `builds` branch |
-| `decoded/<source>/<plugin>/sources/` | JADX-generated Java approximation of each `classes.dex` payload |
-| `kotlin/<source>/<plugin>/PluginMetadata.kt` | Valid Kotlin metadata index for each decoded plugin |
-| `manifests/` | Embedded plugin manifests extracted from `.cs3` files |
-| `resources/` | Extracted layouts and drawable resources where present |
-| `decoded-index.json` | SHA-256 and size index for all tracked `.cs3` files |
-| `scripts/` | Source synchronization and decoding scripts |
-| `.github/workflows/decode-and-publish.yml` | Automatic update workflow |
+| `CNCVerse__*.cs3` | CNCVerse build archives at root |
+| `Phisher98__*.cs3` | Phisher98 build archives at root |
+| `java/` | Decompiled source layers, separated only by provider filename to avoid collisions |
+| `kotlin/` | Generated Kotlin `PluginMetadata.kt` files |
+| `manifests/` | Extracted embedded manifests |
+| `resources/` | Extracted layouts and drawables |
+| `decoder.py` | Easy root-level decoder entry point |
+| `auto-pusher.py` | Easy root-level upstream updater entry point |
+| `scripts/` | Full implementation scripts |
+| `.github/workflows/decode-and-publish.yml` | Automatic decode and push workflow |
+| `decoded-index.json` | SHA-256 and size index for every root archive |
 
-## Automation workflow
+Duplicate provider names are retained safely with upstream prefixes, for example `CNCVerse__AniKoto.cs3` and `Phisher98__AniKoto.cs3`.
 
-The GitHub Actions workflow runs **hourly** and can also be started manually from the **Actions** tab. Each run:
+## Automation
 
-1. Clones the current `builds` branch from both upstream repositories.
-2. Copies newly published or changed `.cs3` files into `sources/`.
+The visible workflow is [`Auto Decode and Push Builds`](.github/workflows/decode-and-publish.yml). It runs hourly and can be started manually from the repository’s **Actions** tab.
+
+Every run:
+
+1. Pulls both public `builds` branches.
+2. Places all current `.cs3` files in the repository root.
 3. Extracts manifests and resources.
-4. Decompiles each `classes.dex` payload with JADX.
-5. Generates a Kotlin `PluginMetadata.kt` file for every plugin.
-6. Computes the source SHA-256 index.
-7. Commits and pushes only when upstream content changed.
+4. Runs JADX on every `classes.dex` payload.
+5. Generates a Kotlin metadata file for every plugin.
+6. Commits and pushes changes automatically.
 
-The upstream repositories do not provide a guaranteed cross-repository webhook to this repository, so the hourly schedule is the reliable automatic detector. Use **Actions → Update and decode CloudStream builds → Run workflow** for an immediate refresh after an upstream publication.
+The source repositories do not provide a guaranteed webhook to this repository, so the hourly schedule detects new uploads. For an immediate update, open [Actions](../../actions), choose **Auto Decode and Push Builds**, and click **Run workflow**.
 
-## Access and local use
-
-Clone the repository:
+## Run locally
 
 ```bash
 git clone https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo.git
 cd NepaliStream-CNC-Repo
+python3 auto-pusher.py
+PATH=/path/to/jadx/bin:$PATH python3 decoder.py
 ```
 
-Run the same process locally after installing Python, Git, and JADX:
+## Kotlin limitation
 
-```bash
-python3 scripts/update_sources.py
-python3 scripts/decode_sources.py
-```
+A `.cs3` file contains compiled Android DEX bytecode, not the original Kotlin source. The generated files under `kotlin/` are valid Kotlin metadata/index files; they are not exact recovered provider implementations. The `java/` directory is retained as the decompiler behavior reference. Building a complete Kotlin provider requires manual porting into the correct CloudStream SDK project and compilation/testing against its dependencies.
 
-Open a provider’s Kotlin metadata at a path such as:
+## Attribution and licensing
 
-```text
-kotlin/phisher98/AllMovieLandProvider/PluginMetadata.kt
-```
+Upstream authors and provider authors remain credited in their original manifests. This repository does not claim ownership of upstream code, trademarks, or third-party assets. Review upstream licensing and author permissions before redistribution or production use.
 
-## Important Kotlin note
+## Tags
 
-A `.cs3` file is a ZIP container containing compiled Android DEX bytecode. It does not contain the original `.kt` source. Therefore, the Kotlin files generated here are **valid metadata/index files**, not claimed exact restorations of the original provider implementations. JADX output is included as a behavior reference because a reliable source-level Kotlin reconstruction requires manual porting into the correct CloudStream SDK project and compilation/testing against its dependencies.
-
-## Repository tags
-
-`cloudstream`, `cs3`, `kotlin`, `jadx`, `decompiler`, `streaming`, `anime`, `movies`, `tv-series`, `nepalistream`, `cnc-repo`, `automated-builds`, `developer-tools`
-
-## License and attribution
-
-No common license for the upstream build artifacts was inferred automatically. Review the upstream repositories and each provider’s license/author information before redistribution or production use. This repository is an attribution-focused mirror/inspection project and should not be treated as permission to redistribute third-party code or media assets.
+`cloudstream` `cs3` `kotlin` `jadx` `decompiler` `nepalistream` `cnc-repo` `github-actions` `automated-builds` `streaming` `anime` `movies` `tv-series`
