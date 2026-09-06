@@ -1,6 +1,5 @@
 package com.phisher98;
 
-import android.content.SharedPreferences;
 import com.lagradost.cloudstream3.MainAPIKt;
 import com.lagradost.cloudstream3.MainActivityKt;
 import com.lagradost.cloudstream3.ParCollectionsKt;
@@ -223,10 +222,8 @@ public final class SuperStreamExtractor extends SuperStream {
         }
     }
 
-    /* JADX WARN: Illegal instructions before constructor call */
     private SuperStreamExtractor() {
-        SharedPreferences sharedPreferences = null;
-        super(sharedPreferences, 1, sharedPreferences);
+        super(null, 1, null);
     }
 
     public static /* synthetic */ Object invokeSuperstream$default(SuperStreamExtractor superStreamExtractor, String str, String str2, Integer num, Integer num2, Function1 function1, Continuation continuation, int i, Object obj) {
@@ -1502,8 +1499,11 @@ public final class SuperStreamExtractor extends SuperStream {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x02e3 -> B:40:0x0311). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.getLastInsn(BlockUtils.java:217)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.makeIfInfo(IfRegionMaker.java:156)
+        	at jadx.core.dex.attributes.AttributeStorage.add(AttributeStorage.java:53)
+        	at jadx.core.dex.attributes.AttrNode.add(AttrNode.java:21)
+        	at jadx.core.dex.regions.conditions.Compare.<init>(Compare.java:12)
+        	at jadx.core.dex.regions.conditions.IfCondition.fromIfNode(IfCondition.java:73)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.makeIfInfo(IfRegionMaker.java:161)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:64)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
@@ -2522,9 +2522,6 @@ public final class SuperStreamExtractor extends SuperStream {
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
         */
     @org.jetbrains.annotations.Nullable
     public final java.lang.Object invokeWyZIESUBAPI(@org.jetbrains.annotations.Nullable java.lang.String r32, @org.jetbrains.annotations.Nullable java.lang.Integer r33, @org.jetbrains.annotations.Nullable java.lang.Integer r34, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r35, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r36) {

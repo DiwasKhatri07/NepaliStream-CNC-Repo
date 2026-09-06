@@ -2864,18 +2864,15 @@ public final class MultiMoviesProvider extends MainAPI {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:41:0x0343 -> B:42:0x0360). Please report as a decompilation issue!!! */
         /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
             java.lang.StackOverflowError
-            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:712)
-            	at jadx.core.utils.BlockUtils.isPathExists(BlockUtils.java:845)
+            	at java.base/java.util.Collections.eq(Collections.java:5475)
+            	at java.base/java.util.Collections$SingletonList.contains(Collections.java:4956)
+            	at jadx.core.utils.BlockUtils.isPathExists(BlockUtils.java:842)
             	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.isCandidateForOutBlock(IfRegionMaker.java:303)
             	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.findOutBlock(IfRegionMaker.java:267)
             	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.restructureIf(IfRegionMaker.java:191)
             	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:82)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-            	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-            	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
             	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
@@ -3885,6 +3882,9 @@ public final class MultiMoviesProvider extends MainAPI {
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
             	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
+            	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
+            	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
+            	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
             	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
             */

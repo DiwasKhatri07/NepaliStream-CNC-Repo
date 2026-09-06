@@ -1727,6 +1727,7 @@ public final class AllMovieLandProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:339:0x0d11 -> B:340:0x0d3d). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
+        	at java.base/java.util.HashMap.hash(HashMap.java:338)
         	at java.base/java.util.HashMap.put(HashMap.java:610)
         	at java.base/java.util.HashSet.add(HashSet.java:221)
         	at jadx.core.utils.BlockUtils.addPredecessors(BlockUtils.java:703)

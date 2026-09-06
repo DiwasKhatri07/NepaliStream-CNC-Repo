@@ -56,7 +56,8 @@ public final class SKTechPlugin extends Plugin {
         Pair pair;
         SKTech.INSTANCE.setContext(context);
         LiveEventsProvider.INSTANCE.setContext(context);
-        registerMainAPI(new LiveEventsProvider(null, null, 3, null));
+        String str = null;
+        registerMainAPI(new LiveEventsProvider(str, str, 3, str));
         this.iptvProviders = (List) BuildersKt.runBlocking$default((CoroutineContext) null, new C00461(null), 1, (Object) null);
         Iterable $this$mapNotNull$iv = this.iptvProviders;
         Collection destination$iv$iv = new ArrayList();

@@ -117,7 +117,8 @@ public class Gofile extends ExtractorApi {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:89:0x04f0 -> B:90:0x050e). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.dex.nodes.BlockNode.isDominator(BlockNode.java:178)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:746)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     static /* synthetic */ java.lang.Object getUrl$suspendImpl(com.dudefilms.Gofile r33, java.lang.String r34, java.lang.String r35, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r36, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r37, kotlin.coroutines.Continuation<? super kotlin.Unit> r38) {
