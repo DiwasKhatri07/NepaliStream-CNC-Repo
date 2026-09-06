@@ -82,10 +82,11 @@ public class MegaPlay extends ExtractorApi {
         /* JADX WARN: Unreachable blocks removed: 2, instructions: 9 */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:159:0x0781 -> B:172:0x0885). Please report as a decompilation issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:169:0x083f -> B:217:0x086b). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-            java.lang.StackOverflowError
-            	at java.base/java.util.regex.Pattern.lambda$Range$10(Pattern.java:5755)
-            	at java.base/java.util.regex.Pattern$BmpCharPredicate.lambda$union$2(Pattern.java:5653)
+        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
             */
         @org.jetbrains.annotations.Nullable
         public final java.lang.Object extractMegaPlayUrl(@org.jetbrains.annotations.NotNull java.lang.String r47, @org.jetbrains.annotations.Nullable java.lang.String r48, @org.jetbrains.annotations.NotNull java.lang.String r49, @org.jetbrains.annotations.NotNull java.lang.String r50, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r51, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r52, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r53) {

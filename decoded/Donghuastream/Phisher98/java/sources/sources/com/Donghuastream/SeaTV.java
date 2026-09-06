@@ -193,12 +193,10 @@ public class SeaTV extends Donghuastream {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x00ce -> B:20:0x00d5). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at java.base/java.util.RegularEnumSet.add(RegularEnumSet.java:36)
-        	at jadx.core.dex.attributes.AttributeStorage.add(AttributeStorage.java:53)
-        	at jadx.core.dex.attributes.AttrNode.add(AttrNode.java:21)
-        	at jadx.core.dex.regions.conditions.Compare.<init>(Compare.java:12)
-        	at jadx.core.dex.regions.conditions.IfCondition.fromIfNode(IfCondition.java:73)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.makeIfInfo(IfRegionMaker.java:161)
+        	at jadx.core.utils.blocks.BlockSet.<init>(BlockSet.java:41)
+        	at jadx.core.utils.blocks.BlockSet.empty(BlockSet.java:27)
+        	at jadx.core.dex.regions.conditions.IfInfo.<init>(IfInfo.java:26)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.makeIfInfo(IfRegionMaker.java:162)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:64)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
@@ -1216,6 +1214,8 @@ public class SeaTV extends Donghuastream {
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
+        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         */
     static /* synthetic */ java.lang.Object search$suspendImpl(com.Donghuastream.SeaTV r25, java.lang.String r26, kotlin.coroutines.Continuation<? super java.util.List<? extends com.lagradost.cloudstream3.SearchResponse>> r27) {
         /*
