@@ -57,7 +57,7 @@ public final class AniVortexTmdb {
     /* JADX INFO: compiled from: AniVortexTmdb.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.AniVortex.AniVortexTmdb", f = "AniVortexTmdb.kt", i = {0, 0, 0, 0}, l = {98}, m = "fetchDetails", n = {"type", "url", "$this$fetchDetails_u24lambda_u240", "tmdbId"}, nl = {98}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
-    static final class C00101 extends ContinuationImpl {
+    static final class C00161 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -65,7 +65,7 @@ public final class AniVortexTmdb {
         int label;
         /* synthetic */ Object result;
 
-        C00101(Continuation<? super C00101> continuation) {
+        C00161(Continuation<? super C00161> continuation) {
             super(continuation);
         }
 
@@ -81,7 +81,7 @@ public final class AniVortexTmdb {
     /* JADX INFO: compiled from: AniVortexTmdb.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.AniVortex.AniVortexTmdb", f = "AniVortexTmdb.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4}, l = {48, 54, 58, 64, 71}, m = "fetchMetadata", n = {"title", "originalTitle", "year", "explicitTmdbId", "explicitImdbId", "tmdbType", "resolvedTmdbId", "isMovie", "title", "originalTitle", "year", "explicitTmdbId", "explicitImdbId", "tmdbType", "resolvedTmdbId", "cleanTitle", "isMovie", "title", "originalTitle", "year", "explicitTmdbId", "explicitImdbId", "tmdbType", "resolvedTmdbId", "cleanTitle", "isMovie", "title", "originalTitle", "year", "explicitTmdbId", "explicitImdbId", "tmdbType", "resolvedTmdbId", "cleanTitle", "cleanOrig", "isMovie", "title", "originalTitle", "year", "explicitTmdbId", "explicitImdbId", "tmdbType", "resolvedTmdbId", "isMovie"}, nl = {52, 57, 62, 68, -1}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
-    static final class C00111 extends ContinuationImpl {
+    static final class C00171 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -95,7 +95,7 @@ public final class AniVortexTmdb {
         int label;
         /* synthetic */ Object result;
 
-        C00111(Continuation<? super C00111> continuation) {
+        C00171(Continuation<? super C00171> continuation) {
             super(continuation);
         }
 
@@ -111,7 +111,7 @@ public final class AniVortexTmdb {
     /* JADX INFO: compiled from: AniVortexTmdb.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.AniVortex.AniVortexTmdb", f = "AniVortexTmdb.kt", i = {0, 0, 0, 0}, l = {90}, m = "findTmdbIdByImdb", n = {"imdbId", "url", "$this$findTmdbIdByImdb_u24lambda_u240", "isMovie"}, nl = {90}, s = {"L$0", "L$1", "L$2", "Z$0"}, v = 2)
-    static final class C00121 extends ContinuationImpl {
+    static final class C00181 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -119,7 +119,7 @@ public final class AniVortexTmdb {
         int label;
         /* synthetic */ Object result;
 
-        C00121(Continuation<? super C00121> continuation) {
+        C00181(Continuation<? super C00181> continuation) {
             super(continuation);
         }
 
@@ -135,7 +135,7 @@ public final class AniVortexTmdb {
     /* JADX INFO: compiled from: AniVortexTmdb.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.AniVortex.AniVortexTmdb", f = "AniVortexTmdb.kt", i = {0, 0, 0, 0, 0, 0}, l = {81}, m = "searchTmdbId", n = {"query", "year", "type", "yearParam", "url", "$this$searchTmdbId_u24lambda_u240"}, nl = {81}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    static final class C00131 extends ContinuationImpl {
+    static final class C00191 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -145,7 +145,7 @@ public final class AniVortexTmdb {
         int label;
         /* synthetic */ Object result;
 
-        C00131(Continuation<? super C00131> continuation) {
+        C00191(Continuation<? super C00191> continuation) {
             super(continuation);
         }
 
@@ -200,7 +200,7 @@ public final class AniVortexTmdb {
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public final Object fetchMetadata(@NotNull String title, @Nullable String originalTitle, @Nullable Integer year, boolean isMovie, @Nullable Integer explicitTmdbId, @Nullable String explicitImdbId, @NotNull Continuation<? super TmdbMetadata> continuation) {
-        C00111 c00111;
+        C00171 c00171;
         String tmdbType;
         String originalTitle2;
         Integer year2;
@@ -234,20 +234,20 @@ public final class AniVortexTmdb {
         Object objSearchTmdbId3;
         Object objFetchDetails;
         boolean isMovie2 = isMovie;
-        if (continuation instanceof C00111) {
-            c00111 = (C00111) continuation;
-            if ((c00111.label & Integer.MIN_VALUE) != 0) {
-                c00111.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00171) {
+            c00171 = (C00171) continuation;
+            if ((c00171.label & Integer.MIN_VALUE) != 0) {
+                c00171.label -= Integer.MIN_VALUE;
             } else {
-                c00111 = new C00111(continuation);
+                c00171 = new C00171(continuation);
             }
         } else {
-            c00111 = new C00111(continuation);
+            c00171 = new C00171(continuation);
         }
-        Object $result = c00111.result;
+        Object $result = c00171.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         String originalTitle6 = null;
-        switch (c00111.label) {
+        switch (c00171.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String tmdbType4 = isMovie2 ? "movie" : "tv";
@@ -255,18 +255,18 @@ public final class AniVortexTmdb {
                     String str2 = explicitImdbId;
                     if (!(str2 == null || StringsKt.isBlank(str2))) {
                         tmdbType = title;
-                        c00111.L$0 = tmdbType;
+                        c00171.L$0 = tmdbType;
                         originalTitle2 = originalTitle;
-                        c00111.L$1 = originalTitle2;
+                        c00171.L$1 = originalTitle2;
                         year2 = year;
-                        c00111.L$2 = year2;
-                        c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId);
-                        c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId);
-                        c00111.L$5 = tmdbType4;
-                        c00111.L$6 = SpillingKt.nullOutSpilledVariable(explicitTmdbId);
-                        c00111.Z$0 = isMovie2;
-                        c00111.label = 1;
-                        Object objFindTmdbIdByImdb = findTmdbIdByImdb(explicitImdbId, isMovie2, c00111);
+                        c00171.L$2 = year2;
+                        c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId);
+                        c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId);
+                        c00171.L$5 = tmdbType4;
+                        c00171.L$6 = SpillingKt.nullOutSpilledVariable(explicitTmdbId);
+                        c00171.Z$0 = isMovie2;
+                        c00171.label = 1;
+                        Object objFindTmdbIdByImdb = findTmdbIdByImdb(explicitImdbId, isMovie2, c00171);
                         if (objFindTmdbIdByImdb == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -278,17 +278,17 @@ public final class AniVortexTmdb {
                     }
                     if (resolvedTmdbId == null) {
                         cleanTitle = cleanSearchTitle(tmdbType);
-                        c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                        c00111.L$1 = originalTitle2;
-                        c00111.L$2 = year2;
-                        c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId2);
-                        c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId2);
-                        c00111.L$5 = title2;
-                        c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId);
-                        c00111.L$7 = cleanTitle;
-                        c00111.Z$0 = isMovie2;
-                        c00111.label = 2;
-                        objSearchTmdbId = searchTmdbId(cleanTitle, year2, title2, c00111);
+                        c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                        c00171.L$1 = originalTitle2;
+                        c00171.L$2 = year2;
+                        c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId2);
+                        c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId2);
+                        c00171.L$5 = title2;
+                        c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId);
+                        c00171.L$7 = cleanTitle;
+                        c00171.Z$0 = isMovie2;
+                        c00171.label = 2;
+                        objSearchTmdbId = searchTmdbId(cleanTitle, year2, title2, c00171);
                         if (objSearchTmdbId == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -310,17 +310,17 @@ public final class AniVortexTmdb {
                             resolvedTmdbId2 = resolvedTmdbId3;
                             title4 = cleanTitle2;
                         } else {
-                            c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                            c00111.L$1 = originalTitle4;
-                            c00111.L$2 = year3;
-                            c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId4);
-                            c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                            c00111.L$5 = tmdbType2;
-                            c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId3);
-                            c00111.L$7 = SpillingKt.nullOutSpilledVariable(cleanTitle2);
-                            c00111.Z$0 = isMovie2;
-                            c00111.label = 3;
-                            objSearchTmdbId2 = searchTmdbId(cleanTitle2, null, tmdbType2, c00111);
+                            c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                            c00171.L$1 = originalTitle4;
+                            c00171.L$2 = year3;
+                            c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId4);
+                            c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                            c00171.L$5 = tmdbType2;
+                            c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId3);
+                            c00171.L$7 = SpillingKt.nullOutSpilledVariable(cleanTitle2);
+                            c00171.Z$0 = isMovie2;
+                            c00171.label = 3;
+                            objSearchTmdbId2 = searchTmdbId(cleanTitle2, null, tmdbType2, c00171);
                             if (objSearchTmdbId2 == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -342,18 +342,18 @@ public final class AniVortexTmdb {
                             }
                             if (!z) {
                                 String cleanOrig2 = cleanSearchTitle(originalTitle5);
-                                c00111.L$0 = SpillingKt.nullOutSpilledVariable(title3);
-                                c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle5);
-                                c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                                c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId5);
-                                c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                                c00111.L$5 = tmdbType3;
-                                c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
-                                c00111.L$7 = SpillingKt.nullOutSpilledVariable(title4);
-                                c00111.L$8 = SpillingKt.nullOutSpilledVariable(cleanOrig2);
-                                c00111.Z$0 = isMovie2;
-                                c00111.label = 4;
-                                objSearchTmdbId3 = searchTmdbId(cleanOrig2, year2, tmdbType3, c00111);
+                                c00171.L$0 = SpillingKt.nullOutSpilledVariable(title3);
+                                c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle5);
+                                c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                                c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId5);
+                                c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                                c00171.L$5 = tmdbType3;
+                                c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                                c00171.L$7 = SpillingKt.nullOutSpilledVariable(title4);
+                                c00171.L$8 = SpillingKt.nullOutSpilledVariable(cleanOrig2);
+                                c00171.Z$0 = isMovie2;
+                                c00171.label = 4;
+                                objSearchTmdbId3 = searchTmdbId(cleanOrig2, year2, tmdbType3, c00171);
                                 if (objSearchTmdbId3 == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -381,19 +381,19 @@ public final class AniVortexTmdb {
                         return originalTitle6;
                     }
                     int iIntValue = resolvedTmdbId2.intValue();
-                    c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                    c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
-                    c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                    c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
-                    c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                    c00111.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
-                    c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                    c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                    c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
+                    c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                    c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
+                    c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                    c00171.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
+                    c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
                     String str4 = originalTitle6;
-                    c00111.L$7 = str4;
-                    c00111.L$8 = str4;
-                    c00111.Z$0 = isMovie2;
-                    c00111.label = 5;
-                    objFetchDetails = fetchDetails(iIntValue, cleanOrig, c00111);
+                    c00171.L$7 = str4;
+                    c00171.L$8 = str4;
+                    c00171.Z$0 = isMovie2;
+                    c00171.label = 5;
+                    objFetchDetails = fetchDetails(iIntValue, cleanOrig, c00171);
                     if (objFetchDetails == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -408,17 +408,17 @@ public final class AniVortexTmdb {
                 explicitTmdbId2 = explicitTmdbId;
                 if (resolvedTmdbId == null) {
                     cleanTitle = cleanSearchTitle(tmdbType);
-                    c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                    c00111.L$1 = originalTitle2;
-                    c00111.L$2 = year2;
-                    c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId2);
-                    c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId2);
-                    c00111.L$5 = title2;
-                    c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId);
-                    c00111.L$7 = cleanTitle;
-                    c00111.Z$0 = isMovie2;
-                    c00111.label = 2;
-                    objSearchTmdbId = searchTmdbId(cleanTitle, year2, title2, c00111);
+                    c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                    c00171.L$1 = originalTitle2;
+                    c00171.L$2 = year2;
+                    c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId2);
+                    c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId2);
+                    c00171.L$5 = title2;
+                    c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId);
+                    c00171.L$7 = cleanTitle;
+                    c00171.Z$0 = isMovie2;
+                    c00171.label = 2;
+                    objSearchTmdbId = searchTmdbId(cleanTitle, year2, title2, c00171);
                     if (objSearchTmdbId == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -449,18 +449,18 @@ public final class AniVortexTmdb {
                         }
                         if (!z) {
                             String cleanOrig3 = cleanSearchTitle(originalTitle5);
-                            c00111.L$0 = SpillingKt.nullOutSpilledVariable(title3);
-                            c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle5);
-                            c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                            c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId5);
-                            c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                            c00111.L$5 = tmdbType3;
-                            c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
-                            c00111.L$7 = SpillingKt.nullOutSpilledVariable(title4);
-                            c00111.L$8 = SpillingKt.nullOutSpilledVariable(cleanOrig3);
-                            c00111.Z$0 = isMovie2;
-                            c00111.label = 4;
-                            objSearchTmdbId3 = searchTmdbId(cleanOrig3, year2, tmdbType3, c00111);
+                            c00171.L$0 = SpillingKt.nullOutSpilledVariable(title3);
+                            c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle5);
+                            c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                            c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId5);
+                            c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                            c00171.L$5 = tmdbType3;
+                            c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                            c00171.L$7 = SpillingKt.nullOutSpilledVariable(title4);
+                            c00171.L$8 = SpillingKt.nullOutSpilledVariable(cleanOrig3);
+                            c00171.Z$0 = isMovie2;
+                            c00171.label = 4;
+                            objSearchTmdbId3 = searchTmdbId(cleanOrig3, year2, tmdbType3, c00171);
                             if (objSearchTmdbId3 == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -488,31 +488,31 @@ public final class AniVortexTmdb {
                     return originalTitle6;
                 }
                 int iIntValue2 = resolvedTmdbId2.intValue();
-                c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
-                c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
-                c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                c00111.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
-                c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
+                c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
+                c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                c00171.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
+                c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
                 String str6 = originalTitle6;
-                c00111.L$7 = str6;
-                c00111.L$8 = str6;
-                c00111.Z$0 = isMovie2;
-                c00111.label = 5;
-                objFetchDetails = fetchDetails(iIntValue2, cleanOrig, c00111);
+                c00171.L$7 = str6;
+                c00171.L$8 = str6;
+                c00171.Z$0 = isMovie2;
+                c00171.label = 5;
+                objFetchDetails = fetchDetails(iIntValue2, cleanOrig, c00171);
                 if (objFetchDetails == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return objFetchDetails;
             case 1:
-                isMovie2 = c00111.Z$0;
-                String tmdbType5 = (String) c00111.L$5;
-                String explicitImdbId4 = (String) c00111.L$4;
-                Integer explicitTmdbId6 = (Integer) c00111.L$3;
-                Integer year4 = (Integer) c00111.L$2;
-                String originalTitle7 = (String) c00111.L$1;
-                String title6 = (String) c00111.L$0;
+                isMovie2 = c00171.Z$0;
+                String tmdbType5 = (String) c00171.L$5;
+                String explicitImdbId4 = (String) c00171.L$4;
+                Integer explicitTmdbId6 = (Integer) c00171.L$3;
+                Integer year4 = (Integer) c00171.L$2;
+                String originalTitle7 = (String) c00171.L$1;
+                String title6 = (String) c00171.L$0;
                 ResultKt.throwOnFailure($result);
                 explicitImdbId2 = explicitImdbId4;
                 explicitTmdbId2 = explicitTmdbId6;
@@ -524,17 +524,17 @@ public final class AniVortexTmdb {
                 resolvedTmdbId = (Integer) obj;
                 if (resolvedTmdbId == null) {
                     cleanTitle = cleanSearchTitle(tmdbType);
-                    c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                    c00111.L$1 = originalTitle2;
-                    c00111.L$2 = year2;
-                    c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId2);
-                    c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId2);
-                    c00111.L$5 = title2;
-                    c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId);
-                    c00111.L$7 = cleanTitle;
-                    c00111.Z$0 = isMovie2;
-                    c00111.label = 2;
-                    objSearchTmdbId = searchTmdbId(cleanTitle, year2, title2, c00111);
+                    c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                    c00171.L$1 = originalTitle2;
+                    c00171.L$2 = year2;
+                    c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId2);
+                    c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId2);
+                    c00171.L$5 = title2;
+                    c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId);
+                    c00171.L$7 = cleanTitle;
+                    c00171.Z$0 = isMovie2;
+                    c00171.label = 2;
+                    objSearchTmdbId = searchTmdbId(cleanTitle, year2, title2, c00171);
                     if (objSearchTmdbId == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -565,18 +565,18 @@ public final class AniVortexTmdb {
                         }
                         if (!z) {
                             String cleanOrig4 = cleanSearchTitle(originalTitle5);
-                            c00111.L$0 = SpillingKt.nullOutSpilledVariable(title3);
-                            c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle5);
-                            c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                            c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId5);
-                            c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                            c00111.L$5 = tmdbType3;
-                            c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
-                            c00111.L$7 = SpillingKt.nullOutSpilledVariable(title4);
-                            c00111.L$8 = SpillingKt.nullOutSpilledVariable(cleanOrig4);
-                            c00111.Z$0 = isMovie2;
-                            c00111.label = 4;
-                            objSearchTmdbId3 = searchTmdbId(cleanOrig4, year2, tmdbType3, c00111);
+                            c00171.L$0 = SpillingKt.nullOutSpilledVariable(title3);
+                            c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle5);
+                            c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                            c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId5);
+                            c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                            c00171.L$5 = tmdbType3;
+                            c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                            c00171.L$7 = SpillingKt.nullOutSpilledVariable(title4);
+                            c00171.L$8 = SpillingKt.nullOutSpilledVariable(cleanOrig4);
+                            c00171.Z$0 = isMovie2;
+                            c00171.label = 4;
+                            objSearchTmdbId3 = searchTmdbId(cleanOrig4, year2, tmdbType3, c00171);
                             if (objSearchTmdbId3 == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -604,32 +604,32 @@ public final class AniVortexTmdb {
                     return originalTitle6;
                 }
                 int iIntValue3 = resolvedTmdbId2.intValue();
-                c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
-                c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
-                c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                c00111.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
-                c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
+                c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
+                c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                c00171.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
+                c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
                 String str8 = originalTitle6;
-                c00111.L$7 = str8;
-                c00111.L$8 = str8;
-                c00111.Z$0 = isMovie2;
-                c00111.label = 5;
-                objFetchDetails = fetchDetails(iIntValue3, cleanOrig, c00111);
+                c00171.L$7 = str8;
+                c00171.L$8 = str8;
+                c00171.Z$0 = isMovie2;
+                c00171.label = 5;
+                objFetchDetails = fetchDetails(iIntValue3, cleanOrig, c00171);
                 if (objFetchDetails == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return objFetchDetails;
             case 2:
-                isMovie2 = c00111.Z$0;
-                cleanTitle2 = (String) c00111.L$7;
-                String tmdbType6 = (String) c00111.L$5;
-                explicitImdbId3 = (String) c00111.L$4;
-                Integer explicitTmdbId7 = (Integer) c00111.L$3;
-                Integer year5 = (Integer) c00111.L$2;
-                String originalTitle8 = (String) c00111.L$1;
-                String title7 = (String) c00111.L$0;
+                isMovie2 = c00171.Z$0;
+                cleanTitle2 = (String) c00171.L$7;
+                String tmdbType6 = (String) c00171.L$5;
+                explicitImdbId3 = (String) c00171.L$4;
+                Integer explicitTmdbId7 = (Integer) c00171.L$3;
+                Integer year5 = (Integer) c00171.L$2;
+                String originalTitle8 = (String) c00171.L$1;
+                String title7 = (String) c00171.L$0;
                 ResultKt.throwOnFailure($result);
                 tmdbType2 = tmdbType6;
                 tmdbType = title7;
@@ -657,18 +657,18 @@ public final class AniVortexTmdb {
                     }
                     if (!z) {
                         String cleanOrig5 = cleanSearchTitle(originalTitle5);
-                        c00111.L$0 = SpillingKt.nullOutSpilledVariable(title3);
-                        c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle5);
-                        c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                        c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId5);
-                        c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                        c00111.L$5 = tmdbType3;
-                        c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
-                        c00111.L$7 = SpillingKt.nullOutSpilledVariable(title4);
-                        c00111.L$8 = SpillingKt.nullOutSpilledVariable(cleanOrig5);
-                        c00111.Z$0 = isMovie2;
-                        c00111.label = 4;
-                        objSearchTmdbId3 = searchTmdbId(cleanOrig5, year2, tmdbType3, c00111);
+                        c00171.L$0 = SpillingKt.nullOutSpilledVariable(title3);
+                        c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle5);
+                        c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                        c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId5);
+                        c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                        c00171.L$5 = tmdbType3;
+                        c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                        c00171.L$7 = SpillingKt.nullOutSpilledVariable(title4);
+                        c00171.L$8 = SpillingKt.nullOutSpilledVariable(cleanOrig5);
+                        c00171.Z$0 = isMovie2;
+                        c00171.label = 4;
+                        objSearchTmdbId3 = searchTmdbId(cleanOrig5, year2, tmdbType3, c00171);
                         if (objSearchTmdbId3 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -682,19 +682,19 @@ public final class AniVortexTmdb {
                         return originalTitle6;
                     }
                     int iIntValue4 = resolvedTmdbId2.intValue();
-                    c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                    c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
-                    c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                    c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
-                    c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                    c00111.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
-                    c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                    c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                    c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
+                    c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                    c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
+                    c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                    c00171.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
+                    c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
                     String str10 = originalTitle6;
-                    c00111.L$7 = str10;
-                    c00111.L$8 = str10;
-                    c00111.Z$0 = isMovie2;
-                    c00111.label = 5;
-                    objFetchDetails = fetchDetails(iIntValue4, cleanOrig, c00111);
+                    c00171.L$7 = str10;
+                    c00171.L$8 = str10;
+                    c00171.Z$0 = isMovie2;
+                    c00171.label = 5;
+                    objFetchDetails = fetchDetails(iIntValue4, cleanOrig, c00171);
                     if (objFetchDetails == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -709,32 +709,32 @@ public final class AniVortexTmdb {
                     return originalTitle6;
                 }
                 int iIntValue5 = resolvedTmdbId2.intValue();
-                c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
-                c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
-                c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                c00111.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
-                c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
+                c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
+                c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                c00171.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
+                c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
                 String str11 = originalTitle6;
-                c00111.L$7 = str11;
-                c00111.L$8 = str11;
-                c00111.Z$0 = isMovie2;
-                c00111.label = 5;
-                objFetchDetails = fetchDetails(iIntValue5, cleanOrig, c00111);
+                c00171.L$7 = str11;
+                c00171.L$8 = str11;
+                c00171.Z$0 = isMovie2;
+                c00171.label = 5;
+                objFetchDetails = fetchDetails(iIntValue5, cleanOrig, c00171);
                 if (objFetchDetails == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return objFetchDetails;
             case 3:
-                isMovie2 = c00111.Z$0;
-                cleanTitle2 = (String) c00111.L$7;
-                tmdbType2 = (String) c00111.L$5;
-                explicitImdbId3 = (String) c00111.L$4;
-                explicitTmdbId4 = (Integer) c00111.L$3;
-                year3 = (Integer) c00111.L$2;
-                originalTitle4 = (String) c00111.L$1;
-                title5 = (String) c00111.L$0;
+                isMovie2 = c00171.Z$0;
+                cleanTitle2 = (String) c00171.L$7;
+                tmdbType2 = (String) c00171.L$5;
+                explicitImdbId3 = (String) c00171.L$4;
+                explicitTmdbId4 = (Integer) c00171.L$3;
+                year3 = (Integer) c00171.L$2;
+                originalTitle4 = (String) c00171.L$1;
+                title5 = (String) c00171.L$0;
                 ResultKt.throwOnFailure($result);
                 objSearchTmdbId2 = $result;
                 resolvedTmdbId2 = (Integer) objSearchTmdbId2;
@@ -753,18 +753,18 @@ public final class AniVortexTmdb {
                     }
                     if (!z) {
                         String cleanOrig6 = cleanSearchTitle(originalTitle5);
-                        c00111.L$0 = SpillingKt.nullOutSpilledVariable(title3);
-                        c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle5);
-                        c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                        c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId5);
-                        c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                        c00111.L$5 = tmdbType3;
-                        c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
-                        c00111.L$7 = SpillingKt.nullOutSpilledVariable(title4);
-                        c00111.L$8 = SpillingKt.nullOutSpilledVariable(cleanOrig6);
-                        c00111.Z$0 = isMovie2;
-                        c00111.label = 4;
-                        objSearchTmdbId3 = searchTmdbId(cleanOrig6, year2, tmdbType3, c00111);
+                        c00171.L$0 = SpillingKt.nullOutSpilledVariable(title3);
+                        c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle5);
+                        c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                        c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId5);
+                        c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                        c00171.L$5 = tmdbType3;
+                        c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                        c00171.L$7 = SpillingKt.nullOutSpilledVariable(title4);
+                        c00171.L$8 = SpillingKt.nullOutSpilledVariable(cleanOrig6);
+                        c00171.Z$0 = isMovie2;
+                        c00171.label = 4;
+                        objSearchTmdbId3 = searchTmdbId(cleanOrig6, year2, tmdbType3, c00171);
                         if (objSearchTmdbId3 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -778,19 +778,19 @@ public final class AniVortexTmdb {
                         return originalTitle6;
                     }
                     int iIntValue6 = resolvedTmdbId2.intValue();
-                    c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                    c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
-                    c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                    c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
-                    c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                    c00111.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
-                    c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                    c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                    c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
+                    c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                    c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
+                    c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                    c00171.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
+                    c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
                     String str12 = originalTitle6;
-                    c00111.L$7 = str12;
-                    c00111.L$8 = str12;
-                    c00111.Z$0 = isMovie2;
-                    c00111.label = 5;
-                    objFetchDetails = fetchDetails(iIntValue6, cleanOrig, c00111);
+                    c00171.L$7 = str12;
+                    c00171.L$8 = str12;
+                    c00171.Z$0 = isMovie2;
+                    c00171.label = 5;
+                    objFetchDetails = fetchDetails(iIntValue6, cleanOrig, c00171);
                     if (objFetchDetails == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -805,31 +805,31 @@ public final class AniVortexTmdb {
                     return originalTitle6;
                 }
                 int iIntValue7 = resolvedTmdbId2.intValue();
-                c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
-                c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
-                c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                c00111.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
-                c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
+                c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
+                c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                c00171.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
+                c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
                 String str13 = originalTitle6;
-                c00111.L$7 = str13;
-                c00111.L$8 = str13;
-                c00111.Z$0 = isMovie2;
-                c00111.label = 5;
-                objFetchDetails = fetchDetails(iIntValue7, cleanOrig, c00111);
+                c00171.L$7 = str13;
+                c00171.L$8 = str13;
+                c00171.Z$0 = isMovie2;
+                c00171.label = 5;
+                objFetchDetails = fetchDetails(iIntValue7, cleanOrig, c00171);
                 if (objFetchDetails == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return objFetchDetails;
             case 4:
-                isMovie2 = c00111.Z$0;
-                tmdbType3 = (String) c00111.L$5;
-                explicitImdbId3 = (String) c00111.L$4;
-                explicitTmdbId5 = (Integer) c00111.L$3;
-                year2 = (Integer) c00111.L$2;
-                originalTitle5 = (String) c00111.L$1;
-                title3 = (String) c00111.L$0;
+                isMovie2 = c00171.Z$0;
+                tmdbType3 = (String) c00171.L$5;
+                explicitImdbId3 = (String) c00171.L$4;
+                explicitTmdbId5 = (Integer) c00171.L$3;
+                year2 = (Integer) c00171.L$2;
+                originalTitle5 = (String) c00171.L$1;
+                title3 = (String) c00171.L$0;
                 ResultKt.throwOnFailure($result);
                 objSearchTmdbId3 = $result;
                 resolvedTmdbId2 = (Integer) objSearchTmdbId3;
@@ -841,25 +841,25 @@ public final class AniVortexTmdb {
                     return originalTitle6;
                 }
                 int iIntValue8 = resolvedTmdbId2.intValue();
-                c00111.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
-                c00111.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
-                c00111.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                c00111.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
-                c00111.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
-                c00111.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
-                c00111.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
+                c00171.L$0 = SpillingKt.nullOutSpilledVariable(tmdbType);
+                c00171.L$1 = SpillingKt.nullOutSpilledVariable(originalTitle3);
+                c00171.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                c00171.L$3 = SpillingKt.nullOutSpilledVariable(explicitTmdbId3);
+                c00171.L$4 = SpillingKt.nullOutSpilledVariable(explicitImdbId3);
+                c00171.L$5 = SpillingKt.nullOutSpilledVariable(cleanOrig);
+                c00171.L$6 = SpillingKt.nullOutSpilledVariable(resolvedTmdbId2);
                 String str14 = originalTitle6;
-                c00111.L$7 = str14;
-                c00111.L$8 = str14;
-                c00111.Z$0 = isMovie2;
-                c00111.label = 5;
-                objFetchDetails = fetchDetails(iIntValue8, cleanOrig, c00111);
+                c00171.L$7 = str14;
+                c00171.L$8 = str14;
+                c00171.Z$0 = isMovie2;
+                c00171.label = 5;
+                objFetchDetails = fetchDetails(iIntValue8, cleanOrig, c00171);
                 if (objFetchDetails == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return objFetchDetails;
             case 5:
-                boolean z2 = c00111.Z$0;
+                boolean z2 = c00171.Z$0;
                 ResultKt.throwOnFailure($result);
                 return $result;
             default:
@@ -878,7 +878,7 @@ public final class AniVortexTmdb {
     /* JADX WARN: Code duplicated, block: B:72:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     public final Object searchTmdbId(String query, Integer year, String type, Continuation<? super Integer> continuation) {
-        C00131 c00131;
+        C00191 c00191;
         String yearParam;
         StringBuilder sb;
         String str;
@@ -888,20 +888,20 @@ public final class AniVortexTmdb {
         JSONObject jSONObjectOptJSONObject;
         Integer numBoxInt;
         int it;
-        if (continuation instanceof C00131) {
-            c00131 = (C00131) continuation;
-            if ((c00131.label & Integer.MIN_VALUE) != 0) {
-                c00131.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00191) {
+            c00191 = (C00191) continuation;
+            if ((c00191.label & Integer.MIN_VALUE) != 0) {
+                c00191.label -= Integer.MIN_VALUE;
             } else {
-                c00131 = new C00131(continuation);
+                c00191 = new C00191(continuation);
             }
         } else {
-            c00131 = new C00131(continuation);
+            c00191 = new C00191(continuation);
         }
-        C00131 c00132 = c00131;
-        Object $result = c00132.result;
+        C00191 c00192 = c00191;
+        Object $result = c00192.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00132.label) {
+        switch (c00192.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (StringsKt.isBlank(query)) {
@@ -924,15 +924,15 @@ public final class AniVortexTmdb {
                     Result.Companion companion = Result.Companion;
                     AniVortexTmdb $this$searchTmdbId_u24lambda_u240 = this;
                     Requests app = MainActivityKt.getApp();
-                    c00132.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                    c00132.L$1 = SpillingKt.nullOutSpilledVariable(year);
-                    c00132.L$2 = SpillingKt.nullOutSpilledVariable(type);
-                    c00132.L$3 = SpillingKt.nullOutSpilledVariable(yearParam);
-                    c00132.L$4 = SpillingKt.nullOutSpilledVariable(url);
-                    c00132.L$5 = SpillingKt.nullOutSpilledVariable($this$searchTmdbId_u24lambda_u240);
-                    c00132.label = 1;
+                    c00192.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                    c00192.L$1 = SpillingKt.nullOutSpilledVariable(year);
+                    c00192.L$2 = SpillingKt.nullOutSpilledVariable(type);
+                    c00192.L$3 = SpillingKt.nullOutSpilledVariable(yearParam);
+                    c00192.L$4 = SpillingKt.nullOutSpilledVariable(url);
+                    c00192.L$5 = SpillingKt.nullOutSpilledVariable($this$searchTmdbId_u24lambda_u240);
+                    c00192.label = 1;
                     try {
-                        Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00132, 4094, (Object) null);
+                        Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00192, 4094, (Object) null);
                         if (obj2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1047,7 +1047,7 @@ public final class AniVortexTmdb {
     /* JADX WARN: Code duplicated, block: B:62:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     public final Object findTmdbIdByImdb(String imdbId, boolean isMovie, Continuation<? super Integer> continuation) {
-        C00121 c00121;
+        C00181 c00181;
         boolean z;
         boolean isMovie2;
         Object obj;
@@ -1055,20 +1055,20 @@ public final class AniVortexTmdb {
         String key;
         JSONArray jSONArrayOptJSONArray;
         JSONObject jSONObjectOptJSONObject;
-        if (continuation instanceof C00121) {
-            c00121 = (C00121) continuation;
-            if ((c00121.label & Integer.MIN_VALUE) != 0) {
-                c00121.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00181) {
+            c00181 = (C00181) continuation;
+            if ((c00181.label & Integer.MIN_VALUE) != 0) {
+                c00181.label -= Integer.MIN_VALUE;
             } else {
-                c00121 = new C00121(continuation);
+                c00181 = new C00181(continuation);
             }
         } else {
-            c00121 = new C00121(continuation);
+            c00181 = new C00181(continuation);
         }
-        C00121 c00122 = c00121;
-        Object $result = c00122.result;
+        C00181 c00182 = c00181;
+        Object $result = c00182.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00122.label) {
+        switch (c00182.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String url = "https://api.themoviedb.org/3/find/" + imdbId + "?api_key=1865f43a0549ca50d341dd9ab8b29f49&external_source=imdb_id";
@@ -1076,14 +1076,14 @@ public final class AniVortexTmdb {
                     Result.Companion companion = Result.Companion;
                     AniVortexTmdb $this$findTmdbIdByImdb_u24lambda_u240 = this;
                     Requests app = MainActivityKt.getApp();
-                    c00122.L$0 = SpillingKt.nullOutSpilledVariable(imdbId);
-                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                    c00122.L$2 = SpillingKt.nullOutSpilledVariable($this$findTmdbIdByImdb_u24lambda_u240);
-                    c00122.Z$0 = isMovie;
-                    c00122.label = 1;
+                    c00182.L$0 = SpillingKt.nullOutSpilledVariable(imdbId);
+                    c00182.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                    c00182.L$2 = SpillingKt.nullOutSpilledVariable($this$findTmdbIdByImdb_u24lambda_u240);
+                    c00182.Z$0 = isMovie;
+                    c00182.label = 1;
                     z = true;
                     try {
-                        Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00122, 4094, (Object) null);
+                        Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00182, 4094, (Object) null);
                         if (obj2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1154,7 +1154,7 @@ public final class AniVortexTmdb {
                 }
                 break;
             case 1:
-                isMovie2 = c00122.Z$0;
+                isMovie2 = c00182.Z$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     z = true;
@@ -1244,7 +1244,7 @@ public final class AniVortexTmdb {
     /* JADX WARN: Code duplicated, block: B:90:0x0250  */
     /* JADX WARN: Code duplicated, block: B:93:0x025c  */
     public final Object fetchDetails(int tmdbId, String type, Continuation<? super TmdbMetadata> continuation) {
-        C00101 c00101;
+        C00161 c00161;
         int tmdbId2;
         Object obj;
         String text;
@@ -1284,20 +1284,20 @@ public final class AniVortexTmdb {
         JSONObject jSONObjectOptJSONObject4;
         String n;
         String it5;
-        if (continuation instanceof C00101) {
-            c00101 = (C00101) continuation;
-            if ((c00101.label & Integer.MIN_VALUE) != 0) {
-                c00101.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00161) {
+            c00161 = (C00161) continuation;
+            if ((c00161.label & Integer.MIN_VALUE) != 0) {
+                c00161.label -= Integer.MIN_VALUE;
             } else {
-                c00101 = new C00101(continuation);
+                c00161 = new C00161(continuation);
             }
         } else {
-            c00101 = new C00101(continuation);
+            c00161 = new C00161(continuation);
         }
-        C00101 c00102 = c00101;
-        Object $result = c00102.result;
+        C00161 c00162 = c00161;
+        Object $result = c00162.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00102.label) {
+        switch (c00162.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String url = "https://api.themoviedb.org/3/" + type + '/' + tmdbId + "?api_key=1865f43a0549ca50d341dd9ab8b29f49&append_to_response=images,credits,external_ids,videos&include_image_language=en,hi,ja,null";
@@ -1305,13 +1305,13 @@ public final class AniVortexTmdb {
                     Result.Companion companion = Result.Companion;
                     AniVortexTmdb $this$fetchDetails_u24lambda_u240 = this;
                     Requests app = MainActivityKt.getApp();
-                    c00102.L$0 = SpillingKt.nullOutSpilledVariable(type);
-                    c00102.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                    c00102.L$2 = SpillingKt.nullOutSpilledVariable($this$fetchDetails_u24lambda_u240);
-                    c00102.I$0 = tmdbId;
-                    c00102.label = 1;
+                    c00162.L$0 = SpillingKt.nullOutSpilledVariable(type);
+                    c00162.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                    c00162.L$2 = SpillingKt.nullOutSpilledVariable($this$fetchDetails_u24lambda_u240);
+                    c00162.I$0 = tmdbId;
+                    c00162.label = 1;
                     try {
-                        Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00102, 4094, (Object) null);
+                        Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00162, 4094, (Object) null);
                         if (obj2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1633,7 +1633,7 @@ public final class AniVortexTmdb {
                 }
                 break;
             case 1:
-                int tmdbId3 = c00102.I$0;
+                int tmdbId3 = c00162.I$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     tmdbId2 = tmdbId3;

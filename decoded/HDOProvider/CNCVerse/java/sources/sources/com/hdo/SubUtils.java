@@ -232,8 +232,7 @@ public final class SubUtils {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:54:0x02de -> B:55:0x0304). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at java.base/java.util.BitSet.get(BitSet.java:628)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:744)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
@@ -273,8 +272,7 @@ public final class SubUtils {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:89:0x039c -> B:90:0x03bf). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at java.base/java.util.BitSet.get(BitSet.java:628)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:744)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable

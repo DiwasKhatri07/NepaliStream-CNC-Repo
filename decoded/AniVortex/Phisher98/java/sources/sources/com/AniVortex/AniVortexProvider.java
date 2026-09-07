@@ -24,6 +24,7 @@ import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
 import com.phisher98.donation.DonationManager;
+import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -71,8 +72,8 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: AniVortexProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AniVortex/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u0000\u0090\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J \u0010 \u001a\u0004\u0018\u00010$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020(H\u0096@¢\u0006\u0002\u0010)J \u0010*\u001a\u0004\u0018\u00010+2\u0006\u0010,\u001a\u00020\u00052\u0006\u0010-\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010.J\u001c\u0010/\u001a\b\u0012\u0004\u0012\u00020+0\u001e2\u0006\u00100\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u00101J\u0018\u00102\u001a\u00020\u00052\u0006\u0010-\u001a\u00020\u00052\u0006\u00100\u001a\u00020\u0005H\u0002J:\u00103\u001a\b\u0012\u0004\u0012\u00020+0\u001e2\f\u00104\u001a\b\u0012\u0004\u0012\u00020+0\u001e2\f\u00105\u001a\b\u0012\u0004\u0012\u00020+0\u001e2\u000e\b\u0002\u00106\u001a\b\u0012\u0004\u0012\u00020+0\u001eH\u0002J\u0019\u00107\u001a\u0004\u0018\u0001082\b\u00109\u001a\u0004\u0018\u00010:H\u0002¢\u0006\u0002\u0010;J\u001e\u0010<\u001a\n\u0012\u0004\u0012\u00020=\u0018\u00010\u001e2\u0006\u0010>\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00101J\u001e\u0010?\u001a\n\u0012\u0004\u0012\u00020=\u0018\u00010\u001e2\u0006\u0010>\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00101J\u0018\u0010@\u001a\u0004\u0018\u00010A2\u0006\u0010B\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00101JF\u0010C\u001a\u00020\u000e2\u0006\u0010D\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u000e2\u0012\u0010F\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020I0G2\u0012\u0010J\u001a\u000e\u0012\u0004\u0012\u00020K\u0012\u0004\u0012\u00020I0GH\u0096@¢\u0006\u0002\u0010LJ\u000e\u0010M\u001a\u0004\u0018\u00010=*\u00020NH\u0002J\u0012\u0010O\u001a\u00020&2\b\u0010P\u001a\u0004\u0018\u00010\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0014\u0010\u0016\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0010R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R\u001a\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006Q"}, d2 = {"Lcom/AniVortex/AniVortexProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasQuickSearch", "getHasQuickSearch", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "ottCursorMap", "Ljava/util/concurrent/ConcurrentHashMap;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchOttSection", "Lcom/lagradost/cloudstream3/HomePageList;", "slug", "title", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchCatalogHome", "catalog", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "cleanSectionTitle", "mergeAndSortHomeSections", "movieSections", "animeSections", "ottSections", "formatScore", "Lcom/lagradost/cloudstream3/Score;", "rating", "", "(Ljava/lang/Double;)Lcom/lagradost/cloudstream3/Score;", "quickSearch", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "search", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResponse", "Lcom/AniVortex/CatalogItem;", "getQualityInt", "quality", "AniVortex"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAniVortexProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,680:1\n73#2,5:681\n73#2,5:702\n73#2,5:726\n73#2,5:745\n73#2,5:764\n73#2,5:803\n73#2,5:822\n73#2,5:856\n73#2,5:862\n73#2,5:893\n296#3,2:686\n1795#3,10:688\n2068#3:698\n2069#3:700\n1805#3:701\n1795#3,10:707\n2068#3:717\n2069#3:719\n1805#3:720\n777#3:721\n873#3,2:722\n2068#3,2:724\n1795#3,10:731\n2068#3:741\n2069#3:743\n1805#3:744\n1795#3,10:750\n2068#3:760\n2069#3:762\n1805#3:763\n1795#3,10:769\n2068#3:779\n1795#3,10:780\n2068#3:790\n2069#3:792\n1805#3:793\n2069#3:795\n1805#3:796\n2068#3,2:797\n2068#3,2:799\n2068#3,2:801\n1795#3,10:808\n2068#3:818\n2069#3:820\n1805#3:821\n1795#3,10:828\n2068#3:838\n2069#3:840\n1805#3:841\n1795#3,10:842\n2068#3:852\n2069#3:854\n1805#3:855\n2068#3:861\n2068#3,2:867\n2069#3:869\n2068#3:898\n2068#3,2:899\n2068#3,2:901\n2069#3:903\n2068#3,2:904\n296#3,2:906\n1#4:699\n1#4:718\n1#4:742\n1#4:761\n1#4:791\n1#4:794\n1#4:819\n1#4:827\n1#4:839\n1#4:853\n1#4:873\n1#4:908\n93#5,2:870\n63#5:872\n64#5,15:874\n95#5,2:891\n50#6:889\n43#6:890\n*S KotlinDebug\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider\n*L\n119#1:681,5\n147#1:702,5\n178#1:726,5\n206#1:745,5\n230#1:764,5\n400#1:803,5\n415#1:822,5\n488#1:856,5\n501#1:862,5\n581#1:893,5\n121#1:686,2\n126#1:688,10\n126#1:698\n126#1:700\n126#1:701\n149#1:707,10\n149#1:717\n149#1:719\n149#1:720\n168#1:721\n168#1:722,2\n168#1:724,2\n179#1:731,10\n179#1:741\n179#1:743\n179#1:744\n207#1:750,10\n207#1:760\n207#1:762\n207#1:763\n236#1:769,10\n236#1:779\n237#1:780,10\n237#1:790\n237#1:792\n237#1:793\n236#1:795\n236#1:796\n353#1:797,2\n367#1:799,2\n375#1:801,2\n402#1:808,10\n402#1:818\n402#1:820\n402#1:821\n455#1:828,10\n455#1:838\n455#1:840\n455#1:841\n456#1:842,10\n456#1:852\n456#1:854\n456#1:855\n492#1:861\n503#1:867,2\n492#1:869\n585#1:898\n589#1:899,2\n605#1:901,2\n585#1:903\n622#1:904,2\n291#1:906,2\n126#1:699\n149#1:718\n179#1:742\n207#1:761\n237#1:791\n236#1:794\n402#1:819\n455#1:839\n456#1:853\n566#1:873\n566#1:870,2\n566#1:872\n566#1:874,15\n566#1:891,2\n566#1:889\n566#1:890\n*E\n"})
+@Metadata(d1 = {"\u0000 \u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0006\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J*\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u00052\u0012\u0010'\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050(H\u0082@¢\u0006\u0002\u0010)J \u0010 \u001a\u0004\u0018\u00010*2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020.H\u0096@¢\u0006\u0002\u0010/J \u00100\u001a\u0004\u0018\u0001012\u0006\u00102\u001a\u00020\u00052\u0006\u00103\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u00104J\u001c\u00105\u001a\b\u0012\u0004\u0012\u0002010\u001e2\u0006\u00106\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u00107J\u0018\u00108\u001a\u00020\u00052\u0006\u00103\u001a\u00020\u00052\u0006\u00106\u001a\u00020\u0005H\u0002J:\u00109\u001a\b\u0012\u0004\u0012\u0002010\u001e2\f\u0010:\u001a\b\u0012\u0004\u0012\u0002010\u001e2\f\u0010;\u001a\b\u0012\u0004\u0012\u0002010\u001e2\u000e\b\u0002\u0010<\u001a\b\u0012\u0004\u0012\u0002010\u001eH\u0002J\u0019\u0010=\u001a\u0004\u0018\u00010>2\b\u0010?\u001a\u0004\u0018\u00010@H\u0002¢\u0006\u0002\u0010AJ\u001e\u0010B\u001a\n\u0012\u0004\u0012\u00020C\u0018\u00010\u001e2\u0006\u0010D\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00107J\u001e\u0010E\u001a\n\u0012\u0004\u0012\u00020C\u0018\u00010\u001e2\u0006\u0010D\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00107J\u0018\u0010F\u001a\u0004\u0018\u00010G2\u0006\u0010&\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00107JF\u0010H\u001a\u00020\u000e2\u0006\u0010I\u001a\u00020\u00052\u0006\u0010J\u001a\u00020\u000e2\u0012\u0010K\u001a\u000e\u0012\u0004\u0012\u00020M\u0012\u0004\u0012\u00020N0L2\u0012\u0010O\u001a\u000e\u0012\u0004\u0012\u00020P\u0012\u0004\u0012\u00020N0LH\u0096@¢\u0006\u0002\u0010QJ\u000e\u0010R\u001a\u0004\u0018\u00010C*\u00020SH\u0002J\u0012\u0010T\u001a\u00020,2\b\u0010U\u001a\u0004\u0018\u00010\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0014\u0010\u0016\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0010R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R\u001a\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006V"}, d2 = {"Lcom/AniVortex/AniVortexProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasQuickSearch", "getHasQuickSearch", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "ottCursorMap", "Ljava/util/concurrent/ConcurrentHashMap;", "apiGet", "Lcom/lagradost/nicehttp/NiceResponse;", "url", "headers", "", "(Ljava/lang/String;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchOttSection", "Lcom/lagradost/cloudstream3/HomePageList;", "slug", "title", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchCatalogHome", "catalog", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "cleanSectionTitle", "mergeAndSortHomeSections", "movieSections", "animeSections", "ottSections", "formatScore", "Lcom/lagradost/cloudstream3/Score;", "rating", "", "(Ljava/lang/Double;)Lcom/lagradost/cloudstream3/Score;", "quickSearch", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "search", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResponse", "Lcom/AniVortex/CatalogItem;", "getQualityInt", "quality", "AniVortex"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nAniVortexProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,713:1\n1795#2,10:714\n2068#2:724\n2069#2:726\n1805#2:727\n296#2,2:733\n1795#2,10:735\n2068#2:745\n2069#2:747\n1805#2:748\n1795#2,10:754\n2068#2:764\n2069#2:766\n1805#2:767\n777#2:768\n873#2,2:769\n2068#2,2:771\n1795#2,10:778\n2068#2:788\n2069#2:790\n1805#2:791\n1795#2,10:797\n2068#2:807\n2069#2:809\n1805#2:810\n1795#2,10:816\n2068#2:826\n1795#2,10:827\n2068#2:837\n2069#2:839\n1805#2:840\n2069#2:842\n1805#2:843\n2068#2,2:844\n2068#2,2:846\n2068#2,2:848\n1795#2,10:855\n2068#2:865\n2069#2:867\n1805#2:868\n1795#2,10:875\n2068#2:885\n2069#2:887\n1805#2:888\n1795#2,10:889\n2068#2:899\n2069#2:901\n1805#2:902\n2068#2:908\n2068#2,2:914\n2069#2:916\n2068#2:945\n2068#2,2:946\n2068#2,2:948\n2069#2:950\n2068#2,2:951\n296#2,2:953\n1#3:725\n1#3:746\n1#3:765\n1#3:789\n1#3:808\n1#3:838\n1#3:841\n1#3:866\n1#3:874\n1#3:886\n1#3:900\n1#3:920\n1#3:955\n73#4,5:728\n73#4,5:749\n73#4,5:773\n73#4,5:792\n73#4,5:811\n73#4,5:850\n73#4,5:869\n73#4,5:903\n73#4,5:909\n73#4,5:940\n93#5,2:917\n63#5:919\n64#5,15:921\n95#5,2:938\n50#6:936\n43#6:937\n*S KotlinDebug\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider\n*L\n62#1:714,10\n62#1:724\n62#1:726\n62#1:727\n151#1:733,2\n156#1:735,10\n156#1:745\n156#1:747\n156#1:748\n179#1:754,10\n179#1:764\n179#1:766\n179#1:767\n198#1:768\n198#1:769,2\n198#1:771,2\n209#1:778,10\n209#1:788\n209#1:790\n209#1:791\n237#1:797,10\n237#1:807\n237#1:809\n237#1:810\n266#1:816,10\n266#1:826\n267#1:827,10\n267#1:837\n267#1:839\n267#1:840\n266#1:842\n266#1:843\n383#1:844,2\n397#1:846,2\n405#1:848,2\n433#1:855,10\n433#1:865\n433#1:867\n433#1:868\n487#1:875,10\n487#1:885\n487#1:887\n487#1:888\n488#1:889,10\n488#1:899\n488#1:901\n488#1:902\n524#1:908\n535#1:914,2\n524#1:916\n618#1:945\n622#1:946,2\n638#1:948,2\n618#1:950\n655#1:951,2\n321#1:953,2\n62#1:725\n156#1:746\n179#1:765\n209#1:789\n237#1:808\n267#1:838\n266#1:841\n433#1:866\n487#1:886\n488#1:900\n598#1:920\n149#1:728,5\n177#1:749,5\n208#1:773,5\n236#1:792,5\n260#1:811,5\n431#1:850,5\n447#1:869,5\n520#1:903,5\n533#1:909,5\n614#1:940,5\n598#1:917,2\n598#1:919\n598#1:921,15\n598#1:938,2\n598#1:936\n598#1:937\n*E\n"})
 public final class AniVortexProvider extends MainAPI {
 
     @NotNull
@@ -96,11 +97,42 @@ public final class AniVortexProvider extends MainAPI {
     @NotNull
     private final ConcurrentHashMap<String, String> ottCursorMap = new ConcurrentHashMap<>();
 
+    /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$apiGet$1 */
+    /* JADX INFO: compiled from: AniVortexProvider.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {54, 57, 69}, m = "apiGet", n = {"url", "headers", "$this$apiGet_u24lambda_u240", "url", "headers", "$this$apiGet_u24lambda_u240", "resp", "url", "headers", "$this$apiGet_u24lambda_u240", "resp", "urlPath", "queryStr", "freshQuery", "freshHeaders", "freshUrl", "queryMap", "ok"}, nl = {55, 58, 71}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0"}, v = 2)
+    static final class C00001 extends ContinuationImpl {
+        Object L$0;
+        Object L$1;
+        Object L$2;
+        Object L$3;
+        Object L$4;
+        Object L$5;
+        Object L$6;
+        Object L$7;
+        Object L$8;
+        Object L$9;
+        boolean Z$0;
+        int label;
+        /* synthetic */ Object result;
+
+        C00001(Continuation<? super C00001> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return AniVortexProvider.this.apiGet(null, null, (Continuation) this);
+        }
+    }
+
     /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$fetchCatalogHome$1 */
     /* JADX INFO: compiled from: AniVortexProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 0, 0}, l = {230}, m = "fetchCatalogHome", n = {"catalog", "query", "headers", "url"}, nl = {681}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
-    static final class C00001 extends ContinuationImpl {
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 0, 0}, l = {260}, m = "fetchCatalogHome", n = {"catalog", "query", "headers", "url"}, nl = {714}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
+    static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -108,7 +140,7 @@ public final class AniVortexProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00001(Continuation<? super C00001> continuation) {
+        C00011(Continuation<? super C00011> continuation) {
             super(continuation);
         }
 
@@ -123,8 +155,8 @@ public final class AniVortexProvider extends MainAPI {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$fetchOttSection$1 */
     /* JADX INFO: compiled from: AniVortexProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 0, 0, 0}, l = {206}, m = "fetchOttSection", n = {"slug", "title", "query", "headers", "url"}, nl = {681}, s = {"L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
-    static final class C00011 extends ContinuationImpl {
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 0, 0, 0}, l = {236}, m = "fetchOttSection", n = {"slug", "title", "query", "headers", "url"}, nl = {714}, s = {"L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
+    static final class C00021 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -133,7 +165,7 @@ public final class AniVortexProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00011(Continuation<? super C00011> continuation) {
+        C00021(Continuation<? super C00021> continuation) {
             super(continuation);
         }
 
@@ -148,8 +180,8 @@ public final class AniVortexProvider extends MainAPI {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$getMainPage$1 */
     /* JADX INFO: compiled from: AniVortexProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5}, l = {61, 96, 119, 147, 178, 191}, m = "getMainPage", n = {"request", "data", "page", "request", "data", "catalog", "page", "request", "data", "parts", "catalog", "targetKey", "query", "headers", "url", "page", "request", "data", "catalog", "queryParams", "query", "headers", "url", "page", "request", "data", "slug", "queryParams", "query", "headers", "url", "page", "request", "data", "page"}, nl = {81, 97, 681, 702, 726, -1}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "I$0"}, v = 2)
-    static final class C00021 extends ContinuationImpl {
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6}, l = {84, 91, 126, 149, 177, 208, 221}, m = "getMainPage", n = {"request", "page", "request", "data", "page", "request", "data", "catalog", "page", "request", "data", "parts", "catalog", "targetKey", "query", "headers", "url", "page", "request", "data", "catalog", "queryParams", "query", "headers", "url", "page", "request", "data", "slug", "queryParams", "query", "headers", "url", "page", "request", "data", "page"}, nl = {85, 111, 127, 714, 735, 759, -1}, s = {"L$0", "I$0", "L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "I$0"}, v = 2)
+    static final class C00031 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -162,7 +194,7 @@ public final class AniVortexProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00021(Continuation<? super C00021> continuation) {
+        C00031(Continuation<? super C00031> continuation) {
             super(continuation);
         }
 
@@ -177,8 +209,8 @@ public final class AniVortexProvider extends MainAPI {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$load$1 */
     /* JADX INFO: compiled from: AniVortexProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6}, l = {415, 438, 464, 488, 501, 528, 544}, m = "load", n = {"url", "queryDetail", "headersDetail", "detailUrl", "titleId", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "$this$load_u24lambda_u240", "titleId", "isMovie", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "tmdb", "finalPoster", "finalBackdrop", "finalPlot", "finalTags", "finalScore", "recommendationsList", "actorsList", "payload", "titleId", "isMovie", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "tmdb", "finalPoster", "finalBackdrop", "finalPlot", "finalTags", "finalScore", "recommendationsList", "actorsList", "queryWatch", "headersWatch", "watchUrl", "titleId", "isMovie", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "tmdb", "finalPoster", "finalBackdrop", "finalPlot", "finalTags", "finalScore", "recommendationsList", "actorsList", "queryWatch", "headersWatch", "watchUrl", "watchRes", "episodesList", "$this$forEach$iv", "element$iv", "season", "querySeason", "headersSeason", "seasonUrl", "titleId", "isMovie", "seasonId", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "tmdb", "finalPoster", "finalBackdrop", "finalPlot", "finalTags", "finalScore", "recommendationsList", "actorsList", "queryWatch", "headersWatch", "watchUrl", "watchRes", "episodesList", "fallbackPayload", "titleId", "isMovie", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "tmdb", "finalPoster", "finalBackdrop", "finalPlot", "finalTags", "finalScore", "recommendationsList", "actorsList", "queryWatch", "headersWatch", "watchUrl", "watchRes", "episodesList", "titleId", "isMovie"}, nl = {681, 445, 481, 715, 721, 544, -1}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$27", "L$28", "L$29", "L$30", "L$31", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "I$0", "I$1"}, v = 2)
-    static final class C00041 extends ContinuationImpl {
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {437, 447, 470, 496, 520, 533, 560, 576}, m = "load", n = {"url", "url", "queryDetail", "headersDetail", "detailUrl", "titleId", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "$this$load_u24lambda_u240", "titleId", "isMovie", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "tmdb", "finalPoster", "finalBackdrop", "finalPlot", "finalTags", "finalScore", "recommendationsList", "actorsList", "payload", "titleId", "isMovie", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "tmdb", "finalPoster", "finalBackdrop", "finalPlot", "finalTags", "finalScore", "recommendationsList", "actorsList", "queryWatch", "headersWatch", "watchUrl", "titleId", "isMovie", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "tmdb", "finalPoster", "finalBackdrop", "finalPlot", "finalTags", "finalScore", "recommendationsList", "actorsList", "queryWatch", "headersWatch", "watchUrl", "watchRes", "episodesList", "$this$forEach$iv", "element$iv", "season", "querySeason", "headersSeason", "seasonUrl", "titleId", "isMovie", "seasonId", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "tmdb", "finalPoster", "finalBackdrop", "finalPlot", "finalTags", "finalScore", "recommendationsList", "actorsList", "queryWatch", "headersWatch", "watchUrl", "watchRes", "episodesList", "fallbackPayload", "titleId", "isMovie", "url", "queryDetail", "headersDetail", "detailUrl", "detail", "tvType", "title", "poster", "backPoster", "plot", "tags", "year", "tmdb", "finalPoster", "finalBackdrop", "finalPlot", "finalTags", "finalScore", "recommendationsList", "actorsList", "queryWatch", "headersWatch", "watchUrl", "watchRes", "episodesList", "titleId", "isMovie"}, nl = {438, 714, 477, 513, 748, 754, 576, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$27", "L$28", "L$29", "L$30", "L$31", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "I$0", "I$1"}, v = 2)
+    static final class C00051 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -217,7 +249,7 @@ public final class AniVortexProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00041(Continuation<? super C00041> continuation) {
+        C00051(Continuation<? super C00051> continuation) {
             super(continuation);
         }
 
@@ -232,8 +264,8 @@ public final class AniVortexProvider extends MainAPI {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$loadLinks$1 */
     /* JADX INFO: compiled from: AniVortexProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {581, 592, 608, 625}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "payload", "queryParams", "query", "headers", "url", "isCasting", "titleId", "data", "subtitleCallback", "callback", "payload", "queryParams", "query", "headers", "url", "playback", "serverName", "$this$forEach$iv", "element$iv", "lang", "langName", "$this$forEach$iv", "element$iv", "stream", "streamUrl", "isCasting", "titleId", "data", "subtitleCallback", "callback", "payload", "queryParams", "query", "headers", "url", "playback", "serverName", "$this$forEach$iv", "element$iv", "lang", "$this$forEach$iv", "langName", "element$iv", "download", "downloadUrl", "isCasting", "titleId", "data", "subtitleCallback", "callback", "payload", "queryParams", "query", "headers", "url", "playback", "serverName", "$this$forEach$iv", "element$iv", "sub", "isCasting", "titleId"}, nl = {704, 591, 607, 624}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$12", "L$13", "Z$0", "I$0"}, v = 2)
-    static final class C00081 extends ContinuationImpl {
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {606, 614, 625, 641, 658}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "payload", "queryParams", "isCasting", "titleId", "data", "subtitleCallback", "callback", "payload", "queryParams", "query", "headers", "url", "isCasting", "titleId", "data", "subtitleCallback", "callback", "payload", "queryParams", "query", "headers", "url", "playback", "serverName", "$this$forEach$iv", "element$iv", "lang", "langName", "$this$forEach$iv", "element$iv", "stream", "streamUrl", "isCasting", "titleId", "data", "subtitleCallback", "callback", "payload", "queryParams", "query", "headers", "url", "playback", "serverName", "$this$forEach$iv", "element$iv", "lang", "$this$forEach$iv", "langName", "element$iv", "download", "downloadUrl", "isCasting", "titleId", "data", "subtitleCallback", "callback", "payload", "queryParams", "query", "headers", "url", "playback", "serverName", "$this$forEach$iv", "element$iv", "sub", "isCasting", "titleId"}, nl = {607, 737, 624, 640, 657}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$12", "L$13", "Z$0", "I$0"}, v = 2)
+    static final class C00091 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -260,7 +292,7 @@ public final class AniVortexProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00081(Continuation<? super C00081> continuation) {
+        C00091(Continuation<? super C00091> continuation) {
             super(continuation);
         }
 
@@ -275,8 +307,8 @@ public final class AniVortexProvider extends MainAPI {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$search$1 */
     /* JADX INFO: compiled from: AniVortexProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 0, 0, 0}, l = {400}, m = "search", n = {"query", "queryString", "headers", "url"}, nl = {681}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
-    static final class C00091 extends ContinuationImpl {
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider", f = "AniVortexProvider.kt", i = {0, 1, 1, 1, 1}, l = {423, 431}, m = "search", n = {"query", "query", "queryString", "headers", "url"}, nl = {424, 714}, s = {"L$0", "L$0", "L$1", "L$2", "L$3"}, v = 2)
+    static final class C00101 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -284,7 +316,7 @@ public final class AniVortexProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00091(Continuation<? super C00091> continuation) {
+        C00101(Continuation<? super C00101> continuation) {
             super(continuation);
         }
 
@@ -345,155 +377,537 @@ public final class AniVortexProvider extends MainAPI {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:105:0x0363  */
-    /* JADX WARN: Code duplicated, block: B:131:0x04c0  */
-    /* JADX WARN: Code duplicated, block: B:137:0x04d5  */
-    /* JADX WARN: Code duplicated, block: B:139:0x04dd  */
-    /* JADX WARN: Code duplicated, block: B:140:0x04df  */
-    /* JADX WARN: Code duplicated, block: B:190:0x06fd  */
-    /* JADX WARN: Code duplicated, block: B:195:0x0710  */
-    /* JADX WARN: Code duplicated, block: B:202:0x0722  */
-    /* JADX WARN: Code duplicated, block: B:204:0x0725  */
-    /* JADX WARN: Code duplicated, block: B:211:0x0758  */
-    /* JADX WARN: Code duplicated, block: B:213:0x0760  */
-    /* JADX WARN: Code duplicated, block: B:214:0x0762  */
-    /* JADX WARN: Code duplicated, block: B:217:0x0769  */
-    /* JADX WARN: Code duplicated, block: B:218:0x076c  */
-    /* JADX WARN: Code duplicated, block: B:270:0x0301 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:7:0x001c  */
-    /* JADX WARN: Code duplicated, block: B:82:0x02f3 A[LOOP:2: B:67:0x02ad->B:82:0x02f3, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:87:0x0307  */
-    /* JADX WARN: Code duplicated, block: B:89:0x030b  */
-    /* JADX WARN: Code duplicated, block: B:92:0x0318  */
-    /* JADX WARN: Code duplicated, block: B:95:0x031c  */
-    @Nullable
-    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
-        C00021 c00021;
-        boolean z;
-        String catalog;
-        Map queryParams;
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code duplicated, block: B:21:0x0106  */
+    /* JADX WARN: Code duplicated, block: B:23:0x0123 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:24:0x0124  */
+    /* JADX WARN: Code duplicated, block: B:27:0x0136  */
+    /* JADX WARN: Code duplicated, block: B:29:0x0154  */
+    /* JADX WARN: Code duplicated, block: B:30:0x0159  */
+    /* JADX WARN: Code duplicated, block: B:33:0x0167  */
+    /* JADX WARN: Code duplicated, block: B:34:0x0169  */
+    /* JADX WARN: Code duplicated, block: B:36:0x016c  */
+    /* JADX WARN: Code duplicated, block: B:39:0x019a  */
+    /* JADX WARN: Code duplicated, block: B:41:0x01c4  */
+    /* JADX WARN: Code duplicated, block: B:42:0x01df  */
+    /* JADX WARN: Code duplicated, block: B:44:0x01e4  */
+    /* JADX WARN: Code duplicated, block: B:47:0x01fd  */
+    /* JADX WARN: Code duplicated, block: B:50:0x023c  */
+    /* JADX WARN: Code duplicated, block: B:52:0x0240  */
+    /* JADX WARN: Code duplicated, block: B:55:0x02d3 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:56:0x02d4  */
+    /* JADX WARN: Code duplicated, block: B:58:0x02e9  */
+    /* JADX WARN: Code duplicated, block: B:59:0x02f8  */
+    /* JADX WARN: Code duplicated, block: B:64:0x01e8 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
+    /* JADX WARN: Instruction removed from duplicated block: B:27:0x0136, please report this as an issue */
+    public final Object apiGet(String url, Map<String, String> map, Continuation<? super NiceResponse> continuation) throws Throwable {
+        C00001 c00001;
         Object obj;
-        String data;
+        int i;
+        C00001 c00002;
+        String url2;
+        Map<String, String> map2;
+        int i2;
+        AniVortexProvider $this$apiGet_u24lambda_u240;
+        NiceResponse resp;
+        Object objReRegister;
+        NiceResponse resp2;
+        int i3;
+        AniVortexProvider $this$apiGet_u24lambda_u241;
+        Map<String, String> map3;
+        String url3;
+        boolean ok;
+        String strSubstringAfter$default;
+        String queryStr;
+        boolean z;
+        Map queryMap;
+        String url4;
+        String url5;
+        int i4;
+        NiceResponse resp3;
+        AniVortexProvider $this$apiGet_u24lambda_u242;
+        Map<String, String> map4;
+        Collection destination$iv$iv;
+        int $i$f$mapNotNullTo;
+        List parts;
+        Pair pair;
+        if (continuation instanceof C00001) {
+            c00001 = (C00001) continuation;
+            if ((c00001.label & Integer.MIN_VALUE) != 0) {
+                c00001.label -= Integer.MIN_VALUE;
+            } else {
+                c00001 = new C00001(continuation);
+            }
+        } else {
+            c00001 = new C00001(continuation);
+        }
+        Object $result = c00001.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (c00001.label) {
+            case 0:
+                ResultKt.throwOnFailure($result);
+                AniVortexProvider $this$apiGet_u24lambda_u243 = this;
+                Requests app = MainActivityKt.getApp();
+                c00001.L$0 = url;
+                c00001.L$1 = SpillingKt.nullOutSpilledVariable(map);
+                c00001.L$2 = $this$apiGet_u24lambda_u243;
+                c00001.label = 1;
+                C00001 c00003 = c00001;
+                obj = coroutine_suspended;
+                i = 2;
+                $result = Requests.get$default(app, url, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00003, 4092, (Object) null);
+                c00002 = c00003;
+                if ($result == obj) {
+                    return obj;
+                }
+                url2 = url;
+                map2 = map;
+                i2 = 0;
+                $this$apiGet_u24lambda_u240 = $this$apiGet_u24lambda_u243;
+                resp = (NiceResponse) $result;
+                if (resp.getCode() == 401) {
+                    return resp;
+                }
+                Log.w("AniVortex", "Got 401, triggering re-registration and retry...");
+                AniVortexRegistration aniVortexRegistration = AniVortexRegistration.INSTANCE;
+                c00002.L$0 = url2;
+                c00002.L$1 = SpillingKt.nullOutSpilledVariable(map2);
+                c00002.L$2 = $this$apiGet_u24lambda_u240;
+                c00002.L$3 = resp;
+                c00002.label = i;
+                objReRegister = aniVortexRegistration.reRegister(c00002);
+                if (objReRegister == obj) {
+                    return obj;
+                }
+                resp2 = resp;
+                i3 = i2;
+                $result = objReRegister;
+                $this$apiGet_u24lambda_u241 = $this$apiGet_u24lambda_u240;
+                map3 = map2;
+                url3 = url2;
+                ok = ((Boolean) $result).booleanValue();
+                if (!ok) {
+                    return resp2;
+                }
+                String urlPath = StringsKt.substringBefore$default(StringsKt.substringAfter$default(url3, $this$apiGet_u24lambda_u241.getMainUrl(), (String) null, i, (Object) null), "?", (String) null, i, (Object) null);
+                if (StringsKt.contains$default(url3, "?", false, i, (Object) null)) {
+                    strSubstringAfter$default = StringsKt.substringAfter$default(url3, "?", (String) null, i, (Object) null);
+                } else {
+                    strSubstringAfter$default = "";
+                }
+                queryStr = strSubstringAfter$default;
+                if (queryStr.length() > 0) {
+                    z = true;
+                } else {
+                    z = false;
+                }
+                if (z) {
+                    Iterable $this$mapNotNull$iv = StringsKt.split$default(queryStr, new String[]{"&"}, false, 0, 6, (Object) null);
+                    destination$iv$iv = new ArrayList();
+                    $i$f$mapNotNullTo = 0;
+                    for (Object element$iv$iv$iv : $this$mapNotNull$iv) {
+                        String it = (String) element$iv$iv$iv;
+                        parts = StringsKt.split$default(it, new String[]{"="}, false, 2, 2, (Object) null);
+                        if (parts.size() == i) {
+                            pair = TuplesKt.to(parts.get(0), URLDecoder.decode((String) parts.get(1), "UTF-8"));
+                        } else {
+                            pair = null;
+                        }
+                        if (pair != null) {
+                            destination$iv$iv.add(pair);
+                        }
+                        $i$f$mapNotNullTo = $i$f$mapNotNullTo;
+                        i = 2;
+                    }
+                    queryMap = MapsKt.toMap((List) destination$iv$iv);
+                } else {
+                    queryMap = MapsKt.emptyMap();
+                }
+                Pair pairBuildHeaders$default = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", urlPath, queryMap, null, 8, null);
+                Map queryMap2 = queryMap;
+                String freshQuery = (String) pairBuildHeaders$default.component1();
+                Map freshHeaders = (Map) pairBuildHeaders$default.component2();
+                String freshUrl = $this$apiGet_u24lambda_u241.getMainUrl() + urlPath + (freshQuery.length() > 0 ? '?' + freshQuery : "");
+                Requests app2 = MainActivityKt.getApp();
+                c00002.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                c00002.L$1 = SpillingKt.nullOutSpilledVariable(map3);
+                c00002.L$2 = SpillingKt.nullOutSpilledVariable($this$apiGet_u24lambda_u241);
+                c00002.L$3 = SpillingKt.nullOutSpilledVariable(resp2);
+                c00002.L$4 = SpillingKt.nullOutSpilledVariable(urlPath);
+                c00002.L$5 = SpillingKt.nullOutSpilledVariable(queryStr);
+                c00002.L$6 = SpillingKt.nullOutSpilledVariable(freshQuery);
+                c00002.L$7 = SpillingKt.nullOutSpilledVariable(freshHeaders);
+                c00002.L$8 = SpillingKt.nullOutSpilledVariable(freshUrl);
+                c00002.L$9 = SpillingKt.nullOutSpilledVariable(queryMap2);
+                c00002.Z$0 = ok;
+                c00002.label = 3;
+                url4 = url3;
+                $result = Requests.get$default(app2, freshUrl, freshHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00002, 4092, (Object) null);
+                if ($result == obj) {
+                    return obj;
+                }
+                url5 = url4;
+                i4 = i3;
+                resp3 = resp2;
+                $this$apiGet_u24lambda_u242 = $this$apiGet_u24lambda_u241;
+                map4 = map3;
+                return (NiceResponse) $result;
+            case 1:
+                i2 = 0;
+                $this$apiGet_u24lambda_u240 = (AniVortexProvider) c00001.L$2;
+                map2 = (Map) c00001.L$1;
+                url2 = (String) c00001.L$0;
+                ResultKt.throwOnFailure($result);
+                c00002 = c00001;
+                obj = coroutine_suspended;
+                i = 2;
+                resp = (NiceResponse) $result;
+                if (resp.getCode() == 401) {
+                    return resp;
+                }
+                Log.w("AniVortex", "Got 401, triggering re-registration and retry...");
+                AniVortexRegistration aniVortexRegistration2 = AniVortexRegistration.INSTANCE;
+                c00002.L$0 = url2;
+                c00002.L$1 = SpillingKt.nullOutSpilledVariable(map2);
+                c00002.L$2 = $this$apiGet_u24lambda_u240;
+                c00002.L$3 = resp;
+                c00002.label = i;
+                objReRegister = aniVortexRegistration2.reRegister(c00002);
+                if (objReRegister == obj) {
+                    return obj;
+                }
+                resp2 = resp;
+                i3 = i2;
+                $result = objReRegister;
+                $this$apiGet_u24lambda_u241 = $this$apiGet_u24lambda_u240;
+                map3 = map2;
+                url3 = url2;
+                ok = ((Boolean) $result).booleanValue();
+                if (!ok) {
+                    return resp2;
+                }
+                String urlPath2 = StringsKt.substringBefore$default(StringsKt.substringAfter$default(url3, $this$apiGet_u24lambda_u241.getMainUrl(), (String) null, i, (Object) null), "?", (String) null, i, (Object) null);
+                if (StringsKt.contains$default(url3, "?", false, i, (Object) null)) {
+                    strSubstringAfter$default = StringsKt.substringAfter$default(url3, "?", (String) null, i, (Object) null);
+                } else {
+                    strSubstringAfter$default = "";
+                }
+                queryStr = strSubstringAfter$default;
+                if (queryStr.length() > 0) {
+                    z = true;
+                } else {
+                    z = false;
+                }
+                if (z) {
+                    Iterable $this$mapNotNull$iv2 = StringsKt.split$default(queryStr, new String[]{"&"}, false, 0, 6, (Object) null);
+                    destination$iv$iv = new ArrayList();
+                    $i$f$mapNotNullTo = 0;
+                    while (r17.hasNext()) {
+                        String it2 = (String) element$iv$iv$iv;
+                        parts = StringsKt.split$default(it2, new String[]{"="}, false, 2, 2, (Object) null);
+                        if (parts.size() == i) {
+                            pair = TuplesKt.to(parts.get(0), URLDecoder.decode((String) parts.get(1), "UTF-8"));
+                        } else {
+                            pair = null;
+                        }
+                        if (pair != null) {
+                            destination$iv$iv.add(pair);
+                        }
+                        $i$f$mapNotNullTo = $i$f$mapNotNullTo;
+                        i = 2;
+                    }
+                    queryMap = MapsKt.toMap((List) destination$iv$iv);
+                } else {
+                    queryMap = MapsKt.emptyMap();
+                }
+                Pair pairBuildHeaders$default2 = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", urlPath2, queryMap, null, 8, null);
+                Map queryMap3 = queryMap;
+                String freshQuery2 = (String) pairBuildHeaders$default2.component1();
+                Map freshHeaders2 = (Map) pairBuildHeaders$default2.component2();
+                String freshUrl2 = $this$apiGet_u24lambda_u241.getMainUrl() + urlPath2 + (freshQuery2.length() > 0 ? '?' + freshQuery2 : "");
+                Requests app3 = MainActivityKt.getApp();
+                c00002.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                c00002.L$1 = SpillingKt.nullOutSpilledVariable(map3);
+                c00002.L$2 = SpillingKt.nullOutSpilledVariable($this$apiGet_u24lambda_u241);
+                c00002.L$3 = SpillingKt.nullOutSpilledVariable(resp2);
+                c00002.L$4 = SpillingKt.nullOutSpilledVariable(urlPath2);
+                c00002.L$5 = SpillingKt.nullOutSpilledVariable(queryStr);
+                c00002.L$6 = SpillingKt.nullOutSpilledVariable(freshQuery2);
+                c00002.L$7 = SpillingKt.nullOutSpilledVariable(freshHeaders2);
+                c00002.L$8 = SpillingKt.nullOutSpilledVariable(freshUrl2);
+                c00002.L$9 = SpillingKt.nullOutSpilledVariable(queryMap3);
+                c00002.Z$0 = ok;
+                c00002.label = 3;
+                url4 = url3;
+                $result = Requests.get$default(app3, freshUrl2, freshHeaders2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00002, 4092, (Object) null);
+                if ($result == obj) {
+                    return obj;
+                }
+                url5 = url4;
+                i4 = i3;
+                resp3 = resp2;
+                $this$apiGet_u24lambda_u242 = $this$apiGet_u24lambda_u241;
+                map4 = map3;
+                return (NiceResponse) $result;
+            case 2:
+                NiceResponse resp4 = (NiceResponse) c00001.L$3;
+                AniVortexProvider $this$apiGet_u24lambda_u244 = (AniVortexProvider) c00001.L$2;
+                Map<String, String> map5 = (Map) c00001.L$1;
+                String url6 = (String) c00001.L$0;
+                ResultKt.throwOnFailure($result);
+                c00002 = c00001;
+                obj = coroutine_suspended;
+                i3 = 0;
+                resp2 = resp4;
+                $this$apiGet_u24lambda_u241 = $this$apiGet_u24lambda_u244;
+                map3 = map5;
+                url3 = url6;
+                i = 2;
+                ok = ((Boolean) $result).booleanValue();
+                if (!ok) {
+                    return resp2;
+                }
+                String urlPath3 = StringsKt.substringBefore$default(StringsKt.substringAfter$default(url3, $this$apiGet_u24lambda_u241.getMainUrl(), (String) null, i, (Object) null), "?", (String) null, i, (Object) null);
+                if (StringsKt.contains$default(url3, "?", false, i, (Object) null)) {
+                    strSubstringAfter$default = StringsKt.substringAfter$default(url3, "?", (String) null, i, (Object) null);
+                } else {
+                    strSubstringAfter$default = "";
+                }
+                queryStr = strSubstringAfter$default;
+                if (queryStr.length() > 0) {
+                    z = true;
+                } else {
+                    z = false;
+                }
+                if (z) {
+                    Iterable $this$mapNotNull$iv3 = StringsKt.split$default(queryStr, new String[]{"&"}, false, 0, 6, (Object) null);
+                    destination$iv$iv = new ArrayList();
+                    $i$f$mapNotNullTo = 0;
+                    while (r17.hasNext()) {
+                        String it3 = (String) element$iv$iv$iv;
+                        parts = StringsKt.split$default(it3, new String[]{"="}, false, 2, 2, (Object) null);
+                        if (parts.size() == i) {
+                            pair = TuplesKt.to(parts.get(0), URLDecoder.decode((String) parts.get(1), "UTF-8"));
+                        } else {
+                            pair = null;
+                        }
+                        if (pair != null) {
+                            destination$iv$iv.add(pair);
+                        }
+                        $i$f$mapNotNullTo = $i$f$mapNotNullTo;
+                        i = 2;
+                    }
+                    queryMap = MapsKt.toMap((List) destination$iv$iv);
+                } else {
+                    queryMap = MapsKt.emptyMap();
+                }
+                Pair pairBuildHeaders$default3 = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", urlPath3, queryMap, null, 8, null);
+                Map queryMap4 = queryMap;
+                String freshQuery3 = (String) pairBuildHeaders$default3.component1();
+                Map freshHeaders3 = (Map) pairBuildHeaders$default3.component2();
+                String freshUrl3 = $this$apiGet_u24lambda_u241.getMainUrl() + urlPath3 + (freshQuery3.length() > 0 ? '?' + freshQuery3 : "");
+                Requests app4 = MainActivityKt.getApp();
+                c00002.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                c00002.L$1 = SpillingKt.nullOutSpilledVariable(map3);
+                c00002.L$2 = SpillingKt.nullOutSpilledVariable($this$apiGet_u24lambda_u241);
+                c00002.L$3 = SpillingKt.nullOutSpilledVariable(resp2);
+                c00002.L$4 = SpillingKt.nullOutSpilledVariable(urlPath3);
+                c00002.L$5 = SpillingKt.nullOutSpilledVariable(queryStr);
+                c00002.L$6 = SpillingKt.nullOutSpilledVariable(freshQuery3);
+                c00002.L$7 = SpillingKt.nullOutSpilledVariable(freshHeaders3);
+                c00002.L$8 = SpillingKt.nullOutSpilledVariable(freshUrl3);
+                c00002.L$9 = SpillingKt.nullOutSpilledVariable(queryMap4);
+                c00002.Z$0 = ok;
+                c00002.label = 3;
+                url4 = url3;
+                $result = Requests.get$default(app4, freshUrl3, freshHeaders3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00002, 4092, (Object) null);
+                if ($result == obj) {
+                    return obj;
+                }
+                url5 = url4;
+                i4 = i3;
+                resp3 = resp2;
+                $this$apiGet_u24lambda_u242 = $this$apiGet_u24lambda_u241;
+                map4 = map3;
+                return (NiceResponse) $result;
+            case 3:
+                i4 = 0;
+                boolean z2 = c00001.Z$0;
+                resp3 = (NiceResponse) c00001.L$3;
+                $this$apiGet_u24lambda_u242 = (AniVortexProvider) c00001.L$2;
+                map4 = (Map) c00001.L$1;
+                url5 = (String) c00001.L$0;
+                ResultKt.throwOnFailure($result);
+                return (NiceResponse) $result;
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+    }
+
+    /* JADX WARN: Code duplicated, block: B:100:0x02df  */
+    /* JADX WARN: Code duplicated, block: B:110:0x0326  */
+    /* JADX WARN: Code duplicated, block: B:136:0x0459  */
+    /* JADX WARN: Code duplicated, block: B:142:0x0470  */
+    /* JADX WARN: Code duplicated, block: B:144:0x0478  */
+    /* JADX WARN: Code duplicated, block: B:145:0x047a  */
+    /* JADX WARN: Code duplicated, block: B:195:0x0666  */
+    /* JADX WARN: Code duplicated, block: B:200:0x0679  */
+    /* JADX WARN: Code duplicated, block: B:207:0x0688  */
+    /* JADX WARN: Code duplicated, block: B:209:0x068b  */
+    /* JADX WARN: Code duplicated, block: B:216:0x06be  */
+    /* JADX WARN: Code duplicated, block: B:218:0x06c6  */
+    /* JADX WARN: Code duplicated, block: B:219:0x06c8  */
+    /* JADX WARN: Code duplicated, block: B:222:0x06cf  */
+    /* JADX WARN: Code duplicated, block: B:223:0x06d1  */
+    /* JADX WARN: Code duplicated, block: B:249:0x077f  */
+    /* JADX WARN: Code duplicated, block: B:252:0x0786  */
+    /* JADX WARN: Code duplicated, block: B:254:0x0793  */
+    /* JADX WARN: Code duplicated, block: B:256:0x07b2 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:257:0x07b3  */
+    /* JADX WARN: Code duplicated, block: B:275:0x02c3 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
+    /* JADX WARN: Code duplicated, block: B:86:0x02b5 A[LOOP:2: B:71:0x026f->B:86:0x02b5, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:92:0x02ca  */
+    /* JADX WARN: Code duplicated, block: B:94:0x02ce  */
+    /* JADX WARN: Code duplicated, block: B:97:0x02db  */
+    @Nullable
+    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Throwable {
+        C00031 c00031;
         MainPageRequest request2;
         int page2;
-        Object obj2;
+        String data;
+        boolean z;
+        Object objCoroutineScope;
+        Object objFetchCatalogHome;
+        String data2;
+        Map queryParams;
+        Object objApiGet;
+        String data3;
+        Object objApiGet2;
         MainPageRequest request3;
         boolean z2;
-        Object obj3;
         String targetKey;
+        Object objApiGet3;
         MainPageRequest request4;
-        int page3;
         Object safe;
         CatalogHomeResponse response;
         CatalogHomeResponse response2;
         CatalogSection matchedSection;
+        List<CatalogSection> sections;
         List items;
         Iterable items2;
-        List<CatalogSection> sections;
         Iterable sections2;
         Object element$iv;
         int $i$f$firstOrNull;
         boolean z3;
         Object safe2;
         CatalogExploreResponse response3;
+        CatalogExploreResponse response4;
         List items3;
         boolean zBooleanValue;
         Boolean hasMore;
         Iterable items4;
         Object safe3;
-        OttTitlesResponse response4;
+        OttTitlesResponse response5;
+        OttTitlesResponse response6;
         List items5;
         String nextCursor;
-        String nextCursor2;
         String str;
         boolean z4;
         boolean hasMore2;
         boolean z5;
-        OttPageInfo page4;
+        OttPageInfo page3;
         Boolean hasMore3;
-        OttPageInfo page5;
+        OttPageInfo page4;
         Iterable items6;
-        if (continuation instanceof C00021) {
-            c00021 = (C00021) continuation;
-            if ((c00021.label & Integer.MIN_VALUE) != 0) {
-                c00021.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00031) {
+            c00031 = (C00031) continuation;
+            if ((c00031.label & Integer.MIN_VALUE) != 0) {
+                c00031.label -= Integer.MIN_VALUE;
             } else {
-                c00021 = new C00021(continuation);
+                c00031 = new C00031(continuation);
             }
         } else {
-            c00021 = new C00021(continuation);
+            c00031 = new C00031(continuation);
         }
-        Object element$iv$iv = c00021.result;
+        C00031 c00032 = c00031;
+        Object $result = c00032.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00021.label) {
+        switch (c00032.label) {
             case 0:
-                ResultKt.throwOnFailure(element$iv$iv);
+                ResultKt.throwOnFailure($result);
                 DonationManager.INSTANCE.checkAndShow(getName());
-                String data2 = request.getData();
-                if (Intrinsics.areEqual(data2, "home:all") || Intrinsics.areEqual(data2, "home")) {
+                AniVortexRegistration aniVortexRegistration = AniVortexRegistration.INSTANCE;
+                request2 = request;
+                c00032.L$0 = request2;
+                page2 = page;
+                c00032.I$0 = page2;
+                c00032.label = 1;
+                if (aniVortexRegistration.ensureRegistered(c00032) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                data = request2.getData();
+                if (!Intrinsics.areEqual(data, "home:all") || Intrinsics.areEqual(data, "home")) {
                     z = false;
                 } else {
-                    if (!(data2.length() == 0)) {
-                        String strRemovePrefix = "anime";
-                        if (StringsKt.startsWith$default(data2, "home:", false, 2, (Object) null) || Intrinsics.areEqual(data2, "movie_series") || Intrinsics.areEqual(data2, "anime")) {
-                            if (page > 1) {
+                    if (!(data.length() == 0)) {
+                        String catalog = "anime";
+                        if (StringsKt.startsWith$default(data, "home:", false, 2, (Object) null) || Intrinsics.areEqual(data, "movie_series") || Intrinsics.areEqual(data, "anime")) {
+                            if (page2 > 1) {
                                 return MainAPIKt.newHomePageResponse(CollectionsKt.emptyList(), Boxing.boxBoolean(false));
                             }
-                            if (StringsKt.startsWith$default(data2, "home:", false, 2, (Object) null)) {
-                                strRemovePrefix = StringsKt.removePrefix(data2, "home:");
-                            } else if (!Intrinsics.areEqual(data2, "anime")) {
-                                strRemovePrefix = "movie_series";
+                            if (StringsKt.startsWith$default(data, "home:", false, 2, (Object) null)) {
+                                catalog = StringsKt.removePrefix(data, "home:");
+                            } else if (!Intrinsics.areEqual(data, "anime")) {
+                                catalog = "movie_series";
                             }
-                            catalog = strRemovePrefix;
-                            c00021.L$0 = SpillingKt.nullOutSpilledVariable(request);
-                            c00021.L$1 = SpillingKt.nullOutSpilledVariable(data2);
-                            c00021.L$2 = catalog;
-                            c00021.I$0 = page;
-                            c00021.label = 2;
-                            element$iv$iv = fetchCatalogHome(catalog, c00021);
-                            if (element$iv$iv == coroutine_suspended) {
+                            c00032.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                            c00032.L$1 = SpillingKt.nullOutSpilledVariable(data);
+                            c00032.L$2 = catalog;
+                            c00032.I$0 = page2;
+                            c00032.label = 3;
+                            objFetchCatalogHome = fetchCatalogHome(catalog, c00032);
+                            if (objFetchCatalogHome == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            List homeLists = (List) element$iv$iv;
-                            Log.d("AniVortex", "Loaded " + homeLists.size() + " home sections for " + catalog);
+                            data2 = catalog;
+                            List homeLists = (List) objFetchCatalogHome;
+                            Log.d("AniVortex", "Loaded " + homeLists.size() + " home sections for " + data2);
                             return MainAPIKt.newHomePageResponse(homeLists, Boxing.boxBoolean(false));
                         }
-                        if (StringsKt.startsWith$default(data2, "section:", false, 2, (Object) null)) {
-                            if (page > 1) {
+                        if (StringsKt.startsWith$default(data, "section:", false, 2, (Object) null)) {
+                            if (page2 > 1) {
                                 return MainAPIKt.newHomePageResponse(CollectionsKt.emptyList(), Boxing.boxBoolean(false));
                             }
-                            List parts = StringsKt.split$default(data2, new String[]{":"}, false, 0, 6, (Object) null);
+                            List parts = StringsKt.split$default(data, new String[]{":"}, false, 0, 6, (Object) null);
+                            z2 = false;
                             String str2 = (String) CollectionsKt.getOrNull(parts, 1);
                             String catalog2 = str2 != null ? str2 : "movie_series";
-                            String targetKey2 = (String) CollectionsKt.getOrNull(parts, 2);
-                            if (targetKey2 == null) {
-                                targetKey2 = "";
+                            targetKey = (String) CollectionsKt.getOrNull(parts, 2);
+                            if (targetKey == null) {
+                                targetKey = "";
                             }
                             Pair pairBuildHeaders$default = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", "/api/v1/catalog/home", MapsKt.mapOf(new Pair[]{TuplesKt.to("catalog", catalog2), TuplesKt.to("include_adult", "false")}), null, 8, null);
                             String query = (String) pairBuildHeaders$default.component1();
-                            Map headers = (Map) pairBuildHeaders$default.component2();
+                            Map<String, String> map = (Map) pairBuildHeaders$default.component2();
                             String url = getMainUrl() + "/api/v1/catalog/home?" + query;
-                            Requests app = MainActivityKt.getApp();
-                            c00021.L$0 = request;
-                            c00021.L$1 = SpillingKt.nullOutSpilledVariable(data2);
-                            c00021.L$2 = SpillingKt.nullOutSpilledVariable(parts);
-                            c00021.L$3 = SpillingKt.nullOutSpilledVariable(catalog2);
-                            c00021.L$4 = targetKey2;
-                            c00021.L$5 = SpillingKt.nullOutSpilledVariable(query);
-                            c00021.L$6 = SpillingKt.nullOutSpilledVariable(headers);
-                            c00021.L$7 = SpillingKt.nullOutSpilledVariable(url);
-                            c00021.I$0 = page;
-                            c00021.label = 3;
-                            String targetKey3 = targetKey2;
-                            z2 = false;
-                            obj3 = Requests.get$default(app, url, headers, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00021, 4092, (Object) null);
-                            if (obj3 == coroutine_suspended) {
+                            c00032.L$0 = request2;
+                            c00032.L$1 = SpillingKt.nullOutSpilledVariable(data);
+                            c00032.L$2 = SpillingKt.nullOutSpilledVariable(parts);
+                            c00032.L$3 = SpillingKt.nullOutSpilledVariable(catalog2);
+                            c00032.L$4 = targetKey;
+                            c00032.L$5 = SpillingKt.nullOutSpilledVariable(query);
+                            c00032.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                            c00032.L$7 = SpillingKt.nullOutSpilledVariable(url);
+                            c00032.I$0 = page2;
+                            c00032.label = 4;
+                            objApiGet3 = apiGet(url, map, c00032);
+                            if (objApiGet3 == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            targetKey = targetKey3;
-                            request4 = request;
-                            page3 = page;
-                            NiceResponse this_$iv = (NiceResponse) obj3;
+                            request4 = request2;
+                            NiceResponse this_$iv = (NiceResponse) objApiGet3;
                             try {
                                 ResponseParser parser = this_$iv.getParser();
                                 Intrinsics.checkNotNull(parser);
@@ -552,8 +966,9 @@ public final class AniVortexProvider extends MainAPI {
                                         element$iv = null;
                                     }
                                 }
-                                matchedSection = (CatalogSection) element$iv;
-                                if (matchedSection == null) {
+                                CatalogSection catalogSection = (CatalogSection) element$iv;
+                                if (catalogSection != null) {
+                                    matchedSection = catalogSection;
                                 }
                                 if (matchedSection != null || (items2 = matchedSection.getItems()) == null) {
                                     items = CollectionsKt.emptyList();
@@ -586,55 +1001,58 @@ public final class AniVortexProvider extends MainAPI {
                             }
                             return MainAPIKt.newHomePageResponse(request4.getName(), items, Boxing.boxBoolean(z2));
                         }
-                        C00021 c00022 = c00021;
-                        if (StringsKt.startsWith$default(data2, "explore:", false, 2, (Object) null)) {
-                            String catalog3 = StringsKt.removePrefix(data2, "explore:");
-                            Map queryParams2 = MapsKt.mutableMapOf(new Pair[]{TuplesKt.to("catalog", catalog3), TuplesKt.to("include_adult", "false"), TuplesKt.to("page", String.valueOf(page)), TuplesKt.to("limit", "24")});
+                        if (StringsKt.startsWith$default(data, "explore:", false, 2, (Object) null)) {
+                            String catalog3 = StringsKt.removePrefix(data, "explore:");
+                            Map queryParams2 = MapsKt.mutableMapOf(new Pair[]{TuplesKt.to("catalog", catalog3), TuplesKt.to("include_adult", "false"), TuplesKt.to("page", String.valueOf(page2)), TuplesKt.to("limit", "24")});
                             Pair pairBuildHeaders$default2 = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", "/api/v1/catalog/explore", queryParams2, null, 8, null);
                             String query2 = (String) pairBuildHeaders$default2.component1();
-                            Map headers2 = (Map) pairBuildHeaders$default2.component2();
+                            Map<String, String> map2 = (Map) pairBuildHeaders$default2.component2();
                             String url2 = getMainUrl() + "/api/v1/catalog/explore?" + query2;
-                            Requests app2 = MainActivityKt.getApp();
-                            c00022.L$0 = request;
-                            c00022.L$1 = SpillingKt.nullOutSpilledVariable(data2);
-                            c00022.L$2 = SpillingKt.nullOutSpilledVariable(catalog3);
-                            c00022.L$3 = SpillingKt.nullOutSpilledVariable(queryParams2);
-                            c00022.L$4 = SpillingKt.nullOutSpilledVariable(query2);
-                            c00022.L$5 = SpillingKt.nullOutSpilledVariable(headers2);
-                            c00022.L$6 = SpillingKt.nullOutSpilledVariable(url2);
-                            c00022.I$0 = page;
-                            c00022.label = 4;
-                            obj2 = Requests.get$default(app2, url2, headers2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
-                            if (obj2 == coroutine_suspended) {
+                            c00032.L$0 = request2;
+                            c00032.L$1 = SpillingKt.nullOutSpilledVariable(data);
+                            c00032.L$2 = SpillingKt.nullOutSpilledVariable(catalog3);
+                            c00032.L$3 = SpillingKt.nullOutSpilledVariable(queryParams2);
+                            c00032.L$4 = SpillingKt.nullOutSpilledVariable(query2);
+                            c00032.L$5 = SpillingKt.nullOutSpilledVariable(map2);
+                            c00032.L$6 = SpillingKt.nullOutSpilledVariable(url2);
+                            c00032.I$0 = page2;
+                            c00032.label = 5;
+                            objApiGet2 = apiGet(url2, map2, c00032);
+                            if (objApiGet2 == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            request3 = request;
-                            NiceResponse this_$iv2 = (NiceResponse) obj2;
+                            request3 = request2;
+                            NiceResponse this_$iv2 = (NiceResponse) objApiGet2;
                             try {
                                 ResponseParser parser2 = this_$iv2.getParser();
                                 Intrinsics.checkNotNull(parser2);
                                 safe2 = parser2.parseSafe(this_$iv2.getText(), Reflection.getOrCreateKotlinClass(CatalogExploreResponse.class));
+                                break;
                             } catch (Exception e$iv) {
                                 e$iv.printStackTrace();
                                 safe2 = null;
                             }
                             response3 = (CatalogExploreResponse) safe2;
                             if (response3 != null || (items4 = response3.getItems()) == null) {
+                                response4 = response3;
                                 items3 = CollectionsKt.emptyList();
                             } else {
                                 Iterable $this$mapNotNull$iv2 = items4;
                                 Collection destination$iv$iv2 = new ArrayList();
                                 for (Object element$iv$iv$iv2 : $this$mapNotNull$iv2) {
+                                    CatalogExploreResponse response7 = response3;
                                     CatalogItem it4 = (CatalogItem) element$iv$iv$iv2;
                                     SearchResponse searchResponse2 = toSearchResponse(it4);
                                     if (searchResponse2 != null) {
                                         destination$iv$iv2.add(searchResponse2);
                                     }
+                                    response3 = response7;
                                 }
+                                response4 = response3;
                                 items3 = (List) destination$iv$iv2;
                             }
                             String name = request3.getName();
-                            if (response3 == null && (hasMore = response3.getHasMore()) != null) {
+                            if (response4 == null && (hasMore = response4.getHasMore()) != null) {
                                 zBooleanValue = hasMore.booleanValue();
                             } else if (items3.size() >= 24) {
                                 zBooleanValue = true;
@@ -643,20 +1061,20 @@ public final class AniVortexProvider extends MainAPI {
                             }
                             return MainAPIKt.newHomePageResponse(name, items3, Boxing.boxBoolean(zBooleanValue));
                         }
-                        if (!StringsKt.startsWith$default(data2, "ott:", false, 2, (Object) null)) {
-                            MainPageRequest mainPageRequestCopy$default = MainPageRequest.copy$default(request, (String) null, "home:all", false, 5, (Object) null);
-                            c00022.L$0 = SpillingKt.nullOutSpilledVariable(request);
-                            c00022.L$1 = SpillingKt.nullOutSpilledVariable(data2);
-                            c00022.I$0 = page;
-                            c00022.label = 6;
-                            element$iv$iv = getMainPage(page, mainPageRequestCopy$default, c00022);
-                            return element$iv$iv == coroutine_suspended ? coroutine_suspended : element$iv$iv;
+                        if (!StringsKt.startsWith$default(data, "ott:", false, 2, (Object) null)) {
+                            MainPageRequest mainPageRequestCopy$default = MainPageRequest.copy$default(request2, (String) null, "home:all", false, 5, (Object) null);
+                            c00032.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                            c00032.L$1 = SpillingKt.nullOutSpilledVariable(data);
+                            c00032.I$0 = page2;
+                            c00032.label = 7;
+                            Object mainPage = getMainPage(page2, mainPageRequestCopy$default, c00032);
+                            return mainPage == coroutine_suspended ? coroutine_suspended : mainPage;
                         }
-                        String slug = StringsKt.removePrefix(data2, "ott:");
+                        String slug = StringsKt.removePrefix(data, "ott:");
                         Map queryParams3 = MapsKt.mutableMapOf(new Pair[]{TuplesKt.to("sort", "popular"), TuplesKt.to("include_adult", "false"), TuplesKt.to("limit", "24")});
                         ConcurrentHashMap<String, String> concurrentHashMap = this.ottCursorMap;
-                        if (page > 1) {
-                            String cursor = concurrentHashMap.get(data2 + ':' + page);
+                        if (page2 > 1) {
+                            String cursor = concurrentHashMap.get(data + ':' + page2);
                             String str3 = cursor;
                             if (str3 == null || str3.length() == 0) {
                                 queryParams = queryParams3;
@@ -669,21 +1087,19 @@ public final class AniVortexProvider extends MainAPI {
                             int $i$f$filter = 0;
                             Collection destination$iv$iv3 = new ArrayList();
                             Iterable $this$filterTo$iv$iv = $this$filter$iv;
-                            for (Object element$iv$iv2 : $this$filterTo$iv$iv) {
-                                Object $result = element$iv$iv;
+                            for (Object element$iv$iv : $this$filterTo$iv$iv) {
+                                String it5 = (String) element$iv$iv;
                                 Map queryParams4 = queryParams3;
-                                String it5 = (String) element$iv$iv2;
                                 Iterable $this$filter$iv2 = $this$filter$iv;
                                 int $i$f$filter2 = $i$f$filter;
                                 Iterable $this$filterTo$iv$iv2 = $this$filterTo$iv$iv;
-                                if (StringsKt.startsWith$default(it5, data2 + ':', false, 2, (Object) null)) {
-                                    destination$iv$iv3.add(element$iv$iv2);
+                                if (StringsKt.startsWith$default(it5, data + ':', false, 2, (Object) null)) {
+                                    destination$iv$iv3.add(element$iv$iv);
                                 }
                                 $this$filter$iv = $this$filter$iv2;
                                 $i$f$filter = $i$f$filter2;
                                 $this$filterTo$iv$iv = $this$filterTo$iv$iv2;
                                 queryParams3 = queryParams4;
-                                element$iv$iv = $result;
                             }
                             queryParams = queryParams3;
                             Iterable $this$forEach$iv = (List) destination$iv$iv3;
@@ -694,26 +1110,23 @@ public final class AniVortexProvider extends MainAPI {
                         }
                         Pair pairBuildHeaders$default3 = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", "/api/v1/catalog/ott-platforms/" + slug + "/titles", queryParams, null, 8, null);
                         String query3 = (String) pairBuildHeaders$default3.component1();
-                        Map headers3 = (Map) pairBuildHeaders$default3.component2();
+                        Map<String, String> map3 = (Map) pairBuildHeaders$default3.component2();
                         String url3 = getMainUrl() + "/api/v1/catalog/ott-platforms/" + slug + "/titles?" + query3;
-                        Requests app3 = MainActivityKt.getApp();
-                        c00022.L$0 = request;
-                        c00022.L$1 = data2;
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(slug);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(queryParams);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(query3);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(headers3);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(url3);
-                        c00022.I$0 = page;
-                        c00022.label = 5;
-                        obj = Requests.get$default(app3, url3, headers3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
-                        if (obj == coroutine_suspended) {
+                        c00032.L$0 = request2;
+                        c00032.L$1 = data;
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(slug);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(queryParams);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(query3);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map3);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(url3);
+                        c00032.I$0 = page2;
+                        c00032.label = 6;
+                        objApiGet = apiGet(url3, map3, c00032);
+                        if (objApiGet == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        data = data2;
-                        request2 = request;
-                        page2 = page;
-                        NiceResponse this_$iv3 = (NiceResponse) obj;
+                        data3 = data;
+                        NiceResponse this_$iv3 = (NiceResponse) objApiGet;
                         try {
                             ResponseParser parser3 = this_$iv3.getParser();
                             Intrinsics.checkNotNull(parser3);
@@ -723,37 +1136,40 @@ public final class AniVortexProvider extends MainAPI {
                             e$iv2.printStackTrace();
                             safe3 = null;
                         }
-                        response4 = (OttTitlesResponse) safe3;
-                        if (response4 != null || (items6 = response4.getItems()) == null) {
+                        response5 = (OttTitlesResponse) safe3;
+                        if (response5 != null || (items6 = response5.getItems()) == null) {
+                            response6 = response5;
                             items5 = CollectionsKt.emptyList();
                         } else {
                             Iterable $this$mapNotNull$iv3 = items6;
                             Collection destination$iv$iv4 = new ArrayList();
                             for (Object element$iv$iv$iv3 : $this$mapNotNull$iv3) {
+                                OttTitlesResponse response8 = response5;
                                 CatalogItem it7 = (CatalogItem) element$iv$iv$iv3;
                                 SearchResponse searchResponse3 = toSearchResponse(it7);
                                 if (searchResponse3 != null) {
                                     destination$iv$iv4.add(searchResponse3);
                                 }
+                                response5 = response8;
                             }
+                            response6 = response5;
                             items5 = (List) destination$iv$iv4;
                         }
-                        if (response4 != null || (page5 = response4.getPage()) == null) {
+                        if (response6 != null || (page4 = response6.getPage()) == null) {
                             nextCursor = null;
                         } else {
-                            nextCursor = page5.getNextCursor();
+                            nextCursor = page4.getNextCursor();
                         }
-                        nextCursor2 = nextCursor;
-                        str = nextCursor2;
+                        str = nextCursor;
                         if (str != null || str.length() == 0) {
                             z4 = true;
                         } else {
                             z4 = false;
                         }
                         if (!z4) {
-                            this.ottCursorMap.put(data + ':' + (page2 + 1), nextCursor2);
+                            this.ottCursorMap.put(data3 + ':' + (page2 + 1), nextCursor);
                         }
-                        if (response4 == null && (page4 = response4.getPage()) != null && (hasMore3 = page4.getHasMore()) != null) {
+                        if (response6 == null && (page3 = response6.getPage()) != null && (hasMore3 = page3.getHasMore()) != null) {
                             hasMore2 = hasMore3.booleanValue();
                         } else if (items5.size() >= 24) {
                             hasMore2 = true;
@@ -770,47 +1186,74 @@ public final class AniVortexProvider extends MainAPI {
                     }
                     z = false;
                 }
-                if (page > 1) {
+                if (page2 > 1) {
                     return MainAPIKt.newHomePageResponse(CollectionsKt.emptyList(), Boxing.boxBoolean(z));
                 }
-                C00032 c00032 = new C00032(null);
-                c00021.L$0 = SpillingKt.nullOutSpilledVariable(request);
-                c00021.L$1 = SpillingKt.nullOutSpilledVariable(data2);
-                c00021.I$0 = page;
-                c00021.label = 1;
-                element$iv$iv = CoroutineScopeKt.coroutineScope(c00032, c00021);
-                if (element$iv$iv == coroutine_suspended) {
+                C00042 c00042 = new C00042(null);
+                c00032.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(data);
+                c00032.I$0 = page2;
+                c00032.label = 2;
+                objCoroutineScope = CoroutineScopeKt.coroutineScope(c00042, c00032);
+                if (objCoroutineScope == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                Triple triple = (Triple) element$iv$iv;
+                Triple triple = (Triple) objCoroutineScope;
                 List<HomePageList> listMergeAndSortHomeSections = mergeAndSortHomeSections((List) triple.component1(), (List) triple.component2(), (List) triple.component3());
                 Log.d("AniVortex", "Loaded " + listMergeAndSortHomeSections.size() + " combined home sections (including OTT platforms)");
                 return MainAPIKt.newHomePageResponse(listMergeAndSortHomeSections, Boxing.boxBoolean(false));
             case 1:
-                int page6 = c00021.I$0;
-                ResultKt.throwOnFailure(element$iv$iv);
-                Triple triple2 = (Triple) element$iv$iv;
+                int page5 = c00032.I$0;
+                request2 = (MainPageRequest) c00032.L$0;
+                ResultKt.throwOnFailure($result);
+                page2 = page5;
+                data = request2.getData();
+                if (Intrinsics.areEqual(data, "home:all")) {
+                    z = false;
+                } else {
+                    z = false;
+                }
+                if (page2 > 1) {
+                    return MainAPIKt.newHomePageResponse(CollectionsKt.emptyList(), Boxing.boxBoolean(z));
+                }
+                C00042 c00043 = new C00042(null);
+                c00032.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(data);
+                c00032.I$0 = page2;
+                c00032.label = 2;
+                objCoroutineScope = CoroutineScopeKt.coroutineScope(c00043, c00032);
+                if (objCoroutineScope == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                Triple triple2 = (Triple) objCoroutineScope;
                 List<HomePageList> listMergeAndSortHomeSections2 = mergeAndSortHomeSections((List) triple2.component1(), (List) triple2.component2(), (List) triple2.component3());
                 Log.d("AniVortex", "Loaded " + listMergeAndSortHomeSections2.size() + " combined home sections (including OTT platforms)");
                 return MainAPIKt.newHomePageResponse(listMergeAndSortHomeSections2, Boxing.boxBoolean(false));
             case 2:
-                int page7 = c00021.I$0;
-                catalog = (String) c00021.L$2;
-                ResultKt.throwOnFailure(element$iv$iv);
-                List homeLists2 = (List) element$iv$iv;
-                Log.d("AniVortex", "Loaded " + homeLists2.size() + " home sections for " + catalog);
-                return MainAPIKt.newHomePageResponse(homeLists2, Boxing.boxBoolean(false));
+                int page6 = c00032.I$0;
+                ResultKt.throwOnFailure($result);
+                objCoroutineScope = $result;
+                Triple triple3 = (Triple) objCoroutineScope;
+                List<HomePageList> listMergeAndSortHomeSections3 = mergeAndSortHomeSections((List) triple3.component1(), (List) triple3.component2(), (List) triple3.component3());
+                Log.d("AniVortex", "Loaded " + listMergeAndSortHomeSections3.size() + " combined home sections (including OTT platforms)");
+                return MainAPIKt.newHomePageResponse(listMergeAndSortHomeSections3, Boxing.boxBoolean(false));
             case 3:
-                int page8 = c00021.I$0;
-                String targetKey4 = (String) c00021.L$4;
-                MainPageRequest request5 = (MainPageRequest) c00021.L$0;
-                ResultKt.throwOnFailure(element$iv$iv);
+                int page7 = c00032.I$0;
+                data2 = (String) c00032.L$2;
+                ResultKt.throwOnFailure($result);
+                objFetchCatalogHome = $result;
+                List homeLists2 = (List) objFetchCatalogHome;
+                Log.d("AniVortex", "Loaded " + homeLists2.size() + " home sections for " + data2);
+                return MainAPIKt.newHomePageResponse(homeLists2, Boxing.boxBoolean(false));
+            case 4:
+                int page8 = c00032.I$0;
+                String targetKey2 = (String) c00032.L$4;
+                request4 = (MainPageRequest) c00032.L$0;
+                ResultKt.throwOnFailure($result);
+                targetKey = targetKey2;
                 z2 = false;
-                targetKey = targetKey4;
-                obj3 = element$iv$iv;
-                request4 = request5;
-                page3 = page8;
-                NiceResponse this_$iv4 = (NiceResponse) obj3;
+                objApiGet3 = $result;
+                NiceResponse this_$iv4 = (NiceResponse) objApiGet3;
                 ResponseParser parser4 = this_$iv4.getParser();
                 Intrinsics.checkNotNull(parser4);
                 safe = parser4.parseSafe(this_$iv4.getText(), Reflection.getOrCreateKotlinClass(CatalogHomeResponse.class));
@@ -836,24 +1279,25 @@ public final class AniVortexProvider extends MainAPI {
                     items = CollectionsKt.emptyList();
                 }
                 return MainAPIKt.newHomePageResponse(request4.getName(), items, Boxing.boxBoolean(z2));
-            case 4:
-                int page9 = c00021.I$0;
-                MainPageRequest request6 = (MainPageRequest) c00021.L$0;
-                ResultKt.throwOnFailure(element$iv$iv);
-                obj2 = element$iv$iv;
-                request3 = request6;
-                NiceResponse this_$iv5 = (NiceResponse) obj2;
+            case 5:
+                int page9 = c00032.I$0;
+                request3 = (MainPageRequest) c00032.L$0;
+                ResultKt.throwOnFailure($result);
+                objApiGet2 = $result;
+                NiceResponse this_$iv5 = (NiceResponse) objApiGet2;
                 ResponseParser parser5 = this_$iv5.getParser();
                 Intrinsics.checkNotNull(parser5);
                 safe2 = parser5.parseSafe(this_$iv5.getText(), Reflection.getOrCreateKotlinClass(CatalogExploreResponse.class));
                 response3 = (CatalogExploreResponse) safe2;
                 if (response3 != null) {
+                    response4 = response3;
                     items3 = CollectionsKt.emptyList();
                 } else {
+                    response4 = response3;
                     items3 = CollectionsKt.emptyList();
                 }
                 String name3 = request3.getName();
-                if (response3 == null) {
+                if (response4 == null) {
                     if (items3.size() >= 24) {
                         zBooleanValue = true;
                     } else {
@@ -865,40 +1309,40 @@ public final class AniVortexProvider extends MainAPI {
                     zBooleanValue = false;
                 }
                 return MainAPIKt.newHomePageResponse(name3, items3, Boxing.boxBoolean(zBooleanValue));
-            case 5:
-                int page10 = c00021.I$0;
-                data = (String) c00021.L$1;
-                MainPageRequest request7 = (MainPageRequest) c00021.L$0;
-                ResultKt.throwOnFailure(element$iv$iv);
-                obj = element$iv$iv;
-                request2 = request7;
+            case 6:
+                int page10 = c00032.I$0;
+                data3 = (String) c00032.L$1;
+                request2 = (MainPageRequest) c00032.L$0;
+                ResultKt.throwOnFailure($result);
+                objApiGet = $result;
                 page2 = page10;
-                NiceResponse this_$iv6 = (NiceResponse) obj;
+                NiceResponse this_$iv6 = (NiceResponse) objApiGet;
                 ResponseParser parser6 = this_$iv6.getParser();
                 Intrinsics.checkNotNull(parser6);
                 safe3 = parser6.parseSafe(this_$iv6.getText(), Reflection.getOrCreateKotlinClass(OttTitlesResponse.class));
-                response4 = (OttTitlesResponse) safe3;
-                if (response4 != null) {
+                response5 = (OttTitlesResponse) safe3;
+                if (response5 != null) {
+                    response6 = response5;
                     items5 = CollectionsKt.emptyList();
                 } else {
+                    response6 = response5;
                     items5 = CollectionsKt.emptyList();
                 }
-                if (response4 != null) {
+                if (response6 != null) {
                     nextCursor = null;
                 } else {
                     nextCursor = null;
                 }
-                nextCursor2 = nextCursor;
-                str = nextCursor2;
+                str = nextCursor;
                 if (str != null) {
                     z4 = true;
                 } else {
                     z4 = true;
                 }
                 if (!z4) {
-                    this.ottCursorMap.put(data + ':' + (page2 + 1), nextCursor2);
+                    this.ottCursorMap.put(data3 + ':' + (page2 + 1), nextCursor);
                 }
-                if (response4 == null) {
+                if (response6 == null) {
                     if (items5.size() >= 24) {
                         hasMore2 = true;
                     } else {
@@ -916,9 +1360,10 @@ public final class AniVortexProvider extends MainAPI {
                     z5 = false;
                 }
                 return MainAPIKt.newHomePageResponse(name4, items5, Boxing.boxBoolean(z5));
-            case 6:
-                int i = c00021.I$0;
-                ResultKt.throwOnFailure(element$iv$iv);
+            case 7:
+                int i = c00032.I$0;
+                ResultKt.throwOnFailure($result);
+                return $result;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
@@ -927,8 +1372,8 @@ public final class AniVortexProvider extends MainAPI {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$getMainPage$2 */
     /* JADX INFO: compiled from: AniVortexProvider.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a&\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00030\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00030\u0002\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00030\u00020\u0001*\u00020\u0004H\n"}, d2 = {"<anonymous>", "Lkotlin/Triple;", "", "Lcom/lagradost/cloudstream3/HomePageList;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexProvider$getMainPage$2", f = "AniVortexProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2}, l = {78, 78, 78}, m = "invokeSuspend", n = {"$this$coroutineScope", "movieDef", "animeDef", "ottDef", "$this$coroutineScope", "movieDef", "animeDef", "ottDef", "$this$coroutineScope", "movieDef", "animeDef", "ottDef"}, nl = {78, 78, -1}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3"}, v = 2)
-    static final class C00032 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Triple<? extends List<? extends HomePageList>, ? extends List<? extends HomePageList>, ? extends List<? extends HomePageList>>>, Object> {
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider$getMainPage$2", f = "AniVortexProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2}, l = {108, 108, 108}, m = "invokeSuspend", n = {"$this$coroutineScope", "movieDef", "animeDef", "ottDef", "$this$coroutineScope", "movieDef", "animeDef", "ottDef", "$this$coroutineScope", "movieDef", "animeDef", "ottDef"}, nl = {108, 108, -1}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3"}, v = 2)
+    static final class C00042 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Triple<? extends List<? extends HomePageList>, ? extends List<? extends HomePageList>, ? extends List<? extends HomePageList>>>, Object> {
         private /* synthetic */ Object L$0;
         Object L$1;
         Object L$2;
@@ -937,14 +1382,14 @@ public final class AniVortexProvider extends MainAPI {
         Object L$5;
         int label;
 
-        C00032(Continuation<? super C00032> continuation) {
+        C00042(Continuation<? super C00042> continuation) {
             super(2, continuation);
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00032 = AniVortexProvider.this.new C00032(continuation);
-            c00032.L$0 = obj;
-            return c00032;
+            Continuation<Unit> c00042 = AniVortexProvider.this.new C00042(continuation);
+            c00042.L$0 = obj;
+            return c00042;
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Triple<? extends List<HomePageList>, ? extends List<HomePageList>, ? extends List<HomePageList>>> continuation) {
@@ -1082,14 +1527,15 @@ public final class AniVortexProvider extends MainAPI {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code duplicated, block: B:44:0x01a7  */
-    /* JADX WARN: Code duplicated, block: B:51:0x01b8  */
-    /* JADX WARN: Code duplicated, block: B:53:0x01bb A[Catch: all -> 0x01c6, TRY_LEAVE, TryCatch #1 {all -> 0x01c6, blocks: (B:26:0x013c, B:28:0x0140, B:32:0x015d, B:34:0x0161, B:36:0x0167, B:37:0x0179, B:39:0x017f, B:41:0x0197, B:43:0x01a0, B:45:0x01a9, B:47:0x01af, B:53:0x01bb, B:31:0x0157), top: B:69:0x013c, inners: #3 }] */
+    /* JADX WARN: Code duplicated, block: B:42:0x016a  */
+    /* JADX WARN: Code duplicated, block: B:49:0x017a  */
+    /* JADX WARN: Code duplicated, block: B:51:0x017d A[Catch: all -> 0x0186, TRY_LEAVE, TryCatch #0 {all -> 0x0186, blocks: (B:24:0x00fd, B:26:0x0101, B:30:0x011d, B:32:0x0121, B:34:0x0127, B:35:0x013c, B:37:0x0142, B:39:0x015a, B:41:0x0163, B:43:0x016b, B:45:0x0171, B:51:0x017d, B:29:0x0118), top: B:63:0x00fd, inners: #3 }] */
+    /* JADX WARN: Code duplicated, block: B:53:0x0184 A[RETURN, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
-    /* JADX WARN: Code duplicated, block: B:83:? A[RETURN, SYNTHETIC] */
     public final Object fetchOttSection(String slug, String title, Continuation<? super HomePageList> continuation) {
-        C00011 c00011;
+        C00021 c00021;
         String title2;
+        Object objApiGet;
         Object safe;
         OttTitlesResponse response;
         List items;
@@ -1097,99 +1543,96 @@ public final class AniVortexProvider extends MainAPI {
         boolean z;
         Iterable items2;
         String slug2 = slug;
-        if (continuation instanceof C00011) {
-            c00011 = (C00011) continuation;
-            if ((c00011.label & Integer.MIN_VALUE) != 0) {
-                c00011.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00021) {
+            c00021 = (C00021) continuation;
+            if ((c00021.label & Integer.MIN_VALUE) != 0) {
+                c00021.label -= Integer.MIN_VALUE;
             } else {
-                c00011 = new C00011(continuation);
+                c00021 = new C00021(continuation);
             }
         } else {
-            c00011 = new C00011(continuation);
+            c00021 = new C00021(continuation);
         }
-        Object $result = c00011.result;
+        Object $result = c00021.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00011.label) {
+        switch (c00021.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 try {
                     Pair pairBuildHeaders$default = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", "/api/v1/catalog/ott-platforms/" + slug2 + "/titles", MapsKt.mapOf(new Pair[]{TuplesKt.to("sort", "popular"), TuplesKt.to("include_adult", "false"), TuplesKt.to("limit", "20")}), null, 8, null);
                     String query = (String) pairBuildHeaders$default.component1();
-                    Map headers = (Map) pairBuildHeaders$default.component2();
+                    Map<String, String> map = (Map) pairBuildHeaders$default.component2();
                     String url = getMainUrl() + "/api/v1/catalog/ott-platforms/" + slug2 + "/titles?" + query;
+                    c00021.L$0 = slug2;
+                    title2 = title;
                     try {
-                        Requests app = MainActivityKt.getApp();
-                        c00011.L$0 = slug2;
-                        c00011.L$1 = title;
-                        c00011.L$2 = SpillingKt.nullOutSpilledVariable(query);
-                        c00011.L$3 = SpillingKt.nullOutSpilledVariable(headers);
-                        c00011.L$4 = SpillingKt.nullOutSpilledVariable(url);
-                        c00011.label = 1;
+                        c00021.L$1 = title2;
+                        c00021.L$2 = SpillingKt.nullOutSpilledVariable(query);
+                        c00021.L$3 = SpillingKt.nullOutSpilledVariable(map);
+                        c00021.L$4 = SpillingKt.nullOutSpilledVariable(url);
+                        c00021.label = 1;
+                        objApiGet = apiGet(url, map, c00021);
+                        if (objApiGet == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
                         try {
-                            $result = Requests.get$default(app, url, headers, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00011, 4092, (Object) null);
-                            if ($result == coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            title2 = title;
+                            NiceResponse this_$iv = (NiceResponse) objApiGet;
                             try {
-                                NiceResponse this_$iv = (NiceResponse) $result;
-                                try {
-                                    ResponseParser parser = this_$iv.getParser();
-                                    Intrinsics.checkNotNull(parser);
-                                    safe = parser.parseSafe(this_$iv.getText(), Reflection.getOrCreateKotlinClass(OttTitlesResponse.class));
-                                    break;
-                                } catch (Exception e$iv) {
-                                    e$iv.printStackTrace();
-                                    safe = null;
-                                }
-                                response = (OttTitlesResponse) safe;
-                                if (response != null || (items2 = response.getItems()) == null) {
-                                    items = null;
-                                } else {
-                                    Iterable $this$mapNotNull$iv = items2;
-                                    Collection destination$iv$iv = new ArrayList();
-                                    for (Object element$iv$iv$iv : $this$mapNotNull$iv) {
-                                        CatalogItem it = (CatalogItem) element$iv$iv$iv;
-                                        SearchResponse searchResponse = toSearchResponse(it);
-                                        if (searchResponse != null) {
-                                            destination$iv$iv.add(searchResponse);
-                                        }
+                                ResponseParser parser = this_$iv.getParser();
+                                Intrinsics.checkNotNull(parser);
+                                safe = parser.parseSafe(this_$iv.getText(), Reflection.getOrCreateKotlinClass(OttTitlesResponse.class));
+                                break;
+                            } catch (Exception e$iv) {
+                                e$iv.printStackTrace();
+                                safe = null;
+                            }
+                            response = (OttTitlesResponse) safe;
+                            if (response != null || (items2 = response.getItems()) == null) {
+                                items = null;
+                            } else {
+                                Iterable $this$mapNotNull$iv = items2;
+                                Collection destination$iv$iv = new ArrayList();
+                                for (Object element$iv$iv$iv : $this$mapNotNull$iv) {
+                                    CatalogItem it = (CatalogItem) element$iv$iv$iv;
+                                    SearchResponse searchResponse = toSearchResponse(it);
+                                    if (searchResponse != null) {
+                                        destination$iv$iv.add(searchResponse);
                                     }
-                                    items = (List) destination$iv$iv;
                                 }
-                                list = items;
-                                if (list != null || list.isEmpty()) {
-                                    z = true;
-                                } else {
-                                    z = false;
-                                }
-                                if (z) {
-                                    return null;
-                                }
-                                return new HomePageList(title2, items, false);
-                            } catch (Throwable th) {
-                                e = th;
-                                Log.e("AniVortex", "Failed to fetch OTT section " + slug2 + ": " + e.getMessage());
+                                items = (List) destination$iv$iv;
+                            }
+                            list = items;
+                            if (list != null || list.isEmpty()) {
+                                z = true;
+                            } else {
+                                z = false;
+                            }
+                            if (z) {
                                 return null;
                             }
-                        } catch (Throwable th2) {
-                            e = th2;
+                            return new HomePageList(title2, items, false);
+                        } catch (Throwable th) {
+                            e = th;
                             Log.e("AniVortex", "Failed to fetch OTT section " + slug2 + ": " + e.getMessage());
                             return null;
                         }
-                    } catch (Throwable th3) {
-                        e = th3;
+                    } catch (Throwable th2) {
+                        e = th2;
+                        Log.e("AniVortex", "Failed to fetch OTT section " + slug2 + ": " + e.getMessage());
+                        return null;
                     }
-                } catch (Throwable th4) {
-                    e = th4;
+                } catch (Throwable th3) {
+                    e = th3;
                 }
                 break;
             case 1:
-                title2 = (String) c00011.L$1;
-                slug2 = (String) c00011.L$0;
+                String title3 = (String) c00021.L$1;
+                slug2 = (String) c00021.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
-                    NiceResponse this_$iv2 = (NiceResponse) $result;
+                    objApiGet = $result;
+                    title2 = title3;
+                    NiceResponse this_$iv2 = (NiceResponse) objApiGet;
                     ResponseParser parser2 = this_$iv2.getParser();
                     Intrinsics.checkNotNull(parser2);
                     safe = parser2.parseSafe(this_$iv2.getText(), Reflection.getOrCreateKotlinClass(OttTitlesResponse.class));
@@ -1209,8 +1652,8 @@ public final class AniVortexProvider extends MainAPI {
                         return new HomePageList(title2, items, false);
                     }
                     return null;
-                } catch (Throwable th5) {
-                    e = th5;
+                } catch (Throwable th4) {
+                    e = th4;
                     Log.e("AniVortex", "Failed to fetch OTT section " + slug2 + ": " + e.getMessage());
                     return null;
                 }
@@ -1221,55 +1664,55 @@ public final class AniVortexProvider extends MainAPI {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    public final Object fetchCatalogHome(String catalog, Continuation<? super List<HomePageList>> continuation) {
-        C00001 c00001;
-        String catalog2;
+    public final Object fetchCatalogHome(String catalog, Continuation<? super List<HomePageList>> continuation) throws Throwable {
+        C00011 c00011;
+        Object objApiGet;
+        String url;
         Object safe;
-        CatalogHomeResponse response;
         List items;
         HomePageList homePageList;
         AniVortexProvider aniVortexProvider = this;
-        if (continuation instanceof C00001) {
-            c00001 = (C00001) continuation;
-            if ((c00001.label & Integer.MIN_VALUE) != 0) {
-                c00001.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00011) {
+            c00011 = (C00011) continuation;
+            if ((c00011.label & Integer.MIN_VALUE) != 0) {
+                c00011.label -= Integer.MIN_VALUE;
             } else {
-                c00001 = aniVortexProvider.new C00001(continuation);
+                c00011 = aniVortexProvider.new C00011(continuation);
             }
         } else {
-            c00001 = aniVortexProvider.new C00001(continuation);
+            c00011 = aniVortexProvider.new C00011(continuation);
         }
-        Object $result = c00001.result;
+        Object $result = c00011.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00001.label) {
+        switch (c00011.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Pair pairBuildHeaders$default = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", "/api/v1/catalog/home", MapsKt.mapOf(new Pair[]{TuplesKt.to("catalog", catalog), TuplesKt.to("include_adult", "false")}), null, 8, null);
                 String query = (String) pairBuildHeaders$default.component1();
-                Map headers = (Map) pairBuildHeaders$default.component2();
-                String url = aniVortexProvider.getMainUrl() + "/api/v1/catalog/home?" + query;
-                Requests app = MainActivityKt.getApp();
-                c00001.L$0 = catalog;
-                c00001.L$1 = SpillingKt.nullOutSpilledVariable(query);
-                c00001.L$2 = SpillingKt.nullOutSpilledVariable(headers);
-                c00001.L$3 = SpillingKt.nullOutSpilledVariable(url);
-                c00001.label = 1;
-                $result = Requests.get$default(app, url, headers, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00001, 4092, (Object) null);
-                if ($result == coroutine_suspended) {
+                Map<String, String> map = (Map) pairBuildHeaders$default.component2();
+                String url2 = aniVortexProvider.getMainUrl() + "/api/v1/catalog/home?" + query;
+                c00011.L$0 = catalog;
+                c00011.L$1 = SpillingKt.nullOutSpilledVariable(query);
+                c00011.L$2 = SpillingKt.nullOutSpilledVariable(map);
+                c00011.L$3 = SpillingKt.nullOutSpilledVariable(url2);
+                c00011.label = 1;
+                objApiGet = aniVortexProvider.apiGet(url2, map, c00011);
+                if (objApiGet == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                catalog2 = catalog;
+                url = catalog;
                 break;
                 break;
             case 1:
-                String catalog3 = (String) c00001.L$0;
+                String catalog2 = (String) c00011.L$0;
                 ResultKt.throwOnFailure($result);
-                catalog2 = catalog3;
+                objApiGet = $result;
+                url = catalog2;
                 break;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-        NiceResponse this_$iv = (NiceResponse) $result;
+        NiceResponse this_$iv = (NiceResponse) objApiGet;
         try {
             ResponseParser parser = this_$iv.getParser();
             Intrinsics.checkNotNull(parser);
@@ -1278,12 +1721,12 @@ public final class AniVortexProvider extends MainAPI {
             e$iv.printStackTrace();
             safe = null;
         }
-        CatalogHomeResponse response2 = (CatalogHomeResponse) safe;
-        if ((response2 != null ? response2.getSections() : null) == null) {
-            Log.e("AniVortex", "Failed to parse catalog home response for " + catalog2);
+        CatalogHomeResponse response = (CatalogHomeResponse) safe;
+        if ((response != null ? response.getSections() : null) == null) {
+            Log.e("AniVortex", "Failed to parse catalog home response for " + url);
             return CollectionsKt.emptyList();
         }
-        Iterable $this$mapNotNull$iv = response2.getSections();
+        Iterable $this$mapNotNull$iv = response.getSections();
         Collection destination$iv$iv = new ArrayList();
         for (Object element$iv$iv$iv : $this$mapNotNull$iv) {
             CatalogSection section = (CatalogSection) element$iv$iv$iv;
@@ -1292,18 +1735,14 @@ public final class AniVortexProvider extends MainAPI {
                 Iterable $this$mapNotNull$iv2 = items2;
                 Collection destination$iv$iv2 = new ArrayList();
                 for (Object element$iv$iv$iv2 : $this$mapNotNull$iv2) {
-                    CatalogHomeResponse response3 = response2;
                     CatalogItem it = (CatalogItem) element$iv$iv$iv2;
                     SearchResponse searchResponse = aniVortexProvider.toSearchResponse(it);
                     if (searchResponse != null) {
                         destination$iv$iv2.add(searchResponse);
                     }
-                    response2 = response3;
                 }
-                response = response2;
                 items = (List) destination$iv$iv2;
             } else {
-                response = response2;
                 items = null;
             }
             List list = items;
@@ -1314,15 +1753,14 @@ public final class AniVortexProvider extends MainAPI {
                 if (title == null && (title = section.getKey()) == null) {
                     title = "Featured";
                 }
-                String cleanTitle = aniVortexProvider.cleanSectionTitle(title, catalog2);
+                String cleanTitle = aniVortexProvider.cleanSectionTitle(title, url);
                 homePageList = new HomePageList(cleanTitle, items, Intrinsics.areEqual(section.getPresentation(), "hero"));
             }
             if (homePageList != null) {
                 destination$iv$iv.add(homePageList);
             }
             aniVortexProvider = this;
-            catalog2 = catalog2;
-            response2 = response;
+            response = response;
         }
         return (List) destination$iv$iv;
     }
@@ -1580,109 +2018,177 @@ public final class AniVortexProvider extends MainAPI {
         return search(query, continuation);
     }
 
+    /* JADX WARN: Code duplicated, block: B:20:0x00c8 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:21:0x00c9  */
+    /* JADX WARN: Code duplicated, block: B:29:0x00f4 A[ADDED_TO_REGION, RETURN] */
+    /* JADX WARN: Code duplicated, block: B:30:0x00f5  */
+    /* JADX WARN: Code duplicated, block: B:35:0x0113  */
+    /* JADX WARN: Code duplicated, block: B:37:0x0129  */
+    /* JADX WARN: Code duplicated, block: B:46:0x012e A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
-    public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
-        C00091 c00091;
-        Object obj;
+    public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) throws Throwable {
+        C00101 c00101;
+        String query2;
+        Object objApiGet;
         Object safe;
+        AniVortexSearchResponse response;
         Iterable items;
-        if (continuation instanceof C00091) {
-            c00091 = (C00091) continuation;
-            if ((c00091.label & Integer.MIN_VALUE) != 0) {
-                c00091.label -= Integer.MIN_VALUE;
+        Collection destination$iv$iv;
+        SearchResponse searchResponse;
+        if (continuation instanceof C00101) {
+            c00101 = (C00101) continuation;
+            if ((c00101.label & Integer.MIN_VALUE) != 0) {
+                c00101.label -= Integer.MIN_VALUE;
             } else {
-                c00091 = new C00091(continuation);
+                c00101 = new C00101(continuation);
             }
         } else {
-            c00091 = new C00091(continuation);
+            c00101 = new C00101(continuation);
         }
-        C00091 c00092 = c00091;
-        Object $result = c00092.result;
+        C00101 c00102 = c00101;
+        Object $result = c00102.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00092.label) {
+        switch (c00102.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                Pair pairBuildHeaders$default = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", "/api/v1/search", MapsKt.mapOf(TuplesKt.to("q", query)), null, 8, null);
-                String queryString = (String) pairBuildHeaders$default.component1();
-                Map headers = (Map) pairBuildHeaders$default.component2();
-                String url = getMainUrl() + "/api/v1/search?" + queryString;
-                Requests app = MainActivityKt.getApp();
-                c00092.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                c00092.L$1 = SpillingKt.nullOutSpilledVariable(queryString);
-                c00092.L$2 = SpillingKt.nullOutSpilledVariable(headers);
-                c00092.L$3 = SpillingKt.nullOutSpilledVariable(url);
-                c00092.label = 1;
-                obj = Requests.get$default(app, url, headers, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 4092, (Object) null);
-                if (obj == coroutine_suspended) {
+                AniVortexRegistration aniVortexRegistration = AniVortexRegistration.INSTANCE;
+                c00102.L$0 = query;
+                c00102.label = 1;
+                if (aniVortexRegistration.ensureRegistered(c00102) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                break;
-                break;
+                query2 = query;
+                Pair pairBuildHeaders$default = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", "/api/v1/search", MapsKt.mapOf(TuplesKt.to("q", query2)), null, 8, null);
+                String queryString = (String) pairBuildHeaders$default.component1();
+                Map<String, String> map = (Map) pairBuildHeaders$default.component2();
+                String url = getMainUrl() + "/api/v1/search?" + queryString;
+                c00102.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00102.L$1 = SpillingKt.nullOutSpilledVariable(queryString);
+                c00102.L$2 = SpillingKt.nullOutSpilledVariable(map);
+                c00102.L$3 = SpillingKt.nullOutSpilledVariable(url);
+                c00102.label = 2;
+                objApiGet = apiGet(url, map, c00102);
+                if (objApiGet == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                NiceResponse this_$iv = (NiceResponse) objApiGet;
+                try {
+                    ResponseParser parser = this_$iv.getParser();
+                    Intrinsics.checkNotNull(parser);
+                    safe = parser.parseSafe(this_$iv.getText(), Reflection.getOrCreateKotlinClass(AniVortexSearchResponse.class));
+                    break;
+                } catch (Exception e$iv) {
+                    e$iv.printStackTrace();
+                    safe = null;
+                }
+                response = (AniVortexSearchResponse) safe;
+                if (response == null && (items = response.getItems()) != null) {
+                    Iterable $this$mapNotNull$iv = items;
+                    destination$iv$iv = new ArrayList();
+                    for (Object element$iv$iv$iv : $this$mapNotNull$iv) {
+                        AniVortexSearchResponse response2 = response;
+                        CatalogItem it = (CatalogItem) element$iv$iv$iv;
+                        searchResponse = toSearchResponse(it);
+                        if (searchResponse != null) {
+                            destination$iv$iv.add(searchResponse);
+                        }
+                        response = response2;
+                    }
+                    return (List) destination$iv$iv;
+                }
+                return null;
             case 1:
+                query2 = (String) c00102.L$0;
                 ResultKt.throwOnFailure($result);
-                obj = $result;
-                break;
+                Pair pairBuildHeaders$default2 = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", "/api/v1/search", MapsKt.mapOf(TuplesKt.to("q", query2)), null, 8, null);
+                String queryString2 = (String) pairBuildHeaders$default2.component1();
+                Map<String, String> map2 = (Map) pairBuildHeaders$default2.component2();
+                String url2 = getMainUrl() + "/api/v1/search?" + queryString2;
+                c00102.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00102.L$1 = SpillingKt.nullOutSpilledVariable(queryString2);
+                c00102.L$2 = SpillingKt.nullOutSpilledVariable(map2);
+                c00102.L$3 = SpillingKt.nullOutSpilledVariable(url2);
+                c00102.label = 2;
+                objApiGet = apiGet(url2, map2, c00102);
+                if (objApiGet == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                NiceResponse this_$iv2 = (NiceResponse) objApiGet;
+                ResponseParser parser2 = this_$iv2.getParser();
+                Intrinsics.checkNotNull(parser2);
+                safe = parser2.parseSafe(this_$iv2.getText(), Reflection.getOrCreateKotlinClass(AniVortexSearchResponse.class));
+                response = (AniVortexSearchResponse) safe;
+                if (response == null) {
+                    return null;
+                }
+                Iterable $this$mapNotNull$iv2 = items;
+                destination$iv$iv = new ArrayList();
+                while (r16.hasNext()) {
+                    AniVortexSearchResponse response3 = response;
+                    CatalogItem it2 = (CatalogItem) element$iv$iv$iv;
+                    searchResponse = toSearchResponse(it2);
+                    if (searchResponse != null) {
+                        destination$iv$iv.add(searchResponse);
+                    }
+                    response = response3;
+                }
+                return (List) destination$iv$iv;
+            case 2:
+                ResultKt.throwOnFailure($result);
+                objApiGet = $result;
+                NiceResponse this_$iv3 = (NiceResponse) objApiGet;
+                ResponseParser parser3 = this_$iv3.getParser();
+                Intrinsics.checkNotNull(parser3);
+                safe = parser3.parseSafe(this_$iv3.getText(), Reflection.getOrCreateKotlinClass(AniVortexSearchResponse.class));
+                response = (AniVortexSearchResponse) safe;
+                if (response == null) {
+                    return null;
+                }
+                Iterable $this$mapNotNull$iv3 = items;
+                destination$iv$iv = new ArrayList();
+                while (r16.hasNext()) {
+                    AniVortexSearchResponse response4 = response;
+                    CatalogItem it3 = (CatalogItem) element$iv$iv$iv;
+                    searchResponse = toSearchResponse(it3);
+                    if (searchResponse != null) {
+                        destination$iv$iv.add(searchResponse);
+                    }
+                    response = response4;
+                }
+                return (List) destination$iv$iv;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-        NiceResponse this_$iv = (NiceResponse) obj;
-        try {
-            ResponseParser parser = this_$iv.getParser();
-            Intrinsics.checkNotNull(parser);
-            safe = parser.parseSafe(this_$iv.getText(), Reflection.getOrCreateKotlinClass(AniVortexSearchResponse.class));
-        } catch (Exception e$iv) {
-            e$iv.printStackTrace();
-            safe = null;
-        }
-        AniVortexSearchResponse response = (AniVortexSearchResponse) safe;
-        if (response != null && (items = response.getItems()) != null) {
-            Iterable $this$mapNotNull$iv = items;
-            Collection destination$iv$iv = new ArrayList();
-            for (Object element$iv$iv$iv : $this$mapNotNull$iv) {
-                AniVortexSearchResponse response2 = response;
-                CatalogItem it = (CatalogItem) element$iv$iv$iv;
-                SearchResponse searchResponse = toSearchResponse(it);
-                if (searchResponse != null) {
-                    destination$iv$iv.add(searchResponse);
-                }
-                response = response2;
-            }
-            return (List) destination$iv$iv;
-        }
-        return null;
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code duplicated, block: B:126:0x0746 A[DONT_INVERT] */
-    /* JADX WARN: Code duplicated, block: B:127:0x0748  */
-    /* JADX WARN: Code duplicated, block: B:129:0x074f  */
-    /* JADX WARN: Code duplicated, block: B:136:0x0766 A[DONT_INVERT] */
-    /* JADX WARN: Code duplicated, block: B:137:0x0768  */
-    /* JADX WARN: Code duplicated, block: B:139:0x076f  */
-    /* JADX WARN: Code duplicated, block: B:187:0x08ad A[DONT_INVERT] */
-    /* JADX WARN: Code duplicated, block: B:188:0x08af  */
-    /* JADX WARN: Code duplicated, block: B:189:0x08b6  */
-    /* JADX WARN: Code duplicated, block: B:222:0x0b76  */
-    /* JADX WARN: Code duplicated, block: B:224:0x0b88  */
-    /* JADX WARN: Code duplicated, block: B:226:0x0cc2 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:227:0x0cc3  */
-    /* JADX WARN: Code duplicated, block: B:245:0x0d17  */
-    /* JADX WARN: Code duplicated, block: B:256:0x0d9c  */
-    /* JADX WARN: Code duplicated, block: B:258:0x0dc0  */
-    /* JADX WARN: Code duplicated, block: B:68:0x05fe  */
-    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:227:0x0cc3 -> B:228:0x0ce3). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:258:0x0dc0 -> B:259:0x0de1). Please report as a decompilation issue!!! */
+    /* JADX WARN: Code duplicated, block: B:128:0x06cb A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:129:0x06cd  */
+    /* JADX WARN: Code duplicated, block: B:131:0x06d4  */
+    /* JADX WARN: Code duplicated, block: B:138:0x06e8 A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:139:0x06ea  */
+    /* JADX WARN: Code duplicated, block: B:141:0x06f1  */
+    /* JADX WARN: Code duplicated, block: B:226:0x0aa5  */
+    /* JADX WARN: Code duplicated, block: B:228:0x0ab7  */
+    /* JADX WARN: Code duplicated, block: B:230:0x0be8 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:231:0x0be9  */
+    /* JADX WARN: Code duplicated, block: B:248:0x0c46  */
+    /* JADX WARN: Code duplicated, block: B:259:0x0ccb  */
+    /* JADX WARN: Code duplicated, block: B:261:0x0cf3  */
+    /* JADX WARN: Code duplicated, block: B:74:0x0575  */
+    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:231:0x0be9 -> B:232:0x0c11). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:261:0x0cf3 -> B:262:0x0d15). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
-    public java.lang.Object load(@org.jetbrains.annotations.NotNull java.lang.String r79, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r80) {
+    public java.lang.Object load(@org.jetbrains.annotations.NotNull java.lang.String r58, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r59) {
         /*
-            Method dump skipped, instruction units count: 4190
+            Method dump skipped, instruction units count: 4054
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.AniVortex.AniVortexProvider.load(java.lang.String, kotlin.coroutines.Continuation):java.lang.Object");
@@ -1691,9 +2197,9 @@ public final class AniVortexProvider extends MainAPI {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$load$2 */
     /* JADX INFO: compiled from: AniVortexProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexProvider$load$2", f = "AniVortexProvider.kt", i = {0, 0}, l = {474}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse", "it"}, nl = {474}, s = {"L$0", "L$1"}, v = 2)
-    @SourceDebugExtension({"SMAP\nAniVortexProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider$load$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,680:1\n1#2:681\n*E\n"})
-    static final class C00052 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider$load$2", f = "AniVortexProvider.kt", i = {0, 0}, l = {506}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse", "it"}, nl = {506}, s = {"L$0", "L$1"}, v = 2)
+    @SourceDebugExtension({"SMAP\nAniVortexProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider$load$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,713:1\n1#2:714\n*E\n"})
+    static final class C00062 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<ActorData> $actorsList;
         final /* synthetic */ String $finalBackdrop;
         final /* synthetic */ String $finalPlot;
@@ -1708,7 +2214,7 @@ public final class AniVortexProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00052(String str, String str2, TmdbMetadata tmdbMetadata, String str3, List<String> list, Integer num, Score score, List<? extends SearchResponse> list2, List<ActorData> list3, Continuation<? super C00052> continuation) {
+        C00062(String str, String str2, TmdbMetadata tmdbMetadata, String str3, List<String> list, Integer num, Score score, List<? extends SearchResponse> list2, List<ActorData> list3, Continuation<? super C00062> continuation) {
             super(2, continuation);
             this.$finalPoster = str;
             this.$finalBackdrop = str2;
@@ -1722,9 +2228,9 @@ public final class AniVortexProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00052 = new C00052(this.$finalPoster, this.$finalBackdrop, this.$tmdb, this.$finalPlot, this.$finalTags, this.$year, this.$finalScore, this.$recommendationsList, this.$actorsList, continuation);
-            c00052.L$0 = obj;
-            return c00052;
+            Continuation<Unit> c00062 = new C00062(this.$finalPoster, this.$finalBackdrop, this.$tmdb, this.$finalPlot, this.$finalTags, this.$year, this.$finalScore, this.$recommendationsList, this.$actorsList, continuation);
+            c00062.L$0 = obj;
+            return c00062;
         }
 
         public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
@@ -1822,9 +2328,9 @@ public final class AniVortexProvider extends MainAPI {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$load$4 */
     /* JADX INFO: compiled from: AniVortexProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexProvider$load$4", f = "AniVortexProvider.kt", i = {0, 0}, l = {538}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse", "it"}, nl = {538}, s = {"L$0", "L$1"}, v = 2)
-    @SourceDebugExtension({"SMAP\nAniVortexProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider$load$4\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,680:1\n1#2:681\n*E\n"})
-    static final class C00064 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider$load$4", f = "AniVortexProvider.kt", i = {0, 0}, l = {570}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse", "it"}, nl = {570}, s = {"L$0", "L$1"}, v = 2)
+    @SourceDebugExtension({"SMAP\nAniVortexProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider$load$4\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,713:1\n1#2:714\n*E\n"})
+    static final class C00074 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<ActorData> $actorsList;
         final /* synthetic */ String $finalBackdrop;
         final /* synthetic */ String $finalPlot;
@@ -1839,7 +2345,7 @@ public final class AniVortexProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00064(String str, String str2, TmdbMetadata tmdbMetadata, String str3, List<String> list, Integer num, Score score, List<? extends SearchResponse> list2, List<ActorData> list3, Continuation<? super C00064> continuation) {
+        C00074(String str, String str2, TmdbMetadata tmdbMetadata, String str3, List<String> list, Integer num, Score score, List<? extends SearchResponse> list2, List<ActorData> list3, Continuation<? super C00074> continuation) {
             super(2, continuation);
             this.$finalPoster = str;
             this.$finalBackdrop = str2;
@@ -1853,9 +2359,9 @@ public final class AniVortexProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00064 = new C00064(this.$finalPoster, this.$finalBackdrop, this.$tmdb, this.$finalPlot, this.$finalTags, this.$year, this.$finalScore, this.$recommendationsList, this.$actorsList, continuation);
-            c00064.L$0 = obj;
-            return c00064;
+            Continuation<Unit> c00074 = new C00074(this.$finalPoster, this.$finalBackdrop, this.$tmdb, this.$finalPlot, this.$finalTags, this.$year, this.$finalScore, this.$recommendationsList, this.$actorsList, continuation);
+            c00074.L$0 = obj;
+            return c00074;
         }
 
         public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
@@ -1919,9 +2425,9 @@ public final class AniVortexProvider extends MainAPI {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexProvider$load$5 */
     /* JADX INFO: compiled from: AniVortexProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexProvider$load$5", f = "AniVortexProvider.kt", i = {0, 0}, l = {554}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse", "it"}, nl = {554}, s = {"L$0", "L$1"}, v = 2)
-    @SourceDebugExtension({"SMAP\nAniVortexProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider$load$5\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,680:1\n1#2:681\n*E\n"})
-    static final class C00075 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.AniVortex.AniVortexProvider$load$5", f = "AniVortexProvider.kt", i = {0, 0}, l = {586}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse", "it"}, nl = {586}, s = {"L$0", "L$1"}, v = 2)
+    @SourceDebugExtension({"SMAP\nAniVortexProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider$load$5\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,713:1\n1#2:714\n*E\n"})
+    static final class C00085 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<ActorData> $actorsList;
         final /* synthetic */ String $finalBackdrop;
         final /* synthetic */ String $finalPlot;
@@ -1936,7 +2442,7 @@ public final class AniVortexProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00075(String str, String str2, TmdbMetadata tmdbMetadata, String str3, List<String> list, Integer num, Score score, List<? extends SearchResponse> list2, List<ActorData> list3, Continuation<? super C00075> continuation) {
+        C00085(String str, String str2, TmdbMetadata tmdbMetadata, String str3, List<String> list, Integer num, Score score, List<? extends SearchResponse> list2, List<ActorData> list3, Continuation<? super C00085> continuation) {
             super(2, continuation);
             this.$finalPoster = str;
             this.$finalBackdrop = str2;
@@ -1950,9 +2456,9 @@ public final class AniVortexProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00075 = new C00075(this.$finalPoster, this.$finalBackdrop, this.$tmdb, this.$finalPlot, this.$finalTags, this.$year, this.$finalScore, this.$recommendationsList, this.$actorsList, continuation);
-            c00075.L$0 = obj;
-            return c00075;
+            Continuation<Unit> c00085 = new C00085(this.$finalPoster, this.$finalBackdrop, this.$tmdb, this.$finalPlot, this.$finalTags, this.$year, this.$finalScore, this.$recommendationsList, this.$actorsList, continuation);
+            c00085.L$0 = obj;
+            return c00085;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -2013,56 +2519,84 @@ public final class AniVortexProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:100:0x0485  */
-    /* JADX WARN: Code duplicated, block: B:120:0x0606  */
-    /* JADX WARN: Code duplicated, block: B:133:0x075d A[PHI: r0 r1 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12 r13 r14 r15 r16 r17 r18 r21 r23 r26
-      0x075d: PHI (r0v101 kotlin.coroutines.Continuation<? super java.lang.Boolean>) = 
-      (r0v82 kotlin.coroutines.Continuation<? super java.lang.Boolean>)
-      (r0v103 kotlin.coroutines.Continuation<? super java.lang.Boolean>)
-     binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r1v38 'playback' com.AniVortex.PlaybackResponse) = (r1v20 'playback' com.AniVortex.PlaybackResponse), (r1v40 'playback' com.AniVortex.PlaybackResponse) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r3v23 com.AniVortex.AniVortexProvider$loadLinks$1) = (r3v14 com.AniVortex.AniVortexProvider$loadLinks$1), (r3v25 com.AniVortex.AniVortexProvider$loadLinks$1) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r4v20 'serverName' java.lang.String) = (r4v13 'serverName' java.lang.String), (r4v22 'serverName' java.lang.String) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r5v26 '$this$forEach$iv' java.lang.Object) = (r5v9 '$this$forEach$iv' java.lang.Object), (r5v28 '$this$forEach$iv' java.lang.Object) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r6v32 'isCasting' boolean) = (r6v24 'isCasting' boolean), (r6v34 'isCasting' boolean) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r7v37 java.lang.Object) = (r7v17 java.lang.Object), (r7v40 java.lang.Object) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r8v24 'isCasting' boolean) = (r8v14 'isCasting' boolean), (r8v26 'isCasting' boolean) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r9v22 'url' java.lang.String) = (r9v15 'url' java.lang.String), (r9v23 'url' java.lang.String) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r10v19 'headers' java.util.Map) = (r10v14 'headers' java.util.Map), (r10v20 'headers' java.util.Map) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r11v18 'query' java.lang.Object) = (r11v13 'query' java.lang.Object), (r11v19 'query' java.lang.Object) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r12v28 'queryParams' java.util.Map) = (r12v23 'queryParams' java.util.Map), (r12v29 'queryParams' java.util.Map) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r13v28 'payload' com.AniVortex.EpisodeDataPayload) = (r13v23 'payload' com.AniVortex.EpisodeDataPayload), (r13v29 'payload' com.AniVortex.EpisodeDataPayload) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r14v26 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit>) = 
-      (r14v15 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit>)
-      (r14v28 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit>)
-     binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r15v18 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit>) = 
-      (r15v14 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit>)
-      (r15v19 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit>)
-     binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r16v10 'data' java.lang.Object) = (r16v6 'data' java.lang.Object), (r16v11 'data' java.lang.Object) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r17v16 java.util.Iterator) = (r17v9 java.util.Iterator), (r17v18 java.util.Iterator) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r18v10 com.AniVortex.AniVortexProvider) = (r18v6 com.AniVortex.AniVortexProvider), (r18v12 com.AniVortex.AniVortexProvider) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r21v12 'titleId' int) = (r21v5 'titleId' int), (r21v13 'titleId' int) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r23v10 boolean) = (r23v6 boolean), (r23v11 boolean) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]
-      0x075d: PHI (r26v10 '$result' java.lang.Object) = (r26v4 '$result' java.lang.Object), (r26v11 '$result' java.lang.Object) binds: [B:119:0x0604, B:132:0x073b] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Code duplicated, block: B:102:0x047a  */
+    /* JADX WARN: Code duplicated, block: B:122:0x0616  */
+    /* JADX WARN: Code duplicated, block: B:178:0x02b2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:34:0x02ab  */
+    /* JADX WARN: Code duplicated, block: B:44:0x02c7 A[Catch: Exception -> 0x02df, TRY_LEAVE, TryCatch #1 {Exception -> 0x02df, blocks: (B:25:0x0277, B:32:0x02a5, B:35:0x02ac, B:44:0x02c7, B:43:0x02c1, B:31:0x029a, B:24:0x026d, B:28:0x027e, B:21:0x0254, B:38:0x02b2), top: B:170:0x0254, inners: #4, #5, #7 }] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:93:0x0467  */
-    /* JADX WARN: Code duplicated, block: B:95:0x0477  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:119:0x0604 -> B:133:0x075d). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:120:0x0606 -> B:121:0x0626). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:125:0x063e -> B:131:0x0724). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:129:0x06f4 -> B:130:0x070f). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:159:0x0852 -> B:160:0x086b). Please report as a decompilation issue!!! */
+    /* JADX WARN: Code duplicated, block: B:93:0x0456 A[PHI: r0 r1 r2 r3 r4 r5 r6 r7 r8 r9 r10 r11 r12 r13 r14 r20 r21 r22 r23
+      0x0456: PHI (r0v90 kotlin.coroutines.Continuation<? super java.lang.Boolean>) = 
+      (r0v44 kotlin.coroutines.Continuation<? super java.lang.Boolean>)
+      (r0v83 kotlin.coroutines.Continuation<? super java.lang.Boolean>)
+      (r0v93 kotlin.coroutines.Continuation<? super java.lang.Boolean>)
+     binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r1v19 'playback' com.AniVortex.PlaybackResponse) = 
+      (r1v6 'playback' com.AniVortex.PlaybackResponse)
+      (r1v12 'playback' com.AniVortex.PlaybackResponse)
+      (r1v22 'playback' com.AniVortex.PlaybackResponse)
+     binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r2v31 'serverName' java.lang.String) = (r2v16 'serverName' java.lang.String), (r2v21 'serverName' java.lang.String), (r2v34 'serverName' java.lang.String) binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r3v16 '$this$forEach$iv' java.lang.Iterable) = 
+      (r3v1 '$this$forEach$iv' java.lang.Iterable)
+      (r3v5 '$this$forEach$iv' java.lang.Iterable)
+      (r3v21 '$this$forEach$iv' java.lang.Iterable)
+     binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r4v11 'titleId' int) = (r4v2 'titleId' int), (r4v5 'titleId' int), (r4v13 'titleId' int) binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r5v10 com.AniVortex.AniVortexProvider$loadLinks$1) = 
+      (r5v1 com.AniVortex.AniVortexProvider$loadLinks$1)
+      (r5v5 com.AniVortex.AniVortexProvider$loadLinks$1)
+      (r5v14 com.AniVortex.AniVortexProvider$loadLinks$1)
+     binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r6v37 '$result' java.lang.Object) = (r6v22 '$result' java.lang.Object), (r6v27 '$result' java.lang.Object), (r6v42 '$result' java.lang.Object) binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r7v31 java.lang.Object) = (r7v16 java.lang.Object), (r7v22 java.lang.Object), (r7v35 java.lang.Object) binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r8v24 'isCasting' boolean) = (r8v11 'isCasting' boolean), (r8v18 'isCasting' boolean), (r8v26 'isCasting' boolean) binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r9v20 'query' java.lang.String) = (r9v9 'query' java.lang.String), (r9v15 'query' java.lang.String), (r9v24 'query' java.lang.String) binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r10v22 java.util.Map<java.lang.String, java.lang.String>) = 
+      (r10v11 java.util.Map<java.lang.String, java.lang.String>)
+      (r10v17 java.util.Map<java.lang.String, java.lang.String>)
+      (r10v24 java.util.Map<java.lang.String, java.lang.String>)
+     binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r11v25 'query' java.lang.String) = (r11v9 'query' java.lang.String), (r11v16 'query' java.lang.String), (r11v27 'query' java.lang.String) binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r12v38 'queryParams' java.util.Map) = (r12v8 'queryParams' java.util.Map), (r12v15 'queryParams' java.util.Map), (r12v39 'queryParams' java.util.Map) binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r13v50 'payload' com.AniVortex.EpisodeDataPayload) = 
+      (r13v22 'payload' com.AniVortex.EpisodeDataPayload)
+      (r13v33 'payload' com.AniVortex.EpisodeDataPayload)
+      (r13v51 'payload' com.AniVortex.EpisodeDataPayload)
+     binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r14v25 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit>) = 
+      (r14v11 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit>)
+      (r14v18 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit>)
+      (r14v28 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit>)
+     binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r20v12 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit>) = 
+      (r20v4 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit>)
+      (r20v9 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit>)
+      (r20v14 kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit>)
+     binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r21v10 'data' java.lang.String) = (r21v0 'data' java.lang.String), (r21v5 'data' java.lang.String), (r21v11 'data' java.lang.String) binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r22v14 java.util.Iterator) = (r22v1 java.util.Iterator), (r22v5 java.util.Iterator), (r22v17 java.util.Iterator) binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]
+      0x0456: PHI (r23v12 com.AniVortex.AniVortexProvider) = 
+      (r23v2 com.AniVortex.AniVortexProvider)
+      (r23v4 com.AniVortex.AniVortexProvider)
+      (r23v14 com.AniVortex.AniVortexProvider)
+     binds: [B:92:0x0435, B:121:0x0614, B:134:0x0769] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Code duplicated, block: B:95:0x045c  */
+    /* JADX WARN: Code duplicated, block: B:97:0x046c  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:121:0x0614 -> B:93:0x0456). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:122:0x0616 -> B:123:0x063c). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:127:0x0654 -> B:133:0x0750). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:131:0x070c -> B:132:0x0738). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:161:0x0884 -> B:162:0x0896). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
-    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r46, boolean r47, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r48, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r49, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r50) {
+    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r38, boolean r39, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r40, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r41, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r42) {
         /*
-            Method dump skipped, instruction units count: 2248
+            Method dump skipped, instruction units count: 2292
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.AniVortex.AniVortexProvider.loadLinks(java.lang.String, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");

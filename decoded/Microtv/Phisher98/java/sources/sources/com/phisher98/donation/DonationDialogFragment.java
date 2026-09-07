@@ -44,7 +44,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: DonationDialogFragment.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Microtv/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\u0018\u00002\u00020\u0001B!\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0010\b\u0002\u0010\u0004\u001a\n\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0005¢\u0006\u0004\b\u0007\u0010\bJ\u0012\u0010\t\u001a\u00020\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0016J\b\u0010\r\u001a\u00020\u0006H\u0016J6\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u00132\b\u0010\u000b\u001a\u0004\u0018\u00010\fH\u0017b\u0010\b\u0014\u0012\f\b\u0015\u0012\b\b\fJ\u0004\b\b(\u0016J\u0010\u0010\u0017\u001a\u00020\u00062\u0006\u0010\u0018\u001a\u00020\u0019H\u0016J\b\u0010\u001a\u001a\u00020\u0006H\u0016J\u0018\u0010\u001b\u001a\u00020\u00062\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fH\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u0016\u0010\u0004\u001a\n\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006 "}, d2 = {"Lcom/phisher98/donation/DonationDialogFragment;", "Landroidx/fragment/app/DialogFragment;", "config", "Lcom/phisher98/donation/DonationConfig;", "onDismissCallback", "Lkotlin/Function0;", "", "<init>", "(Lcom/phisher98/donation/DonationConfig;Lkotlin/jvm/functions/Function0;)V", "onCreateDialog", "Landroid/app/Dialog;", "savedInstanceState", "Landroid/os/Bundle;", "onStart", "onCreateView", "Landroid/view/View;", "inflater", "Landroid/view/LayoutInflater;", "container", "Landroid/view/ViewGroup;", "Landroid/annotation/SuppressLint;", "value", "SetTextI18n", "onDismiss", "dialog", "Landroid/content/DialogInterface;", "onDestroy", "openUrl", "context", "Landroid/content/Context;", "url", "", "Microtv"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nDonationDialogFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationDialogFragment.kt\ncom/phisher98/donation/DonationDialogFragment\n+ 2 ColorDrawable.kt\nandroidx/core/graphics/drawable/ColorDrawableKt\n+ 3 Color.kt\nandroidx/core/graphics/ColorKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,410:1\n27#2:411\n432#3:412\n432#3:413\n432#3:414\n432#3:415\n432#3:416\n432#3:418\n432#3:419\n432#3:420\n432#3:421\n432#3:422\n432#3:423\n432#3:424\n432#3:425\n432#3:426\n432#3:427\n432#3:428\n432#3:429\n432#3:430\n432#3:431\n432#3:432\n432#3:433\n432#3:434\n1#4:417\n*S KotlinDebug\n*F\n+ 1 DonationDialogFragment.kt\ncom/phisher98/donation/DonationDialogFragment\n*L\n37#1:411\n71#1:412\n73#1:413\n86#1:414\n90#1:415\n92#1:416\n177#1:418\n181#1:419\n196#1:420\n198#1:421\n220#1:422\n231#1:423\n242#1:424\n256#1:425\n289#1:426\n311#1:427\n337#1:428\n363#1:429\n367#1:430\n369#1:431\n316#1:432\n343#1:433\n373#1:434\n*E\n"})
+@SourceDebugExtension({"SMAP\nDonationDialogFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationDialogFragment.kt\ncom/phisher98/donation/DonationDialogFragment\n+ 2 ColorDrawable.kt\nandroidx/core/graphics/drawable/ColorDrawableKt\n+ 3 Color.kt\nandroidx/core/graphics/ColorKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Uri.kt\nandroidx/core/net/UriKt\n*L\n1#1,451:1\n27#2:452\n432#3:453\n432#3:454\n432#3:455\n432#3:456\n432#3:457\n432#3:459\n432#3:460\n432#3:461\n432#3:462\n432#3:463\n432#3:464\n432#3:465\n432#3:466\n432#3:467\n432#3:468\n432#3:469\n432#3:470\n432#3:471\n432#3:472\n432#3:473\n432#3:474\n432#3:475\n432#3:477\n432#3:478\n432#3:479\n432#3:480\n432#3:481\n432#3:482\n1#4:458\n29#5:476\n*S KotlinDebug\n*F\n+ 1 DonationDialogFragment.kt\ncom/phisher98/donation/DonationDialogFragment\n*L\n37#1:452\n71#1:453\n73#1:454\n86#1:455\n90#1:456\n92#1:457\n177#1:459\n181#1:460\n196#1:461\n198#1:462\n220#1:463\n231#1:464\n242#1:465\n256#1:466\n289#1:467\n311#1:468\n337#1:469\n363#1:470\n373#1:471\n375#1:472\n404#1:473\n408#1:474\n410#1:475\n316#1:477\n343#1:478\n381#1:479\n382#1:480\n383#1:481\n414#1:482\n444#1:476\n*E\n"})
 public final class DonationDialogFragment extends DialogFragment {
 
     @NotNull
@@ -94,7 +94,7 @@ public final class DonationDialogFragment extends DialogFragment {
         String cur;
         String supportersText;
         final Context ctx = requireContext();
-        float density = ctx.getResources().getDisplayMetrics().density;
+        final float density = ctx.getResources().getDisplayMetrics().density;
         LinearLayout root = new LinearLayout(ctx);
         root.setOrientation(1);
         root.setPadding(onCreateView$dp(density, 20), onCreateView$dp(density, 18), onCreateView$dp(density, 20), onCreateView$dp(density, 18));
@@ -138,7 +138,7 @@ public final class DonationDialogFragment extends DialogFragment {
         titleView.setLayoutParams($this$onCreateView_u24lambda_u242_u240);
         root.addView(titleView);
         int i = 0;
-        List bullets = this.config.isGoalAchieved() ? CollectionsKt.listOf(new Triple[]{new Triple("🎉", "100% Funded for " + this.config.getMonth() + ':', "Monthly server & repo costs are fully covered!"), new Triple("🚀", "80+ Extensions on Track:", "Fast fixes, domain bypasses, and updates continue across all providers."), new Triple("💖", "Thank You, Community:", "Massive thanks to every supporter who stepped up this month!")}) : CollectionsKt.listOf(new Triple[]{new Triple("🟢", "100% Free Forever:", "No ads, no paywalls, no VIP crap across 80+ extensions."), new Triple("🔧", "Active Repo Maintenance:", "Maintaining 80+ providers against weekly site changes & domain blocks."), new Triple("⌛", "Goal Missed = Delayed Fixes:", "If monthly target isn't met, extension updates will slow down."), new Triple("💀", "Zero Support = Extensions Die:", "Without donations, scrapers break and links die over time.")});
+        List bullets = this.config.isGoalAchieved() ? CollectionsKt.listOf(new Triple[]{new Triple("🎉", "100% Funded for " + this.config.getMonth() + ':', "Monthly repo & extension maintenance is fully funded!"), new Triple("🚀", "80+ Extensions on Track:", "Fast fixes, domain bypasses, and updates continue across all providers."), new Triple("💖", "Thank You, Community:", "Massive thanks to every supporter who stepped up this month!")}) : CollectionsKt.listOf(new Triple[]{new Triple("🟢", "100% Free Forever:", "No ads, no paywalls, no VIP crap across 80+ extensions."), new Triple("🔧", "Active Repo Maintenance:", "Maintaining 80+ providers against weekly site changes & domain blocks."), new Triple("⌛", "Goal Missed = Delayed Fixes:", "If monthly target isn't met, extension updates will slow down."), new Triple("💀", "Zero Support = Extensions Die:", "Without donations, scrapers break and links die over time.")});
         LinearLayout bulletsContainer = new LinearLayout(ctx);
         bulletsContainer.setOrientation(1);
         LinearLayout.LayoutParams $this$onCreateView_u24lambda_u243_u240 = new LinearLayout.LayoutParams(-1, -2);
@@ -327,34 +327,70 @@ public final class DonationDialogFragment extends DialogFragment {
             actionsRow.addView($this$onCreateView_u24lambda_u2417);
         }
         root.addView(actionsRow);
-        if (!StringsKt.isBlank(this.config.getSecondaryDonateUrl())) {
-            Button $this$onCreateView_u24lambda_u2418 = new Button(ctx);
-            $this$onCreateView_u24lambda_u2418.setText(this.config.getSecondaryButtonText());
-            $this$onCreateView_u24lambda_u2418.setTextSize(13.0f);
-            $this$onCreateView_u24lambda_u2418.setTextColor(Color.parseColor("#E2E8F0"));
-            $this$onCreateView_u24lambda_u2418.setAllCaps(false);
-            $this$onCreateView_u24lambda_u2418.setFocusable(true);
-            final GradientDrawable $this$onCreateView_u24lambda_u2418_u240 = new GradientDrawable();
-            $this$onCreateView_u24lambda_u2418_u240.setColor(Color.parseColor("#212634"));
-            $this$onCreateView_u24lambda_u2418_u240.setCornerRadius(onCreateView$dp(density, 10));
-            $this$onCreateView_u24lambda_u2418_u240.setStroke(onCreateView$dp(density, 1), Color.parseColor("#323A4E"));
-            $this$onCreateView_u24lambda_u2418.setBackground($this$onCreateView_u24lambda_u2418_u240);
-            $this$onCreateView_u24lambda_u2418.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.phisher98.donation.DonationDialogFragment$$ExternalSyntheticLambda5
+        if (!StringsKt.isBlank(this.config.getAdSupportUrl())) {
+            final TextView $this$onCreateView_u24lambda_u2418 = new TextView(ctx);
+            $this$onCreateView_u24lambda_u2418.setText(this.config.getAdSupportButtonText());
+            $this$onCreateView_u24lambda_u2418.setTextSize(12.5f);
+            $this$onCreateView_u24lambda_u2418.setTextColor(Color.parseColor("#93C5FD"));
+            $this$onCreateView_u24lambda_u2418.setTypeface(Typeface.DEFAULT_BOLD);
+            $this$onCreateView_u24lambda_u2418.setGravity(17);
+            LinearLayout $this$onCreateView_u24lambda_u2419 = new LinearLayout(ctx);
+            $this$onCreateView_u24lambda_u2419.setOrientation(0);
+            $this$onCreateView_u24lambda_u2419.setGravity(17);
+            $this$onCreateView_u24lambda_u2419.setPadding(onCreateView$dp(density, 12), onCreateView$dp(density, 10), onCreateView$dp(density, 12), onCreateView$dp(density, 10));
+            final GradientDrawable $this$onCreateView_u24lambda_u2419_u240 = new GradientDrawable();
+            $this$onCreateView_u24lambda_u2419_u240.setColor(Color.parseColor("#161B26"));
+            $this$onCreateView_u24lambda_u2419_u240.setCornerRadius(onCreateView$dp(density, 10));
+            $this$onCreateView_u24lambda_u2419_u240.setStroke(onCreateView$dp(density, 1), Color.parseColor("#2D3748"));
+            $this$onCreateView_u24lambda_u2419.setBackground($this$onCreateView_u24lambda_u2419_u240);
+            $this$onCreateView_u24lambda_u2419.setClickable(true);
+            $this$onCreateView_u24lambda_u2419.setFocusable(true);
+            $this$onCreateView_u24lambda_u2419.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.phisher98.donation.DonationDialogFragment$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnFocusChangeListener
                 public final void onFocusChange(View view, boolean z2) {
-                    DonationDialogFragment.onCreateView$lambda$18$1($this$onCreateView_u24lambda_u2418_u240, view, z2);
+                    DonationDialogFragment.onCreateView$lambda$19$1($this$onCreateView_u24lambda_u2419_u240, $this$onCreateView_u24lambda_u2418, density, view, z2);
                 }
             });
-            $this$onCreateView_u24lambda_u2418.setOnClickListener(new View.OnClickListener() { // from class: com.phisher98.donation.DonationDialogFragment$$ExternalSyntheticLambda6
+            $this$onCreateView_u24lambda_u2419.setOnClickListener(new View.OnClickListener() { // from class: com.phisher98.donation.DonationDialogFragment$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DonationDialogFragment.onCreateView$lambda$18$2(this.f$0, ctx, view);
+                    DonationDialogFragment.onCreateView$lambda$19$2(this.f$0, ctx, view);
                 }
             });
-            LinearLayout.LayoutParams $this$onCreateView_u24lambda_u2418_u243 = new LinearLayout.LayoutParams(-1, onCreateView$dp(density, 40));
-            $this$onCreateView_u24lambda_u2418_u243.topMargin = onCreateView$dp(density, 10);
-            $this$onCreateView_u24lambda_u2418.setLayoutParams($this$onCreateView_u24lambda_u2418_u243);
-            root.addView($this$onCreateView_u24lambda_u2418);
+            LinearLayout.LayoutParams $this$onCreateView_u24lambda_u2419_u243 = new LinearLayout.LayoutParams(-1, -2);
+            $this$onCreateView_u24lambda_u2419_u243.topMargin = onCreateView$dp(density, 12);
+            $this$onCreateView_u24lambda_u2419.setLayoutParams($this$onCreateView_u24lambda_u2419_u243);
+            $this$onCreateView_u24lambda_u2419.addView($this$onCreateView_u24lambda_u2418);
+            root.addView($this$onCreateView_u24lambda_u2419);
+        }
+        if (!StringsKt.isBlank(this.config.getSecondaryDonateUrl())) {
+            Button $this$onCreateView_u24lambda_u2420 = new Button(ctx);
+            $this$onCreateView_u24lambda_u2420.setText(this.config.getSecondaryButtonText());
+            $this$onCreateView_u24lambda_u2420.setTextSize(13.0f);
+            $this$onCreateView_u24lambda_u2420.setTextColor(Color.parseColor("#E2E8F0"));
+            $this$onCreateView_u24lambda_u2420.setAllCaps(false);
+            $this$onCreateView_u24lambda_u2420.setFocusable(true);
+            final GradientDrawable $this$onCreateView_u24lambda_u2420_u240 = new GradientDrawable();
+            $this$onCreateView_u24lambda_u2420_u240.setColor(Color.parseColor("#212634"));
+            $this$onCreateView_u24lambda_u2420_u240.setCornerRadius(onCreateView$dp(density, 10));
+            $this$onCreateView_u24lambda_u2420_u240.setStroke(onCreateView$dp(density, 1), Color.parseColor("#323A4E"));
+            $this$onCreateView_u24lambda_u2420.setBackground($this$onCreateView_u24lambda_u2420_u240);
+            $this$onCreateView_u24lambda_u2420.setOnFocusChangeListener(new View.OnFocusChangeListener() { // from class: com.phisher98.donation.DonationDialogFragment$$ExternalSyntheticLambda7
+                @Override // android.view.View.OnFocusChangeListener
+                public final void onFocusChange(View view, boolean z2) {
+                    DonationDialogFragment.onCreateView$lambda$20$1($this$onCreateView_u24lambda_u2420_u240, view, z2);
+                }
+            });
+            $this$onCreateView_u24lambda_u2420.setOnClickListener(new View.OnClickListener() { // from class: com.phisher98.donation.DonationDialogFragment$$ExternalSyntheticLambda8
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    DonationDialogFragment.onCreateView$lambda$20$2(this.f$0, ctx, view);
+                }
+            });
+            LinearLayout.LayoutParams $this$onCreateView_u24lambda_u2420_u243 = new LinearLayout.LayoutParams(-1, onCreateView$dp(density, 40));
+            $this$onCreateView_u24lambda_u2420_u243.topMargin = onCreateView$dp(density, 10);
+            $this$onCreateView_u24lambda_u2420.setLayoutParams($this$onCreateView_u24lambda_u2420_u243);
+            root.addView($this$onCreateView_u24lambda_u2420);
         }
         return root;
     }
@@ -380,12 +416,25 @@ public final class DonationDialogFragment extends DialogFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onCreateView$lambda$18$1(GradientDrawable $secBg, View view, boolean hasFocus) {
+    public static final void onCreateView$lambda$19$1(GradientDrawable $adBg, TextView $adText, float $density, View view, boolean hasFocus) {
+        $adBg.setColor(hasFocus ? Color.parseColor("#1E293B") : Color.parseColor("#161B26"));
+        $adBg.setStroke(onCreateView$dp($density, 1), hasFocus ? Color.parseColor("#60A5FA") : Color.parseColor("#2D3748"));
+        $adText.setTextColor(hasFocus ? -1 : Color.parseColor("#93C5FD"));
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void onCreateView$lambda$19$2(DonationDialogFragment this$0, Context $ctx, View it) {
+        this$0.openUrl($ctx, this$0.config.getAdSupportUrl());
+        this$0.dismissAllowingStateLoss();
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final void onCreateView$lambda$20$1(GradientDrawable $secBg, View view, boolean hasFocus) {
         $secBg.setColor(hasFocus ? Color.parseColor("#2B3245") : Color.parseColor("#212634"));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void onCreateView$lambda$18$2(DonationDialogFragment this$0, Context $ctx, View it) {
+    public static final void onCreateView$lambda$20$2(DonationDialogFragment this$0, Context $ctx, View it) {
         this$0.openUrl($ctx, this$0.config.getSecondaryDonateUrl());
         this$0.dismissAllowingStateLoss();
     }
@@ -409,7 +458,9 @@ public final class DonationDialogFragment extends DialogFragment {
         try {
             Result.Companion companion = Result.Companion;
             DonationDialogFragment donationDialogFragment = this;
-            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(url));
+            Uri uri = Uri.parse(url);
+            Intrinsics.checkExpressionValueIsNotNull(uri, "Uri.parse(this)");
+            Intent intent = new Intent("android.intent.action.VIEW", uri);
             intent.setFlags(268435456);
             context.startActivity(intent);
             Result.constructor-impl(Unit.INSTANCE);
