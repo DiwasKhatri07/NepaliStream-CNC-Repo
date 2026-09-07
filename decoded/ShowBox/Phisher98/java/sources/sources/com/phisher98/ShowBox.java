@@ -29,6 +29,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.io.ByteArrayInputStream;
 import java.io.Closeable;
 import java.io.IOException;
@@ -115,7 +116,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: ShowBox.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/ShowBox/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u009a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010$\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0012\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b%\b\u0016\u0018\u0000 [2\u00020\u0001:#[\\]^_`abcdefghijklmnopqrstuvwxyz{|}B\u0013\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u001d\u001a\u00020\u0007H\u0002J\u000e\u0010\"\u001a\u00020#2\u0006\u0010$\u001a\u00020\u0007J\u000e\u0010%\u001a\u00020&2\u0006\u0010$\u001a\u00020\u0007J\u0006\u0010'\u001a\u00020(J\u0016\u0010)\u001a\u00020\u00072\u0006\u0010*\u001a\u00020\u00072\u0006\u0010+\u001a\u00020\rJ\"\u0010,\u001a\u0002H-\"\n\b\u0000\u0010-\u0018\u0001*\u00020.2\u0006\u0010*\u001a\u00020\u0007H\u0086\b¢\u0006\u0002\u0010/J\u0006\u00100\u001a\u000201J\u001e\u0010C\u001a\u00020D2\u0006\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020HH\u0096@¢\u0006\u0002\u0010IJ\u001c\u0010J\u001a\b\u0012\u0004\u0012\u00020L0K2\u0006\u0010*\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010MJ\u0016\u0010N\u001a\u00020O2\u0006\u0010P\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010MJF\u0010Q\u001a\u00020\r2\u0006\u0010R\u001a\u00020\u00072\u0006\u0010S\u001a\u00020\r2\u0012\u0010T\u001a\u000e\u0012\u0004\u0012\u00020V\u0012\u0004\u0012\u00020W0U2\u0012\u0010X\u001a\u000e\u0012\u0004\u0012\u00020Y\u0012\u0004\u0012\u00020W0UH\u0096@¢\u0006\u0002\u0010ZR\u001a\u0010\u0006\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u0014\u0010\f\u001a\u00020\rX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000fR\u0014\u0010\u0010\u001a\u00020\rX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u000fR\u0014\u0010\u0012\u001a\u00020\rX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u000fR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0013\u0010\u0019\u001a\u0004\u0018\u00010\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\tR\u001a\u0010\u001b\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u00070\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u00102\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00103\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00104\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u00105\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b6\u0010\tR\u0011\u00107\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b8\u0010\tR\u0014\u00109\u001a\u00020\u0007X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b:\u0010\tR\u0014\u0010;\u001a\u00020\u0007X\u0086D¢\u0006\b\n\u0000\u001a\u0004\b<\u0010\tR\u000e\u0010=\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010>\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b?\u0010\tR\u000e\u0010@\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000¨\u0006~"}, d2 = {"Lcom/phisher98/ShowBox;", "Lcom/lagradost/cloudstream3/MainAPI;", "sharedPref", "Landroid/content/SharedPreferences;", "<init>", "(Landroid/content/SharedPreferences;)V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "instantLinkLoading", "getInstantLinkLoading", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "uitoken", "getUitoken", "headers", "", "randomToken", "token", "cinemeta_url", "CLIENT_CERT_PEM", "CLIENT_KEY_PEM", "loadCertificateFromPem", "Ljava/security/cert/X509Certificate;", "pem", "loadPrivateKeyFromPem", "Ljava/security/PrivateKey;", "buildClientWithCert", "Lokhttp3/OkHttpClient;", "queryApi", "query", "useAlternativeApi", "queryApiParsed", "T", "", "(Ljava/lang/String;)Ljava/lang/Object;", "getExpiryDate", "", "iv", "key", "firstAPI", "secondAPI", "getSecondAPI", "thirdAPI", "getThirdAPI", "watchSomuchAPI", "getWatchSomuchAPI", "openSubAPI", "getOpenSubAPI", "appKey", "appId", "getAppId", "appIdSecond", "appVersion", "appVersionCode", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "ResponseTypes", "UserAgentInterceptor", "CipherUtils", "HexDump", "MD5Util", "PostJSON", "ListJSON", "DataJSON", "Data", "MainData", "LoadData", "MovieData", "MovieDataProp", "SeriesDataProp", "SeriesSeasonProp", "SeriesLanguage", "SeriesEpisode", "SeriesData", "LinkData", "LinkDataProp", "LinkList", "ParsedLinkData", "SubtitleDataProp", "Subtitles", "SubtitleList", "PrivateSubtitleData", "ExternalResponse", "WatchsomuchTorrents", "WatchsomuchMovies", "WatchsomuchResponses", "WatchsomuchSubtitles", "WatchsomuchSubResponses", "OsSubtitles", "OsResult", "ShowBox"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nShowBox.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox\n+ 2 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,946:1\n365#1,12:949\n365#1,12:993\n365#1,12:1038\n365#1,12:1050\n221#2,2:947\n1#3:961\n1#3:984\n1#3:987\n1#3:1016\n1#3:1020\n1#3:1063\n1795#4,10:962\n2068#4:972\n1795#4,10:973\n2068#4:983\n2069#4:985\n1805#4:986\n2069#4:988\n1805#4:989\n1960#4,3:990\n1795#4,10:1005\n2068#4:1015\n2069#4:1017\n1805#4:1018\n63#5:1019\n64#5,15:1021\n63#5:1062\n64#5,15:1064\n50#6:1036\n43#6:1037\n50#6:1079\n43#6:1080\n*S KotlinDebug\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox\n*L\n444#1:949,12\n514#1:993,12\n681#1:1038,12\n707#1:1050,12\n349#1:947,2\n453#1:984\n450#1:987\n514#1:1016\n662#1:1020\n840#1:1063\n450#1:962,10\n450#1:972\n453#1:973,10\n453#1:983\n453#1:985\n453#1:986\n450#1:988\n450#1:989\n470#1:990,3\n514#1:1005,10\n514#1:1015\n514#1:1017\n514#1:1018\n662#1:1019\n662#1:1021,15\n840#1:1062\n840#1:1064,15\n662#1:1036\n662#1:1037\n840#1:1079\n840#1:1080\n*E\n"})
+@SourceDebugExtension({"SMAP\nShowBox.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox\n+ 2 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,947:1\n365#1,12:950\n365#1,12:994\n365#1,12:1039\n365#1,12:1051\n221#2,2:948\n1#3:962\n1#3:985\n1#3:988\n1#3:1017\n1#3:1021\n1#3:1064\n1795#4,10:963\n2068#4:973\n1795#4,10:974\n2068#4:984\n2069#4:986\n1805#4:987\n2069#4:989\n1805#4:990\n1960#4,3:991\n1795#4,10:1006\n2068#4:1016\n2069#4:1018\n1805#4:1019\n63#5:1020\n64#5,15:1022\n63#5:1063\n64#5,15:1065\n50#6:1037\n43#6:1038\n50#6:1080\n43#6:1081\n*S KotlinDebug\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox\n*L\n445#1:950,12\n515#1:994,12\n682#1:1039,12\n708#1:1051,12\n349#1:948,2\n454#1:985\n451#1:988\n515#1:1017\n663#1:1021\n841#1:1064\n451#1:963,10\n451#1:973\n454#1:974,10\n454#1:984\n454#1:986\n454#1:987\n451#1:989\n451#1:990\n471#1:991,3\n515#1:1006,10\n515#1:1016\n515#1:1018\n515#1:1019\n663#1:1020\n663#1:1022,15\n841#1:1063\n841#1:1065,15\n663#1:1037\n663#1:1038\n841#1:1080\n841#1:1081\n*E\n"})
 public class ShowBox extends MainAPI {
 
     @NotNull
@@ -187,7 +188,7 @@ public class ShowBox extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.ShowBox$load$1 */
     /* JADX INFO: compiled from: ShowBox.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.ShowBox", f = "ShowBox.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6}, l = {685, 686, 688, 711, 712, 714, 742}, m = "load$suspendImpl", n = {"$this", "url", "loadData", "data", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "meta", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "meta", "logoUrl", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "meta", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "meta", "logoUrl", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "meta", "logoUrl", "allEpisodes", "isMovie", "hideNsfw"}, nl = {686, 688, 707, 712, 714, 740, -1}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.ShowBox", f = "ShowBox.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6}, l = {686, 687, 689, 712, 713, 715, 743}, m = "load$suspendImpl", n = {"$this", "url", "loadData", "data", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "meta", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "meta", "logoUrl", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "meta", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "meta", "logoUrl", "isMovie", "hideNsfw", "$this", "url", "loadData", "data", "meta", "logoUrl", "allEpisodes", "isMovie", "hideNsfw"}, nl = {687, 689, 708, 713, 715, 741, -1}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "I$1"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -216,7 +217,7 @@ public class ShowBox extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.ShowBox$loadLinks$1 */
     /* JADX INFO: compiled from: ShowBox.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.ShowBox", f = "ShowBox.kt", i = {0, 0, 0, 0, 0, 0}, l = {842}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "parsed", "isCasting"}, nl = {892}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.ShowBox", f = "ShowBox.kt", i = {0, 0, 0, 0, 0, 0}, l = {843}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "parsed", "isCasting"}, nl = {893}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -359,7 +360,7 @@ public class ShowBox extends MainAPI {
 
         /* JADX INFO: compiled from: ShowBox.kt */
         @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0015\u0010\u0004\u001a\u00020\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007¢\u0006\u0002\u0010\b¨\u0006\t"}, d2 = {"Lcom/phisher98/ShowBox$ResponseTypes$Companion;", "", "<init>", "()V", "getResponseType", "Lcom/phisher98/ShowBox$ResponseTypes;", "value", "", "(Ljava/lang/Integer;)Lcom/phisher98/ShowBox$ResponseTypes;", "ShowBox"}, k = 1, mv = {2, 4, 0}, xi = 48)
-        @SourceDebugExtension({"SMAP\nShowBox.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$ResponseTypes$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,946:1\n296#2,2:947\n*S KotlinDebug\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$ResponseTypes$Companion\n*L\n94#1:947,2\n*E\n"})
+        @SourceDebugExtension({"SMAP\nShowBox.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$ResponseTypes$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,947:1\n296#2,2:948\n*S KotlinDebug\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$ResponseTypes$Companion\n*L\n94#1:948,2\n*E\n"})
         public static final class Companion {
             public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
                 this();
@@ -413,7 +414,7 @@ public class ShowBox extends MainAPI {
 
     /* JADX INFO: compiled from: ShowBox.kt */
     @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\n\bÂ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u0007\u001a\u0004\u0018\u00010\u00052\u0006\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\n\u001a\u00020\u0005J\u0010\u0010\u000b\u001a\u0004\u0018\u00010\u00052\u0006\u0010\b\u001a\u00020\u0005J\"\u0010\f\u001a\u0004\u0018\u00010\u00052\b\u0010\b\u001a\u0004\u0018\u00010\u00052\u0006\u0010\r\u001a\u00020\u00052\u0006\u0010\u000e\u001a\u00020\u0005R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lcom/phisher98/ShowBox$CipherUtils;", "", "<init>", "()V", "ALGORITHM", "", "TRANSFORMATION", "encrypt", "str", "key", "iv", "md5", "getVerify", "str2", "str3", "ShowBox"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nShowBox.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$CipherUtils\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,946:1\n1#2:947\n*E\n"})
+    @SourceDebugExtension({"SMAP\nShowBox.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$CipherUtils\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,947:1\n1#2:948\n*E\n"})
     private static final class CipherUtils {
 
         @NotNull
@@ -1254,7 +1255,7 @@ public class ShowBox extends MainAPI {
         return this.appId;
     }
 
-    /* JADX WARN: Code duplicated, block: B:43:0x016f  */
+    /* JADX WARN: Code duplicated, block: B:43:0x0178  */
     static /* synthetic */ Object getMainPage$suspendImpl(ShowBox showBox, int i, MainPageRequest mainPageRequest, Continuation<? super HomePageResponse> continuation) {
         Object objFromJson;
         boolean z;
@@ -1263,6 +1264,7 @@ public class ShowBox extends MainAPI {
         HomePageList homePageList;
         final String str;
         MovieSearchResponse movieSearchResponseNewMovieSearchResponse;
+        DonationManager.INSTANCE.checkAndShow(showBox.getName());
         int i2 = 1;
         boolean z3 = !MainAPI.Companion.getSettingsForProvider().getEnableAdult();
         String strTrimIndent = StringsKt.trimIndent("{\"childmode\":\"" + (z3 ? 1 : 0) + "\",\"app_version\":\"" + showBox.appVersion + "\",\"appid\":\"" + showBox.appIdSecond + "\",\"module\":\"Home_list_type_v2\",\"channel\":\"Website\",\"page\":\"" + i + "\",\"lang\":\"en\",\"type\":\"all\",\"pagelimit\":\"20\",\"expired_date\":\"" + showBox.getExpiryDate() + "\",\"platform\":\"android\"}\n            ");
@@ -5017,8 +5019,8 @@ public class ShowBox extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.ShowBox$load$2 */
     /* JADX INFO: compiled from: ShowBox.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.ShowBox$load$2", f = "ShowBox.kt", i = {0}, l = {702}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {703}, s = {"L$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nShowBox.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,946:1\n1795#2,10:947\n2068#2:957\n2069#2:959\n1805#2:960\n1739#2:961\n1814#2,3:962\n1#3:958\n*S KotlinDebug\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$load$2\n*L\n694#1:947,10\n694#1:957\n694#1:959\n694#1:960\n700#1:961\n700#1:962,3\n694#1:958\n*E\n"})
+    @DebugMetadata(c = "com.phisher98.ShowBox$load$2", f = "ShowBox.kt", i = {0}, l = {703}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {704}, s = {"L$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nShowBox.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,947:1\n1795#2,10:948\n2068#2:958\n2069#2:960\n1805#2:961\n1739#2:962\n1814#2,3:963\n1#3:959\n*S KotlinDebug\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$load$2\n*L\n695#1:948,10\n695#1:958\n695#1:960\n695#1:961\n701#1:962\n701#1:963,3\n695#1:959\n*E\n"})
     static final class C00012 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ MovieData $data;
         final /* synthetic */ String $logoUrl;
@@ -5130,7 +5132,7 @@ public class ShowBox extends MainAPI {
     /* JADX INFO: compiled from: ShowBox.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.ShowBox$load$3", f = "ShowBox.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nShowBox.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,946:1\n1739#2:947\n1814#2,3:948\n*S KotlinDebug\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$load$3\n*L\n749#1:947\n749#1:948,3\n*E\n"})
+    @SourceDebugExtension({"SMAP\nShowBox.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,947:1\n1739#2:948\n1814#2,3:949\n*S KotlinDebug\n*F\n+ 1 ShowBox.kt\ncom/phisher98/ShowBox$load$3\n*L\n750#1:948\n750#1:949,3\n*E\n"})
     static final class C00023 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ SeriesData $data;
         final /* synthetic */ String $logoUrl;
@@ -6625,7 +6627,7 @@ public class ShowBox extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.ShowBox$loadLinks$2 */
     /* JADX INFO: compiled from: ShowBox.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.ShowBox$loadLinks$2", f = "ShowBox.kt", i = {}, l = {844}, m = "invokeSuspend", n = {}, nl = {852}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.ShowBox$loadLinks$2", f = "ShowBox.kt", i = {}, l = {845}, m = "invokeSuspend", n = {}, nl = {853}, s = {}, v = 2)
     static final class C00042 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ LinkData $parsed;
@@ -6671,7 +6673,7 @@ public class ShowBox extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.ShowBox$loadLinks$3 */
     /* JADX INFO: compiled from: ShowBox.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.ShowBox$loadLinks$3", f = "ShowBox.kt", i = {}, l = {854}, m = "invokeSuspend", n = {}, nl = {863}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.ShowBox$loadLinks$3", f = "ShowBox.kt", i = {}, l = {855}, m = "invokeSuspend", n = {}, nl = {864}, s = {}, v = 2)
     static final class C00053 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ LinkData $parsed;
@@ -6717,7 +6719,7 @@ public class ShowBox extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.ShowBox$loadLinks$4 */
     /* JADX INFO: compiled from: ShowBox.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.ShowBox$loadLinks$4", f = "ShowBox.kt", i = {}, l = {865}, m = "invokeSuspend", n = {}, nl = {873}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.ShowBox$loadLinks$4", f = "ShowBox.kt", i = {}, l = {866}, m = "invokeSuspend", n = {}, nl = {874}, s = {}, v = 2)
     static final class C00064 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ LinkData $parsed;
@@ -6763,7 +6765,7 @@ public class ShowBox extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.ShowBox$loadLinks$5 */
     /* JADX INFO: compiled from: ShowBox.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.ShowBox$loadLinks$5", f = "ShowBox.kt", i = {}, l = {875}, m = "invokeSuspend", n = {}, nl = {881}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.ShowBox$loadLinks$5", f = "ShowBox.kt", i = {}, l = {876}, m = "invokeSuspend", n = {}, nl = {882}, s = {}, v = 2)
     static final class C00075 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ LinkData $parsed;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -6807,7 +6809,7 @@ public class ShowBox extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.ShowBox$loadLinks$6 */
     /* JADX INFO: compiled from: ShowBox.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.ShowBox$loadLinks$6", f = "ShowBox.kt", i = {}, l = {883}, m = "invokeSuspend", n = {}, nl = {889}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.ShowBox$loadLinks$6", f = "ShowBox.kt", i = {}, l = {884}, m = "invokeSuspend", n = {}, nl = {890}, s = {}, v = 2)
     static final class C00086 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ LinkData $parsed;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

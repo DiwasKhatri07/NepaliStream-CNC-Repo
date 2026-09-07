@@ -22,6 +22,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -72,7 +73,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Pmsm.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Pmsm/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u00002\u00020\u0001:\u0001>B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\u001c\u0010)\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0016\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+JF\u0010/\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u000e2\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0096@¢\u0006\u0002\u00108J\u000e\u00109\u001a\u0004\u0018\u00010:*\u00020(H\u0002J\u0019\u0010;\u001a\u0004\u0018\u00010\"2\b\u0010<\u001a\u0004\u0018\u00010\u0005H\u0002¢\u0006\u0002\u0010=R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006?"}, d2 = {"Lcom/pmsm/Pmsm;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toEpisode", "Lcom/lagradost/cloudstream3/Episode;", "extractYear", "text", "(Ljava/lang/String;)Ljava/lang/Integer;", "ZetaPlayerResponse", "Pmsm"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nPmsm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pmsm.kt\ncom/pmsm/Pmsm\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,214:1\n1795#2,10:215\n2068#2:225\n2069#2:227\n1805#2:228\n1849#2,8:229\n1795#2,10:237\n2068#2:247\n2069#2:249\n1805#2:250\n1849#2,8:251\n1739#2:260\n1814#2,3:261\n777#2:264\n873#2,2:265\n1739#2:267\n1814#2,3:268\n777#2:271\n873#2,2:272\n1795#2,10:274\n2068#2:284\n2069#2:286\n1805#2:287\n777#2:288\n873#2,2:289\n1849#2,8:291\n1795#2,10:299\n2068#2:309\n2069#2:311\n1805#2:312\n1849#2,8:313\n1#3:226\n1#3:248\n1#3:259\n1#3:285\n1#3:310\n1#3:321\n*S KotlinDebug\n*F\n+ 1 Pmsm.kt\ncom/pmsm/Pmsm\n*L\n55#1:215,10\n55#1:225\n55#1:227\n55#1:228\n57#1:229,8\n73#1:237,10\n73#1:247\n73#1:249\n73#1:250\n74#1:251,8\n86#1:260\n86#1:261,3\n86#1:264\n86#1:265,2\n87#1:267\n87#1:268,3\n87#1:271\n87#1:272,2\n97#1:274,10\n97#1:284\n97#1:286\n97#1:287\n98#1:288\n98#1:289,2\n99#1:291,8\n103#1:299,10\n103#1:309\n103#1:311\n103#1:312\n104#1:313,8\n55#1:226\n73#1:248\n97#1:285\n103#1:310\n*E\n"})
+@SourceDebugExtension({"SMAP\nPmsm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pmsm.kt\ncom/pmsm/Pmsm\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,215:1\n1795#2,10:216\n2068#2:226\n2069#2:228\n1805#2:229\n1849#2,8:230\n1795#2,10:238\n2068#2:248\n2069#2:250\n1805#2:251\n1849#2,8:252\n1739#2:261\n1814#2,3:262\n777#2:265\n873#2,2:266\n1739#2:268\n1814#2,3:269\n777#2:272\n873#2,2:273\n1795#2,10:275\n2068#2:285\n2069#2:287\n1805#2:288\n777#2:289\n873#2,2:290\n1849#2,8:292\n1795#2,10:300\n2068#2:310\n2069#2:312\n1805#2:313\n1849#2,8:314\n1#3:227\n1#3:249\n1#3:260\n1#3:286\n1#3:311\n1#3:322\n*S KotlinDebug\n*F\n+ 1 Pmsm.kt\ncom/pmsm/Pmsm\n*L\n56#1:216,10\n56#1:226\n56#1:228\n56#1:229\n58#1:230,8\n74#1:238,10\n74#1:248\n74#1:250\n74#1:251\n75#1:252,8\n87#1:261\n87#1:262,3\n87#1:265\n87#1:266,2\n88#1:268\n88#1:269,3\n88#1:272\n88#1:273,2\n98#1:275,10\n98#1:285\n98#1:287\n98#1:288\n99#1:289\n99#1:290,2\n100#1:292,8\n104#1:300,10\n104#1:310\n104#1:312\n104#1:313\n105#1:314,8\n56#1:227\n74#1:249\n98#1:286\n104#1:311\n*E\n"})
 public final class Pmsm extends MainAPI {
 
     @NotNull
@@ -95,14 +96,14 @@ public final class Pmsm extends MainAPI {
     /* JADX INFO: renamed from: com.pmsm.Pmsm$getMainPage$1 */
     /* JADX INFO: compiled from: Pmsm.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.pmsm.Pmsm", f = "Pmsm.kt", i = {0, 0}, l = {54}, m = "getMainPage", n = {"request", "page"}, nl = {55}, s = {"L$0", "I$0"}, v = 2)
-    static final class C00031 extends ContinuationImpl {
+    @DebugMetadata(c = "com.pmsm.Pmsm", f = "Pmsm.kt", i = {0, 0}, l = {55}, m = "getMainPage", n = {"request", "page"}, nl = {56}, s = {"L$0", "I$0"}, v = 2)
+    static final class C00061 extends ContinuationImpl {
         int I$0;
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00031(Continuation<? super C00031> continuation) {
+        C00061(Continuation<? super C00061> continuation) {
             super(continuation);
         }
 
@@ -117,8 +118,8 @@ public final class Pmsm extends MainAPI {
     /* JADX INFO: renamed from: com.pmsm.Pmsm$load$1 */
     /* JADX INFO: compiled from: Pmsm.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.pmsm.Pmsm", f = "Pmsm.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {78, 107, 120}, m = "load", n = {"url", "url", "document", "rawTitle", "title", "poster", "bgposter", "description", "tags", "actors", "year", "duration", "rating", "trailerId", "trailerUrl", "recommendations", "episodes", "isSeries", "url", "document", "rawTitle", "title", "poster", "bgposter", "description", "tags", "actors", "year", "duration", "rating", "trailerId", "trailerUrl", "recommendations", "isSeries"}, nl = {79, 120, 101}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "Z$0"}, v = 2)
-    static final class C00041 extends ContinuationImpl {
+    @DebugMetadata(c = "com.pmsm.Pmsm", f = "Pmsm.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {79, 108, 121}, m = "load", n = {"url", "url", "document", "rawTitle", "title", "poster", "bgposter", "description", "tags", "actors", "year", "duration", "rating", "trailerId", "trailerUrl", "recommendations", "episodes", "isSeries", "url", "document", "rawTitle", "title", "poster", "bgposter", "description", "tags", "actors", "year", "duration", "rating", "trailerId", "trailerUrl", "recommendations", "isSeries"}, nl = {80, 121, 102}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "Z$0"}, v = 2)
+    static final class C00071 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -139,7 +140,7 @@ public final class Pmsm extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00041(Continuation<? super C00041> continuation) {
+        C00071(Continuation<? super C00071> continuation) {
             super(continuation);
         }
 
@@ -154,8 +155,8 @@ public final class Pmsm extends MainAPI {
     /* JADX INFO: renamed from: com.pmsm.Pmsm$loadLinks$1 */
     /* JADX INFO: compiled from: Pmsm.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.pmsm.Pmsm", f = "Pmsm.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {141, 142}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {142, 170}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
-    static final class C00071 extends ContinuationImpl {
+    @DebugMetadata(c = "com.pmsm.Pmsm", f = "Pmsm.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {142, 143}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {143, 171}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    static final class C00101 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -164,7 +165,7 @@ public final class Pmsm extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00071(Continuation<? super C00071> continuation) {
+        C00101(Continuation<? super C00101> continuation) {
             super(continuation);
         }
 
@@ -179,13 +180,13 @@ public final class Pmsm extends MainAPI {
     /* JADX INFO: renamed from: com.pmsm.Pmsm$search$1 */
     /* JADX INFO: compiled from: Pmsm.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.pmsm.Pmsm", f = "Pmsm.kt", i = {0}, l = {72}, m = "search", n = {"query"}, nl = {73}, s = {"L$0"}, v = 2)
-    static final class C00091 extends ContinuationImpl {
+    @DebugMetadata(c = "com.pmsm.Pmsm", f = "Pmsm.kt", i = {0}, l = {73}, m = "search", n = {"query"}, nl = {74}, s = {"L$0"}, v = 2)
+    static final class C00121 extends ContinuationImpl {
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00091(Continuation<? super C00091> continuation) {
+        C00121(Continuation<? super C00121> continuation) {
             super(continuation);
         }
 
@@ -245,30 +246,31 @@ public final class Pmsm extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
-        C00031 c00031;
+        C00061 c00061;
         MainPageRequest request2;
         int page2 = page;
-        if (continuation instanceof C00031) {
-            c00031 = (C00031) continuation;
-            if ((c00031.label & Integer.MIN_VALUE) != 0) {
-                c00031.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00061) {
+            c00061 = (C00061) continuation;
+            if ((c00061.label & Integer.MIN_VALUE) != 0) {
+                c00061.label -= Integer.MIN_VALUE;
             } else {
-                c00031 = new C00031(continuation);
+                c00061 = new C00061(continuation);
             }
         } else {
-            c00031 = new C00031(continuation);
+            c00061 = new C00061(continuation);
         }
-        Object $result = c00031.result;
+        Object $result = c00061.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00031.label) {
+        switch (c00061.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + request.getData() + "/page/" + page2;
-                c00031.L$0 = request;
-                c00031.I$0 = page2;
-                c00031.label = 1;
-                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00031, 4094, (Object) null);
+                c00061.L$0 = request;
+                c00061.I$0 = page2;
+                c00061.label = 1;
+                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00061, 4094, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -276,8 +278,8 @@ public final class Pmsm extends MainAPI {
                 break;
                 break;
             case 1:
-                page2 = c00031.I$0;
-                request2 = (MainPageRequest) c00031.L$0;
+                page2 = c00061.I$0;
+                request2 = (MainPageRequest) c00061.L$0;
                 ResultKt.throwOnFailure($result);
                 break;
             default:
@@ -328,27 +330,27 @@ public final class Pmsm extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
-        C00091 c00091;
-        if (continuation instanceof C00091) {
-            c00091 = (C00091) continuation;
-            if ((c00091.label & Integer.MIN_VALUE) != 0) {
-                c00091.label -= Integer.MIN_VALUE;
+        C00121 c00121;
+        if (continuation instanceof C00121) {
+            c00121 = (C00121) continuation;
+            if ((c00121.label & Integer.MIN_VALUE) != 0) {
+                c00121.label -= Integer.MIN_VALUE;
             } else {
-                c00091 = new C00091(continuation);
+                c00121 = new C00121(continuation);
             }
         } else {
-            c00091 = new C00091(continuation);
+            c00121 = new C00121(continuation);
         }
-        Object $result = c00091.result;
+        Object $result = c00121.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00091.label) {
+        switch (c00121.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + "/?s=" + query;
-                c00091.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                c00091.label = 1;
-                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 60L, (Interceptor) null, false, (ResponseParser) null, c00091, 3838, (Object) null);
+                c00121.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c00121.label = 1;
+                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 60L, (Interceptor) null, false, (ResponseParser) null, c00121, 3838, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -437,7 +439,7 @@ public final class Pmsm extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:99:0x0347  */
     @Nullable
     public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) {
-        C00041 c00041;
+        C00071 c00071;
         Object obj;
         char c;
         Object obj2;
@@ -505,29 +507,29 @@ public final class Pmsm extends MainAPI {
         String strText4;
         String strAttr3;
         String strText5;
-        if (continuation instanceof C00041) {
-            c00041 = (C00041) continuation;
-            if ((c00041.label & Integer.MIN_VALUE) != 0) {
-                c00041.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00071) {
+            c00071 = (C00071) continuation;
+            if ((c00071.label & Integer.MIN_VALUE) != 0) {
+                c00071.label -= Integer.MIN_VALUE;
             } else {
-                c00041 = new C00041(continuation);
+                c00071 = new C00071(continuation);
             }
         } else {
-            c00041 = new C00041(continuation);
+            c00071 = new C00071(continuation);
         }
-        C00041 c00042 = c00041;
-        Object $result = c00042.result;
+        C00071 c00072 = c00071;
+        Object $result = c00072.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00042.label) {
+        switch (c00072.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 Requests app = MainActivityKt.getApp();
-                c00042.L$0 = url;
-                c00042.label = 1;
+                c00072.L$0 = url;
+                c00072.label = 1;
                 c = 1;
-                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00042, 4094, (Object) null);
-                c00042 = c00042;
+                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00072, 4094, (Object) null);
+                c00072 = c00072;
                 if (obj2 == obj) {
                     return obj;
                 }
@@ -691,25 +693,25 @@ public final class Pmsm extends MainAPI {
                 if (isSeries) {
                     String title2 = title;
                     TvType tvType = TvType.Movie;
-                    C00063 c00063 = new C00063(poster, bgposter, description, tags, year, recommendations, duration, rating, actors, trailerUrl, null);
-                    c00042.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00042.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                    c00042.L$2 = SpillingKt.nullOutSpilledVariable(rawTitle);
-                    c00042.L$3 = SpillingKt.nullOutSpilledVariable(title2);
-                    c00042.L$4 = SpillingKt.nullOutSpilledVariable(poster);
-                    c00042.L$5 = SpillingKt.nullOutSpilledVariable(bgposter);
-                    c00042.L$6 = SpillingKt.nullOutSpilledVariable(description);
-                    c00042.L$7 = SpillingKt.nullOutSpilledVariable(tags);
-                    c00042.L$8 = SpillingKt.nullOutSpilledVariable(actors);
-                    c00042.L$9 = SpillingKt.nullOutSpilledVariable(year);
-                    c00042.L$10 = SpillingKt.nullOutSpilledVariable(duration);
-                    c00042.L$11 = SpillingKt.nullOutSpilledVariable(rating);
-                    c00042.L$12 = SpillingKt.nullOutSpilledVariable(trailerId2);
-                    c00042.L$13 = SpillingKt.nullOutSpilledVariable(trailerUrl);
-                    c00042.L$14 = SpillingKt.nullOutSpilledVariable(recommendations);
-                    c00042.Z$0 = isSeries;
-                    c00042.label = 3;
-                    $result = MainAPIKt.newMovieLoadResponse(this, title2, url2, tvType, url2, c00063, c00042);
+                    C00093 c00093 = new C00093(poster, bgposter, description, tags, year, recommendations, duration, rating, actors, trailerUrl, null);
+                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00072.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                    c00072.L$2 = SpillingKt.nullOutSpilledVariable(rawTitle);
+                    c00072.L$3 = SpillingKt.nullOutSpilledVariable(title2);
+                    c00072.L$4 = SpillingKt.nullOutSpilledVariable(poster);
+                    c00072.L$5 = SpillingKt.nullOutSpilledVariable(bgposter);
+                    c00072.L$6 = SpillingKt.nullOutSpilledVariable(description);
+                    c00072.L$7 = SpillingKt.nullOutSpilledVariable(tags);
+                    c00072.L$8 = SpillingKt.nullOutSpilledVariable(actors);
+                    c00072.L$9 = SpillingKt.nullOutSpilledVariable(year);
+                    c00072.L$10 = SpillingKt.nullOutSpilledVariable(duration);
+                    c00072.L$11 = SpillingKt.nullOutSpilledVariable(rating);
+                    c00072.L$12 = SpillingKt.nullOutSpilledVariable(trailerId2);
+                    c00072.L$13 = SpillingKt.nullOutSpilledVariable(trailerUrl);
+                    c00072.L$14 = SpillingKt.nullOutSpilledVariable(recommendations);
+                    c00072.Z$0 = isSeries;
+                    c00072.label = 3;
+                    $result = MainAPIKt.newMovieLoadResponse(this, title2, url2, tvType, url2, c00093, c00072);
                     if ($result == obj) {
                         return obj;
                     }
@@ -753,32 +755,32 @@ public final class Pmsm extends MainAPI {
                 List episodes = CollectionsKt.sortedWith($this$distinctBy$iv3, ComparisonsKt.compareBy(function1Arr));
                 String title3 = title;
                 TvType tvType2 = TvType.TvSeries;
-                C00052 c00052 = new C00052(poster, bgposter, description, tags, year, recommendations, duration, rating, actors, trailerUrl, null);
-                c00042.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c00042.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                c00042.L$2 = SpillingKt.nullOutSpilledVariable(rawTitle);
-                c00042.L$3 = SpillingKt.nullOutSpilledVariable(title3);
-                c00042.L$4 = SpillingKt.nullOutSpilledVariable(poster);
-                c00042.L$5 = SpillingKt.nullOutSpilledVariable(bgposter);
-                c00042.L$6 = SpillingKt.nullOutSpilledVariable(description);
-                c00042.L$7 = SpillingKt.nullOutSpilledVariable(tags);
-                c00042.L$8 = SpillingKt.nullOutSpilledVariable(actors);
-                c00042.L$9 = SpillingKt.nullOutSpilledVariable(year);
-                c00042.L$10 = SpillingKt.nullOutSpilledVariable(duration);
-                c00042.L$11 = SpillingKt.nullOutSpilledVariable(rating);
-                c00042.L$12 = SpillingKt.nullOutSpilledVariable(trailerId2);
-                c00042.L$13 = SpillingKt.nullOutSpilledVariable(trailerUrl);
-                c00042.L$14 = SpillingKt.nullOutSpilledVariable(recommendations);
-                c00042.L$15 = SpillingKt.nullOutSpilledVariable(episodes);
-                c00042.Z$0 = isSeries;
-                c00042.label = 2;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title3, url2, tvType2, episodes, c00052, c00042);
+                C00082 c00082 = new C00082(poster, bgposter, description, tags, year, recommendations, duration, rating, actors, trailerUrl, null);
+                c00072.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c00072.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                c00072.L$2 = SpillingKt.nullOutSpilledVariable(rawTitle);
+                c00072.L$3 = SpillingKt.nullOutSpilledVariable(title3);
+                c00072.L$4 = SpillingKt.nullOutSpilledVariable(poster);
+                c00072.L$5 = SpillingKt.nullOutSpilledVariable(bgposter);
+                c00072.L$6 = SpillingKt.nullOutSpilledVariable(description);
+                c00072.L$7 = SpillingKt.nullOutSpilledVariable(tags);
+                c00072.L$8 = SpillingKt.nullOutSpilledVariable(actors);
+                c00072.L$9 = SpillingKt.nullOutSpilledVariable(year);
+                c00072.L$10 = SpillingKt.nullOutSpilledVariable(duration);
+                c00072.L$11 = SpillingKt.nullOutSpilledVariable(rating);
+                c00072.L$12 = SpillingKt.nullOutSpilledVariable(trailerId2);
+                c00072.L$13 = SpillingKt.nullOutSpilledVariable(trailerUrl);
+                c00072.L$14 = SpillingKt.nullOutSpilledVariable(recommendations);
+                c00072.L$15 = SpillingKt.nullOutSpilledVariable(episodes);
+                c00072.Z$0 = isSeries;
+                c00072.label = 2;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title3, url2, tvType2, episodes, c00082, c00072);
                 if ($result == obj) {
                     return obj;
                 }
                 return (LoadResponse) $result;
             case 1:
-                String url3 = (String) c00042.L$0;
+                String url3 = (String) c00072.L$0;
                 ResultKt.throwOnFailure($result);
                 url2 = url3;
                 obj = coroutine_suspended;
@@ -940,25 +942,25 @@ public final class Pmsm extends MainAPI {
                 if (isSeries) {
                     String title4 = title;
                     TvType tvType3 = TvType.Movie;
-                    C00063 c00064 = new C00063(poster, bgposter, description, tags, year, recommendations, duration, rating, actors, trailerUrl, null);
-                    c00042.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00042.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                    c00042.L$2 = SpillingKt.nullOutSpilledVariable(rawTitle);
-                    c00042.L$3 = SpillingKt.nullOutSpilledVariable(title4);
-                    c00042.L$4 = SpillingKt.nullOutSpilledVariable(poster);
-                    c00042.L$5 = SpillingKt.nullOutSpilledVariable(bgposter);
-                    c00042.L$6 = SpillingKt.nullOutSpilledVariable(description);
-                    c00042.L$7 = SpillingKt.nullOutSpilledVariable(tags);
-                    c00042.L$8 = SpillingKt.nullOutSpilledVariable(actors);
-                    c00042.L$9 = SpillingKt.nullOutSpilledVariable(year);
-                    c00042.L$10 = SpillingKt.nullOutSpilledVariable(duration);
-                    c00042.L$11 = SpillingKt.nullOutSpilledVariable(rating);
-                    c00042.L$12 = SpillingKt.nullOutSpilledVariable(trailerId2);
-                    c00042.L$13 = SpillingKt.nullOutSpilledVariable(trailerUrl);
-                    c00042.L$14 = SpillingKt.nullOutSpilledVariable(recommendations);
-                    c00042.Z$0 = isSeries;
-                    c00042.label = 3;
-                    $result = MainAPIKt.newMovieLoadResponse(this, title4, url2, tvType3, url2, c00064, c00042);
+                    C00093 c00094 = new C00093(poster, bgposter, description, tags, year, recommendations, duration, rating, actors, trailerUrl, null);
+                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00072.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                    c00072.L$2 = SpillingKt.nullOutSpilledVariable(rawTitle);
+                    c00072.L$3 = SpillingKt.nullOutSpilledVariable(title4);
+                    c00072.L$4 = SpillingKt.nullOutSpilledVariable(poster);
+                    c00072.L$5 = SpillingKt.nullOutSpilledVariable(bgposter);
+                    c00072.L$6 = SpillingKt.nullOutSpilledVariable(description);
+                    c00072.L$7 = SpillingKt.nullOutSpilledVariable(tags);
+                    c00072.L$8 = SpillingKt.nullOutSpilledVariable(actors);
+                    c00072.L$9 = SpillingKt.nullOutSpilledVariable(year);
+                    c00072.L$10 = SpillingKt.nullOutSpilledVariable(duration);
+                    c00072.L$11 = SpillingKt.nullOutSpilledVariable(rating);
+                    c00072.L$12 = SpillingKt.nullOutSpilledVariable(trailerId2);
+                    c00072.L$13 = SpillingKt.nullOutSpilledVariable(trailerUrl);
+                    c00072.L$14 = SpillingKt.nullOutSpilledVariable(recommendations);
+                    c00072.Z$0 = isSeries;
+                    c00072.label = 3;
+                    $result = MainAPIKt.newMovieLoadResponse(this, title4, url2, tvType3, url2, c00094, c00072);
                     if ($result == obj) {
                         return obj;
                     }
@@ -1002,38 +1004,38 @@ public final class Pmsm extends MainAPI {
                 List episodes2 = CollectionsKt.sortedWith($this$distinctBy$iv6, ComparisonsKt.compareBy(function1Arr2));
                 String title5 = title;
                 TvType tvType4 = TvType.TvSeries;
-                C00052 c00053 = new C00052(poster, bgposter, description, tags, year, recommendations, duration, rating, actors, trailerUrl, null);
-                c00042.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c00042.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                c00042.L$2 = SpillingKt.nullOutSpilledVariable(rawTitle);
-                c00042.L$3 = SpillingKt.nullOutSpilledVariable(title5);
-                c00042.L$4 = SpillingKt.nullOutSpilledVariable(poster);
-                c00042.L$5 = SpillingKt.nullOutSpilledVariable(bgposter);
-                c00042.L$6 = SpillingKt.nullOutSpilledVariable(description);
-                c00042.L$7 = SpillingKt.nullOutSpilledVariable(tags);
-                c00042.L$8 = SpillingKt.nullOutSpilledVariable(actors);
-                c00042.L$9 = SpillingKt.nullOutSpilledVariable(year);
-                c00042.L$10 = SpillingKt.nullOutSpilledVariable(duration);
-                c00042.L$11 = SpillingKt.nullOutSpilledVariable(rating);
-                c00042.L$12 = SpillingKt.nullOutSpilledVariable(trailerId2);
-                c00042.L$13 = SpillingKt.nullOutSpilledVariable(trailerUrl);
-                c00042.L$14 = SpillingKt.nullOutSpilledVariable(recommendations);
-                c00042.L$15 = SpillingKt.nullOutSpilledVariable(episodes2);
-                c00042.Z$0 = isSeries;
-                c00042.label = 2;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, url2, tvType4, episodes2, c00053, c00042);
+                C00082 c00083 = new C00082(poster, bgposter, description, tags, year, recommendations, duration, rating, actors, trailerUrl, null);
+                c00072.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c00072.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                c00072.L$2 = SpillingKt.nullOutSpilledVariable(rawTitle);
+                c00072.L$3 = SpillingKt.nullOutSpilledVariable(title5);
+                c00072.L$4 = SpillingKt.nullOutSpilledVariable(poster);
+                c00072.L$5 = SpillingKt.nullOutSpilledVariable(bgposter);
+                c00072.L$6 = SpillingKt.nullOutSpilledVariable(description);
+                c00072.L$7 = SpillingKt.nullOutSpilledVariable(tags);
+                c00072.L$8 = SpillingKt.nullOutSpilledVariable(actors);
+                c00072.L$9 = SpillingKt.nullOutSpilledVariable(year);
+                c00072.L$10 = SpillingKt.nullOutSpilledVariable(duration);
+                c00072.L$11 = SpillingKt.nullOutSpilledVariable(rating);
+                c00072.L$12 = SpillingKt.nullOutSpilledVariable(trailerId2);
+                c00072.L$13 = SpillingKt.nullOutSpilledVariable(trailerUrl);
+                c00072.L$14 = SpillingKt.nullOutSpilledVariable(recommendations);
+                c00072.L$15 = SpillingKt.nullOutSpilledVariable(episodes2);
+                c00072.Z$0 = isSeries;
+                c00072.label = 2;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, url2, tvType4, episodes2, c00083, c00072);
                 if ($result == obj) {
                     return obj;
                 }
                 return (LoadResponse) $result;
             case 2:
-                boolean z = c00042.Z$0;
+                boolean z = c00072.Z$0;
                 ResultKt.throwOnFailure($result);
                 return (LoadResponse) $result;
             case 3:
-                isSeries2 = c00042.Z$0;
-                rawTitle2 = (String) c00042.L$2;
-                document2 = (Document) c00042.L$1;
+                isSeries2 = c00072.Z$0;
+                rawTitle2 = (String) c00072.L$2;
+                document2 = (Document) c00072.L$1;
                 ResultKt.throwOnFailure($result);
                 return (LoadResponse) $result;
             default:
@@ -1060,8 +1062,8 @@ public final class Pmsm extends MainAPI {
     /* JADX INFO: renamed from: com.pmsm.Pmsm$load$2 */
     /* JADX INFO: compiled from: Pmsm.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.pmsm.Pmsm$load$2", f = "Pmsm.kt", i = {0}, l = {117}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {118}, s = {"L$0"}, v = 2)
-    static final class C00052 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.pmsm.Pmsm$load$2", f = "Pmsm.kt", i = {0}, l = {118}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {119}, s = {"L$0"}, v = 2)
+    static final class C00082 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<String> $actors;
         final /* synthetic */ String $bgposter;
         final /* synthetic */ String $description;
@@ -1076,7 +1078,7 @@ public final class Pmsm extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00052(String str, String str2, String str3, List<String> list, Integer num, List<? extends SearchResponse> list2, Integer num2, Double d, List<String> list3, String str4, Continuation<? super C00052> continuation) {
+        C00082(String str, String str2, String str3, List<String> list, Integer num, List<? extends SearchResponse> list2, Integer num2, Double d, List<String> list3, String str4, Continuation<? super C00082> continuation) {
             super(2, continuation);
             this.$poster = str;
             this.$bgposter = str2;
@@ -1091,9 +1093,9 @@ public final class Pmsm extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00052 = new C00052(this.$poster, this.$bgposter, this.$description, this.$tags, this.$year, this.$recommendations, this.$duration, this.$rating, this.$actors, this.$trailerUrl, continuation);
-            c00052.L$0 = obj;
-            return c00052;
+            Continuation<Unit> c00082 = new C00082(this.$poster, this.$bgposter, this.$description, this.$tags, this.$year, this.$recommendations, this.$duration, this.$rating, this.$actors, this.$trailerUrl, continuation);
+            c00082.L$0 = obj;
+            return c00082;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -1138,8 +1140,8 @@ public final class Pmsm extends MainAPI {
     /* JADX INFO: renamed from: com.pmsm.Pmsm$load$3 */
     /* JADX INFO: compiled from: Pmsm.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.pmsm.Pmsm$load$3", f = "Pmsm.kt", i = {0}, l = {130}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {131}, s = {"L$0"}, v = 2)
-    static final class C00063 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.pmsm.Pmsm$load$3", f = "Pmsm.kt", i = {0}, l = {131}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {132}, s = {"L$0"}, v = 2)
+    static final class C00093 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<String> $actors;
         final /* synthetic */ String $bgposter;
         final /* synthetic */ String $description;
@@ -1154,7 +1156,7 @@ public final class Pmsm extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00063(String str, String str2, String str3, List<String> list, Integer num, List<? extends SearchResponse> list2, Integer num2, Double d, List<String> list3, String str4, Continuation<? super C00063> continuation) {
+        C00093(String str, String str2, String str3, List<String> list, Integer num, List<? extends SearchResponse> list2, Integer num2, Double d, List<String> list3, String str4, Continuation<? super C00093> continuation) {
             super(2, continuation);
             this.$poster = str;
             this.$bgposter = str2;
@@ -1169,9 +1171,9 @@ public final class Pmsm extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00063 = new C00063(this.$poster, this.$bgposter, this.$description, this.$tags, this.$year, this.$recommendations, this.$duration, this.$rating, this.$actors, this.$trailerUrl, continuation);
-            c00063.L$0 = obj;
-            return c00063;
+            Continuation<Unit> c00093 = new C00093(this.$poster, this.$bgposter, this.$description, this.$tags, this.$year, this.$recommendations, this.$duration, this.$rating, this.$actors, this.$trailerUrl, continuation);
+            c00093.L$0 = obj;
+            return c00093;
         }
 
         public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
@@ -1218,47 +1220,47 @@ public final class Pmsm extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
-        C00071 c00071;
+        C00101 c00101;
         Pmsm pmsm;
         Object obj;
         boolean z;
-        C00071 c00072;
+        C00101 c00102;
         boolean isCasting2;
         Function1<? super SubtitleFile, Unit> function3;
         Function1<? super ExtractorLink, Unit> function4;
         Object obj2;
         String data2;
         List listSelect;
-        C00082 c00082;
-        if (continuation instanceof C00071) {
-            c00071 = (C00071) continuation;
-            if ((c00071.label & Integer.MIN_VALUE) != 0) {
-                c00071.label -= Integer.MIN_VALUE;
+        C00112 c00112;
+        if (continuation instanceof C00101) {
+            c00101 = (C00101) continuation;
+            if ((c00101.label & Integer.MIN_VALUE) != 0) {
+                c00101.label -= Integer.MIN_VALUE;
                 pmsm = this;
             } else {
                 pmsm = this;
-                c00071 = pmsm.new C00071(continuation);
+                c00101 = pmsm.new C00101(continuation);
             }
         } else {
             pmsm = this;
-            c00071 = pmsm.new C00071(continuation);
+            c00101 = pmsm.new C00101(continuation);
         }
-        Object $result = c00071.result;
+        Object $result = c00101.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00071.label) {
+        switch (c00101.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
-                c00071.L$0 = data;
-                c00071.L$1 = function1;
-                c00071.L$2 = function2;
-                c00071.Z$0 = isCasting;
-                c00071.label = 1;
-                C00071 c00073 = c00071;
+                c00101.L$0 = data;
+                c00101.L$1 = function1;
+                c00101.L$2 = function2;
+                c00101.Z$0 = isCasting;
+                c00101.label = 1;
+                C00101 c00103 = c00101;
                 obj = coroutine_suspended;
                 z = true;
-                Object obj3 = Requests.get$default(app, data, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00073, 4094, (Object) null);
-                c00072 = c00073;
+                Object obj3 = Requests.get$default(app, data, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00103, 4094, (Object) null);
+                c00102 = c00103;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -1269,24 +1271,24 @@ public final class Pmsm extends MainAPI {
                 data2 = data;
                 Document document = ((NiceResponse) obj2).getDocument();
                 listSelect = document.select("#playeroptionsul > li");
-                c00082 = pmsm.new C00082(data2, function3, function4, null);
-                c00072.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                c00072.L$1 = SpillingKt.nullOutSpilledVariable(function3);
-                c00072.L$2 = SpillingKt.nullOutSpilledVariable(function4);
-                c00072.L$3 = SpillingKt.nullOutSpilledVariable(document);
-                c00072.Z$0 = isCasting2;
-                c00072.label = 2;
-                if (ParCollectionsKt.amap(listSelect, c00082, c00072) == obj) {
+                c00112 = pmsm.new C00112(data2, function3, function4, null);
+                c00102.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                c00102.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                c00102.L$2 = SpillingKt.nullOutSpilledVariable(function4);
+                c00102.L$3 = SpillingKt.nullOutSpilledVariable(document);
+                c00102.Z$0 = isCasting2;
+                c00102.label = 2;
+                if (ParCollectionsKt.amap(listSelect, c00112, c00102) == obj) {
                     return obj;
                 }
                 return Boxing.boxBoolean(z);
             case 1:
-                boolean isCasting3 = c00071.Z$0;
-                Function1<? super ExtractorLink, Unit> function5 = (Function1) c00071.L$2;
-                Function1<? super SubtitleFile, Unit> function6 = (Function1) c00071.L$1;
-                String data3 = (String) c00071.L$0;
+                boolean isCasting3 = c00101.Z$0;
+                Function1<? super ExtractorLink, Unit> function5 = (Function1) c00101.L$2;
+                Function1<? super SubtitleFile, Unit> function6 = (Function1) c00101.L$1;
+                String data3 = (String) c00101.L$0;
                 ResultKt.throwOnFailure($result);
-                c00072 = c00071;
+                c00102 = c00101;
                 obj = coroutine_suspended;
                 data2 = data3;
                 isCasting2 = isCasting3;
@@ -1296,19 +1298,19 @@ public final class Pmsm extends MainAPI {
                 obj2 = $result;
                 Document document2 = ((NiceResponse) obj2).getDocument();
                 listSelect = document2.select("#playeroptionsul > li");
-                c00082 = pmsm.new C00082(data2, function3, function4, null);
-                c00072.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                c00072.L$1 = SpillingKt.nullOutSpilledVariable(function3);
-                c00072.L$2 = SpillingKt.nullOutSpilledVariable(function4);
-                c00072.L$3 = SpillingKt.nullOutSpilledVariable(document2);
-                c00072.Z$0 = isCasting2;
-                c00072.label = 2;
-                if (ParCollectionsKt.amap(listSelect, c00082, c00072) == obj) {
+                c00112 = pmsm.new C00112(data2, function3, function4, null);
+                c00102.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                c00102.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                c00102.L$2 = SpillingKt.nullOutSpilledVariable(function4);
+                c00102.L$3 = SpillingKt.nullOutSpilledVariable(document2);
+                c00102.Z$0 = isCasting2;
+                c00102.label = 2;
+                if (ParCollectionsKt.amap(listSelect, c00112, c00102) == obj) {
                     return obj;
                 }
                 return Boxing.boxBoolean(z);
             case 2:
-                boolean z2 = c00071.Z$0;
+                boolean z2 = c00101.Z$0;
                 ResultKt.throwOnFailure($result);
                 z = true;
                 return Boxing.boxBoolean(z);
@@ -1320,9 +1322,9 @@ public final class Pmsm extends MainAPI {
     /* JADX INFO: renamed from: com.pmsm.Pmsm$loadLinks$2 */
     /* JADX INFO: compiled from: Pmsm.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "li", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.pmsm.Pmsm$loadLinks$2", f = "Pmsm.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {147, 162, 166}, m = "invokeSuspend", n = {"li", "post", "nume", "type", "li", "post", "nume", "type", "res", "link", "li", "post", "nume", "type", "res", "link"}, nl = {157, 166, 168}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    @SourceDebugExtension({"SMAP\nPmsm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pmsm.kt\ncom/pmsm/Pmsm$loadLinks$2\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,214:1\n73#2,5:215\n*S KotlinDebug\n*F\n+ 1 Pmsm.kt\ncom/pmsm/Pmsm$loadLinks$2\n*L\n157#1:215,5\n*E\n"})
-    static final class C00082 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.pmsm.Pmsm$loadLinks$2", f = "Pmsm.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {148, 163, 167}, m = "invokeSuspend", n = {"li", "post", "nume", "type", "li", "post", "nume", "type", "res", "link", "li", "post", "nume", "type", "res", "link"}, nl = {158, 167, 169}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    @SourceDebugExtension({"SMAP\nPmsm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pmsm.kt\ncom/pmsm/Pmsm$loadLinks$2\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,215:1\n73#2,5:216\n*S KotlinDebug\n*F\n+ 1 Pmsm.kt\ncom/pmsm/Pmsm$loadLinks$2\n*L\n158#1:216,5\n*E\n"})
+    static final class C00112 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $data;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -1335,7 +1337,7 @@ public final class Pmsm extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00082(String str, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00082> continuation) {
+        C00112(String str, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00112> continuation) {
             super(2, continuation);
             this.$data = str;
             this.$subtitleCallback = function1;
@@ -1343,9 +1345,9 @@ public final class Pmsm extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00082 = Pmsm.this.new C00082(this.$data, this.$subtitleCallback, this.$callback, continuation);
-            c00082.L$0 = obj;
-            return c00082;
+            Continuation<Unit> c00112 = Pmsm.this.new C00112(this.$data, this.$subtitleCallback, this.$callback, continuation);
+            c00112.L$0 = obj;
+            return c00112;
         }
 
         public final Object invoke(Element element, Continuation<? super Unit> continuation) {

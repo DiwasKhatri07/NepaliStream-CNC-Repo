@@ -24,6 +24,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -68,7 +69,7 @@ import org.jsoup.select.Elements;
 /* JADX INFO: compiled from: AllWish.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AllWish/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000ª\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u0000 Q2\u00020\u0001:\u0004QRSTB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010$\u001a\b\u0012\u0004\u0012\u00020%0 2\u0006\u0010&\u001a\u00020'H\u0002J\u001e\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020\u00052\u0006\u0010+\u001a\u00020,H\u0096@¢\u0006\u0002\u0010-J \u0010\"\u001a\u0004\u0018\u00010.2\u0006\u0010+\u001a\u00020,2\u0006\u0010/\u001a\u000200H\u0096@¢\u0006\u0002\u00101J$\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u0005H\u0097@b\f\b6\u0012\b\b7\u0012\u0004\b\u0003\u00104¢\u0006\u0002\u00105JF\u00108\u001a\u00020\u001a2\u0006\u00109\u001a\u00020\u00052\u0006\u0010:\u001a\u00020\u001a2\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020>0<2\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020>0<H\u0096@¢\u0006\u0002\u0010AJ2\u0010B\u001a\u00020C2\b\u0010D\u001a\u0004\u0018\u00010E2\u0006\u0010F\u001a\u00020,2\u0006\u0010G\u001a\u00020\u00052\u0006\u0010H\u001a\u00020\u001a2\u0006\u0010I\u001a\u00020\u0005H\u0002J\"\u0010J\u001a\u00020\u00052\b\u0010K\u001a\u0004\u0018\u00010L2\u0006\u0010I\u001a\u00020\u00052\u0006\u0010F\u001a\u00020,H\u0002J4\u0010M\u001a\u001a\u0012\n\u0012\b\u0012\u0004\u0012\u00020C0 \u0012\n\u0012\b\u0012\u0004\u0012\u00020C0 0N2\b\u0010O\u001a\u0004\u0018\u00010P2\b\u0010D\u001a\u0004\u0018\u00010EH\u0002R\u001c\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u0010\n\u0002\b\n\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001c\u0010\u000b\u001a\u00020\u0005X\u0096\u000e¢\u0006\u0010\n\u0002\b\u000e\u001a\u0004\b\f\u0010\u0007\"\u0004\b\r\u0010\tR \u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u001a\u0010\u0016\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0007\"\u0004\b\u0018\u0010\tR\u0014\u0010\u0019\u001a\u00020\u001aX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#¨\u0006U"}, d2 = {"Lcom/allwish/AllWish;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "mainUrl$1", "name", "getName", "setName", "name$1", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "setSupportedTypes", "(Ljava/util/Set;)V", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "mutex", "Lkotlinx/coroutines/sync/Mutex;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "searchResponseBuilder", "Lcom/lagradost/cloudstream3/AnimeSearchResponse;", "res", "Lorg/jsoup/nodes/Document;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "page", "", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Landroidx/annotation/RequiresApi;", "value", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "createEpisode", "Lcom/lagradost/cloudstream3/Episode;", "animeMetaData", "Lcom/allwish/MetaAnimeData;", "episodeNumber", "epId", "isDub", "htmlTitle", "resolveTitle", "epData", "Lcom/allwish/MetaEpisode;", "parseEpisodes", "Lkotlin/Pair;", "epRes", "Lcom/allwish/AllWish$APIResponse;", "Companion", "APIResponse", "APIResponseUrl", "ServerUrl", "AllWish"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAllWish.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,262:1\n2068#2,2:263\n1739#2:280\n1814#2,3:281\n2068#2,2:290\n117#3,10:265\n73#4,5:275\n73#4,5:284\n1#5:289\n*S KotlinDebug\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish\n*L\n60#1:263,2\n107#1:280\n107#1:281,3\n230#1:290,2\n79#1:265,10\n93#1:275,5\n141#1:284,5\n*E\n"})
+@SourceDebugExtension({"SMAP\nAllWish.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,263:1\n2068#2,2:264\n1739#2:281\n1814#2,3:282\n2068#2,2:291\n117#3,10:266\n73#4,5:276\n73#4,5:285\n1#5:290\n*S KotlinDebug\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish\n*L\n60#1:264,2\n108#1:281\n108#1:282,3\n231#1:291,2\n80#1:266,10\n94#1:276,5\n142#1:285,5\n*E\n"})
 public final class AllWish extends MainAPI {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
@@ -108,7 +109,7 @@ public final class AllWish extends MainAPI {
     /* JADX INFO: renamed from: com.allwish.AllWish$getMainPage$1 */
     /* JADX INFO: compiled from: AllWish.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.allwish.AllWish", f = "AllWish.kt", i = {0, 0, 0, 1, 1, 1}, l = {267, 80}, m = "getMainPage", n = {"request", "$this$withLock_u24default$iv", "page", "request", "$this$withLock_u24default$iv", "page"}, nl = {268, 269}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.allwish.AllWish", f = "AllWish.kt", i = {0, 0, 0, 1, 1, 1}, l = {268, 81}, m = "getMainPage", n = {"request", "$this$withLock_u24default$iv", "page", "request", "$this$withLock_u24default$iv", "page"}, nl = {269, 270}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -131,7 +132,7 @@ public final class AllWish extends MainAPI {
     /* JADX INFO: renamed from: com.allwish.AllWish$load$1 */
     /* JADX INFO: compiled from: AllWish.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.allwish.AllWish", f = "AllWish.kt", i = {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {88, 92, 98, 111}, m = "load", n = {"url", "url", "res", "id", "vrf", "url", "res", "id", "vrf", "epRes", "malId", "url", "res", "id", "vrf", "epRes", "malId", "syncMetaData", "animeMetaData", "data", "name", "posterRegex", "subEpisodes", "dubEpisodes", "status", "genres", "content", "year"}, nl = {89, 93, 99, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16"}, v = 2)
+    @DebugMetadata(c = "com.allwish.AllWish", f = "AllWish.kt", i = {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {89, 93, 99, 112}, m = "load", n = {"url", "url", "res", "id", "vrf", "url", "res", "id", "vrf", "epRes", "malId", "url", "res", "id", "vrf", "epRes", "malId", "syncMetaData", "animeMetaData", "data", "name", "posterRegex", "subEpisodes", "dubEpisodes", "status", "genres", "content", "year"}, nl = {90, 94, 100, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -168,7 +169,7 @@ public final class AllWish extends MainAPI {
     /* JADX INFO: renamed from: com.allwish.AllWish$loadLinks$1 */
     /* JADX INFO: compiled from: AllWish.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.allwish.AllWish", f = "AllWish.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {141, 144}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "type", "id", "isCasting", "data", "subtitleCallback", "callback", "type", "id", "res", "isCasting"}, nl = {263, 167}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.allwish.AllWish", f = "AllWish.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {142, 145}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "type", "id", "isCasting", "data", "subtitleCallback", "callback", "type", "id", "res", "isCasting"}, nl = {264, 168}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -373,8 +374,8 @@ public final class AllWish extends MainAPI {
         return MainAPIKt.toNewSearchResponseList$default(searchResponseBuilder(res), (Boolean) null, page2, (Object) null);
     }
 
-    /* JADX WARN: Code duplicated, block: B:27:0x00e0 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:28:0x00e1  */
+    /* JADX WARN: Code duplicated, block: B:27:0x00e9 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:28:0x00ea  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Throwable {
@@ -406,6 +407,7 @@ public final class AllWish extends MainAPI {
         switch (c00002.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Mutex $this$withLock_u24default$iv5 = this.mutex;
                 c00002.L$0 = request;
                 c00002.L$1 = $this$withLock_u24default$iv5;
@@ -1054,7 +1056,7 @@ public final class AllWish extends MainAPI {
     /* JADX INFO: compiled from: AllWish.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.allwish.AllWish$load$2", f = "AllWish.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nAllWish.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,262:1\n296#2,2:263\n296#2,2:265\n1#3:267\n*S KotlinDebug\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish$load$2\n*L\n121#1:263,2\n126#1:265,2\n*E\n"})
+    @SourceDebugExtension({"SMAP\nAllWish.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,263:1\n296#2,2:264\n296#2,2:266\n1#3:268\n*S KotlinDebug\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish$load$2\n*L\n122#1:264,2\n127#1:266,2\n*E\n"})
     static final class C00022 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ MetaAnimeData $animeMetaData;
         final /* synthetic */ String $content;
@@ -1510,7 +1512,7 @@ public final class AllWish extends MainAPI {
     /* JADX INFO: renamed from: com.allwish.AllWish$loadLinks$2 */
     /* JADX INFO: compiled from: AllWish.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "section", "Lcom/fleeksoft/ksoup/nodes/Element;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.allwish.AllWish$loadLinks$2", f = "AllWish.kt", i = {0, 0, 0}, l = {149}, m = "invokeSuspend", n = {"section", "sectionType", "isHardSub"}, nl = {164}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.allwish.AllWish$loadLinks$2", f = "AllWish.kt", i = {0, 0, 0}, l = {150}, m = "invokeSuspend", n = {"section", "sectionType", "isHardSub"}, nl = {165}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00042 extends SuspendLambda implements Function2<com.fleeksoft.ksoup.nodes.Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -1589,8 +1591,8 @@ public final class AllWish extends MainAPI {
         /* JADX INFO: renamed from: com.allwish.AllWish$loadLinks$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: AllWish.kt */
         @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "server", "Lcom/fleeksoft/ksoup/nodes/Element;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-        @DebugMetadata(c = "com.allwish.AllWish$loadLinks$2$1", f = "AllWish.kt", i = {0, 0, 1, 1, 1, 1, 1}, l = {152, 161}, m = "invokeSuspend", n = {"server", "dataId", "server", "dataId", "apiRes", "realUrl", "epIdWithType"}, nl = {153, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
-        @SourceDebugExtension({"SMAP\nAllWish.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish$loadLinks$2$1\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,262:1\n73#2,5:263\n*S KotlinDebug\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish$loadLinks$2$1\n*L\n153#1:263,5\n*E\n"})
+        @DebugMetadata(c = "com.allwish.AllWish$loadLinks$2$1", f = "AllWish.kt", i = {0, 0, 1, 1, 1, 1, 1}, l = {153, 162}, m = "invokeSuspend", n = {"server", "dataId", "server", "dataId", "apiRes", "realUrl", "epIdWithType"}, nl = {154, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
+        @SourceDebugExtension({"SMAP\nAllWish.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish$loadLinks$2$1\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,263:1\n73#2,5:264\n*S KotlinDebug\n*F\n+ 1 AllWish.kt\ncom/allwish/AllWish$loadLinks$2$1\n*L\n154#1:264,5\n*E\n"})
         static final class AnonymousClass1 extends SuspendLambda implements Function2<com.fleeksoft.ksoup.nodes.Element, Continuation<? super Boolean>, Object> {
             final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
             final /* synthetic */ boolean $isHardSub;

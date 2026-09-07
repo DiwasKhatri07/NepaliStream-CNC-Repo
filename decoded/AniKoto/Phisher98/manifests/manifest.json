@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.anikoto.AnikotoPlugin",
   "name": "AniKoto",
-  "version": 1,
+  "version": 3,
   "requiresResources": false
 }

@@ -22,6 +22,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -56,7 +57,7 @@ import org.jsoup.select.Elements;
 /* JADX INFO: compiled from: Latanime.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Latanime/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010 \u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J\f\u0010(\u001a\u00020)*\u00020*H\u0002J\u001c\u0010+\u001a\b\u0012\u0004\u0012\u00020)0\u001e2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-J\u0016\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-JF\u00101\u001a\u00020\u000e2\u0006\u00102\u001a\u00020\u00052\u0006\u00103\u001a\u00020\u000e2\u0012\u00104\u001a\u000e\u0012\u0004\u0012\u000206\u0012\u0004\u0012\u000207052\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020705H\u0096@¢\u0006\u0002\u0010:J\u000e\u0010;\u001a\u0004\u0018\u00010\u0005*\u00020*H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0014\u0010\u0016\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0010R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!¨\u0006<"}, d2 = {"Lcom/latanime/Latanime;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getImageAttr", "Latanime"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nLatanime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Latanime.kt\ncom/latanime/Latanime\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,133:1\n1795#2,10:134\n2068#2:144\n2069#2:146\n1805#2:147\n1795#2,10:148\n2068#2:158\n2069#2:160\n1805#2:161\n1739#2:162\n1814#2,3:163\n1739#2:166\n1814#2,3:167\n1#3:145\n1#3:159\n1#3:170\n*S KotlinDebug\n*F\n+ 1 Latanime.kt\ncom/latanime/Latanime\n*L\n47#1:134,10\n47#1:144\n47#1:146\n47#1:147\n71#1:148,10\n71#1:158\n71#1:160\n71#1:161\n79#1:162\n79#1:163,3\n84#1:166\n84#1:167,3\n47#1:145\n71#1:159\n*E\n"})
+@SourceDebugExtension({"SMAP\nLatanime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Latanime.kt\ncom/latanime/Latanime\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,134:1\n1795#2,10:135\n2068#2:145\n2069#2:147\n1805#2:148\n1795#2,10:149\n2068#2:159\n2069#2:161\n1805#2:162\n1739#2:163\n1814#2,3:164\n1739#2:167\n1814#2,3:168\n1#3:146\n1#3:160\n1#3:171\n*S KotlinDebug\n*F\n+ 1 Latanime.kt\ncom/latanime/Latanime\n*L\n48#1:135,10\n48#1:145\n48#1:147\n48#1:148\n72#1:149,10\n72#1:159\n72#1:161\n72#1:162\n80#1:163\n80#1:164,3\n85#1:167\n85#1:168,3\n48#1:146\n72#1:160\n*E\n"})
 public final class Latanime extends MainAPI {
 
     @NotNull
@@ -80,7 +81,7 @@ public final class Latanime extends MainAPI {
     /* JADX INFO: renamed from: com.latanime.Latanime$getMainPage$1 */
     /* JADX INFO: compiled from: Latanime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.latanime.Latanime", f = "Latanime.kt", i = {0, 0}, l = {46}, m = "getMainPage", n = {"request", "page"}, nl = {47}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.latanime.Latanime", f = "Latanime.kt", i = {0, 0}, l = {47}, m = "getMainPage", n = {"request", "page"}, nl = {48}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -102,7 +103,7 @@ public final class Latanime extends MainAPI {
     /* JADX INFO: renamed from: com.latanime.Latanime$load$1 */
     /* JADX INFO: compiled from: Latanime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.latanime.Latanime", f = "Latanime.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {75, 93, 100}, m = "load", n = {"url", "url", "document", "title", "poster", "description", "tags", "year", "epsAnchor", "episodes", "url", "document", "title", "poster", "description", "tags", "year", "epsAnchor"}, nl = {76, 100, 83}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
+    @DebugMetadata(c = "com.latanime.Latanime", f = "Latanime.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {76, 94, 101}, m = "load", n = {"url", "url", "document", "title", "poster", "description", "tags", "year", "epsAnchor", "episodes", "url", "document", "title", "poster", "description", "tags", "year", "epsAnchor"}, nl = {77, 101, 84}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -131,7 +132,7 @@ public final class Latanime extends MainAPI {
     /* JADX INFO: renamed from: com.latanime.Latanime$loadLinks$1 */
     /* JADX INFO: compiled from: Latanime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.latanime.Latanime", f = "Latanime.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {115, 116}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {116, 125}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.latanime.Latanime", f = "Latanime.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {116, 117}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {117, 126}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -156,7 +157,7 @@ public final class Latanime extends MainAPI {
     /* JADX INFO: renamed from: com.latanime.Latanime$search$1 */
     /* JADX INFO: compiled from: Latanime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.latanime.Latanime", f = "Latanime.kt", i = {0}, l = {70}, m = "search", n = {"query"}, nl = {71}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.latanime.Latanime", f = "Latanime.kt", i = {0}, l = {71}, m = "search", n = {"query"}, nl = {72}, s = {"L$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -245,6 +246,7 @@ public final class Latanime extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + request.getData() + "&p=" + page2;
                 c00001.L$0 = request;
@@ -836,7 +838,7 @@ public final class Latanime extends MainAPI {
     /* JADX INFO: renamed from: com.latanime.Latanime$loadLinks$2 */
     /* JADX INFO: compiled from: Latanime.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.latanime.Latanime$loadLinks$2", f = "Latanime.kt", i = {0, 0}, l = {118}, m = "invokeSuspend", n = {"it", "href"}, nl = {123}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.latanime.Latanime$loadLinks$2", f = "Latanime.kt", i = {0, 0}, l = {119}, m = "invokeSuspend", n = {"it", "href"}, nl = {124}, s = {"L$0", "L$1"}, v = 2)
     static final class C00052 extends SuspendLambda implements Function2<Element, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

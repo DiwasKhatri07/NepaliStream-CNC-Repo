@@ -4,7 +4,7 @@ package nepali.stream.decoded.coflix
 object PluginMetadata {
     const val name: String = "Coflix"
     const val originalPluginClass: String = "com.Coflix.CoflixProvider"
-    const val version: Int = 17
+    const val version: Int = 19
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

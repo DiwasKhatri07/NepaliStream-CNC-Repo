@@ -7,7 +7,7 @@ import com.android.tools.r8.annotations.SynthesizedClassV2;
 @SynthesizedClassV2(apiLevel = -2, kind = 32, versionHash = "7bbc1d7254613ffaa026de47d975f73968361ef3e5d7b818ce0a83a33039c6b8")
 public final /* synthetic */ class AWSStream$Response$$ExternalSyntheticBackport0 {
     /* JADX INFO: renamed from: m */
-    public static /* synthetic */ int m0m(boolean z) {
+    public static /* synthetic */ int m2m(boolean z) {
         return z ? 1231 : 1237;
     }
 }

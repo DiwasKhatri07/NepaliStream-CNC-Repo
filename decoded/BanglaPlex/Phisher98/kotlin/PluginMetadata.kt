@@ -4,7 +4,7 @@ package nepali.stream.decoded.banglaplex
 object PluginMetadata {
     const val name: String = "BanglaPlex"
     const val originalPluginClass: String = "com.BanglaPlex.BanglaPlexProvider"
-    const val version: Int = 6
+    const val version: Int = 8
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

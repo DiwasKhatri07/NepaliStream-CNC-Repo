@@ -98,7 +98,7 @@ public class ByseSX extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.piratexplay.ByseSX", f = "Extractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {609, 614, 633, 642, 646, 661, 676, 686}, m = "getPlayback", n = {"mainUrl", "base", "code", "embed", "detailsUrl", "referer", "headers", "mainUrl", "base", "code", "embed", "detailsUrl", "referer", "headers", "details", "mainUrl", "base", "code", "embed", "detailsUrl", "referer", "headers", "details", "detailsRoot", "embedBase", "embedCode", "settingsUrl", "mainUrl", "base", "code", "embed", "detailsUrl", "referer", "headers", "details", "detailsRoot", "embedBase", "embedCode", "settingsUrl", "settingsRes", "fprintData", "finalFprint", "challengeUrl", "mainUrl", "base", "code", "embed", "detailsUrl", "referer", "headers", "details", "detailsRoot", "embedBase", "embedCode", "settingsUrl", "settingsRes", "fprintData", "finalFprint", "challengeUrl", "challengeRes", "attestUrl", "mainUrl", "base", "code", "embed", "detailsUrl", "referer", "headers", "details", "detailsRoot", "embedBase", "embedCode", "settingsUrl", "settingsRes", "fprintData", "finalFprint", "challengeUrl", "challengeRes", "captchaUrl", "mainUrl", "base", "code", "embed", "detailsUrl", "referer", "headers", "details", "detailsRoot", "embedBase", "embedCode", "settingsUrl", "settingsRes", "fprintData", "finalFprint", "challengeUrl", "challengeRes", "captchaUrl", "captchaRes", "powNonce", "powToken", "solution", "verifyUrl", "postData", "powDifficulty", "mainUrl", "base", "code", "embed", "detailsUrl", "referer", "headers", "details", "detailsRoot", "embedBase", "embedCode", "settingsUrl", "settingsRes", "fprintData", "finalFprint", "playbackUrl"}, nl = {923, 928, 933, 938, 943, 948, 953, 690}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15"}, v = 2)
-    static final class C00021 extends ContinuationImpl {
+    static final class C00051 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -127,7 +127,7 @@ public class ByseSX extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00021(Continuation<? super C00021> continuation) {
+        C00051(Continuation<? super C00051> continuation) {
             super(continuation);
         }
 
@@ -143,7 +143,7 @@ public class ByseSX extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.piratexplay.ByseSX", f = "Extractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {747, 750, 757, 762, 774}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "redirectDomains", "parsedUrl", "finalUrl", "refererUrl", "code", "detailsUrl", "$this", "url", "referer", "subtitleCallback", "callback", "redirectDomains", "parsedUrl", "finalUrl", "refererUrl", "code", "detailsUrl", "details", "$this", "url", "referer", "subtitleCallback", "callback", "redirectDomains", "parsedUrl", "finalUrl", "refererUrl", "code", "detailsUrl", "details", "$this", "url", "referer", "subtitleCallback", "callback", "redirectDomains", "parsedUrl", "finalUrl", "refererUrl", "code", "detailsUrl", "details", "playbackRoot", "$this", "url", "referer", "subtitleCallback", "callback", "redirectDomains", "parsedUrl", "finalUrl", "refererUrl", "code", "detailsUrl", "details", "playbackRoot", "streamUrl", "headers"}, nl = {923, 928, 759, 764, 773}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14"}, v = 2)
-    static final class C00031 extends ContinuationImpl {
+    static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -163,7 +163,7 @@ public class ByseSX extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00031(Continuation<? super C00031> continuation) {
+        C00061(Continuation<? super C00061> continuation) {
             super(continuation);
         }
 
@@ -211,7 +211,7 @@ public class ByseSX extends ExtractorApi {
     }
 
     /* JADX INFO: renamed from: fp */
-    private final Map<String, Object> m6fp(int x, double y, double z) throws NoSuchAlgorithmException {
+    private final Map<String, Object> m8fp(int x, double y, double z) throws NoSuchAlgorithmException {
         String vId = CollectionsKt.joinToString$default(new IntRange(1, x), "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.piratexplay.ByseSX$$ExternalSyntheticLambda0
             public final Object invoke(Object obj) {
                 return ByseSX.fp$lambda$0(((Integer) obj).intValue());
@@ -249,7 +249,7 @@ public class ByseSX extends ExtractorApi {
     }
 
     /* JADX INFO: renamed from: fh */
-    private final String m5fh(double r) throws NoSuchAlgorithmException {
+    private final String m7fh(double r) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("SHA-256");
         byte[] bytes = String.valueOf(r).getBytes(Charsets.UTF_8);
         Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
@@ -257,7 +257,7 @@ public class ByseSX extends ExtractorApi {
     }
 
     /* JADX INFO: renamed from: wn */
-    private final Map<String, Object> m9wn(Map<String, ? extends Object> ch) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException, InvalidAlgorithmParameterException {
+    private final Map<String, Object> m11wn(Map<String, ? extends Object> ch) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException, InvalidAlgorithmParameterException {
         String nonce;
         KeyPairGenerator kpg = KeyPairGenerator.getInstance("EC");
         kpg.initialize(new ECGenParameterSpec("secp256r1"));
@@ -293,7 +293,7 @@ public class ByseSX extends ExtractorApi {
         byte[] rawSignature = ArraysKt.plus(wn$pad32(rBytes), wn$pad32(sBytes));
         String sigBase64 = Base64.encodeToString(rawSignature, 11);
         double rVal = Random.Default.nextDouble();
-        Map clientData = MapsKt.mapOf(new Pair[]{TuplesKt.to("user_agent", "Mozilla/5.0 (Linux; Android 10; TX6s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"), TuplesKt.to("architecture", "arm"), TuplesKt.to("bitness", "32"), TuplesKt.to("platform", "Android"), TuplesKt.to("platform_version", "10.0.0"), TuplesKt.to("model", "TX6s"), TuplesKt.to("ua_full_version", "137.0.7337.0"), TuplesKt.to("brand_full_versions", CollectionsKt.listOf(MapsKt.mapOf(new Pair[]{TuplesKt.to("brand", "Chromium"), TuplesKt.to("version", "137.0.7337.0")}))), TuplesKt.to("pixel_ratio", 1), TuplesKt.to("screen_width", 1280), TuplesKt.to("screen_height", 720), TuplesKt.to("color_depth", 24), TuplesKt.to("languages", CollectionsKt.listOf("en-US")), TuplesKt.to("timezone", "America/New_York"), TuplesKt.to("hardware_concurrency", 4), TuplesKt.to("device_memory", 2), TuplesKt.to("touch_points", 1), TuplesKt.to("webgl_vendor", "Google Inc. (ARM)"), TuplesKt.to("webgl_renderer", "ANGLE (ARM, Mali-G31 MP2, OpenGL ES 3.2)"), TuplesKt.to("canvas_hash", m5fh(rVal)), TuplesKt.to("audio_hash", m5fh(rVal + 1.0d)), TuplesKt.to("webgl_params_hash", m5fh(2.0d + rVal)), TuplesKt.to("fonts_hash", m5fh(3.0d + rVal)), TuplesKt.to("codecs_hash", m5fh(4.0d + rVal)), TuplesKt.to("media_devices", "ai1ao1vi4"), TuplesKt.to("pointer_type", "coarse"), TuplesKt.to("extra", MapsKt.mapOf(new Pair[]{TuplesKt.to("vendor", "Google Inc."), TuplesKt.to("appVersion", "5.0 (Linux; Android 10; TX6s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36")}))});
+        Map clientData = MapsKt.mapOf(new Pair[]{TuplesKt.to("user_agent", "Mozilla/5.0 (Linux; Android 10; TX6s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"), TuplesKt.to("architecture", "arm"), TuplesKt.to("bitness", "32"), TuplesKt.to("platform", "Android"), TuplesKt.to("platform_version", "10.0.0"), TuplesKt.to("model", "TX6s"), TuplesKt.to("ua_full_version", "137.0.7337.0"), TuplesKt.to("brand_full_versions", CollectionsKt.listOf(MapsKt.mapOf(new Pair[]{TuplesKt.to("brand", "Chromium"), TuplesKt.to("version", "137.0.7337.0")}))), TuplesKt.to("pixel_ratio", 1), TuplesKt.to("screen_width", 1280), TuplesKt.to("screen_height", 720), TuplesKt.to("color_depth", 24), TuplesKt.to("languages", CollectionsKt.listOf("en-US")), TuplesKt.to("timezone", "America/New_York"), TuplesKt.to("hardware_concurrency", 4), TuplesKt.to("device_memory", 2), TuplesKt.to("touch_points", 1), TuplesKt.to("webgl_vendor", "Google Inc. (ARM)"), TuplesKt.to("webgl_renderer", "ANGLE (ARM, Mali-G31 MP2, OpenGL ES 3.2)"), TuplesKt.to("canvas_hash", m7fh(rVal)), TuplesKt.to("audio_hash", m7fh(rVal + 1.0d)), TuplesKt.to("webgl_params_hash", m7fh(2.0d + rVal)), TuplesKt.to("fonts_hash", m7fh(3.0d + rVal)), TuplesKt.to("codecs_hash", m7fh(4.0d + rVal)), TuplesKt.to("media_devices", "ai1ao1vi4"), TuplesKt.to("pointer_type", "coarse"), TuplesKt.to("extra", MapsKt.mapOf(new Pair[]{TuplesKt.to("vendor", "Google Inc."), TuplesKt.to("appVersion", "5.0 (Linux; Android 10; TX6s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36")}))});
         Pair[] pairArr = new Pair[9];
         pairArr[0] = TuplesKt.to("viewer_id", "");
         pairArr[1] = TuplesKt.to("device_id", "");
@@ -316,25 +316,25 @@ public class ByseSX extends ExtractorApi {
     }
 
     /* JADX INFO: renamed from: re */
-    private final long m8re(long t, int e) {
+    private final long m10re(long t, int e) {
         long t32 = t & 4294967295L;
         return 4294967295L & ((t32 << e) | (t32 >>> (32 - e)));
     }
 
     /* JADX INFO: renamed from: ye */
-    private final void m11ye(long[] t) {
+    private final void m13ye(long[] t) {
         t[0] = (t[0] + t[1]) & 4294967295L;
-        t[3] = m8re(t[3] ^ t[0], 16);
+        t[3] = m10re(t[3] ^ t[0], 16);
         t[2] = (t[2] + t[3]) & 4294967295L;
-        t[1] = m8re(t[1] ^ t[2], 12);
+        t[1] = m10re(t[1] ^ t[2], 12);
         t[0] = (t[0] + t[1]) & 4294967295L;
-        t[3] = m8re(t[3] ^ t[0], 8);
+        t[3] = m10re(t[3] ^ t[0], 8);
         t[2] = (t[2] + t[3]) & 4294967295L;
-        t[1] = m8re(t[1] ^ t[2], 7);
+        t[1] = m10re(t[1] ^ t[2], 7);
     }
 
     /* JADX INFO: renamed from: gr */
-    private final long[] m7gr(byte[] bytes) {
+    private final long[] m9gr(byte[] bytes) {
         int i;
         byte[] bArr = bytes;
         long m = 4294967295L;
@@ -345,8 +345,8 @@ public class ByseSX extends ExtractorApi {
             byte b = bArr[i2];
             long i3 = ((long) b) & 255;
             e[0] = (e[0] + i3) & m;
-            e[0] = m8re(e[0], 7);
-            m11ye(e);
+            e[0] = m10re(e[0], 7);
+            m13ye(e);
             i2++;
             bArr = bytes;
             m = m;
@@ -357,12 +357,12 @@ public class ByseSX extends ExtractorApi {
             if (i4 >= 8) {
                 break;
             }
-            m11ye(e);
+            m13ye(e);
             i4++;
         }
         long[] r = new long[512];
         for (int i5 = 0; i5 < 512; i5++) {
-            m11ye(e);
+            m13ye(e);
             r[i5] = (e[0] ^ e[2]) & m2;
         }
         for (int i6 = 0; i6 < 2; i6++) {
@@ -370,10 +370,10 @@ public class ByseSX extends ExtractorApi {
             while (a < 512) {
                 int s = a;
                 long c = (r[s] + r[(int) (((long) 511) & r[a])]) & m2;
-                long c2 = (m8re(c, 13) ^ ((r[(s + 1) & 511] * 2654435761L) & m2)) & m2;
+                long c2 = (m10re(c, 13) ^ ((r[(s + 1) & 511] * 2654435761L) & m2)) & m2;
                 r[s] = c2;
                 e[0] = (e[0] ^ c2) & m2;
-                m11ye(e);
+                m13ye(e);
                 a = s + 1;
             }
         }
@@ -381,13 +381,13 @@ public class ByseSX extends ExtractorApi {
         int o = 512 / 8;
         int i7 = 0;
         for (i = 8; i7 < i; i = 8) {
-            m11ye(e);
+            m13ye(e);
             long s2 = e[0];
             int a2 = i7 * o;
             int c3 = 0;
             while (c3 < o) {
                 long d = r[a2 + c3];
-                s2 = (m8re((s2 + d) & m2, 5) ^ ((d * 2246822519L) & m2)) & m2;
+                s2 = (m10re((s2 + d) & m2, 5) ^ ((d * 2246822519L) & m2)) & m2;
                 c3++;
                 r = r;
             }
@@ -399,7 +399,7 @@ public class ByseSX extends ExtractorApi {
     }
 
     /* JADX INFO: renamed from: wr */
-    private final int m10wr(long[] t) {
+    private final int m12wr(long[] t) {
         int e = 0;
         for (long n : t) {
             if (n == 0) {
@@ -418,11 +418,11 @@ public class ByseSX extends ExtractorApi {
         if ((i2 & 4) != 0) {
             d = 20.0d;
         }
-        return byseSX.m4er(str, i, d);
+        return byseSX.m6er(str, i, d);
     }
 
     /* JADX INFO: renamed from: er */
-    private final String m4er(String tStr, int e, double rLimit) {
+    private final String m6er(String tStr, int e, double rLimit) {
         if (e <= 0) {
             return "0";
         }
@@ -433,8 +433,8 @@ public class ByseSX extends ExtractorApi {
             for (int i = 0; i < 1024; i++) {
                 byte[] bytes = (prefix + s).getBytes(Charsets.US_ASCII);
                 Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
-                long[] d = m7gr(bytes);
-                if (m10wr(d) < e) {
+                long[] d = m9gr(bytes);
+                if (m12wr(d) < e) {
                     s++;
                 } else {
                     return String.valueOf(s);
@@ -497,7 +497,7 @@ public class ByseSX extends ExtractorApi {
     /* JADX WARN: Type inference failed for: r34v15 */
     /* JADX WARN: Type inference failed for: r34v17 */
     public final Object getPlayback(String str, Continuation<? super PlaybackRoot> continuation) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException, InvalidAlgorithmParameterException {
-        C00021 c00021;
+        C00051 c00051;
         Number number;
         String str2;
         Object obj;
@@ -507,7 +507,7 @@ public class ByseSX extends ExtractorApi {
         String str5;
         Map map;
         Object obj2;
-        C00021 c00022;
+        C00051 c00052;
         String str6;
         Object obj3;
         String str7;
@@ -541,7 +541,7 @@ public class ByseSX extends ExtractorApi {
         String str25;
         String str26;
         Object obj5;
-        C00021 c00023;
+        C00051 c00053;
         DetailsRoot detailsRoot4;
         String str27;
         String str28;
@@ -562,7 +562,7 @@ public class ByseSX extends ExtractorApi {
         Map map4;
         Object obj7;
         String str36;
-        Map<String, Object> mapM6fp;
+        Map<String, Object> mapM8fp;
         Map mapMapOf;
         boolean zAreEqual;
         Object obj8;
@@ -581,7 +581,7 @@ public class ByseSX extends ExtractorApi {
         String str46;
         Object obj9;
         Object objPost$default;
-        C00021 c00024;
+        C00051 c00054;
         Map map8;
         Object obj10;
         Map map9;
@@ -678,21 +678,21 @@ public class ByseSX extends ExtractorApi {
         Map map28;
         Object obj25;
         String string3;
-        if (continuation instanceof C00021) {
-            c00021 = (C00021) continuation;
-            if ((c00021.label & Integer.MIN_VALUE) != 0) {
-                c00021.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00051) {
+            c00051 = (C00051) continuation;
+            if ((c00051.label & Integer.MIN_VALUE) != 0) {
+                c00051.label -= Integer.MIN_VALUE;
             } else {
-                c00021 = new C00021(continuation);
+                c00051 = new C00051(continuation);
             }
         } else {
-            c00021 = new C00021(continuation);
+            c00051 = new C00051(continuation);
         }
-        C00021 c00025 = c00021;
-        Object obj26 = c00025.result;
+        C00051 c00055 = c00051;
+        Object obj26 = c00055.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         String str81 = "";
-        switch (c00025.label) {
+        switch (c00055.label) {
             case 0:
                 number = null;
                 ResultKt.throwOnFailure(obj26);
@@ -702,14 +702,14 @@ public class ByseSX extends ExtractorApi {
                 String str82 = baseUrl + '/';
                 Map mapMutableMapOf = MapsKt.mutableMapOf(new Pair[]{TuplesKt.to("User-Agent", "Mozilla/5.0 (Linux; Android 10; TX6s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Mobile Safari/537.36"), TuplesKt.to("Referer", str82), TuplesKt.to("Origin", baseUrl)});
                 Requests app = MainActivityKt.getApp();
-                c00025.L$0 = str;
-                c00025.L$1 = baseUrl;
-                c00025.L$2 = codeFromUrl;
-                c00025.L$3 = "";
-                c00025.L$4 = SpillingKt.nullOutSpilledVariable(str2);
-                c00025.L$5 = SpillingKt.nullOutSpilledVariable(str82);
-                c00025.L$6 = mapMutableMapOf;
-                c00025.label = 1;
+                c00055.L$0 = str;
+                c00055.L$1 = baseUrl;
+                c00055.L$2 = codeFromUrl;
+                c00055.L$3 = "";
+                c00055.L$4 = SpillingKt.nullOutSpilledVariable(str2);
+                c00055.L$5 = SpillingKt.nullOutSpilledVariable(str82);
+                c00055.L$6 = mapMutableMapOf;
+                c00055.label = 1;
                 obj = "token";
                 str3 = str82;
                 str4 = "/api/videos/";
@@ -717,8 +717,8 @@ public class ByseSX extends ExtractorApi {
                 str5 = "";
                 map = mapMutableMapOf;
                 obj2 = "fingerprint";
-                Object obj27 = Requests.get$default(app, str2, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00025, 4092, (Object) null);
-                c00022 = c00025;
+                Object obj27 = Requests.get$default(app, str2, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00055, 4092, (Object) null);
+                c00052 = c00055;
                 if (obj27 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -739,22 +739,22 @@ public class ByseSX extends ExtractorApi {
                 if (detailsRoot == null) {
                     str14 = str7 + str4 + str6 + "/embed/details";
                     Requests app2 = MainActivityKt.getApp();
-                    c00022.L$0 = str8;
-                    c00022.L$1 = str7;
-                    c00022.L$2 = str6;
-                    c00022.L$3 = "embed/";
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str14);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(str3);
-                    c00022.L$6 = map;
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot);
-                    c00022.label = 2;
-                    C00021 c00026 = c00022;
+                    c00052.L$0 = str8;
+                    c00052.L$1 = str7;
+                    c00052.L$2 = str6;
+                    c00052.L$3 = "embed/";
+                    c00052.L$4 = SpillingKt.nullOutSpilledVariable(str14);
+                    c00052.L$5 = SpillingKt.nullOutSpilledVariable(str3);
+                    c00052.L$6 = map;
+                    c00052.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot);
+                    c00052.label = 2;
+                    C00051 c00056 = c00052;
                     str15 = str6;
                     str16 = str7;
                     str17 = str8;
                     c = 2;
-                    obj4 = Requests.get$default(app2, str14, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00026, 4092, (Object) null);
-                    c00022 = c00026;
+                    obj4 = Requests.get$default(app2, str14, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00056, 4092, (Object) null);
+                    c00052 = c00056;
                     if (obj4 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -836,23 +836,23 @@ public class ByseSX extends ExtractorApi {
                 }
                 str25 = str23 + str4 + str24 + '/' + str11 + "settings";
                 Requests app3 = MainActivityKt.getApp();
-                c00022.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(str12);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str10);
-                c00022.L$3 = str11;
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str13);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(str3);
-                c00022.L$6 = map;
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot2);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot3);
-                c00022.L$9 = str23;
-                c00022.L$10 = str24;
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str25);
-                c00022.label = 3;
-                C00021 c00027 = c00022;
+                c00052.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                c00052.L$1 = SpillingKt.nullOutSpilledVariable(str12);
+                c00052.L$2 = SpillingKt.nullOutSpilledVariable(str10);
+                c00052.L$3 = str11;
+                c00052.L$4 = SpillingKt.nullOutSpilledVariable(str13);
+                c00052.L$5 = SpillingKt.nullOutSpilledVariable(str3);
+                c00052.L$6 = map;
+                c00052.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot2);
+                c00052.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot3);
+                c00052.L$9 = str23;
+                c00052.L$10 = str24;
+                c00052.L$11 = SpillingKt.nullOutSpilledVariable(str25);
+                c00052.label = 3;
+                C00051 c00057 = c00052;
                 str26 = str11;
-                obj5 = Requests.get$default(app3, str25, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00027, 4092, (Object) null);
-                c00023 = c00027;
+                obj5 = Requests.get$default(app3, str25, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00057, 4092, (Object) null);
+                c00053 = c00057;
                 if (obj5 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -880,11 +880,11 @@ public class ByseSX extends ExtractorApi {
                 map4 = (Map) safe3;
                 obj7 = obj;
                 str36 = str4;
-                mapM6fp = m6fp(16, 0.83d, 0.94d);
-                Object obj28 = mapM6fp.get(obj2);
+                mapM8fp = m8fp(16, 0.83d, 0.94d);
+                Object obj28 = mapM8fp.get(obj2);
                 Intrinsics.checkNotNull(obj28);
                 mapMapOf = MapsKt.mapOf(TuplesKt.to(obj2, obj28));
-                map.put("Cookie", "byse_viewer_id=" + mapM6fp.get("vId") + "; byse_device_id=" + mapM6fp.get("dId"));
+                map.put("Cookie", "byse_viewer_id=" + mapM8fp.get("vId") + "; byse_device_id=" + mapM8fp.get("dId"));
                 if (map4 != null) {
                     zAreEqual = Intrinsics.areEqual(map4.get("captcha_required"), Boxing.boxBoolean(z5));
                 } else {
@@ -894,30 +894,30 @@ public class ByseSX extends ExtractorApi {
                     str43 = str34 + "/api/videos/access/challenge";
                     Requests app4 = MainActivityKt.getApp();
                     Map mapEmptyMap = MapsKt.emptyMap();
-                    c00023.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                    c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                    c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00023.L$3 = str29;
-                    c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00023.L$6 = map;
-                    c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                    c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                    c00023.L$9 = str34;
-                    c00023.L$10 = str33;
-                    c00023.L$11 = SpillingKt.nullOutSpilledVariable(str31);
-                    c00023.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00023.L$13 = SpillingKt.nullOutSpilledVariable(mapM6fp);
-                    c00023.L$14 = mapMapOf;
-                    c00023.L$15 = SpillingKt.nullOutSpilledVariable(str43);
-                    c00023.label = 4;
-                    C00021 c00028 = c00023;
+                    c00053.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                    c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00053.L$3 = str29;
+                    c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00053.L$6 = map;
+                    c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                    c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                    c00053.L$9 = str34;
+                    c00053.L$10 = str33;
+                    c00053.L$11 = SpillingKt.nullOutSpilledVariable(str31);
+                    c00053.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00053.L$13 = SpillingKt.nullOutSpilledVariable(mapM8fp);
+                    c00053.L$14 = mapMapOf;
+                    c00053.L$15 = SpillingKt.nullOutSpilledVariable(str43);
+                    c00053.label = 4;
+                    C00051 c00058 = c00053;
                     str44 = str29;
                     str45 = str33;
                     str46 = str34;
                     obj9 = coroutine_suspended;
-                    objPost$default = Requests.post$default(app4, str43, map, (String) null, (Map) null, (Map) null, mapEmptyMap, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00028, 65500, (Object) null);
-                    c00024 = c00028;
+                    objPost$default = Requests.post$default(app4, str43, map, (String) null, (Map) null, (Map) null, mapEmptyMap, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00058, 65500, (Object) null);
+                    c00054 = c00058;
                     if (objPost$default == obj9) {
                         return obj9;
                     }
@@ -928,7 +928,7 @@ public class ByseSX extends ExtractorApi {
                     str48 = str45;
                     str49 = str43;
                     str50 = str31;
-                    map6 = mapM6fp;
+                    map6 = mapM8fp;
                     z6 = z5;
                     NiceResponse niceResponse4 = (NiceResponse) obj10;
                     try {
@@ -943,31 +943,31 @@ public class ByseSX extends ExtractorApi {
                     if (map10 != null) {
                         String str84 = str46 + "/api/videos/access/attest";
                         Requests app5 = MainActivityKt.getApp();
-                        Map<String, Object> mapM9wn = m9wn(map10);
-                        c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                        c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                        c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00024.L$3 = str47;
-                        c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00024.L$6 = map;
-                        c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                        c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                        c00024.L$9 = str46;
-                        c00024.L$10 = str48;
-                        c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                        c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                        c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00024.L$14 = map9;
-                        c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                        c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                        c00024.L$17 = SpillingKt.nullOutSpilledVariable(str84);
-                        c00024.label = 5;
-                        C00021 c00029 = c00024;
+                        Map<String, Object> mapM11wn = m11wn(map10);
+                        c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                        c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                        c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00054.L$3 = str47;
+                        c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00054.L$6 = map;
+                        c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                        c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                        c00054.L$9 = str46;
+                        c00054.L$10 = str48;
+                        c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                        c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                        c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00054.L$14 = map9;
+                        c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                        c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                        c00054.L$17 = SpillingKt.nullOutSpilledVariable(str84);
+                        c00054.label = 5;
+                        C00051 c00059 = c00054;
                         map11 = map9;
                         str52 = str48;
-                        objPost$default2 = Requests.post$default(app5, str84, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapM9wn, (RequestBody) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c00029, 61308, (Object) null);
-                        c00024 = c00029;
+                        objPost$default2 = Requests.post$default(app5, str84, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapM11wn, (RequestBody) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c00059, 61308, (Object) null);
+                        c00054 = c00059;
                         if (objPost$default2 == obj9) {
                             return obj9;
                         }
@@ -1063,31 +1063,31 @@ public class ByseSX extends ExtractorApi {
                     str58 = str46 + str85 + str51 + '/' + str47 + "captcha";
                     Object obj29 = obj11;
                     Requests app6 = MainActivityKt.getApp();
-                    c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                    c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                    c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00024.L$3 = str47;
-                    c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00024.L$6 = map;
-                    c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                    c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                    c00024.L$9 = str46;
-                    c00024.L$10 = str51;
-                    c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                    c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                    c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                    c00024.L$14 = mapMapOf2;
-                    c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                    c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                    c00024.L$17 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00024.label = 6;
-                    C00021 c000210 = c00024;
+                    c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                    c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00054.L$3 = str47;
+                    c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00054.L$6 = map;
+                    c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                    c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                    c00054.L$9 = str46;
+                    c00054.L$10 = str51;
+                    c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                    c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                    c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                    c00054.L$14 = mapMapOf2;
+                    c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                    c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                    c00054.L$17 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00054.label = 6;
+                    C00051 c000510 = c00054;
                     obj12 = obj29;
                     str59 = str85;
                     map16 = mapMapOf2;
-                    objPost$default3 = Requests.post$default(app6, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000210, 65404, (Object) null);
-                    c00023 = c000210;
+                    objPost$default3 = Requests.post$default(app6, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000510, 65404, (Object) null);
+                    c00053 = c000510;
                     if (objPost$default3 == obj9) {
                         return obj9;
                     }
@@ -1149,40 +1149,40 @@ public class ByseSX extends ExtractorApi {
                             pairArr2[c] = TuplesKt.to(obj19, obj30);
                             mapMapOf3 = MapsKt.mapOf(pairArr2);
                             Requests app7 = MainActivityKt.getApp();
-                            c00023.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                            c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                            c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                            c00023.L$3 = str61;
-                            c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                            c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                            c00023.L$6 = map22;
-                            c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                            c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                            c00023.L$9 = str64;
-                            c00023.L$10 = str60;
-                            c00023.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                            c00023.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                            c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                            c00023.L$14 = map18;
-                            c00023.L$15 = SpillingKt.nullOutSpilledVariable(str62);
-                            c00023.L$16 = SpillingKt.nullOutSpilledVariable(map17);
-                            c00023.L$17 = SpillingKt.nullOutSpilledVariable(str63);
-                            c00023.L$18 = SpillingKt.nullOutSpilledVariable(map21);
-                            c00023.L$19 = SpillingKt.nullOutSpilledVariable(str66);
-                            c00023.L$20 = SpillingKt.nullOutSpilledVariable(str67);
-                            c00023.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
-                            c00023.L$22 = SpillingKt.nullOutSpilledVariable(str86);
-                            c00023.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
-                            c00023.I$0 = iIntValue;
-                            c00023.label = 7;
-                            C00021 c000211 = c00023;
+                            c00053.L$0 = SpillingKt.nullOutSpilledVariable(str65);
+                            c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                            c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                            c00053.L$3 = str61;
+                            c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                            c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                            c00053.L$6 = map22;
+                            c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                            c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                            c00053.L$9 = str64;
+                            c00053.L$10 = str60;
+                            c00053.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                            c00053.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                            c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                            c00053.L$14 = map18;
+                            c00053.L$15 = SpillingKt.nullOutSpilledVariable(str62);
+                            c00053.L$16 = SpillingKt.nullOutSpilledVariable(map17);
+                            c00053.L$17 = SpillingKt.nullOutSpilledVariable(str63);
+                            c00053.L$18 = SpillingKt.nullOutSpilledVariable(map21);
+                            c00053.L$19 = SpillingKt.nullOutSpilledVariable(str66);
+                            c00053.L$20 = SpillingKt.nullOutSpilledVariable(str67);
+                            c00053.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
+                            c00053.L$22 = SpillingKt.nullOutSpilledVariable(str86);
+                            c00053.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
+                            c00053.I$0 = iIntValue;
+                            c00053.label = 7;
+                            C00051 c000511 = c00053;
                             str69 = str60;
                             map23 = map18;
                             str70 = str61;
                             str37 = str68;
                             str71 = str64;
-                            objPost$default4 = Requests.post$default(app7, str86, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000211, 65404, (Object) null);
-                            c00023 = c000211;
+                            objPost$default4 = Requests.post$default(app7, str86, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000511, 65404, (Object) null);
+                            c00053 = c000511;
                             obj8 = obj20;
                             if (objPost$default4 == obj8) {
                                 return obj8;
@@ -1268,39 +1268,39 @@ public class ByseSX extends ExtractorApi {
                     str39 = str33;
                     str40 = str31;
                     str41 = str87;
-                    map6 = mapM6fp;
+                    map6 = mapM8fp;
                     map7 = map4;
                     str42 = str9;
                 }
                 String str88 = str38 + str37 + str39 + '/' + str41 + "playback";
                 Requests app8 = MainActivityKt.getApp();
-                c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                c00023.L$15 = SpillingKt.nullOutSpilledVariable(str88);
-                c00023.L$16 = null;
-                c00023.L$17 = null;
-                c00023.L$18 = null;
-                c00023.L$19 = null;
-                c00023.L$20 = null;
-                c00023.L$21 = null;
-                c00023.L$22 = null;
-                c00023.L$23 = null;
-                c00023.label = 8;
+                c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                c00053.L$15 = SpillingKt.nullOutSpilledVariable(str88);
+                c00053.L$16 = null;
+                c00053.L$17 = null;
+                c00053.L$18 = null;
+                c00053.L$19 = null;
+                c00053.L$20 = null;
+                c00053.L$21 = null;
+                c00053.L$22 = null;
+                c00053.L$23 = null;
+                c00053.label = 8;
                 obj23 = obj8;
-                objPost$default5 = Requests.post$default(app8, str88, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                objPost$default5 = Requests.post$default(app8, str88, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                 if (objPost$default5 == obj23) {
                     return obj23;
                 }
@@ -1325,13 +1325,13 @@ public class ByseSX extends ExtractorApi {
                 break;
             case 1:
                 number = null;
-                Map map31 = (Map) c00025.L$6;
-                String str89 = (String) c00025.L$5;
-                String str90 = (String) c00025.L$4;
-                String str91 = (String) c00025.L$3;
-                String str92 = (String) c00025.L$2;
-                String str93 = (String) c00025.L$1;
-                String str94 = (String) c00025.L$0;
+                Map map31 = (Map) c00055.L$6;
+                String str89 = (String) c00055.L$5;
+                String str90 = (String) c00055.L$4;
+                String str91 = (String) c00055.L$3;
+                String str92 = (String) c00055.L$2;
+                String str93 = (String) c00055.L$1;
+                String str94 = (String) c00055.L$0;
                 ResultKt.throwOnFailure(obj26);
                 str3 = str89;
                 obj = "token";
@@ -1340,7 +1340,7 @@ public class ByseSX extends ExtractorApi {
                 z = true;
                 str2 = str90;
                 obj2 = "fingerprint";
-                c00022 = c00025;
+                c00052 = c00055;
                 str4 = "/api/videos/";
                 str7 = str93;
                 str6 = str92;
@@ -1354,22 +1354,22 @@ public class ByseSX extends ExtractorApi {
                 if (detailsRoot == null) {
                     str14 = str7 + str4 + str6 + "/embed/details";
                     Requests app9 = MainActivityKt.getApp();
-                    c00022.L$0 = str8;
-                    c00022.L$1 = str7;
-                    c00022.L$2 = str6;
-                    c00022.L$3 = "embed/";
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str14);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(str3);
-                    c00022.L$6 = map;
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot);
-                    c00022.label = 2;
-                    C00021 c000212 = c00022;
+                    c00052.L$0 = str8;
+                    c00052.L$1 = str7;
+                    c00052.L$2 = str6;
+                    c00052.L$3 = "embed/";
+                    c00052.L$4 = SpillingKt.nullOutSpilledVariable(str14);
+                    c00052.L$5 = SpillingKt.nullOutSpilledVariable(str3);
+                    c00052.L$6 = map;
+                    c00052.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot);
+                    c00052.label = 2;
+                    C00051 c000512 = c00052;
                     str15 = str6;
                     str16 = str7;
                     str17 = str8;
                     c = 2;
-                    obj4 = Requests.get$default(app9, str14, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000212, 4092, (Object) null);
-                    c00022 = c000212;
+                    obj4 = Requests.get$default(app9, str14, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000512, 4092, (Object) null);
+                    c00052 = c000512;
                     if (obj4 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1434,23 +1434,23 @@ public class ByseSX extends ExtractorApi {
                 }
                 str25 = str23 + str4 + str24 + '/' + str11 + "settings";
                 Requests app10 = MainActivityKt.getApp();
-                c00022.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(str12);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str10);
-                c00022.L$3 = str11;
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str13);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(str3);
-                c00022.L$6 = map;
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot2);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot3);
-                c00022.L$9 = str23;
-                c00022.L$10 = str24;
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str25);
-                c00022.label = 3;
-                C00021 c000213 = c00022;
+                c00052.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                c00052.L$1 = SpillingKt.nullOutSpilledVariable(str12);
+                c00052.L$2 = SpillingKt.nullOutSpilledVariable(str10);
+                c00052.L$3 = str11;
+                c00052.L$4 = SpillingKt.nullOutSpilledVariable(str13);
+                c00052.L$5 = SpillingKt.nullOutSpilledVariable(str3);
+                c00052.L$6 = map;
+                c00052.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot2);
+                c00052.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot3);
+                c00052.L$9 = str23;
+                c00052.L$10 = str24;
+                c00052.L$11 = SpillingKt.nullOutSpilledVariable(str25);
+                c00052.label = 3;
+                C00051 c000513 = c00052;
                 str26 = str11;
-                obj5 = Requests.get$default(app10, str25, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000213, 4092, (Object) null);
-                c00023 = c000213;
+                obj5 = Requests.get$default(app10, str25, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000513, 4092, (Object) null);
+                c00053 = c000513;
                 if (obj5 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -1473,11 +1473,11 @@ public class ByseSX extends ExtractorApi {
                 map4 = (Map) safe3;
                 obj7 = obj;
                 str36 = str4;
-                mapM6fp = m6fp(16, 0.83d, 0.94d);
-                Object obj210 = mapM6fp.get(obj2);
+                mapM8fp = m8fp(16, 0.83d, 0.94d);
+                Object obj210 = mapM8fp.get(obj2);
                 Intrinsics.checkNotNull(obj210);
                 mapMapOf = MapsKt.mapOf(TuplesKt.to(obj2, obj210));
-                map.put("Cookie", "byse_viewer_id=" + mapM6fp.get("vId") + "; byse_device_id=" + mapM6fp.get("dId"));
+                map.put("Cookie", "byse_viewer_id=" + mapM8fp.get("vId") + "; byse_device_id=" + mapM8fp.get("dId"));
                 if (map4 != null) {
                     zAreEqual = Intrinsics.areEqual(map4.get("captcha_required"), Boxing.boxBoolean(z5));
                 } else {
@@ -1487,30 +1487,30 @@ public class ByseSX extends ExtractorApi {
                     str43 = str34 + "/api/videos/access/challenge";
                     Requests app11 = MainActivityKt.getApp();
                     Map mapEmptyMap2 = MapsKt.emptyMap();
-                    c00023.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                    c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                    c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00023.L$3 = str29;
-                    c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00023.L$6 = map;
-                    c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                    c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                    c00023.L$9 = str34;
-                    c00023.L$10 = str33;
-                    c00023.L$11 = SpillingKt.nullOutSpilledVariable(str31);
-                    c00023.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00023.L$13 = SpillingKt.nullOutSpilledVariable(mapM6fp);
-                    c00023.L$14 = mapMapOf;
-                    c00023.L$15 = SpillingKt.nullOutSpilledVariable(str43);
-                    c00023.label = 4;
-                    C00021 c000214 = c00023;
+                    c00053.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                    c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00053.L$3 = str29;
+                    c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00053.L$6 = map;
+                    c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                    c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                    c00053.L$9 = str34;
+                    c00053.L$10 = str33;
+                    c00053.L$11 = SpillingKt.nullOutSpilledVariable(str31);
+                    c00053.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00053.L$13 = SpillingKt.nullOutSpilledVariable(mapM8fp);
+                    c00053.L$14 = mapMapOf;
+                    c00053.L$15 = SpillingKt.nullOutSpilledVariable(str43);
+                    c00053.label = 4;
+                    C00051 c000514 = c00053;
                     str44 = str29;
                     str45 = str33;
                     str46 = str34;
                     obj9 = coroutine_suspended;
-                    objPost$default = Requests.post$default(app11, str43, map, (String) null, (Map) null, (Map) null, mapEmptyMap2, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000214, 65500, (Object) null);
-                    c00024 = c000214;
+                    objPost$default = Requests.post$default(app11, str43, map, (String) null, (Map) null, (Map) null, mapEmptyMap2, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000514, 65500, (Object) null);
+                    c00054 = c000514;
                     if (objPost$default == obj9) {
                         return obj9;
                     }
@@ -1521,7 +1521,7 @@ public class ByseSX extends ExtractorApi {
                     str48 = str45;
                     str49 = str43;
                     str50 = str31;
-                    map6 = mapM6fp;
+                    map6 = mapM8fp;
                     z6 = z5;
                     NiceResponse niceResponse12 = (NiceResponse) obj10;
                     ResponseParser parser12 = niceResponse12.getParser();
@@ -1531,31 +1531,31 @@ public class ByseSX extends ExtractorApi {
                     if (map10 != null) {
                         String str811 = str46 + "/api/videos/access/attest";
                         Requests app12 = MainActivityKt.getApp();
-                        Map<String, Object> mapM9wn2 = m9wn(map10);
-                        c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                        c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                        c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00024.L$3 = str47;
-                        c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00024.L$6 = map;
-                        c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                        c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                        c00024.L$9 = str46;
-                        c00024.L$10 = str48;
-                        c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                        c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                        c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00024.L$14 = map9;
-                        c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                        c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                        c00024.L$17 = SpillingKt.nullOutSpilledVariable(str811);
-                        c00024.label = 5;
-                        C00021 c000215 = c00024;
+                        Map<String, Object> mapM11wn2 = m11wn(map10);
+                        c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                        c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                        c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00054.L$3 = str47;
+                        c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00054.L$6 = map;
+                        c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                        c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                        c00054.L$9 = str46;
+                        c00054.L$10 = str48;
+                        c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                        c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                        c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00054.L$14 = map9;
+                        c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                        c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                        c00054.L$17 = SpillingKt.nullOutSpilledVariable(str811);
+                        c00054.label = 5;
+                        C00051 c000515 = c00054;
                         map11 = map9;
                         str52 = str48;
-                        objPost$default2 = Requests.post$default(app12, str811, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapM9wn2, (RequestBody) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c000215, 61308, (Object) null);
-                        c00024 = c000215;
+                        objPost$default2 = Requests.post$default(app12, str811, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapM11wn2, (RequestBody) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c000515, 61308, (Object) null);
+                        c00054 = c000515;
                         if (objPost$default2 == obj9) {
                             return obj9;
                         }
@@ -1640,31 +1640,31 @@ public class ByseSX extends ExtractorApi {
                     str58 = str46 + str812 + str51 + '/' + str47 + "captcha";
                     Object obj211 = obj11;
                     Requests app13 = MainActivityKt.getApp();
-                    c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                    c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                    c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00024.L$3 = str47;
-                    c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00024.L$6 = map;
-                    c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                    c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                    c00024.L$9 = str46;
-                    c00024.L$10 = str51;
-                    c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                    c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                    c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                    c00024.L$14 = mapMapOf2;
-                    c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                    c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                    c00024.L$17 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00024.label = 6;
-                    C00021 c000216 = c00024;
+                    c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                    c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00054.L$3 = str47;
+                    c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00054.L$6 = map;
+                    c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                    c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                    c00054.L$9 = str46;
+                    c00054.L$10 = str51;
+                    c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                    c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                    c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                    c00054.L$14 = mapMapOf2;
+                    c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                    c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                    c00054.L$17 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00054.label = 6;
+                    C00051 c000516 = c00054;
                     obj12 = obj211;
                     str59 = str812;
                     map16 = mapMapOf2;
-                    objPost$default3 = Requests.post$default(app13, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000216, 65404, (Object) null);
-                    c00023 = c000216;
+                    objPost$default3 = Requests.post$default(app13, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000516, 65404, (Object) null);
+                    c00053 = c000516;
                     if (objPost$default3 == obj9) {
                         return obj9;
                     }
@@ -1721,40 +1721,40 @@ public class ByseSX extends ExtractorApi {
                             pairArr4[c] = TuplesKt.to(obj19, obj31);
                             mapMapOf3 = MapsKt.mapOf(pairArr4);
                             Requests app14 = MainActivityKt.getApp();
-                            c00023.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                            c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                            c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                            c00023.L$3 = str61;
-                            c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                            c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                            c00023.L$6 = map22;
-                            c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                            c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                            c00023.L$9 = str64;
-                            c00023.L$10 = str60;
-                            c00023.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                            c00023.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                            c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                            c00023.L$14 = map18;
-                            c00023.L$15 = SpillingKt.nullOutSpilledVariable(str62);
-                            c00023.L$16 = SpillingKt.nullOutSpilledVariable(map17);
-                            c00023.L$17 = SpillingKt.nullOutSpilledVariable(str63);
-                            c00023.L$18 = SpillingKt.nullOutSpilledVariable(map21);
-                            c00023.L$19 = SpillingKt.nullOutSpilledVariable(str66);
-                            c00023.L$20 = SpillingKt.nullOutSpilledVariable(str67);
-                            c00023.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
-                            c00023.L$22 = SpillingKt.nullOutSpilledVariable(str813);
-                            c00023.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
-                            c00023.I$0 = iIntValue;
-                            c00023.label = 7;
-                            C00021 c000217 = c00023;
+                            c00053.L$0 = SpillingKt.nullOutSpilledVariable(str65);
+                            c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                            c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                            c00053.L$3 = str61;
+                            c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                            c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                            c00053.L$6 = map22;
+                            c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                            c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                            c00053.L$9 = str64;
+                            c00053.L$10 = str60;
+                            c00053.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                            c00053.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                            c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                            c00053.L$14 = map18;
+                            c00053.L$15 = SpillingKt.nullOutSpilledVariable(str62);
+                            c00053.L$16 = SpillingKt.nullOutSpilledVariable(map17);
+                            c00053.L$17 = SpillingKt.nullOutSpilledVariable(str63);
+                            c00053.L$18 = SpillingKt.nullOutSpilledVariable(map21);
+                            c00053.L$19 = SpillingKt.nullOutSpilledVariable(str66);
+                            c00053.L$20 = SpillingKt.nullOutSpilledVariable(str67);
+                            c00053.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
+                            c00053.L$22 = SpillingKt.nullOutSpilledVariable(str813);
+                            c00053.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
+                            c00053.I$0 = iIntValue;
+                            c00053.label = 7;
+                            C00051 c000517 = c00053;
                             str69 = str60;
                             map23 = map18;
                             str70 = str61;
                             str37 = str68;
                             str71 = str64;
-                            objPost$default4 = Requests.post$default(app14, str813, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000217, 65404, (Object) null);
-                            c00023 = c000217;
+                            objPost$default4 = Requests.post$default(app14, str813, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000517, 65404, (Object) null);
+                            c00053 = c000517;
                             obj8 = obj20;
                             if (objPost$default4 == obj8) {
                                 return obj8;
@@ -1825,39 +1825,39 @@ public class ByseSX extends ExtractorApi {
                     str39 = str33;
                     str40 = str31;
                     str41 = str814;
-                    map6 = mapM6fp;
+                    map6 = mapM8fp;
                     map7 = map4;
                     str42 = str9;
                 }
                 String str815 = str38 + str37 + str39 + '/' + str41 + "playback";
                 Requests app15 = MainActivityKt.getApp();
-                c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                c00023.L$15 = SpillingKt.nullOutSpilledVariable(str815);
-                c00023.L$16 = null;
-                c00023.L$17 = null;
-                c00023.L$18 = null;
-                c00023.L$19 = null;
-                c00023.L$20 = null;
-                c00023.L$21 = null;
-                c00023.L$22 = null;
-                c00023.L$23 = null;
-                c00023.label = 8;
+                c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                c00053.L$15 = SpillingKt.nullOutSpilledVariable(str815);
+                c00053.L$16 = null;
+                c00053.L$17 = null;
+                c00053.L$18 = null;
+                c00053.L$19 = null;
+                c00053.L$20 = null;
+                c00053.L$21 = null;
+                c00053.L$22 = null;
+                c00053.L$23 = null;
+                c00053.label = 8;
                 obj23 = obj8;
-                objPost$default5 = Requests.post$default(app15, str815, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                objPost$default5 = Requests.post$default(app15, str815, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                 if (objPost$default5 == obj23) {
                     return obj23;
                 }
@@ -1869,13 +1869,13 @@ public class ByseSX extends ExtractorApi {
                 return parser16.parseSafe(niceResponse16.getText(), Reflection.getOrCreateKotlinClass(PlaybackRoot.class));
             case 2:
                 number = null;
-                map2 = (Map) c00025.L$6;
-                String str95 = (String) c00025.L$5;
-                str14 = (String) c00025.L$4;
-                str18 = (String) c00025.L$3;
-                str19 = (String) c00025.L$2;
-                str20 = (String) c00025.L$1;
-                String str96 = (String) c00025.L$0;
+                map2 = (Map) c00055.L$6;
+                String str95 = (String) c00055.L$5;
+                str14 = (String) c00055.L$4;
+                str18 = (String) c00055.L$3;
+                str19 = (String) c00055.L$2;
+                str20 = (String) c00055.L$1;
+                String str96 = (String) c00055.L$0;
                 ResultKt.throwOnFailure(obj26);
                 str17 = str96;
                 str3 = str95;
@@ -1884,7 +1884,7 @@ public class ByseSX extends ExtractorApi {
                 obj4 = obj26;
                 z4 = true;
                 c = 2;
-                c00022 = c00025;
+                c00052 = c00055;
                 str4 = "/api/videos/";
                 NiceResponse niceResponse17 = (NiceResponse) obj4;
                 ResponseParser parser17 = niceResponse17.getParser();
@@ -1932,23 +1932,23 @@ public class ByseSX extends ExtractorApi {
                 }
                 str25 = str23 + str4 + str24 + '/' + str11 + "settings";
                 Requests app16 = MainActivityKt.getApp();
-                c00022.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(str12);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str10);
-                c00022.L$3 = str11;
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str13);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(str3);
-                c00022.L$6 = map;
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot2);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot3);
-                c00022.L$9 = str23;
-                c00022.L$10 = str24;
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str25);
-                c00022.label = 3;
-                C00021 c000218 = c00022;
+                c00052.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                c00052.L$1 = SpillingKt.nullOutSpilledVariable(str12);
+                c00052.L$2 = SpillingKt.nullOutSpilledVariable(str10);
+                c00052.L$3 = str11;
+                c00052.L$4 = SpillingKt.nullOutSpilledVariable(str13);
+                c00052.L$5 = SpillingKt.nullOutSpilledVariable(str3);
+                c00052.L$6 = map;
+                c00052.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot2);
+                c00052.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot3);
+                c00052.L$9 = str23;
+                c00052.L$10 = str24;
+                c00052.L$11 = SpillingKt.nullOutSpilledVariable(str25);
+                c00052.label = 3;
+                C00051 c000518 = c00052;
                 str26 = str11;
-                obj5 = Requests.get$default(app16, str25, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000218, 4092, (Object) null);
-                c00023 = c000218;
+                obj5 = Requests.get$default(app16, str25, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000518, 4092, (Object) null);
+                c00053 = c000518;
                 if (obj5 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -1971,11 +1971,11 @@ public class ByseSX extends ExtractorApi {
                 map4 = (Map) safe3;
                 obj7 = obj;
                 str36 = str4;
-                mapM6fp = m6fp(16, 0.83d, 0.94d);
-                Object obj212 = mapM6fp.get(obj2);
+                mapM8fp = m8fp(16, 0.83d, 0.94d);
+                Object obj212 = mapM8fp.get(obj2);
                 Intrinsics.checkNotNull(obj212);
                 mapMapOf = MapsKt.mapOf(TuplesKt.to(obj2, obj212));
-                map.put("Cookie", "byse_viewer_id=" + mapM6fp.get("vId") + "; byse_device_id=" + mapM6fp.get("dId"));
+                map.put("Cookie", "byse_viewer_id=" + mapM8fp.get("vId") + "; byse_device_id=" + mapM8fp.get("dId"));
                 if (map4 != null) {
                     zAreEqual = Intrinsics.areEqual(map4.get("captcha_required"), Boxing.boxBoolean(z5));
                 } else {
@@ -1985,30 +1985,30 @@ public class ByseSX extends ExtractorApi {
                     str43 = str34 + "/api/videos/access/challenge";
                     Requests app17 = MainActivityKt.getApp();
                     Map mapEmptyMap3 = MapsKt.emptyMap();
-                    c00023.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                    c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                    c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00023.L$3 = str29;
-                    c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00023.L$6 = map;
-                    c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                    c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                    c00023.L$9 = str34;
-                    c00023.L$10 = str33;
-                    c00023.L$11 = SpillingKt.nullOutSpilledVariable(str31);
-                    c00023.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00023.L$13 = SpillingKt.nullOutSpilledVariable(mapM6fp);
-                    c00023.L$14 = mapMapOf;
-                    c00023.L$15 = SpillingKt.nullOutSpilledVariable(str43);
-                    c00023.label = 4;
-                    C00021 c000219 = c00023;
+                    c00053.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                    c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00053.L$3 = str29;
+                    c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00053.L$6 = map;
+                    c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                    c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                    c00053.L$9 = str34;
+                    c00053.L$10 = str33;
+                    c00053.L$11 = SpillingKt.nullOutSpilledVariable(str31);
+                    c00053.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00053.L$13 = SpillingKt.nullOutSpilledVariable(mapM8fp);
+                    c00053.L$14 = mapMapOf;
+                    c00053.L$15 = SpillingKt.nullOutSpilledVariable(str43);
+                    c00053.label = 4;
+                    C00051 c000519 = c00053;
                     str44 = str29;
                     str45 = str33;
                     str46 = str34;
                     obj9 = coroutine_suspended;
-                    objPost$default = Requests.post$default(app17, str43, map, (String) null, (Map) null, (Map) null, mapEmptyMap3, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000219, 65500, (Object) null);
-                    c00024 = c000219;
+                    objPost$default = Requests.post$default(app17, str43, map, (String) null, (Map) null, (Map) null, mapEmptyMap3, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000519, 65500, (Object) null);
+                    c00054 = c000519;
                     if (objPost$default == obj9) {
                         return obj9;
                     }
@@ -2019,7 +2019,7 @@ public class ByseSX extends ExtractorApi {
                     str48 = str45;
                     str49 = str43;
                     str50 = str31;
-                    map6 = mapM6fp;
+                    map6 = mapM8fp;
                     z6 = z5;
                     NiceResponse niceResponse19 = (NiceResponse) obj10;
                     ResponseParser parser19 = niceResponse19.getParser();
@@ -2029,31 +2029,31 @@ public class ByseSX extends ExtractorApi {
                     if (map10 != null) {
                         String str817 = str46 + "/api/videos/access/attest";
                         Requests app18 = MainActivityKt.getApp();
-                        Map<String, Object> mapM9wn3 = m9wn(map10);
-                        c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                        c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                        c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00024.L$3 = str47;
-                        c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00024.L$6 = map;
-                        c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                        c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                        c00024.L$9 = str46;
-                        c00024.L$10 = str48;
-                        c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                        c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                        c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00024.L$14 = map9;
-                        c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                        c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                        c00024.L$17 = SpillingKt.nullOutSpilledVariable(str817);
-                        c00024.label = 5;
-                        C00021 c0002110 = c00024;
+                        Map<String, Object> mapM11wn3 = m11wn(map10);
+                        c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                        c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                        c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00054.L$3 = str47;
+                        c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00054.L$6 = map;
+                        c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                        c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                        c00054.L$9 = str46;
+                        c00054.L$10 = str48;
+                        c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                        c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                        c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00054.L$14 = map9;
+                        c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                        c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                        c00054.L$17 = SpillingKt.nullOutSpilledVariable(str817);
+                        c00054.label = 5;
+                        C00051 c0005110 = c00054;
                         map11 = map9;
                         str52 = str48;
-                        objPost$default2 = Requests.post$default(app18, str817, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapM9wn3, (RequestBody) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c0002110, 61308, (Object) null);
-                        c00024 = c0002110;
+                        objPost$default2 = Requests.post$default(app18, str817, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapM11wn3, (RequestBody) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c0005110, 61308, (Object) null);
+                        c00054 = c0005110;
                         if (objPost$default2 == obj9) {
                             return obj9;
                         }
@@ -2138,31 +2138,31 @@ public class ByseSX extends ExtractorApi {
                     str58 = str46 + str818 + str51 + '/' + str47 + "captcha";
                     Object obj213 = obj11;
                     Requests app19 = MainActivityKt.getApp();
-                    c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                    c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                    c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00024.L$3 = str47;
-                    c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00024.L$6 = map;
-                    c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                    c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                    c00024.L$9 = str46;
-                    c00024.L$10 = str51;
-                    c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                    c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                    c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                    c00024.L$14 = mapMapOf2;
-                    c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                    c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                    c00024.L$17 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00024.label = 6;
-                    C00021 c0002111 = c00024;
+                    c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                    c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00054.L$3 = str47;
+                    c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00054.L$6 = map;
+                    c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                    c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                    c00054.L$9 = str46;
+                    c00054.L$10 = str51;
+                    c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                    c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                    c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                    c00054.L$14 = mapMapOf2;
+                    c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                    c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                    c00054.L$17 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00054.label = 6;
+                    C00051 c0005111 = c00054;
                     obj12 = obj213;
                     str59 = str818;
                     map16 = mapMapOf2;
-                    objPost$default3 = Requests.post$default(app19, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002111, 65404, (Object) null);
-                    c00023 = c0002111;
+                    objPost$default3 = Requests.post$default(app19, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0005111, 65404, (Object) null);
+                    c00053 = c0005111;
                     if (objPost$default3 == obj9) {
                         return obj9;
                     }
@@ -2219,40 +2219,40 @@ public class ByseSX extends ExtractorApi {
                             pairArr6[c] = TuplesKt.to(obj19, obj32);
                             mapMapOf3 = MapsKt.mapOf(pairArr6);
                             Requests app110 = MainActivityKt.getApp();
-                            c00023.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                            c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                            c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                            c00023.L$3 = str61;
-                            c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                            c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                            c00023.L$6 = map22;
-                            c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                            c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                            c00023.L$9 = str64;
-                            c00023.L$10 = str60;
-                            c00023.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                            c00023.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                            c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                            c00023.L$14 = map18;
-                            c00023.L$15 = SpillingKt.nullOutSpilledVariable(str62);
-                            c00023.L$16 = SpillingKt.nullOutSpilledVariable(map17);
-                            c00023.L$17 = SpillingKt.nullOutSpilledVariable(str63);
-                            c00023.L$18 = SpillingKt.nullOutSpilledVariable(map21);
-                            c00023.L$19 = SpillingKt.nullOutSpilledVariable(str66);
-                            c00023.L$20 = SpillingKt.nullOutSpilledVariable(str67);
-                            c00023.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
-                            c00023.L$22 = SpillingKt.nullOutSpilledVariable(str819);
-                            c00023.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
-                            c00023.I$0 = iIntValue;
-                            c00023.label = 7;
-                            C00021 c0002112 = c00023;
+                            c00053.L$0 = SpillingKt.nullOutSpilledVariable(str65);
+                            c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                            c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                            c00053.L$3 = str61;
+                            c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                            c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                            c00053.L$6 = map22;
+                            c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                            c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                            c00053.L$9 = str64;
+                            c00053.L$10 = str60;
+                            c00053.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                            c00053.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                            c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                            c00053.L$14 = map18;
+                            c00053.L$15 = SpillingKt.nullOutSpilledVariable(str62);
+                            c00053.L$16 = SpillingKt.nullOutSpilledVariable(map17);
+                            c00053.L$17 = SpillingKt.nullOutSpilledVariable(str63);
+                            c00053.L$18 = SpillingKt.nullOutSpilledVariable(map21);
+                            c00053.L$19 = SpillingKt.nullOutSpilledVariable(str66);
+                            c00053.L$20 = SpillingKt.nullOutSpilledVariable(str67);
+                            c00053.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
+                            c00053.L$22 = SpillingKt.nullOutSpilledVariable(str819);
+                            c00053.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
+                            c00053.I$0 = iIntValue;
+                            c00053.label = 7;
+                            C00051 c0005112 = c00053;
                             str69 = str60;
                             map23 = map18;
                             str70 = str61;
                             str37 = str68;
                             str71 = str64;
-                            objPost$default4 = Requests.post$default(app110, str819, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002112, 65404, (Object) null);
-                            c00023 = c0002112;
+                            objPost$default4 = Requests.post$default(app110, str819, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0005112, 65404, (Object) null);
+                            c00053 = c0005112;
                             obj8 = obj20;
                             if (objPost$default4 == obj8) {
                                 return obj8;
@@ -2323,39 +2323,39 @@ public class ByseSX extends ExtractorApi {
                     str39 = str33;
                     str40 = str31;
                     str41 = str8110;
-                    map6 = mapM6fp;
+                    map6 = mapM8fp;
                     map7 = map4;
                     str42 = str9;
                 }
                 String str8111 = str38 + str37 + str39 + '/' + str41 + "playback";
                 Requests app111 = MainActivityKt.getApp();
-                c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                c00023.L$15 = SpillingKt.nullOutSpilledVariable(str8111);
-                c00023.L$16 = null;
-                c00023.L$17 = null;
-                c00023.L$18 = null;
-                c00023.L$19 = null;
-                c00023.L$20 = null;
-                c00023.L$21 = null;
-                c00023.L$22 = null;
-                c00023.L$23 = null;
-                c00023.label = 8;
+                c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                c00053.L$15 = SpillingKt.nullOutSpilledVariable(str8111);
+                c00053.L$16 = null;
+                c00053.L$17 = null;
+                c00053.L$18 = null;
+                c00053.L$19 = null;
+                c00053.L$20 = null;
+                c00053.L$21 = null;
+                c00053.L$22 = null;
+                c00053.L$23 = null;
+                c00053.label = 8;
                 obj23 = obj8;
-                objPost$default5 = Requests.post$default(app111, str8111, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                objPost$default5 = Requests.post$default(app111, str8111, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                 if (objPost$default5 == obj23) {
                     return obj23;
                 }
@@ -2367,18 +2367,18 @@ public class ByseSX extends ExtractorApi {
                 return parser113.parseSafe(niceResponse113.getText(), Reflection.getOrCreateKotlinClass(PlaybackRoot.class));
             case 3:
                 number = null;
-                String str97 = (String) c00025.L$11;
-                String str98 = (String) c00025.L$10;
-                String str99 = (String) c00025.L$9;
-                DetailsRoot detailsRoot10 = (DetailsRoot) c00025.L$8;
-                DetailsRoot detailsRoot11 = (DetailsRoot) c00025.L$7;
-                Map map34 = (Map) c00025.L$6;
-                String str100 = (String) c00025.L$5;
-                String str101 = (String) c00025.L$4;
-                String str102 = (String) c00025.L$3;
-                String str103 = (String) c00025.L$2;
-                String str104 = (String) c00025.L$1;
-                String str105 = (String) c00025.L$0;
+                String str97 = (String) c00055.L$11;
+                String str98 = (String) c00055.L$10;
+                String str99 = (String) c00055.L$9;
+                DetailsRoot detailsRoot10 = (DetailsRoot) c00055.L$8;
+                DetailsRoot detailsRoot11 = (DetailsRoot) c00055.L$7;
+                Map map34 = (Map) c00055.L$6;
+                String str100 = (String) c00055.L$5;
+                String str101 = (String) c00055.L$4;
+                String str102 = (String) c00055.L$3;
+                String str103 = (String) c00055.L$2;
+                String str104 = (String) c00055.L$1;
+                String str105 = (String) c00055.L$0;
                 ResultKt.throwOnFailure(obj26);
                 str9 = str105;
                 detailsRoot5 = detailsRoot10;
@@ -2394,7 +2394,7 @@ public class ByseSX extends ExtractorApi {
                 obj6 = obj26;
                 z5 = true;
                 c = 2;
-                c00023 = c00025;
+                c00053 = c00055;
                 str33 = str98;
                 map = map34;
                 str4 = "/api/videos/";
@@ -2406,11 +2406,11 @@ public class ByseSX extends ExtractorApi {
                 map4 = (Map) safe3;
                 obj7 = obj;
                 str36 = str4;
-                mapM6fp = m6fp(16, 0.83d, 0.94d);
-                Object obj214 = mapM6fp.get(obj2);
+                mapM8fp = m8fp(16, 0.83d, 0.94d);
+                Object obj214 = mapM8fp.get(obj2);
                 Intrinsics.checkNotNull(obj214);
                 mapMapOf = MapsKt.mapOf(TuplesKt.to(obj2, obj214));
-                map.put("Cookie", "byse_viewer_id=" + mapM6fp.get("vId") + "; byse_device_id=" + mapM6fp.get("dId"));
+                map.put("Cookie", "byse_viewer_id=" + mapM8fp.get("vId") + "; byse_device_id=" + mapM8fp.get("dId"));
                 if (map4 != null) {
                     zAreEqual = Intrinsics.areEqual(map4.get("captcha_required"), Boxing.boxBoolean(z5));
                 } else {
@@ -2420,30 +2420,30 @@ public class ByseSX extends ExtractorApi {
                     str43 = str34 + "/api/videos/access/challenge";
                     Requests app112 = MainActivityKt.getApp();
                     Map mapEmptyMap4 = MapsKt.emptyMap();
-                    c00023.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                    c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                    c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00023.L$3 = str29;
-                    c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00023.L$6 = map;
-                    c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                    c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                    c00023.L$9 = str34;
-                    c00023.L$10 = str33;
-                    c00023.L$11 = SpillingKt.nullOutSpilledVariable(str31);
-                    c00023.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00023.L$13 = SpillingKt.nullOutSpilledVariable(mapM6fp);
-                    c00023.L$14 = mapMapOf;
-                    c00023.L$15 = SpillingKt.nullOutSpilledVariable(str43);
-                    c00023.label = 4;
-                    C00021 c0002113 = c00023;
+                    c00053.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                    c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00053.L$3 = str29;
+                    c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00053.L$6 = map;
+                    c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                    c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                    c00053.L$9 = str34;
+                    c00053.L$10 = str33;
+                    c00053.L$11 = SpillingKt.nullOutSpilledVariable(str31);
+                    c00053.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00053.L$13 = SpillingKt.nullOutSpilledVariable(mapM8fp);
+                    c00053.L$14 = mapMapOf;
+                    c00053.L$15 = SpillingKt.nullOutSpilledVariable(str43);
+                    c00053.label = 4;
+                    C00051 c0005113 = c00053;
                     str44 = str29;
                     str45 = str33;
                     str46 = str34;
                     obj9 = coroutine_suspended;
-                    objPost$default = Requests.post$default(app112, str43, map, (String) null, (Map) null, (Map) null, mapEmptyMap4, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002113, 65500, (Object) null);
-                    c00024 = c0002113;
+                    objPost$default = Requests.post$default(app112, str43, map, (String) null, (Map) null, (Map) null, mapEmptyMap4, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0005113, 65500, (Object) null);
+                    c00054 = c0005113;
                     if (objPost$default == obj9) {
                         return obj9;
                     }
@@ -2454,7 +2454,7 @@ public class ByseSX extends ExtractorApi {
                     str48 = str45;
                     str49 = str43;
                     str50 = str31;
-                    map6 = mapM6fp;
+                    map6 = mapM8fp;
                     z6 = z5;
                     NiceResponse niceResponse115 = (NiceResponse) obj10;
                     ResponseParser parser115 = niceResponse115.getParser();
@@ -2464,31 +2464,31 @@ public class ByseSX extends ExtractorApi {
                     if (map10 != null) {
                         String str8112 = str46 + "/api/videos/access/attest";
                         Requests app113 = MainActivityKt.getApp();
-                        Map<String, Object> mapM9wn4 = m9wn(map10);
-                        c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                        c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                        c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00024.L$3 = str47;
-                        c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00024.L$6 = map;
-                        c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                        c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                        c00024.L$9 = str46;
-                        c00024.L$10 = str48;
-                        c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                        c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                        c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00024.L$14 = map9;
-                        c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                        c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                        c00024.L$17 = SpillingKt.nullOutSpilledVariable(str8112);
-                        c00024.label = 5;
-                        C00021 c0002114 = c00024;
+                        Map<String, Object> mapM11wn4 = m11wn(map10);
+                        c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                        c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                        c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00054.L$3 = str47;
+                        c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00054.L$6 = map;
+                        c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                        c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                        c00054.L$9 = str46;
+                        c00054.L$10 = str48;
+                        c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                        c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                        c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00054.L$14 = map9;
+                        c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                        c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                        c00054.L$17 = SpillingKt.nullOutSpilledVariable(str8112);
+                        c00054.label = 5;
+                        C00051 c0005114 = c00054;
                         map11 = map9;
                         str52 = str48;
-                        objPost$default2 = Requests.post$default(app113, str8112, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapM9wn4, (RequestBody) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c0002114, 61308, (Object) null);
-                        c00024 = c0002114;
+                        objPost$default2 = Requests.post$default(app113, str8112, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapM11wn4, (RequestBody) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c0005114, 61308, (Object) null);
+                        c00054 = c0005114;
                         if (objPost$default2 == obj9) {
                             return obj9;
                         }
@@ -2573,31 +2573,31 @@ public class ByseSX extends ExtractorApi {
                     str58 = str46 + str8113 + str51 + '/' + str47 + "captcha";
                     Object obj215 = obj11;
                     Requests app114 = MainActivityKt.getApp();
-                    c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                    c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                    c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00024.L$3 = str47;
-                    c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00024.L$6 = map;
-                    c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                    c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                    c00024.L$9 = str46;
-                    c00024.L$10 = str51;
-                    c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                    c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                    c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                    c00024.L$14 = mapMapOf2;
-                    c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                    c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                    c00024.L$17 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00024.label = 6;
-                    C00021 c0002115 = c00024;
+                    c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                    c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00054.L$3 = str47;
+                    c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00054.L$6 = map;
+                    c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                    c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                    c00054.L$9 = str46;
+                    c00054.L$10 = str51;
+                    c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                    c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                    c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                    c00054.L$14 = mapMapOf2;
+                    c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                    c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                    c00054.L$17 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00054.label = 6;
+                    C00051 c0005115 = c00054;
                     obj12 = obj215;
                     str59 = str8113;
                     map16 = mapMapOf2;
-                    objPost$default3 = Requests.post$default(app114, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002115, 65404, (Object) null);
-                    c00023 = c0002115;
+                    objPost$default3 = Requests.post$default(app114, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0005115, 65404, (Object) null);
+                    c00053 = c0005115;
                     if (objPost$default3 == obj9) {
                         return obj9;
                     }
@@ -2654,40 +2654,40 @@ public class ByseSX extends ExtractorApi {
                             pairArr8[c] = TuplesKt.to(obj19, obj33);
                             mapMapOf3 = MapsKt.mapOf(pairArr8);
                             Requests app115 = MainActivityKt.getApp();
-                            c00023.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                            c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                            c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                            c00023.L$3 = str61;
-                            c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                            c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                            c00023.L$6 = map22;
-                            c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                            c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                            c00023.L$9 = str64;
-                            c00023.L$10 = str60;
-                            c00023.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                            c00023.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                            c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                            c00023.L$14 = map18;
-                            c00023.L$15 = SpillingKt.nullOutSpilledVariable(str62);
-                            c00023.L$16 = SpillingKt.nullOutSpilledVariable(map17);
-                            c00023.L$17 = SpillingKt.nullOutSpilledVariable(str63);
-                            c00023.L$18 = SpillingKt.nullOutSpilledVariable(map21);
-                            c00023.L$19 = SpillingKt.nullOutSpilledVariable(str66);
-                            c00023.L$20 = SpillingKt.nullOutSpilledVariable(str67);
-                            c00023.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
-                            c00023.L$22 = SpillingKt.nullOutSpilledVariable(str8114);
-                            c00023.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
-                            c00023.I$0 = iIntValue;
-                            c00023.label = 7;
-                            C00021 c0002116 = c00023;
+                            c00053.L$0 = SpillingKt.nullOutSpilledVariable(str65);
+                            c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                            c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                            c00053.L$3 = str61;
+                            c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                            c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                            c00053.L$6 = map22;
+                            c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                            c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                            c00053.L$9 = str64;
+                            c00053.L$10 = str60;
+                            c00053.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                            c00053.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                            c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                            c00053.L$14 = map18;
+                            c00053.L$15 = SpillingKt.nullOutSpilledVariable(str62);
+                            c00053.L$16 = SpillingKt.nullOutSpilledVariable(map17);
+                            c00053.L$17 = SpillingKt.nullOutSpilledVariable(str63);
+                            c00053.L$18 = SpillingKt.nullOutSpilledVariable(map21);
+                            c00053.L$19 = SpillingKt.nullOutSpilledVariable(str66);
+                            c00053.L$20 = SpillingKt.nullOutSpilledVariable(str67);
+                            c00053.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
+                            c00053.L$22 = SpillingKt.nullOutSpilledVariable(str8114);
+                            c00053.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
+                            c00053.I$0 = iIntValue;
+                            c00053.label = 7;
+                            C00051 c0005116 = c00053;
                             str69 = str60;
                             map23 = map18;
                             str70 = str61;
                             str37 = str68;
                             str71 = str64;
-                            objPost$default4 = Requests.post$default(app115, str8114, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002116, 65404, (Object) null);
-                            c00023 = c0002116;
+                            objPost$default4 = Requests.post$default(app115, str8114, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0005116, 65404, (Object) null);
+                            c00053 = c0005116;
                             obj8 = obj20;
                             if (objPost$default4 == obj8) {
                                 return obj8;
@@ -2758,39 +2758,39 @@ public class ByseSX extends ExtractorApi {
                     str39 = str33;
                     str40 = str31;
                     str41 = str8115;
-                    map6 = mapM6fp;
+                    map6 = mapM8fp;
                     map7 = map4;
                     str42 = str9;
                 }
                 String str8116 = str38 + str37 + str39 + '/' + str41 + "playback";
                 Requests app116 = MainActivityKt.getApp();
-                c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                c00023.L$15 = SpillingKt.nullOutSpilledVariable(str8116);
-                c00023.L$16 = null;
-                c00023.L$17 = null;
-                c00023.L$18 = null;
-                c00023.L$19 = null;
-                c00023.L$20 = null;
-                c00023.L$21 = null;
-                c00023.L$22 = null;
-                c00023.L$23 = null;
-                c00023.label = 8;
+                c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                c00053.L$15 = SpillingKt.nullOutSpilledVariable(str8116);
+                c00053.L$16 = null;
+                c00053.L$17 = null;
+                c00053.L$18 = null;
+                c00053.L$19 = null;
+                c00053.L$20 = null;
+                c00053.L$21 = null;
+                c00053.L$22 = null;
+                c00053.L$23 = null;
+                c00053.label = 8;
                 obj23 = obj8;
-                objPost$default5 = Requests.post$default(app116, str8116, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                objPost$default5 = Requests.post$default(app116, str8116, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                 if (objPost$default5 == obj23) {
                     return obj23;
                 }
@@ -2802,22 +2802,22 @@ public class ByseSX extends ExtractorApi {
                 return parser119.parseSafe(niceResponse119.getText(), Reflection.getOrCreateKotlinClass(PlaybackRoot.class));
             case 4:
                 number = null;
-                String str106 = (String) c00025.L$15;
-                Map map36 = (Map) c00025.L$14;
-                Map<String, Object> map37 = (Map) c00025.L$13;
-                Map map38 = (Map) c00025.L$12;
-                String str107 = (String) c00025.L$11;
-                str48 = (String) c00025.L$10;
-                String str108 = (String) c00025.L$9;
-                DetailsRoot detailsRoot12 = (DetailsRoot) c00025.L$8;
-                DetailsRoot detailsRoot13 = (DetailsRoot) c00025.L$7;
-                Map map39 = (Map) c00025.L$6;
-                String str109 = (String) c00025.L$5;
-                String str110 = (String) c00025.L$4;
-                String str111 = (String) c00025.L$3;
-                String str112 = (String) c00025.L$2;
-                String str113 = (String) c00025.L$1;
-                String str114 = (String) c00025.L$0;
+                String str106 = (String) c00055.L$15;
+                Map map36 = (Map) c00055.L$14;
+                Map<String, Object> map37 = (Map) c00055.L$13;
+                Map map38 = (Map) c00055.L$12;
+                String str107 = (String) c00055.L$11;
+                str48 = (String) c00055.L$10;
+                String str108 = (String) c00055.L$9;
+                DetailsRoot detailsRoot12 = (DetailsRoot) c00055.L$8;
+                DetailsRoot detailsRoot13 = (DetailsRoot) c00055.L$7;
+                Map map39 = (Map) c00055.L$6;
+                String str109 = (String) c00055.L$5;
+                String str110 = (String) c00055.L$4;
+                String str111 = (String) c00055.L$3;
+                String str112 = (String) c00055.L$2;
+                String str113 = (String) c00055.L$1;
+                String str114 = (String) c00055.L$0;
                 ResultKt.throwOnFailure(obj26);
                 str9 = str114;
                 map6 = map37;
@@ -2838,7 +2838,7 @@ public class ByseSX extends ExtractorApi {
                 obj10 = obj26;
                 z6 = true;
                 c = 2;
-                c00024 = c00025;
+                c00054 = c00055;
                 map9 = map36;
                 obj9 = coroutine_suspended;
                 str47 = str111;
@@ -2850,31 +2850,31 @@ public class ByseSX extends ExtractorApi {
                 if (map10 != null) {
                     String str8117 = str46 + "/api/videos/access/attest";
                     Requests app117 = MainActivityKt.getApp();
-                    Map<String, Object> mapM9wn5 = m9wn(map10);
-                    c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                    c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                    c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00024.L$3 = str47;
-                    c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00024.L$6 = map;
-                    c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                    c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                    c00024.L$9 = str46;
-                    c00024.L$10 = str48;
-                    c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                    c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                    c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                    c00024.L$14 = map9;
-                    c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                    c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                    c00024.L$17 = SpillingKt.nullOutSpilledVariable(str8117);
-                    c00024.label = 5;
-                    C00021 c0002117 = c00024;
+                    Map<String, Object> mapM11wn5 = m11wn(map10);
+                    c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                    c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00054.L$3 = str47;
+                    c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00054.L$6 = map;
+                    c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                    c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                    c00054.L$9 = str46;
+                    c00054.L$10 = str48;
+                    c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                    c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                    c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                    c00054.L$14 = map9;
+                    c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                    c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                    c00054.L$17 = SpillingKt.nullOutSpilledVariable(str8117);
+                    c00054.label = 5;
+                    C00051 c0005117 = c00054;
                     map11 = map9;
                     str52 = str48;
-                    objPost$default2 = Requests.post$default(app117, str8117, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapM9wn5, (RequestBody) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c0002117, 61308, (Object) null);
-                    c00024 = c0002117;
+                    objPost$default2 = Requests.post$default(app117, str8117, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapM11wn5, (RequestBody) null, false, 0, (TimeUnit) null, 10000L, (Interceptor) null, false, (ResponseParser) null, c0005117, 61308, (Object) null);
+                    c00054 = c0005117;
                     if (objPost$default2 == obj9) {
                         return obj9;
                     }
@@ -2959,31 +2959,31 @@ public class ByseSX extends ExtractorApi {
                 str58 = str46 + str8118 + str51 + '/' + str47 + "captcha";
                 Object obj216 = obj11;
                 Requests app118 = MainActivityKt.getApp();
-                c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                c00024.L$3 = str47;
-                c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                c00024.L$6 = map;
-                c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                c00024.L$9 = str46;
-                c00024.L$10 = str51;
-                c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                c00024.L$14 = mapMapOf2;
-                c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                c00024.L$17 = SpillingKt.nullOutSpilledVariable(str58);
-                c00024.label = 6;
-                C00021 c0002118 = c00024;
+                c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                c00054.L$3 = str47;
+                c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                c00054.L$6 = map;
+                c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                c00054.L$9 = str46;
+                c00054.L$10 = str51;
+                c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                c00054.L$14 = mapMapOf2;
+                c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                c00054.L$17 = SpillingKt.nullOutSpilledVariable(str58);
+                c00054.label = 6;
+                C00051 c0005118 = c00054;
                 obj12 = obj216;
                 str59 = str8118;
                 map16 = mapMapOf2;
-                objPost$default3 = Requests.post$default(app118, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002118, 65404, (Object) null);
-                c00023 = c0002118;
+                objPost$default3 = Requests.post$default(app118, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0005118, 65404, (Object) null);
+                c00053 = c0005118;
                 if (objPost$default3 == obj9) {
                     return obj9;
                 }
@@ -3040,40 +3040,40 @@ public class ByseSX extends ExtractorApi {
                         pairArr10[c] = TuplesKt.to(obj19, obj34);
                         mapMapOf3 = MapsKt.mapOf(pairArr10);
                         Requests app119 = MainActivityKt.getApp();
-                        c00023.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                        c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                        c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00023.L$3 = str61;
-                        c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00023.L$6 = map22;
-                        c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                        c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                        c00023.L$9 = str64;
-                        c00023.L$10 = str60;
-                        c00023.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                        c00023.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                        c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00023.L$14 = map18;
-                        c00023.L$15 = SpillingKt.nullOutSpilledVariable(str62);
-                        c00023.L$16 = SpillingKt.nullOutSpilledVariable(map17);
-                        c00023.L$17 = SpillingKt.nullOutSpilledVariable(str63);
-                        c00023.L$18 = SpillingKt.nullOutSpilledVariable(map21);
-                        c00023.L$19 = SpillingKt.nullOutSpilledVariable(str66);
-                        c00023.L$20 = SpillingKt.nullOutSpilledVariable(str67);
-                        c00023.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
-                        c00023.L$22 = SpillingKt.nullOutSpilledVariable(str8119);
-                        c00023.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
-                        c00023.I$0 = iIntValue;
-                        c00023.label = 7;
-                        C00021 c0002119 = c00023;
+                        c00053.L$0 = SpillingKt.nullOutSpilledVariable(str65);
+                        c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                        c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00053.L$3 = str61;
+                        c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00053.L$6 = map22;
+                        c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                        c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                        c00053.L$9 = str64;
+                        c00053.L$10 = str60;
+                        c00053.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                        c00053.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                        c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00053.L$14 = map18;
+                        c00053.L$15 = SpillingKt.nullOutSpilledVariable(str62);
+                        c00053.L$16 = SpillingKt.nullOutSpilledVariable(map17);
+                        c00053.L$17 = SpillingKt.nullOutSpilledVariable(str63);
+                        c00053.L$18 = SpillingKt.nullOutSpilledVariable(map21);
+                        c00053.L$19 = SpillingKt.nullOutSpilledVariable(str66);
+                        c00053.L$20 = SpillingKt.nullOutSpilledVariable(str67);
+                        c00053.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
+                        c00053.L$22 = SpillingKt.nullOutSpilledVariable(str8119);
+                        c00053.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
+                        c00053.I$0 = iIntValue;
+                        c00053.label = 7;
+                        C00051 c0005119 = c00053;
                         str69 = str60;
                         map23 = map18;
                         str70 = str61;
                         str37 = str68;
                         str71 = str64;
-                        objPost$default4 = Requests.post$default(app119, str8119, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002119, 65404, (Object) null);
-                        c00023 = c0002119;
+                        objPost$default4 = Requests.post$default(app119, str8119, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0005119, 65404, (Object) null);
+                        c00053 = c0005119;
                         obj8 = obj20;
                         if (objPost$default4 == obj8) {
                             return obj8;
@@ -3119,33 +3119,33 @@ public class ByseSX extends ExtractorApi {
                         str40 = str50;
                         String str81110 = str38 + str37 + str39 + '/' + str41 + "playback";
                         Requests app1110 = MainActivityKt.getApp();
-                        c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                        c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                        c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                        c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                        c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                        c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                        c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                        c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                        c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                        c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                        c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                        c00023.L$15 = SpillingKt.nullOutSpilledVariable(str81110);
-                        c00023.L$16 = null;
-                        c00023.L$17 = null;
-                        c00023.L$18 = null;
-                        c00023.L$19 = null;
-                        c00023.L$20 = null;
-                        c00023.L$21 = null;
-                        c00023.L$22 = null;
-                        c00023.L$23 = null;
-                        c00023.label = 8;
+                        c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                        c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                        c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                        c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                        c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                        c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                        c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                        c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                        c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                        c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                        c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                        c00053.L$15 = SpillingKt.nullOutSpilledVariable(str81110);
+                        c00053.L$16 = null;
+                        c00053.L$17 = null;
+                        c00053.L$18 = null;
+                        c00053.L$19 = null;
+                        c00053.L$20 = null;
+                        c00053.L$21 = null;
+                        c00053.L$22 = null;
+                        c00053.L$23 = null;
+                        c00053.label = 8;
                         obj23 = obj8;
-                        objPost$default5 = Requests.post$default(app1110, str81110, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                        objPost$default5 = Requests.post$default(app1110, str81110, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                         if (objPost$default5 == obj23) {
                             return obj23;
                         }
@@ -3174,33 +3174,33 @@ public class ByseSX extends ExtractorApi {
                 str40 = str50;
                 String str81111 = str38 + str37 + str39 + '/' + str41 + "playback";
                 Requests app1111 = MainActivityKt.getApp();
-                c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                c00023.L$15 = SpillingKt.nullOutSpilledVariable(str81111);
-                c00023.L$16 = null;
-                c00023.L$17 = null;
-                c00023.L$18 = null;
-                c00023.L$19 = null;
-                c00023.L$20 = null;
-                c00023.L$21 = null;
-                c00023.L$22 = null;
-                c00023.L$23 = null;
-                c00023.label = 8;
+                c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                c00053.L$15 = SpillingKt.nullOutSpilledVariable(str81111);
+                c00053.L$16 = null;
+                c00053.L$17 = null;
+                c00053.L$18 = null;
+                c00053.L$19 = null;
+                c00053.L$20 = null;
+                c00053.L$21 = null;
+                c00053.L$22 = null;
+                c00053.L$23 = null;
+                c00053.label = 8;
                 obj23 = obj8;
-                objPost$default5 = Requests.post$default(app1111, str81111, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                objPost$default5 = Requests.post$default(app1111, str81111, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                 if (objPost$default5 == obj23) {
                     return obj23;
                 }
@@ -3212,23 +3212,23 @@ public class ByseSX extends ExtractorApi {
                 return parser1115.parseSafe(niceResponse1115.getText(), Reflection.getOrCreateKotlinClass(PlaybackRoot.class));
             case 5:
                 number = null;
-                Map<String, ? extends Object> map40 = (Map) c00025.L$16;
-                str49 = (String) c00025.L$15;
-                Map map41 = (Map) c00025.L$14;
-                map13 = (Map) c00025.L$13;
-                map14 = (Map) c00025.L$12;
-                str57 = (String) c00025.L$11;
-                str53 = (String) c00025.L$10;
-                String str115 = (String) c00025.L$9;
-                detailsRoot6 = (DetailsRoot) c00025.L$8;
-                detailsRoot7 = (DetailsRoot) c00025.L$7;
-                map12 = (Map) c00025.L$6;
-                str55 = (String) c00025.L$5;
-                str56 = (String) c00025.L$4;
-                String str116 = (String) c00025.L$3;
-                String str117 = (String) c00025.L$2;
-                str54 = (String) c00025.L$1;
-                String str118 = (String) c00025.L$0;
+                Map<String, ? extends Object> map40 = (Map) c00055.L$16;
+                str49 = (String) c00055.L$15;
+                Map map41 = (Map) c00055.L$14;
+                map13 = (Map) c00055.L$13;
+                map14 = (Map) c00055.L$12;
+                str57 = (String) c00055.L$11;
+                str53 = (String) c00055.L$10;
+                String str115 = (String) c00055.L$9;
+                detailsRoot6 = (DetailsRoot) c00055.L$8;
+                detailsRoot7 = (DetailsRoot) c00055.L$7;
+                map12 = (Map) c00055.L$6;
+                str55 = (String) c00055.L$5;
+                str56 = (String) c00055.L$4;
+                String str116 = (String) c00055.L$3;
+                String str117 = (String) c00055.L$2;
+                str54 = (String) c00055.L$1;
+                String str118 = (String) c00055.L$0;
                 ResultKt.throwOnFailure(obj26);
                 str9 = str118;
                 map11 = map41;
@@ -3239,7 +3239,7 @@ public class ByseSX extends ExtractorApi {
                 objPost$default2 = obj26;
                 z8 = true;
                 c = 2;
-                c00024 = c00025;
+                c00054 = c00055;
                 map15 = map40;
                 str46 = str115;
                 obj9 = coroutine_suspended;
@@ -3306,31 +3306,31 @@ public class ByseSX extends ExtractorApi {
                 str58 = str46 + str81112 + str51 + '/' + str47 + "captcha";
                 Object obj217 = obj11;
                 Requests app1112 = MainActivityKt.getApp();
-                c00024.L$0 = SpillingKt.nullOutSpilledVariable(str9);
-                c00024.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                c00024.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                c00024.L$3 = str47;
-                c00024.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                c00024.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                c00024.L$6 = map;
-                c00024.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                c00024.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                c00024.L$9 = str46;
-                c00024.L$10 = str51;
-                c00024.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                c00024.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                c00024.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                c00024.L$14 = mapMapOf2;
-                c00024.L$15 = SpillingKt.nullOutSpilledVariable(str49);
-                c00024.L$16 = SpillingKt.nullOutSpilledVariable(map10);
-                c00024.L$17 = SpillingKt.nullOutSpilledVariable(str58);
-                c00024.label = 6;
-                C00021 c00021110 = c00024;
+                c00054.L$0 = SpillingKt.nullOutSpilledVariable(str9);
+                c00054.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                c00054.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                c00054.L$3 = str47;
+                c00054.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                c00054.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                c00054.L$6 = map;
+                c00054.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                c00054.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                c00054.L$9 = str46;
+                c00054.L$10 = str51;
+                c00054.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                c00054.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                c00054.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                c00054.L$14 = mapMapOf2;
+                c00054.L$15 = SpillingKt.nullOutSpilledVariable(str49);
+                c00054.L$16 = SpillingKt.nullOutSpilledVariable(map10);
+                c00054.L$17 = SpillingKt.nullOutSpilledVariable(str58);
+                c00054.label = 6;
+                C00051 c00051110 = c00054;
                 obj12 = obj217;
                 str59 = str81112;
                 map16 = mapMapOf2;
-                objPost$default3 = Requests.post$default(app1112, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00021110, 65404, (Object) null);
-                c00023 = c00021110;
+                objPost$default3 = Requests.post$default(app1112, str58, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map16, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00051110, 65404, (Object) null);
+                c00053 = c00051110;
                 if (objPost$default3 == obj9) {
                     return obj9;
                 }
@@ -3387,40 +3387,40 @@ public class ByseSX extends ExtractorApi {
                         pairArr12[c] = TuplesKt.to(obj19, obj35);
                         mapMapOf3 = MapsKt.mapOf(pairArr12);
                         Requests app1113 = MainActivityKt.getApp();
-                        c00023.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                        c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                        c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00023.L$3 = str61;
-                        c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00023.L$6 = map22;
-                        c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                        c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                        c00023.L$9 = str64;
-                        c00023.L$10 = str60;
-                        c00023.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                        c00023.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                        c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00023.L$14 = map18;
-                        c00023.L$15 = SpillingKt.nullOutSpilledVariable(str62);
-                        c00023.L$16 = SpillingKt.nullOutSpilledVariable(map17);
-                        c00023.L$17 = SpillingKt.nullOutSpilledVariable(str63);
-                        c00023.L$18 = SpillingKt.nullOutSpilledVariable(map21);
-                        c00023.L$19 = SpillingKt.nullOutSpilledVariable(str66);
-                        c00023.L$20 = SpillingKt.nullOutSpilledVariable(str67);
-                        c00023.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
-                        c00023.L$22 = SpillingKt.nullOutSpilledVariable(str81113);
-                        c00023.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
-                        c00023.I$0 = iIntValue;
-                        c00023.label = 7;
-                        C00021 c00021111 = c00023;
+                        c00053.L$0 = SpillingKt.nullOutSpilledVariable(str65);
+                        c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                        c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00053.L$3 = str61;
+                        c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00053.L$6 = map22;
+                        c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                        c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                        c00053.L$9 = str64;
+                        c00053.L$10 = str60;
+                        c00053.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                        c00053.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                        c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00053.L$14 = map18;
+                        c00053.L$15 = SpillingKt.nullOutSpilledVariable(str62);
+                        c00053.L$16 = SpillingKt.nullOutSpilledVariable(map17);
+                        c00053.L$17 = SpillingKt.nullOutSpilledVariable(str63);
+                        c00053.L$18 = SpillingKt.nullOutSpilledVariable(map21);
+                        c00053.L$19 = SpillingKt.nullOutSpilledVariable(str66);
+                        c00053.L$20 = SpillingKt.nullOutSpilledVariable(str67);
+                        c00053.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
+                        c00053.L$22 = SpillingKt.nullOutSpilledVariable(str81113);
+                        c00053.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
+                        c00053.I$0 = iIntValue;
+                        c00053.label = 7;
+                        C00051 c00051111 = c00053;
                         str69 = str60;
                         map23 = map18;
                         str70 = str61;
                         str37 = str68;
                         str71 = str64;
-                        objPost$default4 = Requests.post$default(app1113, str81113, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00021111, 65404, (Object) null);
-                        c00023 = c00021111;
+                        objPost$default4 = Requests.post$default(app1113, str81113, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00051111, 65404, (Object) null);
+                        c00053 = c00051111;
                         obj8 = obj20;
                         if (objPost$default4 == obj8) {
                             return obj8;
@@ -3466,33 +3466,33 @@ public class ByseSX extends ExtractorApi {
                         str40 = str50;
                         String str81114 = str38 + str37 + str39 + '/' + str41 + "playback";
                         Requests app1114 = MainActivityKt.getApp();
-                        c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                        c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                        c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                        c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                        c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                        c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                        c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                        c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                        c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                        c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                        c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                        c00023.L$15 = SpillingKt.nullOutSpilledVariable(str81114);
-                        c00023.L$16 = null;
-                        c00023.L$17 = null;
-                        c00023.L$18 = null;
-                        c00023.L$19 = null;
-                        c00023.L$20 = null;
-                        c00023.L$21 = null;
-                        c00023.L$22 = null;
-                        c00023.L$23 = null;
-                        c00023.label = 8;
+                        c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                        c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                        c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                        c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                        c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                        c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                        c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                        c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                        c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                        c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                        c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                        c00053.L$15 = SpillingKt.nullOutSpilledVariable(str81114);
+                        c00053.L$16 = null;
+                        c00053.L$17 = null;
+                        c00053.L$18 = null;
+                        c00053.L$19 = null;
+                        c00053.L$20 = null;
+                        c00053.L$21 = null;
+                        c00053.L$22 = null;
+                        c00053.L$23 = null;
+                        c00053.label = 8;
                         obj23 = obj8;
-                        objPost$default5 = Requests.post$default(app1114, str81114, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                        objPost$default5 = Requests.post$default(app1114, str81114, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                         if (objPost$default5 == obj23) {
                             return obj23;
                         }
@@ -3521,33 +3521,33 @@ public class ByseSX extends ExtractorApi {
                 str40 = str50;
                 String str81115 = str38 + str37 + str39 + '/' + str41 + "playback";
                 Requests app1115 = MainActivityKt.getApp();
-                c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                c00023.L$15 = SpillingKt.nullOutSpilledVariable(str81115);
-                c00023.L$16 = null;
-                c00023.L$17 = null;
-                c00023.L$18 = null;
-                c00023.L$19 = null;
-                c00023.L$20 = null;
-                c00023.L$21 = null;
-                c00023.L$22 = null;
-                c00023.L$23 = null;
-                c00023.label = 8;
+                c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                c00053.L$15 = SpillingKt.nullOutSpilledVariable(str81115);
+                c00053.L$16 = null;
+                c00053.L$17 = null;
+                c00053.L$18 = null;
+                c00053.L$19 = null;
+                c00053.L$20 = null;
+                c00053.L$21 = null;
+                c00053.L$22 = null;
+                c00053.L$23 = null;
+                c00053.label = 8;
                 obj23 = obj8;
-                objPost$default5 = Requests.post$default(app1115, str81115, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                objPost$default5 = Requests.post$default(app1115, str81115, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                 if (objPost$default5 == obj23) {
                     return obj23;
                 }
@@ -3559,24 +3559,24 @@ public class ByseSX extends ExtractorApi {
                 return parser11110.parseSafe(niceResponse11110.getText(), Reflection.getOrCreateKotlinClass(PlaybackRoot.class));
             case 6:
                 number = null;
-                String str119 = (String) c00025.L$17;
-                Map<String, ? extends Object> map42 = (Map) c00025.L$16;
-                String str120 = (String) c00025.L$15;
-                Map map43 = (Map) c00025.L$14;
-                Map<String, Object> map44 = (Map) c00025.L$13;
-                Map map45 = (Map) c00025.L$12;
-                String str121 = (String) c00025.L$11;
-                str60 = (String) c00025.L$10;
-                String str122 = (String) c00025.L$9;
-                DetailsRoot detailsRoot14 = (DetailsRoot) c00025.L$8;
-                DetailsRoot detailsRoot15 = (DetailsRoot) c00025.L$7;
-                Map map46 = (Map) c00025.L$6;
-                String str123 = (String) c00025.L$5;
-                String str124 = (String) c00025.L$4;
-                String str125 = (String) c00025.L$3;
-                String str126 = (String) c00025.L$2;
-                String str127 = (String) c00025.L$1;
-                String str128 = (String) c00025.L$0;
+                String str119 = (String) c00055.L$17;
+                Map<String, ? extends Object> map42 = (Map) c00055.L$16;
+                String str120 = (String) c00055.L$15;
+                Map map43 = (Map) c00055.L$14;
+                Map<String, Object> map44 = (Map) c00055.L$13;
+                Map map45 = (Map) c00055.L$12;
+                String str121 = (String) c00055.L$11;
+                str60 = (String) c00055.L$10;
+                String str122 = (String) c00055.L$9;
+                DetailsRoot detailsRoot14 = (DetailsRoot) c00055.L$8;
+                DetailsRoot detailsRoot15 = (DetailsRoot) c00055.L$7;
+                Map map46 = (Map) c00055.L$6;
+                String str123 = (String) c00055.L$5;
+                String str124 = (String) c00055.L$4;
+                String str125 = (String) c00055.L$3;
+                String str126 = (String) c00055.L$2;
+                String str127 = (String) c00055.L$1;
+                String str128 = (String) c00055.L$0;
                 ResultKt.throwOnFailure(obj26);
                 str9 = str128;
                 map17 = map42;
@@ -3600,7 +3600,7 @@ public class ByseSX extends ExtractorApi {
                 objPost$default3 = obj26;
                 r34 = 1;
                 c = 2;
-                c00023 = c00025;
+                c00053 = c00055;
                 obj9 = coroutine_suspended;
                 map18 = map43;
                 NiceResponse niceResponse11111 = (NiceResponse) objPost$default3;
@@ -3648,40 +3648,40 @@ public class ByseSX extends ExtractorApi {
                         pairArr13[c] = TuplesKt.to(obj19, obj36);
                         mapMapOf3 = MapsKt.mapOf(pairArr13);
                         Requests app1116 = MainActivityKt.getApp();
-                        c00023.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                        c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                        c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00023.L$3 = str61;
-                        c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00023.L$6 = map22;
-                        c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                        c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                        c00023.L$9 = str64;
-                        c00023.L$10 = str60;
-                        c00023.L$11 = SpillingKt.nullOutSpilledVariable(str50);
-                        c00023.L$12 = SpillingKt.nullOutSpilledVariable(map8);
-                        c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00023.L$14 = map18;
-                        c00023.L$15 = SpillingKt.nullOutSpilledVariable(str62);
-                        c00023.L$16 = SpillingKt.nullOutSpilledVariable(map17);
-                        c00023.L$17 = SpillingKt.nullOutSpilledVariable(str63);
-                        c00023.L$18 = SpillingKt.nullOutSpilledVariable(map21);
-                        c00023.L$19 = SpillingKt.nullOutSpilledVariable(str66);
-                        c00023.L$20 = SpillingKt.nullOutSpilledVariable(str67);
-                        c00023.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
-                        c00023.L$22 = SpillingKt.nullOutSpilledVariable(str81116);
-                        c00023.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
-                        c00023.I$0 = iIntValue;
-                        c00023.label = 7;
-                        C00021 c00021112 = c00023;
+                        c00053.L$0 = SpillingKt.nullOutSpilledVariable(str65);
+                        c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                        c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00053.L$3 = str61;
+                        c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00053.L$6 = map22;
+                        c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                        c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                        c00053.L$9 = str64;
+                        c00053.L$10 = str60;
+                        c00053.L$11 = SpillingKt.nullOutSpilledVariable(str50);
+                        c00053.L$12 = SpillingKt.nullOutSpilledVariable(map8);
+                        c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00053.L$14 = map18;
+                        c00053.L$15 = SpillingKt.nullOutSpilledVariable(str62);
+                        c00053.L$16 = SpillingKt.nullOutSpilledVariable(map17);
+                        c00053.L$17 = SpillingKt.nullOutSpilledVariable(str63);
+                        c00053.L$18 = SpillingKt.nullOutSpilledVariable(map21);
+                        c00053.L$19 = SpillingKt.nullOutSpilledVariable(str66);
+                        c00053.L$20 = SpillingKt.nullOutSpilledVariable(str67);
+                        c00053.L$21 = SpillingKt.nullOutSpilledVariable(strEr$default);
+                        c00053.L$22 = SpillingKt.nullOutSpilledVariable(str81116);
+                        c00053.L$23 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
+                        c00053.I$0 = iIntValue;
+                        c00053.label = 7;
+                        C00051 c00051112 = c00053;
                         str69 = str60;
                         map23 = map18;
                         str70 = str61;
                         str37 = str68;
                         str71 = str64;
-                        objPost$default4 = Requests.post$default(app1116, str81116, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00021112, 65404, (Object) null);
-                        c00023 = c00021112;
+                        objPost$default4 = Requests.post$default(app1116, str81116, map22, (String) null, (Map) null, (Map) null, (Map) null, (List) null, mapMapOf3, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00051112, 65404, (Object) null);
+                        c00053 = c00051112;
                         obj8 = obj20;
                         if (objPost$default4 == obj8) {
                             return obj8;
@@ -3727,33 +3727,33 @@ public class ByseSX extends ExtractorApi {
                         str40 = str50;
                         String str81117 = str38 + str37 + str39 + '/' + str41 + "playback";
                         Requests app1117 = MainActivityKt.getApp();
-                        c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                        c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                        c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                        c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                        c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                        c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                        c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                        c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                        c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                        c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                        c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                        c00023.L$15 = SpillingKt.nullOutSpilledVariable(str81117);
-                        c00023.L$16 = null;
-                        c00023.L$17 = null;
-                        c00023.L$18 = null;
-                        c00023.L$19 = null;
-                        c00023.L$20 = null;
-                        c00023.L$21 = null;
-                        c00023.L$22 = null;
-                        c00023.L$23 = null;
-                        c00023.label = 8;
+                        c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                        c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                        c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                        c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                        c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                        c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                        c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                        c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                        c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                        c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                        c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                        c00053.L$15 = SpillingKt.nullOutSpilledVariable(str81117);
+                        c00053.L$16 = null;
+                        c00053.L$17 = null;
+                        c00053.L$18 = null;
+                        c00053.L$19 = null;
+                        c00053.L$20 = null;
+                        c00053.L$21 = null;
+                        c00053.L$22 = null;
+                        c00053.L$23 = null;
+                        c00053.label = 8;
                         obj23 = obj8;
-                        objPost$default5 = Requests.post$default(app1117, str81117, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                        objPost$default5 = Requests.post$default(app1117, str81117, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                         if (objPost$default5 == obj23) {
                             return obj23;
                         }
@@ -3782,33 +3782,33 @@ public class ByseSX extends ExtractorApi {
                 str40 = str50;
                 String str81118 = str38 + str37 + str39 + '/' + str41 + "playback";
                 Requests app1118 = MainActivityKt.getApp();
-                c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                c00023.L$15 = SpillingKt.nullOutSpilledVariable(str81118);
-                c00023.L$16 = null;
-                c00023.L$17 = null;
-                c00023.L$18 = null;
-                c00023.L$19 = null;
-                c00023.L$20 = null;
-                c00023.L$21 = null;
-                c00023.L$22 = null;
-                c00023.L$23 = null;
-                c00023.label = 8;
+                c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                c00053.L$15 = SpillingKt.nullOutSpilledVariable(str81118);
+                c00053.L$16 = null;
+                c00053.L$17 = null;
+                c00053.L$18 = null;
+                c00053.L$19 = null;
+                c00053.L$20 = null;
+                c00053.L$21 = null;
+                c00053.L$22 = null;
+                c00053.L$23 = null;
+                c00053.label = 8;
                 obj23 = obj8;
-                objPost$default5 = Requests.post$default(app1118, str81118, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                objPost$default5 = Requests.post$default(app1118, str81118, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                 if (objPost$default5 == obj23) {
                     return obj23;
                 }
@@ -3819,30 +3819,30 @@ public class ByseSX extends ExtractorApi {
                 Intrinsics.checkNotNull(parser11114);
                 return parser11114.parseSafe(niceResponse11114.getText(), Reflection.getOrCreateKotlinClass(PlaybackRoot.class));
             case 7:
-                int i = c00025.I$0;
-                Map map47 = (Map) c00025.L$23;
-                map25 = (Map) c00025.L$14;
-                map27 = (Map) c00025.L$13;
-                Map map48 = (Map) c00025.L$12;
-                String str129 = (String) c00025.L$11;
-                str73 = (String) c00025.L$10;
-                String str130 = (String) c00025.L$9;
-                detailsRoot8 = (DetailsRoot) c00025.L$8;
-                detailsRoot9 = (DetailsRoot) c00025.L$7;
-                Map map49 = (Map) c00025.L$6;
-                str76 = (String) c00025.L$5;
-                str77 = (String) c00025.L$4;
-                str72 = (String) c00025.L$3;
-                str75 = (String) c00025.L$2;
-                str74 = (String) c00025.L$1;
-                String str131 = (String) c00025.L$0;
+                int i = c00055.I$0;
+                Map map47 = (Map) c00055.L$23;
+                map25 = (Map) c00055.L$14;
+                map27 = (Map) c00055.L$13;
+                Map map48 = (Map) c00055.L$12;
+                String str129 = (String) c00055.L$11;
+                str73 = (String) c00055.L$10;
+                String str130 = (String) c00055.L$9;
+                detailsRoot8 = (DetailsRoot) c00055.L$8;
+                detailsRoot9 = (DetailsRoot) c00055.L$7;
+                Map map49 = (Map) c00055.L$6;
+                str76 = (String) c00055.L$5;
+                str77 = (String) c00055.L$4;
+                str72 = (String) c00055.L$3;
+                str75 = (String) c00055.L$2;
+                str74 = (String) c00055.L$1;
+                String str131 = (String) c00055.L$0;
                 ResultKt.throwOnFailure(obj26);
                 obj21 = "token";
                 map8 = map48;
                 str50 = str129;
                 map26 = map49;
                 obj22 = obj26;
-                c00023 = c00025;
+                c00053 = c00055;
                 obj8 = coroutine_suspended;
                 map24 = map47;
                 str37 = "/api/videos/";
@@ -3875,33 +3875,33 @@ public class ByseSX extends ExtractorApi {
                 str40 = str50;
                 String str81119 = str38 + str37 + str39 + '/' + str41 + "playback";
                 Requests app1119 = MainActivityKt.getApp();
-                c00023.L$0 = SpillingKt.nullOutSpilledVariable(str42);
-                c00023.L$1 = SpillingKt.nullOutSpilledVariable(str30);
-                c00023.L$2 = SpillingKt.nullOutSpilledVariable(str32);
-                c00023.L$3 = SpillingKt.nullOutSpilledVariable(str41);
-                c00023.L$4 = SpillingKt.nullOutSpilledVariable(str27);
-                c00023.L$5 = SpillingKt.nullOutSpilledVariable(str28);
-                c00023.L$6 = SpillingKt.nullOutSpilledVariable(map);
-                c00023.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
-                c00023.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
-                c00023.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00023.L$10 = SpillingKt.nullOutSpilledVariable(str39);
-                c00023.L$11 = SpillingKt.nullOutSpilledVariable(str40);
-                c00023.L$12 = SpillingKt.nullOutSpilledVariable(map7);
-                c00023.L$13 = SpillingKt.nullOutSpilledVariable(map6);
-                c00023.L$14 = SpillingKt.nullOutSpilledVariable(map5);
-                c00023.L$15 = SpillingKt.nullOutSpilledVariable(str81119);
-                c00023.L$16 = null;
-                c00023.L$17 = null;
-                c00023.L$18 = null;
-                c00023.L$19 = null;
-                c00023.L$20 = null;
-                c00023.L$21 = null;
-                c00023.L$22 = null;
-                c00023.L$23 = null;
-                c00023.label = 8;
+                c00053.L$0 = SpillingKt.nullOutSpilledVariable(str42);
+                c00053.L$1 = SpillingKt.nullOutSpilledVariable(str30);
+                c00053.L$2 = SpillingKt.nullOutSpilledVariable(str32);
+                c00053.L$3 = SpillingKt.nullOutSpilledVariable(str41);
+                c00053.L$4 = SpillingKt.nullOutSpilledVariable(str27);
+                c00053.L$5 = SpillingKt.nullOutSpilledVariable(str28);
+                c00053.L$6 = SpillingKt.nullOutSpilledVariable(map);
+                c00053.L$7 = SpillingKt.nullOutSpilledVariable(detailsRoot4);
+                c00053.L$8 = SpillingKt.nullOutSpilledVariable(detailsRoot5);
+                c00053.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00053.L$10 = SpillingKt.nullOutSpilledVariable(str39);
+                c00053.L$11 = SpillingKt.nullOutSpilledVariable(str40);
+                c00053.L$12 = SpillingKt.nullOutSpilledVariable(map7);
+                c00053.L$13 = SpillingKt.nullOutSpilledVariable(map6);
+                c00053.L$14 = SpillingKt.nullOutSpilledVariable(map5);
+                c00053.L$15 = SpillingKt.nullOutSpilledVariable(str81119);
+                c00053.L$16 = null;
+                c00053.L$17 = null;
+                c00053.L$18 = null;
+                c00053.L$19 = null;
+                c00053.L$20 = null;
+                c00053.L$21 = null;
+                c00053.L$22 = null;
+                c00053.L$23 = null;
+                c00053.label = 8;
                 obj23 = obj8;
-                objPost$default5 = Requests.post$default(app1119, str81119, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 65404, (Object) null);
+                objPost$default5 = Requests.post$default(app1119, str81119, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, map5, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00053, 65404, (Object) null);
                 if (objPost$default5 == obj23) {
                     return obj23;
                 }
@@ -3912,7 +3912,7 @@ public class ByseSX extends ExtractorApi {
                 Intrinsics.checkNotNull(parser11116);
                 return parser11116.parseSafe(niceResponse11116.getText(), Reflection.getOrCreateKotlinClass(PlaybackRoot.class));
             case 8:
-                String str132 = (String) c00025.L$0;
+                String str132 = (String) c00055.L$0;
                 ResultKt.throwOnFailure(obj26);
                 obj24 = obj26;
                 str79 = str132;
@@ -4089,7 +4089,7 @@ public class ByseSX extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:89:0x05d3 A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:90:0x05d4  */
     static /* synthetic */ Object getUrl$suspendImpl(ByseSX $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) throws BadPaddingException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, SignatureException, InvalidKeyException, InvalidAlgorithmParameterException {
-        C00031 c00031;
+        C00061 c00061;
         char c;
         String str;
         List redirectDomains;
@@ -4156,20 +4156,20 @@ public class ByseSX extends ExtractorApi {
         String refererUrl5;
         String code5;
         Function1<? super ExtractorLink, Unit> function11;
-        if (continuation instanceof C00031) {
-            c00031 = (C00031) continuation;
-            if ((c00031.label & Integer.MIN_VALUE) != 0) {
-                c00031.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00061) {
+            c00061 = (C00061) continuation;
+            if ((c00061.label & Integer.MIN_VALUE) != 0) {
+                c00061.label -= Integer.MIN_VALUE;
             } else {
-                c00031 = $this.new C00031(continuation);
+                c00061 = $this.new C00061(continuation);
             }
         } else {
-            c00031 = $this.new C00031(continuation);
+            c00061 = $this.new C00061(continuation);
         }
-        C00031 c00032 = c00031;
-        Object $result = c00032.result;
+        C00061 c00062 = c00061;
+        Object $result = c00062.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00032.label) {
+        switch (c00062.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 List redirectDomains5 = CollectionsKt.listOf(new String[]{"boosteradx.online", "byse.sx", "streamlyplayer.online"});
@@ -4180,26 +4180,26 @@ public class ByseSX extends ExtractorApi {
                 String detailsUrl3 = refererUrl6 + "/api/videos/" + code6 + "/details";
                 Requests app = MainActivityKt.getApp();
                 Map mapMapOf = MapsKt.mapOf(TuplesKt.to("Referer", refererUrl6 + '/'));
-                c00032.L$0 = $this;
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                c00032.L$4 = function2;
-                c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains5);
-                c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl5);
-                c00032.L$7 = finalUrl10;
-                c00032.L$8 = refererUrl6;
-                c00032.L$9 = code6;
-                c00032.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl3);
-                c00032.label = 1;
+                c00062.L$0 = $this;
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c00062.L$4 = function2;
+                c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains5);
+                c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl5);
+                c00062.L$7 = finalUrl10;
+                c00062.L$8 = refererUrl6;
+                c00062.L$9 = code6;
+                c00062.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl3);
+                c00062.label = 1;
                 String finalUrl11 = finalUrl10;
                 c = 1;
                 str = "/api/videos/";
                 redirectDomains = redirectDomains5;
                 obj = "Referer";
                 obj2 = coroutine_suspended;
-                Object obj6 = Requests.get$default(app, detailsUrl3, mapMapOf, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
-                c00032 = c00032;
+                Object obj6 = Requests.get$default(app, detailsUrl3, mapMapOf, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00062, 4092, (Object) null);
+                c00062 = c00062;
                 if (obj6 == obj2) {
                     return obj2;
                 }
@@ -4228,29 +4228,29 @@ public class ByseSX extends ExtractorApi {
                     String detailsUrl4 = finalUrl2 + str + refererUrl + "/embed/details";
                     Requests app2 = MainActivityKt.getApp();
                     Map mapMapOf2 = MapsKt.mapOf(TuplesKt.to(obj, finalUrl2 + '/'));
-                    c00032.L$0 = $this2;
-                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                    c00032.L$4 = function4;
-                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains);
-                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl);
-                    c00032.L$7 = finalUrl;
-                    c00032.L$8 = finalUrl2;
-                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl);
-                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl4);
-                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(details);
-                    c00032.label = 2;
+                    c00062.L$0 = $this2;
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00062.L$4 = function4;
+                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains);
+                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl);
+                    c00062.L$7 = finalUrl;
+                    c00062.L$8 = finalUrl2;
+                    c00062.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl);
+                    c00062.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl4);
+                    c00062.L$11 = SpillingKt.nullOutSpilledVariable(details);
+                    c00062.label = 2;
                     code2 = refererUrl;
                     refererUrl2 = finalUrl2;
-                    C00031 c00033 = c00032;
+                    C00061 c00063 = c00062;
                     finalUrl3 = finalUrl;
                     $this3 = $this2;
                     function5 = function4;
                     obj4 = obj;
                     detailsUrl = detailsUrl4;
-                    obj5 = Requests.get$default(app2, detailsUrl, mapMapOf2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00033, 4092, (Object) null);
-                    c00032 = c00033;
+                    obj5 = Requests.get$default(app2, detailsUrl, mapMapOf2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00063, 4092, (Object) null);
+                    c00062 = c00063;
                     if (obj5 == obj2) {
                         return obj2;
                     }
@@ -4304,20 +4304,20 @@ public class ByseSX extends ExtractorApi {
                         finalUrl2 = $this2.getBaseUrl(details.getEmbed_frame_url());
                     }
                 }
-                c00032.L$0 = $this2;
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c00032.L$4 = function4;
-                c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains);
-                c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl);
-                c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl);
-                c00032.L$8 = finalUrl2;
-                c00032.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl);
-                c00032.L$10 = SpillingKt.nullOutSpilledVariable(code);
-                c00032.L$11 = SpillingKt.nullOutSpilledVariable(details);
-                c00032.label = 3;
-                playback = $this2.getPlayback(finalUrl, c00032);
+                c00062.L$0 = $this2;
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c00062.L$4 = function4;
+                c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains);
+                c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl);
+                c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl);
+                c00062.L$8 = finalUrl2;
+                c00062.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl);
+                c00062.L$10 = SpillingKt.nullOutSpilledVariable(code);
+                c00062.L$11 = SpillingKt.nullOutSpilledVariable(details);
+                c00062.label = 3;
+                playback = $this2.getPlayback(finalUrl, c00062);
                 if (playback == obj2) {
                     return obj2;
                 }
@@ -4346,22 +4346,22 @@ public class ByseSX extends ExtractorApi {
                 if (z2) {
                     if (playbackRoot.getPlayback() != null) {
                         Playback playback2 = playbackRoot.getPlayback();
-                        c00032.L$0 = $this4;
+                        c00062.L$0 = $this4;
                         finalUrl7 = finalUrl6;
-                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
-                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
-                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(function9);
-                        c00032.L$4 = function8;
-                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains3);
-                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl3);
-                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl7);
-                        c00032.L$8 = refererUrl4;
-                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(code4);
-                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl2);
-                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(details2);
-                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
-                        c00032.label = 4;
-                        $result = $this4.decryptPlayback(playback2, c00032);
+                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
+                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
+                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(function9);
+                        c00062.L$4 = function8;
+                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains3);
+                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl3);
+                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl7);
+                        c00062.L$8 = refererUrl4;
+                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(code4);
+                        c00062.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl2);
+                        c00062.L$11 = SpillingKt.nullOutSpilledVariable(details2);
+                        c00062.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
+                        c00062.label = 4;
+                        $result = $this4.decryptPlayback(playback2, c00062);
                         if ($result == obj2) {
                             return obj2;
                         }
@@ -4405,25 +4405,25 @@ public class ByseSX extends ExtractorApi {
                 String name = $this4.getName();
                 ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
                 ByseSX $this5 = $this4;
-                C00042 c00042 = new C00042(headers, null);
-                c00032.L$0 = SpillingKt.nullOutSpilledVariable($this5);
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function9);
-                c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains4);
-                c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl4);
-                c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl8);
-                c00032.L$8 = SpillingKt.nullOutSpilledVariable(refererUrl7);
-                c00032.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl5);
-                c00032.L$10 = SpillingKt.nullOutSpilledVariable(code5);
-                c00032.L$11 = SpillingKt.nullOutSpilledVariable(details3);
-                c00032.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
-                c00032.L$13 = SpillingKt.nullOutSpilledVariable(streamUrl);
-                c00032.L$14 = SpillingKt.nullOutSpilledVariable(headers);
-                c00032.L$15 = function8;
-                c00032.label = 5;
-                $result = ExtractorApiKt.newExtractorLink(refererUrl8, name, streamUrl, infer_type, c00042, c00032);
+                C00072 c00072 = new C00072(headers, null);
+                c00062.L$0 = SpillingKt.nullOutSpilledVariable($this5);
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function9);
+                c00062.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains4);
+                c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl4);
+                c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl8);
+                c00062.L$8 = SpillingKt.nullOutSpilledVariable(refererUrl7);
+                c00062.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl5);
+                c00062.L$10 = SpillingKt.nullOutSpilledVariable(code5);
+                c00062.L$11 = SpillingKt.nullOutSpilledVariable(details3);
+                c00062.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
+                c00062.L$13 = SpillingKt.nullOutSpilledVariable(streamUrl);
+                c00062.L$14 = SpillingKt.nullOutSpilledVariable(headers);
+                c00062.L$15 = function8;
+                c00062.label = 5;
+                $result = ExtractorApiKt.newExtractorLink(refererUrl8, name, streamUrl, infer_type, c00072, c00062);
                 if ($result == obj2) {
                     return obj2;
                 }
@@ -4431,17 +4431,17 @@ public class ByseSX extends ExtractorApi {
                 function11.invoke($result);
                 return Unit.INSTANCE;
             case 1:
-                String detailsUrl5 = (String) c00032.L$10;
-                String code7 = (String) c00032.L$9;
-                String refererUrl9 = (String) c00032.L$8;
-                String finalUrl12 = (String) c00032.L$7;
-                Url parsedUrl6 = (Url) c00032.L$6;
-                List redirectDomains6 = (List) c00032.L$5;
-                Function1<? super ExtractorLink, Unit> function13 = (Function1) c00032.L$4;
-                Function1<? super SubtitleFile, Unit> function14 = (Function1) c00032.L$3;
-                String referer5 = (String) c00032.L$2;
-                String url4 = (String) c00032.L$1;
-                ByseSX $this6 = (ByseSX) c00032.L$0;
+                String detailsUrl5 = (String) c00062.L$10;
+                String code7 = (String) c00062.L$9;
+                String refererUrl9 = (String) c00062.L$8;
+                String finalUrl12 = (String) c00062.L$7;
+                Url parsedUrl6 = (Url) c00062.L$6;
+                List redirectDomains6 = (List) c00062.L$5;
+                Function1<? super ExtractorLink, Unit> function13 = (Function1) c00062.L$4;
+                Function1<? super SubtitleFile, Unit> function14 = (Function1) c00062.L$3;
+                String referer5 = (String) c00062.L$2;
+                String url4 = (String) c00062.L$1;
+                ByseSX $this6 = (ByseSX) c00062.L$0;
                 ResultKt.throwOnFailure($result);
                 obj2 = coroutine_suspended;
                 parsedUrl = parsedUrl6;
@@ -4468,29 +4468,29 @@ public class ByseSX extends ExtractorApi {
                     String detailsUrl6 = finalUrl2 + str + refererUrl + "/embed/details";
                     Requests app3 = MainActivityKt.getApp();
                     Map mapMapOf3 = MapsKt.mapOf(TuplesKt.to(obj, finalUrl2 + '/'));
-                    c00032.L$0 = $this2;
-                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                    c00032.L$4 = function4;
-                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains);
-                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl);
-                    c00032.L$7 = finalUrl;
-                    c00032.L$8 = finalUrl2;
-                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl);
-                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl6);
-                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(details);
-                    c00032.label = 2;
+                    c00062.L$0 = $this2;
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00062.L$4 = function4;
+                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains);
+                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl);
+                    c00062.L$7 = finalUrl;
+                    c00062.L$8 = finalUrl2;
+                    c00062.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl);
+                    c00062.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl6);
+                    c00062.L$11 = SpillingKt.nullOutSpilledVariable(details);
+                    c00062.label = 2;
                     code2 = refererUrl;
                     refererUrl2 = finalUrl2;
-                    C00031 c00034 = c00032;
+                    C00061 c00064 = c00062;
                     finalUrl3 = finalUrl;
                     $this3 = $this2;
                     function5 = function4;
                     obj4 = obj;
                     detailsUrl = detailsUrl6;
-                    obj5 = Requests.get$default(app3, detailsUrl, mapMapOf3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00034, 4092, (Object) null);
-                    c00032 = c00034;
+                    obj5 = Requests.get$default(app3, detailsUrl, mapMapOf3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00064, 4092, (Object) null);
+                    c00062 = c00064;
                     if (obj5 == obj2) {
                         return obj2;
                     }
@@ -4533,20 +4533,20 @@ public class ByseSX extends ExtractorApi {
                         finalUrl2 = $this2.getBaseUrl(details.getEmbed_frame_url());
                     }
                 }
-                c00032.L$0 = $this2;
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c00032.L$4 = function4;
-                c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains);
-                c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl);
-                c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl);
-                c00032.L$8 = finalUrl2;
-                c00032.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl);
-                c00032.L$10 = SpillingKt.nullOutSpilledVariable(code);
-                c00032.L$11 = SpillingKt.nullOutSpilledVariable(details);
-                c00032.label = 3;
-                playback = $this2.getPlayback(finalUrl, c00032);
+                c00062.L$0 = $this2;
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c00062.L$4 = function4;
+                c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains);
+                c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl);
+                c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl);
+                c00062.L$8 = finalUrl2;
+                c00062.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl);
+                c00062.L$10 = SpillingKt.nullOutSpilledVariable(code);
+                c00062.L$11 = SpillingKt.nullOutSpilledVariable(details);
+                c00062.label = 3;
+                playback = $this2.getPlayback(finalUrl, c00062);
                 if (playback == obj2) {
                     return obj2;
                 }
@@ -4584,22 +4584,22 @@ public class ByseSX extends ExtractorApi {
                 } else {
                     if (playbackRoot.getPlayback() != null) {
                         Playback playback3 = playbackRoot.getPlayback();
-                        c00032.L$0 = $this4;
+                        c00062.L$0 = $this4;
                         finalUrl7 = finalUrl6;
-                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
-                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
-                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(function9);
-                        c00032.L$4 = function8;
-                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains3);
-                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl3);
-                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl7);
-                        c00032.L$8 = refererUrl4;
-                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(code4);
-                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl2);
-                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(details2);
-                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
-                        c00032.label = 4;
-                        $result = $this4.decryptPlayback(playback3, c00032);
+                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
+                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
+                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(function9);
+                        c00062.L$4 = function8;
+                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains3);
+                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl3);
+                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl7);
+                        c00062.L$8 = refererUrl4;
+                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(code4);
+                        c00062.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl2);
+                        c00062.L$11 = SpillingKt.nullOutSpilledVariable(details2);
+                        c00062.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
+                        c00062.label = 4;
+                        $result = $this4.decryptPlayback(playback3, c00062);
                         if ($result == obj2) {
                             return obj2;
                         }
@@ -4634,25 +4634,25 @@ public class ByseSX extends ExtractorApi {
                 String name2 = $this4.getName();
                 ExtractorLinkType infer_type2 = ExtractorApiKt.getINFER_TYPE();
                 ByseSX $this7 = $this4;
-                C00042 c00043 = new C00042(headers2, null);
-                c00032.L$0 = SpillingKt.nullOutSpilledVariable($this7);
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function9);
-                c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains4);
-                c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl4);
-                c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl8);
-                c00032.L$8 = SpillingKt.nullOutSpilledVariable(refererUrl10);
-                c00032.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl5);
-                c00032.L$10 = SpillingKt.nullOutSpilledVariable(code5);
-                c00032.L$11 = SpillingKt.nullOutSpilledVariable(details3);
-                c00032.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
-                c00032.L$13 = SpillingKt.nullOutSpilledVariable(streamUrl);
-                c00032.L$14 = SpillingKt.nullOutSpilledVariable(headers2);
-                c00032.L$15 = function8;
-                c00032.label = 5;
-                $result = ExtractorApiKt.newExtractorLink(refererUrl11, name2, streamUrl, infer_type2, c00043, c00032);
+                C00072 c00073 = new C00072(headers2, null);
+                c00062.L$0 = SpillingKt.nullOutSpilledVariable($this7);
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function9);
+                c00062.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains4);
+                c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl4);
+                c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl8);
+                c00062.L$8 = SpillingKt.nullOutSpilledVariable(refererUrl10);
+                c00062.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl5);
+                c00062.L$10 = SpillingKt.nullOutSpilledVariable(code5);
+                c00062.L$11 = SpillingKt.nullOutSpilledVariable(details3);
+                c00062.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
+                c00062.L$13 = SpillingKt.nullOutSpilledVariable(streamUrl);
+                c00062.L$14 = SpillingKt.nullOutSpilledVariable(headers2);
+                c00062.L$15 = function8;
+                c00062.label = 5;
+                $result = ExtractorApiKt.newExtractorLink(refererUrl11, name2, streamUrl, infer_type2, c00073, c00062);
                 if ($result == obj2) {
                     return obj2;
                 }
@@ -4660,17 +4660,17 @@ public class ByseSX extends ExtractorApi {
                 function11.invoke($result);
                 return Unit.INSTANCE;
             case 2:
-                detailsUrl = (String) c00032.L$10;
-                code3 = (String) c00032.L$9;
-                refererUrl3 = (String) c00032.L$8;
-                finalUrl4 = (String) c00032.L$7;
-                parsedUrl2 = (Url) c00032.L$6;
-                redirectDomains2 = (List) c00032.L$5;
-                function6 = (Function1) c00032.L$4;
-                function7 = (Function1) c00032.L$3;
-                referer3 = (String) c00032.L$2;
-                url3 = (String) c00032.L$1;
-                ByseSX $this8 = (ByseSX) c00032.L$0;
+                detailsUrl = (String) c00062.L$10;
+                code3 = (String) c00062.L$9;
+                refererUrl3 = (String) c00062.L$8;
+                finalUrl4 = (String) c00062.L$7;
+                parsedUrl2 = (Url) c00062.L$6;
+                redirectDomains2 = (List) c00062.L$5;
+                function6 = (Function1) c00062.L$4;
+                function7 = (Function1) c00062.L$3;
+                referer3 = (String) c00062.L$2;
+                url3 = (String) c00062.L$1;
+                ByseSX $this8 = (ByseSX) c00062.L$0;
                 ResultKt.throwOnFailure($result);
                 $this3 = $this8;
                 obj2 = coroutine_suspended;
@@ -4704,20 +4704,20 @@ public class ByseSX extends ExtractorApi {
                         finalUrl2 = $this2.getBaseUrl(details.getEmbed_frame_url());
                     }
                 }
-                c00032.L$0 = $this2;
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c00032.L$4 = function4;
-                c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains);
-                c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl);
-                c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl);
-                c00032.L$8 = finalUrl2;
-                c00032.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl);
-                c00032.L$10 = SpillingKt.nullOutSpilledVariable(code);
-                c00032.L$11 = SpillingKt.nullOutSpilledVariable(details);
-                c00032.label = 3;
-                playback = $this2.getPlayback(finalUrl, c00032);
+                c00062.L$0 = $this2;
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c00062.L$4 = function4;
+                c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains);
+                c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl);
+                c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl);
+                c00062.L$8 = finalUrl2;
+                c00062.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl);
+                c00062.L$10 = SpillingKt.nullOutSpilledVariable(code);
+                c00062.L$11 = SpillingKt.nullOutSpilledVariable(details);
+                c00062.label = 3;
+                playback = $this2.getPlayback(finalUrl, c00062);
                 if (playback == obj2) {
                     return obj2;
                 }
@@ -4755,22 +4755,22 @@ public class ByseSX extends ExtractorApi {
                 } else {
                     if (playbackRoot.getPlayback() != null) {
                         Playback playback4 = playbackRoot.getPlayback();
-                        c00032.L$0 = $this4;
+                        c00062.L$0 = $this4;
                         finalUrl7 = finalUrl6;
-                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
-                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
-                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(function9);
-                        c00032.L$4 = function8;
-                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains3);
-                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl3);
-                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl7);
-                        c00032.L$8 = refererUrl4;
-                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(code4);
-                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl2);
-                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(details2);
-                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
-                        c00032.label = 4;
-                        $result = $this4.decryptPlayback(playback4, c00032);
+                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
+                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
+                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(function9);
+                        c00062.L$4 = function8;
+                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains3);
+                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl3);
+                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl7);
+                        c00062.L$8 = refererUrl4;
+                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(code4);
+                        c00062.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl2);
+                        c00062.L$11 = SpillingKt.nullOutSpilledVariable(details2);
+                        c00062.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
+                        c00062.label = 4;
+                        $result = $this4.decryptPlayback(playback4, c00062);
                         if ($result == obj2) {
                             return obj2;
                         }
@@ -4805,25 +4805,25 @@ public class ByseSX extends ExtractorApi {
                 String name3 = $this4.getName();
                 ExtractorLinkType infer_type3 = ExtractorApiKt.getINFER_TYPE();
                 ByseSX $this9 = $this4;
-                C00042 c00044 = new C00042(headers3, null);
-                c00032.L$0 = SpillingKt.nullOutSpilledVariable($this9);
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function9);
-                c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains4);
-                c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl4);
-                c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl8);
-                c00032.L$8 = SpillingKt.nullOutSpilledVariable(refererUrl12);
-                c00032.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl5);
-                c00032.L$10 = SpillingKt.nullOutSpilledVariable(code5);
-                c00032.L$11 = SpillingKt.nullOutSpilledVariable(details3);
-                c00032.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
-                c00032.L$13 = SpillingKt.nullOutSpilledVariable(streamUrl);
-                c00032.L$14 = SpillingKt.nullOutSpilledVariable(headers3);
-                c00032.L$15 = function8;
-                c00032.label = 5;
-                $result = ExtractorApiKt.newExtractorLink(refererUrl13, name3, streamUrl, infer_type3, c00044, c00032);
+                C00072 c00074 = new C00072(headers3, null);
+                c00062.L$0 = SpillingKt.nullOutSpilledVariable($this9);
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function9);
+                c00062.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains4);
+                c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl4);
+                c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl8);
+                c00062.L$8 = SpillingKt.nullOutSpilledVariable(refererUrl12);
+                c00062.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl5);
+                c00062.L$10 = SpillingKt.nullOutSpilledVariable(code5);
+                c00062.L$11 = SpillingKt.nullOutSpilledVariable(details3);
+                c00062.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
+                c00062.L$13 = SpillingKt.nullOutSpilledVariable(streamUrl);
+                c00062.L$14 = SpillingKt.nullOutSpilledVariable(headers3);
+                c00062.L$15 = function8;
+                c00062.label = 5;
+                $result = ExtractorApiKt.newExtractorLink(refererUrl13, name3, streamUrl, infer_type3, c00074, c00062);
                 if ($result == obj2) {
                     return obj2;
                 }
@@ -4831,18 +4831,18 @@ public class ByseSX extends ExtractorApi {
                 function11.invoke($result);
                 return Unit.INSTANCE;
             case 3:
-                DetailsRoot details4 = (DetailsRoot) c00032.L$11;
-                String detailsUrl7 = (String) c00032.L$10;
-                String code8 = (String) c00032.L$9;
-                String refererUrl14 = (String) c00032.L$8;
-                String finalUrl13 = (String) c00032.L$7;
-                Url parsedUrl7 = (Url) c00032.L$6;
-                List redirectDomains7 = (List) c00032.L$5;
-                Function1<? super ExtractorLink, Unit> function17 = (Function1) c00032.L$4;
-                Function1<? super SubtitleFile, Unit> function18 = (Function1) c00032.L$3;
-                String referer6 = (String) c00032.L$2;
-                finalUrl5 = (String) c00032.L$1;
-                $this4 = (ByseSX) c00032.L$0;
+                DetailsRoot details4 = (DetailsRoot) c00062.L$11;
+                String detailsUrl7 = (String) c00062.L$10;
+                String code8 = (String) c00062.L$9;
+                String refererUrl14 = (String) c00062.L$8;
+                String finalUrl13 = (String) c00062.L$7;
+                Url parsedUrl7 = (Url) c00062.L$6;
+                List redirectDomains7 = (List) c00062.L$5;
+                Function1<? super ExtractorLink, Unit> function17 = (Function1) c00062.L$4;
+                Function1<? super SubtitleFile, Unit> function18 = (Function1) c00062.L$3;
+                String referer6 = (String) c00062.L$2;
+                finalUrl5 = (String) c00062.L$1;
+                $this4 = (ByseSX) c00062.L$0;
                 ResultKt.throwOnFailure($result);
                 code4 = code8;
                 parsedUrl3 = parsedUrl7;
@@ -4880,22 +4880,22 @@ public class ByseSX extends ExtractorApi {
                 } else {
                     if (playbackRoot.getPlayback() != null) {
                         Playback playback5 = playbackRoot.getPlayback();
-                        c00032.L$0 = $this4;
+                        c00062.L$0 = $this4;
                         finalUrl7 = finalUrl6;
-                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
-                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
-                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(function9);
-                        c00032.L$4 = function8;
-                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains3);
-                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl3);
-                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl7);
-                        c00032.L$8 = refererUrl4;
-                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(code4);
-                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl2);
-                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(details2);
-                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
-                        c00032.label = 4;
-                        $result = $this4.decryptPlayback(playback5, c00032);
+                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
+                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
+                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(function9);
+                        c00062.L$4 = function8;
+                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains3);
+                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl3);
+                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl7);
+                        c00062.L$8 = refererUrl4;
+                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(code4);
+                        c00062.L$10 = SpillingKt.nullOutSpilledVariable(detailsUrl2);
+                        c00062.L$11 = SpillingKt.nullOutSpilledVariable(details2);
+                        c00062.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
+                        c00062.label = 4;
+                        $result = $this4.decryptPlayback(playback5, c00062);
                         if ($result == obj2) {
                             return obj2;
                         }
@@ -4930,25 +4930,25 @@ public class ByseSX extends ExtractorApi {
                 String name4 = $this4.getName();
                 ExtractorLinkType infer_type4 = ExtractorApiKt.getINFER_TYPE();
                 ByseSX $this10 = $this4;
-                C00042 c00045 = new C00042(headers4, null);
-                c00032.L$0 = SpillingKt.nullOutSpilledVariable($this10);
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function9);
-                c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains4);
-                c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl4);
-                c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl8);
-                c00032.L$8 = SpillingKt.nullOutSpilledVariable(refererUrl15);
-                c00032.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl5);
-                c00032.L$10 = SpillingKt.nullOutSpilledVariable(code5);
-                c00032.L$11 = SpillingKt.nullOutSpilledVariable(details3);
-                c00032.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
-                c00032.L$13 = SpillingKt.nullOutSpilledVariable(streamUrl);
-                c00032.L$14 = SpillingKt.nullOutSpilledVariable(headers4);
-                c00032.L$15 = function8;
-                c00032.label = 5;
-                $result = ExtractorApiKt.newExtractorLink(refererUrl16, name4, streamUrl, infer_type4, c00045, c00032);
+                C00072 c00075 = new C00072(headers4, null);
+                c00062.L$0 = SpillingKt.nullOutSpilledVariable($this10);
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function9);
+                c00062.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains4);
+                c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl4);
+                c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl8);
+                c00062.L$8 = SpillingKt.nullOutSpilledVariable(refererUrl15);
+                c00062.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl5);
+                c00062.L$10 = SpillingKt.nullOutSpilledVariable(code5);
+                c00062.L$11 = SpillingKt.nullOutSpilledVariable(details3);
+                c00062.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
+                c00062.L$13 = SpillingKt.nullOutSpilledVariable(streamUrl);
+                c00062.L$14 = SpillingKt.nullOutSpilledVariable(headers4);
+                c00062.L$15 = function8;
+                c00062.label = 5;
+                $result = ExtractorApiKt.newExtractorLink(refererUrl16, name4, streamUrl, infer_type4, c00075, c00062);
                 if ($result == obj2) {
                     return obj2;
                 }
@@ -4956,19 +4956,19 @@ public class ByseSX extends ExtractorApi {
                 function11.invoke($result);
                 return Unit.INSTANCE;
             case 4:
-                PlaybackRoot playbackRoot2 = (PlaybackRoot) c00032.L$12;
-                details2 = (DetailsRoot) c00032.L$11;
-                detailsUrl2 = (String) c00032.L$10;
-                code4 = (String) c00032.L$9;
-                refererUrl4 = (String) c00032.L$8;
-                String finalUrl14 = (String) c00032.L$7;
-                parsedUrl3 = (Url) c00032.L$6;
-                redirectDomains3 = (List) c00032.L$5;
-                function8 = (Function1) c00032.L$4;
-                function9 = (Function1) c00032.L$3;
-                referer4 = (String) c00032.L$2;
-                String url5 = (String) c00032.L$1;
-                $this4 = (ByseSX) c00032.L$0;
+                PlaybackRoot playbackRoot2 = (PlaybackRoot) c00062.L$12;
+                details2 = (DetailsRoot) c00062.L$11;
+                detailsUrl2 = (String) c00062.L$10;
+                code4 = (String) c00062.L$9;
+                refererUrl4 = (String) c00062.L$8;
+                String finalUrl14 = (String) c00062.L$7;
+                parsedUrl3 = (Url) c00062.L$6;
+                redirectDomains3 = (List) c00062.L$5;
+                function8 = (Function1) c00062.L$4;
+                function9 = (Function1) c00062.L$3;
+                referer4 = (String) c00062.L$2;
+                String url5 = (String) c00062.L$1;
+                $this4 = (ByseSX) c00062.L$0;
                 ResultKt.throwOnFailure($result);
                 obj2 = coroutine_suspended;
                 obj4 = "Referer";
@@ -5001,25 +5001,25 @@ public class ByseSX extends ExtractorApi {
                 String name5 = $this4.getName();
                 ExtractorLinkType infer_type5 = ExtractorApiKt.getINFER_TYPE();
                 ByseSX $this11 = $this4;
-                C00042 c00046 = new C00042(headers5, null);
-                c00032.L$0 = SpillingKt.nullOutSpilledVariable($this11);
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function9);
-                c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                c00032.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains4);
-                c00032.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl4);
-                c00032.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl8);
-                c00032.L$8 = SpillingKt.nullOutSpilledVariable(refererUrl17);
-                c00032.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl5);
-                c00032.L$10 = SpillingKt.nullOutSpilledVariable(code5);
-                c00032.L$11 = SpillingKt.nullOutSpilledVariable(details3);
-                c00032.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
-                c00032.L$13 = SpillingKt.nullOutSpilledVariable(streamUrl);
-                c00032.L$14 = SpillingKt.nullOutSpilledVariable(headers5);
-                c00032.L$15 = function8;
-                c00032.label = 5;
-                $result = ExtractorApiKt.newExtractorLink(refererUrl18, name5, streamUrl, infer_type5, c00046, c00032);
+                C00072 c00076 = new C00072(headers5, null);
+                c00062.L$0 = SpillingKt.nullOutSpilledVariable($this11);
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(finalUrl5);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(referer4);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function9);
+                c00062.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                c00062.L$5 = SpillingKt.nullOutSpilledVariable(redirectDomains4);
+                c00062.L$6 = SpillingKt.nullOutSpilledVariable(parsedUrl4);
+                c00062.L$7 = SpillingKt.nullOutSpilledVariable(finalUrl8);
+                c00062.L$8 = SpillingKt.nullOutSpilledVariable(refererUrl17);
+                c00062.L$9 = SpillingKt.nullOutSpilledVariable(refererUrl5);
+                c00062.L$10 = SpillingKt.nullOutSpilledVariable(code5);
+                c00062.L$11 = SpillingKt.nullOutSpilledVariable(details3);
+                c00062.L$12 = SpillingKt.nullOutSpilledVariable(playbackRoot);
+                c00062.L$13 = SpillingKt.nullOutSpilledVariable(streamUrl);
+                c00062.L$14 = SpillingKt.nullOutSpilledVariable(headers5);
+                c00062.L$15 = function8;
+                c00062.label = 5;
+                $result = ExtractorApiKt.newExtractorLink(refererUrl18, name5, streamUrl, infer_type5, c00076, c00062);
                 if ($result == obj2) {
                     return obj2;
                 }
@@ -5027,7 +5027,7 @@ public class ByseSX extends ExtractorApi {
                 function11.invoke($result);
                 return Unit.INSTANCE;
             case 5:
-                function11 = (Function1) c00032.L$15;
+                function11 = (Function1) c00062.L$15;
                 ResultKt.throwOnFailure($result);
                 function11.invoke($result);
                 return Unit.INSTANCE;
@@ -5040,21 +5040,21 @@ public class ByseSX extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.piratexplay.ByseSX$getUrl$2", f = "Extractor.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00042 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00072 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00042(Map<String, String> map, Continuation<? super C00042> continuation) {
+        C00072(Map<String, String> map, Continuation<? super C00072> continuation) {
             super(2, continuation);
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00042 = new C00042(this.$headers, continuation);
-            c00042.L$0 = obj;
-            return c00042;
+            Continuation<Unit> c00072 = new C00072(this.$headers, continuation);
+            c00072.L$0 = obj;
+            return c00072;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

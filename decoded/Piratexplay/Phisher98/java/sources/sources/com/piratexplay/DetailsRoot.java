@@ -116,7 +116,7 @@ public final /* data */ class DetailsRoot {
     }
 
     public int hashCode() {
-        return (((((((((((((DetailsRoot$$ExternalSyntheticBackport0.m12m(this.id) * 31) + this.code.hashCode()) * 31) + this.title.hashCode()) * 31) + this.poster_url.hashCode()) * 31) + this.description.hashCode()) * 31) + this.created_at.hashCode()) * 31) + (this.owner_private == null ? 0 : this.owner_private.hashCode())) * 31) + (this.embed_frame_url != null ? this.embed_frame_url.hashCode() : 0);
+        return (((((((((((((DetailsRoot$$ExternalSyntheticBackport0.m14m(this.id) * 31) + this.code.hashCode()) * 31) + this.title.hashCode()) * 31) + this.poster_url.hashCode()) * 31) + this.description.hashCode()) * 31) + this.created_at.hashCode()) * 31) + (this.owner_private == null ? 0 : this.owner_private.hashCode())) * 31) + (this.embed_frame_url != null ? this.embed_frame_url.hashCode() : 0);
     }
 
     @NotNull

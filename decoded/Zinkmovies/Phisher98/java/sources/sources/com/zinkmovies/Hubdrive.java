@@ -40,7 +40,7 @@ public final class Hubdrive extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.zinkmovies.Hubdrive", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {37, 38, 39}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "href", "url", "referer", "subtitleCallback", "callback", "href"}, nl = {38, 40, 40}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
-    static final class C00031 extends ContinuationImpl {
+    static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -49,7 +49,7 @@ public final class Hubdrive extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00031(Continuation<? super C00031> continuation) {
+        C00061(Continuation<? super C00061> continuation) {
             super(continuation);
         }
 
@@ -84,7 +84,7 @@ public final class Hubdrive extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C00031 c00031;
+        C00061 c00061;
         Object obj;
         boolean z;
         Object obj2;
@@ -93,32 +93,32 @@ public final class Hubdrive extends ExtractorApi {
         Function1<? super SubtitleFile, Unit> function3;
         Function1<? super ExtractorLink, Unit> function4;
         String href;
-        if (continuation instanceof C00031) {
-            c00031 = (C00031) continuation;
-            if ((c00031.label & Integer.MIN_VALUE) != 0) {
-                c00031.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00061) {
+            c00061 = (C00061) continuation;
+            if ((c00061.label & Integer.MIN_VALUE) != 0) {
+                c00061.label -= Integer.MIN_VALUE;
             } else {
-                c00031 = new C00031(continuation);
+                c00061 = new C00061(continuation);
             }
         } else {
-            c00031 = new C00031(continuation);
+            c00061 = new C00061(continuation);
         }
-        C00031 c00032 = c00031;
-        Object $result = c00032.result;
+        C00061 c00062 = c00061;
+        Object $result = c00062.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00032.label) {
+        switch (c00062.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
-                c00032.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c00032.L$2 = function1;
-                c00032.L$3 = function2;
-                c00032.label = 1;
+                c00062.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c00062.L$2 = function1;
+                c00062.L$3 = function2;
+                c00062.label = 1;
                 obj = coroutine_suspended;
                 z = true;
-                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 5000L, (Interceptor) null, false, (ResponseParser) null, c00032, 3838, (Object) null);
-                c00032 = c00032;
+                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 5000L, (Interceptor) null, false, (ResponseParser) null, c00062, 3838, (Object) null);
+                c00062 = c00062;
                 if (obj2 == obj) {
                     return obj;
                 }
@@ -128,34 +128,34 @@ public final class Hubdrive extends ExtractorApi {
                 function4 = function2;
                 href = ((NiceResponse) obj2).getDocument().select(".btn.btn-primary.btn-user.btn-success1.m-1").attr("href");
                 if (StringsKt.contains(href, "hubcloud", z)) {
-                    c00032.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(href);
-                    c00032.label = 3;
-                    if (ExtractorApiKt.loadExtractor(href, "HubDrive", function3, function4, c00032) == obj) {
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(href);
+                    c00062.label = 3;
+                    if (ExtractorApiKt.loadExtractor(href, "HubDrive", function3, function4, c00062) == obj) {
                         return obj;
                     }
                     return Unit.INSTANCE;
                 }
                 HubCloud hubCloud = new HubCloud();
-                c00032.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                c00032.L$4 = SpillingKt.nullOutSpilledVariable(href);
-                c00032.label = 2;
-                $result = hubCloud.getUrl(href, "HubDrive", function3, function4, c00032);
+                c00062.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                c00062.L$4 = SpillingKt.nullOutSpilledVariable(href);
+                c00062.label = 2;
+                $result = hubCloud.getUrl(href, "HubDrive", function3, function4, c00062);
                 if ($result == obj) {
                     return obj;
                 }
                 return $result;
             case 1:
-                Function1<? super ExtractorLink, Unit> function5 = (Function1) c00032.L$3;
-                function3 = (Function1) c00032.L$2;
-                String referer3 = (String) c00032.L$1;
-                url2 = (String) c00032.L$0;
+                Function1<? super ExtractorLink, Unit> function5 = (Function1) c00062.L$3;
+                function3 = (Function1) c00062.L$2;
+                String referer3 = (String) c00062.L$1;
+                url2 = (String) c00062.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 referer2 = referer3;
@@ -164,25 +164,25 @@ public final class Hubdrive extends ExtractorApi {
                 z = true;
                 href = ((NiceResponse) obj2).getDocument().select(".btn.btn-primary.btn-user.btn-success1.m-1").attr("href");
                 if (StringsKt.contains(href, "hubcloud", z)) {
-                    c00032.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(href);
-                    c00032.label = 3;
-                    if (ExtractorApiKt.loadExtractor(href, "HubDrive", function3, function4, c00032) == obj) {
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(href);
+                    c00062.label = 3;
+                    if (ExtractorApiKt.loadExtractor(href, "HubDrive", function3, function4, c00062) == obj) {
                         return obj;
                     }
                     return Unit.INSTANCE;
                 }
                 HubCloud hubCloud2 = new HubCloud();
-                c00032.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                c00032.L$4 = SpillingKt.nullOutSpilledVariable(href);
-                c00032.label = 2;
-                $result = hubCloud2.getUrl(href, "HubDrive", function3, function4, c00032);
+                c00062.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c00062.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00062.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c00062.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                c00062.L$4 = SpillingKt.nullOutSpilledVariable(href);
+                c00062.label = 2;
+                $result = hubCloud2.getUrl(href, "HubDrive", function3, function4, c00062);
                 if ($result == obj) {
                     return obj;
                 }

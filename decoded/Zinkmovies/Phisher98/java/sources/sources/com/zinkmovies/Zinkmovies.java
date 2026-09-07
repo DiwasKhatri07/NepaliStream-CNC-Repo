@@ -27,6 +27,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -79,7 +80,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Zinkmovies.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Zinkmovies/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 C2\u00020\u0001:\u0001CB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010 \u001a\u00020$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020(H\u0096@¢\u0006\u0002\u0010)J\u0010\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020-H\u0002J\u001e\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u00052\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u00101J\u0016\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00105JF\u00106\u001a\u00020\u00112\u0006\u00107\u001a\u00020\u00052\u0006\u00108\u001a\u00020\u00112\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020;\u0012\u0004\u0012\u00020<0:2\u0012\u0010=\u001a\u000e\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u00020<0:H\u0096@¢\u0006\u0002\u0010?J\u0012\u0010@\u001a\u0004\u0018\u00010A2\b\u0010B\u001a\u0004\u0018\u00010\u0005R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u0014\u0010\u0010\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013R\u0014\u0010\u0016\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0013R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R\u001a\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006D"}, d2 = {"Lcom/zinkmovies/Zinkmovies;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "hasDownloadSupport", "getHasDownloadSupport", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "headers", "", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "post", "Lorg/jsoup/nodes/Element;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getSearchQuality", "Lcom/lagradost/cloudstream3/SearchQuality;", "check", "Companion", "Zinkmovies"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nZinkmovies.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Zinkmovies.kt\ncom/zinkmovies/Zinkmovies\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 6 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 7 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,568:1\n832#2:569\n862#2,2:570\n1795#2,10:572\n2068#2:582\n2069#2:584\n1805#2:585\n1739#2:587\n1814#2,3:588\n1739#2:591\n1814#2,3:592\n1739#2:595\n1814#2,3:596\n777#2:599\n873#2,2:600\n2068#2:602\n2068#2:603\n2069#2:611\n2069#2:612\n1739#2:613\n1814#2,3:614\n777#2:617\n873#2,2:618\n2068#2:620\n2068#2:621\n2069#2:629\n2069#2:630\n1739#2:656\n1814#2,3:657\n777#2:660\n873#2,2:661\n1#3:583\n1#3:586\n1#3:636\n1#3:663\n460#4,7:604\n460#4,7:622\n221#5,2:631\n93#6,2:633\n63#6:635\n64#6,15:637\n95#6,2:654\n50#7:652\n43#7:653\n*S KotlinDebug\n*F\n+ 1 Zinkmovies.kt\ncom/zinkmovies/Zinkmovies\n*L\n82#1:569\n82#1:570,2\n83#1:572,10\n83#1:582\n83#1:584\n83#1:585\n104#1:587\n104#1:588,3\n134#1:591\n134#1:592,3\n322#1:595\n322#1:596,3\n346#1:599\n346#1:600,2\n347#1:602\n376#1:603\n376#1:611\n347#1:612\n415#1:613\n415#1:614,3\n416#1:617\n416#1:618,2\n418#1:620\n421#1:621\n421#1:629\n418#1:630\n488#1:656\n488#1:657,3\n489#1:660\n489#1:661,2\n83#1:583\n487#1:636\n395#1:604,7\n431#1:622,7\n441#1:631,2\n487#1:633,2\n487#1:635\n487#1:637,15\n487#1:654,2\n487#1:652\n487#1:653\n*E\n"})
+@SourceDebugExtension({"SMAP\nZinkmovies.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Zinkmovies.kt\ncom/zinkmovies/Zinkmovies\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 6 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 7 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,569:1\n832#2:570\n862#2,2:571\n1795#2,10:573\n2068#2:583\n2069#2:585\n1805#2:586\n1739#2:588\n1814#2,3:589\n1739#2:592\n1814#2,3:593\n1739#2:596\n1814#2,3:597\n777#2:600\n873#2,2:601\n2068#2:603\n2068#2:604\n2069#2:612\n2069#2:613\n1739#2:614\n1814#2,3:615\n777#2:618\n873#2,2:619\n2068#2:621\n2068#2:622\n2069#2:630\n2069#2:631\n1739#2:657\n1814#2,3:658\n777#2:661\n873#2,2:662\n1#3:584\n1#3:587\n1#3:637\n1#3:664\n460#4,7:605\n460#4,7:623\n221#5,2:632\n93#6,2:634\n63#6:636\n64#6,15:638\n95#6,2:655\n50#7:653\n43#7:654\n*S KotlinDebug\n*F\n+ 1 Zinkmovies.kt\ncom/zinkmovies/Zinkmovies\n*L\n83#1:570\n83#1:571,2\n84#1:573,10\n84#1:583\n84#1:585\n84#1:586\n105#1:588\n105#1:589,3\n135#1:592\n135#1:593,3\n323#1:596\n323#1:597,3\n347#1:600\n347#1:601,2\n348#1:603\n377#1:604\n377#1:612\n348#1:613\n416#1:614\n416#1:615,3\n417#1:618\n417#1:619,2\n419#1:621\n422#1:622\n422#1:630\n419#1:631\n489#1:657\n489#1:658,3\n490#1:661\n490#1:662,2\n84#1:584\n488#1:637\n396#1:605,7\n432#1:623,7\n442#1:632,2\n488#1:634,2\n488#1:636\n488#1:638,15\n488#1:655,2\n488#1:653\n488#1:654\n*E\n"})
 public final class Zinkmovies extends MainAPI {
 
     @NotNull
@@ -115,14 +116,14 @@ public final class Zinkmovies extends MainAPI {
     /* JADX INFO: renamed from: com.zinkmovies.Zinkmovies$getMainPage$1 */
     /* JADX INFO: compiled from: Zinkmovies.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.zinkmovies.Zinkmovies", f = "Zinkmovies.kt", i = {0, 0}, l = {76}, m = "getMainPage", n = {"request", "page"}, nl = {81}, s = {"L$0", "I$0"}, v = 2)
-    static final class C00081 extends ContinuationImpl {
+    @DebugMetadata(c = "com.zinkmovies.Zinkmovies", f = "Zinkmovies.kt", i = {0, 0}, l = {77}, m = "getMainPage", n = {"request", "page"}, nl = {82}, s = {"L$0", "I$0"}, v = 2)
+    static final class C00111 extends ContinuationImpl {
         int I$0;
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00081(Continuation<? super C00081> continuation) {
+        C00111(Continuation<? super C00111> continuation) {
             super(continuation);
         }
 
@@ -137,8 +138,8 @@ public final class Zinkmovies extends MainAPI {
     /* JADX INFO: renamed from: com.zinkmovies.Zinkmovies$load$1 */
     /* JADX INFO: compiled from: Zinkmovies.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.zinkmovies.Zinkmovies", f = "Zinkmovies.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {116, 162, 174, 239, 325, 374, 420, 463}, m = "load", n = {"url", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "$this$load_u24lambda_u242", "query", "type", "searchUrl", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "$this$load_u24lambda_u243", "type", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "$this$load_u24lambda_u243", "type", "detailsText", "detailsJson", "yearRaw", "metaYear", "metaRating", "metaDesc", "metaBackground", "metaName", "imdbId", "logoPath", "actorDataList", "metaGenres", "videos", "totalSeasons", "season", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "responseData", "movieList", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "responseData", "episodesData", "epLinksMap", "seasonRegex", "episodeRegex", "$this$forEach$iv", "element$iv", "seasonElement", "next", "seasonUrl", "seasonNum", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "responseData", "episodesData", "epLinksMap", "seasonRegex", "episodeRegex", "$this$forEach$iv", "element$iv", "linkUrl", "fallbackSeason", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "responseData", "episodesData", "epLinksMap", "seasonRegex", "episodeRegex"}, nl = {117, 164, 176, 241, 339, 376, 421, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$25", "L$26", "L$27", "L$28", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$25", "L$26", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22"}, v = 2)
-    static final class C00091 extends ContinuationImpl {
+    @DebugMetadata(c = "com.zinkmovies.Zinkmovies", f = "Zinkmovies.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {117, 163, 175, 240, 326, 375, 421, 464}, m = "load", n = {"url", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "$this$load_u24lambda_u242", "query", "type", "searchUrl", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "$this$load_u24lambda_u243", "type", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "$this$load_u24lambda_u243", "type", "detailsText", "detailsJson", "yearRaw", "metaYear", "metaRating", "metaDesc", "metaBackground", "metaName", "imdbId", "logoPath", "actorDataList", "metaGenres", "videos", "totalSeasons", "season", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "responseData", "movieList", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "responseData", "episodesData", "epLinksMap", "seasonRegex", "episodeRegex", "$this$forEach$iv", "element$iv", "seasonElement", "next", "seasonUrl", "seasonNum", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "responseData", "episodesData", "epLinksMap", "seasonRegex", "episodeRegex", "$this$forEach$iv", "element$iv", "linkUrl", "fallbackSeason", "url", "doc", "title", "seasontitle", "seasonNumber", "image", "plot", "tags", "poster", "trailer", "tvtype", "recommendations", "actorData", "genre", "year", "background", "description", "tmdbIdResolved", "responseData", "episodesData", "epLinksMap", "seasonRegex", "episodeRegex"}, nl = {118, 165, 177, 242, 340, 377, 422, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$25", "L$26", "L$27", "L$28", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$25", "L$26", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22"}, v = 2)
+    static final class C00121 extends ContinuationImpl {
         int I$0;
         int I$1;
         Object L$0;
@@ -177,7 +178,7 @@ public final class Zinkmovies extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00091(Continuation<? super C00091> continuation) {
+        C00121(Continuation<? super C00121> continuation) {
             super(continuation);
         }
 
@@ -192,8 +193,8 @@ public final class Zinkmovies extends MainAPI {
     /* JADX INFO: renamed from: com.zinkmovies.Zinkmovies$loadLinks$1 */
     /* JADX INFO: compiled from: Zinkmovies.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.zinkmovies.Zinkmovies", f = "Zinkmovies.kt", i = {0, 0, 0, 0, 0}, l = {494}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "linksList", "isCasting"}, nl = {519}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
-    static final class C00121 extends ContinuationImpl {
+    @DebugMetadata(c = "com.zinkmovies.Zinkmovies", f = "Zinkmovies.kt", i = {0, 0, 0, 0, 0}, l = {495}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "linksList", "isCasting"}, nl = {520}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    static final class C00151 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -202,7 +203,7 @@ public final class Zinkmovies extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00121(Continuation<? super C00121> continuation) {
+        C00151(Continuation<? super C00151> continuation) {
             super(continuation);
         }
 
@@ -217,14 +218,14 @@ public final class Zinkmovies extends MainAPI {
     /* JADX INFO: renamed from: com.zinkmovies.Zinkmovies$search$1 */
     /* JADX INFO: compiled from: Zinkmovies.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.zinkmovies.Zinkmovies", f = "Zinkmovies.kt", i = {0, 0}, l = {102}, m = "search", n = {"query", "page"}, nl = {104}, s = {"L$0", "I$0"}, v = 2)
-    static final class C00141 extends ContinuationImpl {
+    @DebugMetadata(c = "com.zinkmovies.Zinkmovies", f = "Zinkmovies.kt", i = {0, 0}, l = {103}, m = "search", n = {"query", "page"}, nl = {105}, s = {"L$0", "I$0"}, v = 2)
+    static final class C00171 extends ContinuationImpl {
         int I$0;
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00141(Continuation<? super C00141> continuation) {
+        C00171(Continuation<? super C00171> continuation) {
             super(continuation);
         }
 
@@ -288,33 +289,34 @@ public final class Zinkmovies extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
-        C00081 c00081;
+        C00111 c00111;
         boolean z;
         MainPageRequest request2;
         int page2 = page;
-        if (continuation instanceof C00081) {
-            c00081 = (C00081) continuation;
-            if ((c00081.label & Integer.MIN_VALUE) != 0) {
-                c00081.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00111) {
+            c00111 = (C00111) continuation;
+            if ((c00111.label & Integer.MIN_VALUE) != 0) {
+                c00111.label -= Integer.MIN_VALUE;
             } else {
-                c00081 = new C00081(continuation);
+                c00111 = new C00111(continuation);
             }
         } else {
-            c00081 = new C00081(continuation);
+            c00111 = new C00111(continuation);
         }
-        Object $result = c00081.result;
+        Object $result = c00111.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00081.label) {
+        switch (c00111.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + request.getData() + "page/" + page2 + '/';
                 Map<String, String> map = this.headers;
-                c00081.L$0 = request;
-                c00081.I$0 = page2;
-                c00081.label = 1;
+                c00111.L$0 = request;
+                c00111.I$0 = page2;
+                c00111.label = 1;
                 z = true;
-                $result = Requests.get$default(app, str, map, (String) null, (Map) null, (Map) null, true, 60, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00081, 3996, (Object) null);
+                $result = Requests.get$default(app, str, map, (String) null, (Map) null, (Map) null, true, 60, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00111, 3996, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -322,8 +324,8 @@ public final class Zinkmovies extends MainAPI {
                 break;
                 break;
             case 1:
-                page2 = c00081.I$0;
-                request2 = (MainPageRequest) c00081.L$0;
+                page2 = c00111.I$0;
+                request2 = (MainPageRequest) c00111.L$0;
                 ResultKt.throwOnFailure($result);
                 z = true;
                 break;
@@ -380,35 +382,35 @@ public final class Zinkmovies extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object search(@NotNull String query, int page, @NotNull Continuation<? super SearchResponseList> continuation) {
-        C00141 c00141;
-        if (continuation instanceof C00141) {
-            c00141 = (C00141) continuation;
-            if ((c00141.label & Integer.MIN_VALUE) != 0) {
-                c00141.label -= Integer.MIN_VALUE;
+        C00171 c00171;
+        if (continuation instanceof C00171) {
+            c00171 = (C00171) continuation;
+            if ((c00171.label & Integer.MIN_VALUE) != 0) {
+                c00171.label -= Integer.MIN_VALUE;
             } else {
-                c00141 = new C00141(continuation);
+                c00171 = new C00171(continuation);
             }
         } else {
-            c00141 = new C00141(continuation);
+            c00171 = new C00171(continuation);
         }
-        Object $result = c00141.result;
+        Object $result = c00171.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00141.label) {
+        switch (c00171.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + "/page/" + page + "/?s=" + query;
-                c00141.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                c00141.I$0 = page;
-                c00141.label = 1;
-                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00141, 4094, (Object) null);
+                c00171.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c00171.I$0 = page;
+                c00171.label = 1;
+                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00171, 4094, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 break;
                 break;
             case 1:
-                int i = c00141.I$0;
+                int i = c00171.I$0;
                 ResultKt.throwOnFailure($result);
                 break;
             default:
@@ -653,8 +655,8 @@ public final class Zinkmovies extends MainAPI {
     /* JADX INFO: renamed from: com.zinkmovies.Zinkmovies$load$5 */
     /* JADX INFO: compiled from: Zinkmovies.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.zinkmovies.Zinkmovies$load$5", f = "Zinkmovies.kt", i = {0}, l = {335}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {336}, s = {"L$0"}, v = 2)
-    static final class C00115 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.zinkmovies.Zinkmovies$load$5", f = "Zinkmovies.kt", i = {0}, l = {336}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {337}, s = {"L$0"}, v = 2)
+    static final class C00145 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ Ref.ObjectRef<List<ActorData>> $actorData;
         final /* synthetic */ Ref.ObjectRef<String> $background;
         final /* synthetic */ Ref.ObjectRef<String> $description;
@@ -670,7 +672,7 @@ public final class Zinkmovies extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00115(Ref.ObjectRef<String> objectRef, List<MovieSearchResponse> list, ResponseDataLocal responseDataLocal, String str, Ref.ObjectRef<String> objectRef2, Ref.ObjectRef<String> objectRef3, String str2, Ref.ObjectRef<List<String>> objectRef4, List<String> list2, Ref.ObjectRef<List<ActorData>> objectRef5, String str3, Continuation<? super C00115> continuation) {
+        C00145(Ref.ObjectRef<String> objectRef, List<MovieSearchResponse> list, ResponseDataLocal responseDataLocal, String str, Ref.ObjectRef<String> objectRef2, Ref.ObjectRef<String> objectRef3, String str2, Ref.ObjectRef<List<String>> objectRef4, List<String> list2, Ref.ObjectRef<List<ActorData>> objectRef5, String str3, Continuation<? super C00145> continuation) {
             super(2, continuation);
             this.$background = objectRef;
             this.$recommendations = list;
@@ -686,9 +688,9 @@ public final class Zinkmovies extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00115 = new C00115(this.$background, this.$recommendations, this.$responseData, this.$poster, this.$year, this.$description, this.$plot, this.$genre, this.$tags, this.$actorData, this.$trailer, continuation);
-            c00115.L$0 = obj;
-            return c00115;
+            Continuation<Unit> c00145 = new C00145(this.$background, this.$recommendations, this.$responseData, this.$poster, this.$year, this.$description, this.$plot, this.$genre, this.$tags, this.$actorData, this.$trailer, continuation);
+            c00145.L$0 = obj;
+            return c00145;
         }
 
         public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
@@ -766,8 +768,8 @@ public final class Zinkmovies extends MainAPI {
     /* JADX INFO: renamed from: com.zinkmovies.Zinkmovies$load$12 */
     /* JADX INFO: compiled from: Zinkmovies.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.zinkmovies.Zinkmovies$load$12", f = "Zinkmovies.kt", i = {0}, l = {474}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {475}, s = {"L$0"}, v = 2)
-    static final class C001012 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.zinkmovies.Zinkmovies$load$12", f = "Zinkmovies.kt", i = {0}, l = {475}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {476}, s = {"L$0"}, v = 2)
+    static final class C001312 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ Ref.ObjectRef<List<ActorData>> $actorData;
         final /* synthetic */ Ref.ObjectRef<String> $background;
         final /* synthetic */ Ref.ObjectRef<String> $description;
@@ -783,7 +785,7 @@ public final class Zinkmovies extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C001012(Ref.ObjectRef<String> objectRef, List<MovieSearchResponse> list, ResponseDataLocal responseDataLocal, String str, Ref.ObjectRef<String> objectRef2, Ref.ObjectRef<String> objectRef3, String str2, Ref.ObjectRef<List<String>> objectRef4, List<String> list2, Ref.ObjectRef<List<ActorData>> objectRef5, String str3, Continuation<? super C001012> continuation) {
+        C001312(Ref.ObjectRef<String> objectRef, List<MovieSearchResponse> list, ResponseDataLocal responseDataLocal, String str, Ref.ObjectRef<String> objectRef2, Ref.ObjectRef<String> objectRef3, String str2, Ref.ObjectRef<List<String>> objectRef4, List<String> list2, Ref.ObjectRef<List<ActorData>> objectRef5, String str3, Continuation<? super C001312> continuation) {
             super(2, continuation);
             this.$background = objectRef;
             this.$recommendations = list;
@@ -799,9 +801,9 @@ public final class Zinkmovies extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c001012 = new C001012(this.$background, this.$recommendations, this.$responseData, this.$poster, this.$year, this.$description, this.$plot, this.$genre, this.$tags, this.$actorData, this.$trailer, continuation);
-            c001012.L$0 = obj;
-            return c001012;
+            Continuation<Unit> c001312 = new C001312(this.$background, this.$recommendations, this.$responseData, this.$poster, this.$year, this.$description, this.$plot, this.$genre, this.$tags, this.$actorData, this.$trailer, continuation);
+            c001312.L$0 = obj;
+            return c001312;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -863,26 +865,26 @@ public final class Zinkmovies extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
-        C00121 c00121;
+        C00151 c00151;
         Object obj;
         Object obj2;
         Object objDecodeFromString;
         List linksList;
         boolean z;
-        if (continuation instanceof C00121) {
-            c00121 = (C00121) continuation;
-            if ((c00121.label & Integer.MIN_VALUE) != 0) {
-                c00121.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00151) {
+            c00151 = (C00151) continuation;
+            if ((c00151.label & Integer.MIN_VALUE) != 0) {
+                c00151.label -= Integer.MIN_VALUE;
             } else {
-                c00121 = new C00121(continuation);
+                c00151 = new C00151(continuation);
             }
         } else {
-            c00121 = new C00121(continuation);
+            c00151 = new C00151(continuation);
         }
-        C00121 c00122 = c00121;
-        Object $result = c00122.result;
+        C00151 c00152 = c00151;
+        Object $result = c00152.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00122.label) {
+        switch (c00152.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 AppUtils appUtils = AppUtils.INSTANCE;
@@ -958,21 +960,21 @@ public final class Zinkmovies extends MainAPI {
                 if (linksList.isEmpty()) {
                     return Boxing.boxBoolean(false);
                 }
-                C00132 c00132 = new C00132(function2, this, function1, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(data);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(function1);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(function2);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(linksList);
-                c00122.Z$0 = isCasting;
+                C00162 c00162 = new C00162(function2, this, function1, null);
+                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data);
+                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function1);
+                c00152.L$2 = SpillingKt.nullOutSpilledVariable(function2);
+                c00152.L$3 = SpillingKt.nullOutSpilledVariable(linksList);
+                c00152.Z$0 = isCasting;
                 z = true;
-                c00122.label = 1;
-                if (ParCollectionsKt.amap(linksList, c00132, c00122) == coroutine_suspended) {
+                c00152.label = 1;
+                if (ParCollectionsKt.amap(linksList, c00162, c00152) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 break;
                 break;
             case 1:
-                boolean z2 = c00122.Z$0;
+                boolean z2 = c00152.Z$0;
                 ResultKt.throwOnFailure($result);
                 z = true;
                 break;
@@ -985,9 +987,9 @@ public final class Zinkmovies extends MainAPI {
     /* JADX INFO: renamed from: com.zinkmovies.Zinkmovies$loadLinks$2 */
     /* JADX INFO: compiled from: Zinkmovies.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "pageUrl", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.zinkmovies.Zinkmovies$loadLinks$2", f = "Zinkmovies.kt", i = {0, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3}, l = {495, 496, 499, 509}, m = "invokeSuspend", n = {"pageUrl", "pageUrl", "finalUrl", "pageUrl", "finalUrl", "$this$forEach$iv", "element$iv", "link", "pageUrl", "finalUrl", "$this$forEach$iv", "element$iv", "link"}, nl = {496, 569, 498, 516}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$7", "L$8", "L$0", "L$1", "L$2", "L$7", "L$8"}, v = 2)
-    @SourceDebugExtension({"SMAP\nZinkmovies.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Zinkmovies.kt\ncom/zinkmovies/Zinkmovies$loadLinks$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,568:1\n2068#2,2:569\n*S KotlinDebug\n*F\n+ 1 Zinkmovies.kt\ncom/zinkmovies/Zinkmovies$loadLinks$2\n*L\n496#1:569,2\n*E\n"})
-    static final class C00132 extends SuspendLambda implements Function2<String, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.zinkmovies.Zinkmovies$loadLinks$2", f = "Zinkmovies.kt", i = {0, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3}, l = {496, 497, 500, 510}, m = "invokeSuspend", n = {"pageUrl", "pageUrl", "finalUrl", "pageUrl", "finalUrl", "$this$forEach$iv", "element$iv", "link", "pageUrl", "finalUrl", "$this$forEach$iv", "element$iv", "link"}, nl = {497, 570, 499, 517}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$7", "L$8", "L$0", "L$1", "L$2", "L$7", "L$8"}, v = 2)
+    @SourceDebugExtension({"SMAP\nZinkmovies.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Zinkmovies.kt\ncom/zinkmovies/Zinkmovies$loadLinks$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,569:1\n2068#2,2:570\n*S KotlinDebug\n*F\n+ 1 Zinkmovies.kt\ncom/zinkmovies/Zinkmovies$loadLinks$2\n*L\n497#1:570,2\n*E\n"})
+    static final class C00162 extends SuspendLambda implements Function2<String, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
         /* synthetic */ Object L$0;
@@ -1004,7 +1006,7 @@ public final class Zinkmovies extends MainAPI {
         final /* synthetic */ Zinkmovies this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00132(Function1<? super ExtractorLink, Unit> function1, Zinkmovies zinkmovies, Function1<? super SubtitleFile, Unit> function2, Continuation<? super C00132> continuation) {
+        C00162(Function1<? super ExtractorLink, Unit> function1, Zinkmovies zinkmovies, Function1<? super SubtitleFile, Unit> function2, Continuation<? super C00162> continuation) {
             super(2, continuation);
             this.$callback = function1;
             this.this$0 = zinkmovies;
@@ -1012,9 +1014,9 @@ public final class Zinkmovies extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00132 = new C00132(this.$callback, this.this$0, this.$subtitleCallback, continuation);
-            c00132.L$0 = obj;
-            return c00132;
+            Continuation<Unit> c00162 = new C00162(this.$callback, this.this$0, this.$subtitleCallback, continuation);
+            c00162.L$0 = obj;
+            return c00162;
         }
 
         public final Object invoke(String str, Continuation<? super Unit> continuation) {
@@ -1040,7 +1042,7 @@ public final class Zinkmovies extends MainAPI {
                 Method dump skipped, instruction units count: 444
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.zinkmovies.Zinkmovies.C00132.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.zinkmovies.Zinkmovies.C00162.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 

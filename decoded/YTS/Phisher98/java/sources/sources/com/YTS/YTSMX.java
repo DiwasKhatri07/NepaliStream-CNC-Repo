@@ -21,6 +21,7 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -56,7 +57,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: YTS MAX.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/YTS/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000p\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010 \u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J\f\u0010(\u001a\u00020)*\u00020*H\u0002J\u0016\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010.J\u0012\u0010/\u001a\u00020$2\b\u00100\u001a\u0004\u0018\u00010\u0005H\u0002JF\u00101\u001a\u00020\u000e2\u0006\u00102\u001a\u00020\u00052\u0006\u00103\u001a\u00020\u000e2\u0012\u00104\u001a\u000e\u0012\u0004\u0012\u000206\u0012\u0004\u0012\u000207052\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020705H\u0096@¢\u0006\u0002\u0010:R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0014\u0010\u0016\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0010R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!¨\u0006;"}, d2 = {"Lcom/YTS/YTSMX;", "Lcom/YTS/YTS;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasQuickSearch", "getHasQuickSearch", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getIndexQuality", "str", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "YTS"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nYTS MAX.kt\nKotlin\n*S Kotlin\n*F\n+ 1 YTS MAX.kt\ncom/YTS/YTSMX\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,121:1\n1795#2,10:122\n2068#2:132\n2069#2:134\n1805#2:135\n1739#2:136\n1814#2,3:137\n1#3:133\n*S KotlinDebug\n*F\n+ 1 YTS MAX.kt\ncom/YTS/YTSMX\n*L\n52#1:122,10\n52#1:132\n52#1:134\n52#1:135\n84#1:136\n84#1:137,3\n52#1:133\n*E\n"})
+@SourceDebugExtension({"SMAP\nYTS MAX.kt\nKotlin\n*S Kotlin\n*F\n+ 1 YTS MAX.kt\ncom/YTS/YTSMX\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,122:1\n1795#2,10:123\n2068#2:133\n2069#2:135\n1805#2:136\n1739#2:137\n1814#2,3:138\n1#3:134\n*S KotlinDebug\n*F\n+ 1 YTS MAX.kt\ncom/YTS/YTSMX\n*L\n53#1:123,10\n53#1:133\n53#1:135\n53#1:136\n85#1:137\n85#1:138,3\n53#1:134\n*E\n"})
 public final class YTSMX extends YTS {
 
     @NotNull
@@ -80,7 +81,7 @@ public final class YTSMX extends YTS {
     /* JADX INFO: renamed from: com.YTS.YTSMX$getMainPage$1 */
     /* JADX INFO: compiled from: YTS MAX.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.YTS.YTSMX", f = "YTS MAX.kt", i = {0, 0, 0}, l = {51}, m = "getMainPage", n = {"request", "url", "page"}, nl = {52}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.YTS.YTSMX", f = "YTS MAX.kt", i = {0, 0, 0}, l = {52}, m = "getMainPage", n = {"request", "url", "page"}, nl = {53}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -103,7 +104,7 @@ public final class YTSMX extends YTS {
     /* JADX INFO: renamed from: com.YTS.YTSMX$load$1 */
     /* JADX INFO: compiled from: YTS MAX.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.YTS.YTSMX", f = "YTS MAX.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {78, 87}, m = "load", n = {"url", "url", "document", "title", "poster", "year", "tags", "description", "rating"}, nl = {79, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
+    @DebugMetadata(c = "com.YTS.YTSMX", f = "YTS MAX.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {79, 88}, m = "load", n = {"url", "url", "document", "title", "poster", "year", "tags", "description", "rating"}, nl = {80, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -131,7 +132,7 @@ public final class YTSMX extends YTS {
     /* JADX INFO: renamed from: com.YTS.YTSMX$loadLinks$1 */
     /* JADX INFO: compiled from: YTS MAX.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.YTS.YTSMX", f = "YTS MAX.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {102, 103}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {103, 119}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.YTS.YTSMX", f = "YTS MAX.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {103, 104}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {104, 120}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00091 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -236,6 +237,7 @@ public final class YTSMX extends YTS {
         switch (c00061.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String url = page == 1 ? getMainUrl() + '/' + request.getData() : getMainUrl() + '/' + request.getData() + "?page=" + page;
                 Requests app = MainActivityKt.getApp();
                 c00061.L$0 = request;
@@ -551,7 +553,7 @@ public final class YTSMX extends YTS {
     /* JADX INFO: renamed from: com.YTS.YTSMX$loadLinks$2 */
     /* JADX INFO: compiled from: YTS MAX.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.YTS.YTSMX$loadLinks$2", f = "YTS MAX.kt", i = {0, 0, 0}, l = {108}, m = "invokeSuspend", n = {"it", "magnet", "quality"}, nl = {107}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.YTS.YTSMX$loadLinks$2", f = "YTS MAX.kt", i = {0, 0, 0}, l = {109}, m = "invokeSuspend", n = {"it", "magnet", "quality"}, nl = {108}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00102 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         int I$0;

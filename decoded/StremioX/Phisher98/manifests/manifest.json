@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.phisher98.StremioXPlugin",
   "name": "StremioX",
-  "version": 24,
+  "version": 26,
   "requiresResources": true
 }

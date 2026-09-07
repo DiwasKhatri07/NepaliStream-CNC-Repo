@@ -18,6 +18,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -54,7 +55,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: DesicinemasProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Desicinemas/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0016\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u001e\u001a\u0004\u0018\u00010 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\u0014\u0010&\u001a\u00020'*\u00020(2\u0006\u0010\u0012\u001a\u00020\nH\u0002J\u000e\u0010)\u001a\u0004\u0018\u00010**\u00020(H\u0002J\u001c\u0010+\u001a\b\u0012\u0004\u0012\u00020*0\u001c2\u0006\u0010,\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010-J\u0018\u0010.\u001a\u0004\u0018\u00010/2\u0006\u00100\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010-JF\u00101\u001a\u00020\u00162\u0006\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\u00162\u0012\u00104\u001a\u000e\u0012\u0004\u0012\u000206\u0012\u0004\u0012\u000207052\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020705H\u0096@¢\u0006\u0002\u0010:R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\f\"\u0004\b\u0011\u0010\u000eR\u001a\u0010\u0012\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\f\"\u0004\b\u0014\u0010\u000eR\u0014\u0010\u0015\u001a\u00020\u0016X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u0014\u0010\u0019\u001a\u00020\nX\u0086D¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\fR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006;"}, d2 = {"Lcom/Desicinemas/DesicinemasProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "proxy", "getProxy", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toHomePageList", "Lcom/lagradost/cloudstream3/HomePageList;", "Lorg/jsoup/nodes/Element;", "toHomePageResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Desicinemas"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nDesicinemasProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesicinemasProvider.kt\ncom/Desicinemas/DesicinemasProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,83:1\n1#2:84\n1#2:96\n1#2:110\n1795#3,10:85\n2068#3:95\n2069#3:97\n1805#3:98\n1795#3,10:99\n2068#3:109\n2069#3:111\n1805#3:112\n*S KotlinDebug\n*F\n+ 1 DesicinemasProvider.kt\ncom/Desicinemas/DesicinemasProvider\n*L\n35#1:96\n47#1:110\n35#1:85,10\n35#1:95\n35#1:97\n35#1:98\n47#1:99,10\n47#1:109\n47#1:111\n47#1:112\n*E\n"})
+@SourceDebugExtension({"SMAP\nDesicinemasProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesicinemasProvider.kt\ncom/Desicinemas/DesicinemasProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,84:1\n1#2:85\n1#2:97\n1#2:111\n1795#3,10:86\n2068#3:96\n2069#3:98\n1805#3:99\n1795#3,10:100\n2068#3:110\n2069#3:112\n1805#3:113\n*S KotlinDebug\n*F\n+ 1 DesicinemasProvider.kt\ncom/Desicinemas/DesicinemasProvider\n*L\n36#1:97\n48#1:111\n36#1:86,10\n36#1:96\n36#1:98\n36#1:99\n48#1:100,10\n48#1:110\n48#1:112\n48#1:113\n*E\n"})
 public class DesicinemasProvider extends MainAPI {
 
     @NotNull
@@ -79,7 +80,7 @@ public class DesicinemasProvider extends MainAPI {
     /* JADX INFO: renamed from: com.Desicinemas.DesicinemasProvider$getMainPage$1 */
     /* JADX INFO: compiled from: DesicinemasProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider", f = "DesicinemasProvider.kt", i = {0, 0, 0, 0}, l = {23}, m = "getMainPage$suspendImpl", n = {"$this", "request", "url", "page"}, nl = {26}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider", f = "DesicinemasProvider.kt", i = {0, 0, 0, 0}, l = {24}, m = "getMainPage$suspendImpl", n = {"$this", "request", "url", "page"}, nl = {27}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -103,7 +104,7 @@ public class DesicinemasProvider extends MainAPI {
     /* JADX INFO: renamed from: com.Desicinemas.DesicinemasProvider$load$1 */
     /* JADX INFO: compiled from: DesicinemasProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider", f = "DesicinemasProvider.kt", i = {0, 0, 1, 1, 1, 1, 1}, l = {50, 54}, m = "load$suspendImpl", n = {"$this", "url", "$this", "url", "doc", "title", "posterUrl"}, nl = {51, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
+    @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider", f = "DesicinemasProvider.kt", i = {0, 0, 1, 1, 1, 1, 1}, l = {51, 55}, m = "load$suspendImpl", n = {"$this", "url", "$this", "url", "doc", "title", "posterUrl"}, nl = {52, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -128,7 +129,7 @@ public class DesicinemasProvider extends MainAPI {
     /* JADX INFO: renamed from: com.Desicinemas.DesicinemasProvider$loadLinks$1 */
     /* JADX INFO: compiled from: DesicinemasProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider", f = "DesicinemasProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {67, 67}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "isCasting", "$this", "data", "subtitleCallback", "callback", "isCasting"}, nl = {67, 80}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider", f = "DesicinemasProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {68, 68}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "isCasting", "$this", "data", "subtitleCallback", "callback", "isCasting"}, nl = {68, 81}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00101 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -153,7 +154,7 @@ public class DesicinemasProvider extends MainAPI {
     /* JADX INFO: renamed from: com.Desicinemas.DesicinemasProvider$search$1 */
     /* JADX INFO: compiled from: DesicinemasProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider", f = "DesicinemasProvider.kt", i = {0, 0}, l = {46}, m = "search$suspendImpl", n = {"$this", "query"}, nl = {47}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider", f = "DesicinemasProvider.kt", i = {0, 0}, l = {47}, m = "search$suspendImpl", n = {"$this", "query"}, nl = {48}, s = {"L$0", "L$1"}, v = 2)
     static final class C00121 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -260,6 +261,7 @@ public class DesicinemasProvider extends MainAPI {
         switch (c00071.label) {
             case 0:
                 ResultKt.throwOnFailure(obj2);
+                DonationManager.INSTANCE.checkAndShow(desicinemasProvider.getName());
                 String data = (i == 1 || Intrinsics.areEqual(mainPageRequest.getName(), "Home")) ? mainPageRequest.getData() : mainPageRequest.getData() + "page/" + i + '/';
                 Requests app = UtilsKt.getApp();
                 String mainUrl = desicinemasProvider.getMainUrl();
@@ -486,7 +488,7 @@ public class DesicinemasProvider extends MainAPI {
     /* JADX INFO: compiled from: DesicinemasProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider$load$3", f = "DesicinemasProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nDesicinemasProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesicinemasProvider.kt\ncom/Desicinemas/DesicinemasProvider$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,83:1\n1739#2:84\n1814#2,3:85\n*S KotlinDebug\n*F\n+ 1 DesicinemasProvider.kt\ncom/Desicinemas/DesicinemasProvider$load$3\n*L\n57#1:84\n57#1:85,3\n*E\n"})
+    @SourceDebugExtension({"SMAP\nDesicinemasProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesicinemasProvider.kt\ncom/Desicinemas/DesicinemasProvider$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,84:1\n1739#2:85\n1814#2,3:86\n*S KotlinDebug\n*F\n+ 1 DesicinemasProvider.kt\ncom/Desicinemas/DesicinemasProvider$load$3\n*L\n58#1:85\n58#1:86,3\n*E\n"})
     static final class C00093 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ Document $doc;
         final /* synthetic */ String $posterUrl;
@@ -635,7 +637,7 @@ public class DesicinemasProvider extends MainAPI {
     /* JADX INFO: renamed from: com.Desicinemas.DesicinemasProvider$loadLinks$2 */
     /* JADX INFO: compiled from: DesicinemasProvider.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider$loadLinks$2", f = "DesicinemasProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {76, 78}, m = "invokeSuspend", n = {"it", "name", "link", "headers", "it", "name", "link", "headers", "src", "iframe"}, nl = {77, 79}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    @DebugMetadata(c = "com.Desicinemas.DesicinemasProvider$loadLinks$2", f = "DesicinemasProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {77, 79}, m = "invokeSuspend", n = {"it", "name", "link", "headers", "it", "name", "link", "headers", "src", "iframe"}, nl = {78, 80}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
     static final class C00112 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

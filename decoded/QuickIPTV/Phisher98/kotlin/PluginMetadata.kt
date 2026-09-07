@@ -4,7 +4,7 @@ package nepali.stream.decoded.quickiptv
 object PluginMetadata {
     const val name: String = "QuickIPTV"
     const val originalPluginClass: String = "com.phisher98.QuickIPTVPlugin"
-    const val version: Int = 6
+    const val version: Int = 8
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

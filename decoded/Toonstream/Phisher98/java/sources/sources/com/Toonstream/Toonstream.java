@@ -24,6 +24,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -58,7 +59,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Toonstream.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Toonstream/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\f\u0010)\u001a\u00020'*\u00020(H\u0002J\u001e\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\"H\u0096@¢\u0006\u0002\u0010-J\u0016\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00101JF\u00102\u001a\u00020\u000e2\u0006\u00103\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u000e2\u0012\u00105\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u000208062\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020806H\u0096@¢\u0006\u0002\u0010;R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006<"}, d2 = {"Lcom/Toonstream/Toonstream;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "toSearch", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Toonstream"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nToonstream.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Toonstream.kt\ncom/Toonstream/Toonstream\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,249:1\n1795#2,10:250\n2068#2:260\n2069#2:262\n1805#2:263\n1795#2,10:264\n2068#2:274\n2069#2:276\n1805#2:277\n1739#2:278\n1814#2,3:279\n2068#2:282\n2068#2:283\n2069#2:285\n2069#2:286\n1#3:261\n1#3:275\n1#3:284\n*S KotlinDebug\n*F\n+ 1 Toonstream.kt\ncom/Toonstream/Toonstream\n*L\n31#1:250,10\n31#1:260\n31#1:262\n31#1:263\n68#1:264,10\n68#1:274\n68#1:276\n68#1:277\n79#1:278\n79#1:279,3\n89#1:282\n94#1:283\n94#1:285\n89#1:286\n31#1:261\n68#1:275\n*E\n"})
+@SourceDebugExtension({"SMAP\nToonstream.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Toonstream.kt\ncom/Toonstream/Toonstream\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,250:1\n1795#2,10:251\n2068#2:261\n2069#2:263\n1805#2:264\n1795#2,10:265\n2068#2:275\n2069#2:277\n1805#2:278\n1739#2:279\n1814#2,3:280\n2068#2:283\n2068#2:284\n2069#2:286\n2069#2:287\n1#3:262\n1#3:276\n1#3:285\n*S KotlinDebug\n*F\n+ 1 Toonstream.kt\ncom/Toonstream/Toonstream\n*L\n32#1:251,10\n32#1:261\n32#1:263\n32#1:264\n69#1:265,10\n69#1:275\n69#1:277\n69#1:278\n80#1:279\n80#1:280,3\n90#1:283\n95#1:284\n95#1:286\n90#1:287\n32#1:262\n69#1:276\n*E\n"})
 public final class Toonstream extends MainAPI {
 
     @NotNull
@@ -81,7 +82,7 @@ public final class Toonstream extends MainAPI {
     /* JADX INFO: renamed from: com.Toonstream.Toonstream$getMainPage$1 */
     /* JADX INFO: compiled from: Toonstream.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Toonstream.Toonstream", f = "Toonstream.kt", i = {0, 0}, l = {30}, m = "getMainPage", n = {"request", "page"}, nl = {31}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Toonstream.Toonstream", f = "Toonstream.kt", i = {0, 0}, l = {31}, m = "getMainPage", n = {"request", "page"}, nl = {32}, s = {"L$0", "I$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -103,7 +104,7 @@ public final class Toonstream extends MainAPI {
     /* JADX INFO: renamed from: com.Toonstream.Toonstream$load$1 */
     /* JADX INFO: compiled from: Toonstream.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Toonstream.Toonstream", f = "Toonstream.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {73, 92, 127, 136}, m = "load", n = {"url", "url", "document", "title", "posterraw", "poster", "bgposter", "description", "cast", "duration", "tvtag", "episodes", "$this$forEach$iv", "element$iv", "seasonItem", "seasonUrl", "url", "document", "title", "posterraw", "poster", "bgposter", "description", "cast", "duration", "tvtag", "episodes", "url", "document", "title", "posterraw", "poster", "bgposter", "description", "cast", "duration", "tvtag"}, nl = {74, 94, 136, 85}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"}, v = 2)
+    @DebugMetadata(c = "com.Toonstream.Toonstream", f = "Toonstream.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {74, 93, 128, 137}, m = "load", n = {"url", "url", "document", "title", "posterraw", "poster", "bgposter", "description", "cast", "duration", "tvtag", "episodes", "$this$forEach$iv", "element$iv", "seasonItem", "seasonUrl", "url", "document", "title", "posterraw", "poster", "bgposter", "description", "cast", "duration", "tvtag", "episodes", "url", "document", "title", "posterraw", "poster", "bgposter", "description", "cast", "duration", "tvtag"}, nl = {75, 95, 137, 86}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -139,7 +140,7 @@ public final class Toonstream extends MainAPI {
     /* JADX INFO: renamed from: com.Toonstream.Toonstream$loadLinks$1 */
     /* JADX INFO: compiled from: Toonstream.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Toonstream.Toonstream", f = "Toonstream.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {152, 153}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {153, 181}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Toonstream.Toonstream", f = "Toonstream.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {153, 154}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {154, 182}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -164,7 +165,7 @@ public final class Toonstream extends MainAPI {
     /* JADX INFO: renamed from: com.Toonstream.Toonstream$search$1 */
     /* JADX INFO: compiled from: Toonstream.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Toonstream.Toonstream", f = "Toonstream.kt", i = {0, 0}, l = {67}, m = "search", n = {"query", "page"}, nl = {68}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Toonstream.Toonstream", f = "Toonstream.kt", i = {0, 0}, l = {68}, m = "search", n = {"query", "page"}, nl = {69}, s = {"L$0", "I$0"}, v = 2)
     static final class C00101 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -250,6 +251,7 @@ public final class Toonstream extends MainAPI {
         switch (c00041.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + request.getData() + "?type=all&page=" + page2;
                 c00041.L$0 = request;
@@ -622,7 +624,7 @@ public final class Toonstream extends MainAPI {
     /* JADX INFO: renamed from: com.Toonstream.Toonstream$loadLinks$2 */
     /* JADX INFO: compiled from: Toonstream.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "iframe", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Toonstream.Toonstream$loadLinks$2", f = "Toonstream.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {160, 175}, m = "invokeSuspend", n = {"iframe", "embedPath", "embedUrl", "iframe", "embedPath", "embedUrl", "embedDoc", "innerIframe", "finalUrl"}, nl = {161, 176}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    @DebugMetadata(c = "com.Toonstream.Toonstream$loadLinks$2", f = "Toonstream.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {161, 176}, m = "invokeSuspend", n = {"iframe", "embedPath", "embedUrl", "iframe", "embedPath", "embedUrl", "embedDoc", "innerIframe", "finalUrl"}, nl = {162, 177}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
     static final class C00092 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

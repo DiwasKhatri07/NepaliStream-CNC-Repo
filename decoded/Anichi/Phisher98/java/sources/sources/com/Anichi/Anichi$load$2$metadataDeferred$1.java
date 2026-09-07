@@ -20,7 +20,7 @@ import okhttp3.Interceptor;
 /* JADX INFO: compiled from: Anichi.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Anichi/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/Anichi/MetaAnimeData;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.Anichi.Anichi$load$2$metadataDeferred$1", f = "Anichi.kt", i = {0}, l = {252}, m = "invokeSuspend", n = {"malId"}, nl = {251}, s = {"I$0"}, v = 2)
+@DebugMetadata(c = "com.Anichi.Anichi$load$2$metadataDeferred$1", f = "Anichi.kt", i = {0}, l = {253}, m = "invokeSuspend", n = {"malId"}, nl = {252}, s = {"I$0"}, v = 2)
 final class Anichi$load$2$metadataDeferred$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super MetaAnimeData>, Object> {
     final /* synthetic */ AnichiParser.AniMedia $trackers;
     int I$0;

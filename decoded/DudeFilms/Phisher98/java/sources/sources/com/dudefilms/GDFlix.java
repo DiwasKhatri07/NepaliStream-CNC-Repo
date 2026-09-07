@@ -119,7 +119,7 @@ public final class GDFlix extends ExtractorApi {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:93:0x0517 -> B:94:0x0532). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:730)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
@@ -641,7 +641,7 @@ public final class GDFlix extends ExtractorApi {
                             this.L$1 = SpillingKt.nullOutSpilledVariable(sourceurl);
                             this.L$2 = function2;
                             this.label = 1;
-                            objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("GDFlix [Index]", "GDFlix [Index] [" + this.$fileSize + ']', sourceurl, (ExtractorLinkType) null, new C00171(this.this$0, this.$fileName, null), (Continuation) this, 8, (Object) null);
+                            objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("GDFlix [Index]", "GDFlix [Index] [" + this.$fileSize + ']', sourceurl, (ExtractorLinkType) null, new C00201(this.this$0, this.$fileName, null), (Continuation) this, 8, (Object) null);
                             if (objNewExtractorLink$default == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -664,23 +664,23 @@ public final class GDFlix extends ExtractorApi {
                 /* JADX INFO: compiled from: Extractors.kt */
                 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
                 @DebugMetadata(c = "com.dudefilms.GDFlix$getUrl$2$2$1$1", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-                static final class C00171 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+                static final class C00201 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
                     final /* synthetic */ String $fileName;
                     private /* synthetic */ Object L$0;
                     int label;
                     final /* synthetic */ GDFlix this$0;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    C00171(GDFlix gDFlix, String str, Continuation<? super C00171> continuation) {
+                    C00201(GDFlix gDFlix, String str, Continuation<? super C00201> continuation) {
                         super(2, continuation);
                         this.this$0 = gDFlix;
                         this.$fileName = str;
                     }
 
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        Continuation<Unit> c00171 = new C00171(this.this$0, this.$fileName, continuation);
-                        c00171.L$0 = obj;
-                        return c00171;
+                        Continuation<Unit> c00201 = new C00201(this.this$0, this.$fileName, continuation);
+                        c00201.L$0 = obj;
+                        return c00201;
                     }
 
                     public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

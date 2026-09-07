@@ -22,6 +22,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -62,7 +63,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Animeav1.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Animeav1/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010 \u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J\f\u0010(\u001a\u00020)*\u00020*H\u0002J\u001c\u0010+\u001a\b\u0012\u0004\u0012\u00020)0\u001e2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-J\f\u0010.\u001a\u00020\u001a*\u00020\u0005H\u0002J\u0016\u0010/\u001a\u0002002\u0006\u00101\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-JF\u00102\u001a\u00020\u000e2\u0006\u00103\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u000e2\u0012\u00105\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u000208062\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020806H\u0096@¢\u0006\u0002\u0010;R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0014\u0010\u0016\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0010R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!¨\u0006<"}, d2 = {"Lcom/Animeav1/Animeav1;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toTvType", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Animeav1"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAnimeav1.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Animeav1.kt\ncom/Animeav1/Animeav1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,237:1\n1795#2,10:238\n2068#2:248\n2069#2:250\n1805#2:251\n1795#2,10:252\n2068#2:262\n2069#2:264\n1805#2:265\n1739#2:266\n1814#2,3:267\n296#2,2:270\n1#3:249\n1#3:263\n1#3:272\n*S KotlinDebug\n*F\n+ 1 Animeav1.kt\ncom/Animeav1/Animeav1\n*L\n52#1:238,10\n52#1:248\n52#1:250\n52#1:251\n74#1:252,10\n74#1:262\n74#1:264\n74#1:265\n94#1:266\n94#1:267,3\n153#1:270,2\n52#1:249\n74#1:263\n*E\n"})
+@SourceDebugExtension({"SMAP\nAnimeav1.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Animeav1.kt\ncom/Animeav1/Animeav1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,238:1\n1795#2,10:239\n2068#2:249\n2069#2:251\n1805#2:252\n1795#2,10:253\n2068#2:263\n2069#2:265\n1805#2:266\n1739#2:267\n1814#2,3:268\n296#2,2:271\n1#3:250\n1#3:264\n1#3:273\n*S KotlinDebug\n*F\n+ 1 Animeav1.kt\ncom/Animeav1/Animeav1\n*L\n53#1:239,10\n53#1:249\n53#1:251\n53#1:252\n75#1:253,10\n75#1:263\n75#1:265\n75#1:266\n95#1:267\n95#1:268,3\n154#1:271,2\n53#1:250\n75#1:264\n*E\n"})
 public final class Animeav1 extends MainAPI {
 
     @NotNull
@@ -86,7 +87,7 @@ public final class Animeav1 extends MainAPI {
     /* JADX INFO: renamed from: com.Animeav1.Animeav1$getMainPage$1 */
     /* JADX INFO: compiled from: Animeav1.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Animeav1.Animeav1", f = "Animeav1.kt", i = {0, 0}, l = {51}, m = "getMainPage", n = {"request", "page"}, nl = {52}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Animeav1.Animeav1", f = "Animeav1.kt", i = {0, 0}, l = {52}, m = "getMainPage", n = {"request", "page"}, nl = {53}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -108,7 +109,7 @@ public final class Animeav1 extends MainAPI {
     /* JADX INFO: renamed from: com.Animeav1.Animeav1$load$1 */
     /* JADX INFO: compiled from: Animeav1.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Animeav1.Animeav1", f = "Animeav1.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {89, 126, 134}, m = "load", n = {"url", "url", "document", "title", "poster", "description", "type", "tags", "year", "score", "href", "episodes", "mediaId", "scriptContent", "episodeZeroRegex", "regex", "match", "url", "document", "title", "poster", "description", "type", "tags", "year", "score", "href"}, nl = {90, 134, 99}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"}, v = 2)
+    @DebugMetadata(c = "com.Animeav1.Animeav1", f = "Animeav1.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {90, 127, 135}, m = "load", n = {"url", "url", "document", "title", "poster", "description", "type", "tags", "year", "score", "href", "episodes", "mediaId", "scriptContent", "episodeZeroRegex", "regex", "match", "url", "document", "title", "poster", "description", "type", "tags", "year", "score", "href"}, nl = {91, 135, 100}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -144,7 +145,7 @@ public final class Animeav1 extends MainAPI {
     /* JADX INFO: renamed from: com.Animeav1.Animeav1$loadLinks$1 */
     /* JADX INFO: compiled from: Animeav1.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Animeav1.Animeav1", f = "Animeav1.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {150, 186, 196}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "scriptHtml", "embedsPattern", "embedsMatch", "embedsJson", "embedsObject", "subEmbeds", "dubEmbeds", "isCasting", "data", "subtitleCallback", "callback", "document", "scriptHtml", "embedsPattern", "embedsMatch", "embedsJson", "embedsObject", "subEmbeds", "dubEmbeds", "isCasting"}, nl = {154, 196, 206}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Animeav1.Animeav1", f = "Animeav1.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {151, 187, 197}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "scriptHtml", "embedsPattern", "embedsMatch", "embedsJson", "embedsObject", "subEmbeds", "dubEmbeds", "isCasting", "data", "subtitleCallback", "callback", "document", "scriptHtml", "embedsPattern", "embedsMatch", "embedsJson", "embedsObject", "subEmbeds", "dubEmbeds", "isCasting"}, nl = {155, 197, 207}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -176,7 +177,7 @@ public final class Animeav1 extends MainAPI {
     /* JADX INFO: renamed from: com.Animeav1.Animeav1$search$1 */
     /* JADX INFO: compiled from: Animeav1.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Animeav1.Animeav1", f = "Animeav1.kt", i = {0}, l = {73}, m = "search", n = {"query"}, nl = {74}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Animeav1.Animeav1", f = "Animeav1.kt", i = {0}, l = {74}, m = "search", n = {"query"}, nl = {75}, s = {"L$0"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -265,6 +266,7 @@ public final class Animeav1 extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + request.getData() + "&page=" + page2;
                 c00001.L$0 = request;
@@ -1259,7 +1261,7 @@ public final class Animeav1 extends MainAPI {
     /* JADX INFO: renamed from: com.Animeav1.Animeav1$loadLinks$2 */
     /* JADX INFO: compiled from: Animeav1.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00040\u0003H\n"}, d2 = {"<anonymous>", "", "<destruct>", "Lkotlin/Pair;", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Animeav1.Animeav1$loadLinks$2", f = "Animeav1.kt", i = {0, 0, 0}, l = {187}, m = "invokeSuspend", n = {"<destruct>", "server", "url"}, nl = {194}, s = {"L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.Animeav1.Animeav1$loadLinks$2", f = "Animeav1.kt", i = {0, 0, 0}, l = {188}, m = "invokeSuspend", n = {"<destruct>", "server", "url"}, nl = {195}, s = {"L$0", "L$1", "L$2"}, v = 2)
     static final class C00052 extends SuspendLambda implements Function2<Pair<? extends String, ? extends String>, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -1314,7 +1316,7 @@ public final class Animeav1 extends MainAPI {
     /* JADX INFO: renamed from: com.Animeav1.Animeav1$loadLinks$3 */
     /* JADX INFO: compiled from: Animeav1.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00040\u0003H\n"}, d2 = {"<anonymous>", "", "<destruct>", "Lkotlin/Pair;", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Animeav1.Animeav1$loadLinks$3", f = "Animeav1.kt", i = {0, 0, 0}, l = {197}, m = "invokeSuspend", n = {"<destruct>", "server", "url"}, nl = {204}, s = {"L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.Animeav1.Animeav1$loadLinks$3", f = "Animeav1.kt", i = {0, 0, 0}, l = {198}, m = "invokeSuspend", n = {"<destruct>", "server", "url"}, nl = {205}, s = {"L$0", "L$1", "L$2"}, v = 2)
     static final class C00063 extends SuspendLambda implements Function2<Pair<? extends String, ? extends String>, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

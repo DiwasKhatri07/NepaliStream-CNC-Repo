@@ -26,7 +26,7 @@ public final class PiratexplayExtractor extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.piratexplay.PiratexplayExtractor", f = "Extractor.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {318, 332}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "document", "serverLinks", "links", "$this$forEach$iv", "element$iv", "link"}, nl = {320, 333}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10"}, v = 2)
-    static final class C00151 extends ContinuationImpl {
+    static final class C00181 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -41,7 +41,7 @@ public final class PiratexplayExtractor extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00151(Continuation<? super C00151> continuation) {
+        C00181(Continuation<? super C00181> continuation) {
             super(continuation);
         }
 
@@ -75,8 +75,7 @@ public final class PiratexplayExtractor extends ExtractorApi {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x0285 -> B:61:0x02b6). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.nodes.BlockNode.isDominator(BlockNode.java:178)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:746)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable

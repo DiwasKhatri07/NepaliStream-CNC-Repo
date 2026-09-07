@@ -184,17 +184,17 @@ public final class SettingsFragment extends BottomSheetDialogFragment {
         webView.getSettings().setDomStorageEnabled(true);
         webView.getSettings().setUserAgentString("Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Mobile Safari/537.36");
         CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true);
-        webView.setWebViewClient(new C00231(webView));
+        webView.setWebViewClient(new C00261(webView));
     }
 
     /* JADX INFO: renamed from: com.phisher98.settings.SettingsFragment$setupWebView$1 */
     /* JADX INFO: compiled from: SettingsFragment.kt */
     @Metadata(d1 = {"\u0000\u001d\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000*\u0001\u0000\b\n\u0018\u00002\u00020\u0001J\u001c\u0010\u0002\u001a\u00020\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052\b\u0010\u0006\u001a\u0004\u0018\u00010\u0007H\u0016¨\u0006\b"}, d2 = {"com/phisher98/settings/SettingsFragment$setupWebView$1", "Landroid/webkit/WebViewClient;", "onPageFinished", "", "view", "Landroid/webkit/WebView;", "url", "", "SuperStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
     @SourceDebugExtension({"SMAP\nSettingsFragment.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SettingsFragment.kt\ncom/phisher98/settings/SettingsFragment$setupWebView$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,191:1\n1739#2:192\n1814#2,3:193\n1#3:196\n*S KotlinDebug\n*F\n+ 1 SettingsFragment.kt\ncom/phisher98/settings/SettingsFragment$setupWebView$1\n*L\n152#1:192\n152#1:193,3\n*E\n"})
-    public static final class C00231 extends WebViewClient {
+    public static final class C00261 extends WebViewClient {
         final /* synthetic */ WebView $webView;
 
-        C00231(WebView $webView) {
+        C00261(WebView $webView) {
             this.$webView = $webView;
         }
 
@@ -209,7 +209,7 @@ public final class SettingsFragment extends BottomSheetDialogFragment {
                 view.evaluateJavascript("(function() { return document.body.scrollHeight; })();", new ValueCallback() { // from class: com.phisher98.settings.SettingsFragment$setupWebView$1$$ExternalSyntheticLambda0
                     @Override // android.webkit.ValueCallback
                     public final void onReceiveValue(Object obj) {
-                        SettingsFragment.C00231.onPageFinished$lambda$0(settingsFragment, view, (String) obj);
+                        SettingsFragment.C00261.onPageFinished$lambda$0(settingsFragment, view, (String) obj);
                     }
                 });
             }
@@ -250,7 +250,7 @@ public final class SettingsFragment extends BottomSheetDialogFragment {
                 activity.runOnUiThread(new Runnable() { // from class: com.phisher98.settings.SettingsFragment$setupWebView$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SettingsFragment.C00231.onPageFinished$lambda$3(settingsFragment2, finalToken, webView);
+                        SettingsFragment.C00261.onPageFinished$lambda$3(settingsFragment2, finalToken, webView);
                     }
                 });
             }

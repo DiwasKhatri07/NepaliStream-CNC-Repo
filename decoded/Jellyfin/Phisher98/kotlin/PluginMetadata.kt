@@ -4,7 +4,7 @@ package nepali.stream.decoded.jellyfin
 object PluginMetadata {
     const val name: String = "Jellyfin"
     const val originalPluginClass: String = "com.phisher98.JellyfinPlugin"
-    const val version: Int = 4
+    const val version: Int = 6
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

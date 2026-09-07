@@ -4,7 +4,7 @@ package nepali.stream.decoded.showbox
 object PluginMetadata {
     const val name: String = "ShowBox"
     const val originalPluginClass: String = "com.phisher98.SuperStreamPlugin"
-    const val version: Int = 6
+    const val version: Int = 8
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

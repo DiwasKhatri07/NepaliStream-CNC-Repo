@@ -23,6 +23,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -56,7 +57,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Pencurimovie.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Pencurimovie/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\u001c\u0010)\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0016\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+JF\u0010/\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u000e2\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0096@¢\u0006\u0002\u00108R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u00069"}, d2 = {"Lcom/Pencurimovie/Pencurimovie;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Pencurimovie"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nPencurimovie.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pencurimovie.kt\ncom/Pencurimovie/Pencurimovie\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,138:1\n1795#2,10:139\n2068#2:149\n2069#2:151\n1805#2:152\n1795#2,10:153\n2068#2:163\n2069#2:165\n1805#2:166\n1739#2:167\n1814#2,3:168\n1739#2:171\n1814#2,3:172\n1795#2,10:175\n2068#2:185\n2069#2:187\n1805#2:188\n1#3:150\n1#3:164\n1#3:186\n*S KotlinDebug\n*F\n+ 1 Pencurimovie.kt\ncom/Pencurimovie/Pencurimovie\n*L\n33#1:139,10\n33#1:149\n33#1:151\n33#1:152\n59#1:153,10\n59#1:163\n59#1:165\n59#1:166\n71#1:167\n71#1:168,3\n73#1:171\n73#1:172,3\n76#1:175,10\n76#1:185\n76#1:187\n76#1:188\n33#1:150\n59#1:164\n76#1:186\n*E\n"})
+@SourceDebugExtension({"SMAP\nPencurimovie.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pencurimovie.kt\ncom/Pencurimovie/Pencurimovie\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,139:1\n1795#2,10:140\n2068#2:150\n2069#2:152\n1805#2:153\n1795#2,10:154\n2068#2:164\n2069#2:166\n1805#2:167\n1739#2:168\n1814#2,3:169\n1739#2:172\n1814#2,3:173\n1795#2,10:176\n2068#2:186\n2069#2:188\n1805#2:189\n1#3:151\n1#3:165\n1#3:187\n*S KotlinDebug\n*F\n+ 1 Pencurimovie.kt\ncom/Pencurimovie/Pencurimovie\n*L\n34#1:140,10\n34#1:150\n34#1:152\n34#1:153\n60#1:154,10\n60#1:164\n60#1:166\n60#1:167\n72#1:168\n72#1:169,3\n74#1:172\n74#1:173,3\n77#1:176,10\n77#1:186\n77#1:188\n77#1:189\n34#1:151\n60#1:165\n77#1:187\n*E\n"})
 public final class Pencurimovie extends MainAPI {
 
     @NotNull
@@ -79,7 +80,7 @@ public final class Pencurimovie extends MainAPI {
     /* JADX INFO: renamed from: com.Pencurimovie.Pencurimovie$getMainPage$1 */
     /* JADX INFO: compiled from: Pencurimovie.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie", f = "Pencurimovie.kt", i = {0, 0}, l = {32}, m = "getMainPage", n = {"request", "page"}, nl = {33}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie", f = "Pencurimovie.kt", i = {0, 0}, l = {33}, m = "getMainPage", n = {"request", "page"}, nl = {34}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -101,7 +102,7 @@ public final class Pencurimovie extends MainAPI {
     /* JADX INFO: renamed from: com.Pencurimovie.Pencurimovie$load$1 */
     /* JADX INFO: compiled from: Pencurimovie.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie", f = "Pencurimovie.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {64, 81, 101, 111}, m = "load", n = {"url", "url", "document", "title", "poster", "description", "tvtag", "trailer", "genre", "actors", "year", "recommendation", "episodes", "url", "document", "title", "poster", "description", "tvtag", "trailer", "genre", "actors", "year", "recommendation", "episodes", "url", "document", "title", "poster", "description", "tvtag", "trailer", "genre", "actors", "year", "recommendation"}, nl = {66, 101, 111, 79}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10"}, v = 2)
+    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie", f = "Pencurimovie.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {65, 82, 102, 112}, m = "load", n = {"url", "url", "document", "title", "poster", "description", "tvtag", "trailer", "genre", "actors", "year", "recommendation", "episodes", "url", "document", "title", "poster", "description", "tvtag", "trailer", "genre", "actors", "year", "recommendation", "episodes", "url", "document", "title", "poster", "description", "tvtag", "trailer", "genre", "actors", "year", "recommendation"}, nl = {67, 102, 112, 80}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -133,7 +134,7 @@ public final class Pencurimovie extends MainAPI {
     /* JADX INFO: renamed from: com.Pencurimovie.Pencurimovie$loadLinks$1 */
     /* JADX INFO: compiled from: Pencurimovie.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie", f = "Pencurimovie.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {129, 130}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {130, 134}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie", f = "Pencurimovie.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {130, 131}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {131, 135}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -158,7 +159,7 @@ public final class Pencurimovie extends MainAPI {
     /* JADX INFO: renamed from: com.Pencurimovie.Pencurimovie$search$1 */
     /* JADX INFO: compiled from: Pencurimovie.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie", f = "Pencurimovie.kt", i = {0}, l = {58}, m = "search", n = {"query"}, nl = {59}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie", f = "Pencurimovie.kt", i = {0}, l = {59}, m = "search", n = {"query"}, nl = {60}, s = {"L$0"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -243,6 +244,7 @@ public final class Pencurimovie extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + request.getData() + "/page/" + page2;
                 c00001.L$0 = request;
@@ -787,7 +789,7 @@ public final class Pencurimovie extends MainAPI {
     /* JADX INFO: compiled from: Pencurimovie.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "info", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.Pencurimovie.Pencurimovie$load$2", f = "Pencurimovie.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nPencurimovie.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pencurimovie.kt\ncom/Pencurimovie/Pencurimovie$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,138:1\n2068#2,2:139\n*S KotlinDebug\n*F\n+ 1 Pencurimovie.kt\ncom/Pencurimovie/Pencurimovie$load$2\n*L\n83#1:139,2\n*E\n"})
+    @SourceDebugExtension({"SMAP\nPencurimovie.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pencurimovie.kt\ncom/Pencurimovie/Pencurimovie$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,139:1\n2068#2,2:140\n*S KotlinDebug\n*F\n+ 1 Pencurimovie.kt\ncom/Pencurimovie/Pencurimovie$load$2\n*L\n84#1:140,2\n*E\n"})
     static final class C00022 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<Episode> $episodes;
         /* synthetic */ Object L$0;
@@ -856,7 +858,7 @@ public final class Pencurimovie extends MainAPI {
     /* JADX INFO: renamed from: com.Pencurimovie.Pencurimovie$load$3 */
     /* JADX INFO: compiled from: Pencurimovie.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie$load$3", f = "Pencurimovie.kt", i = {0}, l = {106}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {107}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie$load$3", f = "Pencurimovie.kt", i = {0}, l = {107}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {108}, s = {"L$0"}, v = 2)
     static final class C00033 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<String> $actors;
         final /* synthetic */ String $description;
@@ -921,7 +923,7 @@ public final class Pencurimovie extends MainAPI {
     /* JADX INFO: renamed from: com.Pencurimovie.Pencurimovie$load$4 */
     /* JADX INFO: compiled from: Pencurimovie.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie$load$4", f = "Pencurimovie.kt", i = {0}, l = {116}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {117}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie$load$4", f = "Pencurimovie.kt", i = {0}, l = {117}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {118}, s = {"L$0"}, v = 2)
     static final class C00044 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<String> $actors;
         final /* synthetic */ String $description;
@@ -1078,7 +1080,7 @@ public final class Pencurimovie extends MainAPI {
     /* JADX INFO: renamed from: com.Pencurimovie.Pencurimovie$loadLinks$2 */
     /* JADX INFO: compiled from: Pencurimovie.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie$loadLinks$2", f = "Pencurimovie.kt", i = {0, 0}, l = {132}, m = "invokeSuspend", n = {"it", "href"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.Pencurimovie.Pencurimovie$loadLinks$2", f = "Pencurimovie.kt", i = {0, 0}, l = {133}, m = "invokeSuspend", n = {"it", "href"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
     static final class C00062 extends SuspendLambda implements Function2<Element, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

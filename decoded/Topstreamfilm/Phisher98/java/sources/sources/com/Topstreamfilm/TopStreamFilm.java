@@ -23,6 +23,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -56,7 +57,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Topstreamfilm.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Topstreamfilm/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\u000e\u0010&\u001a\u0004\u0018\u00010'*\u00020(H\u0002J\u001c\u0010)\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0018\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+JF\u0010/\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u000e2\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0096@¢\u0006\u0002\u00108J\u0014\u00109\u001a\b\u0012\u0004\u0012\u00020\u00050\u001c2\u0006\u0010:\u001a\u00020\u0005R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006;"}, d2 = {"Lcom/Topstreamfilm/TopStreamFilm;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "extractUrlsWithMapNotNull", "text", "Topstreamfilm"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nTopstreamfilm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Topstreamfilm.kt\ncom/Topstreamfilm/TopStreamFilm\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,141:1\n1795#2,10:142\n2068#2:152\n2069#2:154\n1805#2:155\n1795#2,10:156\n2068#2:166\n2069#2:168\n1805#2:169\n1739#2:170\n1814#2,3:171\n1795#2,10:174\n2068#2:184\n2069#2:186\n1805#2:187\n1#3:153\n1#3:167\n1#3:185\n*S KotlinDebug\n*F\n+ 1 Topstreamfilm.kt\ncom/Topstreamfilm/TopStreamFilm\n*L\n33#1:142,10\n33#1:152\n33#1:154\n33#1:155\n54#1:156,10\n54#1:166\n54#1:168\n54#1:169\n65#1:170\n65#1:171,3\n135#1:174,10\n135#1:184\n135#1:186\n135#1:187\n33#1:153\n54#1:167\n135#1:185\n*E\n"})
+@SourceDebugExtension({"SMAP\nTopstreamfilm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Topstreamfilm.kt\ncom/Topstreamfilm/TopStreamFilm\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,142:1\n1795#2,10:143\n2068#2:153\n2069#2:155\n1805#2:156\n1795#2,10:157\n2068#2:167\n2069#2:169\n1805#2:170\n1739#2:171\n1814#2,3:172\n1795#2,10:175\n2068#2:185\n2069#2:187\n1805#2:188\n1#3:154\n1#3:168\n1#3:186\n*S KotlinDebug\n*F\n+ 1 Topstreamfilm.kt\ncom/Topstreamfilm/TopStreamFilm\n*L\n34#1:143,10\n34#1:153\n34#1:155\n34#1:156\n55#1:157,10\n55#1:167\n55#1:169\n55#1:170\n66#1:171\n66#1:172,3\n136#1:175,10\n136#1:185\n136#1:187\n136#1:188\n34#1:154\n55#1:168\n136#1:186\n*E\n"})
 public final class TopStreamFilm extends MainAPI {
 
     @NotNull
@@ -79,7 +80,7 @@ public final class TopStreamFilm extends MainAPI {
     /* JADX INFO: renamed from: com.Topstreamfilm.TopStreamFilm$getMainPage$1 */
     /* JADX INFO: compiled from: Topstreamfilm.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm", f = "Topstreamfilm.kt", i = {0, 0, 0}, l = {32}, m = "getMainPage", n = {"request", "url", "page"}, nl = {33}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm", f = "Topstreamfilm.kt", i = {0, 0, 0}, l = {33}, m = "getMainPage", n = {"request", "url", "page"}, nl = {34}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -102,7 +103,7 @@ public final class TopStreamFilm extends MainAPI {
     /* JADX INFO: renamed from: com.Topstreamfilm.TopStreamFilm$load$1 */
     /* JADX INFO: compiled from: Topstreamfilm.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm", f = "Topstreamfilm.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {60, 72, 88, 96}, m = "load", n = {"url", "url", "document", "title", "plot", "poster", "year", "tags", "rating", "checkSeason", "type", "episodes", "url", "document", "title", "plot", "poster", "year", "tags", "rating", "checkSeason", "type", "episodes", "url", "document", "title", "plot", "poster", "year", "tags", "rating", "checkSeason", "type"}, nl = {61, 88, 96, 69}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"}, v = 2)
+    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm", f = "Topstreamfilm.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {61, 73, 89, 97}, m = "load", n = {"url", "url", "document", "title", "plot", "poster", "year", "tags", "rating", "checkSeason", "type", "episodes", "url", "document", "title", "plot", "poster", "year", "tags", "rating", "checkSeason", "type", "episodes", "url", "document", "title", "plot", "poster", "year", "tags", "rating", "checkSeason", "type"}, nl = {62, 89, 97, 70}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -133,7 +134,7 @@ public final class TopStreamFilm extends MainAPI {
     /* JADX INFO: renamed from: com.Topstreamfilm.TopStreamFilm$loadLinks$1 */
     /* JADX INFO: compiled from: Topstreamfilm.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm", f = "Topstreamfilm.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3}, l = {115, 121, 122, 122}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "urls", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "iframe", "isCasting", "data", "subtitleCallback", "callback", "iframe", "isCasting"}, nl = {121, 122, 122, 127}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm", f = "Topstreamfilm.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3}, l = {116, 122, 123, 123}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "urls", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "iframe", "isCasting", "data", "subtitleCallback", "callback", "iframe", "isCasting"}, nl = {122, 123, 123, 128}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -158,7 +159,7 @@ public final class TopStreamFilm extends MainAPI {
     /* JADX INFO: renamed from: com.Topstreamfilm.TopStreamFilm$search$1 */
     /* JADX INFO: compiled from: Topstreamfilm.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm", f = "Topstreamfilm.kt", i = {0}, l = {53}, m = "search", n = {"query"}, nl = {54}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm", f = "Topstreamfilm.kt", i = {0}, l = {54}, m = "search", n = {"query"}, nl = {55}, s = {"L$0"}, v = 2)
     static final class C00101 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -242,6 +243,7 @@ public final class TopStreamFilm extends MainAPI {
         switch (c00021.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String url = getMainUrl() + '/' + request.getData() + "/page/" + page2;
                 Requests app = MainActivityKt.getApp();
                 c00021.L$0 = request;
@@ -552,7 +554,7 @@ public final class TopStreamFilm extends MainAPI {
     /* JADX INFO: compiled from: Topstreamfilm.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm$load$2", f = "Topstreamfilm.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nTopstreamfilm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Topstreamfilm.kt\ncom/Topstreamfilm/TopStreamFilm$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,141:1\n1739#2:142\n1814#2,3:143\n*S KotlinDebug\n*F\n+ 1 Topstreamfilm.kt\ncom/Topstreamfilm/TopStreamFilm$load$2\n*L\n74#1:142\n74#1:143,3\n*E\n"})
+    @SourceDebugExtension({"SMAP\nTopstreamfilm.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Topstreamfilm.kt\ncom/Topstreamfilm/TopStreamFilm$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,142:1\n1739#2:143\n1814#2,3:144\n*S KotlinDebug\n*F\n+ 1 Topstreamfilm.kt\ncom/Topstreamfilm/TopStreamFilm$load$2\n*L\n75#1:143\n75#1:144,3\n*E\n"})
     static final class C00042 extends SuspendLambda implements Function2<Element, Continuation<? super String>, Object> {
         final /* synthetic */ List<Episode> $episodes;
         /* synthetic */ Object L$0;
@@ -923,7 +925,7 @@ public final class TopStreamFilm extends MainAPI {
     /* JADX INFO: renamed from: com.Topstreamfilm.TopStreamFilm$loadLinks$2 */
     /* JADX INFO: compiled from: Topstreamfilm.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm$loadLinks$2", f = "Topstreamfilm.kt", i = {0}, l = {116}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm$loadLinks$2", f = "Topstreamfilm.kt", i = {0}, l = {117}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
     static final class C00082 extends SuspendLambda implements Function2<String, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -972,7 +974,7 @@ public final class TopStreamFilm extends MainAPI {
     /* JADX INFO: renamed from: com.Topstreamfilm.TopStreamFilm$loadLinks$3 */
     /* JADX INFO: compiled from: Topstreamfilm.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm$loadLinks$3", f = "Topstreamfilm.kt", i = {0, 0}, l = {124}, m = "invokeSuspend", n = {"it", "href"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.Topstreamfilm.TopStreamFilm$loadLinks$3", f = "Topstreamfilm.kt", i = {0, 0}, l = {125}, m = "invokeSuspend", n = {"it", "href"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
     static final class C00093 extends SuspendLambda implements Function2<Element, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

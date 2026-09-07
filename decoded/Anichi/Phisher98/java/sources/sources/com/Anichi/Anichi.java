@@ -31,6 +31,7 @@ import com.lagradost.cloudstream3.utils.StringUtils;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -87,7 +88,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: Anichi.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Anichi/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000¬\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0016\u0018\u0000 X2\u00020\u0001:\u0001XB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0005H\u0002J\u001e\u00100\u001a\u0002052\u0006\u00106\u001a\u00020&2\u0006\u00107\u001a\u000208H\u0096@¢\u0006\u0002\u00109J\u0018\u0010:\u001a\u0004\u0018\u00010;2\u0006\u0010<\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010=J\u0014\u0010>\u001a\u0004\u0018\u00010\u00052\b\u0010?\u001a\u0004\u0018\u00010\u0005H\u0002J\u000e\u0010@\u001a\u0004\u0018\u00010A*\u00020BH\u0002J\u001e\u0010C\u001a\n\u0012\u0004\u0012\u00020D\u0018\u00010.2\u0006\u0010E\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010=J \u0010F\u001a\u0004\u0018\u00010G2\u0006\u0010E\u001a\u00020\u00052\u0006\u00106\u001a\u00020&H\u0096@¢\u0006\u0002\u0010HJ \u0010I\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0004\u001a\u00020\u00172\u0006\u0010J\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010KJ\u0018\u0010L\u001a\u0004\u0018\u00010M2\u0006\u0010<\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010=JF\u0010N\u001a\u00020\u000b2\u0006\u0010O\u001a\u00020\u00052\u0006\u0010P\u001a\u00020\u000b2\u0012\u0010Q\u001a\u000e\u0012\u0004\u0012\u00020S\u0012\u0004\u0012\u00020T0R2\u0012\u0010U\u001a\u000e\u0012\u0004\u0012\u00020V\u0012\u0004\u0012\u00020T0RH\u0096@¢\u0006\u0002\u0010WR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u0014\u0010\u000e\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\rR\u0014\u0010\u0010\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\rR\u001a\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u001a\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001b0\u0016X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u0019R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001f\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u0011\u0010!\u001a\u00020\"¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u0011\u0010%\u001a\u00020&¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u0011\u0010)\u001a\u00020&¢\u0006\b\n\u0000\u001a\u0004\b*\u0010(R\u0011\u0010+\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b,\u0010\u0007R/\u0010-\u001a\b\u0012\u0004\u0012\u00020/0.8\u0016X\u0097\u0004\u0092\u0002\u0010\b2\u0012\f\b3\u0012\b\b\fJ\u0004\b\b(4¢\u0006\b\n\u0000\u001a\u0004\b0\u00101¨\u0006Y"}, d2 = {"Lcom/Anichi/Anichi;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "instantLinkLoading", "", "getInstantLinkLoading", "()Z", "hasQuickSearch", "getHasQuickSearch", "hasMainPage", "getHasMainPage", "getStatus", "Lcom/lagradost/cloudstream3/ShowStatus;", "t", "supportedSyncNames", "", "Lcom/lagradost/cloudstream3/syncproviders/SyncIdName;", "getSupportedSyncNames", "()Ljava/util/Set;", "supportedTypes", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "popularTitle", "animeRecentTitle", "donghuaRecentTitle", "movieTitle", "calendar", "Ljava/util/Calendar;", "getCalendar", "()Ljava/util/Calendar;", "year", "", "getYear", "()I", "month", "getMonth", "season", "getSeason", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Landroid/annotation/SuppressLint;", "value", "NewApi", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchQuery", "Lcom/Anichi/AnichiParser$AnichiQuery;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getPosterUrl", "thumbnail", "toSearchResponse", "Lcom/lagradost/cloudstream3/AnimeSearchResponse;", "Lcom/Anichi/AnichiParser$Edges;", "quickSearch", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getLoadUrl", "id", "(Lcom/lagradost/cloudstream3/syncproviders/SyncIdName;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "Anichi"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAnichi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anichi.kt\ncom/Anichi/Anichi\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,376:1\n1739#2:377\n1814#2,3:378\n777#2:381\n873#2,2:382\n1795#2,10:384\n2068#2:394\n2069#2:396\n1805#2:397\n777#2:423\n873#2,2:424\n1795#2,10:426\n2068#2:436\n2069#2:438\n1805#2:439\n296#2,2:450\n1739#2:452\n1814#2,3:453\n1739#2:475\n1814#2,2:476\n1816#2:479\n1#3:395\n1#3:403\n1#3:405\n1#3:437\n1#3:457\n1#3:478\n73#4,5:398\n73#4,5:440\n73#4,5:445\n63#5:404\n64#5,15:406\n63#5:456\n64#5,15:458\n50#6:421\n43#6:422\n50#6:473\n43#6:474\n*S KotlinDebug\n*F\n+ 1 Anichi.kt\ncom/Anichi/Anichi\n*L\n112#1:377\n112#1:378,3\n116#1:381\n116#1:382,2\n122#1:384,10\n122#1:394\n122#1:396\n122#1:397\n180#1:423\n180#1:424,2\n187#1:426,10\n187#1:436\n187#1:438\n187#1:439\n258#1:450,2\n296#1:452\n296#1:453,3\n276#1:475\n276#1:476,2\n276#1:479\n122#1:395\n177#1:405\n187#1:437\n343#1:457\n135#1:398,5\n198#1:440,5\n227#1:445,5\n177#1:404\n177#1:406,15\n343#1:456\n343#1:458,15\n177#1:421\n177#1:422\n343#1:473\n343#1:474\n*E\n"})
+@SourceDebugExtension({"SMAP\nAnichi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anichi.kt\ncom/Anichi/Anichi\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,377:1\n1739#2:378\n1814#2,3:379\n777#2:382\n873#2,2:383\n1795#2,10:385\n2068#2:395\n2069#2:397\n1805#2:398\n777#2:424\n873#2,2:425\n1795#2,10:427\n2068#2:437\n2069#2:439\n1805#2:440\n296#2,2:451\n1739#2:453\n1814#2,3:454\n1739#2:476\n1814#2,2:477\n1816#2:480\n1#3:396\n1#3:404\n1#3:406\n1#3:438\n1#3:458\n1#3:479\n73#4,5:399\n73#4,5:441\n73#4,5:446\n63#5:405\n64#5,15:407\n63#5:457\n64#5,15:459\n50#6:422\n43#6:423\n50#6:474\n43#6:475\n*S KotlinDebug\n*F\n+ 1 Anichi.kt\ncom/Anichi/Anichi\n*L\n113#1:378\n113#1:379,3\n117#1:382\n117#1:383,2\n123#1:385,10\n123#1:395\n123#1:397\n123#1:398\n181#1:424\n181#1:425,2\n188#1:427,10\n188#1:437\n188#1:439\n188#1:440\n259#1:451,2\n297#1:453\n297#1:454,3\n277#1:476\n277#1:477,2\n277#1:480\n123#1:396\n178#1:406\n188#1:438\n344#1:458\n136#1:399,5\n199#1:441,5\n228#1:446,5\n178#1:405\n178#1:407,15\n344#1:457\n344#1:459,15\n178#1:422\n178#1:423\n344#1:474\n344#1:475\n*E\n"})
 public class Anichi extends MainAPI {
 
     @NotNull
@@ -163,7 +164,7 @@ public class Anichi extends MainAPI {
     /* JADX INFO: renamed from: com.Anichi.Anichi$fetchQuery$1 */
     /* JADX INFO: compiled from: Anichi.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0}, l = {135}, m = "fetchQuery", n = {"url"}, nl = {377}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0}, l = {136}, m = "fetchQuery", n = {"url"}, nl = {378}, s = {"L$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -184,7 +185,7 @@ public class Anichi extends MainAPI {
     /* JADX INFO: renamed from: com.Anichi.Anichi$getLoadUrl$1 */
     /* JADX INFO: compiled from: Anichi.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2}, l = {196, 198, 200}, m = "getLoadUrl$suspendImpl", n = {"$this", "name", "id", "syncId", "$this", "name", "id", "syncId", "malId", "$this", "name", "id", "syncId", "malId", "media", "link"}, nl = {193, 377, 202}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
+    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2}, l = {197, 199, 201}, m = "getLoadUrl$suspendImpl", n = {"$this", "name", "id", "syncId", "$this", "name", "id", "syncId", "malId", "$this", "name", "id", "syncId", "malId", "media", "link"}, nl = {194, 378, 203}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -211,7 +212,7 @@ public class Anichi extends MainAPI {
     /* JADX INFO: renamed from: com.Anichi.Anichi$getMainPage$1 */
     /* JADX INFO: compiled from: Anichi.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 0, 0}, l = {108}, m = "getMainPage$suspendImpl", n = {"$this", "request", "url", "page"}, nl = {109}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 0, 0}, l = {109}, m = "getMainPage$suspendImpl", n = {"$this", "request", "url", "page"}, nl = {110}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -235,7 +236,7 @@ public class Anichi extends MainAPI {
     /* JADX INFO: renamed from: com.Anichi.Anichi$load$1 */
     /* JADX INFO: compiled from: Anichi.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {226, 234, 242, 267, 311}, m = "load$suspendImpl", n = {"$this", "url", "id", "body", "$this", "url", "id", "body", "res", "showData", "title", "description", "$this", "url", "id", "body", "res", "showData", "title", "description", "trackers", "$this", "url", "id", "body", "res", "showData", "title", "description", "trackers", "data", "animeMetadata", "fanart", "engtitle", "backgroundposter", "logotvType", "tmdbid", "$this", "url", "id", "body", "res", "showData", "title", "description", "trackers", "data", "animeMetadata", "fanart", "engtitle", "backgroundposter", "logotvType", "tmdbid", "logoUrl", "poster", "episodes", "subEpisodes", "dubEpisodes", "characters", "tvType"}, nl = {227, 233, 257, 275, -1}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22"}, v = 2)
+    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {227, 235, 243, 268, 312}, m = "load$suspendImpl", n = {"$this", "url", "id", "body", "$this", "url", "id", "body", "res", "showData", "title", "description", "$this", "url", "id", "body", "res", "showData", "title", "description", "trackers", "$this", "url", "id", "body", "res", "showData", "title", "description", "trackers", "data", "animeMetadata", "fanart", "engtitle", "backgroundposter", "logotvType", "tmdbid", "$this", "url", "id", "body", "res", "showData", "title", "description", "trackers", "data", "animeMetadata", "fanart", "engtitle", "backgroundposter", "logotvType", "tmdbid", "logoUrl", "poster", "episodes", "subEpisodes", "dubEpisodes", "characters", "tvType"}, nl = {228, 234, 258, 276, -1}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -278,7 +279,7 @@ public class Anichi extends MainAPI {
     /* JADX INFO: renamed from: com.Anichi.Anichi$loadLinks$1 */
     /* JADX INFO: compiled from: Anichi.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 0, 0, 0, 0}, l = {344}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "loadData", "isCasting"}, nl = {352}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 0, 0, 0, 0}, l = {345}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "loadData", "isCasting"}, nl = {353}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -304,7 +305,7 @@ public class Anichi extends MainAPI {
     /* JADX INFO: renamed from: com.Anichi.Anichi$quickSearch$1 */
     /* JADX INFO: compiled from: Anichi.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 1, 1}, l = {160, 159}, m = "quickSearch$suspendImpl", n = {"$this", "query", "$this", "query"}, nl = {164, 165}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 1, 1}, l = {161, 160}, m = "quickSearch$suspendImpl", n = {"$this", "query", "$this", "query"}, nl = {165, 166}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -327,7 +328,7 @@ public class Anichi extends MainAPI {
     /* JADX INFO: renamed from: com.Anichi.Anichi$search$1 */
     /* JADX INFO: compiled from: Anichi.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 0, 1, 1, 1, 1, 1}, l = {169, 174}, m = "search$suspendImpl", n = {"$this", "query", "page", "$this", "query", "encodedQuery", "link", "page"}, nl = {173, 175}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Anichi.Anichi", f = "Anichi.kt", i = {0, 0, 0, 1, 1, 1, 1, 1}, l = {170, 175}, m = "search$suspendImpl", n = {"$this", "query", "page", "$this", "query", "encodedQuery", "link", "page"}, nl = {174, 176}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
     static final class C00091 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -484,6 +485,7 @@ public class Anichi extends MainAPI {
         switch (c00021.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow($this2.getName());
                 if (StringsKt.contains$default(request.getData(), "%d", false, 2, (Object) null)) {
                     url = String.format(request.getData(), Arrays.copyOf(new Object[]{Boxing.boxInt(page)}, 1));
                     Intrinsics.checkNotNullExpressionValue(url, "format(...)");
@@ -733,7 +735,7 @@ public class Anichi extends MainAPI {
     /* JADX INFO: compiled from: Anichi.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.Anichi.Anichi$quickSearch$2", f = "Anichi.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nAnichi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anichi.kt\ncom/Anichi/Anichi$quickSearch$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,376:1\n1#2:377\n*E\n"})
+    @SourceDebugExtension({"SMAP\nAnichi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anichi.kt\ncom/Anichi/Anichi$quickSearch$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,377:1\n1#2:378\n*E\n"})
     static final class C00082 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ String $query;
         int label;
@@ -4374,7 +4376,7 @@ public class Anichi extends MainAPI {
     /* JADX INFO: renamed from: com.Anichi.Anichi$load$2 */
     /* JADX INFO: compiled from: Anichi.kt */
     @Metadata(d1 = {"\u0000\u0012\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0012\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0012\u0006\u0012\u0004\u0018\u00010\u00030\u0001*\u00020\u0004H\n"}, d2 = {"<anonymous>", "Lkotlin/Pair;", "Lcom/Anichi/AnilistAPIResponse$anilistMedia;", "Lcom/Anichi/MetaAnimeData;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Anichi.Anichi$load$2", f = "Anichi.kt", i = {0, 0, 0, 1, 1, 1}, l = {255, 255}, m = "invokeSuspend", n = {"$this$coroutineScope", "anilistDeferred", "metadataDeferred", "$this$coroutineScope", "anilistDeferred", "metadataDeferred"}, nl = {255, -1}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.Anichi.Anichi$load$2", f = "Anichi.kt", i = {0, 0, 0, 1, 1, 1}, l = {256, 256}, m = "invokeSuspend", n = {"$this$coroutineScope", "anilistDeferred", "metadataDeferred", "$this$coroutineScope", "anilistDeferred", "metadataDeferred"}, nl = {256, -1}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
     static final class C00042 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Pair<? extends AnilistAPIResponse.anilistMedia, ? extends MetaAnimeData>>, Object> {
         final /* synthetic */ AnichiParser.AniMedia $trackers;
         private /* synthetic */ Object L$0;
@@ -4527,8 +4529,8 @@ public class Anichi extends MainAPI {
     /* JADX INFO: renamed from: com.Anichi.Anichi$load$3 */
     /* JADX INFO: compiled from: Anichi.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Anichi.Anichi$load$3", f = "Anichi.kt", i = {0}, l = {319}, m = "invokeSuspend", n = {"$this$newAnimeLoadResponse"}, nl = {324}, s = {"L$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nAnichi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anichi.kt\ncom/Anichi/Anichi$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,376:1\n777#2:377\n873#2,2:378\n1739#2:380\n1814#2,3:381\n*S KotlinDebug\n*F\n+ 1 Anichi.kt\ncom/Anichi/Anichi$load$3\n*L\n320#1:377\n320#1:378,2\n320#1:380\n320#1:381,3\n*E\n"})
+    @DebugMetadata(c = "com.Anichi.Anichi$load$3", f = "Anichi.kt", i = {0}, l = {320}, m = "invokeSuspend", n = {"$this$newAnimeLoadResponse"}, nl = {325}, s = {"L$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nAnichi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anichi.kt\ncom/Anichi/Anichi$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,377:1\n777#2:378\n873#2,2:379\n1739#2:381\n1814#2,3:382\n*S KotlinDebug\n*F\n+ 1 Anichi.kt\ncom/Anichi/Anichi$load$3\n*L\n321#1:378\n321#1:379,2\n321#1:381\n321#1:382,3\n*E\n"})
     static final class C00053 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $backgroundposter;
         final /* synthetic */ List<Pair<Actor, ActorRole>> $characters;

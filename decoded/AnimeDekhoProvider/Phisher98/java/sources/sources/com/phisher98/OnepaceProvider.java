@@ -24,6 +24,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -72,7 +73,7 @@ import org.jsoup.select.Elements;
 /* JADX INFO: compiled from: OnePace.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AnimeDekhoProvider/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\b\u0016\u0018\u00002\u00020\u0001:\u00018B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001c\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"H\u0096@¢\u0006\u0002\u0010#J\f\u0010$\u001a\u00020%*\u00020&H\u0002J\u001c\u0010'\u001a\b\u0012\u0004\u0012\u00020%0\u001a2\u0006\u0010(\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010)J\u0016\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010)JF\u0010-\u001a\u00020\u000e2\u0006\u0010.\u001a\u00020\u00052\u0006\u0010/\u001a\u00020\u000e2\u0012\u00100\u001a\u000e\u0012\u0004\u0012\u000202\u0012\u0004\u0012\u000203012\u0012\u00104\u001a\u000e\u0012\u0004\u0012\u000205\u0012\u0004\u0012\u00020301H\u0096@¢\u0006\u0002\u00106J\f\u00107\u001a\u00020\u0005*\u00020&H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001d¨\u00069"}, d2 = {"Lcom/phisher98/OnepaceProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/AnimeSearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getsrcAttribute", "Media", "AnimeDekhoProvider"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nOnePace.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OnePace.kt\ncom/phisher98/OnepaceProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,154:1\n1739#2:155\n1814#2,3:156\n1795#2,10:159\n2068#2:169\n2069#2:171\n1805#2:172\n1795#2,10:192\n2068#2:202\n2069#2:204\n1805#2:205\n1#3:170\n1#3:174\n1#3:203\n1#3:207\n63#4:173\n64#4,15:175\n63#4:206\n64#4,15:208\n50#5:190\n43#5:191\n50#5:223\n43#5:224\n*S KotlinDebug\n*F\n+ 1 OnePace.kt\ncom/phisher98/OnepaceProvider\n*L\n34#1:155\n34#1:156,3\n73#1:159,10\n73#1:169\n73#1:171\n73#1:172\n101#1:192,10\n101#1:202\n101#1:204\n101#1:205\n73#1:170\n79#1:174\n101#1:203\n128#1:207\n79#1:173\n79#1:175,15\n128#1:206\n128#1:208,15\n79#1:190\n79#1:191\n128#1:223\n128#1:224\n*E\n"})
+@SourceDebugExtension({"SMAP\nOnePace.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OnePace.kt\ncom/phisher98/OnepaceProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,155:1\n1739#2:156\n1814#2,3:157\n1795#2,10:160\n2068#2:170\n2069#2:172\n1805#2:173\n1795#2,10:193\n2068#2:203\n2069#2:205\n1805#2:206\n1#3:171\n1#3:175\n1#3:204\n1#3:208\n63#4:174\n64#4,15:176\n63#4:207\n64#4,15:209\n50#5:191\n43#5:192\n50#5:224\n43#5:225\n*S KotlinDebug\n*F\n+ 1 OnePace.kt\ncom/phisher98/OnepaceProvider\n*L\n35#1:156\n35#1:157,3\n74#1:160,10\n74#1:170\n74#1:172\n74#1:173\n102#1:193,10\n102#1:203\n102#1:205\n102#1:206\n74#1:171\n80#1:175\n102#1:204\n129#1:208\n80#1:174\n80#1:176,15\n129#1:207\n129#1:209,15\n80#1:191\n80#1:192\n129#1:224\n129#1:225\n*E\n"})
 public class OnepaceProvider extends MainAPI {
 
     @NotNull
@@ -94,7 +95,7 @@ public class OnepaceProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.OnepaceProvider$getMainPage$1 */
     /* JADX INFO: compiled from: OnePace.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.OnepaceProvider", f = "OnePace.kt", i = {0, 0, 0, 0}, l = {32}, m = "getMainPage$suspendImpl", n = {"$this", "request", "link", "page"}, nl = {34}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.OnepaceProvider", f = "OnePace.kt", i = {0, 0, 0, 0}, l = {33}, m = "getMainPage$suspendImpl", n = {"$this", "request", "link", "page"}, nl = {35}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
     static final class C00171 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -118,7 +119,7 @@ public class OnepaceProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.OnepaceProvider$load$1 */
     /* JADX INFO: compiled from: OnePace.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.OnepaceProvider", f = "OnePace.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {80, 92, 114}, m = "load$suspendImpl", n = {"$this", "url", "media", "$this", "url", "media", "document", "ArcINT", "element", "title", "poster", "plot", "year", "lst", "$this", "url", "media", "document", "ArcINT", "element", "title", "poster", "plot", "year", "lst", "episodes"}, nl = {81, 101, 91}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.OnepaceProvider", f = "OnePace.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {81, 93, 115}, m = "load$suspendImpl", n = {"$this", "url", "media", "$this", "url", "media", "document", "ArcINT", "element", "title", "poster", "plot", "year", "lst", "$this", "url", "media", "document", "ArcINT", "element", "title", "poster", "plot", "year", "lst", "episodes"}, nl = {82, 102, 92}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11"}, v = 2)
     static final class C00181 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -150,7 +151,7 @@ public class OnepaceProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.OnepaceProvider$loadLinks$1 */
     /* JADX INFO: compiled from: OnePace.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.OnepaceProvider", f = "OnePace.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {129, 131}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "media", "isCasting", "$this", "data", "subtitleCallback", "callback", "media", "body", "term", "isCasting"}, nl = {130, 137}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.OnepaceProvider", f = "OnePace.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {130, 132}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "media", "isCasting", "$this", "data", "subtitleCallback", "callback", "media", "body", "term", "isCasting"}, nl = {131, 138}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
     static final class C00211 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -178,7 +179,7 @@ public class OnepaceProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.OnepaceProvider$search$1 */
     /* JADX INFO: compiled from: OnePace.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.OnepaceProvider", f = "OnePace.kt", i = {0, 0}, l = {72}, m = "search$suspendImpl", n = {"$this", "query"}, nl = {73}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.OnepaceProvider", f = "OnePace.kt", i = {0, 0}, l = {73}, m = "search$suspendImpl", n = {"$this", "query"}, nl = {74}, s = {"L$0", "L$1"}, v = 2)
     static final class C00231 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -278,6 +279,7 @@ public class OnepaceProvider extends MainAPI {
         switch (c00171.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow($this2.getName());
                 String link = $this2.getMainUrl() + request.getData();
                 Requests app = MainActivityKt.getApp();
                 c00171.L$0 = $this2;
@@ -1181,7 +1183,7 @@ public class OnepaceProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.OnepaceProvider$loadLinks$2 */
     /* JADX INFO: compiled from: OnePace.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "i", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.OnepaceProvider$loadLinks$2", f = "OnePace.kt", i = {0, 1, 1}, l = {132, 135}, m = "invokeSuspend", n = {"i", "link", "i"}, nl = {133, 136}, s = {"I$0", "L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.OnepaceProvider$loadLinks$2", f = "OnePace.kt", i = {0, 1, 1}, l = {133, 136}, m = "invokeSuspend", n = {"i", "link", "i"}, nl = {134, 137}, s = {"I$0", "L$0", "I$0"}, v = 2)
     static final class C00222 extends SuspendLambda implements Function2<Integer, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Media $media;

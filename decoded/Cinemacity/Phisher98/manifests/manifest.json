@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.Cinemacity.CinemacityPlugin",
   "name": "Cinemacity",
-  "version": 24,
+  "version": 26,
   "requiresResources": true
 }

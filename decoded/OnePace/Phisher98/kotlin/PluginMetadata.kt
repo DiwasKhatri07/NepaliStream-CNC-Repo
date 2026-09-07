@@ -4,7 +4,7 @@ package nepali.stream.decoded.onepace
 object PluginMetadata {
     const val name: String = "OnePace"
     const val originalPluginClass: String = "com.phisher98.OnePacePlugin"
-    const val version: Int = 21
+    const val version: Int = 23
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

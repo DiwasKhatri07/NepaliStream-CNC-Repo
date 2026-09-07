@@ -23,6 +23,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -60,7 +61,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Megakino.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Megakino/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 :2\u00020\u0001:\u0001:B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\f\u0010)\u001a\u00020'*\u00020(H\u0002J\u001c\u0010*\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010+\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010,J\u0016\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010,JF\u00100\u001a\u00020\u000e2\u0006\u00101\u001a\u00020\u00052\u0006\u00102\u001a\u00020\u000e2\u0012\u00103\u001a\u000e\u0012\u0004\u0012\u000205\u0012\u0004\u0012\u000206042\u0012\u00107\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020604H\u0096@¢\u0006\u0002\u00109R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006;"}, d2 = {"Lcom/Megakino/Megakino;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "toSearchResult1", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "Megakino"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nMegakino.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Megakino.kt\ncom/Megakino/Megakino\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,158:1\n1795#2,10:159\n2068#2:169\n2069#2:171\n1805#2:172\n1739#2:173\n1814#2,3:174\n1739#2:177\n1814#2,2:178\n1816#2:181\n1739#2:182\n1814#2,3:183\n1739#2:186\n1814#2,3:187\n1#3:170\n1#3:180\n*S KotlinDebug\n*F\n+ 1 Megakino.kt\ncom/Megakino/Megakino\n*L\n52#1:159,10\n52#1:169\n52#1:171\n52#1:172\n92#1:173\n92#1:174,3\n107#1:177\n107#1:178,2\n107#1:181\n111#1:182\n111#1:183,3\n117#1:186\n117#1:187,3\n52#1:170\n*E\n"})
+@SourceDebugExtension({"SMAP\nMegakino.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Megakino.kt\ncom/Megakino/Megakino\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,159:1\n1795#2,10:160\n2068#2:170\n2069#2:172\n1805#2:173\n1739#2:174\n1814#2,3:175\n1739#2:178\n1814#2,2:179\n1816#2:182\n1739#2:183\n1814#2,3:184\n1739#2:187\n1814#2,3:188\n1#3:171\n1#3:181\n*S KotlinDebug\n*F\n+ 1 Megakino.kt\ncom/Megakino/Megakino\n*L\n53#1:160,10\n53#1:170\n53#1:172\n53#1:173\n93#1:174\n93#1:175,3\n108#1:178\n108#1:179,2\n108#1:182\n112#1:183\n112#1:184,3\n118#1:187\n118#1:188,3\n53#1:171\n*E\n"})
 public final class Megakino extends MainAPI {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
@@ -90,7 +91,7 @@ public final class Megakino extends MainAPI {
     /* JADX INFO: renamed from: com.Megakino.Megakino$getMainPage$1 */
     /* JADX INFO: compiled from: Megakino.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Megakino.Megakino", f = "Megakino.kt", i = {0, 0, 1, 1, 1}, l = {44, 46}, m = "getMainPage", n = {"request", "page", "request", "cookie", "page"}, nl = {46, 50}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Megakino.Megakino", f = "Megakino.kt", i = {0, 0, 1, 1, 1}, l = {45, 47}, m = "getMainPage", n = {"request", "page", "request", "cookie", "page"}, nl = {47, 51}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -113,7 +114,7 @@ public final class Megakino extends MainAPI {
     /* JADX INFO: renamed from: com.Megakino.Megakino$load$1 */
     /* JADX INFO: compiled from: Megakino.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Megakino.Megakino", f = "Megakino.kt", i = {0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {99, 101, 128, 136}, m = "load", n = {"url", "url", "cookie", "url", "cookie", "document", "title", "poster", "year", "hreflist", "description", "trailer", "genresText", "genresList", "typetag", "type", "episodes", "url", "cookie", "document", "title", "poster", "year", "hreflist", "description", "trailer", "genresText", "genresList", "typetag", "type"}, nl = {101, 103, 136, 114}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12"}, v = 2)
+    @DebugMetadata(c = "com.Megakino.Megakino", f = "Megakino.kt", i = {0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {100, 102, 129, 137}, m = "load", n = {"url", "url", "cookie", "url", "cookie", "document", "title", "poster", "year", "hreflist", "description", "trailer", "genresText", "genresList", "typetag", "type", "episodes", "url", "cookie", "document", "title", "poster", "year", "hreflist", "description", "trailer", "genresText", "genresList", "typetag", "type"}, nl = {102, 104, 137, 115}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -147,7 +148,7 @@ public final class Megakino extends MainAPI {
     /* JADX INFO: renamed from: com.Megakino.Megakino$loadLinks$1 */
     /* JADX INFO: compiled from: Megakino.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Megakino.Megakino", f = "Megakino.kt", i = {0, 0, 0, 0, 1, 1, 1, 1}, l = {149, 154}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "isCasting"}, nl = {154, 155}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Megakino.Megakino", f = "Megakino.kt", i = {0, 0, 0, 0, 1, 1, 1, 1}, l = {150, 155}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "isCasting"}, nl = {155, 156}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "Z$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -171,7 +172,7 @@ public final class Megakino extends MainAPI {
     /* JADX INFO: renamed from: com.Megakino.Megakino$search$1 */
     /* JADX INFO: compiled from: Megakino.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Megakino.Megakino", f = "Megakino.kt", i = {0, 1, 1, 1}, l = {87, 89}, m = "search", n = {"query", "query", "cookie", "data"}, nl = {88, 91}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.Megakino.Megakino", f = "Megakino.kt", i = {0, 1, 1, 1}, l = {88, 90}, m = "search", n = {"query", "query", "cookie", "data"}, nl = {89, 92}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -233,7 +234,7 @@ public final class Megakino extends MainAPI {
 
     /* JADX INFO: compiled from: Megakino.kt */
     @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0006\u001a\u0004\u0018\u00010\u0005H\u0086@¢\u0006\u0002\u0010\u0007R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"Lcom/Megakino/Megakino$Companion;", "", "<init>", "()V", "TOKEN_URL", "", "getTokenCookie", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Megakino"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nMegakino.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Megakino.kt\ncom/Megakino/Megakino$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,158:1\n296#2,2:159\n*S KotlinDebug\n*F\n+ 1 Megakino.kt\ncom/Megakino/Megakino$Companion\n*L\n25#1:159,2\n*E\n"})
+    @SourceDebugExtension({"SMAP\nMegakino.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Megakino.kt\ncom/Megakino/Megakino$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,159:1\n296#2,2:160\n*S KotlinDebug\n*F\n+ 1 Megakino.kt\ncom/Megakino/Megakino$Companion\n*L\n25#1:160,2\n*E\n"})
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -306,12 +307,12 @@ public final class Megakino extends MainAPI {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:20:0x0072  */
-    /* JADX WARN: Code duplicated, block: B:23:0x00ef A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:24:0x00f0  */
-    /* JADX WARN: Code duplicated, block: B:28:0x011b  */
-    /* JADX WARN: Code duplicated, block: B:30:0x012d  */
-    /* JADX WARN: Code duplicated, block: B:36:0x0132 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:20:0x007b  */
+    /* JADX WARN: Code duplicated, block: B:23:0x00f8 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:24:0x00f9  */
+    /* JADX WARN: Code duplicated, block: B:28:0x0124  */
+    /* JADX WARN: Code duplicated, block: B:30:0x0136  */
+    /* JADX WARN: Code duplicated, block: B:36:0x013b A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
@@ -340,6 +341,7 @@ public final class Megakino extends MainAPI {
         switch (c00011.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Companion companion = INSTANCE;
                 request2 = request;
                 c00011.L$0 = request2;
@@ -1104,7 +1106,7 @@ public final class Megakino extends MainAPI {
     /* JADX INFO: renamed from: com.Megakino.Megakino$load$3 */
     /* JADX INFO: compiled from: Megakino.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Megakino.Megakino$load$3", f = "Megakino.kt", i = {0}, l = {133}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {134}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Megakino.Megakino$load$3", f = "Megakino.kt", i = {0}, l = {134}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {135}, s = {"L$0"}, v = 2)
     static final class C00033 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $description;
         final /* synthetic */ List<String> $genresList;
@@ -1163,7 +1165,7 @@ public final class Megakino extends MainAPI {
     /* JADX INFO: renamed from: com.Megakino.Megakino$load$4 */
     /* JADX INFO: compiled from: Megakino.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Megakino.Megakino$load$4", f = "Megakino.kt", i = {0}, l = {141}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {142}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Megakino.Megakino$load$4", f = "Megakino.kt", i = {0}, l = {142}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {143}, s = {"L$0"}, v = 2)
     static final class C00044 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $description;
         final /* synthetic */ List<String> $genresList;
@@ -1276,7 +1278,7 @@ public final class Megakino extends MainAPI {
     /* JADX INFO: renamed from: com.Megakino.Megakino$loadLinks$2 */
     /* JADX INFO: compiled from: Megakino.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Megakino.Megakino$loadLinks$2", f = "Megakino.kt", i = {0}, l = {150}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Megakino.Megakino$loadLinks$2", f = "Megakino.kt", i = {0}, l = {151}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
     static final class C00062 extends SuspendLambda implements Function2<String, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

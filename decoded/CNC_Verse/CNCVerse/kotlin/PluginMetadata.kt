@@ -4,7 +4,7 @@ package nepali.stream.decoded.cnc_verse
 object PluginMetadata {
     const val name: String = "CNC Verse"
     const val originalPluginClass: String = "com.horis.cncverse.CNCVersePlugin"
-    const val version: Int = 108
+    const val version: Int = 109
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

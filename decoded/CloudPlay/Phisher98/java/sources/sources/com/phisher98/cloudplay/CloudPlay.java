@@ -24,6 +24,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
@@ -89,7 +90,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: CloudPlayProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/CloudPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\u00020\u0001:\u0004NOPQB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\u001fH\u0002J\b\u0010 \u001a\u00020\u0005H\u0002J\u001e\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J.\u0010(\u001a\b\u0012\u0004\u0012\u00020*0)2\u0006\u0010+\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u00052\b\u0010-\u001a\u0004\u0018\u00010\u0005H\u0082@¢\u0006\u0002\u0010.J&\u0010/\u001a\b\u0012\u0004\u0012\u0002000)2\u0006\u0010,\u001a\u00020\u00052\b\u0010-\u001a\u0004\u0018\u00010\u0005H\u0082@¢\u0006\u0002\u00101J\u0016\u00102\u001a\b\u0012\u0004\u0012\u0002030)2\u0006\u00104\u001a\u00020\u0005H\u0002J\u001c\u00105\u001a\b\u0012\u0004\u0012\u0002000)2\u0006\u00106\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00107J\u0016\u00108\u001a\u0002092\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00107J\f\u0010:\u001a\u00020\u0005*\u00020\u0005H\u0002J,\u0010;\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u00052\u0014\u0010<\u001a\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u001cH\u0082@¢\u0006\u0002\u0010=J\u001e\u0010>\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u00052\u0006\u0010?\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u00101JF\u0010@\u001a\u00020\u00112\u0006\u0010A\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u00112\u0012\u0010C\u001a\u000e\u0012\u0004\u0012\u00020E\u0012\u0004\u0012\u00020F0D2\u0012\u0010G\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020F0DH\u0096@¢\u0006\u0002\u0010IJ \u0010J\u001a\u00020\u00052\u0006\u0010K\u001a\u00020\u00052\u0006\u0010L\u001a\u00020\u00052\u0006\u0010M\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u0014\u0010\u0010\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001cX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006R"}, d2 = {"Lcom/phisher98/cloudplay/CloudPlay;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "apiHeaders", "", "generateSign", "ts", "", "mainPhpUrl", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchHomeSections", "", "Lcom/lagradost/cloudstream3/HomePageList;", "sectionName", "url", "fallbackLogo", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchChannels", "Lcom/lagradost/cloudstream3/SearchResponse;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "parseM3u", "Lcom/phisher98/cloudplay/CloudPlay$CloudPlayChannel;", "m3uText", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "hexToBase64Url", "getMpdStream", "customHeaders", "(Ljava/lang/String;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getDRMKeysFromLicenseServer", "kid", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "decryptPayload", "payloadBase64", "ivBase64", "tagBase64", "CloudPlayResponse", "CloudPlayStreams", "CloudPlayStream", "CloudPlayChannel", "CloudPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nCloudPlayProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CloudPlayProvider.kt\ncom/phisher98/cloudplay/CloudPlay\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,461:1\n73#2,5:462\n73#2,5:580\n63#3:467\n64#3,15:469\n63#3:491\n64#3,15:493\n63#3:514\n64#3,15:516\n63#3:538\n64#3,15:540\n63#3:561\n64#3,15:563\n63#3:585\n64#3,15:587\n63#3:607\n64#3,15:609\n63#3:630\n64#3,15:632\n63#3:651\n64#3,15:653\n1#4:468\n1#4:489\n1#4:492\n1#4:515\n1#4:536\n1#4:539\n1#4:562\n1#4:586\n1#4:608\n1#4:631\n1#4:652\n50#5:484\n43#5:485\n50#5:508\n43#5:509\n50#5:531\n43#5:532\n50#5:555\n43#5:556\n50#5:578\n43#5:579\n50#5:602\n43#5:603\n50#5:624\n43#5:625\n50#5:647\n43#5:648\n50#5:668\n43#5:669\n1739#6:486\n1814#6,2:487\n1816#6:490\n1739#6:510\n1814#6,3:511\n1739#6:533\n1814#6,2:534\n1816#6:537\n1739#6:557\n1814#6,3:558\n777#6:604\n873#6,2:605\n1739#6:626\n1814#6,3:627\n296#6,2:649\n*S KotlinDebug\n*F\n+ 1 CloudPlayProvider.kt\ncom/phisher98/cloudplay/CloudPlay\n*L\n65#1:462,5\n265#1:580,5\n69#1:467\n69#1:469,15\n108#1:491\n108#1:493,15\n123#1:514\n123#1:516,15\n162#1:538\n162#1:540,15\n177#1:561\n177#1:563,15\n268#1:585\n268#1:587,15\n278#1:607\n278#1:609,15\n317#1:630\n317#1:632,15\n332#1:651\n332#1:653,15\n69#1:468\n108#1:492\n123#1:515\n162#1:539\n177#1:562\n268#1:586\n278#1:608\n317#1:631\n332#1:652\n69#1:484\n69#1:485\n108#1:508\n108#1:509\n123#1:531\n123#1:532\n162#1:555\n162#1:556\n177#1:578\n177#1:579\n268#1:602\n268#1:603\n278#1:624\n278#1:625\n317#1:647\n317#1:648\n332#1:668\n332#1:669\n94#1:486\n94#1:487,2\n94#1:490\n110#1:510\n110#1:511,3\n151#1:533\n151#1:534,2\n151#1:537\n164#1:557\n164#1:558,3\n274#1:604\n274#1:605,2\n294#1:626\n294#1:627,3\n320#1:649,2\n*E\n"})
+@SourceDebugExtension({"SMAP\nCloudPlayProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CloudPlayProvider.kt\ncom/phisher98/cloudplay/CloudPlay\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,462:1\n73#2,5:463\n73#2,5:581\n63#3:468\n64#3,15:470\n63#3:492\n64#3,15:494\n63#3:515\n64#3,15:517\n63#3:539\n64#3,15:541\n63#3:562\n64#3,15:564\n63#3:586\n64#3,15:588\n63#3:608\n64#3,15:610\n63#3:631\n64#3,15:633\n63#3:652\n64#3,15:654\n1#4:469\n1#4:490\n1#4:493\n1#4:516\n1#4:537\n1#4:540\n1#4:563\n1#4:587\n1#4:609\n1#4:632\n1#4:653\n50#5:485\n43#5:486\n50#5:509\n43#5:510\n50#5:532\n43#5:533\n50#5:556\n43#5:557\n50#5:579\n43#5:580\n50#5:603\n43#5:604\n50#5:625\n43#5:626\n50#5:648\n43#5:649\n50#5:669\n43#5:670\n1739#6:487\n1814#6,2:488\n1816#6:491\n1739#6:511\n1814#6,3:512\n1739#6:534\n1814#6,2:535\n1816#6:538\n1739#6:558\n1814#6,3:559\n777#6:605\n873#6,2:606\n1739#6:627\n1814#6,3:628\n296#6,2:650\n*S KotlinDebug\n*F\n+ 1 CloudPlayProvider.kt\ncom/phisher98/cloudplay/CloudPlay\n*L\n66#1:463,5\n266#1:581,5\n70#1:468\n70#1:470,15\n109#1:492\n109#1:494,15\n124#1:515\n124#1:517,15\n163#1:539\n163#1:541,15\n178#1:562\n178#1:564,15\n269#1:586\n269#1:588,15\n279#1:608\n279#1:610,15\n318#1:631\n318#1:633,15\n333#1:652\n333#1:654,15\n70#1:469\n109#1:493\n124#1:516\n163#1:540\n178#1:563\n269#1:587\n279#1:609\n318#1:632\n333#1:653\n70#1:485\n70#1:486\n109#1:509\n109#1:510\n124#1:532\n124#1:533\n163#1:556\n163#1:557\n178#1:579\n178#1:580\n269#1:603\n269#1:604\n279#1:625\n279#1:626\n318#1:648\n318#1:649\n333#1:669\n333#1:670\n95#1:487\n95#1:488,2\n95#1:491\n111#1:511\n111#1:512,3\n152#1:534\n152#1:535,2\n152#1:538\n165#1:558\n165#1:559,3\n275#1:605\n275#1:606,2\n295#1:627\n295#1:628,3\n321#1:650,2\n*E\n"})
 public final class CloudPlay extends MainAPI {
 
     @NotNull
@@ -112,7 +113,7 @@ public final class CloudPlay extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.cloudplay.CloudPlay$fetchChannels$1 */
     /* JADX INFO: compiled from: CloudPlayProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {146, 179}, m = "fetchChannels", n = {"url", "fallbackLogo", "shows", "headers", "isHost", "url", "fallbackLogo", "shows", "headers", "resText", "subStreams", "isHost"}, nl = {147, 181}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {147, 180}, m = "fetchChannels", n = {"url", "fallbackLogo", "shows", "headers", "isHost", "url", "fallbackLogo", "shows", "headers", "resText", "subStreams", "isHost"}, nl = {148, 182}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -139,7 +140,7 @@ public final class CloudPlay extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.cloudplay.CloudPlay$fetchHomeSections$1 */
     /* JADX INFO: compiled from: CloudPlayProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {89, 126}, m = "fetchHomeSections", n = {"sectionName", "url", "fallbackLogo", "headers", "isHost", "sectionName", "url", "fallbackLogo", "headers", "resText", "subStreams", "sections", "isHost"}, nl = {90, 134}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {90, 127}, m = "fetchHomeSections", n = {"sectionName", "url", "fallbackLogo", "headers", "isHost", "sectionName", "url", "fallbackLogo", "headers", "resText", "subStreams", "sections", "isHost"}, nl = {91, 135}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -167,7 +168,7 @@ public final class CloudPlay extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.cloudplay.CloudPlay$getDRMKeysFromLicenseServer$1 */
     /* JADX INFO: compiled from: CloudPlayProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0, 0}, l = {307}, m = "getDRMKeysFromLicenseServer", n = {"url", "kid", "userAgent"}, nl = {314}, s = {"L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0, 0}, l = {308}, m = "getDRMKeysFromLicenseServer", n = {"url", "kid", "userAgent"}, nl = {315}, s = {"L$0", "L$1", "L$2"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -190,7 +191,7 @@ public final class CloudPlay extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.cloudplay.CloudPlay$getMainPage$1 */
     /* JADX INFO: compiled from: CloudPlayProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {64, 72}, m = "getMainPage", n = {"request", "page", "request", "req", "res", "decryptedJson", "streams", "homePageLists", "page"}, nl = {65, 77}, s = {"L$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {65, 73}, m = "getMainPage", n = {"request", "page", "request", "req", "res", "decryptedJson", "streams", "homePageLists", "page"}, nl = {66, 78}, s = {"L$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -217,7 +218,7 @@ public final class CloudPlay extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.cloudplay.CloudPlay$getMpdStream$1 */
     /* JADX INFO: compiled from: CloudPlayProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0}, l = {302}, m = "getMpdStream", n = {"url", "customHeaders"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0}, l = {303}, m = "getMpdStream", n = {"url", "customHeaders"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -239,7 +240,7 @@ public final class CloudPlay extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.cloudplay.CloudPlay$loadLinks$1 */
     /* JADX INFO: compiled from: CloudPlayProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3}, l = {342, 347, 351, 381}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "channel", "licenseUrl", "keyStr", "kidStr", "isCasting", "data", "subtitleCallback", "callback", "channel", "licenseUrl", "keyStr", "kidStr", "mpdStr", "regex", "matchResult", "drmKid", "isCasting", "data", "subtitleCallback", "callback", "channel", "licenseUrl", "keyStr", "kidStr", "isCasting", "data", "subtitleCallback", "callback", "channel", "isCasting", "isTs"}, nl = {343, 350, 350, 380}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0", "Z$1"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3}, l = {343, 348, 352, 382}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "channel", "licenseUrl", "keyStr", "kidStr", "isCasting", "data", "subtitleCallback", "callback", "channel", "licenseUrl", "keyStr", "kidStr", "mpdStr", "regex", "matchResult", "drmKid", "isCasting", "data", "subtitleCallback", "callback", "channel", "licenseUrl", "keyStr", "kidStr", "isCasting", "data", "subtitleCallback", "callback", "channel", "isCasting", "isTs"}, nl = {344, 351, 351, 381}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0", "Z$1"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -273,7 +274,7 @@ public final class CloudPlay extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.cloudplay.CloudPlay$search$1 */
     /* JADX INFO: compiled from: CloudPlayProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 1, 1, 1, 1}, l = {264, 270}, m = "search", n = {"query", "query", "res", "decryptedJson", "streams"}, nl = {265, 272}, s = {"L$0", "L$0", "L$1", "L$2", "L$3"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay", f = "CloudPlayProvider.kt", i = {0, 1, 1, 1, 1}, l = {265, 271}, m = "search", n = {"query", "query", "res", "decryptedJson", "streams"}, nl = {266, 273}, s = {"L$0", "L$0", "L$1", "L$2", "L$3"}, v = 2)
     static final class C00111 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -361,16 +362,16 @@ public final class CloudPlay extends MainAPI {
         return getMainUrl() + "/main.php?ts=" + ts + "&sign=" + sign;
     }
 
-    /* JADX WARN: Code duplicated, block: B:25:0x00dd  */
-    /* JADX WARN: Code duplicated, block: B:27:0x00ec  */
-    /* JADX WARN: Code duplicated, block: B:35:0x0120  */
-    /* JADX WARN: Code duplicated, block: B:47:0x0158  */
-    /* JADX WARN: Code duplicated, block: B:56:0x0174  */
-    /* JADX WARN: Code duplicated, block: B:59:0x01ca A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:60:0x01cb  */
-    /* JADX WARN: Code duplicated, block: B:63:0x01d4  */
-    /* JADX WARN: Code duplicated, block: B:67:0x0124 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:73:0x015f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:25:0x00e6  */
+    /* JADX WARN: Code duplicated, block: B:27:0x00f5  */
+    /* JADX WARN: Code duplicated, block: B:35:0x0129  */
+    /* JADX WARN: Code duplicated, block: B:47:0x0161  */
+    /* JADX WARN: Code duplicated, block: B:56:0x017d  */
+    /* JADX WARN: Code duplicated, block: B:59:0x01d3 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:60:0x01d4  */
+    /* JADX WARN: Code duplicated, block: B:63:0x01dd  */
+    /* JADX WARN: Code duplicated, block: B:71:0x012d A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:73:0x0168 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws BadPaddingException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, InvalidKeyException, InvalidAlgorithmParameterException {
@@ -407,6 +408,7 @@ public final class CloudPlay extends MainAPI {
         switch (c00042.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String strMainPhpUrl = mainPhpUrl();
                 Map<String, String> map = this.apiHeaders;
@@ -587,7 +589,7 @@ public final class CloudPlay extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.cloudplay.CloudPlay$getMainPage$2 */
     /* JADX INFO: compiled from: CloudPlayProvider.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "stream", "Lcom/phisher98/cloudplay/CloudPlay$CloudPlayStream;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay$getMainPage$2", f = "CloudPlayProvider.kt", i = {0}, l = {73}, m = "invokeSuspend", n = {"stream"}, nl = {74}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay$getMainPage$2", f = "CloudPlayProvider.kt", i = {0}, l = {74}, m = "invokeSuspend", n = {"stream"}, nl = {75}, s = {"L$0"}, v = 2)
     static final class C00052 extends SuspendLambda implements Function2<CloudPlayStream, Continuation<? super Boolean>, Object> {
         final /* synthetic */ List<HomePageList> $homePageLists;
         /* synthetic */ Object L$0;
@@ -1412,7 +1414,7 @@ public final class CloudPlay extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.cloudplay.CloudPlay$fetchHomeSections$3 */
     /* JADX INFO: compiled from: CloudPlayProvider.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "subStream", "Lcom/phisher98/cloudplay/CloudPlay$CloudPlayStream;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay$fetchHomeSections$3", f = "CloudPlayProvider.kt", i = {0}, l = {127}, m = "invokeSuspend", n = {"subStream"}, nl = {132}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay$fetchHomeSections$3", f = "CloudPlayProvider.kt", i = {0}, l = {128}, m = "invokeSuspend", n = {"subStream"}, nl = {133}, s = {"L$0"}, v = 2)
     static final class C00023 extends SuspendLambda implements Function2<CloudPlayStream, Continuation<? super Boolean>, Object> {
         final /* synthetic */ String $fallbackLogo;
         final /* synthetic */ String $sectionName;
@@ -3651,7 +3653,7 @@ public final class CloudPlay extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.cloudplay.CloudPlay$loadLinks$3 */
     /* JADX INFO: compiled from: CloudPlayProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay$loadLinks$3", f = "CloudPlayProvider.kt", i = {0, 0}, l = {399}, m = "invokeSuspend", n = {"$this$newExtractorLink", "headersMap"}, nl = {404}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.cloudplay.CloudPlay$loadLinks$3", f = "CloudPlayProvider.kt", i = {0, 0}, l = {400}, m = "invokeSuspend", n = {"$this$newExtractorLink", "headersMap"}, nl = {405}, s = {"L$0", "L$1"}, v = 2)
     static final class C00103 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ CloudPlayChannel $channel;
         private /* synthetic */ Object L$0;

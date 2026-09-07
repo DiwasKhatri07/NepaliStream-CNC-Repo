@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.Megakino.MegakinoProvider",
   "name": "Megakino",
-  "version": 4,
+  "version": 6,
   "requiresResources": false
 }

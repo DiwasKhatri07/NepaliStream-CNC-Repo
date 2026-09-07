@@ -27,6 +27,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -71,7 +72,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: IStreamFlare.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/IStreamFlare/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 =2\u00020\u0001:\u0001=B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010 \u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J\f\u0010(\u001a\u00020)*\u00020*H\u0002J\u001c\u0010+\u001a\b\u0012\u0004\u0012\u00020)0\u001e2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-J\u001c\u0010.\u001a\b\u0012\u0004\u0012\u00020)0\u001e2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-J\u0016\u0010/\u001a\u0002002\u0006\u00101\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-JF\u00102\u001a\u00020\u000e2\u0006\u00103\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u000e2\u0012\u00105\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u000208062\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020806H\u0096@¢\u0006\u0002\u0010;J\u0016\u0010<\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010-R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0014\u0010\u0016\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0010R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!¨\u0006>"}, d2 = {"Lcom/IStreamFlare/IStreamFlare;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/IStreamFlare/HomeRes;", "quickSearch", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getDecodedJson", "Companion", "IStreamFlare"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nIStreamFlare.kt\nKotlin\n*S Kotlin\n*F\n+ 1 IStreamFlare.kt\ncom/IStreamFlare/IStreamFlare\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,622:1\n63#2:623\n64#2,15:625\n63#2:642\n64#2,15:644\n63#2:665\n64#2,15:667\n63#2:684\n64#2,15:686\n93#2,2:707\n63#2:709\n64#2,15:711\n95#2,2:728\n63#2:730\n64#2,15:732\n63#2:749\n64#2,15:751\n63#2:768\n64#2,15:770\n63#2:788\n64#2,15:790\n63#2:807\n64#2,15:809\n63#2:827\n64#2,15:829\n63#2:850\n64#2,15:852\n63#2:869\n64#2,15:871\n63#2:888\n64#2,15:890\n63#2:907\n64#2,15:909\n63#2:926\n64#2,15:928\n1#3:624\n1#3:643\n1#3:666\n1#3:685\n1#3:710\n1#3:731\n1#3:750\n1#3:769\n1#3:787\n1#3:789\n1#3:808\n1#3:828\n1#3:849\n1#3:851\n1#3:870\n1#3:889\n1#3:908\n1#3:927\n1#3:946\n50#4:640\n43#4:641\n50#4:659\n43#4:660\n50#4:682\n43#4:683\n50#4:701\n43#4:702\n50#4:726\n43#4:727\n50#4:747\n43#4:748\n50#4:766\n43#4:767\n50#4:785\n43#4:786\n50#4:805\n43#4:806\n50#4:824\n43#4:825\n50#4:844\n43#4:845\n50#4:867\n43#4:868\n50#4:886\n43#4:887\n50#4:905\n43#4:906\n50#4:924\n43#4:925\n50#4:943\n43#4:944\n1739#5:661\n1814#5,3:662\n1739#5:703\n1814#5,3:704\n2068#5:826\n2068#5,2:846\n2069#5:848\n2068#5:945\n2069#5:947\n*S KotlinDebug\n*F\n+ 1 IStreamFlare.kt\ncom/IStreamFlare/IStreamFlare\n*L\n97#1:623\n97#1:625,15\n109#1:642\n109#1:644,15\n172#1:665\n172#1:667,15\n183#1:684\n183#1:686,15\n197#1:707,2\n197#1:709\n197#1:711,15\n197#1:728,2\n236#1:730\n236#1:732,15\n248#1:749\n248#1:751,15\n264#1:768\n264#1:770,15\n283#1:788\n283#1:790,15\n309#1:807\n309#1:809,15\n334#1:827\n334#1:829,15\n500#1:850\n500#1:852,15\n512#1:869\n512#1:871,15\n522#1:888\n522#1:890,15\n532#1:907\n532#1:909,15\n603#1:926\n603#1:928,15\n97#1:624\n109#1:643\n172#1:666\n183#1:685\n197#1:710\n236#1:731\n248#1:750\n264#1:769\n283#1:789\n309#1:808\n334#1:828\n500#1:851\n512#1:870\n522#1:889\n532#1:908\n603#1:927\n97#1:640\n97#1:641\n109#1:659\n109#1:660\n172#1:682\n172#1:683\n183#1:701\n183#1:702\n197#1:726\n197#1:727\n236#1:747\n236#1:748\n248#1:766\n248#1:767\n264#1:785\n264#1:786\n283#1:805\n283#1:806\n309#1:824\n309#1:825\n334#1:844\n334#1:845\n500#1:867\n500#1:868\n512#1:886\n512#1:887\n522#1:905\n522#1:906\n532#1:924\n532#1:925\n603#1:943\n603#1:944\n114#1:661\n114#1:662,3\n188#1:703\n188#1:704,3\n314#1:826\n339#1:846,2\n314#1:848\n436#1:945\n436#1:947\n*E\n"})
+@SourceDebugExtension({"SMAP\nIStreamFlare.kt\nKotlin\n*S Kotlin\n*F\n+ 1 IStreamFlare.kt\ncom/IStreamFlare/IStreamFlare\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,623:1\n63#2:624\n64#2,15:626\n63#2:643\n64#2,15:645\n63#2:666\n64#2,15:668\n63#2:685\n64#2,15:687\n93#2,2:708\n63#2:710\n64#2,15:712\n95#2,2:729\n63#2:731\n64#2,15:733\n63#2:750\n64#2,15:752\n63#2:769\n64#2,15:771\n63#2:789\n64#2,15:791\n63#2:808\n64#2,15:810\n63#2:828\n64#2,15:830\n63#2:851\n64#2,15:853\n63#2:870\n64#2,15:872\n63#2:889\n64#2,15:891\n63#2:908\n64#2,15:910\n63#2:927\n64#2,15:929\n1#3:625\n1#3:644\n1#3:667\n1#3:686\n1#3:711\n1#3:732\n1#3:751\n1#3:770\n1#3:788\n1#3:790\n1#3:809\n1#3:829\n1#3:850\n1#3:852\n1#3:871\n1#3:890\n1#3:909\n1#3:928\n1#3:947\n50#4:641\n43#4:642\n50#4:660\n43#4:661\n50#4:683\n43#4:684\n50#4:702\n43#4:703\n50#4:727\n43#4:728\n50#4:748\n43#4:749\n50#4:767\n43#4:768\n50#4:786\n43#4:787\n50#4:806\n43#4:807\n50#4:825\n43#4:826\n50#4:845\n43#4:846\n50#4:868\n43#4:869\n50#4:887\n43#4:888\n50#4:906\n43#4:907\n50#4:925\n43#4:926\n50#4:944\n43#4:945\n1739#5:662\n1814#5,3:663\n1739#5:704\n1814#5,3:705\n2068#5:827\n2068#5,2:847\n2069#5:849\n2068#5:946\n2069#5:948\n*S KotlinDebug\n*F\n+ 1 IStreamFlare.kt\ncom/IStreamFlare/IStreamFlare\n*L\n98#1:624\n98#1:626,15\n110#1:643\n110#1:645,15\n173#1:666\n173#1:668,15\n184#1:685\n184#1:687,15\n198#1:708,2\n198#1:710\n198#1:712,15\n198#1:729,2\n237#1:731\n237#1:733,15\n249#1:750\n249#1:752,15\n265#1:769\n265#1:771,15\n284#1:789\n284#1:791,15\n310#1:808\n310#1:810,15\n335#1:828\n335#1:830,15\n501#1:851\n501#1:853,15\n513#1:870\n513#1:872,15\n523#1:889\n523#1:891,15\n533#1:908\n533#1:910,15\n604#1:927\n604#1:929,15\n98#1:625\n110#1:644\n173#1:667\n184#1:686\n198#1:711\n237#1:732\n249#1:751\n265#1:770\n284#1:790\n310#1:809\n335#1:829\n501#1:852\n513#1:871\n523#1:890\n533#1:909\n604#1:928\n98#1:641\n98#1:642\n110#1:660\n110#1:661\n173#1:683\n173#1:684\n184#1:702\n184#1:703\n198#1:727\n198#1:728\n237#1:748\n237#1:749\n249#1:767\n249#1:768\n265#1:786\n265#1:787\n284#1:806\n284#1:807\n310#1:825\n310#1:826\n335#1:845\n335#1:846\n501#1:868\n501#1:869\n513#1:887\n513#1:888\n523#1:906\n523#1:907\n533#1:925\n533#1:926\n604#1:944\n604#1:945\n115#1:662\n115#1:663,3\n189#1:704\n189#1:705,3\n315#1:827\n340#1:847,2\n315#1:849\n437#1:946\n437#1:948\n*E\n"})
 public final class IStreamFlare extends MainAPI {
 
     @NotNull
@@ -108,7 +109,7 @@ public final class IStreamFlare extends MainAPI {
     /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$getDecodedJson$1 */
     /* JADX INFO: compiled from: IStreamFlare.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0}, l = {595}, m = "getDecodedJson", n = {"url"}, nl = {598}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0}, l = {596}, m = "getDecodedJson", n = {"url"}, nl = {599}, s = {"L$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -129,7 +130,7 @@ public final class IStreamFlare extends MainAPI {
     /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$getMainPage$1 */
     /* JADX INFO: compiled from: IStreamFlare.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0, 0, 0, 0}, l = {91}, m = "getMainPage", n = {"request", "url", "page", "isLiveTv"}, nl = {94}, s = {"L$0", "L$1", "I$0", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0, 0, 0, 0}, l = {92}, m = "getMainPage", n = {"request", "url", "page", "isLiveTv"}, nl = {95}, s = {"L$0", "L$1", "I$0", "Z$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -153,7 +154,7 @@ public final class IStreamFlare extends MainAPI {
     /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$load$1 */
     /* JADX INFO: compiled from: IStreamFlare.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {207, 231, 260, 279, 304, 328, 390, 411}, m = "load", n = {"url", "res", "url", "res", "type", "endpoint", "isMovie", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "$this$load_u24lambda_u240", "isMovie", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "imdbId", "it", "$this$load_u24lambda_u242_u240", "isMovie", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "imdbId", "responseData", "meta", "poster", "description", "cast", "year", "episodesList", "isMovie", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "imdbId", "responseData", "meta", "poster", "description", "cast", "year", "episodesList", "seasonsRaw", "seasons", "$this$forEach$iv", "element$iv", "season", "isMovie", "seasonNumber", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "imdbId", "responseData", "meta", "poster", "description", "cast", "year", "episodesList", "seasonsRaw", "seasons", "isMovie", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "imdbId", "responseData", "meta", "poster", "description", "cast", "year", "href", "isMovie"}, nl = {217, 235, 262, 281, 308, 327, 409, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$20", "L$21", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {208, 232, 261, 280, 305, 329, 391, 412}, m = "load", n = {"url", "res", "url", "res", "type", "endpoint", "isMovie", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "$this$load_u24lambda_u240", "isMovie", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "imdbId", "it", "$this$load_u24lambda_u242_u240", "isMovie", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "imdbId", "responseData", "meta", "poster", "description", "cast", "year", "episodesList", "isMovie", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "imdbId", "responseData", "meta", "poster", "description", "cast", "year", "episodesList", "seasonsRaw", "seasons", "$this$forEach$iv", "element$iv", "season", "isMovie", "seasonNumber", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "imdbId", "responseData", "meta", "poster", "description", "cast", "year", "episodesList", "seasonsRaw", "seasons", "isMovie", "url", "res", "type", "endpoint", "rawJson", "parsedElement", "dataElement", "resJson", "imdbId", "responseData", "meta", "poster", "description", "cast", "year", "href", "isMovie"}, nl = {218, 236, 263, 282, 309, 328, 410, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$20", "L$21", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "I$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -197,7 +198,7 @@ public final class IStreamFlare extends MainAPI {
     /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$loadLinks$1 */
     /* JADX INFO: compiled from: IStreamFlare.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8}, l = {514, 520, 524, 530, 534, 541, 558, 563, 573}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "jsonString", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "decodedJson", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "decodedJson", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "extractor", "linkFound", "isCasting", "data", "subtitleCallback", "callback", "extractor", "linkFound", "isCasting", "data", "subtitleCallback", "callback", "type", "isCasting"}, nl = {515, 521, 525, 531, 535, 540, 562, 565, 572}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8}, l = {515, 521, 525, 531, 535, 542, 559, 564, 574}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "jsonString", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "decodedJson", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "decodedJson", "links", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "extractor", "linkFound", "isCasting", "data", "subtitleCallback", "callback", "extractor", "linkFound", "isCasting", "data", "subtitleCallback", "callback", "type", "isCasting"}, nl = {516, 522, 526, 532, 536, 541, 563, 566, 573}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -223,7 +224,7 @@ public final class IStreamFlare extends MainAPI {
     /* JADX INFO: renamed from: com.IStreamFlare.IStreamFlare$search$1 */
     /* JADX INFO: compiled from: IStreamFlare.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0, 0, 1, 1, 1, 1}, l = {167, 177}, m = "search", n = {"query", "url", "query", "url", "raw", "outer"}, nl = {170, 179}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3"}, v = 2)
+    @DebugMetadata(c = "com.IStreamFlare.IStreamFlare", f = "IStreamFlare.kt", i = {0, 0, 1, 1, 1, 1}, l = {168, 178}, m = "search", n = {"query", "url", "query", "url", "raw", "outer"}, nl = {171, 180}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3"}, v = 2)
     static final class C00091 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -310,7 +311,6 @@ public final class IStreamFlare extends MainAPI {
     }
 
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
-    /* JADX WARN: Code duplicated, block: B:94:0x028c A[LOOP:0: B:92:0x0286->B:94:0x028c, LOOP_END] */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
         C00011 c00011;
@@ -321,7 +321,6 @@ public final class IStreamFlare extends MainAPI {
         Object obj;
         Object objDecodeFromString;
         Iterable homeList;
-        Collection destination$iv$iv;
         Object obj2;
         Object objDecodeFromString2;
         if (continuation instanceof C00011) {
@@ -339,6 +338,7 @@ public final class IStreamFlare extends MainAPI {
         switch (c00011.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 boolean isLiveTv2 = StringsKt.contains(request.getData(), "android/getAllLiveTV", true);
                 if (StringsKt.endsWith$default(request.getData(), "page", false, 2, (Object) null)) {
                     int offset = (page - 1) * 10;
@@ -472,24 +472,15 @@ public final class IStreamFlare extends MainAPI {
                     homeList = (List) objDecodeFromString2;
                 }
             } catch (Exception e4) {
-                homeList = CollectionsKt.emptyList();
-                Iterable $this$map$iv = homeList;
-                destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
-                for (Object item$iv$iv : $this$map$iv) {
-                    HomeRes it = (HomeRes) item$iv$iv;
-                    destination$iv$iv.add(toSearchResult(it));
-                }
-                List searchResults = (List) destination$iv$iv;
-                return MainAPIKt.newHomePageResponse(new HomePageList(request2.getName(), searchResults, isLiveTv), Boxing.boxBoolean(!searchResults.isEmpty()));
             }
-            Iterable $this$map$iv2 = homeList;
-            destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv2, 10));
-            while (r13.hasNext()) {
-                HomeRes it2 = (HomeRes) item$iv$iv;
-                destination$iv$iv.add(toSearchResult(it2));
+            Iterable $this$map$iv = homeList;
+            Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+            for (Object item$iv$iv : $this$map$iv) {
+                HomeRes it = (HomeRes) item$iv$iv;
+                destination$iv$iv.add(toSearchResult(it));
             }
-            List searchResults2 = (List) destination$iv$iv;
-            return MainAPIKt.newHomePageResponse(new HomePageList(request2.getName(), searchResults2, isLiveTv), Boxing.boxBoolean(!searchResults2.isEmpty()));
+            List searchResults = (List) destination$iv$iv;
+            return MainAPIKt.newHomePageResponse(new HomePageList(request2.getName(), searchResults, isLiveTv), Boxing.boxBoolean(!searchResults.isEmpty()));
         } catch (Exception e5) {
             return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
         }

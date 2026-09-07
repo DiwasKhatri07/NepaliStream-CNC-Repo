@@ -26,6 +26,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -73,7 +74,7 @@ import org.jsoup.select.Elements;
 /* JADX INFO: compiled from: dudefilms.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/DudeFilms/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 =2\u00020\u0001:\u0001=B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010 \u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J\f\u0010(\u001a\u00020)*\u00020*H\u0002J\u001e\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u00052\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010.J\u0016\u0010/\u001a\u0002002\u0006\u00101\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00102JF\u00103\u001a\u00020\u00112\u0006\u00104\u001a\u00020\u00052\u0006\u00105\u001a\u00020\u00112\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u000209072\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020;\u0012\u0004\u0012\u00020907H\u0096@¢\u0006\u0002\u0010<R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u0014\u0010\u0010\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013R\u0014\u0010\u0016\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0013R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!¨\u0006>"}, d2 = {"Lcom/dudefilms/Dudefilms;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "hasDownloadSupport", "getHasDownloadSupport", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "DudeFilms"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\ndudefilms.kt\nKotlin\n*S Kotlin\n*F\n+ 1 dudefilms.kt\ncom/dudefilms/Dudefilms\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,261:1\n1795#2,10:262\n2068#2:272\n2069#2:274\n1805#2:275\n1795#2,10:277\n2068#2:287\n2069#2:289\n1805#2:290\n2068#2:314\n832#2:315\n862#2,2:316\n2068#2:318\n2068#2:319\n2069#2:327\n2069#2:328\n2069#2:329\n296#2,2:333\n1#3:273\n1#3:276\n1#3:288\n1#3:294\n1#3:339\n93#4,2:291\n63#4:293\n64#4,15:295\n95#4,2:312\n93#4,2:336\n63#4:338\n64#4,15:340\n95#4,2:357\n50#5:310\n43#5:311\n50#5:355\n43#5:356\n460#6,7:320\n129#7:330\n158#7,2:331\n160#7:335\n*S KotlinDebug\n*F\n+ 1 dudefilms.kt\ncom/dudefilms/Dudefilms\n*L\n68#1:262,10\n68#1:272\n68#1:274\n68#1:275\n88#1:277,10\n88#1:287\n88#1:289\n88#1:290\n148#1:314\n162#1:315\n162#1:316,2\n163#1:318\n170#1:319\n170#1:327\n163#1:328\n148#1:329\n198#1:333,2\n68#1:273\n88#1:288\n132#1:294\n255#1:339\n132#1:291,2\n132#1:293\n132#1:295,15\n132#1:312,2\n255#1:336,2\n255#1:338\n255#1:340,15\n255#1:357,2\n132#1:310\n132#1:311\n255#1:355\n255#1:356\n186#1:320,7\n194#1:330\n194#1:331,2\n194#1:335\n*E\n"})
+@SourceDebugExtension({"SMAP\ndudefilms.kt\nKotlin\n*S Kotlin\n*F\n+ 1 dudefilms.kt\ncom/dudefilms/Dudefilms\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,262:1\n1795#2,10:263\n2068#2:273\n2069#2:275\n1805#2:276\n1795#2,10:278\n2068#2:288\n2069#2:290\n1805#2:291\n2068#2:315\n832#2:316\n862#2,2:317\n2068#2:319\n2068#2:320\n2069#2:328\n2069#2:329\n2069#2:330\n296#2,2:334\n1#3:274\n1#3:277\n1#3:289\n1#3:295\n1#3:340\n93#4,2:292\n63#4:294\n64#4,15:296\n95#4,2:313\n93#4,2:337\n63#4:339\n64#4,15:341\n95#4,2:358\n50#5:311\n43#5:312\n50#5:356\n43#5:357\n460#6,7:321\n129#7:331\n158#7,2:332\n160#7:336\n*S KotlinDebug\n*F\n+ 1 dudefilms.kt\ncom/dudefilms/Dudefilms\n*L\n69#1:263,10\n69#1:273\n69#1:275\n69#1:276\n89#1:278,10\n89#1:288\n89#1:290\n89#1:291\n149#1:315\n163#1:316\n163#1:317,2\n164#1:319\n171#1:320\n171#1:328\n164#1:329\n149#1:330\n199#1:334,2\n69#1:274\n89#1:289\n133#1:295\n256#1:340\n133#1:292,2\n133#1:294\n133#1:296,15\n133#1:313,2\n256#1:337,2\n256#1:339\n256#1:341,15\n256#1:358,2\n133#1:311\n133#1:312\n256#1:356\n256#1:357\n187#1:321,7\n195#1:331\n195#1:332,2\n195#1:336\n*E\n"})
 public final class Dudefilms extends MainAPI {
 
     @NotNull
@@ -100,7 +101,7 @@ public final class Dudefilms extends MainAPI {
     /* JADX INFO: renamed from: com.dudefilms.Dudefilms$getMainPage$1 */
     /* JADX INFO: compiled from: dudefilms.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.dudefilms.Dudefilms", f = "dudefilms.kt", i = {0, 0, 1, 1}, l = {66, 66}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {66, 68}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.dudefilms.Dudefilms", f = "dudefilms.kt", i = {0, 0, 1, 1}, l = {67, 67}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {67, 69}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -122,7 +123,7 @@ public final class Dudefilms extends MainAPI {
     /* JADX INFO: renamed from: com.dudefilms.Dudefilms$load$1 */
     /* JADX INFO: compiled from: dudefilms.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.dudefilms.Dudefilms", f = "dudefilms.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {94, 113, 130, 168, 212, 229}, m = "load", n = {"url", "url", "doc", "title", "poster", "plot", "descriptions", "typeraw", "year", "tvtype", "genre", "background", "description", "cast", "url", "doc", "title", "poster", "plot", "descriptions", "typeraw", "year", "tvtype", "genre", "background", "description", "cast", "hrefs", "imdbId", "typeset", "url", "doc", "title", "poster", "plot", "descriptions", "typeraw", "year", "tvtype", "genre", "background", "description", "cast", "hrefs", "imdbId", "typeset", "responseData", "episodeUrlMap", "$this$forEach$iv", "element$iv", "h4", "sibling", "$this$forEach$iv", "element$iv", "seasonButton", "seasonPageUrl", "seasonNumber", "url", "doc", "title", "poster", "plot", "descriptions", "typeraw", "year", "tvtype", "genre", "background", "description", "cast", "hrefs", "imdbId", "typeset", "responseData", "episodeUrlMap", "episodes", "url", "doc", "title", "poster", "plot", "descriptions", "typeraw", "year", "tvtype", "genre", "background", "description", "cast", "hrefs", "imdbId", "typeset", "responseData"}, nl = {96, 119, 131, 170, 229, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$20", "L$21", "L$22", "L$23", "L$25", "L$26", "L$27", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16"}, v = 2)
+    @DebugMetadata(c = "com.dudefilms.Dudefilms", f = "dudefilms.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {95, 114, 131, 169, 213, 230}, m = "load", n = {"url", "url", "doc", "title", "poster", "plot", "descriptions", "typeraw", "year", "tvtype", "genre", "background", "description", "cast", "url", "doc", "title", "poster", "plot", "descriptions", "typeraw", "year", "tvtype", "genre", "background", "description", "cast", "hrefs", "imdbId", "typeset", "url", "doc", "title", "poster", "plot", "descriptions", "typeraw", "year", "tvtype", "genre", "background", "description", "cast", "hrefs", "imdbId", "typeset", "responseData", "episodeUrlMap", "$this$forEach$iv", "element$iv", "h4", "sibling", "$this$forEach$iv", "element$iv", "seasonButton", "seasonPageUrl", "seasonNumber", "url", "doc", "title", "poster", "plot", "descriptions", "typeraw", "year", "tvtype", "genre", "background", "description", "cast", "hrefs", "imdbId", "typeset", "responseData", "episodeUrlMap", "episodes", "url", "doc", "title", "poster", "plot", "descriptions", "typeraw", "year", "tvtype", "genre", "background", "description", "cast", "hrefs", "imdbId", "typeset", "responseData"}, nl = {97, 120, 132, 171, 230, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$20", "L$21", "L$22", "L$23", "L$25", "L$26", "L$27", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -171,7 +172,7 @@ public final class Dudefilms extends MainAPI {
     /* JADX INFO: renamed from: com.dudefilms.Dudefilms$loadLinks$1 */
     /* JADX INFO: compiled from: dudefilms.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.dudefilms.Dudefilms", f = "dudefilms.kt", i = {0, 0, 0, 0, 0}, l = {256}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "links", "isCasting"}, nl = {259}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.dudefilms.Dudefilms", f = "dudefilms.kt", i = {0, 0, 0, 0, 0}, l = {257}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "links", "isCasting"}, nl = {260}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -196,7 +197,7 @@ public final class Dudefilms extends MainAPI {
     /* JADX INFO: renamed from: com.dudefilms.Dudefilms$search$1 */
     /* JADX INFO: compiled from: dudefilms.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.dudefilms.Dudefilms", f = "dudefilms.kt", i = {0, 0}, l = {87}, m = "search", n = {"query", "page"}, nl = {88}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.dudefilms.Dudefilms", f = "dudefilms.kt", i = {0, 0}, l = {88}, m = "search", n = {"query", "page"}, nl = {89}, s = {"L$0", "I$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -264,9 +265,9 @@ public final class Dudefilms extends MainAPI {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:27:0x0149  */
-    /* JADX WARN: Code duplicated, block: B:29:0x015c  */
-    /* JADX WARN: Code duplicated, block: B:35:0x0161 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:27:0x0152  */
+    /* JADX WARN: Code duplicated, block: B:29:0x0165  */
+    /* JADX WARN: Code duplicated, block: B:35:0x016a A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
@@ -293,6 +294,7 @@ public final class Dudefilms extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 if (page2 != 1) {
                     C00001 c00003 = c00001;
                     z = true;
@@ -761,7 +763,7 @@ public final class Dudefilms extends MainAPI {
     /* JADX INFO: renamed from: com.dudefilms.Dudefilms$loadLinks$2 */
     /* JADX INFO: compiled from: dudefilms.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.dudefilms.Dudefilms$loadLinks$2", f = "dudefilms.kt", i = {0}, l = {257}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.dudefilms.Dudefilms$loadLinks$2", f = "dudefilms.kt", i = {0}, l = {258}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
     static final class C00052 extends SuspendLambda implements Function2<String, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

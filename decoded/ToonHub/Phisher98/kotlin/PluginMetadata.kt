@@ -4,7 +4,7 @@ package nepali.stream.decoded.toonhub
 object PluginMetadata {
     const val name: String = "ToonHub"
     const val originalPluginClass: String = "com.toonhub4u.Toonhub4uPlugin"
-    const val version: Int = 10
+    const val version: Int = 12
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

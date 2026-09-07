@@ -21,6 +21,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -57,7 +58,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: BanglaPlex.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/BanglaPlex/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u001c\u001a\u0004\u0018\u00010\u001e2\u0006\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"H\u0096@¢\u0006\u0002\u0010#J\f\u0010$\u001a\u00020%*\u00020&H\u0002J\u001e\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020 H\u0096@¢\u0006\u0002\u0010*J\u0016\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010.JF\u0010/\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u000e2\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0096@¢\u0006\u0002\u00108R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001d¨\u00069"}, d2 = {"Lcom/BanglaPlex/Banglaplex;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "BanglaPlex"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nBanglaPlex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BanglaPlex.kt\ncom/BanglaPlex/Banglaplex\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,125:1\n1795#2,10:126\n2068#2:136\n2069#2:138\n1805#2:139\n1795#2,10:140\n2068#2:150\n2069#2:152\n1805#2:153\n1795#2,10:154\n2068#2:164\n2069#2:166\n1805#2:167\n1#3:137\n1#3:151\n1#3:165\n*S KotlinDebug\n*F\n+ 1 BanglaPlex.kt\ncom/BanglaPlex/Banglaplex\n*L\n34#1:126,10\n34#1:136\n34#1:138\n34#1:139\n48#1:140,10\n48#1:150\n48#1:152\n48#1:153\n87#1:154,10\n87#1:164\n87#1:166\n87#1:167\n34#1:137\n48#1:151\n87#1:165\n*E\n"})
+@SourceDebugExtension({"SMAP\nBanglaPlex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BanglaPlex.kt\ncom/BanglaPlex/Banglaplex\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,126:1\n1795#2,10:127\n2068#2:137\n2069#2:139\n1805#2:140\n1795#2,10:141\n2068#2:151\n2069#2:153\n1805#2:154\n1795#2,10:155\n2068#2:165\n2069#2:167\n1805#2:168\n1#3:138\n1#3:152\n1#3:166\n*S KotlinDebug\n*F\n+ 1 BanglaPlex.kt\ncom/BanglaPlex/Banglaplex\n*L\n35#1:127,10\n35#1:137\n35#1:139\n35#1:140\n49#1:141,10\n49#1:151\n49#1:153\n49#1:154\n88#1:155,10\n88#1:165\n88#1:167\n88#1:168\n35#1:138\n49#1:152\n88#1:166\n*E\n"})
 public final class Banglaplex extends MainAPI {
 
     @NotNull
@@ -79,7 +80,7 @@ public final class Banglaplex extends MainAPI {
     /* JADX INFO: renamed from: com.BanglaPlex.Banglaplex$getMainPage$1 */
     /* JADX INFO: compiled from: BanglaPlex.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.BanglaPlex.Banglaplex", f = "BanglaPlex.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 2}, l = {29, 32, 46}, m = "getMainPage", n = {"request", "page", "request", "res", "page", "request", "res", "page", "newpagenumber"}, nl = {30, 33, 47}, s = {"L$0", "I$0", "L$0", "L$1", "I$0", "L$0", "L$1", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.BanglaPlex.Banglaplex", f = "BanglaPlex.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 2}, l = {30, 33, 47}, m = "getMainPage", n = {"request", "page", "request", "res", "page", "request", "res", "page", "newpagenumber"}, nl = {31, 34, 48}, s = {"L$0", "I$0", "L$0", "L$1", "I$0", "L$0", "L$1", "I$0", "I$1"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -103,7 +104,7 @@ public final class Banglaplex extends MainAPI {
     /* JADX INFO: renamed from: com.BanglaPlex.Banglaplex$load$1 */
     /* JADX INFO: compiled from: BanglaPlex.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.BanglaPlex.Banglaplex", f = "BanglaPlex.kt", i = {0, 1, 1, 1, 1, 1}, l = {93, 98}, m = "load", n = {"url", "url", "document", "title", "poster", "description"}, nl = {94, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
+    @DebugMetadata(c = "com.BanglaPlex.Banglaplex", f = "BanglaPlex.kt", i = {0, 1, 1, 1, 1, 1}, l = {94, 99}, m = "load", n = {"url", "url", "document", "title", "poster", "description"}, nl = {95, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -128,7 +129,7 @@ public final class Banglaplex extends MainAPI {
     /* JADX INFO: renamed from: com.BanglaPlex.Banglaplex$loadLinks$1 */
     /* JADX INFO: compiled from: BanglaPlex.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.BanglaPlex.Banglaplex", f = "BanglaPlex.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {105, 107, 111, 114, 114}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "it", "isCasting", "data", "subtitleCallback", "callback", "document", "downloadURLs", "isCasting", "data", "subtitleCallback", "callback", "document", "downloadURLs", "tokenres", "csrftoken", "csrftokenvakue", "isCasting", "data", "subtitleCallback", "callback", "document", "downloadURLs", "tokenres", "csrftoken", "csrftokenvakue", "isCasting"}, nl = {106, 106, 112, 114, 123}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.BanglaPlex.Banglaplex", f = "BanglaPlex.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {106, 108, 112, 115, 115}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "it", "isCasting", "data", "subtitleCallback", "callback", "document", "downloadURLs", "isCasting", "data", "subtitleCallback", "callback", "document", "downloadURLs", "tokenres", "csrftoken", "csrftokenvakue", "isCasting", "data", "subtitleCallback", "callback", "document", "downloadURLs", "tokenres", "csrftoken", "csrftokenvakue", "isCasting"}, nl = {107, 107, 113, 115, 124}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -157,7 +158,7 @@ public final class Banglaplex extends MainAPI {
     /* JADX INFO: renamed from: com.BanglaPlex.Banglaplex$search$1 */
     /* JADX INFO: compiled from: BanglaPlex.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.BanglaPlex.Banglaplex", f = "BanglaPlex.kt", i = {0, 0, 0}, l = {85}, m = "search", n = {"query", "url", "page"}, nl = {86}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.BanglaPlex.Banglaplex", f = "BanglaPlex.kt", i = {0, 0, 0}, l = {86}, m = "search", n = {"query", "url", "page"}, nl = {87}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -218,20 +219,20 @@ public final class Banglaplex extends MainAPI {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:21:0x00fb A[DONT_INVERT] */
-    /* JADX WARN: Code duplicated, block: B:22:0x00fd  */
-    /* JADX WARN: Code duplicated, block: B:24:0x0165 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:25:0x0166  */
-    /* JADX WARN: Code duplicated, block: B:29:0x018f  */
-    /* JADX WARN: Code duplicated, block: B:31:0x01a7  */
-    /* JADX WARN: Code duplicated, block: B:35:0x01ce  */
-    /* JADX WARN: Code duplicated, block: B:37:0x024a A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:38:0x024b  */
-    /* JADX WARN: Code duplicated, block: B:42:0x0276  */
-    /* JADX WARN: Code duplicated, block: B:44:0x028a  */
-    /* JADX WARN: Code duplicated, block: B:48:0x02b0 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:52:0x028f A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:55:0x01ac A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:21:0x0104 A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:22:0x0106  */
+    /* JADX WARN: Code duplicated, block: B:24:0x016e A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:25:0x016f  */
+    /* JADX WARN: Code duplicated, block: B:29:0x0198  */
+    /* JADX WARN: Code duplicated, block: B:31:0x01b0  */
+    /* JADX WARN: Code duplicated, block: B:35:0x01d7  */
+    /* JADX WARN: Code duplicated, block: B:37:0x0253 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:38:0x0254  */
+    /* JADX WARN: Code duplicated, block: B:42:0x027f  */
+    /* JADX WARN: Code duplicated, block: B:44:0x0293  */
+    /* JADX WARN: Code duplicated, block: B:48:0x02b9 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:52:0x0298 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:55:0x01b5 A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
@@ -273,6 +274,7 @@ public final class Banglaplex extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(banglaplex.getName());
                 Requests app = MainActivityKt.getApp();
                 String str4 = banglaplex.getMainUrl() + '/' + request.getData() + ".html";
                 c00001.L$0 = request;
@@ -1259,7 +1261,7 @@ public final class Banglaplex extends MainAPI {
     /* JADX INFO: renamed from: com.BanglaPlex.Banglaplex$loadLinks$3 */
     /* JADX INFO: compiled from: BanglaPlex.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.BanglaPlex.Banglaplex$loadLinks$3", f = "BanglaPlex.kt", i = {0, 0, 1, 1}, l = {118, 120}, m = "invokeSuspend", n = {"it", "href", "it", "href"}, nl = {120, -1}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.BanglaPlex.Banglaplex$loadLinks$3", f = "BanglaPlex.kt", i = {0, 0, 1, 1}, l = {119, 121}, m = "invokeSuspend", n = {"it", "href", "it", "href"}, nl = {121, -1}, s = {"L$0", "L$1", "L$0", "L$1"}, v = 2)
     static final class C00043 extends SuspendLambda implements Function2<Element, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

@@ -24,6 +24,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -67,7 +68,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: LayarKacaProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/LayarKacaProvider/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\u0016\u0010&\u001a\u00020\u00052\u0006\u0010'\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010(J\u000e\u0010)\u001a\u0004\u0018\u00010**\u00020+H\u0002J\u001c\u0010,\u001a\b\u0012\u0004\u0012\u00020*0\u001c2\u0006\u0010-\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010(J\u0016\u0010.\u001a\u00020/2\u0006\u0010'\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010(JF\u00100\u001a\u00020\u00102\u0006\u00101\u001a\u00020\u00052\u0006\u00102\u001a\u00020\u00102\u0012\u00103\u001a\u000e\u0012\u0004\u0012\u000205\u0012\u0004\u0012\u000206042\u0012\u00107\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020604H\u0096@¢\u0006\u0002\u00109J\u0012\u0010:\u001a\u00020\u0005*\u00020\u0005H\u0082@¢\u0006\u0002\u0010(J\u0016\u0010;\u001a\u00020\u00052\u0006\u0010'\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010(J\f\u0010<\u001a\u00020\u0005*\u00020+H\u0002J\u0010\u0010=\u001a\u00020\u00052\b\u0010'\u001a\u0004\u0018\u00010\u0005R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\f\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u0007\"\u0004\b\u000e\u0010\tR\u0014\u0010\u000f\u001a\u00020\u0010X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u001a\u0010\u0013\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0007\"\u0004\b\u0015\u0010\tR\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006>"}, d2 = {"Lcom/layarKacaProvider/LayarKacaProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "seriesUrl", "searchurl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getProperLink", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getIframe", "fetchURL", "getImageAttr", "getBaseUrl", "LayarKacaProvider"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nLayarKacaProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LayarKacaProvider.kt\ncom/layarKacaProvider/LayarKacaProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 5 Iterators.kt\nkotlin/collections/CollectionsKt__IteratorsKt\n*L\n1#1,240:1\n1795#2,10:241\n2068#2:251\n2069#2:253\n1805#2:254\n1739#2:261\n1814#2,3:262\n1739#2:265\n1814#2,3:266\n1739#2:271\n1814#2,3:272\n1#3:252\n437#4:255\n513#4,5:256\n32#5,2:269\n*S KotlinDebug\n*F\n+ 1 LayarKacaProvider.kt\ncom/layarKacaProvider/LayarKacaProvider\n*L\n41#1:241,10\n41#1:251\n41#1:253\n41#1:254\n121#1:261\n121#1:262,3\n132#1:265\n132#1:266,3\n195#1:271\n195#1:272,3\n41#1:252\n67#1:255\n67#1:256,5\n147#1:269,2\n*E\n"})
+@SourceDebugExtension({"SMAP\nLayarKacaProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LayarKacaProvider.kt\ncom/layarKacaProvider/LayarKacaProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 5 Iterators.kt\nkotlin/collections/CollectionsKt__IteratorsKt\n*L\n1#1,241:1\n1795#2,10:242\n2068#2:252\n2069#2:254\n1805#2:255\n1739#2:262\n1814#2,3:263\n1739#2:266\n1814#2,3:267\n1739#2:272\n1814#2,3:273\n1#3:253\n437#4:256\n513#4,5:257\n32#5,2:270\n*S KotlinDebug\n*F\n+ 1 LayarKacaProvider.kt\ncom/layarKacaProvider/LayarKacaProvider\n*L\n42#1:242,10\n42#1:252\n42#1:254\n42#1:255\n122#1:262\n122#1:263,3\n133#1:266\n133#1:267,3\n196#1:272\n196#1:273,3\n42#1:253\n68#1:256\n68#1:257,5\n148#1:270,2\n*E\n"})
 public final class LayarKacaProvider extends MainAPI {
 
     @NotNull
@@ -95,7 +96,7 @@ public final class LayarKacaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.layarKacaProvider.LayarKacaProvider$fetchURL$1 */
     /* JADX INFO: compiled from: LayarKacaProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0}, l = {212}, m = "fetchURL", n = {"url"}, nl = {213}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0}, l = {213}, m = "fetchURL", n = {"url"}, nl = {214}, s = {"L$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -116,7 +117,7 @@ public final class LayarKacaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.layarKacaProvider.LayarKacaProvider$getIframe$1 */
     /* JADX INFO: compiled from: LayarKacaProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0}, l = {207}, m = "getIframe", n = {"$this$getIframe"}, nl = {208}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0}, l = {208}, m = "getIframe", n = {"$this$getIframe"}, nl = {209}, s = {"L$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -137,7 +138,7 @@ public final class LayarKacaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.layarKacaProvider.LayarKacaProvider$getMainPage$1 */
     /* JADX INFO: compiled from: LayarKacaProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0, 0}, l = {40}, m = "getMainPage", n = {"request", "page"}, nl = {41}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0, 0}, l = {41}, m = "getMainPage", n = {"request", "page"}, nl = {42}, s = {"L$0", "I$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -159,7 +160,7 @@ public final class LayarKacaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.layarKacaProvider.LayarKacaProvider$getProperLink$1 */
     /* JADX INFO: compiled from: LayarKacaProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0}, l = {49}, m = "getProperLink", n = {"url"}, nl = {50}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0}, l = {50}, m = "getProperLink", n = {"url"}, nl = {51}, s = {"L$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -180,7 +181,7 @@ public final class LayarKacaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.layarKacaProvider.LayarKacaProvider$load$1 */
     /* JADX INFO: compiled from: LayarKacaProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {116, 117, 118, 164, 175}, m = "load", n = {"url", "url", "fixUrl", "url", "fixUrl", "document", "url", "fixUrl", "document", "baseurl", "title", "poster", "tags", "posterheaders", "year", "tvType", "description", "trailer", "rating", "recommendations", "json", "episodes", "url", "fixUrl", "document", "baseurl", "title", "poster", "tags", "posterheaders", "year", "tvType", "description", "trailer", "rating", "recommendations"}, nl = {117, 118, 119, 175, 142}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13"}, v = 2)
+    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0, 1, 1, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {117, 118, 119, 165, 176}, m = "load", n = {"url", "url", "fixUrl", "url", "fixUrl", "document", "url", "fixUrl", "document", "baseurl", "title", "poster", "tags", "posterheaders", "year", "tvType", "description", "trailer", "rating", "recommendations", "json", "episodes", "url", "fixUrl", "document", "baseurl", "title", "poster", "tags", "posterheaders", "year", "tvType", "description", "trailer", "rating", "recommendations"}, nl = {118, 119, 120, 176, 143}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -216,7 +217,7 @@ public final class LayarKacaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.layarKacaProvider.LayarKacaProvider$loadLinks$1 */
     /* JADX INFO: compiled from: LayarKacaProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {194, 197}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {197, 203}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {195, 198}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "isCasting"}, nl = {198, 204}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -241,7 +242,7 @@ public final class LayarKacaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.layarKacaProvider.LayarKacaProvider$search$1 */
     /* JADX INFO: compiled from: LayarKacaProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0, 1, 1}, l = {85, 86}, m = "search", n = {"query", "query", "refer"}, nl = {86, 87}, s = {"L$0", "L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider", f = "LayarKacaProvider.kt", i = {0, 1, 1}, l = {86, 87}, m = "search", n = {"query", "query", "refer"}, nl = {87, 88}, s = {"L$0", "L$0", "L$1"}, v = 2)
     static final class C00101 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -322,6 +323,7 @@ public final class LayarKacaProvider extends MainAPI {
         switch (c00031.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = request.getData() + page2;
                 c00031.L$0 = request;
@@ -1689,7 +1691,7 @@ public final class LayarKacaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.layarKacaProvider.LayarKacaProvider$load$3 */
     /* JADX INFO: compiled from: LayarKacaProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider$load$3", f = "LayarKacaProvider.kt", i = {0}, l = {172}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {173}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider$load$3", f = "LayarKacaProvider.kt", i = {0}, l = {173}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {174}, s = {"L$0"}, v = 2)
     static final class C00063 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $description;
         final /* synthetic */ String $poster;
@@ -1757,7 +1759,7 @@ public final class LayarKacaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.layarKacaProvider.LayarKacaProvider$load$4 */
     /* JADX INFO: compiled from: LayarKacaProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider$load$4", f = "LayarKacaProvider.kt", i = {0}, l = {183}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {184}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider$load$4", f = "LayarKacaProvider.kt", i = {0}, l = {184}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {185}, s = {"L$0"}, v = 2)
     static final class C00074 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $description;
         final /* synthetic */ String $poster;
@@ -1937,7 +1939,7 @@ public final class LayarKacaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.layarKacaProvider.LayarKacaProvider$loadLinks$3 */
     /* JADX INFO: compiled from: LayarKacaProvider.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider$loadLinks$3", f = "LayarKacaProvider.kt", i = {0, 1, 1, 1, 2, 2, 2}, l = {198, 201, 201}, m = "invokeSuspend", n = {"it", "it", "test", "referer", "it", "test", "referer"}, nl = {199, 201, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.layarKacaProvider.LayarKacaProvider$loadLinks$3", f = "LayarKacaProvider.kt", i = {0, 1, 1, 1, 2, 2, 2}, l = {199, 202, 202}, m = "invokeSuspend", n = {"it", "it", "test", "referer", "it", "test", "referer"}, nl = {200, 202, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
     static final class C00093 extends SuspendLambda implements Function2<String, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

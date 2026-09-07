@@ -52,7 +52,7 @@ public final class HUBCDN extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.zinkmovies.HUBCDN", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {273, 286}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "doc", "scriptText", "encodedUrl", "decodedUrl"}, nl = {274, 285}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C00001 extends ContinuationImpl {
+    static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -65,7 +65,7 @@ public final class HUBCDN extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00001(Continuation<? super C00001> continuation) {
+        C00031(Continuation<? super C00031> continuation) {
             super(continuation);
         }
 
@@ -104,7 +104,7 @@ public final class HUBCDN extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C00001 c00001;
+        C00031 c00031;
         HUBCDN hubcdn;
         Object obj;
         int i;
@@ -134,35 +134,35 @@ public final class HUBCDN extends ExtractorApi {
         String it;
         List groupValues;
         String str2;
-        if (continuation instanceof C00001) {
-            c00001 = (C00001) continuation;
-            if ((c00001.label & Integer.MIN_VALUE) != 0) {
-                c00001.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00031) {
+            c00031 = (C00031) continuation;
+            if ((c00031.label & Integer.MIN_VALUE) != 0) {
+                c00031.label -= Integer.MIN_VALUE;
                 hubcdn = this;
             } else {
                 hubcdn = this;
-                c00001 = hubcdn.new C00001(continuation);
+                c00031 = hubcdn.new C00031(continuation);
             }
         } else {
             hubcdn = this;
-            c00001 = hubcdn.new C00001(continuation);
+            c00031 = hubcdn.new C00031(continuation);
         }
-        C00001 c00002 = c00001;
-        Object $result = c00002.result;
+        C00031 c00032 = c00031;
+        Object $result = c00032.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00002.label) {
+        switch (c00032.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
-                c00002.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c00002.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c00002.L$2 = SpillingKt.nullOutSpilledVariable(function1);
-                c00002.L$3 = function2;
-                c00002.label = 1;
+                c00032.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                c00032.L$3 = function2;
+                c00032.label = 1;
                 obj = coroutine_suspended;
                 i = 1;
-                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00002, 4094, (Object) null);
-                c00002 = c00002;
+                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4094, (Object) null);
+                c00032 = c00032;
                 if (obj2 == obj) {
                     return obj;
                 }
@@ -199,18 +199,18 @@ public final class HUBCDN extends ExtractorApi {
                     String name = hubcdn.getName();
                     String name2 = hubcdn.getName();
                     ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
-                    C00012 c00012 = new C00012(null);
-                    c00002.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00002.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00002.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                    c00002.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                    c00002.L$4 = SpillingKt.nullOutSpilledVariable(doc);
-                    c00002.L$5 = SpillingKt.nullOutSpilledVariable(scriptText);
-                    c00002.L$6 = SpillingKt.nullOutSpilledVariable(encodedUrl);
-                    c00002.L$7 = SpillingKt.nullOutSpilledVariable(decodedUrl);
-                    c00002.L$8 = function4;
-                    c00002.label = 2;
-                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, decodedUrl, infer_type, c00012, c00002);
+                    C00042 c00042 = new C00042(null);
+                    c00032.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(doc);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(scriptText);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(encodedUrl);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(decodedUrl);
+                    c00032.L$8 = function4;
+                    c00032.label = 2;
+                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, decodedUrl, infer_type, c00042, c00032);
                     if (objNewExtractorLink == obj) {
                         return obj;
                     }
@@ -229,10 +229,10 @@ public final class HUBCDN extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 1:
-                Function1<? super ExtractorLink, Unit> function9 = (Function1) c00002.L$3;
-                Function1<? super SubtitleFile, Unit> function10 = (Function1) c00002.L$2;
-                String referer4 = (String) c00002.L$1;
-                url2 = (String) c00002.L$0;
+                Function1<? super ExtractorLink, Unit> function9 = (Function1) c00032.L$3;
+                Function1<? super SubtitleFile, Unit> function10 = (Function1) c00032.L$2;
+                String referer4 = (String) c00032.L$1;
+                url2 = (String) c00032.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 function4 = function9;
@@ -269,18 +269,18 @@ public final class HUBCDN extends ExtractorApi {
                     String name3 = hubcdn.getName();
                     String name4 = hubcdn.getName();
                     ExtractorLinkType infer_type2 = ExtractorApiKt.getINFER_TYPE();
-                    C00012 c00013 = new C00012(null);
-                    c00002.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00002.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00002.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                    c00002.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                    c00002.L$4 = SpillingKt.nullOutSpilledVariable(doc);
-                    c00002.L$5 = SpillingKt.nullOutSpilledVariable(scriptText);
-                    c00002.L$6 = SpillingKt.nullOutSpilledVariable(encodedUrl);
-                    c00002.L$7 = SpillingKt.nullOutSpilledVariable(decodedUrl);
-                    c00002.L$8 = function4;
-                    c00002.label = 2;
-                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(name3, name4, decodedUrl, infer_type2, c00013, c00002);
+                    C00042 c00043 = new C00042(null);
+                    c00032.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(doc);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(scriptText);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(encodedUrl);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(decodedUrl);
+                    c00032.L$8 = function4;
+                    c00032.label = 2;
+                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(name3, name4, decodedUrl, infer_type2, c00043, c00032);
                     if (objNewExtractorLink == obj) {
                         return obj;
                     }
@@ -299,15 +299,15 @@ public final class HUBCDN extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 2:
-                function6 = (Function1) c00002.L$8;
-                decodedUrl2 = (String) c00002.L$7;
-                decodedUrl3 = (String) c00002.L$6;
-                scriptText2 = (String) c00002.L$5;
-                doc2 = (Document) c00002.L$4;
-                function7 = (Function1) c00002.L$3;
-                function5 = (Function1) c00002.L$2;
-                referer3 = (String) c00002.L$1;
-                url3 = (String) c00002.L$0;
+                function6 = (Function1) c00032.L$8;
+                decodedUrl2 = (String) c00032.L$7;
+                decodedUrl3 = (String) c00032.L$6;
+                scriptText2 = (String) c00032.L$5;
+                doc2 = (Document) c00032.L$4;
+                function7 = (Function1) c00032.L$3;
+                function5 = (Function1) c00032.L$2;
+                referer3 = (String) c00032.L$1;
+                url3 = (String) c00032.L$0;
                 ResultKt.throwOnFailure($result);
                 function6.invoke($result);
                 return Unit.INSTANCE;
@@ -320,18 +320,18 @@ public final class HUBCDN extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.zinkmovies.HUBCDN$getUrl$2", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00012 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00042 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         private /* synthetic */ Object L$0;
         int label;
 
-        C00012(Continuation<? super C00012> continuation) {
+        C00042(Continuation<? super C00042> continuation) {
             super(2, continuation);
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00012 = new C00012(continuation);
-            c00012.L$0 = obj;
-            return c00012;
+            Continuation<Unit> c00042 = new C00042(continuation);
+            c00042.L$0 = obj;
+            return c00042;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

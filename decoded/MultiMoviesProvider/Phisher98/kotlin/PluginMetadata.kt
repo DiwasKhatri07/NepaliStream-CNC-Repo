@@ -4,7 +4,7 @@ package nepali.stream.decoded.multimoviesprovider
 object PluginMetadata {
     const val name: String = "MultiMoviesProvider"
     const val originalPluginClass: String = "com.phisher98.MultiMoviesProviderPlugin"
-    const val version: Int = 51
+    const val version: Int = 53
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

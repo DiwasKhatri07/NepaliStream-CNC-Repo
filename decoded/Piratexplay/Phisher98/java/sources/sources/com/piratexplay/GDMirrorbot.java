@@ -52,7 +52,7 @@ public class GDMirrorbot extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.piratexplay.GDMirrorbot", f = "Extractor.kt", i = {0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {153, 156, 188}, m = "extractSidsAndHost", n = {"url", "sid", "url", "url", "pageText", "finalId", "myKey", "idType", "baseUrl", "host", "apiUrl"}, nl = {154, 159, 191}, s = {"L$0", "L$1", "L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C00051 extends ContinuationImpl {
+    static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -64,7 +64,7 @@ public class GDMirrorbot extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00051(Continuation<? super C00051> continuation) {
+        C00081(Continuation<? super C00081> continuation) {
             super(continuation);
         }
 
@@ -80,7 +80,7 @@ public class GDMirrorbot extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.piratexplay.GDMirrorbot", f = "Extractor.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {63, 74, 128, 131, 134}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "$this", "url", "referer", "subtitleCallback", "callback", "sids", "host", "$this$forEach$iv", "element$iv", "sid", "$this", "url", "referer", "subtitleCallback", "callback", "sids", "host", "$this$forEach$iv", "element$iv", "sid", "root", "siteUrls", "siteFriendlyNames", "$this$forEach$iv", "decodedMresult", "responseText", "element$iv", "key", "path", "fullUrl", "friendlyName", "base", "$this", "url", "referer", "subtitleCallback", "callback", "sids", "host", "$this$forEach$iv", "element$iv", "sid", "root", "siteUrls", "siteFriendlyNames", "$this$forEach$iv", "decodedMresult", "responseText", "element$iv", "key", "path", "fullUrl", "friendlyName", "base", "$this", "url", "referer", "subtitleCallback", "callback", "sids", "host", "$this$forEach$iv", "element$iv", "sid", "root", "siteUrls", "siteFriendlyNames", "$this$forEach$iv", "decodedMresult", "responseText", "element$iv", "key", "path", "fullUrl", "friendlyName", "base"}, nl = {65, 81, 131, 134, 137}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23"}, v = 2)
-    static final class C00061 extends ContinuationImpl {
+    static final class C00091 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -108,7 +108,7 @@ public class GDMirrorbot extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00061(Continuation<? super C00061> continuation) {
+        C00091(Continuation<? super C00091> continuation) {
             super(continuation);
         }
 
@@ -177,7 +177,7 @@ public class GDMirrorbot extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:67:0x0200  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     public final Object extractSidsAndHost(String url, Continuation<? super Pair<? extends List<String>, String>> continuation) {
-        C00051 c00051;
+        C00081 c00081;
         Object obj;
         String url2;
         GDMirrorbot gDMirrorbot;
@@ -220,30 +220,30 @@ public class GDMirrorbot extends ExtractorApi {
         JsonElement it2;
         JsonObject json;
         List it3;
-        if (continuation instanceof C00051) {
-            c00051 = (C00051) continuation;
-            if ((c00051.label & Integer.MIN_VALUE) != 0) {
-                c00051.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00081) {
+            c00081 = (C00081) continuation;
+            if ((c00081.label & Integer.MIN_VALUE) != 0) {
+                c00081.label -= Integer.MIN_VALUE;
             } else {
-                c00051 = new C00051(continuation);
+                c00081 = new C00081(continuation);
             }
         } else {
-            c00051 = new C00051(continuation);
+            c00081 = new C00081(continuation);
         }
-        C00051 c00052 = c00051;
-        Object $result = c00052.result;
+        C00081 c00082 = c00081;
+        Object $result = c00082.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00052.label) {
+        switch (c00082.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (!StringsKt.contains$default(url, "key=", false, 2, (Object) null)) {
                     String sid2 = StringsKt.substringAfterLast$default(url, "embed/", (String) null, 2, (Object) null);
                     Requests app = MainActivityKt.getApp();
-                    c00052.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                    c00052.L$1 = sid2;
-                    c00052.L$2 = this;
-                    c00052.label = 1;
-                    $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00052, 4094, (Object) null);
+                    c00082.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                    c00082.L$1 = sid2;
+                    c00082.L$2 = this;
+                    c00082.label = 1;
+                    $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 4094, (Object) null);
                     if ($result == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -253,9 +253,9 @@ public class GDMirrorbot extends ExtractorApi {
                 }
                 obj = coroutine_suspended;
                 Requests app2 = MainActivityKt.getApp();
-                c00052.L$0 = url;
-                c00052.label = 2;
-                $result = Requests.get$default(app2, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00052, 4094, (Object) null);
+                c00082.L$0 = url;
+                c00082.label = 2;
+                $result = Requests.get$default(app2, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 4094, (Object) null);
                 if ($result == obj) {
                     return obj;
                 }
@@ -331,19 +331,19 @@ public class GDMirrorbot extends ExtractorApi {
                         apiUrl = gDMirrorbot2.getMainUrl() + "/mymovieapi?" + idType + '=' + finalId + "&key=" + myKey2;
                     }
                     Requests app3 = MainActivityKt.getApp();
-                    c00052.L$0 = url2;
-                    c00052.L$1 = SpillingKt.nullOutSpilledVariable(pageText);
-                    c00052.L$2 = SpillingKt.nullOutSpilledVariable(finalId);
-                    c00052.L$3 = SpillingKt.nullOutSpilledVariable(myKey2);
-                    c00052.L$4 = SpillingKt.nullOutSpilledVariable(idType);
-                    c00052.L$5 = SpillingKt.nullOutSpilledVariable(baseUrl);
-                    c00052.L$6 = host;
-                    c00052.L$7 = SpillingKt.nullOutSpilledVariable(apiUrl);
-                    c00052.label = 3;
+                    c00082.L$0 = url2;
+                    c00082.L$1 = SpillingKt.nullOutSpilledVariable(pageText);
+                    c00082.L$2 = SpillingKt.nullOutSpilledVariable(finalId);
+                    c00082.L$3 = SpillingKt.nullOutSpilledVariable(myKey2);
+                    c00082.L$4 = SpillingKt.nullOutSpilledVariable(idType);
+                    c00082.L$5 = SpillingKt.nullOutSpilledVariable(baseUrl);
+                    c00082.L$6 = host;
+                    c00082.L$7 = SpillingKt.nullOutSpilledVariable(apiUrl);
+                    c00082.label = 3;
                     String idType2 = apiUrl;
                     url3 = url2;
                     jsonElement = null;
-                    Object obj2 = Requests.get$default(app3, apiUrl, (Map) null, idType2, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00052, 4090, (Object) null);
+                    Object obj2 = Requests.get$default(app3, apiUrl, (Map) null, idType2, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 4090, (Object) null);
                     if (obj2 == obj) {
                         return obj;
                     }
@@ -393,12 +393,12 @@ public class GDMirrorbot extends ExtractorApi {
                 }
                 return new Pair(it3, host2);
             case 1:
-                gDMirrorbot = (GDMirrorbot) c00052.L$2;
-                sid = (String) c00052.L$1;
+                gDMirrorbot = (GDMirrorbot) c00082.L$2;
+                sid = (String) c00082.L$1;
                 ResultKt.throwOnFailure($result);
                 return new Pair(CollectionsKt.listOf(sid), gDMirrorbot.getBaseUrl(((NiceResponse) $result).getUrl()));
             case 2:
-                url2 = (String) c00052.L$0;
+                url2 = (String) c00082.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 pageText = ((NiceResponse) $result).getText();
@@ -465,10 +465,10 @@ public class GDMirrorbot extends ExtractorApi {
                 }
                 return null;
             case 3:
-                apiUrl2 = (String) c00052.L$6;
-                baseUrl3 = (String) c00052.L$5;
-                myKey = (String) c00052.L$3;
-                String url6 = (String) c00052.L$0;
+                apiUrl2 = (String) c00082.L$6;
+                baseUrl3 = (String) c00082.L$5;
+                myKey = (String) c00082.L$3;
+                String url6 = (String) c00082.L$0;
                 ResultKt.throwOnFailure($result);
                 url3 = url6;
                 jsonElement = null;

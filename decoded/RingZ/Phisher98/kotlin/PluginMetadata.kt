@@ -4,7 +4,7 @@ package nepali.stream.decoded.ringz
 object PluginMetadata {
     const val name: String = "RingZ"
     const val originalPluginClass: String = "com.RingZ.RingZProvider"
-    const val version: Int = 10
+    const val version: Int = 12
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

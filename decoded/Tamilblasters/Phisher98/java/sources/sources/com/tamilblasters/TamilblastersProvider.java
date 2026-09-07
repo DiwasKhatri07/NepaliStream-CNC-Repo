@@ -23,6 +23,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -71,7 +72,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: TamilblastersProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Tamilblasters/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001:\u00019B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fH\u0096@¢\u0006\u0002\u0010 J\u000e\u0010!\u001a\u0004\u0018\u00010\"*\u00020#H\u0002J\u001c\u0010$\u001a\b\u0012\u0004\u0012\u00020\"0%2\u0006\u0010&\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010'J\u0018\u0010(\u001a\u0004\u0018\u00010)2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010'JF\u0010+\u001a\u00020\u00172\u0006\u0010,\u001a\u00020\u00052\u0006\u0010-\u001a\u00020\u00172\u0012\u0010.\u001a\u000e\u0012\u0004\u0012\u000200\u0012\u0004\u0012\u0002010/2\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000203\u0012\u0004\u0012\u0002010/H\u0096@¢\u0006\u0002\u00104J\u0016\u00105\u001a\b\u0012\u0004\u0012\u0002060%2\u0006\u00107\u001a\u000208H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010\u000b\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\u0007\"\u0004\b\r\u0010\tR\u001a\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u001a\u0010\u0013\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0007\"\u0004\b\u0015\u0010\tR\u0014\u0010\u0016\u001a\u00020\u0017X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019¨\u0006:"}, d2 = {"Lcom/tamilblasters/TamilblastersProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "streamhg", "name", "getName", "setName", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "extractVideos", "Lcom/tamilblasters/TamilblastersProvider$VideoEntry;", "document", "Lorg/jsoup/nodes/Document;", "VideoEntry", "Tamilblasters"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nTamilblastersProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TamilblastersProvider.kt\ncom/tamilblasters/TamilblastersProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,148:1\n1795#2,10:149\n2068#2:159\n2069#2:161\n1805#2:162\n1795#2,10:163\n2068#2:173\n2069#2:175\n1805#2:176\n296#2,2:177\n1739#2:180\n1814#2,3:181\n1795#2,10:207\n2068#2:217\n296#2,2:218\n2069#2:222\n1805#2:223\n1#3:160\n1#3:174\n1#3:179\n1#3:187\n1#3:220\n1#3:221\n93#4,2:184\n63#4:186\n64#4,15:188\n95#4,2:205\n50#5:203\n43#5:204\n*S KotlinDebug\n*F\n+ 1 TamilblastersProvider.kt\ncom/tamilblasters/TamilblastersProvider\n*L\n40#1:149,10\n40#1:159\n40#1:161\n40#1:162\n57#1:163,10\n57#1:173\n57#1:175\n57#1:176\n72#1:177,2\n75#1:180\n75#1:181,3\n141#1:207,10\n141#1:217\n143#1:218,2\n141#1:222\n141#1:223\n40#1:160\n57#1:174\n101#1:187\n141#1:221\n101#1:184,2\n101#1:186\n101#1:188,15\n101#1:205,2\n101#1:203\n101#1:204\n*E\n"})
+@SourceDebugExtension({"SMAP\nTamilblastersProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TamilblastersProvider.kt\ncom/tamilblasters/TamilblastersProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,149:1\n1795#2,10:150\n2068#2:160\n2069#2:162\n1805#2:163\n1795#2,10:164\n2068#2:174\n2069#2:176\n1805#2:177\n296#2,2:178\n1739#2:181\n1814#2,3:182\n1795#2,10:208\n2068#2:218\n296#2,2:219\n2069#2:223\n1805#2:224\n1#3:161\n1#3:175\n1#3:180\n1#3:188\n1#3:221\n1#3:222\n93#4,2:185\n63#4:187\n64#4,15:189\n95#4,2:206\n50#5:204\n43#5:205\n*S KotlinDebug\n*F\n+ 1 TamilblastersProvider.kt\ncom/tamilblasters/TamilblastersProvider\n*L\n41#1:150,10\n41#1:160\n41#1:162\n41#1:163\n58#1:164,10\n58#1:174\n58#1:176\n58#1:177\n73#1:178,2\n76#1:181\n76#1:182,3\n142#1:208,10\n142#1:218\n144#1:219,2\n142#1:223\n142#1:224\n41#1:161\n58#1:175\n102#1:188\n142#1:222\n102#1:185,2\n102#1:187\n102#1:189,15\n102#1:206,2\n102#1:204\n102#1:205\n*E\n"})
 public final class TamilblastersProvider extends MainAPI {
 
     @NotNull
@@ -93,15 +94,15 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX INFO: renamed from: com.tamilblasters.TamilblastersProvider$getMainPage$1 */
     /* JADX INFO: compiled from: TamilblastersProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider", f = "TamilblastersProvider.kt", i = {0, 0, 0}, l = {39}, m = "getMainPage", n = {"request", "url", "page"}, nl = {40}, s = {"L$0", "L$1", "I$0"}, v = 2)
-    static final class C00011 extends ContinuationImpl {
+    @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider", f = "TamilblastersProvider.kt", i = {0, 0, 0}, l = {40}, m = "getMainPage", n = {"request", "url", "page"}, nl = {41}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    static final class C00041 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C00011(Continuation<? super C00011> continuation) {
+        C00041(Continuation<? super C00041> continuation) {
             super(continuation);
         }
 
@@ -116,8 +117,8 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX INFO: renamed from: com.tamilblasters.TamilblastersProvider$load$1 */
     /* JADX INFO: compiled from: TamilblastersProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider", f = "TamilblastersProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {65, 80, 86}, m = "load", n = {"url", "url", "document", "ogdesc", "title", "year", "type", "posterUrl", "plotParagraph", "desc", "episodes", "url", "document", "ogdesc", "title", "year", "type", "posterUrl", "plotParagraph", "desc"}, nl = {66, 86, 74}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
-    static final class C00021 extends ContinuationImpl {
+    @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider", f = "TamilblastersProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {66, 81, 87}, m = "load", n = {"url", "url", "document", "ogdesc", "title", "year", "type", "posterUrl", "plotParagraph", "desc", "episodes", "url", "document", "ogdesc", "title", "year", "type", "posterUrl", "plotParagraph", "desc"}, nl = {67, 87, 75}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
+    static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -131,7 +132,7 @@ public final class TamilblastersProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00021(Continuation<? super C00021> continuation) {
+        C00051(Continuation<? super C00051> continuation) {
             super(continuation);
         }
 
@@ -146,8 +147,8 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX INFO: renamed from: com.tamilblasters.TamilblastersProvider$loadLinks$1 */
     /* JADX INFO: compiled from: TamilblastersProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider", f = "TamilblastersProvider.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {108, 112, 113}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "streamurl", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "doc", "isCasting"}, nl = {109, 113, 135}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
-    static final class C00051 extends ContinuationImpl {
+    @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider", f = "TamilblastersProvider.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {109, 113, 114}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "streamurl", "isCasting", "data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "doc", "isCasting"}, nl = {110, 114, 136}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -157,7 +158,7 @@ public final class TamilblastersProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00051(Continuation<? super C00051> continuation) {
+        C00081(Continuation<? super C00081> continuation) {
             super(continuation);
         }
 
@@ -172,13 +173,13 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX INFO: renamed from: com.tamilblasters.TamilblastersProvider$search$1 */
     /* JADX INFO: compiled from: TamilblastersProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider", f = "TamilblastersProvider.kt", i = {0}, l = {56}, m = "search", n = {"query"}, nl = {57}, s = {"L$0"}, v = 2)
-    static final class C00071 extends ContinuationImpl {
+    @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider", f = "TamilblastersProvider.kt", i = {0}, l = {57}, m = "search", n = {"query"}, nl = {58}, s = {"L$0"}, v = 2)
+    static final class C00101 extends ContinuationImpl {
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00071(Continuation<? super C00071> continuation) {
+        C00101(Continuation<? super C00101> continuation) {
             super(continuation);
         }
 
@@ -229,37 +230,38 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
-        C00011 c00011;
+        C00041 c00041;
         int page2 = page;
-        if (continuation instanceof C00011) {
-            c00011 = (C00011) continuation;
-            if ((c00011.label & Integer.MIN_VALUE) != 0) {
-                c00011.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00041) {
+            c00041 = (C00041) continuation;
+            if ((c00041.label & Integer.MIN_VALUE) != 0) {
+                c00041.label -= Integer.MIN_VALUE;
             } else {
-                c00011 = new C00011(continuation);
+                c00041 = new C00041(continuation);
             }
         } else {
-            c00011 = new C00011(continuation);
+            c00041 = new C00041(continuation);
         }
-        Object $result = c00011.result;
+        Object $result = c00041.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00011.label) {
+        switch (c00041.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String url = page2 == 1 ? getMainUrl() : getMainUrl() + "/page/" + page2;
                 Requests app = MainActivityKt.getApp();
-                c00011.L$0 = SpillingKt.nullOutSpilledVariable(request);
-                c00011.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c00011.I$0 = page2;
-                c00011.label = 1;
-                $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00011, 4094, (Object) null);
+                c00041.L$0 = SpillingKt.nullOutSpilledVariable(request);
+                c00041.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00041.I$0 = page2;
+                c00041.label = 1;
+                $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00041, 4094, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 break;
                 break;
             case 1:
-                page2 = c00011.I$0;
+                page2 = c00041.I$0;
                 ResultKt.throwOnFailure($result);
                 break;
             default:
@@ -309,27 +311,27 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
-        C00071 c00071;
-        if (continuation instanceof C00071) {
-            c00071 = (C00071) continuation;
-            if ((c00071.label & Integer.MIN_VALUE) != 0) {
-                c00071.label -= Integer.MIN_VALUE;
+        C00101 c00101;
+        if (continuation instanceof C00101) {
+            c00101 = (C00101) continuation;
+            if ((c00101.label & Integer.MIN_VALUE) != 0) {
+                c00101.label -= Integer.MIN_VALUE;
             } else {
-                c00071 = new C00071(continuation);
+                c00101 = new C00101(continuation);
             }
         } else {
-            c00071 = new C00071(continuation);
+            c00101 = new C00101(continuation);
         }
-        Object $result = c00071.result;
+        Object $result = c00101.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00071.label) {
+        switch (c00101.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + "/?s=" + query;
-                c00071.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                c00071.label = 1;
-                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00071, 4094, (Object) null);
+                c00101.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c00101.label = 1;
+                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00101, 4094, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -449,7 +451,7 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:82:0x01a8 A[SYNTHETIC] */
     @Nullable
     public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) {
-        C00021 c00021;
+        C00051 c00051;
         Object obj;
         Object obj2;
         String url2;
@@ -490,28 +492,28 @@ public final class TamilblastersProvider extends MainAPI {
         String strText;
         List groupValues;
         String str;
-        if (continuation instanceof C00021) {
-            c00021 = (C00021) continuation;
-            if ((c00021.label & Integer.MIN_VALUE) != 0) {
-                c00021.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00051) {
+            c00051 = (C00051) continuation;
+            if ((c00051.label & Integer.MIN_VALUE) != 0) {
+                c00051.label -= Integer.MIN_VALUE;
             } else {
-                c00021 = new C00021(continuation);
+                c00051 = new C00051(continuation);
             }
         } else {
-            c00021 = new C00021(continuation);
+            c00051 = new C00051(continuation);
         }
-        C00021 c00022 = c00021;
-        Object $result2 = c00022.result;
+        C00051 c00052 = c00051;
+        Object $result2 = c00052.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00022.label) {
+        switch (c00052.label) {
             case 0:
                 ResultKt.throwOnFailure($result2);
                 Requests app = MainActivityKt.getApp();
-                c00022.L$0 = url;
-                c00022.label = 1;
+                c00052.L$0 = url;
+                c00052.label = 1;
                 obj = coroutine_suspended;
-                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4094, (Object) null);
-                c00022 = c00022;
+                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00052, 4094, (Object) null);
+                c00052 = c00052;
                 if (obj2 == obj) {
                     return obj;
                 }
@@ -582,18 +584,18 @@ public final class TamilblastersProvider extends MainAPI {
                     if (type == TvType.TvSeries) {
                         desc2 = title2;
                         TvType tvType2 = TvType.Movie;
-                        C00043 c00043 = new C00043(posterUrl, year, desc, null);
-                        c00022.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(ogdesc);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(desc2);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(year);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(type);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(posterUrl);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(plotParagraph);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(desc);
-                        c00022.label = 3;
-                        objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, desc2, url2, tvType2, url2, c00043, c00022);
+                        C00073 c00073 = new C00073(posterUrl, year, desc, null);
+                        c00052.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c00052.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                        c00052.L$2 = SpillingKt.nullOutSpilledVariable(ogdesc);
+                        c00052.L$3 = SpillingKt.nullOutSpilledVariable(desc2);
+                        c00052.L$4 = SpillingKt.nullOutSpilledVariable(year);
+                        c00052.L$5 = SpillingKt.nullOutSpilledVariable(type);
+                        c00052.L$6 = SpillingKt.nullOutSpilledVariable(posterUrl);
+                        c00052.L$7 = SpillingKt.nullOutSpilledVariable(plotParagraph);
+                        c00052.L$8 = SpillingKt.nullOutSpilledVariable(desc);
+                        c00052.label = 3;
+                        objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, desc2, url2, tvType2, url2, c00073, c00052);
                         if (objNewMovieLoadResponse == obj) {
                             return obj;
                         }
@@ -622,19 +624,19 @@ public final class TamilblastersProvider extends MainAPI {
                     }
                     List episodes = CollectionsKt.reversed((List) destination$iv$iv);
                     TvType tvType3 = TvType.TvSeries;
-                    C00032 c00032 = new C00032(posterUrl, year, desc, null);
-                    c00022.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(ogdesc);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(title2);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(year);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(type);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(posterUrl);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(plotParagraph);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(desc);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(episodes);
-                    c00022.label = 2;
-                    objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse(this, title2, url2, tvType3, episodes, c00032, c00022);
+                    C00062 c00062 = new C00062(posterUrl, year, desc, null);
+                    c00052.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00052.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                    c00052.L$2 = SpillingKt.nullOutSpilledVariable(ogdesc);
+                    c00052.L$3 = SpillingKt.nullOutSpilledVariable(title2);
+                    c00052.L$4 = SpillingKt.nullOutSpilledVariable(year);
+                    c00052.L$5 = SpillingKt.nullOutSpilledVariable(type);
+                    c00052.L$6 = SpillingKt.nullOutSpilledVariable(posterUrl);
+                    c00052.L$7 = SpillingKt.nullOutSpilledVariable(plotParagraph);
+                    c00052.L$8 = SpillingKt.nullOutSpilledVariable(desc);
+                    c00052.L$9 = SpillingKt.nullOutSpilledVariable(episodes);
+                    c00052.label = 2;
+                    objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse(this, title2, url2, tvType3, episodes, c00062, c00052);
                     if (objNewTvSeriesLoadResponse == obj) {
                         return obj;
                     }
@@ -642,7 +644,7 @@ public final class TamilblastersProvider extends MainAPI {
                 }
                 return null;
             case 1:
-                String url5 = (String) c00022.L$0;
+                String url5 = (String) c00052.L$0;
                 ResultKt.throwOnFailure($result2);
                 obj = coroutine_suspended;
                 url2 = url5;
@@ -710,18 +712,18 @@ public final class TamilblastersProvider extends MainAPI {
                 if (type == TvType.TvSeries) {
                     desc2 = title2;
                     TvType tvType4 = TvType.Movie;
-                    C00043 c00044 = new C00043(posterUrl, year, desc, null);
-                    c00022.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(ogdesc);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(desc2);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(year);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(type);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(posterUrl);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(plotParagraph);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(desc);
-                    c00022.label = 3;
-                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, desc2, url2, tvType4, url2, c00044, c00022);
+                    C00073 c00074 = new C00073(posterUrl, year, desc, null);
+                    c00052.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00052.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                    c00052.L$2 = SpillingKt.nullOutSpilledVariable(ogdesc);
+                    c00052.L$3 = SpillingKt.nullOutSpilledVariable(desc2);
+                    c00052.L$4 = SpillingKt.nullOutSpilledVariable(year);
+                    c00052.L$5 = SpillingKt.nullOutSpilledVariable(type);
+                    c00052.L$6 = SpillingKt.nullOutSpilledVariable(posterUrl);
+                    c00052.L$7 = SpillingKt.nullOutSpilledVariable(plotParagraph);
+                    c00052.L$8 = SpillingKt.nullOutSpilledVariable(desc);
+                    c00052.label = 3;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, desc2, url2, tvType4, url2, c00074, c00052);
                     if (objNewMovieLoadResponse == obj) {
                         return obj;
                     }
@@ -750,19 +752,19 @@ public final class TamilblastersProvider extends MainAPI {
                 }
                 List episodes2 = CollectionsKt.reversed((List) destination$iv$iv);
                 TvType tvType5 = TvType.TvSeries;
-                C00032 c00033 = new C00032(posterUrl, year, desc, null);
-                c00022.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(ogdesc);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(title2);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(year);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(type);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(posterUrl);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(plotParagraph);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(desc);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(episodes2);
-                c00022.label = 2;
-                objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse(this, title2, url2, tvType5, episodes2, c00033, c00022);
+                C00062 c00063 = new C00062(posterUrl, year, desc, null);
+                c00052.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c00052.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                c00052.L$2 = SpillingKt.nullOutSpilledVariable(ogdesc);
+                c00052.L$3 = SpillingKt.nullOutSpilledVariable(title2);
+                c00052.L$4 = SpillingKt.nullOutSpilledVariable(year);
+                c00052.L$5 = SpillingKt.nullOutSpilledVariable(type);
+                c00052.L$6 = SpillingKt.nullOutSpilledVariable(posterUrl);
+                c00052.L$7 = SpillingKt.nullOutSpilledVariable(plotParagraph);
+                c00052.L$8 = SpillingKt.nullOutSpilledVariable(desc);
+                c00052.L$9 = SpillingKt.nullOutSpilledVariable(episodes2);
+                c00052.label = 2;
+                objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse(this, title2, url2, tvType5, episodes2, c00063, c00052);
                 if (objNewTvSeriesLoadResponse == obj) {
                     return obj;
                 }
@@ -772,15 +774,15 @@ public final class TamilblastersProvider extends MainAPI {
                 objNewTvSeriesLoadResponse = $result2;
                 return (LoadResponse) objNewTvSeriesLoadResponse;
             case 3:
-                desc3 = (String) c00022.L$8;
-                plotParagraph2 = (Element) c00022.L$7;
-                url4 = (String) c00022.L$6;
-                type2 = (TvType) c00022.L$5;
-                year2 = (Integer) c00022.L$4;
-                title3 = (String) c00022.L$3;
-                ogdesc = (String) c00022.L$2;
-                document = (Document) c00022.L$1;
-                url3 = (String) c00022.L$0;
+                desc3 = (String) c00052.L$8;
+                plotParagraph2 = (Element) c00052.L$7;
+                url4 = (String) c00052.L$6;
+                type2 = (TvType) c00052.L$5;
+                year2 = (Integer) c00052.L$4;
+                title3 = (String) c00052.L$3;
+                ogdesc = (String) c00052.L$2;
+                document = (Document) c00052.L$1;
+                url3 = (String) c00052.L$0;
                 ResultKt.throwOnFailure($result2);
                 objNewMovieLoadResponse = $result2;
                 return (LoadResponse) objNewMovieLoadResponse;
@@ -799,7 +801,7 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX INFO: compiled from: TamilblastersProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider$load$2", f = "TamilblastersProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00032 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    static final class C00062 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $desc;
         final /* synthetic */ String $posterUrl;
         final /* synthetic */ Integer $year;
@@ -807,7 +809,7 @@ public final class TamilblastersProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00032(String str, Integer num, String str2, Continuation<? super C00032> continuation) {
+        C00062(String str, Integer num, String str2, Continuation<? super C00062> continuation) {
             super(2, continuation);
             this.$posterUrl = str;
             this.$year = num;
@@ -815,9 +817,9 @@ public final class TamilblastersProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00032 = new C00032(this.$posterUrl, this.$year, this.$desc, continuation);
-            c00032.L$0 = obj;
-            return c00032;
+            Continuation<Unit> c00062 = new C00062(this.$posterUrl, this.$year, this.$desc, continuation);
+            c00062.L$0 = obj;
+            return c00062;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -844,7 +846,7 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX INFO: compiled from: TamilblastersProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider$load$3", f = "TamilblastersProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00043 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+    static final class C00073 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $desc;
         final /* synthetic */ String $posterUrl;
         final /* synthetic */ Integer $year;
@@ -852,7 +854,7 @@ public final class TamilblastersProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00043(String str, Integer num, String str2, Continuation<? super C00043> continuation) {
+        C00073(String str, Integer num, String str2, Continuation<? super C00073> continuation) {
             super(2, continuation);
             this.$posterUrl = str;
             this.$year = num;
@@ -860,9 +862,9 @@ public final class TamilblastersProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00043 = new C00043(this.$posterUrl, this.$year, this.$desc, continuation);
-            c00043.L$0 = obj;
-            return c00043;
+            Continuation<Unit> c00073 = new C00073(this.$posterUrl, this.$year, this.$desc, continuation);
+            c00073.L$0 = obj;
+            return c00073;
         }
 
         public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
@@ -893,7 +895,7 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:88:0x0111 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
-        C00051 c00051;
+        C00081 c00081;
         boolean z;
         Continuation continuation2;
         Object obj;
@@ -908,39 +910,39 @@ public final class TamilblastersProvider extends MainAPI {
         String value$iv$iv;
         boolean z2;
         List listSelect;
-        C00062 c00062;
-        if (continuation instanceof C00051) {
-            c00051 = (C00051) continuation;
-            if ((c00051.label & Integer.MIN_VALUE) != 0) {
-                c00051.label -= Integer.MIN_VALUE;
+        C00092 c00092;
+        if (continuation instanceof C00081) {
+            c00081 = (C00081) continuation;
+            if ((c00081.label & Integer.MIN_VALUE) != 0) {
+                c00081.label -= Integer.MIN_VALUE;
             } else {
-                c00051 = new C00051(continuation);
+                c00081 = new C00081(continuation);
             }
         } else {
-            c00051 = new C00051(continuation);
+            c00081 = new C00081(continuation);
         }
-        C00051 c00052 = c00051;
-        Object $result = c00052.result;
+        C00081 c00082 = c00081;
+        Object $result = c00082.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00052.label) {
+        switch (c00082.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (!StringsKt.startsWith$default(data, "{", false, 2, (Object) null)) {
                     Requests app = MainActivityKt.getApp();
-                    c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
-                    c00052.L$1 = function1;
-                    c00052.L$2 = function2;
-                    c00052.Z$0 = isCasting;
-                    c00052.label = 2;
+                    c00082.L$0 = SpillingKt.nullOutSpilledVariable(data);
+                    c00082.L$1 = function1;
+                    c00082.L$2 = function2;
+                    c00082.Z$0 = isCasting;
+                    c00082.label = 2;
                     z = true;
                     continuation2 = null;
                     obj = coroutine_suspended;
-                    Object obj4 = Requests.get$default(app, data, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00052, 4094, (Object) null);
+                    Object obj4 = Requests.get$default(app, data, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 4094, (Object) null);
                     if (obj4 == obj) {
-                        c00052 = c00052;
+                        c00082 = c00082;
                         return obj;
                     }
-                    c00052 = c00052;
+                    c00082 = c00082;
                     function3 = function1;
                     obj2 = obj4;
                     function4 = function2;
@@ -948,14 +950,14 @@ public final class TamilblastersProvider extends MainAPI {
                     isCasting2 = isCasting;
                     Document doc = ((NiceResponse) obj2).getDocument();
                     listSelect = doc.select("iframe");
-                    c00062 = new C00062(function3, function4, continuation2);
-                    c00052.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                    c00052.L$1 = SpillingKt.nullOutSpilledVariable(function3);
-                    c00052.L$2 = SpillingKt.nullOutSpilledVariable(function4);
-                    c00052.L$3 = SpillingKt.nullOutSpilledVariable(doc);
-                    c00052.Z$0 = isCasting2;
-                    c00052.label = 3;
-                    if (ParCollectionsKt.amap(listSelect, c00062, c00052) == obj) {
+                    c00092 = new C00092(function3, function4, continuation2);
+                    c00082.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                    c00082.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00082.L$2 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00082.L$3 = SpillingKt.nullOutSpilledVariable(doc);
+                    c00082.Z$0 = isCasting2;
+                    c00082.label = 3;
+                    if (ParCollectionsKt.amap(listSelect, c00092, c00082) == obj) {
                         return obj;
                     }
                     return Boxing.boxBoolean(z);
@@ -1048,24 +1050,24 @@ public final class TamilblastersProvider extends MainAPI {
                     streamurl = this.streamhg + "/e/" + secondPart;
                 }
                 String str = getMainUrl() + '/';
-                c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
-                c00052.L$1 = SpillingKt.nullOutSpilledVariable(function1);
-                c00052.L$2 = SpillingKt.nullOutSpilledVariable(function2);
-                c00052.L$3 = SpillingKt.nullOutSpilledVariable(loadData);
-                c00052.L$4 = SpillingKt.nullOutSpilledVariable(streamurl);
-                c00052.Z$0 = isCasting;
+                c00082.L$0 = SpillingKt.nullOutSpilledVariable(data);
+                c00082.L$1 = SpillingKt.nullOutSpilledVariable(function1);
+                c00082.L$2 = SpillingKt.nullOutSpilledVariable(function2);
+                c00082.L$3 = SpillingKt.nullOutSpilledVariable(loadData);
+                c00082.L$4 = SpillingKt.nullOutSpilledVariable(streamurl);
+                c00082.Z$0 = isCasting;
                 z2 = true;
-                c00052.label = 1;
-                return ExtractorApiKt.loadExtractor(streamurl, str, function1, function2, c00052) == coroutine_suspended ? coroutine_suspended : Boxing.boxBoolean(z2);
+                c00082.label = 1;
+                return ExtractorApiKt.loadExtractor(streamurl, str, function1, function2, c00082) == coroutine_suspended ? coroutine_suspended : Boxing.boxBoolean(z2);
             case 1:
-                boolean isCasting3 = c00052.Z$0;
+                boolean isCasting3 = c00082.Z$0;
                 ResultKt.throwOnFailure($result);
                 z2 = true;
             case 2:
-                isCasting2 = c00052.Z$0;
-                Function1<? super ExtractorLink, Unit> function5 = (Function1) c00052.L$2;
-                Function1<? super SubtitleFile, Unit> function6 = (Function1) c00052.L$1;
-                data2 = (String) c00052.L$0;
+                isCasting2 = c00082.Z$0;
+                Function1<? super ExtractorLink, Unit> function5 = (Function1) c00082.L$2;
+                Function1<? super SubtitleFile, Unit> function6 = (Function1) c00082.L$1;
+                data2 = (String) c00082.L$0;
                 ResultKt.throwOnFailure($result);
                 function4 = function5;
                 obj = coroutine_suspended;
@@ -1075,19 +1077,19 @@ public final class TamilblastersProvider extends MainAPI {
                 continuation2 = null;
                 Document doc2 = ((NiceResponse) obj2).getDocument();
                 listSelect = doc2.select("iframe");
-                c00062 = new C00062(function3, function4, continuation2);
-                c00052.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                c00052.L$1 = SpillingKt.nullOutSpilledVariable(function3);
-                c00052.L$2 = SpillingKt.nullOutSpilledVariable(function4);
-                c00052.L$3 = SpillingKt.nullOutSpilledVariable(doc2);
-                c00052.Z$0 = isCasting2;
-                c00052.label = 3;
-                if (ParCollectionsKt.amap(listSelect, c00062, c00052) == obj) {
+                c00092 = new C00092(function3, function4, continuation2);
+                c00082.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                c00082.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                c00082.L$2 = SpillingKt.nullOutSpilledVariable(function4);
+                c00082.L$3 = SpillingKt.nullOutSpilledVariable(doc2);
+                c00082.Z$0 = isCasting2;
+                c00082.label = 3;
+                if (ParCollectionsKt.amap(listSelect, c00092, c00082) == obj) {
                     return obj;
                 }
                 return Boxing.boxBoolean(z);
             case 3:
-                boolean z3 = c00052.Z$0;
+                boolean z3 = c00082.Z$0;
                 ResultKt.throwOnFailure($result);
                 z = true;
                 return Boxing.boxBoolean(z);
@@ -1099,8 +1101,8 @@ public final class TamilblastersProvider extends MainAPI {
     /* JADX INFO: renamed from: com.tamilblasters.TamilblastersProvider$loadLinks$2 */
     /* JADX INFO: compiled from: TamilblastersProvider.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "iframe", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider$loadLinks$2", f = "TamilblastersProvider.kt", i = {0, 0, 0, 1, 1, 1}, l = {120, 127}, m = "invokeSuspend", n = {"iframe", "streamurl", "host", "iframe", "streamurl", "host"}, nl = {127, 133}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
-    static final class C00062 extends SuspendLambda implements Function2<Element, Continuation<? super Object>, Object> {
+    @DebugMetadata(c = "com.tamilblasters.TamilblastersProvider$loadLinks$2", f = "TamilblastersProvider.kt", i = {0, 0, 0, 1, 1, 1}, l = {121, 128}, m = "invokeSuspend", n = {"iframe", "streamurl", "host", "iframe", "streamurl", "host"}, nl = {128, 134}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
+    static final class C00092 extends SuspendLambda implements Function2<Element, Continuation<? super Object>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
         /* synthetic */ Object L$0;
@@ -1109,16 +1111,16 @@ public final class TamilblastersProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00062(Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00062> continuation) {
+        C00092(Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00092> continuation) {
             super(2, continuation);
             this.$subtitleCallback = function1;
             this.$callback = function2;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00062 = TamilblastersProvider.this.new C00062(this.$subtitleCallback, this.$callback, continuation);
-            c00062.L$0 = obj;
-            return c00062;
+            Continuation<Unit> c00092 = TamilblastersProvider.this.new C00092(this.$subtitleCallback, this.$callback, continuation);
+            c00092.L$0 = obj;
+            return c00092;
         }
 
         public final Object invoke(Element element, Continuation<Object> continuation) {

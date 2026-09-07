@@ -24,6 +24,7 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -72,7 +73,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: MPlayer.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/MPlayerProvider/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u008c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0001IB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\f\u0010&\u001a\u00020'*\u00020)H\u0002J\u0010\u0010*\u001a\u0004\u0018\u00010\n2\u0006\u0010+\u001a\u00020(J\u0010\u0010*\u001a\u0004\u0018\u00010\n2\u0006\u0010+\u001a\u00020)J\u0010\u0010,\u001a\u0004\u0018\u00010\n2\u0006\u0010-\u001a\u00020\nJ\u0010\u0010.\u001a\u0004\u0018\u00010\n2\u0006\u0010+\u001a\u00020(J\u001c\u0010/\u001a\b\u0012\u0004\u0012\u00020'002\u0006\u00101\u001a\u00020\nH\u0096@¢\u0006\u0002\u00102J\u0018\u00103\u001a\u0004\u0018\u0001042\u0006\u00105\u001a\u00020\nH\u0096@¢\u0006\u0002\u00102JF\u00106\u001a\u00020\u00162\u0006\u00107\u001a\u00020\n2\u0006\u00108\u001a\u00020\u00162\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020;\u0012\u0004\u0012\u00020<0:2\u0012\u0010=\u001a\u000e\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u00020<0:H\u0096@¢\u0006\u0002\u0010?J(\u0010@\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\"\u0012\u0004\u0012\u00020\n0A002\u0006\u00105\u001a\u00020\nH\u0082@¢\u0006\u0002\u00102J\"\u0010B\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0C*\u00020D2\b\b\u0002\u0010E\u001a\u00020\nH\u0002J\u0010\u0010F\u001a\u0004\u0018\u00010\n*\u0004\u0018\u00010GH\u0002J\u0014\u0010H\u001a\u0004\u0018\u00010\n2\b\u00105\u001a\u0004\u0018\u00010\nH\u0002R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\f\"\u0004\b\u0011\u0010\u000eR\u001a\u0010\u0012\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\f\"\u0004\b\u0014\u0010\u000eR\u0014\u0010\u0015\u001a\u00020\u0016X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u001a\u001a\u0004\u0018\u00010\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\nX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\nX\u0082D¢\u0006\u0002\n\u0000R\u0014\u0010\u001d\u001a\u00020\n8BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u001e\u0010\f¨\u0006J"}, d2 = {"Lcom/MPlayer/MPlayer;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "imageUrl", "userID", "webApi", "endpointurl", "endParam", "getEndParam", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/MPlayer/MovieItem;", "Lcom/MPlayer/Item;", "getPortraitLargeImageUrl", "item", "getMovieBigPic", "jsonString", "getMBigPic", "search", "", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getSeasonData", "Lkotlin/Pair;", "getCookies", "", "Lokhttp3/Headers;", "cookieKey", "bestVariant", "Lorg/json/JSONObject;", "normalizeUrl", "LoadUrl", "MPlayerProvider"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nMPlayer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MPlayer.kt\ncom/MPlayer/MPlayer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,522:1\n1739#2:523\n1814#2,3:524\n1739#2:527\n1814#2,3:528\n1739#2:531\n1814#2,3:532\n1739#2:535\n1814#2,3:536\n1739#2:539\n1814#2,3:540\n296#2,2:543\n296#2,2:546\n296#2,2:548\n296#2,2:550\n1739#2:552\n1814#2,3:553\n1739#2:556\n1814#2,3:557\n1739#2:560\n1814#2,3:561\n777#2:564\n873#2,2:565\n2068#2:567\n2068#2,2:568\n2069#2:570\n1795#2,10:571\n2068#2:581\n2069#2:583\n1805#2:584\n777#2:585\n873#2,2:586\n1795#2,10:588\n2068#2:598\n2069#2:600\n1805#2:601\n1358#2,2:602\n1435#2,4:604\n1#3:545\n1#3:582\n1#3:599\n684#4:608\n669#4,6:609\n*S KotlinDebug\n*F\n+ 1 MPlayer.kt\ncom/MPlayer/MPlayer\n*L\n58#1:523\n58#1:524,3\n67#1:527\n67#1:528,3\n76#1:531\n76#1:532,3\n84#1:535\n84#1:536,3\n92#1:539\n92#1:540,3\n122#1:543,2\n129#1:546,2\n136#1:548,2\n142#1:550,2\n217#1:552\n217#1:553,3\n240#1:556\n240#1:557,3\n313#1:560\n313#1:561,3\n314#1:564\n314#1:565,2\n350#1:567\n369#1:568,2\n350#1:570\n464#1:571,10\n464#1:581\n464#1:583\n464#1:584\n480#1:585\n480#1:586,2\n480#1:588,10\n480#1:598\n480#1:600\n480#1:601\n484#1:602,2\n484#1:604,4\n464#1:582\n480#1:599\n487#1:608\n487#1:609,6\n*E\n"})
+@SourceDebugExtension({"SMAP\nMPlayer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MPlayer.kt\ncom/MPlayer/MPlayer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,523:1\n1739#2:524\n1814#2,3:525\n1739#2:528\n1814#2,3:529\n1739#2:532\n1814#2,3:533\n1739#2:536\n1814#2,3:537\n1739#2:540\n1814#2,3:541\n296#2,2:544\n296#2,2:547\n296#2,2:549\n296#2,2:551\n1739#2:553\n1814#2,3:554\n1739#2:557\n1814#2,3:558\n1739#2:561\n1814#2,3:562\n777#2:565\n873#2,2:566\n2068#2:568\n2068#2,2:569\n2069#2:571\n1795#2,10:572\n2068#2:582\n2069#2:584\n1805#2:585\n777#2:586\n873#2,2:587\n1795#2,10:589\n2068#2:599\n2069#2:601\n1805#2:602\n1358#2,2:603\n1435#2,4:605\n1#3:546\n1#3:583\n1#3:600\n684#4:609\n669#4,6:610\n*S KotlinDebug\n*F\n+ 1 MPlayer.kt\ncom/MPlayer/MPlayer\n*L\n59#1:524\n59#1:525,3\n68#1:528\n68#1:529,3\n77#1:532\n77#1:533,3\n85#1:536\n85#1:537,3\n93#1:540\n93#1:541,3\n123#1:544,2\n130#1:547,2\n137#1:549,2\n143#1:551,2\n218#1:553\n218#1:554,3\n241#1:557\n241#1:558,3\n314#1:561\n314#1:562,3\n315#1:565\n315#1:566,2\n351#1:568\n370#1:569,2\n351#1:571\n465#1:572,10\n465#1:582\n465#1:584\n465#1:585\n481#1:586\n481#1:587,2\n481#1:589,10\n481#1:599\n481#1:601\n481#1:602\n485#1:603,2\n485#1:605,4\n465#1:583\n481#1:600\n488#1:609\n488#1:610,6\n*E\n"})
 public final class MPlayer extends MainAPI {
 
     @Nullable
@@ -103,7 +104,7 @@ public final class MPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.MPlayer.MPlayer$getMainPage$1 */
     /* JADX INFO: compiled from: MPlayer.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MPlayer.MPlayer", f = "MPlayer.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {49, 53, 62, 71, 80, 88}, m = "getMainPage", n = {"request", "page", "request", "res", "page", "request", "res", "dramaResponse", "dramaRoot", "dramashows", "page", "request", "res", "dramaResponse", "dramaRoot", "dramashows", "crimeResponse", "crimeRoot", "crime_shows", "page", "request", "res", "dramaResponse", "dramaRoot", "dramashows", "crimeResponse", "crimeRoot", "crime_shows", "thrillerResponse", "thrillerRoot", "thriller_shows", "page", "request", "res", "dramaResponse", "dramaRoot", "dramashows", "crimeResponse", "crimeRoot", "crime_shows", "thrillerResponse", "thrillerRoot", "thriller_shows", "hindimovieresponse", "movieRoot", "hindi_Movies", "page"}, nl = {50, 56, 65, 74, 82, 90}, s = {"L$0", "I$0", "L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.MPlayer.MPlayer", f = "MPlayer.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {50, 54, 63, 72, 81, 89}, m = "getMainPage", n = {"request", "page", "request", "res", "page", "request", "res", "dramaResponse", "dramaRoot", "dramashows", "page", "request", "res", "dramaResponse", "dramaRoot", "dramashows", "crimeResponse", "crimeRoot", "crime_shows", "page", "request", "res", "dramaResponse", "dramaRoot", "dramashows", "crimeResponse", "crimeRoot", "crime_shows", "thrillerResponse", "thrillerRoot", "thriller_shows", "page", "request", "res", "dramaResponse", "dramaRoot", "dramashows", "crimeResponse", "crimeRoot", "crime_shows", "thrillerResponse", "thrillerRoot", "thriller_shows", "hindimovieresponse", "movieRoot", "hindi_Movies", "page"}, nl = {51, 57, 66, 75, 83, 91}, s = {"L$0", "I$0", "L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -138,7 +139,7 @@ public final class MPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.MPlayer.MPlayer$getSeasonData$1 */
     /* JADX INFO: compiled from: MPlayer.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MPlayer.MPlayer", f = "MPlayer.kt", i = {0}, l = {463}, m = "getSeasonData", n = {"url"}, nl = {464}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.MPlayer.MPlayer", f = "MPlayer.kt", i = {0}, l = {464}, m = "getSeasonData", n = {"url"}, nl = {465}, s = {"L$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -159,7 +160,7 @@ public final class MPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.MPlayer.MPlayer$load$1 */
     /* JADX INFO: compiled from: MPlayer.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MPlayer.MPlayer", f = "MPlayer.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {347, 361, 407, 415}, m = "load", n = {"url", "gson", "video", "title", "poster", "type", "languages", "alternativeUrls", "hrefList", "epposter", "url", "gson", "video", "title", "poster", "type", "languages", "alternativeUrls", "hrefList", "epposter", "seasonData", "episodes", "$this$forEach$iv", "element$iv", "seasonId", "episodeNumber", "nextQuery", "apiUrl", "season", "page", "url", "gson", "video", "title", "poster", "type", "languages", "alternativeUrls", "hrefList", "epposter", "seasonData", "episodes", "url", "gson", "video", "title", "poster", "type", "languages", "alternativeUrls", "hrefList"}, nl = {348, 363, 415, 345}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
+    @DebugMetadata(c = "com.MPlayer.MPlayer", f = "MPlayer.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {348, 362, 408, 416}, m = "load", n = {"url", "gson", "video", "title", "poster", "type", "languages", "alternativeUrls", "hrefList", "epposter", "url", "gson", "video", "title", "poster", "type", "languages", "alternativeUrls", "hrefList", "epposter", "seasonData", "episodes", "$this$forEach$iv", "element$iv", "seasonId", "episodeNumber", "nextQuery", "apiUrl", "season", "page", "url", "gson", "video", "title", "poster", "type", "languages", "alternativeUrls", "hrefList", "epposter", "seasonData", "episodes", "url", "gson", "video", "title", "poster", "type", "languages", "alternativeUrls", "hrefList"}, nl = {349, 364, 416, 346}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -200,7 +201,7 @@ public final class MPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.MPlayer.MPlayer$loadLinks$1 */
     /* JADX INFO: compiled from: MPlayer.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MPlayer.MPlayer", f = "MPlayer.kt", i = {0, 0, 0, 0, 0}, l = {440}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "urls", "isCasting"}, nl = {459}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.MPlayer.MPlayer", f = "MPlayer.kt", i = {0, 0, 0, 0, 0}, l = {441}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "urls", "isCasting"}, nl = {460}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -225,7 +226,7 @@ public final class MPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.MPlayer.MPlayer$search$1 */
     /* JADX INFO: compiled from: MPlayer.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MPlayer.MPlayer", f = "MPlayer.kt", i = {0}, l = {147}, m = "search", n = {"query"}, nl = {151}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.MPlayer.MPlayer", f = "MPlayer.kt", i = {0}, l = {148}, m = "search", n = {"query"}, nl = {152}, s = {"L$0"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -284,26 +285,26 @@ public final class MPlayer extends MainAPI {
     }
 
     /* JADX INFO: Thrown type has an unknown type hierarchy: com.lagradost.cloudstream3.ErrorLoadingException */
-    /* JADX WARN: Code duplicated, block: B:24:0x020b  */
-    /* JADX WARN: Code duplicated, block: B:26:0x0294 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:27:0x0295  */
-    /* JADX WARN: Code duplicated, block: B:31:0x02d5 A[LOOP:4: B:29:0x02cf->B:31:0x02d5, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:34:0x0372 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:35:0x0373  */
-    /* JADX WARN: Code duplicated, block: B:39:0x03b3 A[LOOP:3: B:37:0x03ad->B:39:0x03b3, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:42:0x045e A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:43:0x045f  */
-    /* JADX WARN: Code duplicated, block: B:47:0x04a1 A[LOOP:2: B:45:0x049b->B:47:0x04a1, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:50:0x0567 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:51:0x0568  */
-    /* JADX WARN: Code duplicated, block: B:55:0x05ab A[LOOP:1: B:53:0x05a5->B:55:0x05ab, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:58:0x067f A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:59:0x0680  */
-    /* JADX WARN: Code duplicated, block: B:63:0x06c4 A[LOOP:0: B:61:0x06be->B:63:0x06c4, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:66:0x0732  */
+    /* JADX WARN: Code duplicated, block: B:24:0x0214  */
+    /* JADX WARN: Code duplicated, block: B:26:0x029d A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:27:0x029e  */
+    /* JADX WARN: Code duplicated, block: B:31:0x02de A[LOOP:4: B:29:0x02d8->B:31:0x02de, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:34:0x037b A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:35:0x037c  */
+    /* JADX WARN: Code duplicated, block: B:39:0x03bc A[LOOP:3: B:37:0x03b6->B:39:0x03bc, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:42:0x0467 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:43:0x0468  */
+    /* JADX WARN: Code duplicated, block: B:47:0x04aa A[LOOP:2: B:45:0x04a4->B:47:0x04aa, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:50:0x0570 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:51:0x0571  */
+    /* JADX WARN: Code duplicated, block: B:55:0x05b4 A[LOOP:1: B:53:0x05ae->B:55:0x05b4, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:58:0x0688 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:59:0x0689  */
+    /* JADX WARN: Code duplicated, block: B:63:0x06cd A[LOOP:0: B:61:0x06c7->B:63:0x06cd, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:66:0x073b  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Type inference failed for: r10v36, types: [com.MPlayer.MPlayer$getMainPage$movieRoot$1] */
-    /* JADX WARN: Type inference failed for: r5v45, types: [com.MPlayer.MPlayer$getMainPage$movieRootte$1] */
+    /* JADX WARN: Type inference failed for: r5v46, types: [com.MPlayer.MPlayer$getMainPage$movieRootte$1] */
     /* JADX WARN: Type inference failed for: r7v11, types: [com.MPlayer.MPlayer$getMainPage$dramaRoot$1] */
     /* JADX WARN: Type inference failed for: r8v14, types: [com.MPlayer.MPlayer$getMainPage$crimeRoot$1] */
     /* JADX WARN: Type inference failed for: r9v22, types: [com.MPlayer.MPlayer$getMainPage$thrillerRoot$1] */
@@ -387,6 +388,7 @@ public final class MPlayer extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = UtilsKt.getApp();
                 String mainUrl = getMainUrl();
                 c00001.L$0 = SpillingKt.nullOutSpilledVariable(request);
@@ -1938,7 +1940,7 @@ public final class MPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.MPlayer.MPlayer$loadLinks$2 */
     /* JADX INFO: compiled from: MPlayer.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "url", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MPlayer.MPlayer$loadLinks$2", f = "MPlayer.kt", i = {0, 0, 0}, l = {447}, m = "invokeSuspend", n = {"url", "label", "fullUrl"}, nl = {446}, s = {"L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.MPlayer.MPlayer$loadLinks$2", f = "MPlayer.kt", i = {0, 0, 0}, l = {448}, m = "invokeSuspend", n = {"url", "label", "fullUrl"}, nl = {447}, s = {"L$0", "L$1", "L$2"}, v = 2)
     static final class C00062 extends SuspendLambda implements Function2<String, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         /* synthetic */ Object L$0;

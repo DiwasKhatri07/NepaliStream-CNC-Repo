@@ -4,7 +4,7 @@ package nepali.stream.decoded.pmsm
 object PluginMetadata {
     const val name: String = "Pmsm"
     const val originalPluginClass: String = "com.pmsm.PmsmPlugin"
-    const val version: Int = 4
+    const val version: Int = 6
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

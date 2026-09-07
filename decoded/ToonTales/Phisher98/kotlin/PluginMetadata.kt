@@ -4,7 +4,7 @@ package nepali.stream.decoded.toontales
 object PluginMetadata {
     const val name: String = "ToonTales"
     const val originalPluginClass: String = "com.ToonTales.ToonTalesProvider"
-    const val version: Int = 3
+    const val version: Int = 5
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

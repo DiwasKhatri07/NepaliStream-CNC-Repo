@@ -23,6 +23,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -67,7 +68,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Toonhub4u.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/ToonHub/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\u001c\u0010)\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0016\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+JF\u0010/\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u000e2\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0096@¢\u0006\u0002\u00108R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u00069"}, d2 = {"Lcom/toonhub4u/Toonhub4u;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "ToonHub"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nToonhub4u.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Toonhub4u.kt\ncom/toonhub4u/Toonhub4u\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,136:1\n1795#2,10:137\n2068#2:147\n2069#2:149\n1805#2:150\n1795#2,10:152\n2068#2:162\n2069#2:164\n1805#2:165\n1739#2:166\n1814#2,3:167\n2068#2:170\n2068#2:171\n2068#2,2:172\n2069#2:174\n2069#2:175\n1#3:148\n1#3:151\n1#3:163\n1#3:176\n*S KotlinDebug\n*F\n+ 1 Toonhub4u.kt\ncom/toonhub4u/Toonhub4u\n*L\n39#1:137,10\n39#1:147\n39#1:149\n39#1:150\n62#1:152,10\n62#1:162\n62#1:164\n62#1:165\n73#1:166\n73#1:167,3\n76#1:170\n77#1:171\n85#1:172,2\n77#1:174\n76#1:175\n39#1:148\n62#1:163\n*E\n"})
+@SourceDebugExtension({"SMAP\nToonhub4u.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Toonhub4u.kt\ncom/toonhub4u/Toonhub4u\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,137:1\n1795#2,10:138\n2068#2:148\n2069#2:150\n1805#2:151\n1795#2,10:153\n2068#2:163\n2069#2:165\n1805#2:166\n1739#2:167\n1814#2,3:168\n2068#2:171\n2068#2:172\n2068#2,2:173\n2069#2:175\n2069#2:176\n1#3:149\n1#3:152\n1#3:164\n1#3:177\n*S KotlinDebug\n*F\n+ 1 Toonhub4u.kt\ncom/toonhub4u/Toonhub4u\n*L\n40#1:138,10\n40#1:148\n40#1:150\n40#1:151\n63#1:153,10\n63#1:163\n63#1:165\n63#1:166\n74#1:167\n74#1:168,3\n77#1:171\n78#1:172\n86#1:173,2\n78#1:175\n77#1:176\n40#1:149\n63#1:164\n*E\n"})
 public final class Toonhub4u extends MainAPI {
 
     @NotNull
@@ -90,14 +91,14 @@ public final class Toonhub4u extends MainAPI {
     /* JADX INFO: renamed from: com.toonhub4u.Toonhub4u$getMainPage$1 */
     /* JADX INFO: compiled from: Toonhub4u.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.toonhub4u.Toonhub4u", f = "Toonhub4u.kt", i = {0, 0}, l = {38}, m = "getMainPage", n = {"request", "page"}, nl = {39}, s = {"L$0", "I$0"}, v = 2)
-    static final class C00011 extends ContinuationImpl {
+    @DebugMetadata(c = "com.toonhub4u.Toonhub4u", f = "Toonhub4u.kt", i = {0, 0}, l = {39}, m = "getMainPage", n = {"request", "page"}, nl = {40}, s = {"L$0", "I$0"}, v = 2)
+    static final class C00041 extends ContinuationImpl {
         int I$0;
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00011(Continuation<? super C00011> continuation) {
+        C00041(Continuation<? super C00041> continuation) {
             super(continuation);
         }
 
@@ -112,8 +113,8 @@ public final class Toonhub4u extends MainAPI {
     /* JADX INFO: renamed from: com.toonhub4u.Toonhub4u$load$1 */
     /* JADX INFO: compiled from: Toonhub4u.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.toonhub4u.Toonhub4u", f = "Toonhub4u.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {67, 98, 105}, m = "load", n = {"url", "url", "document", "title", "backgroundposter", "poster", "description", "tvtag", "hrefs", "episodes", "url", "document", "title", "backgroundposter", "poster", "description", "tvtag", "hrefs"}, nl = {68, 105, 74}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C00021 extends ContinuationImpl {
+    @DebugMetadata(c = "com.toonhub4u.Toonhub4u", f = "Toonhub4u.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {68, 99, 106}, m = "load", n = {"url", "url", "document", "title", "backgroundposter", "poster", "description", "tvtag", "hrefs", "episodes", "url", "document", "title", "backgroundposter", "poster", "description", "tvtag", "hrefs"}, nl = {69, 106, 75}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
+    static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -126,7 +127,7 @@ public final class Toonhub4u extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00021(Continuation<? super C00021> continuation) {
+        C00051(Continuation<? super C00051> continuation) {
             super(continuation);
         }
 
@@ -141,8 +142,8 @@ public final class Toonhub4u extends MainAPI {
     /* JADX INFO: renamed from: com.toonhub4u.Toonhub4u$loadLinks$1 */
     /* JADX INFO: compiled from: Toonhub4u.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.toonhub4u.Toonhub4u", f = "Toonhub4u.kt", i = {0, 0, 0, 0, 0, 0}, l = {121}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "jsonArray", "links", "isCasting"}, nl = {133}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
-    static final class C00051 extends ContinuationImpl {
+    @DebugMetadata(c = "com.toonhub4u.Toonhub4u", f = "Toonhub4u.kt", i = {0, 0, 0, 0, 0, 0}, l = {122}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "jsonArray", "links", "isCasting"}, nl = {134}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
+    static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -152,7 +153,7 @@ public final class Toonhub4u extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00051(Continuation<? super C00051> continuation) {
+        C00081(Continuation<? super C00081> continuation) {
             super(continuation);
         }
 
@@ -167,13 +168,13 @@ public final class Toonhub4u extends MainAPI {
     /* JADX INFO: renamed from: com.toonhub4u.Toonhub4u$search$1 */
     /* JADX INFO: compiled from: Toonhub4u.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.toonhub4u.Toonhub4u", f = "Toonhub4u.kt", i = {0}, l = {61}, m = "search", n = {"query"}, nl = {62}, s = {"L$0"}, v = 2)
-    static final class C00071 extends ContinuationImpl {
+    @DebugMetadata(c = "com.toonhub4u.Toonhub4u", f = "Toonhub4u.kt", i = {0}, l = {62}, m = "search", n = {"query"}, nl = {63}, s = {"L$0"}, v = 2)
+    static final class C00101 extends ContinuationImpl {
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00071(Continuation<? super C00071> continuation) {
+        C00101(Continuation<? super C00101> continuation) {
             super(continuation);
         }
 
@@ -233,29 +234,30 @@ public final class Toonhub4u extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
-        C00011 c00011;
+        C00041 c00041;
         MainPageRequest request2;
-        if (continuation instanceof C00011) {
-            c00011 = (C00011) continuation;
-            if ((c00011.label & Integer.MIN_VALUE) != 0) {
-                c00011.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00041) {
+            c00041 = (C00041) continuation;
+            if ((c00041.label & Integer.MIN_VALUE) != 0) {
+                c00041.label -= Integer.MIN_VALUE;
             } else {
-                c00011 = new C00011(continuation);
+                c00041 = new C00041(continuation);
             }
         } else {
-            c00011 = new C00011(continuation);
+            c00041 = new C00041(continuation);
         }
-        Object $result = c00011.result;
+        Object $result = c00041.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00011.label) {
+        switch (c00041.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + request.getData() + "/page/" + page + '/';
-                c00011.L$0 = request;
-                c00011.I$0 = page;
-                c00011.label = 1;
-                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00011, 4094, (Object) null);
+                c00041.L$0 = request;
+                c00041.I$0 = page;
+                c00041.label = 1;
+                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00041, 4094, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -263,8 +265,8 @@ public final class Toonhub4u extends MainAPI {
                 break;
                 break;
             case 1:
-                int i = c00011.I$0;
-                request2 = (MainPageRequest) c00011.L$0;
+                int i = c00041.I$0;
+                request2 = (MainPageRequest) c00041.L$0;
                 ResultKt.throwOnFailure($result);
                 break;
             default:
@@ -307,27 +309,27 @@ public final class Toonhub4u extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
-        C00071 c00071;
-        if (continuation instanceof C00071) {
-            c00071 = (C00071) continuation;
-            if ((c00071.label & Integer.MIN_VALUE) != 0) {
-                c00071.label -= Integer.MIN_VALUE;
+        C00101 c00101;
+        if (continuation instanceof C00101) {
+            c00101 = (C00101) continuation;
+            if ((c00101.label & Integer.MIN_VALUE) != 0) {
+                c00101.label -= Integer.MIN_VALUE;
             } else {
-                c00071 = new C00071(continuation);
+                c00101 = new C00101(continuation);
             }
         } else {
-            c00071 = new C00071(continuation);
+            c00101 = new C00101(continuation);
         }
-        Object $result = c00071.result;
+        Object $result = c00101.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00071.label) {
+        switch (c00101.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + "/?s=" + query;
-                c00071.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                c00071.label = 1;
-                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00071, 4094, (Object) null);
+                c00101.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c00101.label = 1;
+                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00101, 4094, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -377,7 +379,7 @@ public final class Toonhub4u extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:89:0x0285 A[SYNTHETIC] */
     @Nullable
     public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) {
-        C00021 c00021;
+        C00051 c00051;
         Object obj;
         Object obj2;
         String url2;
@@ -418,28 +420,28 @@ public final class Toonhub4u extends MainAPI {
         String strAttr2;
         String strSubstringBefore$default;
         String strSubstringBefore$default2;
-        if (continuation instanceof C00021) {
-            c00021 = (C00021) continuation;
-            if ((c00021.label & Integer.MIN_VALUE) != 0) {
-                c00021.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00051) {
+            c00051 = (C00051) continuation;
+            if ((c00051.label & Integer.MIN_VALUE) != 0) {
+                c00051.label -= Integer.MIN_VALUE;
             } else {
-                c00021 = new C00021(continuation);
+                c00051 = new C00051(continuation);
             }
         } else {
-            c00021 = new C00021(continuation);
+            c00051 = new C00051(continuation);
         }
-        C00021 c00022 = c00021;
-        Object $result2 = c00022.result;
+        C00051 c00052 = c00051;
+        Object $result2 = c00052.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00022.label) {
+        switch (c00052.label) {
             case 0:
                 ResultKt.throwOnFailure($result2);
                 Requests app = MainActivityKt.getApp();
-                c00022.L$0 = url;
-                c00022.label = 1;
+                c00052.L$0 = url;
+                c00052.label = 1;
                 obj = coroutine_suspended;
-                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4094, (Object) null);
-                c00022 = c00022;
+                obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00052, 4094, (Object) null);
+                c00052 = c00052;
                 if (obj2 == obj) {
                     return obj;
                 }
@@ -477,17 +479,17 @@ public final class Toonhub4u extends MainAPI {
                 hrefs = appUtils.toJson((List) destination$iv$iv);
                 if (tvtag == TvType.TvSeries) {
                     TvType tvType2 = TvType.Movie;
-                    C00044 c00044 = new C00044(poster, backgroundposter, description, null);
-                    c00022.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(title);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(backgroundposter);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(poster);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(description);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(tvtag);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(hrefs);
-                    c00022.label = 3;
-                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, title, url2, tvType2, hrefs, c00044, c00022);
+                    C00074 c00074 = new C00074(poster, backgroundposter, description, null);
+                    c00052.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00052.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                    c00052.L$2 = SpillingKt.nullOutSpilledVariable(title);
+                    c00052.L$3 = SpillingKt.nullOutSpilledVariable(backgroundposter);
+                    c00052.L$4 = SpillingKt.nullOutSpilledVariable(poster);
+                    c00052.L$5 = SpillingKt.nullOutSpilledVariable(description);
+                    c00052.L$6 = SpillingKt.nullOutSpilledVariable(tvtag);
+                    c00052.L$7 = SpillingKt.nullOutSpilledVariable(hrefs);
+                    c00052.label = 3;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, title, url2, tvType2, hrefs, c00074, c00052);
                     if (objNewMovieLoadResponse == obj) {
                         return obj;
                     }
@@ -561,24 +563,24 @@ public final class Toonhub4u extends MainAPI {
                 List episodes3 = episodes;
                 String url5 = url2;
                 TvType tvType3 = TvType.Anime;
-                C00033 c00033 = new C00033(poster, backgroundposter, description, null);
-                c00022.L$0 = SpillingKt.nullOutSpilledVariable(url5);
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(title4);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(backgroundposter);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(poster);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(description);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(tvtag);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(hrefs);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(episodes3);
-                c00022.label = 2;
-                objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse(this, title4, url5, tvType3, episodes3, c00033, c00022);
+                C00063 c00063 = new C00063(poster, backgroundposter, description, null);
+                c00052.L$0 = SpillingKt.nullOutSpilledVariable(url5);
+                c00052.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                c00052.L$2 = SpillingKt.nullOutSpilledVariable(title4);
+                c00052.L$3 = SpillingKt.nullOutSpilledVariable(backgroundposter);
+                c00052.L$4 = SpillingKt.nullOutSpilledVariable(poster);
+                c00052.L$5 = SpillingKt.nullOutSpilledVariable(description);
+                c00052.L$6 = SpillingKt.nullOutSpilledVariable(tvtag);
+                c00052.L$7 = SpillingKt.nullOutSpilledVariable(hrefs);
+                c00052.L$8 = SpillingKt.nullOutSpilledVariable(episodes3);
+                c00052.label = 2;
+                objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse(this, title4, url5, tvType3, episodes3, c00063, c00052);
                 if (objNewTvSeriesLoadResponse == obj) {
                     return obj;
                 }
                 return (LoadResponse) objNewTvSeriesLoadResponse;
             case 1:
-                String url6 = (String) c00022.L$0;
+                String url6 = (String) c00052.L$0;
                 ResultKt.throwOnFailure($result2);
                 obj = coroutine_suspended;
                 url2 = url6;
@@ -616,17 +618,17 @@ public final class Toonhub4u extends MainAPI {
                 hrefs = appUtils2.toJson((List) destination$iv$iv);
                 if (tvtag == TvType.TvSeries) {
                     TvType tvType4 = TvType.Movie;
-                    C00044 c00045 = new C00044(poster, backgroundposter, description, null);
-                    c00022.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(title);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(backgroundposter);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(poster);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(description);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(tvtag);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(hrefs);
-                    c00022.label = 3;
-                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, title, url2, tvType4, hrefs, c00045, c00022);
+                    C00074 c00075 = new C00074(poster, backgroundposter, description, null);
+                    c00052.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00052.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                    c00052.L$2 = SpillingKt.nullOutSpilledVariable(title);
+                    c00052.L$3 = SpillingKt.nullOutSpilledVariable(backgroundposter);
+                    c00052.L$4 = SpillingKt.nullOutSpilledVariable(poster);
+                    c00052.L$5 = SpillingKt.nullOutSpilledVariable(description);
+                    c00052.L$6 = SpillingKt.nullOutSpilledVariable(tvtag);
+                    c00052.L$7 = SpillingKt.nullOutSpilledVariable(hrefs);
+                    c00052.label = 3;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, title, url2, tvType4, hrefs, c00075, c00052);
                     if (objNewMovieLoadResponse == obj) {
                         return obj;
                     }
@@ -700,18 +702,18 @@ public final class Toonhub4u extends MainAPI {
                 List episodes4 = episodes;
                 String url8 = url2;
                 TvType tvType5 = TvType.Anime;
-                C00033 c00034 = new C00033(poster, backgroundposter, description, null);
-                c00022.L$0 = SpillingKt.nullOutSpilledVariable(url8);
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(document);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(title6);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(backgroundposter);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(poster);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(description);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(tvtag);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(hrefs);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(episodes4);
-                c00022.label = 2;
-                objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse(this, title6, url8, tvType5, episodes4, c00034, c00022);
+                C00063 c00064 = new C00063(poster, backgroundposter, description, null);
+                c00052.L$0 = SpillingKt.nullOutSpilledVariable(url8);
+                c00052.L$1 = SpillingKt.nullOutSpilledVariable(document);
+                c00052.L$2 = SpillingKt.nullOutSpilledVariable(title6);
+                c00052.L$3 = SpillingKt.nullOutSpilledVariable(backgroundposter);
+                c00052.L$4 = SpillingKt.nullOutSpilledVariable(poster);
+                c00052.L$5 = SpillingKt.nullOutSpilledVariable(description);
+                c00052.L$6 = SpillingKt.nullOutSpilledVariable(tvtag);
+                c00052.L$7 = SpillingKt.nullOutSpilledVariable(hrefs);
+                c00052.L$8 = SpillingKt.nullOutSpilledVariable(episodes4);
+                c00052.label = 2;
+                objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse(this, title6, url8, tvType5, episodes4, c00064, c00052);
                 if (objNewTvSeriesLoadResponse == obj) {
                     return obj;
                 }
@@ -721,14 +723,14 @@ public final class Toonhub4u extends MainAPI {
                 objNewTvSeriesLoadResponse = $result2;
                 return (LoadResponse) objNewTvSeriesLoadResponse;
             case 3:
-                hrefs2 = (String) c00022.L$7;
-                tvtag2 = (TvType) c00022.L$6;
-                url3 = (String) c00022.L$5;
-                poster2 = (String) c00022.L$4;
-                backgroundposter2 = (String) c00022.L$3;
-                title2 = (String) c00022.L$2;
-                document = (Document) c00022.L$1;
-                backgroundposter3 = (String) c00022.L$0;
+                hrefs2 = (String) c00052.L$7;
+                tvtag2 = (TvType) c00052.L$6;
+                url3 = (String) c00052.L$5;
+                poster2 = (String) c00052.L$4;
+                backgroundposter2 = (String) c00052.L$3;
+                title2 = (String) c00052.L$2;
+                document = (Document) c00052.L$1;
+                backgroundposter3 = (String) c00052.L$0;
                 ResultKt.throwOnFailure($result2);
                 objNewMovieLoadResponse = $result2;
                 return (LoadResponse) objNewMovieLoadResponse;
@@ -747,7 +749,7 @@ public final class Toonhub4u extends MainAPI {
     /* JADX INFO: compiled from: Toonhub4u.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.toonhub4u.Toonhub4u$load$3", f = "Toonhub4u.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00033 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    static final class C00063 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $backgroundposter;
         final /* synthetic */ String $description;
         final /* synthetic */ String $poster;
@@ -755,7 +757,7 @@ public final class Toonhub4u extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00033(String str, String str2, String str3, Continuation<? super C00033> continuation) {
+        C00063(String str, String str2, String str3, Continuation<? super C00063> continuation) {
             super(2, continuation);
             this.$poster = str;
             this.$backgroundposter = str2;
@@ -763,9 +765,9 @@ public final class Toonhub4u extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00033 = new C00033(this.$poster, this.$backgroundposter, this.$description, continuation);
-            c00033.L$0 = obj;
-            return c00033;
+            Continuation<Unit> c00063 = new C00063(this.$poster, this.$backgroundposter, this.$description, continuation);
+            c00063.L$0 = obj;
+            return c00063;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -792,7 +794,7 @@ public final class Toonhub4u extends MainAPI {
     /* JADX INFO: compiled from: Toonhub4u.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.toonhub4u.Toonhub4u$load$4", f = "Toonhub4u.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00044 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+    static final class C00074 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $backgroundposter;
         final /* synthetic */ String $description;
         final /* synthetic */ String $poster;
@@ -800,7 +802,7 @@ public final class Toonhub4u extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00044(String str, String str2, String str3, Continuation<? super C00044> continuation) {
+        C00074(String str, String str2, String str3, Continuation<? super C00074> continuation) {
             super(2, continuation);
             this.$poster = str;
             this.$backgroundposter = str2;
@@ -808,9 +810,9 @@ public final class Toonhub4u extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00044 = new C00044(this.$poster, this.$backgroundposter, this.$description, continuation);
-            c00044.L$0 = obj;
-            return c00044;
+            Continuation<Unit> c00074 = new C00074(this.$poster, this.$backgroundposter, this.$description, continuation);
+            c00074.L$0 = obj;
+            return c00074;
         }
 
         public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
@@ -836,20 +838,20 @@ public final class Toonhub4u extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
-        C00051 c00051;
-        if (continuation instanceof C00051) {
-            c00051 = (C00051) continuation;
-            if ((c00051.label & Integer.MIN_VALUE) != 0) {
-                c00051.label -= Integer.MIN_VALUE;
+        C00081 c00081;
+        if (continuation instanceof C00081) {
+            c00081 = (C00081) continuation;
+            if ((c00081.label & Integer.MIN_VALUE) != 0) {
+                c00081.label -= Integer.MIN_VALUE;
             } else {
-                c00051 = new C00051(continuation);
+                c00081 = new C00081(continuation);
             }
         } else {
-            c00051 = new C00051(continuation);
+            c00081 = new C00081(continuation);
         }
-        Object $result = c00051.result;
+        Object $result = c00081.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00051.label) {
+        switch (c00081.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 JSONArray jsonArray = new JSONArray(data);
@@ -860,21 +862,21 @@ public final class Toonhub4u extends MainAPI {
                     arrayList.add(jsonArray.getString(it));
                 }
                 ArrayList links = arrayList;
-                C00062 c00062 = new C00062(links, function1, function2, null);
-                c00051.L$0 = SpillingKt.nullOutSpilledVariable(data);
-                c00051.L$1 = SpillingKt.nullOutSpilledVariable(function1);
-                c00051.L$2 = SpillingKt.nullOutSpilledVariable(function2);
-                c00051.L$3 = SpillingKt.nullOutSpilledVariable(jsonArray);
-                c00051.L$4 = SpillingKt.nullOutSpilledVariable(links);
-                c00051.Z$0 = isCasting;
-                c00051.label = 1;
-                if (CoroutineScopeKt.coroutineScope(c00062, c00051) == coroutine_suspended) {
+                C00092 c00092 = new C00092(links, function1, function2, null);
+                c00081.L$0 = SpillingKt.nullOutSpilledVariable(data);
+                c00081.L$1 = SpillingKt.nullOutSpilledVariable(function1);
+                c00081.L$2 = SpillingKt.nullOutSpilledVariable(function2);
+                c00081.L$3 = SpillingKt.nullOutSpilledVariable(jsonArray);
+                c00081.L$4 = SpillingKt.nullOutSpilledVariable(links);
+                c00081.Z$0 = isCasting;
+                c00081.label = 1;
+                if (CoroutineScopeKt.coroutineScope(c00092, c00081) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 break;
                 break;
             case 1:
-                boolean isCasting2 = c00051.Z$0;
+                boolean isCasting2 = c00081.Z$0;
                 ResultKt.throwOnFailure($result);
                 break;
             default:
@@ -886,8 +888,8 @@ public final class Toonhub4u extends MainAPI {
     /* JADX INFO: renamed from: com.toonhub4u.Toonhub4u$loadLinks$2 */
     /* JADX INFO: compiled from: Toonhub4u.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.toonhub4u.Toonhub4u$loadLinks$2", f = "Toonhub4u.kt", i = {0, 1}, l = {122, 130}, m = "invokeSuspend", n = {"$this$coroutineScope", "$this$coroutineScope"}, nl = {130, 131}, s = {"L$0", "L$0"}, v = 2)
-    static final class C00062 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.toonhub4u.Toonhub4u$loadLinks$2", f = "Toonhub4u.kt", i = {0, 1}, l = {123, 131}, m = "invokeSuspend", n = {"$this$coroutineScope", "$this$coroutineScope"}, nl = {131, 132}, s = {"L$0", "L$0"}, v = 2)
+    static final class C00092 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ List<String> $links;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -895,7 +897,7 @@ public final class Toonhub4u extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00062(List<String> list, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00062> continuation) {
+        C00092(List<String> list, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00092> continuation) {
             super(2, continuation);
             this.$links = list;
             this.$subtitleCallback = function1;
@@ -903,9 +905,9 @@ public final class Toonhub4u extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00062 = new C00062(this.$links, this.$subtitleCallback, this.$callback, continuation);
-            c00062.L$0 = obj;
-            return c00062;
+            Continuation<Unit> c00092 = new C00092(this.$links, this.$subtitleCallback, this.$callback, continuation);
+            c00092.L$0 = obj;
+            return c00092;
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -944,15 +946,15 @@ public final class Toonhub4u extends MainAPI {
             /* JADX INFO: renamed from: com.toonhub4u.Toonhub4u$loadLinks$2$1$1, reason: invalid class name and collision with other inner class name */
             /* JADX INFO: compiled from: Toonhub4u.kt */
             @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-            @DebugMetadata(c = "com.toonhub4u.Toonhub4u$loadLinks$2$1$1", f = "Toonhub4u.kt", i = {}, l = {125}, m = "invokeSuspend", n = {}, nl = {126}, s = {}, v = 2)
-            static final class C00081 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+            @DebugMetadata(c = "com.toonhub4u.Toonhub4u$loadLinks$2$1$1", f = "Toonhub4u.kt", i = {}, l = {126}, m = "invokeSuspend", n = {}, nl = {127}, s = {}, v = 2)
+            static final class C00111 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                 final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
                 final /* synthetic */ String $link;
                 final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
                 int label;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                C00081(String str, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00081> continuation) {
+                C00111(String str, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00111> continuation) {
                     super(2, continuation);
                     this.$link = str;
                     this.$subtitleCallback = function1;
@@ -960,7 +962,7 @@ public final class Toonhub4u extends MainAPI {
                 }
 
                 public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    return new C00081(this.$link, this.$subtitleCallback, this.$callback, continuation);
+                    return new C00111(this.$link, this.$subtitleCallback, this.$callback, continuation);
                 }
 
                 public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -997,7 +999,7 @@ public final class Toonhub4u extends MainAPI {
                 switch (this.label) {
                     case 0:
                         ResultKt.throwOnFailure($result);
-                        return BuildersKt.launch$default(this.$$this$coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new C00081(link, this.$subtitleCallback, this.$callback, null), 3, (Object) null);
+                        return BuildersKt.launch$default(this.$$this$coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new C00111(link, this.$subtitleCallback, this.$callback, null), 3, (Object) null);
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }

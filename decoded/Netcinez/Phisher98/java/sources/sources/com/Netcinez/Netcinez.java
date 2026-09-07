@@ -23,6 +23,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -56,7 +57,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Netcinez.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Netcinez/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\n\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010 \u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J\f\u0010(\u001a\u00020)*\u00020*H\u0002J\u001c\u0010+\u001a\b\u0012\u0004\u0012\u00020)0\u001e2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-J\u0016\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-JF\u00101\u001a\u00020\u000e2\u0006\u00102\u001a\u00020\u00052\u0006\u00103\u001a\u00020\u000e2\u0012\u00104\u001a\u000e\u0012\u0004\u0012\u000206\u0012\u0004\u0012\u000207052\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020705H\u0096@¢\u0006\u0002\u0010:R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u0014\u0010\u0016\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0010R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!¨\u0006;"}, d2 = {"Lcom/Netcinez/Netcinez;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Netcinez"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nNetcinez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Netcinez.kt\ncom/Netcinez/Netcinez\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,208:1\n1795#2,10:209\n2068#2:219\n2069#2:221\n1805#2:222\n1795#2,10:224\n2068#2:234\n2069#2:236\n1805#2:237\n1739#2:238\n1814#2,3:239\n1739#2:242\n1814#2,3:243\n1#3:220\n1#3:223\n1#3:235\n*S KotlinDebug\n*F\n+ 1 Netcinez.kt\ncom/Netcinez/Netcinez\n*L\n62#1:209,10\n62#1:219\n62#1:221\n62#1:222\n88#1:224,10\n88#1:234\n88#1:236\n88#1:237\n106#1:238\n106#1:239,3\n118#1:242\n118#1:243,3\n62#1:220\n88#1:235\n*E\n"})
+@SourceDebugExtension({"SMAP\nNetcinez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Netcinez.kt\ncom/Netcinez/Netcinez\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,209:1\n1795#2,10:210\n2068#2:220\n2069#2:222\n1805#2:223\n1795#2,10:225\n2068#2:235\n2069#2:237\n1805#2:238\n1739#2:239\n1814#2,3:240\n1739#2:243\n1814#2,3:244\n1#3:221\n1#3:224\n1#3:236\n*S KotlinDebug\n*F\n+ 1 Netcinez.kt\ncom/Netcinez/Netcinez\n*L\n63#1:210,10\n63#1:220\n63#1:222\n63#1:223\n89#1:225,10\n89#1:235\n89#1:237\n89#1:238\n107#1:239\n107#1:240,3\n119#1:243\n119#1:244,3\n63#1:221\n89#1:236\n*E\n"})
 public final class Netcinez extends MainAPI {
 
     @NotNull
@@ -80,7 +81,7 @@ public final class Netcinez extends MainAPI {
     /* JADX INFO: renamed from: com.Netcinez.Netcinez$getMainPage$1 */
     /* JADX INFO: compiled from: Netcinez.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Netcinez.Netcinez", f = "Netcinez.kt", i = {0, 0, 0}, l = {60}, m = "getMainPage", n = {"request", "url", "page"}, nl = {62}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Netcinez.Netcinez", f = "Netcinez.kt", i = {0, 0, 0}, l = {61}, m = "getMainPage", n = {"request", "url", "page"}, nl = {63}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -103,7 +104,7 @@ public final class Netcinez extends MainAPI {
     /* JADX INFO: renamed from: com.Netcinez.Netcinez$load$1 */
     /* JADX INFO: compiled from: Netcinez.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Netcinez.Netcinez", f = "Netcinez.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {100, 107, 132, 141}, m = "load", n = {"url", "url", "document", "title", "poster", "description", "type", "imdbid", "actors", "url", "document", "title", "poster", "description", "type", "imdbid", "actors", "recommendations", "year", "episodes", "url", "document", "title", "poster", "description", "type", "imdbid", "actors", "recommendations", "year"}, nl = {101, 115, 141, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"}, v = 2)
+    @DebugMetadata(c = "com.Netcinez.Netcinez", f = "Netcinez.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {101, 108, 133, 142}, m = "load", n = {"url", "url", "document", "title", "poster", "description", "type", "imdbid", "actors", "url", "document", "title", "poster", "description", "type", "imdbid", "actors", "recommendations", "year", "episodes", "url", "document", "title", "poster", "description", "type", "imdbid", "actors", "recommendations", "year"}, nl = {102, 116, 142, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -134,7 +135,7 @@ public final class Netcinez extends MainAPI {
     /* JADX INFO: renamed from: com.Netcinez.Netcinez$loadLinks$1 */
     /* JADX INFO: compiled from: Netcinez.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Netcinez.Netcinez", f = "Netcinez.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {157, 164, 171}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "doc", "iframeUrl", "isCasting", "data", "subtitleCallback", "callback", "doc", "iframeUrl", "iframeDoc", "buttons", "isCasting"}, nl = {158, 165, 205}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Netcinez.Netcinez", f = "Netcinez.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {158, 165, 172}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "doc", "iframeUrl", "isCasting", "data", "subtitleCallback", "callback", "doc", "iframeUrl", "iframeDoc", "buttons", "isCasting"}, nl = {159, 166, 206}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -162,7 +163,7 @@ public final class Netcinez extends MainAPI {
     /* JADX INFO: renamed from: com.Netcinez.Netcinez$search$1 */
     /* JADX INFO: compiled from: Netcinez.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Netcinez.Netcinez", f = "Netcinez.kt", i = {0, 0, 0}, l = {87}, m = "search", n = {"query", "searchResponse", "i"}, nl = {88}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Netcinez.Netcinez", f = "Netcinez.kt", i = {0, 0, 0}, l = {88}, m = "search", n = {"query", "searchResponse", "i"}, nl = {89}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -252,6 +253,7 @@ public final class Netcinez extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String url = getMainUrl() + '/' + request.getData();
                 Requests app = MainActivityKt.getApp();
                 c00001.L$0 = request;
@@ -1198,7 +1200,7 @@ public final class Netcinez extends MainAPI {
     /* JADX INFO: renamed from: com.Netcinez.Netcinez$loadLinks$2 */
     /* JADX INFO: compiled from: Netcinez.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "button", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Netcinez.Netcinez$loadLinks$2", f = "Netcinez.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {176, 187}, m = "invokeSuspend", n = {"button", "intermediateUrl", "label", "button", "intermediateUrl", "label", "finalDoc", "finalElement", "finalUrl"}, nl = {177, 186}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    @DebugMetadata(c = "com.Netcinez.Netcinez$loadLinks$2", f = "Netcinez.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {177, 188}, m = "invokeSuspend", n = {"button", "intermediateUrl", "label", "button", "intermediateUrl", "label", "finalDoc", "finalElement", "finalUrl"}, nl = {178, 187}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
     static final class C00052 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         /* synthetic */ Object L$0;

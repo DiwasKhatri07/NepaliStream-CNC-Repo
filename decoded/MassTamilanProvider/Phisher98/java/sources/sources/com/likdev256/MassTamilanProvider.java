@@ -31,6 +31,7 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -78,7 +79,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: MassTamilanProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/MassTamilanProvider/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u00019B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\u000e\u0010&\u001a\u0004\u0018\u00010'*\u00020(H\u0002J\u001c\u0010)\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0016\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+JF\u0010/\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u000e2\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0096@¢\u0006\u0002\u00108R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006:"}, d2 = {"Lcom/likdev256/MassTamilanProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "MassTamilanLinks", "MassTamilanProvider"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nMassTamilanProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MassTamilanProvider.kt\ncom/likdev256/MassTamilanProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,186:1\n1795#2,10:187\n2068#2:197\n2069#2:199\n1805#2:200\n1795#2,10:201\n2068#2:211\n2069#2:213\n1805#2:214\n1739#2:215\n1814#2,2:216\n1739#2:218\n1814#2,3:219\n1739#2:222\n1814#2,3:223\n1739#2:226\n1814#2,3:227\n1816#2:230\n1739#2:231\n1814#2,2:232\n1739#2:234\n1814#2,3:235\n1816#2:238\n1739#2:239\n1814#2,3:240\n1#3:198\n1#3:212\n1#3:244\n63#4:243\n64#4,15:245\n50#5:260\n43#5:261\n*S KotlinDebug\n*F\n+ 1 MassTamilanProvider.kt\ncom/likdev256/MassTamilanProvider\n*L\n38#1:187,10\n38#1:197\n38#1:199\n38#1:200\n60#1:201,10\n60#1:211\n60#1:213\n60#1:214\n82#1:215\n82#1:216,2\n83#1:218\n83#1:219,3\n86#1:222\n86#1:223,3\n96#1:226\n96#1:227,3\n82#1:230\n108#1:231\n108#1:232,2\n109#1:234\n109#1:235,3\n108#1:238\n130#1:239\n130#1:240,3\n38#1:198\n60#1:212\n165#1:244\n165#1:243\n165#1:245,15\n165#1:260\n165#1:261\n*E\n"})
+@SourceDebugExtension({"SMAP\nMassTamilanProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MassTamilanProvider.kt\ncom/likdev256/MassTamilanProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,187:1\n1795#2,10:188\n2068#2:198\n2069#2:200\n1805#2:201\n1795#2,10:202\n2068#2:212\n2069#2:214\n1805#2:215\n1739#2:216\n1814#2,2:217\n1739#2:219\n1814#2,3:220\n1739#2:223\n1814#2,3:224\n1739#2:227\n1814#2,3:228\n1816#2:231\n1739#2:232\n1814#2,2:233\n1739#2:235\n1814#2,3:236\n1816#2:239\n1739#2:240\n1814#2,3:241\n1#3:199\n1#3:213\n1#3:245\n63#4:244\n64#4,15:246\n50#5:261\n43#5:262\n*S KotlinDebug\n*F\n+ 1 MassTamilanProvider.kt\ncom/likdev256/MassTamilanProvider\n*L\n39#1:188,10\n39#1:198\n39#1:200\n39#1:201\n61#1:202,10\n61#1:212\n61#1:214\n61#1:215\n83#1:216\n83#1:217,2\n84#1:219\n84#1:220,3\n87#1:223\n87#1:224,3\n97#1:227\n97#1:228,3\n83#1:231\n109#1:232\n109#1:233,2\n110#1:235\n110#1:236,3\n109#1:239\n131#1:240\n131#1:241,3\n39#1:199\n61#1:213\n166#1:245\n166#1:244\n166#1:246,15\n166#1:261\n166#1:262\n*E\n"})
 public final class MassTamilanProvider extends MainAPI {
 
     @NotNull
@@ -101,7 +102,7 @@ public final class MassTamilanProvider extends MainAPI {
     /* JADX INFO: renamed from: com.likdev256.MassTamilanProvider$getMainPage$1 */
     /* JADX INFO: compiled from: MassTamilanProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.likdev256.MassTamilanProvider", f = "MassTamilanProvider.kt", i = {0, 0}, l = {36}, m = "getMainPage", n = {"request", "page"}, nl = {37}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.likdev256.MassTamilanProvider", f = "MassTamilanProvider.kt", i = {0, 0}, l = {37}, m = "getMainPage", n = {"request", "page"}, nl = {38}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -123,7 +124,7 @@ public final class MassTamilanProvider extends MainAPI {
     /* JADX INFO: renamed from: com.likdev256.MassTamilanProvider$load$1 */
     /* JADX INFO: compiled from: MassTamilanProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.likdev256.MassTamilanProvider", f = "MassTamilanProvider.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {72, 148}, m = "load", n = {"url", "docLink", "url", "docLink", "doc", "title", "poster", "description", "tags", "year", "actors", "episodes", "zipLinks"}, nl = {74, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10"}, v = 2)
+    @DebugMetadata(c = "com.likdev256.MassTamilanProvider", f = "MassTamilanProvider.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {73, 149}, m = "load", n = {"url", "docLink", "url", "docLink", "doc", "title", "poster", "description", "tags", "year", "actors", "episodes", "zipLinks"}, nl = {75, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -154,7 +155,7 @@ public final class MassTamilanProvider extends MainAPI {
     /* JADX INFO: renamed from: com.likdev256.MassTamilanProvider$loadLinks$1 */
     /* JADX INFO: compiled from: MassTamilanProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.likdev256.MassTamilanProvider", f = "MassTamilanProvider.kt", i = {0, 0, 0, 0}, l = {165}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting"}, nl = {183}, s = {"L$0", "L$1", "L$2", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.likdev256.MassTamilanProvider", f = "MassTamilanProvider.kt", i = {0, 0, 0, 0}, l = {166}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting"}, nl = {184}, s = {"L$0", "L$1", "L$2", "Z$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -178,7 +179,7 @@ public final class MassTamilanProvider extends MainAPI {
     /* JADX INFO: renamed from: com.likdev256.MassTamilanProvider$search$1 */
     /* JADX INFO: compiled from: MassTamilanProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.likdev256.MassTamilanProvider", f = "MassTamilanProvider.kt", i = {0}, l = {57}, m = "search", n = {"query"}, nl = {60}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.likdev256.MassTamilanProvider", f = "MassTamilanProvider.kt", i = {0}, l = {58}, m = "search", n = {"query"}, nl = {61}, s = {"L$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -263,6 +264,7 @@ public final class MassTamilanProvider extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str2 = request.getData() + "?page=" + page;
                 c00001.L$0 = request;
@@ -1030,7 +1032,7 @@ public final class MassTamilanProvider extends MainAPI {
     /* JADX INFO: renamed from: com.likdev256.MassTamilanProvider$loadLinks$2 */
     /* JADX INFO: compiled from: MassTamilanProvider.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "Lcom/lagradost/cloudstream3/mvvm/Resource;", "", "it", "Lcom/likdev256/MassTamilanProvider$MassTamilanLinks;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.likdev256.MassTamilanProvider$loadLinks$2", f = "MassTamilanProvider.kt", i = {0}, l = {167}, m = "invokeSuspend", n = {"it"}, nl = {179}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.likdev256.MassTamilanProvider$loadLinks$2", f = "MassTamilanProvider.kt", i = {0}, l = {168}, m = "invokeSuspend", n = {"it"}, nl = {180}, s = {"L$0"}, v = 2)
     static final class C00042 extends SuspendLambda implements Function2<MassTamilanLinks, Continuation<? super Resource<? extends Unit>>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         /* synthetic */ Object L$0;
@@ -1078,7 +1080,7 @@ public final class MassTamilanProvider extends MainAPI {
         /* JADX INFO: renamed from: com.likdev256.MassTamilanProvider$loadLinks$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: MassTamilanProvider.kt */
         @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-        @DebugMetadata(c = "com.likdev256.MassTamilanProvider$loadLinks$2$1", f = "MassTamilanProvider.kt", i = {}, l = {169}, m = "invokeSuspend", n = {}, nl = {168}, s = {}, v = 2)
+        @DebugMetadata(c = "com.likdev256.MassTamilanProvider$loadLinks$2$1", f = "MassTamilanProvider.kt", i = {}, l = {170}, m = "invokeSuspend", n = {}, nl = {169}, s = {}, v = 2)
         static final class AnonymousClass1 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
             final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
             final /* synthetic */ MassTamilanLinks $it;
@@ -1112,7 +1114,7 @@ public final class MassTamilanProvider extends MainAPI {
                         Function1<ExtractorLink, Unit> function2 = this.$callback;
                         this.L$0 = function2;
                         this.label = 1;
-                        objNewExtractorLink = ExtractorApiKt.newExtractorLink(this.$it.getSourceName(), this.$it.getSourceName(), "https://goodproxy.goodproxy.workers.dev/fetch?url=" + this.$it.getSourceLink(), ExtractorApiKt.getINFER_TYPE(), new C00061(this.this$0, null), (Continuation) this);
+                        objNewExtractorLink = ExtractorApiKt.newExtractorLink(this.$it.getSourceName(), this.$it.getSourceName(), "https://goodproxy.goodproxy.workers.dev/fetch?url=" + this.$it.getSourceLink(), ExtractorApiKt.getINFER_TYPE(), new C00091(this.this$0, null), (Continuation) this);
                         if (objNewExtractorLink == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1135,21 +1137,21 @@ public final class MassTamilanProvider extends MainAPI {
             /* JADX INFO: compiled from: MassTamilanProvider.kt */
             @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
             @DebugMetadata(c = "com.likdev256.MassTamilanProvider$loadLinks$2$1$1", f = "MassTamilanProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-            static final class C00061 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+            static final class C00091 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
                 private /* synthetic */ Object L$0;
                 int label;
                 final /* synthetic */ MassTamilanProvider this$0;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                C00061(MassTamilanProvider massTamilanProvider, Continuation<? super C00061> continuation) {
+                C00091(MassTamilanProvider massTamilanProvider, Continuation<? super C00091> continuation) {
                     super(2, continuation);
                     this.this$0 = massTamilanProvider;
                 }
 
                 public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    Continuation<Unit> c00061 = new C00061(this.this$0, continuation);
-                    c00061.L$0 = obj;
-                    return c00061;
+                    Continuation<Unit> c00091 = new C00091(this.this$0, continuation);
+                    c00091.L$0 = obj;
+                    return c00091;
                 }
 
                 public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

@@ -39,7 +39,7 @@ public final class MyAnimeworld extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.piratexplay.MyAnimeworld", f = "Extractor.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {290, 291}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "iframe"}, nl = {291, 292}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
-    static final class C00071 extends ContinuationImpl {
+    static final class C00101 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -48,7 +48,7 @@ public final class MyAnimeworld extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00071(Continuation<? super C00071> continuation) {
+        C00101(Continuation<? super C00101> continuation) {
             super(continuation);
         }
 
@@ -78,39 +78,39 @@ public final class MyAnimeworld extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C00071 c00071;
+        C00101 c00101;
         Object obj;
-        C00071 c00072;
+        C00101 c00102;
         String url2;
         String referer2;
         Function1<? super SubtitleFile, Unit> function3;
         Function1<? super ExtractorLink, Unit> function4;
         String iframe;
-        if (continuation instanceof C00071) {
-            c00071 = (C00071) continuation;
-            if ((c00071.label & Integer.MIN_VALUE) != 0) {
-                c00071.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00101) {
+            c00101 = (C00101) continuation;
+            if ((c00101.label & Integer.MIN_VALUE) != 0) {
+                c00101.label -= Integer.MIN_VALUE;
             } else {
-                c00071 = new C00071(continuation);
+                c00101 = new C00101(continuation);
             }
         } else {
-            c00071 = new C00071(continuation);
+            c00101 = new C00101(continuation);
         }
-        Object $result = c00071.result;
+        Object $result = c00101.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00071.label) {
+        switch (c00101.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
-                c00071.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c00071.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c00071.L$2 = function1;
-                c00071.L$3 = function2;
-                c00071.label = 1;
-                C00071 c00073 = c00071;
+                c00101.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c00101.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c00101.L$2 = function1;
+                c00101.L$3 = function2;
+                c00101.label = 1;
+                C00101 c00103 = c00101;
                 obj = coroutine_suspended;
-                $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00073, 4094, (Object) null);
-                c00072 = c00073;
+                $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00103, 4094, (Object) null);
+                c00102 = c00103;
                 if ($result == obj) {
                     return obj;
                 }
@@ -119,32 +119,32 @@ public final class MyAnimeworld extends ExtractorApi {
                 function3 = function1;
                 function4 = function2;
                 iframe = ((NiceResponse) $result).getDocument().select("iframe").attr("src");
-                c00072.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c00072.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00072.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c00072.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                c00072.L$4 = SpillingKt.nullOutSpilledVariable(iframe);
-                c00072.label = 2;
-                if (ExtractorApiKt.loadExtractor(iframe, "", function3, function4, c00072) == obj) {
+                c00102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c00102.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c00102.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                c00102.L$4 = SpillingKt.nullOutSpilledVariable(iframe);
+                c00102.label = 2;
+                if (ExtractorApiKt.loadExtractor(iframe, "", function3, function4, c00102) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 1:
-                function4 = (Function1) c00071.L$3;
-                function3 = (Function1) c00071.L$2;
-                referer2 = (String) c00071.L$1;
-                url2 = (String) c00071.L$0;
+                function4 = (Function1) c00101.L$3;
+                function3 = (Function1) c00101.L$2;
+                referer2 = (String) c00101.L$1;
+                url2 = (String) c00101.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
-                c00072 = c00071;
+                c00102 = c00101;
                 iframe = ((NiceResponse) $result).getDocument().select("iframe").attr("src");
-                c00072.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c00072.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00072.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c00072.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                c00072.L$4 = SpillingKt.nullOutSpilledVariable(iframe);
-                c00072.label = 2;
-                if (ExtractorApiKt.loadExtractor(iframe, "", function3, function4, c00072) == obj) {
+                c00102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c00102.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c00102.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                c00102.L$4 = SpillingKt.nullOutSpilledVariable(iframe);
+                c00102.label = 2;
+                if (ExtractorApiKt.loadExtractor(iframe, "", function3, function4, c00102) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;

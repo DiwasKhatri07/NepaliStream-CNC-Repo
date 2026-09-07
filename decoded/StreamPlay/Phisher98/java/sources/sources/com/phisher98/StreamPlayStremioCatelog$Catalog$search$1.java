@@ -10,7 +10,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
 @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$Catalog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0, 0, 0, 0}, l = {221}, m = "search", n = {"query", "provider", "entries", "$this$forEach$iv", "element$iv", "type"}, nl = {224}, s = {"L$0", "L$1", "L$2", "L$3", "L$5", "L$6"}, v = 2)
+@DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$Catalog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0, 0, 0, 0}, l = {222}, m = "search", n = {"query", "provider", "entries", "$this$forEach$iv", "element$iv", "type"}, nl = {225}, s = {"L$0", "L$1", "L$2", "L$3", "L$5", "L$6"}, v = 2)
 final class StreamPlayStremioCatelog$Catalog$search$1 extends ContinuationImpl {
     Object L$0;
     Object L$1;

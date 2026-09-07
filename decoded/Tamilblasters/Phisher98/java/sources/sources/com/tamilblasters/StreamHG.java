@@ -48,7 +48,7 @@ public class StreamHG extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.tamilblasters.StreamHG", f = "Extractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {46, 53}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "headers", "resolver", "$this", "url", "referer", "subtitleCallback", "callback", "headers", "resolver", "interceptedUrl"}, nl = {51, 57}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C00001 extends ContinuationImpl {
+    static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -60,7 +60,7 @@ public class StreamHG extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00001(Continuation<? super C00001> continuation) {
+        C00031(Continuation<? super C00031> continuation) {
             super(continuation);
         }
 
@@ -96,7 +96,7 @@ public class StreamHG extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:25:0x01cf A[LOOP:0: B:23:0x01c9->B:25:0x01cf, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     static /* synthetic */ Object getUrl$suspendImpl(StreamHG $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C00001 c00001;
+        C00031 c00031;
         WebViewResolver resolver;
         Object obj;
         int i;
@@ -110,36 +110,36 @@ public class StreamHG extends ExtractorApi {
         Function1<? super ExtractorLink, Unit> function5;
         Object objGenerateM3u8$default;
         Function1<? super ExtractorLink, Unit> function6;
-        if (continuation instanceof C00001) {
-            c00001 = (C00001) continuation;
-            if ((c00001.label & Integer.MIN_VALUE) != 0) {
-                c00001.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00031) {
+            c00031 = (C00031) continuation;
+            if ((c00031.label & Integer.MIN_VALUE) != 0) {
+                c00031.label -= Integer.MIN_VALUE;
             } else {
-                c00001 = $this.new C00001(continuation);
+                c00031 = $this.new C00031(continuation);
             }
         } else {
-            c00001 = $this.new C00001(continuation);
+            c00031 = $this.new C00031(continuation);
         }
-        C00001 c00002 = c00001;
-        Object $result = c00002.result;
+        C00031 c00032 = c00031;
+        Object $result = c00032.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00002.label) {
+        switch (c00032.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Map headers2 = MapsKt.mapOf(new Pair[]{TuplesKt.to("Sec-Fetch-Dest", "empty"), TuplesKt.to("Sec-Fetch-Mode", "cors"), TuplesKt.to("Sec-Fetch-Site", "cross-site"), TuplesKt.to("Origin", $this.getMainUrl()), TuplesKt.to("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36")});
                 resolver = new WebViewResolver(new Regex("(m3u8|master\\.txt)"), CollectionsKt.listOf(new Regex("(m3u8|master\\.txt)")), (String) null, false, (String) null, (Function1) null, 15000L, 52, (DefaultConstructorMarker) null);
-                c00002.L$0 = $this;
-                c00002.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                c00002.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                c00002.L$4 = function2;
-                c00002.L$5 = SpillingKt.nullOutSpilledVariable(headers2);
-                c00002.L$6 = SpillingKt.nullOutSpilledVariable(resolver);
-                c00002.label = 1;
+                c00032.L$0 = $this;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c00032.L$4 = function2;
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(headers2);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(resolver);
+                c00032.label = 1;
                 obj = coroutine_suspended;
                 i = 2;
-                Object obj3 = Requests.get$default(MainActivityKt.getApp(), url, headers2, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) resolver, false, (ResponseParser) null, c00002, 3576, (Object) null);
-                c00002 = c00002;
+                Object obj3 = Requests.get$default(MainActivityKt.getApp(), url, headers2, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) resolver, false, (ResponseParser) null, c00032, 3576, (Object) null);
+                c00032 = c00032;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -154,17 +154,17 @@ public class StreamHG extends ExtractorApi {
                 M3u8Helper.Companion companion = M3u8Helper.Companion;
                 String name = $this2.getName();
                 String str = $this2.getMainUrl() + '/';
-                c00002.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00002.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c00002.L$4 = function4;
-                c00002.L$5 = SpillingKt.nullOutSpilledVariable(headers);
-                c00002.L$6 = SpillingKt.nullOutSpilledVariable(resolver);
-                c00002.L$7 = SpillingKt.nullOutSpilledVariable(interceptedUrl);
-                c00002.label = i;
+                c00032.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c00032.L$4 = function4;
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(headers);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(resolver);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(interceptedUrl);
+                c00032.label = i;
                 function5 = function4;
-                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, name, interceptedUrl, str, (Integer) null, (Map) null, (String) null, c00002, 56, (Object) null);
+                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, name, interceptedUrl, str, (Integer) null, (Map) null, (String) null, c00032, 56, (Object) null);
                 if (objGenerateM3u8$default == obj) {
                     return obj;
                 }
@@ -175,13 +175,13 @@ public class StreamHG extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 1:
-                WebViewResolver resolver2 = (WebViewResolver) c00002.L$6;
-                Map headers3 = (Map) c00002.L$5;
-                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00002.L$4;
-                Function1<? super SubtitleFile, Unit> function8 = (Function1) c00002.L$3;
-                String referer3 = (String) c00002.L$2;
-                String url3 = (String) c00002.L$1;
-                StreamHG $this3 = (StreamHG) c00002.L$0;
+                WebViewResolver resolver2 = (WebViewResolver) c00032.L$6;
+                Map headers3 = (Map) c00032.L$5;
+                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00032.L$4;
+                Function1<? super SubtitleFile, Unit> function8 = (Function1) c00032.L$3;
+                String referer3 = (String) c00032.L$2;
+                String url3 = (String) c00032.L$1;
+                StreamHG $this3 = (StreamHG) c00032.L$0;
                 ResultKt.throwOnFailure($result);
                 $this2 = $this3;
                 obj = coroutine_suspended;
@@ -197,17 +197,17 @@ public class StreamHG extends ExtractorApi {
                 M3u8Helper.Companion companion2 = M3u8Helper.Companion;
                 String name2 = $this2.getName();
                 String str2 = $this2.getMainUrl() + '/';
-                c00002.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00002.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c00002.L$4 = function4;
-                c00002.L$5 = SpillingKt.nullOutSpilledVariable(headers);
-                c00002.L$6 = SpillingKt.nullOutSpilledVariable(resolver);
-                c00002.L$7 = SpillingKt.nullOutSpilledVariable(interceptedUrl2);
-                c00002.label = i;
+                c00032.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c00032.L$4 = function4;
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(headers);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(resolver);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(interceptedUrl2);
+                c00032.label = i;
                 function5 = function4;
-                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion2, name2, interceptedUrl2, str2, (Integer) null, (Map) null, (String) null, c00002, 56, (Object) null);
+                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion2, name2, interceptedUrl2, str2, (Integer) null, (Map) null, (String) null, c00032, 56, (Object) null);
                 if (objGenerateM3u8$default == obj) {
                     return obj;
                 }
@@ -218,7 +218,7 @@ public class StreamHG extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 2:
-                function6 = (Function1) c00002.L$4;
+                function6 = (Function1) c00032.L$4;
                 ResultKt.throwOnFailure($result);
                 objGenerateM3u8$default = $result;
                 Iterable $this$forEach$iv3 = (Iterable) objGenerateM3u8$default;

@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.Aniworld.AniworldPlugin",
   "name": "Aniworld",
-  "version": 12,
+  "version": 14,
   "requiresResources": true
 }

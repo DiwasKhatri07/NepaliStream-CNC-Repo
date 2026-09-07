@@ -29,13 +29,13 @@ import org.json.JSONObject;
 /* JADX INFO: compiled from: UHDmoviesProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/UHDmoviesProvider/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000,\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u001a(\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00032\b\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0086@¢\u0006\u0002\u0010\b\u001a\"\u0010\t\u001a\u0004\u0018\u00010\n2\b\u0010\u000b\u001a\u0004\u0018\u00010\u00032\u0006\u0010\f\u001a\u00020\rH\u0082@¢\u0006\u0002\u0010\u000e\u001a \u0010\u000f\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u000b\u001a\u00020\u00032\u0006\u0010\u0006\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u0010\u0010¨\u0006\u0011"}, d2 = {"fetchIds", "Lcom/phisher98/IdResult;", "title", "", "year", "", "isSeries", "", "(Ljava/lang/String;Ljava/lang/Integer;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchMetaData", "Lcom/fasterxml/jackson/databind/JsonNode;", "imdbId", "type", "Lcom/lagradost/cloudstream3/TvType;", "(Ljava/lang/String;Lcom/lagradost/cloudstream3/TvType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchSimklId", "(Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "UHDmoviesProvider"}, k = 2, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nUHDmoviesProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UHDmoviesProvider.kt\ncom/phisher98/UHDmoviesProviderKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,382:1\n1#2:383\n*E\n"})
+@SourceDebugExtension({"SMAP\nUHDmoviesProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UHDmoviesProvider.kt\ncom/phisher98/UHDmoviesProviderKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,383:1\n1#2:384\n*E\n"})
 public final class UHDmoviesProviderKt {
 
     /* JADX INFO: renamed from: com.phisher98.UHDmoviesProviderKt$fetchIds$1 */
     /* JADX INFO: compiled from: UHDmoviesProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.UHDmoviesProviderKt", f = "UHDmoviesProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {334, 340}, m = "fetchIds", n = {"title", "year", "TMDB_API", "TMDB_API_KEY", "type", "searchUrl", "isSeries", "title", "year", "TMDB_API", "TMDB_API_KEY", "type", "searchUrl", "searchJson", "results", "tmdbId", "extUrl", "isSeries", "id"}, nl = {335, 341}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.UHDmoviesProviderKt", f = "UHDmoviesProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {335, 341}, m = "fetchIds", n = {"title", "year", "TMDB_API", "TMDB_API_KEY", "type", "searchUrl", "isSeries", "title", "year", "TMDB_API", "TMDB_API_KEY", "type", "searchUrl", "searchJson", "results", "tmdbId", "extUrl", "isSeries", "id"}, nl = {336, 342}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0", "I$0"}, v = 2)
     static final class C00141 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -67,7 +67,7 @@ public final class UHDmoviesProviderKt {
     /* JADX INFO: renamed from: com.phisher98.UHDmoviesProviderKt$fetchMetaData$1 */
     /* JADX INFO: compiled from: UHDmoviesProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.UHDmoviesProviderKt", f = "UHDmoviesProvider.kt", i = {0, 0, 0, 0}, l = {363}, m = "fetchMetaData", n = {"imdbId", "type", "metaType", "url"}, nl = {364}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.UHDmoviesProviderKt", f = "UHDmoviesProvider.kt", i = {0, 0, 0, 0}, l = {364}, m = "fetchMetaData", n = {"imdbId", "type", "metaType", "url"}, nl = {365}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
     static final class C00151 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -91,7 +91,7 @@ public final class UHDmoviesProviderKt {
     /* JADX INFO: renamed from: com.phisher98.UHDmoviesProviderKt$fetchSimklId$1 */
     /* JADX INFO: compiled from: UHDmoviesProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.UHDmoviesProviderKt", f = "UHDmoviesProvider.kt", i = {0, 0, 0, 0}, l = {377}, m = "fetchSimklId", n = {"imdbId", "type", "url", "isSeries"}, nl = {378}, s = {"L$0", "L$1", "L$2", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.UHDmoviesProviderKt", f = "UHDmoviesProvider.kt", i = {0, 0, 0, 0}, l = {378}, m = "fetchSimklId", n = {"imdbId", "type", "url", "isSeries"}, nl = {379}, s = {"L$0", "L$1", "L$2", "Z$0"}, v = 2)
     static final class C00161 extends ContinuationImpl {
         Object L$0;
         Object L$1;

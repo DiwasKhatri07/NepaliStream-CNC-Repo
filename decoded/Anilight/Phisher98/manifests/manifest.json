@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.anilight.AnilightPlugin",
   "name": "Anilight",
-  "version": 1,
+  "version": 3,
   "requiresResources": false
 }

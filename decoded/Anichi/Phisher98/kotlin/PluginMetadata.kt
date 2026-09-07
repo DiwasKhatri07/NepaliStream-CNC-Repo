@@ -4,7 +4,7 @@ package nepali.stream.decoded.anichi
 object PluginMetadata {
     const val name: String = "Anichi"
     const val originalPluginClass: String = "com.Anichi.AnichiPlugin"
-    const val version: Int = 24
+    const val version: Int = 26
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

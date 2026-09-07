@@ -39,7 +39,7 @@ public class GDMirrorbot extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.toonhub4u.GDMirrorbot", f = "Extractor.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6}, l = {104, 107, 145, 161, 207, 216, 225}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "$this", "url", "referer", "subtitleCallback", "callback", "$this", "url", "referer", "subtitleCallback", "callback", "pageText", "finalId", "myKey", "idType", "baseUrl", "hostUrl", "apiUrl", "$this", "url", "referer", "subtitleCallback", "callback", "sid", "host", "$this", "url", "referer", "subtitleCallback", "callback", "sid", "host", "response", "decodedMresult", "$this$forEach$iv", "element$iv", "key", "path", "friendlyName", "fullUrl", "base", "$this", "url", "referer", "subtitleCallback", "callback", "sid", "host", "response", "decodedMresult", "$this$forEach$iv", "element$iv", "key", "path", "friendlyName", "fullUrl", "base", "$this", "url", "referer", "subtitleCallback", "callback", "sid", "host", "response", "decodedMresult", "$this$forEach$iv", "element$iv", "key", "path", "friendlyName", "fullUrl", "base"}, nl = {102, 111, 148, 164, 216, 225, 233}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16"}, v = 2)
-    static final class C00001 extends ContinuationImpl {
+    static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -60,7 +60,7 @@ public class GDMirrorbot extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00001(Continuation<? super C00001> continuation) {
+        C00031(Continuation<? super C00031> continuation) {
             super(continuation);
         }
 
@@ -388,10 +388,11 @@ public class GDMirrorbot extends ExtractorApi {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:272:0x0ab6 -> B:273:0x0ac0). Please report as a decompilation issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:287:0x0b2b -> B:288:0x0b72). Please report as a decompilation issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:296:0x0bb1 -> B:297:0x0bb9). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-        java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
     static /* synthetic */ java.lang.Object getUrl$suspendImpl(com.toonhub4u.GDMirrorbot r36, java.lang.String r37, java.lang.String r38, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r39, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r40, kotlin.coroutines.Continuation<? super kotlin.Unit> r41) {
         /*

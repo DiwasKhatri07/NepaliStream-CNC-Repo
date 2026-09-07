@@ -36,6 +36,7 @@ import com.lagradost.cloudstream3.utils.UiText;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -92,7 +93,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: StreamPlayAnime.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000²\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\u00020\u0001:\u0003Z[\\B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010(\u001a\u00020\u0005*\u00020)H\u0004J\u0016\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010-J\f\u0010.\u001a\u00020/*\u000200H\u0002J,\u00101\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020/03\u0012\u0004\u0012\u00020\u001b02*\u0002042\u0006\u00105\u001a\u00020$H\u0082@¢\u0006\u0002\u00106J \u0010<\u001a\u0004\u0018\u00010=2\u0006\u0010,\u001a\u00020\u00052\u0006\u00105\u001a\u00020$H\u0096@¢\u0006\u0002\u0010>J\u001e\u0010:\u001a\u00020?2\u0006\u00105\u001a\u00020$2\u0006\u0010@\u001a\u000204H\u0096@¢\u0006\u0002\u0010AJ\u0016\u0010B\u001a\u00020C2\u0006\u0010D\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-JF\u0010E\u001a\u00020\u001b2\u0006\u0010F\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u001b2\u0012\u0010H\u001a\u000e\u0012\u0004\u0012\u00020J\u0012\u0004\u0012\u00020K0I2\u0012\u0010L\u001a\u000e\u0012\u0004\u0012\u00020M\u0012\u0004\u0012\u00020K0IH\u0096@¢\u0006\u0002\u0010NJ\u0010\u0010O\u001a\u00020P2\b\u0010Q\u001a\u0004\u0018\u00010\u0005J*\u0010R\u001a\u00020S2\b\u0010T\u001a\u0004\u0018\u00010\u00052\b\u0010U\u001a\u0004\u0018\u00010$2\u0006\u0010V\u001a\u00020\u000fH\u0082@¢\u0006\u0002\u0010WJ\u0017\u0010X\u001a\u0004\u0018\u00010$2\u0006\u0010T\u001a\u00020\u0005H\u0002¢\u0006\u0002\u0010YR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR \u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u001a\u0010\u0014\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0007\"\u0004\b\u0016\u0010\tR\u001a\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u000eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0011R\u0014\u0010\u001a\u001a\u00020\u001bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u0014\u0010\u001e\u001a\u00020\u001bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u001dR\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u001bX\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010&\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00108\u001a\b\u0012\u0004\u0012\u00020903X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b:\u0010;¨\u0006]"}, d2 = {"Lcom/phisher98/StreamPlayAnime;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "setSupportedTypes", "(Ljava/util/Set;)V", "lang", "getLang", "setLang", "supportedSyncNames", "Lcom/lagradost/cloudstream3/syncproviders/SyncIdName;", "getSupportedSyncNames", "hasMainPage", "", "getHasMainPage", "()Z", "hasQuickSearch", "getHasQuickSearch", "repo", "Lcom/lagradost/cloudstream3/syncproviders/SyncRepo;", "apiUrl", "mediaLimit", "", "isAdult", "headerJSON", "", "toStringData", "", "anilistAPICall", "Lcom/phisher98/StreamPlayAnime$AnilistAPIResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResponse", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/phisher98/StreamPlayAnime$Media;", "toSearchResponseList", "Lkotlin/Pair;", "", "Lcom/lagradost/cloudstream3/MainPageRequest;", "page", "(Lcom/lagradost/cloudstream3/MainPageRequest;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "currentYear", "mainPage", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "request", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getStatus", "Lcom/lagradost/cloudstream3/ShowStatus;", "t", "tmdbToAnimeId", "Lcom/phisher98/AniIds;", "title", "year", "type", "(Ljava/lang/String;Ljava/lang/Integer;Lcom/lagradost/cloudstream3/TvType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "extractSeason", "(Ljava/lang/String;)Ljava/lang/Integer;", "AnilistAPIResponse", "LinkData", "Media", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,530:1\n73#2,5:531\n73#2,5:598\n73#2,5:604\n1739#3:536\n1814#3,3:537\n1739#3:540\n1814#3,3:541\n1795#3,10:544\n2068#3:554\n2069#3:556\n1805#3:557\n1453#3,2:558\n1468#3,4:560\n1453#3,2:564\n1468#3,4:566\n1739#3:570\n1814#3,3:571\n1749#3:574\n1782#3,4:575\n1#4:555\n1#4:580\n1#4:603\n63#5:579\n64#5,15:581\n50#6:596\n43#6:597\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n*L\n84#1:531,5\n321#1:598,5\n516#1:604,5\n105#1:536\n105#1:537,3\n131#1:540\n131#1:541,3\n144#1:544,10\n144#1:554\n144#1:556\n144#1:557\n191#1:558,2\n191#1:560,4\n192#1:564,2\n192#1:566,4\n220#1:570\n220#1:571,3\n247#1:574\n247#1:575,4\n144#1:555\n312#1:580\n312#1:579\n312#1:581,15\n312#1:596\n312#1:597\n*E\n"})
+@SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,531:1\n73#2,5:532\n73#2,5:599\n73#2,5:605\n1739#3:537\n1814#3,3:538\n1739#3:541\n1814#3,3:542\n1795#3,10:545\n2068#3:555\n2069#3:557\n1805#3:558\n1453#3,2:559\n1468#3,4:561\n1453#3,2:565\n1468#3,4:567\n1739#3:571\n1814#3,3:572\n1749#3:575\n1782#3,4:576\n1#4:556\n1#4:581\n1#4:604\n63#5:580\n64#5,15:582\n50#6:597\n43#6:598\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n*L\n84#1:532,5\n322#1:599,5\n517#1:605,5\n105#1:537\n105#1:538,3\n131#1:541\n131#1:542,3\n145#1:545,10\n145#1:555\n145#1:557\n145#1:558\n192#1:559,2\n192#1:561,4\n193#1:565,2\n193#1:567,4\n221#1:571\n221#1:572,3\n248#1:575\n248#1:576,4\n145#1:556\n313#1:581\n313#1:580\n313#1:582,15\n313#1:597\n313#1:598\n*E\n"})
 public final class StreamPlayAnime extends MainAPI {
     private final boolean hasQuickSearch;
 
@@ -152,7 +153,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$getMainPage$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1}, l = {144, 154}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {144, 155}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1}, l = {145, 155}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {145, 156}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
     static final class C00801 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -174,7 +175,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$load$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {161, 171, 175, 182, 265, 279}, m = "load", n = {"url", "id", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid"}, nl = {163, 173, 176, 190, 279, 264}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {162, 172, 176, 183, 266, 280}, m = "load", n = {"url", "id", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid"}, nl = {164, 174, 177, 191, 280, 265}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2"}, v = 2)
     static final class C00811 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -219,7 +220,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {321, 331}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "malsync", "kaasSlug", "dubStatus", "isCasting"}, nl = {550, 362}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {322, 332}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "malsync", "kaasSlug", "dubStatus", "isCasting"}, nl = {551, 363}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0"}, v = 2)
     static final class C00841 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -276,7 +277,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$tmdbToAnimeId$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0}, l = {515}, m = "tmdbToAnimeId", n = {"title", "year", "type", "query", "variables", "data"}, nl = {516}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0}, l = {516}, m = "tmdbToAnimeId", n = {"title", "year", "type", "query", "variables", "data"}, nl = {517}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
     static final class C00971 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -567,13 +568,13 @@ public final class StreamPlayAnime extends MainAPI {
         return MainAPIKt.toNewSearchResponseList$default((List) destination$iv$iv, (Boolean) null, 1, (Object) null);
     }
 
-    /* JADX WARN: Code duplicated, block: B:27:0x00b6  */
-    /* JADX WARN: Code duplicated, block: B:29:0x00ce  */
-    /* JADX WARN: Code duplicated, block: B:30:0x00d5  */
-    /* JADX WARN: Code duplicated, block: B:32:0x00e1  */
-    /* JADX WARN: Code duplicated, block: B:33:0x00e8  */
-    /* JADX WARN: Code duplicated, block: B:35:0x0121  */
-    /* JADX WARN: Code duplicated, block: B:46:0x0127 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:27:0x00bf  */
+    /* JADX WARN: Code duplicated, block: B:29:0x00d7  */
+    /* JADX WARN: Code duplicated, block: B:30:0x00de  */
+    /* JADX WARN: Code duplicated, block: B:32:0x00ea  */
+    /* JADX WARN: Code duplicated, block: B:33:0x00f1  */
+    /* JADX WARN: Code duplicated, block: B:35:0x012a  */
+    /* JADX WARN: Code duplicated, block: B:46:0x0130 A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Exception {
@@ -603,6 +604,7 @@ public final class StreamPlayAnime extends MainAPI {
         switch (c00801.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 if (!StringsKt.contains$default(request2.getName(), "Personal", false, 2, (Object) null)) {
                     c00801.L$0 = request2;
                     c00801.I$0 = page2;
@@ -909,7 +911,7 @@ public final class StreamPlayAnime extends MainAPI {
                 if (data != null) {
                     throw new Exception("Unable to fetch media details");
                 }
-                anititle = data.m44getTitle();
+                anititle = data.m46getTitle();
                 aniyear = data.getStartDate().getYear();
                 anititle2 = data.getCoverImage().getExtraLarge();
                 backgroundUrl = data.getBannerImage();
@@ -1097,7 +1099,7 @@ public final class StreamPlayAnime extends MainAPI {
                         } else {
                             anidbEid = 0;
                         }
-                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m44getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
+                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m46getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
                         $this$map$iv = new IntRange(1, totalEps);
                         id3 = syncMetaData2;
                         ids4 = ids3;
@@ -1111,7 +1113,7 @@ public final class StreamPlayAnime extends MainAPI {
                             final MetaEpisode epData = (MetaEpisode) epMetaMap.get(Boxing.boxInt(item$iv$iv));
                             Integer idMal = ids4.getIdMal();
                             Integer id5 = ids4.getId();
-                            String strM44getTitle = data4.m44getTitle();
+                            String strM46getTitle = data4.m46getTitle();
                             int year = data4.getStartDate().getYear();
                             Map epMetaMap4 = epMetaMap;
                             num3 = (Integer) destination$iv$iv.get(Boxing.boxInt(item$iv$iv));
@@ -1120,7 +1122,7 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue3 = 0;
                             }
-                            String linkData = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv), id5, idMal, strM44getTitle, Boxing.boxInt(year), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
+                            String linkData = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv), id5, idMal, strM46getTitle, Boxing.boxInt(year), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
                             destination$iv$iv3.add(MainAPIKt.newEpisode(this, linkData, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj5) {
                                     return StreamPlayAnime.load$lambda$3$0(item$iv$iv, epData, fallbackPoster, fallbackTitle, (Episode) obj5);
@@ -1147,7 +1149,7 @@ public final class StreamPlayAnime extends MainAPI {
                             int i2 = index$iv$iv + 1;
                             Integer idMal2 = ids4.getIdMal();
                             Integer id6 = ids4.getId();
-                            String strM44getTitle2 = data4.m44getTitle();
+                            String strM46getTitle2 = data4.m46getTitle();
                             int year2 = data4.getStartDate().getYear();
                             List episodes5 = episodes;
                             num2 = (Integer) destination$iv$iv.get(Boxing.boxInt(i2));
@@ -1156,7 +1158,7 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue2 = 0;
                             }
-                            String dubLinkData = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i2), id6, idMal2, strM44getTitle2, Boxing.boxInt(year2), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
+                            String dubLinkData = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i2), id6, idMal2, strM46getTitle2, Boxing.boxInt(year2), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
                             destination$iv$iv4.add(Episode.copy$default(ep, dubLinkData, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
                             episodes = episodes5;
                             index$iv$iv = index$iv$iv2;
@@ -1164,7 +1166,7 @@ public final class StreamPlayAnime extends MainAPI {
                         episodes2 = episodes;
                         episodesDub = (List) destination$iv$iv4;
                         if (StringsKt.contains(data4.getFormat(), "Movie", true)) {
-                            String strM44getTitle3 = data4.m44getTitle();
+                            String strM46getTitle3 = data4.m46getTitle();
                             fallbackPoster2 = fallbackPoster;
                             TvType tvType = TvType.AnimeMovie;
                             C00822 c00822 = new C00822(id3, ids4, kitsuid4, data4, backgroundUrl4, animeMetaData2, posterurl3, logoUrl, null);
@@ -1197,7 +1199,7 @@ public final class StreamPlayAnime extends MainAPI {
                             C00811 c00816 = c00813;
                             fallbackTitle2 = fallbackTitle;
                             anidbEid4 = anidbEid;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM44getTitle3, url3, tvType, href, c00822, c00816);
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM46getTitle3, url3, tvType, href, c00822, c00816);
                             c00814 = c00816;
                             if (objNewMovieLoadResponse == coroutine_suspended) {
                                 return coroutine_suspended;
@@ -1209,7 +1211,7 @@ public final class StreamPlayAnime extends MainAPI {
                         aniyear5 = aniyear4;
                         String fallbackTitle4 = fallbackTitle;
                         anidbEid2 = anidbEid;
-                        String strM44getTitle4 = data4.m44getTitle();
+                        String strM46getTitle4 = data4.m46getTitle();
                         TvType tvType2 = TvType.Anime;
                         data5 = data4;
                         C00811 c00817 = c00813;
@@ -1242,7 +1244,7 @@ public final class StreamPlayAnime extends MainAPI {
                         c00817.I$1 = totalEps;
                         c00817.I$2 = anidbEid2;
                         c00817.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM44getTitle4, url3, tvType2, false, c00833, c00817, 8, (Object) null);
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle4, url3, tvType2, false, c00833, c00817, 8, (Object) null);
                         if (objNewAnimeLoadResponse$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1281,7 +1283,7 @@ public final class StreamPlayAnime extends MainAPI {
                 if (data != null) {
                     throw new Exception("Unable to fetch media details");
                 }
-                anititle = data.m44getTitle();
+                anititle = data.m46getTitle();
                 aniyear = data.getStartDate().getYear();
                 anititle2 = data.getCoverImage().getExtraLarge();
                 backgroundUrl = data.getBannerImage();
@@ -1485,7 +1487,7 @@ public final class StreamPlayAnime extends MainAPI {
                         } else {
                             anidbEid = 0;
                         }
-                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m44getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
+                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m46getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
                         $this$map$iv = new IntRange(1, totalEps);
                         id3 = syncMetaData2;
                         ids4 = ids3;
@@ -1499,7 +1501,7 @@ public final class StreamPlayAnime extends MainAPI {
                             final MetaEpisode epData2 = (MetaEpisode) epMetaMap.get(Boxing.boxInt(item$iv$iv3));
                             Integer idMal3 = ids4.getIdMal();
                             Integer id8 = ids4.getId();
-                            String strM44getTitle5 = data4.m44getTitle();
+                            String strM46getTitle5 = data4.m46getTitle();
                             int year3 = data4.getStartDate().getYear();
                             Map epMetaMap5 = epMetaMap;
                             num3 = (Integer) destination$iv$iv.get(Boxing.boxInt(item$iv$iv3));
@@ -1508,7 +1510,7 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue3 = 0;
                             }
-                            String linkData2 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv3), id8, idMal3, strM44getTitle5, Boxing.boxInt(year3), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
+                            String linkData2 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv3), id8, idMal3, strM46getTitle5, Boxing.boxInt(year3), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
                             destination$iv$iv3.add(MainAPIKt.newEpisode(this, linkData2, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj5) {
                                     return StreamPlayAnime.load$lambda$3$0(item$iv$iv3, epData2, fallbackPoster, fallbackTitle, (Episode) obj5);
@@ -1535,7 +1537,7 @@ public final class StreamPlayAnime extends MainAPI {
                             int i3 = index$iv$iv + 1;
                             Integer idMal4 = ids4.getIdMal();
                             Integer id9 = ids4.getId();
-                            String strM44getTitle6 = data4.m44getTitle();
+                            String strM46getTitle6 = data4.m46getTitle();
                             int year4 = data4.getStartDate().getYear();
                             List episodes6 = episodes;
                             num2 = (Integer) destination$iv$iv.get(Boxing.boxInt(i3));
@@ -1544,7 +1546,7 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue2 = 0;
                             }
-                            String dubLinkData2 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i3), id9, idMal4, strM44getTitle6, Boxing.boxInt(year4), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
+                            String dubLinkData2 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i3), id9, idMal4, strM46getTitle6, Boxing.boxInt(year4), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
                             destination$iv$iv4.add(Episode.copy$default(ep2, dubLinkData2, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
                             episodes = episodes6;
                             index$iv$iv = index$iv$iv3;
@@ -1552,7 +1554,7 @@ public final class StreamPlayAnime extends MainAPI {
                         episodes2 = episodes;
                         episodesDub = (List) destination$iv$iv4;
                         if (StringsKt.contains(data4.getFormat(), "Movie", true)) {
-                            String strM44getTitle7 = data4.m44getTitle();
+                            String strM46getTitle7 = data4.m46getTitle();
                             fallbackPoster2 = fallbackPoster;
                             TvType tvType3 = TvType.AnimeMovie;
                             C00822 c00823 = new C00822(id3, ids4, kitsuid4, data4, backgroundUrl4, animeMetaData2, posterurl3, logoUrl, null);
@@ -1585,7 +1587,7 @@ public final class StreamPlayAnime extends MainAPI {
                             C00811 c00818 = c00813;
                             fallbackTitle2 = fallbackTitle;
                             anidbEid4 = anidbEid;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM44getTitle7, url3, tvType3, href, c00823, c00818);
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM46getTitle7, url3, tvType3, href, c00823, c00818);
                             c00814 = c00818;
                             if (objNewMovieLoadResponse == coroutine_suspended) {
                                 return coroutine_suspended;
@@ -1597,7 +1599,7 @@ public final class StreamPlayAnime extends MainAPI {
                         aniyear5 = aniyear4;
                         String fallbackTitle5 = fallbackTitle;
                         anidbEid2 = anidbEid;
-                        String strM44getTitle8 = data4.m44getTitle();
+                        String strM46getTitle8 = data4.m46getTitle();
                         TvType tvType4 = TvType.Anime;
                         data5 = data4;
                         C00811 c00819 = c00813;
@@ -1630,7 +1632,7 @@ public final class StreamPlayAnime extends MainAPI {
                         c00819.I$1 = totalEps;
                         c00819.I$2 = anidbEid2;
                         c00819.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM44getTitle8, url3, tvType4, false, c00834, c00819, 8, (Object) null);
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle8, url3, tvType4, false, c00834, c00819, 8, (Object) null);
                         if (objNewAnimeLoadResponse$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1849,7 +1851,7 @@ public final class StreamPlayAnime extends MainAPI {
                         } else {
                             anidbEid = 0;
                         }
-                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m44getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
+                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m46getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
                         $this$map$iv = new IntRange(1, totalEps);
                         id3 = syncMetaData2;
                         ids4 = ids3;
@@ -1863,7 +1865,7 @@ public final class StreamPlayAnime extends MainAPI {
                             final MetaEpisode epData3 = (MetaEpisode) epMetaMap.get(Boxing.boxInt(item$iv$iv4));
                             Integer idMal5 = ids4.getIdMal();
                             Integer id11 = ids4.getId();
-                            String strM44getTitle9 = data4.m44getTitle();
+                            String strM46getTitle9 = data4.m46getTitle();
                             int year5 = data4.getStartDate().getYear();
                             Map epMetaMap6 = epMetaMap;
                             num3 = (Integer) destination$iv$iv.get(Boxing.boxInt(item$iv$iv4));
@@ -1872,7 +1874,7 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue3 = 0;
                             }
-                            String linkData3 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv4), id11, idMal5, strM44getTitle9, Boxing.boxInt(year5), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
+                            String linkData3 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv4), id11, idMal5, strM46getTitle9, Boxing.boxInt(year5), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
                             destination$iv$iv3.add(MainAPIKt.newEpisode(this, linkData3, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj5) {
                                     return StreamPlayAnime.load$lambda$3$0(item$iv$iv4, epData3, fallbackPoster, fallbackTitle, (Episode) obj5);
@@ -1899,7 +1901,7 @@ public final class StreamPlayAnime extends MainAPI {
                             int i4 = index$iv$iv + 1;
                             Integer idMal6 = ids4.getIdMal();
                             Integer id12 = ids4.getId();
-                            String strM44getTitle10 = data4.m44getTitle();
+                            String strM46getTitle10 = data4.m46getTitle();
                             int year6 = data4.getStartDate().getYear();
                             List episodes7 = episodes;
                             num2 = (Integer) destination$iv$iv.get(Boxing.boxInt(i4));
@@ -1908,7 +1910,7 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue2 = 0;
                             }
-                            String dubLinkData3 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i4), id12, idMal6, strM44getTitle10, Boxing.boxInt(year6), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
+                            String dubLinkData3 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i4), id12, idMal6, strM46getTitle10, Boxing.boxInt(year6), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
                             destination$iv$iv4.add(Episode.copy$default(ep3, dubLinkData3, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
                             episodes = episodes7;
                             index$iv$iv = index$iv$iv4;
@@ -1916,7 +1918,7 @@ public final class StreamPlayAnime extends MainAPI {
                         episodes2 = episodes;
                         episodesDub = (List) destination$iv$iv4;
                         if (StringsKt.contains(data4.getFormat(), "Movie", true)) {
-                            String strM44getTitle11 = data4.m44getTitle();
+                            String strM46getTitle11 = data4.m46getTitle();
                             fallbackPoster2 = fallbackPoster;
                             TvType tvType5 = TvType.AnimeMovie;
                             C00822 c00824 = new C00822(id3, ids4, kitsuid4, data4, backgroundUrl4, animeMetaData2, posterurl3, logoUrl, null);
@@ -1949,7 +1951,7 @@ public final class StreamPlayAnime extends MainAPI {
                             C00811 c008110 = c00813;
                             fallbackTitle2 = fallbackTitle;
                             anidbEid4 = anidbEid;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM44getTitle11, url3, tvType5, href, c00824, c008110);
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM46getTitle11, url3, tvType5, href, c00824, c008110);
                             c00814 = c008110;
                             if (objNewMovieLoadResponse == coroutine_suspended) {
                                 return coroutine_suspended;
@@ -1961,7 +1963,7 @@ public final class StreamPlayAnime extends MainAPI {
                         aniyear5 = aniyear4;
                         String fallbackTitle6 = fallbackTitle;
                         anidbEid2 = anidbEid;
-                        String strM44getTitle12 = data4.m44getTitle();
+                        String strM46getTitle12 = data4.m46getTitle();
                         TvType tvType6 = TvType.Anime;
                         data5 = data4;
                         C00811 c008111 = c00813;
@@ -1994,7 +1996,7 @@ public final class StreamPlayAnime extends MainAPI {
                         c008111.I$1 = totalEps;
                         c008111.I$2 = anidbEid2;
                         c008111.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM44getTitle12, url3, tvType6, false, c00835, c008111, 8, (Object) null);
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle12, url3, tvType6, false, c00835, c008111, 8, (Object) null);
                         if (objNewAnimeLoadResponse$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -2191,7 +2193,7 @@ public final class StreamPlayAnime extends MainAPI {
                         } else {
                             anidbEid = 0;
                         }
-                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m44getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
+                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m46getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
                         $this$map$iv = new IntRange(1, totalEps);
                         id3 = syncMetaData2;
                         ids4 = ids3;
@@ -2205,7 +2207,7 @@ public final class StreamPlayAnime extends MainAPI {
                             final MetaEpisode epData4 = (MetaEpisode) epMetaMap.get(Boxing.boxInt(item$iv$iv5));
                             Integer idMal7 = ids4.getIdMal();
                             Integer id14 = ids4.getId();
-                            String strM44getTitle13 = data4.m44getTitle();
+                            String strM46getTitle13 = data4.m46getTitle();
                             int year7 = data4.getStartDate().getYear();
                             Map epMetaMap7 = epMetaMap;
                             num3 = (Integer) destination$iv$iv.get(Boxing.boxInt(item$iv$iv5));
@@ -2214,7 +2216,7 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue3 = 0;
                             }
-                            String linkData4 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv5), id14, idMal7, strM44getTitle13, Boxing.boxInt(year7), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
+                            String linkData4 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv5), id14, idMal7, strM46getTitle13, Boxing.boxInt(year7), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
                             destination$iv$iv3.add(MainAPIKt.newEpisode(this, linkData4, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj5) {
                                     return StreamPlayAnime.load$lambda$3$0(item$iv$iv5, epData4, fallbackPoster, fallbackTitle, (Episode) obj5);
@@ -2241,7 +2243,7 @@ public final class StreamPlayAnime extends MainAPI {
                             int i5 = index$iv$iv + 1;
                             Integer idMal8 = ids4.getIdMal();
                             Integer id15 = ids4.getId();
-                            String strM44getTitle14 = data4.m44getTitle();
+                            String strM46getTitle14 = data4.m46getTitle();
                             int year8 = data4.getStartDate().getYear();
                             List episodes8 = episodes;
                             num2 = (Integer) destination$iv$iv.get(Boxing.boxInt(i5));
@@ -2250,7 +2252,7 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue2 = 0;
                             }
-                            String dubLinkData4 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i5), id15, idMal8, strM44getTitle14, Boxing.boxInt(year8), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
+                            String dubLinkData4 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i5), id15, idMal8, strM46getTitle14, Boxing.boxInt(year8), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
                             destination$iv$iv4.add(Episode.copy$default(ep4, dubLinkData4, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
                             episodes = episodes8;
                             index$iv$iv = index$iv$iv5;
@@ -2258,7 +2260,7 @@ public final class StreamPlayAnime extends MainAPI {
                         episodes2 = episodes;
                         episodesDub = (List) destination$iv$iv4;
                         if (StringsKt.contains(data4.getFormat(), "Movie", true)) {
-                            String strM44getTitle15 = data4.m44getTitle();
+                            String strM46getTitle15 = data4.m46getTitle();
                             fallbackPoster2 = fallbackPoster;
                             TvType tvType7 = TvType.AnimeMovie;
                             C00822 c00825 = new C00822(id3, ids4, kitsuid4, data4, backgroundUrl4, animeMetaData2, posterurl3, logoUrl, null);
@@ -2291,7 +2293,7 @@ public final class StreamPlayAnime extends MainAPI {
                             C00811 c008112 = c00813;
                             fallbackTitle2 = fallbackTitle;
                             anidbEid4 = anidbEid;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM44getTitle15, url3, tvType7, href, c00825, c008112);
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM46getTitle15, url3, tvType7, href, c00825, c008112);
                             c00814 = c008112;
                             if (objNewMovieLoadResponse == coroutine_suspended) {
                                 return coroutine_suspended;
@@ -2303,7 +2305,7 @@ public final class StreamPlayAnime extends MainAPI {
                         aniyear5 = aniyear4;
                         String fallbackTitle7 = fallbackTitle;
                         anidbEid2 = anidbEid;
-                        String strM44getTitle16 = data4.m44getTitle();
+                        String strM46getTitle16 = data4.m46getTitle();
                         TvType tvType8 = TvType.Anime;
                         data5 = data4;
                         C00811 c008113 = c00813;
@@ -2336,7 +2338,7 @@ public final class StreamPlayAnime extends MainAPI {
                         c008113.I$1 = totalEps;
                         c008113.I$2 = anidbEid2;
                         c008113.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM44getTitle16, url3, tvType8, false, c00836, c008113, 8, (Object) null);
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle16, url3, tvType8, false, c00836, c008113, 8, (Object) null);
                         if (objNewAnimeLoadResponse$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -2485,7 +2487,7 @@ public final class StreamPlayAnime extends MainAPI {
                         } else {
                             anidbEid = 0;
                         }
-                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m44getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
+                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m46getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
                         $this$map$iv = new IntRange(1, totalEps);
                         id3 = syncMetaData2;
                         ids4 = ids3;
@@ -2499,7 +2501,7 @@ public final class StreamPlayAnime extends MainAPI {
                             final MetaEpisode epData5 = (MetaEpisode) epMetaMap.get(Boxing.boxInt(item$iv$iv6));
                             Integer idMal9 = ids4.getIdMal();
                             Integer id17 = ids4.getId();
-                            String strM44getTitle17 = data4.m44getTitle();
+                            String strM46getTitle17 = data4.m46getTitle();
                             int year9 = data4.getStartDate().getYear();
                             Map epMetaMap8 = epMetaMap;
                             num3 = (Integer) destination$iv$iv.get(Boxing.boxInt(item$iv$iv6));
@@ -2508,7 +2510,7 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue3 = 0;
                             }
-                            String linkData5 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv6), id17, idMal9, strM44getTitle17, Boxing.boxInt(year9), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
+                            String linkData5 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv6), id17, idMal9, strM46getTitle17, Boxing.boxInt(year9), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
                             destination$iv$iv3.add(MainAPIKt.newEpisode(this, linkData5, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj5) {
                                     return StreamPlayAnime.load$lambda$3$0(item$iv$iv6, epData5, fallbackPoster, fallbackTitle, (Episode) obj5);
@@ -2535,7 +2537,7 @@ public final class StreamPlayAnime extends MainAPI {
                             int i6 = index$iv$iv + 1;
                             Integer idMal10 = ids4.getIdMal();
                             Integer id18 = ids4.getId();
-                            String strM44getTitle18 = data4.m44getTitle();
+                            String strM46getTitle18 = data4.m46getTitle();
                             int year10 = data4.getStartDate().getYear();
                             List episodes9 = episodes;
                             num2 = (Integer) destination$iv$iv.get(Boxing.boxInt(i6));
@@ -2544,7 +2546,7 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue2 = 0;
                             }
-                            String dubLinkData5 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i6), id18, idMal10, strM44getTitle18, Boxing.boxInt(year10), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
+                            String dubLinkData5 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i6), id18, idMal10, strM46getTitle18, Boxing.boxInt(year10), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
                             destination$iv$iv4.add(Episode.copy$default(ep5, dubLinkData5, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
                             episodes = episodes9;
                             index$iv$iv = index$iv$iv6;
@@ -2552,7 +2554,7 @@ public final class StreamPlayAnime extends MainAPI {
                         episodes2 = episodes;
                         episodesDub = (List) destination$iv$iv4;
                         if (StringsKt.contains(data4.getFormat(), "Movie", true)) {
-                            String strM44getTitle19 = data4.m44getTitle();
+                            String strM46getTitle19 = data4.m46getTitle();
                             fallbackPoster2 = fallbackPoster;
                             TvType tvType9 = TvType.AnimeMovie;
                             C00822 c00826 = new C00822(id3, ids4, kitsuid4, data4, backgroundUrl4, animeMetaData2, posterurl3, logoUrl, null);
@@ -2585,7 +2587,7 @@ public final class StreamPlayAnime extends MainAPI {
                             C00811 c008114 = c00813;
                             fallbackTitle2 = fallbackTitle;
                             anidbEid4 = anidbEid;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM44getTitle19, url3, tvType9, href, c00826, c008114);
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM46getTitle19, url3, tvType9, href, c00826, c008114);
                             c00814 = c008114;
                             if (objNewMovieLoadResponse == coroutine_suspended) {
                                 return coroutine_suspended;
@@ -2597,7 +2599,7 @@ public final class StreamPlayAnime extends MainAPI {
                         aniyear5 = aniyear4;
                         String fallbackTitle8 = fallbackTitle;
                         anidbEid2 = anidbEid;
-                        String strM44getTitle110 = data4.m44getTitle();
+                        String strM46getTitle110 = data4.m46getTitle();
                         TvType tvType10 = TvType.Anime;
                         data5 = data4;
                         C00811 c008115 = c00813;
@@ -2630,7 +2632,7 @@ public final class StreamPlayAnime extends MainAPI {
                         c008115.I$1 = totalEps;
                         c008115.I$2 = anidbEid2;
                         c008115.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM44getTitle110, url3, tvType10, false, c00837, c008115, 8, (Object) null);
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle110, url3, tvType10, false, c00837, c008115, 8, (Object) null);
                         if (objNewAnimeLoadResponse$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -2750,7 +2752,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayAnime$load$2", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,530:1\n296#2,2:531\n296#2,2:533\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$2\n*L\n271#1:531,2\n273#1:533,2\n*E\n"})
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,531:1\n296#2,2:532\n296#2,2:534\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$2\n*L\n272#1:532,2\n274#1:534,2\n*E\n"})
     static final class C00822 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ MetaAnimeData $animeMetaData;
         final /* synthetic */ String $backgroundUrl;
@@ -2847,8 +2849,8 @@ public final class StreamPlayAnime extends MainAPI {
                         }
                     }
                     loadResponse.setBackgroundPosterUrl(bannerImage);
-                    String strM43getCoverImage = this.$posterurl;
-                    if (strM43getCoverImage == null && (strM43getCoverImage = this.$data.m43getCoverImage()) == null) {
+                    String strM45getCoverImage = this.$posterurl;
+                    if (strM45getCoverImage == null && (strM45getCoverImage = this.$data.m45getCoverImage()) == null) {
                         MetaAnimeData metaAnimeData2 = this.$animeMetaData;
                         if (metaAnimeData2 != null && (images = metaAnimeData2.getImages()) != null) {
                             Iterable $this$firstOrNull$iv2 = images;
@@ -2871,7 +2873,7 @@ public final class StreamPlayAnime extends MainAPI {
                             }
                         }
                     } else {
-                        url = strM43getCoverImage;
+                        url = strM45getCoverImage;
                     }
                     loadResponse.setPosterUrl(url);
                     try {
@@ -2892,7 +2894,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayAnime$load$3", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,530:1\n296#2,2:531\n296#2,2:533\n1795#2,10:535\n2068#2:545\n2069#2:547\n1805#2:548\n1#3:546\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$3\n*L\n288#1:531,2\n290#1:533,2\n295#1:535,10\n295#1:545\n295#1:547\n295#1:548\n295#1:546\n*E\n"})
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,531:1\n296#2,2:532\n296#2,2:534\n1795#2,10:536\n2068#2:546\n2069#2:548\n1805#2:549\n1#3:547\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$3\n*L\n289#1:532,2\n291#1:534,2\n296#1:536,10\n296#1:546\n296#1:548\n296#1:549\n296#1:547\n*E\n"})
     static final class C00833 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ MetaAnimeData $animeMetaData;
         final /* synthetic */ AnilistAPIResponse.anilistMedia $data;
@@ -2994,11 +2996,11 @@ public final class StreamPlayAnime extends MainAPI {
                         }
                     }
                     loadResponse.setBackgroundPosterUrl(bannerImage);
-                    String strM43getCoverImage = this.$data.m43getCoverImage();
-                    if (strM43getCoverImage == null) {
+                    String strM45getCoverImage = this.$data.m45getCoverImage();
+                    if (strM45getCoverImage == null) {
                         MetaAnimeData metaAnimeData2 = this.$animeMetaData;
                         if (metaAnimeData2 == null || (images = metaAnimeData2.getImages()) == null) {
-                            strM43getCoverImage = null;
+                            strM45getCoverImage = null;
                         } else {
                             Iterable $this$firstOrNull$iv2 = images;
                             Iterator it4 = $this$firstOrNull$iv2.iterator();
@@ -3011,20 +3013,20 @@ public final class StreamPlayAnime extends MainAPI {
                                 }
                                 imageData = (ImageData) element$iv;
                                 if (imageData != null) {
-                                    strM43getCoverImage = imageData.getUrl();
+                                    strM45getCoverImage = imageData.getUrl();
                                 } else {
-                                    strM43getCoverImage = null;
+                                    strM45getCoverImage = null;
                                 }
                             } while (!StringsKt.equals(it.getCoverType(), "Poster", true));
                             imageData = (ImageData) element$iv;
                             if (imageData != null) {
-                                strM43getCoverImage = imageData.getUrl();
+                                strM45getCoverImage = imageData.getUrl();
                             } else {
-                                strM43getCoverImage = null;
+                                strM45getCoverImage = null;
                             }
                         }
                     }
-                    loadResponse.setPosterUrl(strM43getCoverImage);
+                    loadResponse.setPosterUrl(strM45getCoverImage);
                     loadResponse.setTags(this.$data.getGenres());
                     loadResponse.setScore(Score.Companion.from100(Boxing.boxInt(this.$data.getAverageScore())));
                     loadResponse.setShowStatus(this.this$0.getStatus(this.$data.getStatus()));
@@ -3412,7 +3414,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$2 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$2", f = "StreamPlayAnime.kt", i = {}, l = {332}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$2", f = "StreamPlayAnime.kt", i = {}, l = {333}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00882 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -3462,8 +3464,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$3 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$3", f = "StreamPlayAnime.kt", i = {0}, l = {335}, m = "invokeSuspend", n = {"it"}, nl = {336}, s = {"L$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadLinks$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,530:1\n1#2:531\n*E\n"})
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$3", f = "StreamPlayAnime.kt", i = {0}, l = {336}, m = "invokeSuspend", n = {"it"}, nl = {337}, s = {"L$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadLinks$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,531:1\n1#2:532\n*E\n"})
     static final class C00893 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -3588,7 +3590,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$4 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$4", f = "StreamPlayAnime.kt", i = {}, l = {339}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$4", f = "StreamPlayAnime.kt", i = {}, l = {340}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00904 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -3638,7 +3640,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$5 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$5", f = "StreamPlayAnime.kt", i = {}, l = {340}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$5", f = "StreamPlayAnime.kt", i = {}, l = {341}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00915 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ String $anititle;
@@ -3698,7 +3700,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$6 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$6", f = "StreamPlayAnime.kt", i = {}, l = {341}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$6", f = "StreamPlayAnime.kt", i = {}, l = {342}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00926 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ String $anititle;
@@ -3758,7 +3760,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$7 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$7", f = "StreamPlayAnime.kt", i = {}, l = {342}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$7", f = "StreamPlayAnime.kt", i = {}, l = {343}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00937 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ String $anititle;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -3812,7 +3814,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$8 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$8", f = "StreamPlayAnime.kt", i = {}, l = {343}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$8", f = "StreamPlayAnime.kt", i = {}, l = {344}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00948 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -3864,7 +3866,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$9 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$9", f = "StreamPlayAnime.kt", i = {}, l = {344}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$9", f = "StreamPlayAnime.kt", i = {}, l = {345}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00959 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -3918,7 +3920,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$10 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$10", f = "StreamPlayAnime.kt", i = {0}, l = {347}, m = "invokeSuspend", n = {"it"}, nl = {353}, s = {"I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$10", f = "StreamPlayAnime.kt", i = {0}, l = {348}, m = "invokeSuspend", n = {"it"}, nl = {354}, s = {"I$0"}, v = 2)
     static final class C008510 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $anidbEid;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -3982,7 +3984,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$11 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$11", f = "StreamPlayAnime.kt", i = {}, l = {356}, m = "invokeSuspend", n = {}, nl = {357}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$11", f = "StreamPlayAnime.kt", i = {}, l = {357}, m = "invokeSuspend", n = {}, nl = {358}, s = {}, v = 2)
     static final class C008611 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -4032,7 +4034,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$12 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$12", f = "StreamPlayAnime.kt", i = {}, l = {359}, m = "invokeSuspend", n = {}, nl = {360}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$12", f = "StreamPlayAnime.kt", i = {}, l = {360}, m = "invokeSuspend", n = {}, nl = {361}, s = {}, v = 2)
     static final class C008712 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ String $anititle;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -4662,7 +4664,7 @@ public final class StreamPlayAnime extends MainAPI {
 
             @NotNull
             /* JADX INFO: renamed from: getTitle, reason: collision with other method in class */
-            public final String m44getTitle() throws Exception {
+            public final String m46getTitle() throws Exception {
                 String english = this.title.getEnglish();
                 if (english != null || (english = this.title.getRomaji()) != null) {
                     return english;
@@ -4672,7 +4674,7 @@ public final class StreamPlayAnime extends MainAPI {
 
             @Nullable
             /* JADX INFO: renamed from: getCoverImage, reason: collision with other method in class */
-            public final String m43getCoverImage() {
+            public final String m45getCoverImage() {
                 String extraLarge = this.coverImage.getExtraLarge();
                 if (extraLarge != null) {
                     return extraLarge;

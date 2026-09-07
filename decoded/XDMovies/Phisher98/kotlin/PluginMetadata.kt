@@ -4,7 +4,7 @@ package nepali.stream.decoded.xdmovies
 object PluginMetadata {
     const val name: String = "XDMovies"
     const val originalPluginClass: String = "com.phisher98.XDMoviesProvider"
-    const val version: Int = 12
+    const val version: Int = 14
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

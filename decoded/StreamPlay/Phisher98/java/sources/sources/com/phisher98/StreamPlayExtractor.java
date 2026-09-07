@@ -26634,11 +26634,10 @@ public final class StreamPlayExtractor extends StreamPlay {
     /* JADX WARN: Code duplicated, block: B:98:0x04ef  */
     /* JADX WARN: Code duplicated, block: B:99:0x04f5  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:105:0x05b7 -> B:106:0x05d1). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public final java.lang.Object invokeHexa(@org.jetbrains.annotations.Nullable java.lang.Integer r41, @org.jetbrains.annotations.Nullable java.lang.Integer r42, @org.jetbrains.annotations.Nullable java.lang.Integer r43, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r44, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r45) {

@@ -4,7 +4,7 @@ package nepali.stream.decoded.animeav1
 object PluginMetadata {
     const val name: String = "Animeav1"
     const val originalPluginClass: String = "com.Animeav1.Animeav1Provider"
-    const val version: Int = 7
+    const val version: Int = 9
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

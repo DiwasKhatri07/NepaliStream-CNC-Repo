@@ -14,6 +14,7 @@ import com.lagradost.cloudstream3.TvType;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -42,7 +43,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Serienstream.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Aniworld/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0013\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u001c\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001c0\u00172\u0006\u0010\u001d\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010\u001eJ\u001e\u0010\u0019\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020#H\u0096@¢\u0006\u0002\u0010$J\u0018\u0010%\u001a\u0004\u0018\u00010&2\u0006\u0010'\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010\u001eR\u001a\u0010\u0006\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR\u001a\u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0016\u0010\u0014\u001a\u0004\u0018\u00010\u0007X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\tR\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001a¨\u0006("}, d2 = {"Lcom/Aniworld/Serienstream;", "Lcom/Aniworld/Aniworld;", "sharedPref", "Landroid/content/SharedPreferences;", "<init>", "(Landroid/content/SharedPreferences;)V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "token", "getToken", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "Aniworld"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nSerienstream.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Serienstream.kt\ncom/Aniworld/Serienstream\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,93:1\n1795#2,10:94\n2068#2:104\n2069#2:106\n1805#2:107\n1795#2,10:108\n2068#2:118\n2069#2:120\n1805#2:121\n1#3:105\n1#3:119\n1#3:122\n*S KotlinDebug\n*F\n+ 1 Serienstream.kt\ncom/Aniworld/Serienstream\n*L\n60#1:94,10\n60#1:104\n60#1:106\n60#1:107\n74#1:108,10\n74#1:118\n74#1:120\n74#1:121\n60#1:105\n74#1:119\n*E\n"})
+@SourceDebugExtension({"SMAP\nSerienstream.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Serienstream.kt\ncom/Aniworld/Serienstream\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,94:1\n1795#2,10:95\n2068#2:105\n2069#2:107\n1805#2:108\n1795#2,10:109\n2068#2:119\n2069#2:121\n1805#2:122\n1#3:106\n1#3:120\n1#3:123\n*S KotlinDebug\n*F\n+ 1 Serienstream.kt\ncom/Aniworld/Serienstream\n*L\n60#1:95,10\n60#1:105\n60#1:107\n60#1:108\n75#1:109,10\n75#1:119\n75#1:121\n75#1:122\n60#1:106\n75#1:120\n*E\n"})
 public final class Serienstream extends Aniworld {
 
     @NotNull
@@ -63,7 +64,7 @@ public final class Serienstream extends Aniworld {
     /* JADX INFO: renamed from: com.Aniworld.Serienstream$getMainPage$1 */
     /* JADX INFO: compiled from: Serienstream.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Aniworld.Serienstream", f = "Serienstream.kt", i = {0, 0}, l = {70}, m = "getMainPage", n = {"request", "page"}, nl = {72}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Aniworld.Serienstream", f = "Serienstream.kt", i = {0, 0}, l = {71}, m = "getMainPage", n = {"request", "page"}, nl = {73}, s = {"L$0", "I$0"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -85,7 +86,7 @@ public final class Serienstream extends Aniworld {
     /* JADX INFO: renamed from: com.Aniworld.Serienstream$load$1 */
     /* JADX INFO: compiled from: Serienstream.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Aniworld.Serienstream", f = "Serienstream.kt", i = {0}, l = {91}, m = "load", n = {"url"}, nl = {94}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Aniworld.Serienstream", f = "Serienstream.kt", i = {0}, l = {92}, m = "load", n = {"url"}, nl = {95}, s = {"L$0"}, v = 2)
     static final class C00091 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -256,6 +257,7 @@ public final class Serienstream extends Aniworld {
         switch (c00081.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + request.getData() + "?page=" + page2;
                 Map mapMapOf = MapsKt.mapOf(TuplesKt.to("cookie", String.valueOf(getToken())));

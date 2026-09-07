@@ -25,6 +25,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -61,7 +62,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Coflix.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Coflix/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\u001e\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\"H\u0096@¢\u0006\u0002\u0010,J\u0016\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00100JF\u00101\u001a\u00020\u000e2\u0006\u00102\u001a\u00020\u00052\u0006\u00103\u001a\u00020\u000e2\u0012\u00104\u001a\u000e\u0012\u0004\u0012\u000206\u0012\u0004\u0012\u000207052\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020705H\u0096@¢\u0006\u0002\u0010:J\u0016\u0010;\u001a\u00020\u00052\u0006\u0010/\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u00100R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006<"}, d2 = {"Lcom/Coflix/Coflix;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getBaseUrl", "Coflix"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nCoflix.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Coflix.kt\ncom/Coflix/Coflix\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,191:1\n1739#2:192\n1814#2,3:193\n1739#2:196\n1814#2,3:197\n1739#2:201\n1814#2,3:202\n1739#2:205\n1814#2,3:206\n1795#2,10:209\n2068#2:219\n2069#2:221\n1805#2:222\n1749#2:223\n1782#2,4:224\n1#3:200\n1#3:220\n*S KotlinDebug\n*F\n+ 1 Coflix.kt\ncom/Coflix/Coflix\n*L\n50#1:192\n50#1:193,3\n75#1:196\n75#1:197,3\n99#1:201\n99#1:202,3\n102#1:205\n102#1:206,3\n104#1:209,10\n104#1:219\n104#1:221\n104#1:222\n124#1:223\n124#1:224,4\n104#1:220\n*E\n"})
+@SourceDebugExtension({"SMAP\nCoflix.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Coflix.kt\ncom/Coflix/Coflix\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,192:1\n1739#2:193\n1814#2,3:194\n1739#2:197\n1814#2,3:198\n1739#2:202\n1814#2,3:203\n1739#2:206\n1814#2,3:207\n1795#2,10:210\n2068#2:220\n2069#2:222\n1805#2:223\n1749#2:224\n1782#2,4:225\n1#3:201\n1#3:221\n*S KotlinDebug\n*F\n+ 1 Coflix.kt\ncom/Coflix/Coflix\n*L\n51#1:193\n51#1:194,3\n76#1:197\n76#1:198,3\n100#1:202\n100#1:203,3\n103#1:206\n103#1:207,3\n105#1:210,10\n105#1:220\n105#1:222\n105#1:223\n125#1:224\n125#1:225,4\n105#1:221\n*E\n"})
 public final class Coflix extends MainAPI {
 
     @NotNull
@@ -84,7 +85,7 @@ public final class Coflix extends MainAPI {
     /* JADX INFO: renamed from: com.Coflix.Coflix$getBaseUrl$1 */
     /* JADX INFO: compiled from: Coflix.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Coflix.Coflix", f = "Coflix.kt", i = {0}, l = {187}, m = "getBaseUrl", n = {"url"}, nl = {-1}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Coflix.Coflix", f = "Coflix.kt", i = {0}, l = {188}, m = "getBaseUrl", n = {"url"}, nl = {-1}, s = {"L$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -105,7 +106,7 @@ public final class Coflix extends MainAPI {
     /* JADX INFO: renamed from: com.Coflix.Coflix$getMainPage$1 */
     /* JADX INFO: compiled from: Coflix.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Coflix.Coflix", f = "Coflix.kt", i = {0, 0, 0}, l = {49}, m = "getMainPage", n = {"request", "getrequest", "page"}, nl = {50}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Coflix.Coflix", f = "Coflix.kt", i = {0, 0, 0}, l = {50}, m = "getMainPage", n = {"request", "getrequest", "page"}, nl = {51}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -128,7 +129,7 @@ public final class Coflix extends MainAPI {
     /* JADX INFO: renamed from: com.Coflix.Coflix$load$1 */
     /* JADX INFO: compiled from: Coflix.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Coflix.Coflix", f = "Coflix.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {80, 140, 151}, m = "load", n = {"url", "url", "document", "title", "poster", "style", "bannerUrl", "description", "type", "cast", "rating", "year", "tags", "recommendations", "episodes", "url", "document", "title", "poster", "style", "bannerUrl", "description", "type", "cast", "rating", "year", "tags", "recommendations"}, nl = {81, 151, 122}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12"}, v = 2)
+    @DebugMetadata(c = "com.Coflix.Coflix", f = "Coflix.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {81, 141, 152}, m = "load", n = {"url", "url", "document", "title", "poster", "style", "bannerUrl", "description", "type", "cast", "rating", "year", "tags", "recommendations", "episodes", "url", "document", "title", "poster", "style", "bannerUrl", "description", "type", "cast", "rating", "year", "tags", "recommendations"}, nl = {82, 152, 123}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -162,7 +163,7 @@ public final class Coflix extends MainAPI {
     /* JADX INFO: renamed from: com.Coflix.Coflix$loadLinks$1 */
     /* JADX INFO: compiled from: Coflix.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Coflix.Coflix", f = "Coflix.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {164, 165, 166, 168}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "referer", "isCasting", "data", "subtitleCallback", "callback", "referer", "iframe", "isCasting", "data", "subtitleCallback", "callback", "referer", "iframe", "doc", "lis", "isCasting"}, nl = {165, 166, 167, 183}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Coflix.Coflix", f = "Coflix.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {165, 166, 167, 169}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "referer", "isCasting", "data", "subtitleCallback", "callback", "referer", "iframe", "isCasting", "data", "subtitleCallback", "callback", "referer", "iframe", "doc", "lis", "isCasting"}, nl = {166, 167, 168, 184}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -190,7 +191,7 @@ public final class Coflix extends MainAPI {
     /* JADX INFO: renamed from: com.Coflix.Coflix$search$1 */
     /* JADX INFO: compiled from: Coflix.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Coflix.Coflix", f = "Coflix.kt", i = {0, 0}, l = {75}, m = "search", n = {"query", "page"}, nl = {192}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Coflix.Coflix", f = "Coflix.kt", i = {0, 0}, l = {76}, m = "search", n = {"query", "page"}, nl = {193}, s = {"L$0", "I$0"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -275,6 +276,7 @@ public final class Coflix extends MainAPI {
         switch (c00011.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String getrequest = page == 1 ? request.getData() : request.getData() + "/page/" + page + '/';
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + getrequest;
@@ -1519,7 +1521,7 @@ public final class Coflix extends MainAPI {
     /* JADX INFO: renamed from: com.Coflix.Coflix$loadLinks$2 */
     /* JADX INFO: compiled from: Coflix.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "li", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Coflix.Coflix$loadLinks$2", f = "Coflix.kt", i = {0, 0, 0, 0}, l = {178}, m = "invokeSuspend", n = {"li", "onclick", "base64encoded", "url"}, nl = {179}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
+    @DebugMetadata(c = "com.Coflix.Coflix$loadLinks$2", f = "Coflix.kt", i = {0, 0, 0, 0}, l = {179}, m = "invokeSuspend", n = {"li", "onclick", "base64encoded", "url"}, nl = {180}, s = {"L$0", "L$1", "L$2", "L$3"}, v = 2)
     static final class C00062 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $referer;

@@ -4,7 +4,7 @@ package nepali.stream.decoded.stremiox
 object PluginMetadata {
     const val name: String = "StremioX"
     const val originalPluginClass: String = "com.phisher98.StremioXPlugin"
-    const val version: Int = 24
+    const val version: Int = 26
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

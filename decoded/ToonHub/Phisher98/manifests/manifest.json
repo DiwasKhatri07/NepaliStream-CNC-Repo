@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.toonhub4u.Toonhub4uPlugin",
   "name": "ToonHub",
-  "version": 10,
+  "version": 12,
   "requiresResources": false
 }

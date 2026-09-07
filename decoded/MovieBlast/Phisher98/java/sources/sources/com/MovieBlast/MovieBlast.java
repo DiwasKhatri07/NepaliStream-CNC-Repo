@@ -30,6 +30,7 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -82,7 +83,7 @@ import org.json.JSONObject;
 /* JADX INFO: compiled from: MovieBlast.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/MovieBlast/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 =2\u00020\u0001:\u0001=B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010\u001b\u001a\u00020\u000e*\u00020\u001cH\u0002J\u001e\u0010 \u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J\u001c\u0010(\u001a\b\u0012\u0004\u0012\u00020)0\u001e2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u000e\u0010,\u001a\u0004\u0018\u00010)*\u00020\u001cH\u0002J\u0016\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+JF\u00100\u001a\u00020\u000e2\u0006\u00101\u001a\u00020\u00052\u0006\u00102\u001a\u00020\u000e2\u0012\u00103\u001a\u000e\u0012\u0004\u0012\u000205\u0012\u0004\u0012\u000206042\u0012\u00107\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020604H\u0096@¢\u0006\u0002\u00109J\u000e\u0010:\u001a\u00020\u00052\u0006\u0010/\u001a\u00020\u0005J\u0010\u0010;\u001a\u00020$2\b\u0010<\u001a\u0004\u0018\u00010\u0005R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!¨\u0006>"}, d2 = {"Lcom/MovieBlast/MovieBlast;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "isSeries", "Lcom/MovieBlast/HomeDaum;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResultSafe", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "httpsify", "matchQualityFromString", "s", "Companion", "MovieBlast"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nMovieBlast.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBlast.kt\ncom/MovieBlast/MovieBlast\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,320:1\n73#2,5:321\n73#2,5:326\n1739#3:331\n1814#3,3:332\n1795#3,10:336\n2068#3:346\n2069#3:348\n1805#3:349\n1795#3,10:350\n2068#3:360\n2069#3:362\n1805#3:363\n1795#3,10:364\n2068#3:374\n2069#3:376\n1805#3:377\n1795#3,10:378\n2068#3:388\n2069#3:390\n1805#3:391\n1#4:335\n1#4:347\n1#4:361\n1#4:375\n1#4:389\n1#4:395\n93#5,2:392\n63#5:394\n64#5,15:396\n95#5,2:413\n50#6:411\n43#6:412\n*S KotlinDebug\n*F\n+ 1 MovieBlast.kt\ncom/MovieBlast/MovieBlast\n*L\n79#1:321,5\n99#1:326,5\n102#1:331\n102#1:332,3\n162#1:336,10\n162#1:346\n162#1:348\n162#1:349\n168#1:350,10\n168#1:360\n168#1:362\n168#1:363\n195#1:364,10\n195#1:374\n195#1:376\n195#1:377\n232#1:378,10\n232#1:388\n232#1:390\n232#1:391\n162#1:347\n168#1:361\n195#1:375\n232#1:389\n266#1:395\n266#1:392,2\n266#1:394\n266#1:396,15\n266#1:413,2\n266#1:411\n266#1:412\n*E\n"})
+@SourceDebugExtension({"SMAP\nMovieBlast.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBlast.kt\ncom/MovieBlast/MovieBlast\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,321:1\n73#2,5:322\n73#2,5:327\n1739#3:332\n1814#3,3:333\n1795#3,10:337\n2068#3:347\n2069#3:349\n1805#3:350\n1795#3,10:351\n2068#3:361\n2069#3:363\n1805#3:364\n1795#3,10:365\n2068#3:375\n2069#3:377\n1805#3:378\n1795#3,10:379\n2068#3:389\n2069#3:391\n1805#3:392\n1#4:336\n1#4:348\n1#4:362\n1#4:376\n1#4:390\n1#4:396\n93#5,2:393\n63#5:395\n64#5,15:397\n95#5,2:414\n50#6:412\n43#6:413\n*S KotlinDebug\n*F\n+ 1 MovieBlast.kt\ncom/MovieBlast/MovieBlast\n*L\n80#1:322,5\n100#1:327,5\n103#1:332\n103#1:333,3\n163#1:337,10\n163#1:347\n163#1:349\n163#1:350\n169#1:351,10\n169#1:361\n169#1:363\n169#1:364\n196#1:365,10\n196#1:375\n196#1:377\n196#1:378\n233#1:379,10\n233#1:389\n233#1:391\n233#1:392\n163#1:348\n169#1:362\n196#1:376\n233#1:390\n267#1:396\n267#1:393,2\n267#1:395\n267#1:397,15\n267#1:414,2\n267#1:412\n267#1:413\n*E\n"})
 public final class MovieBlast extends MainAPI {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
@@ -115,7 +116,7 @@ public final class MovieBlast extends MainAPI {
     /* JADX INFO: renamed from: com.MovieBlast.MovieBlast$getMainPage$1 */
     /* JADX INFO: compiled from: MovieBlast.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBlast.MovieBlast", f = "MovieBlast.kt", i = {0, 0}, l = {76}, m = "getMainPage", n = {"request", "page"}, nl = {79}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.MovieBlast.MovieBlast", f = "MovieBlast.kt", i = {0, 0}, l = {77}, m = "getMainPage", n = {"request", "page"}, nl = {80}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -137,7 +138,7 @@ public final class MovieBlast extends MainAPI {
     /* JADX INFO: renamed from: com.MovieBlast.MovieBlast$load$1 */
     /* JADX INFO: compiled from: MovieBlast.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBlast.MovieBlast", f = "MovieBlast.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {140, 217, 243}, m = "load", n = {"url", "url", "json", "title", "poster", "background", "backdroppath", "overview", "releaseDate", "voteAverage", "genres", "actors", "episodes", "seasons", "isSeries", "url", "json", "title", "poster", "background", "backdroppath", "overview", "releaseDate", "voteAverage", "genres", "actors", "videoUrls", "isSeries"}, nl = {142, 231, 181}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.MovieBlast.MovieBlast", f = "MovieBlast.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {141, 218, 244}, m = "load", n = {"url", "url", "json", "title", "poster", "background", "backdroppath", "overview", "releaseDate", "voteAverage", "genres", "actors", "episodes", "seasons", "isSeries", "url", "json", "title", "poster", "background", "backdroppath", "overview", "releaseDate", "voteAverage", "genres", "actors", "videoUrls", "isSeries"}, nl = {143, 232, 182}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -171,7 +172,7 @@ public final class MovieBlast extends MainAPI {
     /* JADX INFO: renamed from: com.MovieBlast.MovieBlast$loadLinks$1 */
     /* JADX INFO: compiled from: MovieBlast.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBlast.MovieBlast", f = "MovieBlast.kt", i = {0, 0, 0, 0, 0}, l = {267}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "links", "isCasting"}, nl = {292}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.MovieBlast.MovieBlast", f = "MovieBlast.kt", i = {0, 0, 0, 0, 0}, l = {268}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "links", "isCasting"}, nl = {293}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -196,7 +197,7 @@ public final class MovieBlast extends MainAPI {
     /* JADX INFO: renamed from: com.MovieBlast.MovieBlast$search$1 */
     /* JADX INFO: compiled from: MovieBlast.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBlast.MovieBlast", f = "MovieBlast.kt", i = {0, 0, 0}, l = {98}, m = "search", n = {"query", "safeQuery", "headers"}, nl = {99}, s = {"L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.MovieBlast.MovieBlast", f = "MovieBlast.kt", i = {0, 0, 0}, l = {99}, m = "search", n = {"query", "safeQuery", "headers"}, nl = {100}, s = {"L$0", "L$1", "L$2"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -363,6 +364,7 @@ public final class MovieBlast extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + request.getData() + '/' + token + "?page=" + page;
                 Map<String, String> map = headers;
@@ -1511,7 +1513,7 @@ public final class MovieBlast extends MainAPI {
     /* JADX INFO: renamed from: com.MovieBlast.MovieBlast$loadLinks$2 */
     /* JADX INFO: compiled from: MovieBlast.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "loadUrl", "Lcom/MovieBlast/LoadURL;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBlast.MovieBlast$loadLinks$2", f = "MovieBlast.kt", i = {0, 0, 0}, l = {280}, m = "invokeSuspend", n = {"loadUrl", "headers", "signed"}, nl = {279}, s = {"L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.MovieBlast.MovieBlast$loadLinks$2", f = "MovieBlast.kt", i = {0, 0, 0}, l = {281}, m = "invokeSuspend", n = {"loadUrl", "headers", "signed"}, nl = {280}, s = {"L$0", "L$1", "L$2"}, v = 2)
     static final class C00052 extends SuspendLambda implements Function2<LoadURL, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         /* synthetic */ Object L$0;

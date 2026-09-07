@@ -24,6 +24,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -69,7 +70,7 @@ import org.json.JSONObject;
 /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0002\b\u0010\u0018\u00002\u00020\u0001:\u000eCDEFGHIJKLMNOPB#\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006¢\u0006\u0004\b\u0007\u0010\bJ\u001e\u0010\u001a\u001a\u00020\u001b2\u0006\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001fH\u0096@¢\u0006\u0002\u0010 J\u001c\u0010!\u001a\b\u0012\u0004\u0012\u00020#0\"2\u0006\u0010$\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010%J\u0016\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010%JT\u0010)\u001a\u00020\u00172\u0006\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u00172\u0012\u0010,\u001a\u000e\u0012\u0004\u0012\u00020.\u0012\u0004\u0012\u00020/0-2\u0012\u00100\u001a\u000e\u0012\u0004\u0012\u000201\u0012\u0004\u0012\u00020/0-H\u0097@b\f\b3\u0012\b\b4\u0012\u0004\b\u0003\u00104¢\u0006\u0002\u00102J\f\u00105\u001a\u000206*\u000207H\u0002J\u0014\u00108\u001a\u0004\u0018\u00010\u0003*\u000207H\u0086@¢\u0006\u0002\u00109J\"\u0010:\u001a\u0004\u0018\u00010\u00032\u0006\u0010;\u001a\u00020\u00032\b\u0010<\u001a\u0004\u0018\u00010\u0003H\u0086@¢\u0006\u0002\u0010=J\u0018\u0010>\u001a\u0004\u0018\u00010\u00032\u0006\u0010?\u001a\u00020\u0003H\u0086@¢\u0006\u0002\u0010%J\"\u0010@\u001a\u0004\u0018\u00010A2\u0006\u0010B\u001a\u00020\u00032\b\u0010<\u001a\u0004\u0018\u00010\u0003H\u0086@¢\u0006\u0002\u0010=R\u001a\u0010\u0002\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\t\u0010\n\"\u0004\b\u000b\u0010\fR\u001a\u0010\u0004\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\n\"\u0004\b\u000e\u0010\fR\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0006¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u0017X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019¨\u0006Q"}, d2 = {"Lcom/phisher98/StreamPlayStremioCatelog;", "Lcom/lagradost/cloudstream3/MainAPI;", "mainUrl", "", "name", "sharedPref", "Landroid/content/SharedPreferences;", "<init>", "(Ljava/lang/String;Ljava/lang/String;Landroid/content/SharedPreferences;)V", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "getName", "setName", "getSharedPref", "()Landroid/content/SharedPreferences;", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "hasMainPage", "", "getHasMainPage", "()Z", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Landroidx/annotation/RequiresApi;", "value", "toLinkData", "Lcom/phisher98/StreamPlay$LinkData;", "Lcom/phisher98/StreamPlayStremioCatelog$LoadData;", "resolveImdbId", "(Lcom/phisher98/StreamPlayStremioCatelog$LoadData;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "tmdbToImdb", "tmdbId", "type", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "kitsuToImdb", "kitsuId", "fetchCinemetaMeta", "Lcom/phisher98/StreamPlayStremioCatelog$CinemetaMetaData;", "imdbId", "LoadData", "Manifest", "Catalog", "CatalogResponse", "Trailer", "CatalogEntry", "Video", "TmdbExternalIds", "AniZipResponse", "AniZipMappings", "CinemetaResponse", "CinemetaMeta", "CinemetaLink", "CinemetaMetaData", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nStreamPlayStremioCatelog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 7 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,451:1\n73#2,5:452\n73#2,5:457\n73#2,5:500\n73#2,5:505\n73#2,5:542\n73#2,5:547\n73#2,5:552\n63#3:462\n64#3,15:464\n63#3:481\n64#3,15:483\n63#3:512\n64#3,15:514\n1#4:463\n1#4:482\n1#4:513\n50#5:479\n43#5:480\n50#5:498\n43#5:499\n50#5:529\n43#5:530\n296#6,2:510\n777#6:531\n873#6,2:532\n1739#6:534\n1814#6,3:535\n296#6,2:557\n37#7,2:538\n37#7,2:540\n*S KotlinDebug\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog\n*L\n61#1:452,5\n84#1:457,5\n103#1:500,5\n107#1:505,5\n380#1:542,5\n395#1:547,5\n416#1:552,5\n94#1:462\n94#1:464,15\n98#1:481\n98#1:483,15\n125#1:512\n125#1:514,15\n94#1:463\n98#1:482\n125#1:513\n94#1:479\n94#1:480\n98#1:498\n98#1:499\n125#1:529\n125#1:530\n111#1:510,2\n139#1:531\n139#1:532,2\n164#1:534\n164#1:535,3\n422#1:557,2\n178#1:538,2\n179#1:540,2\n*E\n"})
+@SourceDebugExtension({"SMAP\nStreamPlayStremioCatelog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 7 ArraysJVM.kt\nkotlin/collections/ArraysKt__ArraysJVMKt\n*L\n1#1,452:1\n73#2,5:453\n73#2,5:458\n73#2,5:501\n73#2,5:506\n73#2,5:543\n73#2,5:548\n73#2,5:553\n63#3:463\n64#3,15:465\n63#3:482\n64#3,15:484\n63#3:513\n64#3,15:515\n1#4:464\n1#4:483\n1#4:514\n50#5:480\n43#5:481\n50#5:499\n43#5:500\n50#5:530\n43#5:531\n296#6,2:511\n777#6:532\n873#6,2:533\n1739#6:535\n1814#6,3:536\n296#6,2:558\n37#7,2:539\n37#7,2:541\n*S KotlinDebug\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog\n*L\n62#1:453,5\n85#1:458,5\n104#1:501,5\n108#1:506,5\n381#1:543,5\n396#1:548,5\n417#1:553,5\n95#1:463\n95#1:465,15\n99#1:482\n99#1:484,15\n126#1:513\n126#1:515,15\n95#1:464\n99#1:483\n126#1:514\n95#1:480\n95#1:481\n99#1:499\n99#1:500\n126#1:530\n126#1:531\n112#1:511,2\n140#1:532\n140#1:533,2\n165#1:535\n165#1:536,3\n423#1:558,2\n179#1:539,2\n180#1:541,2\n*E\n"})
 public final class StreamPlayStremioCatelog extends MainAPI {
     private final boolean hasMainPage;
 
@@ -88,7 +89,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$fetchCinemetaMeta$1 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0}, l = {414}, m = "fetchCinemetaMeta", n = {"imdbId", "type", "mediaType"}, nl = {416}, s = {"L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0}, l = {415}, m = "fetchCinemetaMeta", n = {"imdbId", "type", "mediaType"}, nl = {417}, s = {"L$0", "L$1", "L$2"}, v = 2)
     static final class C02561 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -111,7 +112,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$getMainPage$1 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {60, 65}, m = "getMainPage", n = {"request", "page", "pageSize", "skip", "request", "manifest", "lists", "page", "pageSize", "skip"}, nl = {61, 77}, s = {"L$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "I$0", "I$1", "I$2"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {61, 66}, m = "getMainPage", n = {"request", "page", "pageSize", "skip", "request", "manifest", "lists", "page", "pageSize", "skip"}, nl = {62, 78}, s = {"L$0", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "I$0", "I$1", "I$2"}, v = 2)
     static final class C02571 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -137,7 +138,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$kitsuToImdb$1 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0}, l = {392}, m = "kitsuToImdb", n = {"kitsuId", "id"}, nl = {395}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0}, l = {393}, m = "kitsuToImdb", n = {"kitsuId", "id"}, nl = {396}, s = {"L$0", "L$1"}, v = 2)
     static final class C02591 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -159,7 +160,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$load$1 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3}, l = {96, 102, 106, 115}, m = "load", n = {"url", "url", "res", "encodedId", "url", "res", "encodedId", "response", "url", "res", "encodedId", "response", "entry"}, nl = {97, 103, 107, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3}, l = {97, 103, 107, 116}, m = "load", n = {"url", "url", "res", "encodedId", "url", "res", "encodedId", "response", "url", "res", "encodedId", "response", "entry"}, nl = {98, 104, 108, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
     static final class C02601 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -184,7 +185,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$loadLinks$1 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {126, 128, 149}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "res", "isCasting", "data", "subtitleCallback", "callback", "res", "imdb", "it", "isCasting", "data", "subtitleCallback", "callback", "res", "imdb", "cinemeta", "resolved", "disabledProviderIds", "providersList", "stremioAddons", "authToken", "isCasting"}, nl = {127, 127, 182}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {127, 129, 150}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "res", "isCasting", "data", "subtitleCallback", "callback", "res", "imdb", "it", "isCasting", "data", "subtitleCallback", "callback", "res", "imdb", "cinemeta", "resolved", "disabledProviderIds", "providersList", "stremioAddons", "authToken", "isCasting"}, nl = {128, 128, 183}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0"}, v = 2)
     static final class C02611 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -216,7 +217,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$search$1 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 1, 1, 1}, l = {84, 86}, m = "search", n = {"query", "query", "res", "list"}, nl = {452, 89}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 1, 1, 1}, l = {85, 87}, m = "search", n = {"query", "query", "res", "list"}, nl = {453, 90}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
     static final class C02641 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -239,7 +240,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$tmdbToImdb$1 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0}, l = {377}, m = "tmdbToImdb", n = {"tmdbId", "type", "mediaType"}, nl = {380}, s = {"L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog", f = "StreamPlayStremioCatelog.kt", i = {0, 0, 0}, l = {378}, m = "tmdbToImdb", n = {"tmdbId", "type", "mediaType"}, nl = {381}, s = {"L$0", "L$1", "L$2"}, v = 2)
     static final class C02661 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -303,8 +304,8 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         return this.hasMainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:34:0x0153 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:35:0x0154  */
+    /* JADX WARN: Code duplicated, block: B:34:0x015c A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:35:0x015d  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
@@ -340,6 +341,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         switch (c02571.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 if (getMainUrl().length() == 0) {
                     throw new IllegalArgumentException("Configure in StreamPlay Catalogs Addon in Extension Settings\n");
                 }
@@ -453,7 +455,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$getMainPage$2 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "catalog", "Lcom/phisher98/StreamPlayStremioCatelog$Catalog;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$getMainPage$2", f = "StreamPlayStremioCatelog.kt", i = {0}, l = {66}, m = "invokeSuspend", n = {"catalog"}, nl = {69}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$getMainPage$2", f = "StreamPlayStremioCatelog.kt", i = {0}, l = {67}, m = "invokeSuspend", n = {"catalog"}, nl = {70}, s = {"L$0"}, v = 2)
     static final class C02582 extends SuspendLambda implements Function2<Catalog, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<HomePageList> $lists;
         final /* synthetic */ int $skip;
@@ -616,7 +618,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$search$2 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "catalog", "Lcom/phisher98/StreamPlayStremioCatelog$Catalog;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$search$2", f = "StreamPlayStremioCatelog.kt", i = {0}, l = {87}, m = "invokeSuspend", n = {"catalog"}, nl = {-1}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$search$2", f = "StreamPlayStremioCatelog.kt", i = {0}, l = {88}, m = "invokeSuspend", n = {"catalog"}, nl = {-1}, s = {"L$0"}, v = 2)
     static final class C02652 extends SuspendLambda implements Function2<Catalog, Continuation<? super Boolean>, Object> {
         final /* synthetic */ List<SearchResponse> $list;
         final /* synthetic */ String $query;
@@ -1773,7 +1775,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$loadLinks$2 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$loadLinks$2", f = "StreamPlayStremioCatelog.kt", i = {}, l = {152}, m = "invokeSuspend", n = {}, nl = {153}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$loadLinks$2", f = "StreamPlayStremioCatelog.kt", i = {}, l = {153}, m = "invokeSuspend", n = {}, nl = {154}, s = {}, v = 2)
     static final class C02622 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ String $imdb;
         final /* synthetic */ LoadData $resolved;
@@ -1822,7 +1824,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayStremioCatelog$loadLinks$3 */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$loadLinks$3", f = "StreamPlayStremioCatelog.kt", i = {}, l = {159}, m = "invokeSuspend", n = {}, nl = {160}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayStremioCatelog$loadLinks$3", f = "StreamPlayStremioCatelog.kt", i = {}, l = {160}, m = "invokeSuspend", n = {}, nl = {161}, s = {}, v = 2)
     static final class C02633 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ String $imdb;
         final /* synthetic */ LoadData $res;
@@ -2102,7 +2104,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010!\n\u0002\b\u000b\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0004\b\u0082\b\u0018\u00002\u00020\u0001B3\u0012\b\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\b\u0010\u0005\u001a\u0004\u0018\u00010\u0003\u0012\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007¢\u0006\u0004\b\b\u0010\tJ$\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00140\u00132\u0006\u0010\u0015\u001a\u00020\u00032\u0006\u0010\u0016\u001a\u00020\u0017H\u0086@¢\u0006\u0002\u0010\u0018J\u001e\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u001b\u001a\u00020\u001cH\u0086@¢\u0006\u0002\u0010\u001dJ\u000b\u0010\u001e\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\t\u0010\u001f\u001a\u00020\u0003HÆ\u0003J\u000b\u0010 \u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000f\u0010!\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007HÆ\u0003J;\u0010\"\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00032\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007HÆ\u0001J\u0014\u0010#\u001a\u00020$2\b\u0010%\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010&\u001a\u00020\u001cHÖ\u0081\u0004J\n\u0010'\u001a\u00020\u0003HÖ\u0081\u0004R\u001c\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR\u0011\u0010\u0004\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\u000bR\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u000bR\u0017\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00030\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011¨\u0006("}, d2 = {"Lcom/phisher98/StreamPlayStremioCatelog$Catalog;", "", "name", "", "id", "type", "types", "", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "getId", "getType", "getTypes", "()Ljava/util/List;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "provider", "Lcom/phisher98/StreamPlayStremioCatelog;", "(Ljava/lang/String;Lcom/phisher98/StreamPlayStremioCatelog;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toHomePageList", "Lcom/lagradost/cloudstream3/HomePageList;", "skip", "", "(Lcom/phisher98/StreamPlayStremioCatelog;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "component1", "component2", "component3", "component4", "copy", "equals", "", "other", "hashCode", "toString", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nStreamPlayStremioCatelog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog$Catalog\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,451:1\n2068#2:452\n2068#2,2:458\n2069#2:460\n2068#2:461\n2068#2,2:467\n2069#2:469\n73#3,5:453\n73#3,5:462\n*S KotlinDebug\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog$Catalog\n*L\n220#1:452\n225#1:458,2\n220#1:460\n235#1:461\n247#1:467,2\n235#1:469\n224#1:453,5\n245#1:462,5\n*E\n"})
+    @SourceDebugExtension({"SMAP\nStreamPlayStremioCatelog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog$Catalog\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,452:1\n2068#2:453\n2068#2,2:459\n2069#2:461\n2068#2:462\n2068#2,2:468\n2069#2:470\n73#3,5:454\n73#3,5:463\n*S KotlinDebug\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog$Catalog\n*L\n221#1:453\n226#1:459,2\n221#1:461\n236#1:462\n248#1:468,2\n236#1:470\n225#1:454,5\n246#1:463,5\n*E\n"})
     static final /* data */ class Catalog {
 
         @NotNull
@@ -2227,11 +2229,10 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         /* JADX WARN: Code duplicated, block: B:32:0x0170 A[LOOP:0: B:30:0x016a->B:32:0x0170, LOOP_END] */
         /* JADX WARN: Code duplicated, block: B:7:0x0018  */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x012b -> B:20:0x0137). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+            java.lang.StackOverflowError
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
             */
         @org.jetbrains.annotations.Nullable
         public final java.lang.Object search(@org.jetbrains.annotations.NotNull java.lang.String r33, @org.jetbrains.annotations.NotNull com.phisher98.StreamPlayStremioCatelog r34, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.util.List<? extends com.lagradost.cloudstream3.SearchResponse>> r35) {
@@ -2251,11 +2252,10 @@ public final class StreamPlayStremioCatelog extends MainAPI {
         /* JADX WARN: Code duplicated, block: B:42:0x01d5  */
         /* JADX WARN: Code duplicated, block: B:7:0x0018  */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:23:0x015d -> B:24:0x016c). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+            java.lang.StackOverflowError
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
             */
         @org.jetbrains.annotations.Nullable
         public final java.lang.Object toHomePageList(@org.jetbrains.annotations.NotNull com.phisher98.StreamPlayStremioCatelog r38, int r39, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.HomePageList> r40) {
@@ -2417,7 +2417,7 @@ public final class StreamPlayStremioCatelog extends MainAPI {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX INFO: compiled from: StreamPlayStremioCatelog.kt */
     @Metadata(d1 = {"\u0000N\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0015\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0082\b\u0018\u00002\u00020\u0001Bí\u0002\u0012\u0016\b\u0001\u0010\u0002\u001a\u00020\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0002\u0012\u0016\b\u0001\u0010\u0006\u001a\u00020\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0006\u0012\u0018\b\u0001\u0010\u0007\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0007\u0012\u0018\b\u0001\u0010\b\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\b\u0012\u0018\b\u0001\u0010\t\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\t\u0012\u0018\b\u0001\u0010\n\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\n\u0012\u0018\b\u0001\u0010\u000b\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000b\u0012\u001e\b\u0001\u0010\f\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010\r:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\f\u0012\u001e\b\u0001\u0010\u000f\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\r:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000f\u0012\u001c\b\u0003\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00030\r:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0010\u0012\u001c\b\u0003\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00030\r:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0011\u0012\u001c\b\u0003\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\r:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0014\u0012\u0018\b\u0003\u0010\u0015\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0016¢\u0006\u0004\b\u0017\u0010\u0018J\u000e\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+J \u0010,\u001a\u00020-2\u0006\u0010*\u001a\u00020+2\b\u0010.\u001a\u0004\u0018\u00010\u0003H\u0086@¢\u0006\u0002\u0010/J\t\u00100\u001a\u00020\u0003HÆ\u0003J\t\u00101\u001a\u00020\u0003HÆ\u0003J\u000b\u00102\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u00103\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u00104\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u00105\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u00106\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0011\u00107\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010\rHÆ\u0003J\u0011\u00108\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\rHÆ\u0003J\u000f\u00109\u001a\b\u0012\u0004\u0012\u00020\u00030\rHÆ\u0003J\u000f\u0010:\u001a\b\u0012\u0004\u0012\u00020\u00030\rHÆ\u0003J\u000f\u0010;\u001a\b\u0012\u0004\u0012\u00020\u00130\rHÆ\u0003J\u000b\u0010<\u001a\u0004\u0018\u00010\u0003HÆ\u0003Jï\u0002\u0010=\u001a\u00020\u00002\u0016\b\u0003\u0010\u0002\u001a\u00020\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00022\u0016\b\u0003\u0010\u0006\u001a\u00020\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00062\u0018\b\u0003\u0010\u0007\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00072\u0018\b\u0003\u0010\b\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\b2\u0018\b\u0003\u0010\t\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\t2\u0018\b\u0003\u0010\n\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\n2\u0018\b\u0003\u0010\u000b\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000b2\u001e\b\u0003\u0010\f\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010\r:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\f2\u001e\b\u0003\u0010\u000f\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\r:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000f2\u001c\b\u0003\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00030\r:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00102\u001c\b\u0003\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00030\r:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00112\u001c\b\u0003\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\r:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00142\u0018\b\u0003\u0010\u0015\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0016HÆ\u0001J\u0014\u0010>\u001a\u00020?2\b\u0010@\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010A\u001a\u00020BHÖ\u0081\u0004J\n\u0010C\u001a\u00020\u0003HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u0011\u0010\u0006\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001aR\u0013\u0010\u0007\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001aR\u0013\u0010\b\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001aR\u0013\u0010\t\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001aR\u0013\u0010\n\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u001aR\u0013\u0010\u000b\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b \u0010\u001aR\u0019\u0010\f\u001a\n\u0012\u0004\u0012\u00020\u000e\u0018\u00010\r¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\"R\u0019\u0010\u000f\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\r¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\"R\u0017\u0010\u0010\u001a\b\u0012\u0004\u0012\u00020\u00030\r¢\u0006\b\n\u0000\u001a\u0004\b$\u0010\"R\u0017\u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00030\r¢\u0006\b\n\u0000\u001a\u0004\b%\u0010\"R\u0017\u0010\u0012\u001a\b\u0012\u0004\u0012\u00020\u00130\r¢\u0006\b\n\u0000\u001a\u0004\b&\u0010\"R\u0013\u0010\u0015\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u001a¨\u0006D"}, d2 = {"Lcom/phisher98/StreamPlayStremioCatelog$CatalogEntry;", "", "name", "", "Lcom/fasterxml/jackson/annotation/JsonProperty;", "value", "id", "poster", "background", "description", "imdbRating", "type", "videos", "", "Lcom/phisher98/StreamPlayStremioCatelog$Video;", "genre", "genres", "cast", "trailersSources", "Lcom/phisher98/StreamPlayStremioCatelog$Trailer;", "trailers", "yearNum", "year", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;)V", "getName", "()Ljava/lang/String;", "getId", "getPoster", "getBackground", "getDescription", "getImdbRating", "getType", "getVideos", "()Ljava/util/List;", "getGenre", "getGenres", "getCast", "getTrailersSources", "getYearNum", "toSearchResponse", "Lcom/lagradost/cloudstream3/SearchResponse;", "provider", "Lcom/phisher98/StreamPlayStremioCatelog;", "toLoadResponse", "Lcom/lagradost/cloudstream3/LoadResponse;", "imdbId", "(Lcom/phisher98/StreamPlayStremioCatelog;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "copy", "equals", "", "other", "hashCode", "", "toString", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nStreamPlayStremioCatelog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog$CatalogEntry\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,451:1\n1739#2:452\n1814#2,3:453\n*S KotlinDebug\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog$CatalogEntry\n*L\n316#1:452\n316#1:453,3\n*E\n"})
+    @SourceDebugExtension({"SMAP\nStreamPlayStremioCatelog.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog$CatalogEntry\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,452:1\n1739#2:453\n1814#2,3:454\n*S KotlinDebug\n*F\n+ 1 StreamPlayStremioCatelog.kt\ncom/phisher98/StreamPlayStremioCatelog$CatalogEntry\n*L\n317#1:453\n317#1:454,3\n*E\n"})
     static final /* data */ class CatalogEntry {
 
         @Nullable

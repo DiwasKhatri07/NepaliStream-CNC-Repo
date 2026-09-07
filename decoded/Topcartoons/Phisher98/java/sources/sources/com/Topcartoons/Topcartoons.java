@@ -20,6 +20,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -53,7 +54,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Topcartoons.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Topcartoons/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\u001c\u0010)\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0016\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+JF\u0010/\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u000e2\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0096@¢\u0006\u0002\u00108R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u00069"}, d2 = {"Lcom/Topcartoons/Topcartoons;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Topcartoons"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nTopcartoons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Topcartoons.kt\ncom/Topcartoons/Topcartoons\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,90:1\n1795#2,10:91\n2068#2:101\n2069#2:103\n1805#2:104\n1795#2,10:105\n2068#2:115\n2069#2:117\n1805#2:118\n1739#2:119\n1814#2,3:120\n1#3:102\n1#3:116\n*S KotlinDebug\n*F\n+ 1 Topcartoons.kt\ncom/Topcartoons/Topcartoons\n*L\n21#1:91,10\n21#1:101\n21#1:103\n21#1:104\n44#1:105,10\n44#1:115\n44#1:117\n44#1:118\n57#1:119\n57#1:120,3\n21#1:102\n44#1:116\n*E\n"})
+@SourceDebugExtension({"SMAP\nTopcartoons.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Topcartoons.kt\ncom/Topcartoons/Topcartoons\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,91:1\n1795#2,10:92\n2068#2:102\n2069#2:104\n1805#2:105\n1795#2,10:106\n2068#2:116\n2069#2:118\n1805#2:119\n1739#2:120\n1814#2,3:121\n1#3:103\n1#3:117\n*S KotlinDebug\n*F\n+ 1 Topcartoons.kt\ncom/Topcartoons/Topcartoons\n*L\n22#1:92,10\n22#1:102\n22#1:104\n22#1:105\n45#1:106,10\n45#1:116\n45#1:118\n45#1:119\n58#1:120\n58#1:121,3\n22#1:103\n45#1:117\n*E\n"})
 public final class Topcartoons extends MainAPI {
 
     @NotNull
@@ -76,7 +77,7 @@ public final class Topcartoons extends MainAPI {
     /* JADX INFO: renamed from: com.Topcartoons.Topcartoons$getMainPage$1 */
     /* JADX INFO: compiled from: Topcartoons.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Topcartoons.Topcartoons", f = "Topcartoons.kt", i = {0, 0}, l = {20}, m = "getMainPage", n = {"request", "page"}, nl = {21}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Topcartoons.Topcartoons", f = "Topcartoons.kt", i = {0, 0}, l = {21}, m = "getMainPage", n = {"request", "page"}, nl = {22}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -98,7 +99,7 @@ public final class Topcartoons extends MainAPI {
     /* JADX INFO: renamed from: com.Topcartoons.Topcartoons$load$1 */
     /* JADX INFO: compiled from: Topcartoons.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Topcartoons.Topcartoons", f = "Topcartoons.kt", i = {0, 1, 1, 1, 1, 1, 1, 1}, l = {50, 66}, m = "load", n = {"url", "url", "request", "document", "title", "poster", "description", "episodes"}, nl = {51, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
+    @DebugMetadata(c = "com.Topcartoons.Topcartoons", f = "Topcartoons.kt", i = {0, 1, 1, 1, 1, 1, 1, 1}, l = {51, 67}, m = "load", n = {"url", "url", "request", "document", "title", "poster", "description", "episodes"}, nl = {52, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -125,7 +126,7 @@ public final class Topcartoons extends MainAPI {
     /* JADX INFO: renamed from: com.Topcartoons.Topcartoons$loadLinks$1 */
     /* JADX INFO: compiled from: Topcartoons.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Topcartoons.Topcartoons", f = "Topcartoons.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {73, 76}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "file", "isCasting"}, nl = {74, 75}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Topcartoons.Topcartoons", f = "Topcartoons.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {74, 77}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "document", "file", "isCasting"}, nl = {75, 76}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -152,7 +153,7 @@ public final class Topcartoons extends MainAPI {
     /* JADX INFO: renamed from: com.Topcartoons.Topcartoons$search$1 */
     /* JADX INFO: compiled from: Topcartoons.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Topcartoons.Topcartoons", f = "Topcartoons.kt", i = {0}, l = {43}, m = "search", n = {"query"}, nl = {44}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.Topcartoons.Topcartoons", f = "Topcartoons.kt", i = {0}, l = {44}, m = "search", n = {"query"}, nl = {45}, s = {"L$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -235,6 +236,7 @@ public final class Topcartoons extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + '/' + request.getData();
                 c00001.L$0 = request;

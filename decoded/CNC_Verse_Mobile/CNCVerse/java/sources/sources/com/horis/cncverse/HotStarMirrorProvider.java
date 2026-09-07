@@ -1864,10 +1864,10 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x014a -> B:18:0x0150). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.attributes.AttributeStorage.contains(AttributeStorage.java:94)
-        	at jadx.core.dex.attributes.AttrNode.contains(AttrNode.java:103)
-        	at jadx.core.utils.BlockUtils.isExceptionHandlerPath(BlockUtils.java:92)
-        	at jadx.core.dex.attributes.nodes.LoopInfo.getExitEdges(LoopInfo.java:66)
+        	at java.base/java.util.HashMap$KeyIterator.<init>(HashMap.java:1618)
+        	at java.base/java.util.HashMap$KeySet.iterator(HashMap.java:983)
+        	at java.base/java.util.HashSet.iterator(HashSet.java:174)
+        	at jadx.core.dex.attributes.nodes.LoopInfo.getExitEdges(LoopInfo.java:64)
         	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.checkLoopExits(LoopRegionMaker.java:265)
         	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.makeLoopRegion(LoopRegionMaker.java:237)
         	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.process(LoopRegionMaker.java:80)

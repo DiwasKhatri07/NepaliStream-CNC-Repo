@@ -4,7 +4,7 @@ package nepali.stream.decoded.kisskhprovider
 object PluginMetadata {
     const val name: String = "KisskhProvider"
     const val originalPluginClass: String = "com.phisher98.KisskhProviderPlugin"
-    const val version: Int = 20
+    const val version: Int = 22
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

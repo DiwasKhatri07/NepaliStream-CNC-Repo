@@ -4,7 +4,7 @@ package nepali.stream.decoded.desicinemas
 object PluginMetadata {
     const val name: String = "Desicinemas"
     const val originalPluginClass: String = "com.Desicinemas.DesicinemasPlugin"
-    const val version: Int = 14
+    const val version: Int = 16
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

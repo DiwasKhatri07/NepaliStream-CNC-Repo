@@ -16,6 +16,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -53,7 +54,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: BollyzoneProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Desicinemas/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u0018\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001eH\u0096@¢\u0006\u0002\u0010\u001fJ\u001c\u0010 \u001a\b\u0012\u0004\u0012\u00020!0\u00162\u0006\u0010\"\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010#J\u0014\u0010$\u001a\u00020%*\u00020&2\u0006\u0010\u0012\u001a\u00020\nH\u0002J\u000e\u0010'\u001a\u0004\u0018\u00010!*\u00020&H\u0002J\u0018\u0010(\u001a\u0004\u0018\u00010)2\u0006\u0010*\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010#JF\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\n2\u0006\u0010.\u001a\u00020,2\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u000201\u0012\u0004\u0012\u000202002\u0012\u00103\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u00020200H\u0096@¢\u0006\u0002\u00105J\f\u00106\u001a\u00020\n*\u00020&H\u0002R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\f\"\u0004\b\u0011\u0010\u000eR\u001a\u0010\u0012\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\f\"\u0004\b\u0014\u0010\u000eR\u001a\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019¨\u00067"}, d2 = {"Lcom/Desicinemas/BollyzoneProvider;", "Lcom/Desicinemas/DesicinemasProvider;", "<init>", "()V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toHomePageList", "Lcom/lagradost/cloudstream3/HomePageList;", "Lorg/jsoup/nodes/Element;", "toHomePageResult", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getImageAttr", "Desicinemas"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nBollyzoneProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BollyzoneProvider.kt\ncom/Desicinemas/BollyzoneProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,225:1\n777#2:226\n873#2,2:227\n296#2,2:229\n1795#2,10:231\n2068#2:241\n2069#2:243\n1805#2:244\n1960#2,3:245\n1795#2,10:248\n2068#2:258\n2069#2:260\n1805#2:261\n1795#2,10:262\n2068#2:272\n2069#2:274\n1805#2:275\n1739#2:276\n1814#2,3:277\n1795#2,10:280\n2068#2:290\n2069#2:292\n1805#2:293\n1544#2:294\n1633#2,2:295\n1795#2,10:297\n2068#2:307\n2069#2:310\n1805#2:311\n1635#2,3:312\n1#3:242\n1#3:259\n1#3:273\n1#3:291\n1#3:308\n1#3:309\n*S KotlinDebug\n*F\n+ 1 BollyzoneProvider.kt\ncom/Desicinemas/BollyzoneProvider\n*L\n39#1:226\n39#1:227,2\n46#1:229,2\n56#1:231,10\n56#1:241\n56#1:243\n56#1:244\n63#1:245,3\n76#1:248,10\n76#1:258\n76#1:260\n76#1:261\n81#1:262,10\n81#1:272\n81#1:274\n81#1:275\n118#1:276\n118#1:277,3\n121#1:280,10\n121#1:290\n121#1:292\n121#1:293\n126#1:294\n126#1:295,2\n130#1:297,10\n130#1:307\n130#1:310\n130#1:311\n126#1:312,3\n56#1:242\n76#1:259\n81#1:273\n121#1:291\n130#1:309\n*E\n"})
+@SourceDebugExtension({"SMAP\nBollyzoneProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BollyzoneProvider.kt\ncom/Desicinemas/BollyzoneProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,226:1\n777#2:227\n873#2,2:228\n296#2,2:230\n1795#2,10:232\n2068#2:242\n2069#2:244\n1805#2:245\n1960#2,3:246\n1795#2,10:249\n2068#2:259\n2069#2:261\n1805#2:262\n1795#2,10:263\n2068#2:273\n2069#2:275\n1805#2:276\n1739#2:277\n1814#2,3:278\n1795#2,10:281\n2068#2:291\n2069#2:293\n1805#2:294\n1544#2:295\n1633#2,2:296\n1795#2,10:298\n2068#2:308\n2069#2:311\n1805#2:312\n1635#2,3:313\n1#3:243\n1#3:260\n1#3:274\n1#3:292\n1#3:309\n1#3:310\n*S KotlinDebug\n*F\n+ 1 BollyzoneProvider.kt\ncom/Desicinemas/BollyzoneProvider\n*L\n40#1:227\n40#1:228,2\n47#1:230,2\n57#1:232,10\n57#1:242\n57#1:244\n57#1:245\n64#1:246,3\n77#1:249,10\n77#1:259\n77#1:261\n77#1:262\n82#1:263,10\n82#1:273\n82#1:275\n82#1:276\n119#1:277\n119#1:278,3\n122#1:281,10\n122#1:291\n122#1:293\n122#1:294\n127#1:295\n127#1:296,2\n131#1:298,10\n131#1:308\n131#1:311\n131#1:312\n127#1:313,3\n57#1:243\n77#1:260\n82#1:274\n122#1:292\n131#1:310\n*E\n"})
 public final class BollyzoneProvider extends DesicinemasProvider {
 
     @NotNull
@@ -74,7 +75,7 @@ public final class BollyzoneProvider extends DesicinemasProvider {
     /* JADX INFO: renamed from: com.Desicinemas.BollyzoneProvider$getMainPage$1 */
     /* JADX INFO: compiled from: BollyzoneProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider", f = "BollyzoneProvider.kt", i = {0, 0, 0}, l = {35}, m = "getMainPage", n = {"request", "url", "page"}, nl = {37}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider", f = "BollyzoneProvider.kt", i = {0, 0, 0}, l = {36}, m = "getMainPage", n = {"request", "url", "page"}, nl = {38}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -97,7 +98,7 @@ public final class BollyzoneProvider extends DesicinemasProvider {
     /* JADX INFO: renamed from: com.Desicinemas.BollyzoneProvider$load$1 */
     /* JADX INFO: compiled from: BollyzoneProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider", f = "BollyzoneProvider.kt", i = {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {100, 107, 128, 144}, m = "load", n = {"url", "url", "doc", "title", "posterUrl", "url", "doc", "title", "posterUrl", "description", "tags", "dateRegex", "$this$flatMap$iv", "$this$flatMapTo$iv$iv", "destination$iv$iv", "element$iv$iv", "pageUrl", "lastPageNumber", "page", "url", "doc", "title", "posterUrl", "description", "tags", "dateRegex", "episodes", "lastPageNumber"}, nl = {103, 115, 130, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider", f = "BollyzoneProvider.kt", i = {0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {101, 108, 129, 145}, m = "load", n = {"url", "url", "doc", "title", "posterUrl", "url", "doc", "title", "posterUrl", "description", "tags", "dateRegex", "$this$flatMap$iv", "$this$flatMapTo$iv$iv", "destination$iv$iv", "element$iv$iv", "pageUrl", "lastPageNumber", "page", "url", "doc", "title", "posterUrl", "description", "tags", "dateRegex", "episodes", "lastPageNumber"}, nl = {104, 116, 131, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -132,7 +133,7 @@ public final class BollyzoneProvider extends DesicinemasProvider {
     /* JADX INFO: renamed from: com.Desicinemas.BollyzoneProvider$loadLinks$1 */
     /* JADX INFO: compiled from: BollyzoneProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider", f = "BollyzoneProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1}, l = {157, 159}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "isCasting"}, nl = {158, 214}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider", f = "BollyzoneProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1}, l = {158, 160}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "isCasting"}, nl = {159, 215}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "Z$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -156,7 +157,7 @@ public final class BollyzoneProvider extends DesicinemasProvider {
     /* JADX INFO: renamed from: com.Desicinemas.BollyzoneProvider$search$1 */
     /* JADX INFO: compiled from: BollyzoneProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider", f = "BollyzoneProvider.kt", i = {0, 0, 1, 1, 1}, l = {70, 72}, m = "search", n = {"query", "url", "query", "url", "<unused var>"}, nl = {71, 69}, s = {"L$0", "L$1", "L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider", f = "BollyzoneProvider.kt", i = {0, 0, 1, 1, 1}, l = {71, 73}, m = "search", n = {"query", "url", "query", "url", "<unused var>"}, nl = {72, 70}, s = {"L$0", "L$1", "L$0", "L$1", "L$2"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -221,11 +222,11 @@ public final class BollyzoneProvider extends DesicinemasProvider {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:100:0x01ab A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:100:0x01b4 A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Code duplicated, block: B:96:0x019b A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:98:0x0199 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:99:0x01b0 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:96:0x01a4 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:98:0x01a2 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:99:0x01b9 A[SYNTHETIC] */
     @Override // com.Desicinemas.DesicinemasProvider
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
@@ -254,6 +255,7 @@ public final class BollyzoneProvider extends DesicinemasProvider {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String url2 = page2 == 1 ? request.getData() : request.getData() + "page/" + page2 + '/';
                 Requests app = UtilsKt.getApp();
                 String str = getMainUrl() + '/';
@@ -647,7 +649,7 @@ public final class BollyzoneProvider extends DesicinemasProvider {
     /* JADX INFO: compiled from: BollyzoneProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider$load$3", f = "BollyzoneProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nBollyzoneProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BollyzoneProvider.kt\ncom/Desicinemas/BollyzoneProvider$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,225:1\n1739#2:226\n1814#2,3:227\n*S KotlinDebug\n*F\n+ 1 BollyzoneProvider.kt\ncom/Desicinemas/BollyzoneProvider$load$3\n*L\n110#1:226\n110#1:227,3\n*E\n"})
+    @SourceDebugExtension({"SMAP\nBollyzoneProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BollyzoneProvider.kt\ncom/Desicinemas/BollyzoneProvider$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,226:1\n1739#2:227\n1814#2,3:228\n*S KotlinDebug\n*F\n+ 1 BollyzoneProvider.kt\ncom/Desicinemas/BollyzoneProvider$load$3\n*L\n111#1:227\n111#1:228,3\n*E\n"})
     static final class C00023 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ Document $doc;
         final /* synthetic */ String $posterUrl;
@@ -845,7 +847,7 @@ public final class BollyzoneProvider extends DesicinemasProvider {
     /* JADX INFO: renamed from: com.Desicinemas.BollyzoneProvider$loadLinks$2 */
     /* JADX INFO: compiled from: BollyzoneProvider.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider$loadLinks$2", f = "BollyzoneProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {173, 180, 194, 205}, m = "invokeSuspend", n = {"it", "name", "link", "headers", "it", "name", "link", "headers", "src", "doc", "iframe", "it", "name", "link", "headers", "src", "doc", "iframe", "iframeURL", "pathParts", "token", "type", "playerUrl", "it", "name", "link", "headers", "src", "doc", "iframe", "iframeURL"}, nl = {174, 183, 201, 212}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
+    @DebugMetadata(c = "com.Desicinemas.BollyzoneProvider$loadLinks$2", f = "BollyzoneProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {174, 181, 195, 206}, m = "invokeSuspend", n = {"it", "name", "link", "headers", "it", "name", "link", "headers", "src", "doc", "iframe", "it", "name", "link", "headers", "src", "doc", "iframe", "iframeURL", "pathParts", "token", "type", "playerUrl", "it", "name", "link", "headers", "src", "doc", "iframe", "iframeURL"}, nl = {175, 184, 202, 213}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
     static final class C00052 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

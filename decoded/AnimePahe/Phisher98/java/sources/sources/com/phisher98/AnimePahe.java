@@ -33,6 +33,7 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -92,7 +93,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: AnimePahe.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AnimePahe/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u008a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 =2\u00020\u0001:\u0007=>?@ABCB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001b\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"J\u001c\u0010#\u001a\b\u0012\u0004\u0012\u00020$0\u00192\u0006\u0010%\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010&J<\u0010'\u001a\u0012\u0012\u0004\u0012\u00020)0(j\b\u0012\u0004\u0012\u00020)`*2\u0006\u0010+\u001a\u00020\u00052\u0014\u0010,\u001a\u0010\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020.\u0018\u00010-H\u0082@¢\u0006\u0002\u0010/J\u0018\u00100\u001a\u0004\u0018\u0001012\u0006\u00102\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010&JF\u00103\u001a\u00020\u000e2\u0006\u00104\u001a\u00020\u00052\u0006\u00105\u001a\u00020\u000e2\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u000209072\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020;\u0012\u0004\u0012\u00020907H\u0096@¢\u0006\u0002\u0010<R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0014\u0010\u0011\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0010R\u001a\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001c¨\u0006D"}, d2 = {"Lcom/phisher98/AnimePahe;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasQuickSearch", "", "getHasQuickSearch", "()Z", "hasMainPage", "getHasMainPage", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "generateListOfEpisodes", "Ljava/util/ArrayList;", "Lcom/lagradost/cloudstream3/Episode;", "Lkotlin/collections/ArrayList;", "session", "metaEpisodes", "", "Lcom/phisher98/MetaEpisode;", "(Ljava/lang/String;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "AnimePaheSearchData", "AnimePaheSearch", "AnimeData", "AnimePaheAnimeData", "LinkLoadData", "LoadData", "AnimePahe"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,581:1\n93#2,2:582\n63#2:584\n64#2,15:586\n95#2,2:603\n93#2,2:609\n63#2:611\n64#2,15:613\n95#2,2:630\n93#2,2:636\n63#2:638\n64#2,15:640\n95#2,2:657\n93#2,2:665\n63#2:667\n64#2,15:669\n95#2,2:686\n1#3:585\n1#3:612\n1#3:639\n1#3:668\n1#3:688\n50#4:601\n43#4:602\n50#4:628\n43#4:629\n50#4:655\n43#4:656\n50#4:684\n43#4:685\n1739#5:605\n1814#5,3:606\n1739#5:632\n1814#5,3:633\n2068#5,2:659\n1739#5:661\n1814#5,3:662\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe\n*L\n199#1:582,2\n199#1:584\n199#1:586,15\n199#1:603,2\n245#1:609,2\n245#1:611\n245#1:613,15\n245#1:630,2\n316#1:636,2\n316#1:638\n316#1:640,15\n316#1:657,2\n512#1:665,2\n512#1:667\n512#1:669,15\n512#1:686,2\n199#1:585\n245#1:612\n316#1:639\n512#1:668\n199#1:601\n199#1:602\n245#1:628\n245#1:629\n316#1:655\n316#1:656\n512#1:684\n512#1:685\n199#1:605\n199#1:606,3\n247#1:632\n247#1:633,3\n328#1:659,2\n353#1:661\n353#1:662,3\n*E\n"})
+@SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,582:1\n93#2,2:583\n63#2:585\n64#2,15:587\n95#2,2:604\n93#2,2:610\n63#2:612\n64#2,15:614\n95#2,2:631\n93#2,2:637\n63#2:639\n64#2,15:641\n95#2,2:658\n93#2,2:666\n63#2:668\n64#2,15:670\n95#2,2:687\n1#3:586\n1#3:613\n1#3:640\n1#3:669\n1#3:689\n50#4:602\n43#4:603\n50#4:629\n43#4:630\n50#4:656\n43#4:657\n50#4:685\n43#4:686\n1739#5:606\n1814#5,3:607\n1739#5:633\n1814#5,3:634\n2068#5,2:660\n1739#5:662\n1814#5,3:663\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe\n*L\n200#1:583,2\n200#1:585\n200#1:587,15\n200#1:604,2\n246#1:610,2\n246#1:612\n246#1:614,15\n246#1:631,2\n317#1:637,2\n317#1:639\n317#1:641,15\n317#1:658,2\n513#1:666,2\n513#1:668\n513#1:670,15\n513#1:687,2\n200#1:586\n246#1:613\n317#1:640\n513#1:669\n200#1:602\n200#1:603\n246#1:629\n246#1:630\n317#1:656\n317#1:657\n513#1:685\n513#1:686\n200#1:606\n200#1:607,3\n248#1:633\n248#1:634,3\n329#1:660,2\n354#1:662\n354#1:663,3\n*E\n"})
 public final class AnimePahe extends MainAPI {
     private final boolean hasQuickSearch;
 
@@ -125,7 +126,7 @@ public final class AnimePahe extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.AnimePahe$generateListOfEpisodes$1 */
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.AnimePahe", f = "AnimePahe.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {315, 390}, m = "generateListOfEpisodes", n = {"session", "metaEpisodes", "episodes", "semaphore", "uri", "session", "metaEpisodes", "episodes", "semaphore", "uri", "req", "data", "currentEpisode", "deferredResults", "last_page", "per_page", "total"}, nl = {316, 393}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "I$1", "I$2"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.AnimePahe", f = "AnimePahe.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {316, 391}, m = "generateListOfEpisodes", n = {"session", "metaEpisodes", "episodes", "semaphore", "uri", "session", "metaEpisodes", "episodes", "semaphore", "uri", "req", "data", "currentEpisode", "deferredResults", "last_page", "per_page", "total"}, nl = {317, 394}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "I$1", "I$2"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -158,7 +159,7 @@ public final class AnimePahe extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.AnimePahe$getMainPage$1 */
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.AnimePahe", f = "AnimePahe.kt", i = {0, 0}, l = {198}, m = "getMainPage", n = {"request", "page"}, nl = {199}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.AnimePahe", f = "AnimePahe.kt", i = {0, 0}, l = {199}, m = "getMainPage", n = {"request", "page"}, nl = {200}, s = {"L$0", "I$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -180,7 +181,7 @@ public final class AnimePahe extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.AnimePahe$loadLinks$1 */
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.AnimePahe", f = "AnimePahe.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3}, l = {513, 514, 515, 548}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parsed", "isCasting", "data", "subtitleCallback", "callback", "parsed", "episodeUrl", "isCasting", "data", "subtitleCallback", "callback", "parsed", "episodeUrl", "document", "isCasting", "data", "subtitleCallback", "callback", "parsed", "episodeUrl", "document", "isCasting"}, nl = {514, 515, 548, 574}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.AnimePahe", f = "AnimePahe.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3}, l = {514, 515, 516, 549}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parsed", "isCasting", "data", "subtitleCallback", "callback", "parsed", "episodeUrl", "isCasting", "data", "subtitleCallback", "callback", "parsed", "episodeUrl", "document", "isCasting", "data", "subtitleCallback", "callback", "parsed", "episodeUrl", "document", "isCasting"}, nl = {515, 516, 549, 575}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -207,7 +208,7 @@ public final class AnimePahe extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.AnimePahe$search$1 */
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.AnimePahe", f = "AnimePahe.kt", i = {0, 0, 0}, l = {244}, m = "search", n = {"query", "url", "searchHeaders"}, nl = {245}, s = {"L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.AnimePahe", f = "AnimePahe.kt", i = {0, 0, 0}, l = {245}, m = "search", n = {"query", "url", "searchHeaders"}, nl = {246}, s = {"L$0", "L$1", "L$2"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -229,7 +230,7 @@ public final class AnimePahe extends MainAPI {
 
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(d1 = {"\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0012J\u0010\u0010\u0013\u001a\u00020\u00142\u0006\u0010\u0015\u001a\u00020\u0006H\u0002J,\u0010\u0016\u001a\u00020\u00122\u0006\u0010\u0017\u001a\u00020\u00062\u0014\b\u0002\u0010\u0018\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u0005H\u0086@¢\u0006\u0002\u0010\u0019R\u001d\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001d\u0010\t\u001a\u000e\u0012\u0004\u0012\u00020\u0006\u0012\u0004\u0012\u00020\u00060\u00058F¢\u0006\u0006\u001a\u0004\b\n\u0010\bR\u0014\u0010\u000b\u001a\b\u0012\u0004\u0012\u00020\u00060\fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Lcom/phisher98/AnimePahe$Companion;", "", "<init>", "()V", "headers", "", "", "getHeaders", "()Ljava/util/Map;", "cfHeaders", "getCfHeaders", "CF_BLOCKER_PHRASES", "", "cfBypassMutex", "Lkotlinx/coroutines/sync/Mutex;", "isCloudflareBlocked", "", "response", "Lcom/lagradost/nicehttp/NiceResponse;", "getType", "Lcom/lagradost/cloudstream3/TvType;", "t", "appGet", "url", "customHeaders", "(Ljava/lang/String;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "AnimePahe"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,581:1\n1960#2,3:582\n117#3,10:585\n1#4:595\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$Companion\n*L\n142#1:582,3\n156#1:585,10\n*E\n"})
+    @SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$Companion\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,582:1\n1960#2,3:583\n117#3,10:586\n1#4:596\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$Companion\n*L\n142#1:583,3\n156#1:586,10\n*E\n"})
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -885,6 +886,139 @@ public final class AnimePahe extends MainAPI {
         return this.mainPage;
     }
 
+    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
+    @Nullable
+    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Throwable {
+        C00031 c00031;
+        MainPageRequest request2;
+        Object objAppGet;
+        Object obj;
+        Object objDecodeFromString;
+        Object obj2;
+        List episodes;
+        Iterable data;
+        if (continuation instanceof C00031) {
+            c00031 = (C00031) continuation;
+            if ((c00031.label & Integer.MIN_VALUE) != 0) {
+                c00031.label -= Integer.MIN_VALUE;
+            } else {
+                c00031 = new C00031(continuation);
+            }
+        } else {
+            c00031 = new C00031(continuation);
+        }
+        Object $result = c00031.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (c00031.label) {
+            case 0:
+                ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
+                Companion companion = INSTANCE;
+                String str = request.getData() + page;
+                Map<String, String> map = headers;
+                request2 = request;
+                c00031.L$0 = request2;
+                c00031.I$0 = page;
+                c00031.label = 1;
+                objAppGet = companion.appGet(str, map, c00031);
+                if (objAppGet == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                break;
+                break;
+            case 1:
+                int i = c00031.I$0;
+                MainPageRequest request3 = (MainPageRequest) c00031.L$0;
+                ResultKt.throwOnFailure($result);
+                objAppGet = $result;
+                request2 = request3;
+                break;
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+        String response = ((NiceResponse) objAppGet).getText();
+        AppUtils appUtils = AppUtils.INSTANCE;
+        if (response == null) {
+            objDecodeFromString = null;
+        } else {
+            try {
+                try {
+                    Result.Companion companion2 = Result.Companion;
+                    KType kTypeTypeOf = Reflection.typeOf(AnimePaheLatestReleases.class);
+                    MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
+                    obj = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf));
+                } catch (Throwable th) {
+                    Result.Companion companion3 = Result.Companion;
+                    obj = Result.constructor-impl(ResultKt.createFailure(th));
+                }
+                if (Result.exceptionOrNull-impl(obj) == null) {
+                    obj2 = null;
+                } else {
+                    try {
+                        Result.Companion companion4 = Result.Companion;
+                        obj2 = null;
+                        try {
+                            obj = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(AnimePaheLatestReleases.class), (List) null, 2, (Object) null));
+                        } catch (Throwable th2) {
+                            th = th2;
+                            Result.Companion companion5 = Result.Companion;
+                            obj = Result.constructor-impl(ResultKt.createFailure(th));
+                        }
+                    } catch (Throwable th3) {
+                        th = th3;
+                        obj2 = null;
+                    }
+                }
+                if (Result.isFailure-impl(obj)) {
+                    obj = obj2;
+                }
+                DeserializationStrategy deserializationStrategy = (KSerializer) obj;
+                if (deserializationStrategy != null) {
+                    try {
+                        objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, response);
+                    } catch (SerializationException e) {
+                        ArchComponentExtKt.logError(e);
+                        ObjectMapper $this$readValue$iv$iv$iv = MainAPIKt.getMapper();
+                        objDecodeFromString = $this$readValue$iv$iv$iv.readValue(response, new TypeReference<AnimePaheLatestReleases>() { // from class: com.phisher98.AnimePahe$getMainPage$$inlined$tryParseJson$1
+                        });
+                    } catch (Throwable th4) {
+                        ObjectMapper $this$readValue$iv$iv$iv2 = MainAPIKt.getMapper();
+                        objDecodeFromString = $this$readValue$iv$iv$iv2.readValue(response, new TypeReference<AnimePaheLatestReleases>() { // from class: com.phisher98.AnimePahe$getMainPage$$inlined$tryParseJson$1
+                        });
+                    }
+                } else {
+                    ObjectMapper $this$readValue$iv$iv$iv3 = MainAPIKt.getMapper();
+                    objDecodeFromString = $this$readValue$iv$iv$iv3.readValue(response, new TypeReference<AnimePaheLatestReleases>() { // from class: com.phisher98.AnimePahe$getMainPage$$inlined$tryParseJson$1
+                    });
+                }
+            } catch (Exception e2) {
+                objDecodeFromString = null;
+            }
+        }
+        AnimePaheLatestReleases animePaheLatestReleases = (AnimePaheLatestReleases) objDecodeFromString;
+        if (animePaheLatestReleases == null || (data = animePaheLatestReleases.getData()) == null) {
+            episodes = null;
+        } else {
+            Iterable $this$map$iv = data;
+            int $i$f$map = 0;
+            Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+            for (Object item$iv$iv : $this$map$iv) {
+                final Data it = (Data) item$iv$iv;
+                destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it.getAnime_title(), AppUtils.INSTANCE.toJson(new LoadData(it.getAnime_session(), APIHolder.INSTANCE.getUnixTime(), it.getAnime_title())), (TvType) null, false, new Function1() { // from class: com.phisher98.AnimePahe$$ExternalSyntheticLambda2
+                    public final Object invoke(Object obj3) {
+                        return AnimePahe.getMainPage$lambda$0$0(it, (AnimeSearchResponse) obj3);
+                    }
+                }, 4, (Object) null));
+                $this$map$iv = $this$map$iv;
+                $i$f$map = $i$f$map;
+                $result = $result;
+                c00031 = c00031;
+            }
+            episodes = (List) destination$iv$iv;
+        }
+        return MainAPIKt.newHomePageResponse(new HomePageList(request2.getName(), episodes == null ? CollectionsKt.emptyList() : episodes, true), Boxing.boxBoolean(true));
+    }
+
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(d1 = {"\u0000!\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\b\n\u0002\b\u0015\n\u0002\u0010\u000b\n\u0002\b\u0004*\u0001\u0000\b\u008a\b\u0018\u00002\u00020\u0001B5\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\b\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\b\u0010\u0006\u001a\u0004\u0018\u00010\u0003\u0012\b\u0010\u0007\u001a\u0004\u0018\u00010\u0003\u0012\u0006\u0010\b\u001a\u00020\u0003¢\u0006\u0004\b\t\u0010\nJ\t\u0010\u0013\u001a\u00020\u0003HÆ\u0003J\u0010\u0010\u0014\u001a\u0004\u0018\u00010\u0005HÆ\u0003¢\u0006\u0002\u0010\u000eJ\u000b\u0010\u0015\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u0016\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\t\u0010\u0017\u001a\u00020\u0003HÆ\u0003JF\u0010\u0018\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u00032\b\b\u0002\u0010\b\u001a\u00020\u0003HÆ\u0001¢\u0006\u0002\u0010\u0019J\u0014\u0010\u001a\u001a\u00020\u001b2\b\u0010\u001c\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u001d\u001a\u00020\u0005HÖ\u0081\u0004J\n\u0010\u001e\u001a\u00020\u0003HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0015\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\n\n\u0002\u0010\u000f\u001a\u0004\b\r\u0010\u000eR\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\fR\u0013\u0010\u0007\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\fR\u0011\u0010\b\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\f¨\u0006\u001f"}, d2 = {"com/phisher98/AnimePahe$getMainPage$Data", "", "anime_title", "", "episode", "", "snapshot", "created_at", "anime_session", "<init>", "(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getAnime_title", "()Ljava/lang/String;", "getEpisode", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getSnapshot", "getCreated_at", "getAnime_session", "component1", "component2", "component3", "component4", "component5", "copy", "(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/phisher98/AnimePahe$getMainPage$Data;", "equals", "", "other", "hashCode", "toString", "AnimePahe"}, k = 1, mv = {2, 4, 0}, xi = 48)
     public static final /* data */ class Data {
@@ -990,138 +1124,6 @@ public final class AnimePahe extends MainAPI {
         public final String getAnime_session() {
             return this.anime_session;
         }
-    }
-
-    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    @Nullable
-    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Throwable {
-        C00031 c00031;
-        MainPageRequest request2;
-        Object objAppGet;
-        Object objDecodeFromString;
-        Object obj;
-        Object obj2;
-        List episodes;
-        Iterable data;
-        if (continuation instanceof C00031) {
-            c00031 = (C00031) continuation;
-            if ((c00031.label & Integer.MIN_VALUE) != 0) {
-                c00031.label -= Integer.MIN_VALUE;
-            } else {
-                c00031 = new C00031(continuation);
-            }
-        } else {
-            c00031 = new C00031(continuation);
-        }
-        Object $result = c00031.result;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00031.label) {
-            case 0:
-                ResultKt.throwOnFailure($result);
-                Companion companion = INSTANCE;
-                String str = request.getData() + page;
-                Map<String, String> map = headers;
-                request2 = request;
-                c00031.L$0 = request2;
-                c00031.I$0 = page;
-                c00031.label = 1;
-                objAppGet = companion.appGet(str, map, c00031);
-                if (objAppGet == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
-                break;
-                break;
-            case 1:
-                int i = c00031.I$0;
-                MainPageRequest request3 = (MainPageRequest) c00031.L$0;
-                ResultKt.throwOnFailure($result);
-                objAppGet = $result;
-                request2 = request3;
-                break;
-            default:
-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        }
-        String response = ((NiceResponse) objAppGet).getText();
-        AppUtils appUtils = AppUtils.INSTANCE;
-        if (response == null) {
-            objDecodeFromString = null;
-        } else {
-            try {
-                try {
-                    Result.Companion companion2 = Result.Companion;
-                    KType kTypeTypeOf = Reflection.typeOf(AnimePaheLatestReleases.class);
-                    MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                    obj = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf));
-                } catch (Throwable th) {
-                    Result.Companion companion3 = Result.Companion;
-                    obj = Result.constructor-impl(ResultKt.createFailure(th));
-                }
-                if (Result.exceptionOrNull-impl(obj) == null) {
-                    obj2 = null;
-                } else {
-                    try {
-                        Result.Companion companion4 = Result.Companion;
-                        obj2 = null;
-                        try {
-                            obj = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(AnimePaheLatestReleases.class), (List) null, 2, (Object) null));
-                        } catch (Throwable th2) {
-                            th = th2;
-                            Result.Companion companion5 = Result.Companion;
-                            obj = Result.constructor-impl(ResultKt.createFailure(th));
-                        }
-                    } catch (Throwable th3) {
-                        th = th3;
-                        obj2 = null;
-                    }
-                }
-                if (Result.isFailure-impl(obj)) {
-                    obj = obj2;
-                }
-                DeserializationStrategy deserializationStrategy = (KSerializer) obj;
-                if (deserializationStrategy != null) {
-                    try {
-                        objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, response);
-                    } catch (SerializationException e) {
-                        ArchComponentExtKt.logError(e);
-                        ObjectMapper $this$readValue$iv$iv$iv = MainAPIKt.getMapper();
-                        objDecodeFromString = $this$readValue$iv$iv$iv.readValue(response, new TypeReference<AnimePaheLatestReleases>() { // from class: com.phisher98.AnimePahe$getMainPage$$inlined$tryParseJson$1
-                        });
-                    } catch (Throwable th4) {
-                        ObjectMapper $this$readValue$iv$iv$iv2 = MainAPIKt.getMapper();
-                        objDecodeFromString = $this$readValue$iv$iv$iv2.readValue(response, new TypeReference<AnimePaheLatestReleases>() { // from class: com.phisher98.AnimePahe$getMainPage$$inlined$tryParseJson$1
-                        });
-                    }
-                } else {
-                    ObjectMapper $this$readValue$iv$iv$iv3 = MainAPIKt.getMapper();
-                    objDecodeFromString = $this$readValue$iv$iv$iv3.readValue(response, new TypeReference<AnimePaheLatestReleases>() { // from class: com.phisher98.AnimePahe$getMainPage$$inlined$tryParseJson$1
-                    });
-                }
-            } catch (Exception e2) {
-                objDecodeFromString = null;
-            }
-        }
-        AnimePaheLatestReleases animePaheLatestReleases = (AnimePaheLatestReleases) objDecodeFromString;
-        if (animePaheLatestReleases == null || (data = animePaheLatestReleases.getData()) == null) {
-            episodes = null;
-        } else {
-            Iterable $this$map$iv = data;
-            int $i$f$map = 0;
-            Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
-            for (Object item$iv$iv : $this$map$iv) {
-                final Data it = (Data) item$iv$iv;
-                destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it.getAnime_title(), AppUtils.INSTANCE.toJson(new LoadData(it.getAnime_session(), APIHolder.INSTANCE.getUnixTime(), it.getAnime_title())), (TvType) null, false, new Function1() { // from class: com.phisher98.AnimePahe$$ExternalSyntheticLambda2
-                    public final Object invoke(Object obj3) {
-                        return AnimePahe.getMainPage$lambda$0$0(it, (AnimeSearchResponse) obj3);
-                    }
-                }, 4, (Object) null));
-                $this$map$iv = $this$map$iv;
-                $i$f$map = $i$f$map;
-                $result = $result;
-                c00031 = c00031;
-            }
-            episodes = (List) destination$iv$iv;
-        }
-        return MainAPIKt.newHomePageResponse(new HomePageList(request2.getName(), episodes == null ? CollectionsKt.emptyList() : episodes, true), Boxing.boxBoolean(true));
     }
 
     /* JADX INFO: compiled from: AnimePahe.kt */
@@ -2021,7 +2023,7 @@ public final class AnimePahe extends MainAPI {
 
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\b\n\u0002\b\u000e\n\u0002\u0010$\n\u0002\b\u000e\b\u0086\b\u0018\u00002\u00020\u0001B7\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u0012\u0006\u0010\b\u001a\u00020\u0007\u0012\u0006\u0010\t\u001a\u00020\u0003\u0012\u0006\u0010\n\u001a\u00020\u0003¢\u0006\u0004\b\u000b\u0010\fJ\u0010\u0010\u0017\u001a\u0004\u0018\u00010\u0003H\u0086@¢\u0006\u0002\u0010\u0018J\t\u0010\u0019\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001a\u001a\u00020\u0005HÆ\u0003J\t\u0010\u001b\u001a\u00020\u0007HÆ\u0003J\t\u0010\u001c\u001a\u00020\u0007HÆ\u0003J\t\u0010\u001d\u001a\u00020\u0003HÆ\u0003J\t\u0010\u001e\u001a\u00020\u0003HÆ\u0003JE\u0010\u001f\u001a\u00020\u00002\b\b\u0002\u0010\u0002\u001a\u00020\u00032\b\b\u0002\u0010\u0004\u001a\u00020\u00052\b\b\u0002\u0010\u0006\u001a\u00020\u00072\b\b\u0002\u0010\b\u001a\u00020\u00072\b\b\u0002\u0010\t\u001a\u00020\u00032\b\b\u0002\u0010\n\u001a\u00020\u0003HÆ\u0001J\u0014\u0010 \u001a\u00020\u00052\b\u0010!\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\"\u001a\u00020\u0007HÖ\u0081\u0004J\n\u0010#\u001a\u00020\u0003HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0004\u0010\u000fR\u0011\u0010\u0006\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0011\u0010\b\u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0011R\u0011\u0010\t\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u000eR\u0011\u0010\n\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u000eR\u001a\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u0016X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006$"}, d2 = {"Lcom/phisher98/AnimePahe$LinkLoadData;", "", "mainUrl", "", "is_play_page", "", "episode_num", "", "page", "session", "episode_session", "<init>", "(Ljava/lang/String;ZIILjava/lang/String;Ljava/lang/String;)V", "getMainUrl", "()Ljava/lang/String;", "()Z", "getEpisode_num", "()I", "getPage", "getSession", "getEpisode_session", "headers", "", "getUrl", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "component1", "component2", "component3", "component4", "component5", "component6", "copy", "equals", "other", "hashCode", "toString", "AnimePahe"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$LinkLoadData\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,581:1\n73#2,5:582\n296#3,2:587\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$LinkLoadData\n*L\n297#1:582,5\n298#1:587,2\n*E\n"})
+    @SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$LinkLoadData\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,582:1\n73#2,5:583\n296#3,2:588\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$LinkLoadData\n*L\n298#1:583,5\n299#1:588,2\n*E\n"})
     public static final /* data */ class LinkLoadData {
         private final int episode_num;
 
@@ -3057,8 +3059,8 @@ public final class AnimePahe extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.AnimePahe$load$2 */
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001H\n"}, d2 = {"<anonymous>", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.AnimePahe$load$2", f = "AnimePahe.kt", i = {0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {409, 415, 473, 475, 482, 484}, m = "invokeSuspend", n = {"data", "session", "session", "html", "doc", "japTitle", "anime_title", "poster", "tvType", "recommendations", "year", "status", "synopsis", "anilistId", "malId", "session", "html", "doc", "japTitle", "anime_title", "poster", "tvType", "recommendations", "year", "status", "synopsis", "anilistId", "malId", "session", "html", "doc", "japTitle", "anime_title", "poster", "tvType", "recommendations", "year", "status", "synopsis", "anilistId", "malId", "syncMetaData", "animeMetaData", "metaposter", "backgroundposter", "session", "html", "doc", "japTitle", "anime_title", "poster", "tvType", "recommendations", "year", "status", "synopsis", "anilistId", "malId", "syncMetaData", "animeMetaData", "metaposter", "backgroundposter", "episodes"}, nl = {408, 416, 474, 476, 484, 502}, s = {"L$0", "L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17"}, v = 2)
-    @SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$load$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,581:1\n93#2,2:582\n63#2:584\n64#2,15:586\n95#2,2:603\n93#2,2:605\n63#2:607\n64#2,15:609\n95#2,2:626\n1#3:585\n1#3:608\n1#3:639\n1#3:640\n1#3:645\n50#4:601\n43#4:602\n50#4:624\n43#4:625\n1795#5,10:628\n2068#5:638\n2069#5:641\n1805#5:642\n2068#5,2:643\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$load$2\n*L\n405#1:582,2\n405#1:584\n405#1:586,15\n405#1:603,2\n408#1:605,2\n408#1:607\n408#1:609,15\n408#1:626,2\n405#1:585\n408#1:608\n423#1:640\n405#1:601\n405#1:602\n408#1:624\n408#1:625\n423#1:628,10\n423#1:638\n423#1:641\n423#1:642\n462#1:643,2\n*E\n"})
+    @DebugMetadata(c = "com.phisher98.AnimePahe$load$2", f = "AnimePahe.kt", i = {0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {410, 416, 474, 476, 483, 485}, m = "invokeSuspend", n = {"data", "session", "session", "html", "doc", "japTitle", "anime_title", "poster", "tvType", "recommendations", "year", "status", "synopsis", "anilistId", "malId", "session", "html", "doc", "japTitle", "anime_title", "poster", "tvType", "recommendations", "year", "status", "synopsis", "anilistId", "malId", "session", "html", "doc", "japTitle", "anime_title", "poster", "tvType", "recommendations", "year", "status", "synopsis", "anilistId", "malId", "syncMetaData", "animeMetaData", "metaposter", "backgroundposter", "session", "html", "doc", "japTitle", "anime_title", "poster", "tvType", "recommendations", "year", "status", "synopsis", "anilistId", "malId", "syncMetaData", "animeMetaData", "metaposter", "backgroundposter", "episodes"}, nl = {409, 417, 475, 477, 485, 503}, s = {"L$0", "L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17"}, v = 2)
+    @SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$load$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,582:1\n93#2,2:583\n63#2:585\n64#2,15:587\n95#2,2:604\n93#2,2:606\n63#2:608\n64#2,15:610\n95#2,2:627\n1#3:586\n1#3:609\n1#3:640\n1#3:641\n1#3:646\n50#4:602\n43#4:603\n50#4:625\n43#4:626\n1795#5,10:629\n2068#5:639\n2069#5:642\n1805#5:643\n2068#5,2:644\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$load$2\n*L\n406#1:583,2\n406#1:585\n406#1:587,15\n406#1:604,2\n409#1:606,2\n409#1:608\n409#1:610,15\n409#1:627,2\n406#1:586\n409#1:609\n424#1:641\n406#1:602\n406#1:603\n409#1:625\n409#1:626\n424#1:629,10\n424#1:639\n424#1:642\n424#1:643\n463#1:644,2\n*E\n"})
     static final class C00042 extends SuspendLambda implements Function1<Continuation<? super AnimeLoadResponse>, Object> {
         final /* synthetic */ String $url;
         Object L$0;
@@ -5771,7 +5773,7 @@ public final class AnimePahe extends MainAPI {
         /* JADX INFO: compiled from: AnimePahe.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
         @DebugMetadata(c = "com.phisher98.AnimePahe$load$2$2", f = "AnimePahe.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-        @SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$load$2$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,581:1\n1739#2:582\n1814#2,3:583\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$load$2$2\n*L\n495#1:582\n495#1:583,3\n*E\n"})
+        @SourceDebugExtension({"SMAP\nAnimePahe.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$load$2$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,582:1\n1739#2:583\n1814#2,3:584\n*S KotlinDebug\n*F\n+ 1 AnimePahe.kt\ncom/phisher98/AnimePahe$load$2$2\n*L\n496#1:583\n496#1:584,3\n*E\n"})
         static final class AnonymousClass2 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
             final /* synthetic */ Ref.ObjectRef<Integer> $anilistId;
             final /* synthetic */ String $anime_title;
@@ -6186,7 +6188,7 @@ public final class AnimePahe extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.AnimePahe$loadLinks$2 */
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.AnimePahe$loadLinks$2", f = "AnimePahe.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {537}, m = "invokeSuspend", n = {"it", "audio", "badgeLang", "fullText", "type", "qualityRegex", "text", "match", "href", "quality"}, nl = {546}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.AnimePahe$loadLinks$2", f = "AnimePahe.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {538}, m = "invokeSuspend", n = {"it", "audio", "badgeLang", "fullText", "type", "qualityRegex", "text", "match", "href", "quality"}, nl = {547}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0"}, v = 2)
     static final class C00062 extends SuspendLambda implements Function2<org.jsoup.nodes.Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -6304,7 +6306,7 @@ public final class AnimePahe extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.AnimePahe$loadLinks$3 */
     /* JADX INFO: compiled from: AnimePahe.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.AnimePahe$loadLinks$3", f = "AnimePahe.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {565}, m = "invokeSuspend", n = {"it", "qualityRegex", "href", "badgeLang", "anchorText", "type", "text", "match", "quality"}, nl = {573}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.AnimePahe$loadLinks$3", f = "AnimePahe.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {566}, m = "invokeSuspend", n = {"it", "qualityRegex", "href", "badgeLang", "anchorText", "type", "text", "match", "quality"}, nl = {574}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
     static final class C00073 extends SuspendLambda implements Function2<org.jsoup.nodes.Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

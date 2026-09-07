@@ -57,7 +57,7 @@ public class AWSStream extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.piratexplay.AWSStream", f = "Extractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {226, 230, 233, 252}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "extractedHash", "$this", "url", "referer", "subtitleCallback", "callback", "extractedHash", "doc", "m3u8Url", "header", "formdata", "$this", "url", "referer", "subtitleCallback", "callback", "extractedHash", "doc", "m3u8Url", "header", "formdata", "response", "m3u8", "$this", "url", "referer", "subtitleCallback", "callback", "extractedHash", "doc", "m3u8Url", "header", "formdata", "response", "m3u8", "extractedPack", "unpacked", "subtitleUrl"}, nl = {227, 923, 232, 251}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14"}, v = 2)
-    static final class C00001 extends ContinuationImpl {
+    static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -77,7 +77,7 @@ public class AWSStream extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00001(Continuation<? super C00001> continuation) {
+        C00031(Continuation<? super C00031> continuation) {
             super(continuation);
         }
 
@@ -121,7 +121,7 @@ public class AWSStream extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:54:0x03fe  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     static /* synthetic */ Object getUrl$suspendImpl(AWSStream $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C00001 c00001;
+        C00031 c00031;
         Object obj;
         int i;
         char c;
@@ -173,37 +173,37 @@ public class AWSStream extends ExtractorApi {
         Map header4;
         String unpacked2;
         AWSStream $this4 = $this;
-        if (continuation instanceof C00001) {
-            c00001 = (C00001) continuation;
-            if ((c00001.label & Integer.MIN_VALUE) != 0) {
-                c00001.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00031) {
+            c00031 = (C00031) continuation;
+            if ((c00031.label & Integer.MIN_VALUE) != 0) {
+                c00031.label -= Integer.MIN_VALUE;
             } else {
-                c00001 = $this4.new C00001(continuation);
+                c00031 = $this4.new C00031(continuation);
             }
         } else {
-            c00001 = $this4.new C00001(continuation);
+            c00031 = $this4.new C00031(continuation);
         }
-        C00001 c00002 = c00001;
-        Object $result2 = c00002.result;
+        C00031 c00032 = c00031;
+        Object $result2 = c00032.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00002.label) {
+        switch (c00032.label) {
             case 0:
                 ResultKt.throwOnFailure($result2);
                 String extractedHash2 = StringsKt.substringAfterLast$default(url, "/", (String) null, 2, (Object) null);
                 Requests app = MainActivityKt.getApp();
-                c00002.L$0 = $this4;
-                c00002.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                c00002.L$3 = function1;
-                c00002.L$4 = function2;
-                c00002.L$5 = extractedHash2;
-                c00002.label = 1;
+                c00032.L$0 = $this4;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                c00032.L$3 = function1;
+                c00032.L$4 = function2;
+                c00032.L$5 = extractedHash2;
+                c00032.label = 1;
                 obj = coroutine_suspended;
                 i = 2;
                 c = 0;
                 c2 = 1;
-                Object obj3 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00002, 4094, (Object) null);
-                c00002 = c00002;
+                Object obj3 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4094, (Object) null);
+                c00032 = c00032;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -221,23 +221,23 @@ public class AWSStream extends ExtractorApi {
                 pairArr[c2] = TuplesKt.to("r", $this4.getMainUrl());
                 formdata = MapsKt.mapOf(pairArr);
                 Requests app2 = MainActivityKt.getApp();
-                c00002.L$0 = $this4;
-                c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00002.L$3 = function4;
-                c00002.L$4 = function3;
-                c00002.L$5 = SpillingKt.nullOutSpilledVariable(referer3);
-                c00002.L$6 = doc;
-                c00002.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url);
-                c00002.L$8 = SpillingKt.nullOutSpilledVariable(header);
-                c00002.L$9 = SpillingKt.nullOutSpilledVariable(formdata);
-                c00002.label = i;
-                C00001 c00003 = c00002;
+                c00032.L$0 = $this4;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00032.L$3 = function4;
+                c00032.L$4 = function3;
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(referer3);
+                c00032.L$6 = doc;
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(header);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(formdata);
+                c00032.label = i;
+                C00031 c00033 = c00032;
                 function5 = function3;
                 function6 = function4;
                 extractedHash = referer3;
-                objPost$default = Requests.post$default(app2, m3u8Url, header, (String) null, (Map) null, (Map) null, formdata, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00003, 65500, (Object) null);
-                c00002 = c00003;
+                objPost$default = Requests.post$default(app2, m3u8Url, header, (String) null, (Map) null, (Map) null, formdata, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00033, 65500, (Object) null);
+                c00032 = c00033;
                 if (objPost$default == obj) {
                     return obj;
                 }
@@ -264,23 +264,23 @@ public class AWSStream extends ExtractorApi {
                     String name2 = $this2.getName();
                     ExtractorLinkType extractorLinkType = ExtractorLinkType.M3U8;
                     AWSStream$getUrl$2$1 aWSStream$getUrl$2$1 = new AWSStream$getUrl$2$1(null);
-                    c00002.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                    c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00002.L$3 = function7;
-                    c00002.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                    c00002.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
-                    c00002.L$6 = doc2;
-                    c00002.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
-                    c00002.L$8 = SpillingKt.nullOutSpilledVariable(header2);
-                    c00002.L$9 = SpillingKt.nullOutSpilledVariable(formdata2);
-                    c00002.L$10 = SpillingKt.nullOutSpilledVariable(response);
-                    c00002.L$11 = SpillingKt.nullOutSpilledVariable(m3u8);
-                    c00002.L$12 = function8;
-                    c00002.label = 3;
-                    C00001 c00004 = c00002;
-                    $result2 = ExtractorApiKt.newExtractorLink(name, name2, m3u8, extractorLinkType, aWSStream$getUrl$2$1, c00004);
-                    c00002 = c00004;
+                    c00032.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00032.L$3 = function7;
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
+                    c00032.L$6 = doc2;
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(header2);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(formdata2);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(response);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(m3u8);
+                    c00032.L$12 = function8;
+                    c00032.label = 3;
+                    C00031 c00034 = c00032;
+                    $result2 = ExtractorApiKt.newExtractorLink(name, name2, m3u8, extractorLinkType, aWSStream$getUrl$2$1, c00034);
+                    c00032 = c00034;
                     if ($result2 == obj) {
                         return obj;
                     }
@@ -304,24 +304,24 @@ public class AWSStream extends ExtractorApi {
                     }
                     unpacked = new JsUnpacker(extractedPack).unpack();
                     if (unpacked != null && (matchResultFind$default = Regex.find$default(new Regex("\"kind\":\\s*\"captions\"\\s*,\\s*\"file\":\\s*\"(https.*?\\.srt)"), unpacked, 0, 2, (Object) null)) != null && (groupValues = matchResultFind$default.getGroupValues()) != null && (subtitleUrl = (String) groupValues.get(1)) != null) {
-                        c00002.L$0 = SpillingKt.nullOutSpilledVariable($this3);
-                        c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                        c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                        c00002.L$3 = SpillingKt.nullOutSpilledVariable(function7);
-                        c00002.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                        c00002.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
-                        c00002.L$6 = SpillingKt.nullOutSpilledVariable(doc2);
-                        c00002.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url3);
-                        c00002.L$8 = SpillingKt.nullOutSpilledVariable(header3);
-                        c00002.L$9 = SpillingKt.nullOutSpilledVariable(formdata3);
-                        c00002.L$10 = SpillingKt.nullOutSpilledVariable(response2);
-                        c00002.L$11 = SpillingKt.nullOutSpilledVariable(m3u9);
-                        c00002.L$12 = SpillingKt.nullOutSpilledVariable(extractedPack);
-                        c00002.L$13 = SpillingKt.nullOutSpilledVariable(unpacked);
-                        c00002.L$14 = SpillingKt.nullOutSpilledVariable(subtitleUrl);
-                        c00002.L$15 = function7;
-                        c00002.label = 4;
-                        objNewSubtitleFile$default = MainAPIKt.newSubtitleFile$default("English", subtitleUrl, (Function2) null, c00002, 4, (Object) null);
+                        c00032.L$0 = SpillingKt.nullOutSpilledVariable($this3);
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(function7);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(doc2);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url3);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(header3);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(formdata3);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(response2);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(m3u9);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(extractedPack);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(unpacked);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(subtitleUrl);
+                        c00032.L$15 = function7;
+                        c00032.label = 4;
+                        objNewSubtitleFile$default = MainAPIKt.newSubtitleFile$default("English", subtitleUrl, (Function2) null, c00032, 4, (Object) null);
                         if (objNewSubtitleFile$default == obj) {
                             return obj;
                         }
@@ -341,12 +341,12 @@ public class AWSStream extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 1:
-                String extractedHash3 = (String) c00002.L$5;
-                function3 = (Function1) c00002.L$4;
-                Function1<? super SubtitleFile, Unit> function11 = (Function1) c00002.L$3;
-                String referer4 = (String) c00002.L$2;
-                String url4 = (String) c00002.L$1;
-                $this4 = (AWSStream) c00002.L$0;
+                String extractedHash3 = (String) c00032.L$5;
+                function3 = (Function1) c00032.L$4;
+                Function1<? super SubtitleFile, Unit> function11 = (Function1) c00032.L$3;
+                String referer4 = (String) c00032.L$2;
+                String url4 = (String) c00032.L$1;
+                $this4 = (AWSStream) c00032.L$0;
                 ResultKt.throwOnFailure($result2);
                 referer2 = referer4;
                 url2 = url4;
@@ -365,23 +365,23 @@ public class AWSStream extends ExtractorApi {
                 pairArr2[c2] = TuplesKt.to("r", $this4.getMainUrl());
                 formdata = MapsKt.mapOf(pairArr2);
                 Requests app3 = MainActivityKt.getApp();
-                c00002.L$0 = $this4;
-                c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00002.L$3 = function4;
-                c00002.L$4 = function3;
-                c00002.L$5 = SpillingKt.nullOutSpilledVariable(referer3);
-                c00002.L$6 = doc;
-                c00002.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url);
-                c00002.L$8 = SpillingKt.nullOutSpilledVariable(header);
-                c00002.L$9 = SpillingKt.nullOutSpilledVariable(formdata);
-                c00002.label = i;
-                C00001 c00005 = c00002;
+                c00032.L$0 = $this4;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00032.L$3 = function4;
+                c00032.L$4 = function3;
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(referer3);
+                c00032.L$6 = doc;
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(header);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(formdata);
+                c00032.label = i;
+                C00031 c00035 = c00032;
                 function5 = function3;
                 function6 = function4;
                 extractedHash = referer3;
-                objPost$default = Requests.post$default(app3, m3u8Url, header, (String) null, (Map) null, (Map) null, formdata, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00005, 65500, (Object) null);
-                c00002 = c00005;
+                objPost$default = Requests.post$default(app3, m3u8Url, header, (String) null, (Map) null, (Map) null, formdata, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00035, 65500, (Object) null);
+                c00032 = c00035;
                 if (objPost$default == obj) {
                     return obj;
                 }
@@ -402,23 +402,23 @@ public class AWSStream extends ExtractorApi {
                     String name4 = $this2.getName();
                     ExtractorLinkType extractorLinkType2 = ExtractorLinkType.M3U8;
                     AWSStream$getUrl$2$1 aWSStream$getUrl$2$2 = new AWSStream$getUrl$2$1(null);
-                    c00002.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                    c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00002.L$3 = function7;
-                    c00002.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                    c00002.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
-                    c00002.L$6 = doc2;
-                    c00002.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
-                    c00002.L$8 = SpillingKt.nullOutSpilledVariable(header2);
-                    c00002.L$9 = SpillingKt.nullOutSpilledVariable(formdata2);
-                    c00002.L$10 = SpillingKt.nullOutSpilledVariable(response);
-                    c00002.L$11 = SpillingKt.nullOutSpilledVariable(m3u8);
-                    c00002.L$12 = function8;
-                    c00002.label = 3;
-                    C00001 c00006 = c00002;
-                    $result2 = ExtractorApiKt.newExtractorLink(name3, name4, m3u8, extractorLinkType2, aWSStream$getUrl$2$2, c00006);
-                    c00002 = c00006;
+                    c00032.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00032.L$3 = function7;
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
+                    c00032.L$6 = doc2;
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(header2);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(formdata2);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(response);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(m3u8);
+                    c00032.L$12 = function8;
+                    c00032.label = 3;
+                    C00031 c00036 = c00032;
+                    $result2 = ExtractorApiKt.newExtractorLink(name3, name4, m3u8, extractorLinkType2, aWSStream$getUrl$2$2, c00036);
+                    c00032 = c00036;
                     if ($result2 == obj) {
                         return obj;
                     }
@@ -442,24 +442,24 @@ public class AWSStream extends ExtractorApi {
                     }
                     unpacked = new JsUnpacker(extractedPack).unpack();
                     if (unpacked != null) {
-                        c00002.L$0 = SpillingKt.nullOutSpilledVariable($this3);
-                        c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                        c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                        c00002.L$3 = SpillingKt.nullOutSpilledVariable(function7);
-                        c00002.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                        c00002.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
-                        c00002.L$6 = SpillingKt.nullOutSpilledVariable(doc2);
-                        c00002.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url3);
-                        c00002.L$8 = SpillingKt.nullOutSpilledVariable(header3);
-                        c00002.L$9 = SpillingKt.nullOutSpilledVariable(formdata3);
-                        c00002.L$10 = SpillingKt.nullOutSpilledVariable(response2);
-                        c00002.L$11 = SpillingKt.nullOutSpilledVariable(m3u9);
-                        c00002.L$12 = SpillingKt.nullOutSpilledVariable(extractedPack);
-                        c00002.L$13 = SpillingKt.nullOutSpilledVariable(unpacked);
-                        c00002.L$14 = SpillingKt.nullOutSpilledVariable(subtitleUrl);
-                        c00002.L$15 = function7;
-                        c00002.label = 4;
-                        objNewSubtitleFile$default = MainAPIKt.newSubtitleFile$default("English", subtitleUrl, (Function2) null, c00002, 4, (Object) null);
+                        c00032.L$0 = SpillingKt.nullOutSpilledVariable($this3);
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(function7);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(doc2);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url3);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(header3);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(formdata3);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(response2);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(m3u9);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(extractedPack);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(unpacked);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(subtitleUrl);
+                        c00032.L$15 = function7;
+                        c00032.label = 4;
+                        objNewSubtitleFile$default = MainAPIKt.newSubtitleFile$default("English", subtitleUrl, (Function2) null, c00032, 4, (Object) null);
                         if (objNewSubtitleFile$default == obj) {
                             return obj;
                         }
@@ -479,16 +479,16 @@ public class AWSStream extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 2:
-                Map formdata4 = (Map) c00002.L$9;
-                Map header5 = (Map) c00002.L$8;
-                String m3u8Url5 = (String) c00002.L$7;
-                Document doc3 = (Document) c00002.L$6;
-                String extractedHash4 = (String) c00002.L$5;
-                Function1<? super ExtractorLink, Unit> function12 = (Function1) c00002.L$4;
-                Function1<? super SubtitleFile, Unit> function13 = (Function1) c00002.L$3;
-                String referer5 = (String) c00002.L$2;
-                String url5 = (String) c00002.L$1;
-                AWSStream $this5 = (AWSStream) c00002.L$0;
+                Map formdata4 = (Map) c00032.L$9;
+                Map header5 = (Map) c00032.L$8;
+                String m3u8Url5 = (String) c00032.L$7;
+                Document doc3 = (Document) c00032.L$6;
+                String extractedHash4 = (String) c00032.L$5;
+                Function1<? super ExtractorLink, Unit> function12 = (Function1) c00032.L$4;
+                Function1<? super SubtitleFile, Unit> function13 = (Function1) c00032.L$3;
+                String referer5 = (String) c00032.L$2;
+                String url5 = (String) c00032.L$1;
+                AWSStream $this5 = (AWSStream) c00032.L$0;
                 ResultKt.throwOnFailure($result2);
                 m3u8Url2 = m3u8Url5;
                 doc2 = doc3;
@@ -512,23 +512,23 @@ public class AWSStream extends ExtractorApi {
                     String name6 = $this2.getName();
                     ExtractorLinkType extractorLinkType3 = ExtractorLinkType.M3U8;
                     AWSStream$getUrl$2$1 aWSStream$getUrl$2$3 = new AWSStream$getUrl$2$1(null);
-                    c00002.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                    c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00002.L$3 = function7;
-                    c00002.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                    c00002.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
-                    c00002.L$6 = doc2;
-                    c00002.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
-                    c00002.L$8 = SpillingKt.nullOutSpilledVariable(header2);
-                    c00002.L$9 = SpillingKt.nullOutSpilledVariable(formdata2);
-                    c00002.L$10 = SpillingKt.nullOutSpilledVariable(response);
-                    c00002.L$11 = SpillingKt.nullOutSpilledVariable(m3u8);
-                    c00002.L$12 = function8;
-                    c00002.label = 3;
-                    C00001 c00007 = c00002;
-                    $result2 = ExtractorApiKt.newExtractorLink(name5, name6, m3u8, extractorLinkType3, aWSStream$getUrl$2$3, c00007);
-                    c00002 = c00007;
+                    c00032.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00032.L$3 = function7;
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
+                    c00032.L$6 = doc2;
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url2);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(header2);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(formdata2);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(response);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(m3u8);
+                    c00032.L$12 = function8;
+                    c00032.label = 3;
+                    C00031 c00037 = c00032;
+                    $result2 = ExtractorApiKt.newExtractorLink(name5, name6, m3u8, extractorLinkType3, aWSStream$getUrl$2$3, c00037);
+                    c00032 = c00037;
                     if ($result2 == obj) {
                         return obj;
                     }
@@ -552,24 +552,24 @@ public class AWSStream extends ExtractorApi {
                     }
                     unpacked = new JsUnpacker(extractedPack).unpack();
                     if (unpacked != null) {
-                        c00002.L$0 = SpillingKt.nullOutSpilledVariable($this3);
-                        c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                        c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                        c00002.L$3 = SpillingKt.nullOutSpilledVariable(function7);
-                        c00002.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                        c00002.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
-                        c00002.L$6 = SpillingKt.nullOutSpilledVariable(doc2);
-                        c00002.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url3);
-                        c00002.L$8 = SpillingKt.nullOutSpilledVariable(header3);
-                        c00002.L$9 = SpillingKt.nullOutSpilledVariable(formdata3);
-                        c00002.L$10 = SpillingKt.nullOutSpilledVariable(response2);
-                        c00002.L$11 = SpillingKt.nullOutSpilledVariable(m3u9);
-                        c00002.L$12 = SpillingKt.nullOutSpilledVariable(extractedPack);
-                        c00002.L$13 = SpillingKt.nullOutSpilledVariable(unpacked);
-                        c00002.L$14 = SpillingKt.nullOutSpilledVariable(subtitleUrl);
-                        c00002.L$15 = function7;
-                        c00002.label = 4;
-                        objNewSubtitleFile$default = MainAPIKt.newSubtitleFile$default("English", subtitleUrl, (Function2) null, c00002, 4, (Object) null);
+                        c00032.L$0 = SpillingKt.nullOutSpilledVariable($this3);
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(function7);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(doc2);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url3);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(header3);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(formdata3);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(response2);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(m3u9);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(extractedPack);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(unpacked);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(subtitleUrl);
+                        c00032.L$15 = function7;
+                        c00032.label = 4;
+                        objNewSubtitleFile$default = MainAPIKt.newSubtitleFile$default("English", subtitleUrl, (Function2) null, c00032, 4, (Object) null);
                         if (objNewSubtitleFile$default == obj) {
                             return obj;
                         }
@@ -589,19 +589,19 @@ public class AWSStream extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 3:
-                function9 = (Function1) c00002.L$12;
-                m3u9 = (String) c00002.L$11;
-                Response response3 = (Response) c00002.L$10;
-                Map formdata5 = (Map) c00002.L$9;
-                Map header6 = (Map) c00002.L$8;
-                String m3u8Url6 = (String) c00002.L$7;
-                Document doc4 = (Document) c00002.L$6;
-                String extractedHash5 = (String) c00002.L$5;
-                Function1<? super ExtractorLink, Unit> function14 = (Function1) c00002.L$4;
-                Function1<? super SubtitleFile, Unit> function15 = (Function1) c00002.L$3;
-                String referer6 = (String) c00002.L$2;
-                String url6 = (String) c00002.L$1;
-                $this3 = (AWSStream) c00002.L$0;
+                function9 = (Function1) c00032.L$12;
+                m3u9 = (String) c00032.L$11;
+                Response response3 = (Response) c00032.L$10;
+                Map formdata5 = (Map) c00032.L$9;
+                Map header6 = (Map) c00032.L$8;
+                String m3u8Url6 = (String) c00032.L$7;
+                Document doc4 = (Document) c00032.L$6;
+                String extractedHash5 = (String) c00032.L$5;
+                Function1<? super ExtractorLink, Unit> function14 = (Function1) c00032.L$4;
+                Function1<? super SubtitleFile, Unit> function15 = (Function1) c00032.L$3;
+                String referer6 = (String) c00032.L$2;
+                String url6 = (String) c00032.L$1;
+                $this3 = (AWSStream) c00032.L$0;
                 ResultKt.throwOnFailure($result2);
                 url2 = url6;
                 obj = coroutine_suspended;
@@ -626,24 +626,24 @@ public class AWSStream extends ExtractorApi {
                 }
                 unpacked = new JsUnpacker(extractedPack).unpack();
                 if (unpacked != null) {
-                    c00002.L$0 = SpillingKt.nullOutSpilledVariable($this3);
-                    c00002.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00002.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00002.L$3 = SpillingKt.nullOutSpilledVariable(function7);
-                    c00002.L$4 = SpillingKt.nullOutSpilledVariable(function8);
-                    c00002.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
-                    c00002.L$6 = SpillingKt.nullOutSpilledVariable(doc2);
-                    c00002.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url3);
-                    c00002.L$8 = SpillingKt.nullOutSpilledVariable(header3);
-                    c00002.L$9 = SpillingKt.nullOutSpilledVariable(formdata3);
-                    c00002.L$10 = SpillingKt.nullOutSpilledVariable(response2);
-                    c00002.L$11 = SpillingKt.nullOutSpilledVariable(m3u9);
-                    c00002.L$12 = SpillingKt.nullOutSpilledVariable(extractedPack);
-                    c00002.L$13 = SpillingKt.nullOutSpilledVariable(unpacked);
-                    c00002.L$14 = SpillingKt.nullOutSpilledVariable(subtitleUrl);
-                    c00002.L$15 = function7;
-                    c00002.label = 4;
-                    objNewSubtitleFile$default = MainAPIKt.newSubtitleFile$default("English", subtitleUrl, (Function2) null, c00002, 4, (Object) null);
+                    c00032.L$0 = SpillingKt.nullOutSpilledVariable($this3);
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(function7);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(extractedHash);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(doc2);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(m3u8Url3);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(header3);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(formdata3);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(response2);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(m3u9);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(extractedPack);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(unpacked);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(subtitleUrl);
+                    c00032.L$15 = function7;
+                    c00032.label = 4;
+                    objNewSubtitleFile$default = MainAPIKt.newSubtitleFile$default("English", subtitleUrl, (Function2) null, c00032, 4, (Object) null);
                     if (objNewSubtitleFile$default == obj) {
                         return obj;
                     }
@@ -663,16 +663,16 @@ public class AWSStream extends ExtractorApi {
                 return Unit.INSTANCE;
             case 4:
                 subtitleUrl2 = null;
-                function10 = (Function1) c00002.L$15;
-                unpacked2 = (String) c00002.L$13;
-                m3u10 = (String) c00002.L$12;
-                Object m3u11 = (String) c00002.L$11;
-                response2 = (Response) c00002.L$10;
-                formdata3 = (Map) c00002.L$9;
-                Map header7 = (Map) c00002.L$8;
-                String m3u8Url7 = (String) c00002.L$7;
-                String url7 = (String) c00002.L$1;
-                $this3 = (AWSStream) c00002.L$0;
+                function10 = (Function1) c00032.L$15;
+                unpacked2 = (String) c00032.L$13;
+                m3u10 = (String) c00032.L$12;
+                Object m3u11 = (String) c00032.L$11;
+                response2 = (Response) c00032.L$10;
+                formdata3 = (Map) c00032.L$9;
+                Map header7 = (Map) c00032.L$8;
+                String m3u8Url7 = (String) c00032.L$7;
+                String url7 = (String) c00032.L$1;
+                $this3 = (AWSStream) c00032.L$0;
                 ResultKt.throwOnFailure($result2);
                 url3 = url7;
                 m3u8Url4 = m3u8Url7;
@@ -797,7 +797,7 @@ public class AWSStream extends ExtractorApi {
         }
 
         public int hashCode() {
-            return (((((((((((AWSStream$Response$$ExternalSyntheticBackport0.m0m(this.hls) * 31) + this.videoImage.hashCode()) * 31) + this.videoSource.hashCode()) * 31) + this.securedLink.hashCode()) * 31) + this.downloadLinks.hashCode()) * 31) + this.attachmentLinks.hashCode()) * 31) + this.ck.hashCode();
+            return (((((((((((AWSStream$Response$$ExternalSyntheticBackport0.m2m(this.hls) * 31) + this.videoImage.hashCode()) * 31) + this.videoSource.hashCode()) * 31) + this.securedLink.hashCode()) * 31) + this.downloadLinks.hashCode()) * 31) + this.attachmentLinks.hashCode()) * 31) + this.ck.hashCode();
         }
 
         @NotNull

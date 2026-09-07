@@ -4,7 +4,7 @@ package nepali.stream.decoded.animedubhindi
 object PluginMetadata {
     const val name: String = "Animedubhindi"
     const val originalPluginClass: String = "com.animedubhindi.AnimedubhindiProvider"
-    const val version: Int = 5
+    const val version: Int = 7
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

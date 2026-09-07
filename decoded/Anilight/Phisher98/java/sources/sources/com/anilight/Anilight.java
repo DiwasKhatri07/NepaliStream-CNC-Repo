@@ -25,6 +25,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -66,7 +67,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: Anilight.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Anilight/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0016\u0018\u00002\u00020\u0001:\u00149:;<=>?@ABCDEFGHIJKLB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\u001e\u0010)\u001a\n\u0012\u0004\u0012\u00020'\u0018\u00010\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0016\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+JF\u0010/\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u000e2\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0096@¢\u0006\u0002\u00108R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006M"}, d2 = {"Lcom/anilight/Anilight;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/anilight/Anilight$Media;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "LinkData", "ProviderInfo", "FilterResponse", "PageInfo", "Media", "Title", "CoverImage", "DetailResponse", "WatchResponse", "Episode", "Servers", "Provider", "SourcesResponse", "Source", "Track", "Tmdb", "Logos", "AniZipResponse", "AniZipEpisode", "AniZipMappings", "Anilight"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAnilight.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anilight.kt\ncom/anilight/Anilight\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,303:1\n73#2,5:304\n73#2,5:313\n73#2,5:322\n73#2,5:327\n73#2,5:332\n1739#3:309\n1814#3,3:310\n1739#3:318\n1814#3,3:319\n1795#3,10:337\n2068#3:347\n2069#3:349\n1805#3:350\n1795#3,10:351\n2068#3:361\n2069#3:363\n1805#3:364\n1739#3:365\n1814#3,3:366\n1739#3:369\n1814#3,3:370\n1#4:348\n1#4:362\n1#4:374\n1#4:392\n63#5:373\n64#5,15:375\n50#6:390\n43#6:391\n*S KotlinDebug\n*F\n+ 1 Anilight.kt\ncom/anilight/Anilight\n*L\n34#1:304,5\n55#1:313,5\n60#1:322,5\n68#1:327,5\n71#1:332,5\n35#1:309\n35#1:310,3\n56#1:318\n56#1:319,3\n74#1:337,10\n74#1:347\n74#1:349\n74#1:350\n77#1:351,10\n77#1:361\n77#1:363\n77#1:364\n81#1:365\n81#1:366,3\n96#1:369\n96#1:370,3\n74#1:348\n77#1:362\n131#1:374\n131#1:373\n131#1:375,15\n131#1:390\n131#1:391\n*E\n"})
+@SourceDebugExtension({"SMAP\nAnilight.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anilight.kt\ncom/anilight/Anilight\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,304:1\n73#2,5:305\n73#2,5:314\n73#2,5:323\n73#2,5:328\n73#2,5:333\n1739#3:310\n1814#3,3:311\n1739#3:319\n1814#3,3:320\n1795#3,10:338\n2068#3:348\n2069#3:350\n1805#3:351\n1795#3,10:352\n2068#3:362\n2069#3:364\n1805#3:365\n1739#3:366\n1814#3,3:367\n1739#3:370\n1814#3,3:371\n1#4:349\n1#4:363\n1#4:375\n1#4:393\n63#5:374\n64#5,15:376\n50#6:391\n43#6:392\n*S KotlinDebug\n*F\n+ 1 Anilight.kt\ncom/anilight/Anilight\n*L\n35#1:305,5\n56#1:314,5\n61#1:323,5\n69#1:328,5\n72#1:333,5\n36#1:310\n36#1:311,3\n57#1:319\n57#1:320,3\n75#1:338,10\n75#1:348\n75#1:350\n75#1:351\n78#1:352,10\n78#1:362\n78#1:364\n78#1:365\n82#1:366\n82#1:367,3\n97#1:370\n97#1:371,3\n75#1:349\n78#1:363\n132#1:375\n132#1:374\n132#1:376,15\n132#1:391\n132#1:392\n*E\n"})
 public final class Anilight extends MainAPI {
 
     @NotNull
@@ -89,7 +90,7 @@ public final class Anilight extends MainAPI {
     /* JADX INFO: renamed from: com.anilight.Anilight$getMainPage$1 */
     /* JADX INFO: compiled from: Anilight.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anilight.Anilight", f = "Anilight.kt", i = {0, 0, 0}, l = {34}, m = "getMainPage", n = {"request", "url", "page"}, nl = {304}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.anilight.Anilight", f = "Anilight.kt", i = {0, 0, 0}, l = {35}, m = "getMainPage", n = {"request", "url", "page"}, nl = {305}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -112,7 +113,7 @@ public final class Anilight extends MainAPI {
     /* JADX INFO: renamed from: com.anilight.Anilight$load$1 */
     /* JADX INFO: compiled from: Anilight.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anilight.Anilight", f = "Anilight.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {60, 68, 71, 111}, m = "load", n = {"url", "url", "res", "title", "posterUrl", "backgroundUrl", "description", "logoUrl", "watchUrl", "url", "res", "title", "posterUrl", "backgroundUrl", "description", "logoUrl", "watchUrl", "watchRes", "it", "url", "res", "title", "posterUrl", "backgroundUrl", "description", "logoUrl", "watchUrl", "watchRes", "anizipRes", "dubProviders", "subProviders", "subEpisodes", "dubEpisodes"}, nl = {304, 309, 314, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13"}, v = 2)
+    @DebugMetadata(c = "com.anilight.Anilight", f = "Anilight.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {61, 69, 72, 112}, m = "load", n = {"url", "url", "res", "title", "posterUrl", "backgroundUrl", "description", "logoUrl", "watchUrl", "url", "res", "title", "posterUrl", "backgroundUrl", "description", "logoUrl", "watchUrl", "watchRes", "it", "url", "res", "title", "posterUrl", "backgroundUrl", "description", "logoUrl", "watchUrl", "watchRes", "anizipRes", "dubProviders", "subProviders", "subEpisodes", "dubEpisodes"}, nl = {305, 310, 315, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -147,7 +148,7 @@ public final class Anilight extends MainAPI {
     /* JADX INFO: renamed from: com.anilight.Anilight$loadLinks$1 */
     /* JADX INFO: compiled from: Anilight.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anilight.Anilight", f = "Anilight.kt", i = {0, 0, 0, 0, 0}, l = {133}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parsedData", "isCasting"}, nl = {166}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.anilight.Anilight", f = "Anilight.kt", i = {0, 0, 0, 0, 0}, l = {134}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parsedData", "isCasting"}, nl = {167}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -172,7 +173,7 @@ public final class Anilight extends MainAPI {
     /* JADX INFO: renamed from: com.anilight.Anilight$search$1 */
     /* JADX INFO: compiled from: Anilight.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anilight.Anilight", f = "Anilight.kt", i = {0, 0}, l = {55}, m = "search", n = {"query", "url"}, nl = {304}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.anilight.Anilight", f = "Anilight.kt", i = {0, 0}, l = {56}, m = "search", n = {"query", "url"}, nl = {305}, s = {"L$0", "L$1"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -259,6 +260,7 @@ public final class Anilight extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String url = "https://api.anilight.live/api/filter?page=" + page + '&' + request.getData();
                 Requests app = MainActivityKt.getApp();
                 c00001.L$0 = request;
@@ -1804,7 +1806,7 @@ public final class Anilight extends MainAPI {
     /* JADX INFO: compiled from: Anilight.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.anilight.Anilight$load$2", f = "Anilight.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nAnilight.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anilight.kt\ncom/anilight/Anilight$load$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,303:1\n1#2:304\n*E\n"})
+    @SourceDebugExtension({"SMAP\nAnilight.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anilight.kt\ncom/anilight/Anilight$load$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,304:1\n1#2:305\n*E\n"})
     static final class C00022 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ AniZipResponse $anizipRes;
         final /* synthetic */ String $backgroundUrl;
@@ -1987,8 +1989,8 @@ public final class Anilight extends MainAPI {
     /* JADX INFO: renamed from: com.anilight.Anilight$loadLinks$2 */
     /* JADX INFO: compiled from: Anilight.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "provider", "Lcom/anilight/Anilight$ProviderInfo;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anilight.Anilight$loadLinks$2", f = "Anilight.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2}, l = {135, 140, 152}, m = "invokeSuspend", n = {"provider", "url", "provider", "url", "res", "$this$forEach$iv", "element$iv", "track", "provider", "url", "res", "$this$forEach$iv", "element$iv", "source", "nameStr"}, nl = {304, 139, 151}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$7", "L$8", "L$10"}, v = 2)
-    @SourceDebugExtension({"SMAP\nAnilight.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anilight.kt\ncom/anilight/Anilight$loadLinks$2\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,303:1\n73#2,5:304\n2068#3,2:309\n2068#3:311\n2069#3:313\n1#4:312\n*S KotlinDebug\n*F\n+ 1 Anilight.kt\ncom/anilight/Anilight$loadLinks$2\n*L\n135#1:304,5\n137#1:309,2\n148#1:311\n148#1:313\n*E\n"})
+    @DebugMetadata(c = "com.anilight.Anilight$loadLinks$2", f = "Anilight.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2}, l = {136, 141, 153}, m = "invokeSuspend", n = {"provider", "url", "provider", "url", "res", "$this$forEach$iv", "element$iv", "track", "provider", "url", "res", "$this$forEach$iv", "element$iv", "source", "nameStr"}, nl = {305, 140, 152}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$7", "L$8", "L$10"}, v = 2)
+    @SourceDebugExtension({"SMAP\nAnilight.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anilight.kt\ncom/anilight/Anilight$loadLinks$2\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,304:1\n73#2,5:305\n2068#3,2:310\n2068#3:312\n2069#3:314\n1#4:313\n*S KotlinDebug\n*F\n+ 1 Anilight.kt\ncom/anilight/Anilight$loadLinks$2\n*L\n136#1:305,5\n138#1:310,2\n149#1:312\n149#1:314\n*E\n"})
     static final class C00042 extends SuspendLambda implements Function2<ProviderInfo, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ LinkData $parsedData;

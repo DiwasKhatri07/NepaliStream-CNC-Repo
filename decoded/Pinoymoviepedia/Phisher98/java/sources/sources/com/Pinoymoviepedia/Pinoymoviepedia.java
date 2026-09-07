@@ -20,6 +20,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -57,7 +58,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Pinoymoviepedia.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Pinoymoviepedia/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0016\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\u0010\u0010&\u001a\u00020\u00052\u0006\u0010'\u001a\u00020\u0005H\u0002J\u000e\u0010(\u001a\u0004\u0018\u00010)*\u00020*H\u0002J\u001c\u0010+\u001a\b\u0012\u0004\u0012\u00020)0\u001c2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-J\u0016\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-JF\u00101\u001a\u00020\u000e2\u0006\u00102\u001a\u00020\u00052\u0006\u00103\u001a\u00020\u000e2\u0012\u00104\u001a\u000e\u0012\u0004\u0012\u000206\u0012\u0004\u0012\u000207052\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020705H\u0096@¢\u0006\u0002\u0010:J\u000e\u0010;\u001a\u0004\u0018\u00010\u0005*\u00020*H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R \u0010\u0011\u001a\b\u0012\u0004\u0012\u00020\u00130\u0012X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u001a\u0010\u0018\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0019\u0010\u0007\"\u0004\b\u001a\u0010\tR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006<"}, d2 = {"Lcom/Pinoymoviepedia/Pinoymoviepedia;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "setSupportedTypes", "(Ljava/util/Set;)V", "lang", "getLang", "setLang", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getProperLink", "uri", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getImageAttr", "Pinoymoviepedia"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nPinoymoviepedia.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pinoymoviepedia.kt\ncom/Pinoymoviepedia/Pinoymoviepedia\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,158:1\n1795#2,10:159\n2068#2:169\n2069#2:171\n1805#2:172\n1739#2:173\n1814#2,3:174\n1#3:170\n*S KotlinDebug\n*F\n+ 1 Pinoymoviepedia.kt\ncom/Pinoymoviepedia/Pinoymoviepedia\n*L\n37#1:159,10\n37#1:169\n37#1:171\n37#1:172\n82#1:173\n82#1:174,3\n37#1:170\n*E\n"})
+@SourceDebugExtension({"SMAP\nPinoymoviepedia.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pinoymoviepedia.kt\ncom/Pinoymoviepedia/Pinoymoviepedia\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,159:1\n1795#2,10:160\n2068#2:170\n2069#2:172\n1805#2:173\n1739#2:174\n1814#2,3:175\n1#3:171\n*S KotlinDebug\n*F\n+ 1 Pinoymoviepedia.kt\ncom/Pinoymoviepedia/Pinoymoviepedia\n*L\n38#1:160,10\n38#1:170\n38#1:172\n38#1:173\n83#1:174\n83#1:175,3\n38#1:171\n*E\n"})
 public class Pinoymoviepedia extends MainAPI {
 
     @NotNull
@@ -79,7 +80,7 @@ public class Pinoymoviepedia extends MainAPI {
     /* JADX INFO: renamed from: com.Pinoymoviepedia.Pinoymoviepedia$getMainPage$1 */
     /* JADX INFO: compiled from: Pinoymoviepedia.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pinoymoviepedia.Pinoymoviepedia", f = "Pinoymoviepedia.kt", i = {0, 0, 0, 0}, l = {35}, m = "getMainPage$suspendImpl", n = {"$this", "request", "url", "page"}, nl = {37}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Pinoymoviepedia.Pinoymoviepedia", f = "Pinoymoviepedia.kt", i = {0, 0, 0, 0}, l = {36}, m = "getMainPage$suspendImpl", n = {"$this", "request", "url", "page"}, nl = {38}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -103,7 +104,7 @@ public class Pinoymoviepedia extends MainAPI {
     /* JADX INFO: renamed from: com.Pinoymoviepedia.Pinoymoviepedia$load$1 */
     /* JADX INFO: compiled from: Pinoymoviepedia.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pinoymoviepedia.Pinoymoviepedia", f = "Pinoymoviepedia.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {94, 122}, m = "load$suspendImpl", n = {"$this", "url", "$this", "url", "request", "document", "title", "posterUrl", "description"}, nl = {95, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
+    @DebugMetadata(c = "com.Pinoymoviepedia.Pinoymoviepedia", f = "Pinoymoviepedia.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {95, 123}, m = "load$suspendImpl", n = {"$this", "url", "$this", "url", "request", "document", "title", "posterUrl", "description"}, nl = {96, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -130,7 +131,7 @@ public class Pinoymoviepedia extends MainAPI {
     /* JADX INFO: renamed from: com.Pinoymoviepedia.Pinoymoviepedia$loadLinks$1 */
     /* JADX INFO: compiled from: Pinoymoviepedia.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pinoymoviepedia.Pinoymoviepedia", f = "Pinoymoviepedia.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {136, 136}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "isCasting", "$this", "data", "subtitleCallback", "callback", "isCasting"}, nl = {136, 146}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Pinoymoviepedia.Pinoymoviepedia", f = "Pinoymoviepedia.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {137, 137}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "isCasting", "$this", "data", "subtitleCallback", "callback", "isCasting"}, nl = {137, 147}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -155,7 +156,7 @@ public class Pinoymoviepedia extends MainAPI {
     /* JADX INFO: renamed from: com.Pinoymoviepedia.Pinoymoviepedia$search$1 */
     /* JADX INFO: compiled from: Pinoymoviepedia.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pinoymoviepedia.Pinoymoviepedia", f = "Pinoymoviepedia.kt", i = {0, 0}, l = {81}, m = "search$suspendImpl", n = {"$this", "query"}, nl = {82}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.Pinoymoviepedia.Pinoymoviepedia", f = "Pinoymoviepedia.kt", i = {0, 0}, l = {82}, m = "search$suspendImpl", n = {"$this", "query"}, nl = {83}, s = {"L$0", "L$1"}, v = 2)
     static final class C00101 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -262,6 +263,7 @@ public class Pinoymoviepedia extends MainAPI {
         switch (c00051.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow($this2.getName());
                 if (page2 == 1) {
                     sb = new StringBuilder();
                     sbAppend = sb.append($this2.getMainUrl()).append('/').append(request.getData());
@@ -654,7 +656,7 @@ public class Pinoymoviepedia extends MainAPI {
     /* JADX INFO: renamed from: com.Pinoymoviepedia.Pinoymoviepedia$loadLinks$2 */
     /* JADX INFO: compiled from: Pinoymoviepedia.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "it", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Pinoymoviepedia.Pinoymoviepedia$loadLinks$2", f = "Pinoymoviepedia.kt", i = {0, 0}, l = {139}, m = "invokeSuspend", n = {"it", "href"}, nl = {144}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.Pinoymoviepedia.Pinoymoviepedia$loadLinks$2", f = "Pinoymoviepedia.kt", i = {0, 0}, l = {140}, m = "invokeSuspend", n = {"it", "href"}, nl = {145}, s = {"L$0", "L$1"}, v = 2)
     static final class C00092 extends SuspendLambda implements Function2<Element, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

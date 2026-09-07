@@ -29,6 +29,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -77,7 +78,7 @@ import org.jsoup.select.Elements;
 /* JADX INFO: compiled from: hindmoviez.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Hindmoviez/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 =2\u00020\u0001:\u0001=B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010 \u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J\f\u0010(\u001a\u00020)*\u00020*H\u0002J\u001e\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020\u00052\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010.J\u0016\u0010/\u001a\u0002002\u0006\u00101\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00102JF\u00103\u001a\u00020\u00112\u0006\u00104\u001a\u00020\u00052\u0006\u00105\u001a\u00020\u00112\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u000209072\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020;\u0012\u0004\u0012\u00020907H\u0096@¢\u0006\u0002\u0010<R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u0014\u0010\u0010\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013R\u0014\u0010\u0016\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0013R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!¨\u0006>"}, d2 = {"Lcom/hindmoviez/Hindmoviez;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "hasDownloadSupport", "getHasDownloadSupport", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "Hindmoviez"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,454:1\n1795#2,10:455\n2068#2:465\n2069#2:467\n1805#2:468\n1795#2,10:470\n2068#2:480\n2069#2:482\n1805#2:483\n2068#2:484\n1739#2:486\n1814#2,3:487\n2069#2:490\n296#2,2:491\n296#2,2:516\n296#2,2:541\n2068#2:589\n1795#2,10:590\n2068#2:600\n2069#2:602\n1805#2:603\n2068#2:604\n2069#2:612\n2069#2:613\n1739#2:614\n1814#2,3:615\n296#2,2:644\n1#3:466\n1#3:469\n1#3:481\n1#3:485\n1#3:496\n1#3:521\n1#3:546\n1#3:569\n1#3:601\n1#3:621\n1#3:650\n1#3:673\n1#3:693\n93#4,2:493\n63#4:495\n64#4,15:497\n95#4,2:514\n93#4,2:518\n63#4:520\n64#4,15:522\n95#4,2:539\n93#4,2:543\n63#4:545\n64#4,15:547\n95#4,2:564\n93#4,2:566\n63#4:568\n64#4,15:570\n95#4,2:587\n93#4,2:618\n63#4:620\n64#4,15:622\n95#4,2:639\n93#4,2:647\n63#4:649\n64#4,15:651\n95#4,2:668\n93#4,2:670\n63#4:672\n64#4,15:674\n95#4,2:691\n50#5:512\n43#5:513\n50#5:537\n43#5:538\n50#5:562\n43#5:563\n50#5:585\n43#5:586\n50#5:637\n43#5:638\n50#5:666\n43#5:667\n50#5:689\n43#5:690\n460#6,7:605\n129#7:641\n158#7,2:642\n160#7:646\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez\n*L\n85#1:455,10\n85#1:465\n85#1:467\n85#1:468\n105#1:470,10\n105#1:480\n105#1:482\n105#1:483\n132#1:484\n154#1:486\n154#1:487,3\n132#1:490\n162#1:491,2\n234#1:516,2\n238#1:541,2\n257#1:589\n275#1:590,10\n275#1:600\n275#1:602\n275#1:603\n295#1:604\n295#1:612\n257#1:613\n302#1:614\n302#1:615,3\n319#1:644,2\n85#1:466\n105#1:481\n233#1:496\n237#1:521\n243#1:546\n247#1:569\n275#1:601\n314#1:621\n350#1:650\n376#1:673\n233#1:493,2\n233#1:495\n233#1:497,15\n233#1:514,2\n237#1:518,2\n237#1:520\n237#1:522,15\n237#1:539,2\n243#1:543,2\n243#1:545\n243#1:547,15\n243#1:564,2\n247#1:566,2\n247#1:568\n247#1:570,15\n247#1:587,2\n314#1:618,2\n314#1:620\n314#1:622,15\n314#1:639,2\n350#1:647,2\n350#1:649\n350#1:651,15\n350#1:668,2\n376#1:670,2\n376#1:672\n376#1:674,15\n376#1:691,2\n233#1:512\n233#1:513\n237#1:537\n237#1:538\n243#1:562\n243#1:563\n247#1:585\n247#1:586\n314#1:637\n314#1:638\n350#1:666\n350#1:667\n376#1:689\n376#1:690\n297#1:605,7\n316#1:641\n316#1:642,2\n316#1:646\n*E\n"})
+@SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,455:1\n1795#2,10:456\n2068#2:466\n2069#2:468\n1805#2:469\n1795#2,10:471\n2068#2:481\n2069#2:483\n1805#2:484\n2068#2:485\n1739#2:487\n1814#2,3:488\n2069#2:491\n296#2,2:492\n296#2,2:517\n296#2,2:542\n2068#2:590\n1795#2,10:591\n2068#2:601\n2069#2:603\n1805#2:604\n2068#2:605\n2069#2:613\n2069#2:614\n1739#2:615\n1814#2,3:616\n296#2,2:645\n1#3:467\n1#3:470\n1#3:482\n1#3:486\n1#3:497\n1#3:522\n1#3:547\n1#3:570\n1#3:602\n1#3:622\n1#3:651\n1#3:674\n1#3:694\n93#4,2:494\n63#4:496\n64#4,15:498\n95#4,2:515\n93#4,2:519\n63#4:521\n64#4,15:523\n95#4,2:540\n93#4,2:544\n63#4:546\n64#4,15:548\n95#4,2:565\n93#4,2:567\n63#4:569\n64#4,15:571\n95#4,2:588\n93#4,2:619\n63#4:621\n64#4,15:623\n95#4,2:640\n93#4,2:648\n63#4:650\n64#4,15:652\n95#4,2:669\n93#4,2:671\n63#4:673\n64#4,15:675\n95#4,2:692\n50#5:513\n43#5:514\n50#5:538\n43#5:539\n50#5:563\n43#5:564\n50#5:586\n43#5:587\n50#5:638\n43#5:639\n50#5:667\n43#5:668\n50#5:690\n43#5:691\n460#6,7:606\n129#7:642\n158#7,2:643\n160#7:647\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez\n*L\n86#1:456,10\n86#1:466\n86#1:468\n86#1:469\n106#1:471,10\n106#1:481\n106#1:483\n106#1:484\n133#1:485\n155#1:487\n155#1:488,3\n133#1:491\n163#1:492,2\n235#1:517,2\n239#1:542,2\n258#1:590\n276#1:591,10\n276#1:601\n276#1:603\n276#1:604\n296#1:605\n296#1:613\n258#1:614\n303#1:615\n303#1:616,3\n320#1:645,2\n86#1:467\n106#1:482\n234#1:497\n238#1:522\n244#1:547\n248#1:570\n276#1:602\n315#1:622\n351#1:651\n377#1:674\n234#1:494,2\n234#1:496\n234#1:498,15\n234#1:515,2\n238#1:519,2\n238#1:521\n238#1:523,15\n238#1:540,2\n244#1:544,2\n244#1:546\n244#1:548,15\n244#1:565,2\n248#1:567,2\n248#1:569\n248#1:571,15\n248#1:588,2\n315#1:619,2\n315#1:621\n315#1:623,15\n315#1:640,2\n351#1:648,2\n351#1:650\n351#1:652,15\n351#1:669,2\n377#1:671,2\n377#1:673\n377#1:675,15\n377#1:692,2\n234#1:513\n234#1:514\n238#1:538\n238#1:539\n244#1:563\n244#1:564\n248#1:586\n248#1:587\n315#1:638\n315#1:639\n351#1:667\n351#1:668\n377#1:690\n377#1:691\n298#1:606,7\n317#1:642\n317#1:643,2\n317#1:647\n*E\n"})
 public final class Hindmoviez extends MainAPI {
 
     @NotNull
@@ -110,7 +111,7 @@ public final class Hindmoviez extends MainAPI {
     /* JADX INFO: renamed from: com.hindmoviez.Hindmoviez$getMainPage$1 */
     /* JADX INFO: compiled from: hindmoviez.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.hindmoviez.Hindmoviez", f = "hindmoviez.kt", i = {0, 0, 0, 1, 1, 1, 1}, l = {74, 77}, m = "getMainPage", n = {"request", "url", "page", "request", "url", "response", "page"}, nl = {75, 84}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.hindmoviez.Hindmoviez", f = "hindmoviez.kt", i = {0, 0, 0, 1, 1, 1, 1}, l = {75, 78}, m = "getMainPage", n = {"request", "url", "page", "request", "url", "response", "page"}, nl = {76, 85}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -134,7 +135,7 @@ public final class Hindmoviez extends MainAPI {
     /* JADX INFO: renamed from: com.hindmoviez.Hindmoviez$load$1 */
     /* JADX INFO: compiled from: hindmoviez.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.hindmoviez.Hindmoviez", f = "hindmoviez.kt", i = {0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10}, l = {111, 116, 175, 190, 199, 226, 274, 279, 305, 332, 352}, m = "load", n = {"url", "url", "response", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "id", "$this$load_u24lambda_u243_u240", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "it", "tmdbmetatype", "$this$load_u24lambda_u244_u240", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "id", "$this$load_u24lambda_u245_u240", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "tmdbDetail", "logoUrl", "episodeUrlMap", "$this$forEach$iv", "element$iv", "h3", "p", "episodeListUrl", "seasonNumber", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "tmdbDetail", "logoUrl", "episodeUrlMap", "$this$forEach$iv", "element$iv", "h3", "p", "episodeListUrl", "episodeDoc", "ajaxUrl", "seasonNumber", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "tmdbDetail", "logoUrl", "episodeUrlMap", "seasonNumbers", "tmdbSeasonMap", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "tmdbDetail", "logoUrl", "episodeUrlMap", "seasonNumbers", "tmdbSeasonMap", "tvDetail", "episodes", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "tmdbDetail", "logoUrl", "movieDetail"}, nl = {113, 122, 179, 193, 217, 228, 275, 295, 314, 350, -1}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$26", "L$27", "L$28", "L$29", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23"}, v = 2)
+    @DebugMetadata(c = "com.hindmoviez.Hindmoviez", f = "hindmoviez.kt", i = {0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10}, l = {112, 117, 176, 191, 200, 227, 275, 280, 306, 333, 353}, m = "load", n = {"url", "url", "response", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "id", "$this$load_u24lambda_u243_u240", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "it", "tmdbmetatype", "$this$load_u24lambda_u244_u240", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "id", "$this$load_u24lambda_u245_u240", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "tmdbDetail", "logoUrl", "episodeUrlMap", "$this$forEach$iv", "element$iv", "h3", "p", "episodeListUrl", "seasonNumber", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "tmdbDetail", "logoUrl", "episodeUrlMap", "$this$forEach$iv", "element$iv", "h3", "p", "episodeListUrl", "episodeDoc", "ajaxUrl", "seasonNumber", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "tmdbDetail", "logoUrl", "episodeUrlMap", "seasonNumbers", "tmdbSeasonMap", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "tmdbDetail", "logoUrl", "episodeUrlMap", "seasonNumbers", "tmdbSeasonMap", "tvDetail", "episodes", "url", "response", "finalResponse", "doc", "name", "imdbRating", "imdbId", "releaseYear", "docgenres", "title", "poster", "descriptions", "typeraw", "tvtype", "background", "description", "tmdbId", "creditsJson", "castList", "hrefs", "tmdbType", "tmdbDetail", "logoUrl", "movieDetail"}, nl = {114, 123, 180, 194, 218, 229, 276, 296, 315, 351, -1}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$26", "L$27", "L$28", "L$29", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -187,7 +188,7 @@ public final class Hindmoviez extends MainAPI {
     /* JADX INFO: renamed from: com.hindmoviez.Hindmoviez$loadLinks$1 */
     /* JADX INFO: compiled from: hindmoviez.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.hindmoviez.Hindmoviez", f = "hindmoviez.kt", i = {0, 0, 0, 0, 0}, l = {378}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "links", "isCasting"}, nl = {452}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.hindmoviez.Hindmoviez", f = "hindmoviez.kt", i = {0, 0, 0, 0, 0}, l = {379}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "links", "isCasting"}, nl = {453}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -212,7 +213,7 @@ public final class Hindmoviez extends MainAPI {
     /* JADX INFO: renamed from: com.hindmoviez.Hindmoviez$search$1 */
     /* JADX INFO: compiled from: hindmoviez.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.hindmoviez.Hindmoviez", f = "hindmoviez.kt", i = {0, 0}, l = {104}, m = "search", n = {"query", "page"}, nl = {105}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.hindmoviez.Hindmoviez", f = "hindmoviez.kt", i = {0, 0}, l = {105}, m = "search", n = {"query", "page"}, nl = {106}, s = {"L$0", "I$0"}, v = 2)
     static final class C00111 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -280,13 +281,13 @@ public final class Hindmoviez extends MainAPI {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:24:0x010f  */
-    /* JADX WARN: Code duplicated, block: B:26:0x015e A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:27:0x015f  */
-    /* JADX WARN: Code duplicated, block: B:29:0x016e  */
-    /* JADX WARN: Code duplicated, block: B:33:0x0199  */
-    /* JADX WARN: Code duplicated, block: B:35:0x01af  */
-    /* JADX WARN: Code duplicated, block: B:41:0x01b4 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:24:0x0118  */
+    /* JADX WARN: Code duplicated, block: B:26:0x0167 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:27:0x0168  */
+    /* JADX WARN: Code duplicated, block: B:29:0x0177  */
+    /* JADX WARN: Code duplicated, block: B:33:0x01a2  */
+    /* JADX WARN: Code duplicated, block: B:35:0x01b8  */
+    /* JADX WARN: Code duplicated, block: B:41:0x01bd A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
@@ -323,6 +324,7 @@ public final class Hindmoviez extends MainAPI {
         switch (c00021.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String url4 = page == 1 ? getMainUrl() + '/' + request.getData() : getMainUrl() + '/' + request.getData() + "/page/" + page;
                 Requests app = MainActivityKt.getApp();
                 c00021.L$0 = request;
@@ -554,8 +556,8 @@ public final class Hindmoviez extends MainAPI {
     /* JADX INFO: renamed from: com.hindmoviez.Hindmoviez$load$6 */
     /* JADX INFO: compiled from: hindmoviez.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\b\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "s", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.hindmoviez.Hindmoviez$load$6", f = "hindmoviez.kt", i = {0, 0}, l = {307}, m = "invokeSuspend", n = {"$this$invokeSuspend_u24lambda_u240", "s"}, nl = {308}, s = {"L$0", "I$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$6\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,454:1\n1#2:455\n1#2:459\n93#3,2:456\n63#3:458\n64#3,15:460\n95#3,2:477\n50#4:475\n43#4:476\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$6\n*L\n308#1:459\n308#1:456,2\n308#1:458\n308#1:460,15\n308#1:477,2\n308#1:475\n308#1:476\n*E\n"})
+    @DebugMetadata(c = "com.hindmoviez.Hindmoviez$load$6", f = "hindmoviez.kt", i = {0, 0}, l = {308}, m = "invokeSuspend", n = {"$this$invokeSuspend_u24lambda_u240", "s"}, nl = {309}, s = {"L$0", "I$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$6\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,455:1\n1#2:456\n1#2:460\n93#3,2:457\n63#3:459\n64#3,15:461\n95#3,2:478\n50#4:476\n43#4:477\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$6\n*L\n309#1:460\n309#1:457,2\n309#1:459\n309#1:461,15\n309#1:478,2\n309#1:476\n309#1:477\n*E\n"})
     static final class C00046 extends SuspendLambda implements Function2<Integer, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $tmdbId;
         final /* synthetic */ Map<Integer, TmdbSeasonDetail> $tmdbSeasonMap;
@@ -819,7 +821,7 @@ public final class Hindmoviez extends MainAPI {
     /* JADX INFO: compiled from: hindmoviez.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.hindmoviez.Hindmoviez$load$7", f = "hindmoviez.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$7\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,454:1\n1#2:455\n1#2:467\n1795#3,10:456\n2068#3:466\n2069#3:468\n1805#3:469\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$7\n*L\n342#1:467\n342#1:456,10\n342#1:466\n342#1:468\n342#1:469\n*E\n"})
+    @SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$7\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,455:1\n1#2:456\n1#2:468\n1795#3,10:457\n2068#3:467\n2069#3:469\n1805#3:470\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$7\n*L\n343#1:468\n343#1:457,10\n343#1:467\n343#1:469\n343#1:470\n*E\n"})
     static final class C00067 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ Ref.ObjectRef<String> $background;
         final /* synthetic */ List<ActorData> $castList;
@@ -932,7 +934,7 @@ public final class Hindmoviez extends MainAPI {
     /* JADX INFO: compiled from: hindmoviez.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.hindmoviez.Hindmoviez$load$8", f = "hindmoviez.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$8\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,454:1\n1#2:455\n1#2:467\n1795#3,10:456\n2068#3:466\n2069#3:468\n1805#3:469\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$8\n*L\n362#1:467\n362#1:456,10\n362#1:466\n362#1:468\n362#1:469\n*E\n"})
+    @SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$8\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,455:1\n1#2:456\n1#2:468\n1795#3,10:457\n2068#3:467\n2069#3:469\n1805#3:470\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$load$8\n*L\n363#1:468\n363#1:457,10\n363#1:467\n363#1:469\n363#1:470\n*E\n"})
     static final class C00078 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ Ref.ObjectRef<String> $background;
         final /* synthetic */ List<ActorData> $castList;
@@ -1152,8 +1154,8 @@ public final class Hindmoviez extends MainAPI {
     /* JADX INFO: renamed from: com.hindmoviez.Hindmoviez$loadLinks$2 */
     /* JADX INFO: compiled from: hindmoviez.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "linkData", "Lcom/hindmoviez/HindmoviezLinkData;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.hindmoviez.Hindmoviez$loadLinks$2", f = "hindmoviez.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {382, 396, 417}, m = "invokeSuspend", n = {"linkData", "encoded", "linkData", "encoded", "signedUrl", "linkData", "encoded", "signedUrl", "pageDoc", "name", "extractedSpecs", "fileSize", "btnUrls"}, nl = {389, 397, 450}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    @SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$loadLinks$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,454:1\n1#2:455\n1#2:459\n1#2:490\n93#3,2:456\n63#3:458\n64#3,15:460\n95#3,2:477\n50#4:475\n43#4:476\n1795#5,10:479\n2068#5:489\n2069#5:491\n1805#5:492\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$loadLinks$2\n*L\n389#1:459\n415#1:490\n389#1:456,2\n389#1:458\n389#1:460,15\n389#1:477,2\n389#1:475\n389#1:476\n415#1:479,10\n415#1:489\n415#1:491\n415#1:492\n*E\n"})
+    @DebugMetadata(c = "com.hindmoviez.Hindmoviez$loadLinks$2", f = "hindmoviez.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {383, 397, 418}, m = "invokeSuspend", n = {"linkData", "encoded", "linkData", "encoded", "signedUrl", "linkData", "encoded", "signedUrl", "pageDoc", "name", "extractedSpecs", "fileSize", "btnUrls"}, nl = {390, 398, 451}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
+    @SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$loadLinks$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,455:1\n1#2:456\n1#2:460\n1#2:491\n93#3,2:457\n63#3:459\n64#3,15:461\n95#3,2:478\n50#4:476\n43#4:477\n1795#5,10:480\n2068#5:490\n2069#5:492\n1805#5:493\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$loadLinks$2\n*L\n390#1:460\n416#1:491\n390#1:457,2\n390#1:459\n390#1:461,15\n390#1:478,2\n390#1:476\n390#1:477\n416#1:480,10\n416#1:490\n416#1:492\n416#1:493\n*E\n"})
     static final class C00092 extends SuspendLambda implements Function2<HindmoviezLinkData, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -1846,8 +1848,8 @@ public final class Hindmoviez extends MainAPI {
         /* JADX INFO: renamed from: com.hindmoviez.Hindmoviez$loadLinks$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: hindmoviez.kt */
         @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "btnUrl", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-        @DebugMetadata(c = "com.hindmoviez.Hindmoviez$loadLinks$2$1", f = "hindmoviez.kt", i = {0, 1, 2, 2, 2, 2}, l = {419, 423, 430}, m = "invokeSuspend", n = {"btnUrl", "btnUrl", "btnUrl", "doc", "innerLinks", "quality"}, nl = {420, 425, 446}, s = {"L$0", "L$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
-        @SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$loadLinks$2$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,454:1\n1795#2,10:455\n2068#2:465\n2069#2:468\n1805#2:469\n1#3:466\n1#3:467\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$loadLinks$2$1\n*L\n428#1:455,10\n428#1:465\n428#1:468\n428#1:469\n428#1:467\n*E\n"})
+        @DebugMetadata(c = "com.hindmoviez.Hindmoviez$loadLinks$2$1", f = "hindmoviez.kt", i = {0, 1, 2, 2, 2, 2}, l = {420, 424, 431}, m = "invokeSuspend", n = {"btnUrl", "btnUrl", "btnUrl", "doc", "innerLinks", "quality"}, nl = {421, 426, 447}, s = {"L$0", "L$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
+        @SourceDebugExtension({"SMAP\nhindmoviez.kt\nKotlin\n*S Kotlin\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$loadLinks$2$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,455:1\n1795#2,10:456\n2068#2:466\n2069#2:469\n1805#2:470\n1#3:467\n1#3:468\n*S KotlinDebug\n*F\n+ 1 hindmoviez.kt\ncom/hindmoviez/Hindmoviez$loadLinks$2$1\n*L\n429#1:456,10\n429#1:466\n429#1:469\n429#1:470\n429#1:468\n*E\n"})
         static final class AnonymousClass1 extends SuspendLambda implements Function2<String, Continuation<? super Unit>, Object> {
             final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
             final /* synthetic */ String $extractedSpecs;
@@ -1963,7 +1965,7 @@ public final class Hindmoviez extends MainAPI {
                                     this.L$2 = SpillingKt.nullOutSpilledVariable(innerLinks);
                                     this.I$0 = quality;
                                     this.label = 3;
-                                    if (ParCollectionsKt.amap(innerLinks, new C00131(this.$extractedSpecs, this.$fileSize, this.$subtitleCallback, this.$callback, btnUrl, quality, null), (Continuation) this) == coroutine_suspended) {
+                                    if (ParCollectionsKt.amap(innerLinks, new C00161(this.$extractedSpecs, this.$fileSize, this.$subtitleCallback, this.$callback, btnUrl, quality, null), (Continuation) this) == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
                                 } catch (Exception e3) {
@@ -2014,7 +2016,7 @@ public final class Hindmoviez extends MainAPI {
                             this.L$2 = SpillingKt.nullOutSpilledVariable(innerLinks);
                             this.I$0 = quality;
                             this.label = 3;
-                            if (ParCollectionsKt.amap(innerLinks, new C00131(this.$extractedSpecs, this.$fileSize, this.$subtitleCallback, this.$callback, btnUrl, quality, null), (Continuation) this) == coroutine_suspended) {
+                            if (ParCollectionsKt.amap(innerLinks, new C00161(this.$extractedSpecs, this.$fileSize, this.$subtitleCallback, this.$callback, btnUrl, quality, null), (Continuation) this) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                             return Unit.INSTANCE;
@@ -2032,8 +2034,8 @@ public final class Hindmoviez extends MainAPI {
             /* JADX INFO: renamed from: com.hindmoviez.Hindmoviez$loadLinks$2$1$1, reason: invalid class name and collision with other inner class name */
             /* JADX INFO: compiled from: hindmoviez.kt */
             @Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0017\u0010\u0002\u001a\u0013\u0012\u0004\u0012\u00020\u0004\u0012\t\u0012\u00070\u0004¢\u0006\u0002\b\u00050\u0003H\n"}, d2 = {"<anonymous>", "", "<destruct>", "Lkotlin/Pair;", "", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-            @DebugMetadata(c = "com.hindmoviez.Hindmoviez$loadLinks$2$1$1", f = "hindmoviez.kt", i = {0, 0, 0, 1, 1, 1}, l = {432, 435}, m = "invokeSuspend", n = {"<destruct>", "href", "linkText", "<destruct>", "href", "linkText"}, nl = {434, 434}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
-            static final class C00131 extends SuspendLambda implements Function2<Pair<? extends String, ? extends String>, Continuation<? super Object>, Object> {
+            @DebugMetadata(c = "com.hindmoviez.Hindmoviez$loadLinks$2$1$1", f = "hindmoviez.kt", i = {0, 0, 0, 1, 1, 1}, l = {433, 436}, m = "invokeSuspend", n = {"<destruct>", "href", "linkText", "<destruct>", "href", "linkText"}, nl = {435, 435}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2"}, v = 2)
+            static final class C00161 extends SuspendLambda implements Function2<Pair<? extends String, ? extends String>, Continuation<? super Object>, Object> {
                 final /* synthetic */ String $btnUrl;
                 final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
                 final /* synthetic */ String $extractedSpecs;
@@ -2047,7 +2049,7 @@ public final class Hindmoviez extends MainAPI {
                 int label;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                C00131(String str, String str2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, int i, Continuation<? super C00131> continuation) {
+                C00161(String str, String str2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, int i, Continuation<? super C00161> continuation) {
                     super(2, continuation);
                     this.$extractedSpecs = str;
                     this.$fileSize = str2;
@@ -2058,9 +2060,9 @@ public final class Hindmoviez extends MainAPI {
                 }
 
                 public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    Continuation<Unit> c00131 = new C00131(this.$extractedSpecs, this.$fileSize, this.$subtitleCallback, this.$callback, this.$btnUrl, this.$quality, continuation);
-                    c00131.L$0 = obj;
-                    return c00131;
+                    Continuation<Unit> c00161 = new C00161(this.$extractedSpecs, this.$fileSize, this.$subtitleCallback, this.$callback, this.$btnUrl, this.$quality, continuation);
+                    c00161.L$0 = obj;
+                    return c00161;
                 }
 
                 public final Object invoke(Pair<String, String> pair, Continuation<Object> continuation) {
@@ -2093,7 +2095,7 @@ public final class Hindmoviez extends MainAPI {
                             this.L$2 = SpillingKt.nullOutSpilledVariable(linkText3);
                             this.L$3 = function2;
                             this.label = 2;
-                            objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default(linkText3, "[HCloud] " + this.$extractedSpecs + '[' + this.$fileSize + ']', href, (ExtractorLinkType) null, new C00141(this.$btnUrl, this.$quality, null), (Continuation) this, 8, (Object) null);
+                            objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default(linkText3, "[HCloud] " + this.$extractedSpecs + '[' + this.$fileSize + ']', href, (ExtractorLinkType) null, new C00171(this.$btnUrl, this.$quality, null), (Continuation) this, 8, (Object) null);
                             if (objNewExtractorLink$default == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -2123,23 +2125,23 @@ public final class Hindmoviez extends MainAPI {
                 /* JADX INFO: compiled from: hindmoviez.kt */
                 @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
                 @DebugMetadata(c = "com.hindmoviez.Hindmoviez$loadLinks$2$1$1$1", f = "hindmoviez.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-                static final class C00141 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+                static final class C00171 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
                     final /* synthetic */ String $btnUrl;
                     final /* synthetic */ int $quality;
                     private /* synthetic */ Object L$0;
                     int label;
 
                     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                    C00141(String str, int i, Continuation<? super C00141> continuation) {
+                    C00171(String str, int i, Continuation<? super C00171> continuation) {
                         super(2, continuation);
                         this.$btnUrl = str;
                         this.$quality = i;
                     }
 
                     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                        Continuation<Unit> c00141 = new C00141(this.$btnUrl, this.$quality, continuation);
-                        c00141.L$0 = obj;
-                        return c00141;
+                        Continuation<Unit> c00171 = new C00171(this.$btnUrl, this.$quality, continuation);
+                        c00171.L$0 = obj;
+                        return c00171;
                     }
 
                     public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

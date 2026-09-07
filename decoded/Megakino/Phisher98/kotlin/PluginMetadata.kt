@@ -4,7 +4,7 @@ package nepali.stream.decoded.megakino
 object PluginMetadata {
     const val name: String = "Megakino"
     const val originalPluginClass: String = "com.Megakino.MegakinoProvider"
-    const val version: Int = 4
+    const val version: Int = 6
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

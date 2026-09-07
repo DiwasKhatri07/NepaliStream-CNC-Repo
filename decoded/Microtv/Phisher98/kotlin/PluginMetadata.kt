@@ -4,7 +4,7 @@ package nepali.stream.decoded.microtv
 object PluginMetadata {
     const val name: String = "Microtv"
     const val originalPluginClass: String = "com.Microtv.MicrotvProvider"
-    const val version: Int = 1
+    const val version: Int = 3
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

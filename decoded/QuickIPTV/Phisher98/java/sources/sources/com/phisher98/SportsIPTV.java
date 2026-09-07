@@ -24,6 +24,7 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -65,7 +66,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: QuickIPTV.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/QuickIPTV/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\b\u0016\u0018\u00002\u00020\u0001:\u00014B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0096@¢\u0006\u0002\u0010!J\u001c\u0010\"\u001a\b\u0012\u0004\u0012\u00020$0#2\u0006\u0010%\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010&J\u0016\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010&JF\u0010*\u001a\u00020\u00112\u0006\u0010+\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u00112\u0012\u0010-\u001a\u000e\u0012\u0004\u0012\u00020/\u0012\u0004\u0012\u0002000.2\u0012\u00101\u001a\u000e\u0012\u0004\u0012\u000202\u0012\u0004\u0012\u0002000.H\u0096@¢\u0006\u0002\u00103R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u0014\u0010\u0010\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001a¨\u00065"}, d2 = {"Lcom/phisher98/SportsIPTV;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "LoadData", "QuickIPTV"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nQuickIPTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 QuickIPTV.kt\ncom/phisher98/SportsIPTV\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 7 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,387:1\n1665#2:388\n1691#2,3:389\n1694#2,3:399\n1739#2:405\n1814#2,3:406\n777#2:410\n873#2,2:411\n1739#2:413\n1814#2,3:414\n460#3,7:392\n129#4:402\n158#4,2:403\n160#4:409\n63#5:417\n64#5,15:419\n63#5:436\n64#5,15:438\n1#6:418\n1#6:437\n50#7:434\n43#7:435\n50#7:453\n43#7:454\n*S KotlinDebug\n*F\n+ 1 QuickIPTV.kt\ncom/phisher98/SportsIPTV\n*L\n30#1:388\n30#1:389,3\n30#1:399,3\n32#1:405\n32#1:406,3\n55#1:410\n55#1:411,2\n55#1:413\n55#1:414,3\n30#1:392,7\n30#1:402\n30#1:403,2\n30#1:409\n70#1:417\n70#1:419,15\n91#1:436\n91#1:438,15\n70#1:418\n91#1:437\n70#1:434\n70#1:435\n91#1:453\n91#1:454\n*E\n"})
+@SourceDebugExtension({"SMAP\nQuickIPTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 QuickIPTV.kt\ncom/phisher98/SportsIPTV\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 7 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,388:1\n1665#2:389\n1691#2,3:390\n1694#2,3:400\n1739#2:406\n1814#2,3:407\n777#2:411\n873#2,2:412\n1739#2:414\n1814#2,3:415\n460#3,7:393\n129#4:403\n158#4,2:404\n160#4:410\n63#5:418\n64#5,15:420\n63#5:437\n64#5,15:439\n1#6:419\n1#6:438\n50#7:435\n43#7:436\n50#7:454\n43#7:455\n*S KotlinDebug\n*F\n+ 1 QuickIPTV.kt\ncom/phisher98/SportsIPTV\n*L\n31#1:389\n31#1:390,3\n31#1:400,3\n33#1:406\n33#1:407,3\n56#1:411\n56#1:412,2\n56#1:414\n56#1:415,3\n31#1:393,7\n31#1:403\n31#1:404,2\n31#1:410\n71#1:418\n71#1:420,15\n92#1:437\n92#1:439,15\n71#1:419\n92#1:438\n71#1:435\n71#1:436\n92#1:454\n92#1:455\n*E\n"})
 public class SportsIPTV extends MainAPI {
 
     @NotNull
@@ -85,7 +86,7 @@ public class SportsIPTV extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.SportsIPTV$getMainPage$1 */
     /* JADX INFO: compiled from: QuickIPTV.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.SportsIPTV", f = "QuickIPTV.kt", i = {0, 0, 0}, l = {29}, m = "getMainPage$suspendImpl", n = {"$this", "request", "page"}, nl = {30}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.SportsIPTV", f = "QuickIPTV.kt", i = {0, 0, 0}, l = {30}, m = "getMainPage$suspendImpl", n = {"$this", "request", "page"}, nl = {31}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00121 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -109,7 +110,7 @@ public class SportsIPTV extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.SportsIPTV$loadLinks$1 */
     /* JADX INFO: compiled from: QuickIPTV.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.SportsIPTV", f = "QuickIPTV.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {95, 112, 126}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "loadData", "isCasting", "$this", "data", "subtitleCallback", "callback", "loadData", "isCasting", "$this", "data", "subtitleCallback", "callback", "loadData", "isCasting"}, nl = {94, 111, 125}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.SportsIPTV", f = "QuickIPTV.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {96, 113, 127}, m = "loadLinks$suspendImpl", n = {"$this", "data", "subtitleCallback", "callback", "loadData", "isCasting", "$this", "data", "subtitleCallback", "callback", "loadData", "isCasting", "$this", "data", "subtitleCallback", "callback", "loadData", "isCasting"}, nl = {95, 112, 126}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
     static final class C00141 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -136,7 +137,7 @@ public class SportsIPTV extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.SportsIPTV$search$1 */
     /* JADX INFO: compiled from: QuickIPTV.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.SportsIPTV", f = "QuickIPTV.kt", i = {0, 0}, l = {54}, m = "search$suspendImpl", n = {"$this", "query"}, nl = {55}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.SportsIPTV", f = "QuickIPTV.kt", i = {0, 0}, l = {55}, m = "search$suspendImpl", n = {"$this", "query"}, nl = {56}, s = {"L$0", "L$1"}, v = 2)
     static final class C00181 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -238,6 +239,7 @@ public class SportsIPTV extends MainAPI {
         switch (c00121.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow($this.getName());
                 IptvPlaylistParser iptvPlaylistParser2 = new IptvPlaylistParser();
                 Requests app = MainActivityKt.getApp();
                 String mainUrl = $this.getMainUrl();

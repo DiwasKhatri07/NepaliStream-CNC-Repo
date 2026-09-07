@@ -24,6 +24,7 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -65,7 +66,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: IPTVPlayer.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/IPTVPlayer/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u00014B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020 H\u0096@¢\u0006\u0002\u0010!J\u001c\u0010\"\u001a\b\u0012\u0004\u0012\u00020$0#2\u0006\u0010%\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010&J\u0016\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010&JF\u0010*\u001a\u00020\u00112\u0006\u0010+\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u00112\u0012\u0010-\u001a\u000e\u0012\u0004\u0012\u00020/\u0012\u0004\u0012\u0002000.2\u0012\u00101\u001a\u000e\u0012\u0004\u0012\u000202\u0012\u0004\u0012\u0002000.H\u0096@¢\u0006\u0002\u00103R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u0014\u0010\u0010\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001a¨\u00065"}, d2 = {"Lcom/phisher98/IPTVPlayer;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "LoadData", "IPTVPlayer"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nIPTVPlayer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 IPTVPlayer.kt\ncom/phisher98/IPTVPlayer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 7 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,416:1\n1665#2:417\n1691#2,3:418\n1694#2,3:428\n1739#2:434\n1814#2,3:435\n777#2:439\n873#2,2:440\n1739#2:442\n1814#2,3:443\n460#3,7:421\n129#4:431\n158#4,2:432\n160#4:438\n63#5:446\n64#5,15:448\n63#5:465\n64#5,15:467\n1#6:447\n1#6:466\n50#7:463\n43#7:464\n50#7:482\n43#7:483\n*S KotlinDebug\n*F\n+ 1 IPTVPlayer.kt\ncom/phisher98/IPTVPlayer\n*L\n30#1:417\n30#1:418,3\n30#1:428,3\n32#1:434\n32#1:435,3\n56#1:439\n56#1:440,2\n56#1:442\n56#1:443,3\n30#1:421,7\n30#1:431\n30#1:432,2\n30#1:438\n73#1:446\n73#1:448,15\n94#1:465\n94#1:467,15\n73#1:447\n94#1:466\n73#1:463\n73#1:464\n94#1:482\n94#1:483\n*E\n"})
+@SourceDebugExtension({"SMAP\nIPTVPlayer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 IPTVPlayer.kt\ncom/phisher98/IPTVPlayer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 4 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 7 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,417:1\n1665#2:418\n1691#2,3:419\n1694#2,3:429\n1739#2:435\n1814#2,3:436\n777#2:440\n873#2,2:441\n1739#2:443\n1814#2,3:444\n460#3,7:422\n129#4:432\n158#4,2:433\n160#4:439\n63#5:447\n64#5,15:449\n63#5:466\n64#5,15:468\n1#6:448\n1#6:467\n50#7:464\n43#7:465\n50#7:483\n43#7:484\n*S KotlinDebug\n*F\n+ 1 IPTVPlayer.kt\ncom/phisher98/IPTVPlayer\n*L\n31#1:418\n31#1:419,3\n31#1:429,3\n33#1:435\n33#1:436,3\n57#1:440\n57#1:441,2\n57#1:443\n57#1:444,3\n31#1:422,7\n31#1:432\n31#1:433,2\n31#1:439\n74#1:447\n74#1:449,15\n95#1:466\n95#1:468,15\n74#1:448\n95#1:467\n74#1:464\n74#1:465\n95#1:483\n95#1:484\n*E\n"})
 public final class IPTVPlayer extends MainAPI {
 
     @NotNull
@@ -85,7 +86,7 @@ public final class IPTVPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.IPTVPlayer$getMainPage$1 */
     /* JADX INFO: compiled from: IPTVPlayer.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.IPTVPlayer", f = "IPTVPlayer.kt", i = {0, 0}, l = {29}, m = "getMainPage", n = {"request", "page"}, nl = {30}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.IPTVPlayer", f = "IPTVPlayer.kt", i = {0, 0}, l = {30}, m = "getMainPage", n = {"request", "page"}, nl = {31}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -108,7 +109,7 @@ public final class IPTVPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.IPTVPlayer$loadLinks$1 */
     /* JADX INFO: compiled from: IPTVPlayer.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.IPTVPlayer", f = "IPTVPlayer.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {98, 116, 131}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "isCasting", "data", "subtitleCallback", "callback", "loadData", "isCasting", "data", "subtitleCallback", "callback", "loadData", "isCasting"}, nl = {97, 115, 130}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.IPTVPlayer", f = "IPTVPlayer.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {99, 117, 132}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "isCasting", "data", "subtitleCallback", "callback", "loadData", "isCasting", "data", "subtitleCallback", "callback", "loadData", "isCasting"}, nl = {98, 116, 131}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -134,7 +135,7 @@ public final class IPTVPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.IPTVPlayer$search$1 */
     /* JADX INFO: compiled from: IPTVPlayer.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.IPTVPlayer", f = "IPTVPlayer.kt", i = {0}, l = {55}, m = "search", n = {"query"}, nl = {56}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.IPTVPlayer", f = "IPTVPlayer.kt", i = {0}, l = {56}, m = "search", n = {"query"}, nl = {57}, s = {"L$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -215,6 +216,7 @@ public final class IPTVPlayer extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 IptvPlaylistParser iptvPlaylistParser2 = new IptvPlaylistParser();
                 Requests app = MainActivityKt.getApp();
                 String mainUrl = getMainUrl();

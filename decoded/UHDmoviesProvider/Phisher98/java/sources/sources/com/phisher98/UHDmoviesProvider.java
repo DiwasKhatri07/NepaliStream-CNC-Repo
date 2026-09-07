@@ -31,6 +31,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -91,7 +92,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: UHDmoviesProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/UHDmoviesProvider/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001:\u0001;B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010 \u001a\u00020!2\u0006\u0010\"\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010#J\u001e\u0010\u001e\u001a\u00020$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020(H\u0096@¢\u0006\u0002\u0010)J\f\u0010*\u001a\u00020+*\u00020,H\u0002J\u001c\u0010-\u001a\b\u0012\u0004\u0012\u00020+0\u001c2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010#J\u0016\u0010/\u001a\u0002002\u0006\u0010\"\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010#JF\u00101\u001a\u00020\u000e2\u0006\u00102\u001a\u00020\u00052\u0006\u00103\u001a\u00020\u000e2\u0012\u00104\u001a\u000e\u0012\u0004\u0012\u000206\u0012\u0004\u0012\u000207052\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020705H\u0096@¢\u0006\u0002\u0010:R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006<"}, d2 = {"Lcom/phisher98/UHDmoviesProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "cfKiller", "Lcom/lagradost/nicehttp/NiceResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "UHDLinks", "UHDmoviesProvider"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nUHDmoviesProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UHDmoviesProvider.kt\ncom/phisher98/UHDmoviesProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,382:1\n1795#2,10:383\n2068#2:393\n2069#2:395\n1805#2:396\n1795#2,10:398\n2068#2:408\n2069#2:410\n1805#2:411\n1739#2:412\n1814#2,3:413\n2068#2,2:416\n296#2,2:418\n1739#2:420\n1814#2,3:421\n777#2:431\n873#2,2:432\n1#3:394\n1#3:397\n1#3:409\n1#3:424\n437#4:425\n513#4,5:426\n*S KotlinDebug\n*F\n+ 1 UHDmoviesProvider.kt\ncom/phisher98/UHDmoviesProvider\n*L\n89#1:383,10\n89#1:393\n89#1:395\n89#1:396\n124#1:398,10\n124#1:408\n124#1:410\n124#1:411\n144#1:412\n144#1:413,3\n171#1:416,2\n204#1:418,2\n209#1:420\n209#1:421,3\n252#1:431\n252#1:432,2\n89#1:394\n124#1:409\n220#1:425\n220#1:426,5\n*E\n"})
+@SourceDebugExtension({"SMAP\nUHDmoviesProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UHDmoviesProvider.kt\ncom/phisher98/UHDmoviesProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,383:1\n1795#2,10:384\n2068#2:394\n2069#2:396\n1805#2:397\n1795#2,10:399\n2068#2:409\n2069#2:411\n1805#2:412\n1739#2:413\n1814#2,3:414\n2068#2,2:417\n296#2,2:419\n1739#2:421\n1814#2,3:422\n777#2:432\n873#2,2:433\n1#3:395\n1#3:398\n1#3:410\n1#3:425\n437#4:426\n513#4,5:427\n*S KotlinDebug\n*F\n+ 1 UHDmoviesProvider.kt\ncom/phisher98/UHDmoviesProvider\n*L\n90#1:384,10\n90#1:394\n90#1:396\n90#1:397\n125#1:399,10\n125#1:409\n125#1:411\n125#1:412\n145#1:413\n145#1:414,3\n172#1:417,2\n205#1:419,2\n210#1:421\n210#1:422,3\n253#1:432\n253#1:433,2\n90#1:395\n125#1:410\n221#1:426\n221#1:427,5\n*E\n"})
 public final class UHDmoviesProvider extends MainAPI {
 
     @NotNull
@@ -136,7 +137,7 @@ public final class UHDmoviesProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.UHDmoviesProvider$getMainPage$1 */
     /* JADX INFO: compiled from: UHDmoviesProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider", f = "UHDmoviesProvider.kt", i = {0, 0, 1, 1}, l = {84, 86}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {86, 83}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider", f = "UHDmoviesProvider.kt", i = {0, 0, 1, 1}, l = {85, 87}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {87, 84}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -158,7 +159,7 @@ public final class UHDmoviesProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.UHDmoviesProvider$load$1 */
     /* JADX INFO: compiled from: UHDmoviesProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider", f = "UHDmoviesProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {135, 147, 152, 162, 235, 252, 255, 261}, m = "load", n = {"url", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "meta", "metaVideos", "Background", "Description", "IMDBRating", "trailer", "logoUrl", "it", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "meta", "metaVideos", "Background", "Description", "IMDBRating", "trailer", "logoUrl", "simklId", "tvSeriesEpisodes", "episodesMap", "currentSeason", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "meta", "metaVideos", "Background", "Description", "IMDBRating", "trailer", "logoUrl", "simklId", "iframeRegex", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "meta", "metaVideos", "Background", "Description", "IMDBRating", "trailer", "logoUrl", "simklId", "iframeRegex", "iframe", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "meta", "metaVideos", "Background", "Description", "IMDBRating", "trailer", "logoUrl", "simklId", "iframeRegex", "iframe", "data"}, nl = {136, 152, 153, 161, 251, 402, 261, 165}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider", f = "UHDmoviesProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {136, 148, 153, 163, 236, 253, 256, 262}, m = "load", n = {"url", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "meta", "metaVideos", "Background", "Description", "IMDBRating", "trailer", "logoUrl", "it", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "meta", "metaVideos", "Background", "Description", "IMDBRating", "trailer", "logoUrl", "simklId", "tvSeriesEpisodes", "episodesMap", "currentSeason", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "meta", "metaVideos", "Background", "Description", "IMDBRating", "trailer", "logoUrl", "simklId", "iframeRegex", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "meta", "metaVideos", "Background", "Description", "IMDBRating", "trailer", "logoUrl", "simklId", "iframeRegex", "iframe", "url", "doc", "titleRaw", "titleRegex", "title", "img", "poster", "collectionposter", "yearRegex", "year", "tags", "tvTags", "type", "ids", "meta", "metaVideos", "Background", "Description", "IMDBRating", "trailer", "logoUrl", "simklId", "iframeRegex", "iframe", "data"}, nl = {137, 153, 154, 162, 252, 403, 262, 166}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24"}, v = 2)
     static final class C00091 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -203,7 +204,7 @@ public final class UHDmoviesProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.UHDmoviesProvider$search$1 */
     /* JADX INFO: compiled from: UHDmoviesProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider", f = "UHDmoviesProvider.kt", i = {0}, l = {122}, m = "search", n = {"query"}, nl = {124}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider", f = "UHDmoviesProvider.kt", i = {0}, l = {123}, m = "search", n = {"query"}, nl = {125}, s = {"L$0"}, v = 2)
     static final class C00131 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -345,9 +346,9 @@ public final class UHDmoviesProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:27:0x00e4  */
-    /* JADX WARN: Code duplicated, block: B:29:0x00f8  */
-    /* JADX WARN: Code duplicated, block: B:35:0x00fd A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:27:0x00ed  */
+    /* JADX WARN: Code duplicated, block: B:29:0x0101  */
+    /* JADX WARN: Code duplicated, block: B:35:0x0106 A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
@@ -373,6 +374,7 @@ public final class UHDmoviesProvider extends MainAPI {
         switch (c00081.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 if (page == 1) {
                     String str = getMainUrl() + '/' + request2.getData();
                     c00081.L$0 = request2;
@@ -35576,7 +35578,7 @@ public final class UHDmoviesProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.UHDmoviesProvider$load$4 */
     /* JADX INFO: compiled from: UHDmoviesProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider$load$4", f = "UHDmoviesProvider.kt", i = {0}, l = {240}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {241}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider$load$4", f = "UHDmoviesProvider.kt", i = {0}, l = {241}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {242}, s = {"L$0"}, v = 2)
     static final class C00104 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $Background;
         final /* synthetic */ String $Description;
@@ -35668,7 +35670,7 @@ public final class UHDmoviesProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.UHDmoviesProvider$load$5 */
     /* JADX INFO: compiled from: UHDmoviesProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider$load$5", f = "UHDmoviesProvider.kt", i = {0}, l = {266}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {267}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider$load$5", f = "UHDmoviesProvider.kt", i = {0}, l = {267}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {268}, s = {"L$0"}, v = 2)
     static final class C00115 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $Background;
         final /* synthetic */ String $Description;
@@ -35760,8 +35762,8 @@ public final class UHDmoviesProvider extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.UHDmoviesProvider$loadLinks$2 */
     /* JADX INFO: compiled from: UHDmoviesProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider$loadLinks$2", f = "UHDmoviesProvider.kt", i = {0, 1, 1, 2, 2}, l = {288, 292, 296}, m = "invokeSuspend", n = {"$this$coroutineScope", "$this$coroutineScope", "finalLink", "$this$coroutineScope", "sources"}, nl = {290, 294, 311}, s = {"L$0", "L$0", "L$1", "L$0", "L$1"}, v = 2)
-    @SourceDebugExtension({"SMAP\nUHDmoviesProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UHDmoviesProvider.kt\ncom/phisher98/UHDmoviesProvider$loadLinks$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,382:1\n63#2:383\n64#2,15:385\n1#3:384\n50#4:400\n43#4:401\n*S KotlinDebug\n*F\n+ 1 UHDmoviesProvider.kt\ncom/phisher98/UHDmoviesProvider$loadLinks$2\n*L\n294#1:383\n294#1:385,15\n294#1:384\n294#1:400\n294#1:401\n*E\n"})
+    @DebugMetadata(c = "com.phisher98.UHDmoviesProvider$loadLinks$2", f = "UHDmoviesProvider.kt", i = {0, 1, 1, 2, 2}, l = {289, 293, 297}, m = "invokeSuspend", n = {"$this$coroutineScope", "$this$coroutineScope", "finalLink", "$this$coroutineScope", "sources"}, nl = {291, 295, 312}, s = {"L$0", "L$0", "L$1", "L$0", "L$1"}, v = 2)
+    @SourceDebugExtension({"SMAP\nUHDmoviesProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 UHDmoviesProvider.kt\ncom/phisher98/UHDmoviesProvider$loadLinks$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,383:1\n63#2:384\n64#2,15:386\n1#3:385\n50#4:401\n43#4:402\n*S KotlinDebug\n*F\n+ 1 UHDmoviesProvider.kt\ncom/phisher98/UHDmoviesProvider$loadLinks$2\n*L\n295#1:384\n295#1:386,15\n295#1:385\n295#1:401\n295#1:402\n*E\n"})
     static final class C00122 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $data;
@@ -35933,8 +35935,8 @@ public final class UHDmoviesProvider extends MainAPI {
             /* JADX INFO: renamed from: com.phisher98.UHDmoviesProvider$loadLinks$2$1$1, reason: invalid class name and collision with other inner class name */
             /* JADX INFO: compiled from: UHDmoviesProvider.kt */
             @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-            @DebugMetadata(c = "com.phisher98.UHDmoviesProvider$loadLinks$2$1$1", f = "UHDmoviesProvider.kt", i = {0, 0, 0, 1, 1, 1, 1}, l = {301, 305}, m = "invokeSuspend", n = {"$this$launch", "$this$invokeSuspend_u24lambda_u240", "link", "$this$launch", "$this$invokeSuspend_u24lambda_u240", "link", "finalLink"}, nl = {303, 306}, s = {"L$0", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3"}, v = 2)
-            static final class C00181 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+            @DebugMetadata(c = "com.phisher98.UHDmoviesProvider$loadLinks$2$1$1", f = "UHDmoviesProvider.kt", i = {0, 0, 0, 1, 1, 1, 1}, l = {302, 306}, m = "invokeSuspend", n = {"$this$launch", "$this$invokeSuspend_u24lambda_u240", "link", "$this$launch", "$this$invokeSuspend_u24lambda_u240", "link", "finalLink"}, nl = {304, 307}, s = {"L$0", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3"}, v = 2)
+            static final class C00211 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
                 final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
                 final /* synthetic */ UHDLinks $me;
                 final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -35946,7 +35948,7 @@ public final class UHDmoviesProvider extends MainAPI {
                 int label;
 
                 /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-                C00181(UHDLinks uHDLinks, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00181> continuation) {
+                C00211(UHDLinks uHDLinks, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00211> continuation) {
                     super(2, continuation);
                     this.$me = uHDLinks;
                     this.$subtitleCallback = function1;
@@ -35954,9 +35956,9 @@ public final class UHDmoviesProvider extends MainAPI {
                 }
 
                 public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                    Continuation<Unit> c00181 = new C00181(this.$me, this.$subtitleCallback, this.$callback, continuation);
-                    c00181.L$0 = obj;
-                    return c00181;
+                    Continuation<Unit> c00211 = new C00211(this.$me, this.$subtitleCallback, this.$callback, continuation);
+                    c00211.L$0 = obj;
+                    return c00211;
                 }
 
                 public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -36071,7 +36073,7 @@ public final class UHDmoviesProvider extends MainAPI {
                 switch (this.label) {
                     case 0:
                         ResultKt.throwOnFailure($result);
-                        return BuildersKt.launch$default(this.$$this$coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new C00181(me, this.$subtitleCallback, this.$callback, null), 3, (Object) null);
+                        return BuildersKt.launch$default(this.$$this$coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new C00211(me, this.$subtitleCallback, this.$callback, null), 3, (Object) null);
                     default:
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                 }

@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.phisher98.KisskhProviderPlugin",
   "name": "KisskhProvider",
-  "version": 20,
+  "version": 22,
   "requiresResources": false
 }

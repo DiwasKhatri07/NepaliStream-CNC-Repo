@@ -34,6 +34,7 @@ import com.lagradost.cloudstream3.utils.StringUtils;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -96,7 +97,7 @@ import org.json.JSONObject;
 /* JADX INFO: compiled from: OneTouchTV.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/OneTouchTV/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000°\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\u00020\u0001:\u0006OPQRSTB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001d\u001a\u00020\u001e2\u0006\u0010\u001f\u001a\u00020\u00052\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"J\u001e\u0010\u001b\u001a\u00020#2\u0006\u0010 \u001a\u00020!2\u0006\u0010$\u001a\u00020%H\u0096@¢\u0006\u0002\u0010&J\f\u0010'\u001a\u00020(*\u00020)H\u0002J\f\u0010'\u001a\u00020(*\u00020*H\u0002J\f\u0010'\u001a\u00020(*\u00020+H\u0002J\f\u0010,\u001a\u00020-*\u00020(H\u0002J\f\u0010.\u001a\u00020/*\u000200H\u0002J\f\u0010.\u001a\u00020/*\u000201H\u0002J\u0014\u0010,\u001a\u00020-*\u00020/2\u0006\u0010\u0004\u001a\u00020\u0005H\u0002J\u0016\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00105JF\u00106\u001a\u00020\u000e2\u0006\u00107\u001a\u00020\u00052\u0006\u00108\u001a\u00020\u000e2\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020;\u0012\u0004\u0012\u00020<0:2\u0012\u0010=\u001a\u000e\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u00020<0:H\u0096@¢\u0006\u0002\u0010?J\u0010\u0010@\u001a\u00020A2\u0006\u0010B\u001a\u00020\u0005H\u0002J*\u0010C\u001a\u0004\u0018\u00010D2\u0006\u0010E\u001a\u00020\u00052\b\u0010F\u001a\u0004\u0018\u00010!2\u0006\u0010G\u001a\u00020\u000eH\u0082@¢\u0006\u0002\u0010HJ*\u0010I\u001a\u000e\u0012\u0004\u0012\u00020!\u0012\u0004\u0012\u00020K0J2\u0006\u0010L\u001a\u00020!2\u0006\u0010M\u001a\u00020!H\u0082@¢\u0006\u0002\u0010NR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u0014\u0010\u0011\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0010R\u001a\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u00150\u0014X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\u0017R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001c¨\u0006U"}, d2 = {"Lcom/OneTouchTV/OneTouchTV;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "page", "", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toMedia", "Lcom/OneTouchTV/OneTouchTV$OneTouchMedia;", "Lcom/OneTouchTV/OneTouchTVParser$Day;", "Lcom/OneTouchTV/OneTouchTVParser$Week;", "Lcom/OneTouchTV/OneTouchTVParser$Month;", "toSearchResponse", "Lcom/lagradost/cloudstream3/SearchResponse;", "toCleanMedia", "Lcom/OneTouchTV/CleanMedia;", "Lcom/OneTouchTV/RandomSlideShow;", "Lcom/OneTouchTV/Recent;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getStatus", "Lcom/lagradost/cloudstream3/ShowStatus;", "t", "fetchTmdbData", "Lcom/OneTouchTV/OneTouchTV$TmdbData;", "title", "year", "isMovie", "(Ljava/lang/String;Ljava/lang/Integer;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchTmdbEpisodes", "", "Lcom/OneTouchTV/OneTouchTV$TmdbEpisode;", "tmdbId", "seasonNumber", "(IILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "OneTouchMedia", "LoadData", "ActorItem", "EpisodeItem", "TmdbData", "TmdbEpisode", "OneTouchTV"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nOneTouchTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OneTouchTV.kt\ncom/OneTouchTV/OneTouchTV\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,745:1\n63#2:746\n64#2,15:748\n63#2:765\n64#2,15:767\n63#2:788\n64#2,15:790\n63#2:811\n64#2,15:813\n63#2:843\n64#2,15:845\n63#2:894\n64#2,15:896\n63#2:965\n64#2,15:967\n63#2:985\n64#2,15:987\n63#2:1027\n64#2,15:1029\n1#3:747\n1#3:766\n1#3:789\n1#3:812\n1#3:830\n1#3:844\n1#3:891\n1#3:895\n1#3:957\n1#3:962\n1#3:966\n1#3:984\n1#3:986\n1#3:1004\n1#3:1024\n1#3:1028\n1#3:1056\n50#4:763\n43#4:764\n50#4:782\n43#4:783\n50#4:805\n43#4:806\n50#4:828\n43#4:829\n50#4:860\n43#4:861\n50#4:911\n43#4:912\n50#4:982\n43#4:983\n50#4:1002\n43#4:1003\n50#4:1044\n43#4:1045\n1739#5:784\n1814#5,3:785\n1739#5:807\n1814#5,3:808\n1739#5:831\n1814#5,3:832\n1739#5:835\n1814#5,3:836\n1739#5:839\n1814#5,3:840\n1665#5:862\n1691#5,3:863\n1694#5,3:873\n1739#5:887\n1814#5,3:888\n1739#5:913\n1814#5,3:914\n1739#5:917\n1814#5,3:918\n1849#5,8:921\n777#5:929\n873#5,2:930\n1665#5:932\n1691#5,3:933\n1694#5,3:943\n1739#5:958\n1814#5,3:959\n1739#5:1005\n1814#5,3:1006\n1739#5:1009\n1814#5,3:1010\n1795#5,10:1013\n2068#5:1023\n2069#5:1025\n1805#5:1026\n2068#5,2:1046\n2068#5,2:1048\n2068#5,2:1050\n1739#5:1052\n1814#5,3:1053\n460#6,7:866\n460#6,7:936\n139#7,10:876\n221#7:886\n222#7:892\n149#7:893\n139#7,10:946\n221#7:956\n222#7:963\n149#7:964\n*S KotlinDebug\n*F\n+ 1 OneTouchTV.kt\ncom/OneTouchTV/OneTouchTV\n*L\n81#1:746\n81#1:748,15\n83#1:765\n83#1:767,15\n145#1:788\n145#1:790,15\n185#1:811\n185#1:813,15\n204#1:843\n204#1:845,15\n230#1:894\n230#1:896,15\n371#1:965\n371#1:967,15\n407#1:985\n407#1:987,15\n494#1:1027\n494#1:1029,15\n81#1:747\n83#1:766\n145#1:789\n185#1:812\n204#1:844\n210#1:891\n230#1:895\n250#1:962\n371#1:966\n407#1:986\n456#1:1024\n494#1:1028\n81#1:763\n81#1:764\n83#1:782\n83#1:783\n145#1:805\n145#1:806\n185#1:828\n185#1:829\n204#1:860\n204#1:861\n230#1:911\n230#1:912\n371#1:982\n371#1:983\n407#1:1002\n407#1:1003\n494#1:1044\n494#1:1045\n93#1:784\n93#1:785,3\n153#1:807\n153#1:808,3\n192#1:831\n192#1:832,3\n195#1:835\n195#1:836,3\n198#1:839\n198#1:840,3\n209#1:862\n209#1:863,3\n209#1:873,3\n214#1:887\n214#1:888,3\n238#1:913\n238#1:914,3\n239#1:917\n239#1:918,3\n242#1:921,8\n244#1:929\n244#1:930,2\n248#1:932\n248#1:933,3\n248#1:943,3\n254#1:958\n254#1:959,3\n432#1:1005\n432#1:1006,3\n441#1:1009\n441#1:1010,3\n456#1:1013,10\n456#1:1023\n456#1:1025\n456#1:1026\n502#1:1046,2\n503#1:1048,2\n504#1:1050,2\n507#1:1052\n507#1:1053,3\n209#1:866,7\n248#1:936,7\n210#1:876,10\n210#1:886\n210#1:892\n210#1:893\n250#1:946,10\n250#1:956\n250#1:963\n250#1:964\n*E\n"})
+@SourceDebugExtension({"SMAP\nOneTouchTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OneTouchTV.kt\ncom/OneTouchTV/OneTouchTV\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,746:1\n63#2:747\n64#2,15:749\n63#2:766\n64#2,15:768\n63#2:789\n64#2,15:791\n63#2:812\n64#2,15:814\n63#2:844\n64#2,15:846\n63#2:895\n64#2,15:897\n63#2:966\n64#2,15:968\n63#2:986\n64#2,15:988\n63#2:1028\n64#2,15:1030\n1#3:748\n1#3:767\n1#3:790\n1#3:813\n1#3:831\n1#3:845\n1#3:892\n1#3:896\n1#3:958\n1#3:963\n1#3:967\n1#3:985\n1#3:987\n1#3:1005\n1#3:1025\n1#3:1029\n1#3:1057\n50#4:764\n43#4:765\n50#4:783\n43#4:784\n50#4:806\n43#4:807\n50#4:829\n43#4:830\n50#4:861\n43#4:862\n50#4:912\n43#4:913\n50#4:983\n43#4:984\n50#4:1003\n43#4:1004\n50#4:1045\n43#4:1046\n1739#5:785\n1814#5,3:786\n1739#5:808\n1814#5,3:809\n1739#5:832\n1814#5,3:833\n1739#5:836\n1814#5,3:837\n1739#5:840\n1814#5,3:841\n1665#5:863\n1691#5,3:864\n1694#5,3:874\n1739#5:888\n1814#5,3:889\n1739#5:914\n1814#5,3:915\n1739#5:918\n1814#5,3:919\n1849#5,8:922\n777#5:930\n873#5,2:931\n1665#5:933\n1691#5,3:934\n1694#5,3:944\n1739#5:959\n1814#5,3:960\n1739#5:1006\n1814#5,3:1007\n1739#5:1010\n1814#5,3:1011\n1795#5,10:1014\n2068#5:1024\n2069#5:1026\n1805#5:1027\n2068#5,2:1047\n2068#5,2:1049\n2068#5,2:1051\n1739#5:1053\n1814#5,3:1054\n460#6,7:867\n460#6,7:937\n139#7,10:877\n221#7:887\n222#7:893\n149#7:894\n139#7,10:947\n221#7:957\n222#7:964\n149#7:965\n*S KotlinDebug\n*F\n+ 1 OneTouchTV.kt\ncom/OneTouchTV/OneTouchTV\n*L\n81#1:747\n81#1:749,15\n83#1:766\n83#1:768,15\n146#1:789\n146#1:791,15\n186#1:812\n186#1:814,15\n205#1:844\n205#1:846,15\n231#1:895\n231#1:897,15\n372#1:966\n372#1:968,15\n408#1:986\n408#1:988,15\n495#1:1028\n495#1:1030,15\n81#1:748\n83#1:767\n146#1:790\n186#1:813\n205#1:845\n211#1:892\n231#1:896\n251#1:963\n372#1:967\n408#1:987\n457#1:1025\n495#1:1029\n81#1:764\n81#1:765\n83#1:783\n83#1:784\n146#1:806\n146#1:807\n186#1:829\n186#1:830\n205#1:861\n205#1:862\n231#1:912\n231#1:913\n372#1:983\n372#1:984\n408#1:1003\n408#1:1004\n495#1:1045\n495#1:1046\n93#1:785\n93#1:786,3\n154#1:808\n154#1:809,3\n193#1:832\n193#1:833,3\n196#1:836\n196#1:837,3\n199#1:840\n199#1:841,3\n210#1:863\n210#1:864,3\n210#1:874,3\n215#1:888\n215#1:889,3\n239#1:914\n239#1:915,3\n240#1:918\n240#1:919,3\n243#1:922,8\n245#1:930\n245#1:931,2\n249#1:933\n249#1:934,3\n249#1:944,3\n255#1:959\n255#1:960,3\n433#1:1006\n433#1:1007,3\n442#1:1010\n442#1:1011,3\n457#1:1014,10\n457#1:1024\n457#1:1026\n457#1:1027\n503#1:1047,2\n504#1:1049,2\n505#1:1051,2\n508#1:1053\n508#1:1054,3\n210#1:867,7\n249#1:937,7\n211#1:877,10\n211#1:887\n211#1:893\n211#1:894\n251#1:947,10\n251#1:957\n251#1:964\n251#1:965\n*E\n"})
 public final class OneTouchTV extends MainAPI {
     private final boolean hasDownloadSupport;
 
@@ -116,7 +117,7 @@ public final class OneTouchTV extends MainAPI {
     /* JADX INFO: renamed from: com.OneTouchTV.OneTouchTV$fetchTmdbData$1 */
     /* JADX INFO: compiled from: OneTouchTV.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.OneTouchTV.OneTouchTV", f = "OneTouchTV.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {683, 688, 691, 701}, m = "fetchTmdbData", n = {"title", "year", "type", "cleanTitle", "encodedTitle", "tmdbApiKey", "searchUrl", "yearParam", "yearUrl", "isMovie", "title", "year", "type", "cleanTitle", "encodedTitle", "tmdbApiKey", "searchUrl", "yearParam", "yearUrl", "yearRes", "yearJson", "isMovie", "title", "year", "type", "cleanTitle", "encodedTitle", "tmdbApiKey", "searchUrl", "isMovie", "title", "year", "type", "cleanTitle", "encodedTitle", "tmdbApiKey", "searchUrl", "res", "json", "results", "first", "detailUrl", "isMovie", "id"}, nl = {684, 691, 693, 702}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.OneTouchTV.OneTouchTV", f = "OneTouchTV.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {684, 689, 692, 702}, m = "fetchTmdbData", n = {"title", "year", "type", "cleanTitle", "encodedTitle", "tmdbApiKey", "searchUrl", "yearParam", "yearUrl", "isMovie", "title", "year", "type", "cleanTitle", "encodedTitle", "tmdbApiKey", "searchUrl", "yearParam", "yearUrl", "yearRes", "yearJson", "isMovie", "title", "year", "type", "cleanTitle", "encodedTitle", "tmdbApiKey", "searchUrl", "isMovie", "title", "year", "type", "cleanTitle", "encodedTitle", "tmdbApiKey", "searchUrl", "res", "json", "results", "first", "detailUrl", "isMovie", "id"}, nl = {685, 692, 694, 703}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -150,7 +151,7 @@ public final class OneTouchTV extends MainAPI {
     /* JADX INFO: renamed from: com.OneTouchTV.OneTouchTV$fetchTmdbEpisodes$1 */
     /* JADX INFO: compiled from: OneTouchTV.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.OneTouchTV.OneTouchTV", f = "OneTouchTV.kt", i = {0, 0, 0, 0}, l = {727}, m = "fetchTmdbEpisodes", n = {"tmdbApiKey", "url", "tmdbId", "seasonNumber"}, nl = {728}, s = {"L$0", "L$1", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.OneTouchTV.OneTouchTV", f = "OneTouchTV.kt", i = {0, 0, 0, 0}, l = {728}, m = "fetchTmdbEpisodes", n = {"tmdbApiKey", "url", "tmdbId", "seasonNumber"}, nl = {729}, s = {"L$0", "L$1", "I$0", "I$1"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -174,7 +175,7 @@ public final class OneTouchTV extends MainAPI {
     /* JADX INFO: renamed from: com.OneTouchTV.OneTouchTV$getMainPage$1 */
     /* JADX INFO: compiled from: OneTouchTV.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.OneTouchTV.OneTouchTV", f = "OneTouchTV.kt", i = {0, 0, 0}, l = {128}, m = "getMainPage", n = {"request", "url", "page"}, nl = {129}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.OneTouchTV.OneTouchTV", f = "OneTouchTV.kt", i = {0, 0, 0}, l = {129}, m = "getMainPage", n = {"request", "url", "page"}, nl = {130}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -197,7 +198,7 @@ public final class OneTouchTV extends MainAPI {
     /* JADX INFO: renamed from: com.OneTouchTV.OneTouchTV$load$1 */
     /* JADX INFO: compiled from: OneTouchTV.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.OneTouchTV.OneTouchTV", f = "OneTouchTV.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {369, 375, 391, 453, 454, 483, 518, 540}, m = "load", n = {"url", "channelId", "url", "channelId", "rawResponse", "decryptedJson", "channelParser", "channel", "url", "url", "rawResponse", "decryptedJson", "parser", "title", "poster", "backgroundposter", "description", "year", "status", "actors", "tags", "seasonRegex", "seasonMatch", "isMovie", "extractedSeason", "url", "rawResponse", "decryptedJson", "parser", "title", "poster", "backgroundposter", "description", "year", "status", "actors", "tags", "seasonRegex", "seasonMatch", "tmdbData", "isMovie", "extractedSeason", "url", "rawResponse", "decryptedJson", "parser", "title", "poster", "backgroundposter", "description", "year", "status", "actors", "tags", "seasonRegex", "seasonMatch", "tmdbData", "tmdbEpisodes", "episodes", "isMovie", "extractedSeason", "url", "rawResponse", "decryptedJson", "parser", "title", "poster", "backgroundposter", "description", "year", "status", "actors", "tags", "seasonRegex", "seasonMatch", "tmdbData", "tmdbEpisodes", "episodes", "recommendation", "epUrl", "isMovie", "extractedSeason", "url", "rawResponse", "decryptedJson", "parser", "title", "poster", "backgroundposter", "description", "year", "status", "actors", "tags", "seasonRegex", "seasonMatch", "tmdbData", "tmdbEpisodes", "episodes", "recommendation", "isMovie", "extractedSeason"}, nl = {370, 390, 392, 454, 456, 485, 540, 516}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "Z$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.OneTouchTV.OneTouchTV", f = "OneTouchTV.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {370, 376, 392, 454, 455, 484, 519, 541}, m = "load", n = {"url", "channelId", "url", "channelId", "rawResponse", "decryptedJson", "channelParser", "channel", "url", "url", "rawResponse", "decryptedJson", "parser", "title", "poster", "backgroundposter", "description", "year", "status", "actors", "tags", "seasonRegex", "seasonMatch", "isMovie", "extractedSeason", "url", "rawResponse", "decryptedJson", "parser", "title", "poster", "backgroundposter", "description", "year", "status", "actors", "tags", "seasonRegex", "seasonMatch", "tmdbData", "isMovie", "extractedSeason", "url", "rawResponse", "decryptedJson", "parser", "title", "poster", "backgroundposter", "description", "year", "status", "actors", "tags", "seasonRegex", "seasonMatch", "tmdbData", "tmdbEpisodes", "episodes", "isMovie", "extractedSeason", "url", "rawResponse", "decryptedJson", "parser", "title", "poster", "backgroundposter", "description", "year", "status", "actors", "tags", "seasonRegex", "seasonMatch", "tmdbData", "tmdbEpisodes", "episodes", "recommendation", "epUrl", "isMovie", "extractedSeason", "url", "rawResponse", "decryptedJson", "parser", "title", "poster", "backgroundposter", "description", "year", "status", "actors", "tags", "seasonRegex", "seasonMatch", "tmdbData", "tmdbEpisodes", "episodes", "recommendation", "isMovie", "extractedSeason"}, nl = {371, 391, 393, 455, 457, 486, 541, 517}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "Z$0", "I$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -660,104 +661,104 @@ public final class OneTouchTV extends MainAPI {
     }
 
     /* JADX INFO: Thrown type has an unknown type hierarchy: com.lagradost.cloudstream3.ErrorLoadingException */
-    /* JADX WARN: Code duplicated, block: B:101:0x0304  */
-    /* JADX WARN: Code duplicated, block: B:103:0x0319  */
-    /* JADX WARN: Code duplicated, block: B:120:0x0383  */
-    /* JADX WARN: Code duplicated, block: B:129:0x039f A[Catch: Exception -> 0x0528, TryCatch #13 {Exception -> 0x0528, blocks: (B:105:0x0328, B:111:0x034e, B:118:0x037d, B:121:0x0384, B:130:0x03b4, B:129:0x039f, B:128:0x0399, B:117:0x0372, B:110:0x0344, B:114:0x0356, B:107:0x032d, B:123:0x038a), top: B:394:0x0328, inners: #6, #18, #20, #26 }] */
-    /* JADX WARN: Code duplicated, block: B:133:0x03c4  */
-    /* JADX WARN: Code duplicated, block: B:136:0x03d0  */
-    /* JADX WARN: Code duplicated, block: B:138:0x03d3  */
-    /* JADX WARN: Code duplicated, block: B:141:0x03f1 A[LOOP:10: B:139:0x03eb->B:141:0x03f1, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:143:0x0438  */
-    /* JADX WARN: Code duplicated, block: B:146:0x0443  */
-    /* JADX WARN: Code duplicated, block: B:149:0x044f  */
-    /* JADX WARN: Code duplicated, block: B:151:0x0452  */
-    /* JADX WARN: Code duplicated, block: B:154:0x0470 A[LOOP:11: B:152:0x046a->B:154:0x0470, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:158:0x04b3  */
-    /* JADX WARN: Code duplicated, block: B:161:0x04bf  */
-    /* JADX WARN: Code duplicated, block: B:163:0x04c2  */
-    /* JADX WARN: Code duplicated, block: B:166:0x04e0 A[LOOP:12: B:164:0x04da->B:166:0x04e0, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:173:0x0548  */
-    /* JADX WARN: Code duplicated, block: B:190:0x05b3  */
-    /* JADX WARN: Code duplicated, block: B:202:0x05d7 A[Catch: Exception -> 0x076b, TRY_ENTER, TryCatch #1 {Exception -> 0x076b, blocks: (B:175:0x0558, B:181:0x057e, B:188:0x05ad, B:191:0x05b4, B:203:0x05ec, B:202:0x05d7, B:187:0x05a2, B:180:0x0574, B:184:0x0586, B:177:0x055d), top: B:375:0x0558, inners: #0, #7 }] */
-    /* JADX WARN: Code duplicated, block: B:206:0x05f5  */
-    /* JADX WARN: Code duplicated, block: B:209:0x060b  */
-    /* JADX WARN: Code duplicated, block: B:211:0x0619  */
-    /* JADX WARN: Code duplicated, block: B:214:0x0627  */
-    /* JADX WARN: Code duplicated, block: B:215:0x063b  */
-    /* JADX WARN: Code duplicated, block: B:218:0x064e  */
-    /* JADX WARN: Code duplicated, block: B:222:0x066f  */
-    /* JADX WARN: Code duplicated, block: B:224:0x0691  */
-    /* JADX WARN: Code duplicated, block: B:225:0x069c  */
-    /* JADX WARN: Code duplicated, block: B:228:0x06d9  */
-    /* JADX WARN: Code duplicated, block: B:230:0x06ef  */
-    /* JADX WARN: Code duplicated, block: B:234:0x0746  */
-    /* JADX WARN: Code duplicated, block: B:242:0x078d  */
-    /* JADX WARN: Code duplicated, block: B:251:0x07bd  */
-    /* JADX WARN: Code duplicated, block: B:264:0x07f0  */
-    /* JADX WARN: Code duplicated, block: B:273:0x080c A[Catch: Exception -> 0x0adc, TryCatch #8 {Exception -> 0x0adc, blocks: (B:243:0x0791, B:249:0x07b7, B:262:0x07ea, B:265:0x07f1, B:274:0x0821, B:273:0x080c, B:272:0x0806, B:261:0x07df, B:248:0x07ad, B:245:0x0796, B:267:0x07f7), top: B:388:0x0791, inners: #4, #14, #27 }] */
-    /* JADX WARN: Code duplicated, block: B:277:0x0830  */
-    /* JADX WARN: Code duplicated, block: B:280:0x084c A[LOOP:0: B:278:0x0846->B:280:0x084c, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:282:0x0865  */
-    /* JADX WARN: Code duplicated, block: B:285:0x0875  */
-    /* JADX WARN: Code duplicated, block: B:288:0x0891 A[LOOP:1: B:286:0x088b->B:288:0x0891, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:290:0x08a9  */
-    /* JADX WARN: Code duplicated, block: B:294:0x08d0  */
-    /* JADX WARN: Code duplicated, block: B:296:0x08de  */
-    /* JADX WARN: Code duplicated, block: B:303:0x0908  */
-    /* JADX WARN: Code duplicated, block: B:305:0x091c  */
-    /* JADX WARN: Code duplicated, block: B:307:0x0922  */
-    /* JADX WARN: Code duplicated, block: B:308:0x0938  */
-    /* JADX WARN: Code duplicated, block: B:311:0x0942  */
-    /* JADX WARN: Code duplicated, block: B:312:0x0944  */
-    /* JADX WARN: Code duplicated, block: B:315:0x094d  */
-    /* JADX WARN: Code duplicated, block: B:320:0x0979  */
-    /* JADX WARN: Code duplicated, block: B:326:0x09a0  */
-    /* JADX WARN: Code duplicated, block: B:329:0x09ac  */
-    /* JADX WARN: Code duplicated, block: B:330:0x09c0  */
-    /* JADX WARN: Code duplicated, block: B:335:0x09ee  */
-    /* JADX WARN: Code duplicated, block: B:337:0x0a14  */
-    /* JADX WARN: Code duplicated, block: B:339:0x0a1d  */
-    /* JADX WARN: Code duplicated, block: B:340:0x0a1f  */
-    /* JADX WARN: Code duplicated, block: B:342:0x0a22  */
-    /* JADX WARN: Code duplicated, block: B:344:0x0a39  */
-    /* JADX WARN: Code duplicated, block: B:345:0x0a3f  */
-    /* JADX WARN: Code duplicated, block: B:347:0x0a5d  */
-    /* JADX WARN: Code duplicated, block: B:351:0x0a85 A[LOOP:6: B:349:0x0a7f->B:351:0x0a85, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:353:0x0aae  */
-    /* JADX WARN: Code duplicated, block: B:355:0x0ab7  */
-    /* JADX WARN: Code duplicated, block: B:373:0x0586 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:375:0x0558 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:377:0x018b A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:384:0x0356 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:38:0x014c A[Catch: Exception -> 0x01f9, TRY_LEAVE, TryCatch #26 {Exception -> 0x01f9, blocks: (B:36:0x0139, B:38:0x014c), top: B:408:0x0139 }] */
-    /* JADX WARN: Code duplicated, block: B:394:0x0328 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:408:0x0139 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:412:0x07c0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:414:0x01bf A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:416:0x05ba A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:418:0x07f7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:420:0x038a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:425:0x08e9 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:427:0x08ca A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:431:0x0950 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:437:0x0abb A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:444:0x074a A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:447:0x06f1 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:58:0x01b8  */
-    /* JADX WARN: Code duplicated, block: B:68:0x01d4 A[Catch: Exception -> 0x01f7, TryCatch #3 {Exception -> 0x01f7, blocks: (B:49:0x0184, B:56:0x01b2, B:59:0x01b9, B:69:0x01e9, B:68:0x01d4, B:67:0x01ce, B:55:0x01a7, B:48:0x017a, B:70:0x01f0, B:52:0x018b, B:62:0x01bf), top: B:379:0x014a, inners: #2, #9, #29 }] */
-    /* JADX WARN: Code duplicated, block: B:70:0x01f0 A[Catch: Exception -> 0x01f7, TRY_LEAVE, TryCatch #3 {Exception -> 0x01f7, blocks: (B:49:0x0184, B:56:0x01b2, B:59:0x01b9, B:69:0x01e9, B:68:0x01d4, B:67:0x01ce, B:55:0x01a7, B:48:0x017a, B:70:0x01f0, B:52:0x018b, B:62:0x01bf), top: B:379:0x014a, inners: #2, #9, #29 }] */
+    /* JADX WARN: Code duplicated, block: B:101:0x030d  */
+    /* JADX WARN: Code duplicated, block: B:103:0x0322  */
+    /* JADX WARN: Code duplicated, block: B:120:0x038c  */
+    /* JADX WARN: Code duplicated, block: B:129:0x03a8 A[Catch: Exception -> 0x0531, TryCatch #4 {Exception -> 0x0531, blocks: (B:105:0x0331, B:111:0x0357, B:118:0x0386, B:121:0x038d, B:130:0x03bd, B:129:0x03a8, B:128:0x03a2, B:117:0x037b, B:110:0x034d, B:114:0x035f, B:123:0x0393, B:107:0x0336), top: B:381:0x0331, inners: #13, #18, #21, #27 }] */
+    /* JADX WARN: Code duplicated, block: B:133:0x03cd  */
+    /* JADX WARN: Code duplicated, block: B:136:0x03d9  */
+    /* JADX WARN: Code duplicated, block: B:138:0x03dc  */
+    /* JADX WARN: Code duplicated, block: B:141:0x03fa A[LOOP:10: B:139:0x03f4->B:141:0x03fa, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:143:0x0441  */
+    /* JADX WARN: Code duplicated, block: B:146:0x044c  */
+    /* JADX WARN: Code duplicated, block: B:149:0x0458  */
+    /* JADX WARN: Code duplicated, block: B:151:0x045b  */
+    /* JADX WARN: Code duplicated, block: B:154:0x0479 A[LOOP:11: B:152:0x0473->B:154:0x0479, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:158:0x04bc  */
+    /* JADX WARN: Code duplicated, block: B:161:0x04c8  */
+    /* JADX WARN: Code duplicated, block: B:163:0x04cb  */
+    /* JADX WARN: Code duplicated, block: B:166:0x04e9 A[LOOP:12: B:164:0x04e3->B:166:0x04e9, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:173:0x0551  */
+    /* JADX WARN: Code duplicated, block: B:190:0x05bc  */
+    /* JADX WARN: Code duplicated, block: B:202:0x05e0 A[Catch: Exception -> 0x0774, TRY_ENTER, TryCatch #3 {Exception -> 0x0774, blocks: (B:175:0x0561, B:181:0x0587, B:188:0x05b6, B:191:0x05bd, B:203:0x05f5, B:202:0x05e0, B:187:0x05ab, B:180:0x057d, B:184:0x058f, B:177:0x0566), top: B:379:0x0561, inners: #2, #15 }] */
+    /* JADX WARN: Code duplicated, block: B:206:0x05fe  */
+    /* JADX WARN: Code duplicated, block: B:209:0x0614  */
+    /* JADX WARN: Code duplicated, block: B:211:0x0622  */
+    /* JADX WARN: Code duplicated, block: B:214:0x0630  */
+    /* JADX WARN: Code duplicated, block: B:215:0x0644  */
+    /* JADX WARN: Code duplicated, block: B:218:0x0657  */
+    /* JADX WARN: Code duplicated, block: B:222:0x0678  */
+    /* JADX WARN: Code duplicated, block: B:224:0x069a  */
+    /* JADX WARN: Code duplicated, block: B:225:0x06a5  */
+    /* JADX WARN: Code duplicated, block: B:228:0x06e2  */
+    /* JADX WARN: Code duplicated, block: B:230:0x06f8  */
+    /* JADX WARN: Code duplicated, block: B:234:0x074f  */
+    /* JADX WARN: Code duplicated, block: B:242:0x0796  */
+    /* JADX WARN: Code duplicated, block: B:251:0x07c6  */
+    /* JADX WARN: Code duplicated, block: B:264:0x07f9  */
+    /* JADX WARN: Code duplicated, block: B:273:0x0815 A[Catch: Exception -> 0x0ae5, TryCatch #14 {Exception -> 0x0ae5, blocks: (B:243:0x079a, B:249:0x07c0, B:262:0x07f3, B:265:0x07fa, B:274:0x082a, B:273:0x0815, B:272:0x080f, B:261:0x07e8, B:248:0x07b6, B:245:0x079f, B:267:0x0800), top: B:397:0x079a, inners: #9, #28 }] */
+    /* JADX WARN: Code duplicated, block: B:277:0x0839  */
+    /* JADX WARN: Code duplicated, block: B:280:0x0855 A[LOOP:0: B:278:0x084f->B:280:0x0855, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:282:0x086e  */
+    /* JADX WARN: Code duplicated, block: B:285:0x087e  */
+    /* JADX WARN: Code duplicated, block: B:288:0x089a A[LOOP:1: B:286:0x0894->B:288:0x089a, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:290:0x08b2  */
+    /* JADX WARN: Code duplicated, block: B:294:0x08d9  */
+    /* JADX WARN: Code duplicated, block: B:296:0x08e7  */
+    /* JADX WARN: Code duplicated, block: B:303:0x0911  */
+    /* JADX WARN: Code duplicated, block: B:305:0x0925  */
+    /* JADX WARN: Code duplicated, block: B:307:0x092b  */
+    /* JADX WARN: Code duplicated, block: B:308:0x0941  */
+    /* JADX WARN: Code duplicated, block: B:311:0x094b  */
+    /* JADX WARN: Code duplicated, block: B:312:0x094d  */
+    /* JADX WARN: Code duplicated, block: B:315:0x0956  */
+    /* JADX WARN: Code duplicated, block: B:320:0x0982  */
+    /* JADX WARN: Code duplicated, block: B:326:0x09a9  */
+    /* JADX WARN: Code duplicated, block: B:329:0x09b5  */
+    /* JADX WARN: Code duplicated, block: B:330:0x09c9  */
+    /* JADX WARN: Code duplicated, block: B:335:0x09f7  */
+    /* JADX WARN: Code duplicated, block: B:337:0x0a1d  */
+    /* JADX WARN: Code duplicated, block: B:339:0x0a26  */
+    /* JADX WARN: Code duplicated, block: B:340:0x0a28  */
+    /* JADX WARN: Code duplicated, block: B:342:0x0a2b  */
+    /* JADX WARN: Code duplicated, block: B:344:0x0a42  */
+    /* JADX WARN: Code duplicated, block: B:345:0x0a48  */
+    /* JADX WARN: Code duplicated, block: B:347:0x0a66  */
+    /* JADX WARN: Code duplicated, block: B:351:0x0a8e A[LOOP:6: B:349:0x0a88->B:351:0x0a8e, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:353:0x0ab7  */
+    /* JADX WARN: Code duplicated, block: B:355:0x0ac0  */
+    /* JADX WARN: Code duplicated, block: B:375:0x07c9 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:377:0x058f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:379:0x0561 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:381:0x0331 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:383:0x0194 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:38:0x0155 A[Catch: Exception -> 0x0202, TRY_LEAVE, TryCatch #27 {Exception -> 0x0202, blocks: (B:36:0x0142, B:38:0x0155), top: B:412:0x0142 }] */
+    /* JADX WARN: Code duplicated, block: B:395:0x035f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:412:0x0142 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:414:0x05c3 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:416:0x0800 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:418:0x0393 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:420:0x01c8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:425:0x08f2 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:427:0x08d3 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:431:0x0959 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:437:0x0ac4 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:444:0x0753 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:447:0x06fa A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:58:0x01c1  */
+    /* JADX WARN: Code duplicated, block: B:68:0x01dd A[Catch: Exception -> 0x0200, TryCatch #24 {Exception -> 0x0200, blocks: (B:49:0x018d, B:56:0x01bb, B:59:0x01c2, B:69:0x01f2, B:68:0x01dd, B:67:0x01d7, B:55:0x01b0, B:48:0x0183, B:70:0x01f9, B:52:0x0194, B:62:0x01c8), top: B:409:0x0153, inners: #5, #26 }] */
+    /* JADX WARN: Code duplicated, block: B:70:0x01f9 A[Catch: Exception -> 0x0200, TRY_LEAVE, TryCatch #24 {Exception -> 0x0200, blocks: (B:49:0x018d, B:56:0x01bb, B:59:0x01c2, B:69:0x01f2, B:68:0x01dd, B:67:0x01d7, B:55:0x01b0, B:48:0x0183, B:70:0x01f9, B:52:0x0194, B:62:0x01c8), top: B:409:0x0153, inners: #5, #26 }] */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Code duplicated, block: B:80:0x021f  */
-    /* JADX WARN: Code duplicated, block: B:82:0x023a  */
-    /* JADX WARN: Code duplicated, block: B:83:0x023d  */
-    /* JADX WARN: Code duplicated, block: B:86:0x0247  */
-    /* JADX WARN: Code duplicated, block: B:88:0x0251  */
-    /* JADX WARN: Code duplicated, block: B:89:0x0254  */
-    /* JADX WARN: Code duplicated, block: B:91:0x0290  */
-    /* JADX WARN: Code duplicated, block: B:93:0x029e  */
-    /* JADX WARN: Code duplicated, block: B:94:0x02a1  */
-    /* JADX WARN: Code duplicated, block: B:99:0x02f7  */
+    /* JADX WARN: Code duplicated, block: B:80:0x0228  */
+    /* JADX WARN: Code duplicated, block: B:82:0x0243  */
+    /* JADX WARN: Code duplicated, block: B:83:0x0246  */
+    /* JADX WARN: Code duplicated, block: B:86:0x0250  */
+    /* JADX WARN: Code duplicated, block: B:88:0x025a  */
+    /* JADX WARN: Code duplicated, block: B:89:0x025d  */
+    /* JADX WARN: Code duplicated, block: B:91:0x0299  */
+    /* JADX WARN: Code duplicated, block: B:93:0x02a7  */
+    /* JADX WARN: Code duplicated, block: B:94:0x02aa  */
+    /* JADX WARN: Code duplicated, block: B:99:0x0300  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws ErrorLoadingException {
         C00021 c00021;
@@ -892,6 +893,7 @@ public final class OneTouchTV extends MainAPI {
         switch (c00022.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 if (StringsKt.startsWith$default(request.getData(), "vod/filter", false, 2, (Object) null)) {
                     String sep = StringsKt.contains$default(request.getData(), "?", false, 2, (Object) null) ? "&" : "?";
                     url = getMainUrl() + '/' + request.getData() + sep + "page=" + page;
@@ -5628,7 +5630,7 @@ public final class OneTouchTV extends MainAPI {
     /* JADX INFO: compiled from: OneTouchTV.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.OneTouchTV.OneTouchTV$load$4", f = "OneTouchTV.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nOneTouchTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OneTouchTV.kt\ncom/OneTouchTV/OneTouchTV$load$4\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,745:1\n1#2:746\n*E\n"})
+    @SourceDebugExtension({"SMAP\nOneTouchTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OneTouchTV.kt\ncom/OneTouchTV/OneTouchTV$load$4\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,746:1\n1#2:747\n*E\n"})
     static final class C00054 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<ActorData> $actors;
         final /* synthetic */ String $backgroundposter;
@@ -5727,7 +5729,7 @@ public final class OneTouchTV extends MainAPI {
     /* JADX INFO: compiled from: OneTouchTV.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.OneTouchTV.OneTouchTV$load$5", f = "OneTouchTV.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nOneTouchTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OneTouchTV.kt\ncom/OneTouchTV/OneTouchTV$load$5\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,745:1\n1#2:746\n*E\n"})
+    @SourceDebugExtension({"SMAP\nOneTouchTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 OneTouchTV.kt\ncom/OneTouchTV/OneTouchTV$load$5\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,746:1\n1#2:747\n*E\n"})
     static final class C00065 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<ActorData> $actors;
         final /* synthetic */ String $backgroundposter;
@@ -5828,7 +5830,7 @@ public final class OneTouchTV extends MainAPI {
     /* JADX INFO: renamed from: com.OneTouchTV.OneTouchTV$loadLinks$2 */
     /* JADX INFO: compiled from: OneTouchTV.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.OneTouchTV.OneTouchTV$loadLinks$2", f = "OneTouchTV.kt", i = {0, 0, 1}, l = {574, 585}, m = "invokeSuspend", n = {"$this$coroutineScope", "type", "$this$coroutineScope"}, nl = {573, 586}, s = {"L$0", "L$1", "L$0"}, v = 2)
+    @DebugMetadata(c = "com.OneTouchTV.OneTouchTV$loadLinks$2", f = "OneTouchTV.kt", i = {0, 0, 1}, l = {575, 586}, m = "invokeSuspend", n = {"$this$coroutineScope", "type", "$this$coroutineScope"}, nl = {574, 587}, s = {"L$0", "L$1", "L$0"}, v = 2)
     static final class C00072 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $data;
@@ -5928,7 +5930,7 @@ public final class OneTouchTV extends MainAPI {
         /* JADX INFO: renamed from: com.OneTouchTV.OneTouchTV$loadLinks$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: OneTouchTV.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-        @DebugMetadata(c = "com.OneTouchTV.OneTouchTV$loadLinks$2$1", f = "OneTouchTV.kt", i = {0}, l = {600}, m = "invokeSuspend", n = {"track"}, nl = {599}, s = {"L$1"}, v = 2)
+        @DebugMetadata(c = "com.OneTouchTV.OneTouchTV$loadLinks$2$1", f = "OneTouchTV.kt", i = {0}, l = {601}, m = "invokeSuspend", n = {"track"}, nl = {600}, s = {"L$1"}, v = 2)
         static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
             final /* synthetic */ List<TrackItem> $tracks;
@@ -5959,11 +5961,10 @@ public final class OneTouchTV extends MainAPI {
             /* JADX WARN: Code duplicated, block: B:24:0x0051 A[SYNTHETIC] */
             /* JADX WARN: Code duplicated, block: B:26:? A[LOOP:0: B:8:0x0032->B:26:?, LOOP_END, SYNTHETIC] */
             /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x006b -> B:20:0x0072). Please report as a decompilation issue!!! */
-            /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-                jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached at block B:19:0x006b
-                	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-                	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-                	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+            /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+                java.lang.StackOverflowError
+                	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+                	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
                 */
             public final java.lang.Object invokeSuspend(java.lang.Object r14) {
                 /*
@@ -6056,7 +6057,7 @@ public final class OneTouchTV extends MainAPI {
         /* JADX INFO: renamed from: com.OneTouchTV.OneTouchTV$loadLinks$2$2, reason: invalid class name */
         /* JADX INFO: compiled from: OneTouchTV.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-        @DebugMetadata(c = "com.OneTouchTV.OneTouchTV$loadLinks$2$2", f = "OneTouchTV.kt", i = {0}, l = {610}, m = "invokeSuspend", n = {"src"}, nl = {609}, s = {"L$1"}, v = 2)
+        @DebugMetadata(c = "com.OneTouchTV.OneTouchTV$loadLinks$2$2", f = "OneTouchTV.kt", i = {0}, l = {611}, m = "invokeSuspend", n = {"src"}, nl = {610}, s = {"L$1"}, v = 2)
         static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
             final /* synthetic */ List<SourceItem> $sources;

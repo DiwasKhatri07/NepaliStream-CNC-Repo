@@ -4,7 +4,7 @@ package nepali.stream.decoded.cinemacity
 object PluginMetadata {
     const val name: String = "Cinemacity"
     const val originalPluginClass: String = "com.Cinemacity.CinemacityPlugin"
-    const val version: Int = 24
+    const val version: Int = 26
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

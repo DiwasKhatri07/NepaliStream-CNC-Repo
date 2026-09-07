@@ -4,7 +4,7 @@ package nepali.stream.decoded.netcinez
 object PluginMetadata {
     const val name: String = "Netcinez"
     const val originalPluginClass: String = "com.Netcinez.NetcinezProvider"
-    const val version: Int = 3
+    const val version: Int = 5
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

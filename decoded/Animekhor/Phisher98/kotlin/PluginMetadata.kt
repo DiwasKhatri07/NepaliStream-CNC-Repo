@@ -4,7 +4,7 @@ package nepali.stream.decoded.animekhor
 object PluginMetadata {
     const val name: String = "Animekhor"
     const val originalPluginClass: String = "com.Animekhor.AnimenosubProvider"
-    const val version: Int = 11
+    const val version: Int = 13
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

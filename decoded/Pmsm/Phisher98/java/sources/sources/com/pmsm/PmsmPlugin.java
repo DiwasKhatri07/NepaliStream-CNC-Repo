@@ -1,6 +1,7 @@
 package com.pmsm;
 
 import android.content.Context;
+import androidx.appcompat.app.AppCompatActivity;
 import com.lagradost.cloudstream3.MainActivityKt;
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin;
 import com.lagradost.cloudstream3.plugins.Plugin;
@@ -8,12 +9,15 @@ import com.lagradost.cloudstream3.utils.ExtractorApi;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import kotlin.Metadata;
 import kotlin.ResultKt;
+import kotlin.Unit;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
+import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
@@ -39,6 +43,11 @@ public final class PmsmPlugin extends Plugin {
     private static Companion.Domains cachedDomains;
 
     public void load(@NotNull Context context) {
+        setOpenSettings(new Function1() { // from class: com.pmsm.PmsmPlugin$$ExternalSyntheticLambda0
+            public final Object invoke(Object obj) {
+                return PmsmPlugin.load$lambda$0((Context) obj);
+            }
+        });
         registerMainAPI(new Pmsm());
         registerExtractorAPI((ExtractorApi) new DhtprePmsm());
         registerExtractorAPI((ExtractorApi) new NetuPmsm());
@@ -52,9 +61,17 @@ public final class PmsmPlugin extends Plugin {
         registerExtractorAPI(new Larhu());
     }
 
+    static final Unit load$lambda$0(Context ctx) {
+        AppCompatActivity act = ctx instanceof AppCompatActivity ? (AppCompatActivity) ctx : null;
+        if (act != null) {
+            DonationManager.showNow$default(DonationManager.INSTANCE, act, null, 2, null);
+        }
+        return Unit.INSTANCE;
+    }
+
     /* JADX INFO: compiled from: PmsmPlugin.kt */
     @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001:\u0001\u0010B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u001a\u0010\f\u001a\u0004\u0018\u00010\u00072\b\b\u0002\u0010\r\u001a\u00020\u000eH\u0086@¢\u0006\u0002\u0010\u000fR\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u001c\u0010\u0006\u001a\u0004\u0018\u00010\u0007X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000b¨\u0006\u0011"}, d2 = {"Lcom/pmsm/PmsmPlugin$Companion;", "", "<init>", "()V", "DOMAINS_URL", "", "cachedDomains", "Lcom/pmsm/PmsmPlugin$Companion$Domains;", "getCachedDomains", "()Lcom/pmsm/PmsmPlugin$Companion$Domains;", "setCachedDomains", "(Lcom/pmsm/PmsmPlugin$Companion$Domains;)V", "getDomains", "forceRefresh", "", "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Domains", "Pmsm"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nPmsmPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PmsmPlugin.kt\ncom/pmsm/PmsmPlugin$Companion\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,46:1\n73#2,5:47\n*S KotlinDebug\n*F\n+ 1 PmsmPlugin.kt\ncom/pmsm/PmsmPlugin$Companion\n*L\n32#1:47,5\n*E\n"})
+    @SourceDebugExtension({"SMAP\nPmsmPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PmsmPlugin.kt\ncom/pmsm/PmsmPlugin$Companion\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,51:1\n73#2,5:52\n*S KotlinDebug\n*F\n+ 1 PmsmPlugin.kt\ncom/pmsm/PmsmPlugin$Companion\n*L\n37#1:52,5\n*E\n"})
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

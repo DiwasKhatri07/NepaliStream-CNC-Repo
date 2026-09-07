@@ -43,8 +43,8 @@ final class StreamPlayUtilsKt$bypassXD$webSocket$1$onMessage$1 extends SuspendLa
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:11:0x003f -> B:13:0x0042). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextBlockInIfSuccessorChain(IfRegionMaker.java:646)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIfNodeInfo(IfRegionMaker.java:620)
+        	at jadx.core.dex.attributes.AttrNode.contains(AttrNode.java:103)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIfNodeInfo(IfRegionMaker.java:613)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIf(IfRegionMaker.java:602)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.mergeNestedIfNodes(IfRegionMaker.java:409)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:68)

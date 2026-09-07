@@ -34,7 +34,7 @@ public final class TpiLi extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.zinkmovies.TpiLi", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {311, 313}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "finalUrl"}, nl = {312, 315}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
-    static final class C00041 extends ContinuationImpl {
+    static final class C00071 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -43,7 +43,7 @@ public final class TpiLi extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00041(Continuation<? super C00041> continuation) {
+        C00071(Continuation<? super C00071> continuation) {
             super(continuation);
         }
 
@@ -72,30 +72,30 @@ public final class TpiLi extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C00041 c00041;
+        C00071 c00071;
         Object objBypassShortlink;
         String finalUrl;
-        if (continuation instanceof C00041) {
-            c00041 = (C00041) continuation;
-            if ((c00041.label & Integer.MIN_VALUE) != 0) {
-                c00041.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00071) {
+            c00071 = (C00071) continuation;
+            if ((c00071.label & Integer.MIN_VALUE) != 0) {
+                c00071.label -= Integer.MIN_VALUE;
             } else {
-                c00041 = new C00041(continuation);
+                c00071 = new C00071(continuation);
             }
         } else {
-            c00041 = new C00041(continuation);
+            c00071 = new C00071(continuation);
         }
-        Object $result = c00041.result;
+        Object $result = c00071.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00041.label) {
+        switch (c00071.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                c00041.L$0 = url;
-                c00041.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c00041.L$2 = function1;
-                c00041.L$3 = function2;
-                c00041.label = 1;
-                objBypassShortlink = UtilsKt.bypassShortlink(url, c00041);
+                c00071.L$0 = url;
+                c00071.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c00071.L$2 = function1;
+                c00071.L$3 = function2;
+                c00071.label = 1;
+                objBypassShortlink = UtilsKt.bypassShortlink(url, c00071);
                 if (objBypassShortlink == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -103,21 +103,21 @@ public final class TpiLi extends ExtractorApi {
                 if (!Intrinsics.areEqual(finalUrl, url) || StringsKt.isBlank(finalUrl)) {
                     return Unit.INSTANCE;
                 }
-                c00041.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c00041.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c00041.L$2 = SpillingKt.nullOutSpilledVariable(function1);
-                c00041.L$3 = SpillingKt.nullOutSpilledVariable(function2);
-                c00041.L$4 = SpillingKt.nullOutSpilledVariable(finalUrl);
-                c00041.label = 2;
-                if (ExtractorApiKt.loadExtractor(finalUrl, url, function1, function2, c00041) == coroutine_suspended) {
+                c00071.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c00071.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c00071.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                c00071.L$3 = SpillingKt.nullOutSpilledVariable(function2);
+                c00071.L$4 = SpillingKt.nullOutSpilledVariable(finalUrl);
+                c00071.label = 2;
+                if (ExtractorApiKt.loadExtractor(finalUrl, url, function1, function2, c00071) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return Unit.INSTANCE;
             case 1:
-                function2 = (Function1) c00041.L$3;
-                function1 = (Function1) c00041.L$2;
-                referer = (String) c00041.L$1;
-                url = (String) c00041.L$0;
+                function2 = (Function1) c00071.L$3;
+                function1 = (Function1) c00071.L$2;
+                referer = (String) c00071.L$1;
+                url = (String) c00071.L$0;
                 ResultKt.throwOnFailure($result);
                 objBypassShortlink = $result;
                 finalUrl = (String) objBypassShortlink;

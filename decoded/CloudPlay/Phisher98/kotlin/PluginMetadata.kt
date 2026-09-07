@@ -4,7 +4,7 @@ package nepali.stream.decoded.cloudplay
 object PluginMetadata {
     const val name: String = "CloudPlay"
     const val originalPluginClass: String = "com.phisher98.cloudplay.CloudPlayPlugin"
-    const val version: Int = 6
+    const val version: Int = 8
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

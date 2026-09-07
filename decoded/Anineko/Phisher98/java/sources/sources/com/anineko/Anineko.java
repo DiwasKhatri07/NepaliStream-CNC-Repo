@@ -21,6 +21,7 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -61,7 +62,7 @@ import org.jsoup.select.Elements;
 /* JADX INFO: compiled from: Anineko.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Anineko/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\u001c\u0010&\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010(\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010)J\u0018\u0010*\u001a\u0004\u0018\u00010+2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010)JF\u0010-\u001a\u00020\u000e2\u0006\u0010.\u001a\u00020\u00052\u0006\u0010/\u001a\u00020\u000e2\u0012\u00100\u001a\u000e\u0012\u0004\u0012\u000202\u0012\u0004\u0012\u000203012\u0012\u00104\u001a\u000e\u0012\u0004\u0012\u000205\u0012\u0004\u0012\u00020301H\u0096@¢\u0006\u0002\u00106R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u00067"}, d2 = {"Lcom/anineko/Anineko;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Anineko"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAnineko.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anineko.kt\ncom/anineko/Anineko\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,321:1\n1795#2,10:322\n2068#2:332\n2069#2:334\n1805#2:335\n1795#2,10:336\n2068#2:346\n2069#2:348\n1805#2:349\n1739#2:351\n1814#2,3:352\n2068#2:355\n1739#2:356\n1814#2,3:357\n2069#2:360\n296#2,2:361\n777#2:363\n873#2,2:364\n1#3:333\n1#3:347\n1#3:350\n*S KotlinDebug\n*F\n+ 1 Anineko.kt\ncom/anineko/Anineko\n*L\n57#1:322,10\n57#1:332\n57#1:334\n57#1:335\n85#1:336,10\n85#1:346\n85#1:348\n85#1:349\n119#1:351\n119#1:352,3\n148#1:355\n166#1:356\n166#1:357,3\n148#1:360\n194#1:361,2\n225#1:363\n225#1:364,2\n57#1:333\n85#1:347\n*E\n"})
+@SourceDebugExtension({"SMAP\nAnineko.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anineko.kt\ncom/anineko/Anineko\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,322:1\n1795#2,10:323\n2068#2:333\n2069#2:335\n1805#2:336\n1795#2,10:337\n2068#2:347\n2069#2:349\n1805#2:350\n1739#2:352\n1814#2,3:353\n2068#2:356\n1739#2:357\n1814#2,3:358\n2069#2:361\n296#2,2:362\n777#2:364\n873#2,2:365\n1#3:334\n1#3:348\n1#3:351\n*S KotlinDebug\n*F\n+ 1 Anineko.kt\ncom/anineko/Anineko\n*L\n58#1:323,10\n58#1:333\n58#1:335\n58#1:336\n86#1:337,10\n86#1:347\n86#1:349\n86#1:350\n120#1:352\n120#1:353,3\n149#1:356\n167#1:357\n167#1:358,3\n149#1:361\n195#1:362,2\n226#1:364\n226#1:365,2\n58#1:334\n86#1:348\n*E\n"})
 public final class Anineko extends MainAPI {
 
     @NotNull
@@ -84,7 +85,7 @@ public final class Anineko extends MainAPI {
     /* JADX INFO: renamed from: com.anineko.Anineko$getMainPage$1 */
     /* JADX INFO: compiled from: Anineko.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anineko.Anineko", f = "Anineko.kt", i = {0, 0, 0}, l = {55}, m = "getMainPage", n = {"request", "url", "page"}, nl = {57}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.anineko.Anineko", f = "Anineko.kt", i = {0, 0, 0}, l = {56}, m = "getMainPage", n = {"request", "url", "page"}, nl = {58}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -107,7 +108,7 @@ public final class Anineko extends MainAPI {
     /* JADX INFO: renamed from: com.anineko.Anineko$load$1 */
     /* JADX INFO: compiled from: Anineko.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anineko.Anineko", f = "Anineko.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {108, 137, 141, 196}, m = "load", n = {"url", "url", "doc", "title", "altTitle", "poster", "bgStyle", "background", "plot", "tags", "year", "typeText", "tvType", "statusText", "showStatus", "searchTitle", "url", "doc", "title", "altTitle", "poster", "bgStyle", "background", "plot", "tags", "year", "typeText", "tvType", "statusText", "showStatus", "searchTitle", "anilistId", "animeMetaData", "aniZipUrl", "url", "doc", "title", "altTitle", "poster", "bgStyle", "background", "plot", "tags", "year", "typeText", "tvType", "statusText", "showStatus", "searchTitle", "anilistId", "animeMetaData", "subEpisodes", "dubEpisodes", "fanartUrl"}, nl = {110, 138, 142, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19"}, v = 2)
+    @DebugMetadata(c = "com.anineko.Anineko", f = "Anineko.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {109, 138, 142, 197}, m = "load", n = {"url", "url", "doc", "title", "altTitle", "poster", "bgStyle", "background", "plot", "tags", "year", "typeText", "tvType", "statusText", "showStatus", "searchTitle", "url", "doc", "title", "altTitle", "poster", "bgStyle", "background", "plot", "tags", "year", "typeText", "tvType", "statusText", "showStatus", "searchTitle", "anilistId", "animeMetaData", "aniZipUrl", "url", "doc", "title", "altTitle", "poster", "bgStyle", "background", "plot", "tags", "year", "typeText", "tvType", "statusText", "showStatus", "searchTitle", "anilistId", "animeMetaData", "subEpisodes", "dubEpisodes", "fanartUrl"}, nl = {111, 139, 143, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -147,7 +148,7 @@ public final class Anineko extends MainAPI {
     /* JADX INFO: renamed from: com.anineko.Anineko$loadLinks$1 */
     /* JADX INFO: compiled from: Anineko.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anineko.Anineko", f = "Anineko.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {221, 233}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "url", "audioType", "isCasting", "data", "subtitleCallback", "callback", "parts", "url", "audioType", "doc", "panels", "targetPanels", "isCasting"}, nl = {223, 317}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.anineko.Anineko", f = "Anineko.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {222, 234}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "url", "audioType", "isCasting", "data", "subtitleCallback", "callback", "parts", "url", "audioType", "doc", "panels", "targetPanels", "isCasting"}, nl = {224, 318}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -177,7 +178,7 @@ public final class Anineko extends MainAPI {
     /* JADX INFO: renamed from: com.anineko.Anineko$search$1 */
     /* JADX INFO: compiled from: Anineko.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anineko.Anineko", f = "Anineko.kt", i = {0, 0}, l = {83}, m = "search", n = {"query", "url"}, nl = {85}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.anineko.Anineko", f = "Anineko.kt", i = {0, 0}, l = {84}, m = "search", n = {"query", "url"}, nl = {86}, s = {"L$0", "L$1"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -241,9 +242,9 @@ public final class Anineko extends MainAPI {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:57:0x019a  */
-    /* JADX WARN: Code duplicated, block: B:63:0x01d8  */
-    /* JADX WARN: Code duplicated, block: B:69:0x01dc A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:57:0x01a3  */
+    /* JADX WARN: Code duplicated, block: B:63:0x01e1  */
+    /* JADX WARN: Code duplicated, block: B:69:0x01e5 A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
@@ -273,6 +274,7 @@ public final class Anineko extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String url2 = getMainUrl() + request.getData() + "?page=" + page3;
                 Requests app = MainActivityKt.getApp();
                 c00001.L$0 = request;
@@ -5536,7 +5538,7 @@ public final class Anineko extends MainAPI {
     /* JADX INFO: renamed from: com.anineko.Anineko$loadLinks$2 */
     /* JADX INFO: compiled from: Anineko.kt */
     @Metadata(d1 = {"\u0000\u0014\n\u0000\n\u0002\u0010 \n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u000b\u0010\u0003\u001a\u00070\u0004¢\u0006\u0002\b\u0005H\n"}, d2 = {"<anonymous>", "", "", "panel", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anineko.Anineko$loadLinks$2", f = "Anineko.kt", i = {0}, l = {234}, m = "invokeSuspend", n = {"panel"}, nl = {314}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.anineko.Anineko$loadLinks$2", f = "Anineko.kt", i = {0}, l = {235}, m = "invokeSuspend", n = {"panel"}, nl = {315}, s = {"L$0"}, v = 2)
     static final class C00042 extends SuspendLambda implements Function2<Element, Continuation<? super List<? extends Unit>>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -5565,8 +5567,8 @@ public final class Anineko extends MainAPI {
         /* JADX INFO: renamed from: com.anineko.Anineko$loadLinks$2$1, reason: invalid class name */
         /* JADX INFO: compiled from: Anineko.kt */
         @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "serverBtn", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-        @DebugMetadata(c = "com.anineko.Anineko$loadLinks$2$1", f = "Anineko.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6}, l = {243, 247, 267, 279, 283, 297, 301}, m = "invokeSuspend", n = {"serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "subUrl", "subLang", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "embedDoc", "hlsRegexes", "m3u8Url", "sourceName", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "embedDoc", "hlsRegexes", "m3u8Url", "host", "extractor", "links", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "embedDoc", "hlsRegexes", "m3u8Url", "host", "extractor", "links", "$this$forEach$iv", "element$iv", "link", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "embedDoc", "hlsRegexes", "m3u8Url", "links", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "embedDoc", "hlsRegexes", "m3u8Url", "links", "$this$forEach$iv", "element$iv", "link"}, nl = {246, 250, 271, 282, 293, 300, 311}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$15", "L$16", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$13", "L$14"}, v = 2)
-        @SourceDebugExtension({"SMAP\nAnineko.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anineko.kt\ncom/anineko/Anineko$loadLinks$2$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,321:1\n2068#2,2:322\n2068#2,2:324\n2068#2,2:326\n*S KotlinDebug\n*F\n+ 1 Anineko.kt\ncom/anineko/Anineko$loadLinks$2$1\n*L\n271#1:322,2\n282#1:324,2\n300#1:326,2\n*E\n"})
+        @DebugMetadata(c = "com.anineko.Anineko$loadLinks$2$1", f = "Anineko.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6}, l = {244, 248, 268, 280, 284, 298, 302}, m = "invokeSuspend", n = {"serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "subUrl", "subLang", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "embedDoc", "hlsRegexes", "m3u8Url", "sourceName", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "embedDoc", "hlsRegexes", "m3u8Url", "host", "extractor", "links", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "embedDoc", "hlsRegexes", "m3u8Url", "host", "extractor", "links", "$this$forEach$iv", "element$iv", "link", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "embedDoc", "hlsRegexes", "m3u8Url", "links", "serverBtn", "videoUrl", "serverName", "typeName", "subMatch", "finalUrl", "embedDoc", "hlsRegexes", "m3u8Url", "links", "$this$forEach$iv", "element$iv", "link"}, nl = {247, 251, 272, 283, 294, 301, 312}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$15", "L$16", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$13", "L$14"}, v = 2)
+        @SourceDebugExtension({"SMAP\nAnineko.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Anineko.kt\ncom/anineko/Anineko$loadLinks$2$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,322:1\n2068#2,2:323\n2068#2,2:325\n2068#2,2:327\n*S KotlinDebug\n*F\n+ 1 Anineko.kt\ncom/anineko/Anineko$loadLinks$2$1\n*L\n272#1:323,2\n283#1:325,2\n301#1:327,2\n*E\n"})
         static final class AnonymousClass1 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
             final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
             final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;

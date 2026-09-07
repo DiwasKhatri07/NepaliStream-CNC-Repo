@@ -18,6 +18,7 @@ import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -58,7 +59,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: PublicSportsIPTV.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/PublicSportsIPTV/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000d\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 12\u00020\u0001:\u00011B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u001c2\u0006\u0010\u001d\u001a\u00020\u001eH\u0096@¢\u0006\u0002\u0010\u001fJ\f\u0010 \u001a\u00020!*\u00020\"H\u0002J\u0016\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010&JF\u0010'\u001a\u00020\u000e2\u0006\u0010(\u001a\u00020\u00052\u0006\u0010)\u001a\u00020\u000e2\u0012\u0010*\u001a\u000e\u0012\u0004\u0012\u00020,\u0012\u0004\u0012\u00020-0+2\u0012\u0010.\u001a\u000e\u0012\u0004\u0012\u00020/\u0012\u0004\u0012\u00020-0+H\u0096@¢\u0006\u0002\u00100R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018¨\u00062"}, d2 = {"Lcom/PublicSportsIPTV/PublicSportsIPTV;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/PublicSportsIPTV/Match;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "PublicSportsIPTV"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nPublicSportsIPTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PublicSportsIPTV.kt\ncom/PublicSportsIPTV/PublicSportsIPTV\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,102:1\n68#2:103\n777#3:104\n873#3,2:105\n777#3:107\n873#3,2:108\n1739#3:110\n1814#3,3:111\n1739#3:114\n1814#3,3:115\n2077#3,3:164\n93#4,2:118\n63#4:120\n64#4,15:122\n95#4,2:139\n93#4,2:141\n63#4:143\n64#4,15:145\n95#4,2:162\n1#5:121\n1#5:144\n50#6:137\n43#6:138\n50#6:160\n43#6:161\n*S KotlinDebug\n*F\n+ 1 PublicSportsIPTV.kt\ncom/PublicSportsIPTV/PublicSportsIPTV\n*L\n24#1:103\n27#1:104\n27#1:105,2\n31#1:107\n31#1:108,2\n35#1:110\n35#1:111,3\n36#1:114\n36#1:115,3\n84#1:164,3\n57#1:118,2\n57#1:120\n57#1:122,15\n57#1:139,2\n74#1:141,2\n74#1:143\n74#1:145,15\n74#1:162,2\n57#1:121\n74#1:144\n57#1:137\n57#1:138\n74#1:160\n74#1:161\n*E\n"})
+@SourceDebugExtension({"SMAP\nPublicSportsIPTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PublicSportsIPTV.kt\ncom/PublicSportsIPTV/PublicSportsIPTV\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,103:1\n68#2:104\n777#3:105\n873#3,2:106\n777#3:108\n873#3,2:109\n1739#3:111\n1814#3,3:112\n1739#3:115\n1814#3,3:116\n2077#3,3:165\n93#4,2:119\n63#4:121\n64#4,15:123\n95#4,2:140\n93#4,2:142\n63#4:144\n64#4,15:146\n95#4,2:163\n1#5:122\n1#5:145\n50#6:138\n43#6:139\n50#6:161\n43#6:162\n*S KotlinDebug\n*F\n+ 1 PublicSportsIPTV.kt\ncom/PublicSportsIPTV/PublicSportsIPTV\n*L\n25#1:104\n28#1:105\n28#1:106,2\n32#1:108\n32#1:109,2\n36#1:111\n36#1:112,3\n37#1:115\n37#1:116,3\n85#1:165,3\n58#1:119,2\n58#1:121\n58#1:123,15\n58#1:140,2\n75#1:142,2\n75#1:144\n75#1:146,15\n75#1:163,2\n58#1:122\n75#1:145\n58#1:138\n58#1:139\n75#1:161\n75#1:162\n*E\n"})
 public final class PublicSportsIPTV extends MainAPI {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
@@ -87,7 +88,7 @@ public final class PublicSportsIPTV extends MainAPI {
     /* JADX INFO: renamed from: com.PublicSportsIPTV.PublicSportsIPTV$getMainPage$1 */
     /* JADX INFO: compiled from: PublicSportsIPTV.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.PublicSportsIPTV.PublicSportsIPTV", f = "PublicSportsIPTV.kt", i = {0, 0}, l = {24}, m = "getMainPage", n = {"request", "page"}, nl = {103}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.PublicSportsIPTV.PublicSportsIPTV", f = "PublicSportsIPTV.kt", i = {0, 0}, l = {25}, m = "getMainPage", n = {"request", "page"}, nl = {104}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -109,7 +110,7 @@ public final class PublicSportsIPTV extends MainAPI {
     /* JADX INFO: renamed from: com.PublicSportsIPTV.PublicSportsIPTV$loadLinks$1 */
     /* JADX INFO: compiled from: PublicSportsIPTV.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.PublicSportsIPTV.PublicSportsIPTV", f = "PublicSportsIPTV.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {87}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parsed", "urls", "$this$forEachIndexed$iv", "item$iv", "url", "isCasting", "index$iv", "index"}, nl = {86}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "Z$0", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.PublicSportsIPTV.PublicSportsIPTV", f = "PublicSportsIPTV.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {88}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parsed", "urls", "$this$forEachIndexed$iv", "item$iv", "url", "isCasting", "index$iv", "index"}, nl = {87}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "Z$0", "I$0", "I$1"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -214,6 +215,7 @@ public final class PublicSportsIPTV extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
                 String mainUrl = getMainUrl();
                 c00001.L$0 = SpillingKt.nullOutSpilledVariable(request);

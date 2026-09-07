@@ -16,6 +16,7 @@ import com.lagradost.cloudstream3.TvType;
 import com.lagradost.cloudstream3.mvvm.ArchComponentExtKt;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.DataStoreHelper;
+import com.phisher98.donation.DonationManager;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -56,7 +57,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: Ultima.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Ultima/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010!\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u00002\u00020\u0001B\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000e\u0010$\u001a\b\u0012\u0004\u0012\u00020%0#H\u0002J\u001e\u0010&\u001a\u00020\t2\u0006\u0010'\u001a\u00020(2\f\u0010)\u001a\b\u0012\u0004\u0012\u00020\t0*H\u0002J \u0010,\u001a\u0004\u0018\u00010.2\u0006\u0010/\u001a\u0002002\u0006\u00101\u001a\u000202H\u0096@¢\u0006\u0002\u00103J\u001e\u00104\u001a\u0002052\u0006\u00106\u001a\u00020\t2\u0006\u0010/\u001a\u000200H\u0096@¢\u0006\u0002\u00107J\u0016\u00108\u001a\u0002092\u0006\u0010:\u001a\u00020\tH\u0096@¢\u0006\u0002\u0010;R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u001a\u0010\b\u001a\u00020\tX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR \u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00100\u000fX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0011\u0010\u0012\"\u0004\b\u0013\u0010\u0014R\u001a\u0010\u0015\u001a\u00020\tX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u000b\"\u0004\b\u0017\u0010\rR\u0014\u0010\u0018\u001a\u00020\u0019X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001bR\u0014\u0010\u001c\u001a\u00020\u0019X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001bR\u000e\u0010\u001e\u001a\u00020\u001fX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010\"\u001a\b\u0012\u0004\u0012\u00020\t0#X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010+\u001a\b\u0012\u0004\u0012\u00020%0#8VX\u0096\u0004¢\u0006\u0006\u001a\u0004\b,\u0010-¨\u0006<"}, d2 = {"Lcom/phisher98/Ultima;", "Lcom/lagradost/cloudstream3/MainAPI;", "plugin", "Lcom/phisher98/UltimaPlugin;", "<init>", "(Lcom/phisher98/UltimaPlugin;)V", "getPlugin", "()Lcom/phisher98/UltimaPlugin;", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "setSupportedTypes", "(Ljava/util/Set;)V", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "hasQuickSearch", "getHasQuickSearch", "sm", "Lcom/phisher98/UltimaStorageManager;", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "sectionNamesList", "", "loadSections", "Lcom/lagradost/cloudstream3/MainPageData;", "buildSectionName", "section", "Lcom/phisher98/UltimaUtils$SectionInfo;", "names", "", "mainPage", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Ultima"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nUltima.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ultima.kt\ncom/phisher98/Ultima\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n*L\n1#1,225:1\n11615#2:226\n12048#2,5:227\n11615#2:270\n12048#2,5:271\n777#3:232\n873#3,2:233\n1233#3:235\n2068#3,2:236\n1987#3,4:238\n1739#3:266\n1814#3,3:267\n777#3:276\n873#3,2:277\n1739#3:279\n1814#3,3:280\n1795#3,10:283\n2068#3:293\n2069#3:295\n1805#3:296\n777#3:297\n873#3,2:298\n1795#3,10:300\n2068#3:310\n2069#3:331\n1805#3:332\n777#3:333\n873#3,2:334\n50#4:242\n43#4:243\n50#4:245\n43#4:246\n50#4:264\n43#4:265\n50#4:328\n43#4:329\n1#5:244\n1#5:248\n1#5:294\n1#5:312\n1#5:330\n63#6:247\n64#6,15:249\n63#6:311\n64#6,15:313\n*S KotlinDebug\n*F\n+ 1 Ultima.kt\ncom/phisher98/Ultima\n*L\n44#1:226\n44#1:227,5\n154#1:270\n154#1:271,5\n45#1:232\n45#1:233,2\n46#1:235\n48#1:236,2\n68#1:238,4\n138#1:266\n138#1:267,3\n155#1:276\n155#1:277,2\n156#1:279\n156#1:280,3\n163#1:283,10\n163#1:293\n163#1:295\n163#1:296\n193#1:297\n193#1:298,2\n194#1:300,10\n194#1:310\n194#1:331\n194#1:332\n202#1:333\n202#1:334,2\n92#1:242\n92#1:243\n102#1:245\n102#1:246\n119#1:264\n119#1:265\n196#1:328\n196#1:329\n119#1:248\n163#1:294\n196#1:312\n194#1:330\n119#1:247\n119#1:249,15\n196#1:311\n196#1:313,15\n*E\n"})
+@SourceDebugExtension({"SMAP\nUltima.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ultima.kt\ncom/phisher98/Ultima\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n*L\n1#1,226:1\n11615#2:227\n12048#2,5:228\n11615#2:271\n12048#2,5:272\n777#3:233\n873#3,2:234\n1233#3:236\n2068#3,2:237\n1987#3,4:239\n1739#3:267\n1814#3,3:268\n777#3:277\n873#3,2:278\n1739#3:280\n1814#3,3:281\n1795#3,10:284\n2068#3:294\n2069#3:296\n1805#3:297\n777#3:298\n873#3,2:299\n1795#3,10:301\n2068#3:311\n2069#3:332\n1805#3:333\n777#3:334\n873#3,2:335\n50#4:243\n43#4:244\n50#4:246\n43#4:247\n50#4:265\n43#4:266\n50#4:329\n43#4:330\n1#5:245\n1#5:249\n1#5:295\n1#5:313\n1#5:331\n63#6:248\n64#6,15:250\n63#6:312\n64#6,15:314\n*S KotlinDebug\n*F\n+ 1 Ultima.kt\ncom/phisher98/Ultima\n*L\n44#1:227\n44#1:228,5\n155#1:271\n155#1:272,5\n45#1:233\n45#1:234,2\n46#1:236\n48#1:237,2\n68#1:239,4\n139#1:267\n139#1:268,3\n156#1:277\n156#1:278,2\n157#1:280\n157#1:281,3\n164#1:284,10\n164#1:294\n164#1:296\n164#1:297\n194#1:298\n194#1:299,2\n195#1:301,10\n195#1:311\n195#1:332\n195#1:333\n203#1:334\n203#1:335,2\n93#1:243\n93#1:244\n103#1:246\n103#1:247\n120#1:265\n120#1:266\n197#1:329\n197#1:330\n120#1:249\n164#1:295\n197#1:313\n195#1:331\n120#1:248\n120#1:250,15\n197#1:312\n197#1:314,15\n*E\n"})
 public final class Ultima extends MainAPI {
     private final boolean hasQuickSearch;
 
@@ -85,7 +86,7 @@ public final class Ultima extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.Ultima$getMainPage$1 */
     /* JADX INFO: compiled from: Ultima.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.Ultima", f = "Ultima.kt", i = {0, 0, 0, 1, 1, 1, 1, 1}, l = {89, 128}, m = "getMainPage", n = {"request", "homeSections", "page", "request", "section", "provider", "liveData", "page"}, nl = {90, 135}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.Ultima", f = "Ultima.kt", i = {0, 0, 0, 1, 1, 1, 1, 1}, l = {90, 129}, m = "getMainPage", n = {"request", "homeSections", "page", "request", "section", "provider", "liveData", "page"}, nl = {91, 136}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -110,7 +111,7 @@ public final class Ultima extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.Ultima$load$1 */
     /* JADX INFO: compiled from: Ultima.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.Ultima", f = "Ultima.kt", i = {0, 0, 0, 0, 1, 1, 1}, l = {206, 220}, m = "load", n = {"url", "enabledPlugins", "providersToTry", "provider", "url", "enabledPlugins", "providersToTry"}, nl = {208, -1}, s = {"L$0", "L$1", "L$2", "L$4", "L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.Ultima", f = "Ultima.kt", i = {0, 0, 0, 0, 1, 1, 1}, l = {207, 221}, m = "load", n = {"url", "enabledPlugins", "providersToTry", "provider", "url", "enabledPlugins", "providersToTry"}, nl = {209, -1}, s = {"L$0", "L$1", "L$2", "L$4", "L$0", "L$1", "L$2"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -135,7 +136,7 @@ public final class Ultima extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.Ultima$search$1 */
     /* JADX INFO: compiled from: Ultima.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.Ultima", f = "Ultima.kt", i = {0, 0, 0, 0, 0}, l = {188}, m = "search", n = {"query", "enabledPluginNames", "allProviders", "tasks", "page"}, nl = {-1}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.Ultima", f = "Ultima.kt", i = {0, 0, 0, 0, 0}, l = {189}, m = "search", n = {"query", "enabledPluginNames", "allProviders", "tasks", "page"}, nl = {-1}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -296,26 +297,26 @@ public final class Ultima extends MainAPI {
     }
 
     /* JADX INFO: Thrown type has an unknown type hierarchy: com.lagradost.cloudstream3.ErrorLoadingException */
-    /* JADX WARN: Code duplicated, block: B:144:0x02b4 A[Catch: all -> 0x03ce, TryCatch #11 {all -> 0x03ce, blocks: (B:31:0x0091, B:33:0x0098, B:109:0x01f0, B:115:0x021b, B:122:0x024a, B:126:0x0253, B:135:0x0283, B:136:0x0292, B:138:0x0298, B:142:0x02b0, B:144:0x02b4, B:145:0x02be, B:147:0x02c4, B:151:0x02dd, B:153:0x02e2, B:157:0x02ed, B:156:0x02e9, B:134:0x026e, B:133:0x0268, B:121:0x023f, B:114:0x0211, B:111:0x01f8, B:118:0x0222, B:128:0x0259), top: B:216:0x008f, inners: #13, #22, #24 }] */
-    /* JADX WARN: Code duplicated, block: B:147:0x02c4 A[Catch: all -> 0x03ce, TryCatch #11 {all -> 0x03ce, blocks: (B:31:0x0091, B:33:0x0098, B:109:0x01f0, B:115:0x021b, B:122:0x024a, B:126:0x0253, B:135:0x0283, B:136:0x0292, B:138:0x0298, B:142:0x02b0, B:144:0x02b4, B:145:0x02be, B:147:0x02c4, B:151:0x02dd, B:153:0x02e2, B:157:0x02ed, B:156:0x02e9, B:134:0x026e, B:133:0x0268, B:121:0x023f, B:114:0x0211, B:111:0x01f8, B:118:0x0222, B:128:0x0259), top: B:216:0x008f, inners: #13, #22, #24 }] */
-    /* JADX WARN: Code duplicated, block: B:153:0x02e2 A[Catch: all -> 0x03ce, TryCatch #11 {all -> 0x03ce, blocks: (B:31:0x0091, B:33:0x0098, B:109:0x01f0, B:115:0x021b, B:122:0x024a, B:126:0x0253, B:135:0x0283, B:136:0x0292, B:138:0x0298, B:142:0x02b0, B:144:0x02b4, B:145:0x02be, B:147:0x02c4, B:151:0x02dd, B:153:0x02e2, B:157:0x02ed, B:156:0x02e9, B:134:0x026e, B:133:0x0268, B:121:0x023f, B:114:0x0211, B:111:0x01f8, B:118:0x0222, B:128:0x0259), top: B:216:0x008f, inners: #13, #22, #24 }] */
-    /* JADX WARN: Code duplicated, block: B:156:0x02e9 A[Catch: all -> 0x03ce, TryCatch #11 {all -> 0x03ce, blocks: (B:31:0x0091, B:33:0x0098, B:109:0x01f0, B:115:0x021b, B:122:0x024a, B:126:0x0253, B:135:0x0283, B:136:0x0292, B:138:0x0298, B:142:0x02b0, B:144:0x02b4, B:145:0x02be, B:147:0x02c4, B:151:0x02dd, B:153:0x02e2, B:157:0x02ed, B:156:0x02e9, B:134:0x026e, B:133:0x0268, B:121:0x023f, B:114:0x0211, B:111:0x01f8, B:118:0x0222, B:128:0x0259), top: B:216:0x008f, inners: #13, #22, #24 }] */
-    /* JADX WARN: Code duplicated, block: B:161:0x031f A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:162:0x0320  */
-    /* JADX WARN: Code duplicated, block: B:165:0x0325 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:167:0x0328  */
-    /* JADX WARN: Code duplicated, block: B:171:0x034a A[Catch: all -> 0x0397, TRY_LEAVE, TryCatch #19 {all -> 0x0397, blocks: (B:168:0x032a, B:169:0x0344, B:171:0x034a), top: B:229:0x032a }] */
-    /* JADX WARN: Code duplicated, block: B:186:0x03a5  */
-    /* JADX WARN: Code duplicated, block: B:243:0x02dc A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:64:0x012e  */
-    /* JADX WARN: Code duplicated, block: B:66:0x0133 A[Catch: all -> 0x0144, Exception -> 0x014c, TRY_LEAVE, TryCatch #3 {Exception -> 0x014c, blocks: (B:56:0x0114, B:61:0x0123, B:66:0x0133, B:82:0x0174, B:84:0x017a, B:90:0x0188), top: B:205:0x0114 }] */
-    /* JADX WARN: Code duplicated, block: B:72:0x0151  */
-    /* JADX WARN: Code duplicated, block: B:74:0x0154  */
+    /* JADX WARN: Code duplicated, block: B:144:0x02bd A[Catch: all -> 0x03d7, TryCatch #17 {all -> 0x03d7, blocks: (B:31:0x009a, B:33:0x00a1, B:109:0x01f9, B:115:0x0224, B:122:0x0253, B:126:0x025c, B:135:0x028c, B:136:0x029b, B:138:0x02a1, B:142:0x02b9, B:144:0x02bd, B:145:0x02c7, B:147:0x02cd, B:151:0x02e6, B:153:0x02eb, B:157:0x02f6, B:156:0x02f2, B:134:0x0277, B:133:0x0271, B:121:0x0248, B:114:0x021a, B:118:0x022b, B:111:0x0201, B:128:0x0262), top: B:224:0x0098, inners: #3, #19, #24 }] */
+    /* JADX WARN: Code duplicated, block: B:147:0x02cd A[Catch: all -> 0x03d7, TryCatch #17 {all -> 0x03d7, blocks: (B:31:0x009a, B:33:0x00a1, B:109:0x01f9, B:115:0x0224, B:122:0x0253, B:126:0x025c, B:135:0x028c, B:136:0x029b, B:138:0x02a1, B:142:0x02b9, B:144:0x02bd, B:145:0x02c7, B:147:0x02cd, B:151:0x02e6, B:153:0x02eb, B:157:0x02f6, B:156:0x02f2, B:134:0x0277, B:133:0x0271, B:121:0x0248, B:114:0x021a, B:118:0x022b, B:111:0x0201, B:128:0x0262), top: B:224:0x0098, inners: #3, #19, #24 }] */
+    /* JADX WARN: Code duplicated, block: B:153:0x02eb A[Catch: all -> 0x03d7, TryCatch #17 {all -> 0x03d7, blocks: (B:31:0x009a, B:33:0x00a1, B:109:0x01f9, B:115:0x0224, B:122:0x0253, B:126:0x025c, B:135:0x028c, B:136:0x029b, B:138:0x02a1, B:142:0x02b9, B:144:0x02bd, B:145:0x02c7, B:147:0x02cd, B:151:0x02e6, B:153:0x02eb, B:157:0x02f6, B:156:0x02f2, B:134:0x0277, B:133:0x0271, B:121:0x0248, B:114:0x021a, B:118:0x022b, B:111:0x0201, B:128:0x0262), top: B:224:0x0098, inners: #3, #19, #24 }] */
+    /* JADX WARN: Code duplicated, block: B:156:0x02f2 A[Catch: all -> 0x03d7, TryCatch #17 {all -> 0x03d7, blocks: (B:31:0x009a, B:33:0x00a1, B:109:0x01f9, B:115:0x0224, B:122:0x0253, B:126:0x025c, B:135:0x028c, B:136:0x029b, B:138:0x02a1, B:142:0x02b9, B:144:0x02bd, B:145:0x02c7, B:147:0x02cd, B:151:0x02e6, B:153:0x02eb, B:157:0x02f6, B:156:0x02f2, B:134:0x0277, B:133:0x0271, B:121:0x0248, B:114:0x021a, B:118:0x022b, B:111:0x0201, B:128:0x0262), top: B:224:0x0098, inners: #3, #19, #24 }] */
+    /* JADX WARN: Code duplicated, block: B:161:0x0328 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:162:0x0329  */
+    /* JADX WARN: Code duplicated, block: B:165:0x032e A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:167:0x0331  */
+    /* JADX WARN: Code duplicated, block: B:171:0x0353 A[Catch: all -> 0x03a0, TRY_LEAVE, TryCatch #0 {all -> 0x03a0, blocks: (B:168:0x0333, B:169:0x034d, B:171:0x0353), top: B:199:0x0333 }] */
+    /* JADX WARN: Code duplicated, block: B:186:0x03ae  */
+    /* JADX WARN: Code duplicated, block: B:243:0x02e5 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:64:0x0137  */
+    /* JADX WARN: Code duplicated, block: B:66:0x013c A[Catch: all -> 0x014d, Exception -> 0x0155, TRY_LEAVE, TryCatch #8 {Exception -> 0x0155, blocks: (B:56:0x011d, B:61:0x012c, B:66:0x013c, B:82:0x017d, B:84:0x0183, B:90:0x0191), top: B:213:0x011d }] */
+    /* JADX WARN: Code duplicated, block: B:72:0x015a  */
+    /* JADX WARN: Code duplicated, block: B:74:0x015d  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Code duplicated, block: B:80:0x0171  */
-    /* JADX WARN: Code duplicated, block: B:88:0x0184  */
-    /* JADX WARN: Code duplicated, block: B:90:0x0188 A[Catch: Exception -> 0x014c, all -> 0x019e, TRY_LEAVE, TryCatch #3 {Exception -> 0x014c, blocks: (B:56:0x0114, B:61:0x0123, B:66:0x0133, B:82:0x0174, B:84:0x017a, B:90:0x0188), top: B:205:0x0114 }] */
-    /* JADX WARN: Code duplicated, block: B:95:0x01a9  */
+    /* JADX WARN: Code duplicated, block: B:80:0x017a  */
+    /* JADX WARN: Code duplicated, block: B:88:0x018d  */
+    /* JADX WARN: Code duplicated, block: B:90:0x0191 A[Catch: Exception -> 0x0155, all -> 0x01a7, TRY_LEAVE, TryCatch #4 {all -> 0x01a7, blocks: (B:75:0x0160, B:82:0x017d, B:84:0x0183, B:90:0x0191), top: B:207:0x0160 }] */
+    /* JADX WARN: Code duplicated, block: B:95:0x01b2  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws ErrorLoadingException {
         C00001 c00001;
@@ -365,6 +366,7 @@ public final class Ultima extends MainAPI {
         switch (c00002.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
+                DonationManager.INSTANCE.checkAndShow(getName());
                 if (request.getName().length() == 0) {
                     throw new ErrorLoadingException("Select sections from the extension's settings page to show here.");
                 }
@@ -702,13 +704,13 @@ public final class Ultima extends MainAPI {
                                                                 ObjectMapper $this$readValue$iv2 = this.mapper;
                                                                 list = (List) $this$readValue$iv2.readValue(it8, new TypeReference<List<? extends DataStoreHelper.ResumeWatchingResult>>() { // from class: com.phisher98.Ultima$getMainPage$lambda$2$$inlined$readValue$1
                                                                 });
-                                                            } catch (Exception e4) {
-                                                                list = null;
+                                                            } catch (Throwable th11) {
+                                                                e = th11;
+                                                                request2 = request3;
+                                                                obj = null;
                                                             }
-                                                        } catch (Throwable th11) {
-                                                            e = th11;
-                                                            request2 = request3;
-                                                            obj = null;
+                                                        } catch (Exception e4) {
+                                                            list = null;
                                                         }
                                                     } else {
                                                         list = null;
