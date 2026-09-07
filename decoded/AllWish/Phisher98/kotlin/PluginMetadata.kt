@@ -4,7 +4,7 @@ package nepali.stream.decoded.allwish
 object PluginMetadata {
     const val name: String = "AllWish"
     const val originalPluginClass: String = "com.allwish.AllWishPlugin"
-    const val version: Int = 17
+    const val version: Int = 18
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

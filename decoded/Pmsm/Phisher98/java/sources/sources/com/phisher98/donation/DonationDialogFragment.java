@@ -127,7 +127,7 @@ public final class DonationDialogFragment extends DialogFragment {
         $this$onCreateView_u24lambda_u241_u242.bottomMargin = onCreateView$dp(density, 10);
         watermarkBadge.setLayoutParams($this$onCreateView_u24lambda_u241_u242);
         root.addView(watermarkBadge);
-        String displayTitle = this.config.isGoalAchieved() ? "🎉  Phisher Repo Goal Achieved!" : "⚠️  Help Keep Phisher Plugins Alive";
+        String displayTitle = this.config.isGoalAchieved() ? "🎉  Phisher Repo Goal Achieved!" : "⚠️  Help Keep Phisher Repo Alive";
         TextView titleView = new TextView(ctx);
         titleView.setText(displayTitle);
         titleView.setTextSize(16.5f);

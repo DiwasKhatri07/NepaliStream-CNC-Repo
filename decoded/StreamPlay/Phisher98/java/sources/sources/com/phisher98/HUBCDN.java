@@ -46,7 +46,7 @@ public final class HUBCDN extends ExtractorApi {
     /* JADX INFO: renamed from: com.phisher98.HUBCDN$getUrl$1 */
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.HUBCDN", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {2557, 2562}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "it", "m3u8", "encoded"}, nl = {2558, 2561}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.HUBCDN", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {2558, 2563}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "it", "m3u8", "encoded"}, nl = {2559, 2562}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
     static final class C00321 extends ContinuationImpl {
         Object L$0;
         Object L$1;

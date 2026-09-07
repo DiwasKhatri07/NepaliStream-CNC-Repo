@@ -47,7 +47,7 @@ public class Modflix extends ExtractorApi {
     /* JADX INFO: renamed from: com.phisher98.Modflix$getUrl$1 */
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.Modflix", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {908, 925}, m = "getUrl$suspendImpl", n = {"$this", "finallink", "quality", "subtitleCallback", "callback", "token", "$this", "finallink", "quality", "subtitleCallback", "callback", "token", "downloadlink", "finaldownloadlink", "link"}, nl = {920, 924}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.Modflix", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {909, 926}, m = "getUrl$suspendImpl", n = {"$this", "finallink", "quality", "subtitleCallback", "callback", "token", "$this", "finallink", "quality", "subtitleCallback", "callback", "token", "downloadlink", "finaldownloadlink", "link"}, nl = {921, 925}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
     static final class C00461 extends ContinuationImpl {
         Object L$0;
         Object L$1;

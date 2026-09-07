@@ -39,7 +39,7 @@ public final class Hubdrive extends ExtractorApi {
     /* JADX INFO: renamed from: com.phisher98.Hubdrive$getUrl$1 */
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.Hubdrive", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {2283, 2284, 2285}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "href", "url", "referer", "subtitleCallback", "callback", "href"}, nl = {2284, 2286, 2286}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.Hubdrive", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {2284, 2285, 2286}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "href", "url", "referer", "subtitleCallback", "callback", "href"}, nl = {2285, 2287, 2287}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
     static final class C00351 extends ContinuationImpl {
         Object L$0;
         Object L$1;

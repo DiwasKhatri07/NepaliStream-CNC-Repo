@@ -1,12 +1,20 @@
 package com.phisher98;
 
+import android.util.Base64;
 import com.lagradost.api.Log;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.utils.ExtractorApi;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import java.util.List;
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 import kotlin.Metadata;
+import kotlin.Result;
+import kotlin.ResultKt;
 import kotlin.Unit;
+import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -15,14 +23,33 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.text.Charsets;
+import kotlin.text.MatchResult;
+import kotlin.text.Regex;
+import kotlin.text.RegexOption;
+import kotlin.text.StringsKt;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.json.JSONObject;
 
 /* JADX INFO: compiled from: Extractor.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Animesalt/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0016\u0018\u00002\u00020\u0001:\u0003\u0018\u0019\u001aB\u0007¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00052\b\u0010\u0011\u001a\u0004\u0018\u00010\u00052\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u000f0\u00132\u0012\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u000f0\u0013H\u0096@¢\u0006\u0002\u0010\u0017R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u001b"}, d2 = {"Lcom/phisher98/MegaPlay;", "Lcom/lagradost/cloudstream3/utils/ExtractorApi;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "mainUrl", "getMainUrl", "requiresReferer", "", "getRequiresReferer", "()Z", "getUrl", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "MegaPlayResponse", "Sources", "Track", "Animesalt"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nExtractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractor.kt\ncom/phisher98/MegaPlay\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,362:1\n73#2,5:363\n2068#3,2:368\n2068#3,2:370\n777#3:372\n873#3,2:373\n2077#3,3:375\n2068#3,2:378\n*S KotlinDebug\n*F\n+ 1 Extractor.kt\ncom/phisher98/MegaPlay\n*L\n166#1:363,5\n177#1:368,2\n179#1:370,2\n227#1:372\n227#1:373,2\n228#1:375,3\n238#1:378,2\n*E\n"})
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0016\u0018\u0000 \u001b2\u00020\u0001:\u0004\u0018\u0019\u001a\u001bB\u0007¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00052\b\u0010\u0011\u001a\u0004\u0018\u00010\u00052\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u000f0\u00132\u0012\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u000f0\u0013H\u0096@¢\u0006\u0002\u0010\u0017R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u001c"}, d2 = {"Lcom/phisher98/MegaPlay;", "Lcom/lagradost/cloudstream3/utils/ExtractorApi;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "mainUrl", "getMainUrl", "requiresReferer", "", "getRequiresReferer", "()Z", "getUrl", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "MegaPlayResponse", "Sources", "Track", "Companion", "Animesalt"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nExtractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractor.kt\ncom/phisher98/MegaPlay\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,411:1\n73#2,5:412\n1#3:417\n2068#4,2:418\n2068#4,2:420\n777#4:422\n873#4,2:423\n2077#4,3:425\n2068#4,2:428\n*S KotlinDebug\n*F\n+ 1 Extractor.kt\ncom/phisher98/MegaPlay\n*L\n169#1:412,5\n181#1:418,2\n183#1:420,2\n231#1:422\n231#1:423,2\n232#1:425,3\n242#1:428,2\n*E\n"})
 public class MegaPlay extends ExtractorApi {
+
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
+    @NotNull
+    public static final Companion INSTANCE = new Companion(null);
+
+    @NotNull
+    private static final String ENC_IV = "W0;27ToaUpl_P%'c";
+
+    @NotNull
+    private static final String ENC_KEY = "i?LMTAx0Q6,:}50U";
+
+    @NotNull
+    private static final String TOKEN_SECRET = "MpCdnT0k3n!9f2K#xQ7vL5mR8wN1pY4s";
     private final boolean requiresReferer;
 
     @NotNull
@@ -34,7 +61,7 @@ public class MegaPlay extends ExtractorApi {
     /* JADX INFO: renamed from: com.phisher98.MegaPlay$getUrl$1 */
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.MegaPlay", f = "Extractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {154, 166, 172, 185, 225, 229, 237, 238}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "id", "apiUrl", "$this$getUrl_u24lambda_u240", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "id", "apiUrl", "response", "m3u8", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "id", "apiUrl", "response", "m3u8", "$this$forEach$iv", "element$iv", "track", "label", "file", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "$this$forEachIndexed$iv", "item$iv", "subUrl", "index$iv", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "fallbackM3u8"}, nl = {155, 363, 177, 184, 226, 235, 238, 378}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$13", "L$14", "L$15", "L$16", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$14", "L$15", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.MegaPlay", f = "Extractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {157, 169, 176, 189, 229, 233, 241, 242}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "id", "apiUrl", "$this$getUrl_u24lambda_u240", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "id", "apiUrl", "response", "m3u8", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "id", "apiUrl", "response", "m3u8", "$this$forEach$iv", "element$iv", "track", "label", "file", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "$this$forEachIndexed$iv", "item$iv", "subUrl", "index$iv", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "fallbackM3u8"}, nl = {158, 412, 181, 188, 230, 239, 242, 428}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$13", "L$14", "L$15", "L$16", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$14", "L$15", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12"}, v = 2)
     static final class C00101 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -89,36 +116,37 @@ public class MegaPlay extends ExtractorApi {
         return this.requiresReferer;
     }
 
-    /* JADX WARN: Code duplicated, block: B:120:0x065c A[Catch: Exception -> 0x078e, TryCatch #22 {Exception -> 0x078e, blocks: (B:118:0x0656, B:120:0x065c, B:123:0x0672, B:130:0x068a, B:137:0x06bc), top: B:319:0x0656 }] */
-    /* JADX WARN: Code duplicated, block: B:123:0x0672 A[Catch: Exception -> 0x078e, TRY_LEAVE, TryCatch #22 {Exception -> 0x078e, blocks: (B:118:0x0656, B:120:0x065c, B:123:0x0672, B:130:0x068a, B:137:0x06bc), top: B:319:0x0656 }] */
-    /* JADX WARN: Code duplicated, block: B:125:0x067a  */
-    /* JADX WARN: Code duplicated, block: B:135:0x06a5  */
-    /* JADX WARN: Code duplicated, block: B:337:0x0698 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:141:0x0698 A[Catch: Exception -> 0x07cc, TryCatch #20 {Exception -> 0x07cc, blocks: (B:139:0x0692, B:141:0x0698, B:144:0x06ae, B:151:0x06c6, B:158:0x06f8), top: B:341:0x0692 }] */
+    /* JADX WARN: Code duplicated, block: B:144:0x06ae A[Catch: Exception -> 0x07cc, TRY_LEAVE, TryCatch #20 {Exception -> 0x07cc, blocks: (B:139:0x0692, B:141:0x0698, B:144:0x06ae, B:151:0x06c6, B:158:0x06f8), top: B:341:0x0692 }] */
+    /* JADX WARN: Code duplicated, block: B:146:0x06b6  */
+    /* JADX WARN: Code duplicated, block: B:156:0x06e1  */
+    /* JADX WARN: Code duplicated, block: B:370:0x06d4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Path cross not found for [B:337:0x0698, B:137:0x06bc], limit reached: 355 */
-    /* JADX WARN: Type inference failed for: r11v44 */
-    /* JADX WARN: Type inference failed for: r11v45, types: [kotlin.jvm.functions.Function1] */
-    /* JADX WARN: Type inference failed for: r11v58 */
+    /* JADX WARN: Path cross not found for [B:374:0x05b7, B:110:0x05cf], limit reached: 381 */
+    /* JADX WARN: Type inference failed for: r11v40 */
+    /* JADX WARN: Type inference failed for: r11v41, types: [kotlin.jvm.functions.Function1] */
+    /* JADX WARN: Type inference failed for: r11v56 */
     /* JADX WARN: Type inference failed for: r12v14 */
     /* JADX WARN: Type inference failed for: r12v15 */
     /* JADX WARN: Type inference failed for: r12v16 */
     /* JADX WARN: Type inference failed for: r12v17 */
-    /* JADX WARN: Type inference failed for: r12v28, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r12v18 */
     /* JADX WARN: Type inference failed for: r12v3 */
-    /* JADX WARN: Type inference failed for: r12v39 */
+    /* JADX WARN: Type inference failed for: r12v34, types: [java.lang.Object] */
     /* JADX WARN: Type inference failed for: r12v4 */
-    /* JADX WARN: Type inference failed for: r12v58 */
+    /* JADX WARN: Type inference failed for: r12v45 */
     /* JADX WARN: Type inference failed for: r12v6 */
-    /* JADX WARN: Type inference failed for: r12v60 */
+    /* JADX WARN: Type inference failed for: r12v64 */
+    /* JADX WARN: Type inference failed for: r12v66 */
     /* JADX WARN: Type inference failed for: r12v7 */
-    /* JADX WARN: Type inference failed for: r12v70 */
-    /* JADX WARN: Type inference failed for: r12v71 */
-    /* JADX WARN: Type inference failed for: r12v72 */
-    /* JADX WARN: Type inference failed for: r12v73 */
-    /* JADX WARN: Type inference failed for: r12v74 */
-    /* JADX WARN: Type inference failed for: r12v75 */
+    /* JADX WARN: Type inference failed for: r12v76 */
+    /* JADX WARN: Type inference failed for: r12v77 */
+    /* JADX WARN: Type inference failed for: r12v78 */
+    /* JADX WARN: Type inference failed for: r12v79 */
     /* JADX WARN: Type inference failed for: r12v8 */
+    /* JADX WARN: Type inference failed for: r12v80 */
+    /* JADX WARN: Type inference failed for: r12v81 */
     /* JADX WARN: Type inference failed for: r13v0 */
     /* JADX WARN: Type inference failed for: r13v1 */
     /* JADX WARN: Type inference failed for: r13v11 */
@@ -170,28 +198,28 @@ public class MegaPlay extends ExtractorApi {
     /* JADX WARN: Type inference failed for: r13v84 */
     /* JADX WARN: Type inference failed for: r13v85 */
     /* JADX WARN: Type inference failed for: r13v86 */
-    /* JADX WARN: Type inference failed for: r14v26 */
+    /* JADX WARN: Type inference failed for: r13v87 */
     /* JADX WARN: Type inference failed for: r14v27 */
     /* JADX WARN: Type inference failed for: r14v28 */
     /* JADX WARN: Type inference failed for: r14v29 */
-    /* JADX WARN: Type inference failed for: r14v38 */
-    /* JADX WARN: Type inference failed for: r14v40 */
+    /* JADX WARN: Type inference failed for: r14v30 */
+    /* JADX WARN: Type inference failed for: r14v39 */
     /* JADX WARN: Type inference failed for: r14v41 */
-    /* JADX WARN: Type inference failed for: r14v43 */
+    /* JADX WARN: Type inference failed for: r14v42 */
     /* JADX WARN: Type inference failed for: r14v44 */
     /* JADX WARN: Type inference failed for: r14v45 */
     /* JADX WARN: Type inference failed for: r14v46 */
     /* JADX WARN: Type inference failed for: r14v47 */
     /* JADX WARN: Type inference failed for: r14v48 */
     /* JADX WARN: Type inference failed for: r14v49 */
-    /* JADX WARN: Type inference failed for: r14v51 */
-    /* JADX WARN: Type inference failed for: r14v54 */
-    /* JADX WARN: Type inference failed for: r14v55, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r14v58 */
+    /* JADX WARN: Type inference failed for: r14v50 */
+    /* JADX WARN: Type inference failed for: r14v52 */
+    /* JADX WARN: Type inference failed for: r14v55 */
+    /* JADX WARN: Type inference failed for: r14v56, types: [java.lang.Object] */
     /* JADX WARN: Type inference failed for: r14v59 */
     /* JADX WARN: Type inference failed for: r14v60 */
-    /* JADX WARN: Type inference failed for: r14v62 */
-    /* JADX WARN: Type inference failed for: r14v66 */
+    /* JADX WARN: Type inference failed for: r14v61 */
+    /* JADX WARN: Type inference failed for: r14v63 */
     /* JADX WARN: Type inference failed for: r14v67 */
     /* JADX WARN: Type inference failed for: r14v68 */
     /* JADX WARN: Type inference failed for: r14v69 */
@@ -199,6 +227,7 @@ public class MegaPlay extends ExtractorApi {
     /* JADX WARN: Type inference failed for: r14v71 */
     /* JADX WARN: Type inference failed for: r14v72 */
     /* JADX WARN: Type inference failed for: r14v73 */
+    /* JADX WARN: Type inference failed for: r14v74 */
     /* JADX WARN: Type inference failed for: r17v10 */
     /* JADX WARN: Type inference failed for: r17v18 */
     /* JADX WARN: Type inference failed for: r17v19 */
@@ -228,15 +257,15 @@ public class MegaPlay extends ExtractorApi {
     /* JADX WARN: Type inference failed for: r17v7 */
     /* JADX WARN: Type inference failed for: r17v8 */
     /* JADX WARN: Type inference failed for: r17v9 */
-    /* JADX WARN: Type inference failed for: r1v60 */
-    /* JADX WARN: Type inference failed for: r1v70, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r1v78 */
-    /* JADX WARN: Type inference failed for: r1v82 */
+    /* JADX WARN: Type inference failed for: r1v61 */
+    /* JADX WARN: Type inference failed for: r1v71, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r1v79 */
+    /* JADX WARN: Type inference failed for: r1v83 */
     /* JADX WARN: Type inference failed for: r1v92 */
     /* JADX WARN: Type inference failed for: r1v93 */
-    /* JADX WARN: Type inference failed for: r20v12 */
-    /* JADX WARN: Type inference failed for: r20v13 */
-    /* JADX WARN: Type inference failed for: r20v14, types: [java.lang.String] */
+    /* JADX WARN: Type inference failed for: r20v14 */
+    /* JADX WARN: Type inference failed for: r20v15 */
+    /* JADX WARN: Type inference failed for: r20v16, types: [java.lang.String] */
     /* JADX WARN: Type inference failed for: r22v0 */
     /* JADX WARN: Type inference failed for: r22v1 */
     /* JADX WARN: Type inference failed for: r22v9 */
@@ -250,31 +279,32 @@ public class MegaPlay extends ExtractorApi {
     /* JADX WARN: Type inference failed for: r38v2 */
     /* JADX WARN: Type inference failed for: r38v3, types: [java.lang.String] */
     /* JADX WARN: Type inference failed for: r3v1 */
-    /* JADX WARN: Type inference failed for: r3v102 */
     /* JADX WARN: Type inference failed for: r3v103 */
     /* JADX WARN: Type inference failed for: r3v104 */
     /* JADX WARN: Type inference failed for: r3v105 */
+    /* JADX WARN: Type inference failed for: r3v106 */
     /* JADX WARN: Type inference failed for: r3v12 */
     /* JADX WARN: Type inference failed for: r3v14 */
     /* JADX WARN: Type inference failed for: r3v17 */
     /* JADX WARN: Type inference failed for: r3v18 */
+    /* JADX WARN: Type inference failed for: r3v19 */
     /* JADX WARN: Type inference failed for: r3v2 */
-    /* JADX WARN: Type inference failed for: r3v27 */
-    /* JADX WARN: Type inference failed for: r3v29, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r3v28 */
+    /* JADX WARN: Type inference failed for: r3v30, types: [java.lang.Object] */
     /* JADX WARN: Type inference failed for: r3v4 */
-    /* JADX WARN: Type inference failed for: r3v40 */
-    /* JADX WARN: Type inference failed for: r3v44 */
-    /* JADX WARN: Type inference failed for: r3v50 */
-    /* JADX WARN: Type inference failed for: r3v56, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r3v67 */
+    /* JADX WARN: Type inference failed for: r3v41 */
+    /* JADX WARN: Type inference failed for: r3v45 */
+    /* JADX WARN: Type inference failed for: r3v51 */
+    /* JADX WARN: Type inference failed for: r3v57, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r3v68 */
     /* JADX WARN: Type inference failed for: r3v8 */
-    /* JADX WARN: Type inference failed for: r3v88 */
+    /* JADX WARN: Type inference failed for: r3v89 */
     /* JADX WARN: Type inference failed for: r3v9 */
-    /* JADX WARN: Type inference failed for: r3v92 */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:122:0x066c -> B:146:0x0769). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:135:0x06a5 -> B:145:0x0765). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:142:0x0724 -> B:280:0x0748). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:224:0x0aaa -> B:304:0x0ac3). Please report as a decompilation issue!!! */
+    /* JADX WARN: Type inference failed for: r3v93 */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:143:0x06a8 -> B:167:0x07a5). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:156:0x06e1 -> B:166:0x07a1). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:163:0x0760 -> B:304:0x0784). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:249:0x0aec -> B:327:0x0b05). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
@@ -282,25 +312,28 @@ public class MegaPlay extends ExtractorApi {
         */
     static /* synthetic */ java.lang.Object getUrl$suspendImpl(com.phisher98.MegaPlay r54, java.lang.String r55, java.lang.String r56, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r57, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r58, kotlin.coroutines.Continuation<? super kotlin.Unit> r59) {
         /*
-            Method dump skipped, instruction units count: 3334
+            Method dump skipped, instruction units count: 3402
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.phisher98.MegaPlay.getUrl$suspendImpl(com.phisher98.MegaPlay, java.lang.String, java.lang.String, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
-    static final Unit getUrl$lambda$2(String result) {
+    static final Unit getUrl$lambda$4(String result) {
         Log.INSTANCE.d("Megacloud", "JS Result: " + result);
         return Unit.INSTANCE;
     }
 
-    static final Unit getUrl$lambda$3(String result) {
+    static final Unit getUrl$lambda$5(String result) {
         Log.INSTANCE.d("Megacloud", "Subtitle JS Result: " + result);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: compiled from: Extractor.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B#\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0004\b\u0007\u0010\bJ\u000b\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005HÆ\u0003J%\u0010\u000f\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0016HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\f¨\u0006\u0017"}, d2 = {"Lcom/phisher98/MegaPlay$MegaPlayResponse;", "", "sources", "Lcom/phisher98/MegaPlay$Sources;", "tracks", "", "Lcom/phisher98/MegaPlay$Track;", "<init>", "(Lcom/phisher98/MegaPlay$Sources;Ljava/util/List;)V", "getSources", "()Lcom/phisher98/MegaPlay$Sources;", "getTracks", "()Ljava/util/List;", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "Animesalt"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B/\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\u0004\b\t\u0010\nJ\u000b\u0010\u0011\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u0012\u001a\u0004\u0018\u00010\u0005HÆ\u0003J\u000f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\b0\u0007HÆ\u0003J1\u0010\u0014\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007HÆ\u0001J\u0014\u0010\u0015\u001a\u00020\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0018\u001a\u00020\u0019HÖ\u0081\u0004J\n\u0010\u001a\u001a\u00020\u0005HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0017\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001b"}, d2 = {"Lcom/phisher98/MegaPlay$MegaPlayResponse;", "", "sources", "Lcom/phisher98/MegaPlay$Sources;", "enc", "", "tracks", "", "Lcom/phisher98/MegaPlay$Track;", "<init>", "(Lcom/phisher98/MegaPlay$Sources;Ljava/lang/String;Ljava/util/List;)V", "getSources", "()Lcom/phisher98/MegaPlay$Sources;", "getEnc", "()Ljava/lang/String;", "getTracks", "()Ljava/util/List;", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "", "toString", "Animesalt"}, k = 1, mv = {2, 4, 0}, xi = 48)
     public static final /* data */ class MegaPlayResponse {
+
+        @Nullable
+        private final String enc;
 
         @Nullable
         private final Sources sources;
@@ -308,20 +341,22 @@ public class MegaPlay extends ExtractorApi {
         @NotNull
         private final List<Track> tracks;
 
-        /* JADX WARN: Multi-variable type inference failed */
         public MegaPlayResponse() {
-            this(null, 0 == true ? 1 : 0, 3, 0 == true ? 1 : 0);
+            this(null, null, null, 7, null);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        public static /* synthetic */ MegaPlayResponse copy$default(MegaPlayResponse megaPlayResponse, Sources sources, List list, int i, Object obj) {
+        public static /* synthetic */ MegaPlayResponse copy$default(MegaPlayResponse megaPlayResponse, Sources sources, String str, List list, int i, Object obj) {
             if ((i & 1) != 0) {
                 sources = megaPlayResponse.sources;
             }
             if ((i & 2) != 0) {
+                str = megaPlayResponse.enc;
+            }
+            if ((i & 4) != 0) {
                 list = megaPlayResponse.tracks;
             }
-            return megaPlayResponse.copy(sources, list);
+            return megaPlayResponse.copy(sources, str, list);
         }
 
         @Nullable
@@ -330,14 +365,20 @@ public class MegaPlay extends ExtractorApi {
             return this.sources;
         }
 
+        @Nullable
+        /* JADX INFO: renamed from: component2, reason: from getter */
+        public final String getEnc() {
+            return this.enc;
+        }
+
         @NotNull
-        public final List<Track> component2() {
+        public final List<Track> component3() {
             return this.tracks;
         }
 
         @NotNull
-        public final MegaPlayResponse copy(@Nullable Sources sources, @NotNull List<Track> tracks) {
-            return new MegaPlayResponse(sources, tracks);
+        public final MegaPlayResponse copy(@Nullable Sources sources, @Nullable String enc, @NotNull List<Track> tracks) {
+            return new MegaPlayResponse(sources, enc, tracks);
         }
 
         public boolean equals(@Nullable Object other) {
@@ -348,30 +389,36 @@ public class MegaPlay extends ExtractorApi {
                 return false;
             }
             MegaPlayResponse megaPlayResponse = (MegaPlayResponse) other;
-            return Intrinsics.areEqual(this.sources, megaPlayResponse.sources) && Intrinsics.areEqual(this.tracks, megaPlayResponse.tracks);
+            return Intrinsics.areEqual(this.sources, megaPlayResponse.sources) && Intrinsics.areEqual(this.enc, megaPlayResponse.enc) && Intrinsics.areEqual(this.tracks, megaPlayResponse.tracks);
         }
 
         public int hashCode() {
-            return ((this.sources == null ? 0 : this.sources.hashCode()) * 31) + this.tracks.hashCode();
+            return ((((this.sources == null ? 0 : this.sources.hashCode()) * 31) + (this.enc != null ? this.enc.hashCode() : 0)) * 31) + this.tracks.hashCode();
         }
 
         @NotNull
         public String toString() {
-            return "MegaPlayResponse(sources=" + this.sources + ", tracks=" + this.tracks + ')';
+            return "MegaPlayResponse(sources=" + this.sources + ", enc=" + this.enc + ", tracks=" + this.tracks + ')';
         }
 
-        public MegaPlayResponse(@Nullable Sources sources, @NotNull List<Track> list) {
+        public MegaPlayResponse(@Nullable Sources sources, @Nullable String enc, @NotNull List<Track> list) {
             this.sources = sources;
+            this.enc = enc;
             this.tracks = list;
         }
 
-        public /* synthetic */ MegaPlayResponse(Sources sources, List list, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? null : sources, (i & 2) != 0 ? CollectionsKt.emptyList() : list);
+        public /* synthetic */ MegaPlayResponse(Sources sources, String str, List list, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this((i & 1) != 0 ? null : sources, (i & 2) != 0 ? null : str, (i & 4) != 0 ? CollectionsKt.emptyList() : list);
         }
 
         @Nullable
         public final Sources getSources() {
             return this.sources;
+        }
+
+        @Nullable
+        public final String getEnc() {
+            return this.enc;
         }
 
         @NotNull
@@ -540,6 +587,86 @@ public class MegaPlay extends ExtractorApi {
         @Nullable
         public final String getKind() {
             return this.kind;
+        }
+    }
+
+    /* JADX INFO: compiled from: Extractor.kt */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u0005H\u0002J\u0012\u0010\n\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u000b\u001a\u00020\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/phisher98/MegaPlay$Companion;", "", "<init>", "()V", "ENC_KEY", "", "ENC_IV", "TOKEN_SECRET", "signMegaPlayUrl", "url", "decryptMegaPlaySources", "enc", "Animesalt"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @SourceDebugExtension({"SMAP\nExtractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractor.kt\ncom/phisher98/MegaPlay$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,411:1\n1#2:412\n*E\n"})
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final String signMegaPlayUrl(String url) {
+            Object obj;
+            MatchResult m;
+            try {
+                Result.Companion companion = Result.Companion;
+                Companion companion2 = this;
+                if (StringsKt.contains$default(url, "token=", false, 2, (Object) null) || (m = Regex.find$default(new Regex("/([a-f0-9]{32})/([a-f0-9]{32})/", RegexOption.IGNORE_CASE), url, 0, 2, (Object) null)) == null) {
+                    return url;
+                }
+                String payload = ((System.currentTimeMillis() / 1000) + 90) + '|' + ((String) m.getGroupValues().get(1)) + '/' + ((String) m.getGroupValues().get(2));
+                Mac mac = Mac.getInstance("HmacSHA256");
+                byte[] bytes = MegaPlay.TOKEN_SECRET.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+                mac.init(new SecretKeySpec(bytes, "HmacSHA256"));
+                byte[] bytes2 = payload.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(bytes2, "getBytes(...)");
+                byte[] sig = mac.doFinal(bytes2);
+                StringBuilder sb = new StringBuilder();
+                byte[] bytes3 = payload.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(bytes3, "getBytes(...)");
+                String token = sb.append(signMegaPlayUrl$lambda$0$b64(bytes3)).append('.').append(signMegaPlayUrl$lambda$0$b64(sig)).toString();
+                obj = Result.constructor-impl(url + (StringsKt.contains$default(url, "?", false, 2, (Object) null) ? "&" : "?") + "token=" + token);
+            } catch (Throwable th) {
+                Result.Companion companion3 = Result.Companion;
+                obj = Result.constructor-impl(ResultKt.createFailure(th));
+            }
+            if (Result.isFailure-impl(obj)) {
+                obj = url;
+            }
+            return (String) obj;
+        }
+
+        private static final String signMegaPlayUrl$lambda$0$b64(byte[] b) {
+            return Base64.encodeToString(b, 11);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final String decryptMegaPlaySources(String enc) {
+            Object obj;
+            try {
+                Result.Companion companion = Result.Companion;
+                Companion companion2 = this;
+                String normalized = StringsKt.replace$default(StringsKt.replace$default(enc, '-', '+', false, 4, (Object) null), '_', '/', false, 4, (Object) null);
+                String padded = normalized + StringsKt.repeat("=", (4 - (normalized.length() % 4)) % 4);
+                byte[] data = Base64.decode(padded, 0);
+                byte[] keyBytes = MegaPlay.ENC_KEY.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(keyBytes, "getBytes(...)");
+                byte[] key = ArraysKt.plus(keyBytes, new byte[32 - keyBytes.length]);
+                Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+                SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
+                byte[] bytes = MegaPlay.ENC_IV.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+                cipher.init(2, secretKeySpec, new IvParameterSpec(bytes));
+                String json = new String(cipher.doFinal(data), Charsets.UTF_8);
+                JSONObject el = new JSONObject(json);
+                String it = el.optString("file");
+                if (StringsKt.isBlank(it)) {
+                    it = null;
+                }
+                obj = Result.constructor-impl(it);
+            } catch (Throwable th) {
+                Result.Companion companion3 = Result.Companion;
+                obj = Result.constructor-impl(ResultKt.createFailure(th));
+            }
+            return (String) (Result.isFailure-impl(obj) ? null : obj);
         }
     }
 }

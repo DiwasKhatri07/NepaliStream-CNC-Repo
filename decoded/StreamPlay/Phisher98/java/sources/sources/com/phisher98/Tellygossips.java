@@ -46,7 +46,7 @@ public final class Tellygossips extends ExtractorApi {
     /* JADX INFO: renamed from: com.phisher98.Tellygossips$getUrl$1 */
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.Tellygossips", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {840, 843}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "doc", "link"}, nl = {841, 842}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.Tellygossips", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {841, 844}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "doc", "link"}, nl = {842, 843}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
     static final class C02991 extends ContinuationImpl {
         Object L$0;
         Object L$1;

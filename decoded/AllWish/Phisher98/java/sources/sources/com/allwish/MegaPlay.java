@@ -1,12 +1,21 @@
 package com.allwish;
 
+import android.util.Base64;
 import com.lagradost.api.Log;
+import com.lagradost.cloudstream3.MainAPIKt;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.utils.ExtractorApi;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import java.util.List;
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 import kotlin.Metadata;
+import kotlin.Result;
+import kotlin.ResultKt;
 import kotlin.Unit;
+import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
@@ -15,15 +24,38 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.text.Charsets;
+import kotlin.text.MatchResult;
+import kotlin.text.Regex;
+import kotlin.text.RegexOption;
+import kotlin.text.StringsKt;
 import kotlinx.serialization.Serializable;
+import kotlinx.serialization.json.Json;
+import kotlinx.serialization.json.JsonElement;
+import kotlinx.serialization.json.JsonElementKt;
+import kotlinx.serialization.json.JsonObject;
+import kotlinx.serialization.json.JsonPrimitive;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: Extractors.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AllWish/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0016\u0018\u00002\u00020\u0001:\u0003\u0018\u0019\u001aB\u0007¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00052\b\u0010\u0011\u001a\u0004\u0018\u00010\u00052\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u000f0\u00132\u0012\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u000f0\u0013H\u0096@¢\u0006\u0002\u0010\u0017R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u001b"}, d2 = {"Lcom/allwish/MegaPlay;", "Lcom/lagradost/cloudstream3/utils/ExtractorApi;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "mainUrl", "getMainUrl", "requiresReferer", "", "getRequiresReferer", "()Z", "getUrl", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "MegaPlayResponse", "Sources", "Track", "AllWish"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/allwish/MegaPlay\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,247:1\n73#2,5:248\n2068#3,2:253\n2068#3,2:255\n777#3:257\n873#3,2:258\n2077#3,3:260\n2068#3,2:263\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/allwish/MegaPlay\n*L\n75#1:248,5\n86#1:253,2\n88#1:255,2\n136#1:257\n136#1:258,2\n137#1:260,3\n146#1:263,2\n*E\n"})
+@Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\b\u0016\u0018\u0000 \u001b2\u00020\u0001:\u0004\u0018\u0019\u001a\u001bB\u0007¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00052\b\u0010\u0011\u001a\u0004\u0018\u00010\u00052\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u000f0\u00132\u0012\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u000f0\u0013H\u0096@¢\u0006\u0002\u0010\u0017R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u001c"}, d2 = {"Lcom/allwish/MegaPlay;", "Lcom/lagradost/cloudstream3/utils/ExtractorApi;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "mainUrl", "getMainUrl", "requiresReferer", "", "getRequiresReferer", "()Z", "getUrl", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "MegaPlayResponse", "Sources", "Track", "Companion", "AllWish"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/allwish/MegaPlay\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,297:1\n73#2,5:298\n1#3:303\n2068#4,2:304\n2068#4,2:306\n777#4:308\n873#4,2:309\n2077#4,3:311\n2068#4,2:314\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/allwish/MegaPlay\n*L\n78#1:298,5\n92#1:304,2\n94#1:306,2\n142#1:308\n142#1:309,2\n143#1:311,3\n152#1:314,2\n*E\n"})
 public class MegaPlay extends ExtractorApi {
+
+    /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
+    @NotNull
+    public static final Companion INSTANCE = new Companion(null);
+
+    @NotNull
+    private static final String ENC_IV = "W0;27ToaUpl_P%'c";
+
+    @NotNull
+    private static final String ENC_KEY = "i?LMTAx0Q6,:}50U";
+
+    @NotNull
+    private static final String TOKEN_SECRET = "MpCdnT0k3n!9f2K#xQ7vL5mR8wN1pY4s";
     private final boolean requiresReferer;
 
     @NotNull
@@ -35,7 +67,7 @@ public class MegaPlay extends ExtractorApi {
     /* JADX INFO: renamed from: com.allwish.MegaPlay$getUrl$1 */
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.allwish.MegaPlay", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {58, 75, 81, 94, 134, 138, 145, 146}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "page", "id", "apiUrl", "$this$getUrl_u24lambda_u241", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "page", "id", "apiUrl", "response", "m3u8", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "page", "id", "apiUrl", "response", "m3u8", "$this$forEach$iv", "element$iv", "track", "label", "file", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "$this$forEachIndexed$iv", "item$iv", "subUrl", "index$iv", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "fallbackM3u8"}, nl = {60, 248, 86, 93, 135, 143, 146, 263}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$14", "L$15", "L$16", "L$17", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$14", "L$15", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12"}, v = 2)
+    @DebugMetadata(c = "com.allwish.MegaPlay", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {61, 78, 87, 100, 140, 144, 151, 152}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "page", "id", "apiUrl", "$this$getUrl_u24lambda_u241", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "page", "id", "apiUrl", "response", "m3u8", "signedM3u8", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "headers", "page", "id", "apiUrl", "response", "m3u8", "signedM3u8", "$this$forEach$iv", "element$iv", "track", "label", "file", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "$this$forEachIndexed$iv", "item$iv", "subUrl", "index$iv", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "$this", "url", "referer", "subtitleCallback", "callback", "mainheaders", "e", "jsToClickPlay", "m3u8Resolver", "vttResolver", "vttResponse", "subtitleUrls", "fallbackM3u8"}, nl = {63, 298, 92, 99, 141, 149, 152, 314}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$17", "L$18", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$14", "L$15", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -49,6 +81,7 @@ public class MegaPlay extends ExtractorApi {
         Object L$16;
         Object L$17;
         Object L$18;
+        Object L$19;
         Object L$2;
         Object L$3;
         Object L$4;
@@ -91,17 +124,32 @@ public class MegaPlay extends ExtractorApi {
         return this.requiresReferer;
     }
 
-    /* JADX WARN: Code duplicated, block: B:150:0x06e9 A[Catch: Exception -> 0x0838, TryCatch #5 {Exception -> 0x0838, blocks: (B:148:0x06e3, B:150:0x06e9, B:153:0x06ff, B:160:0x0718, B:167:0x0751), top: B:309:0x06e3 }] */
-    /* JADX WARN: Code duplicated, block: B:153:0x06ff A[Catch: Exception -> 0x0838, TRY_LEAVE, TryCatch #5 {Exception -> 0x0838, blocks: (B:148:0x06e3, B:150:0x06e9, B:153:0x06ff, B:160:0x0718, B:167:0x0751), top: B:309:0x06e3 }] */
-    /* JADX WARN: Code duplicated, block: B:155:0x0707  */
-    /* JADX WARN: Code duplicated, block: B:165:0x0733  */
-    /* JADX WARN: Code duplicated, block: B:340:0x0726 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:147:0x0671  */
+    /* JADX WARN: Code duplicated, block: B:166:0x0727 A[Catch: Exception -> 0x087a, TryCatch #36 {Exception -> 0x087a, blocks: (B:164:0x0721, B:166:0x0727, B:169:0x073d, B:176:0x0757, B:183:0x078f), top: B:390:0x0721 }] */
+    /* JADX WARN: Code duplicated, block: B:169:0x073d A[Catch: Exception -> 0x087a, TRY_LEAVE, TryCatch #36 {Exception -> 0x087a, blocks: (B:164:0x0721, B:166:0x0727, B:169:0x073d, B:176:0x0757, B:183:0x078f), top: B:390:0x0721 }] */
+    /* JADX WARN: Code duplicated, block: B:171:0x0745  */
+    /* JADX WARN: Code duplicated, block: B:181:0x0772  */
+    /* JADX WARN: Code duplicated, block: B:396:0x0765 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Path cross not found for [B:340:0x0726, B:167:0x0751], limit reached: 379 */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:152:0x06f9 -> B:176:0x0810). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:165:0x0733 -> B:175:0x0807). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:172:0x07bf -> B:350:0x07e6). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:242:0x0b0c -> B:366:0x0b24). Please report as a decompilation issue!!! */
+    /* JADX WARN: Failed to apply debug info
+    jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached with updateSeq = 36121. Try increasing type updates limit count.
+    	at jadx.core.dex.visitors.typeinference.TypeUpdateInfo.requestUpdate(TypeUpdateInfo.java:61)
+    	at jadx.core.dex.visitors.typeinference.TypeUpdate.requestUpdate(TypeUpdate.java:298)
+    	at jadx.core.dex.visitors.typeinference.TypeUpdate.runUpdate(TypeUpdate.java:124)
+    	at jadx.core.dex.visitors.typeinference.TypeUpdate.apply(TypeUpdate.java:91)
+    	at jadx.core.dex.visitors.typeinference.TypeUpdate.applyDebugInfo(TypeUpdate.java:77)
+    	at jadx.core.dex.visitors.debuginfo.DebugInfoApplyVisitor.applyDebugInfo(DebugInfoApplyVisitor.java:137)
+    	at jadx.core.dex.visitors.debuginfo.DebugInfoApplyVisitor.applyDebugInfo(DebugInfoApplyVisitor.java:133)
+    	at jadx.core.dex.visitors.debuginfo.DebugInfoApplyVisitor.searchAndApplyVarDebugInfo(DebugInfoApplyVisitor.java:75)
+    	at jadx.core.dex.visitors.debuginfo.DebugInfoApplyVisitor.lambda$applyDebugInfo$0(DebugInfoApplyVisitor.java:68)
+    	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+    	at jadx.core.dex.visitors.debuginfo.DebugInfoApplyVisitor.applyDebugInfo(DebugInfoApplyVisitor.java:68)
+    	at jadx.core.dex.visitors.debuginfo.DebugInfoApplyVisitor.visit(DebugInfoApplyVisitor.java:55)
+     */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:168:0x0737 -> B:192:0x084a). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:181:0x0772 -> B:191:0x0842). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:188:0x0803 -> B:352:0x0824). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:262:0x0b5c -> B:360:0x0b74). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
@@ -109,26 +157,29 @@ public class MegaPlay extends ExtractorApi {
         */
     static /* synthetic */ java.lang.Object getUrl$suspendImpl(com.allwish.MegaPlay r56, java.lang.String r57, java.lang.String r58, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r59, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r60, kotlin.coroutines.Continuation<? super kotlin.Unit> r61) {
         /*
-            Method dump skipped, instruction units count: 3516
+            Method dump skipped, instruction units count: 3612
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.allwish.MegaPlay.getUrl$suspendImpl(com.allwish.MegaPlay, java.lang.String, java.lang.String, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
-    static final Unit getUrl$lambda$3(String result) {
+    static final Unit getUrl$lambda$5(String result) {
         Log.INSTANCE.d("Megacloud", "JS Result: " + result);
         return Unit.INSTANCE;
     }
 
-    static final Unit getUrl$lambda$4(String result) {
+    static final Unit getUrl$lambda$6(String result) {
         Log.INSTANCE.d("Megacloud", "Subtitle JS Result: " + result);
         return Unit.INSTANCE;
     }
 
     /* JADX INFO: compiled from: Extractors.kt */
-    @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\b\u0087\b\u0018\u00002\u00020\u0001B#\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\u0004\b\u0007\u0010\bJ\u000b\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000f\u0010\u000e\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005HÆ\u0003J%\u0010\u000f\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\u000e\b\u0002\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0016HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fÊ\u0001\u0002\b\u0018¨\u0006\u0017"}, d2 = {"Lcom/allwish/MegaPlay$MegaPlayResponse;", "", "sources", "Lcom/allwish/MegaPlay$Sources;", "tracks", "", "Lcom/allwish/MegaPlay$Track;", "<init>", "(Lcom/allwish/MegaPlay$Sources;Ljava/util/List;)V", "getSources", "()Lcom/allwish/MegaPlay$Sources;", "getTracks", "()Ljava/util/List;", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "", "AllWish", "Lkotlinx/serialization/Serializable;"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\b\u0087\b\u0018\u00002\u00020\u0001B/\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u0012\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\u0004\b\t\u0010\nJ\u000b\u0010\u0011\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u0012\u001a\u0004\u0018\u00010\u0005HÆ\u0003J\u000f\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\b0\u0007HÆ\u0003J1\u0010\u0014\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00052\u000e\b\u0002\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007HÆ\u0001J\u0014\u0010\u0015\u001a\u00020\u00162\b\u0010\u0017\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0018\u001a\u00020\u0019HÖ\u0081\u0004J\n\u0010\u001a\u001a\u00020\u0005HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\fR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\u000eR\u0017\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\b0\u0007¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010Ê\u0001\u0002\b\u001c¨\u0006\u001b"}, d2 = {"Lcom/allwish/MegaPlay$MegaPlayResponse;", "", "sources", "Lcom/allwish/MegaPlay$Sources;", "enc", "", "tracks", "", "Lcom/allwish/MegaPlay$Track;", "<init>", "(Lcom/allwish/MegaPlay$Sources;Ljava/lang/String;Ljava/util/List;)V", "getSources", "()Lcom/allwish/MegaPlay$Sources;", "getEnc", "()Ljava/lang/String;", "getTracks", "()Ljava/util/List;", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "", "toString", "AllWish", "Lkotlinx/serialization/Serializable;"}, k = 1, mv = {2, 4, 0}, xi = 48)
     @Serializable
     public static final /* data */ class MegaPlayResponse {
+
+        @Nullable
+        private final String enc;
 
         @Nullable
         private final Sources sources;
@@ -136,20 +187,22 @@ public class MegaPlay extends ExtractorApi {
         @NotNull
         private final List<Track> tracks;
 
-        /* JADX WARN: Multi-variable type inference failed */
         public MegaPlayResponse() {
-            this(null, 0 == true ? 1 : 0, 3, 0 == true ? 1 : 0);
+            this(null, null, null, 7, null);
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        public static /* synthetic */ MegaPlayResponse copy$default(MegaPlayResponse megaPlayResponse, Sources sources, List list, int i, Object obj) {
+        public static /* synthetic */ MegaPlayResponse copy$default(MegaPlayResponse megaPlayResponse, Sources sources, String str, List list, int i, Object obj) {
             if ((i & 1) != 0) {
                 sources = megaPlayResponse.sources;
             }
             if ((i & 2) != 0) {
+                str = megaPlayResponse.enc;
+            }
+            if ((i & 4) != 0) {
                 list = megaPlayResponse.tracks;
             }
-            return megaPlayResponse.copy(sources, list);
+            return megaPlayResponse.copy(sources, str, list);
         }
 
         @Nullable
@@ -158,14 +211,20 @@ public class MegaPlay extends ExtractorApi {
             return this.sources;
         }
 
+        @Nullable
+        /* JADX INFO: renamed from: component2, reason: from getter */
+        public final String getEnc() {
+            return this.enc;
+        }
+
         @NotNull
-        public final List<Track> component2() {
+        public final List<Track> component3() {
             return this.tracks;
         }
 
         @NotNull
-        public final MegaPlayResponse copy(@Nullable Sources sources, @NotNull List<Track> tracks) {
-            return new MegaPlayResponse(sources, tracks);
+        public final MegaPlayResponse copy(@Nullable Sources sources, @Nullable String enc, @NotNull List<Track> tracks) {
+            return new MegaPlayResponse(sources, enc, tracks);
         }
 
         public boolean equals(@Nullable Object other) {
@@ -176,30 +235,36 @@ public class MegaPlay extends ExtractorApi {
                 return false;
             }
             MegaPlayResponse megaPlayResponse = (MegaPlayResponse) other;
-            return Intrinsics.areEqual(this.sources, megaPlayResponse.sources) && Intrinsics.areEqual(this.tracks, megaPlayResponse.tracks);
+            return Intrinsics.areEqual(this.sources, megaPlayResponse.sources) && Intrinsics.areEqual(this.enc, megaPlayResponse.enc) && Intrinsics.areEqual(this.tracks, megaPlayResponse.tracks);
         }
 
         public int hashCode() {
-            return ((this.sources == null ? 0 : this.sources.hashCode()) * 31) + this.tracks.hashCode();
+            return ((((this.sources == null ? 0 : this.sources.hashCode()) * 31) + (this.enc != null ? this.enc.hashCode() : 0)) * 31) + this.tracks.hashCode();
         }
 
         @NotNull
         public String toString() {
-            return "MegaPlayResponse(sources=" + this.sources + ", tracks=" + this.tracks + ')';
+            return "MegaPlayResponse(sources=" + this.sources + ", enc=" + this.enc + ", tracks=" + this.tracks + ')';
         }
 
-        public MegaPlayResponse(@Nullable Sources sources, @NotNull List<Track> list) {
+        public MegaPlayResponse(@Nullable Sources sources, @Nullable String enc, @NotNull List<Track> list) {
             this.sources = sources;
+            this.enc = enc;
             this.tracks = list;
         }
 
-        public /* synthetic */ MegaPlayResponse(Sources sources, List list, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? null : sources, (i & 2) != 0 ? CollectionsKt.emptyList() : list);
+        public /* synthetic */ MegaPlayResponse(Sources sources, String str, List list, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this((i & 1) != 0 ? null : sources, (i & 2) != 0 ? null : str, (i & 4) != 0 ? CollectionsKt.emptyList() : list);
         }
 
         @Nullable
         public final Sources getSources() {
             return this.sources;
+        }
+
+        @Nullable
+        public final String getEnc() {
+            return this.enc;
         }
 
         @NotNull
@@ -370,6 +435,93 @@ public class MegaPlay extends ExtractorApi {
         @Nullable
         public final String getKind() {
             return this.kind;
+        }
+    }
+
+    /* JADX INFO: compiled from: Extractors.kt */
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0007\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\b\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u0005H\u0002J\u0012\u0010\n\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u000b\u001a\u00020\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/allwish/MegaPlay$Companion;", "", "<init>", "()V", "ENC_KEY", "", "ENC_IV", "TOKEN_SECRET", "signMegaPlayUrl", "url", "decryptMegaPlaySources", "enc", "AllWish"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    public static final class Companion {
+        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
+            this();
+        }
+
+        private Companion() {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final String signMegaPlayUrl(String url) {
+            Object obj;
+            MatchResult m;
+            try {
+                Result.Companion companion = Result.Companion;
+                Companion companion2 = this;
+                if (StringsKt.contains$default(url, "token=", false, 2, (Object) null) || (m = Regex.find$default(new Regex("/([a-f0-9]{32})/([a-f0-9]{32})/", RegexOption.IGNORE_CASE), url, 0, 2, (Object) null)) == null) {
+                    return url;
+                }
+                String payload = ((System.currentTimeMillis() / 1000) + 90) + '|' + ((String) m.getGroupValues().get(1)) + '/' + ((String) m.getGroupValues().get(2));
+                Mac mac = Mac.getInstance("HmacSHA256");
+                byte[] bytes = MegaPlay.TOKEN_SECRET.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+                mac.init(new SecretKeySpec(bytes, "HmacSHA256"));
+                byte[] bytes2 = payload.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(bytes2, "getBytes(...)");
+                byte[] sig = mac.doFinal(bytes2);
+                StringBuilder sb = new StringBuilder();
+                byte[] bytes3 = payload.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(bytes3, "getBytes(...)");
+                String token = sb.append(signMegaPlayUrl$lambda$0$b64(bytes3)).append('.').append(signMegaPlayUrl$lambda$0$b64(sig)).toString();
+                obj = Result.constructor-impl(url + (StringsKt.contains$default(url, "?", false, 2, (Object) null) ? "&" : "?") + "token=" + token);
+            } catch (Throwable th) {
+                Result.Companion companion3 = Result.Companion;
+                obj = Result.constructor-impl(ResultKt.createFailure(th));
+            }
+            if (Result.isFailure-impl(obj)) {
+                obj = url;
+            }
+            return (String) obj;
+        }
+
+        private static final String signMegaPlayUrl$lambda$0$b64(byte[] b) {
+            return Base64.encodeToString(b, 11);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final String decryptMegaPlaySources(String enc) {
+            Object obj;
+            String contentOrNull;
+            List jsonArray;
+            JsonElement jsonElement;
+            JsonObject jsonObject;
+            JsonElement jsonElement2;
+            JsonPrimitive jsonPrimitive;
+            JsonPrimitive jsonPrimitive2;
+            try {
+                Result.Companion companion = Result.Companion;
+                Companion companion2 = this;
+                String normalized = StringsKt.replace$default(StringsKt.replace$default(enc, '-', '+', false, 4, (Object) null), '_', '/', false, 4, (Object) null);
+                String padded = normalized + StringsKt.repeat("=", (4 - (normalized.length() % 4)) % 4);
+                byte[] data = MainAPIKt.base64DecodeArray(padded);
+                byte[] keyBytes = MegaPlay.ENC_KEY.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(keyBytes, "getBytes(...)");
+                byte[] key = ArraysKt.plus(keyBytes, new byte[32 - keyBytes.length]);
+                Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+                SecretKeySpec secretKeySpec = new SecretKeySpec(key, "AES");
+                byte[] bytes = MegaPlay.ENC_IV.getBytes(Charsets.UTF_8);
+                Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+                cipher.init(2, secretKeySpec, new IvParameterSpec(bytes));
+                String json = new String(cipher.doFinal(data), Charsets.UTF_8);
+                JsonObject el = JsonElementKt.getJsonObject(Json.Default.parseToJsonElement(json));
+                JsonElement jsonElement3 = (JsonElement) el.get("file");
+                if (jsonElement3 == null || (jsonPrimitive2 = JsonElementKt.getJsonPrimitive(jsonElement3)) == null || (contentOrNull = JsonElementKt.getContentOrNull(jsonPrimitive2)) == null) {
+                    JsonElement jsonElement4 = (JsonElement) el.get("sources");
+                    contentOrNull = (jsonElement4 == null || (jsonArray = JsonElementKt.getJsonArray(jsonElement4)) == null || (jsonElement = (JsonElement) CollectionsKt.firstOrNull(jsonArray)) == null || (jsonObject = JsonElementKt.getJsonObject(jsonElement)) == null || (jsonElement2 = (JsonElement) jsonObject.get("file")) == null || (jsonPrimitive = JsonElementKt.getJsonPrimitive(jsonElement2)) == null) ? null : JsonElementKt.getContentOrNull(jsonPrimitive);
+                }
+                obj = Result.constructor-impl(contentOrNull);
+            } catch (Throwable th) {
+                Result.Companion companion3 = Result.Companion;
+                obj = Result.constructor-impl(ResultKt.createFailure(th));
+            }
+            return (String) (Result.isFailure-impl(obj) ? null : obj);
         }
     }
 }

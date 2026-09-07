@@ -12,6 +12,7 @@ import com.lagradost.cloudstream3.CommonActivity;
 import com.lagradost.cloudstream3.MainAPIKt;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 import kotlin.Metadata;
@@ -32,6 +33,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlin.jvm.internal.SourceDebugExtension;
 import kotlin.text.Charsets;
+import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import kotlinx.coroutines.BuildersKt;
 import kotlinx.coroutines.CoroutineScope;
@@ -44,7 +46,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: DonationManager.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AnimeDekhoProvider/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\u0006\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\"\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0014\u001a\u00020\u0013H\u0002J\u0010\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020HH\u0002J\u0018\u0010I\u001a\u00020\u00052\u0006\u0010G\u001a\u00020H2\u0006\u0010J\u001a\u00020\u0013H\u0002J\u0018\u0010K\u001a\u00020L2\u0006\u0010G\u001a\u00020H2\u0006\u0010J\u001a\u00020\u0013H\u0002J\u0010\u0010M\u001a\u00020\u00052\u0006\u0010G\u001a\u00020HH\u0002J\u0010\u0010N\u001a\u00020\u00052\u0006\u0010G\u001a\u00020HH\u0002J\u0010\u0010O\u001a\u00020L2\u0006\u0010G\u001a\u00020HH\u0002J\u000e\u0010P\u001a\u00020L2\u0006\u0010G\u001a\u00020HJ\b\u0010Q\u001a\u00020\u0013H\u0002J\u0010\u0010R\u001a\u00020L2\b\b\u0002\u0010S\u001a\u00020\u0013J\u0018\u0010T\u001a\u00020L2\u0006\u0010U\u001a\u00020V2\b\b\u0002\u0010S\u001a\u00020\u0013J$\u0010W\u001a\u0010\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u000206\u0018\u00010X2\u0006\u0010Y\u001a\u00020\u0013H\u0082@¢\u0006\u0002\u0010ZR\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0007\"\u0004\b\u0011\u0010\tR\u000e\u0010\u0012\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u001a\u0010\u0015\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u001a\u0010\u001a\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u0017\"\u0004\b\u001c\u0010\u0019R\u001a\u0010\u001d\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u0017\"\u0004\b\u001f\u0010\u0019R\u001a\u0010 \u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\u0017\"\u0004\b\"\u0010\u0019R\u001a\u0010#\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010\u0017\"\u0004\b%\u0010\u0019R\u001a\u0010&\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010\u0017\"\u0004\b(\u0010\u0019R\u001c\u0010)\u001a\u00020\u000b8FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010\r\"\u0004\b+\u0010\u000fR\u001a\u0010,\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b-\u0010\u0017\"\u0004\b.\u0010\u0019R\u001a\u0010/\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u0010\u0017\"\u0004\b1\u0010\u0019R\u001a\u00102\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b3\u0010\u0017\"\u0004\b4\u0010\u0019R\u001a\u00105\u001a\u000206X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b7\u00108\"\u0004\b9\u0010:R\u000e\u0010;\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010@\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020DX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006["}, d2 = {"Lcom/phisher98/donation/DonationManager;", "", "<init>", "()V", "testMode", "", "getTestMode", "()Z", "setTestMode", "(Z)V", "testProgressAmount", "", "getTestProgressAmount", "()D", "setTestProgressAmount", "(D)V", "isDialogShowing", "setDialogShowing", "OBFUSCATED_TOKEN", "", "getDecryptedBmcToken", "primaryDonateUrl", "getPrimaryDonateUrl", "()Ljava/lang/String;", "setPrimaryDonateUrl", "(Ljava/lang/String;)V", "primaryButtonText", "getPrimaryButtonText", "setPrimaryButtonText", "secondaryDonateUrl", "getSecondaryDonateUrl", "setSecondaryDonateUrl", "secondaryButtonText", "getSecondaryButtonText", "setSecondaryButtonText", "adSupportUrl", "getAdSupportUrl", "setAdSupportUrl", "adSupportButtonText", "getAdSupportButtonText", "setAdSupportButtonText", "targetAmount", "getTargetAmount", "setTargetAmount", "currency", "getCurrency", "setCurrency", "goalTitle", "getGoalTitle", "setGoalTitle", "goalDescription", "getGoalDescription", "setGoalDescription", "cooldownHours", "", "getCooldownHours", "()I", "setCooldownHours", "(I)V", "PREFS_NAME", "KEY_LAST_SHOWN", "KEY_ACHIEVED_SHOWN_MONTH", "KEY_CACHED_MONTH", "KEY_CACHED_AMOUNT", "KEY_CACHED_SUPPORTERS", "DIALOG_TAG", "gateLock", "lastTriggerTime", "", "getPrefs", "Landroid/content/SharedPreferences;", "context", "Landroid/content/Context;", "hasShownAchievedThisMonth", "currentMonth", "recordAchievedShown", "", "isGoalReachedThisMonth", "isCooldownActive", "recordShown", "resetCooldown", "getCurrentMonthName", "checkAndShow", "providerName", "showNow", "activity", "Landroidx/appcompat/app/AppCompatActivity;", "fetchBuyMeACoffeeMonthly", "Lkotlin/Pair;", "accessToken", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "AnimeDekhoProvider"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,489:1\n40#2,11:490\n40#2,11:501\n40#2,11:512\n1#3:523\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager\n*L\n120#1:490,11\n150#1:501,11\n157#1:512,11\n*E\n"})
+@SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,508:1\n40#2,11:509\n40#2,11:520\n40#2,11:531\n1#3:542\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager\n*L\n121#1:509,11\n151#1:520,11\n158#1:531,11\n*E\n"})
 public final class DonationManager {
 
     @NotNull
@@ -101,7 +103,7 @@ public final class DonationManager {
     private static String currency = "$";
 
     @NotNull
-    private static String goalTitle = "Help Keep This Extension Alive";
+    private static String goalTitle = "Help Keep Phisher Repo Alive";
 
     @NotNull
     private static String goalDescription = "Support us to keep this extension maintained! Reaching the goal means faster updates and active maintenance. If not, updates will be slow, and the extension could become dead over time.";
@@ -113,7 +115,7 @@ public final class DonationManager {
     /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$fetchBuyMeACoffeeMonthly$1 */
     /* JADX INFO: compiled from: DonationManager.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.donation.DonationManager", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {415, 461}, m = "fetchBuyMeACoffeeMonthly", n = {"accessToken", "now", "monthTotal", "supportersCount", "dateFormat", "currentYear", "currentMonth", "page", "hasMore", "accessToken", "now", "monthTotal", "supportersCount", "dateFormat", "$this$fetchBuyMeACoffeeMonthly_u24lambda_u243", "currentYear", "currentMonth", "page", "hasMore"}, nl = {424, 470}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2", "I$3"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.donation.DonationManager", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {432, 480}, m = "fetchBuyMeACoffeeMonthly", n = {"accessToken", "now", "monthTotal", "supportersCount", "dateFormat", "currentYear", "currentMonth", "page", "hasMore", "accessToken", "now", "monthTotal", "supportersCount", "dateFormat", "$this$fetchBuyMeACoffeeMonthly_u24lambda_u244", "currentYear", "currentMonth", "page", "hasMore"}, nl = {441, 489}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2", "I$3"}, v = 2)
     static final class C00261 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -406,8 +408,8 @@ public final class DonationManager {
     /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$checkAndShow$2 */
     /* JADX INFO: compiled from: DonationManager.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.donation.DonationManager$checkAndShow$2", f = "DonationManager.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {204, 254}, m = "invokeSuspend", n = {"prefs", "currentAmount", "supportersCount", "token", "prefs", "currentAmount", "supportersCount", "token", "dynamicTitle", "config", "isGoalAchieved"}, nl = {205, 289}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$checkAndShow$2\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,489:1\n40#2,11:490\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$checkAndShow$2\n*L\n210#1:490,11\n*E\n"})
+    @DebugMetadata(c = "com.phisher98.donation.DonationManager$checkAndShow$2", f = "DonationManager.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {205, 255}, m = "invokeSuspend", n = {"prefs", "currentAmount", "supportersCount", "token", "prefs", "currentAmount", "supportersCount", "token", "dynamicTitle", "config", "isGoalAchieved"}, nl = {206, 290}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$checkAndShow$2\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,508:1\n40#2,11:509\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$checkAndShow$2\n*L\n211#1:509,11\n*E\n"})
     static final class C00252 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Context $appContext;
         final /* synthetic */ String $currentMonth;
@@ -437,23 +439,19 @@ public final class DonationManager {
             return create(coroutineScope, continuation).invokeSuspend(Unit.INSTANCE);
         }
 
-        /* JADX WARN: Code duplicated, block: B:20:0x00a2 A[Catch: all -> 0x0246, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:20:0x00a2 A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
         /* JADX WARN: Code duplicated, block: B:21:0x00e8  */
-        /* JADX WARN: Code duplicated, block: B:26:0x00fe A[Catch: all -> 0x0246, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:28:0x010a A[Catch: all -> 0x0246, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:26:0x00fe A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:28:0x010a A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
         /* JADX WARN: Code duplicated, block: B:34:0x0125  */
-        /* JADX WARN: Code duplicated, block: B:37:0x0130 A[Catch: all -> 0x0246, TRY_LEAVE, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:39:0x0133  */
-        /* JADX WARN: Code duplicated, block: B:41:0x0138 A[Catch: all -> 0x0246, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:44:0x0144 A[Catch: all -> 0x0246, TRY_ENTER, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:45:0x0158 A[Catch: all -> 0x0246, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:47:0x0170 A[Catch: all -> 0x0246, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:49:0x0178 A[Catch: all -> 0x0246, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:50:0x0194 A[Catch: all -> 0x0246, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:53:0x01c5  */
-        /* JADX WARN: Code duplicated, block: B:54:0x01c8 A[Catch: all -> 0x0246, TryCatch #0 {all -> 0x0246, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:41:0x0138, B:44:0x0144, B:46:0x016b, B:51:0x019a, B:55:0x01ce, B:54:0x01c8, B:45:0x0158, B:47:0x0170, B:49:0x0178, B:50:0x0194, B:13:0x0052, B:15:0x0084), top: B:63:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:57:0x0240 A[RETURN] */
-        /* JADX WARN: Code duplicated, block: B:58:0x0241  */
+        /* JADX WARN: Code duplicated, block: B:37:0x0130 A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:39:0x0133 A[DONT_INVERT] */
+        /* JADX WARN: Code duplicated, block: B:40:0x0135  */
+        /* JADX WARN: Code duplicated, block: B:41:0x0138 A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:44:0x0169  */
+        /* JADX WARN: Code duplicated, block: B:45:0x016c A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:48:0x01e4 A[RETURN] */
+        /* JADX WARN: Code duplicated, block: B:49:0x01e5  */
         public final Object invokeSuspend(Object $result) {
             SharedPreferences prefs;
             Ref.DoubleRef currentAmount;
@@ -465,11 +463,9 @@ public final class DonationManager {
             SharedPreferences prefs2;
             Object objFetchBuyMeACoffeeMonthly;
             int i;
-            String str;
             String goalTitle;
             DonationConfig config;
             String primaryButtonText;
-            StringBuilder sbAppend;
             Pair bmcResult;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             try {
@@ -496,11 +492,11 @@ public final class DonationManager {
                             if (bmcResult != null) {
                                 currentAmount.element = ((Number) bmcResult.getFirst()).doubleValue();
                                 supportersCount.element = ((Number) bmcResult.getSecond()).intValue();
-                                String str2 = this.$currentMonth;
+                                String str = this.$currentMonth;
                                 SharedPreferences $this$edit$iv = prefs;
                                 SharedPreferences.Editor editor$iv = $this$edit$iv.edit();
                                 Intrinsics.checkExpressionValueIsNotNull(editor$iv, "editor");
-                                editor$iv.putString(DonationManager.KEY_CACHED_MONTH, str2).putFloat(DonationManager.KEY_CACHED_AMOUNT, (float) currentAmount.element).putInt(DonationManager.KEY_CACHED_SUPPORTERS, supportersCount.element);
+                                editor$iv.putString(DonationManager.KEY_CACHED_MONTH, str).putFloat(DonationManager.KEY_CACHED_AMOUNT, (float) currentAmount.element).putInt(DonationManager.KEY_CACHED_SUPPORTERS, supportersCount.element);
                                 editor$iv.apply();
                             }
                             token2 = token;
@@ -527,22 +523,14 @@ public final class DonationManager {
                         if (DonationManager.INSTANCE.isCooldownActive(this.$appContext)) {
                             return Unit.INSTANCE;
                         }
-                        str = this.$providerName;
                         if (i != 0) {
-                            if (StringsKt.isBlank(str)) {
-                                sbAppend = new StringBuilder().append("Goal Achieved for ").append(this.$currentMonth).append('!');
-                            } else {
-                                sbAppend = new StringBuilder().append("Goal Achieved for ").append(this.$providerName).append('!');
-                            }
-                            goalTitle = sbAppend.toString();
-                        } else if (StringsKt.isBlank(str)) {
-                            goalTitle = DonationManager.INSTANCE.getGoalTitle();
+                            goalTitle = "Goal Achieved for Phisher Repo!";
                         } else {
-                            goalTitle = "Help Keep " + this.$providerName + " Alive";
+                            goalTitle = DonationManager.INSTANCE.getGoalTitle();
                         }
                         String dynamicTitle = goalTitle;
-                        String str3 = this.$providerName;
-                        String str4 = this.$currentMonth;
+                        String str2 = this.$providerName;
+                        String str3 = this.$currentMonth;
                         String goalDescription = DonationManager.INSTANCE.getGoalDescription();
                         String currency = DonationManager.INSTANCE.getCurrency();
                         double targetAmount = DonationManager.INSTANCE.getTargetAmount();
@@ -555,7 +543,7 @@ public final class DonationManager {
                         } else {
                             primaryButtonText = DonationManager.INSTANCE.getPrimaryButtonText();
                         }
-                        config = new DonationConfig(true, str3, str4, dynamicTitle, goalDescription, currency, targetAmount, d, i2, primaryDonateUrl, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
+                        config = new DonationConfig(true, str2, str3, dynamicTitle, goalDescription, currency, targetAmount, d, i2, primaryDonateUrl, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
                         this.L$0 = SpillingKt.nullOutSpilledVariable(prefs3);
                         this.L$1 = SpillingKt.nullOutSpilledVariable(currentAmount2);
                         this.L$2 = SpillingKt.nullOutSpilledVariable(supportersCount2);
@@ -579,11 +567,11 @@ public final class DonationManager {
                         if (bmcResult != null) {
                             currentAmount.element = ((Number) bmcResult.getFirst()).doubleValue();
                             supportersCount.element = ((Number) bmcResult.getSecond()).intValue();
-                            String str5 = this.$currentMonth;
+                            String str4 = this.$currentMonth;
                             SharedPreferences $this$edit$iv2 = prefs;
                             SharedPreferences.Editor editor$iv2 = $this$edit$iv2.edit();
                             Intrinsics.checkExpressionValueIsNotNull(editor$iv2, "editor");
-                            editor$iv2.putString(DonationManager.KEY_CACHED_MONTH, str5).putFloat(DonationManager.KEY_CACHED_AMOUNT, (float) currentAmount.element).putInt(DonationManager.KEY_CACHED_SUPPORTERS, supportersCount.element);
+                            editor$iv2.putString(DonationManager.KEY_CACHED_MONTH, str4).putFloat(DonationManager.KEY_CACHED_AMOUNT, (float) currentAmount.element).putInt(DonationManager.KEY_CACHED_SUPPORTERS, supportersCount.element);
                             editor$iv2.apply();
                         }
                         token2 = token;
@@ -604,22 +592,14 @@ public final class DonationManager {
                         if (DonationManager.INSTANCE.isCooldownActive(this.$appContext)) {
                             return Unit.INSTANCE;
                         }
-                        str = this.$providerName;
                         if (i != 0) {
-                            if (StringsKt.isBlank(str)) {
-                                sbAppend = new StringBuilder().append("Goal Achieved for ").append(this.$providerName).append('!');
-                            } else {
-                                sbAppend = new StringBuilder().append("Goal Achieved for ").append(this.$currentMonth).append('!');
-                            }
-                            goalTitle = sbAppend.toString();
-                        } else if (StringsKt.isBlank(str)) {
-                            goalTitle = "Help Keep " + this.$providerName + " Alive";
+                            goalTitle = "Goal Achieved for Phisher Repo!";
                         } else {
                             goalTitle = DonationManager.INSTANCE.getGoalTitle();
                         }
                         String dynamicTitle2 = goalTitle;
-                        String str6 = this.$providerName;
-                        String str7 = this.$currentMonth;
+                        String str5 = this.$providerName;
+                        String str6 = this.$currentMonth;
                         String goalDescription2 = DonationManager.INSTANCE.getGoalDescription();
                         String currency2 = DonationManager.INSTANCE.getCurrency();
                         double targetAmount2 = DonationManager.INSTANCE.getTargetAmount();
@@ -632,7 +612,7 @@ public final class DonationManager {
                         } else {
                             primaryButtonText = DonationManager.INSTANCE.getPrimaryButtonText();
                         }
-                        config = new DonationConfig(true, str6, str7, dynamicTitle2, goalDescription2, currency2, targetAmount2, d2, i3, primaryDonateUrl2, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
+                        config = new DonationConfig(true, str5, str6, dynamicTitle2, goalDescription2, currency2, targetAmount2, d2, i3, primaryDonateUrl2, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
                         this.L$0 = SpillingKt.nullOutSpilledVariable(prefs4);
                         this.L$1 = SpillingKt.nullOutSpilledVariable(currentAmount2);
                         this.L$2 = SpillingKt.nullOutSpilledVariable(supportersCount2);
@@ -659,7 +639,7 @@ public final class DonationManager {
         /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$checkAndShow$2$2, reason: invalid class name */
         /* JADX INFO: compiled from: DonationManager.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-        @DebugMetadata(c = "com.phisher98.donation.DonationManager$checkAndShow$2$2", f = "DonationManager.kt", i = {0, 0}, l = {261}, m = "invokeSuspend", n = {"currentActivity", "i"}, nl = {262}, s = {"L$0", "I$0"}, v = 2)
+        @DebugMetadata(c = "com.phisher98.donation.DonationManager$checkAndShow$2$2", f = "DonationManager.kt", i = {0, 0}, l = {262}, m = "invokeSuspend", n = {"currentActivity", "i"}, nl = {263}, s = {"L$0", "I$0"}, v = 2)
         static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ Context $appContext;
             final /* synthetic */ DonationConfig $config;
@@ -711,18 +691,19 @@ public final class DonationManager {
     /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$showNow$1 */
     /* JADX INFO: compiled from: DonationManager.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.donation.DonationManager$showNow$1", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2}, l = {309, 348, 363}, m = "invokeSuspend", n = {"currentMonth", "prefs", "token", "currentAmount", "supportersCount", "currentMonth", "prefs", "token", "dynamicTitle", "config", "currentAmount", "supportersCount", "isGoalAchieved", "<unused var>"}, nl = {310, 362, 389}, s = {"L$0", "L$1", "L$2", "D$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "D$0", "I$0", "I$1", "L$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.donation.DonationManager$showNow$1", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2}, l = {310, 354, 369}, m = "invokeSuspend", n = {"currentMonth", "prefs", "currentAmount", "supportersCount", "token", "currentMonth", "prefs", "currentAmount", "supportersCount", "token", "dynamicTitle", "config", "isGoalAchieved", "<unused var>"}, nl = {311, 368, 395}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$showNow$1\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,508:1\n40#2,11:509\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$showNow$1\n*L\n314#1:509,11\n*E\n"})
     static final class C00271 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ AppCompatActivity $activity;
         final /* synthetic */ String $providerName;
-        double D$0;
         int I$0;
-        int I$1;
         Object L$0;
         Object L$1;
         Object L$2;
         Object L$3;
         Object L$4;
+        Object L$5;
+        Object L$6;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -740,41 +721,33 @@ public final class DonationManager {
             return create(coroutineScope, continuation).invokeSuspend(Unit.INSTANCE);
         }
 
-        /* JADX WARN: Code duplicated, block: B:21:0x00ad A[Catch: all -> 0x020e, TryCatch #0 {all -> 0x020e, blocks: (B:8:0x0039, B:11:0x004e, B:19:0x00a9, B:21:0x00ad, B:24:0x00d1, B:26:0x00dd, B:31:0x00f0, B:33:0x00fa, B:40:0x010c, B:43:0x0118, B:45:0x013d, B:51:0x016e, B:55:0x019b, B:54:0x0195, B:44:0x012c, B:46:0x0143, B:48:0x014b, B:49:0x0167, B:14:0x0058, B:16:0x0089), top: B:67:0x000b }] */
-        /* JADX WARN: Code duplicated, block: B:22:0x00c8  */
-        /* JADX WARN: Code duplicated, block: B:26:0x00dd A[Catch: all -> 0x020e, TryCatch #0 {all -> 0x020e, blocks: (B:8:0x0039, B:11:0x004e, B:19:0x00a9, B:21:0x00ad, B:24:0x00d1, B:26:0x00dd, B:31:0x00f0, B:33:0x00fa, B:40:0x010c, B:43:0x0118, B:45:0x013d, B:51:0x016e, B:55:0x019b, B:54:0x0195, B:44:0x012c, B:46:0x0143, B:48:0x014b, B:49:0x0167, B:14:0x0058, B:16:0x0089), top: B:67:0x000b }] */
-        /* JADX WARN: Code duplicated, block: B:28:0x00e6  */
-        /* JADX WARN: Code duplicated, block: B:30:0x00ec  */
-        /* JADX WARN: Code duplicated, block: B:37:0x0105  */
-        /* JADX WARN: Code duplicated, block: B:40:0x010c A[Catch: all -> 0x020e, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x020e, blocks: (B:8:0x0039, B:11:0x004e, B:19:0x00a9, B:21:0x00ad, B:24:0x00d1, B:26:0x00dd, B:31:0x00f0, B:33:0x00fa, B:40:0x010c, B:43:0x0118, B:45:0x013d, B:51:0x016e, B:55:0x019b, B:54:0x0195, B:44:0x012c, B:46:0x0143, B:48:0x014b, B:49:0x0167, B:14:0x0058, B:16:0x0089), top: B:67:0x000b }] */
-        /* JADX WARN: Code duplicated, block: B:43:0x0118 A[Catch: all -> 0x020e, TRY_ENTER, TryCatch #0 {all -> 0x020e, blocks: (B:8:0x0039, B:11:0x004e, B:19:0x00a9, B:21:0x00ad, B:24:0x00d1, B:26:0x00dd, B:31:0x00f0, B:33:0x00fa, B:40:0x010c, B:43:0x0118, B:45:0x013d, B:51:0x016e, B:55:0x019b, B:54:0x0195, B:44:0x012c, B:46:0x0143, B:48:0x014b, B:49:0x0167, B:14:0x0058, B:16:0x0089), top: B:67:0x000b }] */
-        /* JADX WARN: Code duplicated, block: B:44:0x012c A[Catch: all -> 0x020e, TryCatch #0 {all -> 0x020e, blocks: (B:8:0x0039, B:11:0x004e, B:19:0x00a9, B:21:0x00ad, B:24:0x00d1, B:26:0x00dd, B:31:0x00f0, B:33:0x00fa, B:40:0x010c, B:43:0x0118, B:45:0x013d, B:51:0x016e, B:55:0x019b, B:54:0x0195, B:44:0x012c, B:46:0x0143, B:48:0x014b, B:49:0x0167, B:14:0x0058, B:16:0x0089), top: B:67:0x000b }] */
-        /* JADX WARN: Code duplicated, block: B:46:0x0143 A[Catch: all -> 0x020e, TryCatch #0 {all -> 0x020e, blocks: (B:8:0x0039, B:11:0x004e, B:19:0x00a9, B:21:0x00ad, B:24:0x00d1, B:26:0x00dd, B:31:0x00f0, B:33:0x00fa, B:40:0x010c, B:43:0x0118, B:45:0x013d, B:51:0x016e, B:55:0x019b, B:54:0x0195, B:44:0x012c, B:46:0x0143, B:48:0x014b, B:49:0x0167, B:14:0x0058, B:16:0x0089), top: B:67:0x000b }] */
-        /* JADX WARN: Code duplicated, block: B:48:0x014b A[Catch: all -> 0x020e, TryCatch #0 {all -> 0x020e, blocks: (B:8:0x0039, B:11:0x004e, B:19:0x00a9, B:21:0x00ad, B:24:0x00d1, B:26:0x00dd, B:31:0x00f0, B:33:0x00fa, B:40:0x010c, B:43:0x0118, B:45:0x013d, B:51:0x016e, B:55:0x019b, B:54:0x0195, B:44:0x012c, B:46:0x0143, B:48:0x014b, B:49:0x0167, B:14:0x0058, B:16:0x0089), top: B:67:0x000b }] */
-        /* JADX WARN: Code duplicated, block: B:49:0x0167 A[Catch: all -> 0x020e, TryCatch #0 {all -> 0x020e, blocks: (B:8:0x0039, B:11:0x004e, B:19:0x00a9, B:21:0x00ad, B:24:0x00d1, B:26:0x00dd, B:31:0x00f0, B:33:0x00fa, B:40:0x010c, B:43:0x0118, B:45:0x013d, B:51:0x016e, B:55:0x019b, B:54:0x0195, B:44:0x012c, B:46:0x0143, B:48:0x014b, B:49:0x0167, B:14:0x0058, B:16:0x0089), top: B:67:0x000b }] */
-        /* JADX WARN: Code duplicated, block: B:53:0x0192  */
-        /* JADX WARN: Code duplicated, block: B:54:0x0195 A[Catch: all -> 0x020e, TryCatch #0 {all -> 0x020e, blocks: (B:8:0x0039, B:11:0x004e, B:19:0x00a9, B:21:0x00ad, B:24:0x00d1, B:26:0x00dd, B:31:0x00f0, B:33:0x00fa, B:40:0x010c, B:43:0x0118, B:45:0x013d, B:51:0x016e, B:55:0x019b, B:54:0x0195, B:44:0x012c, B:46:0x0143, B:48:0x014b, B:49:0x0167, B:14:0x0058, B:16:0x0089), top: B:67:0x000b }] */
-        /* JADX WARN: Code duplicated, block: B:57:0x0209 A[RETURN] */
-        /* JADX WARN: Code duplicated, block: B:58:0x020a  */
+        /* JADX WARN: Code duplicated, block: B:21:0x00c0 A[Catch: all -> 0x020b, TryCatch #0 {all -> 0x020b, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x015b, B:43:0x018a, B:42:0x0184, B:38:0x0153, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:26:0x0123 A[Catch: all -> 0x020b, TryCatch #0 {all -> 0x020b, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x015b, B:43:0x018a, B:42:0x0184, B:38:0x0153, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:28:0x012f A[Catch: all -> 0x020b, TryCatch #0 {all -> 0x020b, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x015b, B:43:0x018a, B:42:0x0184, B:38:0x0153, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:34:0x014a  */
+        /* JADX WARN: Code duplicated, block: B:37:0x014e  */
+        /* JADX WARN: Code duplicated, block: B:38:0x0153 A[Catch: all -> 0x020b, TryCatch #0 {all -> 0x020b, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x015b, B:43:0x018a, B:42:0x0184, B:38:0x0153, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:41:0x0181  */
+        /* JADX WARN: Code duplicated, block: B:42:0x0184 A[Catch: all -> 0x020b, TryCatch #0 {all -> 0x020b, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x015b, B:43:0x018a, B:42:0x0184, B:38:0x0153, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:45:0x0205 A[RETURN] */
+        /* JADX WARN: Code duplicated, block: B:46:0x0206  */
         public final Object invokeSuspend(Object $result) {
             String currentMonth;
             SharedPreferences prefs;
-            double currentAmount;
-            int supportersCount;
+            Ref.DoubleRef currentAmount;
+            Ref.IntRef supportersCount;
             String token;
             String token2;
+            Ref.IntRef supportersCount2;
+            Ref.DoubleRef currentAmount2;
             SharedPreferences prefs2;
             String currentMonth2;
             Object objFetchBuyMeACoffeeMonthly;
-            int supportersCount2;
-            double currentAmount2;
             int i;
-            String str;
-            String goalTitle;
+            int i2;
             String dynamicTitle;
             DonationConfig config;
             String primaryButtonText;
-            StringBuilder sbAppend;
             Pair bmcResult;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             try {
@@ -783,19 +756,23 @@ public final class DonationManager {
                         ResultKt.throwOnFailure($result);
                         currentMonth = DonationManager.INSTANCE.getCurrentMonthName();
                         prefs = DonationManager.INSTANCE.getPrefs(this.$activity.getApplicationContext());
-                        currentAmount = prefs.getFloat(DonationManager.KEY_CACHED_AMOUNT, 0.0f);
-                        supportersCount = prefs.getInt(DonationManager.KEY_CACHED_SUPPORTERS, 0);
+                        currentAmount = new Ref.DoubleRef();
+                        currentAmount.element = prefs.getFloat(DonationManager.KEY_CACHED_AMOUNT, 0.0f);
+                        supportersCount = new Ref.IntRef();
+                        supportersCount.element = prefs.getInt(DonationManager.KEY_CACHED_SUPPORTERS, 0);
                         token = DonationManager.INSTANCE.getDecryptedBmcToken();
                         if (StringsKt.isBlank(token)) {
                             token2 = token;
+                            supportersCount2 = supportersCount;
+                            currentAmount2 = currentAmount;
                             prefs2 = prefs;
                             currentMonth2 = currentMonth;
                         } else {
                             this.L$0 = currentMonth;
-                            this.L$1 = SpillingKt.nullOutSpilledVariable(prefs);
-                            this.L$2 = SpillingKt.nullOutSpilledVariable(token);
-                            this.D$0 = currentAmount;
-                            this.I$0 = supportersCount;
+                            this.L$1 = prefs;
+                            this.L$2 = currentAmount;
+                            this.L$3 = supportersCount;
+                            this.L$4 = SpillingKt.nullOutSpilledVariable(token);
                             this.label = 1;
                             objFetchBuyMeACoffeeMonthly = DonationManager.INSTANCE.fetchBuyMeACoffeeMonthly(token, (Continuation) this);
                             if (objFetchBuyMeACoffeeMonthly == coroutine_suspended) {
@@ -803,149 +780,131 @@ public final class DonationManager {
                             }
                             bmcResult = (Pair) objFetchBuyMeACoffeeMonthly;
                             if (bmcResult != null) {
-                                currentAmount = ((Number) bmcResult.getFirst()).doubleValue();
-                                supportersCount = ((Number) bmcResult.getSecond()).intValue();
-                                SharedPreferences sharedPreferences = prefs;
-                                token2 = token;
-                                prefs2 = sharedPreferences;
-                                currentMonth2 = currentMonth;
-                            } else {
-                                SharedPreferences sharedPreferences2 = prefs;
-                                token2 = token;
-                                prefs2 = sharedPreferences2;
-                                currentMonth2 = currentMonth;
+                                currentAmount.element = ((Number) bmcResult.getFirst()).doubleValue();
+                                supportersCount.element = ((Number) bmcResult.getSecond()).intValue();
+                                SharedPreferences $this$edit$iv = prefs;
+                                SharedPreferences.Editor editor$iv = $this$edit$iv.edit();
+                                Intrinsics.checkExpressionValueIsNotNull(editor$iv, "editor");
+                                editor$iv.putString(DonationManager.KEY_CACHED_MONTH, currentMonth).putFloat(DonationManager.KEY_CACHED_AMOUNT, (float) currentAmount.element).putInt(DonationManager.KEY_CACHED_SUPPORTERS, supportersCount.element);
+                                editor$iv.apply();
                             }
-                        }
-                        if (DonationManager.INSTANCE.getTestProgressAmount() > 0.0d) {
-                            double currentAmount3 = DonationManager.INSTANCE.getTestProgressAmount();
-                            if (supportersCount == 0) {
-                                supportersCount = 3;
-                            }
-                            supportersCount2 = supportersCount;
-                            currentAmount2 = currentAmount3;
-                        } else {
+                            token2 = token;
                             supportersCount2 = supportersCount;
                             currentAmount2 = currentAmount;
+                            prefs2 = prefs;
+                            currentMonth2 = currentMonth;
                         }
-                        i = (DonationManager.INSTANCE.getTargetAmount() > 0.0d || currentAmount2 < DonationManager.INSTANCE.getTargetAmount()) ? 0 : 1;
-                        str = this.$providerName;
-                        if (i != 0) {
-                            if (StringsKt.isBlank(str)) {
-                                sbAppend = new StringBuilder().append("Goal Achieved for ").append(currentMonth2).append('!');
-                            } else {
-                                sbAppend = new StringBuilder().append("Goal Achieved for ").append(this.$providerName).append('!');
+                        if (DonationManager.INSTANCE.getTestProgressAmount() > 0.0d) {
+                            currentAmount2.element = DonationManager.INSTANCE.getTestProgressAmount();
+                            if (supportersCount2.element == 0) {
+                                supportersCount2.element = 3;
                             }
-                            dynamicTitle = sbAppend.toString();
+                        }
+                        if (DonationManager.INSTANCE.getTargetAmount() > 0.0d || currentAmount2.element < DonationManager.INSTANCE.getTargetAmount()) {
+                            i = 0;
                         } else {
-                            if (StringsKt.isBlank(str)) {
-                                goalTitle = DonationManager.INSTANCE.getGoalTitle();
-                            } else {
-                                goalTitle = "Help Keep " + this.$providerName + " Alive";
-                            }
-                            dynamicTitle = goalTitle;
+                            i = 1;
                         }
-                        String str2 = this.$providerName;
+                        i2 = i;
+                        if (i2 != 0) {
+                            dynamicTitle = "Goal Achieved for Phisher Repo!";
+                        } else {
+                            dynamicTitle = DonationManager.INSTANCE.getGoalTitle();
+                        }
+                        String str = this.$providerName;
                         String goalDescription = DonationManager.INSTANCE.getGoalDescription();
                         String currency = DonationManager.INSTANCE.getCurrency();
                         double targetAmount = DonationManager.INSTANCE.getTargetAmount();
+                        double d = currentAmount2.element;
+                        int i3 = supportersCount2.element;
                         String primaryDonateUrl = DonationManager.INSTANCE.getPrimaryDonateUrl();
-                        if (i != 0) {
+                        if (i2 != 0) {
                             primaryButtonText = "☕ Send Extra Love";
                         } else {
                             primaryButtonText = DonationManager.INSTANCE.getPrimaryButtonText();
                         }
-                        config = new DonationConfig(true, str2, currentMonth2, dynamicTitle, goalDescription, currency, targetAmount, currentAmount2, supportersCount2, primaryDonateUrl, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
+                        config = new DonationConfig(true, str, currentMonth2, dynamicTitle, goalDescription, currency, targetAmount, d, i3, primaryDonateUrl, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
                         this.L$0 = SpillingKt.nullOutSpilledVariable(currentMonth2);
                         this.L$1 = SpillingKt.nullOutSpilledVariable(prefs2);
-                        this.L$2 = SpillingKt.nullOutSpilledVariable(token2);
-                        this.L$3 = SpillingKt.nullOutSpilledVariable(dynamicTitle);
-                        this.L$4 = SpillingKt.nullOutSpilledVariable(config);
-                        this.D$0 = currentAmount2;
-                        this.I$0 = supportersCount2;
-                        this.I$1 = i;
+                        this.L$2 = SpillingKt.nullOutSpilledVariable(currentAmount2);
+                        this.L$3 = SpillingKt.nullOutSpilledVariable(supportersCount2);
+                        this.L$4 = SpillingKt.nullOutSpilledVariable(token2);
+                        this.L$5 = SpillingKt.nullOutSpilledVariable(dynamicTitle);
+                        this.L$6 = SpillingKt.nullOutSpilledVariable(config);
+                        this.I$0 = i2;
                         this.label = 2;
-                        if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass1(this.$activity, config, null), (Continuation) this) == coroutine_suspended) {
+                        if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass2(this.$activity, config, null), (Continuation) this) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         return Unit.INSTANCE;
                     case 1:
-                        supportersCount = this.I$0;
-                        currentAmount = this.D$0;
-                        token = (String) this.L$2;
+                        token = (String) this.L$4;
+                        supportersCount = (Ref.IntRef) this.L$3;
+                        currentAmount = (Ref.DoubleRef) this.L$2;
                         prefs = (SharedPreferences) this.L$1;
                         currentMonth = (String) this.L$0;
                         ResultKt.throwOnFailure($result);
                         objFetchBuyMeACoffeeMonthly = $result;
                         bmcResult = (Pair) objFetchBuyMeACoffeeMonthly;
                         if (bmcResult != null) {
-                            currentAmount = ((Number) bmcResult.getFirst()).doubleValue();
-                            supportersCount = ((Number) bmcResult.getSecond()).intValue();
-                            SharedPreferences sharedPreferences3 = prefs;
-                            token2 = token;
-                            prefs2 = sharedPreferences3;
-                            currentMonth2 = currentMonth;
-                        } else {
-                            SharedPreferences sharedPreferences4 = prefs;
-                            token2 = token;
-                            prefs2 = sharedPreferences4;
-                            currentMonth2 = currentMonth;
+                            currentAmount.element = ((Number) bmcResult.getFirst()).doubleValue();
+                            supportersCount.element = ((Number) bmcResult.getSecond()).intValue();
+                            SharedPreferences $this$edit$iv2 = prefs;
+                            SharedPreferences.Editor editor$iv2 = $this$edit$iv2.edit();
+                            Intrinsics.checkExpressionValueIsNotNull(editor$iv2, "editor");
+                            editor$iv2.putString(DonationManager.KEY_CACHED_MONTH, currentMonth).putFloat(DonationManager.KEY_CACHED_AMOUNT, (float) currentAmount.element).putInt(DonationManager.KEY_CACHED_SUPPORTERS, supportersCount.element);
+                            editor$iv2.apply();
                         }
+                        token2 = token;
+                        supportersCount2 = supportersCount;
+                        currentAmount2 = currentAmount;
+                        prefs2 = prefs;
+                        currentMonth2 = currentMonth;
                         if (DonationManager.INSTANCE.getTestProgressAmount() > 0.0d) {
-                            double currentAmount4 = DonationManager.INSTANCE.getTestProgressAmount();
-                            if (supportersCount == 0) {
-                                supportersCount = 3;
+                            currentAmount2.element = DonationManager.INSTANCE.getTestProgressAmount();
+                            if (supportersCount2.element == 0) {
+                                supportersCount2.element = 3;
                             }
-                            supportersCount2 = supportersCount;
-                            currentAmount2 = currentAmount4;
-                        } else {
-                            supportersCount2 = supportersCount;
-                            currentAmount2 = currentAmount;
                         }
-                        i = (DonationManager.INSTANCE.getTargetAmount() > 0.0d || currentAmount2 < DonationManager.INSTANCE.getTargetAmount()) ? 0 : 1;
-                        str = this.$providerName;
-                        if (i != 0) {
-                            if (StringsKt.isBlank(str)) {
-                                sbAppend = new StringBuilder().append("Goal Achieved for ").append(this.$providerName).append('!');
-                            } else {
-                                sbAppend = new StringBuilder().append("Goal Achieved for ").append(currentMonth2).append('!');
-                            }
-                            dynamicTitle = sbAppend.toString();
+                        if (DonationManager.INSTANCE.getTargetAmount() > 0.0d) {
+                            i = 0;
                         } else {
-                            if (StringsKt.isBlank(str)) {
-                                goalTitle = "Help Keep " + this.$providerName + " Alive";
-                            } else {
-                                goalTitle = DonationManager.INSTANCE.getGoalTitle();
-                            }
-                            dynamicTitle = goalTitle;
+                            i = 0;
                         }
-                        String str3 = this.$providerName;
+                        i2 = i;
+                        if (i2 != 0) {
+                            dynamicTitle = "Goal Achieved for Phisher Repo!";
+                        } else {
+                            dynamicTitle = DonationManager.INSTANCE.getGoalTitle();
+                        }
+                        String str2 = this.$providerName;
                         String goalDescription2 = DonationManager.INSTANCE.getGoalDescription();
                         String currency2 = DonationManager.INSTANCE.getCurrency();
                         double targetAmount2 = DonationManager.INSTANCE.getTargetAmount();
+                        double d2 = currentAmount2.element;
+                        int i4 = supportersCount2.element;
                         String primaryDonateUrl2 = DonationManager.INSTANCE.getPrimaryDonateUrl();
-                        if (i != 0) {
+                        if (i2 != 0) {
                             primaryButtonText = "☕ Send Extra Love";
                         } else {
                             primaryButtonText = DonationManager.INSTANCE.getPrimaryButtonText();
                         }
-                        config = new DonationConfig(true, str3, currentMonth2, dynamicTitle, goalDescription2, currency2, targetAmount2, currentAmount2, supportersCount2, primaryDonateUrl2, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
+                        config = new DonationConfig(true, str2, currentMonth2, dynamicTitle, goalDescription2, currency2, targetAmount2, d2, i4, primaryDonateUrl2, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
                         this.L$0 = SpillingKt.nullOutSpilledVariable(currentMonth2);
                         this.L$1 = SpillingKt.nullOutSpilledVariable(prefs2);
-                        this.L$2 = SpillingKt.nullOutSpilledVariable(token2);
-                        this.L$3 = SpillingKt.nullOutSpilledVariable(dynamicTitle);
-                        this.L$4 = SpillingKt.nullOutSpilledVariable(config);
-                        this.D$0 = currentAmount2;
-                        this.I$0 = supportersCount2;
-                        this.I$1 = i;
+                        this.L$2 = SpillingKt.nullOutSpilledVariable(currentAmount2);
+                        this.L$3 = SpillingKt.nullOutSpilledVariable(supportersCount2);
+                        this.L$4 = SpillingKt.nullOutSpilledVariable(token2);
+                        this.L$5 = SpillingKt.nullOutSpilledVariable(dynamicTitle);
+                        this.L$6 = SpillingKt.nullOutSpilledVariable(config);
+                        this.I$0 = i2;
                         this.label = 2;
-                        if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass1(this.$activity, config, null), (Continuation) this) == coroutine_suspended) {
+                        if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass2(this.$activity, config, null), (Continuation) this) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         return Unit.INSTANCE;
                     case 2:
-                        int i2 = this.I$1;
-                        int i3 = this.I$0;
-                        double d = this.D$0;
+                        int i5 = this.I$0;
                         ResultKt.throwOnFailure($result);
                         return Unit.INSTANCE;
                     case 3:
@@ -960,31 +919,33 @@ public final class DonationManager {
                 this.L$2 = null;
                 this.L$3 = null;
                 this.L$4 = null;
+                this.L$5 = null;
+                this.L$6 = null;
                 this.label = 3;
-                if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass3(this.$activity, this.$providerName, null), (Continuation) this) == coroutine_suspended) {
+                if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass4(this.$activity, this.$providerName, null), (Continuation) this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
             }
         }
 
-        /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$showNow$1$1, reason: invalid class name */
+        /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$showNow$1$2, reason: invalid class name */
         /* JADX INFO: compiled from: DonationManager.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-        @DebugMetadata(c = "com.phisher98.donation.DonationManager$showNow$1$1", f = "DonationManager.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-        static final class AnonymousClass1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        @DebugMetadata(c = "com.phisher98.donation.DonationManager$showNow$1$2", f = "DonationManager.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+        static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ AppCompatActivity $activity;
             final /* synthetic */ DonationConfig $config;
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            AnonymousClass1(AppCompatActivity appCompatActivity, DonationConfig donationConfig, Continuation<? super AnonymousClass1> continuation) {
+            AnonymousClass2(AppCompatActivity appCompatActivity, DonationConfig donationConfig, Continuation<? super AnonymousClass2> continuation) {
                 super(2, continuation);
                 this.$activity = appCompatActivity;
                 this.$config = donationConfig;
             }
 
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new AnonymousClass1(this.$activity, this.$config, continuation);
+                return new AnonymousClass2(this.$activity, this.$config, continuation);
             }
 
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -1007,9 +968,9 @@ public final class DonationManager {
                             return Unit.INSTANCE;
                         }
                         DonationManager.INSTANCE.setDialogShowing(true);
-                        Fragment donationDialogFragment = new DonationDialogFragment(this.$config, new Function0() { // from class: com.phisher98.donation.DonationManager$showNow$1$1$$ExternalSyntheticLambda0
+                        Fragment donationDialogFragment = new DonationDialogFragment(this.$config, new Function0() { // from class: com.phisher98.donation.DonationManager$showNow$1$2$$ExternalSyntheticLambda0
                             public final Object invoke() {
-                                return DonationManager.C00271.AnonymousClass1.invokeSuspend$lambda$0();
+                                return DonationManager.C00271.AnonymousClass2.invokeSuspend$lambda$0();
                             }
                         });
                         FragmentTransaction ft = fm.beginTransaction();
@@ -1027,24 +988,24 @@ public final class DonationManager {
             }
         }
 
-        /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$showNow$1$3, reason: invalid class name */
+        /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$showNow$1$4, reason: invalid class name */
         /* JADX INFO: compiled from: DonationManager.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-        @DebugMetadata(c = "com.phisher98.donation.DonationManager$showNow$1$3", f = "DonationManager.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-        static final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        @DebugMetadata(c = "com.phisher98.donation.DonationManager$showNow$1$4", f = "DonationManager.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+        static final class AnonymousClass4 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ AppCompatActivity $activity;
             final /* synthetic */ String $providerName;
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            AnonymousClass3(AppCompatActivity appCompatActivity, String str, Continuation<? super AnonymousClass3> continuation) {
+            AnonymousClass4(AppCompatActivity appCompatActivity, String str, Continuation<? super AnonymousClass4> continuation) {
                 super(2, continuation);
                 this.$activity = appCompatActivity;
                 this.$providerName = str;
             }
 
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new AnonymousClass3(this.$activity, this.$providerName, continuation);
+                return new AnonymousClass4(this.$activity, this.$providerName, continuation);
             }
 
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -1067,10 +1028,10 @@ public final class DonationManager {
                             return Unit.INSTANCE;
                         }
                         DonationManager.INSTANCE.setDialogShowing(true);
-                        String dynamicTitle = !StringsKt.isBlank(this.$providerName) ? "Help Keep " + this.$providerName + " Alive" : DonationManager.INSTANCE.getGoalTitle();
-                        Fragment donationDialogFragment = new DonationDialogFragment(new DonationConfig(false, this.$providerName, DonationManager.INSTANCE.getCurrentMonthName(), dynamicTitle, null, null, 0.0d, 0.0d, 0, DonationManager.INSTANCE.getPrimaryDonateUrl(), DonationManager.INSTANCE.getPrimaryButtonText(), null, null, DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), 0, null, 104945, null), new Function0() { // from class: com.phisher98.donation.DonationManager$showNow$1$3$$ExternalSyntheticLambda0
+                        String dynamicTitle = DonationManager.INSTANCE.getGoalTitle();
+                        Fragment donationDialogFragment = new DonationDialogFragment(new DonationConfig(false, this.$providerName, DonationManager.INSTANCE.getCurrentMonthName(), dynamicTitle, null, null, 0.0d, 0.0d, 0, DonationManager.INSTANCE.getPrimaryDonateUrl(), DonationManager.INSTANCE.getPrimaryButtonText(), null, null, DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), 0, null, 104945, null), new Function0() { // from class: com.phisher98.donation.DonationManager$showNow$1$4$$ExternalSyntheticLambda0
                             public final Object invoke() {
-                                return DonationManager.C00271.AnonymousClass3.invokeSuspend$lambda$0();
+                                return DonationManager.C00271.AnonymousClass4.invokeSuspend$lambda$0();
                             }
                         });
                         FragmentTransaction ft = fm.beginTransaction();
@@ -1101,39 +1062,68 @@ public final class DonationManager {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code duplicated, block: B:152:0x010f A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:168:0x0205 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:182:0x02b7 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:183:0x0291 A[ADDED_TO_REGION, REMOVE, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:26:0x010a  */
-    /* JADX WARN: Code duplicated, block: B:33:0x0197 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:34:0x0198  */
-    /* JADX WARN: Code duplicated, block: B:39:0x01b9  */
-    /* JADX WARN: Code duplicated, block: B:40:0x01c7 A[Catch: all -> 0x030b, TryCatch #7 {all -> 0x030b, blocks: (B:37:0x01a7, B:40:0x01c7, B:42:0x01cf, B:44:0x01db, B:50:0x0220, B:53:0x0228, B:55:0x022c, B:57:0x024a, B:59:0x0251, B:69:0x02a7, B:60:0x0277, B:62:0x0284, B:64:0x028a, B:71:0x02c5, B:49:0x0216, B:46:0x0205), top: B:158:0x01a7, inners: #12 }] */
-    /* JADX WARN: Code duplicated, block: B:42:0x01cf A[Catch: all -> 0x030b, TryCatch #7 {all -> 0x030b, blocks: (B:37:0x01a7, B:40:0x01c7, B:42:0x01cf, B:44:0x01db, B:50:0x0220, B:53:0x0228, B:55:0x022c, B:57:0x024a, B:59:0x0251, B:69:0x02a7, B:60:0x0277, B:62:0x0284, B:64:0x028a, B:71:0x02c5, B:49:0x0216, B:46:0x0205), top: B:158:0x01a7, inners: #12 }] */
-    /* JADX WARN: Code duplicated, block: B:44:0x01db A[Catch: all -> 0x030b, TRY_LEAVE, TryCatch #7 {all -> 0x030b, blocks: (B:37:0x01a7, B:40:0x01c7, B:42:0x01cf, B:44:0x01db, B:50:0x0220, B:53:0x0228, B:55:0x022c, B:57:0x024a, B:59:0x0251, B:69:0x02a7, B:60:0x0277, B:62:0x0284, B:64:0x028a, B:71:0x02c5, B:49:0x0216, B:46:0x0205), top: B:158:0x01a7, inners: #12 }] */
-    /* JADX WARN: Code duplicated, block: B:52:0x0226  */
-    /* JADX WARN: Code duplicated, block: B:55:0x022c A[Catch: all -> 0x030b, TryCatch #7 {all -> 0x030b, blocks: (B:37:0x01a7, B:40:0x01c7, B:42:0x01cf, B:44:0x01db, B:50:0x0220, B:53:0x0228, B:55:0x022c, B:57:0x024a, B:59:0x0251, B:69:0x02a7, B:60:0x0277, B:62:0x0284, B:64:0x028a, B:71:0x02c5, B:49:0x0216, B:46:0x0205), top: B:158:0x01a7, inners: #12 }] */
-    /* JADX WARN: Code duplicated, block: B:57:0x024a A[Catch: all -> 0x030b, TryCatch #7 {all -> 0x030b, blocks: (B:37:0x01a7, B:40:0x01c7, B:42:0x01cf, B:44:0x01db, B:50:0x0220, B:53:0x0228, B:55:0x022c, B:57:0x024a, B:59:0x0251, B:69:0x02a7, B:60:0x0277, B:62:0x0284, B:64:0x028a, B:71:0x02c5, B:49:0x0216, B:46:0x0205), top: B:158:0x01a7, inners: #12 }] */
-    /* JADX WARN: Code duplicated, block: B:60:0x0277 A[Catch: all -> 0x030b, TryCatch #7 {all -> 0x030b, blocks: (B:37:0x01a7, B:40:0x01c7, B:42:0x01cf, B:44:0x01db, B:50:0x0220, B:53:0x0228, B:55:0x022c, B:57:0x024a, B:59:0x0251, B:69:0x02a7, B:60:0x0277, B:62:0x0284, B:64:0x028a, B:71:0x02c5, B:49:0x0216, B:46:0x0205), top: B:158:0x01a7, inners: #12 }] */
-    /* JADX WARN: Code duplicated, block: B:62:0x0284 A[Catch: all -> 0x030b, TryCatch #7 {all -> 0x030b, blocks: (B:37:0x01a7, B:40:0x01c7, B:42:0x01cf, B:44:0x01db, B:50:0x0220, B:53:0x0228, B:55:0x022c, B:57:0x024a, B:59:0x0251, B:69:0x02a7, B:60:0x0277, B:62:0x0284, B:64:0x028a, B:71:0x02c5, B:49:0x0216, B:46:0x0205), top: B:158:0x01a7, inners: #12 }] */
-    /* JADX WARN: Code duplicated, block: B:67:0x0294  */
-    /* JADX WARN: Code duplicated, block: B:68:0x029f  */
-    /* JADX WARN: Code duplicated, block: B:73:0x02ce  */
-    /* JADX WARN: Code duplicated, block: B:74:0x02d0  */
+    /* JADX WARN: Code duplicated, block: B:141:0x01e4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:151:0x0110 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:168:0x029b A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:169:0x0276 A[ADDED_TO_REGION, REMOVE, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:26:0x010b  */
+    /* JADX WARN: Code duplicated, block: B:33:0x0198 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:34:0x0199  */
+    /* JADX WARN: Code duplicated, block: B:39:0x01ba  */
+    /* JADX WARN: Code duplicated, block: B:41:0x01bf A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:42:0x01c0  */
+    /* JADX WARN: Code duplicated, block: B:43:0x01cc A[Catch: all -> 0x02f4, TryCatch #7 {all -> 0x02f4, blocks: (B:37:0x01ab, B:43:0x01cc, B:45:0x01d6), top: B:149:0x01ab }] */
+    /* JADX WARN: Code duplicated, block: B:45:0x01d6 A[Catch: all -> 0x02f4, TRY_LEAVE, TryCatch #7 {all -> 0x02f4, blocks: (B:37:0x01ab, B:43:0x01cc, B:45:0x01d6), top: B:149:0x01ab }] */
+    /* JADX WARN: Code duplicated, block: B:50:0x020b A[Catch: all -> 0x02c9, TryCatch #3 {all -> 0x02c9, blocks: (B:48:0x01e4, B:50:0x020b, B:52:0x0211, B:54:0x022f, B:56:0x0236, B:66:0x028b, B:57:0x025c, B:59:0x0269, B:61:0x026f, B:68:0x02a9), top: B:141:0x01e4 }] */
+    /* JADX WARN: Code duplicated, block: B:52:0x0211 A[Catch: all -> 0x02c9, TryCatch #3 {all -> 0x02c9, blocks: (B:48:0x01e4, B:50:0x020b, B:52:0x0211, B:54:0x022f, B:56:0x0236, B:66:0x028b, B:57:0x025c, B:59:0x0269, B:61:0x026f, B:68:0x02a9), top: B:141:0x01e4 }] */
+    /* JADX WARN: Code duplicated, block: B:54:0x022f A[Catch: all -> 0x02c9, TryCatch #3 {all -> 0x02c9, blocks: (B:48:0x01e4, B:50:0x020b, B:52:0x0211, B:54:0x022f, B:56:0x0236, B:66:0x028b, B:57:0x025c, B:59:0x0269, B:61:0x026f, B:68:0x02a9), top: B:141:0x01e4 }] */
+    /* JADX WARN: Code duplicated, block: B:57:0x025c A[Catch: all -> 0x02c9, TryCatch #3 {all -> 0x02c9, blocks: (B:48:0x01e4, B:50:0x020b, B:52:0x0211, B:54:0x022f, B:56:0x0236, B:66:0x028b, B:57:0x025c, B:59:0x0269, B:61:0x026f, B:68:0x02a9), top: B:141:0x01e4 }] */
+    /* JADX WARN: Code duplicated, block: B:59:0x0269 A[Catch: all -> 0x02c9, TryCatch #3 {all -> 0x02c9, blocks: (B:48:0x01e4, B:50:0x020b, B:52:0x0211, B:54:0x022f, B:56:0x0236, B:66:0x028b, B:57:0x025c, B:59:0x0269, B:61:0x026f, B:68:0x02a9), top: B:141:0x01e4 }] */
+    /* JADX WARN: Code duplicated, block: B:64:0x0278  */
+    /* JADX WARN: Code duplicated, block: B:65:0x0283  */
+    /* JADX WARN: Code duplicated, block: B:70:0x02b2  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Unreachable blocks removed: 2, instructions: 9 */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x0198 -> B:162:0x01a1). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x0199 -> B:165:0x01a3). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
-    public final java.lang.Object fetchBuyMeACoffeeMonthly(java.lang.String r61, kotlin.coroutines.Continuation<? super kotlin.Pair<java.lang.Double, java.lang.Integer>> r62) {
+    public final java.lang.Object fetchBuyMeACoffeeMonthly(java.lang.String r60, kotlin.coroutines.Continuation<? super kotlin.Pair<java.lang.Double, java.lang.Integer>> r61) {
         /*
-            Method dump skipped, instruction units count: 1400
+            Method dump skipped, instruction units count: 1334
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.phisher98.donation.DonationManager.fetchBuyMeACoffeeMonthly(java.lang.String, kotlin.coroutines.Continuation):java.lang.Object");
+    }
+
+    private static final Date fetchBuyMeACoffeeMonthly$parseDate(SimpleDateFormat dateFormat, String raw) {
+        Object obj;
+        Object obj2;
+        if (StringsKt.isBlank(raw)) {
+            return null;
+        }
+        if (new Regex("\\d+").matches(raw)) {
+            long millis = Long.parseLong(raw) * (raw.length() > 10 ? 1L : 1000L);
+            DonationManager donationManager = INSTANCE;
+            try {
+                Result.Companion companion = Result.Companion;
+                obj2 = Result.constructor-impl(new Date(millis));
+            } catch (Throwable th) {
+                Result.Companion companion2 = Result.Companion;
+                obj2 = Result.constructor-impl(ResultKt.createFailure(th));
+            }
+            return (Date) (Result.isFailure-impl(obj2) ? null : obj2);
+        }
+        DonationManager donationManager2 = INSTANCE;
+        try {
+            Result.Companion companion3 = Result.Companion;
+            obj = Result.constructor-impl(dateFormat.parse(raw));
+        } catch (Throwable th2) {
+            Result.Companion companion4 = Result.Companion;
+            obj = Result.constructor-impl(ResultKt.createFailure(th2));
+        }
+        return (Date) (Result.isFailure-impl(obj) ? null : obj);
     }
 }

@@ -38,7 +38,7 @@ public final class AnimesaltMulti extends ExtractorApi {
     /* JADX INFO: renamed from: com.phisher98.AnimesaltMulti$getUrl$1 */
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.AnimesaltMulti", f = "Extractor.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {357, 358}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "iframe"}, nl = {358, 359}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.AnimesaltMulti", f = "Extractor.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1}, l = {406, 407}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "iframe"}, nl = {407, 408}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
     static final class C00091 extends ContinuationImpl {
         Object L$0;
         Object L$1;
