@@ -7,7 +7,7 @@ metadata=sorted((ROOT/'decoded').glob('*/*/kotlin/PluginMetadata.kt'))
 manifests=sorted((ROOT/'decoded').glob('*/*/manifests/manifest.json'))
 java=sorted((ROOT/'decoded').glob('*/*/java/sources/**/*.java'))
 errors=[]
-if len(archives)!=116: errors.append(f'expected 116 decoded archives, found {len(archives)}')
+if not archives: errors.append('no decoded .cs3 archives found')
 if len(metadata)!=len(archives): errors.append(f'Kotlin metadata {len(metadata)} != archives {len(archives)}')
 if len(manifests)!=len(archives): errors.append(f'manifests {len(manifests)} != archives {len(archives)}')
 for forbidden in ('CNCVerse__*.cs3','Phisher98__*.cs3'):

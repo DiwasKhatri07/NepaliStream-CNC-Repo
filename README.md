@@ -8,8 +8,8 @@
 [![Automation](https://img.shields.io/github/actions/workflow/status/DiwasKhatri07/NepaliStream-CNC-Repo/decode-and-publish.yml?label=automation&logo=githubactions)](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/workflows/decode-and-publish.yml)
 [![5-minute monitor](https://img.shields.io/github/actions/workflow/status/DiwasKhatri07/NepaliStream-CNC-Repo/status-monitor.yml?label=5-min%20monitor&logo=githubactions)](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/workflows/status-monitor.yml)
 [![Public repository](https://img.shields.io/badge/repository-public-success?logo=github)](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo)
-[![Decoded archives](https://img.shields.io/badge/decoded%20archives-116-2ea44f?logo=files)](decoded/)
-[![Kotlin metadata](https://img.shields.io/badge/Kotlin%20metadata-116-7f52ff?logo=kotlin)](decoded/)
+[![Decoded archives](https://img.shields.io/badge/decoded%20archives-live-2ea44f?logo=files)](STATUS.md)
+[![Kotlin metadata](https://img.shields.io/badge/Kotlin%20metadata-live-7f52ff?logo=kotlin)](STATUS.md)
 [![Sources](https://img.shields.io/badge/sources-2-0366d6?logo=github)](decoded/_sources/)
 
 ## What it is
