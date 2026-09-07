@@ -1,5 +1,6 @@
 package com.phisher98;
 
+import android.content.SharedPreferences;
 import com.lagradost.cloudstream3.MainAPIKt;
 import com.lagradost.cloudstream3.MainActivityKt;
 import com.lagradost.cloudstream3.ParCollectionsKt;
@@ -222,8 +223,10 @@ public final class SuperStreamExtractor extends SuperStream {
         }
     }
 
+    /* JADX WARN: Illegal instructions before constructor call */
     private SuperStreamExtractor() {
-        super(null, 1, null);
+        SharedPreferences sharedPreferences = null;
+        super(sharedPreferences, 1, sharedPreferences);
     }
 
     public static /* synthetic */ Object invokeSuperstream$default(SuperStreamExtractor superStreamExtractor, String str, String str2, Integer num, Integer num2, Function1 function1, Continuation continuation, int i, Object obj) {

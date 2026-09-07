@@ -4,7 +4,7 @@ package nepali.stream.decoded.movieboxprovider
 object PluginMetadata {
     const val name: String = "MovieBoxProvider"
     const val originalPluginClass: String = "com.MovieBox.MovieBoxProviderPlugin"
-    const val version: Int = 29
+    const val version: Int = 30
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

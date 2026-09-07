@@ -38,8 +38,8 @@
     "file": "decoded/AniVortex/Phisher98/AniVortex.cs3",
     "source": "Phisher98",
     "plugin": "AniVortex",
-    "sha256": "f8121617c0300e86725dff5fda6a550971f382460182139d8aff95b6eb05b594",
-    "bytes": 124221
+    "sha256": "a231b294d0cf2b37ba6e932cf6e55e049155cda4d5d7c305758cb96bced12014",
+    "bytes": 130072
   },
   {
     "file": "decoded/Anichi/Phisher98/Anichi.cs3",
@@ -493,8 +493,8 @@
     "file": "decoded/MovieBoxProvider/Phisher98/MovieBoxProvider.cs3",
     "source": "Phisher98",
     "plugin": "MovieBoxProvider",
-    "sha256": "0b62d5c090853c429a7e2014a8a0d91bc4202d4aeb9890a74102899688fa2fc4",
-    "bytes": 109083
+    "sha256": "5ea5de6933b6d10bffda6b91edd6a01c1078ee33430ff7af21cd29d95ccb85f8",
+    "bytes": 111343
   },
   {
     "file": "decoded/MovieBoxProviderIN/CNCVerse/MovieBoxProviderIN.cs3",

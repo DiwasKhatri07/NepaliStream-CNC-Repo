@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.AniVortex.AniVortexPlugin",
   "name": "AniVortex",
-  "version": 4,
+  "version": 5,
   "requiresResources": false
 }
