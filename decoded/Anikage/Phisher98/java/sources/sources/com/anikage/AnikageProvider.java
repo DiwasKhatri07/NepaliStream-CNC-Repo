@@ -15,7 +15,7 @@ import com.lagradost.cloudstream3.MainActivityKt;
 import com.lagradost.cloudstream3.MainPageData;
 import com.lagradost.cloudstream3.MainPageRequest;
 import com.lagradost.cloudstream3.Score;
-import com.lagradost.cloudstream3.SearchResponse;
+import com.lagradost.cloudstream3.SearchResponseList;
 import com.lagradost.cloudstream3.ShowStatus;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvType;
@@ -71,12 +71,12 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: AnikageProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Anikage/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u00002\u00020\u0001:\b@ABCDEFGB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001a\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\b\b\u0002\u0010\b\u001a\u00020\u0005H\u0002J\u001e\u0010\"\u001a\u00020$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020(H\u0096@¢\u0006\u0002\u0010)J\u001c\u0010*\u001a\b\u0012\u0004\u0012\u00020+0 2\u0006\u0010,\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-J\f\u0010.\u001a\u00020/*\u000200H\u0002J\u0016\u00101\u001a\u0002022\u0006\u00103\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-JF\u00104\u001a\u00020\u00122\u0006\u00105\u001a\u00020\u00052\u0006\u00106\u001a\u00020\u00122\u0012\u00107\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020:082\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020:08H\u0096@¢\u0006\u0002\u0010=J\u0012\u0010>\u001a\u00020&2\b\u0010?\u001a\u0004\u0018\u00010\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010\t\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR\u001a\u0010\u000e\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u000b\"\u0004\b\u0010\u0010\rR\u0014\u0010\u0011\u001a\u00020\u0012X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u001a\u0010\u0015\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u000b\"\u0004\b\u0017\u0010\rR\u0014\u0010\u0018\u001a\u00020\u0012X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0014R\u001a\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR\u001a\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#¨\u0006H"}, d2 = {"Lcom/anikage/AnikageProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "proxyUrl", "", "buildProxyUrl", "path", "type", "mainUrl", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResponse", "Lcom/lagradost/cloudstream3/AnimeSearchResponse;", "Lcom/anikage/AnikageProvider$AnimeResult;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getQualityFromName", "quality", "EpisodeData", "AnikageResponse", "AnimeDetailsResponse", "AnimeResult", "AnimeTitle", "AnikageCoverImage", "AnilistStats", "EpisodeResult", "Anikage"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@Metadata(d1 = {"\u0000x\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\f\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\f\u0018\u00002\u00020\u0001:\bABCDEFGHB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001a\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\b\b\u0002\u0010\b\u001a\u00020\u0005H\u0002J\u001e\u0010\"\u001a\u00020$2\u0006\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020(H\u0096@¢\u0006\u0002\u0010)J\u001e\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u00052\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010-J\f\u0010.\u001a\u00020/*\u000200H\u0002J\u0016\u00101\u001a\u0002022\u0006\u00103\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00104JF\u00105\u001a\u00020\u00122\u0006\u00106\u001a\u00020\u00052\u0006\u00107\u001a\u00020\u00122\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020;092\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020;09H\u0096@¢\u0006\u0002\u0010>J\u0012\u0010?\u001a\u00020&2\b\u0010@\u001a\u0004\u0018\u00010\u0005H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010\t\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\rR\u001a\u0010\u000e\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u000b\"\u0004\b\u0010\u0010\rR\u0014\u0010\u0011\u001a\u00020\u0012X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u0010\u0014R\u001a\u0010\u0015\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u000b\"\u0004\b\u0017\u0010\rR\u0014\u0010\u0018\u001a\u00020\u0012X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0014R\u001a\u0010\u001a\u001a\b\u0012\u0004\u0012\u00020\u001c0\u001bX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u001eR\u001a\u0010\u001f\u001a\b\u0012\u0004\u0012\u00020!0 X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010#¨\u0006I"}, d2 = {"Lcom/anikage/AnikageProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "proxyUrl", "", "buildProxyUrl", "path", "type", "mainUrl", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResponse", "Lcom/lagradost/cloudstream3/AnimeSearchResponse;", "Lcom/anikage/AnikageProvider$AnimeResult;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getQualityFromName", "quality", "EpisodeData", "AnikageResponse", "AnimeDetailsResponse", "AnimeResult", "AnimeTitle", "AnikageCoverImage", "AnilistStats", "EpisodeResult", "Anikage"}, k = 1, mv = {2, 4, 0}, xi = 48)
 @SourceDebugExtension({"SMAP\nAnikageProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnikageProvider.kt\ncom/anikage/AnikageProvider\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,300:1\n63#2:301\n64#2,15:303\n63#2:324\n64#2,15:326\n63#2:347\n64#2,15:349\n63#2:366\n64#2,15:368\n63#2:385\n64#2,15:387\n1#3:302\n1#3:325\n1#3:348\n1#3:367\n1#3:386\n1#3:404\n50#4:318\n43#4:319\n50#4:341\n43#4:342\n50#4:364\n43#4:365\n50#4:383\n43#4:384\n50#4:402\n43#4:403\n1739#5:320\n1814#5,3:321\n1739#5:343\n1814#5,3:344\n*S KotlinDebug\n*F\n+ 1 AnikageProvider.kt\ncom/anikage/AnikageProvider\n*L\n47#1:301\n47#1:303,15\n63#1:324\n63#1:326,15\n82#1:347\n82#1:349,15\n88#1:366\n88#1:368,15\n144#1:385\n144#1:387,15\n47#1:302\n63#1:325\n82#1:348\n88#1:367\n144#1:386\n47#1:318\n47#1:319\n63#1:341\n63#1:342\n82#1:364\n82#1:365\n88#1:383\n88#1:384\n144#1:402\n144#1:403\n49#1:320\n49#1:321,3\n65#1:343\n65#1:344,3\n*E\n"})
 public final class AnikageProvider extends MainAPI {
 
     @NotNull
-    private final String proxyUrl = "https://gg.akage.lol";
+    private final String proxyUrl = "https://og.bakayaro.live";
 
     @NotNull
     private String mainUrl = "https://anikage.cc";
@@ -204,8 +204,9 @@ public final class AnikageProvider extends MainAPI {
     /* JADX INFO: renamed from: com.anikage.AnikageProvider$search$1 */
     /* JADX INFO: compiled from: AnikageProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.anikage.AnikageProvider", f = "AnikageProvider.kt", i = {0, 0}, l = {62}, m = "search", n = {"query", "url"}, nl = {63}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.anikage.AnikageProvider", f = "AnikageProvider.kt", i = {0, 0, 0}, l = {62}, m = "search", n = {"query", "url", "page"}, nl = {63}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
+        int I$0;
         Object L$0;
         Object L$1;
         int label;
@@ -219,7 +220,7 @@ public final class AnikageProvider extends MainAPI {
         public final Object invokeSuspend(@NotNull Object obj) {
             this.result = obj;
             this.label |= Integer.MIN_VALUE;
-            return AnikageProvider.this.search(null, (Continuation) this);
+            return AnikageProvider.this.search(null, 0, (Continuation) this);
         }
     }
 
@@ -388,9 +389,9 @@ public final class AnikageProvider extends MainAPI {
         return MainAPIKt.newHomePageResponse(new HomePageList(request2.getName(), home, false, 4, (DefaultConstructorMarker) null), Boxing.boxBoolean(z));
     }
 
-    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
+    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
-    public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
+    public Object search(@NotNull String query, int page, @NotNull Continuation<? super SearchResponseList> continuation) {
         C00061 c00061;
         Object obj;
         Object obj2;
@@ -405,24 +406,26 @@ public final class AnikageProvider extends MainAPI {
         } else {
             c00061 = new C00061(continuation);
         }
-        C00061 c00062 = c00061;
-        Object $result = c00062.result;
+        Object $result = c00061.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00062.label) {
+        switch (c00061.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                String url = getMainUrl() + "/api/media/anime/browse?per_page=25&page=1&query=" + query;
+                String url = getMainUrl() + "/api/media/anime/browse?q=" + query + "&sort=popularity&page=" + page + "&limit=25&adult=true";
                 Requests app = MainActivityKt.getApp();
-                c00062.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                c00062.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c00062.label = 1;
-                obj = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00062, 4094, (Object) null);
-                if (obj == coroutine_suspended) {
+                c00061.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c00061.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00061.I$0 = page;
+                c00061.label = 1;
+                Object obj3 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00061, 4094, (Object) null);
+                if (obj3 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
+                obj = obj3;
                 break;
                 break;
             case 1:
+                int i = c00061.I$0;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 break;
@@ -449,7 +452,10 @@ public final class AnikageProvider extends MainAPI {
                 obj2 = Result.constructor-impl(ResultKt.createFailure(th2));
             }
         }
-        DeserializationStrategy deserializationStrategy = (KSerializer) (Result.isFailure-impl(obj2) ? null : obj2);
+        if (Result.isFailure-impl(obj2)) {
+            obj2 = null;
+        }
+        DeserializationStrategy deserializationStrategy = (KSerializer) obj2;
         if (deserializationStrategy != null) {
             try {
                 objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, responseText);
@@ -475,7 +481,7 @@ public final class AnikageProvider extends MainAPI {
             AnimeResult it = (AnimeResult) item$iv$iv;
             destination$iv$iv.add(toSearchResponse(it));
         }
-        return (List) destination$iv$iv;
+        return MainAPIKt.toNewSearchResponseList$default((List) destination$iv$iv, (Boolean) null, 1, (Object) null);
     }
 
     private final AnimeSearchResponse toSearchResponse(final AnimeResult $this$toSearchResponse) {

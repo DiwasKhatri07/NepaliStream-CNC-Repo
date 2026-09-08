@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.anikage.AnikagePlugin",
   "name": "Anikage",
-  "version": 7,
+  "version": 8,
   "requiresResources": false
 }

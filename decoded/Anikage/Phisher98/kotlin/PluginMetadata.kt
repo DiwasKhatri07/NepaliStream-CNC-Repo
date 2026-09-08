@@ -4,7 +4,7 @@ package nepali.stream.decoded.anikage
 object PluginMetadata {
     const val name: String = "Anikage"
     const val originalPluginClass: String = "com.anikage.AnikagePlugin"
-    const val version: Int = 7
+    const val version: Int = 8
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }
