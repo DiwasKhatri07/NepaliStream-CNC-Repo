@@ -48,7 +48,7 @@ public class Istreamcdn extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.IStreamFlare.Istreamcdn", f = "Extractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {85, 99}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "parsedUrl", "host", "qualityName", "$this", "url", "referer", "subtitleCallback", "callback", "parsedUrl", "host", "qualityName", "streamUrl", "type"}, nl = {86, 98}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9"}, v = 2)
-    static final class C00101 extends ContinuationImpl {
+    static final class C00131 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -63,7 +63,7 @@ public class Istreamcdn extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00101(Continuation<? super C00101> continuation) {
+        C00131(Continuation<? super C00131> continuation) {
             super(continuation);
         }
 
@@ -99,20 +99,20 @@ public class Istreamcdn extends ExtractorApi {
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.IStreamFlare.Istreamcdn$resolveCdnRedirect$2", f = "Extractor.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
     @SourceDebugExtension({"SMAP\nExtractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractor.kt\ncom/IStreamFlare/Istreamcdn$resolveCdnRedirect$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,119:1\n1#2:120\n*E\n"})
-    static final class C00122 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
+    static final class C00152 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ String $phpUrl;
         final /* synthetic */ String $referer;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00122(String str, String str2, Continuation<? super C00122> continuation) {
+        C00152(String str, String str2, Continuation<? super C00152> continuation) {
             super(2, continuation);
             this.$phpUrl = str;
             this.$referer = str2;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C00122(this.$phpUrl, this.$referer, continuation);
+            return new C00152(this.$phpUrl, this.$referer, continuation);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super String> continuation) {
@@ -162,7 +162,7 @@ public class Istreamcdn extends ExtractorApi {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final Object resolveCdnRedirect(String phpUrl, String referer, Continuation<? super String> continuation) {
-        return BuildersKt.withContext(Dispatchers.getIO(), new C00122(phpUrl, referer, null), continuation);
+        return BuildersKt.withContext(Dispatchers.getIO(), new C00152(phpUrl, referer, null), continuation);
     }
 
     /* JADX WARN: Code duplicated, block: B:36:0x0118  */
@@ -173,7 +173,7 @@ public class Istreamcdn extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:65:0x01e2  */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     static /* synthetic */ Object getUrl$suspendImpl(Istreamcdn $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C00101 c00101;
+        C00131 c00131;
         String qualityName;
         Function1<? super SubtitleFile, Unit> function3;
         Function1<? super ExtractorLink, Unit> function4;
@@ -189,20 +189,20 @@ public class Istreamcdn extends ExtractorApi {
         Istreamcdn $this2 = $this;
         String url2 = url;
         String referer2 = referer;
-        if (continuation instanceof C00101) {
-            c00101 = (C00101) continuation;
-            if ((c00101.label & Integer.MIN_VALUE) != 0) {
-                c00101.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00131) {
+            c00131 = (C00131) continuation;
+            if ((c00131.label & Integer.MIN_VALUE) != 0) {
+                c00131.label -= Integer.MIN_VALUE;
             } else {
-                c00101 = $this2.new C00101(continuation);
+                c00131 = $this2.new C00131(continuation);
             }
         } else {
-            c00101 = $this2.new C00101(continuation);
+            c00131 = $this2.new C00131(continuation);
         }
-        C00101 c00102 = c00101;
-        Object $result = c00102.result;
+        C00131 c00132 = c00131;
+        Object $result = c00132.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00102.label) {
+        switch (c00132.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 URL parsedUrl2 = new URL(url2);
@@ -211,18 +211,18 @@ public class Istreamcdn extends ExtractorApi {
                     qualityName = "";
                 }
                 try {
-                    c00102.L$0 = $this2;
-                    c00102.L$1 = url2;
-                    c00102.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00102.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                    c00132.L$0 = $this2;
+                    c00132.L$1 = url2;
+                    c00132.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00132.L$3 = SpillingKt.nullOutSpilledVariable(function1);
                     function4 = function2;
                     try {
-                        c00102.L$4 = function4;
-                        c00102.L$5 = SpillingKt.nullOutSpilledVariable(parsedUrl2);
-                        c00102.L$6 = host;
-                        c00102.L$7 = qualityName;
-                        c00102.label = 1;
-                        Object objResolveCdnRedirect = $this2.resolveCdnRedirect(url2, host, c00102);
+                        c00132.L$4 = function4;
+                        c00132.L$5 = SpillingKt.nullOutSpilledVariable(parsedUrl2);
+                        c00132.L$6 = host;
+                        c00132.L$7 = qualityName;
+                        c00132.label = 1;
+                        Object objResolveCdnRedirect = $this2.resolveCdnRedirect(url2, host, c00132);
                         if (objResolveCdnRedirect == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -249,21 +249,21 @@ public class Istreamcdn extends ExtractorApi {
                                 try {
                                     String url3 = url2;
                                     try {
-                                        C00112 c00112 = new C00112(qualityName3, qualityName2, null);
-                                        c00102.L$0 = SpillingKt.nullOutSpilledVariable($this3);
-                                        c00102.L$1 = SpillingKt.nullOutSpilledVariable(url3);
-                                        c00102.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                                        c00102.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                                        c00102.L$4 = SpillingKt.nullOutSpilledVariable(function4);
-                                        c00102.L$5 = SpillingKt.nullOutSpilledVariable(parsedUrl);
-                                        c00102.L$6 = SpillingKt.nullOutSpilledVariable(qualityName3);
-                                        c00102.L$7 = SpillingKt.nullOutSpilledVariable(qualityName2);
-                                        c00102.L$8 = SpillingKt.nullOutSpilledVariable(streamUrl);
-                                        c00102.L$9 = SpillingKt.nullOutSpilledVariable(type2);
-                                        c00102.L$10 = function4;
-                                        c00102.label = 2;
+                                        C00142 c00142 = new C00142(qualityName3, qualityName2, null);
+                                        c00132.L$0 = SpillingKt.nullOutSpilledVariable($this3);
+                                        c00132.L$1 = SpillingKt.nullOutSpilledVariable(url3);
+                                        c00132.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                                        c00132.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                                        c00132.L$4 = SpillingKt.nullOutSpilledVariable(function4);
+                                        c00132.L$5 = SpillingKt.nullOutSpilledVariable(parsedUrl);
+                                        c00132.L$6 = SpillingKt.nullOutSpilledVariable(qualityName3);
+                                        c00132.L$7 = SpillingKt.nullOutSpilledVariable(qualityName2);
+                                        c00132.L$8 = SpillingKt.nullOutSpilledVariable(streamUrl);
+                                        c00132.L$9 = SpillingKt.nullOutSpilledVariable(type2);
+                                        c00132.L$10 = function4;
+                                        c00132.label = 2;
                                         try {
-                                            objNewExtractorLink = ExtractorApiKt.newExtractorLink(host2, name, streamUrl, type2, c00112, c00102);
+                                            objNewExtractorLink = ExtractorApiKt.newExtractorLink(host2, name, streamUrl, type2, c00142, c00132);
                                             if (objNewExtractorLink == coroutine_suspended) {
                                                 return coroutine_suspended;
                                             }
@@ -296,14 +296,14 @@ public class Istreamcdn extends ExtractorApi {
                 }
                 break;
             case 1:
-                String qualityName4 = (String) c00102.L$7;
-                String host3 = (String) c00102.L$6;
-                URL parsedUrl3 = (URL) c00102.L$5;
-                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00102.L$4;
-                function3 = (Function1) c00102.L$3;
-                referer2 = (String) c00102.L$2;
-                url2 = (String) c00102.L$1;
-                $this2 = (Istreamcdn) c00102.L$0;
+                String qualityName4 = (String) c00132.L$7;
+                String host3 = (String) c00132.L$6;
+                URL parsedUrl3 = (URL) c00132.L$5;
+                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00132.L$4;
+                function3 = (Function1) c00132.L$3;
+                referer2 = (String) c00132.L$2;
+                url2 = (String) c00132.L$1;
+                $this2 = (Istreamcdn) c00132.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     obj = $result;
@@ -327,20 +327,20 @@ public class Istreamcdn extends ExtractorApi {
                     String host4 = $this2.getName();
                     Istreamcdn $this4 = $this2;
                     String url4 = url2;
-                    C00112 c00113 = new C00112(qualityName3, qualityName2, null);
-                    c00102.L$0 = SpillingKt.nullOutSpilledVariable($this4);
-                    c00102.L$1 = SpillingKt.nullOutSpilledVariable(url4);
-                    c00102.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00102.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                    c00102.L$4 = SpillingKt.nullOutSpilledVariable(function4);
-                    c00102.L$5 = SpillingKt.nullOutSpilledVariable(parsedUrl);
-                    c00102.L$6 = SpillingKt.nullOutSpilledVariable(qualityName3);
-                    c00102.L$7 = SpillingKt.nullOutSpilledVariable(qualityName2);
-                    c00102.L$8 = SpillingKt.nullOutSpilledVariable(streamUrl);
-                    c00102.L$9 = SpillingKt.nullOutSpilledVariable(type3);
-                    c00102.L$10 = function4;
-                    c00102.label = 2;
-                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(host4, name2, streamUrl, type3, c00113, c00102);
+                    C00142 c00143 = new C00142(qualityName3, qualityName2, null);
+                    c00132.L$0 = SpillingKt.nullOutSpilledVariable($this4);
+                    c00132.L$1 = SpillingKt.nullOutSpilledVariable(url4);
+                    c00132.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00132.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00132.L$4 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00132.L$5 = SpillingKt.nullOutSpilledVariable(parsedUrl);
+                    c00132.L$6 = SpillingKt.nullOutSpilledVariable(qualityName3);
+                    c00132.L$7 = SpillingKt.nullOutSpilledVariable(qualityName2);
+                    c00132.L$8 = SpillingKt.nullOutSpilledVariable(streamUrl);
+                    c00132.L$9 = SpillingKt.nullOutSpilledVariable(type3);
+                    c00132.L$10 = function4;
+                    c00132.label = 2;
+                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(host4, name2, streamUrl, type3, c00143, c00132);
                     if (objNewExtractorLink == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -353,8 +353,8 @@ public class Istreamcdn extends ExtractorApi {
                 Log.INSTANCE.e("IStreamCDN", "getUrl failed");
                 return Unit.INSTANCE;
             case 2:
-                function5 = (Function1) c00102.L$10;
-                function6 = (Function1) c00102.L$3;
+                function5 = (Function1) c00132.L$10;
+                function6 = (Function1) c00132.L$3;
                 try {
                     ResultKt.throwOnFailure($result);
                     objNewExtractorLink = $result;
@@ -374,23 +374,23 @@ public class Istreamcdn extends ExtractorApi {
     /* JADX INFO: compiled from: Extractor.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.IStreamFlare.Istreamcdn$getUrl$2", f = "Extractor.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00112 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00142 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $host;
         final /* synthetic */ String $qualityName;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00112(String str, String str2, Continuation<? super C00112> continuation) {
+        C00142(String str, String str2, Continuation<? super C00142> continuation) {
             super(2, continuation);
             this.$host = str;
             this.$qualityName = str2;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00112 = new C00112(this.$host, this.$qualityName, continuation);
-            c00112.L$0 = obj;
-            return c00112;
+            Continuation<Unit> c00142 = new C00142(this.$host, this.$qualityName, continuation);
+            c00142.L$0 = obj;
+            return c00142;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

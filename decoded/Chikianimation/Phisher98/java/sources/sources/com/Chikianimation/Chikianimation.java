@@ -67,7 +67,7 @@ import org.jsoup.select.Elements;
 /* JADX INFO: compiled from: Chikianimation.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Chikianimation/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u0082\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\u001e\u0010&\u001a\u00020'2\u0006\u0010(\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\"H\u0096@¢\u0006\u0002\u0010)J\u000e\u0010*\u001a\u0004\u0018\u00010+*\u00020,H\u0002J\f\u0010-\u001a\u00020\u0005*\u00020,H\u0002J\u0016\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00101JF\u00102\u001a\u00020\u000e2\u0006\u00103\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u000e2\u0012\u00105\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u000208062\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020806H\u0096@¢\u0006\u0002\u0010;J\u0010\u0010<\u001a\u00020=2\u0006\u0010>\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006?"}, d2 = {"Lcom/Chikianimation/Chikianimation;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "getImgSrc", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "parseDate", "", "value", "Chikianimation"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nChikianimation.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Chikianimation.kt\ncom/Chikianimation/Chikianimation\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 5 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,315:1\n1795#2,10:316\n2068#2:326\n2069#2:328\n1805#2:329\n1795#2,10:330\n2068#2:340\n2069#2:342\n1805#2:343\n296#2,2:345\n1795#2,10:347\n2068#2:357\n2069#2:361\n1805#2:362\n1849#2,8:363\n2068#2,2:371\n1849#2,8:373\n2068#2:381\n2069#2:383\n1739#2:386\n1814#2,3:387\n777#2:390\n873#2,2:391\n1#3:327\n1#3:341\n1#3:344\n1#3:360\n1#3:382\n1088#4,2:358\n1505#5,2:384\n*S KotlinDebug\n*F\n+ 1 Chikianimation.kt\ncom/Chikianimation/Chikianimation\n*L\n33#1:316,10\n33#1:326\n33#1:328\n33#1:329\n46#1:330,10\n46#1:340\n46#1:342\n46#1:343\n100#1:345,2\n110#1:347,10\n110#1:357\n110#1:361\n110#1:362\n135#1:363,8\n178#1:371,2\n194#1:373,8\n259#1:381\n259#1:383\n277#1:386\n277#1:387,3\n278#1:390\n278#1:391,2\n33#1:327\n46#1:341\n110#1:360\n124#1:358,2\n266#1:384,2\n*E\n"})
+@SourceDebugExtension({"SMAP\nChikianimation.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Chikianimation.kt\ncom/Chikianimation/Chikianimation\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 5 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n*L\n1#1,321:1\n1795#2,10:322\n2068#2:332\n2069#2:334\n1805#2:335\n1795#2,10:336\n2068#2:346\n2069#2:348\n1805#2:349\n296#2,2:351\n1795#2,10:353\n2068#2:363\n2069#2:367\n1805#2:368\n1849#2,8:369\n2068#2,2:377\n1849#2,8:379\n2068#2:387\n2069#2:389\n1739#2:392\n1814#2,3:393\n777#2:396\n873#2,2:397\n1#3:333\n1#3:347\n1#3:350\n1#3:366\n1#3:388\n1088#4,2:364\n1505#5,2:390\n*S KotlinDebug\n*F\n+ 1 Chikianimation.kt\ncom/Chikianimation/Chikianimation\n*L\n33#1:322,10\n33#1:332\n33#1:334\n33#1:335\n46#1:336,10\n46#1:346\n46#1:348\n46#1:349\n100#1:351,2\n110#1:353,10\n110#1:363\n110#1:367\n110#1:368\n135#1:369,8\n178#1:377,2\n194#1:379,8\n261#1:387\n261#1:389\n279#1:392\n279#1:393,3\n280#1:396\n280#1:397,2\n33#1:333\n46#1:347\n110#1:366\n124#1:364,2\n268#1:390,2\n*E\n"})
 public final class Chikianimation extends MainAPI {
 
     @NotNull
@@ -152,7 +152,7 @@ public final class Chikianimation extends MainAPI {
     /* JADX INFO: renamed from: com.Chikianimation.Chikianimation$loadLinks$1 */
     /* JADX INFO: compiled from: Chikianimation.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Chikianimation.Chikianimation", f = "Chikianimation.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {219, 261, 269, 280}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "found", "$this$loadLinks_u24lambda_u240", "isCasting", "data", "subtitleCallback", "callback", "found", "pageHtml", "document", "$this$forEach$iv", "element$iv", "el", "src", "isCasting", "data", "subtitleCallback", "callback", "found", "pageHtml", "document", "$this$forEach$iv", "element$iv", "m", "videoId", "$this$loadLinks_u24lambda_u245_u240", "isCasting", "data", "subtitleCallback", "callback", "found", "pageHtml", "document", "options", "isCasting"}, nl = {218, 262, 270, 306}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.Chikianimation.Chikianimation", f = "Chikianimation.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {219, 263, 271, 282}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "found", "$this$loadLinks_u24lambda_u240", "isCasting", "data", "subtitleCallback", "callback", "found", "pageHtml", "document", "$this$forEach$iv", "element$iv", "el", "src", "isCasting", "data", "subtitleCallback", "callback", "found", "pageHtml", "document", "$this$forEach$iv", "element$iv", "m", "videoId", "$this$loadLinks_u24lambda_u245_u240", "isCasting", "data", "subtitleCallback", "callback", "found", "pageHtml", "document", "options", "isCasting"}, nl = {218, 264, 272, 312}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -403,7 +403,7 @@ public final class Chikianimation extends MainAPI {
             } else if (imgEl != null && (it = imgEl.attr("data-src")) != null && StringsKt.startsWith$default(it, "http", false, 2, (Object) null)) {
                 poster = it;
             }
-            return MainAPIKt.newMovieSearchResponse$default(this, title, MainAPIKt.fixUrl(this, href), TvType.Movie, false, new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda0
+            return MainAPIKt.newMovieSearchResponse$default(this, title, MainAPIKt.fixUrl(this, href), TvType.Movie, false, new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda1
                 public final Object invoke(Object obj) {
                     return Chikianimation.toSearchResult$lambda$5(poster, (MovieSearchResponse) obj);
                 }
@@ -741,7 +741,7 @@ public final class Chikianimation extends MainAPI {
                 } else {
                     description = StringsKt.trim(strText5).toString();
                 }
-                strJoinToString$default = CollectionsKt.joinToString$default(document.select("div.genxed a, a[href*=/genres/]"), ", ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda1
+                strJoinToString$default = CollectionsKt.joinToString$default(document.select("div.genxed a, a[href*=/genres/]"), ", ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda2
                     public final Object invoke(Object obj8) {
                         return StringsKt.trim(((Element) obj8).text()).toString();
                     }
@@ -889,7 +889,7 @@ public final class Chikianimation extends MainAPI {
                                     }
                                     formattedName = epNum != null ? str2 + (((epNum.floatValue() % 1.0f) > 0.0f ? 1 : ((epNum.floatValue() % 1.0f) == 0.0f ? 0 : -1)) == 0 ? String.valueOf((int) epNum.floatValue()) : String.valueOf(epNum.floatValue())) : !StringsKt.isBlank(epNumText) ? str2 + epNumText : "Episode 1";
                                 }
-                                episodeNewEpisode = MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, href1), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda2
+                                episodeNewEpisode = MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, href1), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda3
                                     public final Object invoke(Object obj8) {
                                         return Chikianimation.load$lambda$5$2(formattedName, dubSuffix, epNum, epDate, (Episode) obj8);
                                     }
@@ -1159,13 +1159,13 @@ public final class Chikianimation extends MainAPI {
                                                     if (matchResultFind$default3 == null && (groupValues3 = matchResultFind$default3.getGroupValues()) != null) {
                                                         String str22 = (String) groupValues3.get(1);
                                                         final Integer epNum2 = str22 != null ? StringsKt.toIntOrNull(str22) : null;
-                                                        fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda3
+                                                        fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda4
                                                             public final Object invoke(Object obj8) {
                                                                 return Chikianimation.load$lambda$10$1(epName, epNum2, (Episode) obj8);
                                                             }
                                                         }));
                                                     }
-                                                    fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda3
+                                                    fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda4
                                                         public final Object invoke(Object obj8) {
                                                             return Chikianimation.load$lambda$10$1(epName, epNum2, (Episode) obj8);
                                                         }
@@ -1349,7 +1349,7 @@ public final class Chikianimation extends MainAPI {
                                                     matchResultFind$default3 = Regex.find$default(new Regex("(\\d+)"), epTitle, 0, 2, (Object) null);
                                                     if (matchResultFind$default3 == null) {
                                                     }
-                                                    fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda3
+                                                    fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda4
                                                         public final Object invoke(Object obj8) {
                                                             return Chikianimation.load$lambda$10$1(epName, epNum2, (Episode) obj8);
                                                         }
@@ -1584,7 +1584,7 @@ public final class Chikianimation extends MainAPI {
                 } else {
                     description = null;
                 }
-                strJoinToString$default = CollectionsKt.joinToString$default(document.select("div.genxed a, a[href*=/genres/]"), ", ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda1
+                strJoinToString$default = CollectionsKt.joinToString$default(document.select("div.genxed a, a[href*=/genres/]"), ", ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda2
                     public final Object invoke(Object obj8) {
                         return StringsKt.trim(((Element) obj8).text()).toString();
                     }
@@ -1700,7 +1700,7 @@ public final class Chikianimation extends MainAPI {
                                 if (StringsKt.contains(epNumText, "full", true)) {
                                 }
                                 formattedName = "Full Movie";
-                                episodeNewEpisode = MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, href2), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda2
+                                episodeNewEpisode = MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, href2), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda3
                                     public final Object invoke(Object obj8) {
                                         return Chikianimation.load$lambda$5$2(formattedName, dubSuffix, epNum3, epDate2, (Episode) obj8);
                                     }
@@ -1959,7 +1959,7 @@ public final class Chikianimation extends MainAPI {
                                     matchResultFind$default3 = Regex.find$default(new Regex("(\\d+)"), epTitle, 0, 2, (Object) null);
                                     if (matchResultFind$default3 == null) {
                                     }
-                                    fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda3
+                                    fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda4
                                         public final Object invoke(Object obj8) {
                                             return Chikianimation.load$lambda$10$1(epName, epNum2, (Episode) obj8);
                                         }
@@ -2185,7 +2185,7 @@ public final class Chikianimation extends MainAPI {
                                         matchResultFind$default3 = Regex.find$default(new Regex("(\\d+)"), epTitle, 0, 2, (Object) null);
                                         if (matchResultFind$default3 == null) {
                                         }
-                                        fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda3
+                                        fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda4
                                             public final Object invoke(Object obj8) {
                                                 return Chikianimation.load$lambda$10$1(epName, epNum2, (Episode) obj8);
                                             }
@@ -2357,7 +2357,7 @@ public final class Chikianimation extends MainAPI {
                                     matchResultFind$default3 = Regex.find$default(new Regex("(\\d+)"), epTitle, 0, 2, (Object) null);
                                     if (matchResultFind$default3 == null) {
                                     }
-                                    fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda3
+                                    fallbackEps.add(MainAPIKt.newEpisode(this, MainAPIKt.fixUrl(this, h), new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda4
                                         public final Object invoke(Object obj8) {
                                             return Chikianimation.load$lambda$10$1(epName, epNum2, (Episode) obj8);
                                         }
@@ -2762,8 +2762,7 @@ public final class Chikianimation extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:84:0x03b5 -> B:85:0x03c7). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.nodes.BlockNode.isDominator(BlockNode.java:178)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:746)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
@@ -2776,14 +2775,14 @@ public final class Chikianimation extends MainAPI {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code duplicated, block: B:43:0x01af A[Catch: all -> 0x00ce, TryCatch #5 {all -> 0x00ce, blocks: (B:23:0x00c8, B:41:0x01a7, B:43:0x01af, B:44:0x01b1), top: B:91:0x00c8 }] */
-    /* JADX WARN: Code duplicated, block: B:73:0x02d1 A[Catch: all -> 0x0067, TryCatch #1 {all -> 0x0067, blocks: (B:13:0x0061, B:71:0x02c9, B:73:0x02d1, B:74:0x02d4), top: B:83:0x0061 }] */
+    /* JADX WARN: Code duplicated, block: B:43:0x01af A[Catch: all -> 0x00ce, TryCatch #5 {all -> 0x00ce, blocks: (B:23:0x00c8, B:41:0x01a7, B:43:0x01af, B:44:0x01b1), top: B:90:0x00c8 }] */
+    /* JADX WARN: Code duplicated, block: B:72:0x02da A[Catch: all -> 0x0067, TryCatch #1 {all -> 0x0067, blocks: (B:13:0x0061, B:70:0x02d2, B:72:0x02da, B:73:0x02dc), top: B:82:0x0061 }] */
     /* JADX WARN: Code duplicated, block: B:7:0x001e  */
-    public static final Object loadLinks$handleUrl(Chikianimation this$0, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Ref.BooleanRef found, String url, String ref, Continuation<? super Unit> continuation) {
+    public static final Object loadLinks$handleUrl(Chikianimation this$0, Function1<? super SubtitleFile, Unit> function1, final Function1<? super ExtractorLink, Unit> function2, Ref.BooleanRef found, String url, String ref, Continuation<? super Unit> continuation) {
         Chikianimation$loadLinks$handleUrl$1 chikianimation$loadLinks$handleUrl$1;
-        Object objLoadExtractor;
         Object obj;
-        Ref.BooleanRef found2 = found;
+        Object obj2;
+        final Ref.BooleanRef found2 = found;
         if (continuation instanceof Chikianimation$loadLinks$handleUrl$1) {
             chikianimation$loadLinks$handleUrl$1 = (Chikianimation$loadLinks$handleUrl$1) continuation;
             if ((chikianimation$loadLinks$handleUrl$1.label & Integer.MIN_VALUE) != 0) {
@@ -2825,12 +2824,12 @@ public final class Chikianimation extends MainAPI {
                         chikianimation$loadLinks$handleUrl$2.L$8 = SpillingKt.nullOutSpilledVariable(videoId);
                         chikianimation$loadLinks$handleUrl$2.L$9 = SpillingKt.nullOutSpilledVariable(this$0);
                         chikianimation$loadLinks$handleUrl$2.label = 1;
-                        Object objLoadExtractor2 = ExtractorApiKt.loadExtractor("https://www.dailymotion.com/video/" + videoId, ref, function1, function2, chikianimation$loadLinks$handleUrl$2);
-                        if (objLoadExtractor2 == coroutine_suspended) {
+                        Object objLoadExtractor = ExtractorApiKt.loadExtractor("https://www.dailymotion.com/video/" + videoId, ref, function1, function2, chikianimation$loadLinks$handleUrl$2);
+                        if (objLoadExtractor == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        obj = objLoadExtractor2;
-                        if (((Boolean) obj).booleanValue()) {
+                        obj2 = objLoadExtractor;
+                        if (((Boolean) obj2).booleanValue()) {
                             found2.element = true;
                         }
                         Result.constructor-impl(Unit.INSTANCE);
@@ -2846,20 +2845,24 @@ public final class Chikianimation extends MainAPI {
                         Result.Companion companion3 = Result.Companion;
                         GalaxyDonghua galaxyDonghua = new GalaxyDonghua();
                         String str = (String) cleanUrl.element;
+                        Function1<? super ExtractorLink, Unit> function3 = new Function1() { // from class: com.Chikianimation.Chikianimation$$ExternalSyntheticLambda0
+                            public final Object invoke(Object obj3) {
+                                return Chikianimation.loadLinks$handleUrl$lambda$2$0(found2, function2, (ExtractorLink) obj3);
+                            }
+                        };
                         chikianimation$loadLinks$handleUrl$2.L$0 = SpillingKt.nullOutSpilledVariable(this$0);
                         chikianimation$loadLinks$handleUrl$2.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                         chikianimation$loadLinks$handleUrl$2.L$2 = SpillingKt.nullOutSpilledVariable(function2);
-                        chikianimation$loadLinks$handleUrl$2.L$3 = found2;
+                        chikianimation$loadLinks$handleUrl$2.L$3 = SpillingKt.nullOutSpilledVariable(found2);
                         chikianimation$loadLinks$handleUrl$2.L$4 = SpillingKt.nullOutSpilledVariable(url);
                         chikianimation$loadLinks$handleUrl$2.L$5 = SpillingKt.nullOutSpilledVariable(ref);
                         chikianimation$loadLinks$handleUrl$2.L$6 = SpillingKt.nullOutSpilledVariable(cleanUrl);
                         chikianimation$loadLinks$handleUrl$2.L$7 = SpillingKt.nullOutSpilledVariable(dmMatch);
                         chikianimation$loadLinks$handleUrl$2.L$8 = SpillingKt.nullOutSpilledVariable(this$0);
                         chikianimation$loadLinks$handleUrl$2.label = 2;
-                        if (galaxyDonghua.getUrl(str, ref, function1, function2, chikianimation$loadLinks$handleUrl$2) == coroutine_suspended) {
+                        if (galaxyDonghua.getUrl(str, ref, function1, function3, chikianimation$loadLinks$handleUrl$2) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        found2.element = true;
                         Result.constructor-impl(Unit.INSTANCE);
                         return Unit.INSTANCE;
                     } catch (Throwable th2) {
@@ -2882,11 +2885,12 @@ public final class Chikianimation extends MainAPI {
                         chikianimation$loadLinks$handleUrl$2.L$7 = SpillingKt.nullOutSpilledVariable(dmMatch);
                         chikianimation$loadLinks$handleUrl$2.L$8 = SpillingKt.nullOutSpilledVariable(this$0);
                         chikianimation$loadLinks$handleUrl$2.label = 3;
-                        objLoadExtractor = ExtractorApiKt.loadExtractor(str2, ref, function1, function2, chikianimation$loadLinks$handleUrl$2);
-                        if (objLoadExtractor == coroutine_suspended) {
+                        Object objLoadExtractor2 = ExtractorApiKt.loadExtractor(str2, ref, function1, function2, chikianimation$loadLinks$handleUrl$2);
+                        if (objLoadExtractor2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        if (((Boolean) objLoadExtractor).booleanValue()) {
+                        obj = objLoadExtractor2;
+                        if (((Boolean) obj).booleanValue()) {
                             found2.element = true;
                         }
                         Result.constructor-impl(Unit.INSTANCE);
@@ -2902,8 +2906,8 @@ public final class Chikianimation extends MainAPI {
                 found2 = (Ref.BooleanRef) chikianimation$loadLinks$handleUrl$2.L$3;
                 try {
                     ResultKt.throwOnFailure($result);
-                    obj = $result;
-                    if (((Boolean) obj).booleanValue()) {
+                    obj2 = $result;
+                    if (((Boolean) obj2).booleanValue()) {
                         found2.element = true;
                     }
                     Result.constructor-impl(Unit.INSTANCE);
@@ -2915,10 +2919,8 @@ public final class Chikianimation extends MainAPI {
                 }
                 return Unit.INSTANCE;
             case 2:
-                found2 = (Ref.BooleanRef) chikianimation$loadLinks$handleUrl$2.L$3;
                 try {
                     ResultKt.throwOnFailure($result);
-                    found2.element = true;
                     Result.constructor-impl(Unit.INSTANCE);
                     break;
                 } catch (Throwable th5) {
@@ -2931,8 +2933,8 @@ public final class Chikianimation extends MainAPI {
                 found2 = (Ref.BooleanRef) chikianimation$loadLinks$handleUrl$2.L$3;
                 try {
                     ResultKt.throwOnFailure($result);
-                    objLoadExtractor = $result;
-                    if (((Boolean) objLoadExtractor).booleanValue()) {
+                    obj = $result;
+                    if (((Boolean) obj).booleanValue()) {
                         found2.element = true;
                     }
                     Result.constructor-impl(Unit.INSTANCE);
@@ -2948,12 +2950,19 @@ public final class Chikianimation extends MainAPI {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit loadLinks$handleUrl$lambda$2$0(Ref.BooleanRef $found, Function1 $callback, ExtractorLink link) {
+        $found.element = true;
+        $callback.invoke(link);
+        return Unit.INSTANCE;
+    }
+
     /* JADX INFO: renamed from: com.Chikianimation.Chikianimation$loadLinks$4 */
     /* JADX INFO: compiled from: Chikianimation.kt */
-    @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "Lkotlin/Result;", "", "playerPageUrl", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.Chikianimation.Chikianimation$loadLinks$4", f = "Chikianimation.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {284, 292, 301}, m = "invokeSuspend", n = {"playerPageUrl", "resolvedUrl", "$this$invokeSuspend_u24lambda_u240", "playerPageUrl", "resolvedUrl", "$this$invokeSuspend_u24lambda_u240", "playerHtml", "playerDoc", "$this$forEach$iv", "element$iv", "m", "videoId", "$this$invokeSuspend_u24lambda_u240_u240_u240", "playerPageUrl", "resolvedUrl", "$this$invokeSuspend_u24lambda_u240", "playerHtml", "playerDoc", "$this$forEach$iv", "element$iv", "el", "src"}, nl = {285, 293, 302}, s = {"L$0", "L$1", "L$6", "L$0", "L$1", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$0", "L$1", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13"}, v = 2)
-    @SourceDebugExtension({"SMAP\nChikianimation.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Chikianimation.kt\ncom/Chikianimation/Chikianimation$loadLinks$4\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,315:1\n1505#2,2:316\n2068#3:318\n2069#3:320\n1#4:319\n*S KotlinDebug\n*F\n+ 1 Chikianimation.kt\ncom/Chikianimation/Chikianimation$loadLinks$4\n*L\n289#1:316,2\n299#1:318\n299#1:320\n*E\n"})
-    static final class C00084 extends SuspendLambda implements Function2<String, Continuation<? super Result<? extends Unit>>, Object> {
+    @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "playerPageUrl", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.Chikianimation.Chikianimation$loadLinks$4", f = "Chikianimation.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {285, 290, 298, 307}, m = "invokeSuspend", n = {"playerPageUrl", "resolvedUrl", "playerPageUrl", "resolvedUrl", "$this$invokeSuspend_u24lambda_u240", "playerPageUrl", "resolvedUrl", "$this$invokeSuspend_u24lambda_u240", "playerHtml", "playerDoc", "$this$forEach$iv", "element$iv", "m", "videoId", "$this$invokeSuspend_u24lambda_u240_u240_u240", "playerPageUrl", "resolvedUrl", "$this$invokeSuspend_u24lambda_u240", "playerHtml", "playerDoc", "$this$forEach$iv", "element$iv", "el", "src"}, nl = {286, 291, 299, 308}, s = {"L$0", "L$1", "L$0", "L$1", "L$6", "L$0", "L$1", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$0", "L$1", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13"}, v = 2)
+    @SourceDebugExtension({"SMAP\nChikianimation.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Chikianimation.kt\ncom/Chikianimation/Chikianimation$loadLinks$4\n+ 2 _Sequences.kt\nkotlin/sequences/SequencesKt___SequencesKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,321:1\n1505#2,2:322\n2068#3:324\n2069#3:326\n1#4:325\n*S KotlinDebug\n*F\n+ 1 Chikianimation.kt\ncom/Chikianimation/Chikianimation$loadLinks$4\n*L\n295#1:322,2\n305#1:324\n305#1:326\n*E\n"})
+    static final class C00084 extends SuspendLambda implements Function2<String, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $data;
         final /* synthetic */ Ref.BooleanRef $found;
@@ -2990,27 +2999,27 @@ public final class Chikianimation extends MainAPI {
             return c00084;
         }
 
-        public final Object invoke(String str, Continuation<? super Result<Unit>> continuation) {
+        public final Object invoke(String str, Continuation<? super Unit> continuation) {
             return create(str, continuation).invokeSuspend(Unit.INSTANCE);
         }
 
-        /* JADX WARN: Code duplicated, block: B:32:0x01db A[Catch: all -> 0x0409, TRY_LEAVE, TryCatch #5 {all -> 0x0409, blocks: (B:30:0x01d5, B:32:0x01db), top: B:118:0x01d5 }] */
-        /* JADX WARN: Code duplicated, block: B:42:0x0259 A[RETURN] */
-        /* JADX WARN: Code duplicated, block: B:43:0x025a  */
-        /* JADX WARN: Code duplicated, block: B:46:0x0281  */
-        /* JADX WARN: Code duplicated, block: B:48:0x0287  */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:43:0x025a -> B:112:0x0279). Please report as a decompilation issue!!! */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:59:0x02ea -> B:60:0x02f3). Please report as a decompilation issue!!! */
-        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:82:0x03c0 -> B:83:0x03d4). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        /* JADX WARN: Code duplicated, block: B:45:0x023b A[Catch: all -> 0x0466, TRY_LEAVE, TryCatch #6 {all -> 0x0466, blocks: (B:43:0x0235, B:45:0x023b), top: B:139:0x0235 }] */
+        /* JADX WARN: Code duplicated, block: B:53:0x02b9 A[RETURN] */
+        /* JADX WARN: Code duplicated, block: B:54:0x02ba  */
+        /* JADX WARN: Code duplicated, block: B:57:0x02de  */
+        /* JADX WARN: Code duplicated, block: B:59:0x02e4  */
+        /* JADX WARN: Not initialized variable reg: 21, insn: 0x0116: MOVE (r9 I:??[OBJECT, ARRAY]) = (r21 I:??[OBJECT, ARRAY] A[D('resolvedUrl' java.lang.String)]), block:B:18:0x0113 */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:54:0x02ba -> B:133:0x02d6). Please report as a decompilation issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:73:0x0364 -> B:74:0x0369). Please report as a decompilation issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:94:0x041b -> B:95:0x0436). Please report as a decompilation issue!!! */
+        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+            java.lang.StackOverflowError
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
             */
         public final java.lang.Object invokeSuspend(java.lang.Object r31) {
             /*
-                Method dump skipped, instruction units count: 1170
+                Method dump skipped, instruction units count: 1296
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: com.Chikianimation.Chikianimation.C00084.invokeSuspend(java.lang.Object):java.lang.Object");

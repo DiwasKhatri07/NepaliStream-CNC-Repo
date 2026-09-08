@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.Chikianimation.ChikianimationPlugin",
   "name": "Chikianimation",
-  "version": 1,
+  "version": 2,
   "requiresResources": false
 }

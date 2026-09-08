@@ -455,14 +455,14 @@
     {
         "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/Chikianimation.cs3",
         "status": 1,
-        "version": 1,
+        "version": 2,
         "name": "Chikianimation",
         "internalName": "Chikianimation",
         "authors": [
             "Phisher98"
         ],
         "description": "English anime and donghua from chikianimation.com",
-        "fileSize": 79526,
+        "fileSize": 87507,
         "repositoryUrl": "https://github.com/phisher98/cloudstream-extensions-phisher",
         "language": "zh",
         "tvTypes": [
@@ -471,7 +471,7 @@
         ],
         "iconUrl": "https://chikianimation.com/wp-content/uploads/2026/03/logo.png",
         "apiVersion": 1,
-        "fileHash": "sha256-13cb6f53e49842a70abd7561d5e782b36e89812e2874f7d8dc8cd94d4e867fec"
+        "fileHash": "sha256-d899af0353f083f9854be83d439263a08143a272973a34d9b3a919378a2a1c04"
     },
     {
         "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/Cinefreak.cs3",
@@ -833,14 +833,14 @@
     {
         "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/IStreamFlare.cs3",
         "status": 1,
-        "version": 5,
+        "version": 6,
         "name": "IStreamFlare",
         "internalName": "IStreamFlare",
         "authors": [
             "Phisher98"
         ],
         "description": "Movies/Series/Anime",
-        "fileSize": 84641,
+        "fileSize": 92462,
         "repositoryUrl": "https://github.com/phisher98/cloudstream-extensions-phisher",
         "language": "hi",
         "tvTypes": [
@@ -853,7 +853,7 @@
         ],
         "iconUrl": "https://raw.githubusercontent.com/phisher98/TVVVV/refs/heads/main/Icons/streamflare.png",
         "apiVersion": 1,
-        "fileHash": "sha256-e9de127a5860424af713e7805f603cfbb89ba89e36438acc1cc433588b382117"
+        "fileHash": "sha256-477a1ba8e5adfb0e1f64e5cd2099bd8b278c530e7cfc1ac8f478930c9f79de8f"
     },
     {
         "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/Jellyfin.cs3",
