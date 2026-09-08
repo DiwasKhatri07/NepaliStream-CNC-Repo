@@ -364,6 +364,7 @@ public class Animekhor extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:19:0x00ce -> B:20:0x00d5). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
+        	at java.base/java.util.RegularEnumSet.add(RegularEnumSet.java:162)
         	at java.base/java.util.RegularEnumSet.add(RegularEnumSet.java:36)
         	at jadx.core.dex.attributes.AttributeStorage.add(AttributeStorage.java:53)
         	at jadx.core.dex.attributes.AttrNode.add(AttrNode.java:21)
@@ -1386,7 +1387,6 @@ public class Animekhor extends MainAPI {
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         */
     static /* synthetic */ java.lang.Object search$suspendImpl(com.Animekhor.Animekhor r25, java.lang.String r26, kotlin.coroutines.Continuation<? super java.util.List<? extends com.lagradost.cloudstream3.SearchResponse>> r27) {
         /*
