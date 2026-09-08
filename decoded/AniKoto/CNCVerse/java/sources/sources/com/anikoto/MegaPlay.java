@@ -84,9 +84,8 @@ public class MegaPlay extends ExtractorApi {
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:169:0x083f -> B:217:0x086b). Please report as a decompilation issue!!! */
         /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
             java.lang.StackOverflowError
-            	at java.base/java.util.regex.Pattern.inRange(Pattern.java:5745)
-            	at java.base/java.util.regex.Pattern.lambda$Range$10(Pattern.java:5755)
-            	at java.base/java.util.regex.Pattern$BmpCharPredicate.lambda$union$2(Pattern.java:5653)
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
             */
         @org.jetbrains.annotations.Nullable
         public final java.lang.Object extractMegaPlayUrl(@org.jetbrains.annotations.NotNull java.lang.String r47, @org.jetbrains.annotations.Nullable java.lang.String r48, @org.jetbrains.annotations.NotNull java.lang.String r49, @org.jetbrains.annotations.NotNull java.lang.String r50, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r51, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r52, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r53) {
