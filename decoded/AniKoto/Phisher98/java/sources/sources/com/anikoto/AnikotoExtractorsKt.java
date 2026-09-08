@@ -145,8 +145,15 @@ public final class AnikotoExtractorsKt {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:215:0x09a5 -> B:216:0x09b8). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.attributes.AttrNode.contains(AttrNode.java:98)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:60)
+        	at java.base/java.util.HashMap.putVal(HashMap.java:627)
+        	at java.base/java.util.HashMap.put(HashMap.java:610)
+        	at java.base/java.util.HashSet.add(HashSet.java:221)
+        	at java.base/java.util.AbstractCollection.addAll(AbstractCollection.java:336)
+        	at java.base/java.util.HashSet.<init>(HashSet.java:121)
+        	at jadx.core.dex.visitors.regions.maker.RegionStack$State.<init>(RegionStack.java:39)
+        	at jadx.core.dex.visitors.regions.maker.RegionStack$State.copyWith(RegionStack.java:44)
+        	at jadx.core.dex.visitors.regions.maker.RegionStack.push(RegionStack.java:69)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:103)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
@@ -1161,13 +1168,6 @@ public final class AnikotoExtractorsKt {
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object extractMegaPlayUrl(@org.jetbrains.annotations.NotNull java.lang.String r39, @org.jetbrains.annotations.Nullable java.lang.String r40, @org.jetbrains.annotations.NotNull java.lang.String r41, @org.jetbrains.annotations.NotNull java.lang.String r42, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r43, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r44, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r45) {
