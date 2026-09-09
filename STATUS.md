@@ -4,16 +4,16 @@
 
 | Metric | Value |
 |---|---:|
-| Last monitor update (UTC) | 2026-09-08 23:36:59 UTC |
-| Latest decode workflow | [34281988608](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/runs/34281988608) |
+| Last monitor update (UTC) | 2026-09-09 01:32:31 UTC |
+| Latest decode workflow | [34292795520](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/runs/34292795520) |
 | Latest workflow status | **completed** |
 | Latest workflow conclusion | **success** |
 | Decoded  archives | 118 |
 | Kotlin files | 118 |
 | Kotlin lines | 1180 |
 | Decompiled Java files | 2918 |
-| Decompiled Java lines | 1123593 |
-| Total code lines | 1124773 |
-| Comment lines | 51325 |
+| Decompiled Java lines | 1122579 |
+| Total code lines | 1123759 |
+| Comment lines | 51326 |
 
 The counters are generated from the checked-in  folder. A monitor update is informational and does not re-decode upstream archives.
