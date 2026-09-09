@@ -417,8 +417,8 @@ public final class Animesalt extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:91:0x0482 -> B:92:0x04a2). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.attributes.AttrNode.contains(AttrNode.java:103)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIfNodeInfo(IfRegionMaker.java:613)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextBlockInIfSuccessorChain(IfRegionMaker.java:646)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIfNodeInfo(IfRegionMaker.java:620)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIf(IfRegionMaker.java:602)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.mergeNestedIfNodes(IfRegionMaker.java:409)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:68)

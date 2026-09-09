@@ -2221,7 +2221,7 @@ public final class NetflixMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:85:0x0479 A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:86:0x047a  */
     @Nullable
-    public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) throws Exception {
+    public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
         C00251 c00251;
         String data2;
         Function1<? super ExtractorLink, Unit> function3;

@@ -670,7 +670,7 @@ public final class DonationManager {
             /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x006e -> B:28:0x0071). Please report as a decompilation issue!!! */
             /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
                 java.lang.StackOverflowError
-                	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:732)
+                	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
                 	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
                 */
             public final java.lang.Object invokeSuspend(java.lang.Object r11) {
