@@ -56,7 +56,8 @@ public final class PlayZTVPlugin extends Plugin {
         Pair pair;
         PlayZTV.INSTANCE.setContext(context);
         PlayZTVLiveEventsProvider.INSTANCE.setContext(context);
-        registerMainAPI(new PlayZTVLiveEventsProvider(null, null, 3, null));
+        String str = null;
+        registerMainAPI(new PlayZTVLiveEventsProvider(str, str, 3, str));
         this.iptvProviders = (List) BuildersKt.runBlocking$default((CoroutineContext) null, new C00201(null), 1, (Object) null);
         Iterable $this$mapNotNull$iv = this.iptvProviders;
         Collection destination$iv$iv = new ArrayList();

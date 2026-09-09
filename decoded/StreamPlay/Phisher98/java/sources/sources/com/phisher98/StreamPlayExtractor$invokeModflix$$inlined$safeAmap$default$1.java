@@ -78,7 +78,7 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3}, l = {2266, 2278, 2279, 2280}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "it", "selector", "link", "$this$withPermit$iv", "$completion", "it", "selector", "source", "link", "$this$withPermit$iv", "$completion", "it", "selector", "source", "bypassedLink", "link"}, nl = {2267, 2279, 2280, 2282}, s = {"L$0", "L$0", "L$2", "L$3", "L$4", "L$5", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2283\n2440#3,2:2269\n2439#3,12:2271\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n*L\n1889#1:2266,3\n1889#1:2283,2\n*E\n"})
-    public static final class C01871 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C01891 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $aTag$inlined;
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Integer $episode$inlined;
@@ -97,7 +97,7 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C01871(Semaphore semaphore, Object obj, Continuation continuation, String str, Integer num, Integer num2, Function1 function1, Function1 function2) {
+        public C01891(Semaphore semaphore, Object obj, Continuation continuation, String str, Integer num, Integer num2, Function1 function1, Function1 function2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -109,7 +109,7 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01871(this.$semaphore, this.$item, continuation, this.$aTag$inlined, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+            return new C01891(this.$semaphore, this.$item, continuation, this.$aTag$inlined, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -183,39 +183,39 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
             String str3;
             Semaphore $this$withPermit$iv10;
             Object obj9;
-            C01871 c01871 = this;
+            C01891 c01891 = this;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             String str4 = "href";
             boolean z = true;
             try {
                 try {
-                    switch (c01871.label) {
+                    switch (c01891.label) {
                         case 0:
                             ResultKt.throwOnFailure($result);
-                            Semaphore $this$withPermit$iv11 = c01871.$semaphore;
-                            obj4 = c01871.$item;
-                            c01871.L$0 = $this$withPermit$iv11;
-                            c01871.L$1 = obj4;
-                            c01871.label = 1;
-                            if ($this$withPermit$iv11.acquire((Continuation) c01871) == coroutine_suspended) {
+                            Semaphore $this$withPermit$iv11 = c01891.$semaphore;
+                            obj4 = c01891.$item;
+                            c01891.L$0 = $this$withPermit$iv11;
+                            c01891.L$1 = obj4;
+                            c01891.label = 1;
+                            if ($this$withPermit$iv11.acquire((Continuation) c01891) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                             $this$withPermit$iv3 = $this$withPermit$iv11;
                             $this$withPermit$iv4 = null;
                             try {
-                                $completion = (Continuation) c01871;
+                                $completion = (Continuation) c01891;
                                 it = (Element) obj4;
                                 elementNextElementSibling = it.nextElementSibling();
                                 if (elementNextElementSibling != null) {
                                     try {
-                                        elementsSelect = elementNextElementSibling.select("a:contains(" + c01871.$aTag$inlined + ')');
+                                        elementsSelect = elementNextElementSibling.select("a:contains(" + c01891.$aTag$inlined + ')');
                                         if (elementsSelect != null || (strAttr = elementsSelect.attr("href")) == null || (link = StringsKt.substringAfter$default(strAttr, "=", (String) null, 2, (Object) null)) == null) {
                                             link = "";
                                         }
-                                        if (c01871.$season$inlined == null) {
+                                        if (c01891.$season$inlined == null) {
                                             selector = "p a.maxbutton";
                                         } else {
-                                            selector = "h3 a:matches(Episode " + c01871.$episode$inlined + ')';
+                                            selector = "h3 a:matches(Episode " + c01891.$episode$inlined + ')';
                                         }
                                         if (link.length() > 0) {
                                             z = false;
@@ -223,13 +223,13 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                                         try {
                                             if (z) {
                                                 Requests app = MainActivityKt.getApp();
-                                                c01871.L$0 = $this$withPermit$iv3;
-                                                c01871.L$1 = obj4;
-                                                c01871.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                                c01871.L$3 = SpillingKt.nullOutSpilledVariable(it);
-                                                c01871.L$4 = selector;
-                                                c01871.L$5 = SpillingKt.nullOutSpilledVariable(link);
-                                                c01871.label = 2;
+                                                c01891.L$0 = $this$withPermit$iv3;
+                                                c01891.L$1 = obj4;
+                                                c01891.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                                c01891.L$3 = SpillingKt.nullOutSpilledVariable(it);
+                                                c01891.L$4 = selector;
+                                                c01891.L$5 = SpillingKt.nullOutSpilledVariable(link);
+                                                c01891.label = 2;
                                                 obj6 = obj4;
                                                 $this$withPermit$iv7 = $this$withPermit$iv3;
                                                 link2 = link;
@@ -238,7 +238,7 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                                                 semaphore = $this$withPermit$iv4;
                                                 str = "href";
                                                 obj7 = Requests.get$default(app, link2, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, this, 4094, (Object) null);
-                                                c01871 = this;
+                                                c01891 = this;
                                                 if (obj7 == coroutine_suspended) {
                                                     return coroutine_suspended;
                                                 }
@@ -256,15 +256,15 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                                                         obj3 = Unit.INSTANCE;
                                                         $this$withPermit$iv2 = $this$withPermit$iv;
                                                     } else {
-                                                        c01871.L$0 = $this$withPermit$iv;
-                                                        c01871.L$1 = obj2;
-                                                        c01871.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
-                                                        c01871.L$3 = SpillingKt.nullOutSpilledVariable(it2);
-                                                        c01871.L$4 = SpillingKt.nullOutSpilledVariable(selector3);
-                                                        c01871.L$5 = SpillingKt.nullOutSpilledVariable(source);
-                                                        c01871.L$6 = SpillingKt.nullOutSpilledVariable(link3);
-                                                        c01871.label = 3;
-                                                        objBypassHrefli = StreamPlayUtilsKt.bypassHrefli(source, c01871);
+                                                        c01891.L$0 = $this$withPermit$iv;
+                                                        c01891.L$1 = obj2;
+                                                        c01891.L$2 = SpillingKt.nullOutSpilledVariable($completion2);
+                                                        c01891.L$3 = SpillingKt.nullOutSpilledVariable(it2);
+                                                        c01891.L$4 = SpillingKt.nullOutSpilledVariable(selector3);
+                                                        c01891.L$5 = SpillingKt.nullOutSpilledVariable(source);
+                                                        c01891.L$6 = SpillingKt.nullOutSpilledVariable(link3);
+                                                        c01891.label = 3;
+                                                        objBypassHrefli = StreamPlayUtilsKt.bypassHrefli(source, c01891);
                                                         if (objBypassHrefli == coroutine_suspended) {
                                                             return coroutine_suspended;
                                                         }
@@ -279,21 +279,21 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                                                         it3 = it2;
                                                         try {
                                                             String bypassedLink = String.valueOf(objBypassHrefli);
-                                                            Function1 function1 = c01871.$subtitleCallback$inlined;
-                                                            Function1 function2 = c01871.$callback$inlined;
-                                                            c01871.L$0 = $this$withPermit$iv8;
-                                                            c01871.L$1 = obj8;
-                                                            c01871.L$2 = SpillingKt.nullOutSpilledVariable($completion3);
-                                                            c01871.L$3 = SpillingKt.nullOutSpilledVariable(it3);
-                                                            c01871.L$4 = SpillingKt.nullOutSpilledVariable(selector4);
-                                                            c01871.L$5 = SpillingKt.nullOutSpilledVariable(source2);
-                                                            c01871.L$6 = SpillingKt.nullOutSpilledVariable(bypassedLink);
-                                                            c01871.L$7 = SpillingKt.nullOutSpilledVariable(link5);
-                                                            c01871.label = 4;
+                                                            Function1 function1 = c01891.$subtitleCallback$inlined;
+                                                            Function1 function2 = c01891.$callback$inlined;
+                                                            c01891.L$0 = $this$withPermit$iv8;
+                                                            c01891.L$1 = obj8;
+                                                            c01891.L$2 = SpillingKt.nullOutSpilledVariable($completion3);
+                                                            c01891.L$3 = SpillingKt.nullOutSpilledVariable(it3);
+                                                            c01891.L$4 = SpillingKt.nullOutSpilledVariable(selector4);
+                                                            c01891.L$5 = SpillingKt.nullOutSpilledVariable(source2);
+                                                            c01891.L$6 = SpillingKt.nullOutSpilledVariable(bypassedLink);
+                                                            c01891.L$7 = SpillingKt.nullOutSpilledVariable(link5);
+                                                            c01891.label = 4;
                                                             Object obj10 = obj8;
                                                             $this$withPermit$iv9 = $this$withPermit$iv8;
                                                             try {
-                                                                objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("Moviesmod", bypassedLink, "", function1, function2, null, null, c01871, 96, null);
+                                                                objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("Moviesmod", bypassedLink, "", function1, function2, null, null, c01891, 96, null);
                                                                 if (objLoadSourceNameExtractor$default == coroutine_suspended) {
                                                                     return coroutine_suspended;
                                                                 }
@@ -379,23 +379,23 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                                     }
                                 } else {
                                     link = "";
-                                    if (c01871.$season$inlined == null) {
+                                    if (c01891.$season$inlined == null) {
                                         selector = "p a.maxbutton";
                                     } else {
-                                        selector = "h3 a:matches(Episode " + c01871.$episode$inlined + ')';
+                                        selector = "h3 a:matches(Episode " + c01891.$episode$inlined + ')';
                                     }
                                     if (link.length() > 0) {
                                         z = false;
                                     }
                                     if (z) {
                                         Requests app2 = MainActivityKt.getApp();
-                                        c01871.L$0 = $this$withPermit$iv3;
-                                        c01871.L$1 = obj4;
-                                        c01871.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                        c01871.L$3 = SpillingKt.nullOutSpilledVariable(it);
-                                        c01871.L$4 = selector;
-                                        c01871.L$5 = SpillingKt.nullOutSpilledVariable(link);
-                                        c01871.label = 2;
+                                        c01891.L$0 = $this$withPermit$iv3;
+                                        c01891.L$1 = obj4;
+                                        c01891.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                        c01891.L$3 = SpillingKt.nullOutSpilledVariable(it);
+                                        c01891.L$4 = selector;
+                                        c01891.L$5 = SpillingKt.nullOutSpilledVariable(link);
+                                        c01891.label = 2;
                                         obj6 = obj4;
                                         $this$withPermit$iv7 = $this$withPermit$iv3;
                                         link2 = link;
@@ -404,7 +404,7 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                                         semaphore = $this$withPermit$iv4;
                                         str = "href";
                                         obj7 = Requests.get$default(app2, link2, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, this, 4094, (Object) null);
-                                        c01871 = this;
+                                        c01891 = this;
                                         if (obj7 == coroutine_suspended) {
                                             return coroutine_suspended;
                                         }
@@ -441,36 +441,36 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                             return obj3;
                         case 1:
                             $this$withPermit$iv4 = null;
-                            obj4 = c01871.L$1;
-                            $this$withPermit$iv3 = (Semaphore) c01871.L$0;
+                            obj4 = c01891.L$1;
+                            $this$withPermit$iv3 = (Semaphore) c01891.L$0;
                             ResultKt.throwOnFailure($result);
-                            $completion = (Continuation) c01871;
+                            $completion = (Continuation) c01891;
                             it = (Element) obj4;
                             elementNextElementSibling = it.nextElementSibling();
                             if (elementNextElementSibling != null) {
-                                elementsSelect = elementNextElementSibling.select("a:contains(" + c01871.$aTag$inlined + ')');
+                                elementsSelect = elementNextElementSibling.select("a:contains(" + c01891.$aTag$inlined + ')');
                                 if (elementsSelect != null) {
                                     link = "";
                                 } else {
                                     link = "";
                                 }
-                                if (c01871.$season$inlined == null) {
+                                if (c01891.$season$inlined == null) {
                                     selector = "p a.maxbutton";
                                 } else {
-                                    selector = "h3 a:matches(Episode " + c01871.$episode$inlined + ')';
+                                    selector = "h3 a:matches(Episode " + c01891.$episode$inlined + ')';
                                 }
                                 if (link.length() > 0) {
                                     z = false;
                                 }
                                 if (z) {
                                     Requests app3 = MainActivityKt.getApp();
-                                    c01871.L$0 = $this$withPermit$iv3;
-                                    c01871.L$1 = obj4;
-                                    c01871.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                    c01871.L$3 = SpillingKt.nullOutSpilledVariable(it);
-                                    c01871.L$4 = selector;
-                                    c01871.L$5 = SpillingKt.nullOutSpilledVariable(link);
-                                    c01871.label = 2;
+                                    c01891.L$0 = $this$withPermit$iv3;
+                                    c01891.L$1 = obj4;
+                                    c01891.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                    c01891.L$3 = SpillingKt.nullOutSpilledVariable(it);
+                                    c01891.L$4 = selector;
+                                    c01891.L$5 = SpillingKt.nullOutSpilledVariable(link);
+                                    c01891.label = 2;
                                     obj6 = obj4;
                                     $this$withPermit$iv7 = $this$withPermit$iv3;
                                     link2 = link;
@@ -479,7 +479,7 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                                     semaphore = $this$withPermit$iv4;
                                     str = "href";
                                     obj7 = Requests.get$default(app3, link2, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, this, 4094, (Object) null);
-                                    c01871 = this;
+                                    c01891 = this;
                                     if (obj7 == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -503,23 +503,23 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                                 }
                             } else {
                                 link = "";
-                                if (c01871.$season$inlined == null) {
+                                if (c01891.$season$inlined == null) {
                                     selector = "p a.maxbutton";
                                 } else {
-                                    selector = "h3 a:matches(Episode " + c01871.$episode$inlined + ')';
+                                    selector = "h3 a:matches(Episode " + c01891.$episode$inlined + ')';
                                 }
                                 if (link.length() > 0) {
                                     z = false;
                                 }
                                 if (z) {
                                     Requests app4 = MainActivityKt.getApp();
-                                    c01871.L$0 = $this$withPermit$iv3;
-                                    c01871.L$1 = obj4;
-                                    c01871.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                    c01871.L$3 = SpillingKt.nullOutSpilledVariable(it);
-                                    c01871.L$4 = selector;
-                                    c01871.L$5 = SpillingKt.nullOutSpilledVariable(link);
-                                    c01871.label = 2;
+                                    c01891.L$0 = $this$withPermit$iv3;
+                                    c01891.L$1 = obj4;
+                                    c01891.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                    c01891.L$3 = SpillingKt.nullOutSpilledVariable(it);
+                                    c01891.L$4 = selector;
+                                    c01891.L$5 = SpillingKt.nullOutSpilledVariable(link);
+                                    c01891.label = 2;
                                     obj6 = obj4;
                                     $this$withPermit$iv7 = $this$withPermit$iv3;
                                     link2 = link;
@@ -528,7 +528,7 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                                     semaphore = $this$withPermit$iv4;
                                     str = "href";
                                     obj7 = Requests.get$default(app4, link2, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, this, 4094, (Object) null);
-                                    c01871 = this;
+                                    c01891 = this;
                                     if (obj7 == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -556,12 +556,12 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                         case 2:
                             link4 = null;
                             i = 0;
-                            link3 = (String) c01871.L$5;
-                            selector3 = (String) c01871.L$4;
-                            it2 = (Element) c01871.L$3;
-                            $completion2 = (Continuation) c01871.L$2;
-                            obj2 = c01871.L$1;
-                            $this$withPermit$iv = (Semaphore) c01871.L$0;
+                            link3 = (String) c01891.L$5;
+                            selector3 = (String) c01891.L$4;
+                            it2 = (Element) c01891.L$3;
+                            $completion2 = (Continuation) c01891.L$2;
+                            obj2 = c01891.L$1;
+                            $this$withPermit$iv = (Semaphore) c01891.L$0;
                             try {
                                 ResultKt.throwOnFailure($result);
                                 semaphore = null;
@@ -586,13 +586,13 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                             $this$withPermit$iv2.release();
                             return obj3;
                         case 3:
-                            String link6 = (String) c01871.L$6;
-                            String source3 = (String) c01871.L$5;
-                            String selector5 = (String) c01871.L$4;
-                            Element it4 = (Element) c01871.L$3;
-                            Continuation $completion4 = (Continuation) c01871.L$2;
-                            Object obj11 = c01871.L$1;
-                            Semaphore $this$withPermit$iv16 = (Semaphore) c01871.L$0;
+                            String link6 = (String) c01891.L$6;
+                            String source3 = (String) c01891.L$5;
+                            String selector5 = (String) c01891.L$4;
+                            Element it4 = (Element) c01891.L$3;
+                            Continuation $completion4 = (Continuation) c01891.L$2;
+                            Object obj11 = c01891.L$1;
+                            Semaphore $this$withPermit$iv16 = (Semaphore) c01891.L$0;
                             ResultKt.throwOnFailure($result);
                             semaphore = null;
                             obj = null;
@@ -607,20 +607,20 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                             selector4 = selector5;
                             it3 = it4;
                             String bypassedLink2 = String.valueOf(objBypassHrefli);
-                            Function1 function3 = c01871.$subtitleCallback$inlined;
-                            Function1 function4 = c01871.$callback$inlined;
-                            c01871.L$0 = $this$withPermit$iv8;
-                            c01871.L$1 = obj8;
-                            c01871.L$2 = SpillingKt.nullOutSpilledVariable($completion3);
-                            c01871.L$3 = SpillingKt.nullOutSpilledVariable(it3);
-                            c01871.L$4 = SpillingKt.nullOutSpilledVariable(selector4);
-                            c01871.L$5 = SpillingKt.nullOutSpilledVariable(source2);
-                            c01871.L$6 = SpillingKt.nullOutSpilledVariable(bypassedLink2);
-                            c01871.L$7 = SpillingKt.nullOutSpilledVariable(link5);
-                            c01871.label = 4;
+                            Function1 function3 = c01891.$subtitleCallback$inlined;
+                            Function1 function4 = c01891.$callback$inlined;
+                            c01891.L$0 = $this$withPermit$iv8;
+                            c01891.L$1 = obj8;
+                            c01891.L$2 = SpillingKt.nullOutSpilledVariable($completion3);
+                            c01891.L$3 = SpillingKt.nullOutSpilledVariable(it3);
+                            c01891.L$4 = SpillingKt.nullOutSpilledVariable(selector4);
+                            c01891.L$5 = SpillingKt.nullOutSpilledVariable(source2);
+                            c01891.L$6 = SpillingKt.nullOutSpilledVariable(bypassedLink2);
+                            c01891.L$7 = SpillingKt.nullOutSpilledVariable(link5);
+                            c01891.label = 4;
                             Object obj12 = obj8;
                             $this$withPermit$iv9 = $this$withPermit$iv8;
-                            objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("Moviesmod", bypassedLink2, "", function3, function4, null, null, c01871, 96, null);
+                            objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("Moviesmod", bypassedLink2, "", function3, function4, null, null, c01891, 96, null);
                             if (objLoadSourceNameExtractor$default == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -633,8 +633,8 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                             return obj3;
                         case 4:
                             str3 = null;
-                            Object obj13 = c01871.L$1;
-                            $this$withPermit$iv10 = (Semaphore) c01871.L$0;
+                            Object obj13 = c01891.L$1;
+                            $this$withPermit$iv10 = (Semaphore) c01891.L$0;
                             ResultKt.throwOnFailure($result);
                             semaphore = null;
                             obj9 = $result;
@@ -667,7 +667,7 @@ public final class StreamPlayExtractor$invokeModflix$$inlined$safeAmap$default$1
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01871(semaphore, item$iv$iv, null, this.$aTag$inlined, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01891(semaphore, item$iv$iv, null, this.$aTag$inlined, this.$season$inlined, this.$episode$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
                     $this$map$iv = $this$map$iv;
                     destination$iv$iv = destination$iv$iv2;
                 }

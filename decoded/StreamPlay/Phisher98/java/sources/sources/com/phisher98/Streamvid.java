@@ -47,7 +47,7 @@ public class Streamvid extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Streamvid", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {634, 642}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "$this", "url", "referer", "subtitleCallback", "callback", "response", "script", "m3u8"}, nl = {635, 646}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C03091 extends ContinuationImpl {
+    static final class C03111 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -59,7 +59,7 @@ public class Streamvid extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C03091(Continuation<? super C03091> continuation) {
+        C03111(Continuation<? super C03111> continuation) {
             super(continuation);
         }
 
@@ -104,7 +104,7 @@ public class Streamvid extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:52:0x01a5 A[LOOP:0: B:50:0x019f->B:52:0x01a5, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     static /* synthetic */ Object getUrl$suspendImpl(Streamvid $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C03091 c03091;
+        C03111 c03111;
         Object obj;
         Streamvid $this2;
         String url2;
@@ -128,32 +128,32 @@ public class Streamvid extends ExtractorApi {
         Object objGenerateM3u8$default;
         Function1<? super ExtractorLink, Unit> function6;
         List groupValues;
-        if (continuation instanceof C03091) {
-            c03091 = (C03091) continuation;
-            if ((c03091.label & Integer.MIN_VALUE) != 0) {
-                c03091.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C03111) {
+            c03111 = (C03111) continuation;
+            if ((c03111.label & Integer.MIN_VALUE) != 0) {
+                c03111.label -= Integer.MIN_VALUE;
             } else {
-                c03091 = $this.new C03091(continuation);
+                c03111 = $this.new C03111(continuation);
             }
         } else {
-            c03091 = $this.new C03091(continuation);
+            c03111 = $this.new C03111(continuation);
         }
-        C03091 c03092 = c03091;
-        Object $result = c03092.result;
+        C03111 c03112 = c03111;
+        Object $result = c03112.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c03092.label) {
+        switch (c03112.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
-                c03092.L$0 = $this;
-                c03092.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c03092.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                c03092.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                c03092.L$4 = function2;
-                c03092.label = 1;
+                c03112.L$0 = $this;
+                c03112.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c03112.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                c03112.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c03112.L$4 = function2;
+                c03112.label = 1;
                 obj = coroutine_suspended;
-                Object obj3 = Requests.get$default(app, url, (Map) null, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03092, 4090, (Object) null);
-                c03092 = c03092;
+                Object obj3 = Requests.get$default(app, url, (Map) null, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03112, 4090, (Object) null);
+                c03112 = c03112;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -197,17 +197,17 @@ public class Streamvid extends ExtractorApi {
                     return Unit.INSTANCE;
                 }
                 String mainUrl = $this2.getMainUrl();
-                c03092.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c03092.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c03092.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c03092.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c03092.L$4 = function4;
-                c03092.L$5 = SpillingKt.nullOutSpilledVariable(response);
-                c03092.L$6 = SpillingKt.nullOutSpilledVariable(script);
-                c03092.L$7 = SpillingKt.nullOutSpilledVariable(m3u8);
-                c03092.label = 2;
+                c03112.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c03112.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c03112.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c03112.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c03112.L$4 = function4;
+                c03112.L$5 = SpillingKt.nullOutSpilledVariable(response);
+                c03112.L$6 = SpillingKt.nullOutSpilledVariable(script);
+                c03112.L$7 = SpillingKt.nullOutSpilledVariable(m3u8);
+                c03112.label = 2;
                 function5 = function4;
-                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, mainUrl, (Integer) null, (Map) null, (String) null, c03092, 56, (Object) null);
+                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, mainUrl, (Integer) null, (Map) null, (String) null, c03112, 56, (Object) null);
                 if (objGenerateM3u8$default == obj) {
                     return obj;
                 }
@@ -218,11 +218,11 @@ public class Streamvid extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 1:
-                Function1<? super ExtractorLink, Unit> function7 = (Function1) c03092.L$4;
-                Function1<? super SubtitleFile, Unit> function8 = (Function1) c03092.L$3;
-                String referer3 = (String) c03092.L$2;
-                String url3 = (String) c03092.L$1;
-                Streamvid $this3 = (Streamvid) c03092.L$0;
+                Function1<? super ExtractorLink, Unit> function7 = (Function1) c03112.L$4;
+                Function1<? super SubtitleFile, Unit> function8 = (Function1) c03112.L$3;
+                String referer3 = (String) c03112.L$2;
+                String url3 = (String) c03112.L$1;
+                Streamvid $this3 = (Streamvid) c03112.L$0;
                 ResultKt.throwOnFailure($result);
                 $this2 = $this3;
                 obj = coroutine_suspended;
@@ -265,17 +265,17 @@ public class Streamvid extends ExtractorApi {
                     return Unit.INSTANCE;
                 }
                 String mainUrl2 = $this2.getMainUrl();
-                c03092.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c03092.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c03092.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c03092.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c03092.L$4 = function4;
-                c03092.L$5 = SpillingKt.nullOutSpilledVariable(response);
-                c03092.L$6 = SpillingKt.nullOutSpilledVariable(script);
-                c03092.L$7 = SpillingKt.nullOutSpilledVariable(m3u8);
-                c03092.label = 2;
+                c03112.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c03112.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c03112.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c03112.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c03112.L$4 = function4;
+                c03112.L$5 = SpillingKt.nullOutSpilledVariable(response);
+                c03112.L$6 = SpillingKt.nullOutSpilledVariable(script);
+                c03112.L$7 = SpillingKt.nullOutSpilledVariable(m3u8);
+                c03112.label = 2;
                 function5 = function4;
-                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, mainUrl2, (Integer) null, (Map) null, (String) null, c03092, 56, (Object) null);
+                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, mainUrl2, (Integer) null, (Map) null, (String) null, c03112, 56, (Object) null);
                 if (objGenerateM3u8$default == obj) {
                     return obj;
                 }
@@ -286,7 +286,7 @@ public class Streamvid extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 2:
-                function6 = (Function1) c03092.L$4;
+                function6 = (Function1) c03112.L$4;
                 ResultKt.throwOnFailure($result);
                 objGenerateM3u8$default = $result;
                 Iterable $this$forEach$iv3 = (Iterable) objGenerateM3u8$default;

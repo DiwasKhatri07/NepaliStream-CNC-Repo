@@ -1,6 +1,6 @@
 {
   "pluginClassName": "com.phisher98.StreamPlayPlugin",
   "name": "StreamPlay",
-  "version": 666,
+  "version": 667,
   "requiresResources": true
 }

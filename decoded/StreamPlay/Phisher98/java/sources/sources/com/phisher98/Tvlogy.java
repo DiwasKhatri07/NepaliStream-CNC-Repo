@@ -53,7 +53,7 @@ public final class Tvlogy extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Tvlogy", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {874, 877}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "id", "data", "headers", "url", "referer", "subtitleCallback", "callback", "id", "data", "headers", "meta"}, nl = {875, 876}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C03121 extends ContinuationImpl {
+    static final class C03141 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -66,7 +66,7 @@ public final class Tvlogy extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C03121(Continuation<? super C03121> continuation) {
+        C03141(Continuation<? super C03141> continuation) {
             super(continuation);
         }
 
@@ -99,7 +99,7 @@ public final class Tvlogy extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C03121 c03121;
+        C03141 c03141;
         Object obj;
         String referer2;
         Function1<? super SubtitleFile, Unit> function3;
@@ -111,36 +111,36 @@ public final class Tvlogy extends ExtractorApi {
         Object safe;
         MetaData meta;
         Function1<? super ExtractorLink, Unit> function5;
-        if (continuation instanceof C03121) {
-            c03121 = (C03121) continuation;
-            if ((c03121.label & Integer.MIN_VALUE) != 0) {
-                c03121.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C03141) {
+            c03141 = (C03141) continuation;
+            if ((c03141.label & Integer.MIN_VALUE) != 0) {
+                c03141.label -= Integer.MIN_VALUE;
             } else {
-                c03121 = new C03121(continuation);
+                c03141 = new C03141(continuation);
             }
         } else {
-            c03121 = new C03121(continuation);
+            c03141 = new C03141(continuation);
         }
-        C03121 c03122 = c03121;
-        Object $result = c03122.result;
+        C03141 c03142 = c03141;
+        Object $result = c03142.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c03122.label) {
+        switch (c03142.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String id2 = StringsKt.substringAfter$default(url, "data=", (String) null, 2, (Object) null);
                 Map data3 = MapsKt.mapOf(new Pair[]{TuplesKt.to("hash", id2), TuplesKt.to("r", "http%3A%2F%2Ftellygossips.net%2F")});
                 Map headers = MapsKt.mapOf(TuplesKt.to("X-Requested-With", "XMLHttpRequest"));
-                c03122.L$0 = url;
-                c03122.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c03122.L$2 = SpillingKt.nullOutSpilledVariable(function1);
-                c03122.L$3 = function2;
-                c03122.L$4 = SpillingKt.nullOutSpilledVariable(id2);
-                c03122.L$5 = SpillingKt.nullOutSpilledVariable(data3);
-                c03122.L$6 = SpillingKt.nullOutSpilledVariable(headers);
-                c03122.label = 1;
+                c03142.L$0 = url;
+                c03142.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c03142.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                c03142.L$3 = function2;
+                c03142.L$4 = SpillingKt.nullOutSpilledVariable(id2);
+                c03142.L$5 = SpillingKt.nullOutSpilledVariable(data3);
+                c03142.L$6 = SpillingKt.nullOutSpilledVariable(headers);
+                c03142.label = 1;
                 obj = coroutine_suspended;
-                $result = Requests.post$default(MainActivityKt.getApp(), url + "&do=getVideo", headers, url, (Map) null, (Map) null, data3, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03122, 65496, (Object) null);
-                c03122 = c03122;
+                $result = Requests.post$default(MainActivityKt.getApp(), url + "&do=getVideo", headers, url, (Map) null, (Map) null, data3, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03142, 65496, (Object) null);
+                c03142 = c03142;
                 if ($result == obj) {
                     return obj;
                 }
@@ -169,18 +169,18 @@ public final class Tvlogy extends ExtractorApi {
                 String name2 = getName();
                 String videoSource = meta.getVideoSource();
                 ExtractorLinkType extractorLinkType = ExtractorLinkType.M3U8;
-                C03132 c03132 = new C03132(url2, null);
-                c03122.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03122.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c03122.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c03122.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                c03122.L$4 = SpillingKt.nullOutSpilledVariable(id);
-                c03122.L$5 = SpillingKt.nullOutSpilledVariable(data2);
-                c03122.L$6 = SpillingKt.nullOutSpilledVariable(data);
-                c03122.L$7 = SpillingKt.nullOutSpilledVariable(meta);
-                c03122.L$8 = function4;
-                c03122.label = 2;
-                $result = ExtractorApiKt.newExtractorLink(name, name2, videoSource, extractorLinkType, c03132, c03122);
+                C03152 c03152 = new C03152(url2, null);
+                c03142.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03142.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c03142.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c03142.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                c03142.L$4 = SpillingKt.nullOutSpilledVariable(id);
+                c03142.L$5 = SpillingKt.nullOutSpilledVariable(data2);
+                c03142.L$6 = SpillingKt.nullOutSpilledVariable(data);
+                c03142.L$7 = SpillingKt.nullOutSpilledVariable(meta);
+                c03142.L$8 = function4;
+                c03142.label = 2;
+                $result = ExtractorApiKt.newExtractorLink(name, name2, videoSource, extractorLinkType, c03152, c03142);
                 if ($result == obj) {
                     return obj;
                 }
@@ -188,13 +188,13 @@ public final class Tvlogy extends ExtractorApi {
                 function5.invoke($result);
                 return Unit.INSTANCE;
             case 1:
-                Map headers2 = (Map) c03122.L$6;
-                Map data4 = (Map) c03122.L$5;
-                String id3 = (String) c03122.L$4;
-                function4 = (Function1) c03122.L$3;
-                function3 = (Function1) c03122.L$2;
-                referer2 = (String) c03122.L$1;
-                String url3 = (String) c03122.L$0;
+                Map headers2 = (Map) c03142.L$6;
+                Map data4 = (Map) c03142.L$5;
+                String id3 = (String) c03142.L$4;
+                function4 = (Function1) c03142.L$3;
+                function3 = (Function1) c03142.L$2;
+                referer2 = (String) c03142.L$1;
+                String url3 = (String) c03142.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 url2 = url3;
@@ -213,18 +213,18 @@ public final class Tvlogy extends ExtractorApi {
                 String name4 = getName();
                 String videoSource2 = meta.getVideoSource();
                 ExtractorLinkType extractorLinkType2 = ExtractorLinkType.M3U8;
-                C03132 c03133 = new C03132(url2, null);
-                c03122.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03122.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c03122.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c03122.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                c03122.L$4 = SpillingKt.nullOutSpilledVariable(id);
-                c03122.L$5 = SpillingKt.nullOutSpilledVariable(data2);
-                c03122.L$6 = SpillingKt.nullOutSpilledVariable(data);
-                c03122.L$7 = SpillingKt.nullOutSpilledVariable(meta);
-                c03122.L$8 = function4;
-                c03122.label = 2;
-                $result = ExtractorApiKt.newExtractorLink(name3, name4, videoSource2, extractorLinkType2, c03133, c03122);
+                C03152 c03153 = new C03152(url2, null);
+                c03142.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03142.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c03142.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c03142.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                c03142.L$4 = SpillingKt.nullOutSpilledVariable(id);
+                c03142.L$5 = SpillingKt.nullOutSpilledVariable(data2);
+                c03142.L$6 = SpillingKt.nullOutSpilledVariable(data);
+                c03142.L$7 = SpillingKt.nullOutSpilledVariable(meta);
+                c03142.L$8 = function4;
+                c03142.label = 2;
+                $result = ExtractorApiKt.newExtractorLink(name3, name4, videoSource2, extractorLinkType2, c03153, c03142);
                 if ($result == obj) {
                     return obj;
                 }
@@ -232,7 +232,7 @@ public final class Tvlogy extends ExtractorApi {
                 function5.invoke($result);
                 return Unit.INSTANCE;
             case 2:
-                function5 = (Function1) c03122.L$8;
+                function5 = (Function1) c03142.L$8;
                 ResultKt.throwOnFailure($result);
                 function5.invoke($result);
                 return Unit.INSTANCE;
@@ -245,21 +245,21 @@ public final class Tvlogy extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Tvlogy$getUrl$2", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C03132 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C03152 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $url;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C03132(String str, Continuation<? super C03132> continuation) {
+        C03152(String str, Continuation<? super C03152> continuation) {
             super(2, continuation);
             this.$url = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c03132 = new C03132(this.$url, continuation);
-            c03132.L$0 = obj;
-            return c03132;
+            Continuation<Unit> c03152 = new C03152(this.$url, continuation);
+            c03152.L$0 = obj;
+            return c03152;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

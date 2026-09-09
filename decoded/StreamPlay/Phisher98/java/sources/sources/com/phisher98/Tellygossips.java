@@ -47,7 +47,7 @@ public final class Tellygossips extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Tellygossips", f = "Extractors.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {841, 844}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "url", "referer", "subtitleCallback", "callback", "doc", "link"}, nl = {842, 843}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    static final class C03101 extends ContinuationImpl {
+    static final class C03121 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -58,7 +58,7 @@ public final class Tellygossips extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C03101(Continuation<? super C03101> continuation) {
+        C03121(Continuation<? super C03121> continuation) {
             super(continuation);
         }
 
@@ -89,7 +89,7 @@ public final class Tellygossips extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C03101 c03101;
+        C03121 c03121;
         Object obj;
         Object obj2;
         String url2;
@@ -99,32 +99,32 @@ public final class Tellygossips extends ExtractorApi {
         Object objNewExtractorLink;
         Object obj3;
         Function1<? super ExtractorLink, Unit> function5;
-        if (continuation instanceof C03101) {
-            c03101 = (C03101) continuation;
-            if ((c03101.label & Integer.MIN_VALUE) != 0) {
-                c03101.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C03121) {
+            c03121 = (C03121) continuation;
+            if ((c03121.label & Integer.MIN_VALUE) != 0) {
+                c03121.label -= Integer.MIN_VALUE;
             } else {
-                c03101 = new C03101(continuation);
+                c03121 = new C03121(continuation);
             }
         } else {
-            c03101 = new C03101(continuation);
+            c03121 = new C03121(continuation);
         }
-        C03101 c03102 = c03101;
-        Object $result = c03102.result;
+        C03121 c03122 = c03121;
+        Object $result = c03122.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c03102.label) {
+        switch (c03122.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
                 String str = this.referer;
-                c03102.L$0 = url;
-                c03102.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c03102.L$2 = SpillingKt.nullOutSpilledVariable(function1);
-                c03102.L$3 = function2;
-                c03102.label = 1;
+                c03122.L$0 = url;
+                c03122.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c03122.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                c03122.L$3 = function2;
+                c03122.label = 1;
                 obj = coroutine_suspended;
-                obj2 = Requests.get$default(app, url, (Map) null, str, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03102, 4090, (Object) null);
-                c03102 = c03102;
+                obj2 = Requests.get$default(app, url, (Map) null, str, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03122, 4090, (Object) null);
+                c03122 = c03122;
                 if (obj2 == obj) {
                     return obj;
                 }
@@ -137,16 +137,16 @@ public final class Tellygossips extends ExtractorApi {
                 String link2 = getName();
                 String name = getName();
                 ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
-                C03112 c03112 = new C03112(url2, null);
-                c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03102.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c03102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c03102.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                c03102.L$4 = SpillingKt.nullOutSpilledVariable(doc);
-                c03102.L$5 = SpillingKt.nullOutSpilledVariable(link);
-                c03102.L$6 = function4;
-                c03102.label = 2;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(link2, name, link, infer_type, c03112, c03102);
+                C03132 c03132 = new C03132(url2, null);
+                c03122.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03122.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c03122.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c03122.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                c03122.L$4 = SpillingKt.nullOutSpilledVariable(doc);
+                c03122.L$5 = SpillingKt.nullOutSpilledVariable(link);
+                c03122.L$6 = function4;
+                c03122.label = 2;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(link2, name, link, infer_type, c03132, c03122);
                 if (objNewExtractorLink == obj) {
                     return obj;
                 }
@@ -155,10 +155,10 @@ public final class Tellygossips extends ExtractorApi {
                 function5.invoke(obj3);
                 return Unit.INSTANCE;
             case 1:
-                Function1<? super ExtractorLink, Unit> function6 = (Function1) c03102.L$3;
-                Function1<? super SubtitleFile, Unit> function7 = (Function1) c03102.L$2;
-                String referer3 = (String) c03102.L$1;
-                String url3 = (String) c03102.L$0;
+                Function1<? super ExtractorLink, Unit> function6 = (Function1) c03122.L$3;
+                Function1<? super SubtitleFile, Unit> function7 = (Function1) c03122.L$2;
+                String referer3 = (String) c03122.L$1;
+                String url3 = (String) c03122.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 function4 = function6;
@@ -171,16 +171,16 @@ public final class Tellygossips extends ExtractorApi {
                 String link4 = getName();
                 String name2 = getName();
                 ExtractorLinkType infer_type2 = ExtractorApiKt.getINFER_TYPE();
-                C03112 c03113 = new C03112(url2, null);
-                c03102.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03102.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c03102.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c03102.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                c03102.L$4 = SpillingKt.nullOutSpilledVariable(doc2);
-                c03102.L$5 = SpillingKt.nullOutSpilledVariable(link3);
-                c03102.L$6 = function4;
-                c03102.label = 2;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(link4, name2, link3, infer_type2, c03113, c03102);
+                C03132 c03133 = new C03132(url2, null);
+                c03122.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03122.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c03122.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c03122.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                c03122.L$4 = SpillingKt.nullOutSpilledVariable(doc2);
+                c03122.L$5 = SpillingKt.nullOutSpilledVariable(link3);
+                c03122.L$6 = function4;
+                c03122.label = 2;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(link4, name2, link3, infer_type2, c03133, c03122);
                 if (objNewExtractorLink == obj) {
                     return obj;
                 }
@@ -189,7 +189,7 @@ public final class Tellygossips extends ExtractorApi {
                 function5.invoke(obj3);
                 return Unit.INSTANCE;
             case 2:
-                function5 = (Function1) c03102.L$6;
+                function5 = (Function1) c03122.L$6;
                 ResultKt.throwOnFailure($result);
                 obj3 = $result;
                 function5.invoke(obj3);
@@ -203,21 +203,21 @@ public final class Tellygossips extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Tellygossips$getUrl$2", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C03112 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C03132 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $url;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C03112(String str, Continuation<? super C03112> continuation) {
+        C03132(String str, Continuation<? super C03132> continuation) {
             super(2, continuation);
             this.$url = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c03112 = new C03112(this.$url, continuation);
-            c03112.L$0 = obj;
-            return c03112;
+            Continuation<Unit> c03132 = new C03132(this.$url, continuation);
+            c03132.L$0 = obj;
+            return c03132;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

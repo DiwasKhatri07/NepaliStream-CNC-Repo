@@ -51,7 +51,7 @@ public class Streamruby extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Streamruby", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {498, 512}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "id", "$this", "url", "referer", "subtitleCallback", "callback", "id", "response", "script", "m3u8"}, nl = {506, 516}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
-    static final class C03081 extends ContinuationImpl {
+    static final class C03101 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -64,7 +64,7 @@ public class Streamruby extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C03081(Continuation<? super C03081> continuation) {
+        C03101(Continuation<? super C03101> continuation) {
             super(continuation);
         }
 
@@ -110,7 +110,7 @@ public class Streamruby extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:59:0x0247 A[LOOP:0: B:57:0x0241->B:59:0x0247, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     static /* synthetic */ Object getUrl$suspendImpl(Streamruby $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C03081 c03081;
+        C03101 c03101;
         List groupValues;
         String id;
         String id2;
@@ -137,20 +137,20 @@ public class Streamruby extends ExtractorApi {
         Function1<? super ExtractorLink, Unit> function5;
         Function1<? super ExtractorLink, Unit> function6;
         List groupValues2;
-        if (continuation instanceof C03081) {
-            c03081 = (C03081) continuation;
-            if ((c03081.label & Integer.MIN_VALUE) != 0) {
-                c03081.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C03101) {
+            c03101 = (C03101) continuation;
+            if ((c03101.label & Integer.MIN_VALUE) != 0) {
+                c03101.label -= Integer.MIN_VALUE;
             } else {
-                c03081 = $this.new C03081(continuation);
+                c03101 = $this.new C03101(continuation);
             }
         } else {
-            c03081 = $this.new C03081(continuation);
+            c03101 = $this.new C03101(continuation);
         }
-        C03081 c03082 = c03081;
-        Object $result = c03082.result;
+        C03101 c03102 = c03101;
+        Object $result = c03102.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c03082.label) {
+        switch (c03102.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 MatchResult matchResultFind$default2 = Regex.find$default(new Regex("/e/(\\w+)"), url, 0, 2, (Object) null);
@@ -160,23 +160,23 @@ public class Streamruby extends ExtractorApi {
                 Requests app = MainActivityKt.getApp();
                 String str = $this.getMainUrl() + "/dl";
                 Map mapMapOf = MapsKt.mapOf(new Pair[]{TuplesKt.to("op", "embed"), TuplesKt.to("file_code", id), TuplesKt.to("auto", "1"), TuplesKt.to("referer", "")});
-                c03082.L$0 = $this;
-                c03082.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c03082.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                c03082.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                c03082.L$4 = function2;
-                c03082.L$5 = SpillingKt.nullOutSpilledVariable(id);
-                c03082.label = 1;
+                c03102.L$0 = $this;
+                c03102.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c03102.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                c03102.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c03102.L$4 = function2;
+                c03102.L$5 = SpillingKt.nullOutSpilledVariable(id);
+                c03102.label = 1;
                 id2 = id;
                 obj = coroutine_suspended;
                 i = 0;
                 i2 = 2;
-                Object objPost$default = Requests.post$default(app, str, (Map) null, referer, (Map) null, (Map) null, mapMapOf, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03082, 65498, (Object) null);
+                Object objPost$default = Requests.post$default(app, str, (Map) null, referer, (Map) null, (Map) null, mapMapOf, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03102, 65498, (Object) null);
                 if (objPost$default == obj) {
-                    c03082 = c03082;
+                    c03102 = c03102;
                     return obj;
                 }
-                c03082 = c03082;
+                c03102 = c03102;
                 $this2 = $this;
                 url2 = url;
                 referer2 = referer;
@@ -217,18 +217,18 @@ public class Streamruby extends ExtractorApi {
                     return Unit.INSTANCE;
                 }
                 String mainUrl = $this2.getMainUrl();
-                c03082.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c03082.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c03082.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c03082.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c03082.L$4 = function4;
-                c03082.L$5 = SpillingKt.nullOutSpilledVariable(id2);
-                c03082.L$6 = SpillingKt.nullOutSpilledVariable(response);
-                c03082.L$7 = SpillingKt.nullOutSpilledVariable(script);
-                c03082.L$8 = SpillingKt.nullOutSpilledVariable(m3u8);
-                c03082.label = i2;
+                c03102.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c03102.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c03102.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c03102.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c03102.L$4 = function4;
+                c03102.L$5 = SpillingKt.nullOutSpilledVariable(id2);
+                c03102.L$6 = SpillingKt.nullOutSpilledVariable(response);
+                c03102.L$7 = SpillingKt.nullOutSpilledVariable(script);
+                c03102.L$8 = SpillingKt.nullOutSpilledVariable(m3u8);
+                c03102.label = i2;
                 function5 = function4;
-                $result = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, mainUrl, (Integer) null, (Map) null, (String) null, c03082, 56, (Object) null);
+                $result = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, mainUrl, (Integer) null, (Map) null, (String) null, c03102, 56, (Object) null);
                 if ($result == obj) {
                     return obj;
                 }
@@ -239,12 +239,12 @@ public class Streamruby extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 1:
-                String id3 = (String) c03082.L$5;
-                Function1<? super ExtractorLink, Unit> function7 = (Function1) c03082.L$4;
-                Function1<? super SubtitleFile, Unit> function8 = (Function1) c03082.L$3;
-                String referer3 = (String) c03082.L$2;
-                String url3 = (String) c03082.L$1;
-                Streamruby $this3 = (Streamruby) c03082.L$0;
+                String id3 = (String) c03102.L$5;
+                Function1<? super ExtractorLink, Unit> function7 = (Function1) c03102.L$4;
+                Function1<? super SubtitleFile, Unit> function8 = (Function1) c03102.L$3;
+                String referer3 = (String) c03102.L$2;
+                String url3 = (String) c03102.L$1;
+                Streamruby $this3 = (Streamruby) c03102.L$0;
                 ResultKt.throwOnFailure($result);
                 id2 = id3;
                 function3 = function8;
@@ -290,18 +290,18 @@ public class Streamruby extends ExtractorApi {
                     return Unit.INSTANCE;
                 }
                 String mainUrl2 = $this2.getMainUrl();
-                c03082.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c03082.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c03082.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c03082.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c03082.L$4 = function4;
-                c03082.L$5 = SpillingKt.nullOutSpilledVariable(id2);
-                c03082.L$6 = SpillingKt.nullOutSpilledVariable(response);
-                c03082.L$7 = SpillingKt.nullOutSpilledVariable(script);
-                c03082.L$8 = SpillingKt.nullOutSpilledVariable(m3u8);
-                c03082.label = i2;
+                c03102.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c03102.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c03102.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c03102.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c03102.L$4 = function4;
+                c03102.L$5 = SpillingKt.nullOutSpilledVariable(id2);
+                c03102.L$6 = SpillingKt.nullOutSpilledVariable(response);
+                c03102.L$7 = SpillingKt.nullOutSpilledVariable(script);
+                c03102.L$8 = SpillingKt.nullOutSpilledVariable(m3u8);
+                c03102.label = i2;
                 function5 = function4;
-                $result = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, mainUrl2, (Integer) null, (Map) null, (String) null, c03082, 56, (Object) null);
+                $result = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, mainUrl2, (Integer) null, (Map) null, (String) null, c03102, 56, (Object) null);
                 if ($result == obj) {
                     return obj;
                 }
@@ -312,7 +312,7 @@ public class Streamruby extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 2:
-                function6 = (Function1) c03082.L$4;
+                function6 = (Function1) c03102.L$4;
                 ResultKt.throwOnFailure($result);
                 Iterable $this$forEach$iv3 = (Iterable) $result;
                 while (r12.hasNext()) {

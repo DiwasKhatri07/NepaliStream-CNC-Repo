@@ -675,8 +675,8 @@
     "file": "decoded/StreamPlay/Phisher98/StreamPlay.cs3",
     "source": "Phisher98",
     "plugin": "StreamPlay",
-    "sha256": "82fdce0921faecc36ed99a8acbc78a7df8bb897ac54b4abbe69461e46090ebf4",
-    "bytes": 1122726
+    "sha256": "b4e772013274ba5224600c8a60b7f7c8e96091e998b5eb0f653fbb491d02d0ca",
+    "bytes": 1124426
   },
   {
     "file": "decoded/StremioAddon/Phisher98/StremioAddon.cs3",
@@ -773,8 +773,8 @@
     "file": "decoded/TorraStream/Phisher98/TorraStream.cs3",
     "source": "Phisher98",
     "plugin": "TorraStream",
-    "sha256": "dc65ded4c02e09c44b8746214af7fec68a58a7aa5f116fd18ea20cbb43b49fa1",
-    "bytes": 245320
+    "sha256": "6baa1d9f6e3751f72836eaf10c905924b5c29daa1299d315a6376e8d2f5d5bd1",
+    "bytes": 247020
   },
   {
     "file": "decoded/UHDmoviesProvider/Phisher98/UHDmoviesProvider.cs3",

@@ -29,7 +29,7 @@ import kotlinx.coroutines.sync.SemaphoreKt;
 @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\n\u0012\u0006\u0012\u0004\b\u00028\u00000\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
 @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeHdmovie2$lambda$7$$inlined$safeAmap$default$1", f = "StreamPlayExtractor.kt", i = {0, 0}, l = {1898}, m = "invokeSuspend", n = {"$this$coroutineScope", "semaphore"}, nl = {-1}, s = {"L$0", "L$1"}, v = 2)
 @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,2265:1\n1739#2:2266\n1814#2,3:2267\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1\n*L\n1887#1:2266\n1887#1:2267,3\n*E\n"})
-public final class C0169x25f1131f extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Unit>>, Object> {
+public final class C0171x25f1131f extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Unit>>, Object> {
     final /* synthetic */ Function1 $callback$inlined;
     final /* synthetic */ int $concurrency;
     final /* synthetic */ Function1 $subtitleCallback$inlined;
@@ -40,7 +40,7 @@ public final class C0169x25f1131f extends SuspendLambda implements Function2<Cor
     int label;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public C0169x25f1131f(int i, Iterable iterable, Continuation continuation, String str, Function1 function1, Function1 function2) {
+    public C0171x25f1131f(int i, Iterable iterable, Continuation continuation, String str, Function1 function1, Function1 function2) {
         super(2, continuation);
         this.$concurrency = i;
         this.$this_runCatching = iterable;
@@ -50,9 +50,9 @@ public final class C0169x25f1131f extends SuspendLambda implements Function2<Cor
     }
 
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Continuation<Unit> c0169x25f1131f = new C0169x25f1131f(this.$concurrency, this.$this_runCatching, continuation, this.$type$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
-        c0169x25f1131f.L$0 = obj;
-        return c0169x25f1131f;
+        Continuation<Unit> c0171x25f1131f = new C0171x25f1131f(this.$concurrency, this.$this_runCatching, continuation, this.$type$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+        c0171x25f1131f.L$0 = obj;
+        return c0171x25f1131f;
     }
 
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super List<? extends Unit>> continuation) {
@@ -103,17 +103,18 @@ public final class C0169x25f1131f extends SuspendLambda implements Function2<Cor
         /* JADX WARN: Code duplicated, block: B:40:0x0146  */
         /* JADX WARN: Code duplicated, block: B:41:0x0150  */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:37:0x0132 -> B:87:0x0138). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-            java.lang.StackOverflowError
-            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
             */
         public final java.lang.Object invokeSuspend(java.lang.Object r26) {
             /*
                 Method dump skipped, instruction units count: 582
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.C0169x25f1131f.AnonymousClass1.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.C0171x25f1131f.AnonymousClass1.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 

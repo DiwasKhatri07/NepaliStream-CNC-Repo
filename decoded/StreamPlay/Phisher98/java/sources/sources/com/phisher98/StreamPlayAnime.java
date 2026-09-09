@@ -93,8 +93,8 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: StreamPlayAnime.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\u00020\u0001:\u0003cdeB\u0013\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010+\u001a\u00020\u001dH\u0002J\f\u0010,\u001a\u00020\u0007*\u00020-H\u0004J\u0016\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u00101J\f\u00102\u001a\u000203*\u000204H\u0002J,\u00105\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020307\u0012\u0004\u0012\u00020\u001d06*\u0002082\u0006\u00109\u001a\u00020&H\u0082@¢\u0006\u0002\u0010:J \u0010@\u001a\u0004\u0018\u00010A2\u0006\u00100\u001a\u00020\u00072\u0006\u00109\u001a\u00020&H\u0096@¢\u0006\u0002\u0010BJ\u001e\u0010>\u001a\u00020C2\u0006\u00109\u001a\u00020&2\u0006\u0010D\u001a\u000208H\u0096@¢\u0006\u0002\u0010EJ\u0016\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u00101J\u001e\u0010I\u001a\u00020G2\u0006\u0010H\u001a\u00020\u00072\u0006\u0010J\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u0010KJ\u001e\u0010L\u001a\u00020G2\u0006\u0010H\u001a\u00020\u00072\u0006\u0010M\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u0010KJF\u0010N\u001a\u00020\u001d2\u0006\u0010O\u001a\u00020\u00072\u0006\u0010P\u001a\u00020\u001d2\u0012\u0010Q\u001a\u000e\u0012\u0004\u0012\u00020S\u0012\u0004\u0012\u00020T0R2\u0012\u0010U\u001a\u000e\u0012\u0004\u0012\u00020V\u0012\u0004\u0012\u00020T0RH\u0096@¢\u0006\u0002\u0010WJ\u0010\u0010X\u001a\u00020Y2\b\u0010Z\u001a\u0004\u0018\u00010\u0007J*\u0010[\u001a\u00020\\2\b\u0010]\u001a\u0004\u0018\u00010\u00072\b\u0010^\u001a\u0004\u0018\u00010&2\u0006\u0010_\u001a\u00020\u0011H\u0082@¢\u0006\u0002\u0010`J\u0017\u0010a\u001a\u0004\u0018\u00010&2\u0006\u0010]\u001a\u00020\u0007H\u0002¢\u0006\u0002\u0010bR\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR \u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u001a\u0010\u0016\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\t\"\u0004\b\u0018\u0010\u000bR\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0010X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0013R\u0014\u0010\u001c\u001a\u00020\u001dX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u001dX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u001dX\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010(\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u00070)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010<\u001a\b\u0012\u0004\u0012\u00020=07X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b>\u0010?¨\u0006f"}, d2 = {"Lcom/phisher98/StreamPlayAnime;", "Lcom/lagradost/cloudstream3/MainAPI;", "sharedPref", "Landroid/content/SharedPreferences;", "<init>", "(Landroid/content/SharedPreferences;)V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "setSupportedTypes", "(Ljava/util/Set;)V", "lang", "getLang", "setLang", "supportedSyncNames", "Lcom/lagradost/cloudstream3/syncproviders/SyncIdName;", "getSupportedSyncNames", "hasMainPage", "", "getHasMainPage", "()Z", "hasQuickSearch", "getHasQuickSearch", "repo", "Lcom/lagradost/cloudstream3/syncproviders/SyncRepo;", "apiUrl", "mediaLimit", "", "isAdult", "headerJSON", "", "isAnilistDown", "shouldUseKitsu", "toStringData", "", "anilistAPICall", "Lcom/phisher98/StreamPlayAnime$AnilistAPIResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResponse", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/phisher98/StreamPlayAnime$Media;", "toSearchResponseList", "Lkotlin/Pair;", "", "Lcom/lagradost/cloudstream3/MainPageRequest;", "page", "(Lcom/lagradost/cloudstream3/MainPageRequest;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "currentYear", "mainPage", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "request", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadFromAnilist", "id", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadFromKitsu", "rawId", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getStatus", "Lcom/lagradost/cloudstream3/ShowStatus;", "t", "tmdbToAnimeId", "Lcom/phisher98/AniIds;", "title", "year", "type", "(Ljava/lang/String;Ljava/lang/Integer;Lcom/lagradost/cloudstream3/TvType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "extractSeason", "(Ljava/lang/String;)Ljava/lang/Integer;", "AnilistAPIResponse", "LinkData", "Media", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,768:1\n73#2,5:769\n73#2,5:884\n73#2,5:889\n73#2,5:894\n73#2,5:900\n1739#3:774\n1814#3,3:775\n1739#3:778\n1814#3,3:779\n1795#3,10:782\n2068#3:792\n2069#3:794\n1805#3:795\n1453#3,2:796\n1468#3,4:798\n1453#3,2:802\n1468#3,4:804\n1739#3:808\n1814#3,3:809\n1749#3:812\n1782#3,4:813\n296#3,2:818\n296#3,2:820\n1453#3,2:822\n1468#3,4:824\n1453#3,2:828\n1468#3,4:830\n1749#3:834\n1782#3,4:835\n1739#3:839\n1814#3,3:840\n1749#3:843\n1782#3,4:844\n777#3:848\n873#3,2:849\n1795#3,10:851\n2068#3:861\n2069#3:863\n1805#3:864\n1#4:793\n1#4:817\n1#4:862\n1#4:866\n1#4:899\n63#5:865\n64#5,15:867\n50#6:882\n43#6:883\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n*L\n93#1:769,5\n552#1:884,5\n554#1:889,5\n556#1:894,5\n754#1:900,5\n114#1:774\n114#1:775,3\n144#1:778\n144#1:779,3\n166#1:782,10\n166#1:792\n166#1:794\n166#1:795\n250#1:796,2\n250#1:798,4\n251#1:802,2\n251#1:804,4\n280#1:808\n280#1:809,3\n308#1:812\n308#1:813,4\n411#1:818,2\n412#1:820,2\n416#1:822,2\n416#1:824,4\n419#1:828,2\n419#1:830,4\n482#1:834\n482#1:835,4\n484#1:839\n484#1:840,3\n487#1:843\n487#1:844,4\n493#1:848\n493#1:849,2\n493#1:851,10\n493#1:861\n493#1:863\n493#1:864\n166#1:793\n493#1:862\n541#1:866\n541#1:865\n541#1:867,15\n541#1:882\n541#1:883\n*E\n"})
+@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\u00020\u0001:\u0003defB\u0013\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010+\u001a\u00020\u001dH\u0002J\f\u0010,\u001a\u00020\u0007*\u00020-H\u0004J\u0016\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u00101J\f\u00102\u001a\u000203*\u000204H\u0002J,\u00105\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020307\u0012\u0004\u0012\u00020\u001d06*\u0002082\u0006\u00109\u001a\u00020&H\u0082@¢\u0006\u0002\u0010:J\u001e\u0010@\u001a\n\u0012\u0004\u0012\u000203\u0018\u0001072\u0006\u00100\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u00101J\u001e\u0010A\u001a\n\u0012\u0004\u0012\u000203\u0018\u0001072\u0006\u00100\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u00101J \u0010A\u001a\u0004\u0018\u00010B2\u0006\u00100\u001a\u00020\u00072\u0006\u00109\u001a\u00020&H\u0096@¢\u0006\u0002\u0010CJ\u001e\u0010>\u001a\u00020D2\u0006\u00109\u001a\u00020&2\u0006\u0010E\u001a\u000208H\u0096@¢\u0006\u0002\u0010FJ\u0016\u0010G\u001a\u00020H2\u0006\u0010I\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u00101J\u001e\u0010J\u001a\u00020H2\u0006\u0010I\u001a\u00020\u00072\u0006\u0010K\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u0010LJ\u001e\u0010M\u001a\u00020H2\u0006\u0010I\u001a\u00020\u00072\u0006\u0010N\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u0010LJF\u0010O\u001a\u00020\u001d2\u0006\u0010P\u001a\u00020\u00072\u0006\u0010Q\u001a\u00020\u001d2\u0012\u0010R\u001a\u000e\u0012\u0004\u0012\u00020T\u0012\u0004\u0012\u00020U0S2\u0012\u0010V\u001a\u000e\u0012\u0004\u0012\u00020W\u0012\u0004\u0012\u00020U0SH\u0096@¢\u0006\u0002\u0010XJ\u0010\u0010Y\u001a\u00020Z2\b\u0010[\u001a\u0004\u0018\u00010\u0007J*\u0010\\\u001a\u00020]2\b\u0010^\u001a\u0004\u0018\u00010\u00072\b\u0010_\u001a\u0004\u0018\u00010&2\u0006\u0010`\u001a\u00020\u0011H\u0082@¢\u0006\u0002\u0010aJ\u0017\u0010b\u001a\u0004\u0018\u00010&2\u0006\u0010^\u001a\u00020\u0007H\u0002¢\u0006\u0002\u0010cR\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR \u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u001a\u0010\u0016\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\t\"\u0004\b\u0018\u0010\u000bR\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0010X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0013R\u0014\u0010\u001c\u001a\u00020\u001dX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u001dX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u001dX\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010(\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u00070)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010<\u001a\b\u0012\u0004\u0012\u00020=07X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b>\u0010?¨\u0006g"}, d2 = {"Lcom/phisher98/StreamPlayAnime;", "Lcom/lagradost/cloudstream3/MainAPI;", "sharedPref", "Landroid/content/SharedPreferences;", "<init>", "(Landroid/content/SharedPreferences;)V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "setSupportedTypes", "(Ljava/util/Set;)V", "lang", "getLang", "setLang", "supportedSyncNames", "Lcom/lagradost/cloudstream3/syncproviders/SyncIdName;", "getSupportedSyncNames", "hasMainPage", "", "getHasMainPage", "()Z", "hasQuickSearch", "getHasQuickSearch", "repo", "Lcom/lagradost/cloudstream3/syncproviders/SyncRepo;", "apiUrl", "mediaLimit", "", "isAdult", "headerJSON", "", "isAnilistDown", "shouldUseKitsu", "toStringData", "", "anilistAPICall", "Lcom/phisher98/StreamPlayAnime$AnilistAPIResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResponse", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/phisher98/StreamPlayAnime$Media;", "toSearchResponseList", "Lkotlin/Pair;", "", "Lcom/lagradost/cloudstream3/MainPageRequest;", "page", "(Lcom/lagradost/cloudstream3/MainPageRequest;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "currentYear", "mainPage", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "quickSearch", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "request", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadFromAnilist", "id", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadFromKitsu", "rawId", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getStatus", "Lcom/lagradost/cloudstream3/ShowStatus;", "t", "tmdbToAnimeId", "Lcom/phisher98/AniIds;", "title", "year", "type", "(Ljava/lang/String;Ljava/lang/Integer;Lcom/lagradost/cloudstream3/TvType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "extractSeason", "(Ljava/lang/String;)Ljava/lang/Integer;", "AnilistAPIResponse", "LinkData", "Media", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,781:1\n73#2,5:782\n73#2,5:897\n73#2,5:902\n73#2,5:907\n73#2,5:913\n1739#3:787\n1814#3,3:788\n1739#3:791\n1814#3,3:792\n1795#3,10:795\n2068#3:805\n2069#3:807\n1805#3:808\n1453#3,2:809\n1468#3,4:811\n1453#3,2:815\n1468#3,4:817\n1739#3:821\n1814#3,3:822\n1749#3:825\n1782#3,4:826\n296#3,2:831\n296#3,2:833\n1453#3,2:835\n1468#3,4:837\n1453#3,2:841\n1468#3,4:843\n1749#3:847\n1782#3,4:848\n1739#3:852\n1814#3,3:853\n1749#3:856\n1782#3,4:857\n777#3:861\n873#3,2:862\n1795#3,10:864\n2068#3:874\n2069#3:876\n1805#3:877\n1#4:806\n1#4:830\n1#4:875\n1#4:879\n1#4:912\n63#5:878\n64#5,15:880\n50#6:895\n43#6:896\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n*L\n93#1:782,5\n565#1:897,5\n567#1:902,5\n569#1:907,5\n767#1:913,5\n114#1:787\n114#1:788,3\n148#1:791\n148#1:792,3\n170#1:795,10\n170#1:805\n170#1:807\n170#1:808\n263#1:809,2\n263#1:811,4\n264#1:815,2\n264#1:817,4\n293#1:821\n293#1:822,3\n321#1:825\n321#1:826,4\n424#1:831,2\n425#1:833,2\n429#1:835,2\n429#1:837,4\n432#1:841,2\n432#1:843,4\n495#1:847\n495#1:848,4\n497#1:852\n497#1:853,3\n500#1:856\n500#1:857,4\n506#1:861\n506#1:862,2\n506#1:864,10\n506#1:874\n506#1:876\n506#1:877\n170#1:806\n506#1:875\n554#1:879\n554#1:878\n554#1:880,15\n554#1:895\n554#1:896\n*E\n"})
 public final class StreamPlayAnime extends MainAPI {
 
     @NotNull
@@ -158,7 +158,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$getMainPage$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 1, 2, 2, 3, 3, 3, 3}, l = {166, 175, 179, 185}, m = "getMainPage", n = {"request", "page", "request", "catalogId", "page", "request", "page", "request", "e", "catalogId", "page"}, nl = {166, 176, 180, 186}, s = {"L$0", "I$0", "L$0", "L$1", "I$0", "L$0", "I$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 4, 4}, l = {170, 180, 184, 192, 198}, m = "getMainPage", n = {"request", "page", "request", "catalogId", "page", "request", "e", "page", "request", "page", "request", "e", "catalogId", "page"}, nl = {170, 181, 185, 193, 199}, s = {"L$0", "I$0", "L$0", "L$1", "I$0", "L$0", "L$1", "I$0", "L$0", "I$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
     static final class C00811 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -182,7 +182,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$load$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3}, l = {199, 204, 208, 212}, m = "load", n = {"url", "id", "isKitsu", "url", "id", "e", "isKitsu", "url", "id", "isKitsu", "url", "id", "e", "isKitsu"}, nl = {200, 198, 209, 214}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "I$0", "L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3}, l = {212, 217, 221, 225}, m = "load", n = {"url", "id", "isKitsu", "url", "id", "e", "isKitsu", "url", "id", "isKitsu", "url", "id", "e", "isKitsu"}, nl = {213, 211, 222, 227}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "I$0", "L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
     static final class C00821 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -206,7 +206,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadFromAnilist$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {220, 230, 234, 241, 327, 341}, m = "loadFromAnilist", n = {"url", "id", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid"}, nl = {222, 232, 235, 249, 341, 326}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {233, 243, 247, 254, 340, 354}, m = "loadFromAnilist", n = {"url", "id", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid"}, nl = {235, 245, 248, 262, 354, 339}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2"}, v = 2)
     static final class C00831 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -251,7 +251,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadFromKitsu$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8}, l = {370, 372, 374, 374, 380, 392, 403, 501, 514}, m = "loadFromKitsu", n = {"url", "rawId", "url", "rawId", "url", "rawId", "url", "rawId", "url", "rawId", "kitsuMeta", "numericKitsuId", "queryParam", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "isMovie", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "logoUrl", "aniListId", "malId", "isMovie", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "logoUrl", "aniListId", "malId", "ids", "finalAniId", "finalMalId", "jpTitle", "posterurl", "backgroundUrl", "videos", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "recs", "isMovie", "totalEps", "anidbEid", "scoreValue", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "logoUrl", "aniListId", "malId", "ids", "finalAniId", "finalMalId", "jpTitle", "posterurl", "backgroundUrl", "videos", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "recs", "isMovie", "totalEps", "anidbEid", "scoreValue"}, nl = {371, 374, 374, 369, 381, 400, 405, 514, 500}, s = {"L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "I$0", "I$1", "I$2", "I$3"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8}, l = {383, 385, 387, 387, 393, 405, 416, 514, 527}, m = "loadFromKitsu", n = {"url", "rawId", "url", "rawId", "url", "rawId", "url", "rawId", "url", "rawId", "kitsuMeta", "numericKitsuId", "queryParam", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "isMovie", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "logoUrl", "aniListId", "malId", "isMovie", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "logoUrl", "aniListId", "malId", "ids", "finalAniId", "finalMalId", "jpTitle", "posterurl", "backgroundUrl", "videos", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "recs", "isMovie", "totalEps", "anidbEid", "scoreValue", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "logoUrl", "aniListId", "malId", "ids", "finalAniId", "finalMalId", "jpTitle", "posterurl", "backgroundUrl", "videos", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "recs", "isMovie", "totalEps", "anidbEid", "scoreValue"}, nl = {384, 387, 387, 382, 394, 413, 418, 527, 513}, s = {"L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "I$0", "I$1", "I$2", "I$3"}, v = 2)
     static final class C00861 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -305,7 +305,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {552, 554, 556, 567}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "malsync", "kaasSlug", "dubStatus", "isCasting"}, nl = {788, 793, 798, 598}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {565, 567, 569, 580}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "malsync", "kaasSlug", "dubStatus", "isCasting"}, nl = {801, 806, 811, 611}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "Z$0"}, v = 2)
     static final class C00891 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -338,18 +338,60 @@ public final class StreamPlayAnime extends MainAPI {
         }
     }
 
+    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$quickSearch$1 */
+    /* JADX INFO: compiled from: StreamPlayAnime.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0}, l = {135}, m = "quickSearch", n = {"query"}, nl = {-1}, s = {"L$0"}, v = 2)
+    static final class C01011 extends ContinuationImpl {
+        Object L$0;
+        int label;
+        /* synthetic */ Object result;
+
+        C01011(Continuation<? super C01011> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return StreamPlayAnime.this.quickSearch(null, (Continuation) this);
+        }
+    }
+
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$search$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 2, 2, 2}, l = {137, 141, 148}, m = "search", n = {"query", "page", "query", "page", "query", "e", "page"}, nl = {139, 140, 150}, s = {"L$0", "I$0", "L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
-    static final class C01011 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0}, l = {137}, m = "search", n = {"query"}, nl = {-1}, s = {"L$0"}, v = 2)
+    static final class C01021 extends ContinuationImpl {
+        Object L$0;
+        int label;
+        /* synthetic */ Object result;
+
+        C01021(Continuation<? super C01021> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return StreamPlayAnime.this.search(null, (Continuation) this);
+        }
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$search$2 */
+    /* JADX INFO: compiled from: StreamPlayAnime.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 2, 2, 2}, l = {141, 145, 152}, m = "search", n = {"query", "page", "query", "page", "query", "e", "page"}, nl = {143, 144, 154}, s = {"L$0", "I$0", "L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
+    static final class C01032 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C01011(Continuation<? super C01011> continuation) {
+        C01032(Continuation<? super C01032> continuation) {
             super(continuation);
         }
 
@@ -364,8 +406,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$tmdbToAnimeId$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0}, l = {753}, m = "tmdbToAnimeId", n = {"title", "year", "type", "query", "variables", "data"}, nl = {754}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    static final class C01021 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0}, l = {766}, m = "tmdbToAnimeId", n = {"title", "year", "type", "query", "variables", "data"}, nl = {767}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    static final class C01041 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -375,7 +417,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C01021(Continuation<? super C01021> continuation) {
+        C01041(Continuation<? super C01041> continuation) {
             super(continuation);
         }
 
@@ -391,13 +433,13 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0}, l = {112}, m = "toSearchResponseList", n = {"$this$toSearchResponseList", "page"}, nl = {114}, s = {"L$0", "I$0"}, v = 2)
-    static final class C01031 extends ContinuationImpl {
+    static final class C01051 extends ContinuationImpl {
         int I$0;
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C01031(Continuation<? super C01031> continuation) {
+        C01051(Continuation<? super C01051> continuation) {
             super(continuation);
         }
 
@@ -423,10 +465,12 @@ public final class StreamPlayAnime extends MainAPI {
         this.lang = "en";
         this.supportedSyncNames = SetsKt.setOf(new SyncIdName[]{SyncIdName.Anilist, SyncIdName.MyAnimeList});
         this.hasMainPage = true;
+        this.hasQuickSearch = true;
         this.repo = new SyncRepo(AccountManager.Companion.getAniListApi());
         this.apiUrl = StreamPlay.anilistAPI;
         this.mediaLimit = 20;
         this.headerJSON = MapsKt.mapOf(new Pair[]{TuplesKt.to("Accept", "application/json"), TuplesKt.to("Content-Type", "application/json")});
+        this.isAnilistDown = true;
         this.currentYear = Calendar.getInstance().get(1);
         this.mainPage = MainAPIKt.mainPageOf(new Pair[]{TuplesKt.to("query ($page: Int = ###, $sort: [MediaSort] = [TRENDING_DESC, POPULARITY_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "Trending Now"), TuplesKt.to("query ($page: Int = ###, $seasonYear: Int = " + this.currentYear + ", $sort: [MediaSort] = [TRENDING_DESC, POPULARITY_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, seasonYear: $seasonYear, season: SPRING, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "Popular This Season"), TuplesKt.to("query ($page: Int = ###, $sort: [MediaSort] = [POPULARITY_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "All Time Popular"), TuplesKt.to("query ($page: Int = ###, $sort: [MediaSort] = [SCORE_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "Top 100 Anime"), TuplesKt.to("Personal", "Personal")});
     }
@@ -485,11 +529,10 @@ public final class StreamPlayAnime extends MainAPI {
     }
 
     private final boolean shouldUseKitsu() {
-        String string;
+        String pref;
         SharedPreferences sharedPreferences = this.sharedPref;
-        String pref = "auto";
-        if (sharedPreferences != null && (string = sharedPreferences.getString("anime_metadata_source", "auto")) != null) {
-            pref = string;
+        if (sharedPreferences == null || (pref = sharedPreferences.getString("anime_metadata_source", "kitsu")) == null) {
+            pref = "kitsu";
         }
         return Intrinsics.areEqual(pref, "kitsu") || (!Intrinsics.areEqual(pref, "anilist") && this.isAnilistDown);
     }
@@ -579,29 +622,29 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     public final Object toSearchResponseList(MainPageRequest $this$toSearchResponseList, int page, Continuation<? super Pair<? extends List<? extends SearchResponse>, Boolean>> continuation) throws Exception {
-        C01031 c01031;
+        C01051 c01051;
         Object obj;
         Iterable media;
-        if (continuation instanceof C01031) {
-            c01031 = (C01031) continuation;
-            if ((c01031.label & Integer.MIN_VALUE) != 0) {
-                c01031.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C01051) {
+            c01051 = (C01051) continuation;
+            if ((c01051.label & Integer.MIN_VALUE) != 0) {
+                c01051.label -= Integer.MIN_VALUE;
             } else {
-                c01031 = new C01031(continuation);
+                c01051 = new C01051(continuation);
             }
         } else {
-            c01031 = new C01031(continuation);
+            c01051 = new C01051(continuation);
         }
-        Object $result = c01031.result;
+        Object $result = c01051.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c01031.label) {
+        switch (c01051.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String strReplace$default = StringsKt.replace$default($this$toSearchResponseList.getData(), "###", String.valueOf(page), false, 4, (Object) null);
-                c01031.L$0 = SpillingKt.nullOutSpilledVariable($this$toSearchResponseList);
-                c01031.I$0 = page;
-                c01031.label = 1;
-                Object objAnilistAPICall = anilistAPICall(strReplace$default, c01031);
+                c01051.L$0 = SpillingKt.nullOutSpilledVariable($this$toSearchResponseList);
+                c01051.I$0 = page;
+                c01051.label = 1;
+                Object objAnilistAPICall = anilistAPICall(strReplace$default, c01051);
                 if (objAnilistAPICall == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -609,7 +652,7 @@ public final class StreamPlayAnime extends MainAPI {
                 break;
                 break;
             case 1:
-                int i = c01031.I$0;
+                int i = c01051.I$0;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 break;
@@ -638,26 +681,11 @@ public final class StreamPlayAnime extends MainAPI {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:45:0x0134  */
-    /* JADX WARN: Code duplicated, block: B:46:0x013d  */
-    /* JADX WARN: Code duplicated, block: B:49:0x0146  */
-    /* JADX WARN: Code duplicated, block: B:51:0x0165 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:52:0x0166  */
-    /* JADX WARN: Code duplicated, block: B:55:0x0175  */
-    /* JADX WARN: Code duplicated, block: B:7:0x001c  */
+    /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
-    public Object search(@NotNull String query, int page, @NotNull Continuation<? super SearchResponseList> continuation) throws Throwable {
+    public Object quickSearch(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
         C01011 c01011;
-        Object objAnilistAPICall;
-        Object obj;
-        SharedPreferences sharedPreferences;
-        String string;
         Object objSearch;
-        int page2;
-        AnilistAPIResponse.AnilistData.AnilistPage page3;
-        Iterable media;
-        String query2 = query;
-        int page4 = page;
         if (continuation instanceof C01011) {
             c01011 = (C01011) continuation;
             if ((c01011.label & Integer.MIN_VALUE) != 0) {
@@ -668,17 +696,115 @@ public final class StreamPlayAnime extends MainAPI {
         } else {
             c01011 = new C01011(continuation);
         }
-        C01011 c01012 = c01011;
-        Object $result = c01012.result;
+        Object $result = c01011.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c01012.label) {
+        switch (c01011.label) {
+            case 0:
+                ResultKt.throwOnFailure($result);
+                c01011.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c01011.label = 1;
+                objSearch = search(query, 1, c01011);
+                if (objSearch == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                break;
+            case 1:
+                ResultKt.throwOnFailure($result);
+                objSearch = $result;
+                break;
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+        SearchResponseList searchResponseList = (SearchResponseList) objSearch;
+        if (searchResponseList != null) {
+            return searchResponseList.getItems();
+        }
+        return null;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:7:0x0014  */
+    @Nullable
+    public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
+        C01021 c01021;
+        Object objSearch;
+        if (continuation instanceof C01021) {
+            c01021 = (C01021) continuation;
+            if ((c01021.label & Integer.MIN_VALUE) != 0) {
+                c01021.label -= Integer.MIN_VALUE;
+            } else {
+                c01021 = new C01021(continuation);
+            }
+        } else {
+            c01021 = new C01021(continuation);
+        }
+        Object $result = c01021.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (c01021.label) {
+            case 0:
+                ResultKt.throwOnFailure($result);
+                c01021.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c01021.label = 1;
+                objSearch = search(query, 1, c01021);
+                if (objSearch == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                break;
+            case 1:
+                ResultKt.throwOnFailure($result);
+                objSearch = $result;
+                break;
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+        SearchResponseList searchResponseList = (SearchResponseList) objSearch;
+        if (searchResponseList != null) {
+            return searchResponseList.getItems();
+        }
+        return null;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:45:0x0134  */
+    /* JADX WARN: Code duplicated, block: B:46:0x013d  */
+    /* JADX WARN: Code duplicated, block: B:49:0x0146  */
+    /* JADX WARN: Code duplicated, block: B:51:0x0165 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:52:0x0166  */
+    /* JADX WARN: Code duplicated, block: B:54:0x0179  */
+    /* JADX WARN: Code duplicated, block: B:7:0x001c  */
+    @Nullable
+    public Object search(@NotNull String query, int page, @NotNull Continuation<? super SearchResponseList> continuation) {
+        C01032 c01032;
+        Object objAnilistAPICall;
+        Object obj;
+        SharedPreferences sharedPreferences;
+        String string;
+        Object objSearch;
+        Throwable e;
+        int page2;
+        AnilistAPIResponse.AnilistData.AnilistPage page3;
+        Iterable media;
+        String query2 = query;
+        int page4 = page;
+        if (continuation instanceof C01032) {
+            c01032 = (C01032) continuation;
+            if ((c01032.label & Integer.MIN_VALUE) != 0) {
+                c01032.label -= Integer.MIN_VALUE;
+            } else {
+                c01032 = new C01032(continuation);
+            }
+        } else {
+            c01032 = new C01032(continuation);
+        }
+        C01032 c01033 = c01032;
+        Object $result = c01033.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (c01033.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (shouldUseKitsu()) {
-                    c01012.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                    c01012.I$0 = page4;
-                    c01012.label = 1;
-                    Object objSearch2 = StreamPlayKitsuHelper.INSTANCE.search(this, query2, page4, c01012);
+                    c01033.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                    c01033.I$0 = page4;
+                    c01033.label = 1;
+                    Object objSearch2 = StreamPlayKitsuHelper.INSTANCE.search(this, query2, page4, c01033);
                     if (objSearch2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -687,10 +813,10 @@ public final class StreamPlayAnime extends MainAPI {
                 }
                 try {
                     String str = "query ($search: String = \"" + query2 + "\") { Page(page: " + page4 + ", perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(search: $search, isAdult: " + this.isAdult + ", type: ANIME) { id idMal season seasonYear format episodes chapters title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }";
-                    c01012.L$0 = query2;
-                    c01012.I$0 = page4;
-                    c01012.label = 2;
-                    objAnilistAPICall = anilistAPICall(str, c01012);
+                    c01033.L$0 = query2;
+                    c01033.I$0 = page4;
+                    c01033.label = 2;
+                    objAnilistAPICall = anilistAPICall(str, c01033);
                     if (objAnilistAPICall == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -710,33 +836,35 @@ public final class StreamPlayAnime extends MainAPI {
                     e = th;
                     sharedPreferences = this.sharedPref;
                     if (sharedPreferences != null) {
-                        string = sharedPreferences.getString("anime_metadata_source", "auto");
+                        string = sharedPreferences.getString("anime_metadata_source", "kitsu");
                     } else {
                         string = null;
                     }
                     if (!Intrinsics.areEqual(string, "anilist")) {
-                        throw e;
+                        return null;
                     }
                     this.isAnilistDown = true;
-                    c01012.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                    c01012.L$1 = SpillingKt.nullOutSpilledVariable(e);
-                    c01012.I$0 = page4;
-                    c01012.label = 3;
-                    objSearch = StreamPlayKitsuHelper.INSTANCE.search(this, query2, page4, c01012);
+                    c01033.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                    c01033.L$1 = SpillingKt.nullOutSpilledVariable(e);
+                    c01033.I$0 = page4;
+                    c01033.label = 3;
+                    objSearch = StreamPlayKitsuHelper.INSTANCE.search(this, query2, page4, c01033);
                     if (objSearch == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    page2 = page4;
+                    int i = page4;
+                    e = e;
+                    page2 = i;
                     return MainAPIKt.toNewSearchResponseList$default((List) objSearch, (Boolean) null, 1, (Object) null);
                 }
             case 1:
-                int i = c01012.I$0;
+                int i2 = c01033.I$0;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 return MainAPIKt.toNewSearchResponseList$default((List) obj, (Boolean) null, 1, (Object) null);
             case 2:
-                page4 = c01012.I$0;
-                query2 = (String) c01012.L$0;
+                page4 = c01033.I$0;
+                query2 = (String) c01033.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     objAnilistAPICall = $result;
@@ -750,27 +878,30 @@ public final class StreamPlayAnime extends MainAPI {
                     e = th2;
                     sharedPreferences = this.sharedPref;
                     if (sharedPreferences != null) {
-                        string = sharedPreferences.getString("anime_metadata_source", "auto");
+                        string = sharedPreferences.getString("anime_metadata_source", "kitsu");
                     } else {
                         string = null;
                     }
                     if (!Intrinsics.areEqual(string, "anilist")) {
-                        throw e;
+                        return null;
                     }
                     this.isAnilistDown = true;
-                    c01012.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                    c01012.L$1 = SpillingKt.nullOutSpilledVariable(e);
-                    c01012.I$0 = page4;
-                    c01012.label = 3;
-                    objSearch = StreamPlayKitsuHelper.INSTANCE.search(this, query2, page4, c01012);
+                    c01033.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                    c01033.L$1 = SpillingKt.nullOutSpilledVariable(e);
+                    c01033.I$0 = page4;
+                    c01033.label = 3;
+                    objSearch = StreamPlayKitsuHelper.INSTANCE.search(this, query2, page4, c01033);
                     if (objSearch == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    page2 = page4;
+                    int i3 = page4;
+                    e = e;
+                    page2 = i3;
                     return MainAPIKt.toNewSearchResponseList$default((List) objSearch, (Boolean) null, 1, (Object) null);
                 }
             case 3:
-                page2 = c01012.I$0;
+                page2 = c01033.I$0;
+                e = (Throwable) c01033.L$1;
                 ResultKt.throwOnFailure($result);
                 objSearch = $result;
                 return MainAPIKt.toNewSearchResponseList$default((List) objSearch, (Boolean) null, 1, (Object) null);
@@ -779,25 +910,34 @@ public final class StreamPlayAnime extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:33:0x00ed  */
-    /* JADX WARN: Code duplicated, block: B:35:0x0105  */
-    /* JADX WARN: Code duplicated, block: B:36:0x010c  */
-    /* JADX WARN: Code duplicated, block: B:38:0x011a  */
-    /* JADX WARN: Code duplicated, block: B:39:0x011f  */
-    /* JADX WARN: Code duplicated, block: B:41:0x0156  */
-    /* JADX WARN: Code duplicated, block: B:62:0x01ec  */
-    /* JADX WARN: Code duplicated, block: B:63:0x01f5  */
-    /* JADX WARN: Code duplicated, block: B:66:0x01fe  */
-    /* JADX WARN: Code duplicated, block: B:68:0x0228 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:69:0x0229  */
-    /* JADX WARN: Code duplicated, block: B:72:0x024d  */
-    /* JADX WARN: Code duplicated, block: B:79:0x015c A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:110:0x017a A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:38:0x0109  */
+    /* JADX WARN: Code duplicated, block: B:40:0x0121  */
+    /* JADX WARN: Code duplicated, block: B:41:0x0128  */
+    /* JADX WARN: Code duplicated, block: B:43:0x0134  */
+    /* JADX WARN: Code duplicated, block: B:44:0x013b  */
+    /* JADX WARN: Code duplicated, block: B:46:0x0174  */
+    /* JADX WARN: Code duplicated, block: B:57:0x01d6  */
+    /* JADX WARN: Code duplicated, block: B:58:0x01d7  */
+    /* JADX WARN: Code duplicated, block: B:66:0x01e8  */
+    /* JADX WARN: Code duplicated, block: B:67:0x01ed  */
+    /* JADX WARN: Code duplicated, block: B:70:0x01f4  */
+    /* JADX WARN: Code duplicated, block: B:72:0x0207 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:73:0x0208  */
+    /* JADX WARN: Code duplicated, block: B:75:0x022a  */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
+    /* JADX WARN: Code duplicated, block: B:87:0x0267  */
+    /* JADX WARN: Code duplicated, block: B:88:0x026c  */
+    /* JADX WARN: Code duplicated, block: B:91:0x0275  */
+    /* JADX WARN: Code duplicated, block: B:93:0x029f A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:94:0x02a0  */
+    /* JADX WARN: Code duplicated, block: B:97:0x02c4  */
     @Nullable
-    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Throwable {
+    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Exception {
         C00811 c00811;
-        Object searchResponseList;
+        boolean z;
         Object catalog;
+        Object searchResponseList;
         Object obj;
         int page2;
         MainPageRequest request2;
@@ -808,9 +948,15 @@ public final class StreamPlayAnime extends MainAPI {
         HomePageList homePageList;
         SharedPreferences sharedPreferences;
         String string;
-        Object catalog2;
+        Object searchResponseList2;
+        Throwable e;
         int page3;
-        int page4 = page;
+        boolean hasNext;
+        SharedPreferences sharedPreferences2;
+        String string2;
+        Object catalog2;
+        int page4;
+        int page5 = page;
         MainPageRequest request3 = request;
         if (continuation instanceof C00811) {
             c00811 = (C00811) continuation;
@@ -825,6 +971,7 @@ public final class StreamPlayAnime extends MainAPI {
         C00811 c00812 = c00811;
         Object $result = c00812.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        boolean z2 = true;
         HomePageList homePageList2 = null;
         switch (c00812.label) {
             case 0:
@@ -836,14 +983,14 @@ public final class StreamPlayAnime extends MainAPI {
                     }
                     SyncRepo syncRepo = this.repo;
                     c00812.L$0 = request3;
-                    c00812.I$0 = page4;
+                    c00812.I$0 = page5;
                     c00812.label = 1;
                     Object obj2 = syncRepo.library-IoAF18A(c00812);
                     if (obj2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                     obj = obj2;
-                    page2 = page4;
+                    page2 = page5;
                     request2 = request3;
                     ResultKt.throwOnFailure(obj);
                     Intrinsics.checkNotNull(obj);
@@ -857,7 +1004,7 @@ public final class StreamPlayAnime extends MainAPI {
                             name = it.getName();
                             activity = CommonActivity.INSTANCE.getActivity();
                             if (activity == null) {
-                                homePageList = homePageList2;
+                                homePageList = null;
                             } else {
                                 String libraryName = name.asString(activity);
                                 homePageList = new HomePageList(request2.getName() + ": " + libraryName, it.getItems(), false, 4, (DefaultConstructorMarker) null);
@@ -872,58 +1019,115 @@ public final class StreamPlayAnime extends MainAPI {
                     List homePageList3 = (List) destination$iv$iv;
                     return MainAPIKt.newHomePageResponse(homePageList3, Boxing.boxBoolean(false));
                 }
-                if (shouldUseKitsu()) {
-                    String catalogId = StreamPlayKitsuHelper.INSTANCE.mapSectionToKitsuCatalog(request3.getName());
+                z = false;
+                if (!shouldUseKitsu()) {
+                    try {
+                        c00812.L$0 = request3;
+                        c00812.I$0 = page5;
+                        c00812.label = 4;
+                        searchResponseList = toSearchResponseList(request3, page5, c00812);
+                        if (searchResponseList == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        Pair data = (Pair) searchResponseList;
+                        return MainAPIKt.newHomePageResponse(request3.getName(), (List) data.getFirst(), (Boolean) data.getSecond());
+                    } catch (Throwable th) {
+                        e = th;
+                        sharedPreferences2 = this.sharedPref;
+                        if (sharedPreferences2 != null) {
+                            string2 = sharedPreferences2.getString("anime_metadata_source", "kitsu");
+                        } else {
+                            string2 = null;
+                        }
+                        if (!Intrinsics.areEqual(string2, "anilist")) {
+                            throw e;
+                        }
+                        this.isAnilistDown = true;
+                        String catalogId = StreamPlayKitsuHelper.INSTANCE.mapSectionToKitsuCatalog(request3.getName());
+                        c00812.L$0 = request3;
+                        c00812.L$1 = SpillingKt.nullOutSpilledVariable(e);
+                        c00812.L$2 = SpillingKt.nullOutSpilledVariable(catalogId);
+                        c00812.I$0 = page5;
+                        c00812.label = 5;
+                        catalog2 = StreamPlayKitsuHelper.INSTANCE.getCatalog(this, catalogId, page5, c00812);
+                        if (catalog2 == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        page4 = page5;
+                        Pair pair = (Pair) catalog2;
+                        List items = (List) pair.component1();
+                        boolean hasNext2 = ((Boolean) pair.component2()).booleanValue();
+                        return MainAPIKt.newHomePageResponse(request3.getName(), items, Boxing.boxBoolean(hasNext2));
+                    }
+                }
+                try {
+                    String catalogId2 = StreamPlayKitsuHelper.INSTANCE.mapSectionToKitsuCatalog(request3.getName());
                     c00812.L$0 = request3;
-                    c00812.L$1 = SpillingKt.nullOutSpilledVariable(catalogId);
-                    c00812.I$0 = page4;
+                    c00812.L$1 = SpillingKt.nullOutSpilledVariable(catalogId2);
+                    c00812.I$0 = page5;
                     c00812.label = 2;
-                    catalog = StreamPlayKitsuHelper.INSTANCE.getCatalog(this, catalogId, page4, c00812);
+                    catalog = StreamPlayKitsuHelper.INSTANCE.getCatalog(this, catalogId2, page5, c00812);
                     if (catalog == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    Pair pair = (Pair) catalog;
-                    List items = (List) pair.component1();
-                    boolean hasNext = ((Boolean) pair.component2()).booleanValue();
-                    return MainAPIKt.newHomePageResponse(request3.getName(), items, Boxing.boxBoolean(hasNext));
-                }
-                try {
-                    c00812.L$0 = request3;
-                    c00812.I$0 = page4;
-                    c00812.label = 3;
-                    searchResponseList = toSearchResponseList(request3, page4, c00812);
-                    if (searchResponseList == coroutine_suspended) {
-                        return coroutine_suspended;
+                    try {
+                        Pair pair2 = (Pair) catalog;
+                        List items2 = (List) pair2.component1();
+                        hasNext = ((Boolean) pair2.component2()).booleanValue();
+                        String name2 = request3.getName();
+                        if (hasNext) {
+                            z2 = false;
+                        }
+                        return MainAPIKt.newHomePageResponse(name2, items2, Boxing.boxBoolean(z2));
+                    } catch (Throwable th2) {
+                        e = th2;
+                        sharedPreferences = this.sharedPref;
+                        if (sharedPreferences != null) {
+                            string = sharedPreferences.getString("anime_metadata_source", "kitsu");
+                        } else {
+                            string = null;
+                        }
+                        if (Intrinsics.areEqual(string, "kitsu")) {
+                            return MainAPIKt.newHomePageResponse(request3.getName(), CollectionsKt.emptyList(), Boxing.boxBoolean(z));
+                        }
+                        c00812.L$0 = request3;
+                        c00812.L$1 = SpillingKt.nullOutSpilledVariable(e);
+                        c00812.I$0 = page5;
+                        c00812.label = 3;
+                        searchResponseList2 = toSearchResponseList(request3, page5, c00812);
+                        if (searchResponseList2 == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        int i = page5;
+                        e = e;
+                        page3 = i;
+                        Pair data2 = (Pair) searchResponseList2;
+                        return MainAPIKt.newHomePageResponse(request3.getName(), (List) data2.getFirst(), (Boolean) data2.getSecond());
                     }
-                    Pair data = (Pair) searchResponseList;
-                    return MainAPIKt.newHomePageResponse(request3.getName(), (List) data.getFirst(), (Boolean) data.getSecond());
-                } catch (Throwable th) {
-                    e = th;
+                } catch (Throwable th3) {
+                    e = th3;
                     sharedPreferences = this.sharedPref;
                     if (sharedPreferences != null) {
-                        string = sharedPreferences.getString("anime_metadata_source", "auto");
+                        string = sharedPreferences.getString("anime_metadata_source", "kitsu");
                     } else {
                         string = null;
                     }
-                    if (!Intrinsics.areEqual(string, "anilist")) {
-                        throw e;
+                    if (Intrinsics.areEqual(string, "kitsu")) {
+                        return MainAPIKt.newHomePageResponse(request3.getName(), CollectionsKt.emptyList(), Boxing.boxBoolean(z));
                     }
-                    this.isAnilistDown = true;
-                    String catalogId2 = StreamPlayKitsuHelper.INSTANCE.mapSectionToKitsuCatalog(request3.getName());
                     c00812.L$0 = request3;
                     c00812.L$1 = SpillingKt.nullOutSpilledVariable(e);
-                    c00812.L$2 = SpillingKt.nullOutSpilledVariable(catalogId2);
-                    c00812.I$0 = page4;
-                    c00812.label = 4;
-                    catalog2 = StreamPlayKitsuHelper.INSTANCE.getCatalog(this, catalogId2, page4, c00812);
-                    if (catalog2 == coroutine_suspended) {
+                    c00812.I$0 = page5;
+                    c00812.label = 3;
+                    searchResponseList2 = toSearchResponseList(request3, page5, c00812);
+                    if (searchResponseList2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    page3 = page4;
-                    Pair pair2 = (Pair) catalog2;
-                    List items2 = (List) pair2.component1();
-                    boolean hasNext2 = ((Boolean) pair2.component2()).booleanValue();
-                    return MainAPIKt.newHomePageResponse(request3.getName(), items2, Boxing.boxBoolean(hasNext2));
+                    int i2 = page5;
+                    e = e;
+                    page3 = i2;
+                    Pair data3 = (Pair) searchResponseList2;
+                    return MainAPIKt.newHomePageResponse(request3.getName(), (List) data3.getFirst(), (Boolean) data3.getSecond());
                 }
             case 1:
                 page2 = c00812.I$0;
@@ -942,7 +1146,7 @@ public final class StreamPlayAnime extends MainAPI {
                         name = it.getName();
                         activity = CommonActivity.INSTANCE.getActivity();
                         if (activity == null) {
-                            homePageList = homePageList2;
+                            homePageList = null;
                         } else {
                             String libraryName2 = name.asString(activity);
                             homePageList = new HomePageList(request2.getName() + ": " + libraryName2, it.getItems(), false, 4, (DefaultConstructorMarker) null);
@@ -957,31 +1161,71 @@ public final class StreamPlayAnime extends MainAPI {
                 List homePageList4 = (List) destination$iv$iv;
                 return MainAPIKt.newHomePageResponse(homePageList4, Boxing.boxBoolean(false));
             case 2:
-                int i = c00812.I$0;
+                page5 = c00812.I$0;
+                request3 = (MainPageRequest) c00812.L$0;
+                try {
+                    ResultKt.throwOnFailure($result);
+                    catalog = $result;
+                    z = false;
+                    Pair pair3 = (Pair) catalog;
+                    List items3 = (List) pair3.component1();
+                    hasNext = ((Boolean) pair3.component2()).booleanValue();
+                    String name3 = request3.getName();
+                    if (hasNext) {
+                        z2 = false;
+                    }
+                    return MainAPIKt.newHomePageResponse(name3, items3, Boxing.boxBoolean(z2));
+                } catch (Throwable th4) {
+                    e = th4;
+                    z = false;
+                    sharedPreferences = this.sharedPref;
+                    if (sharedPreferences != null) {
+                        string = sharedPreferences.getString("anime_metadata_source", "kitsu");
+                    } else {
+                        string = null;
+                    }
+                    if (Intrinsics.areEqual(string, "kitsu")) {
+                        return MainAPIKt.newHomePageResponse(request3.getName(), CollectionsKt.emptyList(), Boxing.boxBoolean(z));
+                    }
+                    c00812.L$0 = request3;
+                    c00812.L$1 = SpillingKt.nullOutSpilledVariable(e);
+                    c00812.I$0 = page5;
+                    c00812.label = 3;
+                    searchResponseList2 = toSearchResponseList(request3, page5, c00812);
+                    if (searchResponseList2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    int i3 = page5;
+                    e = e;
+                    page3 = i3;
+                    Pair data4 = (Pair) searchResponseList2;
+                    return MainAPIKt.newHomePageResponse(request3.getName(), (List) data4.getFirst(), (Boolean) data4.getSecond());
+                }
+            case 3:
+                page3 = c00812.I$0;
+                e = (Throwable) c00812.L$1;
                 request3 = (MainPageRequest) c00812.L$0;
                 ResultKt.throwOnFailure($result);
-                catalog = $result;
-                Pair pair3 = (Pair) catalog;
-                List items3 = (List) pair3.component1();
-                boolean hasNext3 = ((Boolean) pair3.component2()).booleanValue();
-                return MainAPIKt.newHomePageResponse(request3.getName(), items3, Boxing.boxBoolean(hasNext3));
-            case 3:
-                page4 = c00812.I$0;
+                searchResponseList2 = $result;
+                Pair data5 = (Pair) searchResponseList2;
+                return MainAPIKt.newHomePageResponse(request3.getName(), (List) data5.getFirst(), (Boolean) data5.getSecond());
+            case 4:
+                page5 = c00812.I$0;
                 request3 = (MainPageRequest) c00812.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     searchResponseList = $result;
-                    Pair data2 = (Pair) searchResponseList;
-                    return MainAPIKt.newHomePageResponse(request3.getName(), (List) data2.getFirst(), (Boolean) data2.getSecond());
-                } catch (Throwable th2) {
-                    e = th2;
-                    sharedPreferences = this.sharedPref;
-                    if (sharedPreferences != null) {
-                        string = sharedPreferences.getString("anime_metadata_source", "auto");
+                    Pair data6 = (Pair) searchResponseList;
+                    return MainAPIKt.newHomePageResponse(request3.getName(), (List) data6.getFirst(), (Boolean) data6.getSecond());
+                } catch (Throwable th5) {
+                    e = th5;
+                    sharedPreferences2 = this.sharedPref;
+                    if (sharedPreferences2 != null) {
+                        string2 = sharedPreferences2.getString("anime_metadata_source", "kitsu");
                     } else {
-                        string = null;
+                        string2 = null;
                     }
-                    if (!Intrinsics.areEqual(string, "anilist")) {
+                    if (!Intrinsics.areEqual(string2, "anilist")) {
                         throw e;
                     }
                     this.isAnilistDown = true;
@@ -989,42 +1233,42 @@ public final class StreamPlayAnime extends MainAPI {
                     c00812.L$0 = request3;
                     c00812.L$1 = SpillingKt.nullOutSpilledVariable(e);
                     c00812.L$2 = SpillingKt.nullOutSpilledVariable(catalogId3);
-                    c00812.I$0 = page4;
-                    c00812.label = 4;
-                    catalog2 = StreamPlayKitsuHelper.INSTANCE.getCatalog(this, catalogId3, page4, c00812);
+                    c00812.I$0 = page5;
+                    c00812.label = 5;
+                    catalog2 = StreamPlayKitsuHelper.INSTANCE.getCatalog(this, catalogId3, page5, c00812);
                     if (catalog2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    page3 = page4;
+                    page4 = page5;
                     Pair pair4 = (Pair) catalog2;
                     List items4 = (List) pair4.component1();
-                    boolean hasNext4 = ((Boolean) pair4.component2()).booleanValue();
-                    return MainAPIKt.newHomePageResponse(request3.getName(), items4, Boxing.boxBoolean(hasNext4));
+                    boolean hasNext3 = ((Boolean) pair4.component2()).booleanValue();
+                    return MainAPIKt.newHomePageResponse(request3.getName(), items4, Boxing.boxBoolean(hasNext3));
                 }
-            case 4:
-                page3 = c00812.I$0;
+            case 5:
+                page4 = c00812.I$0;
                 request3 = (MainPageRequest) c00812.L$0;
                 ResultKt.throwOnFailure($result);
                 catalog2 = $result;
                 Pair pair5 = (Pair) catalog2;
                 List items5 = (List) pair5.component1();
-                boolean hasNext5 = ((Boolean) pair5.component2()).booleanValue();
-                return MainAPIKt.newHomePageResponse(request3.getName(), items5, Boxing.boxBoolean(hasNext5));
+                boolean hasNext4 = ((Boolean) pair5.component2()).booleanValue();
+                return MainAPIKt.newHomePageResponse(request3.getName(), items5, Boxing.boxBoolean(hasNext4));
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:43:0x00da  */
-    /* JADX WARN: Code duplicated, block: B:46:0x00e4  */
-    /* JADX WARN: Code duplicated, block: B:48:0x0100 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:49:0x0101  */
-    /* JADX WARN: Code duplicated, block: B:52:0x010a  */
-    /* JADX WARN: Code duplicated, block: B:65:0x012b  */
-    /* JADX WARN: Code duplicated, block: B:68:0x0137  */
-    /* JADX WARN: Code duplicated, block: B:70:0x0156 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:71:0x0157  */
-    /* JADX WARN: Code duplicated, block: B:74:0x0160  */
+    /* JADX WARN: Code duplicated, block: B:43:0x00d8  */
+    /* JADX WARN: Code duplicated, block: B:46:0x00e2  */
+    /* JADX WARN: Code duplicated, block: B:48:0x00fe A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:49:0x00ff  */
+    /* JADX WARN: Code duplicated, block: B:52:0x0108  */
+    /* JADX WARN: Code duplicated, block: B:65:0x0129  */
+    /* JADX WARN: Code duplicated, block: B:68:0x0135  */
+    /* JADX WARN: Code duplicated, block: B:70:0x0154 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:71:0x0155  */
+    /* JADX WARN: Code duplicated, block: B:74:0x015e  */
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) throws Exception {
@@ -1081,7 +1325,7 @@ public final class StreamPlayAnime extends MainAPI {
                             id = id3;
                             e = th;
                             sharedPreferences = this.sharedPref;
-                            if (Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("anime_metadata_source", "auto") : null, "kitsu")) {
+                            if (Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("anime_metadata_source", "kitsu") : null, "kitsu")) {
                                 throw e;
                             }
                             c00821.L$0 = SpillingKt.nullOutSpilledVariable(url);
@@ -1100,7 +1344,7 @@ public final class StreamPlayAnime extends MainAPI {
                     } catch (Throwable th2) {
                         e = th2;
                         sharedPreferences = this.sharedPref;
-                        if (Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("anime_metadata_source", "auto") : null, "kitsu")) {
+                        if (Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("anime_metadata_source", "kitsu") : null, "kitsu")) {
                             throw e;
                         }
                         c00821.L$0 = SpillingKt.nullOutSpilledVariable(url);
@@ -1135,7 +1379,7 @@ public final class StreamPlayAnime extends MainAPI {
                         id = id2;
                         e = th3;
                         sharedPreferences2 = this.sharedPref;
-                        if (Intrinsics.areEqual(sharedPreferences2 != null ? sharedPreferences2.getString("anime_metadata_source", "auto") : null, "anilist")) {
+                        if (Intrinsics.areEqual(sharedPreferences2 != null ? sharedPreferences2.getString("anime_metadata_source", "kitsu") : null, "anilist")) {
                             throw e;
                         }
                         this.isAnilistDown = true;
@@ -1155,7 +1399,7 @@ public final class StreamPlayAnime extends MainAPI {
                 } catch (Throwable th4) {
                     e = th4;
                     sharedPreferences2 = this.sharedPref;
-                    if (Intrinsics.areEqual(sharedPreferences2 != null ? sharedPreferences2.getString("anime_metadata_source", "auto") : null, "anilist")) {
+                    if (Intrinsics.areEqual(sharedPreferences2 != null ? sharedPreferences2.getString("anime_metadata_source", "kitsu") : null, "anilist")) {
                         throw e;
                     }
                     this.isAnilistDown = true;
@@ -1186,7 +1430,7 @@ public final class StreamPlayAnime extends MainAPI {
                     i = i3;
                     id = id6;
                     sharedPreferences = this.sharedPref;
-                    if (Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("anime_metadata_source", "auto") : null, "kitsu")) {
+                    if (Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("anime_metadata_source", "kitsu") : null, "kitsu")) {
                         throw e;
                     }
                     c00821.L$0 = SpillingKt.nullOutSpilledVariable(url);
@@ -1223,7 +1467,7 @@ public final class StreamPlayAnime extends MainAPI {
                     i = i2;
                     id = id8;
                     sharedPreferences2 = this.sharedPref;
-                    if (Intrinsics.areEqual(sharedPreferences2 != null ? sharedPreferences2.getString("anime_metadata_source", "auto") : null, "anilist")) {
+                    if (Intrinsics.areEqual(sharedPreferences2 != null ? sharedPreferences2.getString("anime_metadata_source", "kitsu") : null, "anilist")) {
                         throw e;
                     }
                     this.isAnilistDown = true;
@@ -3349,7 +3593,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadFromAnilist$2", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,768:1\n296#2,2:769\n296#2,2:771\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$2\n*L\n333#1:769,2\n335#1:771,2\n*E\n"})
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,781:1\n296#2,2:782\n296#2,2:784\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$2\n*L\n346#1:782,2\n348#1:784,2\n*E\n"})
     static final class C00842 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ MetaAnimeData $animeMetaData;
         final /* synthetic */ String $backgroundUrl;
@@ -3491,7 +3735,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadFromAnilist$3", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,768:1\n296#2,2:769\n296#2,2:771\n1795#2,10:773\n2068#2:783\n2069#2:785\n1805#2:786\n1#3:784\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$3\n*L\n350#1:769,2\n352#1:771,2\n357#1:773,10\n357#1:783\n357#1:785\n357#1:786\n357#1:784\n*E\n"})
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,781:1\n296#2,2:782\n296#2,2:784\n1795#2,10:786\n2068#2:796\n2069#2:798\n1805#2:799\n1#3:797\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$3\n*L\n363#1:782,2\n365#1:784,2\n370#1:786,10\n370#1:796\n370#1:798\n370#1:799\n370#1:797\n*E\n"})
     static final class C00853 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ MetaAnimeData $animeMetaData;
         final /* synthetic */ AnilistAPIResponse.anilistMedia $data;
@@ -12134,7 +12378,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadFromKitsu$2", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromKitsu$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,768:1\n1#2:769\n*E\n"})
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromKitsu$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,781:1\n1#2:782\n*E\n"})
     static final class C00872 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniyear;
         final /* synthetic */ String $backgroundUrl;
@@ -12215,7 +12459,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadFromKitsu$3", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromKitsu$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,768:1\n1#2:769\n*E\n"})
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromKitsu$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,781:1\n1#2:782\n*E\n"})
     static final class C00883 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniyear;
         final /* synthetic */ String $backgroundUrl;
@@ -13184,7 +13428,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$2 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$2", f = "StreamPlayAnime.kt", i = {}, l = {568}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$2", f = "StreamPlayAnime.kt", i = {}, l = {581}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00932 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -13234,8 +13478,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$3 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$3", f = "StreamPlayAnime.kt", i = {0}, l = {571}, m = "invokeSuspend", n = {"it"}, nl = {572}, s = {"L$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadLinks$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,768:1\n1#2:769\n*E\n"})
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$3", f = "StreamPlayAnime.kt", i = {0}, l = {584}, m = "invokeSuspend", n = {"it"}, nl = {585}, s = {"L$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadLinks$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,781:1\n1#2:782\n*E\n"})
     static final class C00943 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -13360,7 +13604,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$4 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$4", f = "StreamPlayAnime.kt", i = {}, l = {575}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$4", f = "StreamPlayAnime.kt", i = {}, l = {588}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00954 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -13410,7 +13654,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$5 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$5", f = "StreamPlayAnime.kt", i = {}, l = {576}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$5", f = "StreamPlayAnime.kt", i = {}, l = {589}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00965 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ String $anititle;
@@ -13470,7 +13714,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$6 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$6", f = "StreamPlayAnime.kt", i = {}, l = {577}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$6", f = "StreamPlayAnime.kt", i = {}, l = {590}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00976 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ String $anititle;
@@ -13532,7 +13776,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$7 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$7", f = "StreamPlayAnime.kt", i = {}, l = {578}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$7", f = "StreamPlayAnime.kt", i = {}, l = {591}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00987 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ String $anititle;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -13586,7 +13830,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$8 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$8", f = "StreamPlayAnime.kt", i = {}, l = {579}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$8", f = "StreamPlayAnime.kt", i = {}, l = {592}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00998 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -13638,7 +13882,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$9 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$9", f = "StreamPlayAnime.kt", i = {}, l = {580}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$9", f = "StreamPlayAnime.kt", i = {}, l = {593}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C01009 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -13692,7 +13936,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$10 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$10", f = "StreamPlayAnime.kt", i = {0}, l = {583}, m = "invokeSuspend", n = {"it"}, nl = {589}, s = {"I$0"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$10", f = "StreamPlayAnime.kt", i = {0}, l = {596}, m = "invokeSuspend", n = {"it"}, nl = {602}, s = {"I$0"}, v = 2)
     static final class C009010 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $anidbEid;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -13756,7 +14000,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$11 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$11", f = "StreamPlayAnime.kt", i = {}, l = {592}, m = "invokeSuspend", n = {}, nl = {593}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$11", f = "StreamPlayAnime.kt", i = {}, l = {605}, m = "invokeSuspend", n = {}, nl = {606}, s = {}, v = 2)
     static final class C009111 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -13806,7 +14050,7 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$12 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$12", f = "StreamPlayAnime.kt", i = {}, l = {595}, m = "invokeSuspend", n = {}, nl = {596}, s = {}, v = 2)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$12", f = "StreamPlayAnime.kt", i = {}, l = {608}, m = "invokeSuspend", n = {}, nl = {609}, s = {}, v = 2)
     static final class C009212 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ String $anititle;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -15166,26 +15410,26 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:47:0x01c4  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     public final Object tmdbToAnimeId(String title, Integer year, TvType type, Continuation<? super AniIds> continuation) {
-        C01021 c01021;
+        C01041 c01041;
         AniMedia aniMedia;
         Object obj;
         Object safe;
         AniMedia res;
         AniData it;
         ArrayList<AniMedia> media;
-        if (continuation instanceof C01021) {
-            c01021 = (C01021) continuation;
-            if ((c01021.label & Integer.MIN_VALUE) != 0) {
-                c01021.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C01041) {
+            c01041 = (C01041) continuation;
+            if ((c01041.label & Integer.MIN_VALUE) != 0) {
+                c01041.label -= Integer.MIN_VALUE;
             } else {
-                c01021 = new C01021(continuation);
+                c01041 = new C01041(continuation);
             }
         } else {
-            c01021 = new C01021(continuation);
+            c01041 = new C01041(continuation);
         }
-        Object $result = c01021.result;
+        Object $result = c01041.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c01021.label) {
+        switch (c01041.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String str = title;
@@ -15200,15 +15444,15 @@ public final class StreamPlayAnime extends MainAPI {
                 Map variables = MapsKt.mutableMapOf(pairArr);
                 RequestBody data = RequestBody.Companion.create(AppUtils.INSTANCE.toJson(MapsKt.mapOf(new Pair[]{TuplesKt.to("query", "query (\n  $page: Int = 1\n  $search: String\n  $sort: [MediaSort] = [POPULARITY_DESC, SCORE_DESC]\n  $type: MediaType\n  $season: MediaSeason\n  $seasonYear: Int\n  $format: [MediaFormat]\n) {\n  Page(page: $page, perPage: 20) {\n    media(\n      search: $search\n      sort: $sort\n      type: $type\n      season: $season\n      seasonYear: $seasonYear\n      format_in: $format\n    ) {\n      id\n      idMal\n    }\n  }\n}"), TuplesKt.to("variables", variables)})), MediaType.Companion.parse("application/json;charset=utf-8"));
                 Requests app = MainActivityKt.getApp();
-                c01021.L$0 = SpillingKt.nullOutSpilledVariable(title);
-                c01021.L$1 = SpillingKt.nullOutSpilledVariable(year);
-                c01021.L$2 = SpillingKt.nullOutSpilledVariable(type);
-                c01021.L$3 = SpillingKt.nullOutSpilledVariable("query (\n  $page: Int = 1\n  $search: String\n  $sort: [MediaSort] = [POPULARITY_DESC, SCORE_DESC]\n  $type: MediaType\n  $season: MediaSeason\n  $seasonYear: Int\n  $format: [MediaFormat]\n) {\n  Page(page: $page, perPage: 20) {\n    media(\n      search: $search\n      sort: $sort\n      type: $type\n      season: $season\n      seasonYear: $seasonYear\n      format_in: $format\n    ) {\n      id\n      idMal\n    }\n  }\n}");
-                c01021.L$4 = SpillingKt.nullOutSpilledVariable(variables);
-                c01021.L$5 = SpillingKt.nullOutSpilledVariable(data);
-                c01021.label = 1;
+                c01041.L$0 = SpillingKt.nullOutSpilledVariable(title);
+                c01041.L$1 = SpillingKt.nullOutSpilledVariable(year);
+                c01041.L$2 = SpillingKt.nullOutSpilledVariable(type);
+                c01041.L$3 = SpillingKt.nullOutSpilledVariable("query (\n  $page: Int = 1\n  $search: String\n  $sort: [MediaSort] = [POPULARITY_DESC, SCORE_DESC]\n  $type: MediaType\n  $season: MediaSeason\n  $seasonYear: Int\n  $format: [MediaFormat]\n) {\n  Page(page: $page, perPage: 20) {\n    media(\n      search: $search\n      sort: $sort\n      type: $type\n      season: $season\n      seasonYear: $seasonYear\n      format_in: $format\n    ) {\n      id\n      idMal\n    }\n  }\n}");
+                c01041.L$4 = SpillingKt.nullOutSpilledVariable(variables);
+                c01041.L$5 = SpillingKt.nullOutSpilledVariable(data);
+                c01041.label = 1;
                 aniMedia = null;
-                Object objPost$default = Requests.post$default(app, StreamPlay.anilistAPI, (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, data, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c01021, 65278, (Object) null);
+                Object objPost$default = Requests.post$default(app, StreamPlay.anilistAPI, (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, data, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c01041, 65278, (Object) null);
                 if (objPost$default == coroutine_suspended) {
                     return coroutine_suspended;
                 }

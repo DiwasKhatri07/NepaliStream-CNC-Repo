@@ -63,7 +63,7 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 2, 2, 2, 2}, l = {2266, 2269, 2275}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "link", "$this$withPermit$iv", "$completion", "link", "streamurl"}, nl = {2267, 2273, 2274}, s = {"L$0", "L$0", "L$2", "L$3", "L$0", "L$2", "L$3", "L$4"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2286\n5277#3,17:2269\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n*L\n1889#1:2266,3\n1889#1:2286,2\n*E\n"})
-    public static final class C01521 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C01541 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Object $item;
         final /* synthetic */ Semaphore $semaphore;
@@ -76,7 +76,7 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C01521(Semaphore semaphore, Object obj, Continuation continuation, Function1 function1) {
+        public C01541(Semaphore semaphore, Object obj, Continuation continuation, Function1 function1) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -84,7 +84,7 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C01521(this.$semaphore, this.$item, continuation, this.$callback$inlined);
+            return new C01541(this.$semaphore, this.$item, continuation, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -113,20 +113,20 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
             Function1 function1;
             Object objNewExtractorLink$default;
             Function1 function2;
-            C01521 c01521 = this;
+            C01541 c01541 = this;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             Unit unit = null;
             try {
                 try {
-                    switch (c01521.label) {
+                    switch (c01541.label) {
                         case 0:
                             ResultKt.throwOnFailure($result);
-                            Semaphore $this$withPermit$iv3 = c01521.$semaphore;
-                            Object obj3 = c01521.$item;
-                            c01521.L$0 = $this$withPermit$iv3;
-                            c01521.L$1 = obj3;
-                            c01521.label = 1;
-                            if ($this$withPermit$iv3.acquire((Continuation) c01521) == coroutine_suspended) {
+                            Semaphore $this$withPermit$iv3 = c01541.$semaphore;
+                            Object obj3 = c01541.$item;
+                            c01541.L$0 = $this$withPermit$iv3;
+                            c01541.L$1 = obj3;
+                            c01541.label = 1;
+                            if ($this$withPermit$iv3.acquire((Continuation) c01541) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                             $this$withPermit$iv2 = $this$withPermit$iv3;
@@ -135,16 +135,16 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
                             i2 = 0;
                             try {
                                 DooflixLink link2 = (DooflixLink) obj2;
-                                $completion = (Continuation) c01521;
+                                $completion = (Continuation) c01541;
                                 String url = link2.getUrl();
-                                c01521.L$0 = $this$withPermit$iv2;
-                                c01521.L$1 = obj2;
-                                c01521.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                c01521.L$3 = link2;
-                                c01521.label = 2;
+                                c01541.L$0 = $this$withPermit$iv2;
+                                c01541.L$1 = obj2;
+                                c01541.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                c01541.L$3 = link2;
+                                c01541.label = 2;
                                 link = link2;
                                 objSafeGet$default = StreamPlayUtilsKt.safeGet$default(url, null, "https://molop.art/", null, null, false, 0, this, 90, null);
-                                c01521 = this;
+                                c01541 = this;
                                 if (objSafeGet$default == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -155,17 +155,17 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
                                     if (streamurl == null) {
                                         unit = Unit.INSTANCE;
                                     } else {
-                                        function1 = c01521.$callback$inlined;
+                                        function1 = c01541.$callback$inlined;
                                         String host = link.getHost();
                                         StreamPlayExtractor$invokeDooflix$2$1 streamPlayExtractor$invokeDooflix$2$1 = new StreamPlayExtractor$invokeDooflix$2$1(null);
-                                        c01521.L$0 = $this$withPermit$iv;
-                                        c01521.L$1 = obj;
-                                        c01521.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                        c01521.L$3 = SpillingKt.nullOutSpilledVariable(link);
-                                        c01521.L$4 = SpillingKt.nullOutSpilledVariable(streamurl);
-                                        c01521.L$5 = function1;
-                                        c01521.label = 3;
-                                        objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("Dooflix", host, streamurl, (ExtractorLinkType) null, streamPlayExtractor$invokeDooflix$2$1, c01521, 8, (Object) null);
+                                        c01541.L$0 = $this$withPermit$iv;
+                                        c01541.L$1 = obj;
+                                        c01541.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                        c01541.L$3 = SpillingKt.nullOutSpilledVariable(link);
+                                        c01541.L$4 = SpillingKt.nullOutSpilledVariable(streamurl);
+                                        c01541.L$5 = function1;
+                                        c01541.label = 3;
+                                        objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("Dooflix", host, streamurl, (ExtractorLinkType) null, streamPlayExtractor$invokeDooflix$2$1, c01541, 8, (Object) null);
                                         if (objNewExtractorLink$default == coroutine_suspended) {
                                             return coroutine_suspended;
                                         }
@@ -203,24 +203,24 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
                                 throw th;
                             }
                         case 1:
-                            Object obj4 = c01521.L$1;
-                            Semaphore $this$withPermit$iv4 = (Semaphore) c01521.L$0;
+                            Object obj4 = c01541.L$1;
+                            Semaphore $this$withPermit$iv4 = (Semaphore) c01541.L$0;
                             ResultKt.throwOnFailure($result);
                             $i$f$withPermit2 = 0;
                             $this$withPermit$iv2 = $this$withPermit$iv4;
                             obj2 = obj4;
                             i2 = 0;
                             DooflixLink link3 = (DooflixLink) obj2;
-                            $completion = (Continuation) c01521;
+                            $completion = (Continuation) c01541;
                             String url2 = link3.getUrl();
-                            c01521.L$0 = $this$withPermit$iv2;
-                            c01521.L$1 = obj2;
-                            c01521.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                            c01521.L$3 = link3;
-                            c01521.label = 2;
+                            c01541.L$0 = $this$withPermit$iv2;
+                            c01541.L$1 = obj2;
+                            c01541.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                            c01541.L$3 = link3;
+                            c01541.label = 2;
                             link = link3;
                             objSafeGet$default = StreamPlayUtilsKt.safeGet$default(url2, null, "https://molop.art/", null, null, false, 0, this, 90, null);
-                            c01521 = this;
+                            c01541 = this;
                             if (objSafeGet$default == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -230,17 +230,17 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
                             if (streamurl == null) {
                                 unit = Unit.INSTANCE;
                             } else {
-                                function1 = c01521.$callback$inlined;
+                                function1 = c01541.$callback$inlined;
                                 String host2 = link.getHost();
                                 StreamPlayExtractor$invokeDooflix$2$1 streamPlayExtractor$invokeDooflix$2$2 = new StreamPlayExtractor$invokeDooflix$2$1(null);
-                                c01521.L$0 = $this$withPermit$iv;
-                                c01521.L$1 = obj;
-                                c01521.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                c01521.L$3 = SpillingKt.nullOutSpilledVariable(link);
-                                c01521.L$4 = SpillingKt.nullOutSpilledVariable(streamurl);
-                                c01521.L$5 = function1;
-                                c01521.label = 3;
-                                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("Dooflix", host2, streamurl, (ExtractorLinkType) null, streamPlayExtractor$invokeDooflix$2$2, c01521, 8, (Object) null);
+                                c01541.L$0 = $this$withPermit$iv;
+                                c01541.L$1 = obj;
+                                c01541.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                c01541.L$3 = SpillingKt.nullOutSpilledVariable(link);
+                                c01541.L$4 = SpillingKt.nullOutSpilledVariable(streamurl);
+                                c01541.L$5 = function1;
+                                c01541.label = 3;
+                                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("Dooflix", host2, streamurl, (ExtractorLinkType) null, streamPlayExtractor$invokeDooflix$2$2, c01541, 8, (Object) null);
                                 if (objNewExtractorLink$default == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -253,10 +253,10 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
                             $this$withPermit$iv.release();
                             return unit;
                         case 2:
-                            DooflixLink link4 = (DooflixLink) c01521.L$3;
-                            Continuation $completion2 = (Continuation) c01521.L$2;
-                            obj = c01521.L$1;
-                            $this$withPermit$iv = (Semaphore) c01521.L$0;
+                            DooflixLink link4 = (DooflixLink) c01541.L$3;
+                            Continuation $completion2 = (Continuation) c01541.L$2;
+                            obj = c01541.L$1;
+                            $this$withPermit$iv = (Semaphore) c01541.L$0;
                             ResultKt.throwOnFailure($result);
                             $i$f$withPermit2 = 0;
                             i2 = 0;
@@ -267,17 +267,17 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
                             if (streamurl == null) {
                                 unit = Unit.INSTANCE;
                             } else {
-                                function1 = c01521.$callback$inlined;
+                                function1 = c01541.$callback$inlined;
                                 String host3 = link.getHost();
                                 StreamPlayExtractor$invokeDooflix$2$1 streamPlayExtractor$invokeDooflix$2$3 = new StreamPlayExtractor$invokeDooflix$2$1(null);
-                                c01521.L$0 = $this$withPermit$iv;
-                                c01521.L$1 = obj;
-                                c01521.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                c01521.L$3 = SpillingKt.nullOutSpilledVariable(link);
-                                c01521.L$4 = SpillingKt.nullOutSpilledVariable(streamurl);
-                                c01521.L$5 = function1;
-                                c01521.label = 3;
-                                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("Dooflix", host3, streamurl, (ExtractorLinkType) null, streamPlayExtractor$invokeDooflix$2$3, c01521, 8, (Object) null);
+                                c01541.L$0 = $this$withPermit$iv;
+                                c01541.L$1 = obj;
+                                c01541.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                c01541.L$3 = SpillingKt.nullOutSpilledVariable(link);
+                                c01541.L$4 = SpillingKt.nullOutSpilledVariable(streamurl);
+                                c01541.L$5 = function1;
+                                c01541.label = 3;
+                                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default("Dooflix", host3, streamurl, (ExtractorLinkType) null, streamPlayExtractor$invokeDooflix$2$3, c01541, 8, (Object) null);
                                 if (objNewExtractorLink$default == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -292,9 +292,9 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
                         case 3:
                             $i$f$withPermit = 0;
                             i = 0;
-                            function2 = (Function1) c01521.L$5;
-                            obj = c01521.L$1;
-                            $this$withPermit$iv = (Semaphore) c01521.L$0;
+                            function2 = (Function1) c01541.L$5;
+                            obj = c01541.L$1;
+                            $this$withPermit$iv = (Semaphore) c01541.L$0;
                             ResultKt.throwOnFailure($result);
                             objNewExtractorLink$default = $result;
                             function2.invoke(objNewExtractorLink$default);
@@ -324,7 +324,7 @@ public final class StreamPlayExtractor$invokeDooflix$$inlined$safeAmap$default$1
                 Iterable $this$map$iv = this.$this_runCatching;
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
-                    destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01521(semaphore, item$iv$iv, null, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C01541(semaphore, item$iv$iv, null, this.$callback$inlined), 2, (Object) null));
                 }
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);
                 this.L$1 = SpillingKt.nullOutSpilledVariable(semaphore);

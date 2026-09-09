@@ -68,7 +68,7 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
     @Metadata(d1 = {"\u0000\n\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u0004\u0018\u0001H\u0001\"\u0004\b\u0000\u0010\u0001*\u00020\u0002H\n¨\u0006\u0003"}, d2 = {"<anonymous>", "B", "Lkotlinx/coroutines/CoroutineScope;", "com/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default$1$1", f = "StreamPlayExtractor.kt", i = {0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3}, l = {2266, 2271, 2276, 2282}, m = "invokeSuspend", n = {"$this$withPermit$iv", "$this$withPermit$iv", "$completion", "link", "$this$withPermit$iv", "$completion", "link", "$this$withPermit$iv", "$completion", "link", "driveLink"}, nl = {2267, 2272, 2278, 2289}, s = {"L$0", "L$0", "L$2", "L$3", "L$0", "L$2", "L$3", "L$0", "L$2", "L$3", "L$4"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n+ 2 Semaphore.kt\nkotlinx/coroutines/sync/SemaphoreKt\n+ 3 StreamPlayExtractor.kt\ncom/phisher98/StreamPlayExtractor\n*L\n1#1,2265:1\n81#2,3:2266\n85#2,2:2290\n1813#3,21:2269\n*S KotlinDebug\n*F\n+ 1 StreamPlayUtils.kt\ncom/phisher98/StreamPlayUtilsKt$safeAmap$2$1$1$1\n*L\n1889#1:2266,3\n1889#1:2290,2\n*E\n"})
-    public static final class C02241 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C02261 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1 $callback$inlined;
         final /* synthetic */ Object $item;
         final /* synthetic */ Regex $redirectRegex$inlined;
@@ -82,7 +82,7 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        public C02241(Semaphore semaphore, Object obj, Continuation continuation, Regex regex, Function1 function1, Function1 function2) {
+        public C02261(Semaphore semaphore, Object obj, Continuation continuation, Regex regex, Function1 function1, Function1 function2) {
             super(2, continuation);
             this.$semaphore = semaphore;
             this.$item = obj;
@@ -92,7 +92,7 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C02241(this.$semaphore, this.$item, continuation, this.$redirectRegex$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
+            return new C02261(this.$semaphore, this.$item, continuation, this.$redirectRegex$inlined, this.$subtitleCallback$inlined, this.$callback$inlined);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -151,40 +151,40 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
             Object objLoadSourceNameExtractor$default;
             Object obj7;
             String str;
-            C02241 c02241 = this;
+            C02261 c02261 = this;
             Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
             Object obj8 = null;
             try {
                 try {
                     try {
-                        switch (c02241.label) {
+                        switch (c02261.label) {
                             case 0:
                                 ResultKt.throwOnFailure($result);
-                                Semaphore $this$withPermit$iv8 = c02241.$semaphore;
-                                obj2 = c02241.$item;
-                                c02241.L$0 = $this$withPermit$iv8;
-                                c02241.L$1 = obj2;
-                                c02241.label = 1;
-                                if ($this$withPermit$iv8.acquire((Continuation) c02241) == coroutine_suspended) {
+                                Semaphore $this$withPermit$iv8 = c02261.$semaphore;
+                                obj2 = c02261.$item;
+                                c02261.L$0 = $this$withPermit$iv8;
+                                c02261.L$1 = obj2;
+                                c02261.label = 1;
+                                if ($this$withPermit$iv8.acquire((Continuation) c02261) == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
                                 $i$f$withPermit = 0;
                                 $this$withPermit$iv3 = $this$withPermit$iv8;
                                 try {
                                     try {
-                                        $completion = (Continuation) c02241;
+                                        $completion = (Continuation) c02261;
                                         link = (String) obj2;
                                         try {
                                             if (!StringsKt.contains(link, "driveleech", true)) {
-                                                c02241.L$0 = $this$withPermit$iv3;
-                                                c02241.L$1 = obj2;
-                                                c02241.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                                c02241.L$3 = link;
-                                                c02241.label = 2;
+                                                c02261.L$0 = $this$withPermit$iv3;
+                                                c02261.L$1 = obj2;
+                                                c02261.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                                c02261.L$3 = link;
+                                                c02261.label = 2;
                                                 $this$withPermit$iv5 = $this$withPermit$iv3;
                                                 obj4 = obj2;
                                                 objSafeGet$default = StreamPlayUtilsKt.safeGet$default(link, null, null, null, null, false, 0, this, 126, null);
-                                                c02241 = this;
+                                                c02261 = this;
                                                 if (objSafeGet$default == coroutine_suspended) {
                                                     return coroutine_suspended;
                                                 }
@@ -196,23 +196,23 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                                 obj5 = obj4;
                                                 $this$withPermit$iv = $this$withPermit$iv5;
                                                 String text = ((NiceResponse) objSafeGet$default).getText();
-                                                matchResultFind$default = Regex.find$default(c02241.$redirectRegex$inlined, text, 0, 2, (Object) null);
+                                                matchResultFind$default = Regex.find$default(c02261.$redirectRegex$inlined, text, 0, 2, (Object) null);
                                                 if (matchResultFind$default != null) {
                                                 }
                                                 obj8 = Unit.INSTANCE;
                                             } else {
                                                 try {
                                                     if (StringsKt.contains(link, "driveseed", true)) {
-                                                        c02241.L$0 = $this$withPermit$iv3;
-                                                        c02241.L$1 = obj2;
-                                                        c02241.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                                        c02241.L$3 = link;
-                                                        c02241.label = 2;
+                                                        c02261.L$0 = $this$withPermit$iv3;
+                                                        c02261.L$1 = obj2;
+                                                        c02261.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                                        c02261.L$3 = link;
+                                                        c02261.label = 2;
                                                         $this$withPermit$iv5 = $this$withPermit$iv3;
                                                         obj4 = obj2;
                                                         try {
                                                             objSafeGet$default = StreamPlayUtilsKt.safeGet$default(link, null, null, null, null, false, 0, this, 126, null);
-                                                            c02241 = this;
+                                                            c02261 = this;
                                                             if (objSafeGet$default == coroutine_suspended) {
                                                                 return coroutine_suspended;
                                                             }
@@ -224,7 +224,7 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                                             obj5 = obj4;
                                                             $this$withPermit$iv = $this$withPermit$iv5;
                                                             String text2 = ((NiceResponse) objSafeGet$default).getText();
-                                                            matchResultFind$default = Regex.find$default(c02241.$redirectRegex$inlined, text2, 0, 2, (Object) null);
+                                                            matchResultFind$default = Regex.find$default(c02261.$redirectRegex$inlined, text2, 0, 2, (Object) null);
                                                             if (matchResultFind$default != null || (groupValues = matchResultFind$default.getGroupValues()) == null || (fileId = (String) CollectionsKt.getOrNull(groupValues, 1)) == null) {
                                                                 obj8 = Unit.INSTANCE;
                                                             } else {
@@ -237,18 +237,18 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                                                 i3 = i2;
                                                                 $this$withPermit$iv6 = $this$withPermit$iv;
                                                                 try {
-                                                                    Function1 function1 = c02241.$subtitleCallback$inlined;
-                                                                    Function1 function2 = c02241.$callback$inlined;
-                                                                    c02241.L$0 = $this$withPermit$iv6;
-                                                                    c02241.L$1 = obj6;
-                                                                    c02241.L$2 = SpillingKt.nullOutSpilledVariable($completion4);
-                                                                    c02241.L$3 = SpillingKt.nullOutSpilledVariable(link3);
-                                                                    c02241.L$4 = SpillingKt.nullOutSpilledVariable(driveLink);
-                                                                    c02241.label = 4;
+                                                                    Function1 function1 = c02261.$subtitleCallback$inlined;
+                                                                    Function1 function2 = c02261.$callback$inlined;
+                                                                    c02261.L$0 = $this$withPermit$iv6;
+                                                                    c02261.L$1 = obj6;
+                                                                    c02261.L$2 = SpillingKt.nullOutSpilledVariable($completion4);
+                                                                    c02261.L$3 = SpillingKt.nullOutSpilledVariable(link3);
+                                                                    c02261.L$4 = SpillingKt.nullOutSpilledVariable(driveLink);
+                                                                    c02261.label = 4;
                                                                     $this$withPermit$iv7 = $this$withPermit$iv6;
                                                                     Object obj9 = obj6;
                                                                     try {
-                                                                        objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("UHDMovies", driveLink, "", function1, function2, null, null, c02241, 96, null);
+                                                                        objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("UHDMovies", driveLink, "", function1, function2, null, null, c02261, 96, null);
                                                                         if (objLoadSourceNameExtractor$default == coroutine_suspended) {
                                                                             return coroutine_suspended;
                                                                         }
@@ -285,12 +285,12 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                                             throw th;
                                                         }
                                                     } else {
-                                                        c02241.L$0 = $this$withPermit$iv3;
-                                                        c02241.L$1 = obj2;
-                                                        c02241.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                                        c02241.L$3 = SpillingKt.nullOutSpilledVariable(link);
-                                                        c02241.label = 3;
-                                                        objBypassHrefli = StreamPlayUtilsKt.bypassHrefli(link, c02241);
+                                                        c02261.L$0 = $this$withPermit$iv3;
+                                                        c02261.L$1 = obj2;
+                                                        c02261.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                                        c02261.L$3 = SpillingKt.nullOutSpilledVariable(link);
+                                                        c02261.label = 3;
+                                                        objBypassHrefli = StreamPlayUtilsKt.bypassHrefli(link, c02261);
                                                         if (objBypassHrefli == coroutine_suspended) {
                                                             return coroutine_suspended;
                                                         }
@@ -312,17 +312,17 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                                             $completion4 = $completion2;
                                                             obj6 = obj3;
                                                             $this$withPermit$iv6 = $this$withPermit$iv;
-                                                            Function1 function3 = c02241.$subtitleCallback$inlined;
-                                                            Function1 function4 = c02241.$callback$inlined;
-                                                            c02241.L$0 = $this$withPermit$iv6;
-                                                            c02241.L$1 = obj6;
-                                                            c02241.L$2 = SpillingKt.nullOutSpilledVariable($completion4);
-                                                            c02241.L$3 = SpillingKt.nullOutSpilledVariable(link3);
-                                                            c02241.L$4 = SpillingKt.nullOutSpilledVariable(driveLink);
-                                                            c02241.label = 4;
+                                                            Function1 function3 = c02261.$subtitleCallback$inlined;
+                                                            Function1 function4 = c02261.$callback$inlined;
+                                                            c02261.L$0 = $this$withPermit$iv6;
+                                                            c02261.L$1 = obj6;
+                                                            c02261.L$2 = SpillingKt.nullOutSpilledVariable($completion4);
+                                                            c02261.L$3 = SpillingKt.nullOutSpilledVariable(link3);
+                                                            c02261.L$4 = SpillingKt.nullOutSpilledVariable(driveLink);
+                                                            c02261.label = 4;
                                                             $this$withPermit$iv7 = $this$withPermit$iv6;
                                                             Object obj10 = obj6;
-                                                            objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("UHDMovies", driveLink, "", function3, function4, null, null, c02241, 96, null);
+                                                            objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("UHDMovies", driveLink, "", function3, function4, null, null, c02261, 96, null);
                                                             if (objLoadSourceNameExtractor$default == coroutine_suspended) {
                                                                 return coroutine_suspended;
                                                             }
@@ -359,22 +359,22 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                 $this$withPermit$iv.release();
                                 return obj8;
                             case 1:
-                                obj2 = c02241.L$1;
-                                $this$withPermit$iv3 = (Semaphore) c02241.L$0;
+                                obj2 = c02261.L$1;
+                                $this$withPermit$iv3 = (Semaphore) c02261.L$0;
                                 ResultKt.throwOnFailure($result);
                                 $i$f$withPermit = 0;
-                                $completion = (Continuation) c02241;
+                                $completion = (Continuation) c02261;
                                 link = (String) obj2;
                                 if (!StringsKt.contains(link, "driveleech", true)) {
-                                    c02241.L$0 = $this$withPermit$iv3;
-                                    c02241.L$1 = obj2;
-                                    c02241.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                    c02241.L$3 = link;
-                                    c02241.label = 2;
+                                    c02261.L$0 = $this$withPermit$iv3;
+                                    c02261.L$1 = obj2;
+                                    c02261.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                    c02261.L$3 = link;
+                                    c02261.label = 2;
                                     $this$withPermit$iv5 = $this$withPermit$iv3;
                                     obj4 = obj2;
                                     objSafeGet$default = StreamPlayUtilsKt.safeGet$default(link, null, null, null, null, false, 0, this, 126, null);
-                                    c02241 = this;
+                                    c02261 = this;
                                     if (objSafeGet$default == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -386,22 +386,22 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                     obj5 = obj4;
                                     $this$withPermit$iv = $this$withPermit$iv5;
                                     String text3 = ((NiceResponse) objSafeGet$default).getText();
-                                    matchResultFind$default = Regex.find$default(c02241.$redirectRegex$inlined, text3, 0, 2, (Object) null);
+                                    matchResultFind$default = Regex.find$default(c02261.$redirectRegex$inlined, text3, 0, 2, (Object) null);
                                     if (matchResultFind$default != null) {
                                     }
                                     obj8 = Unit.INSTANCE;
                                     break;
                                 } else {
                                     if (StringsKt.contains(link, "driveseed", true)) {
-                                        c02241.L$0 = $this$withPermit$iv3;
-                                        c02241.L$1 = obj2;
-                                        c02241.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                        c02241.L$3 = link;
-                                        c02241.label = 2;
+                                        c02261.L$0 = $this$withPermit$iv3;
+                                        c02261.L$1 = obj2;
+                                        c02261.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                        c02261.L$3 = link;
+                                        c02261.label = 2;
                                         $this$withPermit$iv5 = $this$withPermit$iv3;
                                         obj4 = obj2;
                                         objSafeGet$default = StreamPlayUtilsKt.safeGet$default(link, null, null, null, null, false, 0, this, 126, null);
-                                        c02241 = this;
+                                        c02261 = this;
                                         if (objSafeGet$default == coroutine_suspended) {
                                             return coroutine_suspended;
                                         }
@@ -413,18 +413,18 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                         obj5 = obj4;
                                         $this$withPermit$iv = $this$withPermit$iv5;
                                         String text4 = ((NiceResponse) objSafeGet$default).getText();
-                                        matchResultFind$default = Regex.find$default(c02241.$redirectRegex$inlined, text4, 0, 2, (Object) null);
+                                        matchResultFind$default = Regex.find$default(c02261.$redirectRegex$inlined, text4, 0, 2, (Object) null);
                                         if (matchResultFind$default != null) {
                                         }
                                         obj8 = Unit.INSTANCE;
                                         break;
                                     } else {
-                                        c02241.L$0 = $this$withPermit$iv3;
-                                        c02241.L$1 = obj2;
-                                        c02241.L$2 = SpillingKt.nullOutSpilledVariable($completion);
-                                        c02241.L$3 = SpillingKt.nullOutSpilledVariable(link);
-                                        c02241.label = 3;
-                                        objBypassHrefli = StreamPlayUtilsKt.bypassHrefli(link, c02241);
+                                        c02261.L$0 = $this$withPermit$iv3;
+                                        c02261.L$1 = obj2;
+                                        c02261.L$2 = SpillingKt.nullOutSpilledVariable($completion);
+                                        c02261.L$3 = SpillingKt.nullOutSpilledVariable(link);
+                                        c02261.label = 3;
+                                        objBypassHrefli = StreamPlayUtilsKt.bypassHrefli(link, c02261);
                                         if (objBypassHrefli == coroutine_suspended) {
                                             return coroutine_suspended;
                                         }
@@ -446,17 +446,17 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                             $completion4 = $completion2;
                                             obj6 = obj3;
                                             $this$withPermit$iv6 = $this$withPermit$iv;
-                                            Function1 function5 = c02241.$subtitleCallback$inlined;
-                                            Function1 function6 = c02241.$callback$inlined;
-                                            c02241.L$0 = $this$withPermit$iv6;
-                                            c02241.L$1 = obj6;
-                                            c02241.L$2 = SpillingKt.nullOutSpilledVariable($completion4);
-                                            c02241.L$3 = SpillingKt.nullOutSpilledVariable(link3);
-                                            c02241.L$4 = SpillingKt.nullOutSpilledVariable(driveLink);
-                                            c02241.label = 4;
+                                            Function1 function5 = c02261.$subtitleCallback$inlined;
+                                            Function1 function6 = c02261.$callback$inlined;
+                                            c02261.L$0 = $this$withPermit$iv6;
+                                            c02261.L$1 = obj6;
+                                            c02261.L$2 = SpillingKt.nullOutSpilledVariable($completion4);
+                                            c02261.L$3 = SpillingKt.nullOutSpilledVariable(link3);
+                                            c02261.L$4 = SpillingKt.nullOutSpilledVariable(driveLink);
+                                            c02261.label = 4;
                                             $this$withPermit$iv7 = $this$withPermit$iv6;
                                             Object obj11 = obj6;
-                                            objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("UHDMovies", driveLink, "", function5, function6, null, null, c02241, 96, null);
+                                            objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("UHDMovies", driveLink, "", function5, function6, null, null, c02261, 96, null);
                                             if (objLoadSourceNameExtractor$default == coroutine_suspended) {
                                                 return coroutine_suspended;
                                             }
@@ -473,14 +473,14 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                 $i$f$withPermit3 = 0;
                                 semaphore = null;
                                 i2 = 0;
-                                link2 = (String) c02241.L$3;
-                                $completion3 = (Continuation) c02241.L$2;
-                                obj5 = c02241.L$1;
-                                $this$withPermit$iv = (Semaphore) c02241.L$0;
+                                link2 = (String) c02261.L$3;
+                                $completion3 = (Continuation) c02261.L$2;
+                                obj5 = c02261.L$1;
+                                $this$withPermit$iv = (Semaphore) c02261.L$0;
                                 ResultKt.throwOnFailure($result);
                                 objSafeGet$default = $result;
                                 String text5 = ((NiceResponse) objSafeGet$default).getText();
-                                matchResultFind$default = Regex.find$default(c02241.$redirectRegex$inlined, text5, 0, 2, (Object) null);
+                                matchResultFind$default = Regex.find$default(c02261.$redirectRegex$inlined, text5, 0, 2, (Object) null);
                                 if (matchResultFind$default != null) {
                                     break;
                                 }
@@ -491,10 +491,10 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                 $i$f$withPermit2 = 0;
                                 $this$withPermit$iv4 = null;
                                 i = 0;
-                                link = (String) c02241.L$3;
-                                $completion2 = (Continuation) c02241.L$2;
-                                obj3 = c02241.L$1;
-                                $this$withPermit$iv = (Semaphore) c02241.L$0;
+                                link = (String) c02261.L$3;
+                                $completion2 = (Continuation) c02261.L$2;
+                                obj3 = c02261.L$1;
+                                $this$withPermit$iv = (Semaphore) c02261.L$0;
                                 ResultKt.throwOnFailure($result);
                                 objBypassHrefli = $result;
                                 str = (String) objBypassHrefli;
@@ -509,17 +509,17 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                     $completion4 = $completion2;
                                     obj6 = obj3;
                                     $this$withPermit$iv6 = $this$withPermit$iv;
-                                    Function1 function7 = c02241.$subtitleCallback$inlined;
-                                    Function1 function8 = c02241.$callback$inlined;
-                                    c02241.L$0 = $this$withPermit$iv6;
-                                    c02241.L$1 = obj6;
-                                    c02241.L$2 = SpillingKt.nullOutSpilledVariable($completion4);
-                                    c02241.L$3 = SpillingKt.nullOutSpilledVariable(link3);
-                                    c02241.L$4 = SpillingKt.nullOutSpilledVariable(driveLink);
-                                    c02241.label = 4;
+                                    Function1 function7 = c02261.$subtitleCallback$inlined;
+                                    Function1 function8 = c02261.$callback$inlined;
+                                    c02261.L$0 = $this$withPermit$iv6;
+                                    c02261.L$1 = obj6;
+                                    c02261.L$2 = SpillingKt.nullOutSpilledVariable($completion4);
+                                    c02261.L$3 = SpillingKt.nullOutSpilledVariable(link3);
+                                    c02261.L$4 = SpillingKt.nullOutSpilledVariable(driveLink);
+                                    c02261.label = 4;
                                     $this$withPermit$iv7 = $this$withPermit$iv6;
                                     Object obj12 = obj6;
-                                    objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("UHDMovies", driveLink, "", function7, function8, null, null, c02241, 96, null);
+                                    objLoadSourceNameExtractor$default = StreamPlayUtilsKt.loadSourceNameExtractor$default("UHDMovies", driveLink, "", function7, function8, null, null, c02261, 96, null);
                                     if (objLoadSourceNameExtractor$default == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
@@ -530,8 +530,8 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                                 $this$withPermit$iv.release();
                                 return obj8;
                             case 4:
-                                Object obj13 = c02241.L$1;
-                                $this$withPermit$iv = (Semaphore) c02241.L$0;
+                                Object obj13 = c02261.L$1;
+                                $this$withPermit$iv = (Semaphore) c02261.L$0;
                                 ResultKt.throwOnFailure($result);
                                 $i$f$withPermit4 = 0;
                                 obj7 = $result;
@@ -564,7 +564,7 @@ public final class StreamPlayExtractor$invokeUhdmovies$$inlined$safeAmap$default
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     Collection destination$iv$iv2 = destination$iv$iv;
-                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02241(semaphore, item$iv$iv, null, this.$redirectRegex$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
+                    destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, Dispatchers.getIO(), (CoroutineStart) null, new C02261(semaphore, item$iv$iv, null, this.$redirectRegex$inlined, this.$subtitleCallback$inlined, this.$callback$inlined), 2, (Object) null));
                     destination$iv$iv = destination$iv$iv2;
                 }
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);

@@ -12,7 +12,6 @@ import com.lagradost.cloudstream3.TvType;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
-import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -26,6 +25,7 @@ import kotlin.ResultKt;
 import kotlin.TuplesKt;
 import kotlin.Unit;
 import kotlin.collections.CollectionsKt;
+import kotlin.collections.MapsKt;
 import kotlin.coroutines.Continuation;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
@@ -44,30 +44,34 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: StreamPlayKitsuHelper.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\bÆ\u0002\u0018\u00002\u00020\u0001:\u0005\u0019\u001a\u001b\u001c\u001dB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u0005J8\u0010\b\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000b0\n\u0012\u0004\u0012\u00020\f0\t2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u000f\u001a\u00020\u00052\u0006\u0010\u0010\u001a\u00020\u0011H\u0086@¢\u0006\u0002\u0010\u0012J.\u0010\u0013\u001a\b\u0012\u0004\u0012\u00020\u000b0\n2\u0006\u0010\r\u001a\u00020\u000e2\u0006\u0010\u0014\u001a\u00020\u00052\b\b\u0002\u0010\u0010\u001a\u00020\u0011H\u0086@¢\u0006\u0002\u0010\u0012J\u0018\u0010\u0015\u001a\u0004\u0018\u00010\u00162\u0006\u0010\u0017\u001a\u00020\u0005H\u0086@¢\u0006\u0002\u0010\u0018R\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u001e"}, d2 = {"Lcom/phisher98/StreamPlayKitsuHelper;", "", "<init>", "()V", "KITSU_BASE_URL", "", "mapSectionToKitsuCatalog", "sectionName", "getCatalog", "Lkotlin/Pair;", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "", "api", "Lcom/lagradost/cloudstream3/MainAPI;", "catalogId", "page", "", "(Lcom/lagradost/cloudstream3/MainAPI;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "query", "getMeta", "Lcom/phisher98/StreamPlayKitsuHelper$KitsuMeta;", "idWithPrefix", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "KitsuCatalogResponse", "KitsuMetaResponse", "KitsuMeta", "KitsuVideo", "KitsuLink", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nStreamPlayKitsuHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayKitsuHelper.kt\ncom/phisher98/StreamPlayKitsuHelper\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,144:1\n73#2,5:145\n73#2,5:154\n73#2,5:163\n1739#3:150\n1814#3,3:151\n1739#3:159\n1814#3,3:160\n*S KotlinDebug\n*F\n+ 1 StreamPlayKitsuHelper.kt\ncom/phisher98/StreamPlayKitsuHelper\n*L\n113#1:145,5\n127#1:154,5\n141#1:163,5\n114#1:150\n114#1:151,3\n128#1:159\n128#1:160,3\n*E\n"})
+@Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010$\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\b\bÆ\u0002\u0018\u00002\u00020\u0001:\u0005\u001d\u001e\u001f !B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\n\u001a\u00020\u00052\u0006\u0010\u000b\u001a\u00020\u0005J8\u0010\f\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u000f0\u000e\u0012\u0004\u0012\u00020\u00100\r2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00052\u0006\u0010\u0014\u001a\u00020\u0015H\u0086@¢\u0006\u0002\u0010\u0016J.\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000e2\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0018\u001a\u00020\u00052\b\b\u0002\u0010\u0014\u001a\u00020\u0015H\u0086@¢\u0006\u0002\u0010\u0016J\u0018\u0010\u0019\u001a\u0004\u0018\u00010\u001a2\u0006\u0010\u001b\u001a\u00020\u0005H\u0086@¢\u0006\u0002\u0010\u001cR\u000e\u0010\u0004\u001a\u00020\u0005X\u0086T¢\u0006\u0002\n\u0000R\u001d\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u0007¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\t¨\u0006\""}, d2 = {"Lcom/phisher98/StreamPlayKitsuHelper;", "", "<init>", "()V", "KITSU_BASE_URL", "", "kitsuHeaders", "", "getKitsuHeaders", "()Ljava/util/Map;", "mapSectionToKitsuCatalog", "sectionName", "getCatalog", "Lkotlin/Pair;", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "", "api", "Lcom/lagradost/cloudstream3/MainAPI;", "catalogId", "page", "", "(Lcom/lagradost/cloudstream3/MainAPI;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "query", "getMeta", "Lcom/phisher98/StreamPlayKitsuHelper$KitsuMeta;", "idWithPrefix", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "KitsuCatalogResponse", "KitsuMetaResponse", "KitsuMeta", "KitsuVideo", "KitsuLink", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nStreamPlayKitsuHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayKitsuHelper.kt\ncom/phisher98/StreamPlayKitsuHelper\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,160:1\n73#2,5:161\n73#2,5:170\n73#2,5:179\n1739#3:166\n1814#3,3:167\n1739#3:175\n1814#3,3:176\n*S KotlinDebug\n*F\n+ 1 StreamPlayKitsuHelper.kt\ncom/phisher98/StreamPlayKitsuHelper\n*L\n122#1:161,5\n136#1:170,5\n154#1:179,5\n124#1:166\n124#1:167,3\n137#1:175\n137#1:176,3\n*E\n"})
 public final class StreamPlayKitsuHelper {
+
+    @NotNull
+    public static final String KITSU_BASE_URL = "https://anime-kitsu.strem.fun";
 
     @NotNull
     public static final StreamPlayKitsuHelper INSTANCE = new StreamPlayKitsuHelper();
 
     @NotNull
-    public static final String KITSU_BASE_URL = "https://anime-kitsu.strem.fun";
+    private static final Map<String, String> kitsuHeaders = MapsKt.mapOf(new Pair[]{TuplesKt.to("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"), TuplesKt.to("Accept", "application/json, text/plain, */*"), TuplesKt.to("Referer", "https://anime-kitsu.strem.fun/")});
 
     /* JADX INFO: renamed from: com.phisher98.StreamPlayKitsuHelper$getCatalog$1 */
     /* JADX INFO: compiled from: StreamPlayKitsuHelper.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayKitsuHelper", f = "StreamPlayKitsuHelper.kt", i = {0, 0, 0, 0, 0}, l = {113}, m = "getCatalog", n = {"api", "catalogId", "url", "page", "skip"}, nl = {145}, s = {"L$0", "L$1", "L$2", "I$0", "I$1"}, v = 2)
-    static final class C02581 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayKitsuHelper", f = "StreamPlayKitsuHelper.kt", i = {0, 0, 0, 0, 0, 0}, l = {122}, m = "getCatalog", n = {"api", "catalogId", "url", "page", "pageSize", "skip"}, nl = {161}, s = {"L$0", "L$1", "L$2", "I$0", "I$1", "I$2"}, v = 2)
+    static final class C02601 extends ContinuationImpl {
         int I$0;
         int I$1;
+        int I$2;
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C02581(Continuation<? super C02581> continuation) {
+        C02601(Continuation<? super C02601> continuation) {
             super(continuation);
         }
 
@@ -82,15 +86,15 @@ public final class StreamPlayKitsuHelper {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayKitsuHelper$getMeta$1 */
     /* JADX INFO: compiled from: StreamPlayKitsuHelper.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayKitsuHelper", f = "StreamPlayKitsuHelper.kt", i = {0, 0, 0}, l = {141}, m = "getMeta", n = {"idWithPrefix", "formattedId", "url"}, nl = {145}, s = {"L$0", "L$1", "L$2"}, v = 2)
-    static final class C02591 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayKitsuHelper", f = "StreamPlayKitsuHelper.kt", i = {0, 0, 0}, l = {154}, m = "getMeta", n = {"idWithPrefix", "formattedId", "url"}, nl = {161}, s = {"L$0", "L$1", "L$2"}, v = 2)
+    static final class C02611 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C02591(Continuation<? super C02591> continuation) {
+        C02611(Continuation<? super C02611> continuation) {
             super(continuation);
         }
 
@@ -105,10 +109,9 @@ public final class StreamPlayKitsuHelper {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayKitsuHelper$search$1 */
     /* JADX INFO: compiled from: StreamPlayKitsuHelper.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayKitsuHelper", f = "StreamPlayKitsuHelper.kt", i = {0, 0, 0, 0, 0, 0}, l = {127}, m = "search", n = {"api", "query", "encoded", "url", "page", "skip"}, nl = {145}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "I$1"}, v = 2)
-    static final class C02601 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayKitsuHelper", f = "StreamPlayKitsuHelper.kt", i = {0, 0, 0, 0, 0}, l = {136}, m = "search", n = {"api", "query", "encoded", "url", "page"}, nl = {161}, s = {"L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
+    static final class C02621 extends ContinuationImpl {
         int I$0;
-        int I$1;
         Object L$0;
         Object L$1;
         Object L$2;
@@ -116,7 +119,7 @@ public final class StreamPlayKitsuHelper {
         int label;
         /* synthetic */ Object result;
 
-        C02601(Continuation<? super C02601> continuation) {
+        C02621(Continuation<? super C02621> continuation) {
             super(continuation);
         }
 
@@ -129,6 +132,11 @@ public final class StreamPlayKitsuHelper {
     }
 
     private StreamPlayKitsuHelper() {
+    }
+
+    @NotNull
+    public final Map<String, String> getKitsuHeaders() {
+        return kitsuHeaders;
     }
 
     /* JADX INFO: compiled from: StreamPlayKitsuHelper.kt */
@@ -261,7 +269,7 @@ public final class StreamPlayKitsuHelper {
     /* JADX INFO: compiled from: StreamPlayKitsuHelper.kt */
     @JsonIgnoreProperties(ignoreUnknown = true)
     @Metadata(d1 = {"\u0000P\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\u0010 \n\u0002\b\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0010\b\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0014\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001Bñ\u0003\u0012\u0016\b\u0001\u0010\u0002\u001a\u00020\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0002\u0012\u0018\b\u0003\u0010\u0006\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0007\u0012\u0018\b\u0003\u0010\b\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\t\u0012\u0018\b\u0003\u0010\n\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\n\u0012\u0018\b\u0003\u0010\u000b\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000b\u0012\u0018\b\u0003\u0010\f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\f\u0012\u001e\b\u0003\u0010\r\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u000e:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\r\u0012\u0018\b\u0003\u0010\u000f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000f\u0012\u0018\b\u0003\u0010\u0010\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0010\u0012\u0018\b\u0003\u0010\u0011\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0011\u0012\u0018\b\u0003\u0010\u0012\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0012\u0012\u001e\b\u0003\u0010\u0013\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u000e:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0013\u0012\u0018\b\u0003\u0010\u0014\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0014\u0012\u0018\b\u0003\u0010\u0015\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0015\u0012\u0018\b\u0003\u0010\u0016\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0016\u0012\u0018\b\u0003\u0010\u0017\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0017\u0012\u001e\b\u0003\u0010\u0018\u001a\n\u0012\u0004\u0012\u00020\u0019\u0018\u00010\u000e:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0018\u0012\u001e\b\u0003\u0010\u001a\u001a\n\u0012\u0004\u0012\u00020\u001b\u0018\u00010\u000e:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001a¢\u0006\u0004\b\u001c\u0010\u001dJ\r\u00102\u001a\u0004\u0018\u000103¢\u0006\u0002\u00104J\r\u00105\u001a\u0004\u0018\u000103¢\u0006\u0002\u00104J\u000e\u00106\u001a\u0002072\u0006\u00108\u001a\u000209J\t\u0010:\u001a\u00020\u0003HÆ\u0003J\u000b\u0010;\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010<\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010=\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010>\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010?\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0011\u0010@\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u000eHÆ\u0003J\u000b\u0010A\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010B\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010C\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010D\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0011\u0010E\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u000eHÆ\u0003J\u000b\u0010F\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010G\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010H\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010I\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0011\u0010J\u001a\n\u0012\u0004\u0012\u00020\u0019\u0018\u00010\u000eHÆ\u0003J\u0011\u0010K\u001a\n\u0012\u0004\u0012\u00020\u001b\u0018\u00010\u000eHÆ\u0003Jó\u0003\u0010L\u001a\u00020\u00002\u0016\b\u0003\u0010\u0002\u001a\u00020\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00022\u0018\b\u0003\u0010\u0006\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00072\u0018\b\u0003\u0010\b\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\t2\u0018\b\u0003\u0010\n\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\n2\u0018\b\u0003\u0010\u000b\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000b2\u0018\b\u0003\u0010\f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\f2\u001e\b\u0003\u0010\r\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u000e:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\r2\u0018\b\u0003\u0010\u000f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000f2\u0018\b\u0003\u0010\u0010\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00102\u0018\b\u0003\u0010\u0011\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00112\u0018\b\u0003\u0010\u0012\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00122\u001e\b\u0003\u0010\u0013\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u000e:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00132\u0018\b\u0003\u0010\u0014\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00142\u0018\b\u0003\u0010\u0015\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00152\u0018\b\u0003\u0010\u0016\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00162\u0018\b\u0003\u0010\u0017\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00172\u001e\b\u0003\u0010\u0018\u001a\n\u0012\u0004\u0012\u00020\u0019\u0018\u00010\u000e:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00182\u001e\b\u0003\u0010\u001a\u001a\n\u0012\u0004\u0012\u00020\u001b\u0018\u00010\u000e:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001aHÆ\u0001J\u0014\u0010M\u001a\u00020N2\b\u0010O\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010P\u001a\u000203HÖ\u0081\u0004J\n\u0010Q\u001a\u00020\u0003HÖ\u0081\u0004R\u0011\u0010\u0002\u001a\u00020\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b \u0010\u001fR\u0013\u0010\b\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u0013\u0010\n\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\"\u0010\u001fR\u0013\u0010\u000b\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b#\u0010\u001fR\u0013\u0010\f\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b$\u0010\u001fR\u0019\u0010\r\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u000e¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&R\u0013\u0010\u000f\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b'\u0010\u001fR\u0013\u0010\u0010\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b(\u0010\u001fR\u0013\u0010\u0011\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b)\u0010\u001fR\u0013\u0010\u0012\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b*\u0010\u001fR\u0019\u0010\u0013\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u000e¢\u0006\b\n\u0000\u001a\u0004\b+\u0010&R\u0013\u0010\u0014\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b,\u0010\u001fR\u0013\u0010\u0015\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b-\u0010\u001fR\u0013\u0010\u0016\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b.\u0010\u001fR\u0013\u0010\u0017\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b/\u0010\u001fR\u0019\u0010\u0018\u001a\n\u0012\u0004\u0012\u00020\u0019\u0018\u00010\u000e¢\u0006\b\n\u0000\u001a\u0004\b0\u0010&R\u0019\u0010\u001a\u001a\n\u0012\u0004\u0012\u00020\u001b\u0018\u00010\u000e¢\u0006\b\n\u0000\u001a\u0004\b1\u0010&Ê\u0001\f\bS\u0012\b\bT\u0012\u0004\b\u0007\u0010\u0002¨\u0006R"}, d2 = {"Lcom/phisher98/StreamPlayKitsuHelper$KitsuMeta;", "", "id", "", "Lcom/fasterxml/jackson/annotation/JsonProperty;", "value", "kitsuId", "kitsu_id", "imdbId", "imdb_id", "type", "animeType", "name", "aliases", "", "description", "releaseInfo", "year", "imdbRating", "genres", "logo", "poster", "background", "status", "videos", "Lcom/phisher98/StreamPlayKitsuHelper$KitsuVideo;", "links", "Lcom/phisher98/StreamPlayKitsuHelper$KitsuLink;", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V", "getId", "()Ljava/lang/String;", "getKitsuId", "getImdbId", "getType", "getAnimeType", "getName", "getAliases", "()Ljava/util/List;", "getDescription", "getReleaseInfo", "getYear", "getImdbRating", "getGenres", "getLogo", "getPoster", "getBackground", "getStatus", "getVideos", "getLinks", "getNumericKitsuId", "", "()Ljava/lang/Integer;", "getYearInt", "toSearchResponse", "Lcom/lagradost/cloudstream3/SearchResponse;", "api", "Lcom/lagradost/cloudstream3/MainAPI;", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "copy", "equals", "", "other", "hashCode", "toString", "StreamPlay", "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;", "ignoreUnknown"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nStreamPlayKitsuHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayKitsuHelper.kt\ncom/phisher98/StreamPlayKitsuHelper$KitsuMeta\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,144:1\n1#2:145\n*E\n"})
+    @SourceDebugExtension({"SMAP\nStreamPlayKitsuHelper.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayKitsuHelper.kt\ncom/phisher98/StreamPlayKitsuHelper$KitsuMeta\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,160:1\n1#2:161\n*E\n"})
     public static final /* data */ class KitsuMeta {
 
         @Nullable
@@ -656,7 +664,11 @@ public final class StreamPlayKitsuHelper {
         }
 
         static final Unit toSearchResponse$lambda$1(KitsuMeta this$0, Integer $rating, AnimeSearchResponse $this$newAnimeSearchResponse) {
-            $this$newAnimeSearchResponse.setPosterUrl(this$0.poster);
+            String str = this$0.poster;
+            if (str == null && (str = this$0.logo) == null) {
+                str = this$0.background;
+            }
+            $this$newAnimeSearchResponse.setPosterUrl(str);
             if ($rating != null) {
                 $this$newAnimeSearchResponse.setScore(Score.Companion.from100($rating));
             }
@@ -1010,101 +1022,29 @@ public final class StreamPlayKitsuHelper {
         return (StringsKt.contains(sectionName, "Top", true) || StringsKt.contains(sectionName, "Rating", true)) ? "kitsu-anime-rating" : "kitsu-anime-trending";
     }
 
+    /* JADX WARN: Code duplicated, block: B:43:0x0148 A[Catch: all -> 0x01a8, TryCatch #2 {all -> 0x01a8, blocks: (B:35:0x0123, B:37:0x0127, B:41:0x0144, B:43:0x0148, B:45:0x0155, B:46:0x016f, B:48:0x0175, B:49:0x018a, B:56:0x019f, B:40:0x013e), top: B:70:0x0123, inners: #1 }] */
+    /* JADX WARN: Code duplicated, block: B:45:0x0155 A[Catch: all -> 0x01a8, TryCatch #2 {all -> 0x01a8, blocks: (B:35:0x0123, B:37:0x0127, B:41:0x0144, B:43:0x0148, B:45:0x0155, B:46:0x016f, B:48:0x0175, B:49:0x018a, B:56:0x019f, B:40:0x013e), top: B:70:0x0123, inners: #1 }] */
+    /* JADX WARN: Code duplicated, block: B:48:0x0175 A[Catch: all -> 0x01a8, LOOP:0: B:46:0x016f->B:48:0x0175, LOOP_END, TryCatch #2 {all -> 0x01a8, blocks: (B:35:0x0123, B:37:0x0127, B:41:0x0144, B:43:0x0148, B:45:0x0155, B:46:0x016f, B:48:0x0175, B:49:0x018a, B:56:0x019f, B:40:0x013e), top: B:70:0x0123, inners: #1 }] */
+    /* JADX WARN: Code duplicated, block: B:51:0x0197  */
+    /* JADX WARN: Code duplicated, block: B:52:0x0199  */
+    /* JADX WARN: Code duplicated, block: B:54:0x019c  */
+    /* JADX WARN: Code duplicated, block: B:55:0x019d  */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public final Object getCatalog(@NotNull MainAPI api, @NotNull String catalogId, int page, @NotNull Continuation<? super Pair<? extends List<? extends SearchResponse>, Boolean>> continuation) {
-        C02581 c02581;
-        boolean z;
-        int page2;
-        MainAPI api2;
-        Object obj;
-        Object safe;
-        if (continuation instanceof C02581) {
-            c02581 = (C02581) continuation;
-            if ((c02581.label & Integer.MIN_VALUE) != 0) {
-                c02581.label -= Integer.MIN_VALUE;
-            } else {
-                c02581 = new C02581(continuation);
-            }
-        } else {
-            c02581 = new C02581(continuation);
-        }
-        Object $result = c02581.result;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02581.label) {
-            case 0:
-                ResultKt.throwOnFailure($result);
-                int skip = (page - 1) * 50;
-                String url = skip > 0 ? "https://anime-kitsu.strem.fun/catalog/anime/" + catalogId + "/skip=" + skip + ".json" : "https://anime-kitsu.strem.fun/catalog/anime/" + catalogId + ".json";
-                Requests app = MainActivityKt.getApp();
-                c02581.L$0 = api;
-                c02581.L$1 = SpillingKt.nullOutSpilledVariable(catalogId);
-                c02581.L$2 = SpillingKt.nullOutSpilledVariable(url);
-                c02581.I$0 = page;
-                c02581.I$1 = skip;
-                c02581.label = 1;
-                z = true;
-                page2 = 50;
-                Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02581, 4094, (Object) null);
-                if (obj2 == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
-                api2 = api;
-                obj = obj2;
-                break;
-                break;
-            case 1:
-                int i = c02581.I$1;
-                int i2 = c02581.I$0;
-                api2 = (MainAPI) c02581.L$0;
-                ResultKt.throwOnFailure($result);
-                z = true;
-                obj = $result;
-                page2 = 50;
-                break;
-            default:
-                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        }
-        NiceResponse this_$iv = (NiceResponse) obj;
-        try {
-            ResponseParser parser = this_$iv.getParser();
-            Intrinsics.checkNotNull(parser);
-            safe = parser.parseSafe(this_$iv.getText(), Reflection.getOrCreateKotlinClass(KitsuCatalogResponse.class));
-        } catch (Exception e$iv) {
-            e$iv.printStackTrace();
-            safe = null;
-        }
-        KitsuCatalogResponse res = (KitsuCatalogResponse) safe;
-        if (res == null) {
-            return TuplesKt.to(CollectionsKt.emptyList(), Boxing.boxBoolean(false));
-        }
-        Iterable $this$map$iv = res.getMetas();
-        Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
-        for (Object item$iv$iv : $this$map$iv) {
-            KitsuMeta it = (KitsuMeta) item$iv$iv;
-            destination$iv$iv.add(it.toSearchResponse(api2));
-        }
-        List list = (List) destination$iv$iv;
-        boolean hasNextPage = list.size() >= page2;
-        if (!hasNextPage) {
-            z = false;
-        }
-        return TuplesKt.to(list, Boxing.boxBoolean(z));
-    }
-
-    public static /* synthetic */ Object search$default(StreamPlayKitsuHelper streamPlayKitsuHelper, MainAPI mainAPI, String str, int i, Continuation continuation, int i2, Object obj) {
-        if ((i2 & 4) != 0) {
-            i = 1;
-        }
-        return streamPlayKitsuHelper.search(mainAPI, str, i, continuation);
-    }
-
-    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    @Nullable
-    public final Object search(@NotNull MainAPI api, @NotNull String query, int page, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) throws UnsupportedEncodingException {
         C02601 c02601;
+        boolean z;
+        String url;
+        Object obj;
+        boolean z2;
         MainAPI api2;
+        int pageSize;
         Object safe;
+        KitsuCatalogResponse res;
+        Iterable $this$map$iv;
+        Collection destination$iv$iv;
+        List list;
+        boolean hasNextPage;
         if (continuation instanceof C02601) {
             c02601 = (C02601) continuation;
             if ((c02601.label & Integer.MIN_VALUE) != 0) {
@@ -1115,118 +1055,352 @@ public final class StreamPlayKitsuHelper {
         } else {
             c02601 = new C02601(continuation);
         }
-        Object $result = c02601.result;
+        C02601 c02602 = c02601;
+        Object $result = c02602.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02601.label) {
+        switch (c02602.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                String encoded = URLEncoder.encode(query, StandardCharsets.UTF_8.name());
-                int skip = (page - 1) * 50;
-                String url = skip > 0 ? "https://anime-kitsu.strem.fun/catalog/anime/kitsu-anime-list/search=" + encoded + "/skip=" + skip + ".json" : "https://anime-kitsu.strem.fun/catalog/anime/kitsu-anime-list/search=" + encoded + ".json";
-                Requests app = MainActivityKt.getApp();
-                c02601.L$0 = api;
-                c02601.L$1 = SpillingKt.nullOutSpilledVariable(query);
-                c02601.L$2 = SpillingKt.nullOutSpilledVariable(encoded);
-                c02601.L$3 = SpillingKt.nullOutSpilledVariable(url);
-                c02601.I$0 = page;
-                c02601.I$1 = skip;
-                c02601.label = 1;
-                $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02601, 4094, (Object) null);
-                if ($result == coroutine_suspended) {
-                    return coroutine_suspended;
+                try {
+                    int pageSize2 = StringsKt.contains$default(catalogId, "trending", false, 2, (Object) null) ? 50 : 20;
+                    int skip = (page - 1) * pageSize2;
+                    if (skip > 0) {
+                        try {
+                            url = "https://anime-kitsu.strem.fun/catalog/anime/" + catalogId + "/skip=" + skip + ".json";
+                        } catch (Throwable th) {
+                            z = false;
+                            return TuplesKt.to(CollectionsKt.emptyList(), Boxing.boxBoolean(z));
+                        }
+                    } else {
+                        url = "https://anime-kitsu.strem.fun/catalog/anime/" + catalogId + ".json";
+                    }
+                    Requests app = MainActivityKt.getApp();
+                    Map<String, String> map = kitsuHeaders;
+                    c02602.L$0 = api;
+                    c02602.L$1 = SpillingKt.nullOutSpilledVariable(catalogId);
+                    c02602.L$2 = SpillingKt.nullOutSpilledVariable(url);
+                    c02602.I$0 = page;
+                    c02602.I$1 = pageSize2;
+                    c02602.I$2 = skip;
+                    c02602.label = 1;
+                    int pageSize3 = pageSize2;
+                    obj = null;
+                    z2 = true;
+                    z = false;
+                    try {
+                        Object obj2 = Requests.get$default(app, url, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02602, 4092, (Object) null);
+                        if (obj2 == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        api2 = api;
+                        pageSize = pageSize3;
+                        $result = obj2;
+                        try {
+                            NiceResponse this_$iv = (NiceResponse) $result;
+                            try {
+                                ResponseParser parser = this_$iv.getParser();
+                                Intrinsics.checkNotNull(parser);
+                                safe = parser.parseSafe(this_$iv.getText(), Reflection.getOrCreateKotlinClass(KitsuCatalogResponse.class));
+                                break;
+                            } catch (Exception e$iv) {
+                                e$iv.printStackTrace();
+                                safe = obj;
+                            }
+                            res = (KitsuCatalogResponse) safe;
+                            if (res == null) {
+                                return TuplesKt.to(CollectionsKt.emptyList(), Boxing.boxBoolean(z));
+                            }
+                            $this$map$iv = res.getMetas();
+                            destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+                            for (Object item$iv$iv : $this$map$iv) {
+                                KitsuMeta it = (KitsuMeta) item$iv$iv;
+                                destination$iv$iv.add(it.toSearchResponse(api2));
+                                $this$map$iv = $this$map$iv;
+                            }
+                            list = (List) destination$iv$iv;
+                            if (list.size() >= pageSize) {
+                                hasNextPage = true;
+                            } else {
+                                hasNextPage = false;
+                            }
+                            if (hasNextPage) {
+                                z2 = false;
+                            }
+                            return TuplesKt.to(list, Boxing.boxBoolean(z2));
+                        } catch (Throwable th2) {
+                            return TuplesKt.to(CollectionsKt.emptyList(), Boxing.boxBoolean(z));
+                        }
+                    } catch (Throwable th3) {
+                        return TuplesKt.to(CollectionsKt.emptyList(), Boxing.boxBoolean(z));
+                    }
+                } catch (Throwable th4) {
+                    z = false;
                 }
-                api2 = api;
-                break;
                 break;
             case 1:
-                int i = c02601.I$1;
-                int i2 = c02601.I$0;
-                api2 = (MainAPI) c02601.L$0;
-                ResultKt.throwOnFailure($result);
-                break;
+                int i = c02602.I$2;
+                pageSize = c02602.I$1;
+                int i2 = c02602.I$0;
+                api2 = (MainAPI) c02602.L$0;
+                try {
+                    ResultKt.throwOnFailure($result);
+                    obj = null;
+                    z2 = true;
+                    z = false;
+                    NiceResponse this_$iv2 = (NiceResponse) $result;
+                    ResponseParser parser2 = this_$iv2.getParser();
+                    Intrinsics.checkNotNull(parser2);
+                    safe = parser2.parseSafe(this_$iv2.getText(), Reflection.getOrCreateKotlinClass(KitsuCatalogResponse.class));
+                    res = (KitsuCatalogResponse) safe;
+                    if (res == null) {
+                        return TuplesKt.to(CollectionsKt.emptyList(), Boxing.boxBoolean(z));
+                    }
+                    $this$map$iv = res.getMetas();
+                    destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+                    while (r13.hasNext()) {
+                        KitsuMeta it2 = (KitsuMeta) item$iv$iv;
+                        destination$iv$iv.add(it2.toSearchResponse(api2));
+                        $this$map$iv = $this$map$iv;
+                    }
+                    list = (List) destination$iv$iv;
+                    if (list.size() >= pageSize) {
+                        hasNextPage = true;
+                    } else {
+                        hasNextPage = false;
+                    }
+                    if (hasNextPage) {
+                        z2 = false;
+                    }
+                    return TuplesKt.to(list, Boxing.boxBoolean(z2));
+                } catch (Throwable th5) {
+                    z = false;
+                    return TuplesKt.to(CollectionsKt.emptyList(), Boxing.boxBoolean(z));
+                }
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-        NiceResponse this_$iv = (NiceResponse) $result;
-        try {
-            ResponseParser parser = this_$iv.getParser();
-            Intrinsics.checkNotNull(parser);
-            safe = parser.parseSafe(this_$iv.getText(), Reflection.getOrCreateKotlinClass(KitsuCatalogResponse.class));
-        } catch (Exception e$iv) {
-            e$iv.printStackTrace();
-            safe = null;
-        }
-        KitsuCatalogResponse res = (KitsuCatalogResponse) safe;
-        if (res == null) {
-            return CollectionsKt.emptyList();
-        }
-        Iterable $this$map$iv = res.getMetas();
-        Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
-        for (Object item$iv$iv : $this$map$iv) {
-            KitsuCatalogResponse res2 = res;
-            KitsuMeta it = (KitsuMeta) item$iv$iv;
-            destination$iv$iv.add(it.toSearchResponse(api2));
-            res = res2;
-        }
-        return (List) destination$iv$iv;
     }
 
-    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
+    public static /* synthetic */ Object search$default(StreamPlayKitsuHelper streamPlayKitsuHelper, MainAPI mainAPI, String str, int i, Continuation continuation, int i2, Object obj) {
+        if ((i2 & 4) != 0) {
+            i = 1;
+        }
+        return streamPlayKitsuHelper.search(mainAPI, str, i, continuation);
+    }
+
+    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
-    public final Object getMeta(@NotNull String idWithPrefix, @NotNull Continuation<? super KitsuMeta> continuation) {
-        C02591 c02591;
-        String formattedId;
+    public final Object search(@NotNull MainAPI api, @NotNull String query, int page, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
+        C02621 c02621;
         Object obj;
+        MainAPI api2;
         Object safe;
-        if (continuation instanceof C02591) {
-            c02591 = (C02591) continuation;
-            if ((c02591.label & Integer.MIN_VALUE) != 0) {
-                c02591.label -= Integer.MIN_VALUE;
+        KitsuCatalogResponse res;
+        Iterable metas;
+        if (continuation instanceof C02621) {
+            c02621 = (C02621) continuation;
+            if ((c02621.label & Integer.MIN_VALUE) != 0) {
+                c02621.label -= Integer.MIN_VALUE;
             } else {
-                c02591 = new C02591(continuation);
+                c02621 = new C02621(continuation);
             }
         } else {
-            c02591 = new C02591(continuation);
+            c02621 = new C02621(continuation);
         }
-        Object $result = c02591.result;
+        C02621 c02622 = c02621;
+        Object $result = c02622.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c02591.label) {
+        switch (c02622.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (StringsKt.startsWith$default(idWithPrefix, "kitsu:", false, 2, (Object) null) || StringsKt.startsWith$default(idWithPrefix, "anilist:", false, 2, (Object) null) || StringsKt.startsWith$default(idWithPrefix, "mal:", false, 2, (Object) null) || StringsKt.startsWith$default(idWithPrefix, "anidb:", false, 2, (Object) null) || StringsKt.toIntOrNull(idWithPrefix) == null) {
-                    formattedId = idWithPrefix;
-                } else {
-                    formattedId = "kitsu:" + idWithPrefix;
-                }
-                String url = "https://anime-kitsu.strem.fun/meta/anime/" + formattedId + ".json";
-                Requests app = MainActivityKt.getApp();
-                c02591.L$0 = SpillingKt.nullOutSpilledVariable(idWithPrefix);
-                c02591.L$1 = SpillingKt.nullOutSpilledVariable(formattedId);
-                c02591.L$2 = SpillingKt.nullOutSpilledVariable(url);
-                c02591.label = 1;
-                obj = null;
-                $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02591, 4094, (Object) null);
-                if ($result == coroutine_suspended) {
-                    return coroutine_suspended;
+                try {
+                    String encoded = StringsKt.replace$default(URLEncoder.encode(query, StandardCharsets.UTF_8.name()), "+", "%20", false, 4, (Object) null);
+                    String url = "https://anime-kitsu.strem.fun/catalog/anime/kitsu-anime-list/search=" + encoded + ".json";
+                    Requests app = MainActivityKt.getApp();
+                    Map<String, String> map = kitsuHeaders;
+                    c02622.L$0 = api;
+                    c02622.L$1 = SpillingKt.nullOutSpilledVariable(query);
+                    c02622.L$2 = SpillingKt.nullOutSpilledVariable(encoded);
+                    c02622.L$3 = SpillingKt.nullOutSpilledVariable(url);
+                    c02622.I$0 = page;
+                    c02622.label = 1;
+                    try {
+                        obj = Requests.get$default(app, url, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02622, 4092, (Object) null);
+                        if (obj == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        api2 = api;
+                        try {
+                            NiceResponse this_$iv = (NiceResponse) obj;
+                            try {
+                                ResponseParser parser = this_$iv.getParser();
+                                Intrinsics.checkNotNull(parser);
+                                safe = parser.parseSafe(this_$iv.getText(), Reflection.getOrCreateKotlinClass(KitsuCatalogResponse.class));
+                                break;
+                            } catch (Exception e$iv) {
+                                e$iv.printStackTrace();
+                                safe = null;
+                            }
+                            res = (KitsuCatalogResponse) safe;
+                            if (res != null || (metas = res.getMetas()) == null) {
+                                return CollectionsKt.emptyList();
+                            }
+                            Iterable $this$map$iv = metas;
+                            Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+                            for (Object item$iv$iv : $this$map$iv) {
+                                KitsuMeta it = (KitsuMeta) item$iv$iv;
+                                destination$iv$iv.add(it.toSearchResponse(api2));
+                                res = res;
+                            }
+                            return (List) destination$iv$iv;
+                        } catch (Throwable th) {
+                            return CollectionsKt.emptyList();
+                        }
+                    } catch (Throwable th2) {
+                        return CollectionsKt.emptyList();
+                    }
+                } catch (Throwable th3) {
                 }
                 break;
             case 1:
+                int i = c02622.I$0;
+                api2 = (MainAPI) c02622.L$0;
+                try {
+                    ResultKt.throwOnFailure($result);
+                    obj = $result;
+                    NiceResponse this_$iv2 = (NiceResponse) obj;
+                    ResponseParser parser2 = this_$iv2.getParser();
+                    Intrinsics.checkNotNull(parser2);
+                    safe = parser2.parseSafe(this_$iv2.getText(), Reflection.getOrCreateKotlinClass(KitsuCatalogResponse.class));
+                    res = (KitsuCatalogResponse) safe;
+                    if (res != null) {
+                        break;
+                    }
+                    return CollectionsKt.emptyList();
+                } catch (Throwable th4) {
+                    return CollectionsKt.emptyList();
+                }
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+    }
+
+    /* JADX WARN: Code duplicated, block: B:35:0x00a5  */
+    /* JADX WARN: Code duplicated, block: B:43:0x0111 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:44:0x0112  */
+    /* JADX WARN: Code duplicated, block: B:53:0x0138 A[Catch: all -> 0x0141, TRY_LEAVE, TryCatch #0 {all -> 0x0141, blocks: (B:45:0x0113, B:47:0x0117, B:51:0x0134, B:53:0x0138, B:50:0x012e), top: B:66:0x0113, inners: #2 }] */
+    /* JADX WARN: Code duplicated, block: B:55:0x013e  */
+    /* JADX WARN: Code duplicated, block: B:7:0x001c  */
+    @Nullable
+    public final Object getMeta(@NotNull String idWithPrefix, @NotNull Continuation<? super KitsuMeta> continuation) {
+        C02611 c02611;
+        Object obj;
+        String formattedId;
+        Object safe;
+        if (continuation instanceof C02611) {
+            c02611 = (C02611) continuation;
+            if ((c02611.label & Integer.MIN_VALUE) != 0) {
+                c02611.label -= Integer.MIN_VALUE;
+            } else {
+                c02611 = new C02611(continuation);
+            }
+        } else {
+            c02611 = new C02611(continuation);
+        }
+        Object $result = c02611.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (c02611.label) {
+            case 0:
                 ResultKt.throwOnFailure($result);
-                obj = null;
+                try {
+                    if (StringsKt.startsWith$default(idWithPrefix, "kitsu:", false, 2, (Object) null)) {
+                        formattedId = idWithPrefix;
+                        String url = "https://anime-kitsu.strem.fun/meta/anime/" + formattedId + ".json";
+                        Requests app = MainActivityKt.getApp();
+                        Map<String, String> map = kitsuHeaders;
+                        c02611.L$0 = SpillingKt.nullOutSpilledVariable(idWithPrefix);
+                        c02611.L$1 = SpillingKt.nullOutSpilledVariable(formattedId);
+                        c02611.L$2 = SpillingKt.nullOutSpilledVariable(url);
+                        c02611.label = 1;
+                        obj = null;
+                        $result = Requests.get$default(app, url, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02611, 4092, (Object) null);
+                        if ($result == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        NiceResponse this_$iv = (NiceResponse) $result;
+                        ResponseParser parser = this_$iv.getParser();
+                        Intrinsics.checkNotNull(parser);
+                        safe = parser.parseSafe(this_$iv.getText(), Reflection.getOrCreateKotlinClass(KitsuMetaResponse.class));
+                        KitsuMetaResponse kitsuMetaResponse = (KitsuMetaResponse) safe;
+                        if (kitsuMetaResponse != null) {
+                        }
+                    }
+                    try {
+                        if (StringsKt.startsWith$default(idWithPrefix, "anilist:", false, 2, (Object) null) || StringsKt.startsWith$default(idWithPrefix, "mal:", false, 2, (Object) null) || StringsKt.startsWith$default(idWithPrefix, "anidb:", false, 2, (Object) null) || StringsKt.toIntOrNull(idWithPrefix) == null) {
+                            formattedId = idWithPrefix;
+                        } else {
+                            formattedId = "kitsu:" + idWithPrefix;
+                        }
+                        String url2 = "https://anime-kitsu.strem.fun/meta/anime/" + formattedId + ".json";
+                        try {
+                            Requests app2 = MainActivityKt.getApp();
+                            Map<String, String> map2 = kitsuHeaders;
+                            c02611.L$0 = SpillingKt.nullOutSpilledVariable(idWithPrefix);
+                            c02611.L$1 = SpillingKt.nullOutSpilledVariable(formattedId);
+                            c02611.L$2 = SpillingKt.nullOutSpilledVariable(url2);
+                            c02611.label = 1;
+                            obj = null;
+                            try {
+                                $result = Requests.get$default(app2, url2, map2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c02611, 4092, (Object) null);
+                                if ($result == coroutine_suspended) {
+                                    return coroutine_suspended;
+                                }
+                                try {
+                                    NiceResponse this_$iv2 = (NiceResponse) $result;
+                                    try {
+                                        ResponseParser parser2 = this_$iv2.getParser();
+                                        Intrinsics.checkNotNull(parser2);
+                                        safe = parser2.parseSafe(this_$iv2.getText(), Reflection.getOrCreateKotlinClass(KitsuMetaResponse.class));
+                                        break;
+                                    } catch (Exception e$iv) {
+                                        e$iv.printStackTrace();
+                                        safe = obj;
+                                    }
+                                    KitsuMetaResponse kitsuMetaResponse2 = (KitsuMetaResponse) safe;
+                                    return kitsuMetaResponse2 != null ? kitsuMetaResponse2.getMeta() : obj;
+                                } catch (Throwable th) {
+                                }
+                            } catch (Throwable th2) {
+                            }
+                        } catch (Throwable th3) {
+                            obj = null;
+                        }
+                    } catch (Throwable th4) {
+                        obj = null;
+                    }
+                    break;
+                } catch (Throwable th5) {
+                    obj = null;
+                }
+                return obj;
+            case 1:
+                try {
+                    ResultKt.throwOnFailure($result);
+                    obj = null;
+                    NiceResponse this_$iv3 = (NiceResponse) $result;
+                    ResponseParser parser3 = this_$iv3.getParser();
+                    Intrinsics.checkNotNull(parser3);
+                    safe = parser3.parseSafe(this_$iv3.getText(), Reflection.getOrCreateKotlinClass(KitsuMetaResponse.class));
+                    KitsuMetaResponse kitsuMetaResponse3 = (KitsuMetaResponse) safe;
+                    if (kitsuMetaResponse3 != null) {
+                    }
+                } catch (Throwable th6) {
+                    obj = null;
+                    break;
+                }
                 break;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-        NiceResponse this_$iv = (NiceResponse) $result;
-        try {
-            ResponseParser parser = this_$iv.getParser();
-            Intrinsics.checkNotNull(parser);
-            safe = parser.parseSafe(this_$iv.getText(), Reflection.getOrCreateKotlinClass(KitsuMetaResponse.class));
-        } catch (Exception e$iv) {
-            e$iv.printStackTrace();
-            safe = obj;
-        }
-        KitsuMetaResponse kitsuMetaResponse = (KitsuMetaResponse) safe;
-        return kitsuMetaResponse != null ? kitsuMetaResponse.getMeta() : obj;
     }
 }
