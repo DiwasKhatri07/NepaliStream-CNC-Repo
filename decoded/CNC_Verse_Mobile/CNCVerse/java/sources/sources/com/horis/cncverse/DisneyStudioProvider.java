@@ -315,7 +315,7 @@ public class DisneyStudioProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:21:0x0110  */
     /* JADX WARN: Code duplicated, block: B:25:0x013f A[LOOP:0: B:23:0x0139->B:25:0x013f, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    static /* synthetic */ Object getMainPage$suspendImpl(DisneyStudioProvider $this, int page, MainPageRequest request, Continuation<? super HomePageResponse> continuation) {
+    static /* synthetic */ Object getMainPage$suspendImpl(DisneyStudioProvider $this, int page, MainPageRequest request, Continuation<? super HomePageResponse> continuation) throws Exception {
         C00041 c00041;
         int page2;
         MainPageRequest request2;
@@ -496,7 +496,7 @@ public class DisneyStudioProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:85:0x04e4 A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:86:0x04e5  */
     /* JADX WARN: Code duplicated, block: B:92:0x0513  */
-    static /* synthetic */ Object load$suspendImpl(DisneyStudioProvider $this, String url, Continuation<? super LoadResponse> continuation) {
+    static /* synthetic */ Object load$suspendImpl(DisneyStudioProvider $this, String url, Continuation<? super LoadResponse> continuation) throws Exception {
         C00051 c00051;
         String url2;
         Object obj;
@@ -1716,7 +1716,7 @@ public class DisneyStudioProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:53:0x0666 -> B:25:0x03e1). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:730)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     static /* synthetic */ java.lang.Object loadLinks$suspendImpl(com.horis.cncverse.DisneyStudioProvider r37, java.lang.String r38, boolean r39, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r40, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r41, kotlin.coroutines.Continuation<? super java.lang.Boolean> r42) {

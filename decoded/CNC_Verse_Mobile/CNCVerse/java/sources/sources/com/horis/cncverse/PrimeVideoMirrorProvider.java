@@ -308,7 +308,7 @@ public final class PrimeVideoMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:25:0x015c A[LOOP:0: B:23:0x0156->B:25:0x015c, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
-    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
+    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Exception {
         C00321 c00321;
         Object obj;
         int page2;
@@ -455,7 +455,7 @@ public final class PrimeVideoMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:25:0x0168 A[LOOP:0: B:23:0x0162->B:25:0x0168, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
-    public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
+    public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) throws Exception {
         C00381 c00381;
         Object obj;
         String query2;
@@ -609,7 +609,7 @@ public final class PrimeVideoMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:86:0x04f2  */
     /* JADX WARN: Code duplicated, block: B:92:0x0524  */
     @Nullable
-    public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) {
+    public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) throws Exception {
         C00331 c00331;
         String url2;
         Object obj;
@@ -1774,6 +1774,7 @@ public final class PrimeVideoMirrorProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x014a -> B:18:0x0150). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
+        	at jadx.core.dex.attributes.nodes.LoopInfo.getExitEdges(LoopInfo.java:64)
         	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.checkLoopExits(LoopRegionMaker.java:265)
         	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.makeLoopRegion(LoopRegionMaker.java:237)
         	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.process(LoopRegionMaker.java:80)
@@ -2796,7 +2797,6 @@ public final class PrimeVideoMirrorProvider extends MainAPI {
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
         */
     public final java.lang.Object getEpisodes(java.lang.String r29, java.lang.String r30, java.lang.String r31, int r32, kotlin.coroutines.Continuation<? super java.util.List<com.lagradost.cloudstream3.Episode>> r33) {
         /*
