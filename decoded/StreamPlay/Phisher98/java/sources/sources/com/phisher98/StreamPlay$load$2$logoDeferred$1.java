@@ -49,7 +49,7 @@ final class StreamPlay$load$2$logoDeferred$1 extends SuspendLambda implements Fu
     /* JADX INFO: compiled from: StreamPlay.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlay$load$2$logoDeferred$1$1", f = "StreamPlay.kt", i = {1}, l = {391, 392}, m = "invokeSuspend", n = {"tempRes"}, nl = {392, 398}, s = {"L$0"}, v = 2)
-    static final class C00691 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
+    static final class C00701 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ Deferred<StreamPlay.MediaDetail> $resDeferred;
         final /* synthetic */ String $tmdbAPI;
         final /* synthetic */ TvType $type;
@@ -58,7 +58,7 @@ final class StreamPlay$load$2$logoDeferred$1 extends SuspendLambda implements Fu
         final /* synthetic */ StreamPlay this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00691(Deferred<StreamPlay.MediaDetail> deferred, String str, TvType tvType, StreamPlay streamPlay, Continuation<? super C00691> continuation) {
+        C00701(Deferred<StreamPlay.MediaDetail> deferred, String str, TvType tvType, StreamPlay streamPlay, Continuation<? super C00701> continuation) {
             super(2, continuation);
             this.$resDeferred = deferred;
             this.$tmdbAPI = str;
@@ -67,7 +67,7 @@ final class StreamPlay$load$2$logoDeferred$1 extends SuspendLambda implements Fu
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C00691(this.$resDeferred, this.$tmdbAPI, this.$type, this.this$0, continuation);
+            return new C00701(this.$resDeferred, this.$tmdbAPI, this.$type, this.this$0, continuation);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super String> continuation) {
@@ -121,7 +121,7 @@ final class StreamPlay$load$2$logoDeferred$1 extends SuspendLambda implements Fu
                 ResultKt.throwOnFailure($result);
                 Duration.Companion companion = Duration.Companion;
                 this.label = 1;
-                Object obj = TimeoutKt.withTimeoutOrNull-KLykuaI(DurationKt.toDuration(10000, DurationUnit.MILLISECONDS), new C00691(this.$resDeferred, this.$tmdbAPI, this.$type, this.this$0, null), (Continuation) this);
+                Object obj = TimeoutKt.withTimeoutOrNull-KLykuaI(DurationKt.toDuration(10000, DurationUnit.MILLISECONDS), new C00701(this.$resDeferred, this.$tmdbAPI, this.$type, this.this$0, null), (Continuation) this);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }

@@ -446,8 +446,7 @@ public final class PublicSportsIPTV extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:67:0x0243 -> B:68:0x024c). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.nodes.BlockNode.isDominator(BlockNode.java:178)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:746)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable

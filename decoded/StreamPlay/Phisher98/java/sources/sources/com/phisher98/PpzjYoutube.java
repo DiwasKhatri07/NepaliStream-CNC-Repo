@@ -62,7 +62,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: Extractors.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000B\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0010\u0012\n\u0002\b\u0006\b\u0016\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00052\b\u0010\u0012\u001a\u0004\u0018\u00010\u00052\u0012\u0010\u0013\u001a\u000e\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\u00100\u00142\u0012\u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00100\u0014H\u0096@¢\u0006\u0002\u0010\u0018J \u0010\u0019\u001a\u00020\u00052\u0006\u0010\u001a\u001a\u00020\u00052\u0006\u0010\u001b\u001a\u00020\u00052\u0006\u0010\u001c\u001a\u00020\u0005H\u0002J\u0018\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u0005H\u0002J\u0018\u0010 \u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u0005H\u0002J$\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020$\u0012\u0004\u0012\u00020$0#2\u0006\u0010\u001f\u001a\u00020$2\u0006\u0010%\u001a\u00020$H\u0002J\f\u0010&\u001a\u00020\u0005*\u00020$H\u0002J\f\u0010'\u001a\u00020$*\u00020\u0005H\u0002J\u0010\u0010(\u001a\u00020\u00052\u0006\u0010)\u001a\u00020\u0005H\u0002R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u000e\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000¨\u0006*"}, d2 = {"Lcom/phisher98/PpzjYoutube;", "Lcom/lagradost/cloudstream3/utils/ExtractorApi;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "mainUrl", "getMainUrl", "requiresReferer", "", "getRequiresReferer", "()Z", "apiUrl", "getUrl", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "buildPayloadJson", "fileId", "userId", "domain", "encryptHexAES", "plaintext", "password", "decryptHexAES", "hex", "deriveKeyIv", "Lkotlin/Pair;", "", "salt", "toHex", "hexToBytes", "md5", "input", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/PpzjYoutube\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,4049:1\n1#2:4050\n73#3,5:4051\n2068#4,2:4056\n1739#4:4058\n1814#4,3:4059\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/PpzjYoutube\n*L\n2663#1:4051,5\n2683#1:4056,2\n2813#1:4058\n2813#1:4059,3\n*E\n"})
+@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/PpzjYoutube\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,4076:1\n1#2:4077\n73#3,5:4078\n2068#4,2:4083\n1739#4:4085\n1814#4,3:4086\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/PpzjYoutube\n*L\n2663#1:4078,5\n2683#1:4083,2\n2813#1:4085\n2813#1:4086,3\n*E\n"})
 public class PpzjYoutube extends ExtractorApi {
 
     @NotNull
@@ -79,7 +79,7 @@ public class PpzjYoutube extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.PpzjYoutube", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {2642, 2659, 2678}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "TAG", "domain", "headers", "$this", "url", "referer", "subtitleCallback", "callback", "TAG", "domain", "headers", "html", "matches", "encryptedFileId", "encryptedUserId", "fileId", "userId", "payload", "encryptedPayload", "signatureInput", "signature", "body", "$this", "url", "referer", "subtitleCallback", "callback", "TAG", "domain", "headers", "html", "matches", "encryptedFileId", "encryptedUserId", "fileId", "userId", "payload", "encryptedPayload", "signatureInput", "signature", "body", "response", "encryptedVideo", "videoUrl"}, nl = {2643, 2663, 2683}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21"}, v = 2)
-    static final class C00581 extends ContinuationImpl {
+    static final class C00591 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -105,7 +105,7 @@ public class PpzjYoutube extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00581(Continuation<? super C00581> continuation) {
+        C00591(Continuation<? super C00591> continuation) {
             super(continuation);
         }
 
@@ -154,7 +154,7 @@ public class PpzjYoutube extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:85:0x0535 A[Catch: Exception -> 0x0549, TRY_LEAVE, TryCatch #7 {Exception -> 0x0549, blocks: (B:82:0x0527, B:83:0x052f, B:85:0x0535), top: B:120:0x0527 }] */
     /* JADX WARN: Unreachable blocks removed: 2, instructions: 4 */
     static /* synthetic */ Object getUrl$suspendImpl(PpzjYoutube $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C00581 c00581;
+        C00591 c00591;
         Function1<? super ExtractorLink, Unit> function3;
         String TAG;
         Map headers;
@@ -203,20 +203,20 @@ public class PpzjYoutube extends ExtractorApi {
         String TAG4;
         String TAG5;
         String element$iv;
-        if (continuation instanceof C00581) {
-            c00581 = (C00581) continuation;
-            if ((c00581.label & Integer.MIN_VALUE) != 0) {
-                c00581.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00591) {
+            c00591 = (C00591) continuation;
+            if ((c00591.label & Integer.MIN_VALUE) != 0) {
+                c00591.label -= Integer.MIN_VALUE;
             } else {
-                c00581 = $this.new C00581(continuation);
+                c00591 = $this.new C00591(continuation);
             }
         } else {
-            c00581 = $this.new C00581(continuation);
+            c00591 = $this.new C00591(continuation);
         }
-        C00581 c00582 = c00581;
-        Object $result = c00582.result;
+        C00591 c00592 = c00591;
+        Object $result = c00592.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00582.label) {
+        switch (c00592.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 try {
@@ -225,22 +225,22 @@ public class PpzjYoutube extends ExtractorApi {
                     Map headers4 = MapsKt.mapOf(new Pair[]{TuplesKt.to("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"), TuplesKt.to("Referer", domain4), TuplesKt.to("X-Requested-With", "XMLHttpRequest"), TuplesKt.to("Content-Type", "application/x-www-form-urlencoded")});
                     try {
                         Requests app = MainActivityKt.getApp();
-                        c00582.L$0 = $this;
-                        c00582.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                        c00582.L$2 = referer;
-                        c00582.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                        c00582.L$4 = function2;
-                        c00582.L$5 = "PpzjYoutube";
-                        c00582.L$6 = domain4;
-                        c00582.L$7 = headers4;
-                        c00582.label = 1;
+                        c00592.L$0 = $this;
+                        c00592.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                        c00592.L$2 = referer;
+                        c00592.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                        c00592.L$4 = function2;
+                        c00592.L$5 = "PpzjYoutube";
+                        c00592.L$6 = domain4;
+                        c00592.L$7 = headers4;
+                        c00592.label = 1;
                         headers = headers4;
                         obj = coroutine_suspended;
                         i = 0;
                         domain = "application/x-www-form-urlencoded";
                         try {
-                            Object obj4 = Requests.get$default(app, url, headers, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00582, 4092, (Object) null);
-                            c00582 = c00582;
+                            Object obj4 = Requests.get$default(app, url, headers, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00592, 4092, (Object) null);
+                            c00592 = c00592;
                             if (obj4 == obj) {
                                 return obj;
                             }
@@ -276,29 +276,29 @@ public class PpzjYoutube extends ExtractorApi {
                                 body = RequestBody.Companion.create("data=" + encryptedPayload2 + "%7C" + signature2, MediaType.Companion.get(domain));
                                 Requests app2 = MainActivityKt.getApp();
                                 String str3 = $this2.apiUrl;
-                                c00582.L$0 = $this2;
-                                c00582.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                                c00582.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                                c00582.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                                c00582.L$4 = function5;
-                                c00582.L$5 = TAG2;
-                                c00582.L$6 = domain2;
-                                c00582.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
-                                c00582.L$8 = SpillingKt.nullOutSpilledVariable(html);
-                                c00582.L$9 = SpillingKt.nullOutSpilledVariable(matches);
-                                c00582.L$10 = SpillingKt.nullOutSpilledVariable(encryptedFileId);
-                                c00582.L$11 = SpillingKt.nullOutSpilledVariable(encryptedUserId2);
-                                c00582.L$12 = SpillingKt.nullOutSpilledVariable(fileId2);
-                                c00582.L$13 = SpillingKt.nullOutSpilledVariable(userId2);
-                                c00582.L$14 = SpillingKt.nullOutSpilledVariable(payload2);
-                                c00582.L$15 = SpillingKt.nullOutSpilledVariable(encryptedPayload2);
-                                c00582.L$16 = SpillingKt.nullOutSpilledVariable(signatureInput);
-                                c00582.L$17 = SpillingKt.nullOutSpilledVariable(signature2);
-                                c00582.L$18 = SpillingKt.nullOutSpilledVariable(body);
-                                c00582.label = 2;
+                                c00592.L$0 = $this2;
+                                c00592.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                                c00592.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                                c00592.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                                c00592.L$4 = function5;
+                                c00592.L$5 = TAG2;
+                                c00592.L$6 = domain2;
+                                c00592.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
+                                c00592.L$8 = SpillingKt.nullOutSpilledVariable(html);
+                                c00592.L$9 = SpillingKt.nullOutSpilledVariable(matches);
+                                c00592.L$10 = SpillingKt.nullOutSpilledVariable(encryptedFileId);
+                                c00592.L$11 = SpillingKt.nullOutSpilledVariable(encryptedUserId2);
+                                c00592.L$12 = SpillingKt.nullOutSpilledVariable(fileId2);
+                                c00592.L$13 = SpillingKt.nullOutSpilledVariable(userId2);
+                                c00592.L$14 = SpillingKt.nullOutSpilledVariable(payload2);
+                                c00592.L$15 = SpillingKt.nullOutSpilledVariable(encryptedPayload2);
+                                c00592.L$16 = SpillingKt.nullOutSpilledVariable(signatureInput);
+                                c00592.L$17 = SpillingKt.nullOutSpilledVariable(signature2);
+                                c00592.L$18 = SpillingKt.nullOutSpilledVariable(body);
+                                c00592.label = 2;
                                 domain3 = domain2;
                                 TAG3 = TAG2;
-                                C00581 c00583 = c00582;
+                                C00591 c00593 = c00592;
                                 encryptedUserId = encryptedUserId2;
                                 signature = signature2;
                                 userId = userId2;
@@ -309,8 +309,8 @@ public class PpzjYoutube extends ExtractorApi {
                                 $this3 = $this2;
                                 i2 = 2;
                                 try {
-                                    $result = Requests.post$default(app2, str3, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, body, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00583, 65276, (Object) null);
-                                    c00582 = c00583;
+                                    $result = Requests.post$default(app2, str3, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, body, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00593, 65276, (Object) null);
+                                    c00592 = c00593;
                                     if ($result == obj) {
                                         return obj;
                                     }
@@ -359,32 +359,32 @@ public class PpzjYoutube extends ExtractorApi {
                                             M3u8Helper.Companion companion = M3u8Helper.Companion;
                                             String name = $this4.getName();
                                             Integer numBoxInt = Boxing.boxInt(Qualities.P1080.getValue());
-                                            c00582.L$0 = SpillingKt.nullOutSpilledVariable($this4);
-                                            c00582.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                                            c00582.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                                            c00582.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                                            c00582.L$4 = function6;
-                                            c00582.L$5 = TAG;
-                                            c00582.L$6 = SpillingKt.nullOutSpilledVariable(encryptedFileId3);
-                                            c00582.L$7 = SpillingKt.nullOutSpilledVariable(headers3);
-                                            c00582.L$8 = SpillingKt.nullOutSpilledVariable(html);
-                                            c00582.L$9 = SpillingKt.nullOutSpilledVariable(matches2);
-                                            c00582.L$10 = SpillingKt.nullOutSpilledVariable(encryptedFileId2);
-                                            c00582.L$11 = SpillingKt.nullOutSpilledVariable(encryptedUserId);
-                                            c00582.L$12 = SpillingKt.nullOutSpilledVariable(fileId);
-                                            c00582.L$13 = SpillingKt.nullOutSpilledVariable(userId);
-                                            c00582.L$14 = SpillingKt.nullOutSpilledVariable(payload);
-                                            c00582.L$15 = SpillingKt.nullOutSpilledVariable(encryptedPayload);
-                                            c00582.L$16 = SpillingKt.nullOutSpilledVariable(signatureInput2);
-                                            c00582.L$17 = SpillingKt.nullOutSpilledVariable(signature);
-                                            c00582.L$18 = SpillingKt.nullOutSpilledVariable(body2);
-                                            c00582.L$19 = SpillingKt.nullOutSpilledVariable(response);
-                                            c00582.L$20 = SpillingKt.nullOutSpilledVariable(encryptedVideo);
-                                            c00582.L$21 = SpillingKt.nullOutSpilledVariable(videoUrl);
-                                            c00582.label = 3;
+                                            c00592.L$0 = SpillingKt.nullOutSpilledVariable($this4);
+                                            c00592.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                                            c00592.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                                            c00592.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                                            c00592.L$4 = function6;
+                                            c00592.L$5 = TAG;
+                                            c00592.L$6 = SpillingKt.nullOutSpilledVariable(encryptedFileId3);
+                                            c00592.L$7 = SpillingKt.nullOutSpilledVariable(headers3);
+                                            c00592.L$8 = SpillingKt.nullOutSpilledVariable(html);
+                                            c00592.L$9 = SpillingKt.nullOutSpilledVariable(matches2);
+                                            c00592.L$10 = SpillingKt.nullOutSpilledVariable(encryptedFileId2);
+                                            c00592.L$11 = SpillingKt.nullOutSpilledVariable(encryptedUserId);
+                                            c00592.L$12 = SpillingKt.nullOutSpilledVariable(fileId);
+                                            c00592.L$13 = SpillingKt.nullOutSpilledVariable(userId);
+                                            c00592.L$14 = SpillingKt.nullOutSpilledVariable(payload);
+                                            c00592.L$15 = SpillingKt.nullOutSpilledVariable(encryptedPayload);
+                                            c00592.L$16 = SpillingKt.nullOutSpilledVariable(signatureInput2);
+                                            c00592.L$17 = SpillingKt.nullOutSpilledVariable(signature);
+                                            c00592.L$18 = SpillingKt.nullOutSpilledVariable(body2);
+                                            c00592.L$19 = SpillingKt.nullOutSpilledVariable(response);
+                                            c00592.L$20 = SpillingKt.nullOutSpilledVariable(encryptedVideo);
+                                            c00592.L$21 = SpillingKt.nullOutSpilledVariable(videoUrl);
+                                            c00592.label = 3;
                                             TAG4 = TAG;
                                             try {
-                                                $result = M3u8Helper.Companion.generateM3u8$default(companion, name, videoUrl, encryptedFileId3, numBoxInt, (Map) null, (String) null, c00582, 48, (Object) null);
+                                                $result = M3u8Helper.Companion.generateM3u8$default(companion, name, videoUrl, encryptedFileId3, numBoxInt, (Map) null, (String) null, c00592, 48, (Object) null);
                                                 if ($result == obj) {
                                                     return obj;
                                                 }
@@ -450,14 +450,14 @@ public class PpzjYoutube extends ExtractorApi {
                 }
                 break;
             case 1:
-                Map headers5 = (Map) c00582.L$7;
-                domain2 = (String) c00582.L$6;
-                String TAG6 = (String) c00582.L$5;
-                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00582.L$4;
-                Function1<? super SubtitleFile, Unit> function8 = (Function1) c00582.L$3;
-                String referer3 = (String) c00582.L$2;
-                String url3 = (String) c00582.L$1;
-                PpzjYoutube $this5 = (PpzjYoutube) c00582.L$0;
+                Map headers5 = (Map) c00592.L$7;
+                domain2 = (String) c00592.L$6;
+                String TAG6 = (String) c00592.L$5;
+                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00592.L$4;
+                Function1<? super SubtitleFile, Unit> function8 = (Function1) c00592.L$3;
+                String referer3 = (String) c00592.L$2;
+                String url3 = (String) c00592.L$1;
+                PpzjYoutube $this5 = (PpzjYoutube) c00592.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     headers = headers5;
@@ -494,29 +494,29 @@ public class PpzjYoutube extends ExtractorApi {
                     body = RequestBody.Companion.create("data=" + encryptedPayload3 + "%7C" + signature3, MediaType.Companion.get(domain));
                     Requests app3 = MainActivityKt.getApp();
                     String str4 = $this2.apiUrl;
-                    c00582.L$0 = $this2;
-                    c00582.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00582.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00582.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                    c00582.L$4 = function5;
-                    c00582.L$5 = TAG2;
-                    c00582.L$6 = domain2;
-                    c00582.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
-                    c00582.L$8 = SpillingKt.nullOutSpilledVariable(html);
-                    c00582.L$9 = SpillingKt.nullOutSpilledVariable(matches);
-                    c00582.L$10 = SpillingKt.nullOutSpilledVariable(encryptedFileId);
-                    c00582.L$11 = SpillingKt.nullOutSpilledVariable(encryptedUserId3);
-                    c00582.L$12 = SpillingKt.nullOutSpilledVariable(fileId3);
-                    c00582.L$13 = SpillingKt.nullOutSpilledVariable(userId3);
-                    c00582.L$14 = SpillingKt.nullOutSpilledVariable(payload3);
-                    c00582.L$15 = SpillingKt.nullOutSpilledVariable(encryptedPayload3);
-                    c00582.L$16 = SpillingKt.nullOutSpilledVariable(signatureInput);
-                    c00582.L$17 = SpillingKt.nullOutSpilledVariable(signature3);
-                    c00582.L$18 = SpillingKt.nullOutSpilledVariable(body);
-                    c00582.label = 2;
+                    c00592.L$0 = $this2;
+                    c00592.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00592.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00592.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00592.L$4 = function5;
+                    c00592.L$5 = TAG2;
+                    c00592.L$6 = domain2;
+                    c00592.L$7 = SpillingKt.nullOutSpilledVariable(headers2);
+                    c00592.L$8 = SpillingKt.nullOutSpilledVariable(html);
+                    c00592.L$9 = SpillingKt.nullOutSpilledVariable(matches);
+                    c00592.L$10 = SpillingKt.nullOutSpilledVariable(encryptedFileId);
+                    c00592.L$11 = SpillingKt.nullOutSpilledVariable(encryptedUserId3);
+                    c00592.L$12 = SpillingKt.nullOutSpilledVariable(fileId3);
+                    c00592.L$13 = SpillingKt.nullOutSpilledVariable(userId3);
+                    c00592.L$14 = SpillingKt.nullOutSpilledVariable(payload3);
+                    c00592.L$15 = SpillingKt.nullOutSpilledVariable(encryptedPayload3);
+                    c00592.L$16 = SpillingKt.nullOutSpilledVariable(signatureInput);
+                    c00592.L$17 = SpillingKt.nullOutSpilledVariable(signature3);
+                    c00592.L$18 = SpillingKt.nullOutSpilledVariable(body);
+                    c00592.label = 2;
                     domain3 = domain2;
                     TAG3 = TAG2;
-                    C00581 c00584 = c00582;
+                    C00591 c00594 = c00592;
                     encryptedUserId = encryptedUserId3;
                     signature = signature3;
                     userId = userId3;
@@ -526,8 +526,8 @@ public class PpzjYoutube extends ExtractorApi {
                     fileId = fileId3;
                     $this3 = $this2;
                     i2 = 2;
-                    $result = Requests.post$default(app3, str4, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, body, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00584, 65276, (Object) null);
-                    c00582 = c00584;
+                    $result = Requests.post$default(app3, str4, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, body, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00594, 65276, (Object) null);
+                    c00592 = c00594;
                     if ($result == obj) {
                         return obj;
                     }
@@ -569,31 +569,31 @@ public class PpzjYoutube extends ExtractorApi {
                     M3u8Helper.Companion companion2 = M3u8Helper.Companion;
                     String name2 = $this4.getName();
                     Integer numBoxInt2 = Boxing.boxInt(Qualities.P1080.getValue());
-                    c00582.L$0 = SpillingKt.nullOutSpilledVariable($this4);
-                    c00582.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00582.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00582.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                    c00582.L$4 = function6;
-                    c00582.L$5 = TAG;
-                    c00582.L$6 = SpillingKt.nullOutSpilledVariable(encryptedFileId3);
-                    c00582.L$7 = SpillingKt.nullOutSpilledVariable(headers3);
-                    c00582.L$8 = SpillingKt.nullOutSpilledVariable(html);
-                    c00582.L$9 = SpillingKt.nullOutSpilledVariable(matches2);
-                    c00582.L$10 = SpillingKt.nullOutSpilledVariable(encryptedFileId2);
-                    c00582.L$11 = SpillingKt.nullOutSpilledVariable(encryptedUserId);
-                    c00582.L$12 = SpillingKt.nullOutSpilledVariable(fileId);
-                    c00582.L$13 = SpillingKt.nullOutSpilledVariable(userId);
-                    c00582.L$14 = SpillingKt.nullOutSpilledVariable(payload);
-                    c00582.L$15 = SpillingKt.nullOutSpilledVariable(encryptedPayload);
-                    c00582.L$16 = SpillingKt.nullOutSpilledVariable(signatureInput2);
-                    c00582.L$17 = SpillingKt.nullOutSpilledVariable(signature);
-                    c00582.L$18 = SpillingKt.nullOutSpilledVariable(body2);
-                    c00582.L$19 = SpillingKt.nullOutSpilledVariable(response);
-                    c00582.L$20 = SpillingKt.nullOutSpilledVariable(encryptedVideo);
-                    c00582.L$21 = SpillingKt.nullOutSpilledVariable(videoUrl2);
-                    c00582.label = 3;
+                    c00592.L$0 = SpillingKt.nullOutSpilledVariable($this4);
+                    c00592.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00592.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00592.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00592.L$4 = function6;
+                    c00592.L$5 = TAG;
+                    c00592.L$6 = SpillingKt.nullOutSpilledVariable(encryptedFileId3);
+                    c00592.L$7 = SpillingKt.nullOutSpilledVariable(headers3);
+                    c00592.L$8 = SpillingKt.nullOutSpilledVariable(html);
+                    c00592.L$9 = SpillingKt.nullOutSpilledVariable(matches2);
+                    c00592.L$10 = SpillingKt.nullOutSpilledVariable(encryptedFileId2);
+                    c00592.L$11 = SpillingKt.nullOutSpilledVariable(encryptedUserId);
+                    c00592.L$12 = SpillingKt.nullOutSpilledVariable(fileId);
+                    c00592.L$13 = SpillingKt.nullOutSpilledVariable(userId);
+                    c00592.L$14 = SpillingKt.nullOutSpilledVariable(payload);
+                    c00592.L$15 = SpillingKt.nullOutSpilledVariable(encryptedPayload);
+                    c00592.L$16 = SpillingKt.nullOutSpilledVariable(signatureInput2);
+                    c00592.L$17 = SpillingKt.nullOutSpilledVariable(signature);
+                    c00592.L$18 = SpillingKt.nullOutSpilledVariable(body2);
+                    c00592.L$19 = SpillingKt.nullOutSpilledVariable(response);
+                    c00592.L$20 = SpillingKt.nullOutSpilledVariable(encryptedVideo);
+                    c00592.L$21 = SpillingKt.nullOutSpilledVariable(videoUrl2);
+                    c00592.label = 3;
                     TAG4 = TAG;
-                    $result = M3u8Helper.Companion.generateM3u8$default(companion2, name2, videoUrl2, encryptedFileId3, numBoxInt2, (Map) null, (String) null, c00582, 48, (Object) null);
+                    $result = M3u8Helper.Companion.generateM3u8$default(companion2, name2, videoUrl2, encryptedFileId3, numBoxInt2, (Map) null, (String) null, c00592, 48, (Object) null);
                     if ($result == obj) {
                         return obj;
                     }
@@ -617,26 +617,26 @@ public class PpzjYoutube extends ExtractorApi {
                 }
                 break;
             case 2:
-                RequestBody body3 = (RequestBody) c00582.L$18;
-                String signature4 = (String) c00582.L$17;
-                String signatureInput3 = (String) c00582.L$16;
-                String encryptedPayload4 = (String) c00582.L$15;
-                String payload4 = (String) c00582.L$14;
-                String userId4 = (String) c00582.L$13;
-                String fileId4 = (String) c00582.L$12;
-                String encryptedUserId4 = (String) c00582.L$11;
-                String encryptedFileId4 = (String) c00582.L$10;
-                List matches3 = (List) c00582.L$9;
-                String html2 = (String) c00582.L$8;
+                RequestBody body3 = (RequestBody) c00592.L$18;
+                String signature4 = (String) c00592.L$17;
+                String signatureInput3 = (String) c00592.L$16;
+                String encryptedPayload4 = (String) c00592.L$15;
+                String payload4 = (String) c00592.L$14;
+                String userId4 = (String) c00592.L$13;
+                String fileId4 = (String) c00592.L$12;
+                String encryptedUserId4 = (String) c00592.L$11;
+                String encryptedFileId4 = (String) c00592.L$10;
+                List matches3 = (List) c00592.L$9;
+                String html2 = (String) c00592.L$8;
                 body2 = body3;
-                headers3 = (Map) c00582.L$7;
-                String domain7 = (String) c00582.L$6;
-                String TAG7 = (String) c00582.L$5;
-                Function1<? super ExtractorLink, Unit> function9 = (Function1) c00582.L$4;
-                Function1<? super SubtitleFile, Unit> function10 = (Function1) c00582.L$3;
-                String referer4 = (String) c00582.L$2;
-                String url4 = (String) c00582.L$1;
-                PpzjYoutube $this6 = (PpzjYoutube) c00582.L$0;
+                headers3 = (Map) c00592.L$7;
+                String domain7 = (String) c00592.L$6;
+                String TAG7 = (String) c00592.L$5;
+                Function1<? super ExtractorLink, Unit> function9 = (Function1) c00592.L$4;
+                Function1<? super SubtitleFile, Unit> function10 = (Function1) c00592.L$3;
+                String referer4 = (String) c00592.L$2;
+                String url4 = (String) c00592.L$1;
+                PpzjYoutube $this6 = (PpzjYoutube) c00592.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     signature = signature4;
@@ -687,31 +687,31 @@ public class PpzjYoutube extends ExtractorApi {
                     M3u8Helper.Companion companion3 = M3u8Helper.Companion;
                     String name3 = $this4.getName();
                     Integer numBoxInt3 = Boxing.boxInt(Qualities.P1080.getValue());
-                    c00582.L$0 = SpillingKt.nullOutSpilledVariable($this4);
-                    c00582.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00582.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                    c00582.L$3 = SpillingKt.nullOutSpilledVariable(function4);
-                    c00582.L$4 = function6;
-                    c00582.L$5 = TAG;
-                    c00582.L$6 = SpillingKt.nullOutSpilledVariable(encryptedFileId3);
-                    c00582.L$7 = SpillingKt.nullOutSpilledVariable(headers3);
-                    c00582.L$8 = SpillingKt.nullOutSpilledVariable(html);
-                    c00582.L$9 = SpillingKt.nullOutSpilledVariable(matches2);
-                    c00582.L$10 = SpillingKt.nullOutSpilledVariable(encryptedFileId2);
-                    c00582.L$11 = SpillingKt.nullOutSpilledVariable(encryptedUserId);
-                    c00582.L$12 = SpillingKt.nullOutSpilledVariable(fileId);
-                    c00582.L$13 = SpillingKt.nullOutSpilledVariable(userId);
-                    c00582.L$14 = SpillingKt.nullOutSpilledVariable(payload);
-                    c00582.L$15 = SpillingKt.nullOutSpilledVariable(encryptedPayload);
-                    c00582.L$16 = SpillingKt.nullOutSpilledVariable(signatureInput2);
-                    c00582.L$17 = SpillingKt.nullOutSpilledVariable(signature);
-                    c00582.L$18 = SpillingKt.nullOutSpilledVariable(body2);
-                    c00582.L$19 = SpillingKt.nullOutSpilledVariable(response);
-                    c00582.L$20 = SpillingKt.nullOutSpilledVariable(encryptedVideo);
-                    c00582.L$21 = SpillingKt.nullOutSpilledVariable(videoUrl3);
-                    c00582.label = 3;
+                    c00592.L$0 = SpillingKt.nullOutSpilledVariable($this4);
+                    c00592.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00592.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                    c00592.L$3 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00592.L$4 = function6;
+                    c00592.L$5 = TAG;
+                    c00592.L$6 = SpillingKt.nullOutSpilledVariable(encryptedFileId3);
+                    c00592.L$7 = SpillingKt.nullOutSpilledVariable(headers3);
+                    c00592.L$8 = SpillingKt.nullOutSpilledVariable(html);
+                    c00592.L$9 = SpillingKt.nullOutSpilledVariable(matches2);
+                    c00592.L$10 = SpillingKt.nullOutSpilledVariable(encryptedFileId2);
+                    c00592.L$11 = SpillingKt.nullOutSpilledVariable(encryptedUserId);
+                    c00592.L$12 = SpillingKt.nullOutSpilledVariable(fileId);
+                    c00592.L$13 = SpillingKt.nullOutSpilledVariable(userId);
+                    c00592.L$14 = SpillingKt.nullOutSpilledVariable(payload);
+                    c00592.L$15 = SpillingKt.nullOutSpilledVariable(encryptedPayload);
+                    c00592.L$16 = SpillingKt.nullOutSpilledVariable(signatureInput2);
+                    c00592.L$17 = SpillingKt.nullOutSpilledVariable(signature);
+                    c00592.L$18 = SpillingKt.nullOutSpilledVariable(body2);
+                    c00592.L$19 = SpillingKt.nullOutSpilledVariable(response);
+                    c00592.L$20 = SpillingKt.nullOutSpilledVariable(encryptedVideo);
+                    c00592.L$21 = SpillingKt.nullOutSpilledVariable(videoUrl3);
+                    c00592.label = 3;
                     TAG4 = TAG;
-                    $result = M3u8Helper.Companion.generateM3u8$default(companion3, name3, videoUrl3, encryptedFileId3, numBoxInt3, (Map) null, (String) null, c00582, 48, (Object) null);
+                    $result = M3u8Helper.Companion.generateM3u8$default(companion3, name3, videoUrl3, encryptedFileId3, numBoxInt3, (Map) null, (String) null, c00592, 48, (Object) null);
                     if ($result == obj) {
                         return obj;
                     }
@@ -734,9 +734,9 @@ public class PpzjYoutube extends ExtractorApi {
                 Log.INSTANCE.e(TAG, "Exception: " + ExceptionsKt.stackTraceToString(e));
                 return Unit.INSTANCE;
             case 3:
-                String domain9 = (String) c00582.L$6;
-                TAG5 = (String) c00582.L$5;
-                Function1<? super ExtractorLink, Unit> function11 = (Function1) c00582.L$4;
+                String domain9 = (String) c00592.L$6;
+                TAG5 = (String) c00592.L$5;
+                Function1<? super ExtractorLink, Unit> function11 = (Function1) c00592.L$4;
                 try {
                     ResultKt.throwOnFailure($result);
                     element$iv = domain9;

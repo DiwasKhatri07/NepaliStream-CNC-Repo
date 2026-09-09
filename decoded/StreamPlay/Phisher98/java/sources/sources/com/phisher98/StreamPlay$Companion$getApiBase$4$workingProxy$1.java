@@ -58,7 +58,7 @@ final class StreamPlay$Companion$getApiBase$4$workingProxy$1 extends SuspendLamb
                 Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     String proxy = (String) item$iv$iv;
-                    destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new C0063x17c6b087(proxy, null), 3, (Object) null));
+                    destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new C0064x17c6b087(proxy, null), 3, (Object) null));
                 }
                 List deferredChecks = (List) destination$iv$iv;
                 this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);

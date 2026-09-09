@@ -37,7 +37,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Extractors.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0000\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00052\b\u0010\u0011\u001a\u0004\u0018\u00010\u00052\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u000f0\u00132\u0012\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u000f0\u0013H\u0096@¢\u0006\u0002\u0010\u0017R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006\u0018"}, d2 = {"Lcom/phisher98/Molop;", "Lcom/lagradost/cloudstream3/utils/ExtractorApi;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "mainUrl", "getMainUrl", "requiresReferer", "", "getRequiresReferer", "()Z", "getUrl", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/Molop\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,4049:1\n2068#2,2:4050\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/Molop\n*L\n2312#1:4050,2\n*E\n"})
+@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/Molop\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,4076:1\n2068#2,2:4077\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/Molop\n*L\n2312#1:4077,2\n*E\n"})
 public final class Molop extends ExtractorApi {
 
     @NotNull
@@ -50,8 +50,8 @@ public final class Molop extends ExtractorApi {
     /* JADX INFO: renamed from: com.phisher98.Molop$getUrl$1 */
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.Molop", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {2302, 2312}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "headers", "url", "referer", "subtitleCallback", "callback", "headers", "res", "sniffScript", "cleaned", "regex", "args", "token", "m3u8"}, nl = {2303, 4050}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11"}, v = 2)
-    static final class C00481 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.Molop", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {2302, 2312}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "headers", "url", "referer", "subtitleCallback", "callback", "headers", "res", "sniffScript", "cleaned", "regex", "args", "token", "m3u8"}, nl = {2303, 4077}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11"}, v = 2)
+    static final class C00491 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -67,7 +67,7 @@ public final class Molop extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00481(Continuation<? super C00481> continuation) {
+        C00491(Continuation<? super C00491> continuation) {
             super(continuation);
         }
 
@@ -97,7 +97,7 @@ public final class Molop extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C00481 c00481;
+        C00491 c00491;
         Molop molop;
         Object obj;
         int i;
@@ -114,37 +114,37 @@ public final class Molop extends ExtractorApi {
         Object objGenerateM3u8$default;
         Function1<? super ExtractorLink, Unit> function5;
         Iterable $this$forEach$iv;
-        if (continuation instanceof C00481) {
-            c00481 = (C00481) continuation;
-            if ((c00481.label & Integer.MIN_VALUE) != 0) {
-                c00481.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00491) {
+            c00491 = (C00491) continuation;
+            if ((c00491.label & Integer.MIN_VALUE) != 0) {
+                c00491.label -= Integer.MIN_VALUE;
                 molop = this;
             } else {
                 molop = this;
-                c00481 = molop.new C00481(continuation);
+                c00491 = molop.new C00491(continuation);
             }
         } else {
             molop = this;
-            c00481 = molop.new C00481(continuation);
+            c00491 = molop.new C00491(continuation);
         }
-        C00481 c00482 = c00481;
-        Object $result = c00482.result;
+        C00491 c00492 = c00491;
+        Object $result = c00492.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00482.label) {
+        switch (c00492.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Map headers2 = MapsKt.mapOf(TuplesKt.to("user-agent", "okhttp/4.12.0"));
                 Requests app = MainActivityKt.getApp();
-                c00482.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c00482.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c00482.L$2 = SpillingKt.nullOutSpilledVariable(function1);
-                c00482.L$3 = function2;
-                c00482.L$4 = headers2;
-                c00482.label = 1;
+                c00492.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c00492.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c00492.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                c00492.L$3 = function2;
+                c00492.L$4 = headers2;
+                c00492.label = 1;
                 obj = coroutine_suspended;
                 i = 1;
-                Object obj3 = Requests.get$default(app, url, headers2, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00482, 4088, (Object) null);
-                c00482 = c00482;
+                Object obj3 = Requests.get$default(app, url, headers2, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00492, 4088, (Object) null);
+                c00492 = c00492;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -172,21 +172,21 @@ public final class Molop extends ExtractorApi {
                 M3u8Helper.Companion companion = M3u8Helper.Companion;
                 String name = molop.getName();
                 String mainUrl = molop.getMainUrl();
-                c00482.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c00482.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00482.L$2 = SpillingKt.nullOutSpilledVariable(function3);
-                c00482.L$3 = function4;
-                c00482.L$4 = SpillingKt.nullOutSpilledVariable(headers);
-                c00482.L$5 = SpillingKt.nullOutSpilledVariable(res);
-                c00482.L$6 = SpillingKt.nullOutSpilledVariable(sniffScript);
-                c00482.L$7 = SpillingKt.nullOutSpilledVariable(cleaned);
-                c00482.L$8 = SpillingKt.nullOutSpilledVariable(regex);
-                c00482.L$9 = SpillingKt.nullOutSpilledVariable(args);
-                c00482.L$10 = SpillingKt.nullOutSpilledVariable(token);
-                c00482.L$11 = SpillingKt.nullOutSpilledVariable(m3u8);
-                c00482.label = 2;
+                c00492.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c00492.L$1 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00492.L$2 = SpillingKt.nullOutSpilledVariable(function3);
+                c00492.L$3 = function4;
+                c00492.L$4 = SpillingKt.nullOutSpilledVariable(headers);
+                c00492.L$5 = SpillingKt.nullOutSpilledVariable(res);
+                c00492.L$6 = SpillingKt.nullOutSpilledVariable(sniffScript);
+                c00492.L$7 = SpillingKt.nullOutSpilledVariable(cleaned);
+                c00492.L$8 = SpillingKt.nullOutSpilledVariable(regex);
+                c00492.L$9 = SpillingKt.nullOutSpilledVariable(args);
+                c00492.L$10 = SpillingKt.nullOutSpilledVariable(token);
+                c00492.L$11 = SpillingKt.nullOutSpilledVariable(m3u8);
+                c00492.label = 2;
                 Function1<? super ExtractorLink, Unit> function6 = function4;
-                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, mainUrl, (Integer) null, headers, (String) null, c00482, 40, (Object) null);
+                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, mainUrl, (Integer) null, headers, (String) null, c00492, 40, (Object) null);
                 if (objGenerateM3u8$default == obj) {
                     return obj;
                 }
@@ -199,11 +199,11 @@ public final class Molop extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 1:
-                Map headers3 = (Map) c00482.L$4;
-                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00482.L$3;
-                Function1<? super SubtitleFile, Unit> function8 = (Function1) c00482.L$2;
-                String referer3 = (String) c00482.L$1;
-                String url3 = (String) c00482.L$0;
+                Map headers3 = (Map) c00492.L$4;
+                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00492.L$3;
+                Function1<? super SubtitleFile, Unit> function8 = (Function1) c00492.L$2;
+                String referer3 = (String) c00492.L$1;
+                String url3 = (String) c00492.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 function4 = function7;
@@ -219,7 +219,7 @@ public final class Molop extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 2:
-                function5 = (Function1) c00482.L$3;
+                function5 = (Function1) c00492.L$3;
                 ResultKt.throwOnFailure($result);
                 objGenerateM3u8$default = $result;
                 $this$forEach$iv = (Iterable) objGenerateM3u8$default;

@@ -38,14 +38,14 @@ public final class ProvidersListKt {
     /* JADX INFO: compiled from: ProvidersList.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.ProvidersListKt", f = "ProvidersList.kt", i = {0, 0, 0}, l = {105}, m = "getAnimeIds", n = {"res", "cacheKey", "cached"}, nl = {107}, s = {"L$0", "L$1", "L$2"}, v = 2)
-    static final class C00601 extends ContinuationImpl {
+    static final class C00611 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C00601(Continuation<? super C00601> continuation) {
+        C00611(Continuation<? super C00611> continuation) {
             super(continuation);
         }
 
@@ -68,25 +68,25 @@ public final class ProvidersListKt {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     public static final Object getAnimeIds(StreamPlay.LinkData res, Continuation<? super StreamPlayExtractor.AnimeResolvedIds> continuation) {
-        C00601 c00601;
+        C00611 c00611;
         Object objResolveAnimeIds;
         String cacheKey;
         ArrayList arrayList;
         Iterable iterableSplit$default;
-        if (continuation instanceof C00601) {
-            c00601 = (C00601) continuation;
-            if ((c00601.label & Integer.MIN_VALUE) != 0) {
-                c00601.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00611) {
+            c00611 = (C00611) continuation;
+            if ((c00611.label & Integer.MIN_VALUE) != 0) {
+                c00611.label -= Integer.MIN_VALUE;
             } else {
-                c00601 = new C00601(continuation);
+                c00611 = new C00611(continuation);
             }
         } else {
-            c00601 = new C00601(continuation);
+            c00611 = new C00611(continuation);
         }
-        C00601 c00602 = c00601;
-        Object $result = c00602.result;
+        C00611 c00612 = c00611;
+        Object $result = c00612.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00602.label) {
+        switch (c00612.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 StringBuilder sbAppend = new StringBuilder().append(res.getTitle()).append('_');
@@ -125,11 +125,11 @@ public final class ProvidersListKt {
                 String airedDate = res.getAiredDate();
                 Integer season2 = res.getSeason();
                 Integer episode = res.getEpisode();
-                c00602.L$0 = SpillingKt.nullOutSpilledVariable(res);
-                c00602.L$1 = cacheKey2;
-                c00602.L$2 = SpillingKt.nullOutSpilledVariable(cached);
-                c00602.label = 1;
-                objResolveAnimeIds = streamPlayExtractor.resolveAnimeIds(title, date2, airedDate, season2, episode, c00602);
+                c00612.L$0 = SpillingKt.nullOutSpilledVariable(res);
+                c00612.L$1 = cacheKey2;
+                c00612.L$2 = SpillingKt.nullOutSpilledVariable(cached);
+                c00612.label = 1;
+                objResolveAnimeIds = streamPlayExtractor.resolveAnimeIds(title, date2, airedDate, season2, episode, c00612);
                 if (objResolveAnimeIds == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -137,7 +137,7 @@ public final class ProvidersListKt {
                 break;
                 break;
             case 1:
-                cacheKey = (String) c00602.L$1;
+                cacheKey = (String) c00612.L$1;
                 ResultKt.throwOnFailure($result);
                 objResolveAnimeIds = $result;
                 break;

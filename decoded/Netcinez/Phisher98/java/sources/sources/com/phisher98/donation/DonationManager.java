@@ -45,15 +45,12 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: DonationManager.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Netcinez/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\u0006\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\"\n\u0002\u0010\b\n\u0002\b\r\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0014\u001a\u00020\u0013H\u0002J\u0010\u0010E\u001a\u00020F2\u0006\u0010G\u001a\u00020HH\u0002J\u0018\u0010I\u001a\u00020\u00052\u0006\u0010G\u001a\u00020H2\u0006\u0010J\u001a\u00020\u0013H\u0002J\u0018\u0010K\u001a\u00020L2\u0006\u0010G\u001a\u00020H2\u0006\u0010J\u001a\u00020\u0013H\u0002J\u0010\u0010M\u001a\u00020\u00052\u0006\u0010G\u001a\u00020HH\u0002J\u0010\u0010N\u001a\u00020\u00052\u0006\u0010G\u001a\u00020HH\u0002J\u0010\u0010O\u001a\u00020L2\u0006\u0010G\u001a\u00020HH\u0002J\u000e\u0010P\u001a\u00020L2\u0006\u0010G\u001a\u00020HJ\b\u0010Q\u001a\u00020\u0013H\u0002J\u0010\u0010R\u001a\u00020L2\b\b\u0002\u0010S\u001a\u00020\u0013J\u0018\u0010T\u001a\u00020L2\u0006\u0010U\u001a\u00020V2\b\b\u0002\u0010S\u001a\u00020\u0013J$\u0010W\u001a\u0010\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u000206\u0018\u00010X2\u0006\u0010Y\u001a\u00020\u0013H\u0082@¢\u0006\u0002\u0010ZR\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0007\"\u0004\b\u0011\u0010\tR\u000e\u0010\u0012\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u001a\u0010\u0015\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u001a\u0010\u001a\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u0017\"\u0004\b\u001c\u0010\u0019R\u001a\u0010\u001d\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u0017\"\u0004\b\u001f\u0010\u0019R\u001a\u0010 \u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\u0017\"\u0004\b\"\u0010\u0019R\u001a\u0010#\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010\u0017\"\u0004\b%\u0010\u0019R\u001a\u0010&\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010\u0017\"\u0004\b(\u0010\u0019R\u001c\u0010)\u001a\u00020\u000b8FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010\r\"\u0004\b+\u0010\u000fR\u001a\u0010,\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b-\u0010\u0017\"\u0004\b.\u0010\u0019R\u001a\u0010/\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u0010\u0017\"\u0004\b1\u0010\u0019R\u001a\u00102\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b3\u0010\u0017\"\u0004\b4\u0010\u0019R\u001a\u00105\u001a\u000206X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b7\u00108\"\u0004\b9\u0010:R\u000e\u0010;\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010@\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010C\u001a\u00020DX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006["}, d2 = {"Lcom/phisher98/donation/DonationManager;", "", "<init>", "()V", "testMode", "", "getTestMode", "()Z", "setTestMode", "(Z)V", "testProgressAmount", "", "getTestProgressAmount", "()D", "setTestProgressAmount", "(D)V", "isDialogShowing", "setDialogShowing", "OBFUSCATED_TOKEN", "", "getDecryptedBmcToken", "primaryDonateUrl", "getPrimaryDonateUrl", "()Ljava/lang/String;", "setPrimaryDonateUrl", "(Ljava/lang/String;)V", "primaryButtonText", "getPrimaryButtonText", "setPrimaryButtonText", "secondaryDonateUrl", "getSecondaryDonateUrl", "setSecondaryDonateUrl", "secondaryButtonText", "getSecondaryButtonText", "setSecondaryButtonText", "adSupportUrl", "getAdSupportUrl", "setAdSupportUrl", "adSupportButtonText", "getAdSupportButtonText", "setAdSupportButtonText", "targetAmount", "getTargetAmount", "setTargetAmount", "currency", "getCurrency", "setCurrency", "goalTitle", "getGoalTitle", "setGoalTitle", "goalDescription", "getGoalDescription", "setGoalDescription", "cooldownHours", "", "getCooldownHours", "()I", "setCooldownHours", "(I)V", "PREFS_NAME", "KEY_LAST_SHOWN", "KEY_ACHIEVED_SHOWN_MONTH", "KEY_CACHED_MONTH", "KEY_CACHED_AMOUNT", "KEY_CACHED_SUPPORTERS", "DIALOG_TAG", "gateLock", "lastTriggerTime", "", "getPrefs", "Landroid/content/SharedPreferences;", "context", "Landroid/content/Context;", "hasShownAchievedThisMonth", "currentMonth", "recordAchievedShown", "", "isGoalReachedThisMonth", "isCooldownActive", "recordShown", "resetCooldown", "getCurrentMonthName", "checkAndShow", "providerName", "showNow", "activity", "Landroidx/appcompat/app/AppCompatActivity;", "fetchBuyMeACoffeeMonthly", "Lkotlin/Pair;", "accessToken", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Netcinez"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,508:1\n40#2,11:509\n40#2,11:520\n40#2,11:531\n1#3:542\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager\n*L\n121#1:509,11\n151#1:520,11\n158#1:531,11\n*E\n"})
+@Metadata(d1 = {"\u0000V\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\u0006\n\u0002\b\u0007\n\u0002\u0010\u000e\n\u0002\b\"\n\u0002\u0010\b\n\u0002\b\f\n\u0002\u0010\t\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u0014\u001a\u00020\u0013H\u0002J\u0010\u0010D\u001a\u00020E2\u0006\u0010F\u001a\u00020GH\u0002J\u0010\u0010H\u001a\u00020\u00052\u0006\u0010F\u001a\u00020GH\u0002J\u0010\u0010I\u001a\u00020J2\u0006\u0010F\u001a\u00020GH\u0002J\b\u0010K\u001a\u00020\u0013H\u0002J\u0010\u0010L\u001a\u00020J2\b\b\u0002\u0010M\u001a\u00020\u0013J\u0018\u0010N\u001a\u00020J2\u0006\u0010O\u001a\u00020P2\b\b\u0002\u0010M\u001a\u00020\u0013J$\u0010Q\u001a\u0010\u0012\u0004\u0012\u00020\u000b\u0012\u0004\u0012\u000206\u0018\u00010R2\u0006\u0010S\u001a\u00020\u0013H\u0082@¢\u0006\u0002\u0010TR\u001a\u0010\u0004\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\f\u0010\r\"\u0004\b\u000e\u0010\u000fR\u001a\u0010\u0010\u001a\u00020\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0007\"\u0004\b\u0011\u0010\tR\u000e\u0010\u0012\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u001a\u0010\u0015\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0016\u0010\u0017\"\u0004\b\u0018\u0010\u0019R\u001a\u0010\u001a\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001b\u0010\u0017\"\u0004\b\u001c\u0010\u0019R\u001a\u0010\u001d\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001e\u0010\u0017\"\u0004\b\u001f\u0010\u0019R\u001a\u0010 \u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b!\u0010\u0017\"\u0004\b\"\u0010\u0019R\u001a\u0010#\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b$\u0010\u0017\"\u0004\b%\u0010\u0019R\u001a\u0010&\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b'\u0010\u0017\"\u0004\b(\u0010\u0019R\u001c\u0010)\u001a\u00020\u000b8FX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b*\u0010\r\"\u0004\b+\u0010\u000fR\u001a\u0010,\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b-\u0010\u0017\"\u0004\b.\u0010\u0019R\u001a\u0010/\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b0\u0010\u0017\"\u0004\b1\u0010\u0019R\u001a\u00102\u001a\u00020\u0013X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b3\u0010\u0017\"\u0004\b4\u0010\u0019R\u001a\u00105\u001a\u000206X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b7\u00108\"\u0004\b9\u0010:R\u000e\u0010;\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010<\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010=\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010>\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010?\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010@\u001a\u00020\u0013X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010A\u001a\u00020\u0001X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010B\u001a\u00020CX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006U"}, d2 = {"Lcom/phisher98/donation/DonationManager;", "", "<init>", "()V", "testMode", "", "getTestMode", "()Z", "setTestMode", "(Z)V", "testProgressAmount", "", "getTestProgressAmount", "()D", "setTestProgressAmount", "(D)V", "isDialogShowing", "setDialogShowing", "OBFUSCATED_TOKEN", "", "getDecryptedBmcToken", "primaryDonateUrl", "getPrimaryDonateUrl", "()Ljava/lang/String;", "setPrimaryDonateUrl", "(Ljava/lang/String;)V", "primaryButtonText", "getPrimaryButtonText", "setPrimaryButtonText", "secondaryDonateUrl", "getSecondaryDonateUrl", "setSecondaryDonateUrl", "secondaryButtonText", "getSecondaryButtonText", "setSecondaryButtonText", "adSupportUrl", "getAdSupportUrl", "setAdSupportUrl", "adSupportButtonText", "getAdSupportButtonText", "setAdSupportButtonText", "targetAmount", "getTargetAmount", "setTargetAmount", "currency", "getCurrency", "setCurrency", "goalTitle", "getGoalTitle", "setGoalTitle", "goalDescription", "getGoalDescription", "setGoalDescription", "cooldownHours", "", "getCooldownHours", "()I", "setCooldownHours", "(I)V", "PREFS_NAME", "KEY_LAST_SHOWN", "KEY_CACHED_MONTH", "KEY_CACHED_AMOUNT", "KEY_CACHED_SUPPORTERS", "DIALOG_TAG", "gateLock", "lastTriggerTime", "", "getPrefs", "Landroid/content/SharedPreferences;", "context", "Landroid/content/Context;", "isCooldownActive", "recordShown", "", "getCurrentMonthName", "checkAndShow", "providerName", "showNow", "activity", "Landroidx/appcompat/app/AppCompatActivity;", "fetchBuyMeACoffeeMonthly", "Lkotlin/Pair;", "accessToken", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Netcinez"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,492:1\n40#2,11:493\n1#3:504\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager\n*L\n125#1:493,11\n*E\n"})
 public final class DonationManager {
 
     @NotNull
     private static final String DIALOG_TAG = "phisher_donation_floating_dialog";
-
-    @NotNull
-    private static final String KEY_ACHIEVED_SHOWN_MONTH = "phisher_donation_achieved_shown_month";
 
     @NotNull
     private static final String KEY_CACHED_AMOUNT = "phisher_donation_cached_amount";
@@ -115,7 +112,7 @@ public final class DonationManager {
     /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$fetchBuyMeACoffeeMonthly$1 */
     /* JADX INFO: compiled from: DonationManager.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.donation.DonationManager", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {432, 480}, m = "fetchBuyMeACoffeeMonthly", n = {"accessToken", "now", "monthTotal", "supportersCount", "dateFormat", "currentYear", "currentMonth", "page", "hasMore", "accessToken", "now", "monthTotal", "supportersCount", "dateFormat", "$this$fetchBuyMeACoffeeMonthly_u24lambda_u244", "currentYear", "currentMonth", "page", "hasMore"}, nl = {441, 489}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2", "I$3"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.donation.DonationManager", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {416, 464}, m = "fetchBuyMeACoffeeMonthly", n = {"accessToken", "now", "monthTotal", "supportersCount", "dateFormat", "currentYear", "currentMonth", "page", "hasMore", "accessToken", "now", "monthTotal", "supportersCount", "dateFormat", "$this$fetchBuyMeACoffeeMonthly_u24lambda_u244", "currentYear", "currentMonth", "page", "hasMore"}, nl = {425, 473}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2", "I$3"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -306,38 +303,6 @@ public final class DonationManager {
         return context.getSharedPreferences(PREFS_NAME, 0);
     }
 
-    private final boolean hasShownAchievedThisMonth(Context context, String currentMonth) {
-        if (testMode) {
-            return false;
-        }
-        return Intrinsics.areEqual(getPrefs(context).getString(KEY_ACHIEVED_SHOWN_MONTH, ""), currentMonth);
-    }
-
-    private final void recordAchievedShown(Context context, String currentMonth) {
-        SharedPreferences $this$edit$iv = getPrefs(context);
-        SharedPreferences.Editor editor$iv = $this$edit$iv.edit();
-        Intrinsics.checkExpressionValueIsNotNull(editor$iv, "editor");
-        editor$iv.putString(KEY_ACHIEVED_SHOWN_MONTH, currentMonth);
-        editor$iv.apply();
-    }
-
-    private final boolean isGoalReachedThisMonth(Context context) {
-        if (testProgressAmount > 0.0d || getTargetAmount() <= 0.0d) {
-            return false;
-        }
-        SharedPreferences prefs = getPrefs(context);
-        String string = prefs.getString(KEY_CACHED_MONTH, "");
-        String cachedMonth = string != null ? string : "";
-        String currentMonth = getCurrentMonthName();
-        if (Intrinsics.areEqual(cachedMonth, currentMonth)) {
-            double cachedAmount = prefs.getFloat(KEY_CACHED_AMOUNT, 0.0f);
-            if (cachedAmount >= getTargetAmount()) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean isCooldownActive(Context context) {
         if (testMode) {
@@ -359,14 +324,6 @@ public final class DonationManager {
         SharedPreferences.Editor editor$iv = $this$edit$iv.edit();
         Intrinsics.checkExpressionValueIsNotNull(editor$iv, "editor");
         editor$iv.putLong(KEY_LAST_SHOWN, System.currentTimeMillis());
-        editor$iv.apply();
-    }
-
-    public final void resetCooldown(@NotNull Context context) {
-        SharedPreferences $this$edit$iv = getPrefs(context);
-        SharedPreferences.Editor editor$iv = $this$edit$iv.edit();
-        Intrinsics.checkExpressionValueIsNotNull(editor$iv, "editor");
-        editor$iv.remove(KEY_LAST_SHOWN);
         editor$iv.apply();
     }
 
@@ -400,7 +357,7 @@ public final class DonationManager {
             if (now - lastTriggerTime >= 60000 && !INSTANCE.isCooldownActive(appContext)) {
                 lastTriggerTime = now;
                 Unit unit = Unit.INSTANCE;
-                BuildersKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), (CoroutineContext) null, (CoroutineStart) null, new C00072(appContext, providerName, currentMonth, null), 3, (Object) null);
+                BuildersKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), (CoroutineContext) null, (CoroutineStart) null, new C00072(appContext, currentMonth, providerName, null), 3, (Object) null);
             }
         }
     }
@@ -408,239 +365,68 @@ public final class DonationManager {
     /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$checkAndShow$2 */
     /* JADX INFO: compiled from: DonationManager.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.donation.DonationManager$checkAndShow$2", f = "DonationManager.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {205, 255}, m = "invokeSuspend", n = {"prefs", "currentAmount", "supportersCount", "token", "prefs", "currentAmount", "supportersCount", "token", "dynamicTitle", "config", "isGoalAchieved"}, nl = {206, 290}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$checkAndShow$2\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,508:1\n40#2,11:509\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$checkAndShow$2\n*L\n211#1:509,11\n*E\n"})
+    @DebugMetadata(c = "com.phisher98.donation.DonationManager$checkAndShow$2", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {177, 196, 197, 250}, m = "invokeSuspend", n = {"prefs", "cachedMonth", "currentAmount", "supportersCount", "token", "hasCachedData", "fetchSucceeded", "prefs", "cachedMonth", "currentAmount", "supportersCount", "token", "hasCachedData", "fetchSucceeded", "attempt", "prefs", "cachedMonth", "currentAmount", "supportersCount", "token", "hasCachedData", "fetchSucceeded", "attempt", "prefs", "cachedMonth", "currentAmount", "supportersCount", "token", "dynamicTitle", "config", "hasCachedData", "fetchSucceeded", "isGoalAchieved"}, nl = {178, 197, 198, 285}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "I$1"}, v = 2)
+    @SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$checkAndShow$2\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,492:1\n40#2,11:493\n40#2,11:504\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$checkAndShow$2\n*L\n184#1:493,11\n202#1:504,11\n*E\n"})
     static final class C00072 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Context $appContext;
         final /* synthetic */ String $currentMonth;
         final /* synthetic */ String $providerName;
         int I$0;
+        int I$1;
         Object L$0;
         Object L$1;
         Object L$2;
         Object L$3;
         Object L$4;
         Object L$5;
+        Object L$6;
+        boolean Z$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         C00072(Context context, String str, String str2, Continuation<? super C00072> continuation) {
             super(2, continuation);
             this.$appContext = context;
-            this.$providerName = str;
-            this.$currentMonth = str2;
+            this.$currentMonth = str;
+            this.$providerName = str2;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C00072(this.$appContext, this.$providerName, this.$currentMonth, continuation);
+            return new C00072(this.$appContext, this.$currentMonth, this.$providerName, continuation);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
             return create(coroutineScope, continuation).invokeSuspend(Unit.INSTANCE);
         }
 
-        /* JADX WARN: Code duplicated, block: B:20:0x00a2 A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:21:0x00e8  */
-        /* JADX WARN: Code duplicated, block: B:26:0x00fe A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:28:0x010a A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:34:0x0125  */
-        /* JADX WARN: Code duplicated, block: B:37:0x0130 A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:39:0x0133 A[DONT_INVERT] */
-        /* JADX WARN: Code duplicated, block: B:40:0x0135  */
-        /* JADX WARN: Code duplicated, block: B:41:0x0138 A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:44:0x0169  */
-        /* JADX WARN: Code duplicated, block: B:45:0x016c A[Catch: all -> 0x01ea, TryCatch #0 {all -> 0x01ea, blocks: (B:7:0x0033, B:10:0x0048, B:18:0x009e, B:20:0x00a2, B:24:0x00f2, B:26:0x00fe, B:28:0x010a, B:29:0x010d, B:31:0x0117, B:35:0x0126, B:37:0x0130, B:42:0x013e, B:46:0x0172, B:45:0x016c, B:41:0x0138, B:13:0x0052, B:15:0x0084), top: B:54:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:48:0x01e4 A[RETURN] */
-        /* JADX WARN: Code duplicated, block: B:49:0x01e5  */
-        public final Object invokeSuspend(Object $result) {
-            SharedPreferences prefs;
-            Ref.DoubleRef currentAmount;
-            Ref.IntRef supportersCount;
-            String token;
-            String token2;
-            Ref.IntRef supportersCount2;
-            Ref.DoubleRef currentAmount2;
-            SharedPreferences prefs2;
-            Object objFetchBuyMeACoffeeMonthly;
-            int i;
-            String goalTitle;
-            DonationConfig config;
-            String primaryButtonText;
-            Pair bmcResult;
-            Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            try {
-                switch (this.label) {
-                    case 0:
-                        ResultKt.throwOnFailure($result);
-                        prefs = DonationManager.INSTANCE.getPrefs(this.$appContext);
-                        currentAmount = new Ref.DoubleRef();
-                        currentAmount.element = prefs.getFloat(DonationManager.KEY_CACHED_AMOUNT, 0.0f);
-                        supportersCount = new Ref.IntRef();
-                        supportersCount.element = prefs.getInt(DonationManager.KEY_CACHED_SUPPORTERS, 0);
-                        token = DonationManager.INSTANCE.getDecryptedBmcToken();
-                        if (!StringsKt.isBlank(token)) {
-                            this.L$0 = prefs;
-                            this.L$1 = currentAmount;
-                            this.L$2 = supportersCount;
-                            this.L$3 = SpillingKt.nullOutSpilledVariable(token);
-                            this.label = 1;
-                            objFetchBuyMeACoffeeMonthly = DonationManager.INSTANCE.fetchBuyMeACoffeeMonthly(token, (Continuation) this);
-                            if (objFetchBuyMeACoffeeMonthly == coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            bmcResult = (Pair) objFetchBuyMeACoffeeMonthly;
-                            if (bmcResult != null) {
-                                currentAmount.element = ((Number) bmcResult.getFirst()).doubleValue();
-                                supportersCount.element = ((Number) bmcResult.getSecond()).intValue();
-                                String str = this.$currentMonth;
-                                SharedPreferences $this$edit$iv = prefs;
-                                SharedPreferences.Editor editor$iv = $this$edit$iv.edit();
-                                Intrinsics.checkExpressionValueIsNotNull(editor$iv, "editor");
-                                editor$iv.putString(DonationManager.KEY_CACHED_MONTH, str).putFloat(DonationManager.KEY_CACHED_AMOUNT, (float) currentAmount.element).putInt(DonationManager.KEY_CACHED_SUPPORTERS, supportersCount.element);
-                                editor$iv.apply();
-                            }
-                            token2 = token;
-                            supportersCount2 = supportersCount;
-                            currentAmount2 = currentAmount;
-                            prefs2 = prefs;
-                        } else {
-                            token2 = token;
-                            supportersCount2 = supportersCount;
-                            currentAmount2 = currentAmount;
-                            prefs2 = prefs;
-                        }
-                        if (DonationManager.INSTANCE.getTestProgressAmount() > 0.0d) {
-                            currentAmount2.element = DonationManager.INSTANCE.getTestProgressAmount();
-                            if (supportersCount2.element == 0) {
-                                supportersCount2.element = 3;
-                            }
-                        }
-                        if (DonationManager.INSTANCE.getTargetAmount() > 0.0d || currentAmount2.element < DonationManager.INSTANCE.getTargetAmount()) {
-                            i = 0;
-                        } else {
-                            i = 1;
-                        }
-                        if (DonationManager.INSTANCE.isCooldownActive(this.$appContext)) {
-                            return Unit.INSTANCE;
-                        }
-                        if (i != 0) {
-                            goalTitle = "Goal Achieved for Phisher Repo!";
-                        } else {
-                            goalTitle = DonationManager.INSTANCE.getGoalTitle();
-                        }
-                        String dynamicTitle = goalTitle;
-                        String str2 = this.$providerName;
-                        String str3 = this.$currentMonth;
-                        String goalDescription = DonationManager.INSTANCE.getGoalDescription();
-                        String currency = DonationManager.INSTANCE.getCurrency();
-                        double targetAmount = DonationManager.INSTANCE.getTargetAmount();
-                        SharedPreferences prefs3 = prefs2;
-                        double d = currentAmount2.element;
-                        int i2 = supportersCount2.element;
-                        String primaryDonateUrl = DonationManager.INSTANCE.getPrimaryDonateUrl();
-                        if (i != 0) {
-                            primaryButtonText = "☕ Send Extra Love";
-                        } else {
-                            primaryButtonText = DonationManager.INSTANCE.getPrimaryButtonText();
-                        }
-                        config = new DonationConfig(true, str2, str3, dynamicTitle, goalDescription, currency, targetAmount, d, i2, primaryDonateUrl, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
-                        this.L$0 = SpillingKt.nullOutSpilledVariable(prefs3);
-                        this.L$1 = SpillingKt.nullOutSpilledVariable(currentAmount2);
-                        this.L$2 = SpillingKt.nullOutSpilledVariable(supportersCount2);
-                        this.L$3 = SpillingKt.nullOutSpilledVariable(token2);
-                        this.L$4 = SpillingKt.nullOutSpilledVariable(dynamicTitle);
-                        this.L$5 = SpillingKt.nullOutSpilledVariable(config);
-                        this.I$0 = i;
-                        this.label = 2;
-                        if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass2(this.$appContext, config, null), (Continuation) this) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        return Unit.INSTANCE;
-                    case 1:
-                        token = (String) this.L$3;
-                        supportersCount = (Ref.IntRef) this.L$2;
-                        currentAmount = (Ref.DoubleRef) this.L$1;
-                        prefs = (SharedPreferences) this.L$0;
-                        ResultKt.throwOnFailure($result);
-                        objFetchBuyMeACoffeeMonthly = $result;
-                        bmcResult = (Pair) objFetchBuyMeACoffeeMonthly;
-                        if (bmcResult != null) {
-                            currentAmount.element = ((Number) bmcResult.getFirst()).doubleValue();
-                            supportersCount.element = ((Number) bmcResult.getSecond()).intValue();
-                            String str4 = this.$currentMonth;
-                            SharedPreferences $this$edit$iv2 = prefs;
-                            SharedPreferences.Editor editor$iv2 = $this$edit$iv2.edit();
-                            Intrinsics.checkExpressionValueIsNotNull(editor$iv2, "editor");
-                            editor$iv2.putString(DonationManager.KEY_CACHED_MONTH, str4).putFloat(DonationManager.KEY_CACHED_AMOUNT, (float) currentAmount.element).putInt(DonationManager.KEY_CACHED_SUPPORTERS, supportersCount.element);
-                            editor$iv2.apply();
-                        }
-                        token2 = token;
-                        supportersCount2 = supportersCount;
-                        currentAmount2 = currentAmount;
-                        prefs2 = prefs;
-                        if (DonationManager.INSTANCE.getTestProgressAmount() > 0.0d) {
-                            currentAmount2.element = DonationManager.INSTANCE.getTestProgressAmount();
-                            if (supportersCount2.element == 0) {
-                                supportersCount2.element = 3;
-                            }
-                        }
-                        if (DonationManager.INSTANCE.getTargetAmount() > 0.0d) {
-                            i = 0;
-                        } else {
-                            i = 0;
-                        }
-                        if (DonationManager.INSTANCE.isCooldownActive(this.$appContext)) {
-                            return Unit.INSTANCE;
-                        }
-                        if (i != 0) {
-                            goalTitle = "Goal Achieved for Phisher Repo!";
-                        } else {
-                            goalTitle = DonationManager.INSTANCE.getGoalTitle();
-                        }
-                        String dynamicTitle2 = goalTitle;
-                        String str5 = this.$providerName;
-                        String str6 = this.$currentMonth;
-                        String goalDescription2 = DonationManager.INSTANCE.getGoalDescription();
-                        String currency2 = DonationManager.INSTANCE.getCurrency();
-                        double targetAmount2 = DonationManager.INSTANCE.getTargetAmount();
-                        SharedPreferences prefs4 = prefs2;
-                        double d2 = currentAmount2.element;
-                        int i3 = supportersCount2.element;
-                        String primaryDonateUrl2 = DonationManager.INSTANCE.getPrimaryDonateUrl();
-                        if (i != 0) {
-                            primaryButtonText = "☕ Send Extra Love";
-                        } else {
-                            primaryButtonText = DonationManager.INSTANCE.getPrimaryButtonText();
-                        }
-                        config = new DonationConfig(true, str5, str6, dynamicTitle2, goalDescription2, currency2, targetAmount2, d2, i3, primaryDonateUrl2, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
-                        this.L$0 = SpillingKt.nullOutSpilledVariable(prefs4);
-                        this.L$1 = SpillingKt.nullOutSpilledVariable(currentAmount2);
-                        this.L$2 = SpillingKt.nullOutSpilledVariable(supportersCount2);
-                        this.L$3 = SpillingKt.nullOutSpilledVariable(token2);
-                        this.L$4 = SpillingKt.nullOutSpilledVariable(dynamicTitle2);
-                        this.L$5 = SpillingKt.nullOutSpilledVariable(config);
-                        this.I$0 = i;
-                        this.label = 2;
-                        if (BuildersKt.withContext(Dispatchers.getMain(), new AnonymousClass2(this.$appContext, config, null), (Continuation) this) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        return Unit.INSTANCE;
-                    case 2:
-                        int i4 = this.I$0;
-                        ResultKt.throwOnFailure($result);
-                        return Unit.INSTANCE;
-                    default:
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                }
-            } catch (Throwable th) {
-            }
+        /* JADX WARN: Code duplicated, block: B:115:0x01dc A[EXC_TOP_SPLITTER, SYNTHETIC] */
+        /* JADX WARN: Code duplicated, block: B:51:0x0210 A[RETURN] */
+        /* JADX WARN: Code duplicated, block: B:52:0x0211  */
+        /* JADX WARN: Code duplicated, block: B:55:0x0224 A[Catch: all -> 0x02cb, TryCatch #5 {all -> 0x02cb, blocks: (B:58:0x0247, B:53:0x021b, B:55:0x0224), top: B:123:0x0247 }] */
+        /* JADX WARN: Code duplicated, block: B:57:0x0246 A[RETURN] */
+        /* JADX WARN: Code duplicated, block: B:60:0x0252  */
+        /* JADX WARN: Code duplicated, block: B:62:0x0256 A[Catch: all -> 0x02b2, TRY_ENTER, TRY_LEAVE, TryCatch #0 {all -> 0x02b2, blocks: (B:62:0x0256, B:47:0x01dc), top: B:115:0x01dc }] */
+        /* JADX WARN: Code duplicated, block: B:70:0x02b9  */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x0244 -> B:123:0x0247). Please report as a decompilation issue!!! */
+        /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x0252 -> B:59:0x0249). Please report as a decompilation issue!!! */
+        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+            java.lang.StackOverflowError
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+            */
+        public final java.lang.Object invokeSuspend(java.lang.Object r42) {
+            /*
+                Method dump skipped, instruction units count: 1042
+                To view this dump add '--comments-level debug' option
+            */
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.donation.DonationManager.C00072.invokeSuspend(java.lang.Object):java.lang.Object");
         }
 
-        /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$checkAndShow$2$2, reason: invalid class name */
+        /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$checkAndShow$2$3, reason: invalid class name */
         /* JADX INFO: compiled from: DonationManager.kt */
         @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-        @DebugMetadata(c = "com.phisher98.donation.DonationManager$checkAndShow$2$2", f = "DonationManager.kt", i = {0, 0}, l = {262}, m = "invokeSuspend", n = {"currentActivity", "i"}, nl = {263}, s = {"L$0", "I$0"}, v = 2)
-        static final class AnonymousClass2 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+        @DebugMetadata(c = "com.phisher98.donation.DonationManager$checkAndShow$2$3", f = "DonationManager.kt", i = {0, 0}, l = {257}, m = "invokeSuspend", n = {"currentActivity", "i"}, nl = {258}, s = {"L$0", "I$0"}, v = 2)
+        static final class AnonymousClass3 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
             final /* synthetic */ Context $appContext;
             final /* synthetic */ DonationConfig $config;
             int I$0;
@@ -648,14 +434,14 @@ public final class DonationManager {
             int label;
 
             /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-            AnonymousClass2(Context context, DonationConfig donationConfig, Continuation<? super AnonymousClass2> continuation) {
+            AnonymousClass3(Context context, DonationConfig donationConfig, Continuation<? super AnonymousClass3> continuation) {
                 super(2, continuation);
                 this.$appContext = context;
                 this.$config = donationConfig;
             }
 
             public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-                return new AnonymousClass2(this.$appContext, this.$config, continuation);
+                return new AnonymousClass3(this.$appContext, this.$config, continuation);
             }
 
             public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -678,7 +464,7 @@ public final class DonationManager {
                     Method dump skipped, instruction units count: 244
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.phisher98.donation.DonationManager.C00072.AnonymousClass2.invokeSuspend(java.lang.Object):java.lang.Object");
+                throw new UnsupportedOperationException("Method not decompiled: com.phisher98.donation.DonationManager.C00072.AnonymousClass3.invokeSuspend(java.lang.Object):java.lang.Object");
             }
 
             static final Unit invokeSuspend$lambda$0() {
@@ -691,8 +477,8 @@ public final class DonationManager {
     /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$showNow$1 */
     /* JADX INFO: compiled from: DonationManager.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.donation.DonationManager$showNow$1", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2}, l = {310, 354, 369}, m = "invokeSuspend", n = {"currentMonth", "prefs", "currentAmount", "supportersCount", "token", "currentMonth", "prefs", "currentAmount", "supportersCount", "token", "dynamicTitle", "config", "isGoalAchieved", "<unused var>"}, nl = {311, 368, 395}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$showNow$1\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,508:1\n40#2,11:509\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$showNow$1\n*L\n314#1:509,11\n*E\n"})
+    @DebugMetadata(c = "com.phisher98.donation.DonationManager$showNow$1", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2}, l = {305, 344, 359}, m = "invokeSuspend", n = {"currentMonth", "prefs", "currentAmount", "supportersCount", "token", "currentMonth", "prefs", "currentAmount", "supportersCount", "token", "dynamicTitle", "config", "isGoalAchieved", "<unused var>"}, nl = {306, 358, 384}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$showNow$1\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,492:1\n40#2,11:493\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$showNow$1\n*L\n309#1:493,11\n*E\n"})
     static final class C00091 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ AppCompatActivity $activity;
         final /* synthetic */ String $providerName;
@@ -721,16 +507,16 @@ public final class DonationManager {
             return create(coroutineScope, continuation).invokeSuspend(Unit.INSTANCE);
         }
 
-        /* JADX WARN: Code duplicated, block: B:21:0x00c0 A[Catch: all -> 0x020b, TryCatch #0 {all -> 0x020b, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x015b, B:43:0x018a, B:42:0x0184, B:38:0x0153, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:26:0x0123 A[Catch: all -> 0x020b, TryCatch #0 {all -> 0x020b, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x015b, B:43:0x018a, B:42:0x0184, B:38:0x0153, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:28:0x012f A[Catch: all -> 0x020b, TryCatch #0 {all -> 0x020b, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x015b, B:43:0x018a, B:42:0x0184, B:38:0x0153, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:21:0x00c0 A[Catch: all -> 0x0208, TryCatch #0 {all -> 0x0208, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x0157, B:43:0x0187, B:42:0x0181, B:38:0x0151, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:26:0x0123 A[Catch: all -> 0x0208, TryCatch #0 {all -> 0x0208, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x0157, B:43:0x0187, B:42:0x0181, B:38:0x0151, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:28:0x012f A[Catch: all -> 0x0208, TryCatch #0 {all -> 0x0208, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x0157, B:43:0x0187, B:42:0x0181, B:38:0x0151, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
         /* JADX WARN: Code duplicated, block: B:34:0x014a  */
         /* JADX WARN: Code duplicated, block: B:37:0x014e  */
-        /* JADX WARN: Code duplicated, block: B:38:0x0153 A[Catch: all -> 0x020b, TryCatch #0 {all -> 0x020b, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x015b, B:43:0x018a, B:42:0x0184, B:38:0x0153, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:41:0x0181  */
-        /* JADX WARN: Code duplicated, block: B:42:0x0184 A[Catch: all -> 0x020b, TryCatch #0 {all -> 0x020b, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x015b, B:43:0x018a, B:42:0x0184, B:38:0x0153, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
-        /* JADX WARN: Code duplicated, block: B:45:0x0205 A[RETURN] */
-        /* JADX WARN: Code duplicated, block: B:46:0x0206  */
+        /* JADX WARN: Code duplicated, block: B:38:0x0151 A[Catch: all -> 0x0208, TryCatch #0 {all -> 0x0208, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x0157, B:43:0x0187, B:42:0x0181, B:38:0x0151, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:41:0x017e  */
+        /* JADX WARN: Code duplicated, block: B:42:0x0181 A[Catch: all -> 0x0208, TryCatch #0 {all -> 0x0208, blocks: (B:8:0x0040, B:11:0x0059, B:19:0x00bc, B:21:0x00c0, B:24:0x0117, B:26:0x0123, B:28:0x012f, B:29:0x0132, B:31:0x013c, B:39:0x0157, B:43:0x0187, B:42:0x0181, B:38:0x0151, B:14:0x0063, B:16:0x00a0), top: B:55:0x000e }] */
+        /* JADX WARN: Code duplicated, block: B:45:0x0202 A[RETURN] */
+        /* JADX WARN: Code duplicated, block: B:46:0x0203  */
         public final Object invokeSuspend(Object $result) {
             String currentMonth;
             SharedPreferences prefs;
@@ -745,7 +531,7 @@ public final class DonationManager {
             Object objFetchBuyMeACoffeeMonthly;
             int i;
             int i2;
-            String dynamicTitle;
+            String goalTitle;
             DonationConfig config;
             String primaryButtonText;
             Pair bmcResult;
@@ -807,10 +593,11 @@ public final class DonationManager {
                         }
                         i2 = i;
                         if (i2 != 0) {
-                            dynamicTitle = "Goal Achieved for Phisher Repo!";
+                            goalTitle = "Goal Achieved for Phisher Repo!";
                         } else {
-                            dynamicTitle = DonationManager.INSTANCE.getGoalTitle();
+                            goalTitle = DonationManager.INSTANCE.getGoalTitle();
                         }
+                        String dynamicTitle = goalTitle;
                         String str = this.$providerName;
                         String goalDescription = DonationManager.INSTANCE.getGoalDescription();
                         String currency = DonationManager.INSTANCE.getCurrency();
@@ -873,10 +660,11 @@ public final class DonationManager {
                         }
                         i2 = i;
                         if (i2 != 0) {
-                            dynamicTitle = "Goal Achieved for Phisher Repo!";
+                            goalTitle = "Goal Achieved for Phisher Repo!";
                         } else {
-                            dynamicTitle = DonationManager.INSTANCE.getGoalTitle();
+                            goalTitle = DonationManager.INSTANCE.getGoalTitle();
                         }
+                        String dynamicTitle2 = goalTitle;
                         String str2 = this.$providerName;
                         String goalDescription2 = DonationManager.INSTANCE.getGoalDescription();
                         String currency2 = DonationManager.INSTANCE.getCurrency();
@@ -889,13 +677,13 @@ public final class DonationManager {
                         } else {
                             primaryButtonText = DonationManager.INSTANCE.getPrimaryButtonText();
                         }
-                        config = new DonationConfig(true, str2, currentMonth2, dynamicTitle, goalDescription2, currency2, targetAmount2, d2, i4, primaryDonateUrl2, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
+                        config = new DonationConfig(true, str2, currentMonth2, dynamicTitle2, goalDescription2, currency2, targetAmount2, d2, i4, primaryDonateUrl2, primaryButtonText, DonationManager.INSTANCE.getSecondaryDonateUrl(), DonationManager.INSTANCE.getSecondaryButtonText(), DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), DonationManager.INSTANCE.getCooldownHours(), null, 65536, null);
                         this.L$0 = SpillingKt.nullOutSpilledVariable(currentMonth2);
                         this.L$1 = SpillingKt.nullOutSpilledVariable(prefs2);
                         this.L$2 = SpillingKt.nullOutSpilledVariable(currentAmount2);
                         this.L$3 = SpillingKt.nullOutSpilledVariable(supportersCount2);
                         this.L$4 = SpillingKt.nullOutSpilledVariable(token2);
-                        this.L$5 = SpillingKt.nullOutSpilledVariable(dynamicTitle);
+                        this.L$5 = SpillingKt.nullOutSpilledVariable(dynamicTitle2);
                         this.L$6 = SpillingKt.nullOutSpilledVariable(config);
                         this.I$0 = i2;
                         this.label = 2;
@@ -1028,8 +816,7 @@ public final class DonationManager {
                             return Unit.INSTANCE;
                         }
                         DonationManager.INSTANCE.setDialogShowing(true);
-                        String dynamicTitle = DonationManager.INSTANCE.getGoalTitle();
-                        Fragment donationDialogFragment = new DonationDialogFragment(new DonationConfig(false, this.$providerName, DonationManager.INSTANCE.getCurrentMonthName(), dynamicTitle, null, null, 0.0d, 0.0d, 0, DonationManager.INSTANCE.getPrimaryDonateUrl(), DonationManager.INSTANCE.getPrimaryButtonText(), null, null, DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), 0, null, 104945, null), new Function0() { // from class: com.phisher98.donation.DonationManager$showNow$1$4$$ExternalSyntheticLambda0
+                        Fragment donationDialogFragment = new DonationDialogFragment(new DonationConfig(false, this.$providerName, DonationManager.INSTANCE.getCurrentMonthName(), DonationManager.INSTANCE.getGoalTitle(), null, null, 0.0d, 0.0d, 0, DonationManager.INSTANCE.getPrimaryDonateUrl(), DonationManager.INSTANCE.getPrimaryButtonText(), null, null, DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), 0, null, 104945, null), new Function0() { // from class: com.phisher98.donation.DonationManager$showNow$1$4$$ExternalSyntheticLambda0
                             public final Object invoke() {
                                 return DonationManager.C00091.AnonymousClass4.invokeSuspend$lambda$0();
                             }

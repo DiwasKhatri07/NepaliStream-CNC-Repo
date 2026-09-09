@@ -156,7 +156,7 @@ public final class ToggleFragment extends DialogFragment {
         List stremioLinks = loadStremioLinks();
         List $this$onCreateView_u24lambda_u240 = CollectionsKt.createListBuilder();
         $this$onCreateView_u24lambda_u240.add(new StreamPlay(this.sharedPref));
-        $this$onCreateView_u24lambda_u240.add(new StreamPlayAnime());
+        $this$onCreateView_u24lambda_u240.add(new StreamPlayAnime(null, 1, null));
         if (stremioLinks.isEmpty()) {
             list = $this$onCreateView_u24lambda_u240;
         } else {

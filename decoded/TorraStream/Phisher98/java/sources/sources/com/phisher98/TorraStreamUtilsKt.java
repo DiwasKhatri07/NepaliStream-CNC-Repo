@@ -61,7 +61,7 @@ public final class TorraStreamUtilsKt {
     /* JADX INFO: compiled from: TorraStreamUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamUtilsKt", f = "TorraStreamUtils.kt", i = {0, 0, 0, 0, 0, 0}, l = {195}, m = "fetchTmdbLogoUrl", n = {"tmdbAPI", "apiKey", "type", "tmdbId", "appLangCode", "url"}, nl = {195}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    static final class C00711 extends ContinuationImpl {
+    static final class C00781 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -71,7 +71,7 @@ public final class TorraStreamUtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C00711(Continuation<? super C00711> continuation) {
+        C00781(Continuation<? super C00781> continuation) {
             super(continuation);
         }
 
@@ -87,14 +87,14 @@ public final class TorraStreamUtilsKt {
     /* JADX INFO: compiled from: TorraStreamUtils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamUtilsKt", f = "TorraStreamUtils.kt", i = {0, 0, 0}, l = {326}, m = "generateMagnetLink", n = {"trackerUrls", "hash", "trackers"}, nl = {334}, s = {"L$0", "L$1", "L$2"}, v = 2)
-    static final class C00721 extends ContinuationImpl {
+    static final class C00791 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C00721(Continuation<? super C00721> continuation) {
+        C00791(Continuation<? super C00791> continuation) {
             super(continuation);
         }
 
@@ -226,7 +226,7 @@ public final class TorraStreamUtilsKt {
     /* JADX WARN: Code duplicated, block: B:99:0x022b  */
     @Nullable
     public static final Object fetchTmdbLogoUrl(@NotNull String tmdbAPI, @NotNull String apiKey, @NotNull TvType type, @Nullable Integer tmdbId, @Nullable String appLangCode, @NotNull Continuation<? super String> continuation) {
-        C00711 c00711;
+        C00781 c00781;
         String appLangCode2;
         Object obj;
         JSONObject json;
@@ -247,20 +247,20 @@ public final class TorraStreamUtilsKt {
         String l;
         String string;
         String tmdbAPI3 = tmdbAPI;
-        if (continuation instanceof C00711) {
-            c00711 = (C00711) continuation;
-            if ((c00711.label & Integer.MIN_VALUE) != 0) {
-                c00711.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00781) {
+            c00781 = (C00781) continuation;
+            if ((c00781.label & Integer.MIN_VALUE) != 0) {
+                c00781.label -= Integer.MIN_VALUE;
             } else {
-                c00711 = new C00711(continuation);
+                c00781 = new C00781(continuation);
             }
         } else {
-            c00711 = new C00711(continuation);
+            c00781 = new C00781(continuation);
         }
-        C00711 c00712 = c00711;
-        Object $result = c00712.result;
+        C00781 c00782 = c00781;
+        Object $result = c00782.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00712.label) {
+        switch (c00782.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (tmdbId == null) {
@@ -270,15 +270,15 @@ public final class TorraStreamUtilsKt {
                 try {
                     Result.Companion companion = Result.Companion;
                     Requests app = MainActivityKt.getApp();
-                    c00712.L$0 = SpillingKt.nullOutSpilledVariable(tmdbAPI3);
-                    c00712.L$1 = SpillingKt.nullOutSpilledVariable(apiKey);
-                    c00712.L$2 = SpillingKt.nullOutSpilledVariable(type);
-                    c00712.L$3 = SpillingKt.nullOutSpilledVariable(tmdbId);
-                    c00712.L$4 = appLangCode;
-                    c00712.L$5 = SpillingKt.nullOutSpilledVariable(url);
-                    c00712.label = 1;
+                    c00782.L$0 = SpillingKt.nullOutSpilledVariable(tmdbAPI3);
+                    c00782.L$1 = SpillingKt.nullOutSpilledVariable(apiKey);
+                    c00782.L$2 = SpillingKt.nullOutSpilledVariable(type);
+                    c00782.L$3 = SpillingKt.nullOutSpilledVariable(tmdbId);
+                    c00782.L$4 = appLangCode;
+                    c00782.L$5 = SpillingKt.nullOutSpilledVariable(url);
+                    c00782.label = 1;
                     try {
-                        Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00712, 4094, (Object) null);
+                        Object obj2 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00782, 4094, (Object) null);
                         if (obj2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -453,8 +453,8 @@ public final class TorraStreamUtilsKt {
                 }
                 break;
             case 1:
-                appLangCode2 = (String) c00712.L$4;
-                tmdbAPI3 = (String) c00712.L$0;
+                appLangCode2 = (String) c00782.L$4;
+                tmdbAPI3 = (String) c00782.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     obj = Result.constructor-impl(new JSONObject(((NiceResponse) $result).getText()));
@@ -739,22 +739,22 @@ public final class TorraStreamUtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public static final Object generateMagnetLink(@NotNull List<String> list, @Nullable String hash, @NotNull Continuation<? super String> continuation) {
-        C00721 c00721;
+        C00791 c00791;
         Object objAmap;
         Set trackers;
-        if (continuation instanceof C00721) {
-            c00721 = (C00721) continuation;
-            if ((c00721.label & Integer.MIN_VALUE) != 0) {
-                c00721.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00791) {
+            c00791 = (C00791) continuation;
+            if ((c00791.label & Integer.MIN_VALUE) != 0) {
+                c00791.label -= Integer.MIN_VALUE;
             } else {
-                c00721 = new C00721(continuation);
+                c00791 = new C00791(continuation);
             }
         } else {
-            c00721 = new C00721(continuation);
+            c00791 = new C00791(continuation);
         }
-        Object $result = c00721.result;
+        Object $result = c00791.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00721.label) {
+        switch (c00791.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 boolean z = false;
@@ -765,12 +765,12 @@ public final class TorraStreamUtilsKt {
                     throw new IllegalArgumentException("Failed requirement.".toString());
                 }
                 Set trackers2 = new LinkedHashSet();
-                C00732 c00732 = new C00732(null);
-                c00721.L$0 = SpillingKt.nullOutSpilledVariable(list);
-                c00721.L$1 = hash;
-                c00721.L$2 = trackers2;
-                c00721.label = 1;
-                objAmap = ParCollectionsKt.amap(list, c00732, c00721);
+                C00802 c00802 = new C00802(null);
+                c00791.L$0 = SpillingKt.nullOutSpilledVariable(list);
+                c00791.L$1 = hash;
+                c00791.L$2 = trackers2;
+                c00791.label = 1;
+                objAmap = ParCollectionsKt.amap(list, c00802, c00791);
                 if (objAmap == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -778,8 +778,8 @@ public final class TorraStreamUtilsKt {
                 break;
                 break;
             case 1:
-                trackers = (Set) c00721.L$2;
-                hash = (String) c00721.L$1;
+                trackers = (Set) c00791.L$2;
+                hash = (String) c00791.L$1;
                 ResultKt.throwOnFailure($result);
                 objAmap = $result;
                 break;
@@ -807,18 +807,18 @@ public final class TorraStreamUtilsKt {
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0000\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "", "url"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamUtilsKt$generateMagnetLink$2", f = "TorraStreamUtils.kt", i = {0}, l = {328}, m = "invokeSuspend", n = {"url"}, nl = {329}, s = {"L$0"}, v = 2)
     @SourceDebugExtension({"SMAP\nTorraStreamUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TorraStreamUtils.kt\ncom/phisher98/TorraStreamUtilsKt$generateMagnetLink$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,351:1\n1#2:352\n*E\n"})
-    static final class C00732 extends SuspendLambda implements Function2<String, Continuation<? super List<? extends String>>, Object> {
+    static final class C00802 extends SuspendLambda implements Function2<String, Continuation<? super List<? extends String>>, Object> {
         /* synthetic */ Object L$0;
         int label;
 
-        C00732(Continuation<? super C00732> continuation) {
+        C00802(Continuation<? super C00802> continuation) {
             super(2, continuation);
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00732 = new C00732(continuation);
-            c00732.L$0 = obj;
-            return c00732;
+            Continuation<Unit> c00802 = new C00802(continuation);
+            c00802.L$0 = obj;
+            return c00802;
         }
 
         public final Object invoke(String str, Continuation<? super List<String>> continuation) {
@@ -852,11 +852,11 @@ public final class TorraStreamUtilsKt {
                 }
                 obj = Result.constructor-impl(SequencesKt.toList(SequencesKt.filter(SequencesKt.map(StringsKt.lineSequence(((NiceResponse) obj2).getText()), new Function1() { // from class: com.phisher98.TorraStreamUtilsKt$generateMagnetLink$2$$ExternalSyntheticLambda0
                     public final Object invoke(Object obj3) {
-                        return TorraStreamUtilsKt.C00732.invokeSuspend$lambda$0$0((String) obj3);
+                        return TorraStreamUtilsKt.C00802.invokeSuspend$lambda$0$0((String) obj3);
                     }
                 }), new Function1() { // from class: com.phisher98.TorraStreamUtilsKt$generateMagnetLink$2$$ExternalSyntheticLambda1
                     public final Object invoke(Object obj3) {
-                        return Boolean.valueOf(TorraStreamUtilsKt.C00732.invokeSuspend$lambda$0$1((String) obj3));
+                        return Boolean.valueOf(TorraStreamUtilsKt.C00802.invokeSuspend$lambda$0$1((String) obj3));
                     }
                 })));
             } catch (Throwable th) {

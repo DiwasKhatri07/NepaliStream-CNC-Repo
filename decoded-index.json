@@ -3,22 +3,22 @@
     "file": "decoded/AllMovieLandProvider/Phisher98/AllMovieLandProvider.cs3",
     "source": "Phisher98",
     "plugin": "AllMovieLandProvider",
-    "sha256": "39316e858351c34de448fedffa4ca9fd22867efd19be95413ecb25f75fa1a55a",
-    "bytes": 92033
+    "sha256": "5b9ce3b188ffec0dc6b3ed3f80fb1856052a39ae07efb9061760f7051234dca7",
+    "bytes": 93064
   },
   {
     "file": "decoded/AllWish/Phisher98/AllWish.cs3",
     "source": "Phisher98",
     "plugin": "AllWish",
-    "sha256": "2c420ce44bd361f8ddd2b84006cdddd3d75acf8d8b758cf8d9610c0ff94bfa11",
-    "bytes": 79495
+    "sha256": "e2f3467c90ade5a9f1498591f7d88c04a69377c9ee20cb8d311410ac6008dce5",
+    "bytes": 80739
   },
   {
     "file": "decoded/AniDb/Phisher98/AniDb.cs3",
     "source": "Phisher98",
     "plugin": "AniDb",
-    "sha256": "d59b1665f8c09cf4272b20fe0846812e93f0fa9adeb09f025f69e1ef27b039c2",
-    "bytes": 90045
+    "sha256": "889fcc6432e131318366abeae5b610908110c019cba93890e9572f3e7e323171",
+    "bytes": 91134
   },
   {
     "file": "decoded/AniKoto/CNCVerse/AniKoto.cs3",
@@ -31,57 +31,57 @@
     "file": "decoded/AniKoto/Phisher98/AniKoto.cs3",
     "source": "Phisher98",
     "plugin": "AniKoto",
-    "sha256": "2a017f67d51822ecd9663cc061e8348bcb8bc5096fe14fdb20f1babd979724b3",
-    "bytes": 78276
+    "sha256": "0624a5d845dbe1390e006ccdeb69bf7c2a055d59e264fa64ac7af75349bfff20",
+    "bytes": 79526
   },
   {
     "file": "decoded/AniVortex/Phisher98/AniVortex.cs3",
     "source": "Phisher98",
     "plugin": "AniVortex",
-    "sha256": "84690fa1aa5c33ed9e5c37cfe98dcf4e65220e6653a5afb8629764594b976eca",
-    "bytes": 130237
+    "sha256": "ecc803b43feaafa6458f1c6697647ff1653750d60a7fcc09f73791e95c8933de",
+    "bytes": 139517
   },
   {
     "file": "decoded/Anichi/Phisher98/Anichi.cs3",
     "source": "Phisher98",
     "plugin": "Anichi",
-    "sha256": "e44536b318d05a38342feea597b13903ec29652e5689a5e67aadf27c77f33a92",
-    "bytes": 169382
+    "sha256": "1c6216285d0aa2cbf4ad0e87baf9723fe8746cd359db5b090edada5c7b287fb2",
+    "bytes": 170773
   },
   {
     "file": "decoded/Anikage/Phisher98/Anikage.cs3",
     "source": "Phisher98",
     "plugin": "Anikage",
-    "sha256": "0850e18eb338076d2d143e65da1cc93b621801349204761b4b3197911fe7db81",
-    "bytes": 66396
+    "sha256": "412cdd9fef78052c10d394a08957b35889c6311bacdba8ef0d49bc7a028e4942",
+    "bytes": 67562
   },
   {
     "file": "decoded/Anilight/Phisher98/Anilight.cs3",
     "source": "Phisher98",
     "plugin": "Anilight",
-    "sha256": "08bab0d3053c0ed67cf2c196aa2864d3bfedc09ae0644fba5bffd6c511d44861",
-    "bytes": 66756
+    "sha256": "18fa5427caf87750f596620e5a2635a54c861627eb874a489ecc3386a0acf71f",
+    "bytes": 67981
   },
   {
     "file": "decoded/AnimeCloud/Phisher98/AnimeCloud.cs3",
     "source": "Phisher98",
     "plugin": "AnimeCloud",
-    "sha256": "b3553f49c6762b295085630399e2cd459c1e94a81c3b30e230920006a3a36875",
-    "bytes": 70373
+    "sha256": "654ba3130ddf0913a6ca992c356d1b1ee8e304a059ba83cf58c63b6e40b30069",
+    "bytes": 71632
   },
   {
     "file": "decoded/AnimeDekhoProvider/Phisher98/AnimeDekhoProvider.cs3",
     "source": "Phisher98",
     "plugin": "AnimeDekhoProvider",
-    "sha256": "04a54e9811c105212c195e026f760e6a2ef86630523af0b22526f2fbc1f0b6af",
-    "bytes": 106533
+    "sha256": "361f8b7c01934a287b6f42882a9b49bd3b61f8574449bc442b0da4f0beb673de",
+    "bytes": 107797
   },
   {
     "file": "decoded/AnimePahe/Phisher98/AnimePahe.cs3",
     "source": "Phisher98",
     "plugin": "AnimePahe",
-    "sha256": "eaa8ace929996d9793232f9b63d9f265fb0a5aee0ae09eaeb03d2a23425be8e8",
-    "bytes": 113583
+    "sha256": "d19f390dee69b44a2a7dde7819706aa098f79992dffd65acc6f9bf40ac2a271a",
+    "bytes": 114678
   },
   {
     "file": "decoded/AnimeSuge/CNCVerse/AnimeSuge.cs3",
@@ -94,71 +94,71 @@
     "file": "decoded/Animeav1/Phisher98/Animeav1.cs3",
     "source": "Phisher98",
     "plugin": "Animeav1",
-    "sha256": "0768ff13e38306be330e745fbcb1ab07d226d322f4b873d90e9189b6ea964c67",
-    "bytes": 54002
+    "sha256": "577b09cbce84099f1e73f511932dce742eb685bd4d8fb78f6570449e8e259870",
+    "bytes": 55214
   },
   {
     "file": "decoded/Animedubhindi/Phisher98/Animedubhindi.cs3",
     "source": "Phisher98",
     "plugin": "Animedubhindi",
-    "sha256": "e3eac8038ba2b8a0d9b028a35c0fbaf09f0f3e9a0c0fb4052db27bd91a4c8efe",
-    "bytes": 81909
+    "sha256": "a8917cada9672e73a158bf9fea87dacac6be86cbc274c79e578af41191f6fea3",
+    "bytes": 83148
   },
   {
     "file": "decoded/Animekhor/Phisher98/Animekhor.cs3",
     "source": "Phisher98",
     "plugin": "Animekhor",
-    "sha256": "fdbd6a376a62ee1644d84b78a7ea01bb8da4ba9ad2e9f8dce8c87caec805436b",
-    "bytes": 60231
+    "sha256": "231ff018f225dd5cbdec03e572d8036fef10c9d0477688944850d1b57ca62b3b",
+    "bytes": 61329
   },
   {
     "file": "decoded/Animenosub/Phisher98/Animenosub.cs3",
     "source": "Phisher98",
     "plugin": "Animenosub",
-    "sha256": "03d519cab6d940389b0393697fc7ac0378ebf61d33d6f5a216f01ffc71c3464a",
-    "bytes": 53594
+    "sha256": "0fab9e20cca32c4a34ce0560d987c0b43add66293e927b2a29aaaf15c264a505",
+    "bytes": 54793
   },
   {
     "file": "decoded/Animesalt/Phisher98/Animesalt.cs3",
     "source": "Phisher98",
     "plugin": "Animesalt",
-    "sha256": "01ccfb693e350412c71e0bb0e3fdc827831911e1fb0781024922a744c0190335",
-    "bytes": 78173
+    "sha256": "653048dccc1a10702c433e88af20b5767e20bdb68a82f9a48ab34ce44543d9d7",
+    "bytes": 79420
   },
   {
     "file": "decoded/Animexin/Phisher98/Animexin.cs3",
     "source": "Phisher98",
     "plugin": "Animexin",
-    "sha256": "38eb6088f65101351073538751dfe4043c650ef6df8bd8349b54ae3b9c10437b",
-    "bytes": 75622
+    "sha256": "42cfc446560b89a65009bfd76cf0247bb0eba8326d40f74464153e652be40ea6",
+    "bytes": 76970
   },
   {
     "file": "decoded/Anineko/Phisher98/Anineko.cs3",
     "source": "Phisher98",
     "plugin": "Anineko",
-    "sha256": "c8334af4279239288a730cb85c83d4610dbdaf29c79e837c97acd50e75870d56",
-    "bytes": 66179
+    "sha256": "eb2b3c088f03d7e7776e5be4cac3791d669a79f7f5325a68744e30f6008a46d4",
+    "bytes": 67325
   },
   {
     "file": "decoded/Aniworld/Phisher98/Aniworld.cs3",
     "source": "Phisher98",
     "plugin": "Aniworld",
-    "sha256": "2bdb509ede58926197fc558e73ec585f2669c43520e58d4e946eb8d9c07661c8",
-    "bytes": 87560
+    "sha256": "62a007fc824831174026d40cdbc2ac373f2f6e85119c65094f0a16170c67dea4",
+    "bytes": 88854
   },
   {
     "file": "decoded/Anizone/Phisher98/Anizone.cs3",
     "source": "Phisher98",
     "plugin": "Anizone",
-    "sha256": "4abf52962cc2d4a7a704c14f4e664b99904429aaade3c24950cb48332eb95cb6",
-    "bytes": 59354
+    "sha256": "2ff4db892f7b29f708c8b9cd209a80631f15def8f588944ca16c1385f7336e8a",
+    "bytes": 60442
   },
   {
     "file": "decoded/BanglaPlex/Phisher98/BanglaPlex.cs3",
     "source": "Phisher98",
     "plugin": "BanglaPlex",
-    "sha256": "7a2e00828803275cfade0d8ad6e5eebbd4f418be3b521c500f69efef2c40cfee",
-    "bytes": 56483
+    "sha256": "a3899ea017ec59ba74d8588f82a998c26d602c115be509cff094e4927641eba1",
+    "bytes": 57665
   },
   {
     "file": "decoded/BilibiliProvider/CNCVerse/BilibiliProvider.cs3",
@@ -192,8 +192,8 @@
     "file": "decoded/Chikianimation/Phisher98/Chikianimation.cs3",
     "source": "Phisher98",
     "plugin": "Chikianimation",
-    "sha256": "d899af0353f083f9854be83d439263a08143a272973a34d9b3a919378a2a1c04",
-    "bytes": 87507
+    "sha256": "6c3f7fb1a511acf45b7d1043e8d487bd42304e09e77fe77f65c568777bc9ed11",
+    "bytes": 88493
   },
   {
     "file": "decoded/CineTvProvider/CNCVerse/CineTvProvider.cs3",
@@ -206,29 +206,29 @@
     "file": "decoded/Cinefreak/Phisher98/Cinefreak.cs3",
     "source": "Phisher98",
     "plugin": "Cinefreak",
-    "sha256": "d91f104da70276bb4361d43211b54b8650ef6dd156e0b9b3226fbdb0b3f9d5e1",
-    "bytes": 102960
+    "sha256": "09263d214eb806476d1c413436fe93a843354bace3f69c363be137df916f88c2",
+    "bytes": 104269
   },
   {
     "file": "decoded/Cinemacity/Phisher98/Cinemacity.cs3",
     "source": "Phisher98",
     "plugin": "Cinemacity",
-    "sha256": "192ef106974ba3022bb7528db584bb1ada8f479b006039051faeb2e58b2a6aea",
-    "bytes": 130788
+    "sha256": "1fee574f6cfd824a80c17180b96bf522b6b19a2a4a1e1ba2a571fad382f9d56a",
+    "bytes": 131905
   },
   {
     "file": "decoded/CloudPlay/Phisher98/CloudPlay.cs3",
     "source": "Phisher98",
     "plugin": "CloudPlay",
-    "sha256": "3e9d442825b7156ad12cf1dde7942c765d28e1576766dc26eaaa70e6cfec5bf7",
-    "bytes": 65563
+    "sha256": "fa5a664419946bfa225e89e123a7c33bbd0bb452105024b743176610187cbf92",
+    "bytes": 66705
   },
   {
     "file": "decoded/Coflix/Phisher98/Coflix.cs3",
     "source": "Phisher98",
     "plugin": "Coflix",
-    "sha256": "0686d3f2dc4eb414587c82e799e7d419ec624e3a6de64f85718c10c5404dcc68",
-    "bytes": 62744
+    "sha256": "a92acc797ceebba7b4dd6e35b7153f2c5371837402ded9790168b9f2b8027800",
+    "bytes": 63973
   },
   {
     "file": "decoded/CricifyProvider/CNCVerse/CricifyProvider.cs3",
@@ -248,8 +248,8 @@
     "file": "decoded/Desicinemas/Phisher98/Desicinemas.cs3",
     "source": "Phisher98",
     "plugin": "Desicinemas",
-    "sha256": "c87ebac6848233af2264686a40a91182bee79c8c961ac034fd3417a2fe9700d1",
-    "bytes": 74616
+    "sha256": "2b60a7a6a65a773c98c11a1af275f5a9f95cccafee51e7e84998847ad3bdb412",
+    "bytes": 75956
   },
   {
     "file": "decoded/DoFlixProvider/CNCVerse/DoFlixProvider.cs3",
@@ -262,22 +262,22 @@
     "file": "decoded/Donghuastream/Phisher98/Donghuastream.cs3",
     "source": "Phisher98",
     "plugin": "Donghuastream",
-    "sha256": "7089ad84f34b737243e5d33fea6400101e81ebd0315341bc2e3b951507d21909",
-    "bytes": 72597
+    "sha256": "47b4da716d9c36a85767143d10e84cc5ca3e0df2ee5eccf94427c63273ea0777",
+    "bytes": 73920
   },
   {
     "file": "decoded/DoraBash/Phisher98/DoraBash.cs3",
     "source": "Phisher98",
     "plugin": "DoraBash",
-    "sha256": "66f2a5ecf4367c5f4a0395f3c994121b483204c27090d35ece748837069f48fd",
-    "bytes": 112973
+    "sha256": "7993a0dbfd63c71481e07b176e5f8d337eeb904e6111b6a6168aba88213b4616",
+    "bytes": 114126
   },
   {
     "file": "decoded/DudeFilms/Phisher98/DudeFilms.cs3",
     "source": "Phisher98",
     "plugin": "DudeFilms",
-    "sha256": "cee421684dc76795ab2616ad3df60fa0a0b4102967cb6f22161ff331eef02784",
-    "bytes": 97777
+    "sha256": "941aa80a86e11bf4c3701964ae116dad71f06c56a85d3425f6399ec2ce31d4fd",
+    "bytes": 99194
   },
   {
     "file": "decoded/EinthusanProvider/CNCVerse/EinthusanProvider.cs3",
@@ -290,22 +290,22 @@
     "file": "decoded/Fibwatch/Phisher98/Fibwatch.cs3",
     "source": "Phisher98",
     "plugin": "Fibwatch",
-    "sha256": "d70fb33e577bd0c6c99c22593a3ccbdbfb6db1bc99b0599968ca2bc15caa6199",
-    "bytes": 76819
+    "sha256": "3c6274452e880b65dbff63fd6d5446efe308395ac3ce1cd92b04e2a5399a90aa",
+    "bytes": 78096
   },
   {
     "file": "decoded/Fivemovierulz/Phisher98/Fivemovierulz.cs3",
     "source": "Phisher98",
     "plugin": "Fivemovierulz",
-    "sha256": "b9b94d49bfc1173a987846a6ee97772f98ed5fc91bf06adfa10d701ef3dcd6c4",
-    "bytes": 47604
+    "sha256": "9218787911d58e042f0b6338e6bd61d652e20a0302ae282b5f897b215b67e6bd",
+    "bytes": 48938
   },
   {
     "file": "decoded/FourKHDHub/Phisher98/FourKHDHub.cs3",
     "source": "Phisher98",
     "plugin": "FourKHDHub",
-    "sha256": "8a1b0963e3cc1d6b553eef7f6bdea64b9a8518d6cf52a12a0fa057ce4344d5ca",
-    "bytes": 100915
+    "sha256": "168afae475a319fdfdfa542917a7d016287425f493170c93031637e3b3b2dc67",
+    "bytes": 102211
   },
   {
     "file": "decoded/GoldenAudiobook/CNCVerse/GoldenAudiobook.cs3",
@@ -318,8 +318,8 @@
     "file": "decoded/Goojara/Phisher98/Goojara.cs3",
     "source": "Phisher98",
     "plugin": "Goojara",
-    "sha256": "ab9d2362e799894b053971ee902e1c1c1aecb4f74e6a3dae7ea5660382f28132",
-    "bytes": 77999
+    "sha256": "ef131393e30f53a545ea9543828a880742264c5f833fb01c23f1e0739e4651f0",
+    "bytes": 79233
   },
   {
     "file": "decoded/HDOProvider/CNCVerse/HDOProvider.cs3",
@@ -332,8 +332,8 @@
     "file": "decoded/HDhub4u/Phisher98/HDhub4u.cs3",
     "source": "Phisher98",
     "plugin": "HDhub4u",
-    "sha256": "f794c1d9e05419ab6f7866671d023a90fa0e0c84c9d32ad7e1b0eb2f5956b11f",
-    "bytes": 114346
+    "sha256": "0159ad4429ea5e89c1bda3721f9baf85834a0938209303e4d0a8f413d11c1b53",
+    "bytes": 115335
   },
   {
     "file": "decoded/HDrezkaProvider/CNCVerse/HDrezkaProvider.cs3",
@@ -346,78 +346,78 @@
     "file": "decoded/Hdmovie2/Phisher98/Hdmovie2.cs3",
     "source": "Phisher98",
     "plugin": "Hdmovie2",
-    "sha256": "a1498e43a381941581a25bafd57d93393adeee46026240ffd92f7a89f9a59373",
-    "bytes": 77681
+    "sha256": "62f249619c73648bdba71dd2f5691da9d03fee1f7afad3e65f11beda92719976",
+    "bytes": 78916
   },
   {
     "file": "decoded/Hindmoviez/Phisher98/Hindmoviez.cs3",
     "source": "Phisher98",
     "plugin": "Hindmoviez",
-    "sha256": "fef09f6da9b3f5aeb95d0be2d0102834ca4fa78d40defc323a9f1bbfc44fb3d0",
-    "bytes": 92664
+    "sha256": "6e4161faccd8c3b7ec1f262be5908aa99ac81b1356c13e46f68ed2fd8d4caa39",
+    "bytes": 93783
   },
   {
     "file": "decoded/IPTVPlayer/Phisher98/IPTVPlayer.cs3",
     "source": "Phisher98",
     "plugin": "IPTVPlayer",
-    "sha256": "1ae932dad00e17ef296935687469b632deb83e464146173d6f750d3a10f20180",
-    "bytes": 54511
+    "sha256": "25d987e9bdf741a243cc8da806e4d166039c949f1aefee2d0c68d48239813e8e",
+    "bytes": 55701
   },
   {
     "file": "decoded/IStreamFlare/Phisher98/IStreamFlare.cs3",
     "source": "Phisher98",
     "plugin": "IStreamFlare",
-    "sha256": "477a1ba8e5adfb0e1f64e5cd2099bd8b278c530e7cfc1ac8f478930c9f79de8f",
-    "bytes": 92462
+    "sha256": "580ab32bb356293bd1b594f6d6032b59493b8f953382955a5e08a0772f5393cd",
+    "bytes": 93462
   },
   {
     "file": "decoded/IdlixProvider/Phisher98/IdlixProvider.cs3",
     "source": "Phisher98",
     "plugin": "IdlixProvider",
-    "sha256": "2710fa42d6db88ed2a2df8ee6569ecfb6e5920e0998df7e014b3713102f3e3e1",
-    "bytes": 91019
+    "sha256": "360fd190e67fc9b44a486ea53cb06ff13eed184d2a72e4f7b27528bb467fdc80",
+    "bytes": 92058
   },
   {
     "file": "decoded/Jellyfin/Phisher98/Jellyfin.cs3",
     "source": "Phisher98",
     "plugin": "Jellyfin",
-    "sha256": "963e88fdc04a1d0744f01fae79f5de85fd15e52576755f6e7f7f4757d8428e9c",
-    "bytes": 96603
+    "sha256": "af7e8b0291fa4e8e435486f6cb18146fc34827899e3232a9327df0a090aa4bb4",
+    "bytes": 97802
   },
   {
     "file": "decoded/Kartoons/Phisher98/Kartoons.cs3",
     "source": "Phisher98",
     "plugin": "Kartoons",
-    "sha256": "e9c3e6c5f19dc7682f3725d7eea8267bac336b99297abfd6d468268686a8786c",
-    "bytes": 113288
+    "sha256": "f5c00aeafe81a5d9f5403071c296000848b00f079dcfb72a100690138fadde61",
+    "bytes": 114666
   },
   {
     "file": "decoded/Kickassanime/Phisher98/Kickassanime.cs3",
     "source": "Phisher98",
     "plugin": "Kickassanime",
-    "sha256": "84ea773a437993036ed6270384b8d7a7096d434ea39131467ff8530d7fa91c8d",
-    "bytes": 93135
+    "sha256": "f77e922243624495fd7702ecec8501aca1c917506fde079e1cd308ac6b7a92f2",
+    "bytes": 94165
   },
   {
     "file": "decoded/KisskhProvider/Phisher98/KisskhProvider.cs3",
     "source": "Phisher98",
     "plugin": "KisskhProvider",
-    "sha256": "2faf858bfa81757e3d746a746bff8c5da33bb40f46815b11c1784e7572a995e7",
-    "bytes": 73723
+    "sha256": "4b4212e9395d111dcc09e58cdc00c3a18e2a4d3519518d6ebba4ba06e66d57c4",
+    "bytes": 75080
   },
   {
     "file": "decoded/Latanime/Phisher98/Latanime.cs3",
     "source": "Phisher98",
     "plugin": "Latanime",
-    "sha256": "eeacfb1967e3371607cbe00124417ebd09f890e5f18f63cfa71aa7c14fde59fb",
-    "bytes": 49639
+    "sha256": "ea9f92f80eebbfcd7f92b693c7d33f1f292eb1c877140a03a91068385a4362f7",
+    "bytes": 50882
   },
   {
     "file": "decoded/LayarKacaProvider/Phisher98/LayarKacaProvider.cs3",
     "source": "Phisher98",
     "plugin": "LayarKacaProvider",
-    "sha256": "dc0f70c21eae966357fb681c6e887ffe0488a0561c8e9fc089afe7a74d00f3f1",
-    "bytes": 56128
+    "sha256": "8e7570be9d9230d19775718179dd3d816225394532ef95cd0d3a4c57193b2606",
+    "bytes": 57322
   },
   {
     "file": "decoded/LibriVoxAudiobook/CNCVerse/LibriVoxAudiobook.cs3",
@@ -451,36 +451,36 @@
     "file": "decoded/MPlayerProvider/Phisher98/MPlayerProvider.cs3",
     "source": "Phisher98",
     "plugin": "MPlayerProvider",
-    "sha256": "b069df7993585fdedeb487120cd6e3b2249189780b8631ad82deb11f57186547",
-    "bytes": 126810
+    "sha256": "126ff47800305d9ce1af7f67ad8e62539fbc0d5e3a1fce4fcc9208a6a2c68b08",
+    "bytes": 128119
   },
   {
     "file": "decoded/MassTamilanProvider/Phisher98/MassTamilanProvider.cs3",
     "source": "Phisher98",
     "plugin": "MassTamilanProvider",
-    "sha256": "deb464133774cfc30a3ca4708a70900c2e663625af78968f4e715896c6ff1684",
-    "bytes": 51991
+    "sha256": "eda77a749e14736728ec9ec18c128ed1dd4e43573fb91f015509fb13d0b75c3e",
+    "bytes": 53189
   },
   {
     "file": "decoded/Megakino/Phisher98/Megakino.cs3",
     "source": "Phisher98",
     "plugin": "Megakino",
-    "sha256": "c39d3dbcd183289e1d8acefedbb781b3efb9b54740784b679bf705ad022eab1c",
-    "bytes": 54624
+    "sha256": "36d8ca52f524d59bce43772c0a55ad3ef37303d1d310831e5590908cc9148247",
+    "bytes": 55809
   },
   {
     "file": "decoded/Microtv/Phisher98/Microtv.cs3",
     "source": "Phisher98",
     "plugin": "Microtv",
-    "sha256": "2fb43597905f9b0d0161de712d9a82f125ba99f81ff54964e14151c545b737d2",
-    "bytes": 72216
+    "sha256": "ca70685a95ba144f53da5f5a29daab4bae02281f0dedb386258b43b82f5dce23",
+    "bytes": 73498
   },
   {
     "file": "decoded/MovieBlast/Phisher98/MovieBlast.cs3",
     "source": "Phisher98",
     "plugin": "MovieBlast",
-    "sha256": "62ba1ccedf37a6d12f4f717d50bb43b4e71cc570abb61f012012ae7da203e445",
-    "bytes": 65958
+    "sha256": "8cc33fa5dc7d5e63527d04e9e53c0709410c25119c11bdee541e1a4f17ae66d2",
+    "bytes": 67060
   },
   {
     "file": "decoded/MovieBoxProvider/CNCVerse/MovieBoxProvider.cs3",
@@ -493,8 +493,8 @@
     "file": "decoded/MovieBoxProvider/Phisher98/MovieBoxProvider.cs3",
     "source": "Phisher98",
     "plugin": "MovieBoxProvider",
-    "sha256": "8c9344108246ea6d8242e399a34021b1a9c5a698db7cfc907f71a02564c7b323",
-    "bytes": 111503
+    "sha256": "35b0b0e027fdc2cde8b00012302531d7731976c90ca8c16b5fdb7faf0302020f",
+    "bytes": 112750
   },
   {
     "file": "decoded/MovieBoxProviderIN/CNCVerse/MovieBoxProviderIN.cs3",
@@ -514,8 +514,8 @@
     "file": "decoded/Movies4u/Phisher98/Movies4u.cs3",
     "source": "Phisher98",
     "plugin": "Movies4u",
-    "sha256": "0431f89c4e32dccf9f8337cb5c0330194b91c22143c07d40c379df5b47f57163",
-    "bytes": 109441
+    "sha256": "fb186ffd6f90f579682f085074da7c1525ffebff08ff9b232ee5a89240643448",
+    "bytes": 110647
   },
   {
     "file": "decoded/MoviezwapProvider/CNCVerse/MoviezwapProvider.cs3",
@@ -528,43 +528,43 @@
     "file": "decoded/MultiMoviesProvider/Phisher98/MultiMoviesProvider.cs3",
     "source": "Phisher98",
     "plugin": "MultiMoviesProvider",
-    "sha256": "724cfd3d0d16ff0035f823c25124baba5ab36a5422ff9fb1404db7cc03e836b6",
-    "bytes": 80618
+    "sha256": "1992e41febde1911257a0f770ce3d28a76b0743277947426af3802db18c0d95d",
+    "bytes": 81796
   },
   {
     "file": "decoded/Netcinez/Phisher98/Netcinez.cs3",
     "source": "Phisher98",
     "plugin": "Netcinez",
-    "sha256": "9917044483d7bdd63ae98d989f35d05597dfabb4e53df200a6c8725c1fa89e2d",
-    "bytes": 50878
+    "sha256": "c6c03544c488cb8880962c340a3c529f077fd847ca84127566c2206300abbb87",
+    "bytes": 52137
   },
   {
     "file": "decoded/OHLI24/Phisher98/OHLI24.cs3",
     "source": "Phisher98",
     "plugin": "OHLI24",
-    "sha256": "813cf8bcba4d1db533d8878996c23ff37d0d3c8aa180468c9b5d4f559030fd9a",
-    "bytes": 54410
+    "sha256": "6d308c7b1f5944ce636d20fe72dde59ebd71dddc4eeadb86bfc11f7d763f0538",
+    "bytes": 55647
   },
   {
     "file": "decoded/OnePace/Phisher98/OnePace.cs3",
     "source": "Phisher98",
     "plugin": "OnePace",
-    "sha256": "ef672f7d201a3c068fae0446203cc00289feb7814e10af5565d4fbb6d82055b3",
-    "bytes": 74863
+    "sha256": "71c9254b00179a7dc5ad09703872bd432807c1290109d6b07b556be6c469ec10",
+    "bytes": 76224
   },
   {
     "file": "decoded/OneTouchTV/Phisher98/OneTouchTV.cs3",
     "source": "Phisher98",
     "plugin": "OneTouchTV",
-    "sha256": "68636b1011de29808e7a1ac87646d97ed88d279cc18019e843dea445d77757af",
-    "bytes": 96093
+    "sha256": "1c6524ed952c890f07ddfa9569933c6e2dc1c5411b0d9aaaff1f72e68980d3d3",
+    "bytes": 97241
   },
   {
     "file": "decoded/Pencurimovie/Phisher98/Pencurimovie.cs3",
     "source": "Phisher98",
     "plugin": "Pencurimovie",
-    "sha256": "e4807404956e600160afd969509eef3b442e6343c6629ec494d0d6255a4858f7",
-    "bytes": 49430
+    "sha256": "e4dc5c41d5f0391171020117e80efadd2917e70859f1aa6bb703c160556126b6",
+    "bytes": 50664
   },
   {
     "file": "decoded/PikashowProvider/CNCVerse/PikashowProvider.cs3",
@@ -577,15 +577,15 @@
     "file": "decoded/Pinoymoviepedia/Phisher98/Pinoymoviepedia.cs3",
     "source": "Phisher98",
     "plugin": "Pinoymoviepedia",
-    "sha256": "0c45fd01b23c6b50b2bbca742e6346f07b619a8957c0739526ff7b2856715f9a",
-    "bytes": 56619
+    "sha256": "9689f4a6db2608c6d33fa1a82a8ad652f14625d96ac44ed90c3faf98f0b19652",
+    "bytes": 57868
   },
   {
     "file": "decoded/Piratexplay/Phisher98/Piratexplay.cs3",
     "source": "Phisher98",
     "plugin": "Piratexplay",
-    "sha256": "cef94974558795a0ba1a31d9955625df2cd9b56acf274428725c0d665a34b29d",
-    "bytes": 98885
+    "sha256": "5a400c3d60e6118ef45d8e18c58eb7d707a46a73a231d61539213e7f434b06e0",
+    "bytes": 100223
   },
   {
     "file": "decoded/PlayFyProvider/CNCVerse/PlayFyProvider.cs3",
@@ -605,22 +605,22 @@
     "file": "decoded/Pmsm/Phisher98/Pmsm.cs3",
     "source": "Phisher98",
     "plugin": "Pmsm",
-    "sha256": "1731edc2df21a21bd0d811685d23b53c786b6b645d57b3ba42f5e1f3c06c4a0c",
-    "bytes": 60369
+    "sha256": "8122afb95870d3e95d40989197659a2f92ede90be3cc72647e971f86ba7a02c2",
+    "bytes": 61452
   },
   {
     "file": "decoded/PublicSportsIPTV/Phisher98/PublicSportsIPTV.cs3",
     "source": "Phisher98",
     "plugin": "PublicSportsIPTV",
-    "sha256": "88a4cf4cdee6b514e26b741287d29b3e17bf82b1df5609f362a43cf80aa99801",
-    "bytes": 58730
+    "sha256": "72737c136a7abb11d26ac5997e01f567239c3fcff406a7818eabf99f7acd6403",
+    "bytes": 59887
   },
   {
     "file": "decoded/QuickIPTV/Phisher98/QuickIPTV.cs3",
     "source": "Phisher98",
     "plugin": "QuickIPTV",
-    "sha256": "aac0c417fabc3f3a3e9ba95a1a9945f627e13a0045dac885584e8e198baacf71",
-    "bytes": 58418
+    "sha256": "03c98c58901a94fc80d82e7996e50e27030c080fd8d3c0e9499770e391326ecb",
+    "bytes": 59622
   },
   {
     "file": "decoded/RadioIndiaProvider/CNCVerse/RadioIndiaProvider.cs3",
@@ -633,8 +633,8 @@
     "file": "decoded/RingZ/Phisher98/RingZ.cs3",
     "source": "Phisher98",
     "plugin": "RingZ",
-    "sha256": "3559ed72279c3accc52ea9fe0320687860b75920876cd1fe2b5f9475d29a90f9",
-    "bytes": 64003
+    "sha256": "ca5e59b03af423a364df8ee56524c906f8c9031446e3c66d9937f4f4fc6a2078",
+    "bytes": 65167
   },
   {
     "file": "decoded/Rtally/CNCVerse/Rtally.cs3",
@@ -654,8 +654,8 @@
     "file": "decoded/ShowBox/Phisher98/ShowBox.cs3",
     "source": "Phisher98",
     "plugin": "ShowBox",
-    "sha256": "124949b3be34f4655bce835b2f83a59dbbf8f4e1fe0cdf437f5e1add164d0a3b",
-    "bytes": 148245
+    "sha256": "347b33491b6dd0cc3ddd9c7dfece08a2b30f0462c96d3845b743c0222919477e",
+    "bytes": 149481
   },
   {
     "file": "decoded/SportzxProvider/CNCVerse/SportzxProvider.cs3",
@@ -675,22 +675,22 @@
     "file": "decoded/StreamPlay/Phisher98/StreamPlay.cs3",
     "source": "Phisher98",
     "plugin": "StreamPlay",
-    "sha256": "768bb9a8a99811bf9d141c878f70a358c5e3583fd364d153b91bdeef6b333185",
-    "bytes": 1086089
+    "sha256": "82fdce0921faecc36ed99a8acbc78a7df8bb897ac54b4abbe69461e46090ebf4",
+    "bytes": 1122726
   },
   {
     "file": "decoded/StremioAddon/Phisher98/StremioAddon.cs3",
     "source": "Phisher98",
     "plugin": "StremioAddon",
-    "sha256": "b4201433aae73a370d5927f9828f5f69a466721366fa9deae14d9a4060eb9908",
-    "bytes": 107625
+    "sha256": "92a792721c9ef5230c54b3163f58705e891a64d6a8c39d2c8b9e3e41bb4b8bf4",
+    "bytes": 108977
   },
   {
     "file": "decoded/StremioX/Phisher98/StremioX.cs3",
     "source": "Phisher98",
     "plugin": "StremioX",
-    "sha256": "a72c89fc602184c0ac47fa527f0557b019edac99b19bf6706ab24e2f7e01ee12",
-    "bytes": 205775
+    "sha256": "d442481cc6b52d594b7cfb84e945ce3c59ef680a959d61aaf05311d82d3e0332",
+    "bytes": 207000
   },
   {
     "file": "decoded/SubscriptionManager/CNCVerse/SubscriptionManager.cs3",
@@ -703,8 +703,8 @@
     "file": "decoded/SuperStream/Phisher98/SuperStream.cs3",
     "source": "Phisher98",
     "plugin": "SuperStream",
-    "sha256": "b0edfa330c3d906860031e919ad32ddd610494c8ec03fb47bcc03d13bac292b3",
-    "bytes": 162343
+    "sha256": "7dfbdd377694f4bbb6e931b2e4fc227c4ee3c6736b95ec26260318e787545259",
+    "bytes": 163351
   },
   {
     "file": "decoded/TamilDhoolProvider/CNCVerse/TamilDhoolProvider.cs3",
@@ -724,8 +724,8 @@
     "file": "decoded/Tamilblasters/Phisher98/Tamilblasters.cs3",
     "source": "Phisher98",
     "plugin": "Tamilblasters",
-    "sha256": "131e5c75c0a149cbd11a416d1212f6ccdb05b25b7a5f5a7150cacbf6389c29a4",
-    "bytes": 55312
+    "sha256": "9843387ae0c42ea92fc0f2df50b0934dacc0fd3d9d904333b6ff468511341479",
+    "bytes": 56527
   },
   {
     "file": "decoded/Tamilian/CNCVerse/Tamilian.cs3",
@@ -738,57 +738,57 @@
     "file": "decoded/ToonHub/Phisher98/ToonHub.cs3",
     "source": "Phisher98",
     "plugin": "ToonHub",
-    "sha256": "17a307f5a41d9ff669bc0576e7b679ce1198bb1d0926fb4fef1947d18ad531b1",
-    "bytes": 61096
+    "sha256": "9cc077458a4150ed96b53f4bc2a87a440e478823e2a9c7b124174ca009f53eff",
+    "bytes": 62195
   },
   {
     "file": "decoded/ToonTales/Phisher98/ToonTales.cs3",
     "source": "Phisher98",
     "plugin": "ToonTales",
-    "sha256": "09bdd21334e2765d3425aecfa91e410bc52417a2b4b4cb0c0b14d6965127b302",
-    "bytes": 45508
+    "sha256": "661da5fb6aa7d4e0ed774ddac49afac982dd4010812472883dfcefda09dedc95",
+    "bytes": 46752
   },
   {
     "file": "decoded/Toonstream/Phisher98/Toonstream.cs3",
     "source": "Phisher98",
     "plugin": "Toonstream",
-    "sha256": "956a194a4ae0085d23ee01cfc431fb1f0d51c5d1e20519472936fe41481f7fb7",
-    "bytes": 72144
+    "sha256": "b32f06dcc5389dff02511e99a54c2bcec6d03af656f618b26deadf59c3a801fe",
+    "bytes": 73462
   },
   {
     "file": "decoded/Topcartoons/Phisher98/Topcartoons.cs3",
     "source": "Phisher98",
     "plugin": "Topcartoons",
-    "sha256": "5a21d0437898d6ee2161381235c061ef269d239a5b79b97fdb01db78ff3998a8",
-    "bytes": 45645
+    "sha256": "b1a77aca777495d3f43afa2efb3050bba86e5bbe9990a3c47574cdb7912ad16f",
+    "bytes": 46881
   },
   {
     "file": "decoded/Topstreamfilm/Phisher98/Topstreamfilm.cs3",
     "source": "Phisher98",
     "plugin": "Topstreamfilm",
-    "sha256": "71213310d8699f5622f7b3e16dc97a080ace5e7e54d53aab7e266444c89aa68e",
-    "bytes": 52752
+    "sha256": "0e0dde9dc8e3968861c78f3276e78f26aa1161c4f4b3a1cef25cea66087f056d",
+    "bytes": 53968
   },
   {
     "file": "decoded/TorraStream/Phisher98/TorraStream.cs3",
     "source": "Phisher98",
     "plugin": "TorraStream",
-    "sha256": "9491baadbeaa1d3f52a733c5831a296746f62743ef0637937b06dc07988c2a76",
-    "bytes": 224769
+    "sha256": "dc65ded4c02e09c44b8746214af7fec68a58a7aa5f116fd18ea20cbb43b49fa1",
+    "bytes": 245320
   },
   {
     "file": "decoded/UHDmoviesProvider/Phisher98/UHDmoviesProvider.cs3",
     "source": "Phisher98",
     "plugin": "UHDmoviesProvider",
-    "sha256": "69da4fd4d6d8f1a77a0f9387f247d306a7767c907e0a135b8376da50fdeac9c7",
-    "bytes": 86593
+    "sha256": "23fa9b5d46cebba2ebfebabfd5962ae237a92e7e184c2dfb0c00b51cfdad5d5b",
+    "bytes": 87706
   },
   {
     "file": "decoded/Ultima/Phisher98/Ultima.cs3",
     "source": "Phisher98",
     "plugin": "Ultima",
-    "sha256": "dca8dd6f7914587067d5a6471fccbc88479b8f4127487a45a3f10b8a43dc2136",
-    "bytes": 204063
+    "sha256": "9655e755474d57a8bcaef0e8864fb0f4c142789f596e47acb3e55b96a5369a4b",
+    "bytes": 205128
   },
   {
     "file": "decoded/Watch32/CNCVerse/Watch32.cs3",
@@ -801,8 +801,8 @@
     "file": "decoded/XDMovies/Phisher98/XDMovies.cs3",
     "source": "Phisher98",
     "plugin": "XDMovies",
-    "sha256": "9017a55edc1058b23bcfb8c0a7784b98aa5ad2922156da4d68452477af26931d",
-    "bytes": 146134
+    "sha256": "a3aeb28c53bc252c29eb6410ef1d94f3c7036b7591fb64f0eba1c85ab5d8b230",
+    "bytes": 147186
   },
   {
     "file": "decoded/XonProvider/CNCVerse/XonProvider.cs3",
@@ -815,14 +815,14 @@
     "file": "decoded/YTS/Phisher98/YTS.cs3",
     "source": "Phisher98",
     "plugin": "YTS",
-    "sha256": "441f15e94d30680edbaf5e33d64b6b32c7f148f29c7fa6bd5bde2d720374bca9",
-    "bytes": 51390
+    "sha256": "97ba08f92d9f9935dc15d5ff0a9571f9eb121ec22e93cf8e05c11326e7ebacf7",
+    "bytes": 52607
   },
   {
     "file": "decoded/Zinkmovies/Phisher98/Zinkmovies.cs3",
     "source": "Phisher98",
     "plugin": "Zinkmovies",
-    "sha256": "03d80bea648423ac25fc8ba8a6a676f9c294aff4d499588ff2a2b71d35755fe6",
-    "bytes": 102319
+    "sha256": "710b22ce89736a82e2a96e0b28aceabe346e9b61f76b1224e15f7c819eed6cc2",
+    "bytes": 103536
   }
 ]

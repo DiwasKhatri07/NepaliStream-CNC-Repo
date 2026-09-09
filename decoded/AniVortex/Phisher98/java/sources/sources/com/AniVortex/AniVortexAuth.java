@@ -54,7 +54,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: AniVortexAuth.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AniVortex/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010#\n\u0002\b\n\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0010$\n\u0002\b\u0004\n\u0002\u0010\u0012\n\u0002\b\u0005\bÆ\u0002\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0012\u0010\b\u001a\u0004\u0018\u00010\u00052\u0006\u0010\t\u001a\u00020\u0005H\u0002J\u0006\u0010\u0011\u001a\u00020\u0012J\u0006\u0010\u0013\u001a\u00020\u0014J\u0006\u0010\u0018\u001a\u00020\u0014J\b\u0010\u0019\u001a\u00020\u0017H\u0002JR\u0010\u001a\u001a\u001a\u0012\u0004\u0012\u00020\u0005\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001c0\u001b2\b\b\u0002\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\u00052\u0014\b\u0002\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001c2\n\b\u0002\u0010 \u001a\u0004\u0018\u00010!J\u0010\u0010\"\u001a\u00020\u00052\u0006\u0010#\u001a\u00020\u0005H\u0002J\u0010\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020!H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u0014\u0010\u0006\u001a\b\u0012\u0004\u0012\u00020\u00050\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010\n\u001a\u00020\u00058F¢\u0006\u0006\u001a\u0004\b\u000b\u0010\fR\u0011\u0010\r\u001a\u00020\u00058F¢\u0006\u0006\u001a\u0004\b\u000e\u0010\fR\u0014\u0010\u000f\u001a\u00020\u00058BX\u0082\u0004¢\u0006\u0006\u001a\u0004\b\u0010\u0010\fR\u0010\u0010\u0015\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010\u0016\u001a\u0004\u0018\u00010\u0017X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"Lcom/AniVortex/AniVortexAuth;", "", "<init>", "()V", "EMPTY_BODY_SHA256", "", "revokedInstallIds", "", "stored", "key", "installationId", "getInstallationId", "()Ljava/lang/String;", "keyId", "getKeyId", "privateKeyB64", "getPrivateKeyB64", "hasValidCredentials", "", "markCurrentCredentialsInvalid", "", "cachedKeyB64", "cachedPrivateKey", "Ljava/security/PrivateKey;", "invalidateCache", "getPrivateKey", "buildHeaders", "Lkotlin/Pair;", "", "method", "path", "queryParams", "body", "", "sign", "message", "sha256Hex", "data", "AniVortex"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAniVortexAuth.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexAuth.kt\ncom/AniVortex/AniVortexAuth\n+ 2 CloudStreamApp.kt\ncom/lagradost/cloudstream3/CloudStreamApp$Companion\n+ 3 DataStore.kt\ncom/lagradost/cloudstream3/utils/DataStore\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 7 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,176:1\n144#2:177\n231#3:178\n222#3,3:179\n225#3,2:201\n63#4:182\n64#4,15:184\n1#5:183\n1#5:203\n50#6:199\n43#6:200\n1221#7:204\n*S KotlinDebug\n*F\n+ 1 AniVortexAuth.kt\ncom/AniVortex/AniVortexAuth\n*L\n41#1:177\n41#1:178\n41#1:179,3\n41#1:201,2\n41#1:182\n41#1:184,15\n41#1:183\n41#1:199\n41#1:200\n116#1:204\n*E\n"})
+@SourceDebugExtension({"SMAP\nAniVortexAuth.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexAuth.kt\ncom/AniVortex/AniVortexAuth\n+ 2 CloudStreamApp.kt\ncom/lagradost/cloudstream3/CloudStreamApp$Companion\n+ 3 DataStore.kt\ncom/lagradost/cloudstream3/utils/DataStore\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 7 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,177:1\n144#2:178\n231#3:179\n222#3,3:180\n225#3,2:202\n63#4:183\n64#4,15:185\n1#5:184\n1#5:204\n50#6:200\n43#6:201\n1221#7:205\n*S KotlinDebug\n*F\n+ 1 AniVortexAuth.kt\ncom/AniVortex/AniVortexAuth\n*L\n41#1:178\n41#1:179\n41#1:180,3\n41#1:202,2\n41#1:183\n41#1:185,15\n41#1:184\n41#1:200\n41#1:201\n117#1:205\n*E\n"})
 public final class AniVortexAuth {
 
     @NotNull
@@ -211,13 +211,18 @@ public final class AniVortexAuth {
     }
 
     private final PrivateKey getPrivateKey() throws InvalidKeySpecException {
-        PrivateKey it = AniVortexRegistration.INSTANCE.getKeystorePrivateKey();
-        if (it != null) {
-            return it;
+        PrivateKey ksKey = AniVortexRegistration.INSTANCE.getKeystorePrivateKey();
+        if (ksKey != null) {
+            return ksKey;
         }
         String currentB64 = getPrivateKeyB64();
         if (StringsKt.isBlank(currentB64)) {
-            throw new IllegalStateException("AniVortex is not registered yet — call AniVortexRegistration.ensureRegistered() first");
+            StringBuilder sbAppend = new StringBuilder().append("AniVortex registration failed — ");
+            String lastFailure = AniVortexRegistration.INSTANCE.getLastFailure();
+            if (lastFailure == null) {
+                lastFailure = "no credentials stored, call AniVortexRegistration.ensureRegistered() first";
+            }
+            throw new IllegalStateException(sbAppend.append(lastFailure).toString());
         }
         if (Intrinsics.areEqual(cachedKeyB64, currentB64) && cachedPrivateKey != null) {
             PrivateKey privateKey = cachedPrivateKey;
@@ -246,7 +251,7 @@ public final class AniVortexAuth {
         return aniVortexAuth.buildHeaders(str, str2, map, bArr);
     }
 
-    /* JADX WARN: Code duplicated, block: B:18:0x0077  */
+    /* JADX WARN: Code duplicated, block: B:19:0x007b  */
     @NotNull
     public final Pair<String, Map<String, String>> buildHeaders(@NotNull String method, @NotNull String path, @NotNull Map<String, String> queryParams, @Nullable byte[] body) throws NoSuchAlgorithmException, SignatureException, InvalidKeyException {
         String strJoinToString$default;
@@ -273,7 +278,12 @@ public final class AniVortexAuth {
         String currentInstallId = getInstallationId();
         String currentKeyId = getKeyId();
         if (StringsKt.isBlank(currentInstallId) || StringsKt.isBlank(currentKeyId)) {
-            throw new IllegalStateException("AniVortex is not registered yet — call AniVortexRegistration.ensureRegistered() first");
+            StringBuilder sbAppend = new StringBuilder().append("AniVortex registration failed — ");
+            String lastFailure = AniVortexRegistration.INSTANCE.getLastFailure();
+            if (lastFailure == null) {
+                lastFailure = "no credentials stored, call AniVortexRegistration.ensureRegistered() first";
+            }
+            throw new IllegalStateException(sbAppend.append(lastFailure).toString());
         }
         String requestId = UUID.randomUUID().toString();
         String timestamp = String.valueOf(System.currentTimeMillis() / 1000);

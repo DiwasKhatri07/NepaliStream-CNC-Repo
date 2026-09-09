@@ -68,7 +68,7 @@ public final class Pahe extends ExtractorApi {
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Pahe", f = "Utils.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {223}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "noRedirects", "initialRequest", "kwikUrl", "fContentRequest", "fContent", "fContentString", "fullString", "key", "v1", "v2", "decrypted", "uri", "tok", "noRedirectClient", "content", "location", "code", "tries"}, nl = {222}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "I$0", "I$1"}, v = 2)
-    static final class C00161 extends ContinuationImpl {
+    static final class C00141 extends ContinuationImpl {
         int I$0;
         int I$1;
         Object L$0;
@@ -95,7 +95,7 @@ public final class Pahe extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00161(Continuation<? super C00161> continuation) {
+        C00141(Continuation<? super C00141> continuation) {
             super(continuation);
         }
 
@@ -151,23 +151,23 @@ public final class Pahe extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C00161 c00161;
+        C00141 c00141;
         Function1<? super ExtractorLink, Unit> function3;
         Object obj;
-        if (continuation instanceof C00161) {
-            c00161 = (C00161) continuation;
-            if ((c00161.label & Integer.MIN_VALUE) != 0) {
-                c00161.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00141) {
+            c00141 = (C00141) continuation;
+            if ((c00141.label & Integer.MIN_VALUE) != 0) {
+                c00141.label -= Integer.MIN_VALUE;
             } else {
-                c00161 = new C00161(continuation);
+                c00141 = new C00141(continuation);
             }
         } else {
-            c00161 = new C00161(continuation);
+            c00141 = new C00141(continuation);
         }
-        C00161 c00162 = c00161;
-        Object $result = c00162.result;
+        C00141 c00142 = c00141;
+        Object $result = c00142.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00162.label) {
+        switch (c00142.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 OkHttpClient noRedirects = new OkHttpClient.Builder().followRedirects(false).followSslRedirects(false).build();
@@ -214,32 +214,32 @@ public final class Pahe extends ExtractorApi {
                 String name = getName();
                 String name2 = getName();
                 ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
-                C00172 c00172 = new C00172(null);
-                c00162.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c00162.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                c00162.L$2 = SpillingKt.nullOutSpilledVariable(function1);
-                c00162.L$3 = SpillingKt.nullOutSpilledVariable(function2);
-                c00162.L$4 = SpillingKt.nullOutSpilledVariable(noRedirects);
-                c00162.L$5 = SpillingKt.nullOutSpilledVariable(initialRequest);
-                c00162.L$6 = SpillingKt.nullOutSpilledVariable(kwikUrl);
-                c00162.L$7 = SpillingKt.nullOutSpilledVariable(fContentRequest);
-                c00162.L$8 = SpillingKt.nullOutSpilledVariable(fContent);
-                c00162.L$9 = SpillingKt.nullOutSpilledVariable(fContentString);
-                c00162.L$10 = SpillingKt.nullOutSpilledVariable(fullString);
-                c00162.L$11 = SpillingKt.nullOutSpilledVariable(key);
-                c00162.L$12 = SpillingKt.nullOutSpilledVariable(v3);
-                c00162.L$13 = SpillingKt.nullOutSpilledVariable(v4);
-                c00162.L$14 = SpillingKt.nullOutSpilledVariable(decrypted);
-                c00162.L$15 = SpillingKt.nullOutSpilledVariable(uri);
-                c00162.L$16 = SpillingKt.nullOutSpilledVariable(tok);
-                c00162.L$17 = SpillingKt.nullOutSpilledVariable(noRedirectClient);
-                c00162.L$18 = SpillingKt.nullOutSpilledVariable(content);
-                c00162.L$19 = SpillingKt.nullOutSpilledVariable(location);
-                c00162.L$20 = function2;
-                c00162.I$0 = code;
-                c00162.I$1 = tries;
-                c00162.label = 1;
-                Object objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, location, infer_type, c00172, c00162);
+                C00152 c00152 = new C00152(null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(function2);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(noRedirects);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(initialRequest);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(kwikUrl);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(fContentRequest);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(fContent);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(fContentString);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(fullString);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(key);
+                c00142.L$12 = SpillingKt.nullOutSpilledVariable(v3);
+                c00142.L$13 = SpillingKt.nullOutSpilledVariable(v4);
+                c00142.L$14 = SpillingKt.nullOutSpilledVariable(decrypted);
+                c00142.L$15 = SpillingKt.nullOutSpilledVariable(uri);
+                c00142.L$16 = SpillingKt.nullOutSpilledVariable(tok);
+                c00142.L$17 = SpillingKt.nullOutSpilledVariable(noRedirectClient);
+                c00142.L$18 = SpillingKt.nullOutSpilledVariable(content);
+                c00142.L$19 = SpillingKt.nullOutSpilledVariable(location);
+                c00142.L$20 = function2;
+                c00142.I$0 = code;
+                c00142.I$1 = tries;
+                c00142.label = 1;
+                Object objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, location, infer_type, c00152, c00142);
                 if (objNewExtractorLink == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -248,9 +248,9 @@ public final class Pahe extends ExtractorApi {
                 break;
                 break;
             case 1:
-                int i = c00162.I$1;
-                int i2 = c00162.I$0;
-                function3 = (Function1) c00162.L$20;
+                int i = c00142.I$1;
+                int i2 = c00142.I$0;
+                function3 = (Function1) c00142.L$20;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 break;
@@ -265,18 +265,18 @@ public final class Pahe extends ExtractorApi {
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Pahe$getUrl$2", f = "Utils.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00172 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00152 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         private /* synthetic */ Object L$0;
         int label;
 
-        C00172(Continuation<? super C00172> continuation) {
+        C00152(Continuation<? super C00152> continuation) {
             super(2, continuation);
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00172 = new C00172(continuation);
-            c00172.L$0 = obj;
-            return c00172;
+            Continuation<Unit> c00152 = new C00152(continuation);
+            c00152.L$0 = obj;
+            return c00152;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

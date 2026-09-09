@@ -54,7 +54,7 @@ public final class Kwik extends ExtractorApi {
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Kwik", f = "Utils.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {68, 92, 111}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "$this$getUrl_u24lambda_u240", "url", "referer", "subtitleCallback", "callback", "res", "html", "title", "script", "unpacked", "m3u8", "fileName", "url", "referer", "subtitleCallback", "callback", "res", "html", "title", "script", "unpacked", "m3u8", "fileName", "mp4Url"}, nl = {67, 91, 110}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11"}, v = 2)
-    static final class C00131 extends ContinuationImpl {
+    static final class C00111 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -71,7 +71,7 @@ public final class Kwik extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00131(Continuation<? super C00131> continuation) {
+        C00111(Continuation<? super C00111> continuation) {
             super(continuation);
         }
 
@@ -133,7 +133,7 @@ public final class Kwik extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:99:0x02b8  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C00131 c00131;
+        C00111 c00111;
         Function1<? super ExtractorLink, Unit> function3;
         Function1<? super SubtitleFile, Unit> function4;
         Function1<? super ExtractorLink, Unit> function5;
@@ -202,20 +202,20 @@ public final class Kwik extends ExtractorApi {
         NiceResponse res3;
         Function1<? super SubtitleFile, Unit> function13;
         String url3 = url;
-        if (continuation instanceof C00131) {
-            c00131 = (C00131) continuation;
-            if ((c00131.label & Integer.MIN_VALUE) != 0) {
-                c00131.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00111) {
+            c00111 = (C00111) continuation;
+            if ((c00111.label & Integer.MIN_VALUE) != 0) {
+                c00111.label -= Integer.MIN_VALUE;
             } else {
-                c00131 = new C00131(continuation);
+                c00111 = new C00111(continuation);
             }
         } else {
-            c00131 = new C00131(continuation);
+            c00111 = new C00111(continuation);
         }
-        C00131 c00132 = c00131;
-        Object $result = c00132.result;
+        C00111 c00112 = c00111;
+        Object $result = c00112.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00132.label) {
+        switch (c00112.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 try {
@@ -223,15 +223,15 @@ public final class Kwik extends ExtractorApi {
                     Kwik $this$getUrl_u24lambda_u240 = this;
                     AnimePahe.Companion companion2 = AnimePahe.INSTANCE;
                     Map<String, String> mapMapOf = MapsKt.mapOf(TuplesKt.to("referer", AnimePaheProviderPlugin.INSTANCE.getCurrentAnimepaheServer() + '/'));
-                    c00132.L$0 = url3;
-                    c00132.L$1 = SpillingKt.nullOutSpilledVariable(referer);
-                    c00132.L$2 = SpillingKt.nullOutSpilledVariable(function1);
+                    c00112.L$0 = url3;
+                    c00112.L$1 = SpillingKt.nullOutSpilledVariable(referer);
+                    c00112.L$2 = SpillingKt.nullOutSpilledVariable(function1);
                     function3 = function2;
                     try {
-                        c00132.L$3 = function3;
-                        c00132.L$4 = SpillingKt.nullOutSpilledVariable($this$getUrl_u24lambda_u240);
-                        c00132.label = 1;
-                        Object objAppGet = companion2.appGet(url3, mapMapOf, c00132);
+                        c00112.L$3 = function3;
+                        c00112.L$4 = SpillingKt.nullOutSpilledVariable($this$getUrl_u24lambda_u240);
+                        c00112.label = 1;
+                        Object objAppGet = companion2.appGet(url3, mapMapOf, c00112);
                         if (objAppGet == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -358,21 +358,21 @@ public final class Kwik extends ExtractorApi {
                         String name = getName();
                         String title4 = getName();
                         ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
-                        C00142 c00142 = new C00142(title, null);
-                        c00132.L$0 = url2;
-                        c00132.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                        c00132.L$2 = SpillingKt.nullOutSpilledVariable(function7);
-                        c00132.L$3 = function6;
-                        c00132.L$4 = SpillingKt.nullOutSpilledVariable(res);
-                        c00132.L$5 = SpillingKt.nullOutSpilledVariable(html);
-                        c00132.L$6 = SpillingKt.nullOutSpilledVariable(title);
-                        c00132.L$7 = SpillingKt.nullOutSpilledVariable(script);
-                        c00132.L$8 = SpillingKt.nullOutSpilledVariable(unpacked2);
-                        c00132.L$9 = m3u8;
-                        c00132.L$10 = fileName;
-                        c00132.L$11 = function6;
-                        c00132.label = 2;
-                        objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, title4, m3u8, infer_type, c00142, c00132);
+                        C00122 c00122 = new C00122(title, null);
+                        c00112.L$0 = url2;
+                        c00112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                        c00112.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                        c00112.L$3 = function6;
+                        c00112.L$4 = SpillingKt.nullOutSpilledVariable(res);
+                        c00112.L$5 = SpillingKt.nullOutSpilledVariable(html);
+                        c00112.L$6 = SpillingKt.nullOutSpilledVariable(title);
+                        c00112.L$7 = SpillingKt.nullOutSpilledVariable(script);
+                        c00112.L$8 = SpillingKt.nullOutSpilledVariable(unpacked2);
+                        c00112.L$9 = m3u8;
+                        c00112.L$10 = fileName;
+                        c00112.L$11 = function6;
+                        c00112.label = 2;
+                        objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, title4, m3u8, infer_type, c00122, c00112);
                         if (objNewExtractorLink == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -395,22 +395,22 @@ public final class Kwik extends ExtractorApi {
                             String str4 = getName() + " [Download]";
                             ExtractorLinkType extractorLinkType = ExtractorLinkType.VIDEO;
                             unpacked4 = unpacked3;
-                            C00153 c00153 = new C00153(url2, fileName3, this, null);
-                            c00132.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                            c00132.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                            c00132.L$2 = SpillingKt.nullOutSpilledVariable(function8);
-                            c00132.L$3 = SpillingKt.nullOutSpilledVariable(function10);
-                            c00132.L$4 = SpillingKt.nullOutSpilledVariable(res2);
-                            c00132.L$5 = SpillingKt.nullOutSpilledVariable(html2);
-                            c00132.L$6 = SpillingKt.nullOutSpilledVariable(html4);
-                            c00132.L$7 = SpillingKt.nullOutSpilledVariable(title2);
-                            c00132.L$8 = SpillingKt.nullOutSpilledVariable(unpacked4);
-                            c00132.L$9 = SpillingKt.nullOutSpilledVariable(m3u10);
-                            c00132.L$10 = SpillingKt.nullOutSpilledVariable(fileName3);
-                            c00132.L$11 = SpillingKt.nullOutSpilledVariable(mp4Url2);
-                            c00132.L$12 = function10;
-                            c00132.label = 3;
-                            objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name2, str4, mp4Url2, extractorLinkType, c00153, c00132);
+                            C00133 c00133 = new C00133(url2, fileName3, this, null);
+                            c00112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                            c00112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                            c00112.L$2 = SpillingKt.nullOutSpilledVariable(function8);
+                            c00112.L$3 = SpillingKt.nullOutSpilledVariable(function10);
+                            c00112.L$4 = SpillingKt.nullOutSpilledVariable(res2);
+                            c00112.L$5 = SpillingKt.nullOutSpilledVariable(html2);
+                            c00112.L$6 = SpillingKt.nullOutSpilledVariable(html4);
+                            c00112.L$7 = SpillingKt.nullOutSpilledVariable(title2);
+                            c00112.L$8 = SpillingKt.nullOutSpilledVariable(unpacked4);
+                            c00112.L$9 = SpillingKt.nullOutSpilledVariable(m3u10);
+                            c00112.L$10 = SpillingKt.nullOutSpilledVariable(fileName3);
+                            c00112.L$11 = SpillingKt.nullOutSpilledVariable(mp4Url2);
+                            c00112.L$12 = function10;
+                            c00112.label = 3;
+                            objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name2, str4, mp4Url2, extractorLinkType, c00133, c00112);
                             if (objNewExtractorLink2 == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -441,10 +441,10 @@ public final class Kwik extends ExtractorApi {
                 }
                 break;
             case 1:
-                function5 = (Function1) c00132.L$3;
-                function4 = (Function1) c00132.L$2;
-                referer2 = (String) c00132.L$1;
-                url3 = (String) c00132.L$0;
+                function5 = (Function1) c00112.L$3;
+                function4 = (Function1) c00112.L$2;
+                referer2 = (String) c00112.L$1;
+                url3 = (String) c00112.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     obj = $result;
@@ -587,21 +587,21 @@ public final class Kwik extends ExtractorApi {
                 String name3 = getName();
                 String title5 = getName();
                 ExtractorLinkType infer_type2 = ExtractorApiKt.getINFER_TYPE();
-                C00142 c00143 = new C00142(title, null);
-                c00132.L$0 = url2;
-                c00132.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                c00132.L$2 = SpillingKt.nullOutSpilledVariable(function7);
-                c00132.L$3 = function6;
-                c00132.L$4 = SpillingKt.nullOutSpilledVariable(res);
-                c00132.L$5 = SpillingKt.nullOutSpilledVariable(html);
-                c00132.L$6 = SpillingKt.nullOutSpilledVariable(title);
-                c00132.L$7 = SpillingKt.nullOutSpilledVariable(script);
-                c00132.L$8 = SpillingKt.nullOutSpilledVariable(unpacked2);
-                c00132.L$9 = m3u8;
-                c00132.L$10 = fileName;
-                c00132.L$11 = function6;
-                c00132.label = 2;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name3, title5, m3u8, infer_type2, c00143, c00132);
+                C00122 c00123 = new C00122(title, null);
+                c00112.L$0 = url2;
+                c00112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                c00112.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                c00112.L$3 = function6;
+                c00112.L$4 = SpillingKt.nullOutSpilledVariable(res);
+                c00112.L$5 = SpillingKt.nullOutSpilledVariable(html);
+                c00112.L$6 = SpillingKt.nullOutSpilledVariable(title);
+                c00112.L$7 = SpillingKt.nullOutSpilledVariable(script);
+                c00112.L$8 = SpillingKt.nullOutSpilledVariable(unpacked2);
+                c00112.L$9 = m3u8;
+                c00112.L$10 = fileName;
+                c00112.L$11 = function6;
+                c00112.label = 2;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name3, title5, m3u8, infer_type2, c00123, c00112);
                 if (objNewExtractorLink == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -624,22 +624,22 @@ public final class Kwik extends ExtractorApi {
                     String str5 = getName() + " [Download]";
                     ExtractorLinkType extractorLinkType2 = ExtractorLinkType.VIDEO;
                     unpacked4 = unpacked3;
-                    C00153 c00154 = new C00153(url2, fileName4, this, null);
-                    c00132.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00132.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                    c00132.L$2 = SpillingKt.nullOutSpilledVariable(function8);
-                    c00132.L$3 = SpillingKt.nullOutSpilledVariable(function10);
-                    c00132.L$4 = SpillingKt.nullOutSpilledVariable(res2);
-                    c00132.L$5 = SpillingKt.nullOutSpilledVariable(html2);
-                    c00132.L$6 = SpillingKt.nullOutSpilledVariable(html4);
-                    c00132.L$7 = SpillingKt.nullOutSpilledVariable(title2);
-                    c00132.L$8 = SpillingKt.nullOutSpilledVariable(unpacked4);
-                    c00132.L$9 = SpillingKt.nullOutSpilledVariable(m3u10);
-                    c00132.L$10 = SpillingKt.nullOutSpilledVariable(fileName4);
-                    c00132.L$11 = SpillingKt.nullOutSpilledVariable(mp4Url3);
-                    c00132.L$12 = function10;
-                    c00132.label = 3;
-                    objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name4, str5, mp4Url3, extractorLinkType2, c00154, c00132);
+                    C00133 c00134 = new C00133(url2, fileName4, this, null);
+                    c00112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                    c00112.L$2 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00112.L$3 = SpillingKt.nullOutSpilledVariable(function10);
+                    c00112.L$4 = SpillingKt.nullOutSpilledVariable(res2);
+                    c00112.L$5 = SpillingKt.nullOutSpilledVariable(html2);
+                    c00112.L$6 = SpillingKt.nullOutSpilledVariable(html4);
+                    c00112.L$7 = SpillingKt.nullOutSpilledVariable(title2);
+                    c00112.L$8 = SpillingKt.nullOutSpilledVariable(unpacked4);
+                    c00112.L$9 = SpillingKt.nullOutSpilledVariable(m3u10);
+                    c00112.L$10 = SpillingKt.nullOutSpilledVariable(fileName4);
+                    c00112.L$11 = SpillingKt.nullOutSpilledVariable(mp4Url3);
+                    c00112.L$12 = function10;
+                    c00112.label = 3;
+                    objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name4, str5, mp4Url3, extractorLinkType2, c00134, c00112);
                     if (objNewExtractorLink2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -657,18 +657,18 @@ public final class Kwik extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 2:
-                Function1<? super ExtractorLink, Unit> function14 = (Function1) c00132.L$11;
-                String fileName5 = (String) c00132.L$10;
-                String m3u11 = (String) c00132.L$9;
-                String unpacked8 = (String) c00132.L$8;
-                String script3 = (String) c00132.L$7;
-                String title6 = (String) c00132.L$6;
-                String html5 = (String) c00132.L$5;
-                NiceResponse res4 = (NiceResponse) c00132.L$4;
-                function10 = (Function1) c00132.L$3;
-                Function1<? super SubtitleFile, Unit> function15 = (Function1) c00132.L$2;
-                String referer4 = (String) c00132.L$1;
-                String url4 = (String) c00132.L$0;
+                Function1<? super ExtractorLink, Unit> function14 = (Function1) c00112.L$11;
+                String fileName5 = (String) c00112.L$10;
+                String m3u11 = (String) c00112.L$9;
+                String unpacked8 = (String) c00112.L$8;
+                String script3 = (String) c00112.L$7;
+                String title6 = (String) c00112.L$6;
+                String html5 = (String) c00112.L$5;
+                NiceResponse res4 = (NiceResponse) c00112.L$4;
+                function10 = (Function1) c00112.L$3;
+                Function1<? super SubtitleFile, Unit> function15 = (Function1) c00112.L$2;
+                String referer4 = (String) c00112.L$1;
+                String url4 = (String) c00112.L$0;
                 ResultKt.throwOnFailure($result);
                 m3u9 = m3u11;
                 unpacked3 = unpacked8;
@@ -691,22 +691,22 @@ public final class Kwik extends ExtractorApi {
                     String str6 = getName() + " [Download]";
                     ExtractorLinkType extractorLinkType3 = ExtractorLinkType.VIDEO;
                     unpacked4 = unpacked3;
-                    C00153 c00155 = new C00153(url2, fileName6, this, null);
-                    c00132.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                    c00132.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
-                    c00132.L$2 = SpillingKt.nullOutSpilledVariable(function8);
-                    c00132.L$3 = SpillingKt.nullOutSpilledVariable(function10);
-                    c00132.L$4 = SpillingKt.nullOutSpilledVariable(res2);
-                    c00132.L$5 = SpillingKt.nullOutSpilledVariable(html2);
-                    c00132.L$6 = SpillingKt.nullOutSpilledVariable(html4);
-                    c00132.L$7 = SpillingKt.nullOutSpilledVariable(title2);
-                    c00132.L$8 = SpillingKt.nullOutSpilledVariable(unpacked4);
-                    c00132.L$9 = SpillingKt.nullOutSpilledVariable(m3u10);
-                    c00132.L$10 = SpillingKt.nullOutSpilledVariable(fileName6);
-                    c00132.L$11 = SpillingKt.nullOutSpilledVariable(mp4Url4);
-                    c00132.L$12 = function10;
-                    c00132.label = 3;
-                    objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name5, str6, mp4Url4, extractorLinkType3, c00155, c00132);
+                    C00133 c00135 = new C00133(url2, fileName6, this, null);
+                    c00112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                    c00112.L$1 = SpillingKt.nullOutSpilledVariable(referer3);
+                    c00112.L$2 = SpillingKt.nullOutSpilledVariable(function8);
+                    c00112.L$3 = SpillingKt.nullOutSpilledVariable(function10);
+                    c00112.L$4 = SpillingKt.nullOutSpilledVariable(res2);
+                    c00112.L$5 = SpillingKt.nullOutSpilledVariable(html2);
+                    c00112.L$6 = SpillingKt.nullOutSpilledVariable(html4);
+                    c00112.L$7 = SpillingKt.nullOutSpilledVariable(title2);
+                    c00112.L$8 = SpillingKt.nullOutSpilledVariable(unpacked4);
+                    c00112.L$9 = SpillingKt.nullOutSpilledVariable(m3u10);
+                    c00112.L$10 = SpillingKt.nullOutSpilledVariable(fileName6);
+                    c00112.L$11 = SpillingKt.nullOutSpilledVariable(mp4Url4);
+                    c00112.L$12 = function10;
+                    c00112.label = 3;
+                    objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name5, str6, mp4Url4, extractorLinkType3, c00135, c00112);
                     if (objNewExtractorLink2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -724,15 +724,15 @@ public final class Kwik extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 3:
-                Function1<? super ExtractorLink, Unit> function16 = (Function1) c00132.L$12;
-                fileName2 = (String) c00132.L$10;
-                mp4Url = (String) c00132.L$9;
-                unpacked5 = (String) c00132.L$8;
-                script2 = (String) c00132.L$7;
-                title3 = (String) c00132.L$6;
-                res3 = (NiceResponse) c00132.L$4;
-                Function1<? super ExtractorLink, Unit> function17 = (Function1) c00132.L$3;
-                function13 = (Function1) c00132.L$2;
+                Function1<? super ExtractorLink, Unit> function16 = (Function1) c00112.L$12;
+                fileName2 = (String) c00112.L$10;
+                mp4Url = (String) c00112.L$9;
+                unpacked5 = (String) c00112.L$8;
+                script2 = (String) c00112.L$7;
+                title3 = (String) c00112.L$6;
+                res3 = (NiceResponse) c00112.L$4;
+                Function1<? super ExtractorLink, Unit> function17 = (Function1) c00112.L$3;
+                function13 = (Function1) c00112.L$2;
                 ResultKt.throwOnFailure($result);
                 obj5 = $result;
                 function12 = function17;
@@ -748,21 +748,21 @@ public final class Kwik extends ExtractorApi {
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Kwik$getUrl$2", f = "Utils.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00142 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00122 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $title;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00142(String str, Continuation<? super C00142> continuation) {
+        C00122(String str, Continuation<? super C00122> continuation) {
             super(2, continuation);
             this.$title = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00142 = Kwik.this.new C00142(this.$title, continuation);
-            c00142.L$0 = obj;
-            return c00142;
+            Continuation<Unit> c00122 = Kwik.this.new C00122(this.$title, continuation);
+            c00122.L$0 = obj;
+            return c00122;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -789,7 +789,7 @@ public final class Kwik extends ExtractorApi {
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Kwik$getUrl$3", f = "Utils.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00153 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00133 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $fileName;
         final /* synthetic */ String $url;
         private /* synthetic */ Object L$0;
@@ -797,7 +797,7 @@ public final class Kwik extends ExtractorApi {
         final /* synthetic */ Kwik this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00153(String str, String str2, Kwik kwik, Continuation<? super C00153> continuation) {
+        C00133(String str, String str2, Kwik kwik, Continuation<? super C00133> continuation) {
             super(2, continuation);
             this.$url = str;
             this.$fileName = str2;
@@ -805,9 +805,9 @@ public final class Kwik extends ExtractorApi {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00153 = new C00153(this.$url, this.$fileName, this.this$0, continuation);
-            c00153.L$0 = obj;
-            return c00153;
+            Continuation<Unit> c00133 = new C00133(this.$url, this.$fileName, this.this$0, continuation);
+            c00133.L$0 = obj;
+            return c00133;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

@@ -1,6 +1,7 @@
 package com.phisher98;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.lagradost.cloudstream3.AnimeLoadResponse;
@@ -92,53 +93,57 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: StreamPlayAnime.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u0000²\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\u00020\u0001:\u0003Z[\\B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\f\u0010(\u001a\u00020\u0005*\u00020)H\u0004J\u0016\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010-J\f\u0010.\u001a\u00020/*\u000200H\u0002J,\u00101\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020/03\u0012\u0004\u0012\u00020\u001b02*\u0002042\u0006\u00105\u001a\u00020$H\u0082@¢\u0006\u0002\u00106J \u0010<\u001a\u0004\u0018\u00010=2\u0006\u0010,\u001a\u00020\u00052\u0006\u00105\u001a\u00020$H\u0096@¢\u0006\u0002\u0010>J\u001e\u0010:\u001a\u00020?2\u0006\u00105\u001a\u00020$2\u0006\u0010@\u001a\u000204H\u0096@¢\u0006\u0002\u0010AJ\u0016\u0010B\u001a\u00020C2\u0006\u0010D\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010-JF\u0010E\u001a\u00020\u001b2\u0006\u0010F\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u001b2\u0012\u0010H\u001a\u000e\u0012\u0004\u0012\u00020J\u0012\u0004\u0012\u00020K0I2\u0012\u0010L\u001a\u000e\u0012\u0004\u0012\u00020M\u0012\u0004\u0012\u00020K0IH\u0096@¢\u0006\u0002\u0010NJ\u0010\u0010O\u001a\u00020P2\b\u0010Q\u001a\u0004\u0018\u00010\u0005J*\u0010R\u001a\u00020S2\b\u0010T\u001a\u0004\u0018\u00010\u00052\b\u0010U\u001a\u0004\u0018\u00010$2\u0006\u0010V\u001a\u00020\u000fH\u0082@¢\u0006\u0002\u0010WJ\u0017\u0010X\u001a\u0004\u0018\u00010$2\u0006\u0010T\u001a\u00020\u0005H\u0002¢\u0006\u0002\u0010YR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR \u0010\r\u001a\b\u0012\u0004\u0012\u00020\u000f0\u000eX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\u0011\"\u0004\b\u0012\u0010\u0013R\u001a\u0010\u0014\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0015\u0010\u0007\"\u0004\b\u0016\u0010\tR\u001a\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00180\u000eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0011R\u0014\u0010\u001a\u001a\u00020\u001bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u0014\u0010\u001e\u001a\u00020\u001bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001f\u0010\u001dR\u000e\u0010 \u001a\u00020!X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020$X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u001bX\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010&\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050'X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u00020$X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00108\u001a\b\u0012\u0004\u0012\u00020903X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b:\u0010;¨\u0006]"}, d2 = {"Lcom/phisher98/StreamPlayAnime;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "setSupportedTypes", "(Ljava/util/Set;)V", "lang", "getLang", "setLang", "supportedSyncNames", "Lcom/lagradost/cloudstream3/syncproviders/SyncIdName;", "getSupportedSyncNames", "hasMainPage", "", "getHasMainPage", "()Z", "hasQuickSearch", "getHasQuickSearch", "repo", "Lcom/lagradost/cloudstream3/syncproviders/SyncRepo;", "apiUrl", "mediaLimit", "", "isAdult", "headerJSON", "", "toStringData", "", "anilistAPICall", "Lcom/phisher98/StreamPlayAnime$AnilistAPIResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResponse", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/phisher98/StreamPlayAnime$Media;", "toSearchResponseList", "Lkotlin/Pair;", "", "Lcom/lagradost/cloudstream3/MainPageRequest;", "page", "(Lcom/lagradost/cloudstream3/MainPageRequest;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "currentYear", "mainPage", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "request", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getStatus", "Lcom/lagradost/cloudstream3/ShowStatus;", "t", "tmdbToAnimeId", "Lcom/phisher98/AniIds;", "title", "year", "type", "(Ljava/lang/String;Ljava/lang/Integer;Lcom/lagradost/cloudstream3/TvType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "extractSeason", "(Ljava/lang/String;)Ljava/lang/Integer;", "AnilistAPIResponse", "LinkData", "Media", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,531:1\n73#2,5:532\n73#2,5:599\n73#2,5:605\n1739#3:537\n1814#3,3:538\n1739#3:541\n1814#3,3:542\n1795#3,10:545\n2068#3:555\n2069#3:557\n1805#3:558\n1453#3,2:559\n1468#3,4:561\n1453#3,2:565\n1468#3,4:567\n1739#3:571\n1814#3,3:572\n1749#3:575\n1782#3,4:576\n1#4:556\n1#4:581\n1#4:604\n63#5:580\n64#5,15:582\n50#6:597\n43#6:598\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n*L\n84#1:532,5\n322#1:599,5\n517#1:605,5\n105#1:537\n105#1:538,3\n131#1:541\n131#1:542,3\n145#1:545,10\n145#1:555\n145#1:557\n145#1:558\n192#1:559,2\n192#1:561,4\n193#1:565,2\n193#1:567,4\n221#1:571\n221#1:572,3\n248#1:575\n248#1:576,4\n145#1:556\n313#1:581\n313#1:580\n313#1:582,15\n313#1:597\n313#1:598\n*E\n"})
+@Metadata(d1 = {"\u0000º\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\b\u0003\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\n\u0018\u00002\u00020\u0001:\u0003cdeB\u0013\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010+\u001a\u00020\u001dH\u0002J\f\u0010,\u001a\u00020\u0007*\u00020-H\u0004J\u0016\u0010.\u001a\u00020/2\u0006\u00100\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u00101J\f\u00102\u001a\u000203*\u000204H\u0002J,\u00105\u001a\u0014\u0012\n\u0012\b\u0012\u0004\u0012\u00020307\u0012\u0004\u0012\u00020\u001d06*\u0002082\u0006\u00109\u001a\u00020&H\u0082@¢\u0006\u0002\u0010:J \u0010@\u001a\u0004\u0018\u00010A2\u0006\u00100\u001a\u00020\u00072\u0006\u00109\u001a\u00020&H\u0096@¢\u0006\u0002\u0010BJ\u001e\u0010>\u001a\u00020C2\u0006\u00109\u001a\u00020&2\u0006\u0010D\u001a\u000208H\u0096@¢\u0006\u0002\u0010EJ\u0016\u0010F\u001a\u00020G2\u0006\u0010H\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u00101J\u001e\u0010I\u001a\u00020G2\u0006\u0010H\u001a\u00020\u00072\u0006\u0010J\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u0010KJ\u001e\u0010L\u001a\u00020G2\u0006\u0010H\u001a\u00020\u00072\u0006\u0010M\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u0010KJF\u0010N\u001a\u00020\u001d2\u0006\u0010O\u001a\u00020\u00072\u0006\u0010P\u001a\u00020\u001d2\u0012\u0010Q\u001a\u000e\u0012\u0004\u0012\u00020S\u0012\u0004\u0012\u00020T0R2\u0012\u0010U\u001a\u000e\u0012\u0004\u0012\u00020V\u0012\u0004\u0012\u00020T0RH\u0096@¢\u0006\u0002\u0010WJ\u0010\u0010X\u001a\u00020Y2\b\u0010Z\u001a\u0004\u0018\u00010\u0007J*\u0010[\u001a\u00020\\2\b\u0010]\u001a\u0004\u0018\u00010\u00072\b\u0010^\u001a\u0004\u0018\u00010&2\u0006\u0010_\u001a\u00020\u0011H\u0082@¢\u0006\u0002\u0010`J\u0017\u0010a\u001a\u0004\u0018\u00010&2\u0006\u0010]\u001a\u00020\u0007H\u0002¢\u0006\u0002\u0010bR\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR \u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u001a\u0010\u0016\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\t\"\u0004\b\u0018\u0010\u000bR\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0010X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0013R\u0014\u0010\u001c\u001a\u00020\u001dX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u001dX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u000e\u0010\"\u001a\u00020#X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020\u001dX\u0082D¢\u0006\u0002\n\u0000R\u001a\u0010(\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u00070)X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010*\u001a\u00020\u001dX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010;\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010<\u001a\b\u0012\u0004\u0012\u00020=07X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b>\u0010?¨\u0006f"}, d2 = {"Lcom/phisher98/StreamPlayAnime;", "Lcom/lagradost/cloudstream3/MainAPI;", "sharedPref", "Landroid/content/SharedPreferences;", "<init>", "(Landroid/content/SharedPreferences;)V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "setSupportedTypes", "(Ljava/util/Set;)V", "lang", "getLang", "setLang", "supportedSyncNames", "Lcom/lagradost/cloudstream3/syncproviders/SyncIdName;", "getSupportedSyncNames", "hasMainPage", "", "getHasMainPage", "()Z", "hasQuickSearch", "getHasQuickSearch", "repo", "Lcom/lagradost/cloudstream3/syncproviders/SyncRepo;", "apiUrl", "mediaLimit", "", "isAdult", "headerJSON", "", "isAnilistDown", "shouldUseKitsu", "toStringData", "", "anilistAPICall", "Lcom/phisher98/StreamPlayAnime$AnilistAPIResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResponse", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/phisher98/StreamPlayAnime$Media;", "toSearchResponseList", "Lkotlin/Pair;", "", "Lcom/lagradost/cloudstream3/MainPageRequest;", "page", "(Lcom/lagradost/cloudstream3/MainPageRequest;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "currentYear", "mainPage", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "request", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadFromAnilist", "id", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadFromKitsu", "rawId", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getStatus", "Lcom/lagradost/cloudstream3/ShowStatus;", "t", "tmdbToAnimeId", "Lcom/phisher98/AniIds;", "title", "year", "type", "(Ljava/lang/String;Ljava/lang/Integer;Lcom/lagradost/cloudstream3/TvType;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "extractSeason", "(Ljava/lang/String;)Ljava/lang/Integer;", "AnilistAPIResponse", "LinkData", "Media", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,768:1\n73#2,5:769\n73#2,5:884\n73#2,5:889\n73#2,5:894\n73#2,5:900\n1739#3:774\n1814#3,3:775\n1739#3:778\n1814#3,3:779\n1795#3,10:782\n2068#3:792\n2069#3:794\n1805#3:795\n1453#3,2:796\n1468#3,4:798\n1453#3,2:802\n1468#3,4:804\n1739#3:808\n1814#3,3:809\n1749#3:812\n1782#3,4:813\n296#3,2:818\n296#3,2:820\n1453#3,2:822\n1468#3,4:824\n1453#3,2:828\n1468#3,4:830\n1749#3:834\n1782#3,4:835\n1739#3:839\n1814#3,3:840\n1749#3:843\n1782#3,4:844\n777#3:848\n873#3,2:849\n1795#3,10:851\n2068#3:861\n2069#3:863\n1805#3:864\n1#4:793\n1#4:817\n1#4:862\n1#4:866\n1#4:899\n63#5:865\n64#5,15:867\n50#6:882\n43#6:883\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime\n*L\n93#1:769,5\n552#1:884,5\n554#1:889,5\n556#1:894,5\n754#1:900,5\n114#1:774\n114#1:775,3\n144#1:778\n144#1:779,3\n166#1:782,10\n166#1:792\n166#1:794\n166#1:795\n250#1:796,2\n250#1:798,4\n251#1:802,2\n251#1:804,4\n280#1:808\n280#1:809,3\n308#1:812\n308#1:813,4\n411#1:818,2\n412#1:820,2\n416#1:822,2\n416#1:824,4\n419#1:828,2\n419#1:830,4\n482#1:834\n482#1:835,4\n484#1:839\n484#1:840,3\n487#1:843\n487#1:844,4\n493#1:848\n493#1:849,2\n493#1:851,10\n493#1:861\n493#1:863\n493#1:864\n166#1:793\n493#1:862\n541#1:866\n541#1:865\n541#1:867,15\n541#1:882\n541#1:883\n*E\n"})
 public final class StreamPlayAnime extends MainAPI {
+
+    @NotNull
+    private final String apiUrl;
+    private final int currentYear;
+    private final boolean hasMainPage;
     private final boolean hasQuickSearch;
 
     @NotNull
-    private String name = "StreamPlay-Anime";
-
-    @NotNull
-    private String mainUrl = "https://anilist.co";
-
-    @NotNull
-    private Set<? extends TvType> supportedTypes = SetsKt.setOf(new TvType[]{TvType.Anime, TvType.AnimeMovie, TvType.OVA});
-
-    @NotNull
-    private String lang = "en";
-
-    @NotNull
-    private final Set<SyncIdName> supportedSyncNames = SetsKt.setOf(new SyncIdName[]{SyncIdName.Anilist, SyncIdName.MyAnimeList});
-    private final boolean hasMainPage = true;
-
-    @NotNull
-    private final SyncRepo repo = new SyncRepo(AccountManager.Companion.getAniListApi());
-
-    @NotNull
-    private final String apiUrl = StreamPlay.anilistAPI;
-    private final int mediaLimit = 20;
-
-    @NotNull
-    private final Map<String, String> headerJSON = MapsKt.mapOf(new Pair[]{TuplesKt.to("Accept", "application/json"), TuplesKt.to("Content-Type", "application/json")});
-    private final int currentYear = Calendar.getInstance().get(1);
+    private final Map<String, String> headerJSON;
     private final boolean isAdult;
+    private boolean isAnilistDown;
 
     @NotNull
-    private final List<MainPageData> mainPage = MainAPIKt.mainPageOf(new Pair[]{TuplesKt.to("query ($page: Int = ###, $sort: [MediaSort] = [TRENDING_DESC, POPULARITY_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "Trending Now"), TuplesKt.to("query ($page: Int = ###, $seasonYear: Int = " + this.currentYear + ", $sort: [MediaSort] = [TRENDING_DESC, POPULARITY_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, seasonYear: $seasonYear, season: SPRING, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "Popular This Season"), TuplesKt.to("query ($page: Int = ###, $sort: [MediaSort] = [POPULARITY_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "All Time Popular"), TuplesKt.to("query ($page: Int = ###, $sort: [MediaSort] = [SCORE_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "Top 100 Anime"), TuplesKt.to("Personal", "Personal")});
+    private String lang;
+
+    @NotNull
+    private final List<MainPageData> mainPage;
+
+    @NotNull
+    private String mainUrl;
+    private final int mediaLimit;
+
+    @NotNull
+    private String name;
+
+    @NotNull
+    private final SyncRepo repo;
+
+    @Nullable
+    private final SharedPreferences sharedPref;
+
+    @NotNull
+    private final Set<SyncIdName> supportedSyncNames;
+
+    @NotNull
+    private Set<? extends TvType> supportedTypes;
 
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$anilistAPICall$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0}, l = {82}, m = "anilistAPICall", n = {"query", "data"}, nl = {84}, s = {"L$0", "L$1"}, v = 2)
-    static final class C00791 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0}, l = {91}, m = "anilistAPICall", n = {"query", "data"}, nl = {93}, s = {"L$0", "L$1"}, v = 2)
+    static final class C00801 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C00791(Continuation<? super C00791> continuation) {
+        C00801(Continuation<? super C00801> continuation) {
             super(continuation);
         }
 
@@ -153,14 +158,16 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$getMainPage$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1}, l = {145, 155}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {145, 156}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
-    static final class C00801 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 1, 2, 2, 3, 3, 3, 3}, l = {166, 175, 179, 185}, m = "getMainPage", n = {"request", "page", "request", "catalogId", "page", "request", "page", "request", "e", "catalogId", "page"}, nl = {166, 176, 180, 186}, s = {"L$0", "I$0", "L$0", "L$1", "I$0", "L$0", "I$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
+    static final class C00811 extends ContinuationImpl {
         int I$0;
         Object L$0;
+        Object L$1;
+        Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C00801(Continuation<? super C00801> continuation) {
+        C00811(Continuation<? super C00811> continuation) {
             super(continuation);
         }
 
@@ -175,8 +182,32 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$load$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {162, 172, 176, 183, 266, 280}, m = "load", n = {"url", "id", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid"}, nl = {164, 174, 177, 191, 280, 265}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2"}, v = 2)
-    static final class C00811 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3}, l = {199, 204, 208, 212}, m = "load", n = {"url", "id", "isKitsu", "url", "id", "e", "isKitsu", "url", "id", "isKitsu", "url", "id", "e", "isKitsu"}, nl = {200, 198, 209, 214}, s = {"L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "I$0", "L$0", "L$1", "I$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
+    static final class C00821 extends ContinuationImpl {
+        int I$0;
+        Object L$0;
+        Object L$1;
+        Object L$2;
+        int label;
+        /* synthetic */ Object result;
+
+        C00821(Continuation<? super C00821> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return StreamPlayAnime.this.load(null, (Continuation) this);
+        }
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadFromAnilist$1 */
+    /* JADX INFO: compiled from: StreamPlayAnime.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {220, 230, 234, 241, 327, 341}, m = "loadFromAnilist", n = {"url", "id", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "aniyear", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid", "url", "id", "data", "anititle", "posterurl", "backgroundUrl", "anitype", "ids", "jpTitle", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "logoUrl", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "aniyear", "totalEps", "anidbEid"}, nl = {222, 232, 235, 249, 341, 326}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2"}, v = 2)
+    static final class C00831 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -205,7 +236,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00811(Continuation<? super C00811> continuation) {
+        C00831(Continuation<? super C00831> continuation) {
             super(continuation);
         }
 
@@ -213,21 +244,76 @@ public final class StreamPlayAnime extends MainAPI {
         public final Object invokeSuspend(@NotNull Object obj) {
             this.result = obj;
             this.label |= Integer.MIN_VALUE;
-            return StreamPlayAnime.this.load(null, (Continuation) this);
+            return StreamPlayAnime.this.loadFromAnilist(null, null, (Continuation) this);
         }
     }
 
-    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$1 */
+    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadFromKitsu$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {322, 332}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "malsync", "kaasSlug", "dubStatus", "isCasting"}, nl = {551, 363}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0"}, v = 2)
-    static final class C00841 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8}, l = {370, 372, 374, 374, 380, 392, 403, 501, 514}, m = "loadFromKitsu", n = {"url", "rawId", "url", "rawId", "url", "rawId", "url", "rawId", "url", "rawId", "kitsuMeta", "numericKitsuId", "queryParam", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "isMovie", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "logoUrl", "aniListId", "malId", "isMovie", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "logoUrl", "aniListId", "malId", "ids", "finalAniId", "finalMalId", "jpTitle", "posterurl", "backgroundUrl", "videos", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "recs", "isMovie", "totalEps", "anidbEid", "scoreValue", "url", "rawId", "kitsuMeta", "numericKitsuId", "syncMetaData", "animeMetaData", "tmdbid", "kitsuid", "type", "anitype", "anititle", "aniyear", "logoUrl", "aniListId", "malId", "ids", "finalAniId", "finalMalId", "jpTitle", "posterurl", "backgroundUrl", "videos", "anidbEidMap", "epMetaMap", "fallbackPoster", "fallbackTitle", "href", "episodes", "episodesDub", "recs", "isMovie", "totalEps", "anidbEid", "scoreValue"}, nl = {371, 374, 374, 369, 381, 400, 405, 514, 500}, s = {"L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "I$0", "I$1", "I$2", "I$3"}, v = 2)
+    static final class C00861 extends ContinuationImpl {
+        int I$0;
+        int I$1;
+        int I$2;
+        int I$3;
         Object L$0;
         Object L$1;
         Object L$10;
         Object L$11;
         Object L$12;
         Object L$13;
+        Object L$14;
+        Object L$15;
+        Object L$16;
+        Object L$17;
+        Object L$18;
+        Object L$19;
+        Object L$2;
+        Object L$20;
+        Object L$21;
+        Object L$22;
+        Object L$23;
+        Object L$24;
+        Object L$25;
+        Object L$26;
+        Object L$27;
+        Object L$28;
+        Object L$29;
+        Object L$3;
+        Object L$4;
+        Object L$5;
+        Object L$6;
+        Object L$7;
+        Object L$8;
+        Object L$9;
+        int label;
+        /* synthetic */ Object result;
+
+        C00861(Continuation<? super C00861> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return StreamPlayAnime.this.loadFromKitsu(null, null, (Continuation) this);
+        }
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$1 */
+    /* JADX INFO: compiled from: StreamPlayAnime.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {552, 554, 556, 567}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "malId", "episode", "jpTitle", "anititle", "anidbEid", "aniid", "year", "kitsuId", "malsync", "kaasSlug", "dubStatus", "isCasting"}, nl = {788, 793, 798, 598}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "Z$0"}, v = 2)
+    static final class C00891 extends ContinuationImpl {
+        Object L$0;
+        Object L$1;
+        Object L$10;
+        Object L$11;
+        Object L$12;
+        Object L$13;
+        Object L$14;
         Object L$2;
         Object L$3;
         Object L$4;
@@ -240,7 +326,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00841(Continuation<? super C00841> continuation) {
+        C00891(Continuation<? super C00891> continuation) {
             super(continuation);
         }
 
@@ -255,14 +341,15 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$search$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0}, l = {128}, m = "search", n = {"query", "page"}, nl = {127}, s = {"L$0", "I$0"}, v = 2)
-    static final class C00961 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 1, 1, 2, 2, 2}, l = {137, 141, 148}, m = "search", n = {"query", "page", "query", "page", "query", "e", "page"}, nl = {139, 140, 150}, s = {"L$0", "I$0", "L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
+    static final class C01011 extends ContinuationImpl {
         int I$0;
         Object L$0;
+        Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C00961(Continuation<? super C00961> continuation) {
+        C01011(Continuation<? super C01011> continuation) {
             super(continuation);
         }
 
@@ -277,8 +364,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$tmdbToAnimeId$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0}, l = {516}, m = "tmdbToAnimeId", n = {"title", "year", "type", "query", "variables", "data"}, nl = {517}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    static final class C00971 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0, 0, 0, 0, 0}, l = {753}, m = "tmdbToAnimeId", n = {"title", "year", "type", "query", "variables", "data"}, nl = {754}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    static final class C01021 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -288,7 +375,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00971(Continuation<? super C00971> continuation) {
+        C01021(Continuation<? super C01021> continuation) {
             super(continuation);
         }
 
@@ -303,14 +390,14 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$toSearchResponseList$1 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0}, l = {103}, m = "toSearchResponseList", n = {"$this$toSearchResponseList", "page"}, nl = {105}, s = {"L$0", "I$0"}, v = 2)
-    static final class C00981 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime", f = "StreamPlayAnime.kt", i = {0, 0}, l = {112}, m = "toSearchResponseList", n = {"$this$toSearchResponseList", "page"}, nl = {114}, s = {"L$0", "I$0"}, v = 2)
+    static final class C01031 extends ContinuationImpl {
         int I$0;
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00981(Continuation<? super C00981> continuation) {
+        C01031(Continuation<? super C01031> continuation) {
             super(continuation);
         }
 
@@ -320,6 +407,32 @@ public final class StreamPlayAnime extends MainAPI {
             this.label |= Integer.MIN_VALUE;
             return StreamPlayAnime.this.toSearchResponseList(null, 0, (Continuation) this);
         }
+    }
+
+    /* JADX WARN: Illegal instructions before constructor call */
+    public StreamPlayAnime() {
+        SharedPreferences sharedPreferences = null;
+        this(sharedPreferences, 1, sharedPreferences);
+    }
+
+    public StreamPlayAnime(@Nullable SharedPreferences sharedPref) {
+        this.sharedPref = sharedPref;
+        this.name = "StreamPlay-Anime";
+        this.mainUrl = "https://anilist.co";
+        this.supportedTypes = SetsKt.setOf(new TvType[]{TvType.Anime, TvType.AnimeMovie, TvType.OVA});
+        this.lang = "en";
+        this.supportedSyncNames = SetsKt.setOf(new SyncIdName[]{SyncIdName.Anilist, SyncIdName.MyAnimeList});
+        this.hasMainPage = true;
+        this.repo = new SyncRepo(AccountManager.Companion.getAniListApi());
+        this.apiUrl = StreamPlay.anilistAPI;
+        this.mediaLimit = 20;
+        this.headerJSON = MapsKt.mapOf(new Pair[]{TuplesKt.to("Accept", "application/json"), TuplesKt.to("Content-Type", "application/json")});
+        this.currentYear = Calendar.getInstance().get(1);
+        this.mainPage = MainAPIKt.mainPageOf(new Pair[]{TuplesKt.to("query ($page: Int = ###, $sort: [MediaSort] = [TRENDING_DESC, POPULARITY_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "Trending Now"), TuplesKt.to("query ($page: Int = ###, $seasonYear: Int = " + this.currentYear + ", $sort: [MediaSort] = [TRENDING_DESC, POPULARITY_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, seasonYear: $seasonYear, season: SPRING, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "Popular This Season"), TuplesKt.to("query ($page: Int = ###, $sort: [MediaSort] = [POPULARITY_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "All Time Popular"), TuplesKt.to("query ($page: Int = ###, $sort: [MediaSort] = [SCORE_DESC], $isAdult: Boolean = " + this.isAdult + ") { Page(page: $page, perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(sort: $sort, isAdult: $isAdult, type: ANIME) { id idMal season seasonYear format episodes chapters averageScore title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }", "Top 100 Anime"), TuplesKt.to("Personal", "Personal")});
+    }
+
+    public /* synthetic */ StreamPlayAnime(SharedPreferences sharedPreferences, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? null : sharedPreferences);
     }
 
     @NotNull
@@ -371,6 +484,16 @@ public final class StreamPlayAnime extends MainAPI {
         return this.hasQuickSearch;
     }
 
+    private final boolean shouldUseKitsu() {
+        String string;
+        SharedPreferences sharedPreferences = this.sharedPref;
+        String pref = "auto";
+        if (sharedPreferences != null && (string = sharedPreferences.getString("anime_metadata_source", "auto")) != null) {
+            pref = string;
+        }
+        return Intrinsics.areEqual(pref, "kitsu") || (!Intrinsics.areEqual(pref, "anilist") && this.isAnilistDown);
+    }
+
     @NotNull
     protected final String toStringData(@NotNull Object $this$toStringData) {
         return MainAPIKt.getMapper().writeValueAsString($this$toStringData);
@@ -379,32 +502,32 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     public final Object anilistAPICall(String query, Continuation<? super AnilistAPIResponse> continuation) throws Exception {
-        C00791 c00791;
+        C00801 c00801;
         Object safe;
-        if (continuation instanceof C00791) {
-            c00791 = (C00791) continuation;
-            if ((c00791.label & Integer.MIN_VALUE) != 0) {
-                c00791.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00801) {
+            c00801 = (C00801) continuation;
+            if ((c00801.label & Integer.MIN_VALUE) != 0) {
+                c00801.label -= Integer.MIN_VALUE;
             } else {
-                c00791 = new C00791(continuation);
+                c00801 = new C00801(continuation);
             }
         } else {
-            c00791 = new C00791(continuation);
+            c00801 = new C00801(continuation);
         }
-        C00791 c00792 = c00791;
-        Object $result = c00792.result;
+        C00801 c00802 = c00801;
+        Object $result = c00802.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00792.label) {
+        switch (c00802.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Map data = MapsKt.mapOf(TuplesKt.to("query", query));
                 Requests app = MainActivityKt.getApp();
                 String str = this.apiUrl;
                 Map<String, String> map = this.headerJSON;
-                c00792.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                c00792.L$1 = SpillingKt.nullOutSpilledVariable(data);
-                c00792.label = 1;
-                $result = Requests.post$default(app, str, map, (String) null, (Map) null, (Map) null, data, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00792, 65500, (Object) null);
+                c00802.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c00802.L$1 = SpillingKt.nullOutSpilledVariable(data);
+                c00802.label = 1;
+                $result = Requests.post$default(app, str, map, (String) null, (Map) null, (Map) null, data, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00802, 65500, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -440,7 +563,7 @@ public final class StreamPlayAnime extends MainAPI {
         String url = getMainUrl() + "/anime/" + $this$toSearchResponse.getId();
         final String posterUrl = $this$toSearchResponse.getCoverImage().getLarge();
         final int rating = $this$toSearchResponse.getAverageScore();
-        return MainAPIKt.newAnimeSearchResponse$default(this, title, url, TvType.Anime, false, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda1
+        return MainAPIKt.newAnimeSearchResponse$default(this, title, url, TvType.Anime, false, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
             public final Object invoke(Object obj) {
                 return StreamPlayAnime.toSearchResponse$lambda$0(posterUrl, rating, (AnimeSearchResponse) obj);
             }
@@ -456,29 +579,29 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     public final Object toSearchResponseList(MainPageRequest $this$toSearchResponseList, int page, Continuation<? super Pair<? extends List<? extends SearchResponse>, Boolean>> continuation) throws Exception {
-        C00981 c00981;
+        C01031 c01031;
         Object obj;
         Iterable media;
-        if (continuation instanceof C00981) {
-            c00981 = (C00981) continuation;
-            if ((c00981.label & Integer.MIN_VALUE) != 0) {
-                c00981.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C01031) {
+            c01031 = (C01031) continuation;
+            if ((c01031.label & Integer.MIN_VALUE) != 0) {
+                c01031.label -= Integer.MIN_VALUE;
             } else {
-                c00981 = new C00981(continuation);
+                c01031 = new C01031(continuation);
             }
         } else {
-            c00981 = new C00981(continuation);
+            c01031 = new C01031(continuation);
         }
-        Object $result = c00981.result;
+        Object $result = c01031.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00981.label) {
+        switch (c01031.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String strReplace$default = StringsKt.replace$default($this$toSearchResponseList.getData(), "###", String.valueOf(page), false, 4, (Object) null);
-                c00981.L$0 = SpillingKt.nullOutSpilledVariable($this$toSearchResponseList);
-                c00981.I$0 = page;
-                c00981.label = 1;
-                Object objAnilistAPICall = anilistAPICall(strReplace$default, c00981);
+                c01031.L$0 = SpillingKt.nullOutSpilledVariable($this$toSearchResponseList);
+                c01031.I$0 = page;
+                c01031.label = 1;
+                Object objAnilistAPICall = anilistAPICall(strReplace$default, c01031);
                 if (objAnilistAPICall == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -486,7 +609,7 @@ public final class StreamPlayAnime extends MainAPI {
                 break;
                 break;
             case 1:
-                int i = c00981.I$0;
+                int i = c01031.I$0;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 break;
@@ -515,148 +638,296 @@ public final class StreamPlayAnime extends MainAPI {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
+    /* JADX WARN: Code duplicated, block: B:45:0x0134  */
+    /* JADX WARN: Code duplicated, block: B:46:0x013d  */
+    /* JADX WARN: Code duplicated, block: B:49:0x0146  */
+    /* JADX WARN: Code duplicated, block: B:51:0x0165 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:52:0x0166  */
+    /* JADX WARN: Code duplicated, block: B:55:0x0175  */
+    /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
-    public Object search(@NotNull String query, int page, @NotNull Continuation<? super SearchResponseList> continuation) throws Exception {
-        C00961 c00961;
+    public Object search(@NotNull String query, int page, @NotNull Continuation<? super SearchResponseList> continuation) throws Throwable {
+        C01011 c01011;
         Object objAnilistAPICall;
+        Object obj;
+        SharedPreferences sharedPreferences;
+        String string;
+        Object objSearch;
+        int page2;
+        AnilistAPIResponse.AnilistData.AnilistPage page3;
         Iterable media;
-        if (continuation instanceof C00961) {
-            c00961 = (C00961) continuation;
-            if ((c00961.label & Integer.MIN_VALUE) != 0) {
-                c00961.label -= Integer.MIN_VALUE;
+        String query2 = query;
+        int page4 = page;
+        if (continuation instanceof C01011) {
+            c01011 = (C01011) continuation;
+            if ((c01011.label & Integer.MIN_VALUE) != 0) {
+                c01011.label -= Integer.MIN_VALUE;
             } else {
-                c00961 = new C00961(continuation);
+                c01011 = new C01011(continuation);
             }
         } else {
-            c00961 = new C00961(continuation);
+            c01011 = new C01011(continuation);
         }
-        Object $result = c00961.result;
+        C01011 c01012 = c01011;
+        Object $result = c01012.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00961.label) {
+        switch (c01012.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                String str = "query ($search: String = \"" + query + "\") { Page(page: " + page + ", perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(search: $search, isAdult: " + this.isAdult + ", type: ANIME) { id idMal season seasonYear format episodes chapters title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }";
-                c00961.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                c00961.I$0 = page;
-                c00961.label = 1;
-                objAnilistAPICall = anilistAPICall(str, c00961);
-                if (objAnilistAPICall == coroutine_suspended) {
-                    return coroutine_suspended;
+                if (shouldUseKitsu()) {
+                    c01012.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                    c01012.I$0 = page4;
+                    c01012.label = 1;
+                    Object objSearch2 = StreamPlayKitsuHelper.INSTANCE.search(this, query2, page4, c01012);
+                    if (objSearch2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    obj = objSearch2;
+                    return MainAPIKt.toNewSearchResponseList$default((List) obj, (Boolean) null, 1, (Object) null);
                 }
-                break;
-                break;
+                try {
+                    String str = "query ($search: String = \"" + query2 + "\") { Page(page: " + page4 + ", perPage: " + this.mediaLimit + ") { pageInfo { total perPage currentPage lastPage hasNextPage } media(search: $search, isAdult: " + this.isAdult + ", type: ANIME) { id idMal season seasonYear format episodes chapters title { english romaji } coverImage { extraLarge large medium } synonyms nextAiringEpisode { timeUntilAiring episode } } } }";
+                    c01012.L$0 = query2;
+                    c01012.I$0 = page4;
+                    c01012.label = 2;
+                    objAnilistAPICall = anilistAPICall(str, c01012);
+                    if (objAnilistAPICall == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    AnilistAPIResponse res = (AnilistAPIResponse) objAnilistAPICall;
+                    page3 = res.getData().getPage();
+                    if (page3 != null || (media = page3.getMedia()) == null) {
+                        return null;
+                    }
+                    Iterable $this$map$iv = media;
+                    Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+                    for (Object item$iv$iv : $this$map$iv) {
+                        Media it = (Media) item$iv$iv;
+                        destination$iv$iv.add(toSearchResponse(it));
+                    }
+                    return MainAPIKt.toNewSearchResponseList$default((List) destination$iv$iv, (Boolean) null, 1, (Object) null);
+                } catch (Throwable th) {
+                    e = th;
+                    sharedPreferences = this.sharedPref;
+                    if (sharedPreferences != null) {
+                        string = sharedPreferences.getString("anime_metadata_source", "auto");
+                    } else {
+                        string = null;
+                    }
+                    if (!Intrinsics.areEqual(string, "anilist")) {
+                        throw e;
+                    }
+                    this.isAnilistDown = true;
+                    c01012.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                    c01012.L$1 = SpillingKt.nullOutSpilledVariable(e);
+                    c01012.I$0 = page4;
+                    c01012.label = 3;
+                    objSearch = StreamPlayKitsuHelper.INSTANCE.search(this, query2, page4, c01012);
+                    if (objSearch == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    page2 = page4;
+                    return MainAPIKt.toNewSearchResponseList$default((List) objSearch, (Boolean) null, 1, (Object) null);
+                }
             case 1:
-                int i = c00961.I$0;
+                int i = c01012.I$0;
                 ResultKt.throwOnFailure($result);
-                objAnilistAPICall = $result;
-                break;
+                obj = $result;
+                return MainAPIKt.toNewSearchResponseList$default((List) obj, (Boolean) null, 1, (Object) null);
+            case 2:
+                page4 = c01012.I$0;
+                query2 = (String) c01012.L$0;
+                try {
+                    ResultKt.throwOnFailure($result);
+                    objAnilistAPICall = $result;
+                    AnilistAPIResponse res2 = (AnilistAPIResponse) objAnilistAPICall;
+                    page3 = res2.getData().getPage();
+                    if (page3 != null) {
+                        break;
+                    }
+                    return null;
+                } catch (Throwable th2) {
+                    e = th2;
+                    sharedPreferences = this.sharedPref;
+                    if (sharedPreferences != null) {
+                        string = sharedPreferences.getString("anime_metadata_source", "auto");
+                    } else {
+                        string = null;
+                    }
+                    if (!Intrinsics.areEqual(string, "anilist")) {
+                        throw e;
+                    }
+                    this.isAnilistDown = true;
+                    c01012.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                    c01012.L$1 = SpillingKt.nullOutSpilledVariable(e);
+                    c01012.I$0 = page4;
+                    c01012.label = 3;
+                    objSearch = StreamPlayKitsuHelper.INSTANCE.search(this, query2, page4, c01012);
+                    if (objSearch == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    page2 = page4;
+                    return MainAPIKt.toNewSearchResponseList$default((List) objSearch, (Boolean) null, 1, (Object) null);
+                }
+            case 3:
+                page2 = c01012.I$0;
+                ResultKt.throwOnFailure($result);
+                objSearch = $result;
+                return MainAPIKt.toNewSearchResponseList$default((List) objSearch, (Boolean) null, 1, (Object) null);
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-        AnilistAPIResponse res = (AnilistAPIResponse) objAnilistAPICall;
-        AnilistAPIResponse.AnilistData.AnilistPage page2 = res.getData().getPage();
-        if (page2 == null || (media = page2.getMedia()) == null) {
-            return null;
-        }
-        Iterable $this$map$iv = media;
-        Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
-        for (Object item$iv$iv : $this$map$iv) {
-            Media it = (Media) item$iv$iv;
-            destination$iv$iv.add(toSearchResponse(it));
-        }
-        return MainAPIKt.toNewSearchResponseList$default((List) destination$iv$iv, (Boolean) null, 1, (Object) null);
     }
 
-    /* JADX WARN: Code duplicated, block: B:27:0x00bf  */
-    /* JADX WARN: Code duplicated, block: B:29:0x00d7  */
-    /* JADX WARN: Code duplicated, block: B:30:0x00de  */
-    /* JADX WARN: Code duplicated, block: B:32:0x00ea  */
-    /* JADX WARN: Code duplicated, block: B:33:0x00f1  */
-    /* JADX WARN: Code duplicated, block: B:35:0x012a  */
-    /* JADX WARN: Code duplicated, block: B:46:0x0130 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:33:0x00ed  */
+    /* JADX WARN: Code duplicated, block: B:35:0x0105  */
+    /* JADX WARN: Code duplicated, block: B:36:0x010c  */
+    /* JADX WARN: Code duplicated, block: B:38:0x011a  */
+    /* JADX WARN: Code duplicated, block: B:39:0x011f  */
+    /* JADX WARN: Code duplicated, block: B:41:0x0156  */
+    /* JADX WARN: Code duplicated, block: B:62:0x01ec  */
+    /* JADX WARN: Code duplicated, block: B:63:0x01f5  */
+    /* JADX WARN: Code duplicated, block: B:66:0x01fe  */
+    /* JADX WARN: Code duplicated, block: B:68:0x0228 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:69:0x0229  */
+    /* JADX WARN: Code duplicated, block: B:72:0x024d  */
+    /* JADX WARN: Code duplicated, block: B:79:0x015c A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
-    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Exception {
-        C00801 c00801;
+    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Throwable {
+        C00811 c00811;
         Object searchResponseList;
+        Object catalog;
         Object obj;
+        int page2;
+        MainPageRequest request2;
         Collection destination$iv$iv;
         SyncAPI.LibraryList it;
         UiText name;
         Activity activity;
         HomePageList homePageList;
-        int page2 = page;
-        MainPageRequest request2 = request;
-        if (continuation instanceof C00801) {
-            c00801 = (C00801) continuation;
-            if ((c00801.label & Integer.MIN_VALUE) != 0) {
-                c00801.label -= Integer.MIN_VALUE;
+        SharedPreferences sharedPreferences;
+        String string;
+        Object catalog2;
+        int page3;
+        int page4 = page;
+        MainPageRequest request3 = request;
+        if (continuation instanceof C00811) {
+            c00811 = (C00811) continuation;
+            if ((c00811.label & Integer.MIN_VALUE) != 0) {
+                c00811.label -= Integer.MIN_VALUE;
             } else {
-                c00801 = new C00801(continuation);
+                c00811 = new C00811(continuation);
             }
         } else {
-            c00801 = new C00801(continuation);
+            c00811 = new C00811(continuation);
         }
-        Object $result = c00801.result;
+        C00811 c00812 = c00811;
+        Object $result = c00812.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         HomePageList homePageList2 = null;
-        switch (c00801.label) {
+        switch (c00812.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 DonationManager.INSTANCE.checkAndShow(getName());
-                if (!StringsKt.contains$default(request2.getName(), "Personal", false, 2, (Object) null)) {
-                    c00801.L$0 = request2;
-                    c00801.I$0 = page2;
-                    c00801.label = 2;
-                    searchResponseList = toSearchResponseList(request2, page2, c00801);
+                if (StringsKt.contains$default(request3.getName(), "Personal", false, 2, (Object) null)) {
+                    if (this.repo.authUser() == null) {
+                        return MainAPIKt.newHomePageResponse("Login required for personal content.", CollectionsKt.emptyList(), Boxing.boxBoolean(false));
+                    }
+                    SyncRepo syncRepo = this.repo;
+                    c00812.L$0 = request3;
+                    c00812.I$0 = page4;
+                    c00812.label = 1;
+                    Object obj2 = syncRepo.library-IoAF18A(c00812);
+                    if (obj2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    obj = obj2;
+                    page2 = page4;
+                    request2 = request3;
+                    ResultKt.throwOnFailure(obj);
+                    Intrinsics.checkNotNull(obj);
+                    Iterable $this$mapNotNull$iv = ((SyncAPI.LibraryMetadata) obj).getAllLibraryLists();
+                    destination$iv$iv = new ArrayList();
+                    for (Object element$iv$iv$iv : $this$mapNotNull$iv) {
+                        it = (SyncAPI.LibraryList) element$iv$iv$iv;
+                        if (it.getItems().isEmpty()) {
+                            homePageList = homePageList2;
+                        } else {
+                            name = it.getName();
+                            activity = CommonActivity.INSTANCE.getActivity();
+                            if (activity == null) {
+                                homePageList = homePageList2;
+                            } else {
+                                String libraryName = name.asString(activity);
+                                homePageList = new HomePageList(request2.getName() + ": " + libraryName, it.getItems(), false, 4, (DefaultConstructorMarker) null);
+                            }
+                        }
+                        if (homePageList != null) {
+                            destination$iv$iv.add(homePageList);
+                        }
+                        page2 = page2;
+                        homePageList2 = null;
+                    }
+                    List homePageList3 = (List) destination$iv$iv;
+                    return MainAPIKt.newHomePageResponse(homePageList3, Boxing.boxBoolean(false));
+                }
+                if (shouldUseKitsu()) {
+                    String catalogId = StreamPlayKitsuHelper.INSTANCE.mapSectionToKitsuCatalog(request3.getName());
+                    c00812.L$0 = request3;
+                    c00812.L$1 = SpillingKt.nullOutSpilledVariable(catalogId);
+                    c00812.I$0 = page4;
+                    c00812.label = 2;
+                    catalog = StreamPlayKitsuHelper.INSTANCE.getCatalog(this, catalogId, page4, c00812);
+                    if (catalog == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    Pair pair = (Pair) catalog;
+                    List items = (List) pair.component1();
+                    boolean hasNext = ((Boolean) pair.component2()).booleanValue();
+                    return MainAPIKt.newHomePageResponse(request3.getName(), items, Boxing.boxBoolean(hasNext));
+                }
+                try {
+                    c00812.L$0 = request3;
+                    c00812.I$0 = page4;
+                    c00812.label = 3;
+                    searchResponseList = toSearchResponseList(request3, page4, c00812);
                     if (searchResponseList == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                     Pair data = (Pair) searchResponseList;
-                    return MainAPIKt.newHomePageResponse(request2.getName(), (List) data.getFirst(), (Boolean) data.getSecond());
-                }
-                if (this.repo.authUser() == null) {
-                    return MainAPIKt.newHomePageResponse("Login required for personal content.", CollectionsKt.emptyList(), Boxing.boxBoolean(false));
-                }
-                SyncRepo syncRepo = this.repo;
-                c00801.L$0 = request2;
-                c00801.I$0 = page2;
-                c00801.label = 1;
-                Object obj2 = syncRepo.library-IoAF18A(c00801);
-                if (obj2 == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
-                obj = obj2;
-                ResultKt.throwOnFailure(obj);
-                Intrinsics.checkNotNull(obj);
-                Iterable $this$mapNotNull$iv = ((SyncAPI.LibraryMetadata) obj).getAllLibraryLists();
-                destination$iv$iv = new ArrayList();
-                for (Object element$iv$iv$iv : $this$mapNotNull$iv) {
-                    it = (SyncAPI.LibraryList) element$iv$iv$iv;
-                    if (it.getItems().isEmpty()) {
-                        homePageList = homePageList2;
+                    return MainAPIKt.newHomePageResponse(request3.getName(), (List) data.getFirst(), (Boolean) data.getSecond());
+                } catch (Throwable th) {
+                    e = th;
+                    sharedPreferences = this.sharedPref;
+                    if (sharedPreferences != null) {
+                        string = sharedPreferences.getString("anime_metadata_source", "auto");
                     } else {
-                        name = it.getName();
-                        activity = CommonActivity.INSTANCE.getActivity();
-                        if (activity == null) {
-                            homePageList = null;
-                        } else {
-                            String libraryName = name.asString(activity);
-                            homePageList = new HomePageList(request2.getName() + ": " + libraryName, it.getItems(), false, 4, (DefaultConstructorMarker) null);
-                        }
+                        string = null;
                     }
-                    if (homePageList != null) {
-                        destination$iv$iv.add(homePageList);
+                    if (!Intrinsics.areEqual(string, "anilist")) {
+                        throw e;
                     }
-                    page2 = page2;
-                    homePageList2 = null;
+                    this.isAnilistDown = true;
+                    String catalogId2 = StreamPlayKitsuHelper.INSTANCE.mapSectionToKitsuCatalog(request3.getName());
+                    c00812.L$0 = request3;
+                    c00812.L$1 = SpillingKt.nullOutSpilledVariable(e);
+                    c00812.L$2 = SpillingKt.nullOutSpilledVariable(catalogId2);
+                    c00812.I$0 = page4;
+                    c00812.label = 4;
+                    catalog2 = StreamPlayKitsuHelper.INSTANCE.getCatalog(this, catalogId2, page4, c00812);
+                    if (catalog2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    page3 = page4;
+                    Pair pair2 = (Pair) catalog2;
+                    List items2 = (List) pair2.component1();
+                    boolean hasNext2 = ((Boolean) pair2.component2()).booleanValue();
+                    return MainAPIKt.newHomePageResponse(request3.getName(), items2, Boxing.boxBoolean(hasNext2));
                 }
-                List homePageList3 = (List) destination$iv$iv;
-                return MainAPIKt.newHomePageResponse(homePageList3, Boxing.boxBoolean(false));
             case 1:
-                page2 = c00801.I$0;
-                request2 = (MainPageRequest) c00801.L$0;
+                page2 = c00812.I$0;
+                request2 = (MainPageRequest) c00812.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = ((Result) $result).unbox-impl();
                 ResultKt.throwOnFailure(obj);
@@ -671,7 +942,7 @@ public final class StreamPlayAnime extends MainAPI {
                         name = it.getName();
                         activity = CommonActivity.INSTANCE.getActivity();
                         if (activity == null) {
-                            homePageList = null;
+                            homePageList = homePageList2;
                         } else {
                             String libraryName2 = name.asString(activity);
                             homePageList = new HomePageList(request2.getName() + ": " + libraryName2, it.getItems(), false, 4, (DefaultConstructorMarker) null);
@@ -686,234 +957,528 @@ public final class StreamPlayAnime extends MainAPI {
                 List homePageList4 = (List) destination$iv$iv;
                 return MainAPIKt.newHomePageResponse(homePageList4, Boxing.boxBoolean(false));
             case 2:
-                int i = c00801.I$0;
-                request2 = (MainPageRequest) c00801.L$0;
+                int i = c00812.I$0;
+                request3 = (MainPageRequest) c00812.L$0;
                 ResultKt.throwOnFailure($result);
-                searchResponseList = $result;
-                Pair data2 = (Pair) searchResponseList;
-                return MainAPIKt.newHomePageResponse(request2.getName(), (List) data2.getFirst(), (Boolean) data2.getSecond());
+                catalog = $result;
+                Pair pair3 = (Pair) catalog;
+                List items3 = (List) pair3.component1();
+                boolean hasNext3 = ((Boolean) pair3.component2()).booleanValue();
+                return MainAPIKt.newHomePageResponse(request3.getName(), items3, Boxing.boxBoolean(hasNext3));
+            case 3:
+                page4 = c00812.I$0;
+                request3 = (MainPageRequest) c00812.L$0;
+                try {
+                    ResultKt.throwOnFailure($result);
+                    searchResponseList = $result;
+                    Pair data2 = (Pair) searchResponseList;
+                    return MainAPIKt.newHomePageResponse(request3.getName(), (List) data2.getFirst(), (Boolean) data2.getSecond());
+                } catch (Throwable th2) {
+                    e = th2;
+                    sharedPreferences = this.sharedPref;
+                    if (sharedPreferences != null) {
+                        string = sharedPreferences.getString("anime_metadata_source", "auto");
+                    } else {
+                        string = null;
+                    }
+                    if (!Intrinsics.areEqual(string, "anilist")) {
+                        throw e;
+                    }
+                    this.isAnilistDown = true;
+                    String catalogId3 = StreamPlayKitsuHelper.INSTANCE.mapSectionToKitsuCatalog(request3.getName());
+                    c00812.L$0 = request3;
+                    c00812.L$1 = SpillingKt.nullOutSpilledVariable(e);
+                    c00812.L$2 = SpillingKt.nullOutSpilledVariable(catalogId3);
+                    c00812.I$0 = page4;
+                    c00812.label = 4;
+                    catalog2 = StreamPlayKitsuHelper.INSTANCE.getCatalog(this, catalogId3, page4, c00812);
+                    if (catalog2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    page3 = page4;
+                    Pair pair4 = (Pair) catalog2;
+                    List items4 = (List) pair4.component1();
+                    boolean hasNext4 = ((Boolean) pair4.component2()).booleanValue();
+                    return MainAPIKt.newHomePageResponse(request3.getName(), items4, Boxing.boxBoolean(hasNext4));
+                }
+            case 4:
+                page3 = c00812.I$0;
+                request3 = (MainPageRequest) c00812.L$0;
+                ResultKt.throwOnFailure($result);
+                catalog2 = $result;
+                Pair pair5 = (Pair) catalog2;
+                List items5 = (List) pair5.component1();
+                boolean hasNext5 = ((Boolean) pair5.component2()).booleanValue();
+                return MainAPIKt.newHomePageResponse(request3.getName(), items5, Boxing.boxBoolean(hasNext5));
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:104:0x0564  */
-    /* JADX WARN: Code duplicated, block: B:107:0x0575  */
-    /* JADX WARN: Code duplicated, block: B:108:0x057a  */
-    /* JADX WARN: Code duplicated, block: B:112:0x0606  */
-    /* JADX WARN: Code duplicated, block: B:114:0x0641  */
-    /* JADX WARN: Code duplicated, block: B:115:0x0646  */
-    /* JADX WARN: Code duplicated, block: B:120:0x06e9  */
-    /* JADX WARN: Code duplicated, block: B:122:0x06f1  */
-    /* JADX WARN: Code duplicated, block: B:125:0x071f  */
-    /* JADX WARN: Code duplicated, block: B:126:0x0724  */
-    /* JADX WARN: Code duplicated, block: B:130:0x07a6  */
-    /* JADX WARN: Code duplicated, block: B:132:0x0863 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:133:0x0864  */
-    /* JADX WARN: Code duplicated, block: B:135:0x0887  */
-    /* JADX WARN: Code duplicated, block: B:137:0x0961 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:138:0x0962  */
-    /* JADX WARN: Code duplicated, block: B:141:0x099a  */
-    /* JADX WARN: Code duplicated, block: B:143:0x0498 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:145:0x048c A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:24:0x0296  */
-    /* JADX WARN: Code duplicated, block: B:26:0x02c3  */
-    /* JADX WARN: Code duplicated, block: B:27:0x02c6  */
-    /* JADX WARN: Code duplicated, block: B:30:0x02ec A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:31:0x02ed  */
-    /* JADX WARN: Code duplicated, block: B:34:0x0375 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:35:0x0376  */
-    /* JADX WARN: Code duplicated, block: B:38:0x0388  */
-    /* JADX WARN: Code duplicated, block: B:43:0x0399  */
-    /* JADX WARN: Code duplicated, block: B:45:0x039c  */
-    /* JADX WARN: Code duplicated, block: B:48:0x03a7  */
-    /* JADX WARN: Code duplicated, block: B:51:0x03c2  */
-    /* JADX WARN: Code duplicated, block: B:52:0x03c5  */
-    /* JADX WARN: Code duplicated, block: B:55:0x041f A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:56:0x0420  */
-    /* JADX WARN: Code duplicated, block: B:60:0x046e  */
-    /* JADX WARN: Code duplicated, block: B:62:0x0488  */
-    /* JADX WARN: Code duplicated, block: B:67:0x04ca  */
-    /* JADX WARN: Code duplicated, block: B:69:0x04dc  */
-    /* JADX WARN: Code duplicated, block: B:71:0x04e4  */
-    /* JADX WARN: Code duplicated, block: B:72:0x04f1  */
-    /* JADX WARN: Code duplicated, block: B:73:0x04f4  */
-    /* JADX WARN: Code duplicated, block: B:78:0x0510  */
-    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Code duplicated, block: B:84:0x0524  */
-    /* JADX WARN: Code duplicated, block: B:86:0x0527  */
-    /* JADX WARN: Code duplicated, block: B:91:0x0538 A[PHI: r6
-      0x0538: PHI (r6v31 java.lang.String) = (r6v13 java.lang.String), (r6v34 java.lang.String) binds: [B:97:0x054d, B:89:0x0535] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Code duplicated, block: B:92:0x053a A[DONT_INVERT] */
-    /* JADX WARN: Code duplicated, block: B:93:0x053c  */
-    /* JADX WARN: Code duplicated, block: B:96:0x054b  */
-    /* JADX WARN: Code duplicated, block: B:98:0x054f  */
-    /* JADX WARN: Code duplicated, block: B:99:0x0551  */
+    /* JADX WARN: Code duplicated, block: B:43:0x00da  */
+    /* JADX WARN: Code duplicated, block: B:46:0x00e4  */
+    /* JADX WARN: Code duplicated, block: B:48:0x0100 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:49:0x0101  */
+    /* JADX WARN: Code duplicated, block: B:52:0x010a  */
+    /* JADX WARN: Code duplicated, block: B:65:0x012b  */
+    /* JADX WARN: Code duplicated, block: B:68:0x0137  */
+    /* JADX WARN: Code duplicated, block: B:70:0x0156 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:71:0x0157  */
+    /* JADX WARN: Code duplicated, block: B:74:0x0160  */
+    /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) throws Exception {
-        C00811 c00811;
-        Object objAnilistAPICall;
+        C00821 c00821;
         String id;
+        int i;
+        Object objLoadFromAnilist;
+        String id2;
+        int i2;
+        Object objLoadFromKitsu;
+        String id3;
+        int i3;
+        SharedPreferences sharedPreferences;
+        Object objLoadFromAnilist2;
+        String id4;
+        int i4;
+        SharedPreferences sharedPreferences2;
+        Object objLoadFromKitsu2;
+        String id5;
+        int i5;
+        if (continuation instanceof C00821) {
+            c00821 = (C00821) continuation;
+            if ((c00821.label & Integer.MIN_VALUE) != 0) {
+                c00821.label -= Integer.MIN_VALUE;
+            } else {
+                c00821 = new C00821(continuation);
+            }
+        } else {
+            c00821 = new C00821(continuation);
+        }
+        Object $result = c00821.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (c00821.label) {
+            case 0:
+                ResultKt.throwOnFailure($result);
+                id = StringsKt.substringAfterLast$default(StringsKt.removeSuffix(url, "/"), "/", (String) null, 2, (Object) null);
+                i = (StringsKt.contains$default(url, "kitsu", false, 2, (Object) null) || StringsKt.startsWith$default(id, "kitsu:", false, 2, (Object) null) || shouldUseKitsu()) ? 1 : 0;
+                if (i != 0) {
+                    try {
+                        c00821.L$0 = url;
+                        c00821.L$1 = id;
+                        c00821.I$0 = i;
+                        c00821.label = 1;
+                        objLoadFromKitsu = loadFromKitsu(url, id, c00821);
+                        if (objLoadFromKitsu == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        id3 = id;
+                        i3 = i;
+                        try {
+                            return (LoadResponse) objLoadFromKitsu;
+                        } catch (Throwable th) {
+                            i = i3;
+                            id = id3;
+                            e = th;
+                            sharedPreferences = this.sharedPref;
+                            if (Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("anime_metadata_source", "auto") : null, "kitsu")) {
+                                throw e;
+                            }
+                            c00821.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                            c00821.L$1 = SpillingKt.nullOutSpilledVariable(id);
+                            c00821.L$2 = SpillingKt.nullOutSpilledVariable(e);
+                            c00821.I$0 = i;
+                            c00821.label = 2;
+                            objLoadFromAnilist2 = loadFromAnilist(url, id, c00821);
+                            if (objLoadFromAnilist2 == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                            id4 = id;
+                            i4 = i;
+                            return (LoadResponse) objLoadFromAnilist2;
+                        }
+                    } catch (Throwable th2) {
+                        e = th2;
+                        sharedPreferences = this.sharedPref;
+                        if (Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("anime_metadata_source", "auto") : null, "kitsu")) {
+                            throw e;
+                        }
+                        c00821.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                        c00821.L$1 = SpillingKt.nullOutSpilledVariable(id);
+                        c00821.L$2 = SpillingKt.nullOutSpilledVariable(e);
+                        c00821.I$0 = i;
+                        c00821.label = 2;
+                        objLoadFromAnilist2 = loadFromAnilist(url, id, c00821);
+                        if (objLoadFromAnilist2 == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        id4 = id;
+                        i4 = i;
+                        return (LoadResponse) objLoadFromAnilist2;
+                    }
+                }
+                try {
+                    c00821.L$0 = url;
+                    c00821.L$1 = id;
+                    c00821.I$0 = i;
+                    c00821.label = 3;
+                    objLoadFromAnilist = loadFromAnilist(url, id, c00821);
+                    if (objLoadFromAnilist == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    id2 = id;
+                    i2 = i;
+                    try {
+                        return (LoadResponse) objLoadFromAnilist;
+                    } catch (Throwable th3) {
+                        i = i2;
+                        id = id2;
+                        e = th3;
+                        sharedPreferences2 = this.sharedPref;
+                        if (Intrinsics.areEqual(sharedPreferences2 != null ? sharedPreferences2.getString("anime_metadata_source", "auto") : null, "anilist")) {
+                            throw e;
+                        }
+                        this.isAnilistDown = true;
+                        c00821.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                        c00821.L$1 = SpillingKt.nullOutSpilledVariable(id);
+                        c00821.L$2 = SpillingKt.nullOutSpilledVariable(e);
+                        c00821.I$0 = i;
+                        c00821.label = 4;
+                        objLoadFromKitsu2 = loadFromKitsu(url, id, c00821);
+                        if (objLoadFromKitsu2 == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        id5 = id;
+                        i5 = i;
+                        return (LoadResponse) objLoadFromKitsu2;
+                    }
+                } catch (Throwable th4) {
+                    e = th4;
+                    sharedPreferences2 = this.sharedPref;
+                    if (Intrinsics.areEqual(sharedPreferences2 != null ? sharedPreferences2.getString("anime_metadata_source", "auto") : null, "anilist")) {
+                        throw e;
+                    }
+                    this.isAnilistDown = true;
+                    c00821.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                    c00821.L$1 = SpillingKt.nullOutSpilledVariable(id);
+                    c00821.L$2 = SpillingKt.nullOutSpilledVariable(e);
+                    c00821.I$0 = i;
+                    c00821.label = 4;
+                    objLoadFromKitsu2 = loadFromKitsu(url, id, c00821);
+                    if (objLoadFromKitsu2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    id5 = id;
+                    i5 = i;
+                    return (LoadResponse) objLoadFromKitsu2;
+                }
+            case 1:
+                i3 = c00821.I$0;
+                String id6 = (String) c00821.L$1;
+                url = (String) c00821.L$0;
+                try {
+                    ResultKt.throwOnFailure($result);
+                    id3 = id6;
+                    objLoadFromKitsu = $result;
+                    return (LoadResponse) objLoadFromKitsu;
+                } catch (Throwable th5) {
+                    e = th5;
+                    i = i3;
+                    id = id6;
+                    sharedPreferences = this.sharedPref;
+                    if (Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("anime_metadata_source", "auto") : null, "kitsu")) {
+                        throw e;
+                    }
+                    c00821.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                    c00821.L$1 = SpillingKt.nullOutSpilledVariable(id);
+                    c00821.L$2 = SpillingKt.nullOutSpilledVariable(e);
+                    c00821.I$0 = i;
+                    c00821.label = 2;
+                    objLoadFromAnilist2 = loadFromAnilist(url, id, c00821);
+                    if (objLoadFromAnilist2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    id4 = id;
+                    i4 = i;
+                    return (LoadResponse) objLoadFromAnilist2;
+                }
+            case 2:
+                i4 = c00821.I$0;
+                String id7 = (String) c00821.L$1;
+                ResultKt.throwOnFailure($result);
+                id4 = id7;
+                objLoadFromAnilist2 = $result;
+                return (LoadResponse) objLoadFromAnilist2;
+            case 3:
+                i2 = c00821.I$0;
+                String id8 = (String) c00821.L$1;
+                url = (String) c00821.L$0;
+                try {
+                    ResultKt.throwOnFailure($result);
+                    id2 = id8;
+                    objLoadFromAnilist = $result;
+                    return (LoadResponse) objLoadFromAnilist;
+                } catch (Throwable th6) {
+                    e = th6;
+                    i = i2;
+                    id = id8;
+                    sharedPreferences2 = this.sharedPref;
+                    if (Intrinsics.areEqual(sharedPreferences2 != null ? sharedPreferences2.getString("anime_metadata_source", "auto") : null, "anilist")) {
+                        throw e;
+                    }
+                    this.isAnilistDown = true;
+                    c00821.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                    c00821.L$1 = SpillingKt.nullOutSpilledVariable(id);
+                    c00821.L$2 = SpillingKt.nullOutSpilledVariable(e);
+                    c00821.I$0 = i;
+                    c00821.label = 4;
+                    objLoadFromKitsu2 = loadFromKitsu(url, id, c00821);
+                    if (objLoadFromKitsu2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    id5 = id;
+                    i5 = i;
+                    return (LoadResponse) objLoadFromKitsu2;
+                }
+            case 4:
+                i5 = c00821.I$0;
+                String id9 = (String) c00821.L$1;
+                ResultKt.throwOnFailure($result);
+                id5 = id9;
+                objLoadFromKitsu2 = $result;
+                return (LoadResponse) objLoadFromKitsu2;
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code duplicated, block: B:102:0x0555  */
+    /* JADX WARN: Code duplicated, block: B:107:0x0569  */
+    /* JADX WARN: Code duplicated, block: B:108:0x056e  */
+    /* JADX WARN: Code duplicated, block: B:111:0x057a  */
+    /* JADX WARN: Code duplicated, block: B:112:0x0581  */
+    /* JADX WARN: Code duplicated, block: B:116:0x0607  */
+    /* JADX WARN: Code duplicated, block: B:118:0x062a  */
+    /* JADX WARN: Code duplicated, block: B:119:0x0631  */
+    /* JADX WARN: Code duplicated, block: B:122:0x064d  */
+    /* JADX WARN: Code duplicated, block: B:123:0x0652  */
+    /* JADX WARN: Code duplicated, block: B:128:0x06f4  */
+    /* JADX WARN: Code duplicated, block: B:130:0x06fc  */
+    /* JADX WARN: Code duplicated, block: B:133:0x0712  */
+    /* JADX WARN: Code duplicated, block: B:134:0x0719  */
+    /* JADX WARN: Code duplicated, block: B:137:0x0735  */
+    /* JADX WARN: Code duplicated, block: B:138:0x073a  */
+    /* JADX WARN: Code duplicated, block: B:142:0x07bd  */
+    /* JADX WARN: Code duplicated, block: B:144:0x0874 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:145:0x0875  */
+    /* JADX WARN: Code duplicated, block: B:147:0x088e  */
+    /* JADX WARN: Code duplicated, block: B:149:0x0964 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:150:0x0965  */
+    /* JADX WARN: Code duplicated, block: B:153:0x099d  */
+    /* JADX WARN: Code duplicated, block: B:155:0x048a A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:157:0x047e A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:24:0x027f  */
+    /* JADX WARN: Code duplicated, block: B:26:0x02ac  */
+    /* JADX WARN: Code duplicated, block: B:27:0x02af  */
+    /* JADX WARN: Code duplicated, block: B:30:0x02d6 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:31:0x02d7  */
+    /* JADX WARN: Code duplicated, block: B:34:0x0360 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:35:0x0361  */
+    /* JADX WARN: Code duplicated, block: B:38:0x0379  */
+    /* JADX WARN: Code duplicated, block: B:43:0x038a  */
+    /* JADX WARN: Code duplicated, block: B:45:0x038e  */
+    /* JADX WARN: Code duplicated, block: B:48:0x0399  */
+    /* JADX WARN: Code duplicated, block: B:51:0x03b4  */
+    /* JADX WARN: Code duplicated, block: B:52:0x03b7  */
+    /* JADX WARN: Code duplicated, block: B:55:0x040f A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:56:0x0410  */
+    /* JADX WARN: Code duplicated, block: B:60:0x0460  */
+    /* JADX WARN: Code duplicated, block: B:62:0x047a  */
+    /* JADX WARN: Code duplicated, block: B:67:0x04bf  */
+    /* JADX WARN: Code duplicated, block: B:69:0x04d1  */
+    /* JADX WARN: Code duplicated, block: B:71:0x04d9  */
+    /* JADX WARN: Code duplicated, block: B:72:0x04e6  */
+    /* JADX WARN: Code duplicated, block: B:73:0x04e9  */
+    /* JADX WARN: Code duplicated, block: B:78:0x0505  */
+    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
+    /* JADX WARN: Code duplicated, block: B:84:0x0519  */
+    /* JADX WARN: Code duplicated, block: B:86:0x051c  */
+    /* JADX WARN: Code duplicated, block: B:91:0x052d A[PHI: r5
+      0x052d: PHI (r5v35 java.lang.String) = (r5v15 java.lang.String), (r5v17 java.lang.String), (r5v38 java.lang.String) binds: [B:97:0x0542, B:103:0x0557, B:89:0x052a] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Code duplicated, block: B:92:0x052f A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:93:0x0531  */
+    /* JADX WARN: Code duplicated, block: B:96:0x0540  */
+    /* JADX WARN: Code duplicated, block: B:98:0x0544  */
+    /* JADX WARN: Code duplicated, block: B:99:0x0546  */
+    public final Object loadFromAnilist(String url, String id, Continuation<? super LoadResponse> continuation) throws Exception {
+        C00831 c00831;
+        Object obj;
+        String url2;
+        AnilistAPIResponse.anilistMedia media;
         AnilistAPIResponse.anilistMedia data;
         String anititle;
         int aniyear;
-        String anititle2;
+        String posterurl;
         String backgroundUrl;
         String format;
         TvType anitype;
         Object objTmdbToAnimeId;
-        String anititle3;
+        String url3;
         int aniyear2;
-        String jpTitle;
         String backgroundUrl2;
-        AnilistAPIResponse.anilistMedia data2;
+        String backgroundUrl3;
         TvType anitype2;
         AniIds ids;
-        String jpTitle2;
-        String id2;
-        Object obj;
-        C00811 c00812;
-        String posterurl;
+        String jpTitle;
         TvType anitype3;
-        AniIds ids2;
         Object obj2;
+        C00831 c00832;
+        TvType anitype4;
+        String posterurl2;
+        String anititle2;
+        AniIds ids2;
+        String anititle3;
+        String jpTitle2;
+        Object obj3;
         int aniyear3;
-        AnilistAPIResponse.anilistMedia data3;
-        String syncMetaData;
+        AnilistAPIResponse.anilistMedia data2;
+        String url4;
         MetaAnimeData animeMetaData;
         Integer tmdbid;
         String kitsuid;
         String kitsuid2;
         Integer tmdbid2;
-        TvType anitype4;
-        TvType type;
-        String backgroundUrl3;
-        String jpTitle3;
-        TvType type2;
-        C00811 c00813;
-        AniIds ids3;
-        String url2;
-        int i;
-        String str;
-        Object objFetchTmdbLogoUrl;
         TvType anitype5;
-        Integer tmdbid3;
-        int aniyear4;
-        TvType anitype6;
-        String jpTitle4;
-        MetaAnimeData animeMetaData2;
-        String posterurl2;
-        String syncMetaData2;
+        TvType type;
         String backgroundUrl4;
-        AnilistAPIResponse.anilistMedia data4;
-        String syncMetaData3;
+        String jpTitle3;
+        String id2;
+        int i;
+        AniIds ids3;
+        TvType type2;
+        C00831 c00833;
+        String backgroundUrl5;
+        Object objFetchTmdbLogoUrl;
+        AnilistAPIResponse.anilistMedia data3;
         String posterurl3;
+        String backgroundUrl6;
+        String posterurl4;
+        TvType anitype6;
+        AniIds ids4;
+        MetaAnimeData animeMetaData2;
+        String jpTitle4;
+        String url5;
+        int aniyear4;
+        TvType type3;
         String kitsuid3;
+        Integer tmdbid3;
         MetaMappings mappings;
         MetaMappings mappings2;
         String themoviedbId;
         String logoUrl;
         int totalEps;
-        Map destination$iv$iv;
+        LinkedHashMap result$iv;
+        String id3;
+        String kitsuid4;
+        LinkedHashMap destination$iv$iv;
         Iterator it;
         int iIntValue;
-        String url3;
-        Iterable $this$associateWith$iv;
         int $i$f$associateWith;
-        Map destination$iv$iv2;
-        String syncMetaData4;
-        Map epMetaMap;
-        final String fallbackTitle;
+        LinkedHashMap result$iv2;
+        LinkedHashMap epMetaMap;
+        String url6;
         final String fallbackPoster;
-        String str2;
+        String str;
         Map<String, String> titles;
         Map<String, String> titles2;
+        final String fallbackTitle;
         Integer num;
         int anidbEid;
+        Integer intOrNull;
         String href;
         Iterable $this$map$iv;
-        String id3;
-        AniIds ids4;
-        Collection destination$iv$iv3;
+        Integer tmdbid4;
+        TvType type4;
+        Collection destination$iv$iv2;
         Iterable $this$mapTo$iv$iv;
         int $i$f$mapTo;
         IntIterator it2;
         Map epMetaMap2;
-        String kitsuid4;
+        TvType anitype7;
         List episodes;
-        Collection destination$iv$iv4;
+        Collection destination$iv$iv3;
         int index$iv$iv;
         List episodes2;
         List episodesDub;
-        int aniyear5;
+        String fallbackTitle2;
+        String logoUrl2;
         int anidbEid2;
-        AnilistAPIResponse.anilistMedia data5;
-        MetaAnimeData animeMetaData3;
+        String syncMetaData;
+        String url7;
         Object objNewAnimeLoadResponse$default;
+        List episodes3;
         List episodesDub2;
-        AnilistAPIResponse.anilistMedia data6;
-        Object obj3;
+        Object obj4;
         int totalEps2;
         int anidbEid3;
-        int aniyear6;
-        Map anidbEidMap;
         String href2;
-        List episodes3;
-        String logoUrl2;
-        Map epMetaMap3;
-        String kitsuid5;
-        String fallbackPoster2;
-        String fallbackTitle2;
-        int anidbEid4;
-        Object objNewMovieLoadResponse;
-        C00811 c00814;
         String fallbackTitle3;
-        String fallbackPoster3;
+        Map anidbEidMap;
+        String logoUrl3;
+        String fallbackPoster2;
+        String anititle4;
+        TvType type5;
+        String syncMetaData2;
+        Object objNewMovieLoadResponse;
+        Integer intOrNull2;
         Integer num2;
         int iIntValue2;
+        Integer intOrNull3;
         Integer num3;
         int iIntValue3;
         Map<String, String> titles3;
         List<ImageData> images;
         ImageData imageData;
         int it3;
-        Iterable $this$associateWith$iv2;
-        Object obj4;
+        String url8;
+        MetaEpisode metaEpisode;
         Map<String, MetaEpisode> episodes4;
-        Integer anidbEid5;
-        String url4 = url;
-        if (continuation instanceof C00811) {
-            c00811 = (C00811) continuation;
-            if ((c00811.label & Integer.MIN_VALUE) != 0) {
-                c00811.label -= Integer.MIN_VALUE;
+        Integer anidbEid4;
+        String id4 = id;
+        if (continuation instanceof C00831) {
+            c00831 = (C00831) continuation;
+            if ((c00831.label & Integer.MIN_VALUE) != 0) {
+                c00831.label -= Integer.MIN_VALUE;
             } else {
-                c00811 = new C00811(continuation);
+                c00831 = new C00831(continuation);
             }
         } else {
-            c00811 = new C00811(continuation);
+            c00831 = new C00831(continuation);
         }
-        C00811 c00815 = c00811;
-        Object $result = c00815.result;
+        C00831 c00834 = c00831;
+        Object $result = c00834.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00815.label) {
+        switch (c00834.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                String id4 = StringsKt.substringAfterLast$default(StringsKt.removeSuffix(url4, "/"), "/", (String) null, 2, (Object) null);
-                c00815.L$0 = url4;
-                c00815.L$1 = id4;
-                c00815.label = 1;
-                objAnilistAPICall = anilistAPICall("query ($id: Int = " + id4 + ") { Media(id: $id, type: ANIME) { id title { romaji english } startDate { year } genres description averageScore status bannerImage coverImage { extraLarge large medium } bannerImage episodes format nextAiringEpisode { episode } airingSchedule { nodes { episode } } recommendations { edges { node { id mediaRecommendation { id title { romaji english } coverImage { extraLarge large medium } } } } } } }", c00815);
+                c00834.L$0 = url;
+                c00834.L$1 = id4;
+                c00834.label = 1;
+                Object objAnilistAPICall = anilistAPICall("query ($id: Int = " + id4 + ") { Media(id: $id, type: ANIME) { id title { romaji english } startDate { year } genres description averageScore status bannerImage coverImage { extraLarge large medium } bannerImage episodes format nextAiringEpisode { episode } airingSchedule { nodes { episode } } recommendations { edges { node { id mediaRecommendation { id title { romaji english } coverImage { extraLarge large medium } } } } } } }", c00834);
                 if (objAnilistAPICall == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                id = id4;
-                data = ((AnilistAPIResponse) objAnilistAPICall).getData().getMedia();
-                if (data != null) {
+                obj = objAnilistAPICall;
+                url2 = url;
+                media = ((AnilistAPIResponse) obj).getData().getMedia();
+                if (media != null) {
                     throw new Exception("Unable to fetch media details");
                 }
+                data = media;
                 anititle = data.m46getTitle();
                 aniyear = data.getStartDate().getYear();
-                anititle2 = data.getCoverImage().getExtraLarge();
+                posterurl = data.getCoverImage().getExtraLarge();
                 backgroundUrl = data.getBannerImage();
                 format = data.getFormat();
                 Intrinsics.checkNotNull(format);
@@ -923,55 +1488,56 @@ public final class StreamPlayAnime extends MainAPI {
                     anitype = TvType.TvSeries;
                 }
                 Integer numBoxInt = Boxing.boxInt(aniyear);
-                c00815.L$0 = url4;
-                c00815.L$1 = id;
-                c00815.L$2 = data;
-                c00815.L$3 = SpillingKt.nullOutSpilledVariable(anititle);
-                c00815.L$4 = anititle2;
-                c00815.L$5 = backgroundUrl;
-                c00815.L$6 = SpillingKt.nullOutSpilledVariable(anitype);
-                c00815.I$0 = aniyear;
-                c00815.label = 2;
-                objTmdbToAnimeId = tmdbToAnimeId(anititle, numBoxInt, anitype, c00815);
+                c00834.L$0 = url2;
+                c00834.L$1 = id4;
+                c00834.L$2 = data;
+                c00834.L$3 = SpillingKt.nullOutSpilledVariable(anititle);
+                c00834.L$4 = posterurl;
+                c00834.L$5 = backgroundUrl;
+                c00834.L$6 = SpillingKt.nullOutSpilledVariable(anitype);
+                c00834.I$0 = aniyear;
+                c00834.label = 2;
+                objTmdbToAnimeId = tmdbToAnimeId(anititle, numBoxInt, anitype, c00834);
                 if (objTmdbToAnimeId == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                anititle3 = anititle;
+                TvType tvType = anitype;
+                url3 = url2;
                 aniyear2 = aniyear;
-                jpTitle = backgroundUrl;
-                backgroundUrl2 = id;
-                data2 = data;
-                anitype2 = anitype;
+                backgroundUrl2 = backgroundUrl;
+                backgroundUrl3 = anititle;
+                anitype2 = tvType;
                 ids = (AniIds) objTmdbToAnimeId;
-                String jpTitle5 = data2.getTitle().getRomaji();
-                Requests app = MainActivityKt.getApp();
-                String jpTitle6 = "https://api.ani.zip/mappings?anilist_id=" + backgroundUrl2;
-                c00815.L$0 = url4;
-                c00815.L$1 = backgroundUrl2;
-                c00815.L$2 = data2;
-                c00815.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                c00815.L$4 = anititle2;
-                c00815.L$5 = jpTitle;
-                c00815.L$6 = SpillingKt.nullOutSpilledVariable(anitype2);
-                c00815.L$7 = ids;
-                c00815.L$8 = jpTitle5;
-                c00815.I$0 = aniyear2;
-                c00815.label = 3;
-                jpTitle2 = jpTitle5;
-                id2 = backgroundUrl2;
-                obj = Requests.get$default(app, jpTitle6, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00815, 4094, (Object) null);
-                c00812 = c00815;
-                if (obj == coroutine_suspended) {
+                jpTitle = data.getTitle().getRomaji();
+                anitype3 = anitype2;
+                c00834.L$0 = url3;
+                c00834.L$1 = id4;
+                c00834.L$2 = data;
+                c00834.L$3 = SpillingKt.nullOutSpilledVariable(backgroundUrl3);
+                c00834.L$4 = posterurl;
+                c00834.L$5 = backgroundUrl2;
+                c00834.L$6 = SpillingKt.nullOutSpilledVariable(anitype3);
+                c00834.L$7 = ids;
+                c00834.L$8 = jpTitle;
+                c00834.I$0 = aniyear2;
+                c00834.label = 3;
+                obj2 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?anilist_id=" + id4, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00834, 4094, (Object) null);
+                c00832 = c00834;
+                if (obj2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                posterurl = anititle2;
-                anitype3 = anitype2;
+                anitype4 = anitype3;
+                posterurl2 = posterurl;
+                anititle2 = backgroundUrl3;
                 ids2 = ids;
-                obj2 = obj;
+                anititle3 = backgroundUrl2;
+                jpTitle2 = jpTitle;
+                obj3 = obj2;
                 aniyear3 = aniyear2;
-                data3 = data2;
-                syncMetaData = ((NiceResponse) obj2).getText();
-                animeMetaData = StreamPlayUtilsKt.parseAnimeData(syncMetaData);
+                data2 = data;
+                url4 = url3;
+                String syncMetaData3 = ((NiceResponse) obj3).getText();
+                animeMetaData = StreamPlayUtilsKt.parseAnimeData(syncMetaData3);
                 if (animeMetaData != null || (mappings2 = animeMetaData.getMappings()) == null || (themoviedbId = mappings2.getThemoviedbId()) == null) {
                     tmdbid = null;
                 } else {
@@ -984,114 +1550,109 @@ public final class StreamPlayAnime extends MainAPI {
                 }
                 kitsuid2 = kitsuid;
                 tmdbid2 = tmdbid;
-                anitype4 = anitype3;
-                if (StringsKt.contains(data3.getFormat(), "Movie", true)) {
+                anitype5 = anitype4;
+                if (StringsKt.contains(data2.getFormat(), "Movie", true)) {
                     type = TvType.Movie;
                 } else {
                     type = TvType.TvSeries;
                 }
-                c00812.L$0 = url4;
-                c00812.L$1 = id2;
-                c00812.L$2 = data3;
-                c00812.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                c00812.L$4 = posterurl;
-                c00812.L$5 = jpTitle;
-                c00812.L$6 = SpillingKt.nullOutSpilledVariable(anitype4);
-                c00812.L$7 = ids2;
-                c00812.L$8 = jpTitle2;
-                c00812.L$9 = syncMetaData;
-                c00812.L$10 = animeMetaData;
-                c00812.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid2);
-                c00812.L$12 = kitsuid2;
-                c00812.L$13 = SpillingKt.nullOutSpilledVariable(type);
-                c00812.I$0 = aniyear3;
-                c00812.label = 4;
-                backgroundUrl3 = jpTitle;
+                c00832.L$0 = url4;
+                c00832.L$1 = id4;
+                c00832.L$2 = data2;
+                c00832.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                c00832.L$4 = posterurl2;
+                c00832.L$5 = anititle3;
+                c00832.L$6 = SpillingKt.nullOutSpilledVariable(anitype5);
+                c00832.L$7 = ids2;
+                c00832.L$8 = jpTitle2;
+                c00832.L$9 = syncMetaData3;
+                c00832.L$10 = animeMetaData;
+                c00832.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid2);
+                c00832.L$12 = kitsuid2;
+                c00832.L$13 = SpillingKt.nullOutSpilledVariable(type);
+                c00832.I$0 = aniyear3;
+                c00832.label = 4;
+                backgroundUrl4 = syncMetaData3;
                 jpTitle3 = jpTitle2;
-                type2 = type;
-                c00813 = c00812;
-                ids3 = ids2;
-                url2 = url4;
+                id2 = id4;
                 i = 1;
-                str = null;
-                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", type2, tmdbid2, "en", c00813);
+                ids3 = ids2;
+                type2 = type;
+                c00833 = c00832;
+                backgroundUrl5 = anititle3;
+                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", type2, tmdbid2, "en", c00833);
                 if (objFetchTmdbLogoUrl == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                anitype5 = type2;
-                tmdbid3 = tmdbid2;
-                aniyear4 = aniyear3;
-                anitype6 = anitype4;
-                jpTitle4 = jpTitle3;
+                data3 = data2;
+                posterurl3 = kitsuid2;
+                backgroundUrl6 = backgroundUrl5;
+                posterurl4 = posterurl2;
+                anitype6 = anitype5;
+                ids4 = ids3;
                 animeMetaData2 = animeMetaData;
-                posterurl2 = url2;
-                syncMetaData2 = id2;
-                backgroundUrl4 = backgroundUrl3;
-                data4 = data3;
-                syncMetaData3 = syncMetaData;
-                posterurl3 = posterurl;
-                kitsuid3 = kitsuid2;
+                jpTitle4 = jpTitle3;
+                url5 = id2;
+                aniyear4 = aniyear3;
+                type3 = type2;
+                kitsuid3 = url4;
+                tmdbid3 = tmdbid2;
                 logoUrl = (String) objFetchTmdbLogoUrl;
-                totalEps = data4.totalEpisodes();
-                Iterable $this$associateWith$iv3 = new IntRange(i, totalEps);
-                Map result$iv = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv3, 10)), 16));
+                totalEps = data3.totalEpisodes();
+                Iterable $this$associateWith$iv = new IntRange(i, totalEps);
+                id3 = url5;
+                kitsuid4 = posterurl3;
+                result$iv = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv, 10)), 16));
                 destination$iv$iv = result$iv;
-                it = $this$associateWith$iv3.iterator();
+                it = $this$associateWith$iv.iterator();
                 while (true) {
                     iIntValue = 0;
                     if (!it.hasNext()) {
-                        url3 = posterurl2;
-                        $this$associateWith$iv = new IntRange(1, totalEps);
+                        Iterable $this$associateWith$iv2 = new IntRange(1, totalEps);
                         $i$f$associateWith = 0;
-                        Map result$iv2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv, 10)), 16));
-                        destination$iv$iv2 = result$iv2;
-                        for (Object element$iv$iv : $this$associateWith$iv) {
-                            String syncMetaData5 = syncMetaData3;
+                        result$iv2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv2, 10)), 16));
+                        epMetaMap = result$iv2;
+                        for (Object element$iv$iv : $this$associateWith$iv2) {
+                            int $i$f$associateWith2 = $i$f$associateWith;
                             it3 = ((Number) element$iv$iv).intValue();
                             if (animeMetaData2 != null) {
-                                $this$associateWith$iv2 = $this$associateWith$iv;
+                                url8 = kitsuid3;
                                 episodes4 = animeMetaData2.getEpisodes();
                                 if (episodes4 != null) {
-                                    $i$f$associateWith = $i$f$associateWith;
-                                    obj4 = (MetaEpisode) episodes4.get(String.valueOf(it3));
+                                    result$iv2 = result$iv2;
+                                    metaEpisode = episodes4.get(String.valueOf(it3));
                                 }
-                                destination$iv$iv2.put(element$iv$iv, obj4);
-                                syncMetaData3 = syncMetaData5;
-                                $this$associateWith$iv = $this$associateWith$iv2;
-                                $i$f$associateWith = $i$f$associateWith;
+                                epMetaMap.put(element$iv$iv, metaEpisode);
+                                $i$f$associateWith = $i$f$associateWith2;
+                                kitsuid3 = url8;
+                                result$iv2 = result$iv2;
                             } else {
-                                $this$associateWith$iv2 = $this$associateWith$iv;
+                                url8 = kitsuid3;
                             }
-                            obj4 = str;
-                            destination$iv$iv2.put(element$iv$iv, obj4);
-                            syncMetaData3 = syncMetaData5;
-                            $this$associateWith$iv = $this$associateWith$iv2;
-                            $i$f$associateWith = $i$f$associateWith;
+                            metaEpisode = null;
+                            epMetaMap.put(element$iv$iv, metaEpisode);
+                            $i$f$associateWith = $i$f$associateWith2;
+                            kitsuid3 = url8;
+                            result$iv2 = result$iv2;
                         }
-                        syncMetaData4 = syncMetaData3;
-                        epMetaMap = destination$iv$iv2;
-                        fallbackTitle = "";
+                        url6 = kitsuid3;
                         if (animeMetaData2 != null || (images = animeMetaData2.getImages()) == null || (imageData = (ImageData) CollectionsKt.firstOrNull(images)) == null || (fallbackPoster = imageData.getUrl()) == null) {
                             fallbackPoster = "";
                         }
-                        if (animeMetaData2 != null || (titles3 = animeMetaData2.getTitles()) == null || (str2 = titles3.get("en")) == null) {
+                        if (animeMetaData2 != null || (titles3 = animeMetaData2.getTitles()) == null || (str = titles3.get("en")) == null) {
                             if (animeMetaData2 != null || (titles2 = animeMetaData2.getTitles()) == null) {
-                                str2 = str;
+                                str = null;
                             } else {
-                                str2 = titles2.get("ja");
+                                str = titles2.get("ja");
                             }
-                            if (str2 == null) {
-                                if (animeMetaData2 != null && (titles = animeMetaData2.getTitles()) != null) {
+                            if (str == null) {
+                                if (animeMetaData2 != null || (titles = animeMetaData2.getTitles()) == null) {
+                                    str = null;
+                                } else {
                                     str = titles.get("x-jat");
                                 }
-                                if (str != null) {
-                                    fallbackTitle = str;
-                                }
-                            } else {
-                                fallbackTitle = str2;
+                                fallbackTitle = str != null ? str : "";
                             }
-                        } else {
-                            fallbackTitle = str2;
                         }
                         num = (Integer) destination$iv$iv.get(Boxing.boxInt(1));
                         if (num != null) {
@@ -1099,11 +1660,18 @@ public final class StreamPlayAnime extends MainAPI {
                         } else {
                             anidbEid = 0;
                         }
-                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m46getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
+                        Integer idMal = ids4.getIdMal();
+                        Integer id5 = ids4.getId();
+                        if (kitsuid4 != null) {
+                            intOrNull = StringsKt.toIntOrNull(kitsuid4);
+                        } else {
+                            intOrNull = null;
+                        }
+                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), id5, idMal, data3.m46getTitle(), Boxing.boxInt(data3.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), intOrNull, 16633983, null));
                         $this$map$iv = new IntRange(1, totalEps);
-                        id3 = syncMetaData2;
-                        ids4 = ids3;
-                        destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+                        tmdbid4 = tmdbid3;
+                        type4 = type3;
+                        destination$iv$iv2 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                         $this$mapTo$iv$iv = $this$map$iv;
                         $i$f$mapTo = 0;
                         it2 = $this$mapTo$iv$iv.iterator();
@@ -1111,34 +1679,39 @@ public final class StreamPlayAnime extends MainAPI {
                             final int item$iv$iv = it2.nextInt();
                             Iterable $this$map$iv2 = $this$map$iv;
                             final MetaEpisode epData = (MetaEpisode) epMetaMap.get(Boxing.boxInt(item$iv$iv));
-                            Integer idMal = ids4.getIdMal();
-                            Integer id5 = ids4.getId();
-                            String strM46getTitle = data4.m46getTitle();
-                            int year = data4.getStartDate().getYear();
-                            Map epMetaMap4 = epMetaMap;
+                            Integer idMal2 = ids4.getIdMal();
+                            Integer id6 = ids4.getId();
+                            if (kitsuid4 != null) {
+                                intOrNull3 = StringsKt.toIntOrNull(kitsuid4);
+                            } else {
+                                intOrNull3 = null;
+                            }
+                            String strM46getTitle = data3.m46getTitle();
+                            int year = data3.getStartDate().getYear();
+                            Map epMetaMap3 = epMetaMap;
                             num3 = (Integer) destination$iv$iv.get(Boxing.boxInt(item$iv$iv));
                             if (num3 != null) {
                                 iIntValue3 = num3.intValue();
                             } else {
                                 iIntValue3 = 0;
                             }
-                            String linkData = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv), id5, idMal, strM46getTitle, Boxing.boxInt(year), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
-                            destination$iv$iv3.add(MainAPIKt.newEpisode(this, linkData, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
+                            String linkData = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv), id6, idMal2, strM46getTitle, Boxing.boxInt(year), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), intOrNull3, 8245311, null));
+                            destination$iv$iv2.add(MainAPIKt.newEpisode(this, linkData, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda2
                                 public final Object invoke(Object obj5) {
-                                    return StreamPlayAnime.load$lambda$3$0(item$iv$iv, epData, fallbackPoster, fallbackTitle, (Episode) obj5);
+                                    return StreamPlayAnime.loadFromAnilist$lambda$3$0(item$iv$iv, epData, fallbackPoster, fallbackTitle, (Episode) obj5);
                                 }
                             }));
+                            $this$map$iv = $this$map$iv2;
                             $this$mapTo$iv$iv = $this$mapTo$iv$iv;
                             $i$f$mapTo = $i$f$mapTo;
-                            $this$map$iv = $this$map$iv2;
-                            epMetaMap = epMetaMap4;
-                            kitsuid3 = kitsuid3;
+                            epMetaMap = epMetaMap3;
+                            anitype6 = anitype6;
                         }
                         epMetaMap2 = epMetaMap;
-                        kitsuid4 = kitsuid3;
-                        episodes = (List) destination$iv$iv3;
+                        anitype7 = anitype6;
+                        episodes = (List) destination$iv$iv2;
                         List $this$mapIndexed$iv = episodes;
-                        destination$iv$iv4 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$mapIndexed$iv, 10));
+                        destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$mapIndexed$iv, 10));
                         index$iv$iv = 0;
                         for (Object item$iv$iv2 : $this$mapIndexed$iv) {
                             int index$iv$iv2 = index$iv$iv + 1;
@@ -1147,10 +1720,15 @@ public final class StreamPlayAnime extends MainAPI {
                             }
                             Episode ep = (Episode) item$iv$iv2;
                             int i2 = index$iv$iv + 1;
-                            Integer idMal2 = ids4.getIdMal();
-                            Integer id6 = ids4.getId();
-                            String strM46getTitle2 = data4.m46getTitle();
-                            int year2 = data4.getStartDate().getYear();
+                            Integer idMal3 = ids4.getIdMal();
+                            Integer id7 = ids4.getId();
+                            if (kitsuid4 != null) {
+                                intOrNull2 = StringsKt.toIntOrNull(kitsuid4);
+                            } else {
+                                intOrNull2 = null;
+                            }
+                            String strM46getTitle2 = data3.m46getTitle();
+                            int year2 = data3.getStartDate().getYear();
                             List episodes5 = episodes;
                             num2 = (Integer) destination$iv$iv.get(Boxing.boxInt(i2));
                             if (num2 != null) {
@@ -1158,134 +1736,128 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue2 = 0;
                             }
-                            String dubLinkData = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i2), id6, idMal2, strM46getTitle2, Boxing.boxInt(year2), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
-                            destination$iv$iv4.add(Episode.copy$default(ep, dubLinkData, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
+                            String dubLinkData = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i2), id7, idMal3, strM46getTitle2, Boxing.boxInt(year2), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), intOrNull2, 8245311, null));
+                            destination$iv$iv3.add(Episode.copy$default(ep, dubLinkData, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
                             episodes = episodes5;
                             index$iv$iv = index$iv$iv2;
                         }
                         episodes2 = episodes;
-                        episodesDub = (List) destination$iv$iv4;
-                        if (StringsKt.contains(data4.getFormat(), "Movie", true)) {
-                            String strM46getTitle3 = data4.m46getTitle();
-                            fallbackPoster2 = fallbackPoster;
-                            TvType tvType = TvType.AnimeMovie;
-                            C00822 c00822 = new C00822(id3, ids4, kitsuid4, data4, backgroundUrl4, animeMetaData2, posterurl3, logoUrl, null);
-                            c00813.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                            c00813.L$1 = SpillingKt.nullOutSpilledVariable(id3);
-                            c00813.L$2 = SpillingKt.nullOutSpilledVariable(data4);
-                            c00813.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                            c00813.L$4 = SpillingKt.nullOutSpilledVariable(posterurl3);
-                            c00813.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
-                            c00813.L$6 = SpillingKt.nullOutSpilledVariable(anitype6);
-                            c00813.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
-                            c00813.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
-                            c00813.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData4);
-                            c00813.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
-                            c00813.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid3);
-                            c00813.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
-                            c00813.L$13 = SpillingKt.nullOutSpilledVariable(anitype5);
-                            c00813.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
-                            c00813.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
-                            c00813.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
-                            c00813.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster2);
-                            c00813.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle);
-                            c00813.L$19 = SpillingKt.nullOutSpilledVariable(href);
-                            c00813.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
-                            c00813.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
-                            c00813.I$0 = aniyear4;
-                            c00813.I$1 = totalEps;
-                            c00813.I$2 = anidbEid;
-                            c00813.label = 5;
-                            C00811 c00816 = c00813;
-                            fallbackTitle2 = fallbackTitle;
-                            anidbEid4 = anidbEid;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM46getTitle3, url3, tvType, href, c00822, c00816);
-                            c00814 = c00816;
+                        episodesDub = (List) destination$iv$iv3;
+                        if (StringsKt.contains(data3.getFormat(), "Movie", true)) {
+                            String fallbackTitle4 = fallbackTitle;
+                            String fallbackTitle5 = data3.m46getTitle();
+                            TvType tvType2 = TvType.AnimeMovie;
+                            C00842 c00842 = new C00842(id3, ids4, kitsuid4, data3, backgroundUrl6, animeMetaData2, posterurl4, logoUrl, null);
+                            c00833.L$0 = SpillingKt.nullOutSpilledVariable(url6);
+                            c00833.L$1 = SpillingKt.nullOutSpilledVariable(id3);
+                            c00833.L$2 = SpillingKt.nullOutSpilledVariable(data3);
+                            c00833.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                            c00833.L$4 = SpillingKt.nullOutSpilledVariable(posterurl4);
+                            c00833.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl6);
+                            c00833.L$6 = SpillingKt.nullOutSpilledVariable(anitype7);
+                            c00833.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
+                            c00833.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
+                            c00833.L$9 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
+                            c00833.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
+                            c00833.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid4);
+                            c00833.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
+                            c00833.L$13 = SpillingKt.nullOutSpilledVariable(type4);
+                            c00833.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
+                            c00833.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
+                            c00833.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
+                            c00833.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster);
+                            c00833.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle4);
+                            c00833.L$19 = SpillingKt.nullOutSpilledVariable(href);
+                            c00833.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
+                            c00833.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
+                            c00833.I$0 = aniyear4;
+                            c00833.I$1 = totalEps;
+                            c00833.I$2 = anidbEid;
+                            c00833.label = 5;
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, fallbackTitle5, url6, tvType2, href, c00842, c00833);
                             if (objNewMovieLoadResponse == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            fallbackTitle3 = fallbackTitle2;
-                            fallbackPoster3 = fallbackPoster2;
                             return (LoadResponse) objNewMovieLoadResponse;
                         }
-                        aniyear5 = aniyear4;
-                        String fallbackTitle4 = fallbackTitle;
+                        fallbackTitle2 = fallbackTitle;
+                        logoUrl2 = fallbackPoster;
                         anidbEid2 = anidbEid;
-                        String strM46getTitle4 = data4.m46getTitle();
-                        TvType tvType2 = TvType.Anime;
-                        data5 = data4;
-                        C00811 c00817 = c00813;
-                        MetaAnimeData animeMetaData4 = animeMetaData2;
-                        C00833 c00833 = new C00833(id3, ids4, kitsuid4, episodes2, episodesDub, logoUrl, data5, animeMetaData4, this, null);
-                        animeMetaData3 = animeMetaData4;
-                        c00817.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                        c00817.L$1 = SpillingKt.nullOutSpilledVariable(id3);
-                        c00817.L$2 = SpillingKt.nullOutSpilledVariable(data5);
-                        c00817.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                        c00817.L$4 = SpillingKt.nullOutSpilledVariable(posterurl3);
-                        c00817.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
-                        c00817.L$6 = SpillingKt.nullOutSpilledVariable(anitype6);
-                        c00817.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
-                        c00817.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
-                        c00817.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData4);
-                        c00817.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData3);
-                        c00817.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid3);
-                        c00817.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
-                        c00817.L$13 = SpillingKt.nullOutSpilledVariable(anitype5);
-                        c00817.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
-                        c00817.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
-                        c00817.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
-                        c00817.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster);
-                        c00817.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle4);
-                        c00817.L$19 = SpillingKt.nullOutSpilledVariable(href);
-                        c00817.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
-                        c00817.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
-                        c00817.I$0 = aniyear5;
-                        c00817.I$1 = totalEps;
-                        c00817.I$2 = anidbEid2;
-                        c00817.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle4, url3, tvType2, false, c00833, c00817, 8, (Object) null);
+                        String strM46getTitle3 = data3.m46getTitle();
+                        TvType tvType3 = TvType.Anime;
+                        syncMetaData = backgroundUrl4;
+                        C00831 c00835 = c00833;
+                        C00853 c00853 = new C00853(id3, ids4, kitsuid4, episodes2, episodesDub, logoUrl, data3, animeMetaData2, this, null);
+                        c00835.L$0 = SpillingKt.nullOutSpilledVariable(url6);
+                        c00835.L$1 = SpillingKt.nullOutSpilledVariable(id3);
+                        c00835.L$2 = SpillingKt.nullOutSpilledVariable(data3);
+                        c00835.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                        c00835.L$4 = SpillingKt.nullOutSpilledVariable(posterurl4);
+                        c00835.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl6);
+                        c00835.L$6 = SpillingKt.nullOutSpilledVariable(anitype7);
+                        c00835.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
+                        c00835.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
+                        c00835.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData);
+                        c00835.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
+                        c00835.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid4);
+                        c00835.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
+                        c00835.L$13 = SpillingKt.nullOutSpilledVariable(type4);
+                        c00835.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
+                        c00835.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
+                        c00835.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
+                        c00835.L$17 = SpillingKt.nullOutSpilledVariable(logoUrl2);
+                        c00835.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle2);
+                        c00835.L$19 = SpillingKt.nullOutSpilledVariable(href);
+                        c00835.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
+                        c00835.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
+                        c00835.I$0 = aniyear4;
+                        c00835.I$1 = totalEps;
+                        c00835.I$2 = anidbEid2;
+                        c00835.label = 6;
+                        url7 = url6;
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle3, url7, tvType3, false, c00853, c00835, 8, (Object) null);
                         if (objNewAnimeLoadResponse$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        episodes3 = episodes2;
                         episodesDub2 = episodesDub;
-                        data6 = data5;
-                        obj3 = objNewAnimeLoadResponse$default;
+                        obj4 = objNewAnimeLoadResponse$default;
                         totalEps2 = totalEps;
                         anidbEid3 = anidbEid2;
-                        aniyear6 = aniyear5;
-                        anidbEidMap = destination$iv$iv;
                         href2 = href;
-                        episodes3 = episodes2;
-                        logoUrl2 = logoUrl;
-                        epMetaMap3 = epMetaMap2;
-                        kitsuid5 = kitsuid4;
-                        return (LoadResponse) obj3;
+                        fallbackTitle3 = fallbackTitle2;
+                        anidbEidMap = destination$iv$iv;
+                        logoUrl3 = logoUrl;
+                        fallbackPoster2 = logoUrl2;
+                        anititle4 = anititle2;
+                        type5 = type4;
+                        syncMetaData2 = syncMetaData;
+                        return (LoadResponse) obj4;
                     }
                     Object element$iv$iv2 = it.next();
                     int it4 = ((Number) element$iv$iv2).intValue();
-                    String url5 = posterurl2;
-                    anidbEid5 = StreamPlayUtilsKt.getAnidbEid(syncMetaData3, Boxing.boxInt(it4));
-                    if (anidbEid5 != null) {
-                        iIntValue = anidbEid5.intValue();
+                    LinkedHashMap result$iv3 = result$iv;
+                    anidbEid4 = StreamPlayUtilsKt.getAnidbEid(backgroundUrl4, Boxing.boxInt(it4));
+                    if (anidbEid4 != null) {
+                        iIntValue = anidbEid4.intValue();
                     }
                     destination$iv$iv.put(element$iv$iv2, Boxing.boxInt(iIntValue));
-                    posterurl2 = url5;
+                    result$iv = result$iv3;
                 }
                 break;
             case 1:
-                String id7 = (String) c00815.L$1;
-                url4 = (String) c00815.L$0;
+                id4 = (String) c00834.L$1;
+                url2 = (String) c00834.L$0;
                 ResultKt.throwOnFailure($result);
-                objAnilistAPICall = $result;
-                id = id7;
-                data = ((AnilistAPIResponse) objAnilistAPICall).getData().getMedia();
-                if (data != null) {
+                obj = $result;
+                media = ((AnilistAPIResponse) obj).getData().getMedia();
+                if (media != null) {
                     throw new Exception("Unable to fetch media details");
                 }
+                data = media;
                 anititle = data.m46getTitle();
                 aniyear = data.getStartDate().getYear();
-                anititle2 = data.getCoverImage().getExtraLarge();
+                posterurl = data.getCoverImage().getExtraLarge();
                 backgroundUrl = data.getBannerImage();
                 format = data.getFormat();
                 Intrinsics.checkNotNull(format);
@@ -1295,55 +1867,56 @@ public final class StreamPlayAnime extends MainAPI {
                     anitype = TvType.TvSeries;
                 }
                 Integer numBoxInt2 = Boxing.boxInt(aniyear);
-                c00815.L$0 = url4;
-                c00815.L$1 = id;
-                c00815.L$2 = data;
-                c00815.L$3 = SpillingKt.nullOutSpilledVariable(anititle);
-                c00815.L$4 = anititle2;
-                c00815.L$5 = backgroundUrl;
-                c00815.L$6 = SpillingKt.nullOutSpilledVariable(anitype);
-                c00815.I$0 = aniyear;
-                c00815.label = 2;
-                objTmdbToAnimeId = tmdbToAnimeId(anititle, numBoxInt2, anitype, c00815);
+                c00834.L$0 = url2;
+                c00834.L$1 = id4;
+                c00834.L$2 = data;
+                c00834.L$3 = SpillingKt.nullOutSpilledVariable(anititle);
+                c00834.L$4 = posterurl;
+                c00834.L$5 = backgroundUrl;
+                c00834.L$6 = SpillingKt.nullOutSpilledVariable(anitype);
+                c00834.I$0 = aniyear;
+                c00834.label = 2;
+                objTmdbToAnimeId = tmdbToAnimeId(anititle, numBoxInt2, anitype, c00834);
                 if (objTmdbToAnimeId == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                anititle3 = anititle;
+                TvType tvType4 = anitype;
+                url3 = url2;
                 aniyear2 = aniyear;
-                jpTitle = backgroundUrl;
-                backgroundUrl2 = id;
-                data2 = data;
-                anitype2 = anitype;
+                backgroundUrl2 = backgroundUrl;
+                backgroundUrl3 = anititle;
+                anitype2 = tvType4;
                 ids = (AniIds) objTmdbToAnimeId;
-                String jpTitle7 = data2.getTitle().getRomaji();
-                Requests app2 = MainActivityKt.getApp();
-                String jpTitle8 = "https://api.ani.zip/mappings?anilist_id=" + backgroundUrl2;
-                c00815.L$0 = url4;
-                c00815.L$1 = backgroundUrl2;
-                c00815.L$2 = data2;
-                c00815.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                c00815.L$4 = anititle2;
-                c00815.L$5 = jpTitle;
-                c00815.L$6 = SpillingKt.nullOutSpilledVariable(anitype2);
-                c00815.L$7 = ids;
-                c00815.L$8 = jpTitle7;
-                c00815.I$0 = aniyear2;
-                c00815.label = 3;
-                jpTitle2 = jpTitle7;
-                id2 = backgroundUrl2;
-                obj = Requests.get$default(app2, jpTitle8, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00815, 4094, (Object) null);
-                c00812 = c00815;
-                if (obj == coroutine_suspended) {
+                jpTitle = data.getTitle().getRomaji();
+                anitype3 = anitype2;
+                c00834.L$0 = url3;
+                c00834.L$1 = id4;
+                c00834.L$2 = data;
+                c00834.L$3 = SpillingKt.nullOutSpilledVariable(backgroundUrl3);
+                c00834.L$4 = posterurl;
+                c00834.L$5 = backgroundUrl2;
+                c00834.L$6 = SpillingKt.nullOutSpilledVariable(anitype3);
+                c00834.L$7 = ids;
+                c00834.L$8 = jpTitle;
+                c00834.I$0 = aniyear2;
+                c00834.label = 3;
+                obj2 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?anilist_id=" + id4, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00834, 4094, (Object) null);
+                c00832 = c00834;
+                if (obj2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                posterurl = anititle2;
-                anitype3 = anitype2;
+                anitype4 = anitype3;
+                posterurl2 = posterurl;
+                anititle2 = backgroundUrl3;
                 ids2 = ids;
-                obj2 = obj;
+                anititle3 = backgroundUrl2;
+                jpTitle2 = jpTitle;
+                obj3 = obj2;
                 aniyear3 = aniyear2;
-                data3 = data2;
-                syncMetaData = ((NiceResponse) obj2).getText();
-                animeMetaData = StreamPlayUtilsKt.parseAnimeData(syncMetaData);
+                data2 = data;
+                url4 = url3;
+                String syncMetaData4 = ((NiceResponse) obj3).getText();
+                animeMetaData = StreamPlayUtilsKt.parseAnimeData(syncMetaData4);
                 if (animeMetaData != null) {
                     tmdbid = null;
                 } else {
@@ -1356,93 +1929,92 @@ public final class StreamPlayAnime extends MainAPI {
                 }
                 kitsuid2 = kitsuid;
                 tmdbid2 = tmdbid;
-                anitype4 = anitype3;
-                if (StringsKt.contains(data3.getFormat(), "Movie", true)) {
+                anitype5 = anitype4;
+                if (StringsKt.contains(data2.getFormat(), "Movie", true)) {
                     type = TvType.Movie;
                 } else {
                     type = TvType.TvSeries;
                 }
-                c00812.L$0 = url4;
-                c00812.L$1 = id2;
-                c00812.L$2 = data3;
-                c00812.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                c00812.L$4 = posterurl;
-                c00812.L$5 = jpTitle;
-                c00812.L$6 = SpillingKt.nullOutSpilledVariable(anitype4);
-                c00812.L$7 = ids2;
-                c00812.L$8 = jpTitle2;
-                c00812.L$9 = syncMetaData;
-                c00812.L$10 = animeMetaData;
-                c00812.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid2);
-                c00812.L$12 = kitsuid2;
-                c00812.L$13 = SpillingKt.nullOutSpilledVariable(type);
-                c00812.I$0 = aniyear3;
-                c00812.label = 4;
-                backgroundUrl3 = jpTitle;
+                c00832.L$0 = url4;
+                c00832.L$1 = id4;
+                c00832.L$2 = data2;
+                c00832.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                c00832.L$4 = posterurl2;
+                c00832.L$5 = anititle3;
+                c00832.L$6 = SpillingKt.nullOutSpilledVariable(anitype5);
+                c00832.L$7 = ids2;
+                c00832.L$8 = jpTitle2;
+                c00832.L$9 = syncMetaData4;
+                c00832.L$10 = animeMetaData;
+                c00832.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid2);
+                c00832.L$12 = kitsuid2;
+                c00832.L$13 = SpillingKt.nullOutSpilledVariable(type);
+                c00832.I$0 = aniyear3;
+                c00832.label = 4;
+                backgroundUrl4 = syncMetaData4;
                 jpTitle3 = jpTitle2;
-                type2 = type;
-                c00813 = c00812;
-                ids3 = ids2;
-                url2 = url4;
+                id2 = id4;
                 i = 1;
-                str = null;
-                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", type2, tmdbid2, "en", c00813);
+                ids3 = ids2;
+                type2 = type;
+                c00833 = c00832;
+                backgroundUrl5 = anititle3;
+                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", type2, tmdbid2, "en", c00833);
                 if (objFetchTmdbLogoUrl == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                anitype5 = type2;
-                tmdbid3 = tmdbid2;
-                aniyear4 = aniyear3;
-                anitype6 = anitype4;
-                jpTitle4 = jpTitle3;
+                data3 = data2;
+                posterurl3 = kitsuid2;
+                backgroundUrl6 = backgroundUrl5;
+                posterurl4 = posterurl2;
+                anitype6 = anitype5;
+                ids4 = ids3;
                 animeMetaData2 = animeMetaData;
-                posterurl2 = url2;
-                syncMetaData2 = id2;
-                backgroundUrl4 = backgroundUrl3;
-                data4 = data3;
-                syncMetaData3 = syncMetaData;
-                posterurl3 = posterurl;
-                kitsuid3 = kitsuid2;
+                jpTitle4 = jpTitle3;
+                url5 = id2;
+                aniyear4 = aniyear3;
+                type3 = type2;
+                kitsuid3 = url4;
+                tmdbid3 = tmdbid2;
                 logoUrl = (String) objFetchTmdbLogoUrl;
-                totalEps = data4.totalEpisodes();
-                Iterable $this$associateWith$iv4 = new IntRange(i, totalEps);
-                Map result$iv3 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv4, 10)), 16));
-                destination$iv$iv = result$iv3;
-                it = $this$associateWith$iv4.iterator();
+                totalEps = data3.totalEpisodes();
+                Iterable $this$associateWith$iv3 = new IntRange(i, totalEps);
+                id3 = url5;
+                kitsuid4 = posterurl3;
+                result$iv = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv3, 10)), 16));
+                destination$iv$iv = result$iv;
+                it = $this$associateWith$iv3.iterator();
                 while (true) {
                     iIntValue = 0;
                     if (!it.hasNext()) {
-                        url3 = posterurl2;
-                        $this$associateWith$iv = new IntRange(1, totalEps);
+                        Iterable $this$associateWith$iv4 = new IntRange(1, totalEps);
                         $i$f$associateWith = 0;
-                        Map result$iv4 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv, 10)), 16));
-                        destination$iv$iv2 = result$iv4;
-                        while (r24.hasNext()) {
-                            String syncMetaData6 = syncMetaData3;
+                        result$iv2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv4, 10)), 16));
+                        epMetaMap = result$iv2;
+                        while (r19.hasNext()) {
+                            int $i$f$associateWith3 = $i$f$associateWith;
                             it3 = ((Number) element$iv$iv).intValue();
                             if (animeMetaData2 != null) {
-                                $this$associateWith$iv2 = $this$associateWith$iv;
+                                url8 = kitsuid3;
                                 episodes4 = animeMetaData2.getEpisodes();
                                 if (episodes4 != null) {
-                                    $i$f$associateWith = $i$f$associateWith;
-                                    obj4 = (MetaEpisode) episodes4.get(String.valueOf(it3));
+                                    result$iv2 = result$iv2;
+                                    metaEpisode = episodes4.get(String.valueOf(it3));
                                 }
-                                destination$iv$iv2.put(element$iv$iv, obj4);
-                                syncMetaData3 = syncMetaData6;
-                                $this$associateWith$iv = $this$associateWith$iv2;
-                                $i$f$associateWith = $i$f$associateWith;
+                                epMetaMap.put(element$iv$iv, metaEpisode);
+                                $i$f$associateWith = $i$f$associateWith3;
+                                kitsuid3 = url8;
+                                result$iv2 = result$iv2;
                             } else {
-                                $this$associateWith$iv2 = $this$associateWith$iv;
+                                url8 = kitsuid3;
                             }
-                            obj4 = str;
-                            destination$iv$iv2.put(element$iv$iv, obj4);
-                            syncMetaData3 = syncMetaData6;
-                            $this$associateWith$iv = $this$associateWith$iv2;
-                            $i$f$associateWith = $i$f$associateWith;
+                            metaEpisode = null;
+                            epMetaMap.put(element$iv$iv, metaEpisode);
+                            $i$f$associateWith = $i$f$associateWith3;
+                            kitsuid3 = url8;
+                            result$iv2 = result$iv2;
                         }
-                        syncMetaData4 = syncMetaData3;
-                        epMetaMap = destination$iv$iv2;
-                        fallbackTitle = "";
+                        url6 = kitsuid3;
                         if (animeMetaData2 != null) {
                             fallbackPoster = "";
                         } else {
@@ -1450,35 +2022,33 @@ public final class StreamPlayAnime extends MainAPI {
                         }
                         if (animeMetaData2 != null) {
                             if (animeMetaData2 != null) {
-                                str2 = str;
+                                str = null;
                             } else {
-                                str2 = str;
+                                str = null;
                             }
-                            if (str2 == null) {
+                            if (str == null) {
                                 if (animeMetaData2 != null) {
-                                    str = titles.get("x-jat");
+                                    str = null;
+                                } else {
+                                    str = null;
                                 }
                                 if (str != null) {
-                                    fallbackTitle = str;
                                 }
-                            } else {
-                                fallbackTitle = str2;
                             }
                         } else {
                             if (animeMetaData2 != null) {
-                                str2 = str;
+                                str = null;
                             } else {
-                                str2 = str;
+                                str = null;
                             }
-                            if (str2 == null) {
+                            if (str == null) {
                                 if (animeMetaData2 != null) {
-                                    str = titles.get("x-jat");
+                                    str = null;
+                                } else {
+                                    str = null;
                                 }
                                 if (str != null) {
-                                    fallbackTitle = str;
                                 }
-                            } else {
-                                fallbackTitle = str2;
                             }
                         }
                         num = (Integer) destination$iv$iv.get(Boxing.boxInt(1));
@@ -1487,11 +2057,18 @@ public final class StreamPlayAnime extends MainAPI {
                         } else {
                             anidbEid = 0;
                         }
-                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m46getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
+                        Integer idMal4 = ids4.getIdMal();
+                        Integer id8 = ids4.getId();
+                        if (kitsuid4 != null) {
+                            intOrNull = StringsKt.toIntOrNull(kitsuid4);
+                        } else {
+                            intOrNull = null;
+                        }
+                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), id8, idMal4, data3.m46getTitle(), Boxing.boxInt(data3.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), intOrNull, 16633983, null));
                         $this$map$iv = new IntRange(1, totalEps);
-                        id3 = syncMetaData2;
-                        ids4 = ids3;
-                        destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+                        tmdbid4 = tmdbid3;
+                        type4 = type3;
+                        destination$iv$iv2 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                         $this$mapTo$iv$iv = $this$map$iv;
                         $i$f$mapTo = 0;
                         it2 = $this$mapTo$iv$iv.iterator();
@@ -1499,46 +2076,56 @@ public final class StreamPlayAnime extends MainAPI {
                             final int item$iv$iv3 = it2.nextInt();
                             Iterable $this$map$iv3 = $this$map$iv;
                             final MetaEpisode epData2 = (MetaEpisode) epMetaMap.get(Boxing.boxInt(item$iv$iv3));
-                            Integer idMal3 = ids4.getIdMal();
-                            Integer id8 = ids4.getId();
-                            String strM46getTitle5 = data4.m46getTitle();
-                            int year3 = data4.getStartDate().getYear();
-                            Map epMetaMap5 = epMetaMap;
+                            Integer idMal5 = ids4.getIdMal();
+                            Integer id9 = ids4.getId();
+                            if (kitsuid4 != null) {
+                                intOrNull3 = StringsKt.toIntOrNull(kitsuid4);
+                            } else {
+                                intOrNull3 = null;
+                            }
+                            String strM46getTitle4 = data3.m46getTitle();
+                            int year3 = data3.getStartDate().getYear();
+                            Map epMetaMap4 = epMetaMap;
                             num3 = (Integer) destination$iv$iv.get(Boxing.boxInt(item$iv$iv3));
                             if (num3 != null) {
                                 iIntValue3 = num3.intValue();
                             } else {
                                 iIntValue3 = 0;
                             }
-                            String linkData2 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv3), id8, idMal3, strM46getTitle5, Boxing.boxInt(year3), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
-                            destination$iv$iv3.add(MainAPIKt.newEpisode(this, linkData2, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
+                            String linkData2 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv3), id9, idMal5, strM46getTitle4, Boxing.boxInt(year3), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), intOrNull3, 8245311, null));
+                            destination$iv$iv2.add(MainAPIKt.newEpisode(this, linkData2, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda2
                                 public final Object invoke(Object obj5) {
-                                    return StreamPlayAnime.load$lambda$3$0(item$iv$iv3, epData2, fallbackPoster, fallbackTitle, (Episode) obj5);
+                                    return StreamPlayAnime.loadFromAnilist$lambda$3$0(item$iv$iv3, epData2, fallbackPoster, fallbackTitle, (Episode) obj5);
                                 }
                             }));
+                            $this$map$iv = $this$map$iv3;
                             $this$mapTo$iv$iv = $this$mapTo$iv$iv;
                             $i$f$mapTo = $i$f$mapTo;
-                            $this$map$iv = $this$map$iv3;
-                            epMetaMap = epMetaMap5;
-                            kitsuid3 = kitsuid3;
+                            epMetaMap = epMetaMap4;
+                            anitype6 = anitype6;
                         }
                         epMetaMap2 = epMetaMap;
-                        kitsuid4 = kitsuid3;
-                        episodes = (List) destination$iv$iv3;
+                        anitype7 = anitype6;
+                        episodes = (List) destination$iv$iv2;
                         List $this$mapIndexed$iv2 = episodes;
-                        destination$iv$iv4 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$mapIndexed$iv2, 10));
+                        destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$mapIndexed$iv2, 10));
                         index$iv$iv = 0;
-                        while (r33.hasNext()) {
+                        while (r22.hasNext()) {
                             int index$iv$iv3 = index$iv$iv + 1;
                             if (index$iv$iv < 0) {
                                 CollectionsKt.throwIndexOverflow();
                             }
                             Episode ep2 = (Episode) item$iv$iv2;
                             int i3 = index$iv$iv + 1;
-                            Integer idMal4 = ids4.getIdMal();
-                            Integer id9 = ids4.getId();
-                            String strM46getTitle6 = data4.m46getTitle();
-                            int year4 = data4.getStartDate().getYear();
+                            Integer idMal6 = ids4.getIdMal();
+                            Integer id10 = ids4.getId();
+                            if (kitsuid4 != null) {
+                                intOrNull2 = StringsKt.toIntOrNull(kitsuid4);
+                            } else {
+                                intOrNull2 = null;
+                            }
+                            String strM46getTitle5 = data3.m46getTitle();
+                            int year4 = data3.getStartDate().getYear();
                             List episodes6 = episodes;
                             num2 = (Integer) destination$iv$iv.get(Boxing.boxInt(i3));
                             if (num2 != null) {
@@ -1546,168 +2133,157 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue2 = 0;
                             }
-                            String dubLinkData2 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i3), id9, idMal4, strM46getTitle6, Boxing.boxInt(year4), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
-                            destination$iv$iv4.add(Episode.copy$default(ep2, dubLinkData2, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
+                            String dubLinkData2 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i3), id10, idMal6, strM46getTitle5, Boxing.boxInt(year4), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), intOrNull2, 8245311, null));
+                            destination$iv$iv3.add(Episode.copy$default(ep2, dubLinkData2, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
                             episodes = episodes6;
                             index$iv$iv = index$iv$iv3;
                         }
                         episodes2 = episodes;
-                        episodesDub = (List) destination$iv$iv4;
-                        if (StringsKt.contains(data4.getFormat(), "Movie", true)) {
-                            String strM46getTitle7 = data4.m46getTitle();
-                            fallbackPoster2 = fallbackPoster;
-                            TvType tvType3 = TvType.AnimeMovie;
-                            C00822 c00823 = new C00822(id3, ids4, kitsuid4, data4, backgroundUrl4, animeMetaData2, posterurl3, logoUrl, null);
-                            c00813.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                            c00813.L$1 = SpillingKt.nullOutSpilledVariable(id3);
-                            c00813.L$2 = SpillingKt.nullOutSpilledVariable(data4);
-                            c00813.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                            c00813.L$4 = SpillingKt.nullOutSpilledVariable(posterurl3);
-                            c00813.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
-                            c00813.L$6 = SpillingKt.nullOutSpilledVariable(anitype6);
-                            c00813.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
-                            c00813.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
-                            c00813.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData4);
-                            c00813.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
-                            c00813.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid3);
-                            c00813.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
-                            c00813.L$13 = SpillingKt.nullOutSpilledVariable(anitype5);
-                            c00813.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
-                            c00813.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
-                            c00813.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
-                            c00813.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster2);
-                            c00813.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle);
-                            c00813.L$19 = SpillingKt.nullOutSpilledVariable(href);
-                            c00813.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
-                            c00813.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
-                            c00813.I$0 = aniyear4;
-                            c00813.I$1 = totalEps;
-                            c00813.I$2 = anidbEid;
-                            c00813.label = 5;
-                            C00811 c00818 = c00813;
-                            fallbackTitle2 = fallbackTitle;
-                            anidbEid4 = anidbEid;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM46getTitle7, url3, tvType3, href, c00823, c00818);
-                            c00814 = c00818;
+                        episodesDub = (List) destination$iv$iv3;
+                        if (StringsKt.contains(data3.getFormat(), "Movie", true)) {
+                            String fallbackTitle6 = fallbackTitle;
+                            String fallbackTitle7 = data3.m46getTitle();
+                            TvType tvType5 = TvType.AnimeMovie;
+                            C00842 c00843 = new C00842(id3, ids4, kitsuid4, data3, backgroundUrl6, animeMetaData2, posterurl4, logoUrl, null);
+                            c00833.L$0 = SpillingKt.nullOutSpilledVariable(url6);
+                            c00833.L$1 = SpillingKt.nullOutSpilledVariable(id3);
+                            c00833.L$2 = SpillingKt.nullOutSpilledVariable(data3);
+                            c00833.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                            c00833.L$4 = SpillingKt.nullOutSpilledVariable(posterurl4);
+                            c00833.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl6);
+                            c00833.L$6 = SpillingKt.nullOutSpilledVariable(anitype7);
+                            c00833.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
+                            c00833.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
+                            c00833.L$9 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
+                            c00833.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
+                            c00833.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid4);
+                            c00833.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
+                            c00833.L$13 = SpillingKt.nullOutSpilledVariable(type4);
+                            c00833.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
+                            c00833.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
+                            c00833.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
+                            c00833.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster);
+                            c00833.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle6);
+                            c00833.L$19 = SpillingKt.nullOutSpilledVariable(href);
+                            c00833.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
+                            c00833.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
+                            c00833.I$0 = aniyear4;
+                            c00833.I$1 = totalEps;
+                            c00833.I$2 = anidbEid;
+                            c00833.label = 5;
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, fallbackTitle7, url6, tvType5, href, c00843, c00833);
                             if (objNewMovieLoadResponse == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            fallbackTitle3 = fallbackTitle2;
-                            fallbackPoster3 = fallbackPoster2;
                             return (LoadResponse) objNewMovieLoadResponse;
                         }
-                        aniyear5 = aniyear4;
-                        String fallbackTitle5 = fallbackTitle;
+                        fallbackTitle2 = fallbackTitle;
+                        logoUrl2 = fallbackPoster;
                         anidbEid2 = anidbEid;
-                        String strM46getTitle8 = data4.m46getTitle();
-                        TvType tvType4 = TvType.Anime;
-                        data5 = data4;
-                        C00811 c00819 = c00813;
-                        MetaAnimeData animeMetaData5 = animeMetaData2;
-                        C00833 c00834 = new C00833(id3, ids4, kitsuid4, episodes2, episodesDub, logoUrl, data5, animeMetaData5, this, null);
-                        animeMetaData3 = animeMetaData5;
-                        c00819.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                        c00819.L$1 = SpillingKt.nullOutSpilledVariable(id3);
-                        c00819.L$2 = SpillingKt.nullOutSpilledVariable(data5);
-                        c00819.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                        c00819.L$4 = SpillingKt.nullOutSpilledVariable(posterurl3);
-                        c00819.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
-                        c00819.L$6 = SpillingKt.nullOutSpilledVariable(anitype6);
-                        c00819.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
-                        c00819.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
-                        c00819.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData4);
-                        c00819.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData3);
-                        c00819.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid3);
-                        c00819.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
-                        c00819.L$13 = SpillingKt.nullOutSpilledVariable(anitype5);
-                        c00819.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
-                        c00819.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
-                        c00819.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
-                        c00819.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster);
-                        c00819.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle5);
-                        c00819.L$19 = SpillingKt.nullOutSpilledVariable(href);
-                        c00819.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
-                        c00819.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
-                        c00819.I$0 = aniyear5;
-                        c00819.I$1 = totalEps;
-                        c00819.I$2 = anidbEid2;
-                        c00819.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle8, url3, tvType4, false, c00834, c00819, 8, (Object) null);
+                        String strM46getTitle6 = data3.m46getTitle();
+                        TvType tvType6 = TvType.Anime;
+                        syncMetaData = backgroundUrl4;
+                        C00831 c00836 = c00833;
+                        C00853 c00854 = new C00853(id3, ids4, kitsuid4, episodes2, episodesDub, logoUrl, data3, animeMetaData2, this, null);
+                        c00836.L$0 = SpillingKt.nullOutSpilledVariable(url6);
+                        c00836.L$1 = SpillingKt.nullOutSpilledVariable(id3);
+                        c00836.L$2 = SpillingKt.nullOutSpilledVariable(data3);
+                        c00836.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                        c00836.L$4 = SpillingKt.nullOutSpilledVariable(posterurl4);
+                        c00836.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl6);
+                        c00836.L$6 = SpillingKt.nullOutSpilledVariable(anitype7);
+                        c00836.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
+                        c00836.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
+                        c00836.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData);
+                        c00836.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
+                        c00836.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid4);
+                        c00836.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
+                        c00836.L$13 = SpillingKt.nullOutSpilledVariable(type4);
+                        c00836.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
+                        c00836.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
+                        c00836.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
+                        c00836.L$17 = SpillingKt.nullOutSpilledVariable(logoUrl2);
+                        c00836.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle2);
+                        c00836.L$19 = SpillingKt.nullOutSpilledVariable(href);
+                        c00836.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
+                        c00836.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
+                        c00836.I$0 = aniyear4;
+                        c00836.I$1 = totalEps;
+                        c00836.I$2 = anidbEid2;
+                        c00836.label = 6;
+                        url7 = url6;
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle6, url7, tvType6, false, c00854, c00836, 8, (Object) null);
                         if (objNewAnimeLoadResponse$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        episodes3 = episodes2;
                         episodesDub2 = episodesDub;
-                        data6 = data5;
-                        obj3 = objNewAnimeLoadResponse$default;
+                        obj4 = objNewAnimeLoadResponse$default;
                         totalEps2 = totalEps;
                         anidbEid3 = anidbEid2;
-                        aniyear6 = aniyear5;
-                        anidbEidMap = destination$iv$iv;
                         href2 = href;
-                        episodes3 = episodes2;
-                        logoUrl2 = logoUrl;
-                        epMetaMap3 = epMetaMap2;
-                        kitsuid5 = kitsuid4;
-                        return (LoadResponse) obj3;
+                        fallbackTitle3 = fallbackTitle2;
+                        anidbEidMap = destination$iv$iv;
+                        logoUrl3 = logoUrl;
+                        fallbackPoster2 = logoUrl2;
+                        anititle4 = anititle2;
+                        type5 = type4;
+                        syncMetaData2 = syncMetaData;
+                        return (LoadResponse) obj4;
                     }
                     Object element$iv$iv3 = it.next();
                     int it5 = ((Number) element$iv$iv3).intValue();
-                    String url6 = posterurl2;
-                    anidbEid5 = StreamPlayUtilsKt.getAnidbEid(syncMetaData3, Boxing.boxInt(it5));
-                    if (anidbEid5 != null) {
-                        iIntValue = anidbEid5.intValue();
+                    LinkedHashMap result$iv4 = result$iv;
+                    anidbEid4 = StreamPlayUtilsKt.getAnidbEid(backgroundUrl4, Boxing.boxInt(it5));
+                    if (anidbEid4 != null) {
+                        iIntValue = anidbEid4.intValue();
                     }
                     destination$iv$iv.put(element$iv$iv3, Boxing.boxInt(iIntValue));
-                    posterurl2 = url6;
+                    result$iv = result$iv4;
                 }
                 break;
             case 2:
-                aniyear2 = c00815.I$0;
-                TvType anitype7 = (TvType) c00815.L$6;
-                String backgroundUrl5 = (String) c00815.L$5;
-                String posterurl4 = (String) c00815.L$4;
-                String anititle4 = (String) c00815.L$3;
-                AnilistAPIResponse.anilistMedia data7 = (AnilistAPIResponse.anilistMedia) c00815.L$2;
-                String id10 = (String) c00815.L$1;
-                url4 = (String) c00815.L$0;
+                aniyear2 = c00834.I$0;
+                anitype2 = (TvType) c00834.L$6;
+                backgroundUrl2 = (String) c00834.L$5;
+                posterurl = (String) c00834.L$4;
+                backgroundUrl3 = (String) c00834.L$3;
+                data = (AnilistAPIResponse.anilistMedia) c00834.L$2;
+                id4 = (String) c00834.L$1;
+                url3 = (String) c00834.L$0;
                 ResultKt.throwOnFailure($result);
-                anititle3 = anititle4;
-                backgroundUrl2 = id10;
-                anititle2 = posterurl4;
-                data2 = data7;
-                anitype2 = anitype7;
-                jpTitle = backgroundUrl5;
                 objTmdbToAnimeId = $result;
                 ids = (AniIds) objTmdbToAnimeId;
-                String jpTitle9 = data2.getTitle().getRomaji();
-                Requests app3 = MainActivityKt.getApp();
-                String jpTitle10 = "https://api.ani.zip/mappings?anilist_id=" + backgroundUrl2;
-                c00815.L$0 = url4;
-                c00815.L$1 = backgroundUrl2;
-                c00815.L$2 = data2;
-                c00815.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                c00815.L$4 = anititle2;
-                c00815.L$5 = jpTitle;
-                c00815.L$6 = SpillingKt.nullOutSpilledVariable(anitype2);
-                c00815.L$7 = ids;
-                c00815.L$8 = jpTitle9;
-                c00815.I$0 = aniyear2;
-                c00815.label = 3;
-                jpTitle2 = jpTitle9;
-                id2 = backgroundUrl2;
-                obj = Requests.get$default(app3, jpTitle10, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00815, 4094, (Object) null);
-                c00812 = c00815;
-                if (obj == coroutine_suspended) {
+                jpTitle = data.getTitle().getRomaji();
+                anitype3 = anitype2;
+                c00834.L$0 = url3;
+                c00834.L$1 = id4;
+                c00834.L$2 = data;
+                c00834.L$3 = SpillingKt.nullOutSpilledVariable(backgroundUrl3);
+                c00834.L$4 = posterurl;
+                c00834.L$5 = backgroundUrl2;
+                c00834.L$6 = SpillingKt.nullOutSpilledVariable(anitype3);
+                c00834.L$7 = ids;
+                c00834.L$8 = jpTitle;
+                c00834.I$0 = aniyear2;
+                c00834.label = 3;
+                obj2 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?anilist_id=" + id4, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00834, 4094, (Object) null);
+                c00832 = c00834;
+                if (obj2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                posterurl = anititle2;
-                anitype3 = anitype2;
+                anitype4 = anitype3;
+                posterurl2 = posterurl;
+                anititle2 = backgroundUrl3;
                 ids2 = ids;
-                obj2 = obj;
+                anititle3 = backgroundUrl2;
+                jpTitle2 = jpTitle;
+                obj3 = obj2;
                 aniyear3 = aniyear2;
-                data3 = data2;
-                syncMetaData = ((NiceResponse) obj2).getText();
-                animeMetaData = StreamPlayUtilsKt.parseAnimeData(syncMetaData);
+                data2 = data;
+                url4 = url3;
+                String syncMetaData5 = ((NiceResponse) obj3).getText();
+                animeMetaData = StreamPlayUtilsKt.parseAnimeData(syncMetaData5);
                 if (animeMetaData != null) {
                     tmdbid = null;
                 } else {
@@ -1720,93 +2296,92 @@ public final class StreamPlayAnime extends MainAPI {
                 }
                 kitsuid2 = kitsuid;
                 tmdbid2 = tmdbid;
-                anitype4 = anitype3;
-                if (StringsKt.contains(data3.getFormat(), "Movie", true)) {
+                anitype5 = anitype4;
+                if (StringsKt.contains(data2.getFormat(), "Movie", true)) {
                     type = TvType.Movie;
                 } else {
                     type = TvType.TvSeries;
                 }
-                c00812.L$0 = url4;
-                c00812.L$1 = id2;
-                c00812.L$2 = data3;
-                c00812.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                c00812.L$4 = posterurl;
-                c00812.L$5 = jpTitle;
-                c00812.L$6 = SpillingKt.nullOutSpilledVariable(anitype4);
-                c00812.L$7 = ids2;
-                c00812.L$8 = jpTitle2;
-                c00812.L$9 = syncMetaData;
-                c00812.L$10 = animeMetaData;
-                c00812.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid2);
-                c00812.L$12 = kitsuid2;
-                c00812.L$13 = SpillingKt.nullOutSpilledVariable(type);
-                c00812.I$0 = aniyear3;
-                c00812.label = 4;
-                backgroundUrl3 = jpTitle;
+                c00832.L$0 = url4;
+                c00832.L$1 = id4;
+                c00832.L$2 = data2;
+                c00832.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                c00832.L$4 = posterurl2;
+                c00832.L$5 = anititle3;
+                c00832.L$6 = SpillingKt.nullOutSpilledVariable(anitype5);
+                c00832.L$7 = ids2;
+                c00832.L$8 = jpTitle2;
+                c00832.L$9 = syncMetaData5;
+                c00832.L$10 = animeMetaData;
+                c00832.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid2);
+                c00832.L$12 = kitsuid2;
+                c00832.L$13 = SpillingKt.nullOutSpilledVariable(type);
+                c00832.I$0 = aniyear3;
+                c00832.label = 4;
+                backgroundUrl4 = syncMetaData5;
                 jpTitle3 = jpTitle2;
-                type2 = type;
-                c00813 = c00812;
-                ids3 = ids2;
-                url2 = url4;
+                id2 = id4;
                 i = 1;
-                str = null;
-                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", type2, tmdbid2, "en", c00813);
+                ids3 = ids2;
+                type2 = type;
+                c00833 = c00832;
+                backgroundUrl5 = anititle3;
+                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", type2, tmdbid2, "en", c00833);
                 if (objFetchTmdbLogoUrl == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                anitype5 = type2;
-                tmdbid3 = tmdbid2;
-                aniyear4 = aniyear3;
-                anitype6 = anitype4;
-                jpTitle4 = jpTitle3;
+                data3 = data2;
+                posterurl3 = kitsuid2;
+                backgroundUrl6 = backgroundUrl5;
+                posterurl4 = posterurl2;
+                anitype6 = anitype5;
+                ids4 = ids3;
                 animeMetaData2 = animeMetaData;
-                posterurl2 = url2;
-                syncMetaData2 = id2;
-                backgroundUrl4 = backgroundUrl3;
-                data4 = data3;
-                syncMetaData3 = syncMetaData;
-                posterurl3 = posterurl;
-                kitsuid3 = kitsuid2;
+                jpTitle4 = jpTitle3;
+                url5 = id2;
+                aniyear4 = aniyear3;
+                type3 = type2;
+                kitsuid3 = url4;
+                tmdbid3 = tmdbid2;
                 logoUrl = (String) objFetchTmdbLogoUrl;
-                totalEps = data4.totalEpisodes();
+                totalEps = data3.totalEpisodes();
                 Iterable $this$associateWith$iv5 = new IntRange(i, totalEps);
-                Map result$iv5 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv5, 10)), 16));
-                destination$iv$iv = result$iv5;
+                id3 = url5;
+                kitsuid4 = posterurl3;
+                result$iv = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv5, 10)), 16));
+                destination$iv$iv = result$iv;
                 it = $this$associateWith$iv5.iterator();
                 while (true) {
                     iIntValue = 0;
                     if (!it.hasNext()) {
-                        url3 = posterurl2;
-                        $this$associateWith$iv = new IntRange(1, totalEps);
+                        Iterable $this$associateWith$iv6 = new IntRange(1, totalEps);
                         $i$f$associateWith = 0;
-                        Map result$iv6 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv, 10)), 16));
-                        destination$iv$iv2 = result$iv6;
-                        while (r24.hasNext()) {
-                            String syncMetaData7 = syncMetaData3;
+                        result$iv2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv6, 10)), 16));
+                        epMetaMap = result$iv2;
+                        while (r19.hasNext()) {
+                            int $i$f$associateWith4 = $i$f$associateWith;
                             it3 = ((Number) element$iv$iv).intValue();
                             if (animeMetaData2 != null) {
-                                $this$associateWith$iv2 = $this$associateWith$iv;
+                                url8 = kitsuid3;
                                 episodes4 = animeMetaData2.getEpisodes();
                                 if (episodes4 != null) {
-                                    $i$f$associateWith = $i$f$associateWith;
-                                    obj4 = (MetaEpisode) episodes4.get(String.valueOf(it3));
+                                    result$iv2 = result$iv2;
+                                    metaEpisode = episodes4.get(String.valueOf(it3));
                                 }
-                                destination$iv$iv2.put(element$iv$iv, obj4);
-                                syncMetaData3 = syncMetaData7;
-                                $this$associateWith$iv = $this$associateWith$iv2;
-                                $i$f$associateWith = $i$f$associateWith;
+                                epMetaMap.put(element$iv$iv, metaEpisode);
+                                $i$f$associateWith = $i$f$associateWith4;
+                                kitsuid3 = url8;
+                                result$iv2 = result$iv2;
                             } else {
-                                $this$associateWith$iv2 = $this$associateWith$iv;
+                                url8 = kitsuid3;
                             }
-                            obj4 = str;
-                            destination$iv$iv2.put(element$iv$iv, obj4);
-                            syncMetaData3 = syncMetaData7;
-                            $this$associateWith$iv = $this$associateWith$iv2;
-                            $i$f$associateWith = $i$f$associateWith;
+                            metaEpisode = null;
+                            epMetaMap.put(element$iv$iv, metaEpisode);
+                            $i$f$associateWith = $i$f$associateWith4;
+                            kitsuid3 = url8;
+                            result$iv2 = result$iv2;
                         }
-                        syncMetaData4 = syncMetaData3;
-                        epMetaMap = destination$iv$iv2;
-                        fallbackTitle = "";
+                        url6 = kitsuid3;
                         if (animeMetaData2 != null) {
                             fallbackPoster = "";
                         } else {
@@ -1814,35 +2389,33 @@ public final class StreamPlayAnime extends MainAPI {
                         }
                         if (animeMetaData2 != null) {
                             if (animeMetaData2 != null) {
-                                str2 = str;
+                                str = null;
                             } else {
-                                str2 = str;
+                                str = null;
                             }
-                            if (str2 == null) {
+                            if (str == null) {
                                 if (animeMetaData2 != null) {
-                                    str = titles.get("x-jat");
+                                    str = null;
+                                } else {
+                                    str = null;
                                 }
                                 if (str != null) {
-                                    fallbackTitle = str;
                                 }
-                            } else {
-                                fallbackTitle = str2;
                             }
                         } else {
                             if (animeMetaData2 != null) {
-                                str2 = str;
+                                str = null;
                             } else {
-                                str2 = str;
+                                str = null;
                             }
-                            if (str2 == null) {
+                            if (str == null) {
                                 if (animeMetaData2 != null) {
-                                    str = titles.get("x-jat");
+                                    str = null;
+                                } else {
+                                    str = null;
                                 }
                                 if (str != null) {
-                                    fallbackTitle = str;
                                 }
-                            } else {
-                                fallbackTitle = str2;
                             }
                         }
                         num = (Integer) destination$iv$iv.get(Boxing.boxInt(1));
@@ -1851,11 +2424,18 @@ public final class StreamPlayAnime extends MainAPI {
                         } else {
                             anidbEid = 0;
                         }
-                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m46getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
+                        Integer idMal7 = ids4.getIdMal();
+                        Integer id11 = ids4.getId();
+                        if (kitsuid4 != null) {
+                            intOrNull = StringsKt.toIntOrNull(kitsuid4);
+                        } else {
+                            intOrNull = null;
+                        }
+                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), id11, idMal7, data3.m46getTitle(), Boxing.boxInt(data3.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), intOrNull, 16633983, null));
                         $this$map$iv = new IntRange(1, totalEps);
-                        id3 = syncMetaData2;
-                        ids4 = ids3;
-                        destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+                        tmdbid4 = tmdbid3;
+                        type4 = type3;
+                        destination$iv$iv2 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                         $this$mapTo$iv$iv = $this$map$iv;
                         $i$f$mapTo = 0;
                         it2 = $this$mapTo$iv$iv.iterator();
@@ -1863,46 +2443,56 @@ public final class StreamPlayAnime extends MainAPI {
                             final int item$iv$iv4 = it2.nextInt();
                             Iterable $this$map$iv4 = $this$map$iv;
                             final MetaEpisode epData3 = (MetaEpisode) epMetaMap.get(Boxing.boxInt(item$iv$iv4));
-                            Integer idMal5 = ids4.getIdMal();
-                            Integer id11 = ids4.getId();
-                            String strM46getTitle9 = data4.m46getTitle();
-                            int year5 = data4.getStartDate().getYear();
-                            Map epMetaMap6 = epMetaMap;
+                            Integer idMal8 = ids4.getIdMal();
+                            Integer id12 = ids4.getId();
+                            if (kitsuid4 != null) {
+                                intOrNull3 = StringsKt.toIntOrNull(kitsuid4);
+                            } else {
+                                intOrNull3 = null;
+                            }
+                            String strM46getTitle7 = data3.m46getTitle();
+                            int year5 = data3.getStartDate().getYear();
+                            Map epMetaMap5 = epMetaMap;
                             num3 = (Integer) destination$iv$iv.get(Boxing.boxInt(item$iv$iv4));
                             if (num3 != null) {
                                 iIntValue3 = num3.intValue();
                             } else {
                                 iIntValue3 = 0;
                             }
-                            String linkData3 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv4), id11, idMal5, strM46getTitle9, Boxing.boxInt(year5), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
-                            destination$iv$iv3.add(MainAPIKt.newEpisode(this, linkData3, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
+                            String linkData3 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv4), id12, idMal8, strM46getTitle7, Boxing.boxInt(year5), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), intOrNull3, 8245311, null));
+                            destination$iv$iv2.add(MainAPIKt.newEpisode(this, linkData3, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda2
                                 public final Object invoke(Object obj5) {
-                                    return StreamPlayAnime.load$lambda$3$0(item$iv$iv4, epData3, fallbackPoster, fallbackTitle, (Episode) obj5);
+                                    return StreamPlayAnime.loadFromAnilist$lambda$3$0(item$iv$iv4, epData3, fallbackPoster, fallbackTitle, (Episode) obj5);
                                 }
                             }));
+                            $this$map$iv = $this$map$iv4;
                             $this$mapTo$iv$iv = $this$mapTo$iv$iv;
                             $i$f$mapTo = $i$f$mapTo;
-                            $this$map$iv = $this$map$iv4;
-                            epMetaMap = epMetaMap6;
-                            kitsuid3 = kitsuid3;
+                            epMetaMap = epMetaMap5;
+                            anitype6 = anitype6;
                         }
                         epMetaMap2 = epMetaMap;
-                        kitsuid4 = kitsuid3;
-                        episodes = (List) destination$iv$iv3;
+                        anitype7 = anitype6;
+                        episodes = (List) destination$iv$iv2;
                         List $this$mapIndexed$iv3 = episodes;
-                        destination$iv$iv4 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$mapIndexed$iv3, 10));
+                        destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$mapIndexed$iv3, 10));
                         index$iv$iv = 0;
-                        while (r33.hasNext()) {
+                        while (r22.hasNext()) {
                             int index$iv$iv4 = index$iv$iv + 1;
                             if (index$iv$iv < 0) {
                                 CollectionsKt.throwIndexOverflow();
                             }
                             Episode ep3 = (Episode) item$iv$iv2;
                             int i4 = index$iv$iv + 1;
-                            Integer idMal6 = ids4.getIdMal();
-                            Integer id12 = ids4.getId();
-                            String strM46getTitle10 = data4.m46getTitle();
-                            int year6 = data4.getStartDate().getYear();
+                            Integer idMal9 = ids4.getIdMal();
+                            Integer id13 = ids4.getId();
+                            if (kitsuid4 != null) {
+                                intOrNull2 = StringsKt.toIntOrNull(kitsuid4);
+                            } else {
+                                intOrNull2 = null;
+                            }
+                            String strM46getTitle8 = data3.m46getTitle();
+                            int year6 = data3.getStartDate().getYear();
                             List episodes7 = episodes;
                             num2 = (Integer) destination$iv$iv.get(Boxing.boxInt(i4));
                             if (num2 != null) {
@@ -1910,146 +2500,139 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue2 = 0;
                             }
-                            String dubLinkData3 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i4), id12, idMal6, strM46getTitle10, Boxing.boxInt(year6), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
-                            destination$iv$iv4.add(Episode.copy$default(ep3, dubLinkData3, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
+                            String dubLinkData3 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i4), id13, idMal9, strM46getTitle8, Boxing.boxInt(year6), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), intOrNull2, 8245311, null));
+                            destination$iv$iv3.add(Episode.copy$default(ep3, dubLinkData3, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
                             episodes = episodes7;
                             index$iv$iv = index$iv$iv4;
                         }
                         episodes2 = episodes;
-                        episodesDub = (List) destination$iv$iv4;
-                        if (StringsKt.contains(data4.getFormat(), "Movie", true)) {
-                            String strM46getTitle11 = data4.m46getTitle();
-                            fallbackPoster2 = fallbackPoster;
-                            TvType tvType5 = TvType.AnimeMovie;
-                            C00822 c00824 = new C00822(id3, ids4, kitsuid4, data4, backgroundUrl4, animeMetaData2, posterurl3, logoUrl, null);
-                            c00813.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                            c00813.L$1 = SpillingKt.nullOutSpilledVariable(id3);
-                            c00813.L$2 = SpillingKt.nullOutSpilledVariable(data4);
-                            c00813.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                            c00813.L$4 = SpillingKt.nullOutSpilledVariable(posterurl3);
-                            c00813.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
-                            c00813.L$6 = SpillingKt.nullOutSpilledVariable(anitype6);
-                            c00813.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
-                            c00813.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
-                            c00813.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData4);
-                            c00813.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
-                            c00813.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid3);
-                            c00813.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
-                            c00813.L$13 = SpillingKt.nullOutSpilledVariable(anitype5);
-                            c00813.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
-                            c00813.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
-                            c00813.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
-                            c00813.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster2);
-                            c00813.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle);
-                            c00813.L$19 = SpillingKt.nullOutSpilledVariable(href);
-                            c00813.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
-                            c00813.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
-                            c00813.I$0 = aniyear4;
-                            c00813.I$1 = totalEps;
-                            c00813.I$2 = anidbEid;
-                            c00813.label = 5;
-                            C00811 c008110 = c00813;
-                            fallbackTitle2 = fallbackTitle;
-                            anidbEid4 = anidbEid;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM46getTitle11, url3, tvType5, href, c00824, c008110);
-                            c00814 = c008110;
+                        episodesDub = (List) destination$iv$iv3;
+                        if (StringsKt.contains(data3.getFormat(), "Movie", true)) {
+                            String fallbackTitle8 = fallbackTitle;
+                            String fallbackTitle9 = data3.m46getTitle();
+                            TvType tvType7 = TvType.AnimeMovie;
+                            C00842 c00844 = new C00842(id3, ids4, kitsuid4, data3, backgroundUrl6, animeMetaData2, posterurl4, logoUrl, null);
+                            c00833.L$0 = SpillingKt.nullOutSpilledVariable(url6);
+                            c00833.L$1 = SpillingKt.nullOutSpilledVariable(id3);
+                            c00833.L$2 = SpillingKt.nullOutSpilledVariable(data3);
+                            c00833.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                            c00833.L$4 = SpillingKt.nullOutSpilledVariable(posterurl4);
+                            c00833.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl6);
+                            c00833.L$6 = SpillingKt.nullOutSpilledVariable(anitype7);
+                            c00833.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
+                            c00833.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
+                            c00833.L$9 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
+                            c00833.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
+                            c00833.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid4);
+                            c00833.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
+                            c00833.L$13 = SpillingKt.nullOutSpilledVariable(type4);
+                            c00833.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
+                            c00833.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
+                            c00833.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
+                            c00833.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster);
+                            c00833.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle8);
+                            c00833.L$19 = SpillingKt.nullOutSpilledVariable(href);
+                            c00833.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
+                            c00833.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
+                            c00833.I$0 = aniyear4;
+                            c00833.I$1 = totalEps;
+                            c00833.I$2 = anidbEid;
+                            c00833.label = 5;
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, fallbackTitle9, url6, tvType7, href, c00844, c00833);
                             if (objNewMovieLoadResponse == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            fallbackTitle3 = fallbackTitle2;
-                            fallbackPoster3 = fallbackPoster2;
                             return (LoadResponse) objNewMovieLoadResponse;
                         }
-                        aniyear5 = aniyear4;
-                        String fallbackTitle6 = fallbackTitle;
+                        fallbackTitle2 = fallbackTitle;
+                        logoUrl2 = fallbackPoster;
                         anidbEid2 = anidbEid;
-                        String strM46getTitle12 = data4.m46getTitle();
-                        TvType tvType6 = TvType.Anime;
-                        data5 = data4;
-                        C00811 c008111 = c00813;
-                        MetaAnimeData animeMetaData6 = animeMetaData2;
-                        C00833 c00835 = new C00833(id3, ids4, kitsuid4, episodes2, episodesDub, logoUrl, data5, animeMetaData6, this, null);
-                        animeMetaData3 = animeMetaData6;
-                        c008111.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                        c008111.L$1 = SpillingKt.nullOutSpilledVariable(id3);
-                        c008111.L$2 = SpillingKt.nullOutSpilledVariable(data5);
-                        c008111.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                        c008111.L$4 = SpillingKt.nullOutSpilledVariable(posterurl3);
-                        c008111.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
-                        c008111.L$6 = SpillingKt.nullOutSpilledVariable(anitype6);
-                        c008111.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
-                        c008111.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
-                        c008111.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData4);
-                        c008111.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData3);
-                        c008111.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid3);
-                        c008111.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
-                        c008111.L$13 = SpillingKt.nullOutSpilledVariable(anitype5);
-                        c008111.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
-                        c008111.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
-                        c008111.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
-                        c008111.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster);
-                        c008111.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle6);
-                        c008111.L$19 = SpillingKt.nullOutSpilledVariable(href);
-                        c008111.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
-                        c008111.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
-                        c008111.I$0 = aniyear5;
-                        c008111.I$1 = totalEps;
-                        c008111.I$2 = anidbEid2;
-                        c008111.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle12, url3, tvType6, false, c00835, c008111, 8, (Object) null);
+                        String strM46getTitle9 = data3.m46getTitle();
+                        TvType tvType8 = TvType.Anime;
+                        syncMetaData = backgroundUrl4;
+                        C00831 c00837 = c00833;
+                        C00853 c00855 = new C00853(id3, ids4, kitsuid4, episodes2, episodesDub, logoUrl, data3, animeMetaData2, this, null);
+                        c00837.L$0 = SpillingKt.nullOutSpilledVariable(url6);
+                        c00837.L$1 = SpillingKt.nullOutSpilledVariable(id3);
+                        c00837.L$2 = SpillingKt.nullOutSpilledVariable(data3);
+                        c00837.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                        c00837.L$4 = SpillingKt.nullOutSpilledVariable(posterurl4);
+                        c00837.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl6);
+                        c00837.L$6 = SpillingKt.nullOutSpilledVariable(anitype7);
+                        c00837.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
+                        c00837.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
+                        c00837.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData);
+                        c00837.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
+                        c00837.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid4);
+                        c00837.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
+                        c00837.L$13 = SpillingKt.nullOutSpilledVariable(type4);
+                        c00837.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
+                        c00837.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
+                        c00837.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
+                        c00837.L$17 = SpillingKt.nullOutSpilledVariable(logoUrl2);
+                        c00837.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle2);
+                        c00837.L$19 = SpillingKt.nullOutSpilledVariable(href);
+                        c00837.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
+                        c00837.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
+                        c00837.I$0 = aniyear4;
+                        c00837.I$1 = totalEps;
+                        c00837.I$2 = anidbEid2;
+                        c00837.label = 6;
+                        url7 = url6;
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle9, url7, tvType8, false, c00855, c00837, 8, (Object) null);
                         if (objNewAnimeLoadResponse$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        episodes3 = episodes2;
                         episodesDub2 = episodesDub;
-                        data6 = data5;
-                        obj3 = objNewAnimeLoadResponse$default;
+                        obj4 = objNewAnimeLoadResponse$default;
                         totalEps2 = totalEps;
                         anidbEid3 = anidbEid2;
-                        aniyear6 = aniyear5;
-                        anidbEidMap = destination$iv$iv;
                         href2 = href;
-                        episodes3 = episodes2;
-                        logoUrl2 = logoUrl;
-                        epMetaMap3 = epMetaMap2;
-                        kitsuid5 = kitsuid4;
-                        return (LoadResponse) obj3;
+                        fallbackTitle3 = fallbackTitle2;
+                        anidbEidMap = destination$iv$iv;
+                        logoUrl3 = logoUrl;
+                        fallbackPoster2 = logoUrl2;
+                        anititle4 = anititle2;
+                        type5 = type4;
+                        syncMetaData2 = syncMetaData;
+                        return (LoadResponse) obj4;
                     }
                     Object element$iv$iv4 = it.next();
                     int it6 = ((Number) element$iv$iv4).intValue();
-                    String url7 = posterurl2;
-                    anidbEid5 = StreamPlayUtilsKt.getAnidbEid(syncMetaData3, Boxing.boxInt(it6));
-                    if (anidbEid5 != null) {
-                        iIntValue = anidbEid5.intValue();
+                    LinkedHashMap result$iv5 = result$iv;
+                    anidbEid4 = StreamPlayUtilsKt.getAnidbEid(backgroundUrl4, Boxing.boxInt(it6));
+                    if (anidbEid4 != null) {
+                        iIntValue = anidbEid4.intValue();
                     }
                     destination$iv$iv.put(element$iv$iv4, Boxing.boxInt(iIntValue));
-                    posterurl2 = url7;
+                    result$iv = result$iv5;
                 }
                 break;
             case 3:
-                int aniyear7 = c00815.I$0;
-                String jpTitle11 = (String) c00815.L$8;
-                AniIds ids5 = (AniIds) c00815.L$7;
-                TvType anitype8 = (TvType) c00815.L$6;
-                String backgroundUrl6 = (String) c00815.L$5;
-                String posterurl5 = (String) c00815.L$4;
-                String anititle5 = (String) c00815.L$3;
-                AnilistAPIResponse.anilistMedia data8 = (AnilistAPIResponse.anilistMedia) c00815.L$2;
-                String id13 = (String) c00815.L$1;
-                url4 = (String) c00815.L$0;
+                int aniyear5 = c00834.I$0;
+                String jpTitle5 = (String) c00834.L$8;
+                AniIds ids5 = (AniIds) c00834.L$7;
+                TvType anitype8 = (TvType) c00834.L$6;
+                anititle3 = (String) c00834.L$5;
+                String posterurl5 = (String) c00834.L$4;
+                String anititle5 = (String) c00834.L$3;
+                AnilistAPIResponse.anilistMedia data4 = (AnilistAPIResponse.anilistMedia) c00834.L$2;
+                id4 = (String) c00834.L$1;
+                String url9 = (String) c00834.L$0;
                 ResultKt.throwOnFailure($result);
-                aniyear3 = aniyear7;
-                data3 = data8;
-                c00812 = c00815;
-                id2 = id13;
-                anitype3 = anitype8;
-                posterurl = posterurl5;
-                anititle3 = anititle5;
-                jpTitle2 = jpTitle11;
-                jpTitle = backgroundUrl6;
+                aniyear3 = aniyear5;
+                data2 = data4;
+                c00832 = c00834;
+                url4 = url9;
+                anitype4 = anitype8;
+                posterurl2 = posterurl5;
+                anititle2 = anititle5;
                 ids2 = ids5;
-                obj2 = $result;
-                syncMetaData = ((NiceResponse) obj2).getText();
-                animeMetaData = StreamPlayUtilsKt.parseAnimeData(syncMetaData);
+                jpTitle2 = jpTitle5;
+                obj3 = $result;
+                String syncMetaData6 = ((NiceResponse) obj3).getText();
+                animeMetaData = StreamPlayUtilsKt.parseAnimeData(syncMetaData6);
                 if (animeMetaData != null) {
                     tmdbid = null;
                 } else {
@@ -2062,93 +2645,92 @@ public final class StreamPlayAnime extends MainAPI {
                 }
                 kitsuid2 = kitsuid;
                 tmdbid2 = tmdbid;
-                anitype4 = anitype3;
-                if (StringsKt.contains(data3.getFormat(), "Movie", true)) {
+                anitype5 = anitype4;
+                if (StringsKt.contains(data2.getFormat(), "Movie", true)) {
                     type = TvType.Movie;
                 } else {
                     type = TvType.TvSeries;
                 }
-                c00812.L$0 = url4;
-                c00812.L$1 = id2;
-                c00812.L$2 = data3;
-                c00812.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                c00812.L$4 = posterurl;
-                c00812.L$5 = jpTitle;
-                c00812.L$6 = SpillingKt.nullOutSpilledVariable(anitype4);
-                c00812.L$7 = ids2;
-                c00812.L$8 = jpTitle2;
-                c00812.L$9 = syncMetaData;
-                c00812.L$10 = animeMetaData;
-                c00812.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid2);
-                c00812.L$12 = kitsuid2;
-                c00812.L$13 = SpillingKt.nullOutSpilledVariable(type);
-                c00812.I$0 = aniyear3;
-                c00812.label = 4;
-                backgroundUrl3 = jpTitle;
+                c00832.L$0 = url4;
+                c00832.L$1 = id4;
+                c00832.L$2 = data2;
+                c00832.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                c00832.L$4 = posterurl2;
+                c00832.L$5 = anititle3;
+                c00832.L$6 = SpillingKt.nullOutSpilledVariable(anitype5);
+                c00832.L$7 = ids2;
+                c00832.L$8 = jpTitle2;
+                c00832.L$9 = syncMetaData6;
+                c00832.L$10 = animeMetaData;
+                c00832.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid2);
+                c00832.L$12 = kitsuid2;
+                c00832.L$13 = SpillingKt.nullOutSpilledVariable(type);
+                c00832.I$0 = aniyear3;
+                c00832.label = 4;
+                backgroundUrl4 = syncMetaData6;
                 jpTitle3 = jpTitle2;
-                type2 = type;
-                c00813 = c00812;
-                ids3 = ids2;
-                url2 = url4;
+                id2 = id4;
                 i = 1;
-                str = null;
-                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", type2, tmdbid2, "en", c00813);
+                ids3 = ids2;
+                type2 = type;
+                c00833 = c00832;
+                backgroundUrl5 = anititle3;
+                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", type2, tmdbid2, "en", c00833);
                 if (objFetchTmdbLogoUrl == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                anitype5 = type2;
-                tmdbid3 = tmdbid2;
-                aniyear4 = aniyear3;
-                anitype6 = anitype4;
-                jpTitle4 = jpTitle3;
+                data3 = data2;
+                posterurl3 = kitsuid2;
+                backgroundUrl6 = backgroundUrl5;
+                posterurl4 = posterurl2;
+                anitype6 = anitype5;
+                ids4 = ids3;
                 animeMetaData2 = animeMetaData;
-                posterurl2 = url2;
-                syncMetaData2 = id2;
-                backgroundUrl4 = backgroundUrl3;
-                data4 = data3;
-                syncMetaData3 = syncMetaData;
-                posterurl3 = posterurl;
-                kitsuid3 = kitsuid2;
+                jpTitle4 = jpTitle3;
+                url5 = id2;
+                aniyear4 = aniyear3;
+                type3 = type2;
+                kitsuid3 = url4;
+                tmdbid3 = tmdbid2;
                 logoUrl = (String) objFetchTmdbLogoUrl;
-                totalEps = data4.totalEpisodes();
-                Iterable $this$associateWith$iv6 = new IntRange(i, totalEps);
-                Map result$iv7 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv6, 10)), 16));
-                destination$iv$iv = result$iv7;
-                it = $this$associateWith$iv6.iterator();
+                totalEps = data3.totalEpisodes();
+                Iterable $this$associateWith$iv7 = new IntRange(i, totalEps);
+                id3 = url5;
+                kitsuid4 = posterurl3;
+                result$iv = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv7, 10)), 16));
+                destination$iv$iv = result$iv;
+                it = $this$associateWith$iv7.iterator();
                 while (true) {
                     iIntValue = 0;
                     if (!it.hasNext()) {
-                        url3 = posterurl2;
-                        $this$associateWith$iv = new IntRange(1, totalEps);
+                        Iterable $this$associateWith$iv8 = new IntRange(1, totalEps);
                         $i$f$associateWith = 0;
-                        Map result$iv8 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv, 10)), 16));
-                        destination$iv$iv2 = result$iv8;
-                        while (r24.hasNext()) {
-                            String syncMetaData8 = syncMetaData3;
+                        result$iv2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv8, 10)), 16));
+                        epMetaMap = result$iv2;
+                        while (r19.hasNext()) {
+                            int $i$f$associateWith5 = $i$f$associateWith;
                             it3 = ((Number) element$iv$iv).intValue();
                             if (animeMetaData2 != null) {
-                                $this$associateWith$iv2 = $this$associateWith$iv;
+                                url8 = kitsuid3;
                                 episodes4 = animeMetaData2.getEpisodes();
                                 if (episodes4 != null) {
-                                    $i$f$associateWith = $i$f$associateWith;
-                                    obj4 = (MetaEpisode) episodes4.get(String.valueOf(it3));
+                                    result$iv2 = result$iv2;
+                                    metaEpisode = episodes4.get(String.valueOf(it3));
                                 }
-                                destination$iv$iv2.put(element$iv$iv, obj4);
-                                syncMetaData3 = syncMetaData8;
-                                $this$associateWith$iv = $this$associateWith$iv2;
-                                $i$f$associateWith = $i$f$associateWith;
+                                epMetaMap.put(element$iv$iv, metaEpisode);
+                                $i$f$associateWith = $i$f$associateWith5;
+                                kitsuid3 = url8;
+                                result$iv2 = result$iv2;
                             } else {
-                                $this$associateWith$iv2 = $this$associateWith$iv;
+                                url8 = kitsuid3;
                             }
-                            obj4 = str;
-                            destination$iv$iv2.put(element$iv$iv, obj4);
-                            syncMetaData3 = syncMetaData8;
-                            $this$associateWith$iv = $this$associateWith$iv2;
-                            $i$f$associateWith = $i$f$associateWith;
+                            metaEpisode = null;
+                            epMetaMap.put(element$iv$iv, metaEpisode);
+                            $i$f$associateWith = $i$f$associateWith5;
+                            kitsuid3 = url8;
+                            result$iv2 = result$iv2;
                         }
-                        syncMetaData4 = syncMetaData3;
-                        epMetaMap = destination$iv$iv2;
-                        fallbackTitle = "";
+                        url6 = kitsuid3;
                         if (animeMetaData2 != null) {
                             fallbackPoster = "";
                         } else {
@@ -2156,35 +2738,33 @@ public final class StreamPlayAnime extends MainAPI {
                         }
                         if (animeMetaData2 != null) {
                             if (animeMetaData2 != null) {
-                                str2 = str;
+                                str = null;
                             } else {
-                                str2 = str;
+                                str = null;
                             }
-                            if (str2 == null) {
+                            if (str == null) {
                                 if (animeMetaData2 != null) {
-                                    str = titles.get("x-jat");
+                                    str = null;
+                                } else {
+                                    str = null;
                                 }
                                 if (str != null) {
-                                    fallbackTitle = str;
                                 }
-                            } else {
-                                fallbackTitle = str2;
                             }
                         } else {
                             if (animeMetaData2 != null) {
-                                str2 = str;
+                                str = null;
                             } else {
-                                str2 = str;
+                                str = null;
                             }
-                            if (str2 == null) {
+                            if (str == null) {
                                 if (animeMetaData2 != null) {
-                                    str = titles.get("x-jat");
+                                    str = null;
+                                } else {
+                                    str = null;
                                 }
                                 if (str != null) {
-                                    fallbackTitle = str;
                                 }
-                            } else {
-                                fallbackTitle = str2;
                             }
                         }
                         num = (Integer) destination$iv$iv.get(Boxing.boxInt(1));
@@ -2193,11 +2773,18 @@ public final class StreamPlayAnime extends MainAPI {
                         } else {
                             anidbEid = 0;
                         }
-                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m46getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
+                        Integer idMal10 = ids4.getIdMal();
+                        Integer id14 = ids4.getId();
+                        if (kitsuid4 != null) {
+                            intOrNull = StringsKt.toIntOrNull(kitsuid4);
+                        } else {
+                            intOrNull = null;
+                        }
+                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), id14, idMal10, data3.m46getTitle(), Boxing.boxInt(data3.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), intOrNull, 16633983, null));
                         $this$map$iv = new IntRange(1, totalEps);
-                        id3 = syncMetaData2;
-                        ids4 = ids3;
-                        destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+                        tmdbid4 = tmdbid3;
+                        type4 = type3;
+                        destination$iv$iv2 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                         $this$mapTo$iv$iv = $this$map$iv;
                         $i$f$mapTo = 0;
                         it2 = $this$mapTo$iv$iv.iterator();
@@ -2205,46 +2792,56 @@ public final class StreamPlayAnime extends MainAPI {
                             final int item$iv$iv5 = it2.nextInt();
                             Iterable $this$map$iv5 = $this$map$iv;
                             final MetaEpisode epData4 = (MetaEpisode) epMetaMap.get(Boxing.boxInt(item$iv$iv5));
-                            Integer idMal7 = ids4.getIdMal();
-                            Integer id14 = ids4.getId();
-                            String strM46getTitle13 = data4.m46getTitle();
-                            int year7 = data4.getStartDate().getYear();
-                            Map epMetaMap7 = epMetaMap;
+                            Integer idMal11 = ids4.getIdMal();
+                            Integer id15 = ids4.getId();
+                            if (kitsuid4 != null) {
+                                intOrNull3 = StringsKt.toIntOrNull(kitsuid4);
+                            } else {
+                                intOrNull3 = null;
+                            }
+                            String strM46getTitle10 = data3.m46getTitle();
+                            int year7 = data3.getStartDate().getYear();
+                            Map epMetaMap6 = epMetaMap;
                             num3 = (Integer) destination$iv$iv.get(Boxing.boxInt(item$iv$iv5));
                             if (num3 != null) {
                                 iIntValue3 = num3.intValue();
                             } else {
                                 iIntValue3 = 0;
                             }
-                            String linkData4 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv5), id14, idMal7, strM46getTitle13, Boxing.boxInt(year7), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
-                            destination$iv$iv3.add(MainAPIKt.newEpisode(this, linkData4, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
+                            String linkData4 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv5), id15, idMal11, strM46getTitle10, Boxing.boxInt(year7), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), intOrNull3, 8245311, null));
+                            destination$iv$iv2.add(MainAPIKt.newEpisode(this, linkData4, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda2
                                 public final Object invoke(Object obj5) {
-                                    return StreamPlayAnime.load$lambda$3$0(item$iv$iv5, epData4, fallbackPoster, fallbackTitle, (Episode) obj5);
+                                    return StreamPlayAnime.loadFromAnilist$lambda$3$0(item$iv$iv5, epData4, fallbackPoster, fallbackTitle, (Episode) obj5);
                                 }
                             }));
+                            $this$map$iv = $this$map$iv5;
                             $this$mapTo$iv$iv = $this$mapTo$iv$iv;
                             $i$f$mapTo = $i$f$mapTo;
-                            $this$map$iv = $this$map$iv5;
-                            epMetaMap = epMetaMap7;
-                            kitsuid3 = kitsuid3;
+                            epMetaMap = epMetaMap6;
+                            anitype6 = anitype6;
                         }
                         epMetaMap2 = epMetaMap;
-                        kitsuid4 = kitsuid3;
-                        episodes = (List) destination$iv$iv3;
+                        anitype7 = anitype6;
+                        episodes = (List) destination$iv$iv2;
                         List $this$mapIndexed$iv4 = episodes;
-                        destination$iv$iv4 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$mapIndexed$iv4, 10));
+                        destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$mapIndexed$iv4, 10));
                         index$iv$iv = 0;
-                        while (r33.hasNext()) {
+                        while (r22.hasNext()) {
                             int index$iv$iv5 = index$iv$iv + 1;
                             if (index$iv$iv < 0) {
                                 CollectionsKt.throwIndexOverflow();
                             }
                             Episode ep4 = (Episode) item$iv$iv2;
                             int i5 = index$iv$iv + 1;
-                            Integer idMal8 = ids4.getIdMal();
-                            Integer id15 = ids4.getId();
-                            String strM46getTitle14 = data4.m46getTitle();
-                            int year8 = data4.getStartDate().getYear();
+                            Integer idMal12 = ids4.getIdMal();
+                            Integer id16 = ids4.getId();
+                            if (kitsuid4 != null) {
+                                intOrNull2 = StringsKt.toIntOrNull(kitsuid4);
+                            } else {
+                                intOrNull2 = null;
+                            }
+                            String strM46getTitle11 = data3.m46getTitle();
+                            int year8 = data3.getStartDate().getYear();
                             List episodes8 = episodes;
                             num2 = (Integer) destination$iv$iv.get(Boxing.boxInt(i5));
                             if (num2 != null) {
@@ -2252,197 +2849,188 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue2 = 0;
                             }
-                            String dubLinkData4 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i5), id15, idMal8, strM46getTitle14, Boxing.boxInt(year8), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
-                            destination$iv$iv4.add(Episode.copy$default(ep4, dubLinkData4, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
+                            String dubLinkData4 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i5), id16, idMal12, strM46getTitle11, Boxing.boxInt(year8), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), intOrNull2, 8245311, null));
+                            destination$iv$iv3.add(Episode.copy$default(ep4, dubLinkData4, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
                             episodes = episodes8;
                             index$iv$iv = index$iv$iv5;
                         }
                         episodes2 = episodes;
-                        episodesDub = (List) destination$iv$iv4;
-                        if (StringsKt.contains(data4.getFormat(), "Movie", true)) {
-                            String strM46getTitle15 = data4.m46getTitle();
-                            fallbackPoster2 = fallbackPoster;
-                            TvType tvType7 = TvType.AnimeMovie;
-                            C00822 c00825 = new C00822(id3, ids4, kitsuid4, data4, backgroundUrl4, animeMetaData2, posterurl3, logoUrl, null);
-                            c00813.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                            c00813.L$1 = SpillingKt.nullOutSpilledVariable(id3);
-                            c00813.L$2 = SpillingKt.nullOutSpilledVariable(data4);
-                            c00813.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                            c00813.L$4 = SpillingKt.nullOutSpilledVariable(posterurl3);
-                            c00813.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
-                            c00813.L$6 = SpillingKt.nullOutSpilledVariable(anitype6);
-                            c00813.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
-                            c00813.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
-                            c00813.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData4);
-                            c00813.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
-                            c00813.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid3);
-                            c00813.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
-                            c00813.L$13 = SpillingKt.nullOutSpilledVariable(anitype5);
-                            c00813.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
-                            c00813.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
-                            c00813.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
-                            c00813.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster2);
-                            c00813.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle);
-                            c00813.L$19 = SpillingKt.nullOutSpilledVariable(href);
-                            c00813.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
-                            c00813.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
-                            c00813.I$0 = aniyear4;
-                            c00813.I$1 = totalEps;
-                            c00813.I$2 = anidbEid;
-                            c00813.label = 5;
-                            C00811 c008112 = c00813;
-                            fallbackTitle2 = fallbackTitle;
-                            anidbEid4 = anidbEid;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM46getTitle15, url3, tvType7, href, c00825, c008112);
-                            c00814 = c008112;
+                        episodesDub = (List) destination$iv$iv3;
+                        if (StringsKt.contains(data3.getFormat(), "Movie", true)) {
+                            String fallbackTitle10 = fallbackTitle;
+                            String fallbackTitle11 = data3.m46getTitle();
+                            TvType tvType9 = TvType.AnimeMovie;
+                            C00842 c00845 = new C00842(id3, ids4, kitsuid4, data3, backgroundUrl6, animeMetaData2, posterurl4, logoUrl, null);
+                            c00833.L$0 = SpillingKt.nullOutSpilledVariable(url6);
+                            c00833.L$1 = SpillingKt.nullOutSpilledVariable(id3);
+                            c00833.L$2 = SpillingKt.nullOutSpilledVariable(data3);
+                            c00833.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                            c00833.L$4 = SpillingKt.nullOutSpilledVariable(posterurl4);
+                            c00833.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl6);
+                            c00833.L$6 = SpillingKt.nullOutSpilledVariable(anitype7);
+                            c00833.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
+                            c00833.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
+                            c00833.L$9 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
+                            c00833.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
+                            c00833.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid4);
+                            c00833.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
+                            c00833.L$13 = SpillingKt.nullOutSpilledVariable(type4);
+                            c00833.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
+                            c00833.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
+                            c00833.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
+                            c00833.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster);
+                            c00833.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle10);
+                            c00833.L$19 = SpillingKt.nullOutSpilledVariable(href);
+                            c00833.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
+                            c00833.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
+                            c00833.I$0 = aniyear4;
+                            c00833.I$1 = totalEps;
+                            c00833.I$2 = anidbEid;
+                            c00833.label = 5;
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, fallbackTitle11, url6, tvType9, href, c00845, c00833);
                             if (objNewMovieLoadResponse == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            fallbackTitle3 = fallbackTitle2;
-                            fallbackPoster3 = fallbackPoster2;
                             return (LoadResponse) objNewMovieLoadResponse;
                         }
-                        aniyear5 = aniyear4;
-                        String fallbackTitle7 = fallbackTitle;
+                        fallbackTitle2 = fallbackTitle;
+                        logoUrl2 = fallbackPoster;
                         anidbEid2 = anidbEid;
-                        String strM46getTitle16 = data4.m46getTitle();
-                        TvType tvType8 = TvType.Anime;
-                        data5 = data4;
-                        C00811 c008113 = c00813;
-                        MetaAnimeData animeMetaData7 = animeMetaData2;
-                        C00833 c00836 = new C00833(id3, ids4, kitsuid4, episodes2, episodesDub, logoUrl, data5, animeMetaData7, this, null);
-                        animeMetaData3 = animeMetaData7;
-                        c008113.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                        c008113.L$1 = SpillingKt.nullOutSpilledVariable(id3);
-                        c008113.L$2 = SpillingKt.nullOutSpilledVariable(data5);
-                        c008113.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                        c008113.L$4 = SpillingKt.nullOutSpilledVariable(posterurl3);
-                        c008113.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
-                        c008113.L$6 = SpillingKt.nullOutSpilledVariable(anitype6);
-                        c008113.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
-                        c008113.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
-                        c008113.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData4);
-                        c008113.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData3);
-                        c008113.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid3);
-                        c008113.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
-                        c008113.L$13 = SpillingKt.nullOutSpilledVariable(anitype5);
-                        c008113.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
-                        c008113.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
-                        c008113.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
-                        c008113.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster);
-                        c008113.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle7);
-                        c008113.L$19 = SpillingKt.nullOutSpilledVariable(href);
-                        c008113.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
-                        c008113.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
-                        c008113.I$0 = aniyear5;
-                        c008113.I$1 = totalEps;
-                        c008113.I$2 = anidbEid2;
-                        c008113.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle16, url3, tvType8, false, c00836, c008113, 8, (Object) null);
+                        String strM46getTitle12 = data3.m46getTitle();
+                        TvType tvType10 = TvType.Anime;
+                        syncMetaData = backgroundUrl4;
+                        C00831 c00838 = c00833;
+                        C00853 c00856 = new C00853(id3, ids4, kitsuid4, episodes2, episodesDub, logoUrl, data3, animeMetaData2, this, null);
+                        c00838.L$0 = SpillingKt.nullOutSpilledVariable(url6);
+                        c00838.L$1 = SpillingKt.nullOutSpilledVariable(id3);
+                        c00838.L$2 = SpillingKt.nullOutSpilledVariable(data3);
+                        c00838.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                        c00838.L$4 = SpillingKt.nullOutSpilledVariable(posterurl4);
+                        c00838.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl6);
+                        c00838.L$6 = SpillingKt.nullOutSpilledVariable(anitype7);
+                        c00838.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
+                        c00838.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
+                        c00838.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData);
+                        c00838.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
+                        c00838.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid4);
+                        c00838.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
+                        c00838.L$13 = SpillingKt.nullOutSpilledVariable(type4);
+                        c00838.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
+                        c00838.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
+                        c00838.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
+                        c00838.L$17 = SpillingKt.nullOutSpilledVariable(logoUrl2);
+                        c00838.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle2);
+                        c00838.L$19 = SpillingKt.nullOutSpilledVariable(href);
+                        c00838.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
+                        c00838.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
+                        c00838.I$0 = aniyear4;
+                        c00838.I$1 = totalEps;
+                        c00838.I$2 = anidbEid2;
+                        c00838.label = 6;
+                        url7 = url6;
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle12, url7, tvType10, false, c00856, c00838, 8, (Object) null);
                         if (objNewAnimeLoadResponse$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        episodes3 = episodes2;
                         episodesDub2 = episodesDub;
-                        data6 = data5;
-                        obj3 = objNewAnimeLoadResponse$default;
+                        obj4 = objNewAnimeLoadResponse$default;
                         totalEps2 = totalEps;
                         anidbEid3 = anidbEid2;
-                        aniyear6 = aniyear5;
-                        anidbEidMap = destination$iv$iv;
                         href2 = href;
-                        episodes3 = episodes2;
-                        logoUrl2 = logoUrl;
-                        epMetaMap3 = epMetaMap2;
-                        kitsuid5 = kitsuid4;
-                        return (LoadResponse) obj3;
+                        fallbackTitle3 = fallbackTitle2;
+                        anidbEidMap = destination$iv$iv;
+                        logoUrl3 = logoUrl;
+                        fallbackPoster2 = logoUrl2;
+                        anititle4 = anititle2;
+                        type5 = type4;
+                        syncMetaData2 = syncMetaData;
+                        return (LoadResponse) obj4;
                     }
                     Object element$iv$iv5 = it.next();
                     int it7 = ((Number) element$iv$iv5).intValue();
-                    String url8 = posterurl2;
-                    anidbEid5 = StreamPlayUtilsKt.getAnidbEid(syncMetaData3, Boxing.boxInt(it7));
-                    if (anidbEid5 != null) {
-                        iIntValue = anidbEid5.intValue();
+                    LinkedHashMap result$iv6 = result$iv;
+                    anidbEid4 = StreamPlayUtilsKt.getAnidbEid(backgroundUrl4, Boxing.boxInt(it7));
+                    if (anidbEid4 != null) {
+                        iIntValue = anidbEid4.intValue();
                     }
                     destination$iv$iv.put(element$iv$iv5, Boxing.boxInt(iIntValue));
-                    posterurl2 = url8;
+                    result$iv = result$iv6;
                 }
                 break;
             case 4:
-                int aniyear8 = c00815.I$0;
-                TvType type3 = (TvType) c00815.L$13;
-                String kitsuid6 = (String) c00815.L$12;
-                Integer tmdbid4 = (Integer) c00815.L$11;
-                MetaAnimeData animeMetaData8 = (MetaAnimeData) c00815.L$10;
-                String syncMetaData9 = (String) c00815.L$9;
-                String jpTitle12 = (String) c00815.L$8;
-                AniIds ids6 = (AniIds) c00815.L$7;
-                TvType anitype9 = (TvType) c00815.L$6;
-                String backgroundUrl7 = (String) c00815.L$5;
-                String posterurl6 = (String) c00815.L$4;
-                String anititle6 = (String) c00815.L$3;
-                AnilistAPIResponse.anilistMedia data9 = (AnilistAPIResponse.anilistMedia) c00815.L$2;
-                String id16 = (String) c00815.L$1;
-                String url9 = (String) c00815.L$0;
+                int aniyear6 = c00834.I$0;
+                TvType type6 = (TvType) c00834.L$13;
+                String kitsuid5 = (String) c00834.L$12;
+                Integer tmdbid5 = (Integer) c00834.L$11;
+                MetaAnimeData animeMetaData3 = (MetaAnimeData) c00834.L$10;
+                String syncMetaData7 = (String) c00834.L$9;
+                String jpTitle6 = (String) c00834.L$8;
+                AniIds ids6 = (AniIds) c00834.L$7;
+                anitype6 = (TvType) c00834.L$6;
+                String backgroundUrl7 = (String) c00834.L$5;
+                String posterurl6 = (String) c00834.L$4;
+                String anititle6 = (String) c00834.L$3;
+                AnilistAPIResponse.anilistMedia data5 = (AnilistAPIResponse.anilistMedia) c00834.L$2;
+                String id17 = (String) c00834.L$1;
+                String url10 = (String) c00834.L$0;
                 ResultKt.throwOnFailure($result);
-                anitype5 = type3;
-                tmdbid3 = tmdbid4;
-                syncMetaData3 = syncMetaData9;
-                jpTitle4 = jpTitle12;
-                ids3 = ids6;
-                anitype6 = anitype9;
-                anititle3 = anititle6;
-                data4 = data9;
-                syncMetaData2 = id16;
+                posterurl4 = posterurl6;
+                posterurl3 = kitsuid5;
+                animeMetaData2 = animeMetaData3;
+                jpTitle4 = jpTitle6;
+                ids4 = ids6;
+                backgroundUrl6 = backgroundUrl7;
+                aniyear4 = aniyear6;
+                anititle2 = anititle6;
+                data3 = data5;
+                kitsuid3 = url10;
+                type3 = type6;
+                backgroundUrl4 = syncMetaData7;
+                c00833 = c00834;
                 objFetchTmdbLogoUrl = $result;
-                str = null;
-                kitsuid3 = kitsuid6;
-                posterurl3 = posterurl6;
-                animeMetaData2 = animeMetaData8;
-                c00813 = c00815;
-                aniyear4 = aniyear8;
-                posterurl2 = url9;
-                backgroundUrl4 = backgroundUrl7;
+                url5 = id17;
                 i = 1;
+                tmdbid3 = tmdbid5;
                 logoUrl = (String) objFetchTmdbLogoUrl;
-                totalEps = data4.totalEpisodes();
-                Iterable $this$associateWith$iv7 = new IntRange(i, totalEps);
-                Map result$iv9 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv7, 10)), 16));
-                destination$iv$iv = result$iv9;
-                it = $this$associateWith$iv7.iterator();
+                totalEps = data3.totalEpisodes();
+                Iterable $this$associateWith$iv9 = new IntRange(i, totalEps);
+                id3 = url5;
+                kitsuid4 = posterurl3;
+                result$iv = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv9, 10)), 16));
+                destination$iv$iv = result$iv;
+                it = $this$associateWith$iv9.iterator();
                 while (true) {
                     iIntValue = 0;
                     if (!it.hasNext()) {
-                        url3 = posterurl2;
-                        $this$associateWith$iv = new IntRange(1, totalEps);
+                        Iterable $this$associateWith$iv10 = new IntRange(1, totalEps);
                         $i$f$associateWith = 0;
-                        Map result$iv10 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv, 10)), 16));
-                        destination$iv$iv2 = result$iv10;
-                        while (r24.hasNext()) {
-                            String syncMetaData10 = syncMetaData3;
+                        result$iv2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault($this$associateWith$iv10, 10)), 16));
+                        epMetaMap = result$iv2;
+                        while (r19.hasNext()) {
+                            int $i$f$associateWith6 = $i$f$associateWith;
                             it3 = ((Number) element$iv$iv).intValue();
                             if (animeMetaData2 != null) {
-                                $this$associateWith$iv2 = $this$associateWith$iv;
+                                url8 = kitsuid3;
                                 episodes4 = animeMetaData2.getEpisodes();
                                 if (episodes4 != null) {
-                                    $i$f$associateWith = $i$f$associateWith;
-                                    obj4 = (MetaEpisode) episodes4.get(String.valueOf(it3));
+                                    result$iv2 = result$iv2;
+                                    metaEpisode = episodes4.get(String.valueOf(it3));
                                 }
-                                destination$iv$iv2.put(element$iv$iv, obj4);
-                                syncMetaData3 = syncMetaData10;
-                                $this$associateWith$iv = $this$associateWith$iv2;
-                                $i$f$associateWith = $i$f$associateWith;
+                                epMetaMap.put(element$iv$iv, metaEpisode);
+                                $i$f$associateWith = $i$f$associateWith6;
+                                kitsuid3 = url8;
+                                result$iv2 = result$iv2;
                             } else {
-                                $this$associateWith$iv2 = $this$associateWith$iv;
+                                url8 = kitsuid3;
                             }
-                            obj4 = str;
-                            destination$iv$iv2.put(element$iv$iv, obj4);
-                            syncMetaData3 = syncMetaData10;
-                            $this$associateWith$iv = $this$associateWith$iv2;
-                            $i$f$associateWith = $i$f$associateWith;
+                            metaEpisode = null;
+                            epMetaMap.put(element$iv$iv, metaEpisode);
+                            $i$f$associateWith = $i$f$associateWith6;
+                            kitsuid3 = url8;
+                            result$iv2 = result$iv2;
                         }
-                        syncMetaData4 = syncMetaData3;
-                        epMetaMap = destination$iv$iv2;
-                        fallbackTitle = "";
+                        url6 = kitsuid3;
                         if (animeMetaData2 != null) {
                             fallbackPoster = "";
                         } else {
@@ -2450,35 +3038,33 @@ public final class StreamPlayAnime extends MainAPI {
                         }
                         if (animeMetaData2 != null) {
                             if (animeMetaData2 != null) {
-                                str2 = str;
+                                str = null;
                             } else {
-                                str2 = str;
+                                str = null;
                             }
-                            if (str2 == null) {
+                            if (str == null) {
                                 if (animeMetaData2 != null) {
-                                    str = titles.get("x-jat");
+                                    str = null;
+                                } else {
+                                    str = null;
                                 }
                                 if (str != null) {
-                                    fallbackTitle = str;
                                 }
-                            } else {
-                                fallbackTitle = str2;
                             }
                         } else {
                             if (animeMetaData2 != null) {
-                                str2 = str;
+                                str = null;
                             } else {
-                                str2 = str;
+                                str = null;
                             }
-                            if (str2 == null) {
+                            if (str == null) {
                                 if (animeMetaData2 != null) {
-                                    str = titles.get("x-jat");
+                                    str = null;
+                                } else {
+                                    str = null;
                                 }
                                 if (str != null) {
-                                    fallbackTitle = str;
                                 }
-                            } else {
-                                fallbackTitle = str2;
                             }
                         }
                         num = (Integer) destination$iv$iv.get(Boxing.boxInt(1));
@@ -2487,11 +3073,18 @@ public final class StreamPlayAnime extends MainAPI {
                         } else {
                             anidbEid = 0;
                         }
-                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), ids3.getId(), ids3.getIdMal(), data4.m46getTitle(), Boxing.boxInt(data4.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), 16633983, null));
+                        Integer idMal13 = ids4.getIdMal();
+                        Integer id18 = ids4.getId();
+                        if (kitsuid4 != null) {
+                            intOrNull = StringsKt.toIntOrNull(kitsuid4);
+                        } else {
+                            intOrNull = null;
+                        }
+                        href = toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), id18, idMal13, data3.m46getTitle(), Boxing.boxInt(data3.getStartDate().getYear()), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(anidbEid), intOrNull, 16633983, null));
                         $this$map$iv = new IntRange(1, totalEps);
-                        id3 = syncMetaData2;
-                        ids4 = ids3;
-                        destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+                        tmdbid4 = tmdbid3;
+                        type4 = type3;
+                        destination$iv$iv2 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                         $this$mapTo$iv$iv = $this$map$iv;
                         $i$f$mapTo = 0;
                         it2 = $this$mapTo$iv$iv.iterator();
@@ -2499,46 +3092,56 @@ public final class StreamPlayAnime extends MainAPI {
                             final int item$iv$iv6 = it2.nextInt();
                             Iterable $this$map$iv6 = $this$map$iv;
                             final MetaEpisode epData5 = (MetaEpisode) epMetaMap.get(Boxing.boxInt(item$iv$iv6));
-                            Integer idMal9 = ids4.getIdMal();
-                            Integer id17 = ids4.getId();
-                            String strM46getTitle17 = data4.m46getTitle();
-                            int year9 = data4.getStartDate().getYear();
-                            Map epMetaMap8 = epMetaMap;
+                            Integer idMal14 = ids4.getIdMal();
+                            Integer id19 = ids4.getId();
+                            if (kitsuid4 != null) {
+                                intOrNull3 = StringsKt.toIntOrNull(kitsuid4);
+                            } else {
+                                intOrNull3 = null;
+                            }
+                            String strM46getTitle13 = data3.m46getTitle();
+                            int year9 = data3.getStartDate().getYear();
+                            Map epMetaMap7 = epMetaMap;
                             num3 = (Integer) destination$iv$iv.get(Boxing.boxInt(item$iv$iv6));
                             if (num3 != null) {
                                 iIntValue3 = num3.intValue();
                             } else {
                                 iIntValue3 = 0;
                             }
-                            String linkData5 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv6), id17, idMal9, strM46getTitle17, Boxing.boxInt(year9), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), 8245311, null));
-                            destination$iv$iv3.add(MainAPIKt.newEpisode(this, linkData5, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda0
+                            String linkData5 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(item$iv$iv6), id19, idMal14, strM46getTitle13, Boxing.boxInt(year9), null, true, null, null, null, jpTitle4, null, null, false, false, false, false, Boxing.boxInt(iIntValue3), intOrNull3, 8245311, null));
+                            destination$iv$iv2.add(MainAPIKt.newEpisode(this, linkData5, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda2
                                 public final Object invoke(Object obj5) {
-                                    return StreamPlayAnime.load$lambda$3$0(item$iv$iv6, epData5, fallbackPoster, fallbackTitle, (Episode) obj5);
+                                    return StreamPlayAnime.loadFromAnilist$lambda$3$0(item$iv$iv6, epData5, fallbackPoster, fallbackTitle, (Episode) obj5);
                                 }
                             }));
+                            $this$map$iv = $this$map$iv6;
                             $this$mapTo$iv$iv = $this$mapTo$iv$iv;
                             $i$f$mapTo = $i$f$mapTo;
-                            $this$map$iv = $this$map$iv6;
-                            epMetaMap = epMetaMap8;
-                            kitsuid3 = kitsuid3;
+                            epMetaMap = epMetaMap7;
+                            anitype6 = anitype6;
                         }
                         epMetaMap2 = epMetaMap;
-                        kitsuid4 = kitsuid3;
-                        episodes = (List) destination$iv$iv3;
+                        anitype7 = anitype6;
+                        episodes = (List) destination$iv$iv2;
                         List $this$mapIndexed$iv5 = episodes;
-                        destination$iv$iv4 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$mapIndexed$iv5, 10));
+                        destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$mapIndexed$iv5, 10));
                         index$iv$iv = 0;
-                        while (r33.hasNext()) {
+                        while (r22.hasNext()) {
                             int index$iv$iv6 = index$iv$iv + 1;
                             if (index$iv$iv < 0) {
                                 CollectionsKt.throwIndexOverflow();
                             }
                             Episode ep5 = (Episode) item$iv$iv2;
                             int i6 = index$iv$iv + 1;
-                            Integer idMal10 = ids4.getIdMal();
-                            Integer id18 = ids4.getId();
-                            String strM46getTitle18 = data4.m46getTitle();
-                            int year10 = data4.getStartDate().getYear();
+                            Integer idMal15 = ids4.getIdMal();
+                            Integer id110 = ids4.getId();
+                            if (kitsuid4 != null) {
+                                intOrNull2 = StringsKt.toIntOrNull(kitsuid4);
+                            } else {
+                                intOrNull2 = null;
+                            }
+                            String strM46getTitle14 = data3.m46getTitle();
+                            int year10 = data3.getStartDate().getYear();
                             List episodes9 = episodes;
                             num2 = (Integer) destination$iv$iv.get(Boxing.boxInt(i6));
                             if (num2 != null) {
@@ -2546,157 +3149,151 @@ public final class StreamPlayAnime extends MainAPI {
                             } else {
                                 iIntValue2 = 0;
                             }
-                            String dubLinkData5 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i6), id18, idMal10, strM46getTitle18, Boxing.boxInt(year10), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), 8245311, null));
-                            destination$iv$iv4.add(Episode.copy$default(ep5, dubLinkData5, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
+                            String dubLinkData5 = toStringData(new LinkData(null, null, null, null, null, null, Boxing.boxInt(1), Boxing.boxInt(i6), id110, idMal15, strM46getTitle14, Boxing.boxInt(year10), null, true, null, null, null, jpTitle4, null, null, false, false, false, true, Boxing.boxInt(iIntValue2), intOrNull2, 8245311, null));
+                            destination$iv$iv3.add(Episode.copy$default(ep5, dubLinkData5, (String) null, (Integer) null, (Integer) null, (String) null, (Score) null, (String) null, (Long) null, (Integer) null, 510, (Object) null));
                             episodes = episodes9;
                             index$iv$iv = index$iv$iv6;
                         }
                         episodes2 = episodes;
-                        episodesDub = (List) destination$iv$iv4;
-                        if (StringsKt.contains(data4.getFormat(), "Movie", true)) {
-                            String strM46getTitle19 = data4.m46getTitle();
-                            fallbackPoster2 = fallbackPoster;
-                            TvType tvType9 = TvType.AnimeMovie;
-                            C00822 c00826 = new C00822(id3, ids4, kitsuid4, data4, backgroundUrl4, animeMetaData2, posterurl3, logoUrl, null);
-                            c00813.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                            c00813.L$1 = SpillingKt.nullOutSpilledVariable(id3);
-                            c00813.L$2 = SpillingKt.nullOutSpilledVariable(data4);
-                            c00813.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                            c00813.L$4 = SpillingKt.nullOutSpilledVariable(posterurl3);
-                            c00813.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
-                            c00813.L$6 = SpillingKt.nullOutSpilledVariable(anitype6);
-                            c00813.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
-                            c00813.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
-                            c00813.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData4);
-                            c00813.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
-                            c00813.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid3);
-                            c00813.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
-                            c00813.L$13 = SpillingKt.nullOutSpilledVariable(anitype5);
-                            c00813.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
-                            c00813.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
-                            c00813.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
-                            c00813.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster2);
-                            c00813.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle);
-                            c00813.L$19 = SpillingKt.nullOutSpilledVariable(href);
-                            c00813.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
-                            c00813.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
-                            c00813.I$0 = aniyear4;
-                            c00813.I$1 = totalEps;
-                            c00813.I$2 = anidbEid;
-                            c00813.label = 5;
-                            C00811 c008114 = c00813;
-                            fallbackTitle2 = fallbackTitle;
-                            anidbEid4 = anidbEid;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, strM46getTitle19, url3, tvType9, href, c00826, c008114);
-                            c00814 = c008114;
+                        episodesDub = (List) destination$iv$iv3;
+                        if (StringsKt.contains(data3.getFormat(), "Movie", true)) {
+                            String fallbackTitle12 = fallbackTitle;
+                            String fallbackTitle13 = data3.m46getTitle();
+                            TvType tvType11 = TvType.AnimeMovie;
+                            C00842 c00846 = new C00842(id3, ids4, kitsuid4, data3, backgroundUrl6, animeMetaData2, posterurl4, logoUrl, null);
+                            c00833.L$0 = SpillingKt.nullOutSpilledVariable(url6);
+                            c00833.L$1 = SpillingKt.nullOutSpilledVariable(id3);
+                            c00833.L$2 = SpillingKt.nullOutSpilledVariable(data3);
+                            c00833.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                            c00833.L$4 = SpillingKt.nullOutSpilledVariable(posterurl4);
+                            c00833.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl6);
+                            c00833.L$6 = SpillingKt.nullOutSpilledVariable(anitype7);
+                            c00833.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
+                            c00833.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
+                            c00833.L$9 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
+                            c00833.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
+                            c00833.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid4);
+                            c00833.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
+                            c00833.L$13 = SpillingKt.nullOutSpilledVariable(type4);
+                            c00833.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
+                            c00833.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
+                            c00833.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
+                            c00833.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster);
+                            c00833.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle12);
+                            c00833.L$19 = SpillingKt.nullOutSpilledVariable(href);
+                            c00833.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
+                            c00833.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
+                            c00833.I$0 = aniyear4;
+                            c00833.I$1 = totalEps;
+                            c00833.I$2 = anidbEid;
+                            c00833.label = 5;
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, fallbackTitle13, url6, tvType11, href, c00846, c00833);
                             if (objNewMovieLoadResponse == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
-                            fallbackTitle3 = fallbackTitle2;
-                            fallbackPoster3 = fallbackPoster2;
                             return (LoadResponse) objNewMovieLoadResponse;
                         }
-                        aniyear5 = aniyear4;
-                        String fallbackTitle8 = fallbackTitle;
+                        fallbackTitle2 = fallbackTitle;
+                        logoUrl2 = fallbackPoster;
                         anidbEid2 = anidbEid;
-                        String strM46getTitle110 = data4.m46getTitle();
-                        TvType tvType10 = TvType.Anime;
-                        data5 = data4;
-                        C00811 c008115 = c00813;
-                        MetaAnimeData animeMetaData9 = animeMetaData2;
-                        C00833 c00837 = new C00833(id3, ids4, kitsuid4, episodes2, episodesDub, logoUrl, data5, animeMetaData9, this, null);
-                        animeMetaData3 = animeMetaData9;
-                        c008115.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                        c008115.L$1 = SpillingKt.nullOutSpilledVariable(id3);
-                        c008115.L$2 = SpillingKt.nullOutSpilledVariable(data5);
-                        c008115.L$3 = SpillingKt.nullOutSpilledVariable(anititle3);
-                        c008115.L$4 = SpillingKt.nullOutSpilledVariable(posterurl3);
-                        c008115.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl4);
-                        c008115.L$6 = SpillingKt.nullOutSpilledVariable(anitype6);
-                        c008115.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
-                        c008115.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
-                        c008115.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData4);
-                        c008115.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData3);
-                        c008115.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid3);
-                        c008115.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
-                        c008115.L$13 = SpillingKt.nullOutSpilledVariable(anitype5);
-                        c008115.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
-                        c008115.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
-                        c008115.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
-                        c008115.L$17 = SpillingKt.nullOutSpilledVariable(fallbackPoster);
-                        c008115.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle8);
-                        c008115.L$19 = SpillingKt.nullOutSpilledVariable(href);
-                        c008115.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
-                        c008115.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
-                        c008115.I$0 = aniyear5;
-                        c008115.I$1 = totalEps;
-                        c008115.I$2 = anidbEid2;
-                        c008115.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle110, url3, tvType10, false, c00837, c008115, 8, (Object) null);
+                        String strM46getTitle15 = data3.m46getTitle();
+                        TvType tvType12 = TvType.Anime;
+                        syncMetaData = backgroundUrl4;
+                        C00831 c00839 = c00833;
+                        C00853 c00857 = new C00853(id3, ids4, kitsuid4, episodes2, episodesDub, logoUrl, data3, animeMetaData2, this, null);
+                        c00839.L$0 = SpillingKt.nullOutSpilledVariable(url6);
+                        c00839.L$1 = SpillingKt.nullOutSpilledVariable(id3);
+                        c00839.L$2 = SpillingKt.nullOutSpilledVariable(data3);
+                        c00839.L$3 = SpillingKt.nullOutSpilledVariable(anititle2);
+                        c00839.L$4 = SpillingKt.nullOutSpilledVariable(posterurl4);
+                        c00839.L$5 = SpillingKt.nullOutSpilledVariable(backgroundUrl6);
+                        c00839.L$6 = SpillingKt.nullOutSpilledVariable(anitype7);
+                        c00839.L$7 = SpillingKt.nullOutSpilledVariable(ids4);
+                        c00839.L$8 = SpillingKt.nullOutSpilledVariable(jpTitle4);
+                        c00839.L$9 = SpillingKt.nullOutSpilledVariable(syncMetaData);
+                        c00839.L$10 = SpillingKt.nullOutSpilledVariable(animeMetaData2);
+                        c00839.L$11 = SpillingKt.nullOutSpilledVariable(tmdbid4);
+                        c00839.L$12 = SpillingKt.nullOutSpilledVariable(kitsuid4);
+                        c00839.L$13 = SpillingKt.nullOutSpilledVariable(type4);
+                        c00839.L$14 = SpillingKt.nullOutSpilledVariable(logoUrl);
+                        c00839.L$15 = SpillingKt.nullOutSpilledVariable(destination$iv$iv);
+                        c00839.L$16 = SpillingKt.nullOutSpilledVariable(epMetaMap2);
+                        c00839.L$17 = SpillingKt.nullOutSpilledVariable(logoUrl2);
+                        c00839.L$18 = SpillingKt.nullOutSpilledVariable(fallbackTitle2);
+                        c00839.L$19 = SpillingKt.nullOutSpilledVariable(href);
+                        c00839.L$20 = SpillingKt.nullOutSpilledVariable(episodes2);
+                        c00839.L$21 = SpillingKt.nullOutSpilledVariable(episodesDub);
+                        c00839.I$0 = aniyear4;
+                        c00839.I$1 = totalEps;
+                        c00839.I$2 = anidbEid2;
+                        c00839.label = 6;
+                        url7 = url6;
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, strM46getTitle15, url7, tvType12, false, c00857, c00839, 8, (Object) null);
                         if (objNewAnimeLoadResponse$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        episodes3 = episodes2;
                         episodesDub2 = episodesDub;
-                        data6 = data5;
-                        obj3 = objNewAnimeLoadResponse$default;
+                        obj4 = objNewAnimeLoadResponse$default;
                         totalEps2 = totalEps;
                         anidbEid3 = anidbEid2;
-                        aniyear6 = aniyear5;
-                        anidbEidMap = destination$iv$iv;
                         href2 = href;
-                        episodes3 = episodes2;
-                        logoUrl2 = logoUrl;
-                        epMetaMap3 = epMetaMap2;
-                        kitsuid5 = kitsuid4;
-                        return (LoadResponse) obj3;
+                        fallbackTitle3 = fallbackTitle2;
+                        anidbEidMap = destination$iv$iv;
+                        logoUrl3 = logoUrl;
+                        fallbackPoster2 = logoUrl2;
+                        anititle4 = anititle2;
+                        type5 = type4;
+                        syncMetaData2 = syncMetaData;
+                        return (LoadResponse) obj4;
                     }
                     Object element$iv$iv6 = it.next();
                     int it8 = ((Number) element$iv$iv6).intValue();
-                    String url10 = posterurl2;
-                    anidbEid5 = StreamPlayUtilsKt.getAnidbEid(syncMetaData3, Boxing.boxInt(it8));
-                    if (anidbEid5 != null) {
-                        iIntValue = anidbEid5.intValue();
+                    LinkedHashMap result$iv7 = result$iv;
+                    anidbEid4 = StreamPlayUtilsKt.getAnidbEid(backgroundUrl4, Boxing.boxInt(it8));
+                    if (anidbEid4 != null) {
+                        iIntValue = anidbEid4.intValue();
                     }
                     destination$iv$iv.put(element$iv$iv6, Boxing.boxInt(iIntValue));
-                    posterurl2 = url10;
+                    result$iv = result$iv7;
                 }
                 break;
             case 5:
-                int anidbEid6 = c00815.I$2;
-                int i7 = c00815.I$1;
-                int i8 = c00815.I$0;
-                String fallbackTitle9 = (String) c00815.L$18;
-                fallbackPoster3 = (String) c00815.L$17;
+                int i7 = c00834.I$2;
+                int i8 = c00834.I$1;
+                int i9 = c00834.I$0;
                 ResultKt.throwOnFailure($result);
-                fallbackTitle3 = fallbackTitle9;
-                c00814 = c00815;
-                anidbEid4 = anidbEid6;
                 objNewMovieLoadResponse = $result;
                 return (LoadResponse) objNewMovieLoadResponse;
             case 6:
-                anidbEid3 = c00815.I$2;
-                totalEps2 = c00815.I$1;
-                aniyear6 = c00815.I$0;
-                episodesDub2 = (List) c00815.L$21;
-                episodes3 = (List) c00815.L$20;
-                href2 = (String) c00815.L$19;
-                epMetaMap3 = (Map) c00815.L$16;
-                anidbEidMap = (Map) c00815.L$15;
-                logoUrl2 = (String) c00815.L$14;
-                TvType type4 = (TvType) c00815.L$13;
-                kitsuid5 = (String) c00815.L$12;
-                animeMetaData3 = (MetaAnimeData) c00815.L$10;
-                data6 = (AnilistAPIResponse.anilistMedia) c00815.L$2;
+                anidbEid3 = c00834.I$2;
+                totalEps2 = c00834.I$1;
+                int aniyear7 = c00834.I$0;
+                episodesDub2 = (List) c00834.L$21;
+                episodes3 = (List) c00834.L$20;
+                String href3 = (String) c00834.L$19;
+                fallbackTitle3 = (String) c00834.L$18;
+                fallbackPoster2 = (String) c00834.L$17;
+                anidbEidMap = (Map) c00834.L$15;
+                logoUrl3 = (String) c00834.L$14;
+                type5 = (TvType) c00834.L$13;
+                syncMetaData2 = (String) c00834.L$9;
+                anititle4 = (String) c00834.L$3;
+                AnilistAPIResponse.anilistMedia data6 = (AnilistAPIResponse.anilistMedia) c00834.L$2;
+                String url11 = (String) c00834.L$0;
                 ResultKt.throwOnFailure($result);
-                obj3 = $result;
-                anitype5 = type4;
-                return (LoadResponse) obj3;
+                href2 = href3;
+                data3 = data6;
+                aniyear4 = aniyear7;
+                url7 = url11;
+                obj4 = $result;
+                return (LoadResponse) obj4;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
     }
 
-    private static final String load$resolveTitle(String fallbackTitle, MetaEpisode epData) {
+    private static final String loadFromAnilist$resolveTitle(String fallbackTitle, MetaEpisode epData) {
         String jsonTitle;
         Map<String, String> title;
         Map<String, String> title2;
@@ -2728,12 +3325,12 @@ public final class StreamPlayAnime extends MainAPI {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit load$lambda$3$0(int $i, MetaEpisode $epData, String $fallbackPoster, String $fallbackTitle, Episode $this$newEpisode) {
+    public static final Unit loadFromAnilist$lambda$3$0(int $i, MetaEpisode $epData, String $fallbackPoster, String $fallbackTitle, Episode $this$newEpisode) {
         String image;
         String overview;
         $this$newEpisode.setSeason(1);
         $this$newEpisode.setEpisode(Integer.valueOf($i));
-        $this$newEpisode.setName(load$resolveTitle($fallbackTitle, $epData));
+        $this$newEpisode.setName(loadFromAnilist$resolveTitle($fallbackTitle, $epData));
         if ($epData == null || (image = $epData.getImage()) == null) {
             image = $fallbackPoster;
         }
@@ -2748,12 +3345,12 @@ public final class StreamPlayAnime extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$load$2 */
+    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadFromAnilist$2 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$load$2", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,531:1\n296#2,2:532\n296#2,2:534\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$2\n*L\n272#1:532,2\n274#1:534,2\n*E\n"})
-    static final class C00822 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadFromAnilist$2", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,768:1\n296#2,2:769\n296#2,2:771\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$2\n*L\n333#1:769,2\n335#1:771,2\n*E\n"})
+    static final class C00842 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ MetaAnimeData $animeMetaData;
         final /* synthetic */ String $backgroundUrl;
         final /* synthetic */ AnilistAPIResponse.anilistMedia $data;
@@ -2766,7 +3363,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00822(String str, AniIds aniIds, String str2, AnilistAPIResponse.anilistMedia anilistmedia, String str3, MetaAnimeData metaAnimeData, String str4, String str5, Continuation<? super C00822> continuation) {
+        C00842(String str, AniIds aniIds, String str2, AnilistAPIResponse.anilistMedia anilistmedia, String str3, MetaAnimeData metaAnimeData, String str4, String str5, Continuation<? super C00842> continuation) {
             super(2, continuation);
             this.$id = str;
             this.$ids = aniIds;
@@ -2779,9 +3376,9 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00822 = new C00822(this.$id, this.$ids, this.$kitsuid, this.$data, this.$backgroundUrl, this.$animeMetaData, this.$posterurl, this.$logoUrl, continuation);
-            c00822.L$0 = obj;
-            return c00822;
+            Continuation<Unit> c00842 = new C00842(this.$id, this.$ids, this.$kitsuid, this.$data, this.$backgroundUrl, this.$animeMetaData, this.$posterurl, this.$logoUrl, continuation);
+            c00842.L$0 = obj;
+            return c00842;
         }
 
         public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
@@ -2890,12 +3487,12 @@ public final class StreamPlayAnime extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$load$3 */
+    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadFromAnilist$3 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$load$3", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,531:1\n296#2,2:532\n296#2,2:534\n1795#2,10:536\n2068#2:546\n2069#2:548\n1805#2:549\n1#3:547\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$load$3\n*L\n289#1:532,2\n291#1:534,2\n296#1:536,10\n296#1:546\n296#1:548\n296#1:549\n296#1:547\n*E\n"})
-    static final class C00833 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadFromAnilist$3", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,768:1\n296#2,2:769\n296#2,2:771\n1795#2,10:773\n2068#2:783\n2069#2:785\n1805#2:786\n1#3:784\n*S KotlinDebug\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromAnilist$3\n*L\n350#1:769,2\n352#1:771,2\n357#1:773,10\n357#1:783\n357#1:785\n357#1:786\n357#1:784\n*E\n"})
+    static final class C00853 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ MetaAnimeData $animeMetaData;
         final /* synthetic */ AnilistAPIResponse.anilistMedia $data;
         final /* synthetic */ List<Episode> $episodes;
@@ -2909,7 +3506,7 @@ public final class StreamPlayAnime extends MainAPI {
         final /* synthetic */ StreamPlayAnime this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00833(String str, AniIds aniIds, String str2, List<Episode> list, List<Episode> list2, String str3, AnilistAPIResponse.anilistMedia anilistmedia, MetaAnimeData metaAnimeData, StreamPlayAnime streamPlayAnime, Continuation<? super C00833> continuation) {
+        C00853(String str, AniIds aniIds, String str2, List<Episode> list, List<Episode> list2, String str3, AnilistAPIResponse.anilistMedia anilistmedia, MetaAnimeData metaAnimeData, StreamPlayAnime streamPlayAnime, Continuation<? super C00853> continuation) {
             super(2, continuation);
             this.$id = str;
             this.$ids = aniIds;
@@ -2923,9 +3520,9 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00833 = new C00833(this.$id, this.$ids, this.$kitsuid, this.$episodes, this.$episodesDub, this.$logoUrl, this.$data, this.$animeMetaData, this.this$0, continuation);
-            c00833.L$0 = obj;
-            return c00833;
+            Continuation<Unit> c00853 = new C00853(this.$id, this.$ids, this.$kitsuid, this.$episodes, this.$episodesDub, this.$logoUrl, this.$data, this.$animeMetaData, this.this$0, continuation);
+            c00853.L$0 = obj;
+            return c00853;
         }
 
         public final Object invoke(AnimeLoadResponse animeLoadResponse, Continuation<? super Unit> continuation) {
@@ -3072,68 +3669,8755 @@ public final class StreamPlayAnime extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:54:0x0238  */
-    /* JADX WARN: Code duplicated, block: B:55:0x023d  */
-    /* JADX WARN: Code duplicated, block: B:64:0x0259  */
-    /* JADX WARN: Code duplicated, block: B:69:0x0273  */
-    /* JADX WARN: Code duplicated, block: B:70:0x0277  */
-    /* JADX WARN: Code duplicated, block: B:72:0x027d  */
-    /* JADX WARN: Code duplicated, block: B:73:0x0281  */
-    /* JADX WARN: Code duplicated, block: B:76:0x03b2 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:77:0x03b3  */
-    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:90:0x026b A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:92:? A[LOOP:0: B:62:0x0253->B:92:?, LOOP_END, SYNTHETIC] */
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code duplicated, block: B:100:0x049a  */
+    /* JADX WARN: Code duplicated, block: B:102:0x049e  */
+    /* JADX WARN: Code duplicated, block: B:103:0x04a1  */
+    /* JADX WARN: Code duplicated, block: B:106:0x04ab  */
+    /* JADX WARN: Code duplicated, block: B:108:0x04b1  */
+    /* JADX WARN: Code duplicated, block: B:109:0x04b8  */
+    /* JADX WARN: Code duplicated, block: B:111:0x04bc  */
+    /* JADX WARN: Code duplicated, block: B:114:0x04c6  */
+    /* JADX WARN: Code duplicated, block: B:115:0x04c8  */
+    /* JADX WARN: Code duplicated, block: B:124:0x04ec  */
+    /* JADX WARN: Code duplicated, block: B:126:0x04f1  */
+    /* JADX WARN: Code duplicated, block: B:129:0x0550 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:130:0x0551  */
+    /* JADX WARN: Code duplicated, block: B:133:0x056d  */
+    /* JADX WARN: Code duplicated, block: B:139:0x0582  */
+    /* JADX WARN: Code duplicated, block: B:141:0x0588  */
+    /* JADX WARN: Code duplicated, block: B:143:0x0598  */
+    /* JADX WARN: Code duplicated, block: B:144:0x059d  */
+    /* JADX WARN: Code duplicated, block: B:147:0x05a5  */
+    /* JADX WARN: Code duplicated, block: B:150:0x05b0  */
+    /* JADX WARN: Code duplicated, block: B:152:0x05b3 A[ADDED_TO_REGION] */
+    /* JADX WARN: Code duplicated, block: B:161:0x066b  */
+    /* JADX WARN: Code duplicated, block: B:162:0x066e  */
+    /* JADX WARN: Code duplicated, block: B:165:0x0676  */
+    /* JADX WARN: Code duplicated, block: B:166:0x0679  */
+    /* JADX WARN: Code duplicated, block: B:169:0x0680  */
+    /* JADX WARN: Code duplicated, block: B:174:0x068f A[PHI: r9
+      0x068f: PHI (r9v70 java.lang.String) = (r9v34 java.lang.String), (r9v37 java.lang.String), (r9v73 java.lang.String) binds: [B:180:0x06a2, B:185:0x06b2, B:172:0x068c] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Code duplicated, block: B:175:0x0692 A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:176:0x0694  */
+    /* JADX WARN: Code duplicated, block: B:179:0x06a1  */
+    /* JADX WARN: Code duplicated, block: B:181:0x06a4  */
+    /* JADX WARN: Code duplicated, block: B:183:0x06aa  */
+    /* JADX WARN: Code duplicated, block: B:184:0x06b1  */
+    /* JADX WARN: Code duplicated, block: B:186:0x06b4  */
+    /* JADX WARN: Code duplicated, block: B:189:0x06bc  */
+    /* JADX WARN: Code duplicated, block: B:190:0x06be  */
+    /* JADX WARN: Code duplicated, block: B:203:0x0707  */
+    /* JADX WARN: Code duplicated, block: B:205:0x0710  */
+    /* JADX WARN: Code duplicated, block: B:208:0x071e  */
+    /* JADX WARN: Code duplicated, block: B:209:0x0720  */
+    /* JADX WARN: Code duplicated, block: B:214:0x0733  */
+    /* JADX WARN: Code duplicated, block: B:217:0x074b A[LOOP:1: B:212:0x072d->B:217:0x074b, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:221:0x0755  */
+    /* JADX WARN: Code duplicated, block: B:223:0x075c A[PHI: r3
+      0x075c: PHI (r3v6 java.lang.String) = (r3v5 java.lang.String), (r3v61 java.lang.String) binds: [B:207:0x071c, B:221:0x0755] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Code duplicated, block: B:226:0x0765  */
+    /* JADX WARN: Code duplicated, block: B:229:0x0772  */
+    /* JADX WARN: Code duplicated, block: B:230:0x0777  */
+    /* JADX WARN: Code duplicated, block: B:231:0x0779  */
+    /* JADX WARN: Code duplicated, block: B:234:0x0784  */
+    /* JADX WARN: Code duplicated, block: B:238:0x07b4  */
+    /* JADX WARN: Code duplicated, block: B:240:0x07c4  */
+    /* JADX WARN: Code duplicated, block: B:242:0x07d6  */
+    /* JADX WARN: Code duplicated, block: B:243:0x07db  */
+    /* JADX WARN: Code duplicated, block: B:249:0x081d  */
+    /* JADX WARN: Code duplicated, block: B:251:0x082f  */
+    /* JADX WARN: Code duplicated, block: B:253:0x0837  */
+    /* JADX WARN: Code duplicated, block: B:254:0x0844  */
+    /* JADX WARN: Code duplicated, block: B:255:0x0847  */
+    /* JADX WARN: Code duplicated, block: B:260:0x0860  */
+    /* JADX WARN: Code duplicated, block: B:261:0x0862  */
+    /* JADX WARN: Code duplicated, block: B:266:0x0875  */
+    /* JADX WARN: Code duplicated, block: B:268:0x0878  */
+    /* JADX WARN: Code duplicated, block: B:270:0x087c  */
+    /* JADX WARN: Code duplicated, block: B:272:0x0880  */
+    /* JADX WARN: Code duplicated, block: B:276:0x0890 A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:277:0x0892  */
+    /* JADX WARN: Code duplicated, block: B:280:0x089f  */
+    /* JADX WARN: Code duplicated, block: B:282:0x08a2  */
+    /* JADX WARN: Code duplicated, block: B:283:0x08a4  */
+    /* JADX WARN: Code duplicated, block: B:286:0x08b1  */
+    /* JADX WARN: Code duplicated, block: B:288:0x08b4  */
+    /* JADX WARN: Code duplicated, block: B:289:0x08b7  */
+    /* JADX WARN: Code duplicated, block: B:290:0x08b9  */
+    /* JADX WARN: Code duplicated, block: B:293:0x08c9  */
+    /* JADX WARN: Code duplicated, block: B:294:0x08ce  */
+    /* JADX WARN: Code duplicated, block: B:297:0x092e  */
+    /* JADX WARN: Code duplicated, block: B:300:0x0950  */
+    /* JADX WARN: Code duplicated, block: B:302:0x0958  */
+    /* JADX WARN: Code duplicated, block: B:305:0x096c  */
+    /* JADX WARN: Code duplicated, block: B:306:0x0971  */
+    /* JADX WARN: Code duplicated, block: B:309:0x09ce  */
+    /* JADX WARN: Code duplicated, block: B:312:0x0a08 A[LOOP:8: B:310:0x0a02->B:312:0x0a08, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:317:0x0a61  */
+    /* JADX WARN: Code duplicated, block: B:319:0x0a69  */
+    /* JADX WARN: Code duplicated, block: B:322:0x0a7c  */
+    /* JADX WARN: Code duplicated, block: B:325:0x0a87  */
+    /* JADX WARN: Code duplicated, block: B:329:0x0ac6  */
+    /* JADX WARN: Code duplicated, block: B:332:0x0adb  */
+    /* JADX WARN: Code duplicated, block: B:335:0x0ae3  */
+    /* JADX WARN: Code duplicated, block: B:338:0x0af9  */
+    /* JADX WARN: Code duplicated, block: B:340:0x0b12  */
+    /* JADX WARN: Code duplicated, block: B:345:0x0b3a  */
+    /* JADX WARN: Code duplicated, block: B:347:0x0b4c  */
+    /* JADX WARN: Code duplicated, block: B:348:0x0b57  */
+    /* JADX WARN: Code duplicated, block: B:350:0x0b61  */
+    /* JADX WARN: Code duplicated, block: B:353:0x0b72  */
+    /* JADX WARN: Code duplicated, block: B:354:0x0ba2  */
+    /* JADX WARN: Code duplicated, block: B:357:0x0bac  */
+    /* JADX WARN: Code duplicated, block: B:360:0x0bca  */
+    /* JADX WARN: Code duplicated, block: B:363:0x0bd6  */
+    /* JADX WARN: Code duplicated, block: B:365:0x0cc7 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:366:0x0cc8  */
+    /* JADX WARN: Code duplicated, block: B:368:0x0cf7  */
+    /* JADX WARN: Code duplicated, block: B:370:0x0e1c A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:371:0x0e1d  */
+    /* JADX WARN: Code duplicated, block: B:374:0x0e5a  */
+    /* JADX WARN: Code duplicated, block: B:386:0x074e A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:387:0x0751 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:402:0x0b15 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:405:0x0bb2 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:43:0x036b  */
+    /* JADX WARN: Code duplicated, block: B:45:0x038a A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:47:0x038f  */
+    /* JADX WARN: Code duplicated, block: B:53:0x03a6  */
+    /* JADX WARN: Code duplicated, block: B:55:0x03ad A[Catch: all -> 0x0436, TRY_ENTER, TryCatch #1 {all -> 0x0436, blocks: (B:55:0x03ad, B:57:0x03d0, B:56:0x03c1), top: B:378:0x03ab }] */
+    /* JADX WARN: Code duplicated, block: B:56:0x03c1 A[Catch: all -> 0x0436, TryCatch #1 {all -> 0x0436, blocks: (B:55:0x03ad, B:57:0x03d0, B:56:0x03c1), top: B:378:0x03ab }] */
+    /* JADX WARN: Code duplicated, block: B:61:0x041e A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:62:0x041f  */
+    /* JADX WARN: Code duplicated, block: B:74:0x043f  */
+    /* JADX WARN: Code duplicated, block: B:75:0x0446  */
+    /* JADX WARN: Code duplicated, block: B:77:0x0449  */
+    /* JADX WARN: Code duplicated, block: B:7:0x001c  */
+    /* JADX WARN: Code duplicated, block: B:82:0x045a  */
+    /* JADX WARN: Code duplicated, block: B:84:0x045d  */
+    /* JADX WARN: Code duplicated, block: B:88:0x0469 A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:89:0x046b  */
+    /* JADX WARN: Code duplicated, block: B:90:0x0474  */
+    /* JADX WARN: Code duplicated, block: B:93:0x0487  */
+    /* JADX WARN: Code duplicated, block: B:97:0x0494  */
+    /* JADX WARN: Code duplicated, block: B:99:0x0497  */
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r16v12 */
+    /* JADX WARN: Type inference failed for: r16v15 */
+    /* JADX WARN: Type inference failed for: r16v18 */
+    /* JADX WARN: Type inference failed for: r16v24 */
+    /* JADX WARN: Type inference failed for: r16v6 */
+    /* JADX WARN: Type inference failed for: r16v9, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r19v10 */
+    /* JADX WARN: Type inference failed for: r19v12 */
+    /* JADX WARN: Type inference failed for: r19v2 */
+    /* JADX WARN: Type inference failed for: r19v5 */
+    /* JADX WARN: Type inference failed for: r21v2 */
+    /* JADX WARN: Type inference failed for: r21v4, types: [com.phisher98.MetaAnimeData, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r21v6 */
+    /* JADX WARN: Type inference failed for: r23v1 */
+    /* JADX WARN: Type inference failed for: r23v2, types: [java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r23v5 */
+    /* JADX WARN: Type inference failed for: r34v1 */
+    /* JADX WARN: Type inference failed for: r34v2 */
+    /* JADX WARN: Type inference failed for: r35v1 */
+    /* JADX WARN: Type inference failed for: r35v2 */
+    /* JADX WARN: Type inference failed for: r6v17 */
+    /* JADX WARN: Type inference failed for: r6v25, types: [com.phisher98.MetaAnimeData, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r6v30 */
+    /* JADX WARN: Type inference failed for: r85v1, types: [java.lang.Integer, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r8v18 */
+    /* JADX WARN: Type inference failed for: r8v19, types: [com.phisher98.MetaAnimeData, java.lang.Object] */
+    /* JADX WARN: Type inference failed for: r8v53 */
+    public final Object loadFromKitsu(String str, String str2, Continuation<? super LoadResponse> continuation) throws Exception {
+        C00861 c00861;
+        String str3;
+        Object meta;
+        Object meta2;
+        Object meta3;
+        StreamPlayKitsuHelper.KitsuMeta kitsuMeta;
+        String str4;
+        Object meta4;
+        Integer numericKitsuId;
+        Integer num;
+        StringBuilder sbAppend;
+        Object obj;
+        String str5;
+        StreamPlayKitsuHelper.KitsuMeta kitsuMeta2;
+        StreamPlayKitsuHelper.KitsuMeta kitsuMeta3;
+        Integer num2;
+        String text;
+        String str6;
+        ?? r8;
+        Object intOrNull;
+        String strValueOf;
+        String str7;
+        ?? r85;
+        int i;
+        TvType tvType;
+        TvType tvType2;
+        TvType tvType3;
+        String name;
+        String str8;
+        Integer yearInt;
+        TvType tvType4;
+        Integer num3;
+        String str9;
+        Integer num4;
+        int i2;
+        ?? r19;
+        String str10;
+        TvType tvType5;
+        StreamPlayKitsuHelper.KitsuMeta kitsuMeta4;
+        Integer num5;
+        boolean z;
+        Object objFetchTmdbLogoUrl;
+        C00861 c00862;
+        String str11;
+        String str12;
+        TvType tvType6;
+        String str13;
+        Integer num6;
+        int i3;
+        Integer num7;
+        String str14;
+        TvType tvType7;
+        ?? r16;
+        ?? r6;
+        StreamPlayKitsuHelper.KitsuMeta kitsuMeta5;
+        Map<String, MetaEpisode> episodes;
+        String airDateUtc;
+        String strTake;
+        List<String> aliases;
+        MetaMappings mappings;
+        MetaMappings mappings2;
+        String themoviedbId;
+        MetaAnimeData animeData;
+        String str15;
+        String str16;
+        CharSequence charSequence;
+        Integer intOrNull2;
+        Integer malId;
+        String str17;
+        AniIds aniIds;
+        String str18;
+        TvType tvType8;
+        ?? r21;
+        StreamPlayKitsuHelper.KitsuMeta kitsuMeta6;
+        String str19;
+        String str20;
+        Integer num8;
+        ?? r23;
+        TvType tvType9;
+        int i4;
+        String str21;
+        Integer num9;
+        String str22;
+        Integer num10;
+        String str23;
+        Object objTmdbToAnimeId;
+        StreamPlayKitsuHelper.KitsuMeta kitsuMeta7;
+        Integer num11;
+        TvType tvType10;
+        TvType tvType11;
+        String str24;
+        String str25;
+        String str26;
+        ?? r110;
+        String str27;
+        Integer num12;
+        String str28;
+        MetaMappings mappings3;
+        MetaMappings mappings4;
+        Integer anilistId;
+        AniIds aniIds2;
+        Integer id;
+        Integer num13;
+        Integer idMal;
+        Integer num14;
+        String str29;
+        List<String> aliases2;
+        String str30;
+        Map<String, String> titles;
+        String poster;
+        Object obj2;
+        Integer num15;
+        C00861 c00863;
+        String url;
+        String background;
+        String str31;
+        String str32;
+        List<StreamPlayKitsuHelper.KitsuVideo> videos;
+        int size;
+        Map<String, MetaEpisode> episodes2;
+        LinkedHashMap linkedHashMap;
+        List<StreamPlayKitsuHelper.KitsuVideo> list;
+        Iterable intRange;
+        int i5;
+        LinkedHashMap linkedHashMap2;
+        int i6;
+        String str33;
+        String str34;
+        String str35;
+        String str36;
+        Map<String, String> titles2;
+        Map<String, String> titles3;
+        Integer num16;
+        int iIntValue;
+        int i7;
+        Integer num17;
+        String str37;
+        String str38;
+        String stringData;
+        int i8;
+        int i9;
+        LinkedHashMap linkedHashMap3;
+        LinkedHashMap linkedHashMap4;
+        CharSequence charSequence2;
+        Integer num18;
+        Integer num19;
+        int i10;
+        String str39;
+        Integer num20;
+        Iterable intRange2;
+        ArrayList arrayList;
+        IntIterator it;
+        int i11;
+        ArrayList arrayList2;
+        ArrayList arrayList3;
+        ArrayList arrayList4;
+        ArrayList arrayList5;
+        int i12;
+        LinkedHashMap linkedHashMap5;
+        LinkedHashMap linkedHashMap6;
+        Integer num21;
+        String str40;
+        String str41;
+        ArrayList arrayList6;
+        String imdbRating;
+        int iFloatValue;
+        List<StreamPlayKitsuHelper.KitsuLink> links;
+        ArrayList arrayList7;
+        Integer num22;
+        Integer num23;
+        List list2;
+        int i13;
+        Object obj3;
+        int i14;
+        Object objNewAnimeLoadResponse$default;
+        String str42;
+        String str43;
+        int i15;
+        Object objNewMovieLoadResponse;
+        Object obj4;
+        List<StreamPlayKitsuHelper.KitsuLink> list3;
+        ArrayList arrayList8;
+        ArrayList<StreamPlayKitsuHelper.KitsuLink> arrayList9;
+        int i16;
+        ArrayList arrayList10;
+        String name2;
+        ArrayList arrayList11;
+        String url2;
+        int i17;
+        Integer num24;
+        Integer num25;
+        AnimeSearchResponse animeSearchResponseNewAnimeSearchResponse$default;
+        String strSubstringAfterLast$default;
+        Float floatOrNull;
+        StreamPlayKitsuHelper.KitsuVideo kitsuVideo;
+        int iIntValue2;
+        Integer episode;
+        List<StreamPlayKitsuHelper.KitsuVideo> list4;
+        ArrayList arrayList12;
+        int i18;
+        int i19;
+        Integer episode2;
+        int iIntValue3;
+        Map<String, String> titles4;
+        String url3;
+        List<ImageData> images;
+        ImageData imageData;
+        int iIntValue4;
+        int i20;
+        MetaEpisode metaEpisode;
+        Map<String, MetaEpisode> episodes3;
+        int iIntValue5;
+        List<StreamPlayKitsuHelper.KitsuVideo> list5;
+        List<ImageData> images2;
+        List<ImageData> list6;
+        Iterator it2;
+        Object next;
+        ImageData imageData2;
+        List<ImageData> list7;
+        List<ImageData> images3;
+        Object next2;
+        Map<String, String> titles5;
+        ?? r17;
+        StreamPlayAnime streamPlayAnime = this;
+        String str44 = str;
+        String str45 = str2;
+        if (continuation instanceof C00861) {
+            c00861 = (C00861) continuation;
+            if ((c00861.label & Integer.MIN_VALUE) != 0) {
+                c00861.label -= Integer.MIN_VALUE;
+            } else {
+                c00861 = streamPlayAnime.new C00861(continuation);
+            }
+        } else {
+            c00861 = streamPlayAnime.new C00861(continuation);
+        }
+        C00861 c00864 = c00861;
+        Object obj5 = c00864.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (c00864.label) {
+            case 0:
+                ResultKt.throwOnFailure(obj5);
+                str3 = null;
+                if (!StringsKt.startsWith$default(str45, "kitsu:", false, 2, (Object) null) && !StringsKt.startsWith$default(str45, "anilist:", false, 2, (Object) null) && !StringsKt.startsWith$default(str45, "mal:", false, 2, (Object) null)) {
+                    if (StringsKt.contains$default(str44, "kitsu", false, 2, (Object) null)) {
+                        c00864.L$0 = str44;
+                        c00864.L$1 = str45;
+                        c00864.label = 2;
+                        meta3 = StreamPlayKitsuHelper.INSTANCE.getMeta("kitsu:" + str45, c00864);
+                        if (meta3 == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        kitsuMeta = (StreamPlayKitsuHelper.KitsuMeta) meta3;
+                        str4 = str44;
+                        if (kitsuMeta == null) {
+                            throw new Exception("Unable to fetch Kitsu anime metadata for " + str45);
+                        }
+                        numericKitsuId = kitsuMeta.getNumericKitsuId();
+                        if (numericKitsuId != null) {
+                            sbAppend = new StringBuilder().append("kitsu_id=").append(numericKitsuId.intValue());
+                        } else {
+                            sbAppend = new StringBuilder().append("anilist_id=").append(str45);
+                        }
+                        String string = sbAppend.toString();
+                        Requests app = MainActivityKt.getApp();
+                        String str46 = "https://api.ani.zip/mappings?" + string;
+                        c00864.L$0 = str4;
+                        c00864.L$1 = str45;
+                        c00864.L$2 = kitsuMeta;
+                        c00864.L$3 = numericKitsuId;
+                        c00864.L$4 = SpillingKt.nullOutSpilledVariable(string);
+                        c00864.label = 5;
+                        obj = Requests.get$default(app, str46, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00864, 4094, (Object) null);
+                        if (obj == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        str5 = str4;
+                        kitsuMeta2 = kitsuMeta;
+                        text = ((NiceResponse) obj).getText();
+                        num2 = numericKitsuId;
+                        str6 = str5;
+                        kitsuMeta3 = kitsuMeta2;
+                        if (text != null) {
+                            animeData = StreamPlayUtilsKt.parseAnimeData(text);
+                        } else {
+                            r8 = str3;
+                        }
+                        if (r8 != 0) {
+                            r8 = animeData;
+                            r8 = animeData;
+                            r8 = animeData;
+                            intOrNull = str3;
+                        } else {
+                            r8 = animeData;
+                            r8 = animeData;
+                            r8 = animeData;
+                            intOrNull = str3;
+                        }
+                        if (r8 != 0) {
+                            if (num2 != null) {
+                                strValueOf = String.valueOf(num2.intValue());
+                            } else {
+                                strValueOf = str3;
+                            }
+                        } else if (num2 != null) {
+                            strValueOf = String.valueOf(num2.intValue());
+                        } else {
+                            strValueOf = str3;
+                        }
+                        r8 = animeData;
+                        str7 = strValueOf;
+                        r85 = intOrNull;
+                        if (StringsKt.equals(kitsuMeta3.getType(), "movie", true)) {
+                            i = 1;
+                        } else {
+                            i = 1;
+                        }
+                        if (i != 0) {
+                            tvType = TvType.Movie;
+                        } else {
+                            tvType = TvType.TvSeries;
+                        }
+                        if (i != 0) {
+                            tvType2 = TvType.AnimeMovie;
+                        } else {
+                            tvType2 = TvType.TvSeries;
+                        }
+                        tvType3 = tvType2;
+                        name = kitsuMeta3.getName();
+                        if (name == null) {
+                            aliases = kitsuMeta3.getAliases();
+                            if (aliases != null) {
+                                name = (String) CollectionsKt.firstOrNull(aliases);
+                            } else {
+                                name = null;
+                            }
+                            if (name == null) {
+                                name = "Unknown";
+                            }
+                        }
+                        str8 = name;
+                        yearInt = kitsuMeta3.getYearInt();
+                        if (yearInt != null) {
+                            tvType4 = tvType;
+                        } else if (r8 != 0) {
+                            tvType4 = tvType;
+                            yearInt = null;
+                        } else {
+                            tvType4 = tvType;
+                            yearInt = null;
+                        }
+                        num3 = yearInt;
+                        c00864.L$0 = str6;
+                        c00864.L$1 = str45;
+                        c00864.L$2 = kitsuMeta3;
+                        c00864.L$3 = num2;
+                        c00864.L$4 = text;
+                        c00864.L$5 = r8;
+                        c00864.L$6 = SpillingKt.nullOutSpilledVariable((Object) r85);
+                        c00864.L$7 = str7;
+                        str9 = text;
+                        c00864.L$8 = SpillingKt.nullOutSpilledVariable(tvType4);
+                        c00864.L$9 = tvType3;
+                        c00864.L$10 = str8;
+                        c00864.L$11 = num3;
+                        c00864.I$0 = i;
+                        c00864.label = 6;
+                        num4 = num2;
+                        i2 = i;
+                        r19 = r8;
+                        str10 = str6;
+                        tvType5 = tvType4;
+                        kitsuMeta4 = kitsuMeta3;
+                        num5 = null;
+                        C00861 c00865 = c00864;
+                        z = false;
+                        objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", tvType5, r85, "en", c00865);
+                        c00862 = c00865;
+                        if (objFetchTmdbLogoUrl == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        str11 = str9;
+                        str12 = str7;
+                        tvType6 = tvType3;
+                        str13 = str8;
+                        num6 = num4;
+                        i3 = i2;
+                        num7 = num3;
+                        str14 = str10;
+                        tvType7 = tvType5;
+                        r16 = r85;
+                        r6 = r19;
+                        kitsuMeta5 = kitsuMeta4;
+                        str15 = (String) objFetchTmdbLogoUrl;
+                        if (r6 != 0) {
+                            if (StringsKt.toIntOrNull(str45) != null) {
+                                str16 = str45;
+                                charSequence = "kitsu:";
+                                if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                                    intOrNull2 = StringsKt.toIntOrNull(str16);
+                                }
+                            } else {
+                                str16 = str45;
+                                charSequence = "kitsu:";
+                            }
+                            intOrNull2 = num5;
+                        } else {
+                            if (StringsKt.toIntOrNull(str45) != null) {
+                                str16 = str45;
+                                charSequence = "kitsu:";
+                                if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                                    intOrNull2 = StringsKt.toIntOrNull(str16);
+                                }
+                            } else {
+                                str16 = str45;
+                                charSequence = "kitsu:";
+                            }
+                            intOrNull2 = num5;
+                        }
+                        if (r6 != 0) {
+                            malId = num5;
+                        } else {
+                            malId = num5;
+                        }
+                        if (malId == null) {
+                        }
+                        str17 = str14;
+                        int i21 = i3;
+                        Integer num26 = num7;
+                        aniIds = new AniIds(intOrNull2, malId);
+                        str18 = str15;
+                        tvType8 = tvType6;
+                        r21 = r6;
+                        kitsuMeta6 = kitsuMeta5;
+                        str19 = str11;
+                        str20 = str12;
+                        num8 = num26;
+                        r23 = r16;
+                        tvType9 = tvType7;
+                        i4 = i21;
+                        str21 = str16;
+                        num9 = intOrNull2;
+                        str22 = str13;
+                        num10 = malId;
+                        aniIds2 = aniIds;
+                        id = aniIds2.getId();
+                        if (id == null) {
+                            num13 = num9;
+                        } else {
+                            num13 = id;
+                        }
+                        idMal = aniIds2.getIdMal();
+                        if (idMal == null) {
+                            num14 = num10;
+                        } else {
+                            num14 = idMal;
+                        }
+                        if (r21 != 0) {
+                            if (r21 != 0) {
+                                str29 = null;
+                            } else {
+                                str29 = null;
+                            }
+                            if (str29 != null) {
+                                str30 = str29;
+                            } else {
+                                aliases2 = kitsuMeta6.getAliases();
+                                if (aliases2 != null) {
+                                    str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                                } else {
+                                    str29 = null;
+                                }
+                                if (str29 == null) {
+                                    str30 = str22;
+                                } else {
+                                    str30 = str29;
+                                }
+                            }
+                        } else {
+                            if (r21 != 0) {
+                                str29 = null;
+                            } else {
+                                str29 = null;
+                            }
+                            if (str29 != null) {
+                                str30 = str29;
+                            } else {
+                                aliases2 = kitsuMeta6.getAliases();
+                                if (aliases2 != null) {
+                                    str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                                } else {
+                                    str29 = null;
+                                }
+                                if (str29 == null) {
+                                    str30 = str22;
+                                } else {
+                                    str30 = str29;
+                                }
+                            }
+                        }
+                        poster = kitsuMeta6.getPoster();
+                        if (poster != null) {
+                            obj2 = coroutine_suspended;
+                            num15 = num14;
+                            c00863 = c00862;
+                            url = poster;
+                        } else if (r21 != 0) {
+                            obj2 = coroutine_suspended;
+                            num15 = num14;
+                            c00863 = c00862;
+                            url = null;
+                        } else {
+                            obj2 = coroutine_suspended;
+                            num15 = num14;
+                            c00863 = c00862;
+                            url = null;
+                        }
+                        background = kitsuMeta6.getBackground();
+                        if (background != null) {
+                            str31 = background;
+                        } else {
+                            if (r21 != 0) {
+                                list6 = images2;
+                                it2 = list6.iterator();
+                                while (true) {
+                                    if (it2.hasNext()) {
+                                        next = it2.next();
+                                        list7 = list6;
+                                        if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                            list6 = list7;
+                                        }
+                                    } else {
+                                        next = null;
+                                    }
+                                }
+                                imageData2 = (ImageData) next;
+                                if (imageData2 != null) {
+                                    background = imageData2.getUrl();
+                                    str31 = background;
+                                }
+                            }
+                            str31 = null;
+                        }
+                        str32 = str31;
+                        videos = kitsuMeta6.getVideos();
+                        if (videos == null) {
+                            videos = CollectionsKt.emptyList();
+                        }
+                        if (!videos.isEmpty()) {
+                            size = videos.size();
+                        } else if (r21 != 0) {
+                            size = 1;
+                        } else {
+                            size = 1;
+                        }
+                        Iterable intRange3 = new IntRange(1, size);
+                        linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange3, 10)), 16));
+                        for (Object obj6 : intRange3) {
+                            iIntValue5 = ((Number) obj6).intValue();
+                            if (str19 != null) {
+                                list5 = videos;
+                                Integer anidbEid = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                                if (anidbEid != null) {
+                                }
+                                linkedHashMap.put(obj6, Boxing.boxInt(iIntValue));
+                                videos = list5;
+                            } else {
+                                list5 = videos;
+                            }
+                            linkedHashMap.put(obj6, Boxing.boxInt(iIntValue));
+                            videos = list5;
+                        }
+                        list = videos;
+                        intRange = new IntRange(1, size);
+                        i5 = 0;
+                        linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                        for (Object obj7 : intRange) {
+                            Iterable iterable = intRange;
+                            iIntValue4 = ((Number) obj7).intValue();
+                            if (r21 != 0) {
+                                i20 = size;
+                                episodes3 = r21.getEpisodes();
+                                if (episodes3 != null) {
+                                    i5 = i5;
+                                    metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                                }
+                                linkedHashMap2.put(obj7, metaEpisode);
+                                intRange = iterable;
+                                size = i20;
+                                i5 = i5;
+                            } else {
+                                i20 = size;
+                            }
+                            metaEpisode = null;
+                            linkedHashMap2.put(obj7, metaEpisode);
+                            intRange = iterable;
+                            size = i20;
+                            i5 = i5;
+                        }
+                        i6 = size;
+                        if (url == null) {
+                            if (r21 != 0) {
+                                url3 = null;
+                            } else {
+                                url3 = null;
+                            }
+                            if (url3 == null) {
+                                url3 = "";
+                            }
+                            str33 = url3;
+                        } else {
+                            str33 = url;
+                        }
+                        if (r21 != 0) {
+                            if (r21 != 0) {
+                                str34 = null;
+                            } else {
+                                str34 = null;
+                            }
+                            if (str34 == null) {
+                                if (r21 != 0) {
+                                    str36 = null;
+                                } else {
+                                    str36 = null;
+                                }
+                                if (str36 == null) {
+                                    str35 = str22;
+                                } else {
+                                    str35 = str36;
+                                }
+                            } else {
+                                str35 = str34;
+                            }
+                        } else {
+                            if (r21 != 0) {
+                                str34 = null;
+                            } else {
+                                str34 = null;
+                            }
+                            if (str34 == null) {
+                                if (r21 != 0) {
+                                    str36 = null;
+                                } else {
+                                    str36 = null;
+                                }
+                                if (str36 == null) {
+                                    str35 = str22;
+                                } else {
+                                    str35 = str36;
+                                }
+                            } else {
+                                str35 = str34;
+                            }
+                        }
+                        num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                        if (num16 != null) {
+                            iIntValue = num16.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                        i7 = iIntValue;
+                        num17 = num8;
+                        str37 = str22;
+                        str38 = str30;
+                        stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                        if (list.isEmpty()) {
+                            i8 = i7;
+                            i9 = i4;
+                            linkedHashMap3 = linkedHashMap2;
+                            linkedHashMap4 = linkedHashMap;
+                            charSequence2 = charSequence;
+                            num18 = num15;
+                            num19 = num17;
+                            i10 = i6;
+                            str39 = str35;
+                            num20 = num13;
+                            intRange2 = new IntRange(1, i10);
+                            arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                            it = intRange2.iterator();
+                            while (it.hasNext()) {
+                                ArrayList arrayList13 = arrayList;
+                                arrayList13.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                                i10 = i10;
+                                arrayList = arrayList13;
+                                intRange2 = intRange2;
+                            }
+                            i6 = i10;
+                            i11 = 10;
+                            arrayList2 = arrayList;
+                        } else {
+                            list4 = list;
+                            arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                            i18 = 0;
+                            for (Object obj8 : list4) {
+                                int i22 = i18 + 1;
+                                if (i18 < 0) {
+                                    CollectionsKt.throwIndexOverflow();
+                                }
+                                ArrayList arrayList14 = arrayList12;
+                                LinkedHashMap linkedHashMap7 = linkedHashMap;
+                                StreamPlayKitsuHelper.KitsuVideo kitsuVideo2 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                                i19 = i18;
+                                episode2 = kitsuVideo2.getEpisode();
+                                if (episode2 != null) {
+                                    iIntValue3 = episode2.intValue();
+                                } else {
+                                    iIntValue3 = i19 + 1;
+                                }
+                                CharSequence charSequence3 = charSequence;
+                                List<StreamPlayKitsuHelper.KitsuVideo> list8 = list4;
+                                LinkedHashMap linkedHashMap8 = linkedHashMap2;
+                                String str47 = str35;
+                                arrayList14.add(loadFromKitsu$createEpisode(linkedHashMap8, streamPlayAnime, linkedHashMap7, num13, num15, str37, num17, str38, num6, str33, str47, iIntValue3, kitsuVideo2, false));
+                                streamPlayAnime = this;
+                                linkedHashMap = linkedHashMap7;
+                                str35 = str47;
+                                arrayList12 = arrayList14;
+                                i18 = i22;
+                                obj5 = obj5;
+                                i7 = i7;
+                                i4 = i4;
+                                linkedHashMap2 = linkedHashMap8;
+                                list4 = list8;
+                                charSequence = charSequence3;
+                            }
+                            ArrayList arrayList15 = arrayList12;
+                            i8 = i7;
+                            i9 = i4;
+                            linkedHashMap4 = linkedHashMap;
+                            charSequence2 = charSequence;
+                            num18 = num15;
+                            num19 = num17;
+                            linkedHashMap3 = linkedHashMap2;
+                            str39 = str35;
+                            num20 = num13;
+                            arrayList2 = arrayList15;
+                            i11 = 10;
+                        }
+                        arrayList3 = arrayList2;
+                        arrayList4 = arrayList3;
+                        arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                        i12 = 0;
+                        for (Object obj9 : arrayList4) {
+                            int i23 = i12 + 1;
+                            if (i12 < 0) {
+                                CollectionsKt.throwIndexOverflow();
+                            }
+                            List<StreamPlayKitsuHelper.KitsuVideo> list9 = list;
+                            kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list9, i12);
+                            if (kitsuVideo != null) {
+                                iIntValue2 = i12 + 1;
+                            } else {
+                                iIntValue2 = i12 + 1;
+                            }
+                            list = list9;
+                            arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                            i12 = i23;
+                            arrayList4 = arrayList4;
+                        }
+                        linkedHashMap5 = linkedHashMap3;
+                        linkedHashMap6 = linkedHashMap4;
+                        num21 = num6;
+                        str40 = str33;
+                        str41 = str39;
+                        arrayList6 = arrayList5;
+                        imdbRating = kitsuMeta6.getImdbRating();
+                        if (imdbRating != null) {
+                            iFloatValue = 0;
+                        } else {
+                            iFloatValue = 0;
+                        }
+                        links = kitsuMeta6.getLinks();
+                        if (links != null) {
+                            list3 = links;
+                            arrayList8 = new ArrayList();
+                            for (Object obj10 : list3) {
+                                ArrayList arrayList16 = arrayList6;
+                                List<StreamPlayKitsuHelper.KitsuLink> list10 = list3;
+                                if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                                    arrayList8.add(obj10);
+                                }
+                                arrayList6 = arrayList16;
+                                list3 = list10;
+                            }
+                            arrayList7 = arrayList6;
+                            arrayList9 = arrayList8;
+                            i16 = 0;
+                            arrayList10 = new ArrayList();
+                            for (StreamPlayKitsuHelper.KitsuLink kitsuLink : arrayList9) {
+                                name2 = kitsuLink.getName();
+                                if (name2 == null) {
+                                    arrayList11 = arrayList9;
+                                    i17 = i16;
+                                    num24 = num20;
+                                    num25 = num18;
+                                    animeSearchResponseNewAnimeSearchResponse$default = null;
+                                } else {
+                                    arrayList11 = arrayList9;
+                                    url2 = kitsuLink.getUrl();
+                                    if (url2 != null) {
+                                        i17 = i16;
+                                        num24 = num20;
+                                        num25 = num18;
+                                        strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                        if (strSubstringAfterLast$default == null) {
+                                            animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                        }
+                                    } else {
+                                        i17 = i16;
+                                        num24 = num20;
+                                        num25 = num18;
+                                    }
+                                    animeSearchResponseNewAnimeSearchResponse$default = null;
+                                }
+                                if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                                    arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                                }
+                                arrayList9 = arrayList11;
+                                i16 = i17;
+                                num20 = num24;
+                                num18 = num25;
+                            }
+                            num22 = num20;
+                            num23 = num18;
+                            list2 = arrayList10;
+                        } else {
+                            arrayList7 = arrayList6;
+                            num22 = num20;
+                            num23 = num18;
+                            list2 = null;
+                        }
+                        i13 = i9;
+                        if (i13 != 0) {
+                            TvType tvType12 = TvType.AnimeMovie;
+                            Integer num27 = num19;
+                            C00872 c00872 = new C00872(num22, num23, str20, num27, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                            C00861 c00866 = c00863;
+                            c00866.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                            c00866.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                            c00866.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                            c00866.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                            c00866.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                            c00866.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                            c00866.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                            c00866.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                            c00866.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                            c00866.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                            c00866.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                            c00866.L$11 = SpillingKt.nullOutSpilledVariable(num27);
+                            c00866.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                            c00866.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                            c00866.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                            c00866.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                            c00866.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                            c00866.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                            c00866.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                            c00866.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                            c00866.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                            c00866.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                            c00866.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                            c00866.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                            c00866.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                            c00866.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                            c00866.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                            c00866.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                            c00866.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                            c00866.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                            c00866.I$0 = i13;
+                            c00866.I$1 = i6;
+                            c00866.I$2 = i8;
+                            c00866.I$3 = iFloatValue;
+                            c00866.label = 8;
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType12, stringData, c00872, c00866);
+                            obj4 = obj2;
+                            if (objNewMovieLoadResponse == obj4) {
+                                return obj4;
+                            }
+                            return (LoadResponse) objNewMovieLoadResponse;
+                        }
+                        Integer num28 = num19;
+                        obj3 = obj2;
+                        C00861 c00867 = c00863;
+                        Integer num29 = num22;
+                        Integer num30 = num23;
+                        i14 = iFloatValue;
+                        TvType tvType13 = TvType.Anime;
+                        ArrayList arrayList17 = arrayList7;
+                        C00883 c00883 = new C00883(num29, num30, str20, arrayList3, arrayList17, str18, num28, kitsuMeta6, str32, url, i14, this, list2, null);
+                        c00867.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                        c00867.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                        c00867.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                        c00867.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                        c00867.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                        c00867.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                        c00867.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                        c00867.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                        c00867.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                        c00867.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                        c00867.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                        c00867.L$11 = SpillingKt.nullOutSpilledVariable(num28);
+                        c00867.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                        c00867.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                        c00867.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                        c00867.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                        c00867.L$16 = SpillingKt.nullOutSpilledVariable(num29);
+                        c00867.L$17 = SpillingKt.nullOutSpilledVariable(num30);
+                        c00867.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                        c00867.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                        c00867.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00867.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                        c00867.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                        c00867.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                        c00867.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                        c00867.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                        c00867.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                        c00867.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                        c00867.L$28 = SpillingKt.nullOutSpilledVariable(arrayList17);
+                        c00867.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                        c00867.I$0 = i13;
+                        c00867.I$1 = i6;
+                        c00867.I$2 = i8;
+                        c00867.I$3 = i14;
+                        c00867.label = 9;
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType13, false, c00883, c00867, 8, (Object) null);
+                        if (objNewAnimeLoadResponse$default == obj3) {
+                            return obj3;
+                        }
+                        str42 = str21;
+                        str43 = stringData;
+                        i15 = i14;
+                        obj5 = objNewAnimeLoadResponse$default;
+                        return (LoadResponse) obj5;
+                    }
+                    c00864.L$0 = str44;
+                    c00864.L$1 = str45;
+                    c00864.label = 3;
+                    meta2 = StreamPlayKitsuHelper.INSTANCE.getMeta("anilist:" + str45, c00864);
+                    if (meta2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    kitsuMeta = (StreamPlayKitsuHelper.KitsuMeta) meta2;
+                    if (kitsuMeta == null) {
+                        c00864.L$0 = str44;
+                        c00864.L$1 = str45;
+                        c00864.label = 4;
+                        meta4 = StreamPlayKitsuHelper.INSTANCE.getMeta("kitsu:" + str45, c00864);
+                        if (meta4 == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        kitsuMeta = (StreamPlayKitsuHelper.KitsuMeta) meta4;
+                        str4 = str44;
+                    } else {
+                        str4 = str44;
+                    }
+                    if (kitsuMeta == null) {
+                        throw new Exception("Unable to fetch Kitsu anime metadata for " + str45);
+                    }
+                    numericKitsuId = kitsuMeta.getNumericKitsuId();
+                    if (numericKitsuId != null) {
+                        sbAppend = new StringBuilder().append("kitsu_id=").append(numericKitsuId.intValue());
+                    } else {
+                        sbAppend = new StringBuilder().append("anilist_id=").append(str45);
+                    }
+                    String string2 = sbAppend.toString();
+                    Requests app2 = MainActivityKt.getApp();
+                    String str48 = "https://api.ani.zip/mappings?" + string2;
+                    c00864.L$0 = str4;
+                    c00864.L$1 = str45;
+                    c00864.L$2 = kitsuMeta;
+                    c00864.L$3 = numericKitsuId;
+                    c00864.L$4 = SpillingKt.nullOutSpilledVariable(string2);
+                    c00864.label = 5;
+                    obj = Requests.get$default(app2, str48, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00864, 4094, (Object) null);
+                    if (obj == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    str5 = str4;
+                    kitsuMeta2 = kitsuMeta;
+                    text = ((NiceResponse) obj).getText();
+                    num2 = numericKitsuId;
+                    str6 = str5;
+                    kitsuMeta3 = kitsuMeta2;
+                    if (text != null) {
+                        animeData = StreamPlayUtilsKt.parseAnimeData(text);
+                    } else {
+                        r8 = str3;
+                    }
+                    if (r8 != 0) {
+                        r8 = animeData;
+                        r8 = animeData;
+                        r8 = animeData;
+                        intOrNull = str3;
+                    } else {
+                        r8 = animeData;
+                        r8 = animeData;
+                        r8 = animeData;
+                        intOrNull = str3;
+                    }
+                    if (r8 != 0) {
+                        if (num2 != null) {
+                            strValueOf = String.valueOf(num2.intValue());
+                        } else {
+                            strValueOf = str3;
+                        }
+                    } else if (num2 != null) {
+                        strValueOf = String.valueOf(num2.intValue());
+                    } else {
+                        strValueOf = str3;
+                    }
+                    r8 = animeData;
+                    str7 = strValueOf;
+                    r85 = intOrNull;
+                    if (StringsKt.equals(kitsuMeta3.getType(), "movie", true)) {
+                        i = 1;
+                    } else {
+                        i = 1;
+                    }
+                    if (i != 0) {
+                        tvType = TvType.Movie;
+                    } else {
+                        tvType = TvType.TvSeries;
+                    }
+                    if (i != 0) {
+                        tvType2 = TvType.AnimeMovie;
+                    } else {
+                        tvType2 = TvType.TvSeries;
+                    }
+                    tvType3 = tvType2;
+                    name = kitsuMeta3.getName();
+                    if (name == null) {
+                        aliases = kitsuMeta3.getAliases();
+                        if (aliases != null) {
+                            name = (String) CollectionsKt.firstOrNull(aliases);
+                        } else {
+                            name = null;
+                        }
+                        if (name == null) {
+                            name = "Unknown";
+                        }
+                    }
+                    str8 = name;
+                    yearInt = kitsuMeta3.getYearInt();
+                    if (yearInt != null) {
+                        tvType4 = tvType;
+                    } else if (r8 != 0) {
+                        tvType4 = tvType;
+                        yearInt = null;
+                    } else {
+                        tvType4 = tvType;
+                        yearInt = null;
+                    }
+                    num3 = yearInt;
+                    c00864.L$0 = str6;
+                    c00864.L$1 = str45;
+                    c00864.L$2 = kitsuMeta3;
+                    c00864.L$3 = num2;
+                    c00864.L$4 = text;
+                    c00864.L$5 = r8;
+                    c00864.L$6 = SpillingKt.nullOutSpilledVariable((Object) r85);
+                    c00864.L$7 = str7;
+                    str9 = text;
+                    c00864.L$8 = SpillingKt.nullOutSpilledVariable(tvType4);
+                    c00864.L$9 = tvType3;
+                    c00864.L$10 = str8;
+                    c00864.L$11 = num3;
+                    c00864.I$0 = i;
+                    c00864.label = 6;
+                    num4 = num2;
+                    i2 = i;
+                    r19 = r8;
+                    str10 = str6;
+                    tvType5 = tvType4;
+                    kitsuMeta4 = kitsuMeta3;
+                    num5 = null;
+                    C00861 c00868 = c00864;
+                    z = false;
+                    objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", tvType5, r85, "en", c00868);
+                    c00862 = c00868;
+                    if (objFetchTmdbLogoUrl == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    str11 = str9;
+                    str12 = str7;
+                    tvType6 = tvType3;
+                    str13 = str8;
+                    num6 = num4;
+                    i3 = i2;
+                    num7 = num3;
+                    str14 = str10;
+                    tvType7 = tvType5;
+                    r16 = r85;
+                    r6 = r19;
+                    kitsuMeta5 = kitsuMeta4;
+                    str15 = (String) objFetchTmdbLogoUrl;
+                    if (r6 != 0) {
+                        if (StringsKt.toIntOrNull(str45) != null) {
+                            str16 = str45;
+                            charSequence = "kitsu:";
+                            if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                                intOrNull2 = StringsKt.toIntOrNull(str16);
+                            }
+                        } else {
+                            str16 = str45;
+                            charSequence = "kitsu:";
+                        }
+                        intOrNull2 = num5;
+                    } else {
+                        if (StringsKt.toIntOrNull(str45) != null) {
+                            str16 = str45;
+                            charSequence = "kitsu:";
+                            if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                                intOrNull2 = StringsKt.toIntOrNull(str16);
+                            }
+                        } else {
+                            str16 = str45;
+                            charSequence = "kitsu:";
+                        }
+                        intOrNull2 = num5;
+                    }
+                    if (r6 != 0) {
+                        malId = num5;
+                    } else {
+                        malId = num5;
+                    }
+                    if (malId == null) {
+                    }
+                    str17 = str14;
+                    int i24 = i3;
+                    Integer num210 = num7;
+                    aniIds = new AniIds(intOrNull2, malId);
+                    str18 = str15;
+                    tvType8 = tvType6;
+                    r21 = r6;
+                    kitsuMeta6 = kitsuMeta5;
+                    str19 = str11;
+                    str20 = str12;
+                    num8 = num210;
+                    r23 = r16;
+                    tvType9 = tvType7;
+                    i4 = i24;
+                    str21 = str16;
+                    num9 = intOrNull2;
+                    str22 = str13;
+                    num10 = malId;
+                    aniIds2 = aniIds;
+                    id = aniIds2.getId();
+                    if (id == null) {
+                        num13 = num9;
+                    } else {
+                        num13 = id;
+                    }
+                    idMal = aniIds2.getIdMal();
+                    if (idMal == null) {
+                        num14 = num10;
+                    } else {
+                        num14 = idMal;
+                    }
+                    if (r21 != 0) {
+                        if (r21 != 0) {
+                            str29 = null;
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 != null) {
+                            str30 = str29;
+                        } else {
+                            aliases2 = kitsuMeta6.getAliases();
+                            if (aliases2 != null) {
+                                str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                            } else {
+                                str29 = null;
+                            }
+                            if (str29 == null) {
+                                str30 = str22;
+                            } else {
+                                str30 = str29;
+                            }
+                        }
+                    } else {
+                        if (r21 != 0) {
+                            str29 = null;
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 != null) {
+                            str30 = str29;
+                        } else {
+                            aliases2 = kitsuMeta6.getAliases();
+                            if (aliases2 != null) {
+                                str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                            } else {
+                                str29 = null;
+                            }
+                            if (str29 == null) {
+                                str30 = str22;
+                            } else {
+                                str30 = str29;
+                            }
+                        }
+                    }
+                    poster = kitsuMeta6.getPoster();
+                    if (poster != null) {
+                        obj2 = coroutine_suspended;
+                        num15 = num14;
+                        c00863 = c00862;
+                        url = poster;
+                    } else if (r21 != 0) {
+                        obj2 = coroutine_suspended;
+                        num15 = num14;
+                        c00863 = c00862;
+                        url = null;
+                    } else {
+                        obj2 = coroutine_suspended;
+                        num15 = num14;
+                        c00863 = c00862;
+                        url = null;
+                    }
+                    background = kitsuMeta6.getBackground();
+                    if (background != null) {
+                        str31 = background;
+                    } else {
+                        if (r21 != 0) {
+                            list6 = images2;
+                            it2 = list6.iterator();
+                            while (true) {
+                                if (it2.hasNext()) {
+                                    next = it2.next();
+                                    list7 = list6;
+                                    if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                        list6 = list7;
+                                    }
+                                } else {
+                                    next = null;
+                                }
+                            }
+                            imageData2 = (ImageData) next;
+                            if (imageData2 != null) {
+                                background = imageData2.getUrl();
+                                str31 = background;
+                            }
+                        }
+                        str31 = null;
+                    }
+                    str32 = str31;
+                    videos = kitsuMeta6.getVideos();
+                    if (videos == null) {
+                        videos = CollectionsKt.emptyList();
+                    }
+                    if (!videos.isEmpty()) {
+                        size = videos.size();
+                    } else if (r21 != 0) {
+                        size = 1;
+                    } else {
+                        size = 1;
+                    }
+                    Iterable intRange4 = new IntRange(1, size);
+                    linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange4, 10)), 16));
+                    while (r31.hasNext()) {
+                        iIntValue5 = ((Number) obj6).intValue();
+                        if (str19 != null) {
+                            list5 = videos;
+                            Integer anidbEid2 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                            if (anidbEid2 != null) {
+                            }
+                            linkedHashMap.put(obj6, Boxing.boxInt(iIntValue));
+                            videos = list5;
+                        } else {
+                            list5 = videos;
+                        }
+                        linkedHashMap.put(obj6, Boxing.boxInt(iIntValue));
+                        videos = list5;
+                    }
+                    list = videos;
+                    intRange = new IntRange(1, size);
+                    i5 = 0;
+                    linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                    while (r27.hasNext()) {
+                        Iterable iterable2 = intRange;
+                        iIntValue4 = ((Number) obj7).intValue();
+                        if (r21 != 0) {
+                            i20 = size;
+                            episodes3 = r21.getEpisodes();
+                            if (episodes3 != null) {
+                                i5 = i5;
+                                metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                            }
+                            linkedHashMap2.put(obj7, metaEpisode);
+                            intRange = iterable2;
+                            size = i20;
+                            i5 = i5;
+                        } else {
+                            i20 = size;
+                        }
+                        metaEpisode = null;
+                        linkedHashMap2.put(obj7, metaEpisode);
+                        intRange = iterable2;
+                        size = i20;
+                        i5 = i5;
+                    }
+                    i6 = size;
+                    if (url == null) {
+                        if (r21 != 0) {
+                            url3 = null;
+                        } else {
+                            url3 = null;
+                        }
+                        if (url3 == null) {
+                            url3 = "";
+                        }
+                        str33 = url3;
+                    } else {
+                        str33 = url;
+                    }
+                    if (r21 != 0) {
+                        if (r21 != 0) {
+                            str34 = null;
+                        } else {
+                            str34 = null;
+                        }
+                        if (str34 == null) {
+                            if (r21 != 0) {
+                                str36 = null;
+                            } else {
+                                str36 = null;
+                            }
+                            if (str36 == null) {
+                                str35 = str22;
+                            } else {
+                                str35 = str36;
+                            }
+                        } else {
+                            str35 = str34;
+                        }
+                    } else {
+                        if (r21 != 0) {
+                            str34 = null;
+                        } else {
+                            str34 = null;
+                        }
+                        if (str34 == null) {
+                            if (r21 != 0) {
+                                str36 = null;
+                            } else {
+                                str36 = null;
+                            }
+                            if (str36 == null) {
+                                str35 = str22;
+                            } else {
+                                str35 = str36;
+                            }
+                        } else {
+                            str35 = str34;
+                        }
+                    }
+                    num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                    if (num16 != null) {
+                        iIntValue = num16.intValue();
+                    } else {
+                        iIntValue = 0;
+                    }
+                    i7 = iIntValue;
+                    num17 = num8;
+                    str37 = str22;
+                    str38 = str30;
+                    stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                    if (list.isEmpty()) {
+                        list4 = list;
+                        arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                        i18 = 0;
+                        while (r37.hasNext()) {
+                            int i25 = i18 + 1;
+                            if (i18 < 0) {
+                                CollectionsKt.throwIndexOverflow();
+                            }
+                            ArrayList arrayList18 = arrayList12;
+                            LinkedHashMap linkedHashMap9 = linkedHashMap;
+                            StreamPlayKitsuHelper.KitsuVideo kitsuVideo3 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                            i19 = i18;
+                            episode2 = kitsuVideo3.getEpisode();
+                            if (episode2 != null) {
+                                iIntValue3 = episode2.intValue();
+                            } else {
+                                iIntValue3 = i19 + 1;
+                            }
+                            CharSequence charSequence4 = charSequence;
+                            List<StreamPlayKitsuHelper.KitsuVideo> list11 = list4;
+                            LinkedHashMap linkedHashMap10 = linkedHashMap2;
+                            String str49 = str35;
+                            arrayList18.add(loadFromKitsu$createEpisode(linkedHashMap10, streamPlayAnime, linkedHashMap9, num13, num15, str37, num17, str38, num6, str33, str49, iIntValue3, kitsuVideo3, false));
+                            streamPlayAnime = this;
+                            linkedHashMap = linkedHashMap9;
+                            str35 = str49;
+                            arrayList12 = arrayList18;
+                            i18 = i25;
+                            obj5 = obj5;
+                            i7 = i7;
+                            i4 = i4;
+                            linkedHashMap2 = linkedHashMap10;
+                            list4 = list11;
+                            charSequence = charSequence4;
+                        }
+                        ArrayList arrayList19 = arrayList12;
+                        i8 = i7;
+                        i9 = i4;
+                        linkedHashMap4 = linkedHashMap;
+                        charSequence2 = charSequence;
+                        num18 = num15;
+                        num19 = num17;
+                        linkedHashMap3 = linkedHashMap2;
+                        str39 = str35;
+                        num20 = num13;
+                        arrayList2 = arrayList19;
+                        i11 = 10;
+                    } else {
+                        i8 = i7;
+                        i9 = i4;
+                        linkedHashMap3 = linkedHashMap2;
+                        linkedHashMap4 = linkedHashMap;
+                        charSequence2 = charSequence;
+                        num18 = num15;
+                        num19 = num17;
+                        i10 = i6;
+                        str39 = str35;
+                        num20 = num13;
+                        intRange2 = new IntRange(1, i10);
+                        arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                        it = intRange2.iterator();
+                        while (it.hasNext()) {
+                            ArrayList arrayList110 = arrayList;
+                            arrayList110.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                            i10 = i10;
+                            arrayList = arrayList110;
+                            intRange2 = intRange2;
+                        }
+                        i6 = i10;
+                        i11 = 10;
+                        arrayList2 = arrayList;
+                    }
+                    arrayList3 = arrayList2;
+                    arrayList4 = arrayList3;
+                    arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                    i12 = 0;
+                    while (r32.hasNext()) {
+                        int i26 = i12 + 1;
+                        if (i12 < 0) {
+                            CollectionsKt.throwIndexOverflow();
+                        }
+                        List<StreamPlayKitsuHelper.KitsuVideo> list12 = list;
+                        kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list12, i12);
+                        if (kitsuVideo != null) {
+                            iIntValue2 = i12 + 1;
+                        } else {
+                            iIntValue2 = i12 + 1;
+                        }
+                        list = list12;
+                        arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                        i12 = i26;
+                        arrayList4 = arrayList4;
+                    }
+                    linkedHashMap5 = linkedHashMap3;
+                    linkedHashMap6 = linkedHashMap4;
+                    num21 = num6;
+                    str40 = str33;
+                    str41 = str39;
+                    arrayList6 = arrayList5;
+                    imdbRating = kitsuMeta6.getImdbRating();
+                    if (imdbRating != null) {
+                        iFloatValue = 0;
+                    } else {
+                        iFloatValue = 0;
+                    }
+                    links = kitsuMeta6.getLinks();
+                    if (links != null) {
+                        list3 = links;
+                        arrayList8 = new ArrayList();
+                        while (r10.hasNext()) {
+                            ArrayList arrayList111 = arrayList6;
+                            List<StreamPlayKitsuHelper.KitsuLink> list13 = list3;
+                            if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                                arrayList8.add(obj10);
+                            }
+                            arrayList6 = arrayList111;
+                            list3 = list13;
+                        }
+                        arrayList7 = arrayList6;
+                        arrayList9 = arrayList8;
+                        i16 = 0;
+                        arrayList10 = new ArrayList();
+                        while (r11.hasNext()) {
+                            name2 = kitsuLink.getName();
+                            if (name2 == null) {
+                                arrayList11 = arrayList9;
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                                animeSearchResponseNewAnimeSearchResponse$default = null;
+                            } else {
+                                arrayList11 = arrayList9;
+                                url2 = kitsuLink.getUrl();
+                                if (url2 != null) {
+                                    i17 = i16;
+                                    num24 = num20;
+                                    num25 = num18;
+                                    strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                    if (strSubstringAfterLast$default == null) {
+                                        animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                    }
+                                } else {
+                                    i17 = i16;
+                                    num24 = num20;
+                                    num25 = num18;
+                                }
+                                animeSearchResponseNewAnimeSearchResponse$default = null;
+                            }
+                            if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                                arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                            }
+                            arrayList9 = arrayList11;
+                            i16 = i17;
+                            num20 = num24;
+                            num18 = num25;
+                        }
+                        num22 = num20;
+                        num23 = num18;
+                        list2 = arrayList10;
+                    } else {
+                        arrayList7 = arrayList6;
+                        num22 = num20;
+                        num23 = num18;
+                        list2 = null;
+                    }
+                    i13 = i9;
+                    if (i13 != 0) {
+                        TvType tvType14 = TvType.AnimeMovie;
+                        Integer num211 = num19;
+                        C00872 c00873 = new C00872(num22, num23, str20, num211, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                        C00861 c00869 = c00863;
+                        c00869.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                        c00869.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                        c00869.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                        c00869.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                        c00869.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                        c00869.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                        c00869.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                        c00869.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                        c00869.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                        c00869.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                        c00869.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                        c00869.L$11 = SpillingKt.nullOutSpilledVariable(num211);
+                        c00869.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                        c00869.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                        c00869.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                        c00869.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                        c00869.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                        c00869.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                        c00869.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                        c00869.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                        c00869.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00869.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                        c00869.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                        c00869.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                        c00869.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                        c00869.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                        c00869.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                        c00869.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                        c00869.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                        c00869.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                        c00869.I$0 = i13;
+                        c00869.I$1 = i6;
+                        c00869.I$2 = i8;
+                        c00869.I$3 = iFloatValue;
+                        c00869.label = 8;
+                        objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType14, stringData, c00873, c00869);
+                        obj4 = obj2;
+                        if (objNewMovieLoadResponse == obj4) {
+                            return obj4;
+                        }
+                        return (LoadResponse) objNewMovieLoadResponse;
+                    }
+                    Integer num212 = num19;
+                    obj3 = obj2;
+                    C00861 c008610 = c00863;
+                    Integer num213 = num22;
+                    Integer num31 = num23;
+                    i14 = iFloatValue;
+                    TvType tvType15 = TvType.Anime;
+                    ArrayList arrayList112 = arrayList7;
+                    C00883 c00884 = new C00883(num213, num31, str20, arrayList3, arrayList112, str18, num212, kitsuMeta6, str32, url, i14, this, list2, null);
+                    c008610.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                    c008610.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                    c008610.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                    c008610.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                    c008610.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                    c008610.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                    c008610.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                    c008610.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                    c008610.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                    c008610.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                    c008610.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                    c008610.L$11 = SpillingKt.nullOutSpilledVariable(num212);
+                    c008610.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                    c008610.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                    c008610.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                    c008610.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                    c008610.L$16 = SpillingKt.nullOutSpilledVariable(num213);
+                    c008610.L$17 = SpillingKt.nullOutSpilledVariable(num31);
+                    c008610.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                    c008610.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                    c008610.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                    c008610.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                    c008610.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                    c008610.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                    c008610.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                    c008610.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                    c008610.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                    c008610.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                    c008610.L$28 = SpillingKt.nullOutSpilledVariable(arrayList112);
+                    c008610.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                    c008610.I$0 = i13;
+                    c008610.I$1 = i6;
+                    c008610.I$2 = i8;
+                    c008610.I$3 = i14;
+                    c008610.label = 9;
+                    objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType15, false, c00884, c008610, 8, (Object) null);
+                    if (objNewAnimeLoadResponse$default == obj3) {
+                        return obj3;
+                    }
+                    str42 = str21;
+                    str43 = stringData;
+                    i15 = i14;
+                    obj5 = objNewAnimeLoadResponse$default;
+                    return (LoadResponse) obj5;
+                }
+                StreamPlayKitsuHelper streamPlayKitsuHelper = StreamPlayKitsuHelper.INSTANCE;
+                c00864.L$0 = str44;
+                c00864.L$1 = str45;
+                c00864.label = 1;
+                meta = streamPlayKitsuHelper.getMeta(str45, c00864);
+                if (meta == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                kitsuMeta = (StreamPlayKitsuHelper.KitsuMeta) meta;
+                str4 = str44;
+                if (kitsuMeta == null) {
+                    throw new Exception("Unable to fetch Kitsu anime metadata for " + str45);
+                }
+                numericKitsuId = kitsuMeta.getNumericKitsuId();
+                try {
+                    if (numericKitsuId != null) {
+                        sbAppend = new StringBuilder().append("kitsu_id=").append(numericKitsuId.intValue());
+                    } else {
+                        sbAppend = new StringBuilder().append("anilist_id=").append(str45);
+                    }
+                    String string3 = sbAppend.toString();
+                    Requests app3 = MainActivityKt.getApp();
+                    String str410 = "https://api.ani.zip/mappings?" + string3;
+                    c00864.L$0 = str4;
+                    c00864.L$1 = str45;
+                    c00864.L$2 = kitsuMeta;
+                    c00864.L$3 = numericKitsuId;
+                    c00864.L$4 = SpillingKt.nullOutSpilledVariable(string3);
+                    c00864.label = 5;
+                    try {
+                        obj = Requests.get$default(app3, str410, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00864, 4094, (Object) null);
+                        if (obj == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        str5 = str4;
+                        kitsuMeta2 = kitsuMeta;
+                        try {
+                            text = ((NiceResponse) obj).getText();
+                            num2 = numericKitsuId;
+                            str6 = str5;
+                            kitsuMeta3 = kitsuMeta2;
+                        } catch (Throwable th) {
+                            kitsuMeta = kitsuMeta2;
+                            num = numericKitsuId;
+                            str4 = str5;
+                            kitsuMeta3 = kitsuMeta;
+                            num2 = num;
+                            text = str3;
+                            str6 = str4;
+                        }
+                        if (text != null) {
+                            animeData = StreamPlayUtilsKt.parseAnimeData(text);
+                        } else {
+                            r8 = str3;
+                        }
+                        if (r8 != 0 || (mappings2 = r8.getMappings()) == null || (themoviedbId = mappings2.getThemoviedbId()) == null) {
+                            r8 = animeData;
+                            r8 = animeData;
+                            r8 = animeData;
+                            intOrNull = str3;
+                        } else {
+                            intOrNull = StringsKt.toIntOrNull(themoviedbId);
+                        }
+                        if (r8 != 0 || (mappings = r8.getMappings()) == null || (strValueOf = mappings.getKitsuid()) == null) {
+                            if (num2 != null) {
+                                strValueOf = String.valueOf(num2.intValue());
+                            } else {
+                                strValueOf = str3;
+                            }
+                        }
+                        r8 = animeData;
+                        str7 = strValueOf;
+                        r85 = intOrNull;
+                        if (StringsKt.equals(kitsuMeta3.getType(), "movie", true) || StringsKt.equals(kitsuMeta3.getAnimeType(), "movie", true)) {
+                            i = 1;
+                        } else {
+                            i = 0;
+                        }
+                        if (i != 0) {
+                            tvType = TvType.Movie;
+                        } else {
+                            tvType = TvType.TvSeries;
+                        }
+                        if (i != 0) {
+                            tvType2 = TvType.AnimeMovie;
+                        } else {
+                            tvType2 = TvType.TvSeries;
+                        }
+                        tvType3 = tvType2;
+                        name = kitsuMeta3.getName();
+                        if (name == null) {
+                            aliases = kitsuMeta3.getAliases();
+                            if (aliases != null) {
+                                name = (String) CollectionsKt.firstOrNull(aliases);
+                            } else {
+                                name = null;
+                            }
+                            if (name == null) {
+                                name = "Unknown";
+                            }
+                        }
+                        str8 = name;
+                        yearInt = kitsuMeta3.getYearInt();
+                        if (yearInt != null) {
+                            if (r8 != 0 || (episodes = r8.getEpisodes()) == null) {
+                                tvType4 = tvType;
+                            } else {
+                                tvType4 = tvType;
+                                MetaEpisode metaEpisode2 = episodes.get("1");
+                                if (metaEpisode2 != null && (airDateUtc = metaEpisode2.getAirDateUtc()) != null && (strTake = StringsKt.take(airDateUtc, 4)) != null) {
+                                    yearInt = StringsKt.toIntOrNull(strTake);
+                                }
+                            }
+                            yearInt = null;
+                        } else {
+                            tvType4 = tvType;
+                        }
+                        num3 = yearInt;
+                        c00864.L$0 = str6;
+                        c00864.L$1 = str45;
+                        c00864.L$2 = kitsuMeta3;
+                        c00864.L$3 = num2;
+                        c00864.L$4 = text;
+                        c00864.L$5 = r8;
+                        c00864.L$6 = SpillingKt.nullOutSpilledVariable((Object) r85);
+                        c00864.L$7 = str7;
+                        str9 = text;
+                        c00864.L$8 = SpillingKt.nullOutSpilledVariable(tvType4);
+                        c00864.L$9 = tvType3;
+                        c00864.L$10 = str8;
+                        c00864.L$11 = num3;
+                        c00864.I$0 = i;
+                        c00864.label = 6;
+                        num4 = num2;
+                        i2 = i;
+                        r19 = r8;
+                        str10 = str6;
+                        tvType5 = tvType4;
+                        kitsuMeta4 = kitsuMeta3;
+                        num5 = null;
+                        C00861 c008611 = c00864;
+                        z = false;
+                        objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", tvType5, r85, "en", c008611);
+                        c00862 = c008611;
+                        if (objFetchTmdbLogoUrl == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        str11 = str9;
+                        str12 = str7;
+                        tvType6 = tvType3;
+                        str13 = str8;
+                        num6 = num4;
+                        i3 = i2;
+                        num7 = num3;
+                        str14 = str10;
+                        tvType7 = tvType5;
+                        r16 = r85;
+                        r6 = r19;
+                        kitsuMeta5 = kitsuMeta4;
+                        str15 = (String) objFetchTmdbLogoUrl;
+                        if (r6 != 0 || (mappings4 = r6.getMappings()) == null || (anilistId = mappings4.getAnilistId()) == null) {
+                            if (StringsKt.toIntOrNull(str45) != null) {
+                                str16 = str45;
+                                charSequence = "kitsu:";
+                                if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                                    intOrNull2 = StringsKt.toIntOrNull(str16);
+                                }
+                            } else {
+                                str16 = str45;
+                                charSequence = "kitsu:";
+                            }
+                            intOrNull2 = num5;
+                        } else {
+                            str16 = str45;
+                            intOrNull2 = anilistId;
+                            charSequence = "kitsu:";
+                        }
+                        if (r6 != 0 || (mappings3 = r6.getMappings()) == null) {
+                            malId = num5;
+                        } else {
+                            malId = mappings3.getMalId();
+                        }
+                        if (malId == null || intOrNull2 != null) {
+                            str17 = str14;
+                            int i27 = i3;
+                            Integer num214 = num7;
+                            aniIds = new AniIds(intOrNull2, malId);
+                            str18 = str15;
+                            tvType8 = tvType6;
+                            r21 = r6;
+                            kitsuMeta6 = kitsuMeta5;
+                            str19 = str11;
+                            str20 = str12;
+                            num8 = num214;
+                            r23 = r16;
+                            tvType9 = tvType7;
+                            i4 = i27;
+                            str21 = str16;
+                            num9 = intOrNull2;
+                            str22 = str13;
+                            num10 = malId;
+                        } else {
+                            c00862.L$0 = str14;
+                            c00862.L$1 = SpillingKt.nullOutSpilledVariable(str16);
+                            c00862.L$2 = kitsuMeta5;
+                            c00862.L$3 = num6;
+                            c00862.L$4 = str11;
+                            c00862.L$5 = r6;
+                            c00862.L$6 = SpillingKt.nullOutSpilledVariable((Object) r16);
+                            String str50 = str12;
+                            c00862.L$7 = str50;
+                            c00862.L$8 = SpillingKt.nullOutSpilledVariable(tvType7);
+                            c00862.L$9 = SpillingKt.nullOutSpilledVariable(tvType6);
+                            str23 = str13;
+                            c00862.L$10 = str23;
+                            Integer num32 = num7;
+                            c00862.L$11 = num32;
+                            c00862.L$12 = str15;
+                            c00862.L$13 = intOrNull2;
+                            c00862.L$14 = malId;
+                            String str51 = str14;
+                            int i28 = i3;
+                            c00862.I$0 = i28;
+                            c00862.label = 7;
+                            TvType tvType16 = tvType6;
+                            objTmdbToAnimeId = streamPlayAnime.tmdbToAnimeId(str23, num32, tvType16, c00862);
+                            if (objTmdbToAnimeId == coroutine_suspended) {
+                                return coroutine_suspended;
+                            }
+                            kitsuMeta7 = kitsuMeta5;
+                            num11 = num6;
+                            num8 = num32;
+                            tvType10 = tvType7;
+                            tvType11 = tvType16;
+                            str24 = str50;
+                            str25 = str51;
+                            str26 = str15;
+                            r110 = r6;
+                            i4 = i28;
+                            str27 = str11;
+                            num12 = intOrNull2;
+                            str28 = str16;
+                            r17 = r16;
+                            aniIds = (AniIds) objTmdbToAnimeId;
+                            tvType8 = tvType11;
+                            str18 = str26;
+                            tvType9 = tvType10;
+                            r23 = r17;
+                            str20 = str24;
+                            num6 = num11;
+                            kitsuMeta6 = kitsuMeta7;
+                            str21 = str28;
+                            num9 = num12;
+                            r21 = r110;
+                            str19 = str27;
+                            str17 = str25;
+                            str22 = str23;
+                            num10 = malId;
+                        }
+                        aniIds2 = aniIds;
+                        id = aniIds2.getId();
+                        if (id == null) {
+                            num13 = num9;
+                        } else {
+                            num13 = id;
+                        }
+                        idMal = aniIds2.getIdMal();
+                        if (idMal == null) {
+                            num14 = num10;
+                        } else {
+                            num14 = idMal;
+                        }
+                        if (r21 != 0 || (titles5 = r21.getTitles()) == null || (str29 = titles5.get("ja")) == null) {
+                            if (r21 != 0 || (titles = r21.getTitles()) == null) {
+                                str29 = null;
+                            } else {
+                                str29 = titles.get("x-jat");
+                            }
+                            if (str29 != null) {
+                                str30 = str29;
+                            } else {
+                                aliases2 = kitsuMeta6.getAliases();
+                                if (aliases2 != null) {
+                                    str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                                } else {
+                                    str29 = null;
+                                }
+                                if (str29 == null) {
+                                    str30 = str22;
+                                } else {
+                                    str30 = str29;
+                                }
+                            }
+                        } else {
+                            str30 = str29;
+                        }
+                        poster = kitsuMeta6.getPoster();
+                        if (poster != null) {
+                            if (r21 != 0 || (images3 = r21.getImages()) == null) {
+                                obj2 = coroutine_suspended;
+                                num15 = num14;
+                                c00863 = c00862;
+                            } else {
+                                Iterator it3 = images3.iterator();
+                                while (true) {
+                                    if (it3.hasNext()) {
+                                        next2 = it3.next();
+                                        obj2 = coroutine_suspended;
+                                        num15 = num14;
+                                        c00863 = c00862;
+                                        if (!StringsKt.equals(((ImageData) next2).getCoverType(), "Poster", true)) {
+                                            coroutine_suspended = obj2;
+                                            c00862 = c00863;
+                                            num14 = num15;
+                                        }
+                                    } else {
+                                        obj2 = coroutine_suspended;
+                                        num15 = num14;
+                                        c00863 = c00862;
+                                        next2 = null;
+                                    }
+                                }
+                                ImageData imageData3 = (ImageData) next2;
+                                if (imageData3 != null) {
+                                    url = imageData3.getUrl();
+                                }
+                            }
+                            url = null;
+                        } else {
+                            obj2 = coroutine_suspended;
+                            num15 = num14;
+                            c00863 = c00862;
+                            url = poster;
+                        }
+                        background = kitsuMeta6.getBackground();
+                        if (background != null) {
+                            str31 = background;
+                        } else {
+                            if (r21 != 0 && (images2 = r21.getImages()) != null) {
+                                list6 = images2;
+                                it2 = list6.iterator();
+                                while (true) {
+                                    if (it2.hasNext()) {
+                                        next = it2.next();
+                                        list7 = list6;
+                                        if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                            list6 = list7;
+                                        }
+                                    } else {
+                                        next = null;
+                                    }
+                                }
+                                imageData2 = (ImageData) next;
+                                if (imageData2 != null) {
+                                    background = imageData2.getUrl();
+                                    str31 = background;
+                                }
+                            }
+                            str31 = null;
+                        }
+                        str32 = str31;
+                        videos = kitsuMeta6.getVideos();
+                        if (videos == null) {
+                            videos = CollectionsKt.emptyList();
+                        }
+                        if (!videos.isEmpty()) {
+                            size = videos.size();
+                        } else if (r21 != 0 || (episodes2 = r21.getEpisodes()) == null) {
+                            size = 1;
+                        } else {
+                            size = episodes2.size();
+                        }
+                        Iterable intRange5 = new IntRange(1, size);
+                        linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange5, 10)), 16));
+                        while (r31.hasNext()) {
+                            iIntValue5 = ((Number) obj6).intValue();
+                            if (str19 != null) {
+                                list5 = videos;
+                                Integer anidbEid3 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                                int iIntValue6 = anidbEid3 != null ? anidbEid3.intValue() : 0;
+                                linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                                videos = list5;
+                            } else {
+                                list5 = videos;
+                            }
+                            linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                            videos = list5;
+                        }
+                        list = videos;
+                        intRange = new IntRange(1, size);
+                        i5 = 0;
+                        linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                        while (r27.hasNext()) {
+                            Iterable iterable3 = intRange;
+                            iIntValue4 = ((Number) obj7).intValue();
+                            if (r21 != 0) {
+                                i20 = size;
+                                episodes3 = r21.getEpisodes();
+                                if (episodes3 != null) {
+                                    i5 = i5;
+                                    metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                                }
+                                linkedHashMap2.put(obj7, metaEpisode);
+                                intRange = iterable3;
+                                size = i20;
+                                i5 = i5;
+                            } else {
+                                i20 = size;
+                            }
+                            metaEpisode = null;
+                            linkedHashMap2.put(obj7, metaEpisode);
+                            intRange = iterable3;
+                            size = i20;
+                            i5 = i5;
+                        }
+                        i6 = size;
+                        if (url == null) {
+                            if (r21 != 0 || (images = r21.getImages()) == null || (imageData = (ImageData) CollectionsKt.firstOrNull(images)) == null) {
+                                url3 = null;
+                            } else {
+                                url3 = imageData.getUrl();
+                            }
+                            if (url3 == null) {
+                                url3 = "";
+                            }
+                            str33 = url3;
+                        } else {
+                            str33 = url;
+                        }
+                        if (r21 != 0 || (titles4 = r21.getTitles()) == null || (str35 = titles4.get("en")) == null) {
+                            if (r21 != 0 || (titles3 = r21.getTitles()) == null) {
+                                str34 = null;
+                            } else {
+                                str34 = titles3.get("ja");
+                            }
+                            if (str34 == null) {
+                                if (r21 != 0 || (titles2 = r21.getTitles()) == null) {
+                                    str36 = null;
+                                } else {
+                                    str36 = titles2.get("x-jat");
+                                }
+                                if (str36 == null) {
+                                    str35 = str22;
+                                } else {
+                                    str35 = str36;
+                                }
+                            } else {
+                                str35 = str34;
+                            }
+                        }
+                        num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                        if (num16 != null) {
+                            iIntValue = num16.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                        i7 = iIntValue;
+                        num17 = num8;
+                        str37 = str22;
+                        str38 = str30;
+                        stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                        if (list.isEmpty()) {
+                            list4 = list;
+                            arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                            i18 = 0;
+                            while (r37.hasNext()) {
+                                int i29 = i18 + 1;
+                                if (i18 < 0) {
+                                    CollectionsKt.throwIndexOverflow();
+                                }
+                                ArrayList arrayList113 = arrayList12;
+                                LinkedHashMap linkedHashMap11 = linkedHashMap;
+                                StreamPlayKitsuHelper.KitsuVideo kitsuVideo4 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                                i19 = i18;
+                                episode2 = kitsuVideo4.getEpisode();
+                                if (episode2 != null) {
+                                    iIntValue3 = episode2.intValue();
+                                } else {
+                                    iIntValue3 = i19 + 1;
+                                }
+                                CharSequence charSequence5 = charSequence;
+                                List<StreamPlayKitsuHelper.KitsuVideo> list14 = list4;
+                                LinkedHashMap linkedHashMap12 = linkedHashMap2;
+                                String str411 = str35;
+                                arrayList113.add(loadFromKitsu$createEpisode(linkedHashMap12, streamPlayAnime, linkedHashMap11, num13, num15, str37, num17, str38, num6, str33, str411, iIntValue3, kitsuVideo4, false));
+                                streamPlayAnime = this;
+                                linkedHashMap = linkedHashMap11;
+                                str35 = str411;
+                                arrayList12 = arrayList113;
+                                i18 = i29;
+                                obj5 = obj5;
+                                i7 = i7;
+                                i4 = i4;
+                                linkedHashMap2 = linkedHashMap12;
+                                list4 = list14;
+                                charSequence = charSequence5;
+                            }
+                            ArrayList arrayList114 = arrayList12;
+                            i8 = i7;
+                            i9 = i4;
+                            linkedHashMap4 = linkedHashMap;
+                            charSequence2 = charSequence;
+                            num18 = num15;
+                            num19 = num17;
+                            linkedHashMap3 = linkedHashMap2;
+                            str39 = str35;
+                            num20 = num13;
+                            arrayList2 = arrayList114;
+                            i11 = 10;
+                        } else {
+                            i8 = i7;
+                            i9 = i4;
+                            linkedHashMap3 = linkedHashMap2;
+                            linkedHashMap4 = linkedHashMap;
+                            charSequence2 = charSequence;
+                            num18 = num15;
+                            num19 = num17;
+                            i10 = i6;
+                            str39 = str35;
+                            num20 = num13;
+                            intRange2 = new IntRange(1, i10);
+                            arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                            it = intRange2.iterator();
+                            while (it.hasNext()) {
+                                ArrayList arrayList115 = arrayList;
+                                arrayList115.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                                i10 = i10;
+                                arrayList = arrayList115;
+                                intRange2 = intRange2;
+                            }
+                            i6 = i10;
+                            i11 = 10;
+                            arrayList2 = arrayList;
+                        }
+                        arrayList3 = arrayList2;
+                        arrayList4 = arrayList3;
+                        arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                        i12 = 0;
+                        while (r32.hasNext()) {
+                            int i210 = i12 + 1;
+                            if (i12 < 0) {
+                                CollectionsKt.throwIndexOverflow();
+                            }
+                            List<StreamPlayKitsuHelper.KitsuVideo> list15 = list;
+                            kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list15, i12);
+                            if (kitsuVideo != null || (episode = kitsuVideo.getEpisode()) == null) {
+                                iIntValue2 = i12 + 1;
+                            } else {
+                                iIntValue2 = episode.intValue();
+                            }
+                            list = list15;
+                            arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                            i12 = i210;
+                            arrayList4 = arrayList4;
+                        }
+                        linkedHashMap5 = linkedHashMap3;
+                        linkedHashMap6 = linkedHashMap4;
+                        num21 = num6;
+                        str40 = str33;
+                        str41 = str39;
+                        arrayList6 = arrayList5;
+                        imdbRating = kitsuMeta6.getImdbRating();
+                        if (imdbRating != null || (floatOrNull = StringsKt.toFloatOrNull(imdbRating)) == null) {
+                            iFloatValue = 0;
+                        } else {
+                            iFloatValue = (int) (10.0f * floatOrNull.floatValue());
+                        }
+                        links = kitsuMeta6.getLinks();
+                        if (links != null) {
+                            list3 = links;
+                            arrayList8 = new ArrayList();
+                            while (r10.hasNext()) {
+                                ArrayList arrayList116 = arrayList6;
+                                List<StreamPlayKitsuHelper.KitsuLink> list16 = list3;
+                                if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                                    arrayList8.add(obj10);
+                                }
+                                arrayList6 = arrayList116;
+                                list3 = list16;
+                            }
+                            arrayList7 = arrayList6;
+                            arrayList9 = arrayList8;
+                            i16 = 0;
+                            arrayList10 = new ArrayList();
+                            while (r11.hasNext()) {
+                                name2 = kitsuLink.getName();
+                                if (name2 == null) {
+                                    arrayList11 = arrayList9;
+                                    i17 = i16;
+                                    num24 = num20;
+                                    num25 = num18;
+                                    animeSearchResponseNewAnimeSearchResponse$default = null;
+                                } else {
+                                    arrayList11 = arrayList9;
+                                    url2 = kitsuLink.getUrl();
+                                    if (url2 != null) {
+                                        i17 = i16;
+                                        num24 = num20;
+                                        num25 = num18;
+                                        strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                        if (strSubstringAfterLast$default == null) {
+                                            animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                        }
+                                    } else {
+                                        i17 = i16;
+                                        num24 = num20;
+                                        num25 = num18;
+                                    }
+                                    animeSearchResponseNewAnimeSearchResponse$default = null;
+                                }
+                                if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                                    arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                                }
+                                arrayList9 = arrayList11;
+                                i16 = i17;
+                                num20 = num24;
+                                num18 = num25;
+                            }
+                            num22 = num20;
+                            num23 = num18;
+                            list2 = arrayList10;
+                        } else {
+                            arrayList7 = arrayList6;
+                            num22 = num20;
+                            num23 = num18;
+                            list2 = null;
+                        }
+                        i13 = i9;
+                        if (i13 != 0) {
+                            TvType tvType17 = TvType.AnimeMovie;
+                            Integer num215 = num19;
+                            C00872 c00874 = new C00872(num22, num23, str20, num215, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                            C00861 c008612 = c00863;
+                            c008612.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                            c008612.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                            c008612.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                            c008612.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                            c008612.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                            c008612.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                            c008612.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                            c008612.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                            c008612.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                            c008612.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                            c008612.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                            c008612.L$11 = SpillingKt.nullOutSpilledVariable(num215);
+                            c008612.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                            c008612.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                            c008612.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                            c008612.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                            c008612.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                            c008612.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                            c008612.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                            c008612.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                            c008612.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                            c008612.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                            c008612.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                            c008612.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                            c008612.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                            c008612.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                            c008612.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                            c008612.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                            c008612.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                            c008612.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                            c008612.I$0 = i13;
+                            c008612.I$1 = i6;
+                            c008612.I$2 = i8;
+                            c008612.I$3 = iFloatValue;
+                            c008612.label = 8;
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType17, stringData, c00874, c008612);
+                            obj4 = obj2;
+                            if (objNewMovieLoadResponse == obj4) {
+                                return obj4;
+                            }
+                            return (LoadResponse) objNewMovieLoadResponse;
+                        }
+                        Integer num216 = num19;
+                        obj3 = obj2;
+                        C00861 c008613 = c00863;
+                        Integer num217 = num22;
+                        Integer num33 = num23;
+                        i14 = iFloatValue;
+                        TvType tvType18 = TvType.Anime;
+                        ArrayList arrayList117 = arrayList7;
+                        C00883 c00885 = new C00883(num217, num33, str20, arrayList3, arrayList117, str18, num216, kitsuMeta6, str32, url, i14, this, list2, null);
+                        c008613.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                        c008613.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                        c008613.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                        c008613.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                        c008613.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                        c008613.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                        c008613.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                        c008613.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                        c008613.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                        c008613.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                        c008613.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                        c008613.L$11 = SpillingKt.nullOutSpilledVariable(num216);
+                        c008613.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                        c008613.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                        c008613.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                        c008613.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                        c008613.L$16 = SpillingKt.nullOutSpilledVariable(num217);
+                        c008613.L$17 = SpillingKt.nullOutSpilledVariable(num33);
+                        c008613.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                        c008613.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                        c008613.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                        c008613.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                        c008613.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                        c008613.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                        c008613.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                        c008613.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                        c008613.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                        c008613.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                        c008613.L$28 = SpillingKt.nullOutSpilledVariable(arrayList117);
+                        c008613.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                        c008613.I$0 = i13;
+                        c008613.I$1 = i6;
+                        c008613.I$2 = i8;
+                        c008613.I$3 = i14;
+                        c008613.label = 9;
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType18, false, c00885, c008613, 8, (Object) null);
+                        if (objNewAnimeLoadResponse$default == obj3) {
+                            return obj3;
+                        }
+                        str42 = str21;
+                        str43 = stringData;
+                        i15 = i14;
+                        obj5 = objNewAnimeLoadResponse$default;
+                        return (LoadResponse) obj5;
+                    } catch (Throwable th2) {
+                        c00864 = c00864;
+                        num = numericKitsuId;
+                        kitsuMeta3 = kitsuMeta;
+                        num2 = num;
+                        text = str3;
+                        str6 = str4;
+                        if (text != null) {
+                            animeData = StreamPlayUtilsKt.parseAnimeData(text);
+                        } else {
+                            r8 = str3;
+                        }
+                        if (r8 != 0) {
+                            r8 = animeData;
+                            r8 = animeData;
+                            r8 = animeData;
+                            intOrNull = str3;
+                        } else {
+                            r8 = animeData;
+                            r8 = animeData;
+                            r8 = animeData;
+                            intOrNull = str3;
+                        }
+                        if (r8 != 0) {
+                            if (num2 != null) {
+                                strValueOf = String.valueOf(num2.intValue());
+                            } else {
+                                strValueOf = str3;
+                            }
+                        } else if (num2 != null) {
+                            strValueOf = String.valueOf(num2.intValue());
+                        } else {
+                            strValueOf = str3;
+                        }
+                        r8 = animeData;
+                        str7 = strValueOf;
+                        r85 = intOrNull;
+                        if (StringsKt.equals(kitsuMeta3.getType(), "movie", true)) {
+                            i = 1;
+                        } else {
+                            i = 1;
+                        }
+                        if (i != 0) {
+                            tvType = TvType.Movie;
+                        } else {
+                            tvType = TvType.TvSeries;
+                        }
+                        if (i != 0) {
+                            tvType2 = TvType.AnimeMovie;
+                        } else {
+                            tvType2 = TvType.TvSeries;
+                        }
+                        tvType3 = tvType2;
+                        name = kitsuMeta3.getName();
+                        if (name == null) {
+                            aliases = kitsuMeta3.getAliases();
+                            if (aliases != null) {
+                                name = (String) CollectionsKt.firstOrNull(aliases);
+                            } else {
+                                name = null;
+                            }
+                            if (name == null) {
+                                name = "Unknown";
+                            }
+                        }
+                        str8 = name;
+                        yearInt = kitsuMeta3.getYearInt();
+                        if (yearInt != null) {
+                            tvType4 = tvType;
+                        } else if (r8 != 0) {
+                            tvType4 = tvType;
+                            yearInt = null;
+                        } else {
+                            tvType4 = tvType;
+                            yearInt = null;
+                        }
+                        num3 = yearInt;
+                        c00864.L$0 = str6;
+                        c00864.L$1 = str45;
+                        c00864.L$2 = kitsuMeta3;
+                        c00864.L$3 = num2;
+                        c00864.L$4 = text;
+                        c00864.L$5 = r8;
+                        c00864.L$6 = SpillingKt.nullOutSpilledVariable((Object) r85);
+                        c00864.L$7 = str7;
+                        str9 = text;
+                        c00864.L$8 = SpillingKt.nullOutSpilledVariable(tvType4);
+                        c00864.L$9 = tvType3;
+                        c00864.L$10 = str8;
+                        c00864.L$11 = num3;
+                        c00864.I$0 = i;
+                        c00864.label = 6;
+                        num4 = num2;
+                        i2 = i;
+                        r19 = r8;
+                        str10 = str6;
+                        tvType5 = tvType4;
+                        kitsuMeta4 = kitsuMeta3;
+                        num5 = null;
+                        C00861 c008614 = c00864;
+                        z = false;
+                        objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", tvType5, r85, "en", c008614);
+                        c00862 = c008614;
+                        if (objFetchTmdbLogoUrl == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        str11 = str9;
+                        str12 = str7;
+                        tvType6 = tvType3;
+                        str13 = str8;
+                        num6 = num4;
+                        i3 = i2;
+                        num7 = num3;
+                        str14 = str10;
+                        tvType7 = tvType5;
+                        r16 = r85;
+                        r6 = r19;
+                        kitsuMeta5 = kitsuMeta4;
+                        str15 = (String) objFetchTmdbLogoUrl;
+                        if (r6 != 0) {
+                            if (StringsKt.toIntOrNull(str45) != null) {
+                                str16 = str45;
+                                charSequence = "kitsu:";
+                                if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                                    intOrNull2 = StringsKt.toIntOrNull(str16);
+                                }
+                            } else {
+                                str16 = str45;
+                                charSequence = "kitsu:";
+                            }
+                            intOrNull2 = num5;
+                        } else {
+                            if (StringsKt.toIntOrNull(str45) != null) {
+                                str16 = str45;
+                                charSequence = "kitsu:";
+                                if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                                    intOrNull2 = StringsKt.toIntOrNull(str16);
+                                }
+                            } else {
+                                str16 = str45;
+                                charSequence = "kitsu:";
+                            }
+                            intOrNull2 = num5;
+                        }
+                        if (r6 != 0) {
+                            malId = num5;
+                        } else {
+                            malId = num5;
+                        }
+                        if (malId == null) {
+                        }
+                        str17 = str14;
+                        int i211 = i3;
+                        Integer num218 = num7;
+                        aniIds = new AniIds(intOrNull2, malId);
+                        str18 = str15;
+                        tvType8 = tvType6;
+                        r21 = r6;
+                        kitsuMeta6 = kitsuMeta5;
+                        str19 = str11;
+                        str20 = str12;
+                        num8 = num218;
+                        r23 = r16;
+                        tvType9 = tvType7;
+                        i4 = i211;
+                        str21 = str16;
+                        num9 = intOrNull2;
+                        str22 = str13;
+                        num10 = malId;
+                        aniIds2 = aniIds;
+                        id = aniIds2.getId();
+                        if (id == null) {
+                            num13 = num9;
+                        } else {
+                            num13 = id;
+                        }
+                        idMal = aniIds2.getIdMal();
+                        if (idMal == null) {
+                            num14 = num10;
+                        } else {
+                            num14 = idMal;
+                        }
+                        if (r21 != 0) {
+                            if (r21 != 0) {
+                                str29 = null;
+                            } else {
+                                str29 = null;
+                            }
+                            if (str29 != null) {
+                                str30 = str29;
+                            } else {
+                                aliases2 = kitsuMeta6.getAliases();
+                                if (aliases2 != null) {
+                                    str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                                } else {
+                                    str29 = null;
+                                }
+                                if (str29 == null) {
+                                    str30 = str22;
+                                } else {
+                                    str30 = str29;
+                                }
+                            }
+                        } else {
+                            if (r21 != 0) {
+                                str29 = null;
+                            } else {
+                                str29 = null;
+                            }
+                            if (str29 != null) {
+                                str30 = str29;
+                            } else {
+                                aliases2 = kitsuMeta6.getAliases();
+                                if (aliases2 != null) {
+                                    str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                                } else {
+                                    str29 = null;
+                                }
+                                if (str29 == null) {
+                                    str30 = str22;
+                                } else {
+                                    str30 = str29;
+                                }
+                            }
+                        }
+                        poster = kitsuMeta6.getPoster();
+                        if (poster != null) {
+                            obj2 = coroutine_suspended;
+                            num15 = num14;
+                            c00863 = c00862;
+                            url = poster;
+                        } else if (r21 != 0) {
+                            obj2 = coroutine_suspended;
+                            num15 = num14;
+                            c00863 = c00862;
+                            url = null;
+                        } else {
+                            obj2 = coroutine_suspended;
+                            num15 = num14;
+                            c00863 = c00862;
+                            url = null;
+                        }
+                        background = kitsuMeta6.getBackground();
+                        if (background != null) {
+                            str31 = background;
+                        } else {
+                            if (r21 != 0) {
+                                list6 = images2;
+                                it2 = list6.iterator();
+                                while (true) {
+                                    if (it2.hasNext()) {
+                                        next = it2.next();
+                                        list7 = list6;
+                                        if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                            list6 = list7;
+                                        }
+                                    } else {
+                                        next = null;
+                                    }
+                                }
+                                imageData2 = (ImageData) next;
+                                if (imageData2 != null) {
+                                    background = imageData2.getUrl();
+                                    str31 = background;
+                                }
+                            }
+                            str31 = null;
+                        }
+                        str32 = str31;
+                        videos = kitsuMeta6.getVideos();
+                        if (videos == null) {
+                            videos = CollectionsKt.emptyList();
+                        }
+                        if (!videos.isEmpty()) {
+                            size = videos.size();
+                        } else if (r21 != 0) {
+                            size = 1;
+                        } else {
+                            size = 1;
+                        }
+                        Iterable intRange6 = new IntRange(1, size);
+                        linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange6, 10)), 16));
+                        while (r31.hasNext()) {
+                            iIntValue5 = ((Number) obj6).intValue();
+                            if (str19 != null) {
+                                list5 = videos;
+                                Integer anidbEid4 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                                if (anidbEid4 != null) {
+                                }
+                                linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                                videos = list5;
+                            } else {
+                                list5 = videos;
+                            }
+                            linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                            videos = list5;
+                        }
+                        list = videos;
+                        intRange = new IntRange(1, size);
+                        i5 = 0;
+                        linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                        while (r27.hasNext()) {
+                            Iterable iterable4 = intRange;
+                            iIntValue4 = ((Number) obj7).intValue();
+                            if (r21 != 0) {
+                                i20 = size;
+                                episodes3 = r21.getEpisodes();
+                                if (episodes3 != null) {
+                                    i5 = i5;
+                                    metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                                }
+                                linkedHashMap2.put(obj7, metaEpisode);
+                                intRange = iterable4;
+                                size = i20;
+                                i5 = i5;
+                            } else {
+                                i20 = size;
+                            }
+                            metaEpisode = null;
+                            linkedHashMap2.put(obj7, metaEpisode);
+                            intRange = iterable4;
+                            size = i20;
+                            i5 = i5;
+                        }
+                        i6 = size;
+                        if (url == null) {
+                            if (r21 != 0) {
+                                url3 = null;
+                            } else {
+                                url3 = null;
+                            }
+                            if (url3 == null) {
+                                url3 = "";
+                            }
+                            str33 = url3;
+                        } else {
+                            str33 = url;
+                        }
+                        if (r21 != 0) {
+                            if (r21 != 0) {
+                                str34 = null;
+                            } else {
+                                str34 = null;
+                            }
+                            if (str34 == null) {
+                                if (r21 != 0) {
+                                    str36 = null;
+                                } else {
+                                    str36 = null;
+                                }
+                                if (str36 == null) {
+                                    str35 = str22;
+                                } else {
+                                    str35 = str36;
+                                }
+                            } else {
+                                str35 = str34;
+                            }
+                        } else {
+                            if (r21 != 0) {
+                                str34 = null;
+                            } else {
+                                str34 = null;
+                            }
+                            if (str34 == null) {
+                                if (r21 != 0) {
+                                    str36 = null;
+                                } else {
+                                    str36 = null;
+                                }
+                                if (str36 == null) {
+                                    str35 = str22;
+                                } else {
+                                    str35 = str36;
+                                }
+                            } else {
+                                str35 = str34;
+                            }
+                        }
+                        num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                        if (num16 != null) {
+                            iIntValue = num16.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                        i7 = iIntValue;
+                        num17 = num8;
+                        str37 = str22;
+                        str38 = str30;
+                        stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                        if (list.isEmpty()) {
+                            list4 = list;
+                            arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                            i18 = 0;
+                            while (r37.hasNext()) {
+                                int i212 = i18 + 1;
+                                if (i18 < 0) {
+                                    CollectionsKt.throwIndexOverflow();
+                                }
+                                ArrayList arrayList118 = arrayList12;
+                                LinkedHashMap linkedHashMap13 = linkedHashMap;
+                                StreamPlayKitsuHelper.KitsuVideo kitsuVideo5 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                                i19 = i18;
+                                episode2 = kitsuVideo5.getEpisode();
+                                if (episode2 != null) {
+                                    iIntValue3 = episode2.intValue();
+                                } else {
+                                    iIntValue3 = i19 + 1;
+                                }
+                                CharSequence charSequence6 = charSequence;
+                                List<StreamPlayKitsuHelper.KitsuVideo> list17 = list4;
+                                LinkedHashMap linkedHashMap14 = linkedHashMap2;
+                                String str412 = str35;
+                                arrayList118.add(loadFromKitsu$createEpisode(linkedHashMap14, streamPlayAnime, linkedHashMap13, num13, num15, str37, num17, str38, num6, str33, str412, iIntValue3, kitsuVideo5, false));
+                                streamPlayAnime = this;
+                                linkedHashMap = linkedHashMap13;
+                                str35 = str412;
+                                arrayList12 = arrayList118;
+                                i18 = i212;
+                                obj5 = obj5;
+                                i7 = i7;
+                                i4 = i4;
+                                linkedHashMap2 = linkedHashMap14;
+                                list4 = list17;
+                                charSequence = charSequence6;
+                            }
+                            ArrayList arrayList119 = arrayList12;
+                            i8 = i7;
+                            i9 = i4;
+                            linkedHashMap4 = linkedHashMap;
+                            charSequence2 = charSequence;
+                            num18 = num15;
+                            num19 = num17;
+                            linkedHashMap3 = linkedHashMap2;
+                            str39 = str35;
+                            num20 = num13;
+                            arrayList2 = arrayList119;
+                            i11 = 10;
+                        } else {
+                            i8 = i7;
+                            i9 = i4;
+                            linkedHashMap3 = linkedHashMap2;
+                            linkedHashMap4 = linkedHashMap;
+                            charSequence2 = charSequence;
+                            num18 = num15;
+                            num19 = num17;
+                            i10 = i6;
+                            str39 = str35;
+                            num20 = num13;
+                            intRange2 = new IntRange(1, i10);
+                            arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                            it = intRange2.iterator();
+                            while (it.hasNext()) {
+                                ArrayList arrayList1110 = arrayList;
+                                arrayList1110.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                                i10 = i10;
+                                arrayList = arrayList1110;
+                                intRange2 = intRange2;
+                            }
+                            i6 = i10;
+                            i11 = 10;
+                            arrayList2 = arrayList;
+                        }
+                        arrayList3 = arrayList2;
+                        arrayList4 = arrayList3;
+                        arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                        i12 = 0;
+                        while (r32.hasNext()) {
+                            int i213 = i12 + 1;
+                            if (i12 < 0) {
+                                CollectionsKt.throwIndexOverflow();
+                            }
+                            List<StreamPlayKitsuHelper.KitsuVideo> list18 = list;
+                            kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list18, i12);
+                            if (kitsuVideo != null) {
+                                iIntValue2 = i12 + 1;
+                            } else {
+                                iIntValue2 = i12 + 1;
+                            }
+                            list = list18;
+                            arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                            i12 = i213;
+                            arrayList4 = arrayList4;
+                        }
+                        linkedHashMap5 = linkedHashMap3;
+                        linkedHashMap6 = linkedHashMap4;
+                        num21 = num6;
+                        str40 = str33;
+                        str41 = str39;
+                        arrayList6 = arrayList5;
+                        imdbRating = kitsuMeta6.getImdbRating();
+                        if (imdbRating != null) {
+                            iFloatValue = 0;
+                        } else {
+                            iFloatValue = 0;
+                        }
+                        links = kitsuMeta6.getLinks();
+                        if (links != null) {
+                            list3 = links;
+                            arrayList8 = new ArrayList();
+                            while (r10.hasNext()) {
+                                ArrayList arrayList1111 = arrayList6;
+                                List<StreamPlayKitsuHelper.KitsuLink> list19 = list3;
+                                if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                                    arrayList8.add(obj10);
+                                }
+                                arrayList6 = arrayList1111;
+                                list3 = list19;
+                            }
+                            arrayList7 = arrayList6;
+                            arrayList9 = arrayList8;
+                            i16 = 0;
+                            arrayList10 = new ArrayList();
+                            while (r11.hasNext()) {
+                                name2 = kitsuLink.getName();
+                                if (name2 == null) {
+                                    arrayList11 = arrayList9;
+                                    i17 = i16;
+                                    num24 = num20;
+                                    num25 = num18;
+                                    animeSearchResponseNewAnimeSearchResponse$default = null;
+                                } else {
+                                    arrayList11 = arrayList9;
+                                    url2 = kitsuLink.getUrl();
+                                    if (url2 != null) {
+                                        i17 = i16;
+                                        num24 = num20;
+                                        num25 = num18;
+                                        strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                        if (strSubstringAfterLast$default == null) {
+                                            animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                        }
+                                    } else {
+                                        i17 = i16;
+                                        num24 = num20;
+                                        num25 = num18;
+                                    }
+                                    animeSearchResponseNewAnimeSearchResponse$default = null;
+                                }
+                                if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                                    arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                                }
+                                arrayList9 = arrayList11;
+                                i16 = i17;
+                                num20 = num24;
+                                num18 = num25;
+                            }
+                            num22 = num20;
+                            num23 = num18;
+                            list2 = arrayList10;
+                        } else {
+                            arrayList7 = arrayList6;
+                            num22 = num20;
+                            num23 = num18;
+                            list2 = null;
+                        }
+                        i13 = i9;
+                        if (i13 != 0) {
+                            TvType tvType19 = TvType.AnimeMovie;
+                            Integer num219 = num19;
+                            C00872 c00875 = new C00872(num22, num23, str20, num219, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                            C00861 c008615 = c00863;
+                            c008615.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                            c008615.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                            c008615.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                            c008615.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                            c008615.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                            c008615.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                            c008615.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                            c008615.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                            c008615.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                            c008615.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                            c008615.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                            c008615.L$11 = SpillingKt.nullOutSpilledVariable(num219);
+                            c008615.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                            c008615.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                            c008615.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                            c008615.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                            c008615.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                            c008615.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                            c008615.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                            c008615.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                            c008615.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                            c008615.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                            c008615.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                            c008615.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                            c008615.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                            c008615.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                            c008615.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                            c008615.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                            c008615.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                            c008615.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                            c008615.I$0 = i13;
+                            c008615.I$1 = i6;
+                            c008615.I$2 = i8;
+                            c008615.I$3 = iFloatValue;
+                            c008615.label = 8;
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType19, stringData, c00875, c008615);
+                            obj4 = obj2;
+                            if (objNewMovieLoadResponse == obj4) {
+                                return obj4;
+                            }
+                            return (LoadResponse) objNewMovieLoadResponse;
+                        }
+                        Integer num2110 = num19;
+                        obj3 = obj2;
+                        C00861 c008616 = c00863;
+                        Integer num2111 = num22;
+                        Integer num34 = num23;
+                        i14 = iFloatValue;
+                        TvType tvType110 = TvType.Anime;
+                        ArrayList arrayList1112 = arrayList7;
+                        C00883 c00886 = new C00883(num2111, num34, str20, arrayList3, arrayList1112, str18, num2110, kitsuMeta6, str32, url, i14, this, list2, null);
+                        c008616.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                        c008616.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                        c008616.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                        c008616.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                        c008616.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                        c008616.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                        c008616.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                        c008616.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                        c008616.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                        c008616.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                        c008616.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                        c008616.L$11 = SpillingKt.nullOutSpilledVariable(num2110);
+                        c008616.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                        c008616.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                        c008616.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                        c008616.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                        c008616.L$16 = SpillingKt.nullOutSpilledVariable(num2111);
+                        c008616.L$17 = SpillingKt.nullOutSpilledVariable(num34);
+                        c008616.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                        c008616.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                        c008616.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                        c008616.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                        c008616.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                        c008616.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                        c008616.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                        c008616.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                        c008616.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                        c008616.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                        c008616.L$28 = SpillingKt.nullOutSpilledVariable(arrayList1112);
+                        c008616.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                        c008616.I$0 = i13;
+                        c008616.I$1 = i6;
+                        c008616.I$2 = i8;
+                        c008616.I$3 = i14;
+                        c008616.label = 9;
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType110, false, c00886, c008616, 8, (Object) null);
+                        if (objNewAnimeLoadResponse$default == obj3) {
+                            return obj3;
+                        }
+                        str42 = str21;
+                        str43 = stringData;
+                        i15 = i14;
+                        obj5 = objNewAnimeLoadResponse$default;
+                        return (LoadResponse) obj5;
+                    }
+                } catch (Throwable th3) {
+                    num = numericKitsuId;
+                }
+                break;
+            case 1:
+                str45 = (String) c00864.L$1;
+                str44 = (String) c00864.L$0;
+                ResultKt.throwOnFailure(obj5);
+                meta = obj5;
+                str3 = null;
+                kitsuMeta = (StreamPlayKitsuHelper.KitsuMeta) meta;
+                str4 = str44;
+                if (kitsuMeta == null) {
+                    throw new Exception("Unable to fetch Kitsu anime metadata for " + str45);
+                }
+                numericKitsuId = kitsuMeta.getNumericKitsuId();
+                if (numericKitsuId != null) {
+                    sbAppend = new StringBuilder().append("kitsu_id=").append(numericKitsuId.intValue());
+                } else {
+                    sbAppend = new StringBuilder().append("anilist_id=").append(str45);
+                }
+                String string4 = sbAppend.toString();
+                Requests app4 = MainActivityKt.getApp();
+                String str413 = "https://api.ani.zip/mappings?" + string4;
+                c00864.L$0 = str4;
+                c00864.L$1 = str45;
+                c00864.L$2 = kitsuMeta;
+                c00864.L$3 = numericKitsuId;
+                c00864.L$4 = SpillingKt.nullOutSpilledVariable(string4);
+                c00864.label = 5;
+                obj = Requests.get$default(app4, str413, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00864, 4094, (Object) null);
+                if (obj == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                str5 = str4;
+                kitsuMeta2 = kitsuMeta;
+                text = ((NiceResponse) obj).getText();
+                num2 = numericKitsuId;
+                str6 = str5;
+                kitsuMeta3 = kitsuMeta2;
+                if (text != null) {
+                    animeData = StreamPlayUtilsKt.parseAnimeData(text);
+                } else {
+                    r8 = str3;
+                }
+                if (r8 != 0) {
+                    r8 = animeData;
+                    r8 = animeData;
+                    r8 = animeData;
+                    intOrNull = str3;
+                } else {
+                    r8 = animeData;
+                    r8 = animeData;
+                    r8 = animeData;
+                    intOrNull = str3;
+                }
+                if (r8 != 0) {
+                    if (num2 != null) {
+                        strValueOf = String.valueOf(num2.intValue());
+                    } else {
+                        strValueOf = str3;
+                    }
+                } else if (num2 != null) {
+                    strValueOf = String.valueOf(num2.intValue());
+                } else {
+                    strValueOf = str3;
+                }
+                r8 = animeData;
+                str7 = strValueOf;
+                r85 = intOrNull;
+                if (StringsKt.equals(kitsuMeta3.getType(), "movie", true)) {
+                    i = 1;
+                } else {
+                    i = 1;
+                }
+                if (i != 0) {
+                    tvType = TvType.Movie;
+                } else {
+                    tvType = TvType.TvSeries;
+                }
+                if (i != 0) {
+                    tvType2 = TvType.AnimeMovie;
+                } else {
+                    tvType2 = TvType.TvSeries;
+                }
+                tvType3 = tvType2;
+                name = kitsuMeta3.getName();
+                if (name == null) {
+                    aliases = kitsuMeta3.getAliases();
+                    if (aliases != null) {
+                        name = (String) CollectionsKt.firstOrNull(aliases);
+                    } else {
+                        name = null;
+                    }
+                    if (name == null) {
+                        name = "Unknown";
+                    }
+                }
+                str8 = name;
+                yearInt = kitsuMeta3.getYearInt();
+                if (yearInt != null) {
+                    tvType4 = tvType;
+                } else if (r8 != 0) {
+                    tvType4 = tvType;
+                    yearInt = null;
+                } else {
+                    tvType4 = tvType;
+                    yearInt = null;
+                }
+                num3 = yearInt;
+                c00864.L$0 = str6;
+                c00864.L$1 = str45;
+                c00864.L$2 = kitsuMeta3;
+                c00864.L$3 = num2;
+                c00864.L$4 = text;
+                c00864.L$5 = r8;
+                c00864.L$6 = SpillingKt.nullOutSpilledVariable((Object) r85);
+                c00864.L$7 = str7;
+                str9 = text;
+                c00864.L$8 = SpillingKt.nullOutSpilledVariable(tvType4);
+                c00864.L$9 = tvType3;
+                c00864.L$10 = str8;
+                c00864.L$11 = num3;
+                c00864.I$0 = i;
+                c00864.label = 6;
+                num4 = num2;
+                i2 = i;
+                r19 = r8;
+                str10 = str6;
+                tvType5 = tvType4;
+                kitsuMeta4 = kitsuMeta3;
+                num5 = null;
+                C00861 c008617 = c00864;
+                z = false;
+                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", tvType5, r85, "en", c008617);
+                c00862 = c008617;
+                if (objFetchTmdbLogoUrl == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                str11 = str9;
+                str12 = str7;
+                tvType6 = tvType3;
+                str13 = str8;
+                num6 = num4;
+                i3 = i2;
+                num7 = num3;
+                str14 = str10;
+                tvType7 = tvType5;
+                r16 = r85;
+                r6 = r19;
+                kitsuMeta5 = kitsuMeta4;
+                str15 = (String) objFetchTmdbLogoUrl;
+                if (r6 != 0) {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                } else {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                }
+                if (r6 != 0) {
+                    malId = num5;
+                } else {
+                    malId = num5;
+                }
+                if (malId == null) {
+                }
+                str17 = str14;
+                int i214 = i3;
+                Integer num2112 = num7;
+                aniIds = new AniIds(intOrNull2, malId);
+                str18 = str15;
+                tvType8 = tvType6;
+                r21 = r6;
+                kitsuMeta6 = kitsuMeta5;
+                str19 = str11;
+                str20 = str12;
+                num8 = num2112;
+                r23 = r16;
+                tvType9 = tvType7;
+                i4 = i214;
+                str21 = str16;
+                num9 = intOrNull2;
+                str22 = str13;
+                num10 = malId;
+                aniIds2 = aniIds;
+                id = aniIds2.getId();
+                if (id == null) {
+                    num13 = num9;
+                } else {
+                    num13 = id;
+                }
+                idMal = aniIds2.getIdMal();
+                if (idMal == null) {
+                    num14 = num10;
+                } else {
+                    num14 = idMal;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                }
+                poster = kitsuMeta6.getPoster();
+                if (poster != null) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = poster;
+                } else if (r21 != 0) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                } else {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                }
+                background = kitsuMeta6.getBackground();
+                if (background != null) {
+                    str31 = background;
+                } else {
+                    if (r21 != 0) {
+                        list6 = images2;
+                        it2 = list6.iterator();
+                        while (true) {
+                            if (it2.hasNext()) {
+                                next = it2.next();
+                                list7 = list6;
+                                if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                    list6 = list7;
+                                }
+                            } else {
+                                next = null;
+                            }
+                        }
+                        imageData2 = (ImageData) next;
+                        if (imageData2 != null) {
+                            background = imageData2.getUrl();
+                            str31 = background;
+                        }
+                    }
+                    str31 = null;
+                }
+                str32 = str31;
+                videos = kitsuMeta6.getVideos();
+                if (videos == null) {
+                    videos = CollectionsKt.emptyList();
+                }
+                if (!videos.isEmpty()) {
+                    size = videos.size();
+                } else if (r21 != 0) {
+                    size = 1;
+                } else {
+                    size = 1;
+                }
+                Iterable intRange7 = new IntRange(1, size);
+                linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange7, 10)), 16));
+                while (r31.hasNext()) {
+                    iIntValue5 = ((Number) obj6).intValue();
+                    if (str19 != null) {
+                        list5 = videos;
+                        Integer anidbEid5 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                        if (anidbEid5 != null) {
+                        }
+                        linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                        videos = list5;
+                    } else {
+                        list5 = videos;
+                    }
+                    linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                    videos = list5;
+                }
+                list = videos;
+                intRange = new IntRange(1, size);
+                i5 = 0;
+                linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                while (r27.hasNext()) {
+                    Iterable iterable5 = intRange;
+                    iIntValue4 = ((Number) obj7).intValue();
+                    if (r21 != 0) {
+                        i20 = size;
+                        episodes3 = r21.getEpisodes();
+                        if (episodes3 != null) {
+                            i5 = i5;
+                            metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                        }
+                        linkedHashMap2.put(obj7, metaEpisode);
+                        intRange = iterable5;
+                        size = i20;
+                        i5 = i5;
+                    } else {
+                        i20 = size;
+                    }
+                    metaEpisode = null;
+                    linkedHashMap2.put(obj7, metaEpisode);
+                    intRange = iterable5;
+                    size = i20;
+                    i5 = i5;
+                }
+                i6 = size;
+                if (url == null) {
+                    if (r21 != 0) {
+                        url3 = null;
+                    } else {
+                        url3 = null;
+                    }
+                    if (url3 == null) {
+                        url3 = "";
+                    }
+                    str33 = url3;
+                } else {
+                    str33 = url;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                }
+                num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                if (num16 != null) {
+                    iIntValue = num16.intValue();
+                } else {
+                    iIntValue = 0;
+                }
+                i7 = iIntValue;
+                num17 = num8;
+                str37 = str22;
+                str38 = str30;
+                stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                if (list.isEmpty()) {
+                    list4 = list;
+                    arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                    i18 = 0;
+                    while (r37.hasNext()) {
+                        int i215 = i18 + 1;
+                        if (i18 < 0) {
+                            CollectionsKt.throwIndexOverflow();
+                        }
+                        ArrayList arrayList1113 = arrayList12;
+                        LinkedHashMap linkedHashMap15 = linkedHashMap;
+                        StreamPlayKitsuHelper.KitsuVideo kitsuVideo6 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                        i19 = i18;
+                        episode2 = kitsuVideo6.getEpisode();
+                        if (episode2 != null) {
+                            iIntValue3 = episode2.intValue();
+                        } else {
+                            iIntValue3 = i19 + 1;
+                        }
+                        CharSequence charSequence7 = charSequence;
+                        List<StreamPlayKitsuHelper.KitsuVideo> list110 = list4;
+                        LinkedHashMap linkedHashMap16 = linkedHashMap2;
+                        String str414 = str35;
+                        arrayList1113.add(loadFromKitsu$createEpisode(linkedHashMap16, streamPlayAnime, linkedHashMap15, num13, num15, str37, num17, str38, num6, str33, str414, iIntValue3, kitsuVideo6, false));
+                        streamPlayAnime = this;
+                        linkedHashMap = linkedHashMap15;
+                        str35 = str414;
+                        arrayList12 = arrayList1113;
+                        i18 = i215;
+                        obj5 = obj5;
+                        i7 = i7;
+                        i4 = i4;
+                        linkedHashMap2 = linkedHashMap16;
+                        list4 = list110;
+                        charSequence = charSequence7;
+                    }
+                    ArrayList arrayList1114 = arrayList12;
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    linkedHashMap3 = linkedHashMap2;
+                    str39 = str35;
+                    num20 = num13;
+                    arrayList2 = arrayList1114;
+                    i11 = 10;
+                } else {
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap3 = linkedHashMap2;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    i10 = i6;
+                    str39 = str35;
+                    num20 = num13;
+                    intRange2 = new IntRange(1, i10);
+                    arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                    it = intRange2.iterator();
+                    while (it.hasNext()) {
+                        ArrayList arrayList1115 = arrayList;
+                        arrayList1115.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                        i10 = i10;
+                        arrayList = arrayList1115;
+                        intRange2 = intRange2;
+                    }
+                    i6 = i10;
+                    i11 = 10;
+                    arrayList2 = arrayList;
+                }
+                arrayList3 = arrayList2;
+                arrayList4 = arrayList3;
+                arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                i12 = 0;
+                while (r32.hasNext()) {
+                    int i216 = i12 + 1;
+                    if (i12 < 0) {
+                        CollectionsKt.throwIndexOverflow();
+                    }
+                    List<StreamPlayKitsuHelper.KitsuVideo> list111 = list;
+                    kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list111, i12);
+                    if (kitsuVideo != null) {
+                        iIntValue2 = i12 + 1;
+                    } else {
+                        iIntValue2 = i12 + 1;
+                    }
+                    list = list111;
+                    arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                    i12 = i216;
+                    arrayList4 = arrayList4;
+                }
+                linkedHashMap5 = linkedHashMap3;
+                linkedHashMap6 = linkedHashMap4;
+                num21 = num6;
+                str40 = str33;
+                str41 = str39;
+                arrayList6 = arrayList5;
+                imdbRating = kitsuMeta6.getImdbRating();
+                if (imdbRating != null) {
+                    iFloatValue = 0;
+                } else {
+                    iFloatValue = 0;
+                }
+                links = kitsuMeta6.getLinks();
+                if (links != null) {
+                    list3 = links;
+                    arrayList8 = new ArrayList();
+                    while (r10.hasNext()) {
+                        ArrayList arrayList1116 = arrayList6;
+                        List<StreamPlayKitsuHelper.KitsuLink> list112 = list3;
+                        if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                            arrayList8.add(obj10);
+                        }
+                        arrayList6 = arrayList1116;
+                        list3 = list112;
+                    }
+                    arrayList7 = arrayList6;
+                    arrayList9 = arrayList8;
+                    i16 = 0;
+                    arrayList10 = new ArrayList();
+                    while (r11.hasNext()) {
+                        name2 = kitsuLink.getName();
+                        if (name2 == null) {
+                            arrayList11 = arrayList9;
+                            i17 = i16;
+                            num24 = num20;
+                            num25 = num18;
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        } else {
+                            arrayList11 = arrayList9;
+                            url2 = kitsuLink.getUrl();
+                            if (url2 != null) {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                                strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                if (strSubstringAfterLast$default == null) {
+                                    animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                }
+                            } else {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                            }
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        }
+                        if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                            arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                        }
+                        arrayList9 = arrayList11;
+                        i16 = i17;
+                        num20 = num24;
+                        num18 = num25;
+                    }
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = arrayList10;
+                } else {
+                    arrayList7 = arrayList6;
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = null;
+                }
+                i13 = i9;
+                if (i13 != 0) {
+                    TvType tvType111 = TvType.AnimeMovie;
+                    Integer num2113 = num19;
+                    C00872 c00876 = new C00872(num22, num23, str20, num2113, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                    C00861 c008618 = c00863;
+                    c008618.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                    c008618.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                    c008618.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                    c008618.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                    c008618.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                    c008618.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                    c008618.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                    c008618.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                    c008618.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                    c008618.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                    c008618.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                    c008618.L$11 = SpillingKt.nullOutSpilledVariable(num2113);
+                    c008618.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                    c008618.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                    c008618.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                    c008618.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                    c008618.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                    c008618.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                    c008618.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                    c008618.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                    c008618.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                    c008618.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                    c008618.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                    c008618.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                    c008618.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                    c008618.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                    c008618.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                    c008618.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                    c008618.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                    c008618.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                    c008618.I$0 = i13;
+                    c008618.I$1 = i6;
+                    c008618.I$2 = i8;
+                    c008618.I$3 = iFloatValue;
+                    c008618.label = 8;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType111, stringData, c00876, c008618);
+                    obj4 = obj2;
+                    if (objNewMovieLoadResponse == obj4) {
+                        return obj4;
+                    }
+                    return (LoadResponse) objNewMovieLoadResponse;
+                }
+                Integer num2114 = num19;
+                obj3 = obj2;
+                C00861 c008619 = c00863;
+                Integer num2115 = num22;
+                Integer num35 = num23;
+                i14 = iFloatValue;
+                TvType tvType112 = TvType.Anime;
+                ArrayList arrayList1117 = arrayList7;
+                C00883 c00887 = new C00883(num2115, num35, str20, arrayList3, arrayList1117, str18, num2114, kitsuMeta6, str32, url, i14, this, list2, null);
+                c008619.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                c008619.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                c008619.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                c008619.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                c008619.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                c008619.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                c008619.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                c008619.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                c008619.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                c008619.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                c008619.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                c008619.L$11 = SpillingKt.nullOutSpilledVariable(num2114);
+                c008619.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                c008619.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                c008619.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                c008619.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                c008619.L$16 = SpillingKt.nullOutSpilledVariable(num2115);
+                c008619.L$17 = SpillingKt.nullOutSpilledVariable(num35);
+                c008619.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                c008619.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                c008619.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                c008619.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                c008619.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                c008619.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                c008619.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                c008619.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                c008619.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                c008619.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                c008619.L$28 = SpillingKt.nullOutSpilledVariable(arrayList1117);
+                c008619.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                c008619.I$0 = i13;
+                c008619.I$1 = i6;
+                c008619.I$2 = i8;
+                c008619.I$3 = i14;
+                c008619.label = 9;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType112, false, c00887, c008619, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj3) {
+                    return obj3;
+                }
+                str42 = str21;
+                str43 = stringData;
+                i15 = i14;
+                obj5 = objNewAnimeLoadResponse$default;
+                return (LoadResponse) obj5;
+            case 2:
+                str45 = (String) c00864.L$1;
+                str44 = (String) c00864.L$0;
+                ResultKt.throwOnFailure(obj5);
+                meta3 = obj5;
+                str3 = null;
+                kitsuMeta = (StreamPlayKitsuHelper.KitsuMeta) meta3;
+                str4 = str44;
+                if (kitsuMeta == null) {
+                    throw new Exception("Unable to fetch Kitsu anime metadata for " + str45);
+                }
+                numericKitsuId = kitsuMeta.getNumericKitsuId();
+                if (numericKitsuId != null) {
+                    sbAppend = new StringBuilder().append("kitsu_id=").append(numericKitsuId.intValue());
+                } else {
+                    sbAppend = new StringBuilder().append("anilist_id=").append(str45);
+                }
+                String string5 = sbAppend.toString();
+                Requests app5 = MainActivityKt.getApp();
+                String str415 = "https://api.ani.zip/mappings?" + string5;
+                c00864.L$0 = str4;
+                c00864.L$1 = str45;
+                c00864.L$2 = kitsuMeta;
+                c00864.L$3 = numericKitsuId;
+                c00864.L$4 = SpillingKt.nullOutSpilledVariable(string5);
+                c00864.label = 5;
+                obj = Requests.get$default(app5, str415, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00864, 4094, (Object) null);
+                if (obj == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                str5 = str4;
+                kitsuMeta2 = kitsuMeta;
+                text = ((NiceResponse) obj).getText();
+                num2 = numericKitsuId;
+                str6 = str5;
+                kitsuMeta3 = kitsuMeta2;
+                if (text != null) {
+                    animeData = StreamPlayUtilsKt.parseAnimeData(text);
+                } else {
+                    r8 = str3;
+                }
+                if (r8 != 0) {
+                    r8 = animeData;
+                    r8 = animeData;
+                    r8 = animeData;
+                    intOrNull = str3;
+                } else {
+                    r8 = animeData;
+                    r8 = animeData;
+                    r8 = animeData;
+                    intOrNull = str3;
+                }
+                if (r8 != 0) {
+                    if (num2 != null) {
+                        strValueOf = String.valueOf(num2.intValue());
+                    } else {
+                        strValueOf = str3;
+                    }
+                } else if (num2 != null) {
+                    strValueOf = String.valueOf(num2.intValue());
+                } else {
+                    strValueOf = str3;
+                }
+                r8 = animeData;
+                str7 = strValueOf;
+                r85 = intOrNull;
+                if (StringsKt.equals(kitsuMeta3.getType(), "movie", true)) {
+                    i = 1;
+                } else {
+                    i = 1;
+                }
+                if (i != 0) {
+                    tvType = TvType.Movie;
+                } else {
+                    tvType = TvType.TvSeries;
+                }
+                if (i != 0) {
+                    tvType2 = TvType.AnimeMovie;
+                } else {
+                    tvType2 = TvType.TvSeries;
+                }
+                tvType3 = tvType2;
+                name = kitsuMeta3.getName();
+                if (name == null) {
+                    aliases = kitsuMeta3.getAliases();
+                    if (aliases != null) {
+                        name = (String) CollectionsKt.firstOrNull(aliases);
+                    } else {
+                        name = null;
+                    }
+                    if (name == null) {
+                        name = "Unknown";
+                    }
+                }
+                str8 = name;
+                yearInt = kitsuMeta3.getYearInt();
+                if (yearInt != null) {
+                    tvType4 = tvType;
+                } else if (r8 != 0) {
+                    tvType4 = tvType;
+                    yearInt = null;
+                } else {
+                    tvType4 = tvType;
+                    yearInt = null;
+                }
+                num3 = yearInt;
+                c00864.L$0 = str6;
+                c00864.L$1 = str45;
+                c00864.L$2 = kitsuMeta3;
+                c00864.L$3 = num2;
+                c00864.L$4 = text;
+                c00864.L$5 = r8;
+                c00864.L$6 = SpillingKt.nullOutSpilledVariable((Object) r85);
+                c00864.L$7 = str7;
+                str9 = text;
+                c00864.L$8 = SpillingKt.nullOutSpilledVariable(tvType4);
+                c00864.L$9 = tvType3;
+                c00864.L$10 = str8;
+                c00864.L$11 = num3;
+                c00864.I$0 = i;
+                c00864.label = 6;
+                num4 = num2;
+                i2 = i;
+                r19 = r8;
+                str10 = str6;
+                tvType5 = tvType4;
+                kitsuMeta4 = kitsuMeta3;
+                num5 = null;
+                C00861 c0086110 = c00864;
+                z = false;
+                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", tvType5, r85, "en", c0086110);
+                c00862 = c0086110;
+                if (objFetchTmdbLogoUrl == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                str11 = str9;
+                str12 = str7;
+                tvType6 = tvType3;
+                str13 = str8;
+                num6 = num4;
+                i3 = i2;
+                num7 = num3;
+                str14 = str10;
+                tvType7 = tvType5;
+                r16 = r85;
+                r6 = r19;
+                kitsuMeta5 = kitsuMeta4;
+                str15 = (String) objFetchTmdbLogoUrl;
+                if (r6 != 0) {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                } else {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                }
+                if (r6 != 0) {
+                    malId = num5;
+                } else {
+                    malId = num5;
+                }
+                if (malId == null) {
+                }
+                str17 = str14;
+                int i217 = i3;
+                Integer num2116 = num7;
+                aniIds = new AniIds(intOrNull2, malId);
+                str18 = str15;
+                tvType8 = tvType6;
+                r21 = r6;
+                kitsuMeta6 = kitsuMeta5;
+                str19 = str11;
+                str20 = str12;
+                num8 = num2116;
+                r23 = r16;
+                tvType9 = tvType7;
+                i4 = i217;
+                str21 = str16;
+                num9 = intOrNull2;
+                str22 = str13;
+                num10 = malId;
+                aniIds2 = aniIds;
+                id = aniIds2.getId();
+                if (id == null) {
+                    num13 = num9;
+                } else {
+                    num13 = id;
+                }
+                idMal = aniIds2.getIdMal();
+                if (idMal == null) {
+                    num14 = num10;
+                } else {
+                    num14 = idMal;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                }
+                poster = kitsuMeta6.getPoster();
+                if (poster != null) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = poster;
+                } else if (r21 != 0) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                } else {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                }
+                background = kitsuMeta6.getBackground();
+                if (background != null) {
+                    str31 = background;
+                } else {
+                    if (r21 != 0) {
+                        list6 = images2;
+                        it2 = list6.iterator();
+                        while (true) {
+                            if (it2.hasNext()) {
+                                next = it2.next();
+                                list7 = list6;
+                                if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                    list6 = list7;
+                                }
+                            } else {
+                                next = null;
+                            }
+                        }
+                        imageData2 = (ImageData) next;
+                        if (imageData2 != null) {
+                            background = imageData2.getUrl();
+                            str31 = background;
+                        }
+                    }
+                    str31 = null;
+                }
+                str32 = str31;
+                videos = kitsuMeta6.getVideos();
+                if (videos == null) {
+                    videos = CollectionsKt.emptyList();
+                }
+                if (!videos.isEmpty()) {
+                    size = videos.size();
+                } else if (r21 != 0) {
+                    size = 1;
+                } else {
+                    size = 1;
+                }
+                Iterable intRange8 = new IntRange(1, size);
+                linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange8, 10)), 16));
+                while (r31.hasNext()) {
+                    iIntValue5 = ((Number) obj6).intValue();
+                    if (str19 != null) {
+                        list5 = videos;
+                        Integer anidbEid6 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                        if (anidbEid6 != null) {
+                        }
+                        linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                        videos = list5;
+                    } else {
+                        list5 = videos;
+                    }
+                    linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                    videos = list5;
+                }
+                list = videos;
+                intRange = new IntRange(1, size);
+                i5 = 0;
+                linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                while (r27.hasNext()) {
+                    Iterable iterable6 = intRange;
+                    iIntValue4 = ((Number) obj7).intValue();
+                    if (r21 != 0) {
+                        i20 = size;
+                        episodes3 = r21.getEpisodes();
+                        if (episodes3 != null) {
+                            i5 = i5;
+                            metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                        }
+                        linkedHashMap2.put(obj7, metaEpisode);
+                        intRange = iterable6;
+                        size = i20;
+                        i5 = i5;
+                    } else {
+                        i20 = size;
+                    }
+                    metaEpisode = null;
+                    linkedHashMap2.put(obj7, metaEpisode);
+                    intRange = iterable6;
+                    size = i20;
+                    i5 = i5;
+                }
+                i6 = size;
+                if (url == null) {
+                    if (r21 != 0) {
+                        url3 = null;
+                    } else {
+                        url3 = null;
+                    }
+                    if (url3 == null) {
+                        url3 = "";
+                    }
+                    str33 = url3;
+                } else {
+                    str33 = url;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                }
+                num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                if (num16 != null) {
+                    iIntValue = num16.intValue();
+                } else {
+                    iIntValue = 0;
+                }
+                i7 = iIntValue;
+                num17 = num8;
+                str37 = str22;
+                str38 = str30;
+                stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                if (list.isEmpty()) {
+                    list4 = list;
+                    arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                    i18 = 0;
+                    while (r37.hasNext()) {
+                        int i218 = i18 + 1;
+                        if (i18 < 0) {
+                            CollectionsKt.throwIndexOverflow();
+                        }
+                        ArrayList arrayList1118 = arrayList12;
+                        LinkedHashMap linkedHashMap17 = linkedHashMap;
+                        StreamPlayKitsuHelper.KitsuVideo kitsuVideo7 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                        i19 = i18;
+                        episode2 = kitsuVideo7.getEpisode();
+                        if (episode2 != null) {
+                            iIntValue3 = episode2.intValue();
+                        } else {
+                            iIntValue3 = i19 + 1;
+                        }
+                        CharSequence charSequence8 = charSequence;
+                        List<StreamPlayKitsuHelper.KitsuVideo> list113 = list4;
+                        LinkedHashMap linkedHashMap18 = linkedHashMap2;
+                        String str416 = str35;
+                        arrayList1118.add(loadFromKitsu$createEpisode(linkedHashMap18, streamPlayAnime, linkedHashMap17, num13, num15, str37, num17, str38, num6, str33, str416, iIntValue3, kitsuVideo7, false));
+                        streamPlayAnime = this;
+                        linkedHashMap = linkedHashMap17;
+                        str35 = str416;
+                        arrayList12 = arrayList1118;
+                        i18 = i218;
+                        obj5 = obj5;
+                        i7 = i7;
+                        i4 = i4;
+                        linkedHashMap2 = linkedHashMap18;
+                        list4 = list113;
+                        charSequence = charSequence8;
+                    }
+                    ArrayList arrayList1119 = arrayList12;
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    linkedHashMap3 = linkedHashMap2;
+                    str39 = str35;
+                    num20 = num13;
+                    arrayList2 = arrayList1119;
+                    i11 = 10;
+                } else {
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap3 = linkedHashMap2;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    i10 = i6;
+                    str39 = str35;
+                    num20 = num13;
+                    intRange2 = new IntRange(1, i10);
+                    arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                    it = intRange2.iterator();
+                    while (it.hasNext()) {
+                        ArrayList arrayList11110 = arrayList;
+                        arrayList11110.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                        i10 = i10;
+                        arrayList = arrayList11110;
+                        intRange2 = intRange2;
+                    }
+                    i6 = i10;
+                    i11 = 10;
+                    arrayList2 = arrayList;
+                }
+                arrayList3 = arrayList2;
+                arrayList4 = arrayList3;
+                arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                i12 = 0;
+                while (r32.hasNext()) {
+                    int i219 = i12 + 1;
+                    if (i12 < 0) {
+                        CollectionsKt.throwIndexOverflow();
+                    }
+                    List<StreamPlayKitsuHelper.KitsuVideo> list114 = list;
+                    kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list114, i12);
+                    if (kitsuVideo != null) {
+                        iIntValue2 = i12 + 1;
+                    } else {
+                        iIntValue2 = i12 + 1;
+                    }
+                    list = list114;
+                    arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                    i12 = i219;
+                    arrayList4 = arrayList4;
+                }
+                linkedHashMap5 = linkedHashMap3;
+                linkedHashMap6 = linkedHashMap4;
+                num21 = num6;
+                str40 = str33;
+                str41 = str39;
+                arrayList6 = arrayList5;
+                imdbRating = kitsuMeta6.getImdbRating();
+                if (imdbRating != null) {
+                    iFloatValue = 0;
+                } else {
+                    iFloatValue = 0;
+                }
+                links = kitsuMeta6.getLinks();
+                if (links != null) {
+                    list3 = links;
+                    arrayList8 = new ArrayList();
+                    while (r10.hasNext()) {
+                        ArrayList arrayList11111 = arrayList6;
+                        List<StreamPlayKitsuHelper.KitsuLink> list115 = list3;
+                        if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                            arrayList8.add(obj10);
+                        }
+                        arrayList6 = arrayList11111;
+                        list3 = list115;
+                    }
+                    arrayList7 = arrayList6;
+                    arrayList9 = arrayList8;
+                    i16 = 0;
+                    arrayList10 = new ArrayList();
+                    while (r11.hasNext()) {
+                        name2 = kitsuLink.getName();
+                        if (name2 == null) {
+                            arrayList11 = arrayList9;
+                            i17 = i16;
+                            num24 = num20;
+                            num25 = num18;
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        } else {
+                            arrayList11 = arrayList9;
+                            url2 = kitsuLink.getUrl();
+                            if (url2 != null) {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                                strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                if (strSubstringAfterLast$default == null) {
+                                    animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                }
+                            } else {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                            }
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        }
+                        if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                            arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                        }
+                        arrayList9 = arrayList11;
+                        i16 = i17;
+                        num20 = num24;
+                        num18 = num25;
+                    }
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = arrayList10;
+                } else {
+                    arrayList7 = arrayList6;
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = null;
+                }
+                i13 = i9;
+                if (i13 != 0) {
+                    TvType tvType113 = TvType.AnimeMovie;
+                    Integer num2117 = num19;
+                    C00872 c00877 = new C00872(num22, num23, str20, num2117, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                    C00861 c0086111 = c00863;
+                    c0086111.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                    c0086111.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                    c0086111.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                    c0086111.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                    c0086111.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                    c0086111.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                    c0086111.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                    c0086111.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                    c0086111.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                    c0086111.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                    c0086111.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                    c0086111.L$11 = SpillingKt.nullOutSpilledVariable(num2117);
+                    c0086111.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                    c0086111.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                    c0086111.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                    c0086111.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                    c0086111.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                    c0086111.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                    c0086111.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                    c0086111.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                    c0086111.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                    c0086111.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                    c0086111.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                    c0086111.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                    c0086111.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                    c0086111.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                    c0086111.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                    c0086111.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                    c0086111.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                    c0086111.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                    c0086111.I$0 = i13;
+                    c0086111.I$1 = i6;
+                    c0086111.I$2 = i8;
+                    c0086111.I$3 = iFloatValue;
+                    c0086111.label = 8;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType113, stringData, c00877, c0086111);
+                    obj4 = obj2;
+                    if (objNewMovieLoadResponse == obj4) {
+                        return obj4;
+                    }
+                    return (LoadResponse) objNewMovieLoadResponse;
+                }
+                Integer num2118 = num19;
+                obj3 = obj2;
+                C00861 c0086112 = c00863;
+                Integer num2119 = num22;
+                Integer num36 = num23;
+                i14 = iFloatValue;
+                TvType tvType114 = TvType.Anime;
+                ArrayList arrayList11112 = arrayList7;
+                C00883 c00888 = new C00883(num2119, num36, str20, arrayList3, arrayList11112, str18, num2118, kitsuMeta6, str32, url, i14, this, list2, null);
+                c0086112.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                c0086112.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                c0086112.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                c0086112.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                c0086112.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                c0086112.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                c0086112.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                c0086112.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                c0086112.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                c0086112.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                c0086112.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                c0086112.L$11 = SpillingKt.nullOutSpilledVariable(num2118);
+                c0086112.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                c0086112.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                c0086112.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                c0086112.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                c0086112.L$16 = SpillingKt.nullOutSpilledVariable(num2119);
+                c0086112.L$17 = SpillingKt.nullOutSpilledVariable(num36);
+                c0086112.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                c0086112.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                c0086112.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                c0086112.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                c0086112.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                c0086112.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                c0086112.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                c0086112.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                c0086112.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                c0086112.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                c0086112.L$28 = SpillingKt.nullOutSpilledVariable(arrayList11112);
+                c0086112.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                c0086112.I$0 = i13;
+                c0086112.I$1 = i6;
+                c0086112.I$2 = i8;
+                c0086112.I$3 = i14;
+                c0086112.label = 9;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType114, false, c00888, c0086112, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj3) {
+                    return obj3;
+                }
+                str42 = str21;
+                str43 = stringData;
+                i15 = i14;
+                obj5 = objNewAnimeLoadResponse$default;
+                return (LoadResponse) obj5;
+            case 3:
+                str45 = (String) c00864.L$1;
+                str44 = (String) c00864.L$0;
+                ResultKt.throwOnFailure(obj5);
+                meta2 = obj5;
+                str3 = null;
+                kitsuMeta = (StreamPlayKitsuHelper.KitsuMeta) meta2;
+                if (kitsuMeta == null) {
+                    c00864.L$0 = str44;
+                    c00864.L$1 = str45;
+                    c00864.label = 4;
+                    meta4 = StreamPlayKitsuHelper.INSTANCE.getMeta("kitsu:" + str45, c00864);
+                    if (meta4 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    kitsuMeta = (StreamPlayKitsuHelper.KitsuMeta) meta4;
+                    str4 = str44;
+                } else {
+                    str4 = str44;
+                }
+                if (kitsuMeta == null) {
+                    throw new Exception("Unable to fetch Kitsu anime metadata for " + str45);
+                }
+                numericKitsuId = kitsuMeta.getNumericKitsuId();
+                if (numericKitsuId != null) {
+                    sbAppend = new StringBuilder().append("kitsu_id=").append(numericKitsuId.intValue());
+                } else {
+                    sbAppend = new StringBuilder().append("anilist_id=").append(str45);
+                }
+                String string6 = sbAppend.toString();
+                Requests app6 = MainActivityKt.getApp();
+                String str417 = "https://api.ani.zip/mappings?" + string6;
+                c00864.L$0 = str4;
+                c00864.L$1 = str45;
+                c00864.L$2 = kitsuMeta;
+                c00864.L$3 = numericKitsuId;
+                c00864.L$4 = SpillingKt.nullOutSpilledVariable(string6);
+                c00864.label = 5;
+                obj = Requests.get$default(app6, str417, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00864, 4094, (Object) null);
+                if (obj == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                str5 = str4;
+                kitsuMeta2 = kitsuMeta;
+                text = ((NiceResponse) obj).getText();
+                num2 = numericKitsuId;
+                str6 = str5;
+                kitsuMeta3 = kitsuMeta2;
+                if (text != null) {
+                    animeData = StreamPlayUtilsKt.parseAnimeData(text);
+                } else {
+                    r8 = str3;
+                }
+                if (r8 != 0) {
+                    r8 = animeData;
+                    r8 = animeData;
+                    r8 = animeData;
+                    intOrNull = str3;
+                } else {
+                    r8 = animeData;
+                    r8 = animeData;
+                    r8 = animeData;
+                    intOrNull = str3;
+                }
+                if (r8 != 0) {
+                    if (num2 != null) {
+                        strValueOf = String.valueOf(num2.intValue());
+                    } else {
+                        strValueOf = str3;
+                    }
+                } else if (num2 != null) {
+                    strValueOf = String.valueOf(num2.intValue());
+                } else {
+                    strValueOf = str3;
+                }
+                r8 = animeData;
+                str7 = strValueOf;
+                r85 = intOrNull;
+                if (StringsKt.equals(kitsuMeta3.getType(), "movie", true)) {
+                    i = 1;
+                } else {
+                    i = 1;
+                }
+                if (i != 0) {
+                    tvType = TvType.Movie;
+                } else {
+                    tvType = TvType.TvSeries;
+                }
+                if (i != 0) {
+                    tvType2 = TvType.AnimeMovie;
+                } else {
+                    tvType2 = TvType.TvSeries;
+                }
+                tvType3 = tvType2;
+                name = kitsuMeta3.getName();
+                if (name == null) {
+                    aliases = kitsuMeta3.getAliases();
+                    if (aliases != null) {
+                        name = (String) CollectionsKt.firstOrNull(aliases);
+                    } else {
+                        name = null;
+                    }
+                    if (name == null) {
+                        name = "Unknown";
+                    }
+                }
+                str8 = name;
+                yearInt = kitsuMeta3.getYearInt();
+                if (yearInt != null) {
+                    tvType4 = tvType;
+                } else if (r8 != 0) {
+                    tvType4 = tvType;
+                    yearInt = null;
+                } else {
+                    tvType4 = tvType;
+                    yearInt = null;
+                }
+                num3 = yearInt;
+                c00864.L$0 = str6;
+                c00864.L$1 = str45;
+                c00864.L$2 = kitsuMeta3;
+                c00864.L$3 = num2;
+                c00864.L$4 = text;
+                c00864.L$5 = r8;
+                c00864.L$6 = SpillingKt.nullOutSpilledVariable((Object) r85);
+                c00864.L$7 = str7;
+                str9 = text;
+                c00864.L$8 = SpillingKt.nullOutSpilledVariable(tvType4);
+                c00864.L$9 = tvType3;
+                c00864.L$10 = str8;
+                c00864.L$11 = num3;
+                c00864.I$0 = i;
+                c00864.label = 6;
+                num4 = num2;
+                i2 = i;
+                r19 = r8;
+                str10 = str6;
+                tvType5 = tvType4;
+                kitsuMeta4 = kitsuMeta3;
+                num5 = null;
+                C00861 c0086113 = c00864;
+                z = false;
+                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", tvType5, r85, "en", c0086113);
+                c00862 = c0086113;
+                if (objFetchTmdbLogoUrl == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                str11 = str9;
+                str12 = str7;
+                tvType6 = tvType3;
+                str13 = str8;
+                num6 = num4;
+                i3 = i2;
+                num7 = num3;
+                str14 = str10;
+                tvType7 = tvType5;
+                r16 = r85;
+                r6 = r19;
+                kitsuMeta5 = kitsuMeta4;
+                str15 = (String) objFetchTmdbLogoUrl;
+                if (r6 != 0) {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                } else {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                }
+                if (r6 != 0) {
+                    malId = num5;
+                } else {
+                    malId = num5;
+                }
+                if (malId == null) {
+                }
+                str17 = str14;
+                int i2110 = i3;
+                Integer num21110 = num7;
+                aniIds = new AniIds(intOrNull2, malId);
+                str18 = str15;
+                tvType8 = tvType6;
+                r21 = r6;
+                kitsuMeta6 = kitsuMeta5;
+                str19 = str11;
+                str20 = str12;
+                num8 = num21110;
+                r23 = r16;
+                tvType9 = tvType7;
+                i4 = i2110;
+                str21 = str16;
+                num9 = intOrNull2;
+                str22 = str13;
+                num10 = malId;
+                aniIds2 = aniIds;
+                id = aniIds2.getId();
+                if (id == null) {
+                    num13 = num9;
+                } else {
+                    num13 = id;
+                }
+                idMal = aniIds2.getIdMal();
+                if (idMal == null) {
+                    num14 = num10;
+                } else {
+                    num14 = idMal;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                }
+                poster = kitsuMeta6.getPoster();
+                if (poster != null) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = poster;
+                } else if (r21 != 0) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                } else {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                }
+                background = kitsuMeta6.getBackground();
+                if (background != null) {
+                    str31 = background;
+                } else {
+                    if (r21 != 0) {
+                        list6 = images2;
+                        it2 = list6.iterator();
+                        while (true) {
+                            if (it2.hasNext()) {
+                                next = it2.next();
+                                list7 = list6;
+                                if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                    list6 = list7;
+                                }
+                            } else {
+                                next = null;
+                            }
+                        }
+                        imageData2 = (ImageData) next;
+                        if (imageData2 != null) {
+                            background = imageData2.getUrl();
+                            str31 = background;
+                        }
+                    }
+                    str31 = null;
+                }
+                str32 = str31;
+                videos = kitsuMeta6.getVideos();
+                if (videos == null) {
+                    videos = CollectionsKt.emptyList();
+                }
+                if (!videos.isEmpty()) {
+                    size = videos.size();
+                } else if (r21 != 0) {
+                    size = 1;
+                } else {
+                    size = 1;
+                }
+                Iterable intRange9 = new IntRange(1, size);
+                linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange9, 10)), 16));
+                while (r31.hasNext()) {
+                    iIntValue5 = ((Number) obj6).intValue();
+                    if (str19 != null) {
+                        list5 = videos;
+                        Integer anidbEid7 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                        if (anidbEid7 != null) {
+                        }
+                        linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                        videos = list5;
+                    } else {
+                        list5 = videos;
+                    }
+                    linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                    videos = list5;
+                }
+                list = videos;
+                intRange = new IntRange(1, size);
+                i5 = 0;
+                linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                while (r27.hasNext()) {
+                    Iterable iterable7 = intRange;
+                    iIntValue4 = ((Number) obj7).intValue();
+                    if (r21 != 0) {
+                        i20 = size;
+                        episodes3 = r21.getEpisodes();
+                        if (episodes3 != null) {
+                            i5 = i5;
+                            metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                        }
+                        linkedHashMap2.put(obj7, metaEpisode);
+                        intRange = iterable7;
+                        size = i20;
+                        i5 = i5;
+                    } else {
+                        i20 = size;
+                    }
+                    metaEpisode = null;
+                    linkedHashMap2.put(obj7, metaEpisode);
+                    intRange = iterable7;
+                    size = i20;
+                    i5 = i5;
+                }
+                i6 = size;
+                if (url == null) {
+                    if (r21 != 0) {
+                        url3 = null;
+                    } else {
+                        url3 = null;
+                    }
+                    if (url3 == null) {
+                        url3 = "";
+                    }
+                    str33 = url3;
+                } else {
+                    str33 = url;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                }
+                num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                if (num16 != null) {
+                    iIntValue = num16.intValue();
+                } else {
+                    iIntValue = 0;
+                }
+                i7 = iIntValue;
+                num17 = num8;
+                str37 = str22;
+                str38 = str30;
+                stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                if (list.isEmpty()) {
+                    list4 = list;
+                    arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                    i18 = 0;
+                    while (r37.hasNext()) {
+                        int i2111 = i18 + 1;
+                        if (i18 < 0) {
+                            CollectionsKt.throwIndexOverflow();
+                        }
+                        ArrayList arrayList11113 = arrayList12;
+                        LinkedHashMap linkedHashMap19 = linkedHashMap;
+                        StreamPlayKitsuHelper.KitsuVideo kitsuVideo8 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                        i19 = i18;
+                        episode2 = kitsuVideo8.getEpisode();
+                        if (episode2 != null) {
+                            iIntValue3 = episode2.intValue();
+                        } else {
+                            iIntValue3 = i19 + 1;
+                        }
+                        CharSequence charSequence9 = charSequence;
+                        List<StreamPlayKitsuHelper.KitsuVideo> list116 = list4;
+                        LinkedHashMap linkedHashMap110 = linkedHashMap2;
+                        String str418 = str35;
+                        arrayList11113.add(loadFromKitsu$createEpisode(linkedHashMap110, streamPlayAnime, linkedHashMap19, num13, num15, str37, num17, str38, num6, str33, str418, iIntValue3, kitsuVideo8, false));
+                        streamPlayAnime = this;
+                        linkedHashMap = linkedHashMap19;
+                        str35 = str418;
+                        arrayList12 = arrayList11113;
+                        i18 = i2111;
+                        obj5 = obj5;
+                        i7 = i7;
+                        i4 = i4;
+                        linkedHashMap2 = linkedHashMap110;
+                        list4 = list116;
+                        charSequence = charSequence9;
+                    }
+                    ArrayList arrayList11114 = arrayList12;
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    linkedHashMap3 = linkedHashMap2;
+                    str39 = str35;
+                    num20 = num13;
+                    arrayList2 = arrayList11114;
+                    i11 = 10;
+                } else {
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap3 = linkedHashMap2;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    i10 = i6;
+                    str39 = str35;
+                    num20 = num13;
+                    intRange2 = new IntRange(1, i10);
+                    arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                    it = intRange2.iterator();
+                    while (it.hasNext()) {
+                        ArrayList arrayList11115 = arrayList;
+                        arrayList11115.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                        i10 = i10;
+                        arrayList = arrayList11115;
+                        intRange2 = intRange2;
+                    }
+                    i6 = i10;
+                    i11 = 10;
+                    arrayList2 = arrayList;
+                }
+                arrayList3 = arrayList2;
+                arrayList4 = arrayList3;
+                arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                i12 = 0;
+                while (r32.hasNext()) {
+                    int i2112 = i12 + 1;
+                    if (i12 < 0) {
+                        CollectionsKt.throwIndexOverflow();
+                    }
+                    List<StreamPlayKitsuHelper.KitsuVideo> list117 = list;
+                    kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list117, i12);
+                    if (kitsuVideo != null) {
+                        iIntValue2 = i12 + 1;
+                    } else {
+                        iIntValue2 = i12 + 1;
+                    }
+                    list = list117;
+                    arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                    i12 = i2112;
+                    arrayList4 = arrayList4;
+                }
+                linkedHashMap5 = linkedHashMap3;
+                linkedHashMap6 = linkedHashMap4;
+                num21 = num6;
+                str40 = str33;
+                str41 = str39;
+                arrayList6 = arrayList5;
+                imdbRating = kitsuMeta6.getImdbRating();
+                if (imdbRating != null) {
+                    iFloatValue = 0;
+                } else {
+                    iFloatValue = 0;
+                }
+                links = kitsuMeta6.getLinks();
+                if (links != null) {
+                    list3 = links;
+                    arrayList8 = new ArrayList();
+                    while (r10.hasNext()) {
+                        ArrayList arrayList11116 = arrayList6;
+                        List<StreamPlayKitsuHelper.KitsuLink> list118 = list3;
+                        if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                            arrayList8.add(obj10);
+                        }
+                        arrayList6 = arrayList11116;
+                        list3 = list118;
+                    }
+                    arrayList7 = arrayList6;
+                    arrayList9 = arrayList8;
+                    i16 = 0;
+                    arrayList10 = new ArrayList();
+                    while (r11.hasNext()) {
+                        name2 = kitsuLink.getName();
+                        if (name2 == null) {
+                            arrayList11 = arrayList9;
+                            i17 = i16;
+                            num24 = num20;
+                            num25 = num18;
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        } else {
+                            arrayList11 = arrayList9;
+                            url2 = kitsuLink.getUrl();
+                            if (url2 != null) {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                                strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                if (strSubstringAfterLast$default == null) {
+                                    animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                }
+                            } else {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                            }
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        }
+                        if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                            arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                        }
+                        arrayList9 = arrayList11;
+                        i16 = i17;
+                        num20 = num24;
+                        num18 = num25;
+                    }
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = arrayList10;
+                } else {
+                    arrayList7 = arrayList6;
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = null;
+                }
+                i13 = i9;
+                if (i13 != 0) {
+                    TvType tvType115 = TvType.AnimeMovie;
+                    Integer num21111 = num19;
+                    C00872 c00878 = new C00872(num22, num23, str20, num21111, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                    C00861 c0086114 = c00863;
+                    c0086114.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                    c0086114.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                    c0086114.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                    c0086114.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                    c0086114.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                    c0086114.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                    c0086114.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                    c0086114.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                    c0086114.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                    c0086114.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                    c0086114.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                    c0086114.L$11 = SpillingKt.nullOutSpilledVariable(num21111);
+                    c0086114.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                    c0086114.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                    c0086114.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                    c0086114.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                    c0086114.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                    c0086114.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                    c0086114.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                    c0086114.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                    c0086114.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                    c0086114.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                    c0086114.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                    c0086114.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                    c0086114.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                    c0086114.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                    c0086114.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                    c0086114.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                    c0086114.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                    c0086114.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                    c0086114.I$0 = i13;
+                    c0086114.I$1 = i6;
+                    c0086114.I$2 = i8;
+                    c0086114.I$3 = iFloatValue;
+                    c0086114.label = 8;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType115, stringData, c00878, c0086114);
+                    obj4 = obj2;
+                    if (objNewMovieLoadResponse == obj4) {
+                        return obj4;
+                    }
+                    return (LoadResponse) objNewMovieLoadResponse;
+                }
+                Integer num21112 = num19;
+                obj3 = obj2;
+                C00861 c0086115 = c00863;
+                Integer num21113 = num22;
+                Integer num37 = num23;
+                i14 = iFloatValue;
+                TvType tvType116 = TvType.Anime;
+                ArrayList arrayList11117 = arrayList7;
+                C00883 c00889 = new C00883(num21113, num37, str20, arrayList3, arrayList11117, str18, num21112, kitsuMeta6, str32, url, i14, this, list2, null);
+                c0086115.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                c0086115.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                c0086115.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                c0086115.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                c0086115.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                c0086115.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                c0086115.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                c0086115.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                c0086115.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                c0086115.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                c0086115.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                c0086115.L$11 = SpillingKt.nullOutSpilledVariable(num21112);
+                c0086115.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                c0086115.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                c0086115.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                c0086115.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                c0086115.L$16 = SpillingKt.nullOutSpilledVariable(num21113);
+                c0086115.L$17 = SpillingKt.nullOutSpilledVariable(num37);
+                c0086115.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                c0086115.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                c0086115.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                c0086115.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                c0086115.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                c0086115.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                c0086115.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                c0086115.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                c0086115.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                c0086115.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                c0086115.L$28 = SpillingKt.nullOutSpilledVariable(arrayList11117);
+                c0086115.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                c0086115.I$0 = i13;
+                c0086115.I$1 = i6;
+                c0086115.I$2 = i8;
+                c0086115.I$3 = i14;
+                c0086115.label = 9;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType116, false, c00889, c0086115, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj3) {
+                    return obj3;
+                }
+                str42 = str21;
+                str43 = stringData;
+                i15 = i14;
+                obj5 = objNewAnimeLoadResponse$default;
+                return (LoadResponse) obj5;
+            case 4:
+                str45 = (String) c00864.L$1;
+                str44 = (String) c00864.L$0;
+                ResultKt.throwOnFailure(obj5);
+                meta4 = obj5;
+                str3 = null;
+                kitsuMeta = (StreamPlayKitsuHelper.KitsuMeta) meta4;
+                str4 = str44;
+                if (kitsuMeta == null) {
+                    throw new Exception("Unable to fetch Kitsu anime metadata for " + str45);
+                }
+                numericKitsuId = kitsuMeta.getNumericKitsuId();
+                if (numericKitsuId != null) {
+                    sbAppend = new StringBuilder().append("kitsu_id=").append(numericKitsuId.intValue());
+                } else {
+                    sbAppend = new StringBuilder().append("anilist_id=").append(str45);
+                }
+                String string7 = sbAppend.toString();
+                Requests app7 = MainActivityKt.getApp();
+                String str419 = "https://api.ani.zip/mappings?" + string7;
+                c00864.L$0 = str4;
+                c00864.L$1 = str45;
+                c00864.L$2 = kitsuMeta;
+                c00864.L$3 = numericKitsuId;
+                c00864.L$4 = SpillingKt.nullOutSpilledVariable(string7);
+                c00864.label = 5;
+                obj = Requests.get$default(app7, str419, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00864, 4094, (Object) null);
+                if (obj == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                str5 = str4;
+                kitsuMeta2 = kitsuMeta;
+                text = ((NiceResponse) obj).getText();
+                num2 = numericKitsuId;
+                str6 = str5;
+                kitsuMeta3 = kitsuMeta2;
+                if (text != null) {
+                    animeData = StreamPlayUtilsKt.parseAnimeData(text);
+                } else {
+                    r8 = str3;
+                }
+                if (r8 != 0) {
+                    r8 = animeData;
+                    r8 = animeData;
+                    r8 = animeData;
+                    intOrNull = str3;
+                } else {
+                    r8 = animeData;
+                    r8 = animeData;
+                    r8 = animeData;
+                    intOrNull = str3;
+                }
+                if (r8 != 0) {
+                    if (num2 != null) {
+                        strValueOf = String.valueOf(num2.intValue());
+                    } else {
+                        strValueOf = str3;
+                    }
+                } else if (num2 != null) {
+                    strValueOf = String.valueOf(num2.intValue());
+                } else {
+                    strValueOf = str3;
+                }
+                r8 = animeData;
+                str7 = strValueOf;
+                r85 = intOrNull;
+                if (StringsKt.equals(kitsuMeta3.getType(), "movie", true)) {
+                    i = 1;
+                } else {
+                    i = 1;
+                }
+                if (i != 0) {
+                    tvType = TvType.Movie;
+                } else {
+                    tvType = TvType.TvSeries;
+                }
+                if (i != 0) {
+                    tvType2 = TvType.AnimeMovie;
+                } else {
+                    tvType2 = TvType.TvSeries;
+                }
+                tvType3 = tvType2;
+                name = kitsuMeta3.getName();
+                if (name == null) {
+                    aliases = kitsuMeta3.getAliases();
+                    if (aliases != null) {
+                        name = (String) CollectionsKt.firstOrNull(aliases);
+                    } else {
+                        name = null;
+                    }
+                    if (name == null) {
+                        name = "Unknown";
+                    }
+                }
+                str8 = name;
+                yearInt = kitsuMeta3.getYearInt();
+                if (yearInt != null) {
+                    tvType4 = tvType;
+                } else if (r8 != 0) {
+                    tvType4 = tvType;
+                    yearInt = null;
+                } else {
+                    tvType4 = tvType;
+                    yearInt = null;
+                }
+                num3 = yearInt;
+                c00864.L$0 = str6;
+                c00864.L$1 = str45;
+                c00864.L$2 = kitsuMeta3;
+                c00864.L$3 = num2;
+                c00864.L$4 = text;
+                c00864.L$5 = r8;
+                c00864.L$6 = SpillingKt.nullOutSpilledVariable((Object) r85);
+                c00864.L$7 = str7;
+                str9 = text;
+                c00864.L$8 = SpillingKt.nullOutSpilledVariable(tvType4);
+                c00864.L$9 = tvType3;
+                c00864.L$10 = str8;
+                c00864.L$11 = num3;
+                c00864.I$0 = i;
+                c00864.label = 6;
+                num4 = num2;
+                i2 = i;
+                r19 = r8;
+                str10 = str6;
+                tvType5 = tvType4;
+                kitsuMeta4 = kitsuMeta3;
+                num5 = null;
+                C00861 c0086116 = c00864;
+                z = false;
+                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", tvType5, r85, "en", c0086116);
+                c00862 = c0086116;
+                if (objFetchTmdbLogoUrl == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                str11 = str9;
+                str12 = str7;
+                tvType6 = tvType3;
+                str13 = str8;
+                num6 = num4;
+                i3 = i2;
+                num7 = num3;
+                str14 = str10;
+                tvType7 = tvType5;
+                r16 = r85;
+                r6 = r19;
+                kitsuMeta5 = kitsuMeta4;
+                str15 = (String) objFetchTmdbLogoUrl;
+                if (r6 != 0) {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                } else {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                }
+                if (r6 != 0) {
+                    malId = num5;
+                } else {
+                    malId = num5;
+                }
+                if (malId == null) {
+                }
+                str17 = str14;
+                int i2113 = i3;
+                Integer num21114 = num7;
+                aniIds = new AniIds(intOrNull2, malId);
+                str18 = str15;
+                tvType8 = tvType6;
+                r21 = r6;
+                kitsuMeta6 = kitsuMeta5;
+                str19 = str11;
+                str20 = str12;
+                num8 = num21114;
+                r23 = r16;
+                tvType9 = tvType7;
+                i4 = i2113;
+                str21 = str16;
+                num9 = intOrNull2;
+                str22 = str13;
+                num10 = malId;
+                aniIds2 = aniIds;
+                id = aniIds2.getId();
+                if (id == null) {
+                    num13 = num9;
+                } else {
+                    num13 = id;
+                }
+                idMal = aniIds2.getIdMal();
+                if (idMal == null) {
+                    num14 = num10;
+                } else {
+                    num14 = idMal;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                }
+                poster = kitsuMeta6.getPoster();
+                if (poster != null) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = poster;
+                } else if (r21 != 0) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                } else {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                }
+                background = kitsuMeta6.getBackground();
+                if (background != null) {
+                    str31 = background;
+                } else {
+                    if (r21 != 0) {
+                        list6 = images2;
+                        it2 = list6.iterator();
+                        while (true) {
+                            if (it2.hasNext()) {
+                                next = it2.next();
+                                list7 = list6;
+                                if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                    list6 = list7;
+                                }
+                            } else {
+                                next = null;
+                            }
+                        }
+                        imageData2 = (ImageData) next;
+                        if (imageData2 != null) {
+                            background = imageData2.getUrl();
+                            str31 = background;
+                        }
+                    }
+                    str31 = null;
+                }
+                str32 = str31;
+                videos = kitsuMeta6.getVideos();
+                if (videos == null) {
+                    videos = CollectionsKt.emptyList();
+                }
+                if (!videos.isEmpty()) {
+                    size = videos.size();
+                } else if (r21 != 0) {
+                    size = 1;
+                } else {
+                    size = 1;
+                }
+                Iterable intRange10 = new IntRange(1, size);
+                linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange10, 10)), 16));
+                while (r31.hasNext()) {
+                    iIntValue5 = ((Number) obj6).intValue();
+                    if (str19 != null) {
+                        list5 = videos;
+                        Integer anidbEid8 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                        if (anidbEid8 != null) {
+                        }
+                        linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                        videos = list5;
+                    } else {
+                        list5 = videos;
+                    }
+                    linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                    videos = list5;
+                }
+                list = videos;
+                intRange = new IntRange(1, size);
+                i5 = 0;
+                linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                while (r27.hasNext()) {
+                    Iterable iterable8 = intRange;
+                    iIntValue4 = ((Number) obj7).intValue();
+                    if (r21 != 0) {
+                        i20 = size;
+                        episodes3 = r21.getEpisodes();
+                        if (episodes3 != null) {
+                            i5 = i5;
+                            metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                        }
+                        linkedHashMap2.put(obj7, metaEpisode);
+                        intRange = iterable8;
+                        size = i20;
+                        i5 = i5;
+                    } else {
+                        i20 = size;
+                    }
+                    metaEpisode = null;
+                    linkedHashMap2.put(obj7, metaEpisode);
+                    intRange = iterable8;
+                    size = i20;
+                    i5 = i5;
+                }
+                i6 = size;
+                if (url == null) {
+                    if (r21 != 0) {
+                        url3 = null;
+                    } else {
+                        url3 = null;
+                    }
+                    if (url3 == null) {
+                        url3 = "";
+                    }
+                    str33 = url3;
+                } else {
+                    str33 = url;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                }
+                num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                if (num16 != null) {
+                    iIntValue = num16.intValue();
+                } else {
+                    iIntValue = 0;
+                }
+                i7 = iIntValue;
+                num17 = num8;
+                str37 = str22;
+                str38 = str30;
+                stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                if (list.isEmpty()) {
+                    list4 = list;
+                    arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                    i18 = 0;
+                    while (r37.hasNext()) {
+                        int i2114 = i18 + 1;
+                        if (i18 < 0) {
+                            CollectionsKt.throwIndexOverflow();
+                        }
+                        ArrayList arrayList11118 = arrayList12;
+                        LinkedHashMap linkedHashMap111 = linkedHashMap;
+                        StreamPlayKitsuHelper.KitsuVideo kitsuVideo9 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                        i19 = i18;
+                        episode2 = kitsuVideo9.getEpisode();
+                        if (episode2 != null) {
+                            iIntValue3 = episode2.intValue();
+                        } else {
+                            iIntValue3 = i19 + 1;
+                        }
+                        CharSequence charSequence10 = charSequence;
+                        List<StreamPlayKitsuHelper.KitsuVideo> list119 = list4;
+                        LinkedHashMap linkedHashMap112 = linkedHashMap2;
+                        String str4110 = str35;
+                        arrayList11118.add(loadFromKitsu$createEpisode(linkedHashMap112, streamPlayAnime, linkedHashMap111, num13, num15, str37, num17, str38, num6, str33, str4110, iIntValue3, kitsuVideo9, false));
+                        streamPlayAnime = this;
+                        linkedHashMap = linkedHashMap111;
+                        str35 = str4110;
+                        arrayList12 = arrayList11118;
+                        i18 = i2114;
+                        obj5 = obj5;
+                        i7 = i7;
+                        i4 = i4;
+                        linkedHashMap2 = linkedHashMap112;
+                        list4 = list119;
+                        charSequence = charSequence10;
+                    }
+                    ArrayList arrayList11119 = arrayList12;
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    linkedHashMap3 = linkedHashMap2;
+                    str39 = str35;
+                    num20 = num13;
+                    arrayList2 = arrayList11119;
+                    i11 = 10;
+                } else {
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap3 = linkedHashMap2;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    i10 = i6;
+                    str39 = str35;
+                    num20 = num13;
+                    intRange2 = new IntRange(1, i10);
+                    arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                    it = intRange2.iterator();
+                    while (it.hasNext()) {
+                        ArrayList arrayList111110 = arrayList;
+                        arrayList111110.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                        i10 = i10;
+                        arrayList = arrayList111110;
+                        intRange2 = intRange2;
+                    }
+                    i6 = i10;
+                    i11 = 10;
+                    arrayList2 = arrayList;
+                }
+                arrayList3 = arrayList2;
+                arrayList4 = arrayList3;
+                arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                i12 = 0;
+                while (r32.hasNext()) {
+                    int i2115 = i12 + 1;
+                    if (i12 < 0) {
+                        CollectionsKt.throwIndexOverflow();
+                    }
+                    List<StreamPlayKitsuHelper.KitsuVideo> list1110 = list;
+                    kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list1110, i12);
+                    if (kitsuVideo != null) {
+                        iIntValue2 = i12 + 1;
+                    } else {
+                        iIntValue2 = i12 + 1;
+                    }
+                    list = list1110;
+                    arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                    i12 = i2115;
+                    arrayList4 = arrayList4;
+                }
+                linkedHashMap5 = linkedHashMap3;
+                linkedHashMap6 = linkedHashMap4;
+                num21 = num6;
+                str40 = str33;
+                str41 = str39;
+                arrayList6 = arrayList5;
+                imdbRating = kitsuMeta6.getImdbRating();
+                if (imdbRating != null) {
+                    iFloatValue = 0;
+                } else {
+                    iFloatValue = 0;
+                }
+                links = kitsuMeta6.getLinks();
+                if (links != null) {
+                    list3 = links;
+                    arrayList8 = new ArrayList();
+                    while (r10.hasNext()) {
+                        ArrayList arrayList111111 = arrayList6;
+                        List<StreamPlayKitsuHelper.KitsuLink> list1111 = list3;
+                        if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                            arrayList8.add(obj10);
+                        }
+                        arrayList6 = arrayList111111;
+                        list3 = list1111;
+                    }
+                    arrayList7 = arrayList6;
+                    arrayList9 = arrayList8;
+                    i16 = 0;
+                    arrayList10 = new ArrayList();
+                    while (r11.hasNext()) {
+                        name2 = kitsuLink.getName();
+                        if (name2 == null) {
+                            arrayList11 = arrayList9;
+                            i17 = i16;
+                            num24 = num20;
+                            num25 = num18;
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        } else {
+                            arrayList11 = arrayList9;
+                            url2 = kitsuLink.getUrl();
+                            if (url2 != null) {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                                strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                if (strSubstringAfterLast$default == null) {
+                                    animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                }
+                            } else {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                            }
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        }
+                        if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                            arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                        }
+                        arrayList9 = arrayList11;
+                        i16 = i17;
+                        num20 = num24;
+                        num18 = num25;
+                    }
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = arrayList10;
+                } else {
+                    arrayList7 = arrayList6;
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = null;
+                }
+                i13 = i9;
+                if (i13 != 0) {
+                    TvType tvType117 = TvType.AnimeMovie;
+                    Integer num21115 = num19;
+                    C00872 c00879 = new C00872(num22, num23, str20, num21115, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                    C00861 c0086117 = c00863;
+                    c0086117.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                    c0086117.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                    c0086117.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                    c0086117.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                    c0086117.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                    c0086117.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                    c0086117.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                    c0086117.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                    c0086117.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                    c0086117.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                    c0086117.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                    c0086117.L$11 = SpillingKt.nullOutSpilledVariable(num21115);
+                    c0086117.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                    c0086117.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                    c0086117.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                    c0086117.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                    c0086117.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                    c0086117.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                    c0086117.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                    c0086117.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                    c0086117.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                    c0086117.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                    c0086117.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                    c0086117.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                    c0086117.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                    c0086117.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                    c0086117.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                    c0086117.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                    c0086117.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                    c0086117.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                    c0086117.I$0 = i13;
+                    c0086117.I$1 = i6;
+                    c0086117.I$2 = i8;
+                    c0086117.I$3 = iFloatValue;
+                    c0086117.label = 8;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType117, stringData, c00879, c0086117);
+                    obj4 = obj2;
+                    if (objNewMovieLoadResponse == obj4) {
+                        return obj4;
+                    }
+                    return (LoadResponse) objNewMovieLoadResponse;
+                }
+                Integer num21116 = num19;
+                obj3 = obj2;
+                C00861 c0086118 = c00863;
+                Integer num21117 = num22;
+                Integer num38 = num23;
+                i14 = iFloatValue;
+                TvType tvType118 = TvType.Anime;
+                ArrayList arrayList111112 = arrayList7;
+                C00883 c008810 = new C00883(num21117, num38, str20, arrayList3, arrayList111112, str18, num21116, kitsuMeta6, str32, url, i14, this, list2, null);
+                c0086118.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                c0086118.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                c0086118.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                c0086118.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                c0086118.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                c0086118.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                c0086118.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                c0086118.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                c0086118.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                c0086118.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                c0086118.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                c0086118.L$11 = SpillingKt.nullOutSpilledVariable(num21116);
+                c0086118.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                c0086118.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                c0086118.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                c0086118.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                c0086118.L$16 = SpillingKt.nullOutSpilledVariable(num21117);
+                c0086118.L$17 = SpillingKt.nullOutSpilledVariable(num38);
+                c0086118.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                c0086118.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                c0086118.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                c0086118.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                c0086118.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                c0086118.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                c0086118.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                c0086118.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                c0086118.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                c0086118.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                c0086118.L$28 = SpillingKt.nullOutSpilledVariable(arrayList111112);
+                c0086118.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                c0086118.I$0 = i13;
+                c0086118.I$1 = i6;
+                c0086118.I$2 = i8;
+                c0086118.I$3 = i14;
+                c0086118.label = 9;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType118, false, c008810, c0086118, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj3) {
+                    return obj3;
+                }
+                str42 = str21;
+                str43 = stringData;
+                i15 = i14;
+                obj5 = objNewAnimeLoadResponse$default;
+                return (LoadResponse) obj5;
+            case 5:
+                num = (Integer) c00864.L$3;
+                StreamPlayKitsuHelper.KitsuMeta kitsuMeta8 = (StreamPlayKitsuHelper.KitsuMeta) c00864.L$2;
+                str45 = (String) c00864.L$1;
+                str4 = (String) c00864.L$0;
+                try {
+                    ResultKt.throwOnFailure(obj5);
+                    numericKitsuId = num;
+                    str5 = str4;
+                    obj = obj5;
+                    kitsuMeta2 = kitsuMeta8;
+                    str3 = null;
+                    text = ((NiceResponse) obj).getText();
+                    num2 = numericKitsuId;
+                    str6 = str5;
+                    kitsuMeta3 = kitsuMeta2;
+                } catch (Throwable th4) {
+                    kitsuMeta = kitsuMeta8;
+                    str3 = null;
+                    kitsuMeta3 = kitsuMeta;
+                    num2 = num;
+                    text = str3;
+                    str6 = str4;
+                    if (text != null) {
+                        animeData = StreamPlayUtilsKt.parseAnimeData(text);
+                    } else {
+                        r8 = str3;
+                    }
+                    if (r8 != 0) {
+                        r8 = animeData;
+                        r8 = animeData;
+                        r8 = animeData;
+                        intOrNull = str3;
+                    } else {
+                        r8 = animeData;
+                        r8 = animeData;
+                        r8 = animeData;
+                        intOrNull = str3;
+                    }
+                    if (r8 != 0) {
+                        if (num2 != null) {
+                            strValueOf = String.valueOf(num2.intValue());
+                        } else {
+                            strValueOf = str3;
+                        }
+                    } else if (num2 != null) {
+                        strValueOf = String.valueOf(num2.intValue());
+                    } else {
+                        strValueOf = str3;
+                    }
+                    r8 = animeData;
+                    str7 = strValueOf;
+                    r85 = intOrNull;
+                    if (StringsKt.equals(kitsuMeta3.getType(), "movie", true)) {
+                        i = 1;
+                    } else {
+                        i = 1;
+                    }
+                    if (i != 0) {
+                        tvType = TvType.Movie;
+                    } else {
+                        tvType = TvType.TvSeries;
+                    }
+                    if (i != 0) {
+                        tvType2 = TvType.AnimeMovie;
+                    } else {
+                        tvType2 = TvType.TvSeries;
+                    }
+                    tvType3 = tvType2;
+                    name = kitsuMeta3.getName();
+                    if (name == null) {
+                        aliases = kitsuMeta3.getAliases();
+                        if (aliases != null) {
+                            name = (String) CollectionsKt.firstOrNull(aliases);
+                        } else {
+                            name = null;
+                        }
+                        if (name == null) {
+                            name = "Unknown";
+                        }
+                    }
+                    str8 = name;
+                    yearInt = kitsuMeta3.getYearInt();
+                    if (yearInt != null) {
+                        tvType4 = tvType;
+                    } else if (r8 != 0) {
+                        tvType4 = tvType;
+                        yearInt = null;
+                    } else {
+                        tvType4 = tvType;
+                        yearInt = null;
+                    }
+                    num3 = yearInt;
+                    c00864.L$0 = str6;
+                    c00864.L$1 = str45;
+                    c00864.L$2 = kitsuMeta3;
+                    c00864.L$3 = num2;
+                    c00864.L$4 = text;
+                    c00864.L$5 = r8;
+                    c00864.L$6 = SpillingKt.nullOutSpilledVariable((Object) r85);
+                    c00864.L$7 = str7;
+                    str9 = text;
+                    c00864.L$8 = SpillingKt.nullOutSpilledVariable(tvType4);
+                    c00864.L$9 = tvType3;
+                    c00864.L$10 = str8;
+                    c00864.L$11 = num3;
+                    c00864.I$0 = i;
+                    c00864.label = 6;
+                    num4 = num2;
+                    i2 = i;
+                    r19 = r8;
+                    str10 = str6;
+                    tvType5 = tvType4;
+                    kitsuMeta4 = kitsuMeta3;
+                    num5 = null;
+                    C00861 c0086119 = c00864;
+                    z = false;
+                    objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", tvType5, r85, "en", c0086119);
+                    c00862 = c0086119;
+                    if (objFetchTmdbLogoUrl == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    str11 = str9;
+                    str12 = str7;
+                    tvType6 = tvType3;
+                    str13 = str8;
+                    num6 = num4;
+                    i3 = i2;
+                    num7 = num3;
+                    str14 = str10;
+                    tvType7 = tvType5;
+                    r16 = r85;
+                    r6 = r19;
+                    kitsuMeta5 = kitsuMeta4;
+                    str15 = (String) objFetchTmdbLogoUrl;
+                    if (r6 != 0) {
+                        if (StringsKt.toIntOrNull(str45) != null) {
+                            str16 = str45;
+                            charSequence = "kitsu:";
+                            if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                                intOrNull2 = StringsKt.toIntOrNull(str16);
+                            }
+                        } else {
+                            str16 = str45;
+                            charSequence = "kitsu:";
+                        }
+                        intOrNull2 = num5;
+                    } else {
+                        if (StringsKt.toIntOrNull(str45) != null) {
+                            str16 = str45;
+                            charSequence = "kitsu:";
+                            if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                                intOrNull2 = StringsKt.toIntOrNull(str16);
+                            }
+                        } else {
+                            str16 = str45;
+                            charSequence = "kitsu:";
+                        }
+                        intOrNull2 = num5;
+                    }
+                    if (r6 != 0) {
+                        malId = num5;
+                    } else {
+                        malId = num5;
+                    }
+                    if (malId == null) {
+                    }
+                    str17 = str14;
+                    int i2116 = i3;
+                    Integer num21118 = num7;
+                    aniIds = new AniIds(intOrNull2, malId);
+                    str18 = str15;
+                    tvType8 = tvType6;
+                    r21 = r6;
+                    kitsuMeta6 = kitsuMeta5;
+                    str19 = str11;
+                    str20 = str12;
+                    num8 = num21118;
+                    r23 = r16;
+                    tvType9 = tvType7;
+                    i4 = i2116;
+                    str21 = str16;
+                    num9 = intOrNull2;
+                    str22 = str13;
+                    num10 = malId;
+                    aniIds2 = aniIds;
+                    id = aniIds2.getId();
+                    if (id == null) {
+                        num13 = num9;
+                    } else {
+                        num13 = id;
+                    }
+                    idMal = aniIds2.getIdMal();
+                    if (idMal == null) {
+                        num14 = num10;
+                    } else {
+                        num14 = idMal;
+                    }
+                    if (r21 != 0) {
+                        if (r21 != 0) {
+                            str29 = null;
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 != null) {
+                            str30 = str29;
+                        } else {
+                            aliases2 = kitsuMeta6.getAliases();
+                            if (aliases2 != null) {
+                                str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                            } else {
+                                str29 = null;
+                            }
+                            if (str29 == null) {
+                                str30 = str22;
+                            } else {
+                                str30 = str29;
+                            }
+                        }
+                    } else {
+                        if (r21 != 0) {
+                            str29 = null;
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 != null) {
+                            str30 = str29;
+                        } else {
+                            aliases2 = kitsuMeta6.getAliases();
+                            if (aliases2 != null) {
+                                str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                            } else {
+                                str29 = null;
+                            }
+                            if (str29 == null) {
+                                str30 = str22;
+                            } else {
+                                str30 = str29;
+                            }
+                        }
+                    }
+                    poster = kitsuMeta6.getPoster();
+                    if (poster != null) {
+                        obj2 = coroutine_suspended;
+                        num15 = num14;
+                        c00863 = c00862;
+                        url = poster;
+                    } else if (r21 != 0) {
+                        obj2 = coroutine_suspended;
+                        num15 = num14;
+                        c00863 = c00862;
+                        url = null;
+                    } else {
+                        obj2 = coroutine_suspended;
+                        num15 = num14;
+                        c00863 = c00862;
+                        url = null;
+                    }
+                    background = kitsuMeta6.getBackground();
+                    if (background != null) {
+                        str31 = background;
+                    } else {
+                        if (r21 != 0) {
+                            list6 = images2;
+                            it2 = list6.iterator();
+                            while (true) {
+                                if (it2.hasNext()) {
+                                    next = it2.next();
+                                    list7 = list6;
+                                    if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                        list6 = list7;
+                                    }
+                                } else {
+                                    next = null;
+                                }
+                            }
+                            imageData2 = (ImageData) next;
+                            if (imageData2 != null) {
+                                background = imageData2.getUrl();
+                                str31 = background;
+                            }
+                        }
+                        str31 = null;
+                    }
+                    str32 = str31;
+                    videos = kitsuMeta6.getVideos();
+                    if (videos == null) {
+                        videos = CollectionsKt.emptyList();
+                    }
+                    if (!videos.isEmpty()) {
+                        size = videos.size();
+                    } else if (r21 != 0) {
+                        size = 1;
+                    } else {
+                        size = 1;
+                    }
+                    Iterable intRange11 = new IntRange(1, size);
+                    linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange11, 10)), 16));
+                    while (r31.hasNext()) {
+                        iIntValue5 = ((Number) obj6).intValue();
+                        if (str19 != null) {
+                            list5 = videos;
+                            Integer anidbEid9 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                            if (anidbEid9 != null) {
+                            }
+                            linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                            videos = list5;
+                        } else {
+                            list5 = videos;
+                        }
+                        linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                        videos = list5;
+                    }
+                    list = videos;
+                    intRange = new IntRange(1, size);
+                    i5 = 0;
+                    linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                    while (r27.hasNext()) {
+                        Iterable iterable9 = intRange;
+                        iIntValue4 = ((Number) obj7).intValue();
+                        if (r21 != 0) {
+                            i20 = size;
+                            episodes3 = r21.getEpisodes();
+                            if (episodes3 != null) {
+                                i5 = i5;
+                                metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                            }
+                            linkedHashMap2.put(obj7, metaEpisode);
+                            intRange = iterable9;
+                            size = i20;
+                            i5 = i5;
+                        } else {
+                            i20 = size;
+                        }
+                        metaEpisode = null;
+                        linkedHashMap2.put(obj7, metaEpisode);
+                        intRange = iterable9;
+                        size = i20;
+                        i5 = i5;
+                    }
+                    i6 = size;
+                    if (url == null) {
+                        if (r21 != 0) {
+                            url3 = null;
+                        } else {
+                            url3 = null;
+                        }
+                        if (url3 == null) {
+                            url3 = "";
+                        }
+                        str33 = url3;
+                    } else {
+                        str33 = url;
+                    }
+                    if (r21 != 0) {
+                        if (r21 != 0) {
+                            str34 = null;
+                        } else {
+                            str34 = null;
+                        }
+                        if (str34 == null) {
+                            if (r21 != 0) {
+                                str36 = null;
+                            } else {
+                                str36 = null;
+                            }
+                            if (str36 == null) {
+                                str35 = str22;
+                            } else {
+                                str35 = str36;
+                            }
+                        } else {
+                            str35 = str34;
+                        }
+                    } else {
+                        if (r21 != 0) {
+                            str34 = null;
+                        } else {
+                            str34 = null;
+                        }
+                        if (str34 == null) {
+                            if (r21 != 0) {
+                                str36 = null;
+                            } else {
+                                str36 = null;
+                            }
+                            if (str36 == null) {
+                                str35 = str22;
+                            } else {
+                                str35 = str36;
+                            }
+                        } else {
+                            str35 = str34;
+                        }
+                    }
+                    num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                    if (num16 != null) {
+                        iIntValue = num16.intValue();
+                    } else {
+                        iIntValue = 0;
+                    }
+                    i7 = iIntValue;
+                    num17 = num8;
+                    str37 = str22;
+                    str38 = str30;
+                    stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                    if (list.isEmpty()) {
+                        list4 = list;
+                        arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                        i18 = 0;
+                        while (r37.hasNext()) {
+                            int i2117 = i18 + 1;
+                            if (i18 < 0) {
+                                CollectionsKt.throwIndexOverflow();
+                            }
+                            ArrayList arrayList111113 = arrayList12;
+                            LinkedHashMap linkedHashMap113 = linkedHashMap;
+                            StreamPlayKitsuHelper.KitsuVideo kitsuVideo10 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                            i19 = i18;
+                            episode2 = kitsuVideo10.getEpisode();
+                            if (episode2 != null) {
+                                iIntValue3 = episode2.intValue();
+                            } else {
+                                iIntValue3 = i19 + 1;
+                            }
+                            CharSequence charSequence11 = charSequence;
+                            List<StreamPlayKitsuHelper.KitsuVideo> list1112 = list4;
+                            LinkedHashMap linkedHashMap114 = linkedHashMap2;
+                            String str4111 = str35;
+                            arrayList111113.add(loadFromKitsu$createEpisode(linkedHashMap114, streamPlayAnime, linkedHashMap113, num13, num15, str37, num17, str38, num6, str33, str4111, iIntValue3, kitsuVideo10, false));
+                            streamPlayAnime = this;
+                            linkedHashMap = linkedHashMap113;
+                            str35 = str4111;
+                            arrayList12 = arrayList111113;
+                            i18 = i2117;
+                            obj5 = obj5;
+                            i7 = i7;
+                            i4 = i4;
+                            linkedHashMap2 = linkedHashMap114;
+                            list4 = list1112;
+                            charSequence = charSequence11;
+                        }
+                        ArrayList arrayList111114 = arrayList12;
+                        i8 = i7;
+                        i9 = i4;
+                        linkedHashMap4 = linkedHashMap;
+                        charSequence2 = charSequence;
+                        num18 = num15;
+                        num19 = num17;
+                        linkedHashMap3 = linkedHashMap2;
+                        str39 = str35;
+                        num20 = num13;
+                        arrayList2 = arrayList111114;
+                        i11 = 10;
+                    } else {
+                        i8 = i7;
+                        i9 = i4;
+                        linkedHashMap3 = linkedHashMap2;
+                        linkedHashMap4 = linkedHashMap;
+                        charSequence2 = charSequence;
+                        num18 = num15;
+                        num19 = num17;
+                        i10 = i6;
+                        str39 = str35;
+                        num20 = num13;
+                        intRange2 = new IntRange(1, i10);
+                        arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                        it = intRange2.iterator();
+                        while (it.hasNext()) {
+                            ArrayList arrayList111115 = arrayList;
+                            arrayList111115.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                            i10 = i10;
+                            arrayList = arrayList111115;
+                            intRange2 = intRange2;
+                        }
+                        i6 = i10;
+                        i11 = 10;
+                        arrayList2 = arrayList;
+                    }
+                    arrayList3 = arrayList2;
+                    arrayList4 = arrayList3;
+                    arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                    i12 = 0;
+                    while (r32.hasNext()) {
+                        int i2118 = i12 + 1;
+                        if (i12 < 0) {
+                            CollectionsKt.throwIndexOverflow();
+                        }
+                        List<StreamPlayKitsuHelper.KitsuVideo> list1113 = list;
+                        kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list1113, i12);
+                        if (kitsuVideo != null) {
+                            iIntValue2 = i12 + 1;
+                        } else {
+                            iIntValue2 = i12 + 1;
+                        }
+                        list = list1113;
+                        arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                        i12 = i2118;
+                        arrayList4 = arrayList4;
+                    }
+                    linkedHashMap5 = linkedHashMap3;
+                    linkedHashMap6 = linkedHashMap4;
+                    num21 = num6;
+                    str40 = str33;
+                    str41 = str39;
+                    arrayList6 = arrayList5;
+                    imdbRating = kitsuMeta6.getImdbRating();
+                    if (imdbRating != null) {
+                        iFloatValue = 0;
+                    } else {
+                        iFloatValue = 0;
+                    }
+                    links = kitsuMeta6.getLinks();
+                    if (links != null) {
+                        list3 = links;
+                        arrayList8 = new ArrayList();
+                        while (r10.hasNext()) {
+                            ArrayList arrayList111116 = arrayList6;
+                            List<StreamPlayKitsuHelper.KitsuLink> list1114 = list3;
+                            if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                                arrayList8.add(obj10);
+                            }
+                            arrayList6 = arrayList111116;
+                            list3 = list1114;
+                        }
+                        arrayList7 = arrayList6;
+                        arrayList9 = arrayList8;
+                        i16 = 0;
+                        arrayList10 = new ArrayList();
+                        while (r11.hasNext()) {
+                            name2 = kitsuLink.getName();
+                            if (name2 == null) {
+                                arrayList11 = arrayList9;
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                                animeSearchResponseNewAnimeSearchResponse$default = null;
+                            } else {
+                                arrayList11 = arrayList9;
+                                url2 = kitsuLink.getUrl();
+                                if (url2 != null) {
+                                    i17 = i16;
+                                    num24 = num20;
+                                    num25 = num18;
+                                    strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                    if (strSubstringAfterLast$default == null) {
+                                        animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                    }
+                                } else {
+                                    i17 = i16;
+                                    num24 = num20;
+                                    num25 = num18;
+                                }
+                                animeSearchResponseNewAnimeSearchResponse$default = null;
+                            }
+                            if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                                arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                            }
+                            arrayList9 = arrayList11;
+                            i16 = i17;
+                            num20 = num24;
+                            num18 = num25;
+                        }
+                        num22 = num20;
+                        num23 = num18;
+                        list2 = arrayList10;
+                    } else {
+                        arrayList7 = arrayList6;
+                        num22 = num20;
+                        num23 = num18;
+                        list2 = null;
+                    }
+                    i13 = i9;
+                    if (i13 != 0) {
+                        TvType tvType119 = TvType.AnimeMovie;
+                        Integer num21119 = num19;
+                        C00872 c008710 = new C00872(num22, num23, str20, num21119, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                        C00861 c00861110 = c00863;
+                        c00861110.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                        c00861110.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                        c00861110.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                        c00861110.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                        c00861110.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                        c00861110.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                        c00861110.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                        c00861110.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                        c00861110.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                        c00861110.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                        c00861110.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                        c00861110.L$11 = SpillingKt.nullOutSpilledVariable(num21119);
+                        c00861110.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                        c00861110.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                        c00861110.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                        c00861110.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                        c00861110.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                        c00861110.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                        c00861110.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                        c00861110.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                        c00861110.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00861110.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                        c00861110.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                        c00861110.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                        c00861110.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                        c00861110.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                        c00861110.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                        c00861110.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                        c00861110.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                        c00861110.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                        c00861110.I$0 = i13;
+                        c00861110.I$1 = i6;
+                        c00861110.I$2 = i8;
+                        c00861110.I$3 = iFloatValue;
+                        c00861110.label = 8;
+                        objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType119, stringData, c008710, c00861110);
+                        obj4 = obj2;
+                        if (objNewMovieLoadResponse == obj4) {
+                            return obj4;
+                        }
+                        return (LoadResponse) objNewMovieLoadResponse;
+                    }
+                    Integer num211110 = num19;
+                    obj3 = obj2;
+                    C00861 c00861111 = c00863;
+                    Integer num211111 = num22;
+                    Integer num39 = num23;
+                    i14 = iFloatValue;
+                    TvType tvType1110 = TvType.Anime;
+                    ArrayList arrayList111117 = arrayList7;
+                    C00883 c008811 = new C00883(num211111, num39, str20, arrayList3, arrayList111117, str18, num211110, kitsuMeta6, str32, url, i14, this, list2, null);
+                    c00861111.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                    c00861111.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                    c00861111.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                    c00861111.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                    c00861111.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                    c00861111.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                    c00861111.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                    c00861111.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00861111.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                    c00861111.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                    c00861111.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                    c00861111.L$11 = SpillingKt.nullOutSpilledVariable(num211110);
+                    c00861111.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                    c00861111.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                    c00861111.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                    c00861111.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                    c00861111.L$16 = SpillingKt.nullOutSpilledVariable(num211111);
+                    c00861111.L$17 = SpillingKt.nullOutSpilledVariable(num39);
+                    c00861111.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                    c00861111.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                    c00861111.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00861111.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                    c00861111.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                    c00861111.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                    c00861111.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                    c00861111.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                    c00861111.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                    c00861111.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                    c00861111.L$28 = SpillingKt.nullOutSpilledVariable(arrayList111117);
+                    c00861111.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                    c00861111.I$0 = i13;
+                    c00861111.I$1 = i6;
+                    c00861111.I$2 = i8;
+                    c00861111.I$3 = i14;
+                    c00861111.label = 9;
+                    objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType1110, false, c008811, c00861111, 8, (Object) null);
+                    if (objNewAnimeLoadResponse$default == obj3) {
+                        return obj3;
+                    }
+                    str42 = str21;
+                    str43 = stringData;
+                    i15 = i14;
+                    obj5 = objNewAnimeLoadResponse$default;
+                    return (LoadResponse) obj5;
+                }
+                if (text != null) {
+                    animeData = StreamPlayUtilsKt.parseAnimeData(text);
+                } else {
+                    r8 = str3;
+                }
+                if (r8 != 0) {
+                    r8 = animeData;
+                    r8 = animeData;
+                    r8 = animeData;
+                    intOrNull = str3;
+                } else {
+                    r8 = animeData;
+                    r8 = animeData;
+                    r8 = animeData;
+                    intOrNull = str3;
+                }
+                if (r8 != 0) {
+                    if (num2 != null) {
+                        strValueOf = String.valueOf(num2.intValue());
+                    } else {
+                        strValueOf = str3;
+                    }
+                } else if (num2 != null) {
+                    strValueOf = String.valueOf(num2.intValue());
+                } else {
+                    strValueOf = str3;
+                }
+                r8 = animeData;
+                str7 = strValueOf;
+                r85 = intOrNull;
+                if (StringsKt.equals(kitsuMeta3.getType(), "movie", true)) {
+                    i = 1;
+                } else {
+                    i = 1;
+                }
+                if (i != 0) {
+                    tvType = TvType.Movie;
+                } else {
+                    tvType = TvType.TvSeries;
+                }
+                if (i != 0) {
+                    tvType2 = TvType.AnimeMovie;
+                } else {
+                    tvType2 = TvType.TvSeries;
+                }
+                tvType3 = tvType2;
+                name = kitsuMeta3.getName();
+                if (name == null) {
+                    aliases = kitsuMeta3.getAliases();
+                    if (aliases != null) {
+                        name = (String) CollectionsKt.firstOrNull(aliases);
+                    } else {
+                        name = null;
+                    }
+                    if (name == null) {
+                        name = "Unknown";
+                    }
+                }
+                str8 = name;
+                yearInt = kitsuMeta3.getYearInt();
+                if (yearInt != null) {
+                    tvType4 = tvType;
+                } else if (r8 != 0) {
+                    tvType4 = tvType;
+                    yearInt = null;
+                } else {
+                    tvType4 = tvType;
+                    yearInt = null;
+                }
+                num3 = yearInt;
+                c00864.L$0 = str6;
+                c00864.L$1 = str45;
+                c00864.L$2 = kitsuMeta3;
+                c00864.L$3 = num2;
+                c00864.L$4 = text;
+                c00864.L$5 = r8;
+                c00864.L$6 = SpillingKt.nullOutSpilledVariable((Object) r85);
+                c00864.L$7 = str7;
+                str9 = text;
+                c00864.L$8 = SpillingKt.nullOutSpilledVariable(tvType4);
+                c00864.L$9 = tvType3;
+                c00864.L$10 = str8;
+                c00864.L$11 = num3;
+                c00864.I$0 = i;
+                c00864.label = 6;
+                num4 = num2;
+                i2 = i;
+                r19 = r8;
+                str10 = str6;
+                tvType5 = tvType4;
+                kitsuMeta4 = kitsuMeta3;
+                num5 = null;
+                C00861 c00861112 = c00864;
+                z = false;
+                objFetchTmdbLogoUrl = StreamPlayUtilsKt.fetchTmdbLogoUrl("https://api.themoviedb.org/3", "98ae14df2b8d8f8f8136499daf79f0e0", tvType5, r85, "en", c00861112);
+                c00862 = c00861112;
+                if (objFetchTmdbLogoUrl == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                str11 = str9;
+                str12 = str7;
+                tvType6 = tvType3;
+                str13 = str8;
+                num6 = num4;
+                i3 = i2;
+                num7 = num3;
+                str14 = str10;
+                tvType7 = tvType5;
+                r16 = r85;
+                r6 = r19;
+                kitsuMeta5 = kitsuMeta4;
+                str15 = (String) objFetchTmdbLogoUrl;
+                if (r6 != 0) {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                } else {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                }
+                if (r6 != 0) {
+                    malId = num5;
+                } else {
+                    malId = num5;
+                }
+                if (malId == null) {
+                }
+                str17 = str14;
+                int i2119 = i3;
+                Integer num211112 = num7;
+                aniIds = new AniIds(intOrNull2, malId);
+                str18 = str15;
+                tvType8 = tvType6;
+                r21 = r6;
+                kitsuMeta6 = kitsuMeta5;
+                str19 = str11;
+                str20 = str12;
+                num8 = num211112;
+                r23 = r16;
+                tvType9 = tvType7;
+                i4 = i2119;
+                str21 = str16;
+                num9 = intOrNull2;
+                str22 = str13;
+                num10 = malId;
+                aniIds2 = aniIds;
+                id = aniIds2.getId();
+                if (id == null) {
+                    num13 = num9;
+                } else {
+                    num13 = id;
+                }
+                idMal = aniIds2.getIdMal();
+                if (idMal == null) {
+                    num14 = num10;
+                } else {
+                    num14 = idMal;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                }
+                poster = kitsuMeta6.getPoster();
+                if (poster != null) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = poster;
+                } else if (r21 != 0) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                } else {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                }
+                background = kitsuMeta6.getBackground();
+                if (background != null) {
+                    str31 = background;
+                } else {
+                    if (r21 != 0) {
+                        list6 = images2;
+                        it2 = list6.iterator();
+                        while (true) {
+                            if (it2.hasNext()) {
+                                next = it2.next();
+                                list7 = list6;
+                                if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                    list6 = list7;
+                                }
+                            } else {
+                                next = null;
+                            }
+                        }
+                        imageData2 = (ImageData) next;
+                        if (imageData2 != null) {
+                            background = imageData2.getUrl();
+                            str31 = background;
+                        }
+                    }
+                    str31 = null;
+                }
+                str32 = str31;
+                videos = kitsuMeta6.getVideos();
+                if (videos == null) {
+                    videos = CollectionsKt.emptyList();
+                }
+                if (!videos.isEmpty()) {
+                    size = videos.size();
+                } else if (r21 != 0) {
+                    size = 1;
+                } else {
+                    size = 1;
+                }
+                Iterable intRange12 = new IntRange(1, size);
+                linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange12, 10)), 16));
+                while (r31.hasNext()) {
+                    iIntValue5 = ((Number) obj6).intValue();
+                    if (str19 != null) {
+                        list5 = videos;
+                        Integer anidbEid10 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                        if (anidbEid10 != null) {
+                        }
+                        linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                        videos = list5;
+                    } else {
+                        list5 = videos;
+                    }
+                    linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                    videos = list5;
+                }
+                list = videos;
+                intRange = new IntRange(1, size);
+                i5 = 0;
+                linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                while (r27.hasNext()) {
+                    Iterable iterable10 = intRange;
+                    iIntValue4 = ((Number) obj7).intValue();
+                    if (r21 != 0) {
+                        i20 = size;
+                        episodes3 = r21.getEpisodes();
+                        if (episodes3 != null) {
+                            i5 = i5;
+                            metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                        }
+                        linkedHashMap2.put(obj7, metaEpisode);
+                        intRange = iterable10;
+                        size = i20;
+                        i5 = i5;
+                    } else {
+                        i20 = size;
+                    }
+                    metaEpisode = null;
+                    linkedHashMap2.put(obj7, metaEpisode);
+                    intRange = iterable10;
+                    size = i20;
+                    i5 = i5;
+                }
+                i6 = size;
+                if (url == null) {
+                    if (r21 != 0) {
+                        url3 = null;
+                    } else {
+                        url3 = null;
+                    }
+                    if (url3 == null) {
+                        url3 = "";
+                    }
+                    str33 = url3;
+                } else {
+                    str33 = url;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                }
+                num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                if (num16 != null) {
+                    iIntValue = num16.intValue();
+                } else {
+                    iIntValue = 0;
+                }
+                i7 = iIntValue;
+                num17 = num8;
+                str37 = str22;
+                str38 = str30;
+                stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                if (list.isEmpty()) {
+                    list4 = list;
+                    arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                    i18 = 0;
+                    while (r37.hasNext()) {
+                        int i21110 = i18 + 1;
+                        if (i18 < 0) {
+                            CollectionsKt.throwIndexOverflow();
+                        }
+                        ArrayList arrayList111118 = arrayList12;
+                        LinkedHashMap linkedHashMap115 = linkedHashMap;
+                        StreamPlayKitsuHelper.KitsuVideo kitsuVideo11 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                        i19 = i18;
+                        episode2 = kitsuVideo11.getEpisode();
+                        if (episode2 != null) {
+                            iIntValue3 = episode2.intValue();
+                        } else {
+                            iIntValue3 = i19 + 1;
+                        }
+                        CharSequence charSequence12 = charSequence;
+                        List<StreamPlayKitsuHelper.KitsuVideo> list1115 = list4;
+                        LinkedHashMap linkedHashMap116 = linkedHashMap2;
+                        String str4112 = str35;
+                        arrayList111118.add(loadFromKitsu$createEpisode(linkedHashMap116, streamPlayAnime, linkedHashMap115, num13, num15, str37, num17, str38, num6, str33, str4112, iIntValue3, kitsuVideo11, false));
+                        streamPlayAnime = this;
+                        linkedHashMap = linkedHashMap115;
+                        str35 = str4112;
+                        arrayList12 = arrayList111118;
+                        i18 = i21110;
+                        obj5 = obj5;
+                        i7 = i7;
+                        i4 = i4;
+                        linkedHashMap2 = linkedHashMap116;
+                        list4 = list1115;
+                        charSequence = charSequence12;
+                    }
+                    ArrayList arrayList111119 = arrayList12;
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    linkedHashMap3 = linkedHashMap2;
+                    str39 = str35;
+                    num20 = num13;
+                    arrayList2 = arrayList111119;
+                    i11 = 10;
+                } else {
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap3 = linkedHashMap2;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    i10 = i6;
+                    str39 = str35;
+                    num20 = num13;
+                    intRange2 = new IntRange(1, i10);
+                    arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                    it = intRange2.iterator();
+                    while (it.hasNext()) {
+                        ArrayList arrayList1111110 = arrayList;
+                        arrayList1111110.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                        i10 = i10;
+                        arrayList = arrayList1111110;
+                        intRange2 = intRange2;
+                    }
+                    i6 = i10;
+                    i11 = 10;
+                    arrayList2 = arrayList;
+                }
+                arrayList3 = arrayList2;
+                arrayList4 = arrayList3;
+                arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                i12 = 0;
+                while (r32.hasNext()) {
+                    int i21111 = i12 + 1;
+                    if (i12 < 0) {
+                        CollectionsKt.throwIndexOverflow();
+                    }
+                    List<StreamPlayKitsuHelper.KitsuVideo> list1116 = list;
+                    kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list1116, i12);
+                    if (kitsuVideo != null) {
+                        iIntValue2 = i12 + 1;
+                    } else {
+                        iIntValue2 = i12 + 1;
+                    }
+                    list = list1116;
+                    arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                    i12 = i21111;
+                    arrayList4 = arrayList4;
+                }
+                linkedHashMap5 = linkedHashMap3;
+                linkedHashMap6 = linkedHashMap4;
+                num21 = num6;
+                str40 = str33;
+                str41 = str39;
+                arrayList6 = arrayList5;
+                imdbRating = kitsuMeta6.getImdbRating();
+                if (imdbRating != null) {
+                    iFloatValue = 0;
+                } else {
+                    iFloatValue = 0;
+                }
+                links = kitsuMeta6.getLinks();
+                if (links != null) {
+                    list3 = links;
+                    arrayList8 = new ArrayList();
+                    while (r10.hasNext()) {
+                        ArrayList arrayList1111111 = arrayList6;
+                        List<StreamPlayKitsuHelper.KitsuLink> list1117 = list3;
+                        if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                            arrayList8.add(obj10);
+                        }
+                        arrayList6 = arrayList1111111;
+                        list3 = list1117;
+                    }
+                    arrayList7 = arrayList6;
+                    arrayList9 = arrayList8;
+                    i16 = 0;
+                    arrayList10 = new ArrayList();
+                    while (r11.hasNext()) {
+                        name2 = kitsuLink.getName();
+                        if (name2 == null) {
+                            arrayList11 = arrayList9;
+                            i17 = i16;
+                            num24 = num20;
+                            num25 = num18;
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        } else {
+                            arrayList11 = arrayList9;
+                            url2 = kitsuLink.getUrl();
+                            if (url2 != null) {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                                strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                if (strSubstringAfterLast$default == null) {
+                                    animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                }
+                            } else {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                            }
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        }
+                        if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                            arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                        }
+                        arrayList9 = arrayList11;
+                        i16 = i17;
+                        num20 = num24;
+                        num18 = num25;
+                    }
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = arrayList10;
+                } else {
+                    arrayList7 = arrayList6;
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = null;
+                }
+                i13 = i9;
+                if (i13 != 0) {
+                    TvType tvType1111 = TvType.AnimeMovie;
+                    Integer num211113 = num19;
+                    C00872 c008711 = new C00872(num22, num23, str20, num211113, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                    C00861 c00861113 = c00863;
+                    c00861113.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                    c00861113.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                    c00861113.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                    c00861113.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                    c00861113.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                    c00861113.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                    c00861113.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                    c00861113.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00861113.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                    c00861113.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                    c00861113.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                    c00861113.L$11 = SpillingKt.nullOutSpilledVariable(num211113);
+                    c00861113.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                    c00861113.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                    c00861113.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                    c00861113.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                    c00861113.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                    c00861113.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                    c00861113.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                    c00861113.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                    c00861113.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00861113.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                    c00861113.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                    c00861113.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                    c00861113.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                    c00861113.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                    c00861113.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                    c00861113.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                    c00861113.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                    c00861113.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                    c00861113.I$0 = i13;
+                    c00861113.I$1 = i6;
+                    c00861113.I$2 = i8;
+                    c00861113.I$3 = iFloatValue;
+                    c00861113.label = 8;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType1111, stringData, c008711, c00861113);
+                    obj4 = obj2;
+                    if (objNewMovieLoadResponse == obj4) {
+                        return obj4;
+                    }
+                    return (LoadResponse) objNewMovieLoadResponse;
+                }
+                Integer num211114 = num19;
+                obj3 = obj2;
+                C00861 c00861114 = c00863;
+                Integer num211115 = num22;
+                Integer num310 = num23;
+                i14 = iFloatValue;
+                TvType tvType1112 = TvType.Anime;
+                ArrayList arrayList1111112 = arrayList7;
+                C00883 c008812 = new C00883(num211115, num310, str20, arrayList3, arrayList1111112, str18, num211114, kitsuMeta6, str32, url, i14, this, list2, null);
+                c00861114.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                c00861114.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                c00861114.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                c00861114.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                c00861114.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                c00861114.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                c00861114.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                c00861114.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                c00861114.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                c00861114.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                c00861114.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                c00861114.L$11 = SpillingKt.nullOutSpilledVariable(num211114);
+                c00861114.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                c00861114.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                c00861114.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                c00861114.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                c00861114.L$16 = SpillingKt.nullOutSpilledVariable(num211115);
+                c00861114.L$17 = SpillingKt.nullOutSpilledVariable(num310);
+                c00861114.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                c00861114.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                c00861114.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                c00861114.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                c00861114.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                c00861114.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                c00861114.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                c00861114.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                c00861114.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                c00861114.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                c00861114.L$28 = SpillingKt.nullOutSpilledVariable(arrayList1111112);
+                c00861114.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                c00861114.I$0 = i13;
+                c00861114.I$1 = i6;
+                c00861114.I$2 = i8;
+                c00861114.I$3 = i14;
+                c00861114.label = 9;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType1112, false, c008812, c00861114, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj3) {
+                    return obj3;
+                }
+                str42 = str21;
+                str43 = stringData;
+                i15 = i14;
+                obj5 = objNewAnimeLoadResponse$default;
+                return (LoadResponse) obj5;
+            case 6:
+                int i30 = c00864.I$0;
+                Integer num40 = (Integer) c00864.L$11;
+                String str52 = (String) c00864.L$10;
+                TvType tvType20 = (TvType) c00864.L$9;
+                TvType tvType21 = (TvType) c00864.L$8;
+                String str53 = (String) c00864.L$7;
+                Integer num41 = (Integer) c00864.L$6;
+                MetaAnimeData metaAnimeData = (MetaAnimeData) c00864.L$5;
+                String str54 = (String) c00864.L$4;
+                Integer num42 = (Integer) c00864.L$3;
+                StreamPlayKitsuHelper.KitsuMeta kitsuMeta9 = (StreamPlayKitsuHelper.KitsuMeta) c00864.L$2;
+                str45 = (String) c00864.L$1;
+                str14 = (String) c00864.L$0;
+                ResultKt.throwOnFailure(obj5);
+                num7 = num40;
+                str13 = str52;
+                tvType6 = tvType20;
+                str12 = str53;
+                c00862 = c00864;
+                objFetchTmdbLogoUrl = obj5;
+                i3 = i30;
+                r6 = metaAnimeData;
+                str11 = str54;
+                kitsuMeta5 = kitsuMeta9;
+                z = false;
+                tvType7 = tvType21;
+                r16 = num41;
+                num6 = num42;
+                num5 = null;
+                str15 = (String) objFetchTmdbLogoUrl;
+                if (r6 != 0) {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                } else {
+                    if (StringsKt.toIntOrNull(str45) != null) {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                        if (!StringsKt.contains$default(str14, "kitsu", z, 2, num5)) {
+                            intOrNull2 = StringsKt.toIntOrNull(str16);
+                        }
+                    } else {
+                        str16 = str45;
+                        charSequence = "kitsu:";
+                    }
+                    intOrNull2 = num5;
+                }
+                if (r6 != 0) {
+                    malId = num5;
+                } else {
+                    malId = num5;
+                }
+                if (malId == null) {
+                }
+                str17 = str14;
+                int i21112 = i3;
+                Integer num211116 = num7;
+                aniIds = new AniIds(intOrNull2, malId);
+                str18 = str15;
+                tvType8 = tvType6;
+                r21 = r6;
+                kitsuMeta6 = kitsuMeta5;
+                str19 = str11;
+                str20 = str12;
+                num8 = num211116;
+                r23 = r16;
+                tvType9 = tvType7;
+                i4 = i21112;
+                str21 = str16;
+                num9 = intOrNull2;
+                str22 = str13;
+                num10 = malId;
+                aniIds2 = aniIds;
+                id = aniIds2.getId();
+                if (id == null) {
+                    num13 = num9;
+                } else {
+                    num13 = id;
+                }
+                idMal = aniIds2.getIdMal();
+                if (idMal == null) {
+                    num14 = num10;
+                } else {
+                    num14 = idMal;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                }
+                poster = kitsuMeta6.getPoster();
+                if (poster != null) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = poster;
+                } else if (r21 != 0) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                } else {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                }
+                background = kitsuMeta6.getBackground();
+                if (background != null) {
+                    str31 = background;
+                } else {
+                    if (r21 != 0) {
+                        list6 = images2;
+                        it2 = list6.iterator();
+                        while (true) {
+                            if (it2.hasNext()) {
+                                next = it2.next();
+                                list7 = list6;
+                                if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                    list6 = list7;
+                                }
+                            } else {
+                                next = null;
+                            }
+                        }
+                        imageData2 = (ImageData) next;
+                        if (imageData2 != null) {
+                            background = imageData2.getUrl();
+                            str31 = background;
+                        }
+                    }
+                    str31 = null;
+                }
+                str32 = str31;
+                videos = kitsuMeta6.getVideos();
+                if (videos == null) {
+                    videos = CollectionsKt.emptyList();
+                }
+                if (!videos.isEmpty()) {
+                    size = videos.size();
+                } else if (r21 != 0) {
+                    size = 1;
+                } else {
+                    size = 1;
+                }
+                Iterable intRange13 = new IntRange(1, size);
+                linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange13, 10)), 16));
+                while (r31.hasNext()) {
+                    iIntValue5 = ((Number) obj6).intValue();
+                    if (str19 != null) {
+                        list5 = videos;
+                        Integer anidbEid11 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                        if (anidbEid11 != null) {
+                        }
+                        linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                        videos = list5;
+                    } else {
+                        list5 = videos;
+                    }
+                    linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                    videos = list5;
+                }
+                list = videos;
+                intRange = new IntRange(1, size);
+                i5 = 0;
+                linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                while (r27.hasNext()) {
+                    Iterable iterable11 = intRange;
+                    iIntValue4 = ((Number) obj7).intValue();
+                    if (r21 != 0) {
+                        i20 = size;
+                        episodes3 = r21.getEpisodes();
+                        if (episodes3 != null) {
+                            i5 = i5;
+                            metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                        }
+                        linkedHashMap2.put(obj7, metaEpisode);
+                        intRange = iterable11;
+                        size = i20;
+                        i5 = i5;
+                    } else {
+                        i20 = size;
+                    }
+                    metaEpisode = null;
+                    linkedHashMap2.put(obj7, metaEpisode);
+                    intRange = iterable11;
+                    size = i20;
+                    i5 = i5;
+                }
+                i6 = size;
+                if (url == null) {
+                    if (r21 != 0) {
+                        url3 = null;
+                    } else {
+                        url3 = null;
+                    }
+                    if (url3 == null) {
+                        url3 = "";
+                    }
+                    str33 = url3;
+                } else {
+                    str33 = url;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                }
+                num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                if (num16 != null) {
+                    iIntValue = num16.intValue();
+                } else {
+                    iIntValue = 0;
+                }
+                i7 = iIntValue;
+                num17 = num8;
+                str37 = str22;
+                str38 = str30;
+                stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                if (list.isEmpty()) {
+                    list4 = list;
+                    arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                    i18 = 0;
+                    while (r37.hasNext()) {
+                        int i21113 = i18 + 1;
+                        if (i18 < 0) {
+                            CollectionsKt.throwIndexOverflow();
+                        }
+                        ArrayList arrayList1111113 = arrayList12;
+                        LinkedHashMap linkedHashMap117 = linkedHashMap;
+                        StreamPlayKitsuHelper.KitsuVideo kitsuVideo12 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                        i19 = i18;
+                        episode2 = kitsuVideo12.getEpisode();
+                        if (episode2 != null) {
+                            iIntValue3 = episode2.intValue();
+                        } else {
+                            iIntValue3 = i19 + 1;
+                        }
+                        CharSequence charSequence13 = charSequence;
+                        List<StreamPlayKitsuHelper.KitsuVideo> list1118 = list4;
+                        LinkedHashMap linkedHashMap118 = linkedHashMap2;
+                        String str4113 = str35;
+                        arrayList1111113.add(loadFromKitsu$createEpisode(linkedHashMap118, streamPlayAnime, linkedHashMap117, num13, num15, str37, num17, str38, num6, str33, str4113, iIntValue3, kitsuVideo12, false));
+                        streamPlayAnime = this;
+                        linkedHashMap = linkedHashMap117;
+                        str35 = str4113;
+                        arrayList12 = arrayList1111113;
+                        i18 = i21113;
+                        obj5 = obj5;
+                        i7 = i7;
+                        i4 = i4;
+                        linkedHashMap2 = linkedHashMap118;
+                        list4 = list1118;
+                        charSequence = charSequence13;
+                    }
+                    ArrayList arrayList1111114 = arrayList12;
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    linkedHashMap3 = linkedHashMap2;
+                    str39 = str35;
+                    num20 = num13;
+                    arrayList2 = arrayList1111114;
+                    i11 = 10;
+                } else {
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap3 = linkedHashMap2;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    i10 = i6;
+                    str39 = str35;
+                    num20 = num13;
+                    intRange2 = new IntRange(1, i10);
+                    arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                    it = intRange2.iterator();
+                    while (it.hasNext()) {
+                        ArrayList arrayList1111115 = arrayList;
+                        arrayList1111115.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                        i10 = i10;
+                        arrayList = arrayList1111115;
+                        intRange2 = intRange2;
+                    }
+                    i6 = i10;
+                    i11 = 10;
+                    arrayList2 = arrayList;
+                }
+                arrayList3 = arrayList2;
+                arrayList4 = arrayList3;
+                arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                i12 = 0;
+                while (r32.hasNext()) {
+                    int i21114 = i12 + 1;
+                    if (i12 < 0) {
+                        CollectionsKt.throwIndexOverflow();
+                    }
+                    List<StreamPlayKitsuHelper.KitsuVideo> list1119 = list;
+                    kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list1119, i12);
+                    if (kitsuVideo != null) {
+                        iIntValue2 = i12 + 1;
+                    } else {
+                        iIntValue2 = i12 + 1;
+                    }
+                    list = list1119;
+                    arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                    i12 = i21114;
+                    arrayList4 = arrayList4;
+                }
+                linkedHashMap5 = linkedHashMap3;
+                linkedHashMap6 = linkedHashMap4;
+                num21 = num6;
+                str40 = str33;
+                str41 = str39;
+                arrayList6 = arrayList5;
+                imdbRating = kitsuMeta6.getImdbRating();
+                if (imdbRating != null) {
+                    iFloatValue = 0;
+                } else {
+                    iFloatValue = 0;
+                }
+                links = kitsuMeta6.getLinks();
+                if (links != null) {
+                    list3 = links;
+                    arrayList8 = new ArrayList();
+                    while (r10.hasNext()) {
+                        ArrayList arrayList1111116 = arrayList6;
+                        List<StreamPlayKitsuHelper.KitsuLink> list11110 = list3;
+                        if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                            arrayList8.add(obj10);
+                        }
+                        arrayList6 = arrayList1111116;
+                        list3 = list11110;
+                    }
+                    arrayList7 = arrayList6;
+                    arrayList9 = arrayList8;
+                    i16 = 0;
+                    arrayList10 = new ArrayList();
+                    while (r11.hasNext()) {
+                        name2 = kitsuLink.getName();
+                        if (name2 == null) {
+                            arrayList11 = arrayList9;
+                            i17 = i16;
+                            num24 = num20;
+                            num25 = num18;
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        } else {
+                            arrayList11 = arrayList9;
+                            url2 = kitsuLink.getUrl();
+                            if (url2 != null) {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                                strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                if (strSubstringAfterLast$default == null) {
+                                    animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                }
+                            } else {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                            }
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        }
+                        if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                            arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                        }
+                        arrayList9 = arrayList11;
+                        i16 = i17;
+                        num20 = num24;
+                        num18 = num25;
+                    }
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = arrayList10;
+                } else {
+                    arrayList7 = arrayList6;
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = null;
+                }
+                i13 = i9;
+                if (i13 != 0) {
+                    TvType tvType1113 = TvType.AnimeMovie;
+                    Integer num211117 = num19;
+                    C00872 c008712 = new C00872(num22, num23, str20, num211117, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                    C00861 c00861115 = c00863;
+                    c00861115.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                    c00861115.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                    c00861115.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                    c00861115.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                    c00861115.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                    c00861115.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                    c00861115.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                    c00861115.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00861115.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                    c00861115.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                    c00861115.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                    c00861115.L$11 = SpillingKt.nullOutSpilledVariable(num211117);
+                    c00861115.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                    c00861115.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                    c00861115.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                    c00861115.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                    c00861115.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                    c00861115.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                    c00861115.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                    c00861115.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                    c00861115.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00861115.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                    c00861115.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                    c00861115.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                    c00861115.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                    c00861115.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                    c00861115.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                    c00861115.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                    c00861115.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                    c00861115.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                    c00861115.I$0 = i13;
+                    c00861115.I$1 = i6;
+                    c00861115.I$2 = i8;
+                    c00861115.I$3 = iFloatValue;
+                    c00861115.label = 8;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType1113, stringData, c008712, c00861115);
+                    obj4 = obj2;
+                    if (objNewMovieLoadResponse == obj4) {
+                        return obj4;
+                    }
+                    return (LoadResponse) objNewMovieLoadResponse;
+                }
+                Integer num211118 = num19;
+                obj3 = obj2;
+                C00861 c00861116 = c00863;
+                Integer num211119 = num22;
+                Integer num311 = num23;
+                i14 = iFloatValue;
+                TvType tvType1114 = TvType.Anime;
+                ArrayList arrayList1111117 = arrayList7;
+                C00883 c008813 = new C00883(num211119, num311, str20, arrayList3, arrayList1111117, str18, num211118, kitsuMeta6, str32, url, i14, this, list2, null);
+                c00861116.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                c00861116.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                c00861116.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                c00861116.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                c00861116.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                c00861116.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                c00861116.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                c00861116.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                c00861116.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                c00861116.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                c00861116.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                c00861116.L$11 = SpillingKt.nullOutSpilledVariable(num211118);
+                c00861116.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                c00861116.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                c00861116.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                c00861116.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                c00861116.L$16 = SpillingKt.nullOutSpilledVariable(num211119);
+                c00861116.L$17 = SpillingKt.nullOutSpilledVariable(num311);
+                c00861116.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                c00861116.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                c00861116.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                c00861116.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                c00861116.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                c00861116.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                c00861116.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                c00861116.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                c00861116.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                c00861116.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                c00861116.L$28 = SpillingKt.nullOutSpilledVariable(arrayList1111117);
+                c00861116.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                c00861116.I$0 = i13;
+                c00861116.I$1 = i6;
+                c00861116.I$2 = i8;
+                c00861116.I$3 = i14;
+                c00861116.label = 9;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType1114, false, c008813, c00861116, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj3) {
+                    return obj3;
+                }
+                str42 = str21;
+                str43 = stringData;
+                i15 = i14;
+                obj5 = objNewAnimeLoadResponse$default;
+                return (LoadResponse) obj5;
+            case 7:
+                int i31 = c00864.I$0;
+                Integer num43 = (Integer) c00864.L$14;
+                num12 = (Integer) c00864.L$13;
+                String str55 = (String) c00864.L$12;
+                num8 = (Integer) c00864.L$11;
+                String str56 = (String) c00864.L$10;
+                tvType11 = (TvType) c00864.L$9;
+                tvType10 = (TvType) c00864.L$8;
+                str24 = (String) c00864.L$7;
+                Integer num44 = (Integer) c00864.L$6;
+                r110 = (MetaAnimeData) c00864.L$5;
+                str27 = (String) c00864.L$4;
+                num11 = (Integer) c00864.L$3;
+                kitsuMeta7 = (StreamPlayKitsuHelper.KitsuMeta) c00864.L$2;
+                str28 = (String) c00864.L$1;
+                str25 = (String) c00864.L$0;
+                ResultKt.throwOnFailure(obj5);
+                malId = num43;
+                c00862 = c00864;
+                str26 = str55;
+                str23 = str56;
+                i4 = i31;
+                r17 = num44;
+                charSequence = "kitsu:";
+                objTmdbToAnimeId = obj5;
+                aniIds = (AniIds) objTmdbToAnimeId;
+                tvType8 = tvType11;
+                str18 = str26;
+                tvType9 = tvType10;
+                r23 = r17;
+                str20 = str24;
+                num6 = num11;
+                kitsuMeta6 = kitsuMeta7;
+                str21 = str28;
+                num9 = num12;
+                r21 = r110;
+                str19 = str27;
+                str17 = str25;
+                str22 = str23;
+                num10 = malId;
+                aniIds2 = aniIds;
+                id = aniIds2.getId();
+                if (id == null) {
+                    num13 = num9;
+                } else {
+                    num13 = id;
+                }
+                idMal = aniIds2.getIdMal();
+                if (idMal == null) {
+                    num14 = num10;
+                } else {
+                    num14 = idMal;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str29 = null;
+                    } else {
+                        str29 = null;
+                    }
+                    if (str29 != null) {
+                        str30 = str29;
+                    } else {
+                        aliases2 = kitsuMeta6.getAliases();
+                        if (aliases2 != null) {
+                            str29 = (String) CollectionsKt.firstOrNull(aliases2);
+                        } else {
+                            str29 = null;
+                        }
+                        if (str29 == null) {
+                            str30 = str22;
+                        } else {
+                            str30 = str29;
+                        }
+                    }
+                }
+                poster = kitsuMeta6.getPoster();
+                if (poster != null) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = poster;
+                } else if (r21 != 0) {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                } else {
+                    obj2 = coroutine_suspended;
+                    num15 = num14;
+                    c00863 = c00862;
+                    url = null;
+                }
+                background = kitsuMeta6.getBackground();
+                if (background != null) {
+                    str31 = background;
+                } else {
+                    if (r21 != 0) {
+                        list6 = images2;
+                        it2 = list6.iterator();
+                        while (true) {
+                            if (it2.hasNext()) {
+                                next = it2.next();
+                                list7 = list6;
+                                if (StringsKt.equals(((ImageData) next).getCoverType(), "Fanart", true)) {
+                                    list6 = list7;
+                                }
+                            } else {
+                                next = null;
+                            }
+                        }
+                        imageData2 = (ImageData) next;
+                        if (imageData2 != null) {
+                            background = imageData2.getUrl();
+                            str31 = background;
+                        }
+                    }
+                    str31 = null;
+                }
+                str32 = str31;
+                videos = kitsuMeta6.getVideos();
+                if (videos == null) {
+                    videos = CollectionsKt.emptyList();
+                }
+                if (!videos.isEmpty()) {
+                    size = videos.size();
+                } else if (r21 != 0) {
+                    size = 1;
+                } else {
+                    size = 1;
+                }
+                Iterable intRange14 = new IntRange(1, size);
+                linkedHashMap = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange14, 10)), 16));
+                while (r31.hasNext()) {
+                    iIntValue5 = ((Number) obj6).intValue();
+                    if (str19 != null) {
+                        list5 = videos;
+                        Integer anidbEid12 = StreamPlayUtilsKt.getAnidbEid(str19, Boxing.boxInt(iIntValue5));
+                        if (anidbEid12 != null) {
+                        }
+                        linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                        videos = list5;
+                    } else {
+                        list5 = videos;
+                    }
+                    linkedHashMap.put(obj6, Boxing.boxInt(iIntValue6));
+                    videos = list5;
+                }
+                list = videos;
+                intRange = new IntRange(1, size);
+                i5 = 0;
+                linkedHashMap2 = new LinkedHashMap(RangesKt.coerceAtLeast(MapsKt.mapCapacity(CollectionsKt.collectionSizeOrDefault(intRange, 10)), 16));
+                while (r27.hasNext()) {
+                    Iterable iterable12 = intRange;
+                    iIntValue4 = ((Number) obj7).intValue();
+                    if (r21 != 0) {
+                        i20 = size;
+                        episodes3 = r21.getEpisodes();
+                        if (episodes3 != null) {
+                            i5 = i5;
+                            metaEpisode = episodes3.get(String.valueOf(iIntValue4));
+                        }
+                        linkedHashMap2.put(obj7, metaEpisode);
+                        intRange = iterable12;
+                        size = i20;
+                        i5 = i5;
+                    } else {
+                        i20 = size;
+                    }
+                    metaEpisode = null;
+                    linkedHashMap2.put(obj7, metaEpisode);
+                    intRange = iterable12;
+                    size = i20;
+                    i5 = i5;
+                }
+                i6 = size;
+                if (url == null) {
+                    if (r21 != 0) {
+                        url3 = null;
+                    } else {
+                        url3 = null;
+                    }
+                    if (url3 == null) {
+                        url3 = "";
+                    }
+                    str33 = url3;
+                } else {
+                    str33 = url;
+                }
+                if (r21 != 0) {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                } else {
+                    if (r21 != 0) {
+                        str34 = null;
+                    } else {
+                        str34 = null;
+                    }
+                    if (str34 == null) {
+                        if (r21 != 0) {
+                            str36 = null;
+                        } else {
+                            str36 = null;
+                        }
+                        if (str36 == null) {
+                            str35 = str22;
+                        } else {
+                            str35 = str36;
+                        }
+                    } else {
+                        str35 = str34;
+                    }
+                }
+                num16 = (Integer) linkedHashMap.get(Boxing.boxInt(1));
+                if (num16 != null) {
+                    iIntValue = num16.intValue();
+                } else {
+                    iIntValue = 0;
+                }
+                i7 = iIntValue;
+                num17 = num8;
+                str37 = str22;
+                str38 = str30;
+                stringData = streamPlayAnime.toStringData(new LinkData(null, null, null, null, null, null, null, Boxing.boxInt(1), num13, num15, str22, num17, null, true, null, null, null, str30, null, null, false, false, false, false, Boxing.boxInt(i7), num6, 16633983, null));
+                if (list.isEmpty()) {
+                    list4 = list;
+                    arrayList12 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list4, 10));
+                    i18 = 0;
+                    while (r37.hasNext()) {
+                        int i21115 = i18 + 1;
+                        if (i18 < 0) {
+                            CollectionsKt.throwIndexOverflow();
+                        }
+                        ArrayList arrayList1111118 = arrayList12;
+                        LinkedHashMap linkedHashMap119 = linkedHashMap;
+                        StreamPlayKitsuHelper.KitsuVideo kitsuVideo13 = (StreamPlayKitsuHelper.KitsuVideo) obj8;
+                        i19 = i18;
+                        episode2 = kitsuVideo13.getEpisode();
+                        if (episode2 != null) {
+                            iIntValue3 = episode2.intValue();
+                        } else {
+                            iIntValue3 = i19 + 1;
+                        }
+                        CharSequence charSequence14 = charSequence;
+                        List<StreamPlayKitsuHelper.KitsuVideo> list11111 = list4;
+                        LinkedHashMap linkedHashMap1110 = linkedHashMap2;
+                        String str4114 = str35;
+                        arrayList1111118.add(loadFromKitsu$createEpisode(linkedHashMap1110, streamPlayAnime, linkedHashMap119, num13, num15, str37, num17, str38, num6, str33, str4114, iIntValue3, kitsuVideo13, false));
+                        streamPlayAnime = this;
+                        linkedHashMap = linkedHashMap119;
+                        str35 = str4114;
+                        arrayList12 = arrayList1111118;
+                        i18 = i21115;
+                        obj5 = obj5;
+                        i7 = i7;
+                        i4 = i4;
+                        linkedHashMap2 = linkedHashMap1110;
+                        list4 = list11111;
+                        charSequence = charSequence14;
+                    }
+                    ArrayList arrayList1111119 = arrayList12;
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    linkedHashMap3 = linkedHashMap2;
+                    str39 = str35;
+                    num20 = num13;
+                    arrayList2 = arrayList1111119;
+                    i11 = 10;
+                } else {
+                    i8 = i7;
+                    i9 = i4;
+                    linkedHashMap3 = linkedHashMap2;
+                    linkedHashMap4 = linkedHashMap;
+                    charSequence2 = charSequence;
+                    num18 = num15;
+                    num19 = num17;
+                    i10 = i6;
+                    str39 = str35;
+                    num20 = num13;
+                    intRange2 = new IntRange(1, i10);
+                    arrayList = new ArrayList(CollectionsKt.collectionSizeOrDefault(intRange2, 10));
+                    it = intRange2.iterator();
+                    while (it.hasNext()) {
+                        ArrayList arrayList11111110 = arrayList;
+                        arrayList11111110.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, it.nextInt(), null, false));
+                        i10 = i10;
+                        arrayList = arrayList11111110;
+                        intRange2 = intRange2;
+                    }
+                    i6 = i10;
+                    i11 = 10;
+                    arrayList2 = arrayList;
+                }
+                arrayList3 = arrayList2;
+                arrayList4 = arrayList3;
+                arrayList5 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList4, i11));
+                i12 = 0;
+                while (r32.hasNext()) {
+                    int i21116 = i12 + 1;
+                    if (i12 < 0) {
+                        CollectionsKt.throwIndexOverflow();
+                    }
+                    List<StreamPlayKitsuHelper.KitsuVideo> list11112 = list;
+                    kitsuVideo = (StreamPlayKitsuHelper.KitsuVideo) CollectionsKt.getOrNull(list11112, i12);
+                    if (kitsuVideo != null) {
+                        iIntValue2 = i12 + 1;
+                    } else {
+                        iIntValue2 = i12 + 1;
+                    }
+                    list = list11112;
+                    arrayList5.add(loadFromKitsu$createEpisode(linkedHashMap3, this, linkedHashMap4, num20, num18, str37, num19, str38, num6, str33, str39, iIntValue2, kitsuVideo, true));
+                    i12 = i21116;
+                    arrayList4 = arrayList4;
+                }
+                linkedHashMap5 = linkedHashMap3;
+                linkedHashMap6 = linkedHashMap4;
+                num21 = num6;
+                str40 = str33;
+                str41 = str39;
+                arrayList6 = arrayList5;
+                imdbRating = kitsuMeta6.getImdbRating();
+                if (imdbRating != null) {
+                    iFloatValue = 0;
+                } else {
+                    iFloatValue = 0;
+                }
+                links = kitsuMeta6.getLinks();
+                if (links != null) {
+                    list3 = links;
+                    arrayList8 = new ArrayList();
+                    while (r10.hasNext()) {
+                        ArrayList arrayList11111111 = arrayList6;
+                        List<StreamPlayKitsuHelper.KitsuLink> list11113 = list3;
+                        if (StringsKt.equals(((StreamPlayKitsuHelper.KitsuLink) obj10).getCategory(), "Franchise", true)) {
+                            arrayList8.add(obj10);
+                        }
+                        arrayList6 = arrayList11111111;
+                        list3 = list11113;
+                    }
+                    arrayList7 = arrayList6;
+                    arrayList9 = arrayList8;
+                    i16 = 0;
+                    arrayList10 = new ArrayList();
+                    while (r11.hasNext()) {
+                        name2 = kitsuLink.getName();
+                        if (name2 == null) {
+                            arrayList11 = arrayList9;
+                            i17 = i16;
+                            num24 = num20;
+                            num25 = num18;
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        } else {
+                            arrayList11 = arrayList9;
+                            url2 = kitsuLink.getUrl();
+                            if (url2 != null) {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                                strSubstringAfterLast$default = StringsKt.substringAfterLast$default(url2, "/", (String) null, 2, (Object) null);
+                                if (strSubstringAfterLast$default == null) {
+                                    animeSearchResponseNewAnimeSearchResponse$default = MainAPIKt.newAnimeSearchResponse$default(this, name2, "https://kitsu.io/anime/" + StringsKt.removePrefix(strSubstringAfterLast$default, charSequence2), TvType.Anime, false, (Function1) null, 24, (Object) null);
+                                }
+                            } else {
+                                i17 = i16;
+                                num24 = num20;
+                                num25 = num18;
+                            }
+                            animeSearchResponseNewAnimeSearchResponse$default = null;
+                        }
+                        if (animeSearchResponseNewAnimeSearchResponse$default != null) {
+                            arrayList10.add(animeSearchResponseNewAnimeSearchResponse$default);
+                        }
+                        arrayList9 = arrayList11;
+                        i16 = i17;
+                        num20 = num24;
+                        num18 = num25;
+                    }
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = arrayList10;
+                } else {
+                    arrayList7 = arrayList6;
+                    num22 = num20;
+                    num23 = num18;
+                    list2 = null;
+                }
+                i13 = i9;
+                if (i13 != 0) {
+                    TvType tvType1115 = TvType.AnimeMovie;
+                    Integer num2111110 = num19;
+                    C00872 c008713 = new C00872(num22, num23, str20, num2111110, kitsuMeta6, str32, url, str18, iFloatValue, null);
+                    C00861 c00861117 = c00863;
+                    c00861117.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                    c00861117.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                    c00861117.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                    c00861117.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                    c00861117.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                    c00861117.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                    c00861117.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                    c00861117.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00861117.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                    c00861117.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                    c00861117.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                    c00861117.L$11 = SpillingKt.nullOutSpilledVariable(num2111110);
+                    c00861117.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                    c00861117.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                    c00861117.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                    c00861117.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                    c00861117.L$16 = SpillingKt.nullOutSpilledVariable(num22);
+                    c00861117.L$17 = SpillingKt.nullOutSpilledVariable(num23);
+                    c00861117.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                    c00861117.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                    c00861117.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00861117.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                    c00861117.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                    c00861117.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                    c00861117.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                    c00861117.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                    c00861117.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                    c00861117.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                    c00861117.L$28 = SpillingKt.nullOutSpilledVariable(arrayList7);
+                    c00861117.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                    c00861117.I$0 = i13;
+                    c00861117.I$1 = i6;
+                    c00861117.I$2 = i8;
+                    c00861117.I$3 = iFloatValue;
+                    c00861117.label = 8;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(this, str37, str17, tvType1115, stringData, c008713, c00861117);
+                    obj4 = obj2;
+                    if (objNewMovieLoadResponse == obj4) {
+                        return obj4;
+                    }
+                    return (LoadResponse) objNewMovieLoadResponse;
+                }
+                Integer num2111111 = num19;
+                obj3 = obj2;
+                C00861 c00861118 = c00863;
+                Integer num2111112 = num22;
+                Integer num312 = num23;
+                i14 = iFloatValue;
+                TvType tvType1116 = TvType.Anime;
+                ArrayList arrayList11111112 = arrayList7;
+                C00883 c008814 = new C00883(num2111112, num312, str20, arrayList3, arrayList11111112, str18, num2111111, kitsuMeta6, str32, url, i14, this, list2, null);
+                c00861118.L$0 = SpillingKt.nullOutSpilledVariable(str17);
+                c00861118.L$1 = SpillingKt.nullOutSpilledVariable(str21);
+                c00861118.L$2 = SpillingKt.nullOutSpilledVariable(kitsuMeta6);
+                c00861118.L$3 = SpillingKt.nullOutSpilledVariable(num21);
+                c00861118.L$4 = SpillingKt.nullOutSpilledVariable(str19);
+                c00861118.L$5 = SpillingKt.nullOutSpilledVariable((Object) r21);
+                c00861118.L$6 = SpillingKt.nullOutSpilledVariable((Object) r23);
+                c00861118.L$7 = SpillingKt.nullOutSpilledVariable(str20);
+                c00861118.L$8 = SpillingKt.nullOutSpilledVariable(tvType9);
+                c00861118.L$9 = SpillingKt.nullOutSpilledVariable(tvType8);
+                c00861118.L$10 = SpillingKt.nullOutSpilledVariable(str37);
+                c00861118.L$11 = SpillingKt.nullOutSpilledVariable(num2111111);
+                c00861118.L$12 = SpillingKt.nullOutSpilledVariable(str18);
+                c00861118.L$13 = SpillingKt.nullOutSpilledVariable(num9);
+                c00861118.L$14 = SpillingKt.nullOutSpilledVariable(num10);
+                c00861118.L$15 = SpillingKt.nullOutSpilledVariable(aniIds2);
+                c00861118.L$16 = SpillingKt.nullOutSpilledVariable(num2111112);
+                c00861118.L$17 = SpillingKt.nullOutSpilledVariable(num312);
+                c00861118.L$18 = SpillingKt.nullOutSpilledVariable(str38);
+                c00861118.L$19 = SpillingKt.nullOutSpilledVariable(url);
+                c00861118.L$20 = SpillingKt.nullOutSpilledVariable(str32);
+                c00861118.L$21 = SpillingKt.nullOutSpilledVariable(list);
+                c00861118.L$22 = SpillingKt.nullOutSpilledVariable(linkedHashMap6);
+                c00861118.L$23 = SpillingKt.nullOutSpilledVariable(linkedHashMap5);
+                c00861118.L$24 = SpillingKt.nullOutSpilledVariable(str40);
+                c00861118.L$25 = SpillingKt.nullOutSpilledVariable(str41);
+                c00861118.L$26 = SpillingKt.nullOutSpilledVariable(stringData);
+                c00861118.L$27 = SpillingKt.nullOutSpilledVariable(arrayList3);
+                c00861118.L$28 = SpillingKt.nullOutSpilledVariable(arrayList11111112);
+                c00861118.L$29 = SpillingKt.nullOutSpilledVariable(list2);
+                c00861118.I$0 = i13;
+                c00861118.I$1 = i6;
+                c00861118.I$2 = i8;
+                c00861118.I$3 = i14;
+                c00861118.label = 9;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(this, str37, str17, tvType1116, false, c008814, c00861118, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj3) {
+                    return obj3;
+                }
+                str42 = str21;
+                str43 = stringData;
+                i15 = i14;
+                obj5 = objNewAnimeLoadResponse$default;
+                return (LoadResponse) obj5;
+            case 8:
+                int i32 = c00864.I$3;
+                int i33 = c00864.I$2;
+                int i34 = c00864.I$1;
+                int i35 = c00864.I$0;
+                ResultKt.throwOnFailure(obj5);
+                objNewMovieLoadResponse = obj5;
+                return (LoadResponse) objNewMovieLoadResponse;
+            case 9:
+                int i36 = c00864.I$3;
+                int i37 = c00864.I$2;
+                int i38 = c00864.I$1;
+                int i39 = c00864.I$0;
+                str43 = (String) c00864.L$26;
+                i15 = i36;
+                str42 = (String) c00864.L$1;
+                ResultKt.throwOnFailure(obj5);
+                return (LoadResponse) obj5;
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+    }
+
+    private static final String loadFromKitsu$resolveTitle(String fallbackTitle, MetaEpisode epData, StreamPlayKitsuHelper.KitsuVideo video) {
+        String jsonTitle;
+        Map<String, String> title;
+        Map<String, String> title2;
+        Object episode;
+        Map<String, String> title3;
+        if (epData == null || (title3 = epData.getTitle()) == null || (jsonTitle = title3.get("en")) == null) {
+            jsonTitle = (epData == null || (title2 = epData.getTitle()) == null) ? null : title2.get("ja");
+            if (jsonTitle == null) {
+                jsonTitle = (epData == null || (title = epData.getTitle()) == null) ? null : title.get("x-jat");
+                if (jsonTitle == null) {
+                    jsonTitle = video != null ? video.getTitle() : null;
+                    if (jsonTitle == null) {
+                        jsonTitle = fallbackTitle;
+                    }
+                }
+            }
+        }
+        String string = jsonTitle;
+        if (StringsKt.isBlank(string)) {
+            StringBuilder sbAppend = new StringBuilder().append("Episode ");
+            if (video == null || (episode = video.getEpisode()) == null) {
+                String episode2 = epData != null ? epData.getEpisode() : null;
+                episode = episode2 == null ? "" : episode2;
+            }
+            string = sbAppend.append(episode).toString();
+        }
+        return string;
+    }
+
+    private static final Episode loadFromKitsu$createEpisode(Map<Integer, MetaEpisode> map, StreamPlayAnime this$0, Map<Integer, Integer> map2, Integer finalAniId, Integer finalMalId, String anititle, Integer aniyear, String jpTitle, Integer numericKitsuId, final String fallbackPoster, final String fallbackTitle, int i, final StreamPlayKitsuHelper.KitsuVideo video, boolean isDub) {
+        Integer season;
+        Integer episode;
+        final MetaEpisode epData = map.get(Integer.valueOf(i));
+        final int epNum = (video == null || (episode = video.getEpisode()) == null) ? i : episode.intValue();
+        final int seasonNum = (video == null || (season = video.getSeason()) == null) ? 1 : season.intValue();
+        Integer num = map2.get(Integer.valueOf(i));
+        String linkData = this$0.toStringData(new LinkData(null, null, null, null, null, null, Integer.valueOf(seasonNum), Integer.valueOf(epNum), finalAniId, finalMalId, anititle, aniyear, null, true, null, null, null, jpTitle, null, null, false, false, false, isDub, Integer.valueOf(num != null ? num.intValue() : 0), numericKitsuId, 8245311, null));
+        return MainAPIKt.newEpisode(this$0, linkData, new Function1() { // from class: com.phisher98.StreamPlayAnime$$ExternalSyntheticLambda1
+            public final Object invoke(Object obj) {
+                return StreamPlayAnime.loadFromKitsu$createEpisode$lambda$6(seasonNum, epNum, epData, video, fallbackPoster, fallbackTitle, (Episode) obj);
+            }
+        });
+    }
+
+    static final Unit loadFromKitsu$createEpisode$lambda$6(int $seasonNum, int $epNum, MetaEpisode $epData, StreamPlayKitsuHelper.KitsuVideo $video, String $fallbackPoster, String $fallbackTitle, Episode $this$newEpisode) {
+        String image;
+        String overview;
+        String airdate;
+        $this$newEpisode.setSeason(Integer.valueOf($seasonNum));
+        $this$newEpisode.setEpisode(Integer.valueOf($epNum));
+        $this$newEpisode.setName(loadFromKitsu$resolveTitle($fallbackTitle, $epData, $video));
+        if ($video == null || (image = $video.getThumbnail()) == null) {
+            image = $epData != null ? $epData.getImage() : null;
+            if (image == null) {
+                image = $fallbackPoster;
+            }
+        }
+        $this$newEpisode.setPosterUrl(image);
+        if ($video == null || (overview = $video.getOverview()) == null) {
+            overview = $epData != null ? $epData.getOverview() : null;
+            if (overview == null) {
+                overview = "No summary available";
+            }
+        }
+        $this$newEpisode.setDescription(overview);
+        $this$newEpisode.setScore(Score.Companion.from10($epData != null ? $epData.getRating() : null));
+        $this$newEpisode.setRunTime($epData != null ? $epData.getRuntime() : null);
+        if ($video == null || (airdate = $video.getReleased()) == null) {
+            airdate = $epData != null ? $epData.getAirdate() : null;
+        }
+        MainAPIKt.addDate$default($this$newEpisode, airdate, (String) null, 2, (Object) null);
+        return Unit.INSTANCE;
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadFromKitsu$2 */
+    /* JADX INFO: compiled from: StreamPlayAnime.kt */
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadFromKitsu$2", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromKitsu$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,768:1\n1#2:769\n*E\n"})
+    static final class C00872 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+        final /* synthetic */ Integer $aniyear;
+        final /* synthetic */ String $backgroundUrl;
+        final /* synthetic */ Integer $finalAniId;
+        final /* synthetic */ Integer $finalMalId;
+        final /* synthetic */ StreamPlayKitsuHelper.KitsuMeta $kitsuMeta;
+        final /* synthetic */ String $kitsuid;
+        final /* synthetic */ String $logoUrl;
+        final /* synthetic */ String $posterurl;
+        final /* synthetic */ int $scoreValue;
+        private /* synthetic */ Object L$0;
+        int label;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        C00872(Integer num, Integer num2, String str, Integer num3, StreamPlayKitsuHelper.KitsuMeta kitsuMeta, String str2, String str3, String str4, int i, Continuation<? super C00872> continuation) {
+            super(2, continuation);
+            this.$finalAniId = num;
+            this.$finalMalId = num2;
+            this.$kitsuid = str;
+            this.$aniyear = num3;
+            this.$kitsuMeta = kitsuMeta;
+            this.$backgroundUrl = str2;
+            this.$posterurl = str3;
+            this.$logoUrl = str4;
+            this.$scoreValue = i;
+        }
+
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            Continuation<Unit> c00872 = new C00872(this.$finalAniId, this.$finalMalId, this.$kitsuid, this.$aniyear, this.$kitsuMeta, this.$backgroundUrl, this.$posterurl, this.$logoUrl, this.$scoreValue, continuation);
+            c00872.L$0 = obj;
+            return c00872;
+        }
+
+        public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
+            return create(movieLoadResponse, continuation).invokeSuspend(Unit.INSTANCE);
+        }
+
+        public final Object invokeSuspend(Object $result) {
+            LoadResponse loadResponse = (MovieLoadResponse) this.L$0;
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            switch (this.label) {
+                case 0:
+                    ResultKt.throwOnFailure($result);
+                    Integer num = this.$finalAniId;
+                    if (num != null) {
+                        int it = num.intValue();
+                        LoadResponse.Companion.addAniListId(loadResponse, Boxing.boxInt(it));
+                    }
+                    Integer num2 = this.$finalMalId;
+                    if (num2 != null) {
+                        int it2 = num2.intValue();
+                        LoadResponse.Companion.addMalId(loadResponse, Boxing.boxInt(it2));
+                    }
+                    try {
+                        LoadResponse.Companion.addKitsuId(loadResponse, this.$kitsuid);
+                        break;
+                    } catch (Throwable th) {
+                    }
+                    loadResponse.setYear(this.$aniyear);
+                    loadResponse.setPlot(this.$kitsuMeta.getDescription());
+                    loadResponse.setBackgroundPosterUrl(this.$backgroundUrl);
+                    loadResponse.setPosterUrl(this.$posterurl);
+                    try {
+                        loadResponse.setLogoUrl(this.$logoUrl);
+                        break;
+                    } catch (Throwable th2) {
+                    }
+                    loadResponse.setTags(this.$kitsuMeta.getGenres());
+                    loadResponse.setScore(Score.Companion.from100(Boxing.boxInt(this.$scoreValue)));
+                    return Unit.INSTANCE;
+                default:
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+        }
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadFromKitsu$3 */
+    /* JADX INFO: compiled from: StreamPlayAnime.kt */
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadFromKitsu$3", f = "StreamPlayAnime.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadFromKitsu$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,768:1\n1#2:769\n*E\n"})
+    static final class C00883 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
+        final /* synthetic */ Integer $aniyear;
+        final /* synthetic */ String $backgroundUrl;
+        final /* synthetic */ List<Episode> $episodes;
+        final /* synthetic */ List<Episode> $episodesDub;
+        final /* synthetic */ Integer $finalAniId;
+        final /* synthetic */ Integer $finalMalId;
+        final /* synthetic */ StreamPlayKitsuHelper.KitsuMeta $kitsuMeta;
+        final /* synthetic */ String $kitsuid;
+        final /* synthetic */ String $logoUrl;
+        final /* synthetic */ String $posterurl;
+        final /* synthetic */ List<AnimeSearchResponse> $recs;
+        final /* synthetic */ int $scoreValue;
+        private /* synthetic */ Object L$0;
+        int label;
+        final /* synthetic */ StreamPlayAnime this$0;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        C00883(Integer num, Integer num2, String str, List<Episode> list, List<Episode> list2, String str2, Integer num3, StreamPlayKitsuHelper.KitsuMeta kitsuMeta, String str3, String str4, int i, StreamPlayAnime streamPlayAnime, List<AnimeSearchResponse> list3, Continuation<? super C00883> continuation) {
+            super(2, continuation);
+            this.$finalAniId = num;
+            this.$finalMalId = num2;
+            this.$kitsuid = str;
+            this.$episodes = list;
+            this.$episodesDub = list2;
+            this.$logoUrl = str2;
+            this.$aniyear = num3;
+            this.$kitsuMeta = kitsuMeta;
+            this.$backgroundUrl = str3;
+            this.$posterurl = str4;
+            this.$scoreValue = i;
+            this.this$0 = streamPlayAnime;
+            this.$recs = list3;
+        }
+
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            Continuation<Unit> c00883 = new C00883(this.$finalAniId, this.$finalMalId, this.$kitsuid, this.$episodes, this.$episodesDub, this.$logoUrl, this.$aniyear, this.$kitsuMeta, this.$backgroundUrl, this.$posterurl, this.$scoreValue, this.this$0, this.$recs, continuation);
+            c00883.L$0 = obj;
+            return c00883;
+        }
+
+        public final Object invoke(AnimeLoadResponse animeLoadResponse, Continuation<? super Unit> continuation) {
+            return create(animeLoadResponse, continuation).invokeSuspend(Unit.INSTANCE);
+        }
+
+        public final Object invokeSuspend(Object $result) {
+            LoadResponse loadResponse = (AnimeLoadResponse) this.L$0;
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            switch (this.label) {
+                case 0:
+                    ResultKt.throwOnFailure($result);
+                    Integer num = this.$finalAniId;
+                    if (num != null) {
+                        int it = num.intValue();
+                        LoadResponse.Companion.addAniListId(loadResponse, Boxing.boxInt(it));
+                    }
+                    Integer num2 = this.$finalMalId;
+                    if (num2 != null) {
+                        int it2 = num2.intValue();
+                        LoadResponse.Companion.addMalId(loadResponse, Boxing.boxInt(it2));
+                    }
+                    try {
+                        LoadResponse.Companion.addKitsuId(loadResponse, this.$kitsuid);
+                        break;
+                    } catch (Throwable th) {
+                    }
+                    MainAPIKt.addEpisodes(loadResponse, DubStatus.Subbed, this.$episodes);
+                    MainAPIKt.addEpisodes(loadResponse, DubStatus.Dubbed, this.$episodesDub);
+                    try {
+                        loadResponse.setLogoUrl(this.$logoUrl);
+                        break;
+                    } catch (Throwable th2) {
+                    }
+                    loadResponse.setYear(this.$aniyear);
+                    loadResponse.setPlot(this.$kitsuMeta.getDescription());
+                    loadResponse.setBackgroundPosterUrl(this.$backgroundUrl);
+                    loadResponse.setPosterUrl(this.$posterurl);
+                    loadResponse.setTags(this.$kitsuMeta.getGenres());
+                    loadResponse.setScore(Score.Companion.from100(Boxing.boxInt(this.$scoreValue)));
+                    loadResponse.setShowStatus(this.this$0.getStatus(this.$kitsuMeta.getStatus()));
+                    List<AnimeSearchResponse> list = this.$recs;
+                    if (!(list == null || list.isEmpty())) {
+                        loadResponse.setRecommendations(this.$recs);
+                    }
+                    return Unit.INSTANCE;
+                default:
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+        }
+    }
+
+    /* JADX WARN: Code duplicated, block: B:115:0x0507  */
+    /* JADX WARN: Code duplicated, block: B:116:0x051d  */
+    /* JADX WARN: Code duplicated, block: B:120:0x054c  */
+    /* JADX WARN: Code duplicated, block: B:130:0x0577  */
+    /* JADX WARN: Code duplicated, block: B:133:0x0581  */
+    /* JADX WARN: Code duplicated, block: B:134:0x0585  */
+    /* JADX WARN: Code duplicated, block: B:136:0x058b  */
+    /* JADX WARN: Code duplicated, block: B:137:0x058f  */
+    /* JADX WARN: Code duplicated, block: B:140:0x06d4 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:141:0x06d5  */
+    /* JADX WARN: Code duplicated, block: B:67:0x02ff  */
+    /* JADX WARN: Code duplicated, block: B:68:0x031b  */
+    /* JADX WARN: Code duplicated, block: B:7:0x001e  */
+    /* JADX WARN: Code duplicated, block: B:91:0x040b  */
+    /* JADX WARN: Code duplicated, block: B:92:0x0425  */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r0v19, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r12v27 */
+    /* JADX WARN: Type inference failed for: r12v28 */
+    /* JADX WARN: Type inference failed for: r12v52, types: [java.lang.String] */
+    /* JADX WARN: Type inference failed for: r17v3, types: [java.lang.Object, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r29v13 */
     @Nullable
     public Object loadLinks(@NotNull String str, boolean z, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
-        C00841 c00841;
+        C00891 c00891;
         Object obj;
         Object obj2;
         Object objDecodeFromString;
+        Integer kitsuId;
+        Object obj3;
+        boolean z2;
+        MALSyncSites mALSyncSites;
+        char c;
         String str2;
-        String str3;
         Integer num;
         Integer num2;
-        Integer num3;
-        String str4;
-        Object obj3;
-        char c;
-        boolean z2;
-        boolean z3;
+        char c2;
         Function1<? super SubtitleFile, Unit> function3;
         Function1<? super ExtractorLink, Unit> function4;
-        LinkData linkData;
-        Object obj4;
+        Integer num3;
         Integer num4;
+        MALSyncSites sites;
         Integer num5;
+        String str3;
+        boolean z3;
+        LinkData linkData;
+        String str4;
+        boolean z4;
+        Integer num6;
+        Integer num7;
+        Integer num8;
+        Integer num9;
         String str5;
+        Integer num10;
+        Function1<? super ExtractorLink, Unit> function5;
+        String str6;
+        boolean z5;
+        Integer num11;
+        Integer num12;
+        Integer num13;
+        String str7;
+        String str8;
+        Integer num14;
+        Integer num15;
+        Function1<? super ExtractorLink, Unit> function6;
+        String str9;
+        boolean z6;
+        Integer num16;
+        Integer num17;
+        String str10;
+        String str11;
+        Integer num18;
+        Integer num19;
+        Integer num20;
+        Function1<? super ExtractorLink, Unit> function7;
+        String str12;
+        Function1<? super SubtitleFile, Unit> function8;
+        String str13;
         Object safe;
         MALSyncResponses mALSyncResponses;
-        MALSyncSites mALSyncSites;
-        String str6;
+        Function1<? super SubtitleFile, Unit> function9;
+        String str14;
+        Object safe2;
+        MALSyncResponses mALSyncResponses2;
+        MALSyncSites mALSyncSites2;
+        ?? r12;
+        String str15;
         Function1[] function1Arr;
         HashMap<String, HashMap<String, String>> kickAssAnime;
         Collection<HashMap<String, String>> collectionValues;
-        Iterator<T> it;
-        String str7;
-        MALSyncSites sites;
-        if (continuation instanceof C00841) {
-            c00841 = (C00841) continuation;
-            if ((c00841.label & Integer.MIN_VALUE) != 0) {
-                c00841.label -= Integer.MIN_VALUE;
+        Function1<? super SubtitleFile, Unit> function10;
+        String str16;
+        Object safe3;
+        MALSyncResponses mALSyncResponses3;
+        Function1<? super SubtitleFile, Unit> function11 = function1;
+        if (continuation instanceof C00891) {
+            c00891 = (C00891) continuation;
+            if ((c00891.label & Integer.MIN_VALUE) != 0) {
+                c00891.label -= Integer.MIN_VALUE;
             } else {
-                c00841 = new C00841(continuation);
+                c00891 = new C00891(continuation);
             }
         } else {
-            c00841 = new C00841(continuation);
+            c00891 = new C00891(continuation);
         }
-        C00841 c00842 = c00841;
-        Object obj5 = c00842.result;
+        C00891 c00892 = c00891;
+        Object obj4 = c00892.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00842.label) {
+        switch (c00892.label) {
             case 0:
-                ResultKt.throwOnFailure(obj5);
+                ResultKt.throwOnFailure(obj4);
                 AppUtils appUtils = AppUtils.INSTANCE;
                 try {
                     Result.Companion companion = Result.Companion;
@@ -3192,218 +12476,704 @@ public final class StreamPlayAnime extends MainAPI {
                 Integer anidbEid = linkData2.getAnidbEid();
                 Integer aniId = linkData2.getAniId();
                 Integer year = linkData2.getYear();
-                c00842.L$0 = SpillingKt.nullOutSpilledVariable(str);
-                c00842.L$1 = function1;
-                c00842.L$2 = function2;
-                c00842.L$3 = linkData2;
-                c00842.L$4 = malId;
-                c00842.L$5 = episode;
-                c00842.L$6 = jpTitle;
-                c00842.L$7 = title;
-                c00842.L$8 = anidbEid;
-                c00842.L$9 = aniId;
-                c00842.L$10 = year;
-                c00842.Z$0 = z;
-                c00842.label = 1;
-                str2 = jpTitle;
-                str3 = title;
-                num = anidbEid;
-                num2 = aniId;
-                num3 = year;
-                str4 = null;
-                obj3 = coroutine_suspended;
-                c = 2;
-                z2 = true;
-                Object obj6 = Requests.get$default(MainActivityKt.getApp(), "https://api.malsync.moe/mal/anime/" + malId, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00842, 4094, (Object) null);
-                c00842 = c00842;
-                if (obj6 == obj3) {
-                    return obj3;
-                }
-                z3 = z;
-                function3 = function1;
-                function4 = function2;
-                linkData = linkData2;
-                obj4 = obj6;
-                num4 = episode;
-                num5 = malId;
-                str5 = str;
-                NiceResponse niceResponse = (NiceResponse) obj4;
-                try {
-                    ResponseParser parser = niceResponse.getParser();
-                    Intrinsics.checkNotNull(parser);
-                    safe = parser.parseSafe(niceResponse.getText(), Reflection.getOrCreateKotlinClass(MALSyncResponses.class));
-                    break;
-                } catch (Exception e2) {
-                    e2.printStackTrace();
-                    safe = str4;
-                }
-                mALSyncResponses = (MALSyncResponses) safe;
-                if (mALSyncResponses != null) {
-                    sites = mALSyncResponses.getSites();
-                } else {
-                    mALSyncSites = str4;
-                }
-                if (mALSyncSites != 0 && (kickAssAnime = mALSyncSites.getKickAssAnime()) != null && (collectionValues = kickAssAnime.values()) != null) {
-                    mALSyncSites = sites;
-                    it = collectionValues.iterator();
-                    while (it.hasNext()) {
-                        str7 = (String) ((HashMap) it.next()).get("identifier");
-                        if (str7 != null) {
-                            str4 = str7;
+                kitsuId = linkData2.getKitsuId();
+                if (malId == null) {
+                    obj3 = coroutine_suspended;
+                    z2 = true;
+                    z2 = true;
+                    z2 = true;
+                    mALSyncSites = null;
+                    if (kitsuId != null) {
+                        Requests app = MainActivityKt.getApp();
+                        String str17 = "https://api.malsync.moe/kitsu/anime/" + kitsuId.intValue();
+                        c00892.L$0 = SpillingKt.nullOutSpilledVariable(str);
+                        c00892.L$1 = function11;
+                        c00892.L$2 = function2;
+                        c00892.L$3 = linkData2;
+                        c00892.L$4 = malId;
+                        c00892.L$5 = episode;
+                        c00892.L$6 = jpTitle;
+                        c00892.L$7 = title;
+                        c00892.L$8 = anidbEid;
+                        c00892.L$9 = aniId;
+                        c00892.L$10 = year;
+                        c00892.L$11 = SpillingKt.nullOutSpilledVariable(kitsuId);
+                        c00892.Z$0 = z;
+                        c00892.label = 2;
+                        c = 2;
+                        obj4 = Requests.get$default(app, str17, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00892, 4094, (Object) null);
+                        if (obj4 == obj3) {
+                            c00892 = c00892;
+                            return obj3;
+                        }
+                        c00892 = c00892;
+                        z5 = z;
+                        num11 = malId;
+                        num12 = aniId;
+                        num13 = episode;
+                        str7 = jpTitle;
+                        str8 = title;
+                        num14 = anidbEid;
+                        num15 = year;
+                        linkData = linkData2;
+                        function6 = function2;
+                        str9 = str;
+                        NiceResponse niceResponse = (NiceResponse) obj4;
+                        try {
+                            ResponseParser parser = niceResponse.getParser();
+                            Intrinsics.checkNotNull(parser);
+                            function9 = function11;
+                            try {
+                                str14 = str9;
+                                try {
+                                    safe2 = parser.parseSafe(niceResponse.getText(), Reflection.getOrCreateKotlinClass(MALSyncResponses.class));
+                                } catch (Exception e2) {
+                                    e = e2;
+                                    e.printStackTrace();
+                                    safe2 = mALSyncSites;
+                                }
+                            } catch (Exception e3) {
+                                e = e3;
+                                str14 = str9;
+                            }
+                        } catch (Exception e4) {
+                            e = e4;
+                            function9 = function11;
+                            str14 = str9;
+                        }
+                        mALSyncResponses2 = (MALSyncResponses) safe2;
+                        if (mALSyncResponses2 != null) {
+                            num2 = num15;
+                            num4 = num12;
+                            num = num14;
+                            str2 = str7;
+                            num5 = num13;
+                            num3 = num11;
+                            z3 = z5;
+                            c2 = 3;
+                            function3 = function9;
+                            function4 = function6;
+                            str3 = str8;
+                            sites = mALSyncResponses2.getSites();
+                            str4 = str14;
+                        } else {
+                            str4 = str14;
+                            num2 = num15;
+                            num4 = num12;
+                            num = num14;
+                            str2 = str7;
+                            num5 = num13;
+                            num3 = num11;
+                            z3 = z5;
+                            c2 = 3;
+                            function3 = function9;
+                            function4 = function6;
+                            str3 = str8;
+                            sites = mALSyncSites;
+                        }
+                    } else {
+                        c = 2;
+                        if (aniId != null) {
+                            Requests app2 = MainActivityKt.getApp();
+                            String str18 = "https://api.malsync.moe/anilist/anime/" + aniId.intValue();
+                            c00892.L$0 = SpillingKt.nullOutSpilledVariable(str);
+                            c00892.L$1 = function11;
+                            c00892.L$2 = function2;
+                            c00892.L$3 = linkData2;
+                            c00892.L$4 = malId;
+                            c00892.L$5 = episode;
+                            c00892.L$6 = jpTitle;
+                            c00892.L$7 = title;
+                            c00892.L$8 = anidbEid;
+                            c00892.L$9 = aniId;
+                            c00892.L$10 = year;
+                            c00892.L$11 = SpillingKt.nullOutSpilledVariable(kitsuId);
+                            c00892.Z$0 = z;
+                            c00892.label = 3;
+                            c2 = 3;
+                            obj4 = Requests.get$default(app2, str18, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00892, 4094, (Object) null);
+                            if (obj4 == obj3) {
+                                c00892 = c00892;
+                                return obj3;
+                            }
+                            c00892 = c00892;
+                            z4 = z;
+                            num6 = malId;
+                            num7 = aniId;
+                            num8 = year;
+                            num9 = episode;
+                            str5 = jpTitle;
+                            str3 = title;
+                            num10 = anidbEid;
+                            linkData = linkData2;
+                            function5 = function2;
+                            str6 = str;
+                            NiceResponse niceResponse2 = (NiceResponse) obj4;
+                            try {
+                                ResponseParser parser2 = niceResponse2.getParser();
+                                Intrinsics.checkNotNull(parser2);
+                                function10 = function11;
+                                try {
+                                    str16 = str6;
+                                    try {
+                                        safe3 = parser2.parseSafe(niceResponse2.getText(), Reflection.getOrCreateKotlinClass(MALSyncResponses.class));
+                                    } catch (Exception e5) {
+                                        e = e5;
+                                        e.printStackTrace();
+                                        safe3 = mALSyncSites;
+                                    }
+                                } catch (Exception e6) {
+                                    e = e6;
+                                    str16 = str6;
+                                }
+                            } catch (Exception e7) {
+                                e = e7;
+                                function10 = function11;
+                                str16 = str6;
+                            }
+                            mALSyncResponses3 = (MALSyncResponses) safe3;
+                            if (mALSyncResponses3 != null) {
+                                str2 = str5;
+                                num5 = num9;
+                                num2 = num8;
+                                num3 = num6;
+                                num4 = num7;
+                                num = num10;
+                                z3 = z4;
+                                function3 = function10;
+                                sites = mALSyncResponses3.getSites();
+                                function4 = function5;
+                                str4 = str16;
+                            } else {
+                                str4 = str16;
+                                str2 = str5;
+                                num5 = num9;
+                                num2 = num8;
+                                num3 = num6;
+                                num4 = num7;
+                                num = num10;
+                                z3 = z4;
+                                sites = mALSyncSites;
+                                function3 = function10;
+                                function4 = function5;
+                            }
+                        } else {
+                            str2 = jpTitle;
+                            num = anidbEid;
+                            num2 = year;
+                            c2 = 3;
+                            function3 = function11;
+                            function4 = function2;
+                            num3 = malId;
+                            num4 = aniId;
+                            sites = null;
+                            num5 = episode;
+                            str3 = title;
+                            z3 = z;
+                            linkData = linkData2;
+                            str4 = str;
                         }
                     }
-                }
-                mALSyncSites = sites;
-                mALSyncSites = sites;
-                mALSyncSites = sites;
-                if (linkData.getSeason() == null) {
-                    str6 = "Movie";
-                } else if (linkData.isDub()) {
-                    str6 = "DUB";
+                    break;
                 } else {
-                    str6 = "SUB";
+                    Requests app3 = MainActivityKt.getApp();
+                    String str19 = "https://api.malsync.moe/mal/anime/" + malId.intValue();
+                    c00892.L$0 = SpillingKt.nullOutSpilledVariable(str);
+                    c00892.L$1 = function11;
+                    c00892.L$2 = function2;
+                    c00892.L$3 = linkData2;
+                    c00892.L$4 = malId;
+                    c00892.L$5 = episode;
+                    c00892.L$6 = jpTitle;
+                    c00892.L$7 = title;
+                    c00892.L$8 = anidbEid;
+                    c00892.L$9 = aniId;
+                    c00892.L$10 = year;
+                    c00892.L$11 = SpillingKt.nullOutSpilledVariable(kitsuId);
+                    c00892.Z$0 = z;
+                    c00892.label = 1;
+                    z2 = true;
+                    mALSyncSites = null;
+                    obj3 = coroutine_suspended;
+                    obj4 = Requests.get$default(app3, str19, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00892, 4094, (Object) null);
+                    if (obj4 == obj3) {
+                        c00892 = c00892;
+                        return obj3;
+                    }
+                    c00892 = c00892;
+                    z6 = z;
+                    num16 = malId;
+                    num17 = episode;
+                    str10 = jpTitle;
+                    str11 = title;
+                    num18 = anidbEid;
+                    num19 = aniId;
+                    num20 = year;
+                    linkData = linkData2;
+                    function7 = function2;
+                    str12 = str;
+                    NiceResponse niceResponse3 = (NiceResponse) obj4;
+                    try {
+                        ResponseParser parser3 = niceResponse3.getParser();
+                        Intrinsics.checkNotNull(parser3);
+                        function8 = function11;
+                        try {
+                            str13 = str12;
+                            try {
+                                safe = parser3.parseSafe(niceResponse3.getText(), Reflection.getOrCreateKotlinClass(MALSyncResponses.class));
+                            } catch (Exception e8) {
+                                e = e8;
+                                e.printStackTrace();
+                                safe = mALSyncSites;
+                            }
+                        } catch (Exception e9) {
+                            e = e9;
+                            str13 = str12;
+                        }
+                    } catch (Exception e10) {
+                        e = e10;
+                        function8 = function11;
+                        str13 = str12;
+                    }
+                    mALSyncResponses = (MALSyncResponses) safe;
+                    if (mALSyncResponses != null) {
+                        num2 = num20;
+                        num4 = num19;
+                        num = num18;
+                        str2 = str10;
+                        num5 = num17;
+                        num3 = num16;
+                        z3 = z6;
+                        c2 = 3;
+                        c = 2;
+                        function3 = function8;
+                        function4 = function7;
+                        str3 = str11;
+                        sites = mALSyncResponses.getSites();
+                        str4 = str13;
+                    } else {
+                        str4 = str13;
+                        num2 = num20;
+                        num4 = num19;
+                        num = num18;
+                        str2 = str10;
+                        num5 = num17;
+                        num3 = num16;
+                        z3 = z6;
+                        c2 = 3;
+                        c = 2;
+                        function3 = function8;
+                        function4 = function7;
+                        str3 = str11;
+                        sites = mALSyncSites;
+                    }
+                    break;
+                }
+                mALSyncSites2 = sites;
+                if (mALSyncSites2 != null || (kickAssAnime = mALSyncSites2.getKickAssAnime()) == null || (collectionValues = kickAssAnime.values()) == null) {
+                    r12 = mALSyncSites;
+                } else {
+                    Iterator it = collectionValues.iterator();
+                    do {
+                        if (it.hasNext()) {
+                            r12 = (String) ((HashMap) it.next()).get("identifier");
+                        } else {
+                            r12 = mALSyncSites;
+                        }
+                    } while (r12 == null);
+                }
+                ?? r17 = r12;
+                if (linkData.getSeason() == null) {
+                    str15 = "Movie";
+                } else if (linkData.isDub()) {
+                    str15 = "DUB";
+                } else {
+                    str15 = "SUB";
                 }
                 function1Arr = new Function1[11];
-                Function1<? super SubtitleFile, Unit> function5 = function3;
-                String str8 = str6;
-                Integer num6 = num5;
-                function1Arr[0] = new C00882(num5, num4, function5, function4, str8, null);
-                function1Arr[z2 ? 1 : 0] = new C00893(mALSyncSites, num4, function5, function4, str8, null);
-                String str9 = str2;
-                function1Arr[c] = new C00904(str9, num4, function5, function4, str8, null);
-                Function1<? super ExtractorLink, Unit> function6 = function4;
-                Integer num7 = num4;
-                function1Arr[3] = new C00915(num2, str3, str9, num7, function5, function6, str6, null);
-                function1Arr[4] = new C00926(num2, str3, str9, num7, function5, function6, str6, null);
-                String str10 = str6;
-                function1Arr[5] = new C00937(str9, str3, num3, num7, function5, function6, str6, null);
-                function1Arr[6] = new C00948(str9, str4, num7, function5, function6, str10, null);
-                function1Arr[7] = new C00959(num6, num2, str9, num7, function5, function6, str10, null);
-                function1Arr[8] = new C008510(num6, function5, function6, str10, num, null);
-                function1Arr[9] = new C008611(num2, num7, function5, function6, str10, null);
-                function1Arr[10] = new C008712(str3, str9, num7, function5, function6, str10, null);
-                c00842.L$0 = SpillingKt.nullOutSpilledVariable(str5);
-                c00842.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                c00842.L$2 = SpillingKt.nullOutSpilledVariable(function6);
-                c00842.L$3 = SpillingKt.nullOutSpilledVariable(linkData);
-                c00842.L$4 = SpillingKt.nullOutSpilledVariable(num6);
-                c00842.L$5 = SpillingKt.nullOutSpilledVariable(num7);
-                c00842.L$6 = SpillingKt.nullOutSpilledVariable(str9);
-                c00842.L$7 = SpillingKt.nullOutSpilledVariable(str3);
-                c00842.L$8 = SpillingKt.nullOutSpilledVariable(num);
-                c00842.L$9 = SpillingKt.nullOutSpilledVariable(num2);
-                c00842.L$10 = SpillingKt.nullOutSpilledVariable(num3);
-                c00842.L$11 = SpillingKt.nullOutSpilledVariable(mALSyncSites);
-                c00842.L$12 = SpillingKt.nullOutSpilledVariable(str4);
-                c00842.L$13 = SpillingKt.nullOutSpilledVariable(str10);
-                c00842.Z$0 = z3;
-                c00842.label = 2;
-                if (ParCollectionsKt.runAllAsync(function1Arr, c00842) == obj3) {
+                Integer num21 = num3;
+                function1Arr[0] = new C00932(num3, num5, function3, function4, str15, null);
+                function1Arr[z2 ? 1 : 0] = new C00943(mALSyncSites2, num5, function3, function4, str15, null);
+                String str20 = str2;
+                function1Arr[c] = new C00954(str20, num5, function3, function4, str15, null);
+                Function1<? super ExtractorLink, Unit> function12 = function4;
+                Integer num22 = num5;
+                String str21 = str3;
+                Integer num23 = num4;
+                String str22 = str15;
+                Function1<? super SubtitleFile, Unit> function13 = function3;
+                function1Arr[c2] = new C00965(num23, str21, str20, num22, function13, function12, str22, null);
+                function1Arr[4] = new C00976(num23, str21, str20, num22, function13, function12, str22, num21, null);
+                function1Arr[5] = new C00987(str20, str21, num2, num22, function13, function12, str22, null);
+                function1Arr[6] = new C00998(str20, r17, num22, function13, function12, str22, null);
+                function1Arr[7] = new C01009(num21, num23, str20, num22, function13, function12, str22, null);
+                function1Arr[8] = new C009010(num21, function13, function12, str22, num, null);
+                function1Arr[9] = new C009111(num23, num22, function13, function12, str22, null);
+                function1Arr[10] = new C009212(str21, str20, num22, function13, function12, str22, null);
+                c00892.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                c00892.L$1 = SpillingKt.nullOutSpilledVariable(function13);
+                c00892.L$2 = SpillingKt.nullOutSpilledVariable(function12);
+                c00892.L$3 = SpillingKt.nullOutSpilledVariable(linkData);
+                c00892.L$4 = SpillingKt.nullOutSpilledVariable(num21);
+                c00892.L$5 = SpillingKt.nullOutSpilledVariable(num22);
+                c00892.L$6 = SpillingKt.nullOutSpilledVariable(str20);
+                c00892.L$7 = SpillingKt.nullOutSpilledVariable(str21);
+                c00892.L$8 = SpillingKt.nullOutSpilledVariable(num);
+                c00892.L$9 = SpillingKt.nullOutSpilledVariable(num23);
+                c00892.L$10 = SpillingKt.nullOutSpilledVariable(num2);
+                c00892.L$11 = SpillingKt.nullOutSpilledVariable(kitsuId);
+                c00892.L$12 = SpillingKt.nullOutSpilledVariable(mALSyncSites2);
+                c00892.L$13 = SpillingKt.nullOutSpilledVariable((Object) r17);
+                c00892.L$14 = SpillingKt.nullOutSpilledVariable(str22);
+                c00892.Z$0 = z3;
+                c00892.label = 4;
+                if (ParCollectionsKt.runAllAsync(function1Arr, c00892) == obj3) {
                     return obj3;
                 }
                 return Boxing.boxBoolean(z2);
             case 1:
-                boolean z4 = c00842.Z$0;
-                Integer num8 = (Integer) c00842.L$10;
-                Integer num9 = (Integer) c00842.L$9;
-                Integer num10 = (Integer) c00842.L$8;
-                String str11 = (String) c00842.L$7;
-                String str12 = (String) c00842.L$6;
-                Integer num11 = (Integer) c00842.L$5;
-                Integer num12 = (Integer) c00842.L$4;
-                linkData = (LinkData) c00842.L$3;
-                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00842.L$2;
-                Function1<? super SubtitleFile, Unit> function8 = (Function1) c00842.L$1;
-                String str13 = (String) c00842.L$0;
-                ResultKt.throwOnFailure(obj5);
+                boolean z7 = c00892.Z$0;
+                Integer num24 = (Integer) c00892.L$11;
+                num20 = (Integer) c00892.L$10;
+                num19 = (Integer) c00892.L$9;
+                num18 = (Integer) c00892.L$8;
+                str11 = (String) c00892.L$7;
+                str10 = (String) c00892.L$6;
+                num17 = (Integer) c00892.L$5;
+                num16 = (Integer) c00892.L$4;
+                z6 = z7;
+                LinkData linkData3 = (LinkData) c00892.L$3;
+                Function1<? super ExtractorLink, Unit> function14 = (Function1) c00892.L$2;
+                function11 = (Function1) c00892.L$1;
+                str12 = (String) c00892.L$0;
+                ResultKt.throwOnFailure(obj4);
+                linkData = linkData3;
+                function7 = function14;
+                kitsuId = num24;
                 obj3 = coroutine_suspended;
-                num3 = num8;
-                num2 = num9;
-                num = num10;
-                str3 = str11;
-                str2 = str12;
-                num5 = num12;
-                z3 = z4;
-                c = 2;
                 z2 = true;
-                str4 = null;
-                str5 = str13;
-                obj4 = obj5;
-                function4 = function7;
-                function3 = function8;
-                num4 = num11;
-                NiceResponse niceResponse2 = (NiceResponse) obj4;
-                ResponseParser parser2 = niceResponse2.getParser();
-                Intrinsics.checkNotNull(parser2);
-                safe = parser2.parseSafe(niceResponse2.getText(), Reflection.getOrCreateKotlinClass(MALSyncResponses.class));
+                mALSyncSites = null;
+                NiceResponse niceResponse4 = (NiceResponse) obj4;
+                ResponseParser parser4 = niceResponse4.getParser();
+                Intrinsics.checkNotNull(parser4);
+                function8 = function11;
+                str13 = str12;
+                safe = parser4.parseSafe(niceResponse4.getText(), Reflection.getOrCreateKotlinClass(MALSyncResponses.class));
                 mALSyncResponses = (MALSyncResponses) safe;
                 if (mALSyncResponses != null) {
+                    num2 = num20;
+                    num4 = num19;
+                    num = num18;
+                    str2 = str10;
+                    num5 = num17;
+                    num3 = num16;
+                    z3 = z6;
+                    c2 = 3;
+                    c = 2;
+                    function3 = function8;
+                    function4 = function7;
+                    str3 = str11;
                     sites = mALSyncResponses.getSites();
+                    str4 = str13;
                 } else {
-                    mALSyncSites = str4;
+                    str4 = str13;
+                    num2 = num20;
+                    num4 = num19;
+                    num = num18;
+                    str2 = str10;
+                    num5 = num17;
+                    num3 = num16;
+                    z3 = z6;
+                    c2 = 3;
+                    c = 2;
+                    function3 = function8;
+                    function4 = function7;
+                    str3 = str11;
+                    sites = mALSyncSites;
                 }
-                if (mALSyncSites != 0) {
-                    mALSyncSites = sites;
-                    it = collectionValues.iterator();
-                    while (it.hasNext()) {
-                        str7 = (String) ((HashMap) it.next()).get("identifier");
-                        if (str7 != null) {
-                            str4 = str7;
-                        }
-                    }
+                mALSyncSites2 = sites;
+                if (mALSyncSites2 != null) {
+                    r12 = mALSyncSites;
+                } else {
+                    r12 = mALSyncSites;
                 }
-                mALSyncSites = sites;
-                mALSyncSites = sites;
-                mALSyncSites = sites;
+                ?? r18 = r12;
                 if (linkData.getSeason() == null) {
-                    str6 = "Movie";
+                    str15 = "Movie";
                 } else if (linkData.isDub()) {
-                    str6 = "DUB";
+                    str15 = "DUB";
                 } else {
-                    str6 = "SUB";
+                    str15 = "SUB";
                 }
                 function1Arr = new Function1[11];
-                Function1<? super SubtitleFile, Unit> function9 = function3;
-                String str14 = str6;
-                Integer num13 = num5;
-                function1Arr[0] = new C00882(num5, num4, function9, function4, str14, null);
-                function1Arr[z2 ? 1 : 0] = new C00893(mALSyncSites, num4, function9, function4, str14, null);
-                String str15 = str2;
-                function1Arr[c] = new C00904(str15, num4, function9, function4, str14, null);
-                Function1<? super ExtractorLink, Unit> function10 = function4;
-                Integer num14 = num4;
-                function1Arr[3] = new C00915(num2, str3, str15, num14, function9, function10, str6, null);
-                function1Arr[4] = new C00926(num2, str3, str15, num14, function9, function10, str6, null);
-                String str16 = str6;
-                function1Arr[5] = new C00937(str15, str3, num3, num14, function9, function10, str6, null);
-                function1Arr[6] = new C00948(str15, str4, num14, function9, function10, str16, null);
-                function1Arr[7] = new C00959(num13, num2, str15, num14, function9, function10, str16, null);
-                function1Arr[8] = new C008510(num13, function9, function10, str16, num, null);
-                function1Arr[9] = new C008611(num2, num14, function9, function10, str16, null);
-                function1Arr[10] = new C008712(str3, str15, num14, function9, function10, str16, null);
-                c00842.L$0 = SpillingKt.nullOutSpilledVariable(str5);
-                c00842.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                c00842.L$2 = SpillingKt.nullOutSpilledVariable(function10);
-                c00842.L$3 = SpillingKt.nullOutSpilledVariable(linkData);
-                c00842.L$4 = SpillingKt.nullOutSpilledVariable(num13);
-                c00842.L$5 = SpillingKt.nullOutSpilledVariable(num14);
-                c00842.L$6 = SpillingKt.nullOutSpilledVariable(str15);
-                c00842.L$7 = SpillingKt.nullOutSpilledVariable(str3);
-                c00842.L$8 = SpillingKt.nullOutSpilledVariable(num);
-                c00842.L$9 = SpillingKt.nullOutSpilledVariable(num2);
-                c00842.L$10 = SpillingKt.nullOutSpilledVariable(num3);
-                c00842.L$11 = SpillingKt.nullOutSpilledVariable(mALSyncSites);
-                c00842.L$12 = SpillingKt.nullOutSpilledVariable(str4);
-                c00842.L$13 = SpillingKt.nullOutSpilledVariable(str16);
-                c00842.Z$0 = z3;
-                c00842.label = 2;
-                if (ParCollectionsKt.runAllAsync(function1Arr, c00842) == obj3) {
+                Integer num25 = num3;
+                function1Arr[0] = new C00932(num3, num5, function3, function4, str15, null);
+                function1Arr[z2 ? 1 : 0] = new C00943(mALSyncSites2, num5, function3, function4, str15, null);
+                String str23 = str2;
+                function1Arr[c] = new C00954(str23, num5, function3, function4, str15, null);
+                Function1<? super ExtractorLink, Unit> function15 = function4;
+                Integer num26 = num5;
+                String str24 = str3;
+                Integer num27 = num4;
+                String str25 = str15;
+                Function1<? super SubtitleFile, Unit> function16 = function3;
+                function1Arr[c2] = new C00965(num27, str24, str23, num26, function16, function15, str25, null);
+                function1Arr[4] = new C00976(num27, str24, str23, num26, function16, function15, str25, num25, null);
+                function1Arr[5] = new C00987(str23, str24, num2, num26, function16, function15, str25, null);
+                function1Arr[6] = new C00998(str23, r18, num26, function16, function15, str25, null);
+                function1Arr[7] = new C01009(num25, num27, str23, num26, function16, function15, str25, null);
+                function1Arr[8] = new C009010(num25, function16, function15, str25, num, null);
+                function1Arr[9] = new C009111(num27, num26, function16, function15, str25, null);
+                function1Arr[10] = new C009212(str24, str23, num26, function16, function15, str25, null);
+                c00892.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                c00892.L$1 = SpillingKt.nullOutSpilledVariable(function16);
+                c00892.L$2 = SpillingKt.nullOutSpilledVariable(function15);
+                c00892.L$3 = SpillingKt.nullOutSpilledVariable(linkData);
+                c00892.L$4 = SpillingKt.nullOutSpilledVariable(num25);
+                c00892.L$5 = SpillingKt.nullOutSpilledVariable(num26);
+                c00892.L$6 = SpillingKt.nullOutSpilledVariable(str23);
+                c00892.L$7 = SpillingKt.nullOutSpilledVariable(str24);
+                c00892.L$8 = SpillingKt.nullOutSpilledVariable(num);
+                c00892.L$9 = SpillingKt.nullOutSpilledVariable(num27);
+                c00892.L$10 = SpillingKt.nullOutSpilledVariable(num2);
+                c00892.L$11 = SpillingKt.nullOutSpilledVariable(kitsuId);
+                c00892.L$12 = SpillingKt.nullOutSpilledVariable(mALSyncSites2);
+                c00892.L$13 = SpillingKt.nullOutSpilledVariable((Object) r18);
+                c00892.L$14 = SpillingKt.nullOutSpilledVariable(str25);
+                c00892.Z$0 = z3;
+                c00892.label = 4;
+                if (ParCollectionsKt.runAllAsync(function1Arr, c00892) == obj3) {
                     return obj3;
                 }
                 return Boxing.boxBoolean(z2);
             case 2:
-                boolean z5 = c00842.Z$0;
-                ResultKt.throwOnFailure(obj5);
+                boolean z8 = c00892.Z$0;
+                Integer num28 = (Integer) c00892.L$11;
+                num15 = (Integer) c00892.L$10;
+                num12 = (Integer) c00892.L$9;
+                num14 = (Integer) c00892.L$8;
+                str8 = (String) c00892.L$7;
+                str7 = (String) c00892.L$6;
+                num13 = (Integer) c00892.L$5;
+                num11 = (Integer) c00892.L$4;
+                z5 = z8;
+                LinkData linkData4 = (LinkData) c00892.L$3;
+                Function1<? super ExtractorLink, Unit> function17 = (Function1) c00892.L$2;
+                function11 = (Function1) c00892.L$1;
+                str9 = (String) c00892.L$0;
+                ResultKt.throwOnFailure(obj4);
+                linkData = linkData4;
+                function6 = function17;
+                kitsuId = num28;
+                obj3 = coroutine_suspended;
+                z2 = true;
+                mALSyncSites = null;
+                c = 2;
+                NiceResponse niceResponse5 = (NiceResponse) obj4;
+                ResponseParser parser5 = niceResponse5.getParser();
+                Intrinsics.checkNotNull(parser5);
+                function9 = function11;
+                str14 = str9;
+                safe2 = parser5.parseSafe(niceResponse5.getText(), Reflection.getOrCreateKotlinClass(MALSyncResponses.class));
+                mALSyncResponses2 = (MALSyncResponses) safe2;
+                if (mALSyncResponses2 != null) {
+                    num2 = num15;
+                    num4 = num12;
+                    num = num14;
+                    str2 = str7;
+                    num5 = num13;
+                    num3 = num11;
+                    z3 = z5;
+                    c2 = 3;
+                    function3 = function9;
+                    function4 = function6;
+                    str3 = str8;
+                    sites = mALSyncResponses2.getSites();
+                    str4 = str14;
+                } else {
+                    str4 = str14;
+                    num2 = num15;
+                    num4 = num12;
+                    num = num14;
+                    str2 = str7;
+                    num5 = num13;
+                    num3 = num11;
+                    z3 = z5;
+                    c2 = 3;
+                    function3 = function9;
+                    function4 = function6;
+                    str3 = str8;
+                    sites = mALSyncSites;
+                }
+                mALSyncSites2 = sites;
+                if (mALSyncSites2 != null) {
+                    r12 = mALSyncSites;
+                } else {
+                    r12 = mALSyncSites;
+                }
+                ?? r19 = r12;
+                if (linkData.getSeason() == null) {
+                    str15 = "Movie";
+                } else if (linkData.isDub()) {
+                    str15 = "DUB";
+                } else {
+                    str15 = "SUB";
+                }
+                function1Arr = new Function1[11];
+                Integer num29 = num3;
+                function1Arr[0] = new C00932(num3, num5, function3, function4, str15, null);
+                function1Arr[z2 ? 1 : 0] = new C00943(mALSyncSites2, num5, function3, function4, str15, null);
+                String str26 = str2;
+                function1Arr[c] = new C00954(str26, num5, function3, function4, str15, null);
+                Function1<? super ExtractorLink, Unit> function18 = function4;
+                Integer num210 = num5;
+                String str27 = str3;
+                Integer num211 = num4;
+                String str28 = str15;
+                Function1<? super SubtitleFile, Unit> function19 = function3;
+                function1Arr[c2] = new C00965(num211, str27, str26, num210, function19, function18, str28, null);
+                function1Arr[4] = new C00976(num211, str27, str26, num210, function19, function18, str28, num29, null);
+                function1Arr[5] = new C00987(str26, str27, num2, num210, function19, function18, str28, null);
+                function1Arr[6] = new C00998(str26, r19, num210, function19, function18, str28, null);
+                function1Arr[7] = new C01009(num29, num211, str26, num210, function19, function18, str28, null);
+                function1Arr[8] = new C009010(num29, function19, function18, str28, num, null);
+                function1Arr[9] = new C009111(num211, num210, function19, function18, str28, null);
+                function1Arr[10] = new C009212(str27, str26, num210, function19, function18, str28, null);
+                c00892.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                c00892.L$1 = SpillingKt.nullOutSpilledVariable(function19);
+                c00892.L$2 = SpillingKt.nullOutSpilledVariable(function18);
+                c00892.L$3 = SpillingKt.nullOutSpilledVariable(linkData);
+                c00892.L$4 = SpillingKt.nullOutSpilledVariable(num29);
+                c00892.L$5 = SpillingKt.nullOutSpilledVariable(num210);
+                c00892.L$6 = SpillingKt.nullOutSpilledVariable(str26);
+                c00892.L$7 = SpillingKt.nullOutSpilledVariable(str27);
+                c00892.L$8 = SpillingKt.nullOutSpilledVariable(num);
+                c00892.L$9 = SpillingKt.nullOutSpilledVariable(num211);
+                c00892.L$10 = SpillingKt.nullOutSpilledVariable(num2);
+                c00892.L$11 = SpillingKt.nullOutSpilledVariable(kitsuId);
+                c00892.L$12 = SpillingKt.nullOutSpilledVariable(mALSyncSites2);
+                c00892.L$13 = SpillingKt.nullOutSpilledVariable((Object) r19);
+                c00892.L$14 = SpillingKt.nullOutSpilledVariable(str28);
+                c00892.Z$0 = z3;
+                c00892.label = 4;
+                if (ParCollectionsKt.runAllAsync(function1Arr, c00892) == obj3) {
+                    return obj3;
+                }
+                return Boxing.boxBoolean(z2);
+            case 3:
+                boolean z9 = c00892.Z$0;
+                Integer num30 = (Integer) c00892.L$11;
+                num8 = (Integer) c00892.L$10;
+                num7 = (Integer) c00892.L$9;
+                num10 = (Integer) c00892.L$8;
+                str3 = (String) c00892.L$7;
+                str5 = (String) c00892.L$6;
+                num9 = (Integer) c00892.L$5;
+                num6 = (Integer) c00892.L$4;
+                z4 = z9;
+                LinkData linkData5 = (LinkData) c00892.L$3;
+                Function1<? super ExtractorLink, Unit> function20 = (Function1) c00892.L$2;
+                function11 = (Function1) c00892.L$1;
+                str6 = (String) c00892.L$0;
+                ResultKt.throwOnFailure(obj4);
+                linkData = linkData5;
+                function5 = function20;
+                kitsuId = num30;
+                obj3 = coroutine_suspended;
+                z2 = true;
+                c2 = 3;
+                mALSyncSites = null;
+                c = 2;
+                NiceResponse niceResponse6 = (NiceResponse) obj4;
+                ResponseParser parser6 = niceResponse6.getParser();
+                Intrinsics.checkNotNull(parser6);
+                function10 = function11;
+                str16 = str6;
+                safe3 = parser6.parseSafe(niceResponse6.getText(), Reflection.getOrCreateKotlinClass(MALSyncResponses.class));
+                mALSyncResponses3 = (MALSyncResponses) safe3;
+                if (mALSyncResponses3 != null) {
+                    str2 = str5;
+                    num5 = num9;
+                    num2 = num8;
+                    num3 = num6;
+                    num4 = num7;
+                    num = num10;
+                    z3 = z4;
+                    function3 = function10;
+                    sites = mALSyncResponses3.getSites();
+                    function4 = function5;
+                    str4 = str16;
+                } else {
+                    str4 = str16;
+                    str2 = str5;
+                    num5 = num9;
+                    num2 = num8;
+                    num3 = num6;
+                    num4 = num7;
+                    num = num10;
+                    z3 = z4;
+                    sites = mALSyncSites;
+                    function3 = function10;
+                    function4 = function5;
+                }
+                mALSyncSites2 = sites;
+                if (mALSyncSites2 != null) {
+                    r12 = mALSyncSites;
+                } else {
+                    r12 = mALSyncSites;
+                }
+                ?? r110 = r12;
+                if (linkData.getSeason() == null) {
+                    str15 = "Movie";
+                } else if (linkData.isDub()) {
+                    str15 = "DUB";
+                } else {
+                    str15 = "SUB";
+                }
+                function1Arr = new Function1[11];
+                Integer num212 = num3;
+                function1Arr[0] = new C00932(num3, num5, function3, function4, str15, null);
+                function1Arr[z2 ? 1 : 0] = new C00943(mALSyncSites2, num5, function3, function4, str15, null);
+                String str29 = str2;
+                function1Arr[c] = new C00954(str29, num5, function3, function4, str15, null);
+                Function1<? super ExtractorLink, Unit> function110 = function4;
+                Integer num213 = num5;
+                String str210 = str3;
+                Integer num214 = num4;
+                String str211 = str15;
+                Function1<? super SubtitleFile, Unit> function111 = function3;
+                function1Arr[c2] = new C00965(num214, str210, str29, num213, function111, function110, str211, null);
+                function1Arr[4] = new C00976(num214, str210, str29, num213, function111, function110, str211, num212, null);
+                function1Arr[5] = new C00987(str29, str210, num2, num213, function111, function110, str211, null);
+                function1Arr[6] = new C00998(str29, r110, num213, function111, function110, str211, null);
+                function1Arr[7] = new C01009(num212, num214, str29, num213, function111, function110, str211, null);
+                function1Arr[8] = new C009010(num212, function111, function110, str211, num, null);
+                function1Arr[9] = new C009111(num214, num213, function111, function110, str211, null);
+                function1Arr[10] = new C009212(str210, str29, num213, function111, function110, str211, null);
+                c00892.L$0 = SpillingKt.nullOutSpilledVariable(str4);
+                c00892.L$1 = SpillingKt.nullOutSpilledVariable(function111);
+                c00892.L$2 = SpillingKt.nullOutSpilledVariable(function110);
+                c00892.L$3 = SpillingKt.nullOutSpilledVariable(linkData);
+                c00892.L$4 = SpillingKt.nullOutSpilledVariable(num212);
+                c00892.L$5 = SpillingKt.nullOutSpilledVariable(num213);
+                c00892.L$6 = SpillingKt.nullOutSpilledVariable(str29);
+                c00892.L$7 = SpillingKt.nullOutSpilledVariable(str210);
+                c00892.L$8 = SpillingKt.nullOutSpilledVariable(num);
+                c00892.L$9 = SpillingKt.nullOutSpilledVariable(num214);
+                c00892.L$10 = SpillingKt.nullOutSpilledVariable(num2);
+                c00892.L$11 = SpillingKt.nullOutSpilledVariable(kitsuId);
+                c00892.L$12 = SpillingKt.nullOutSpilledVariable(mALSyncSites2);
+                c00892.L$13 = SpillingKt.nullOutSpilledVariable((Object) r110);
+                c00892.L$14 = SpillingKt.nullOutSpilledVariable(str211);
+                c00892.Z$0 = z3;
+                c00892.label = 4;
+                if (ParCollectionsKt.runAllAsync(function1Arr, c00892) == obj3) {
+                    return obj3;
+                }
+                return Boxing.boxBoolean(z2);
+            case 4:
+                boolean z10 = c00892.Z$0;
+                ResultKt.throwOnFailure(obj4);
                 z2 = true;
                 return Boxing.boxBoolean(z2);
             default:
@@ -3414,8 +13184,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$2 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$2", f = "StreamPlayAnime.kt", i = {}, l = {333}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
-    static final class C00882 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$2", f = "StreamPlayAnime.kt", i = {}, l = {568}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    static final class C00932 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
         final /* synthetic */ Integer $episode;
@@ -3424,7 +13194,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00882(Integer num, Integer num2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str, Continuation<? super C00882> continuation) {
+        C00932(Integer num, Integer num2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str, Continuation<? super C00932> continuation) {
             super(1, continuation);
             this.$malId = num;
             this.$episode = num2;
@@ -3434,7 +13204,7 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C00882(this.$malId, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
+            return new C00932(this.$malId, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -3464,9 +13234,9 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$3 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$3", f = "StreamPlayAnime.kt", i = {0}, l = {336}, m = "invokeSuspend", n = {"it"}, nl = {337}, s = {"L$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadLinks$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,531:1\n1#2:532\n*E\n"})
-    static final class C00893 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$3", f = "StreamPlayAnime.kt", i = {0}, l = {571}, m = "invokeSuspend", n = {"it"}, nl = {572}, s = {"L$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nStreamPlayAnime.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayAnime.kt\ncom/phisher98/StreamPlayAnime$loadLinks$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,768:1\n1#2:769\n*E\n"})
+    static final class C00943 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
         final /* synthetic */ Integer $episode;
@@ -3476,7 +13246,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00893(MALSyncSites mALSyncSites, Integer num, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str, Continuation<? super C00893> continuation) {
+        C00943(MALSyncSites mALSyncSites, Integer num, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str, Continuation<? super C00943> continuation) {
             super(1, continuation);
             this.$malsync = mALSyncSites;
             this.$episode = num;
@@ -3486,7 +13256,7 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C00893(this.$malsync, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
+            return new C00943(this.$malsync, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -3583,15 +13353,15 @@ public final class StreamPlayAnime extends MainAPI {
             L71:
                 return r2
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayAnime.C00893.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.StreamPlayAnime.C00943.invokeSuspend(java.lang.Object):java.lang.Object");
         }
     }
 
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$4 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$4", f = "StreamPlayAnime.kt", i = {}, l = {340}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
-    static final class C00904 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$4", f = "StreamPlayAnime.kt", i = {}, l = {575}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    static final class C00954 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
         final /* synthetic */ Integer $episode;
@@ -3600,7 +13370,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00904(String str, Integer num, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str2, Continuation<? super C00904> continuation) {
+        C00954(String str, Integer num, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str2, Continuation<? super C00954> continuation) {
             super(1, continuation);
             this.$jpTitle = str;
             this.$episode = num;
@@ -3610,7 +13380,7 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C00904(this.$jpTitle, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
+            return new C00954(this.$jpTitle, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -3640,8 +13410,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$5 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$5", f = "StreamPlayAnime.kt", i = {}, l = {341}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
-    static final class C00915 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$5", f = "StreamPlayAnime.kt", i = {}, l = {576}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    static final class C00965 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ String $anititle;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
@@ -3652,7 +13422,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00915(Integer num, String str, String str2, Integer num2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, Continuation<? super C00915> continuation) {
+        C00965(Integer num, String str, String str2, Integer num2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, Continuation<? super C00965> continuation) {
             super(1, continuation);
             this.$aniid = num;
             this.$anititle = str;
@@ -3664,7 +13434,7 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C00915(this.$aniid, this.$anititle, this.$jpTitle, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
+            return new C00965(this.$aniid, this.$anititle, this.$jpTitle, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -3700,19 +13470,20 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$6 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$6", f = "StreamPlayAnime.kt", i = {}, l = {342}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
-    static final class C00926 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$6", f = "StreamPlayAnime.kt", i = {}, l = {577}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    static final class C00976 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ String $anititle;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
         final /* synthetic */ Integer $episode;
         final /* synthetic */ String $jpTitle;
+        final /* synthetic */ Integer $malId;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00926(Integer num, String str, String str2, Integer num2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, Continuation<? super C00926> continuation) {
+        C00976(Integer num, String str, String str2, Integer num2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, Integer num3, Continuation<? super C00976> continuation) {
             super(1, continuation);
             this.$aniid = num;
             this.$anititle = str;
@@ -3721,10 +13492,11 @@ public final class StreamPlayAnime extends MainAPI {
             this.$subtitleCallback = function1;
             this.$callback = function2;
             this.$dubStatus = str3;
+            this.$malId = num3;
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C00926(this.$aniid, this.$anititle, this.$jpTitle, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
+            return new C00976(this.$aniid, this.$anititle, this.$jpTitle, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, this.$malId, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -3743,7 +13515,7 @@ public final class StreamPlayAnime extends MainAPI {
                         str = this.$jpTitle;
                     }
                     this.label = 1;
-                    if (streamPlayExtractor.invokeAnikoto(num, str, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, (Continuation) this) == coroutine_suspended) {
+                    if (streamPlayExtractor.invokeAnikoto(num, str, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, this.$malId, this.$jpTitle, (Continuation) this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                     break;
@@ -3760,8 +13532,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$7 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$7", f = "StreamPlayAnime.kt", i = {}, l = {343}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
-    static final class C00937 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$7", f = "StreamPlayAnime.kt", i = {}, l = {578}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    static final class C00987 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ String $anititle;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -3772,7 +13544,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00937(String str, String str2, Integer num, Integer num2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, Continuation<? super C00937> continuation) {
+        C00987(String str, String str2, Integer num, Integer num2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, Continuation<? super C00987> continuation) {
             super(1, continuation);
             this.$jpTitle = str;
             this.$anititle = str2;
@@ -3784,7 +13556,7 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C00937(this.$jpTitle, this.$anititle, this.$year, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
+            return new C00987(this.$jpTitle, this.$anititle, this.$year, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -3814,8 +13586,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$8 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$8", f = "StreamPlayAnime.kt", i = {}, l = {344}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
-    static final class C00948 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$8", f = "StreamPlayAnime.kt", i = {}, l = {579}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    static final class C00998 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
         final /* synthetic */ Integer $episode;
@@ -3825,7 +13597,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00948(String str, String str2, Integer num, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, Continuation<? super C00948> continuation) {
+        C00998(String str, String str2, Integer num, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, Continuation<? super C00998> continuation) {
             super(1, continuation);
             this.$jpTitle = str;
             this.$kaasSlug = str2;
@@ -3836,7 +13608,7 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C00948(this.$jpTitle, this.$kaasSlug, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
+            return new C00998(this.$jpTitle, this.$kaasSlug, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -3866,8 +13638,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$9 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$9", f = "StreamPlayAnime.kt", i = {}, l = {345}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
-    static final class C00959 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$9", f = "StreamPlayAnime.kt", i = {}, l = {580}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    static final class C01009 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -3878,7 +13650,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00959(Integer num, Integer num2, String str, Integer num3, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str2, Continuation<? super C00959> continuation) {
+        C01009(Integer num, Integer num2, String str, Integer num3, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str2, Continuation<? super C01009> continuation) {
             super(1, continuation);
             this.$malId = num;
             this.$aniid = num2;
@@ -3890,7 +13662,7 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C00959(this.$malId, this.$aniid, this.$jpTitle, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
+            return new C01009(this.$malId, this.$aniid, this.$jpTitle, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -3920,8 +13692,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$10 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$10", f = "StreamPlayAnime.kt", i = {0}, l = {348}, m = "invokeSuspend", n = {"it"}, nl = {354}, s = {"I$0"}, v = 2)
-    static final class C008510 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$10", f = "StreamPlayAnime.kt", i = {0}, l = {583}, m = "invokeSuspend", n = {"it"}, nl = {589}, s = {"I$0"}, v = 2)
+    static final class C009010 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $anidbEid;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -3931,7 +13703,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C008510(Integer num, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str, Integer num2, Continuation<? super C008510> continuation) {
+        C009010(Integer num, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str, Integer num2, Continuation<? super C009010> continuation) {
             super(1, continuation);
             this.$malId = num;
             this.$subtitleCallback = function1;
@@ -3941,7 +13713,7 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C008510(this.$malId, this.$subtitleCallback, this.$callback, this.$dubStatus, this.$anidbEid, continuation);
+            return new C009010(this.$malId, this.$subtitleCallback, this.$callback, this.$dubStatus, this.$anidbEid, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -3984,8 +13756,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$11 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$11", f = "StreamPlayAnime.kt", i = {}, l = {357}, m = "invokeSuspend", n = {}, nl = {358}, s = {}, v = 2)
-    static final class C008611 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$11", f = "StreamPlayAnime.kt", i = {}, l = {592}, m = "invokeSuspend", n = {}, nl = {593}, s = {}, v = 2)
+    static final class C009111 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ Integer $aniid;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -3994,7 +13766,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C008611(Integer num, Integer num2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str, Continuation<? super C008611> continuation) {
+        C009111(Integer num, Integer num2, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str, Continuation<? super C009111> continuation) {
             super(1, continuation);
             this.$aniid = num;
             this.$episode = num2;
@@ -4004,7 +13776,7 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C008611(this.$aniid, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
+            return new C009111(this.$aniid, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -4034,8 +13806,8 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX INFO: renamed from: com.phisher98.StreamPlayAnime$loadLinks$12 */
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\u0002\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$12", f = "StreamPlayAnime.kt", i = {}, l = {360}, m = "invokeSuspend", n = {}, nl = {361}, s = {}, v = 2)
-    static final class C008712 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.phisher98.StreamPlayAnime$loadLinks$12", f = "StreamPlayAnime.kt", i = {}, l = {595}, m = "invokeSuspend", n = {}, nl = {596}, s = {}, v = 2)
+    static final class C009212 extends SuspendLambda implements Function1<Continuation<? super Unit>, Object> {
         final /* synthetic */ String $anititle;
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $dubStatus;
@@ -4045,7 +13817,7 @@ public final class StreamPlayAnime extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C008712(String str, String str2, Integer num, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, Continuation<? super C008712> continuation) {
+        C009212(String str, String str2, Integer num, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, String str3, Continuation<? super C009212> continuation) {
             super(1, continuation);
             this.$anititle = str;
             this.$jpTitle = str2;
@@ -4056,7 +13828,7 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C008712(this.$anititle, this.$jpTitle, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
+            return new C009212(this.$anititle, this.$jpTitle, this.$episode, this.$subtitleCallback, this.$callback, this.$dubStatus, continuation);
         }
 
         public final Object invoke(Continuation<? super Unit> continuation) {
@@ -4090,6 +13862,9 @@ public final class StreamPlayAnime extends MainAPI {
             return ShowStatus.Ongoing;
         }
         if (t != null && StringsKt.contains(t, "RELEASING", true)) {
+            return ShowStatus.Ongoing;
+        }
+        if (t != null && StringsKt.contains(t, "current", true)) {
             z = true;
         }
         return z ? ShowStatus.Ongoing : ShowStatus.Completed;
@@ -4686,7 +14461,7 @@ public final class StreamPlayAnime extends MainAPI {
     }
 
     /* JADX INFO: compiled from: StreamPlayAnime.kt */
-    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\bE\b\u0086\b\u0018\u00002\u00020\u0001B\u0087\u0005\u0012\u0018\b\u0003\u0010\u0002\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0002\u0012\u0018\b\u0003\u0010\u0006\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0006\u0012\u0018\b\u0003\u0010\u0007\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0007\u0012\u0018\b\u0003\u0010\t\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\t\u0012\u0018\b\u0003\u0010\n\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\n\u0012\u0018\b\u0003\u0010\u000b\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000b\u0012\u0018\b\u0003\u0010\f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\f\u0012\u0018\b\u0003\u0010\r\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\r\u0012\u0018\b\u0003\u0010\u000e\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000e\u0012\u0018\b\u0003\u0010\u000f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000f\u0012\u0018\b\u0003\u0010\u0010\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0010\u0012\u0018\b\u0003\u0010\u0011\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0011\u0012\u0018\b\u0003\u0010\u0012\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0012\u0012\u0016\b\u0003\u0010\u0013\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0013\u0012\u0018\b\u0003\u0010\u0015\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0015\u0012\u0018\b\u0003\u0010\u0016\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0016\u0012\u0018\b\u0003\u0010\u0017\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0017\u0012\u0018\b\u0003\u0010\u0018\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0018\u0012\u0018\b\u0003\u0010\u0019\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0019\u0012\u0018\b\u0003\u0010\u001a\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001a\u0012\u0016\b\u0003\u0010\u001b\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001b\u0012\u0016\b\u0003\u0010\u001c\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001c\u0012\u0016\b\u0003\u0010\u001d\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001d\u0012\u0016\b\u0003\u0010\u001e\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001e\u0012\u0018\b\u0003\u0010\u001f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001f¢\u0006\u0004\b \u0010!J\u0010\u0010:\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010;\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u000b\u0010<\u001a\u0004\u0018\u00010\bHÆ\u0003J\u0010\u0010=\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010>\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u000b\u0010?\u001a\u0004\u0018\u00010\bHÆ\u0003J\u0010\u0010@\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010A\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010B\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010C\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u000b\u0010D\u001a\u0004\u0018\u00010\bHÆ\u0003J\u0010\u0010E\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u000b\u0010F\u001a\u0004\u0018\u00010\bHÆ\u0003J\t\u0010G\u001a\u00020\u0014HÆ\u0003J\u0010\u0010H\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u0010\u0010I\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u000b\u0010J\u001a\u0004\u0018\u00010\bHÆ\u0003J\u000b\u0010K\u001a\u0004\u0018\u00010\bHÆ\u0003J\u000b\u0010L\u001a\u0004\u0018\u00010\bHÆ\u0003J\u000b\u0010M\u001a\u0004\u0018\u00010\bHÆ\u0003J\t\u0010N\u001a\u00020\u0014HÆ\u0003J\t\u0010O\u001a\u00020\u0014HÆ\u0003J\t\u0010P\u001a\u00020\u0014HÆ\u0003J\t\u0010Q\u001a\u00020\u0014HÆ\u0003J\u0010\u0010R\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010#J\u008e\u0005\u0010S\u001a\u00020\u00002\u0018\b\u0003\u0010\u0002\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00022\u0018\b\u0003\u0010\u0006\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00062\u0018\b\u0003\u0010\u0007\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00072\u0018\b\u0003\u0010\t\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\t2\u0018\b\u0003\u0010\n\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\n2\u0018\b\u0003\u0010\u000b\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000b2\u0018\b\u0003\u0010\f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\f2\u0018\b\u0003\u0010\r\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\r2\u0018\b\u0003\u0010\u000e\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000e2\u0018\b\u0003\u0010\u000f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000f2\u0018\b\u0003\u0010\u0010\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00102\u0018\b\u0003\u0010\u0011\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00112\u0018\b\u0003\u0010\u0012\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00122\u0016\b\u0003\u0010\u0013\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00132\u0018\b\u0003\u0010\u0015\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00152\u0018\b\u0003\u0010\u0016\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00162\u0018\b\u0003\u0010\u0017\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00172\u0018\b\u0003\u0010\u0018\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00182\u0018\b\u0003\u0010\u0019\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00192\u0018\b\u0003\u0010\u001a\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001a2\u0016\b\u0003\u0010\u001b\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001b2\u0016\b\u0003\u0010\u001c\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001c2\u0016\b\u0003\u0010\u001d\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001d2\u0016\b\u0003\u0010\u001e\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001e2\u0018\b\u0003\u0010\u001f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001fHÆ\u0001¢\u0006\u0002\u0010TJ\u0014\u0010U\u001a\u00020\u00142\b\u0010V\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010W\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010X\u001a\u00020\bHÖ\u0081\u0004R\u0015\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b\"\u0010#R\u0015\u0010\u0006\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b%\u0010#R\u0013\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'R\u0015\u0010\t\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b(\u0010#R\u0015\u0010\n\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b)\u0010#R\u0013\u0010\u000b\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b*\u0010'R\u0015\u0010\f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b+\u0010#R\u0015\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b,\u0010#R\u0015\u0010\u000e\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b-\u0010#R\u0015\u0010\u000f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b.\u0010#R\u0013\u0010\u0010\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b/\u0010'R\u0015\u0010\u0011\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b0\u0010#R\u0013\u0010\u0012\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b1\u0010'R\u0011\u0010\u0013\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u00102R\u0015\u0010\u0015\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b3\u0010#R\u0015\u0010\u0016\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b4\u0010#R\u0013\u0010\u0017\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b5\u0010'R\u0013\u0010\u0018\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b6\u0010'R\u0013\u0010\u0019\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b7\u0010'R\u0013\u0010\u001a\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b8\u0010'R\u0011\u0010\u001b\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u00102R\u0011\u0010\u001c\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u00102R\u0011\u0010\u001d\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u00102R\u0011\u0010\u001e\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u00102R\u0015\u0010\u001f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010$\u001a\u0004\b9\u0010#¨\u0006Y"}, d2 = {"Lcom/phisher98/StreamPlayAnime$LinkData;", "", "simklId", "", "Lcom/fasterxml/jackson/annotation/JsonProperty;", "value", "traktId", "imdbId", "", "tmdbId", "tvdbId", "type", "season", "episode", "aniId", "malId", "title", "year", "orgTitle", "isAnime", "", "airedYear", "lastSeason", "epsTitle", "jpTitle", "date", "airedDate", "isAsian", "isBollywood", "isCartoon", "isDub", "anidbEid", "<init>", "(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/Integer;)V", "getSimklId", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getTraktId", "getImdbId", "()Ljava/lang/String;", "getTmdbId", "getTvdbId", "getType", "getSeason", "getEpisode", "getAniId", "getMalId", "getTitle", "getYear", "getOrgTitle", "()Z", "getAiredYear", "getLastSeason", "getEpsTitle", "getJpTitle", "getDate", "getAiredDate", "getAnidbEid", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component20", "component21", "component22", "component23", "component24", "component25", "copy", "(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/Integer;)Lcom/phisher98/StreamPlayAnime$LinkData;", "equals", "other", "hashCode", "toString", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\b\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\bH\b\u0086\b\u0018\u00002\u00020\u0001B¡\u0005\u0012\u0018\b\u0003\u0010\u0002\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0002\u0012\u0018\b\u0003\u0010\u0006\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0006\u0012\u0018\b\u0003\u0010\u0007\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0007\u0012\u0018\b\u0003\u0010\t\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\t\u0012\u0018\b\u0003\u0010\n\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\n\u0012\u0018\b\u0003\u0010\u000b\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000b\u0012\u0018\b\u0003\u0010\f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\f\u0012\u0018\b\u0003\u0010\r\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\r\u0012\u0018\b\u0003\u0010\u000e\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000e\u0012\u0018\b\u0003\u0010\u000f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000f\u0012\u0018\b\u0003\u0010\u0010\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0010\u0012\u0018\b\u0003\u0010\u0011\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0011\u0012\u0018\b\u0003\u0010\u0012\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0012\u0012\u0016\b\u0003\u0010\u0013\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0013\u0012\u0018\b\u0003\u0010\u0015\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0015\u0012\u0018\b\u0003\u0010\u0016\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0016\u0012\u0018\b\u0003\u0010\u0017\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0017\u0012\u0018\b\u0003\u0010\u0018\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0018\u0012\u0018\b\u0003\u0010\u0019\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u0019\u0012\u0018\b\u0003\u0010\u001a\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001a\u0012\u0016\b\u0003\u0010\u001b\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001b\u0012\u0016\b\u0003\u0010\u001c\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001c\u0012\u0016\b\u0003\u0010\u001d\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001d\u0012\u0016\b\u0003\u0010\u001e\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001e\u0012\u0018\b\u0003\u0010\u001f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001f\u0012\u0018\b\u0003\u0010 \u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b( ¢\u0006\u0004\b!\u0010\"J\u0010\u0010<\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010=\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u000b\u0010>\u001a\u0004\u0018\u00010\bHÆ\u0003J\u0010\u0010?\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010@\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u000b\u0010A\u001a\u0004\u0018\u00010\bHÆ\u0003J\u0010\u0010B\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010C\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010D\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010E\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u000b\u0010F\u001a\u0004\u0018\u00010\bHÆ\u0003J\u0010\u0010G\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u000b\u0010H\u001a\u0004\u0018\u00010\bHÆ\u0003J\t\u0010I\u001a\u00020\u0014HÆ\u0003J\u0010\u0010J\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010K\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u000b\u0010L\u001a\u0004\u0018\u00010\bHÆ\u0003J\u000b\u0010M\u001a\u0004\u0018\u00010\bHÆ\u0003J\u000b\u0010N\u001a\u0004\u0018\u00010\bHÆ\u0003J\u000b\u0010O\u001a\u0004\u0018\u00010\bHÆ\u0003J\t\u0010P\u001a\u00020\u0014HÆ\u0003J\t\u0010Q\u001a\u00020\u0014HÆ\u0003J\t\u0010R\u001a\u00020\u0014HÆ\u0003J\t\u0010S\u001a\u00020\u0014HÆ\u0003J\u0010\u0010T\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J\u0010\u0010U\u001a\u0004\u0018\u00010\u0003HÆ\u0003¢\u0006\u0002\u0010$J¨\u0005\u0010V\u001a\u00020\u00002\u0018\b\u0003\u0010\u0002\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00022\u0018\b\u0003\u0010\u0006\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00062\u0018\b\u0003\u0010\u0007\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00072\u0018\b\u0003\u0010\t\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\t2\u0018\b\u0003\u0010\n\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\n2\u0018\b\u0003\u0010\u000b\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000b2\u0018\b\u0003\u0010\f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\f2\u0018\b\u0003\u0010\r\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\r2\u0018\b\u0003\u0010\u000e\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000e2\u0018\b\u0003\u0010\u000f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u000f2\u0018\b\u0003\u0010\u0010\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00102\u0018\b\u0003\u0010\u0011\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00112\u0018\b\u0003\u0010\u0012\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00122\u0016\b\u0003\u0010\u0013\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00132\u0018\b\u0003\u0010\u0015\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00152\u0018\b\u0003\u0010\u0016\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00162\u0018\b\u0003\u0010\u0017\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00172\u0018\b\u0003\u0010\u0018\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00182\u0018\b\u0003\u0010\u0019\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u00192\u0018\b\u0003\u0010\u001a\u001a\u0004\u0018\u00010\b:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001a2\u0016\b\u0003\u0010\u001b\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001b2\u0016\b\u0003\u0010\u001c\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001c2\u0016\b\u0003\u0010\u001d\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001d2\u0016\b\u0003\u0010\u001e\u001a\u00020\u0014:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001e2\u0018\b\u0003\u0010\u001f\u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b(\u001f2\u0018\b\u0003\u0010 \u001a\u0004\u0018\u00010\u0003:\f\b\u0004\u0012\b\b\u0005\u0012\u0004\b\b( HÆ\u0001¢\u0006\u0002\u0010WJ\u0014\u0010X\u001a\u00020\u00142\b\u0010Y\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010Z\u001a\u00020\u0003HÖ\u0081\u0004J\n\u0010[\u001a\u00020\bHÖ\u0081\u0004R\u0015\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b#\u0010$R\u0015\u0010\u0006\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b&\u0010$R\u0013\u0010\u0007\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b'\u0010(R\u0015\u0010\t\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b)\u0010$R\u0015\u0010\n\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b*\u0010$R\u0013\u0010\u000b\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b+\u0010(R\u0015\u0010\f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b,\u0010$R\u0015\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b-\u0010$R\u0015\u0010\u000e\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b.\u0010$R\u0015\u0010\u000f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b/\u0010$R\u0013\u0010\u0010\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b0\u0010(R\u0015\u0010\u0011\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b1\u0010$R\u0013\u0010\u0012\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b2\u0010(R\u0011\u0010\u0013\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u0013\u00103R\u0015\u0010\u0015\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b4\u0010$R\u0015\u0010\u0016\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b5\u0010$R\u0013\u0010\u0017\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b6\u0010(R\u0013\u0010\u0018\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b7\u0010(R\u0013\u0010\u0019\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b8\u0010(R\u0013\u0010\u001a\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b9\u0010(R\u0011\u0010\u001b\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u00103R\u0011\u0010\u001c\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u00103R\u0011\u0010\u001d\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u00103R\u0011\u0010\u001e\u001a\u00020\u0014¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u00103R\u0015\u0010\u001f\u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b:\u0010$R\u0015\u0010 \u001a\u0004\u0018\u00010\u0003¢\u0006\n\n\u0002\u0010%\u001a\u0004\b;\u0010$¨\u0006\\"}, d2 = {"Lcom/phisher98/StreamPlayAnime$LinkData;", "", "simklId", "", "Lcom/fasterxml/jackson/annotation/JsonProperty;", "value", "traktId", "imdbId", "", "tmdbId", "tvdbId", "type", "season", "episode", "aniId", "malId", "title", "year", "orgTitle", "isAnime", "", "airedYear", "lastSeason", "epsTitle", "jpTitle", "date", "airedDate", "isAsian", "isBollywood", "isCartoon", "isDub", "anidbEid", "kitsuId", "<init>", "(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/Integer;Ljava/lang/Integer;)V", "getSimklId", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getTraktId", "getImdbId", "()Ljava/lang/String;", "getTmdbId", "getTvdbId", "getType", "getSeason", "getEpisode", "getAniId", "getMalId", "getTitle", "getYear", "getOrgTitle", "()Z", "getAiredYear", "getLastSeason", "getEpsTitle", "getJpTitle", "getDate", "getAiredDate", "getAnidbEid", "getKitsuId", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component20", "component21", "component22", "component23", "component24", "component25", "component26", "copy", "(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;ZLjava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/Integer;Ljava/lang/Integer;)Lcom/phisher98/StreamPlayAnime$LinkData;", "equals", "other", "hashCode", "toString", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
     public static final /* data */ class LinkData {
 
         @Nullable
@@ -4722,6 +14497,9 @@ public final class StreamPlayAnime extends MainAPI {
         private final String jpTitle;
 
         @Nullable
+        private final Integer kitsuId;
+
+        @Nullable
         private final Integer lastSeason;
 
         @Nullable
@@ -4755,45 +14533,46 @@ public final class StreamPlayAnime extends MainAPI {
         private final Integer year;
 
         public LinkData() {
-            this(null, null, null, null, null, null, null, null, null, null, null, null, null, false, null, null, null, null, null, null, false, false, false, false, null, 33554431, null);
+            this(null, null, null, null, null, null, null, null, null, null, null, null, null, false, null, null, null, null, null, null, false, false, false, false, null, null, 67108863, null);
         }
 
-        public static /* synthetic */ LinkData copy$default(LinkData linkData, Integer num, Integer num2, String str, Integer num3, Integer num4, String str2, Integer num5, Integer num6, Integer num7, Integer num8, String str3, Integer num9, String str4, boolean z, Integer num10, Integer num11, String str5, String str6, String str7, String str8, boolean z2, boolean z3, boolean z4, boolean z5, Integer num12, int i, Object obj) {
-            Integer num13;
-            boolean z6;
-            Integer num14 = (i & 1) != 0 ? linkData.simklId : num;
-            Integer num15 = (i & 2) != 0 ? linkData.traktId : num2;
+        public static /* synthetic */ LinkData copy$default(LinkData linkData, Integer num, Integer num2, String str, Integer num3, Integer num4, String str2, Integer num5, Integer num6, Integer num7, Integer num8, String str3, Integer num9, String str4, boolean z, Integer num10, Integer num11, String str5, String str6, String str7, String str8, boolean z2, boolean z3, boolean z4, boolean z5, Integer num12, Integer num13, int i, Object obj) {
+            Integer num14;
+            Integer num15;
+            Integer num16 = (i & 1) != 0 ? linkData.simklId : num;
+            Integer num17 = (i & 2) != 0 ? linkData.traktId : num2;
             String str9 = (i & 4) != 0 ? linkData.imdbId : str;
-            Integer num16 = (i & 8) != 0 ? linkData.tmdbId : num3;
-            Integer num17 = (i & 16) != 0 ? linkData.tvdbId : num4;
+            Integer num18 = (i & 8) != 0 ? linkData.tmdbId : num3;
+            Integer num19 = (i & 16) != 0 ? linkData.tvdbId : num4;
             String str10 = (i & 32) != 0 ? linkData.type : str2;
-            Integer num18 = (i & 64) != 0 ? linkData.season : num5;
-            Integer num19 = (i & 128) != 0 ? linkData.episode : num6;
-            Integer num20 = (i & 256) != 0 ? linkData.aniId : num7;
-            Integer num21 = (i & 512) != 0 ? linkData.malId : num8;
+            Integer num20 = (i & 64) != 0 ? linkData.season : num5;
+            Integer num21 = (i & 128) != 0 ? linkData.episode : num6;
+            Integer num22 = (i & 256) != 0 ? linkData.aniId : num7;
+            Integer num23 = (i & 512) != 0 ? linkData.malId : num8;
             String str11 = (i & 1024) != 0 ? linkData.title : str3;
-            Integer num22 = (i & 2048) != 0 ? linkData.year : num9;
+            Integer num24 = (i & 2048) != 0 ? linkData.year : num9;
             String str12 = (i & 4096) != 0 ? linkData.orgTitle : str4;
-            boolean z7 = (i & 8192) != 0 ? linkData.isAnime : z;
-            Integer num23 = num14;
-            Integer num24 = (i & 16384) != 0 ? linkData.airedYear : num10;
-            Integer num25 = (i & 32768) != 0 ? linkData.lastSeason : num11;
+            boolean z6 = (i & 8192) != 0 ? linkData.isAnime : z;
+            Integer num25 = num16;
+            Integer num26 = (i & 16384) != 0 ? linkData.airedYear : num10;
+            Integer num27 = (i & 32768) != 0 ? linkData.lastSeason : num11;
             String str13 = (i & 65536) != 0 ? linkData.epsTitle : str5;
             String str14 = (i & 131072) != 0 ? linkData.jpTitle : str6;
             String str15 = (i & 262144) != 0 ? linkData.date : str7;
             String str16 = (i & 524288) != 0 ? linkData.airedDate : str8;
-            boolean z8 = (i & 1048576) != 0 ? linkData.isAsian : z2;
-            boolean z9 = (i & 2097152) != 0 ? linkData.isBollywood : z3;
-            boolean z10 = (i & 4194304) != 0 ? linkData.isCartoon : z4;
-            boolean z11 = (i & 8388608) != 0 ? linkData.isDub : z5;
-            if ((i & 16777216) != 0) {
-                z6 = z11;
-                num13 = linkData.anidbEid;
+            boolean z7 = (i & 1048576) != 0 ? linkData.isAsian : z2;
+            boolean z8 = (i & 2097152) != 0 ? linkData.isBollywood : z3;
+            boolean z9 = (i & 4194304) != 0 ? linkData.isCartoon : z4;
+            boolean z10 = (i & 8388608) != 0 ? linkData.isDub : z5;
+            Integer num28 = (i & 16777216) != 0 ? linkData.anidbEid : num12;
+            if ((i & 33554432) != 0) {
+                num15 = num28;
+                num14 = linkData.kitsuId;
             } else {
-                num13 = num12;
-                z6 = z11;
+                num14 = num13;
+                num15 = num28;
             }
-            return linkData.copy(num23, num15, str9, num16, num17, str10, num18, num19, num20, num21, str11, num22, str12, z7, num24, num25, str13, str14, str15, str16, z8, z9, z10, z6, num13);
+            return linkData.copy(num25, num17, str9, num18, num19, str10, num20, num21, num22, num23, str11, num24, str12, z6, num26, num27, str13, str14, str15, str16, z7, z8, z9, z10, num15, num14);
         }
 
         @Nullable
@@ -4900,6 +14679,12 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         @Nullable
+        /* JADX INFO: renamed from: component26, reason: from getter */
+        public final Integer getKitsuId() {
+            return this.kitsuId;
+        }
+
+        @Nullable
         /* JADX INFO: renamed from: component3, reason: from getter */
         public final String getImdbId() {
             return this.imdbId;
@@ -4942,8 +14727,8 @@ public final class StreamPlayAnime extends MainAPI {
         }
 
         @NotNull
-        public final LinkData copy(@JsonProperty("simklId") @Nullable Integer simklId, @JsonProperty("traktId") @Nullable Integer traktId, @JsonProperty("imdbId") @Nullable String imdbId, @JsonProperty("tmdbId") @Nullable Integer tmdbId, @JsonProperty("tvdbId") @Nullable Integer tvdbId, @JsonProperty("type") @Nullable String type, @JsonProperty("season") @Nullable Integer season, @JsonProperty("episode") @Nullable Integer episode, @JsonProperty("aniId") @Nullable Integer aniId, @JsonProperty("malId") @Nullable Integer malId, @JsonProperty("title") @Nullable String title, @JsonProperty("year") @Nullable Integer year, @JsonProperty("orgTitle") @Nullable String orgTitle, @JsonProperty("isAnime") boolean isAnime, @JsonProperty("airedYear") @Nullable Integer airedYear, @JsonProperty("lastSeason") @Nullable Integer lastSeason, @JsonProperty("epsTitle") @Nullable String epsTitle, @JsonProperty("jpTitle") @Nullable String jpTitle, @JsonProperty("date") @Nullable String date, @JsonProperty("airedDate") @Nullable String airedDate, @JsonProperty("isAsian") boolean isAsian, @JsonProperty("isBollywood") boolean isBollywood, @JsonProperty("isCartoon") boolean isCartoon, @JsonProperty("isDub") boolean isDub, @JsonProperty("anidbEid") @Nullable Integer anidbEid) {
-            return new LinkData(simklId, traktId, imdbId, tmdbId, tvdbId, type, season, episode, aniId, malId, title, year, orgTitle, isAnime, airedYear, lastSeason, epsTitle, jpTitle, date, airedDate, isAsian, isBollywood, isCartoon, isDub, anidbEid);
+        public final LinkData copy(@JsonProperty("simklId") @Nullable Integer simklId, @JsonProperty("traktId") @Nullable Integer traktId, @JsonProperty("imdbId") @Nullable String imdbId, @JsonProperty("tmdbId") @Nullable Integer tmdbId, @JsonProperty("tvdbId") @Nullable Integer tvdbId, @JsonProperty("type") @Nullable String type, @JsonProperty("season") @Nullable Integer season, @JsonProperty("episode") @Nullable Integer episode, @JsonProperty("aniId") @Nullable Integer aniId, @JsonProperty("malId") @Nullable Integer malId, @JsonProperty("title") @Nullable String title, @JsonProperty("year") @Nullable Integer year, @JsonProperty("orgTitle") @Nullable String orgTitle, @JsonProperty("isAnime") boolean isAnime, @JsonProperty("airedYear") @Nullable Integer airedYear, @JsonProperty("lastSeason") @Nullable Integer lastSeason, @JsonProperty("epsTitle") @Nullable String epsTitle, @JsonProperty("jpTitle") @Nullable String jpTitle, @JsonProperty("date") @Nullable String date, @JsonProperty("airedDate") @Nullable String airedDate, @JsonProperty("isAsian") boolean isAsian, @JsonProperty("isBollywood") boolean isBollywood, @JsonProperty("isCartoon") boolean isCartoon, @JsonProperty("isDub") boolean isDub, @JsonProperty("anidbEid") @Nullable Integer anidbEid, @JsonProperty("kitsuId") @Nullable Integer kitsuId) {
+            return new LinkData(simklId, traktId, imdbId, tmdbId, tvdbId, type, season, episode, aniId, malId, title, year, orgTitle, isAnime, airedYear, lastSeason, epsTitle, jpTitle, date, airedDate, isAsian, isBollywood, isCartoon, isDub, anidbEid, kitsuId);
         }
 
         public boolean equals(@Nullable Object other) {
@@ -4954,11 +14739,11 @@ public final class StreamPlayAnime extends MainAPI {
                 return false;
             }
             LinkData linkData = (LinkData) other;
-            return Intrinsics.areEqual(this.simklId, linkData.simklId) && Intrinsics.areEqual(this.traktId, linkData.traktId) && Intrinsics.areEqual(this.imdbId, linkData.imdbId) && Intrinsics.areEqual(this.tmdbId, linkData.tmdbId) && Intrinsics.areEqual(this.tvdbId, linkData.tvdbId) && Intrinsics.areEqual(this.type, linkData.type) && Intrinsics.areEqual(this.season, linkData.season) && Intrinsics.areEqual(this.episode, linkData.episode) && Intrinsics.areEqual(this.aniId, linkData.aniId) && Intrinsics.areEqual(this.malId, linkData.malId) && Intrinsics.areEqual(this.title, linkData.title) && Intrinsics.areEqual(this.year, linkData.year) && Intrinsics.areEqual(this.orgTitle, linkData.orgTitle) && this.isAnime == linkData.isAnime && Intrinsics.areEqual(this.airedYear, linkData.airedYear) && Intrinsics.areEqual(this.lastSeason, linkData.lastSeason) && Intrinsics.areEqual(this.epsTitle, linkData.epsTitle) && Intrinsics.areEqual(this.jpTitle, linkData.jpTitle) && Intrinsics.areEqual(this.date, linkData.date) && Intrinsics.areEqual(this.airedDate, linkData.airedDate) && this.isAsian == linkData.isAsian && this.isBollywood == linkData.isBollywood && this.isCartoon == linkData.isCartoon && this.isDub == linkData.isDub && Intrinsics.areEqual(this.anidbEid, linkData.anidbEid);
+            return Intrinsics.areEqual(this.simklId, linkData.simklId) && Intrinsics.areEqual(this.traktId, linkData.traktId) && Intrinsics.areEqual(this.imdbId, linkData.imdbId) && Intrinsics.areEqual(this.tmdbId, linkData.tmdbId) && Intrinsics.areEqual(this.tvdbId, linkData.tvdbId) && Intrinsics.areEqual(this.type, linkData.type) && Intrinsics.areEqual(this.season, linkData.season) && Intrinsics.areEqual(this.episode, linkData.episode) && Intrinsics.areEqual(this.aniId, linkData.aniId) && Intrinsics.areEqual(this.malId, linkData.malId) && Intrinsics.areEqual(this.title, linkData.title) && Intrinsics.areEqual(this.year, linkData.year) && Intrinsics.areEqual(this.orgTitle, linkData.orgTitle) && this.isAnime == linkData.isAnime && Intrinsics.areEqual(this.airedYear, linkData.airedYear) && Intrinsics.areEqual(this.lastSeason, linkData.lastSeason) && Intrinsics.areEqual(this.epsTitle, linkData.epsTitle) && Intrinsics.areEqual(this.jpTitle, linkData.jpTitle) && Intrinsics.areEqual(this.date, linkData.date) && Intrinsics.areEqual(this.airedDate, linkData.airedDate) && this.isAsian == linkData.isAsian && this.isBollywood == linkData.isBollywood && this.isCartoon == linkData.isCartoon && this.isDub == linkData.isDub && Intrinsics.areEqual(this.anidbEid, linkData.anidbEid) && Intrinsics.areEqual(this.kitsuId, linkData.kitsuId);
         }
 
         public int hashCode() {
-            return ((((((((((((((((((((((((((((((((((((((((((((((((this.simklId == null ? 0 : this.simklId.hashCode()) * 31) + (this.traktId == null ? 0 : this.traktId.hashCode())) * 31) + (this.imdbId == null ? 0 : this.imdbId.hashCode())) * 31) + (this.tmdbId == null ? 0 : this.tmdbId.hashCode())) * 31) + (this.tvdbId == null ? 0 : this.tvdbId.hashCode())) * 31) + (this.type == null ? 0 : this.type.hashCode())) * 31) + (this.season == null ? 0 : this.season.hashCode())) * 31) + (this.episode == null ? 0 : this.episode.hashCode())) * 31) + (this.aniId == null ? 0 : this.aniId.hashCode())) * 31) + (this.malId == null ? 0 : this.malId.hashCode())) * 31) + (this.title == null ? 0 : this.title.hashCode())) * 31) + (this.year == null ? 0 : this.year.hashCode())) * 31) + (this.orgTitle == null ? 0 : this.orgTitle.hashCode())) * 31) + StreamPlayAnime$LinkData$$ExternalSyntheticBackport0.m22m(this.isAnime)) * 31) + (this.airedYear == null ? 0 : this.airedYear.hashCode())) * 31) + (this.lastSeason == null ? 0 : this.lastSeason.hashCode())) * 31) + (this.epsTitle == null ? 0 : this.epsTitle.hashCode())) * 31) + (this.jpTitle == null ? 0 : this.jpTitle.hashCode())) * 31) + (this.date == null ? 0 : this.date.hashCode())) * 31) + (this.airedDate == null ? 0 : this.airedDate.hashCode())) * 31) + StreamPlayAnime$LinkData$$ExternalSyntheticBackport0.m22m(this.isAsian)) * 31) + StreamPlayAnime$LinkData$$ExternalSyntheticBackport0.m22m(this.isBollywood)) * 31) + StreamPlayAnime$LinkData$$ExternalSyntheticBackport0.m22m(this.isCartoon)) * 31) + StreamPlayAnime$LinkData$$ExternalSyntheticBackport0.m22m(this.isDub)) * 31) + (this.anidbEid != null ? this.anidbEid.hashCode() : 0);
+            return ((((((((((((((((((((((((((((((((((((((((((((((((((this.simklId == null ? 0 : this.simklId.hashCode()) * 31) + (this.traktId == null ? 0 : this.traktId.hashCode())) * 31) + (this.imdbId == null ? 0 : this.imdbId.hashCode())) * 31) + (this.tmdbId == null ? 0 : this.tmdbId.hashCode())) * 31) + (this.tvdbId == null ? 0 : this.tvdbId.hashCode())) * 31) + (this.type == null ? 0 : this.type.hashCode())) * 31) + (this.season == null ? 0 : this.season.hashCode())) * 31) + (this.episode == null ? 0 : this.episode.hashCode())) * 31) + (this.aniId == null ? 0 : this.aniId.hashCode())) * 31) + (this.malId == null ? 0 : this.malId.hashCode())) * 31) + (this.title == null ? 0 : this.title.hashCode())) * 31) + (this.year == null ? 0 : this.year.hashCode())) * 31) + (this.orgTitle == null ? 0 : this.orgTitle.hashCode())) * 31) + StreamPlayAnime$LinkData$$ExternalSyntheticBackport0.m22m(this.isAnime)) * 31) + (this.airedYear == null ? 0 : this.airedYear.hashCode())) * 31) + (this.lastSeason == null ? 0 : this.lastSeason.hashCode())) * 31) + (this.epsTitle == null ? 0 : this.epsTitle.hashCode())) * 31) + (this.jpTitle == null ? 0 : this.jpTitle.hashCode())) * 31) + (this.date == null ? 0 : this.date.hashCode())) * 31) + (this.airedDate == null ? 0 : this.airedDate.hashCode())) * 31) + StreamPlayAnime$LinkData$$ExternalSyntheticBackport0.m22m(this.isAsian)) * 31) + StreamPlayAnime$LinkData$$ExternalSyntheticBackport0.m22m(this.isBollywood)) * 31) + StreamPlayAnime$LinkData$$ExternalSyntheticBackport0.m22m(this.isCartoon)) * 31) + StreamPlayAnime$LinkData$$ExternalSyntheticBackport0.m22m(this.isDub)) * 31) + (this.anidbEid == null ? 0 : this.anidbEid.hashCode())) * 31) + (this.kitsuId != null ? this.kitsuId.hashCode() : 0);
         }
 
         @NotNull
@@ -4966,11 +14751,11 @@ public final class StreamPlayAnime extends MainAPI {
             StringBuilder sb = new StringBuilder();
             sb.append("LinkData(simklId=").append(this.simklId).append(", traktId=").append(this.traktId).append(", imdbId=").append(this.imdbId).append(", tmdbId=").append(this.tmdbId).append(", tvdbId=").append(this.tvdbId).append(", type=").append(this.type).append(", season=").append(this.season).append(", episode=").append(this.episode).append(", aniId=").append(this.aniId).append(", malId=").append(this.malId).append(", title=").append(this.title).append(", year=");
             sb.append(this.year).append(", orgTitle=").append(this.orgTitle).append(", isAnime=").append(this.isAnime).append(", airedYear=").append(this.airedYear).append(", lastSeason=").append(this.lastSeason).append(", epsTitle=").append(this.epsTitle).append(", jpTitle=").append(this.jpTitle).append(", date=").append(this.date).append(", airedDate=").append(this.airedDate).append(", isAsian=").append(this.isAsian).append(", isBollywood=").append(this.isBollywood).append(", isCartoon=").append(this.isCartoon);
-            sb.append(", isDub=").append(this.isDub).append(", anidbEid=").append(this.anidbEid).append(')');
+            sb.append(", isDub=").append(this.isDub).append(", anidbEid=").append(this.anidbEid).append(", kitsuId=").append(this.kitsuId).append(')');
             return sb.toString();
         }
 
-        public LinkData(@JsonProperty("simklId") @Nullable Integer simklId, @JsonProperty("traktId") @Nullable Integer traktId, @JsonProperty("imdbId") @Nullable String imdbId, @JsonProperty("tmdbId") @Nullable Integer tmdbId, @JsonProperty("tvdbId") @Nullable Integer tvdbId, @JsonProperty("type") @Nullable String type, @JsonProperty("season") @Nullable Integer season, @JsonProperty("episode") @Nullable Integer episode, @JsonProperty("aniId") @Nullable Integer aniId, @JsonProperty("malId") @Nullable Integer malId, @JsonProperty("title") @Nullable String title, @JsonProperty("year") @Nullable Integer year, @JsonProperty("orgTitle") @Nullable String orgTitle, @JsonProperty("isAnime") boolean isAnime, @JsonProperty("airedYear") @Nullable Integer airedYear, @JsonProperty("lastSeason") @Nullable Integer lastSeason, @JsonProperty("epsTitle") @Nullable String epsTitle, @JsonProperty("jpTitle") @Nullable String jpTitle, @JsonProperty("date") @Nullable String date, @JsonProperty("airedDate") @Nullable String airedDate, @JsonProperty("isAsian") boolean isAsian, @JsonProperty("isBollywood") boolean isBollywood, @JsonProperty("isCartoon") boolean isCartoon, @JsonProperty("isDub") boolean isDub, @JsonProperty("anidbEid") @Nullable Integer anidbEid) {
+        public LinkData(@JsonProperty("simklId") @Nullable Integer simklId, @JsonProperty("traktId") @Nullable Integer traktId, @JsonProperty("imdbId") @Nullable String imdbId, @JsonProperty("tmdbId") @Nullable Integer tmdbId, @JsonProperty("tvdbId") @Nullable Integer tvdbId, @JsonProperty("type") @Nullable String type, @JsonProperty("season") @Nullable Integer season, @JsonProperty("episode") @Nullable Integer episode, @JsonProperty("aniId") @Nullable Integer aniId, @JsonProperty("malId") @Nullable Integer malId, @JsonProperty("title") @Nullable String title, @JsonProperty("year") @Nullable Integer year, @JsonProperty("orgTitle") @Nullable String orgTitle, @JsonProperty("isAnime") boolean isAnime, @JsonProperty("airedYear") @Nullable Integer airedYear, @JsonProperty("lastSeason") @Nullable Integer lastSeason, @JsonProperty("epsTitle") @Nullable String epsTitle, @JsonProperty("jpTitle") @Nullable String jpTitle, @JsonProperty("date") @Nullable String date, @JsonProperty("airedDate") @Nullable String airedDate, @JsonProperty("isAsian") boolean isAsian, @JsonProperty("isBollywood") boolean isBollywood, @JsonProperty("isCartoon") boolean isCartoon, @JsonProperty("isDub") boolean isDub, @JsonProperty("anidbEid") @Nullable Integer anidbEid, @JsonProperty("kitsuId") @Nullable Integer kitsuId) {
             this.simklId = simklId;
             this.traktId = traktId;
             this.imdbId = imdbId;
@@ -4996,10 +14781,11 @@ public final class StreamPlayAnime extends MainAPI {
             this.isCartoon = isCartoon;
             this.isDub = isDub;
             this.anidbEid = anidbEid;
+            this.kitsuId = kitsuId;
         }
 
-        public /* synthetic */ LinkData(Integer num, Integer num2, String str, Integer num3, Integer num4, String str2, Integer num5, Integer num6, Integer num7, Integer num8, String str3, Integer num9, String str4, boolean z, Integer num10, Integer num11, String str5, String str6, String str7, String str8, boolean z2, boolean z3, boolean z4, boolean z5, Integer num12, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            this((i & 1) != 0 ? null : num, (i & 2) != 0 ? null : num2, (i & 4) != 0 ? null : str, (i & 8) != 0 ? null : num3, (i & 16) != 0 ? null : num4, (i & 32) != 0 ? null : str2, (i & 64) != 0 ? null : num5, (i & 128) != 0 ? null : num6, (i & 256) != 0 ? null : num7, (i & 512) != 0 ? null : num8, (i & 1024) != 0 ? null : str3, (i & 2048) != 0 ? null : num9, (i & 4096) != 0 ? null : str4, (i & 8192) != 0 ? false : z, (i & 16384) != 0 ? null : num10, (i & 32768) != 0 ? null : num11, (i & 65536) != 0 ? null : str5, (i & 131072) != 0 ? null : str6, (i & 262144) != 0 ? null : str7, (i & 524288) != 0 ? null : str8, (i & 1048576) != 0 ? false : z2, (i & 2097152) != 0 ? false : z3, (i & 4194304) != 0 ? false : z4, (i & 8388608) == 0 ? z5 : false, (i & 16777216) != 0 ? null : num12);
+        public /* synthetic */ LinkData(Integer num, Integer num2, String str, Integer num3, Integer num4, String str2, Integer num5, Integer num6, Integer num7, Integer num8, String str3, Integer num9, String str4, boolean z, Integer num10, Integer num11, String str5, String str6, String str7, String str8, boolean z2, boolean z3, boolean z4, boolean z5, Integer num12, Integer num13, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            this((i & 1) != 0 ? null : num, (i & 2) != 0 ? null : num2, (i & 4) != 0 ? null : str, (i & 8) != 0 ? null : num3, (i & 16) != 0 ? null : num4, (i & 32) != 0 ? null : str2, (i & 64) != 0 ? null : num5, (i & 128) != 0 ? null : num6, (i & 256) != 0 ? null : num7, (i & 512) != 0 ? null : num8, (i & 1024) != 0 ? null : str3, (i & 2048) != 0 ? null : num9, (i & 4096) != 0 ? null : str4, (i & 8192) != 0 ? false : z, (i & 16384) != 0 ? null : num10, (i & 32768) != 0 ? null : num11, (i & 65536) != 0 ? null : str5, (i & 131072) != 0 ? null : str6, (i & 262144) != 0 ? null : str7, (i & 524288) != 0 ? null : str8, (i & 1048576) != 0 ? false : z2, (i & 2097152) != 0 ? false : z3, (i & 4194304) != 0 ? false : z4, (i & 8388608) == 0 ? z5 : false, (i & 16777216) != 0 ? null : num12, (i & 33554432) != 0 ? null : num13);
         }
 
         @Nullable
@@ -5120,6 +14906,11 @@ public final class StreamPlayAnime extends MainAPI {
         @Nullable
         public final Integer getAnidbEid() {
             return this.anidbEid;
+        }
+
+        @Nullable
+        public final Integer getKitsuId() {
+            return this.kitsuId;
         }
     }
 
@@ -5375,26 +15166,26 @@ public final class StreamPlayAnime extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:47:0x01c4  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     public final Object tmdbToAnimeId(String title, Integer year, TvType type, Continuation<? super AniIds> continuation) {
-        C00971 c00971;
+        C01021 c01021;
         AniMedia aniMedia;
         Object obj;
         Object safe;
         AniMedia res;
         AniData it;
         ArrayList<AniMedia> media;
-        if (continuation instanceof C00971) {
-            c00971 = (C00971) continuation;
-            if ((c00971.label & Integer.MIN_VALUE) != 0) {
-                c00971.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C01021) {
+            c01021 = (C01021) continuation;
+            if ((c01021.label & Integer.MIN_VALUE) != 0) {
+                c01021.label -= Integer.MIN_VALUE;
             } else {
-                c00971 = new C00971(continuation);
+                c01021 = new C01021(continuation);
             }
         } else {
-            c00971 = new C00971(continuation);
+            c01021 = new C01021(continuation);
         }
-        Object $result = c00971.result;
+        Object $result = c01021.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00971.label) {
+        switch (c01021.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String str = title;
@@ -5409,15 +15200,15 @@ public final class StreamPlayAnime extends MainAPI {
                 Map variables = MapsKt.mutableMapOf(pairArr);
                 RequestBody data = RequestBody.Companion.create(AppUtils.INSTANCE.toJson(MapsKt.mapOf(new Pair[]{TuplesKt.to("query", "query (\n  $page: Int = 1\n  $search: String\n  $sort: [MediaSort] = [POPULARITY_DESC, SCORE_DESC]\n  $type: MediaType\n  $season: MediaSeason\n  $seasonYear: Int\n  $format: [MediaFormat]\n) {\n  Page(page: $page, perPage: 20) {\n    media(\n      search: $search\n      sort: $sort\n      type: $type\n      season: $season\n      seasonYear: $seasonYear\n      format_in: $format\n    ) {\n      id\n      idMal\n    }\n  }\n}"), TuplesKt.to("variables", variables)})), MediaType.Companion.parse("application/json;charset=utf-8"));
                 Requests app = MainActivityKt.getApp();
-                c00971.L$0 = SpillingKt.nullOutSpilledVariable(title);
-                c00971.L$1 = SpillingKt.nullOutSpilledVariable(year);
-                c00971.L$2 = SpillingKt.nullOutSpilledVariable(type);
-                c00971.L$3 = SpillingKt.nullOutSpilledVariable("query (\n  $page: Int = 1\n  $search: String\n  $sort: [MediaSort] = [POPULARITY_DESC, SCORE_DESC]\n  $type: MediaType\n  $season: MediaSeason\n  $seasonYear: Int\n  $format: [MediaFormat]\n) {\n  Page(page: $page, perPage: 20) {\n    media(\n      search: $search\n      sort: $sort\n      type: $type\n      season: $season\n      seasonYear: $seasonYear\n      format_in: $format\n    ) {\n      id\n      idMal\n    }\n  }\n}");
-                c00971.L$4 = SpillingKt.nullOutSpilledVariable(variables);
-                c00971.L$5 = SpillingKt.nullOutSpilledVariable(data);
-                c00971.label = 1;
+                c01021.L$0 = SpillingKt.nullOutSpilledVariable(title);
+                c01021.L$1 = SpillingKt.nullOutSpilledVariable(year);
+                c01021.L$2 = SpillingKt.nullOutSpilledVariable(type);
+                c01021.L$3 = SpillingKt.nullOutSpilledVariable("query (\n  $page: Int = 1\n  $search: String\n  $sort: [MediaSort] = [POPULARITY_DESC, SCORE_DESC]\n  $type: MediaType\n  $season: MediaSeason\n  $seasonYear: Int\n  $format: [MediaFormat]\n) {\n  Page(page: $page, perPage: 20) {\n    media(\n      search: $search\n      sort: $sort\n      type: $type\n      season: $season\n      seasonYear: $seasonYear\n      format_in: $format\n    ) {\n      id\n      idMal\n    }\n  }\n}");
+                c01021.L$4 = SpillingKt.nullOutSpilledVariable(variables);
+                c01021.L$5 = SpillingKt.nullOutSpilledVariable(data);
+                c01021.label = 1;
                 aniMedia = null;
-                Object objPost$default = Requests.post$default(app, StreamPlay.anilistAPI, (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, data, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00971, 65278, (Object) null);
+                Object objPost$default = Requests.post$default(app, StreamPlay.anilistAPI, (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, data, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c01021, 65278, (Object) null);
                 if (objPost$default == coroutine_suspended) {
                     return coroutine_suspended;
                 }

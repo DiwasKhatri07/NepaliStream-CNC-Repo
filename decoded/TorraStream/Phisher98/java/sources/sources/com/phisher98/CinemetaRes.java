@@ -1,5 +1,6 @@
 package com.phisher98;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import kotlin.Metadata;
@@ -10,7 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: TorraStreamParser.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/TorraStream/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001:\u0001\u0011B\u0013\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000b\u0010\b\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0015\u0010\t\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0014\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\r\u001a\u00020\u000eHÖ\u0081\u0004J\n\u0010\u000f\u001a\u00020\u0010HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007¨\u0006\u0012"}, d2 = {"Lcom/phisher98/CinemetaRes;", "", "meta", "Lcom/phisher98/CinemetaRes$Meta;", "<init>", "(Lcom/phisher98/CinemetaRes$Meta;)V", "getMeta", "()Lcom/phisher98/CinemetaRes$Meta;", "component1", "copy", "equals", "", "other", "hashCode", "", "toString", "", "Meta", "TorraStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001:\u0001\u0011B\u0013\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u000b\u0010\b\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0015\u0010\t\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0014\u0010\n\u001a\u00020\u000b2\b\u0010\f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\r\u001a\u00020\u000eHÖ\u0081\u0004J\n\u0010\u000f\u001a\u00020\u0010HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007Ê\u0001\f\b\u0013\u0012\b\b\u0014\u0012\u0004\b\u0007\u0010\u0002¨\u0006\u0012"}, d2 = {"Lcom/phisher98/CinemetaRes;", "", "meta", "Lcom/phisher98/CinemetaRes$Meta;", "<init>", "(Lcom/phisher98/CinemetaRes$Meta;)V", "getMeta", "()Lcom/phisher98/CinemetaRes$Meta;", "component1", "copy", "equals", "", "other", "hashCode", "", "toString", "", "Meta", "TorraStream", "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;", "ignoreUnknown"}, k = 1, mv = {2, 4, 0}, xi = 48)
 public final /* data */ class CinemetaRes {
 
     @Nullable
@@ -73,7 +75,8 @@ public final /* data */ class CinemetaRes {
     }
 
     /* JADX INFO: compiled from: TorraStreamParser.kt */
-    @Metadata(d1 = {"\u0000X\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0010 \n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b=\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\t\b\u0086\b\u0018\u00002\u00020\u0001:\u0007jklmnopB\u0087\u0003\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003\u0012\u0018\b\u0003\u0010\u0006\u001a\u0004\u0018\u00010\u0003:\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0011\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u0003\u0012\u0010\b\u0002\u0010\u0015\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u0016\u0012\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u0003\u0012\u0018\b\u0003\u0010\u0018\u001a\u0004\u0018\u00010\u0003:\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u0019\u0012\n\b\u0002\u0010\u001a\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u00010\u0003\u0012\u0010\b\u0002\u0010\u001c\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\u0016\u0012\u0010\b\u0002\u0010\u001e\u001a\n\u0012\u0004\u0012\u00020\u001f\u0018\u00010\u0016\u0012\u0010\b\u0002\u0010 \u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010\u0016\u0012\u0010\b\u0002\u0010\"\u001a\n\u0012\u0004\u0012\u00020#\u0018\u00010\u0016\u0012\n\b\u0002\u0010$\u001a\u0004\u0018\u00010%\u0012\u0018\b\u0003\u0010&\u001a\u0004\u0018\u00010':\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b((¢\u0006\u0004\b)\u0010*J\u000b\u0010I\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010J\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010K\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010L\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010M\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010N\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010O\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010P\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010Q\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010R\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010S\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010T\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010U\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010V\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010W\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0011\u0010X\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u0016HÆ\u0003J\u000b\u0010Y\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010Z\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010[\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\\\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0011\u0010]\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\u0016HÆ\u0003J\u0011\u0010^\u001a\n\u0012\u0004\u0012\u00020\u001f\u0018\u00010\u0016HÆ\u0003J\u0011\u0010_\u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010\u0016HÆ\u0003J\u0011\u0010`\u001a\n\u0012\u0004\u0012\u00020#\u0018\u00010\u0016HÆ\u0003J\u000b\u0010a\u001a\u0004\u0018\u00010%HÆ\u0003J\u000b\u0010b\u001a\u0004\u0018\u00010'HÆ\u0003J\u0089\u0003\u0010c\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00032\u0018\b\u0003\u0010\u0006\u001a\u0004\u0018\u00010\u0003:\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t2\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0011\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u00032\u0010\b\u0002\u0010\u0015\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u00162\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00032\u0018\b\u0003\u0010\u0018\u001a\u0004\u0018\u00010\u0003:\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u00192\n\b\u0002\u0010\u001a\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u00010\u00032\u0010\b\u0002\u0010\u001c\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\u00162\u0010\b\u0002\u0010\u001e\u001a\n\u0012\u0004\u0012\u00020\u001f\u0018\u00010\u00162\u0010\b\u0002\u0010 \u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010\u00162\u0010\b\u0002\u0010\"\u001a\n\u0012\u0004\u0012\u00020#\u0018\u00010\u00162\n\b\u0002\u0010$\u001a\u0004\u0018\u00010%2\u0018\b\u0003\u0010&\u001a\u0004\u0018\u00010':\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b((HÆ\u0001J\u0014\u0010d\u001a\u00020e2\b\u0010f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010g\u001a\u00020hHÖ\u0081\u0004J\n\u0010i\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b+\u0010,R\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b-\u0010,R\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b.\u0010,R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b/\u0010,R\u0013\u0010\n\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b0\u0010,R\u0013\u0010\u000b\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b1\u0010,R\u0013\u0010\f\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b2\u0010,R\u0013\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b3\u0010,R\u0013\u0010\u000e\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b4\u0010,R\u0013\u0010\u000f\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b5\u0010,R\u0013\u0010\u0010\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b6\u0010,R\u0013\u0010\u0011\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b7\u0010,R\u0013\u0010\u0012\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b8\u0010,R\u0013\u0010\u0013\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b9\u0010,R\u0013\u0010\u0014\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b:\u0010,R\u0019\u0010\u0015\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\u0016¢\u0006\b\n\u0000\u001a\u0004\b;\u0010<R\u0013\u0010\u0017\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b=\u0010,R\u0013\u0010\u0018\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b>\u0010,R\u0013\u0010\u001a\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b?\u0010,R\u0013\u0010\u001b\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b@\u0010,R\u0019\u0010\u001c\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\u0016¢\u0006\b\n\u0000\u001a\u0004\bA\u0010<R\u0019\u0010\u001e\u001a\n\u0012\u0004\u0012\u00020\u001f\u0018\u00010\u0016¢\u0006\b\n\u0000\u001a\u0004\bB\u0010<R\u0019\u0010 \u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010\u0016¢\u0006\b\n\u0000\u001a\u0004\bC\u0010<R\u0019\u0010\"\u001a\n\u0012\u0004\u0012\u00020#\u0018\u00010\u0016¢\u0006\b\n\u0000\u001a\u0004\bD\u0010<R\u0013\u0010$\u001a\u0004\u0018\u00010%¢\u0006\b\n\u0000\u001a\u0004\bE\u0010FR\u0013\u0010&\u001a\u0004\u0018\u00010'¢\u0006\b\n\u0000\u001a\u0004\bG\u0010H¨\u0006q"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta;", "", "id", "", "type", "name", "imdbId", "Lcom/fasterxml/jackson/annotation/JsonProperty;", "value", "imdb_id", "slug", "director", "writer", "description", "year", "releaseInfo", "released", "runtime", "status", "country", "imdbRating", "genres", "", "poster", "rawPosterUrl", "_rawPosterUrl", "background", "logo", "videos", "Lcom/phisher98/CinemetaRes$Meta$Video;", "trailers", "Lcom/phisher98/CinemetaRes$Meta$Trailer;", "trailerStreams", "Lcom/phisher98/CinemetaRes$Meta$TrailerStream;", "links", "Lcom/phisher98/CinemetaRes$Meta$Link;", "behaviorHints", "Lcom/phisher98/CinemetaRes$Meta$BehaviorHints;", "appExtras", "Lcom/phisher98/CinemetaRes$Meta$AppExtras;", "app_extras", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Lcom/phisher98/CinemetaRes$Meta$BehaviorHints;Lcom/phisher98/CinemetaRes$Meta$AppExtras;)V", "getId", "()Ljava/lang/String;", "getType", "getName", "getImdbId", "getSlug", "getDirector", "getWriter", "getDescription", "getYear", "getReleaseInfo", "getReleased", "getRuntime", "getStatus", "getCountry", "getImdbRating", "getGenres", "()Ljava/util/List;", "getPoster", "getRawPosterUrl", "getBackground", "getLogo", "getVideos", "getTrailers", "getTrailerStreams", "getLinks", "getBehaviorHints", "()Lcom/phisher98/CinemetaRes$Meta$BehaviorHints;", "getAppExtras", "()Lcom/phisher98/CinemetaRes$Meta$AppExtras;", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component20", "component21", "component22", "component23", "component24", "component25", "component26", "copy", "equals", "", "other", "hashCode", "", "toString", "BehaviorHints", "Link", "Trailer", "TrailerStream", "Video", "AppExtras", "Cast", "TorraStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    @Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b=\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\t\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001:\u0007jklmnopB\u0093\u0003\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003\u0012\u0018\b\u0003\u0010\u0006\u001a\u0004\u0018\u00010\u0003:\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t\u0012\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u0003\u0012\u0010\b\u0002\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\f\u0012\u0010\b\u0002\u0010\r\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\f\u0012\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0011\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u0003\u0012\u0010\b\u0002\u0010\u0016\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\f\u0012\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u0003\u0012\u0018\b\u0003\u0010\u0018\u001a\u0004\u0018\u00010\u0003:\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u0019\u0012\n\b\u0002\u0010\u001a\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u00010\u0003\u0012\u0010\b\u0002\u0010\u001c\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\f\u0012\u0010\b\u0002\u0010\u001e\u001a\n\u0012\u0004\u0012\u00020\u001f\u0018\u00010\f\u0012\u0010\b\u0002\u0010 \u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010\f\u0012\u0010\b\u0002\u0010\"\u001a\n\u0012\u0004\u0012\u00020#\u0018\u00010\f\u0012\n\b\u0002\u0010$\u001a\u0004\u0018\u00010%\u0012\u0018\b\u0003\u0010&\u001a\u0004\u0018\u00010':\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b((¢\u0006\u0004\b)\u0010*J\u000b\u0010I\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010J\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010K\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010L\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010M\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0011\u0010N\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\fHÆ\u0003J\u0011\u0010O\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\fHÆ\u0003J\u000b\u0010P\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010Q\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010R\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010S\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010T\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010U\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010V\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010W\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0011\u0010X\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\fHÆ\u0003J\u000b\u0010Y\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010Z\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010[\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\\\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0011\u0010]\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\fHÆ\u0003J\u0011\u0010^\u001a\n\u0012\u0004\u0012\u00020\u001f\u0018\u00010\fHÆ\u0003J\u0011\u0010_\u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010\fHÆ\u0003J\u0011\u0010`\u001a\n\u0012\u0004\u0012\u00020#\u0018\u00010\fHÆ\u0003J\u000b\u0010a\u001a\u0004\u0018\u00010%HÆ\u0003J\u000b\u0010b\u001a\u0004\u0018\u00010'HÆ\u0003J\u0095\u0003\u0010c\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00032\u0018\b\u0003\u0010\u0006\u001a\u0004\u0018\u00010\u0003:\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\t2\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u00032\u0010\b\u0002\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\f2\u0010\b\u0002\u0010\r\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\f2\n\b\u0002\u0010\u000e\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000f\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0010\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0011\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0012\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0013\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0014\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0015\u001a\u0004\u0018\u00010\u00032\u0010\b\u0002\u0010\u0016\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\f2\n\b\u0002\u0010\u0017\u001a\u0004\u0018\u00010\u00032\u0018\b\u0003\u0010\u0018\u001a\u0004\u0018\u00010\u0003:\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b(\u00192\n\b\u0002\u0010\u001a\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u001b\u001a\u0004\u0018\u00010\u00032\u0010\b\u0002\u0010\u001c\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\f2\u0010\b\u0002\u0010\u001e\u001a\n\u0012\u0004\u0012\u00020\u001f\u0018\u00010\f2\u0010\b\u0002\u0010 \u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010\f2\u0010\b\u0002\u0010\"\u001a\n\u0012\u0004\u0012\u00020#\u0018\u00010\f2\n\b\u0002\u0010$\u001a\u0004\u0018\u00010%2\u0018\b\u0003\u0010&\u001a\u0004\u0018\u00010':\f\b\u0007\u0012\b\b\b\u0012\u0004\b\b((HÆ\u0001J\u0014\u0010d\u001a\u00020e2\b\u0010f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010g\u001a\u00020hHÖ\u0081\u0004J\n\u0010i\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b+\u0010,R\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b-\u0010,R\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b.\u0010,R\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b/\u0010,R\u0013\u0010\n\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b0\u0010,R\u0019\u0010\u000b\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\f¢\u0006\b\n\u0000\u001a\u0004\b1\u00102R\u0019\u0010\r\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\f¢\u0006\b\n\u0000\u001a\u0004\b3\u00102R\u0013\u0010\u000e\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b4\u0010,R\u0013\u0010\u000f\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b5\u0010,R\u0013\u0010\u0010\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b6\u0010,R\u0013\u0010\u0011\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b7\u0010,R\u0013\u0010\u0012\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b8\u0010,R\u0013\u0010\u0013\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b9\u0010,R\u0013\u0010\u0014\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b:\u0010,R\u0013\u0010\u0015\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b;\u0010,R\u0019\u0010\u0016\u001a\n\u0012\u0004\u0012\u00020\u0003\u0018\u00010\f¢\u0006\b\n\u0000\u001a\u0004\b<\u00102R\u0013\u0010\u0017\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b=\u0010,R\u0013\u0010\u0018\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b>\u0010,R\u0013\u0010\u001a\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b?\u0010,R\u0013\u0010\u001b\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b@\u0010,R\u0019\u0010\u001c\u001a\n\u0012\u0004\u0012\u00020\u001d\u0018\u00010\f¢\u0006\b\n\u0000\u001a\u0004\bA\u00102R\u0019\u0010\u001e\u001a\n\u0012\u0004\u0012\u00020\u001f\u0018\u00010\f¢\u0006\b\n\u0000\u001a\u0004\bB\u00102R\u0019\u0010 \u001a\n\u0012\u0004\u0012\u00020!\u0018\u00010\f¢\u0006\b\n\u0000\u001a\u0004\bC\u00102R\u0019\u0010\"\u001a\n\u0012\u0004\u0012\u00020#\u0018\u00010\f¢\u0006\b\n\u0000\u001a\u0004\bD\u00102R\u0013\u0010$\u001a\u0004\u0018\u00010%¢\u0006\b\n\u0000\u001a\u0004\bE\u0010FR\u0013\u0010&\u001a\u0004\u0018\u00010'¢\u0006\b\n\u0000\u001a\u0004\bG\u0010HÊ\u0001\f\br\u0012\b\bs\u0012\u0004\b\u0007\u0010\u0002¨\u0006q"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta;", "", "id", "", "type", "name", "imdbId", "Lcom/fasterxml/jackson/annotation/JsonProperty;", "value", "imdb_id", "slug", "director", "", "writer", "description", "year", "releaseInfo", "released", "runtime", "status", "country", "imdbRating", "genres", "poster", "rawPosterUrl", "_rawPosterUrl", "background", "logo", "videos", "Lcom/phisher98/CinemetaRes$Meta$Video;", "trailers", "Lcom/phisher98/CinemetaRes$Meta$Trailer;", "trailerStreams", "Lcom/phisher98/CinemetaRes$Meta$TrailerStream;", "links", "Lcom/phisher98/CinemetaRes$Meta$Link;", "behaviorHints", "Lcom/phisher98/CinemetaRes$Meta$BehaviorHints;", "appExtras", "Lcom/phisher98/CinemetaRes$Meta$AppExtras;", "app_extras", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Lcom/phisher98/CinemetaRes$Meta$BehaviorHints;Lcom/phisher98/CinemetaRes$Meta$AppExtras;)V", "getId", "()Ljava/lang/String;", "getType", "getName", "getImdbId", "getSlug", "getDirector", "()Ljava/util/List;", "getWriter", "getDescription", "getYear", "getReleaseInfo", "getReleased", "getRuntime", "getStatus", "getCountry", "getImdbRating", "getGenres", "getPoster", "getRawPosterUrl", "getBackground", "getLogo", "getVideos", "getTrailers", "getTrailerStreams", "getLinks", "getBehaviorHints", "()Lcom/phisher98/CinemetaRes$Meta$BehaviorHints;", "getAppExtras", "()Lcom/phisher98/CinemetaRes$Meta$AppExtras;", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "component10", "component11", "component12", "component13", "component14", "component15", "component16", "component17", "component18", "component19", "component20", "component21", "component22", "component23", "component24", "component25", "component26", "copy", "equals", "", "other", "hashCode", "", "toString", "BehaviorHints", "Link", "Trailer", "TrailerStream", "Video", "AppExtras", "Cast", "TorraStream", "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;", "ignoreUnknown"}, k = 1, mv = {2, 4, 0}, xi = 48)
     public static final /* data */ class Meta {
 
         @Nullable
@@ -92,7 +95,7 @@ public final /* data */ class CinemetaRes {
         private final String description;
 
         @Nullable
-        private final String director;
+        private final List<String> director;
 
         @Nullable
         private final List<String> genres;
@@ -149,7 +152,7 @@ public final /* data */ class CinemetaRes {
         private final List<Video> videos;
 
         @Nullable
-        private final String writer;
+        private final List<String> writer;
 
         @Nullable
         private final String year;
@@ -159,34 +162,34 @@ public final /* data */ class CinemetaRes {
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        public static /* synthetic */ Meta copy$default(Meta meta, String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, String str13, String str14, String str15, List list, String str16, String str17, String str18, String str19, List list2, List list3, List list4, List list5, BehaviorHints behaviorHints, AppExtras appExtras, int i, Object obj) {
+        public static /* synthetic */ Meta copy$default(Meta meta, String str, String str2, String str3, String str4, String str5, List list, List list2, String str6, String str7, String str8, String str9, String str10, String str11, String str12, String str13, List list3, String str14, String str15, String str16, String str17, List list4, List list5, List list6, List list7, BehaviorHints behaviorHints, AppExtras appExtras, int i, Object obj) {
             AppExtras appExtras2;
             BehaviorHints behaviorHints2;
-            String str20 = (i & 1) != 0 ? meta.id : str;
-            String str21 = (i & 2) != 0 ? meta.type : str2;
-            String str22 = (i & 4) != 0 ? meta.name : str3;
-            String str23 = (i & 8) != 0 ? meta.imdbId : str4;
-            String str24 = (i & 16) != 0 ? meta.slug : str5;
-            String str25 = (i & 32) != 0 ? meta.director : str6;
-            String str26 = (i & 64) != 0 ? meta.writer : str7;
-            String str27 = (i & 128) != 0 ? meta.description : str8;
-            String str28 = (i & 256) != 0 ? meta.year : str9;
-            String str29 = (i & 512) != 0 ? meta.releaseInfo : str10;
-            String str30 = (i & 1024) != 0 ? meta.released : str11;
-            String str31 = (i & 2048) != 0 ? meta.runtime : str12;
-            String str32 = (i & 4096) != 0 ? meta.status : str13;
-            String str33 = (i & 8192) != 0 ? meta.country : str14;
-            String str34 = str20;
-            String str35 = (i & 16384) != 0 ? meta.imdbRating : str15;
-            List list6 = (i & 32768) != 0 ? meta.genres : list;
-            String str36 = (i & 65536) != 0 ? meta.poster : str16;
-            String str37 = (i & 131072) != 0 ? meta.rawPosterUrl : str17;
-            String str38 = (i & 262144) != 0 ? meta.background : str18;
-            String str39 = (i & 524288) != 0 ? meta.logo : str19;
-            List list7 = (i & 1048576) != 0 ? meta.videos : list2;
-            List list8 = (i & 2097152) != 0 ? meta.trailers : list3;
-            List list9 = (i & 4194304) != 0 ? meta.trailerStreams : list4;
-            List list10 = (i & 8388608) != 0 ? meta.links : list5;
+            String str18 = (i & 1) != 0 ? meta.id : str;
+            String str19 = (i & 2) != 0 ? meta.type : str2;
+            String str20 = (i & 4) != 0 ? meta.name : str3;
+            String str21 = (i & 8) != 0 ? meta.imdbId : str4;
+            String str22 = (i & 16) != 0 ? meta.slug : str5;
+            List list8 = (i & 32) != 0 ? meta.director : list;
+            List list9 = (i & 64) != 0 ? meta.writer : list2;
+            String str23 = (i & 128) != 0 ? meta.description : str6;
+            String str24 = (i & 256) != 0 ? meta.year : str7;
+            String str25 = (i & 512) != 0 ? meta.releaseInfo : str8;
+            String str26 = (i & 1024) != 0 ? meta.released : str9;
+            String str27 = (i & 2048) != 0 ? meta.runtime : str10;
+            String str28 = (i & 4096) != 0 ? meta.status : str11;
+            String str29 = (i & 8192) != 0 ? meta.country : str12;
+            String str30 = str18;
+            String str31 = (i & 16384) != 0 ? meta.imdbRating : str13;
+            List list10 = (i & 32768) != 0 ? meta.genres : list3;
+            String str32 = (i & 65536) != 0 ? meta.poster : str14;
+            String str33 = (i & 131072) != 0 ? meta.rawPosterUrl : str15;
+            String str34 = (i & 262144) != 0 ? meta.background : str16;
+            String str35 = (i & 524288) != 0 ? meta.logo : str17;
+            List list11 = (i & 1048576) != 0 ? meta.videos : list4;
+            List list12 = (i & 2097152) != 0 ? meta.trailers : list5;
+            List list13 = (i & 4194304) != 0 ? meta.trailerStreams : list6;
+            List list14 = (i & 8388608) != 0 ? meta.links : list7;
             BehaviorHints behaviorHints3 = (i & 16777216) != 0 ? meta.behaviorHints : behaviorHints;
             if ((i & 33554432) != 0) {
                 behaviorHints2 = behaviorHints3;
@@ -195,7 +198,7 @@ public final /* data */ class CinemetaRes {
                 appExtras2 = appExtras;
                 behaviorHints2 = behaviorHints3;
             }
-            return meta.copy(str34, str21, str22, str23, str24, str25, str26, str27, str28, str29, str30, str31, str32, str33, str35, list6, str36, str37, str38, str39, list7, list8, list9, list10, behaviorHints2, appExtras2);
+            return meta.copy(str30, str19, str20, str21, str22, list8, list9, str23, str24, str25, str26, str27, str28, str29, str31, list10, str32, str33, str34, str35, list11, list12, list13, list14, behaviorHints2, appExtras2);
         }
 
         @Nullable
@@ -326,14 +329,12 @@ public final /* data */ class CinemetaRes {
         }
 
         @Nullable
-        /* JADX INFO: renamed from: component6, reason: from getter */
-        public final String getDirector() {
+        public final List<String> component6() {
             return this.director;
         }
 
         @Nullable
-        /* JADX INFO: renamed from: component7, reason: from getter */
-        public final String getWriter() {
+        public final List<String> component7() {
             return this.writer;
         }
 
@@ -350,7 +351,7 @@ public final /* data */ class CinemetaRes {
         }
 
         @NotNull
-        public final Meta copy(@Nullable String id, @Nullable String type, @Nullable String name, @JsonProperty("imdb_id") @Nullable String imdbId, @Nullable String slug, @Nullable String director, @Nullable String writer, @Nullable String description, @Nullable String year, @Nullable String releaseInfo, @Nullable String released, @Nullable String runtime, @Nullable String status, @Nullable String country, @Nullable String imdbRating, @Nullable List<String> genres, @Nullable String poster, @JsonProperty("_rawPosterUrl") @Nullable String rawPosterUrl, @Nullable String background, @Nullable String logo, @Nullable List<Video> videos, @Nullable List<Trailer> trailers, @Nullable List<TrailerStream> trailerStreams, @Nullable List<Link> links, @Nullable BehaviorHints behaviorHints, @JsonProperty("app_extras") @Nullable AppExtras appExtras) {
+        public final Meta copy(@Nullable String id, @Nullable String type, @Nullable String name, @JsonProperty("imdb_id") @Nullable String imdbId, @Nullable String slug, @Nullable List<String> director, @Nullable List<String> writer, @Nullable String description, @Nullable String year, @Nullable String releaseInfo, @Nullable String released, @Nullable String runtime, @Nullable String status, @Nullable String country, @Nullable String imdbRating, @Nullable List<String> genres, @Nullable String poster, @JsonProperty("_rawPosterUrl") @Nullable String rawPosterUrl, @Nullable String background, @Nullable String logo, @Nullable List<Video> videos, @Nullable List<Trailer> trailers, @Nullable List<TrailerStream> trailerStreams, @Nullable List<Link> links, @Nullable BehaviorHints behaviorHints, @JsonProperty("app_extras") @Nullable AppExtras appExtras) {
             return new Meta(id, type, name, imdbId, slug, director, writer, description, year, releaseInfo, released, runtime, status, country, imdbRating, genres, poster, rawPosterUrl, background, logo, videos, trailers, trailerStreams, links, behaviorHints, appExtras);
         }
 
@@ -378,14 +379,14 @@ public final /* data */ class CinemetaRes {
             return sb.toString();
         }
 
-        public Meta(@Nullable String id, @Nullable String type, @Nullable String name, @JsonProperty("imdb_id") @Nullable String imdbId, @Nullable String slug, @Nullable String director, @Nullable String writer, @Nullable String description, @Nullable String year, @Nullable String releaseInfo, @Nullable String released, @Nullable String runtime, @Nullable String status, @Nullable String country, @Nullable String imdbRating, @Nullable List<String> list, @Nullable String poster, @JsonProperty("_rawPosterUrl") @Nullable String rawPosterUrl, @Nullable String background, @Nullable String logo, @Nullable List<Video> list2, @Nullable List<Trailer> list3, @Nullable List<TrailerStream> list4, @Nullable List<Link> list5, @Nullable BehaviorHints behaviorHints, @JsonProperty("app_extras") @Nullable AppExtras appExtras) {
+        public Meta(@Nullable String id, @Nullable String type, @Nullable String name, @JsonProperty("imdb_id") @Nullable String imdbId, @Nullable String slug, @Nullable List<String> list, @Nullable List<String> list2, @Nullable String description, @Nullable String year, @Nullable String releaseInfo, @Nullable String released, @Nullable String runtime, @Nullable String status, @Nullable String country, @Nullable String imdbRating, @Nullable List<String> list3, @Nullable String poster, @JsonProperty("_rawPosterUrl") @Nullable String rawPosterUrl, @Nullable String background, @Nullable String logo, @Nullable List<Video> list4, @Nullable List<Trailer> list5, @Nullable List<TrailerStream> list6, @Nullable List<Link> list7, @Nullable BehaviorHints behaviorHints, @JsonProperty("app_extras") @Nullable AppExtras appExtras) {
             this.id = id;
             this.type = type;
             this.name = name;
             this.imdbId = imdbId;
             this.slug = slug;
-            this.director = director;
-            this.writer = writer;
+            this.director = list;
+            this.writer = list2;
             this.description = description;
             this.year = year;
             this.releaseInfo = releaseInfo;
@@ -394,37 +395,37 @@ public final /* data */ class CinemetaRes {
             this.status = status;
             this.country = country;
             this.imdbRating = imdbRating;
-            this.genres = list;
+            this.genres = list3;
             this.poster = poster;
             this.rawPosterUrl = rawPosterUrl;
             this.background = background;
             this.logo = logo;
-            this.videos = list2;
-            this.trailers = list3;
-            this.trailerStreams = list4;
-            this.links = list5;
+            this.videos = list4;
+            this.trailers = list5;
+            this.trailerStreams = list6;
+            this.links = list7;
             this.behaviorHints = behaviorHints;
             this.appExtras = appExtras;
         }
 
         /* JADX WARN: Illegal instructions before constructor call */
-        public /* synthetic */ Meta(String str, String str2, String str3, String str4, String str5, String str6, String str7, String str8, String str9, String str10, String str11, String str12, String str13, String str14, String str15, List list, String str16, String str17, String str18, String str19, List list2, List list3, List list4, List list5, BehaviorHints behaviorHints, AppExtras appExtras, int i, DefaultConstructorMarker defaultConstructorMarker) {
-            String str20 = (i & 1) != 0 ? null : str;
-            String str21 = (i & 2) != 0 ? null : str2;
-            String str22 = (i & 4) != 0 ? null : str3;
-            String str23 = (i & 8) != 0 ? null : str4;
-            String str24 = (i & 16) != 0 ? null : str5;
-            String str25 = (i & 32) != 0 ? null : str6;
-            String str26 = (i & 64) != 0 ? null : str7;
-            String str27 = (i & 128) != 0 ? null : str8;
-            String str28 = (i & 256) != 0 ? null : str9;
-            String str29 = (i & 512) != 0 ? null : str10;
-            String str30 = (i & 1024) != 0 ? null : str11;
-            String str31 = (i & 2048) != 0 ? null : str12;
-            String str32 = (i & 4096) != 0 ? null : str13;
-            String str33 = (i & 8192) != 0 ? null : str14;
-            String str34 = (i & 16384) != 0 ? null : str15;
-            this(str20, str21, str22, str23, str24, str25, str26, str27, str28, str29, str30, str31, str32, str33, str34, (i & 32768) != 0 ? null : list, (i & 65536) != 0 ? null : str16, (i & 131072) != 0 ? null : str17, (i & 262144) != 0 ? null : str18, (i & 524288) != 0 ? null : str19, (i & 1048576) != 0 ? null : list2, (i & 2097152) != 0 ? null : list3, (i & 4194304) != 0 ? null : list4, (i & 8388608) != 0 ? null : list5, (i & 16777216) != 0 ? null : behaviorHints, (i & 33554432) != 0 ? null : appExtras);
+        public /* synthetic */ Meta(String str, String str2, String str3, String str4, String str5, List list, List list2, String str6, String str7, String str8, String str9, String str10, String str11, String str12, String str13, List list3, String str14, String str15, String str16, String str17, List list4, List list5, List list6, List list7, BehaviorHints behaviorHints, AppExtras appExtras, int i, DefaultConstructorMarker defaultConstructorMarker) {
+            String str18 = (i & 1) != 0 ? null : str;
+            String str19 = (i & 2) != 0 ? null : str2;
+            String str20 = (i & 4) != 0 ? null : str3;
+            String str21 = (i & 8) != 0 ? null : str4;
+            String str22 = (i & 16) != 0 ? null : str5;
+            List list8 = (i & 32) != 0 ? null : list;
+            List list9 = (i & 64) != 0 ? null : list2;
+            String str23 = (i & 128) != 0 ? null : str6;
+            String str24 = (i & 256) != 0 ? null : str7;
+            String str25 = (i & 512) != 0 ? null : str8;
+            String str26 = (i & 1024) != 0 ? null : str9;
+            String str27 = (i & 2048) != 0 ? null : str10;
+            String str28 = (i & 4096) != 0 ? null : str11;
+            String str29 = (i & 8192) != 0 ? null : str12;
+            String str30 = (i & 16384) != 0 ? null : str13;
+            this(str18, str19, str20, str21, str22, list8, list9, str23, str24, str25, str26, str27, str28, str29, str30, (i & 32768) != 0 ? null : list3, (i & 65536) != 0 ? null : str14, (i & 131072) != 0 ? null : str15, (i & 262144) != 0 ? null : str16, (i & 524288) != 0 ? null : str17, (i & 1048576) != 0 ? null : list4, (i & 2097152) != 0 ? null : list5, (i & 4194304) != 0 ? null : list6, (i & 8388608) != 0 ? null : list7, (i & 16777216) != 0 ? null : behaviorHints, (i & 33554432) != 0 ? null : appExtras);
         }
 
         @Nullable
@@ -453,12 +454,12 @@ public final /* data */ class CinemetaRes {
         }
 
         @Nullable
-        public final String getDirector() {
+        public final List<String> getDirector() {
             return this.director;
         }
 
         @Nullable
-        public final String getWriter() {
+        public final List<String> getWriter() {
             return this.writer;
         }
 
@@ -558,7 +559,8 @@ public final /* data */ class CinemetaRes {
         }
 
         /* JADX INFO: compiled from: TorraStreamParser.kt */
-        @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u000e\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\b\u0086\b\u0018\u00002\u00020\u0001B\u001f\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0001\u0012\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u000b\u0010\f\u001a\u0004\u0018\u00010\u0001HÆ\u0003J\u0010\u0010\r\u001a\u0004\u0018\u00010\u0004HÆ\u0003¢\u0006\u0002\u0010\nJ&\u0010\u000e\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00012\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u0004HÆ\u0001¢\u0006\u0002\u0010\u000fJ\u0014\u0010\u0010\u001a\u00020\u00042\b\u0010\u0011\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0012\u001a\u00020\u0013HÖ\u0081\u0004J\n\u0010\u0014\u001a\u00020\u0015HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0015\u0010\u0003\u001a\u0004\u0018\u00010\u0004¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\t\u0010\n¨\u0006\u0016"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$BehaviorHints;", "", "defaultVideoId", "hasScheduledVideos", "", "<init>", "(Ljava/lang/Object;Ljava/lang/Boolean;)V", "getDefaultVideoId", "()Ljava/lang/Object;", "getHasScheduledVideos", "()Ljava/lang/Boolean;", "Ljava/lang/Boolean;", "component1", "component2", "copy", "(Ljava/lang/Object;Ljava/lang/Boolean;)Lcom/phisher98/CinemetaRes$Meta$BehaviorHints;", "equals", "other", "hashCode", "", "toString", "", "TorraStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u000e\n\u0002\u0010\b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B\u001f\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0001\u0012\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u0004¢\u0006\u0004\b\u0005\u0010\u0006J\u000b\u0010\f\u001a\u0004\u0018\u00010\u0001HÆ\u0003J\u0010\u0010\r\u001a\u0004\u0018\u00010\u0004HÆ\u0003¢\u0006\u0002\u0010\nJ&\u0010\u000e\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00012\n\b\u0002\u0010\u0003\u001a\u0004\u0018\u00010\u0004HÆ\u0001¢\u0006\u0002\u0010\u000fJ\u0014\u0010\u0010\u001a\u00020\u00042\b\u0010\u0011\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0012\u001a\u00020\u0013HÖ\u0081\u0004J\n\u0010\u0014\u001a\u00020\u0015HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0015\u0010\u0003\u001a\u0004\u0018\u00010\u0004¢\u0006\n\n\u0002\u0010\u000b\u001a\u0004\b\t\u0010\nÊ\u0001\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\u0007\u0010\u0002¨\u0006\u0016"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$BehaviorHints;", "", "defaultVideoId", "hasScheduledVideos", "", "<init>", "(Ljava/lang/Object;Ljava/lang/Boolean;)V", "getDefaultVideoId", "()Ljava/lang/Object;", "getHasScheduledVideos", "()Ljava/lang/Boolean;", "Ljava/lang/Boolean;", "component1", "component2", "copy", "(Ljava/lang/Object;Ljava/lang/Boolean;)Lcom/phisher98/CinemetaRes$Meta$BehaviorHints;", "equals", "other", "hashCode", "", "toString", "", "TorraStream", "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;", "ignoreUnknown"}, k = 1, mv = {2, 4, 0}, xi = 48)
         public static final /* data */ class BehaviorHints {
 
             @Nullable
@@ -641,7 +643,8 @@ public final /* data */ class CinemetaRes {
         }
 
         /* JADX INFO: compiled from: TorraStreamParser.kt */
-        @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B+\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\u000b\u0010\f\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u000e\u001a\u0004\u0018\u00010\u0003HÆ\u0003J-\u0010\u000f\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\tR\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\t¨\u0006\u0016"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$Link;", "", "name", "", "category", "url", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getName", "()Ljava/lang/String;", "getCategory", "getUrl", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "", "toString", "TorraStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B+\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\u000b\u0010\f\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u000e\u001a\u0004\u0018\u00010\u0003HÆ\u0003J-\u0010\u000f\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\tR\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\tÊ\u0001\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\u0007\u0010\u0002¨\u0006\u0016"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$Link;", "", "name", "", "category", "url", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getName", "()Ljava/lang/String;", "getCategory", "getUrl", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "", "toString", "TorraStream", "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;", "ignoreUnknown"}, k = 1, mv = {2, 4, 0}, xi = 48)
         public static final /* data */ class Link {
 
             @Nullable
@@ -740,8 +743,12 @@ public final /* data */ class CinemetaRes {
         }
 
         /* JADX INFO: compiled from: TorraStreamParser.kt */
-        @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B+\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\u000b\u0010\f\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u000e\u001a\u0004\u0018\u00010\u0003HÆ\u0003J-\u0010\u000f\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\tR\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\t¨\u0006\u0016"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$Trailer;", "", "source", "", "type", "name", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getSource", "()Ljava/lang/String;", "getType", "getName", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "", "toString", "TorraStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0010\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B7\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0007\u0010\bJ\u000b\u0010\u000e\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u000f\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u0010\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u0011\u001a\u0004\u0018\u00010\u0003HÆ\u0003J9\u0010\u0012\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0006\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0014\u0010\u0013\u001a\u00020\u00142\b\u0010\u0015\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0016\u001a\u00020\u0017HÖ\u0081\u0004J\n\u0010\u0018\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\nR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\nR\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\nR\u0013\u0010\u0006\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\r\u0010\nÊ\u0001\f\b\u001a\u0012\b\b\u001b\u0012\u0004\b\u0007\u0010\u0002¨\u0006\u0019"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$Trailer;", "", "source", "", "type", "name", "lang", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getSource", "()Ljava/lang/String;", "getType", "getName", "getLang", "component1", "component2", "component3", "component4", "copy", "equals", "", "other", "hashCode", "", "toString", "TorraStream", "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;", "ignoreUnknown"}, k = 1, mv = {2, 4, 0}, xi = 48)
         public static final /* data */ class Trailer {
+
+            @Nullable
+            private final String lang;
 
             @Nullable
             private final String name;
@@ -753,10 +760,10 @@ public final /* data */ class CinemetaRes {
             private final String type;
 
             public Trailer() {
-                this(null, null, null, 7, null);
+                this(null, null, null, null, 15, null);
             }
 
-            public static /* synthetic */ Trailer copy$default(Trailer trailer, String str, String str2, String str3, int i, Object obj) {
+            public static /* synthetic */ Trailer copy$default(Trailer trailer, String str, String str2, String str3, String str4, int i, Object obj) {
                 if ((i & 1) != 0) {
                     str = trailer.source;
                 }
@@ -766,7 +773,10 @@ public final /* data */ class CinemetaRes {
                 if ((i & 4) != 0) {
                     str3 = trailer.name;
                 }
-                return trailer.copy(str, str2, str3);
+                if ((i & 8) != 0) {
+                    str4 = trailer.lang;
+                }
+                return trailer.copy(str, str2, str3, str4);
             }
 
             @Nullable
@@ -787,9 +797,15 @@ public final /* data */ class CinemetaRes {
                 return this.name;
             }
 
+            @Nullable
+            /* JADX INFO: renamed from: component4, reason: from getter */
+            public final String getLang() {
+                return this.lang;
+            }
+
             @NotNull
-            public final Trailer copy(@Nullable String source, @Nullable String type, @Nullable String name) {
-                return new Trailer(source, type, name);
+            public final Trailer copy(@Nullable String source, @Nullable String type, @Nullable String name, @Nullable String lang) {
+                return new Trailer(source, type, name, lang);
             }
 
             public boolean equals(@Nullable Object other) {
@@ -800,26 +816,27 @@ public final /* data */ class CinemetaRes {
                     return false;
                 }
                 Trailer trailer = (Trailer) other;
-                return Intrinsics.areEqual(this.source, trailer.source) && Intrinsics.areEqual(this.type, trailer.type) && Intrinsics.areEqual(this.name, trailer.name);
+                return Intrinsics.areEqual(this.source, trailer.source) && Intrinsics.areEqual(this.type, trailer.type) && Intrinsics.areEqual(this.name, trailer.name) && Intrinsics.areEqual(this.lang, trailer.lang);
             }
 
             public int hashCode() {
-                return ((((this.source == null ? 0 : this.source.hashCode()) * 31) + (this.type == null ? 0 : this.type.hashCode())) * 31) + (this.name != null ? this.name.hashCode() : 0);
+                return ((((((this.source == null ? 0 : this.source.hashCode()) * 31) + (this.type == null ? 0 : this.type.hashCode())) * 31) + (this.name == null ? 0 : this.name.hashCode())) * 31) + (this.lang != null ? this.lang.hashCode() : 0);
             }
 
             @NotNull
             public String toString() {
-                return "Trailer(source=" + this.source + ", type=" + this.type + ", name=" + this.name + ')';
+                return "Trailer(source=" + this.source + ", type=" + this.type + ", name=" + this.name + ", lang=" + this.lang + ')';
             }
 
-            public Trailer(@Nullable String source, @Nullable String type, @Nullable String name) {
+            public Trailer(@Nullable String source, @Nullable String type, @Nullable String name, @Nullable String lang) {
                 this.source = source;
                 this.type = type;
                 this.name = name;
+                this.lang = lang;
             }
 
-            public /* synthetic */ Trailer(String str, String str2, String str3, int i, DefaultConstructorMarker defaultConstructorMarker) {
-                this((i & 1) != 0 ? null : str, (i & 2) != 0 ? null : str2, (i & 4) != 0 ? null : str3);
+            public /* synthetic */ Trailer(String str, String str2, String str3, String str4, int i, DefaultConstructorMarker defaultConstructorMarker) {
+                this((i & 1) != 0 ? null : str, (i & 2) != 0 ? null : str2, (i & 4) != 0 ? null : str3, (i & 8) != 0 ? null : str4);
             }
 
             @Nullable
@@ -836,10 +853,16 @@ public final /* data */ class CinemetaRes {
             public final String getName() {
                 return this.name;
             }
+
+            @Nullable
+            public final String getLang() {
+                return this.lang;
+            }
         }
 
         /* JADX INFO: compiled from: TorraStreamParser.kt */
-        @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B\u001f\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u000b\u0010\n\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u000b\u001a\u0004\u0018\u00010\u0003HÆ\u0003J!\u0010\f\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0014\u0010\r\u001a\u00020\u000e2\b\u0010\u000f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0010\u001a\u00020\u0011HÖ\u0081\u0004J\n\u0010\u0012\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\b¨\u0006\u0013"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$TrailerStream;", "", "ytId", "", "title", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "getYtId", "()Ljava/lang/String;", "getTitle", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "TorraStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\n\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B\u001f\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u000b\u0010\n\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u000b\u001a\u0004\u0018\u00010\u0003HÆ\u0003J!\u0010\f\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0014\u0010\r\u001a\u00020\u000e2\b\u0010\u000f\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0010\u001a\u00020\u0011HÖ\u0081\u0004J\n\u0010\u0012\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\bÊ\u0001\f\b\u0014\u0012\b\b\u0015\u0012\u0004\b\u0007\u0010\u0002¨\u0006\u0013"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$TrailerStream;", "", "ytId", "", "title", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "getYtId", "()Ljava/lang/String;", "getTitle", "component1", "component2", "copy", "equals", "", "other", "hashCode", "", "toString", "TorraStream", "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;", "ignoreUnknown"}, k = 1, mv = {2, 4, 0}, xi = 48)
         public static final /* data */ class TrailerStream {
 
             @Nullable
@@ -922,7 +945,8 @@ public final /* data */ class CinemetaRes {
         }
 
         /* JADX INFO: compiled from: TorraStreamParser.kt */
-        @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b!\b\u0086\b\u0018\u00002\u00020\u0001Bs\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\f\u0012\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u000e\u0010\u000fJ\u000b\u0010\u001e\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u001f\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0010\u0010 \u001a\u0004\u0018\u00010\u0006HÆ\u0003¢\u0006\u0002\u0010\u0014J\u0010\u0010!\u001a\u0004\u0018\u00010\u0006HÆ\u0003¢\u0006\u0002\u0010\u0014J\u000b\u0010\"\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010#\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010$\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0010\u0010%\u001a\u0004\u0018\u00010\fHÆ\u0003¢\u0006\u0002\u0010\u001bJ\u000b\u0010&\u001a\u0004\u0018\u00010\u0003HÆ\u0003Jz\u0010'\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00062\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u00062\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\f2\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0001¢\u0006\u0002\u0010(J\u0014\u0010)\u001a\u00020\f2\b\u0010*\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010+\u001a\u00020\u0006HÖ\u0081\u0004J\n\u0010,\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0011R\u0015\u0010\u0005\u001a\u0004\u0018\u00010\u0006¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u0013\u0010\u0014R\u0015\u0010\u0007\u001a\u0004\u0018\u00010\u0006¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u0016\u0010\u0014R\u0013\u0010\b\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0011R\u0013\u0010\t\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0011R\u0013\u0010\n\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0011R\u0015\u0010\u000b\u001a\u0004\u0018\u00010\f¢\u0006\n\n\u0002\u0010\u001c\u001a\u0004\b\u001a\u0010\u001bR\u0013\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0011¨\u0006-"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$Video;", "", "id", "", "title", "season", "", "episode", "thumbnail", "overview", "released", "available", "", "runtime", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;)V", "getId", "()Ljava/lang/String;", "getTitle", "getSeason", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getEpisode", "getThumbnail", "getOverview", "getReleased", "getAvailable", "()Ljava/lang/Boolean;", "Ljava/lang/Boolean;", "getRuntime", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "copy", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;)Lcom/phisher98/CinemetaRes$Meta$Video;", "equals", "other", "hashCode", "toString", "TorraStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b!\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001Bs\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u0006\u0012\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\f\u0012\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u000e\u0010\u000fJ\u000b\u0010\u001e\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u001f\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0010\u0010 \u001a\u0004\u0018\u00010\u0006HÆ\u0003¢\u0006\u0002\u0010\u0014J\u0010\u0010!\u001a\u0004\u0018\u00010\u0006HÆ\u0003¢\u0006\u0002\u0010\u0014J\u000b\u0010\"\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010#\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010$\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u0010\u0010%\u001a\u0004\u0018\u00010\fHÆ\u0003¢\u0006\u0002\u0010\u001bJ\u000b\u0010&\u001a\u0004\u0018\u00010\u0003HÆ\u0003Jz\u0010'\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u00062\n\b\u0002\u0010\u0007\u001a\u0004\u0018\u00010\u00062\n\b\u0002\u0010\b\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\n\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u000b\u001a\u0004\u0018\u00010\f2\n\b\u0002\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0001¢\u0006\u0002\u0010(J\u0014\u0010)\u001a\u00020\f2\b\u0010*\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010+\u001a\u00020\u0006HÖ\u0081\u0004J\n\u0010,\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0011R\u0015\u0010\u0005\u001a\u0004\u0018\u00010\u0006¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u0013\u0010\u0014R\u0015\u0010\u0007\u001a\u0004\u0018\u00010\u0006¢\u0006\n\n\u0002\u0010\u0015\u001a\u0004\b\u0016\u0010\u0014R\u0013\u0010\b\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0011R\u0013\u0010\t\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0011R\u0013\u0010\n\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u0011R\u0015\u0010\u000b\u001a\u0004\u0018\u00010\f¢\u0006\n\n\u0002\u0010\u001c\u001a\u0004\b\u001a\u0010\u001bR\u0013\u0010\r\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u001d\u0010\u0011Ê\u0001\f\b.\u0012\b\b/\u0012\u0004\b\u0007\u0010\u0002¨\u0006-"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$Video;", "", "id", "", "title", "season", "", "episode", "thumbnail", "overview", "released", "available", "", "runtime", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;)V", "getId", "()Ljava/lang/String;", "getTitle", "getSeason", "()Ljava/lang/Integer;", "Ljava/lang/Integer;", "getEpisode", "getThumbnail", "getOverview", "getReleased", "getAvailable", "()Ljava/lang/Boolean;", "Ljava/lang/Boolean;", "getRuntime", "component1", "component2", "component3", "component4", "component5", "component6", "component7", "component8", "component9", "copy", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;)Lcom/phisher98/CinemetaRes$Meta$Video;", "equals", "other", "hashCode", "toString", "TorraStream", "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;", "ignoreUnknown"}, k = 1, mv = {2, 4, 0}, xi = 48)
         public static final /* data */ class Video {
 
             @Nullable
@@ -1135,7 +1159,8 @@ public final /* data */ class CinemetaRes {
         }
 
         /* JADX INFO: compiled from: TorraStreamParser.kt */
-        @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0011\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001Ba\u0012\u0010\b\u0002\u0010\u0002\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u0003\u0012\u0012\b\u0002\u0010\u0005\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003\u0012\u0012\b\u0002\u0010\u0006\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003\u0012\u0012\b\u0002\u0010\u0007\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\b\u0018\u00010\u0003\u0012\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\n\u0010\u000bJ\u0011\u0010\u0013\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u0003HÆ\u0003J\u0013\u0010\u0014\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003HÆ\u0003J\u0013\u0010\u0015\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003HÆ\u0003J\u0013\u0010\u0016\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\b\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u0017\u001a\u0004\u0018\u00010\bHÆ\u0003Jc\u0010\u0018\u001a\u00020\u00002\u0010\b\u0002\u0010\u0002\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u00032\u0012\b\u0002\u0010\u0005\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u00032\u0012\b\u0002\u0010\u0006\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u00032\u0012\b\u0002\u0010\u0007\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\b\u0018\u00010\u00032\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\bHÆ\u0001J\u0014\u0010\u0019\u001a\u00020\u001a2\b\u0010\u001b\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u001c\u001a\u00020\u001dHÖ\u0081\u0004J\n\u0010\u001e\u001a\u00020\bHÖ\u0081\u0004R\u0019\u0010\u0002\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u001b\u0010\u0005\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\rR\u001b\u0010\u0006\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\rR\u001b\u0010\u0007\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\b\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\rR\u0013\u0010\t\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012¨\u0006\u001f"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$AppExtras;", "", "cast", "", "Lcom/phisher98/CinemetaRes$Meta$Cast;", "directors", "writers", "seasonPosters", "", "certification", "<init>", "(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;)V", "getCast", "()Ljava/util/List;", "getDirectors", "getWriters", "getSeasonPosters", "getCertification", "()Ljava/lang/String;", "component1", "component2", "component3", "component4", "component5", "copy", "equals", "", "other", "hashCode", "", "toString", "TorraStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        @Metadata(d1 = {"\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0011\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001Ba\u0012\u0010\b\u0002\u0010\u0002\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u0003\u0012\u0012\b\u0002\u0010\u0005\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003\u0012\u0012\b\u0002\u0010\u0006\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003\u0012\u0012\b\u0002\u0010\u0007\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\b\u0018\u00010\u0003\u0012\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\b¢\u0006\u0004\b\n\u0010\u000bJ\u0011\u0010\u0013\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u0003HÆ\u0003J\u0013\u0010\u0014\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003HÆ\u0003J\u0013\u0010\u0015\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003HÆ\u0003J\u0013\u0010\u0016\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\b\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u0017\u001a\u0004\u0018\u00010\bHÆ\u0003Jc\u0010\u0018\u001a\u00020\u00002\u0010\b\u0002\u0010\u0002\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u00032\u0012\b\u0002\u0010\u0005\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u00032\u0012\b\u0002\u0010\u0006\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u00032\u0012\b\u0002\u0010\u0007\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\b\u0018\u00010\u00032\n\b\u0002\u0010\t\u001a\u0004\u0018\u00010\bHÆ\u0001J\u0014\u0010\u0019\u001a\u00020\u001a2\b\u0010\u001b\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u001c\u001a\u00020\u001dHÖ\u0081\u0004J\n\u0010\u001e\u001a\u00020\bHÖ\u0081\u0004R\u0019\u0010\u0002\u001a\n\u0012\u0004\u0012\u00020\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u001b\u0010\u0005\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000e\u0010\rR\u001b\u0010\u0006\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\u0001\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\rR\u001b\u0010\u0007\u001a\f\u0012\u0006\u0012\u0004\u0018\u00010\b\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\rR\u0013\u0010\t\u001a\u0004\u0018\u00010\b¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012Ê\u0001\f\b \u0012\b\b!\u0012\u0004\b\u0007\u0010\u0002¨\u0006\u001f"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$AppExtras;", "", "cast", "", "Lcom/phisher98/CinemetaRes$Meta$Cast;", "directors", "writers", "seasonPosters", "", "certification", "<init>", "(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/lang/String;)V", "getCast", "()Ljava/util/List;", "getDirectors", "getWriters", "getSeasonPosters", "getCertification", "()Ljava/lang/String;", "component1", "component2", "component3", "component4", "component5", "copy", "equals", "", "other", "hashCode", "", "toString", "TorraStream", "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;", "ignoreUnknown"}, k = 1, mv = {2, 4, 0}, xi = 48)
         public static final /* data */ class AppExtras {
 
             @Nullable
@@ -1269,7 +1294,8 @@ public final /* data */ class CinemetaRes {
         }
 
         /* JADX INFO: compiled from: TorraStreamParser.kt */
-        @Metadata(d1 = {"\u0000\"\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\b\u0086\b\u0018\u00002\u00020\u0001B+\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\u000b\u0010\f\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u000e\u001a\u0004\u0018\u00010\u0003HÆ\u0003J-\u0010\u000f\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\tR\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\t¨\u0006\u0016"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$Cast;", "", "name", "", "character", "photo", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getName", "()Ljava/lang/String;", "getCharacter", "getPhoto", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "", "toString", "TorraStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
+        @JsonIgnoreProperties(ignoreUnknown = true)
+        @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\b\u0087\b\u0018\u00002\u00020\u0001B+\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003\u0012\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0006\u0010\u0007J\u000b\u0010\f\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\r\u001a\u0004\u0018\u00010\u0003HÆ\u0003J\u000b\u0010\u000e\u001a\u0004\u0018\u00010\u0003HÆ\u0003J-\u0010\u000f\u001a\u00020\u00002\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u00032\n\b\u0002\u0010\u0005\u001a\u0004\u0018\u00010\u0003HÆ\u0001J\u0014\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0001HÖ\u0083\u0004J\n\u0010\u0013\u001a\u00020\u0014HÖ\u0081\u0004J\n\u0010\u0015\u001a\u00020\u0003HÖ\u0081\u0004R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\b\u0010\tR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\n\u0010\tR\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\tÊ\u0001\f\b\u0017\u0012\b\b\u0018\u0012\u0004\b\u0007\u0010\u0002¨\u0006\u0016"}, d2 = {"Lcom/phisher98/CinemetaRes$Meta$Cast;", "", "name", "", "character", "photo", "<init>", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V", "getName", "()Ljava/lang/String;", "getCharacter", "getPhoto", "component1", "component2", "component3", "copy", "equals", "", "other", "hashCode", "", "toString", "TorraStream", "Lcom/fasterxml/jackson/annotation/JsonIgnoreProperties;", "ignoreUnknown"}, k = 1, mv = {2, 4, 0}, xi = 48)
         public static final /* data */ class Cast {
 
             @Nullable

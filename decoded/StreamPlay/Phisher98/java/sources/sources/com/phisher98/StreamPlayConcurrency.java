@@ -141,7 +141,7 @@ public final class StreamPlayConcurrency {
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayConcurrency$runLimitedAsync$2", f = "StreamPlayConcurrency.kt", i = {0, 0}, l = {91}, m = "invokeSuspend", n = {"$this$coroutineScope", "semaphore"}, nl = {92}, s = {"L$0", "L$1"}, v = 2)
     @SourceDebugExtension({"SMAP\nStreamPlayConcurrency.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StreamPlayConcurrency.kt\ncom/phisher98/StreamPlayConcurrency$runLimitedAsync$2\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,113:1\n12746#2:114\n13093#2,3:115\n*S KotlinDebug\n*F\n+ 1 StreamPlayConcurrency.kt\ncom/phisher98/StreamPlayConcurrency$runLimitedAsync$2\n*L\n81#1:114\n81#1:115,3\n*E\n"})
-    static final class C01012 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    static final class C01062 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ int $concurrency;
         final /* synthetic */ Function1<Continuation<? super Unit>, Object>[] $tasks;
         private /* synthetic */ Object L$0;
@@ -149,16 +149,16 @@ public final class StreamPlayConcurrency {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C01012(Function1<? super Continuation<? super Unit>, ? extends Object>[] function1Arr, int i, Continuation<? super C01012> continuation) {
+        C01062(Function1<? super Continuation<? super Unit>, ? extends Object>[] function1Arr, int i, Continuation<? super C01062> continuation) {
             super(2, continuation);
             this.$tasks = function1Arr;
             this.$concurrency = i;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c01012 = new C01012(this.$tasks, this.$concurrency, continuation);
-            c01012.L$0 = obj;
-            return c01012;
+            Continuation<Unit> c01062 = new C01062(this.$tasks, this.$concurrency, continuation);
+            c01062.L$0 = obj;
+            return c01062;
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -202,7 +202,7 @@ public final class StreamPlayConcurrency {
 
     @Nullable
     public final Object runLimitedAsync(int concurrency, @NotNull Function1<? super Continuation<? super Unit>, ? extends Object>[] function1Arr, @NotNull Continuation<? super Unit> continuation) {
-        Object objCoroutineScope = CoroutineScopeKt.coroutineScope(new C01012(function1Arr, concurrency, null), continuation);
+        Object objCoroutineScope = CoroutineScopeKt.coroutineScope(new C01062(function1Arr, concurrency, null), continuation);
         return objCoroutineScope == IntrinsicsKt.getCOROUTINE_SUSPENDED() ? objCoroutineScope : Unit.INSTANCE;
     }
 

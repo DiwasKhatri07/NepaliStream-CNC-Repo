@@ -58,7 +58,7 @@ import org.jsoup.nodes.Element;
 /* JADX INFO: compiled from: Extractors.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000>\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\n\b\u0016\u0018\u00002\u00020\u0001:\u0001%B\u0007¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u00052\b\u0010\u0012\u001a\u0004\u0018\u00010\u00052\u0012\u0010\u0013\u001a\u000e\u0012\u0004\u0012\u00020\u0015\u0012\u0004\u0012\u00020\u00100\u00142\u0012\u0010\u0016\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00100\u0014H\u0096@¢\u0006\u0002\u0010\u0018J\u0018\u0010\u0019\u001a\u00020\u00052\u0006\u0010\u001a\u001a\u00020\u00052\u0006\u0010\u001b\u001a\u00020\u001cH\u0002J\u0018\u0010\u001d\u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\u00052\u0006\u0010\u001f\u001a\u00020\u0005H\u0002J\u0010\u0010 \u001a\u00020\u00052\u0006\u0010\u001e\u001a\u00020\u0005H\u0002J\f\u0010!\u001a\u00020\u0005*\u00020\u0005H\u0002J\u0014\u0010\"\u001a\u00020\u0005*\u00020\u00052\u0006\u0010#\u001a\u00020\u0005H\u0002J\f\u0010$\u001a\u00020\u0005*\u00020\u0005H\u0002R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u000e\u0010\u000e\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000¨\u0006&"}, d2 = {"Lcom/phisher98/Playm4u;", "Lcom/lagradost/cloudstream3/utils/ExtractorApi;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "mainUrl", "getMainUrl", "requiresReferer", "", "getRequiresReferer", "()Z", "password", "getUrl", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "caesarShift", "str", "amount", "", "mahoa", "input", "key", "md5", "toHex", "findIn", "data", "toLanguage", "Source", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/Playm4u\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,4049:1\n73#2,5:4050\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/Playm4u\n*L\n162#1:4050,5\n*E\n"})
+@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/Playm4u\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,4076:1\n73#2,5:4077\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/Playm4u\n*L\n162#1:4077,5\n*E\n"})
 public class Playm4u extends ExtractorApi {
 
     @NotNull
@@ -75,7 +75,7 @@ public class Playm4u extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Playm4u", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {128, 149, 155, 165, 177}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "$this", "url", "referer", "subtitleCallback", "callback", "document", "script", "passScript", "pass", "idFile", "idUser", "domainApi", "nameKeyV3", "dataEnc", "captchaKey", "amount", "$this", "url", "referer", "subtitleCallback", "callback", "document", "script", "passScript", "pass", "idFile", "idUser", "domainApi", "nameKeyV3", "dataEnc", "captchaKey", "token", "amount", "$this", "url", "referer", "subtitleCallback", "callback", "document", "script", "passScript", "pass", "idFile", "idUser", "domainApi", "nameKeyV3", "dataEnc", "captchaKey", "token", "source", "amount", "$this", "url", "referer", "subtitleCallback", "callback", "document", "script", "passScript", "pass", "idFile", "idUser", "domainApi", "nameKeyV3", "dataEnc", "captchaKey", "token", "source", "amount"}, nl = {129, 155, 162, 164, 176}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "I$0"}, v = 2)
-    static final class C00561 extends ContinuationImpl {
+    static final class C00571 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -98,7 +98,7 @@ public class Playm4u extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00561(Continuation<? super C00561> continuation) {
+        C00571(Continuation<? super C00571> continuation) {
             super(continuation);
         }
 
@@ -134,7 +134,7 @@ public class Playm4u extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:46:0x04f9  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     static /* synthetic */ Object getUrl$suspendImpl(Playm4u $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C00561 c00561;
+        C00571 c00571;
         Object obj;
         char c;
         int i;
@@ -193,34 +193,34 @@ public class Playm4u extends ExtractorApi {
         Object objNewSubtitleFile$default;
         Function1<? super SubtitleFile, Unit> function12;
         Playm4u $this4 = $this;
-        if (continuation instanceof C00561) {
-            c00561 = (C00561) continuation;
-            if ((c00561.label & Integer.MIN_VALUE) != 0) {
-                c00561.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00571) {
+            c00571 = (C00571) continuation;
+            if ((c00571.label & Integer.MIN_VALUE) != 0) {
+                c00571.label -= Integer.MIN_VALUE;
             } else {
-                c00561 = $this4.new C00561(continuation);
+                c00571 = $this4.new C00571(continuation);
             }
         } else {
-            c00561 = $this4.new C00561(continuation);
+            c00571 = $this4.new C00571(continuation);
         }
-        C00561 c00562 = c00561;
-        Object $result2 = c00562.result;
+        C00571 c00572 = c00571;
+        Object $result2 = c00572.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00562.label) {
+        switch (c00572.label) {
             case 0:
                 ResultKt.throwOnFailure($result2);
                 obj = coroutine_suspended;
                 Requests app = MainActivityKt.getApp();
-                c00562.L$0 = $this4;
-                c00562.L$1 = url;
-                c00562.L$2 = referer;
-                c00562.L$3 = function1;
-                c00562.L$4 = function2;
-                c00562.label = 1;
+                c00572.L$0 = $this4;
+                c00572.L$1 = url;
+                c00572.L$2 = referer;
+                c00572.L$3 = function1;
+                c00572.L$4 = function2;
+                c00572.label = 1;
                 c = 1;
                 i = 2;
-                Object obj3 = Requests.get$default(app, url, (Map) null, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00562, 4090, (Object) null);
-                c00562 = c00562;
+                Object obj3 = Requests.get$default(app, url, (Map) null, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00572, 4090, (Object) null);
+                c00572 = c00572;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -247,24 +247,24 @@ public class Playm4u extends ExtractorApi {
                 String dataEnc3 = $this4.toHex($this4.caesarShift($this4.mahoa("Win32|" + idUser2 + '|' + idFile3 + '|' + referer2, $this4.md5(pass3)), amount4));
                 String captchaKey2 = StringsKt.substringAfter$default(document2.select("script[src*=https://www.google.com/recaptcha/api.js?render=]").attr("src"), "render=", (String) null, 2, (Object) null);
                 APIHolder aPIHolder = APIHolder.INSTANCE;
-                c00562.L$0 = $this4;
-                c00562.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00562.L$2 = referer2;
-                c00562.L$3 = function3;
-                c00562.L$4 = function4;
-                c00562.L$5 = SpillingKt.nullOutSpilledVariable(document2);
-                c00562.L$6 = SpillingKt.nullOutSpilledVariable(script);
-                c00562.L$7 = SpillingKt.nullOutSpilledVariable(passScript);
-                c00562.L$8 = SpillingKt.nullOutSpilledVariable(pass3);
-                c00562.L$9 = SpillingKt.nullOutSpilledVariable(idFile3);
-                c00562.L$10 = SpillingKt.nullOutSpilledVariable(idUser2);
-                c00562.L$11 = script2;
-                c00562.L$12 = nameKeyV5;
-                c00562.L$13 = dataEnc3;
-                c00562.L$14 = SpillingKt.nullOutSpilledVariable(captchaKey2);
-                c00562.I$0 = amount4;
-                c00562.label = 2;
-                captchaToken = aPIHolder.getCaptchaToken(url2, captchaKey2, referer2, c00562);
+                c00572.L$0 = $this4;
+                c00572.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00572.L$2 = referer2;
+                c00572.L$3 = function3;
+                c00572.L$4 = function4;
+                c00572.L$5 = SpillingKt.nullOutSpilledVariable(document2);
+                c00572.L$6 = SpillingKt.nullOutSpilledVariable(script);
+                c00572.L$7 = SpillingKt.nullOutSpilledVariable(passScript);
+                c00572.L$8 = SpillingKt.nullOutSpilledVariable(pass3);
+                c00572.L$9 = SpillingKt.nullOutSpilledVariable(idFile3);
+                c00572.L$10 = SpillingKt.nullOutSpilledVariable(idUser2);
+                c00572.L$11 = script2;
+                c00572.L$12 = nameKeyV5;
+                c00572.L$13 = dataEnc3;
+                c00572.L$14 = SpillingKt.nullOutSpilledVariable(captchaKey2);
+                c00572.I$0 = amount4;
+                c00572.label = 2;
+                captchaToken = aPIHolder.getCaptchaToken(url2, captchaKey2, referer2, c00572);
                 if (captchaToken == obj) {
                     return obj;
                 }
@@ -291,33 +291,33 @@ public class Playm4u extends ExtractorApi {
                 pairArr[3] = TuplesKt.to("data", dataEnc + '|' + $this4.md5(dataEnc + $this4.password));
                 Map mapMapOf = MapsKt.mapOf(pairArr);
                 String str = $this4.getMainUrl() + '/';
-                c00562.L$0 = $this4;
-                c00562.L$1 = SpillingKt.nullOutSpilledVariable(url3);
-                c00562.L$2 = SpillingKt.nullOutSpilledVariable($result);
-                c00562.L$3 = function6;
-                c00562.L$4 = function5;
-                c00562.L$5 = SpillingKt.nullOutSpilledVariable(document);
-                c00562.L$6 = SpillingKt.nullOutSpilledVariable(script3);
-                c00562.L$7 = SpillingKt.nullOutSpilledVariable(passScript2);
-                c00562.L$8 = SpillingKt.nullOutSpilledVariable(pass);
-                c00562.L$9 = SpillingKt.nullOutSpilledVariable(idFile);
-                c00562.L$10 = SpillingKt.nullOutSpilledVariable(idUser);
-                c00562.L$11 = SpillingKt.nullOutSpilledVariable(script2);
-                c00562.L$12 = SpillingKt.nullOutSpilledVariable(nameKeyV3);
-                c00562.L$13 = SpillingKt.nullOutSpilledVariable(dataEnc);
-                c00562.L$14 = SpillingKt.nullOutSpilledVariable(captchaKey);
-                c00562.L$15 = SpillingKt.nullOutSpilledVariable(token);
-                c00562.I$0 = amount;
-                c00562.label = 3;
+                c00572.L$0 = $this4;
+                c00572.L$1 = SpillingKt.nullOutSpilledVariable(url3);
+                c00572.L$2 = SpillingKt.nullOutSpilledVariable($result);
+                c00572.L$3 = function6;
+                c00572.L$4 = function5;
+                c00572.L$5 = SpillingKt.nullOutSpilledVariable(document);
+                c00572.L$6 = SpillingKt.nullOutSpilledVariable(script3);
+                c00572.L$7 = SpillingKt.nullOutSpilledVariable(passScript2);
+                c00572.L$8 = SpillingKt.nullOutSpilledVariable(pass);
+                c00572.L$9 = SpillingKt.nullOutSpilledVariable(idFile);
+                c00572.L$10 = SpillingKt.nullOutSpilledVariable(idUser);
+                c00572.L$11 = SpillingKt.nullOutSpilledVariable(script2);
+                c00572.L$12 = SpillingKt.nullOutSpilledVariable(nameKeyV3);
+                c00572.L$13 = SpillingKt.nullOutSpilledVariable(dataEnc);
+                c00572.L$14 = SpillingKt.nullOutSpilledVariable(captchaKey);
+                c00572.L$15 = SpillingKt.nullOutSpilledVariable(token);
+                c00572.I$0 = amount;
+                c00572.label = 3;
                 function7 = function5;
                 function8 = function6;
-                C00561 c00563 = c00562;
+                C00571 c00573 = c00572;
                 amount2 = amount;
                 domainApi = script2;
                 dataEnc2 = dataEnc;
                 nameKeyV4 = nameKeyV3;
-                objPost$default = Requests.post$default(app2, domainApi, (Map) null, str, (Map) null, (Map) null, mapMapOf, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00563, 65498, (Object) null);
-                c00562 = c00563;
+                objPost$default = Requests.post$default(app2, domainApi, (Map) null, str, (Map) null, (Map) null, mapMapOf, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00573, 65498, (Object) null);
+                c00572 = c00573;
                 if (objPost$default == obj) {
                     return obj;
                 }
@@ -346,30 +346,30 @@ public class Playm4u extends ExtractorApi {
                     return Unit.INSTANCE;
                 }
                 ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
-                C00572 c00572 = $this2.new C00572(null);
-                c00562.L$0 = $this2;
-                c00562.L$1 = SpillingKt.nullOutSpilledVariable(url3);
-                c00562.L$2 = SpillingKt.nullOutSpilledVariable(pass2);
-                c00562.L$3 = function10;
-                c00562.L$4 = SpillingKt.nullOutSpilledVariable(function9);
-                c00562.L$5 = SpillingKt.nullOutSpilledVariable(document);
-                c00562.L$6 = SpillingKt.nullOutSpilledVariable(idFile2);
-                c00562.L$7 = SpillingKt.nullOutSpilledVariable(passScript3);
-                c00562.L$8 = SpillingKt.nullOutSpilledVariable(pass);
-                c00562.L$9 = SpillingKt.nullOutSpilledVariable(idFile);
-                c00562.L$10 = SpillingKt.nullOutSpilledVariable(idUser);
-                c00562.L$11 = SpillingKt.nullOutSpilledVariable(domainApi2);
-                c00562.L$12 = SpillingKt.nullOutSpilledVariable(nameKeyV4);
-                c00562.L$13 = SpillingKt.nullOutSpilledVariable(dataEnc2);
-                c00562.L$14 = SpillingKt.nullOutSpilledVariable(captchaKey);
-                c00562.L$15 = SpillingKt.nullOutSpilledVariable(token);
-                c00562.L$16 = source;
-                c00562.L$17 = function9;
-                c00562.I$0 = amount3;
-                c00562.label = 4;
-                C00561 c00564 = c00562;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, data, infer_type, c00572, c00564);
-                c00562 = c00564;
+                C00582 c00582 = $this2.new C00582(null);
+                c00572.L$0 = $this2;
+                c00572.L$1 = SpillingKt.nullOutSpilledVariable(url3);
+                c00572.L$2 = SpillingKt.nullOutSpilledVariable(pass2);
+                c00572.L$3 = function10;
+                c00572.L$4 = SpillingKt.nullOutSpilledVariable(function9);
+                c00572.L$5 = SpillingKt.nullOutSpilledVariable(document);
+                c00572.L$6 = SpillingKt.nullOutSpilledVariable(idFile2);
+                c00572.L$7 = SpillingKt.nullOutSpilledVariable(passScript3);
+                c00572.L$8 = SpillingKt.nullOutSpilledVariable(pass);
+                c00572.L$9 = SpillingKt.nullOutSpilledVariable(idFile);
+                c00572.L$10 = SpillingKt.nullOutSpilledVariable(idUser);
+                c00572.L$11 = SpillingKt.nullOutSpilledVariable(domainApi2);
+                c00572.L$12 = SpillingKt.nullOutSpilledVariable(nameKeyV4);
+                c00572.L$13 = SpillingKt.nullOutSpilledVariable(dataEnc2);
+                c00572.L$14 = SpillingKt.nullOutSpilledVariable(captchaKey);
+                c00572.L$15 = SpillingKt.nullOutSpilledVariable(token);
+                c00572.L$16 = source;
+                c00572.L$17 = function9;
+                c00572.I$0 = amount3;
+                c00572.label = 4;
+                C00571 c00574 = c00572;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, data, infer_type, c00582, c00574);
+                c00572 = c00574;
                 if (objNewExtractorLink == obj) {
                     return obj;
                 }
@@ -385,27 +385,27 @@ public class Playm4u extends ExtractorApi {
                     return Unit.INSTANCE;
                 }
                 String strSubstringAfter$default = StringsKt.substringAfter$default(source2.getSub(), "|", (String) null, 2, (Object) null);
-                c00562.L$0 = SpillingKt.nullOutSpilledVariable($this3);
-                c00562.L$1 = SpillingKt.nullOutSpilledVariable(url3);
-                c00562.L$2 = SpillingKt.nullOutSpilledVariable(pass2);
-                c00562.L$3 = SpillingKt.nullOutSpilledVariable(function10);
-                c00562.L$4 = SpillingKt.nullOutSpilledVariable(function9);
-                c00562.L$5 = SpillingKt.nullOutSpilledVariable(document);
-                c00562.L$6 = SpillingKt.nullOutSpilledVariable(idFile2);
-                c00562.L$7 = SpillingKt.nullOutSpilledVariable(passScript4);
-                c00562.L$8 = SpillingKt.nullOutSpilledVariable(pass);
-                c00562.L$9 = SpillingKt.nullOutSpilledVariable(idFile);
-                c00562.L$10 = SpillingKt.nullOutSpilledVariable(passScript5);
-                c00562.L$11 = SpillingKt.nullOutSpilledVariable(domainApi2);
-                c00562.L$12 = SpillingKt.nullOutSpilledVariable(nameKeyV4);
-                c00562.L$13 = SpillingKt.nullOutSpilledVariable(dataEnc2);
-                c00562.L$14 = SpillingKt.nullOutSpilledVariable(captchaKey);
-                c00562.L$15 = SpillingKt.nullOutSpilledVariable(token);
-                c00562.L$16 = SpillingKt.nullOutSpilledVariable(source2);
-                c00562.L$17 = function10;
-                c00562.I$0 = amount3;
-                c00562.label = 5;
-                objNewSubtitleFile$default = MainAPIKt.newSubtitleFile$default(language, strSubstringAfter$default, (Function2) null, c00562, 4, (Object) null);
+                c00572.L$0 = SpillingKt.nullOutSpilledVariable($this3);
+                c00572.L$1 = SpillingKt.nullOutSpilledVariable(url3);
+                c00572.L$2 = SpillingKt.nullOutSpilledVariable(pass2);
+                c00572.L$3 = SpillingKt.nullOutSpilledVariable(function10);
+                c00572.L$4 = SpillingKt.nullOutSpilledVariable(function9);
+                c00572.L$5 = SpillingKt.nullOutSpilledVariable(document);
+                c00572.L$6 = SpillingKt.nullOutSpilledVariable(idFile2);
+                c00572.L$7 = SpillingKt.nullOutSpilledVariable(passScript4);
+                c00572.L$8 = SpillingKt.nullOutSpilledVariable(pass);
+                c00572.L$9 = SpillingKt.nullOutSpilledVariable(idFile);
+                c00572.L$10 = SpillingKt.nullOutSpilledVariable(passScript5);
+                c00572.L$11 = SpillingKt.nullOutSpilledVariable(domainApi2);
+                c00572.L$12 = SpillingKt.nullOutSpilledVariable(nameKeyV4);
+                c00572.L$13 = SpillingKt.nullOutSpilledVariable(dataEnc2);
+                c00572.L$14 = SpillingKt.nullOutSpilledVariable(captchaKey);
+                c00572.L$15 = SpillingKt.nullOutSpilledVariable(token);
+                c00572.L$16 = SpillingKt.nullOutSpilledVariable(source2);
+                c00572.L$17 = function10;
+                c00572.I$0 = amount3;
+                c00572.label = 5;
+                objNewSubtitleFile$default = MainAPIKt.newSubtitleFile$default(language, strSubstringAfter$default, (Function2) null, c00572, 4, (Object) null);
                 if (objNewSubtitleFile$default == obj) {
                     return obj;
                 }
@@ -413,11 +413,11 @@ public class Playm4u extends ExtractorApi {
                 function12.invoke(objNewSubtitleFile$default);
                 return Unit.INSTANCE;
             case 1:
-                Function1<? super ExtractorLink, Unit> function13 = (Function1) c00562.L$4;
-                function3 = (Function1) c00562.L$3;
-                referer2 = (String) c00562.L$2;
-                url2 = (String) c00562.L$1;
-                $this4 = (Playm4u) c00562.L$0;
+                Function1<? super ExtractorLink, Unit> function13 = (Function1) c00572.L$4;
+                function3 = (Function1) c00572.L$3;
+                referer2 = (String) c00572.L$2;
+                url2 = (String) c00572.L$1;
+                $this4 = (Playm4u) c00572.L$0;
                 ResultKt.throwOnFailure($result2);
                 function4 = function13;
                 obj = coroutine_suspended;
@@ -430,22 +430,22 @@ public class Playm4u extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 2:
-                int amount5 = c00562.I$0;
-                String captchaKey3 = (String) c00562.L$14;
-                String dataEnc4 = (String) c00562.L$13;
-                String nameKeyV6 = (String) c00562.L$12;
-                String domainApi3 = (String) c00562.L$11;
-                String idUser3 = (String) c00562.L$10;
-                String idFile4 = (String) c00562.L$9;
-                String pass4 = (String) c00562.L$8;
-                String passScript6 = (String) c00562.L$7;
-                String script4 = (String) c00562.L$6;
-                Document document4 = (Document) c00562.L$5;
-                Function1<? super ExtractorLink, Unit> function14 = (Function1) c00562.L$4;
-                Function1<? super SubtitleFile, Unit> function15 = (Function1) c00562.L$3;
-                String referer3 = (String) c00562.L$2;
-                String url4 = (String) c00562.L$1;
-                $this4 = (Playm4u) c00562.L$0;
+                int amount5 = c00572.I$0;
+                String captchaKey3 = (String) c00572.L$14;
+                String dataEnc4 = (String) c00572.L$13;
+                String nameKeyV6 = (String) c00572.L$12;
+                String domainApi3 = (String) c00572.L$11;
+                String idUser3 = (String) c00572.L$10;
+                String idFile4 = (String) c00572.L$9;
+                String pass4 = (String) c00572.L$8;
+                String passScript6 = (String) c00572.L$7;
+                String script4 = (String) c00572.L$6;
+                Document document4 = (Document) c00572.L$5;
+                Function1<? super ExtractorLink, Unit> function14 = (Function1) c00572.L$4;
+                Function1<? super SubtitleFile, Unit> function15 = (Function1) c00572.L$3;
+                String referer3 = (String) c00572.L$2;
+                String url4 = (String) c00572.L$1;
+                $this4 = (Playm4u) c00572.L$0;
                 ResultKt.throwOnFailure($result2);
                 dataEnc = dataEnc4;
                 function5 = function14;
@@ -474,33 +474,33 @@ public class Playm4u extends ExtractorApi {
                 pairArr2[3] = TuplesKt.to("data", dataEnc + '|' + $this4.md5(dataEnc + $this4.password));
                 Map mapMapOf2 = MapsKt.mapOf(pairArr2);
                 String str2 = $this4.getMainUrl() + '/';
-                c00562.L$0 = $this4;
-                c00562.L$1 = SpillingKt.nullOutSpilledVariable(url3);
-                c00562.L$2 = SpillingKt.nullOutSpilledVariable($result);
-                c00562.L$3 = function6;
-                c00562.L$4 = function5;
-                c00562.L$5 = SpillingKt.nullOutSpilledVariable(document);
-                c00562.L$6 = SpillingKt.nullOutSpilledVariable(script3);
-                c00562.L$7 = SpillingKt.nullOutSpilledVariable(passScript2);
-                c00562.L$8 = SpillingKt.nullOutSpilledVariable(pass);
-                c00562.L$9 = SpillingKt.nullOutSpilledVariable(idFile);
-                c00562.L$10 = SpillingKt.nullOutSpilledVariable(idUser);
-                c00562.L$11 = SpillingKt.nullOutSpilledVariable(script2);
-                c00562.L$12 = SpillingKt.nullOutSpilledVariable(nameKeyV3);
-                c00562.L$13 = SpillingKt.nullOutSpilledVariable(dataEnc);
-                c00562.L$14 = SpillingKt.nullOutSpilledVariable(captchaKey);
-                c00562.L$15 = SpillingKt.nullOutSpilledVariable(token);
-                c00562.I$0 = amount;
-                c00562.label = 3;
+                c00572.L$0 = $this4;
+                c00572.L$1 = SpillingKt.nullOutSpilledVariable(url3);
+                c00572.L$2 = SpillingKt.nullOutSpilledVariable($result);
+                c00572.L$3 = function6;
+                c00572.L$4 = function5;
+                c00572.L$5 = SpillingKt.nullOutSpilledVariable(document);
+                c00572.L$6 = SpillingKt.nullOutSpilledVariable(script3);
+                c00572.L$7 = SpillingKt.nullOutSpilledVariable(passScript2);
+                c00572.L$8 = SpillingKt.nullOutSpilledVariable(pass);
+                c00572.L$9 = SpillingKt.nullOutSpilledVariable(idFile);
+                c00572.L$10 = SpillingKt.nullOutSpilledVariable(idUser);
+                c00572.L$11 = SpillingKt.nullOutSpilledVariable(script2);
+                c00572.L$12 = SpillingKt.nullOutSpilledVariable(nameKeyV3);
+                c00572.L$13 = SpillingKt.nullOutSpilledVariable(dataEnc);
+                c00572.L$14 = SpillingKt.nullOutSpilledVariable(captchaKey);
+                c00572.L$15 = SpillingKt.nullOutSpilledVariable(token);
+                c00572.I$0 = amount;
+                c00572.label = 3;
                 function7 = function5;
                 function8 = function6;
-                C00561 c00565 = c00562;
+                C00571 c00575 = c00572;
                 amount2 = amount;
                 domainApi = script2;
                 dataEnc2 = dataEnc;
                 nameKeyV4 = nameKeyV3;
-                objPost$default = Requests.post$default(app3, domainApi, (Map) null, str2, (Map) null, (Map) null, mapMapOf2, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00565, 65498, (Object) null);
-                c00562 = c00565;
+                objPost$default = Requests.post$default(app3, domainApi, (Map) null, str2, (Map) null, (Map) null, mapMapOf2, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00575, 65498, (Object) null);
+                c00572 = c00575;
                 if (objPost$default == obj) {
                     return obj;
                 }
@@ -524,23 +524,23 @@ public class Playm4u extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 3:
-                int amount6 = c00562.I$0;
-                String token2 = (String) c00562.L$15;
-                String captchaKey4 = (String) c00562.L$14;
-                String dataEnc5 = (String) c00562.L$13;
-                String nameKeyV7 = (String) c00562.L$12;
-                String domainApi4 = (String) c00562.L$11;
-                String idUser4 = (String) c00562.L$10;
-                String idFile5 = (String) c00562.L$9;
-                String pass5 = (String) c00562.L$8;
-                passScript3 = (String) c00562.L$7;
-                idFile2 = (String) c00562.L$6;
-                Document document5 = (Document) c00562.L$5;
-                Function1<? super ExtractorLink, Unit> function16 = (Function1) c00562.L$4;
-                Function1<? super SubtitleFile, Unit> function17 = (Function1) c00562.L$3;
-                String referer4 = (String) c00562.L$2;
-                String url5 = (String) c00562.L$1;
-                Playm4u $this5 = (Playm4u) c00562.L$0;
+                int amount6 = c00572.I$0;
+                String token2 = (String) c00572.L$15;
+                String captchaKey4 = (String) c00572.L$14;
+                String dataEnc5 = (String) c00572.L$13;
+                String nameKeyV7 = (String) c00572.L$12;
+                String domainApi4 = (String) c00572.L$11;
+                String idUser4 = (String) c00572.L$10;
+                String idFile5 = (String) c00572.L$9;
+                String pass5 = (String) c00572.L$8;
+                passScript3 = (String) c00572.L$7;
+                idFile2 = (String) c00572.L$6;
+                Document document5 = (Document) c00572.L$5;
+                Function1<? super ExtractorLink, Unit> function16 = (Function1) c00572.L$4;
+                Function1<? super SubtitleFile, Unit> function17 = (Function1) c00572.L$3;
+                String referer4 = (String) c00572.L$2;
+                String url5 = (String) c00572.L$1;
+                Playm4u $this5 = (Playm4u) c00572.L$0;
                 ResultKt.throwOnFailure($result2);
                 url3 = url5;
                 obj = coroutine_suspended;
@@ -571,25 +571,25 @@ public class Playm4u extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 4:
-                int amount7 = c00562.I$0;
-                function11 = (Function1) c00562.L$17;
-                Source source3 = (Source) c00562.L$16;
-                String token3 = (String) c00562.L$15;
-                String captchaKey5 = (String) c00562.L$14;
-                String dataEnc6 = (String) c00562.L$13;
-                String nameKeyV8 = (String) c00562.L$12;
-                domainApi2 = (String) c00562.L$11;
-                passScript5 = (String) c00562.L$10;
-                String idFile6 = (String) c00562.L$9;
-                String pass6 = (String) c00562.L$8;
-                String passScript7 = (String) c00562.L$7;
-                String script5 = (String) c00562.L$6;
-                Document document6 = (Document) c00562.L$5;
-                Function1<? super ExtractorLink, Unit> function18 = (Function1) c00562.L$4;
-                Function1<? super SubtitleFile, Unit> function19 = (Function1) c00562.L$3;
-                String referer5 = (String) c00562.L$2;
-                String url6 = (String) c00562.L$1;
-                $this3 = (Playm4u) c00562.L$0;
+                int amount7 = c00572.I$0;
+                function11 = (Function1) c00572.L$17;
+                Source source3 = (Source) c00572.L$16;
+                String token3 = (String) c00572.L$15;
+                String captchaKey5 = (String) c00572.L$14;
+                String dataEnc6 = (String) c00572.L$13;
+                String nameKeyV8 = (String) c00572.L$12;
+                domainApi2 = (String) c00572.L$11;
+                passScript5 = (String) c00572.L$10;
+                String idFile6 = (String) c00572.L$9;
+                String pass6 = (String) c00572.L$8;
+                String passScript7 = (String) c00572.L$7;
+                String script5 = (String) c00572.L$6;
+                Document document6 = (Document) c00572.L$5;
+                Function1<? super ExtractorLink, Unit> function18 = (Function1) c00572.L$4;
+                Function1<? super SubtitleFile, Unit> function19 = (Function1) c00572.L$3;
+                String referer5 = (String) c00572.L$2;
+                String url6 = (String) c00572.L$1;
+                $this3 = (Playm4u) c00572.L$0;
                 ResultKt.throwOnFailure($result2);
                 url3 = url6;
                 obj = coroutine_suspended;
@@ -615,8 +615,8 @@ public class Playm4u extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 5:
-                int i2 = c00562.I$0;
-                function12 = (Function1) c00562.L$17;
+                int i2 = c00572.I$0;
+                function12 = (Function1) c00572.L$17;
                 ResultKt.throwOnFailure($result2);
                 objNewSubtitleFile$default = $result2;
                 function12.invoke(objNewSubtitleFile$default);
@@ -630,18 +630,18 @@ public class Playm4u extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Playm4u$getUrl$2", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00572 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00582 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         private /* synthetic */ Object L$0;
         int label;
 
-        C00572(Continuation<? super C00572> continuation) {
+        C00582(Continuation<? super C00582> continuation) {
             super(2, continuation);
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00572 = Playm4u.this.new C00572(continuation);
-            c00572.L$0 = obj;
-            return c00572;
+            Continuation<Unit> c00582 = Playm4u.this.new C00582(continuation);
+            c00582.L$0 = obj;
+            return c00582;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

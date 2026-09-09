@@ -32,7 +32,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: Extractors.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\b\u0016\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u00052\b\u0010\u0014\u001a\u0004\u0018\u00010\u00052\u0012\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0017\u0012\u0004\u0012\u00020\u00120\u00162\u0012\u0010\u0018\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u00120\u0016H\u0096@¢\u0006\u0002\u0010\u001aR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010¨\u0006\u001b"}, d2 = {"Lcom/phisher98/Netembed;", "Lcom/lagradost/cloudstream3/utils/ExtractorApi;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "requiresReferer", "", "getRequiresReferer", "()Z", "getUrl", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/Netembed\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,4049:1\n2068#2,2:4050\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/Netembed\n*L\n584#1:4050,2\n*E\n"})
+@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/Netembed\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,4076:1\n2068#2,2:4077\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/Netembed\n*L\n584#1:4077,2\n*E\n"})
 public class Netembed extends ExtractorApi {
 
     @NotNull
@@ -45,8 +45,8 @@ public class Netembed extends ExtractorApi {
     /* JADX INFO: renamed from: com.phisher98.Netembed$getUrl$1 */
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.Netembed", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {580, 584}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "$this", "url", "referer", "subtitleCallback", "callback", "response", "script", "m3u8"}, nl = {581, 4050}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C00491 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.Netembed", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {580, 584}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "$this", "url", "referer", "subtitleCallback", "callback", "response", "script", "m3u8"}, nl = {581, 4077}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
+    static final class C00501 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -58,7 +58,7 @@ public class Netembed extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00491(Continuation<? super C00491> continuation) {
+        C00501(Continuation<? super C00501> continuation) {
             super(continuation);
         }
 
@@ -100,7 +100,7 @@ public class Netembed extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:32:0x0180 A[LOOP:0: B:30:0x017a->B:32:0x0180, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     static /* synthetic */ Object getUrl$suspendImpl(Netembed $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C00491 c00491;
+        C00501 c00501;
         Object obj;
         int i;
         Netembed $this2;
@@ -114,33 +114,33 @@ public class Netembed extends ExtractorApi {
         String m3u8;
         Object objGenerateM3u8$default;
         Function1<? super ExtractorLink, Unit> function5;
-        if (continuation instanceof C00491) {
-            c00491 = (C00491) continuation;
-            if ((c00491.label & Integer.MIN_VALUE) != 0) {
-                c00491.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00501) {
+            c00501 = (C00501) continuation;
+            if ((c00501.label & Integer.MIN_VALUE) != 0) {
+                c00501.label -= Integer.MIN_VALUE;
             } else {
-                c00491 = $this.new C00491(continuation);
+                c00501 = $this.new C00501(continuation);
             }
         } else {
-            c00491 = $this.new C00491(continuation);
+            c00501 = $this.new C00501(continuation);
         }
-        C00491 c00492 = c00491;
-        Object $result = c00492.result;
+        C00501 c00502 = c00501;
+        Object $result = c00502.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00492.label) {
+        switch (c00502.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
-                c00492.L$0 = $this;
-                c00492.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c00492.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                c00492.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                c00492.L$4 = function2;
-                c00492.label = 1;
+                c00502.L$0 = $this;
+                c00502.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00502.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                c00502.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c00502.L$4 = function2;
+                c00502.label = 1;
                 obj = coroutine_suspended;
                 i = 1;
-                Object obj3 = Requests.get$default(app, url, (Map) null, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00492, 4090, (Object) null);
-                c00492 = c00492;
+                Object obj3 = Requests.get$default(app, url, (Map) null, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00502, 4090, (Object) null);
+                c00502 = c00502;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -159,17 +159,17 @@ public class Netembed extends ExtractorApi {
                 M3u8Helper.Companion companion = M3u8Helper.Companion;
                 String name = $this2.getName();
                 String str = $this2.getMainUrl() + '/';
-                c00492.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c00492.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00492.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00492.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c00492.L$4 = function4;
-                c00492.L$5 = SpillingKt.nullOutSpilledVariable(response);
-                c00492.L$6 = SpillingKt.nullOutSpilledVariable(script);
-                c00492.L$7 = SpillingKt.nullOutSpilledVariable(m3u8);
-                c00492.label = 2;
+                c00502.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c00502.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00502.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00502.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c00502.L$4 = function4;
+                c00502.L$5 = SpillingKt.nullOutSpilledVariable(response);
+                c00502.L$6 = SpillingKt.nullOutSpilledVariable(script);
+                c00502.L$7 = SpillingKt.nullOutSpilledVariable(m3u8);
+                c00502.label = 2;
                 Function1<? super ExtractorLink, Unit> function6 = function4;
-                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, str, (Integer) null, (Map) null, (String) null, c00492, 56, (Object) null);
+                objGenerateM3u8$default = M3u8Helper.Companion.generateM3u8$default(companion, name, m3u8, str, (Integer) null, (Map) null, (String) null, c00502, 56, (Object) null);
                 if (objGenerateM3u8$default == obj) {
                     return obj;
                 }
@@ -180,11 +180,11 @@ public class Netembed extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 1:
-                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00492.L$4;
-                Function1<? super SubtitleFile, Unit> function8 = (Function1) c00492.L$3;
-                String referer3 = (String) c00492.L$2;
-                String url3 = (String) c00492.L$1;
-                Netembed $this3 = (Netembed) c00492.L$0;
+                Function1<? super ExtractorLink, Unit> function7 = (Function1) c00502.L$4;
+                Function1<? super SubtitleFile, Unit> function8 = (Function1) c00502.L$3;
+                String referer3 = (String) c00502.L$2;
+                String url3 = (String) c00502.L$1;
+                Netembed $this3 = (Netembed) c00502.L$0;
                 ResultKt.throwOnFailure($result);
                 $this2 = $this3;
                 obj = coroutine_suspended;
@@ -201,7 +201,7 @@ public class Netembed extends ExtractorApi {
                 }
                 return Unit.INSTANCE;
             case 2:
-                function5 = (Function1) c00492.L$4;
+                function5 = (Function1) c00502.L$4;
                 ResultKt.throwOnFailure($result);
                 objGenerateM3u8$default = $result;
                 Iterable $this$forEach$iv2 = (Iterable) objGenerateM3u8$default;

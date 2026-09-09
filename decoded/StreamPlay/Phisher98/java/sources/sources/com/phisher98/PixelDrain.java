@@ -39,7 +39,7 @@ public class PixelDrain extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.PixelDrain", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {979, 990}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "mId", "$this", "url", "referer", "subtitleCallback", "callback", "mId"}, nl = {978, 989}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    static final class C00531 extends ContinuationImpl {
+    static final class C00541 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -50,7 +50,7 @@ public class PixelDrain extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00531(Continuation<? super C00531> continuation) {
+        C00541(Continuation<? super C00541> continuation) {
             super(continuation);
         }
 
@@ -83,30 +83,30 @@ public class PixelDrain extends ExtractorApi {
 
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     static /* synthetic */ Object getUrl$suspendImpl(PixelDrain $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C00531 c00531;
+        C00541 c00541;
         PixelDrain pixelDrain;
         String mId;
         Object obj;
         Function1<? super ExtractorLink, Unit> function3;
         List groupValues;
         Function1<? super ExtractorLink, Unit> function4 = function2;
-        if (continuation instanceof C00531) {
-            c00531 = (C00531) continuation;
-            if ((c00531.label & Integer.MIN_VALUE) != 0) {
-                c00531.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00541) {
+            c00541 = (C00541) continuation;
+            if ((c00541.label & Integer.MIN_VALUE) != 0) {
+                c00541.label -= Integer.MIN_VALUE;
                 pixelDrain = $this;
             } else {
                 pixelDrain = $this;
-                c00531 = pixelDrain.new C00531(continuation);
+                c00541 = pixelDrain.new C00541(continuation);
             }
         } else {
             pixelDrain = $this;
-            c00531 = pixelDrain.new C00531(continuation);
+            c00541 = pixelDrain.new C00541(continuation);
         }
-        C00531 c00532 = c00531;
-        Object $result = c00532.result;
+        C00541 c00542 = c00541;
+        Object $result = c00542.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00532.label) {
+        switch (c00542.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 MatchResult matchResultFind$default = Regex.find$default(new Regex("/u/(.*)"), url, 0, 2, (Object) null);
@@ -115,16 +115,16 @@ public class PixelDrain extends ExtractorApi {
                 if (str == null || str.length() == 0) {
                     String name = pixelDrain.getName();
                     String name2 = pixelDrain.getName();
-                    C00542 c00542 = new C00542(url, null);
-                    c00532.L$0 = SpillingKt.nullOutSpilledVariable(pixelDrain);
-                    c00532.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                    c00532.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                    c00532.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                    c00532.L$4 = SpillingKt.nullOutSpilledVariable(function4);
-                    c00532.L$5 = SpillingKt.nullOutSpilledVariable(mId2);
-                    c00532.L$6 = function4;
-                    c00532.label = 1;
-                    Object objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default(name, name2, url, (ExtractorLinkType) null, c00542, c00532, 8, (Object) null);
+                    C00552 c00552 = new C00552(url, null);
+                    c00542.L$0 = SpillingKt.nullOutSpilledVariable(pixelDrain);
+                    c00542.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                    c00542.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                    c00542.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                    c00542.L$4 = SpillingKt.nullOutSpilledVariable(function4);
+                    c00542.L$5 = SpillingKt.nullOutSpilledVariable(mId2);
+                    c00542.L$6 = function4;
+                    c00542.label = 1;
+                    Object objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default(name, name2, url, (ExtractorLinkType) null, c00552, c00542, 8, (Object) null);
                     if (objNewExtractorLink$default == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -136,16 +136,16 @@ public class PixelDrain extends ExtractorApi {
                 String name3 = pixelDrain.getName();
                 String name4 = pixelDrain.getName();
                 String mId3 = pixelDrain.getMainUrl() + "/api/file/" + mId2 + "?download";
-                C00553 c00553 = new C00553(url, null);
-                c00532.L$0 = SpillingKt.nullOutSpilledVariable(pixelDrain);
-                c00532.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c00532.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                c00532.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                c00532.L$4 = SpillingKt.nullOutSpilledVariable(function4);
-                c00532.L$5 = SpillingKt.nullOutSpilledVariable(mId2);
-                c00532.L$6 = function4;
-                c00532.label = 2;
-                $result = ExtractorApiKt.newExtractorLink$default(name3, name4, mId3, (ExtractorLinkType) null, c00553, c00532, 8, (Object) null);
+                C00563 c00563 = new C00563(url, null);
+                c00542.L$0 = SpillingKt.nullOutSpilledVariable(pixelDrain);
+                c00542.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00542.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                c00542.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c00542.L$4 = SpillingKt.nullOutSpilledVariable(function4);
+                c00542.L$5 = SpillingKt.nullOutSpilledVariable(mId2);
+                c00542.L$6 = function4;
+                c00542.label = 2;
+                $result = ExtractorApiKt.newExtractorLink$default(name3, name4, mId3, (ExtractorLinkType) null, c00563, c00542, 8, (Object) null);
                 if ($result != coroutine_suspended) {
                     mId = mId2;
                     function4.invoke($result);
@@ -153,14 +153,14 @@ public class PixelDrain extends ExtractorApi {
                 }
                 return coroutine_suspended;
             case 1:
-                function3 = (Function1) c00532.L$6;
+                function3 = (Function1) c00542.L$6;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 function3.invoke(obj);
                 return Unit.INSTANCE;
             case 2:
-                Function1<? super ExtractorLink, Unit> function5 = (Function1) c00532.L$6;
-                mId = (String) c00532.L$5;
+                Function1<? super ExtractorLink, Unit> function5 = (Function1) c00542.L$6;
+                mId = (String) c00542.L$5;
                 ResultKt.throwOnFailure($result);
                 function4 = function5;
                 function4.invoke($result);
@@ -174,21 +174,21 @@ public class PixelDrain extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.PixelDrain$getUrl$2", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00542 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00552 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $url;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00542(String str, Continuation<? super C00542> continuation) {
+        C00552(String str, Continuation<? super C00552> continuation) {
             super(2, continuation);
             this.$url = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00542 = new C00542(this.$url, continuation);
-            c00542.L$0 = obj;
-            return c00542;
+            Continuation<Unit> c00552 = new C00552(this.$url, continuation);
+            c00552.L$0 = obj;
+            return c00552;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -214,21 +214,21 @@ public class PixelDrain extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.PixelDrain$getUrl$3", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00553 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00563 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $url;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00553(String str, Continuation<? super C00553> continuation) {
+        C00563(String str, Continuation<? super C00563> continuation) {
             super(2, continuation);
             this.$url = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00553 = new C00553(this.$url, continuation);
-            c00553.L$0 = obj;
-            return c00553;
+            Continuation<Unit> c00563 = new C00563(this.$url, continuation);
+            c00563.L$0 = obj;
+            return c00563;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

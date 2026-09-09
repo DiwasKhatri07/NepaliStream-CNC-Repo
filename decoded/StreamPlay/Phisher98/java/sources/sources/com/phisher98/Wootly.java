@@ -47,8 +47,8 @@ public final class Wootly extends ExtractorApi {
     /* JADX INFO: renamed from: com.phisher98.Wootly$getUrl$1 */
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.Wootly", f = "Extractors.kt", i = {0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {3315, 3320, 3330, 3333}, m = "getUrl", n = {"url", "referer", "url", "referer", "iframe", "body", "url", "referer", "iframe", "body", "iframeResp", "iframeHtml", "vdRegex", "tkRegex", "vd", "tk", "url", "referer", "iframe", "body", "iframeResp", "iframeHtml", "vdRegex", "tkRegex", "vd", "tk", "iframeurl"}, nl = {3316, 3321, 3333, 3332}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10"}, v = 2)
-    static final class C03121 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.Wootly", f = "Extractors.kt", i = {0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {3342, 3347, 3357, 3360}, m = "getUrl", n = {"url", "referer", "url", "referer", "iframe", "body", "url", "referer", "iframe", "body", "iframeResp", "iframeHtml", "vdRegex", "tkRegex", "vd", "tk", "url", "referer", "iframe", "body", "iframeResp", "iframeHtml", "vdRegex", "tkRegex", "vd", "tk", "iframeurl"}, nl = {3343, 3348, 3360, 3359}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10"}, v = 2)
+    static final class C03231 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -63,7 +63,7 @@ public final class Wootly extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C03121(Continuation<? super C03121> continuation) {
+        C03231(Continuation<? super C03231> continuation) {
             super(continuation);
         }
 
@@ -117,7 +117,7 @@ public final class Wootly extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Continuation<? super List<? extends ExtractorLink>> continuation) {
-        C03121 c03121;
+        C03231 c03231;
         Object obj;
         Continuation continuation2;
         String url2;
@@ -154,30 +154,30 @@ public final class Wootly extends ExtractorApi {
         String iframe4;
         List groupValues;
         List groupValues2;
-        if (continuation instanceof C03121) {
-            c03121 = (C03121) continuation;
-            if ((c03121.label & Integer.MIN_VALUE) != 0) {
-                c03121.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C03231) {
+            c03231 = (C03231) continuation;
+            if ((c03231.label & Integer.MIN_VALUE) != 0) {
+                c03231.label -= Integer.MIN_VALUE;
             } else {
-                c03121 = new C03121(continuation);
+                c03231 = new C03231(continuation);
             }
         } else {
-            c03121 = new C03121(continuation);
+            c03231 = new C03231(continuation);
         }
-        C03121 c03122 = c03121;
-        Object $result = c03122.result;
+        C03231 c03232 = c03231;
+        Object $result = c03232.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c03122.label) {
+        switch (c03232.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
-                c03122.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c03122.L$1 = referer;
-                c03122.label = 1;
+                c03232.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c03232.L$1 = referer;
+                c03232.label = 1;
                 obj = coroutine_suspended;
                 continuation2 = null;
-                Object obj4 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03122, 4094, (Object) null);
-                c03122 = c03122;
+                Object obj4 = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03232, 4094, (Object) null);
+                c03232 = c03232;
                 if (obj4 == obj) {
                     return obj;
                 }
@@ -186,16 +186,16 @@ public final class Wootly extends ExtractorApi {
                 referer2 = referer;
                 iframe = ((NiceResponse) obj2).getDocument().select("iframe").attr("src");
                 body = new FormBody.Builder(continuation2, 1, continuation2).add("qdfx", "1").build();
-                c03122.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03122.L$1 = referer2;
-                c03122.L$2 = SpillingKt.nullOutSpilledVariable(iframe);
-                c03122.L$3 = SpillingKt.nullOutSpilledVariable(body);
-                c03122.label = 2;
+                c03232.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03232.L$1 = referer2;
+                c03232.L$2 = SpillingKt.nullOutSpilledVariable(iframe);
+                c03232.L$3 = SpillingKt.nullOutSpilledVariable(body);
+                c03232.label = 2;
                 referer3 = referer2;
-                C03121 c03123 = c03122;
+                C03231 c03233 = c03232;
                 i = 2;
-                objPost$default = Requests.post$default(MainActivityKt.getApp(), iframe, (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, (RequestBody) body, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03123, 65278, (Object) null);
-                c03122 = c03123;
+                objPost$default = Requests.post$default(MainActivityKt.getApp(), iframe, (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, (RequestBody) body, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03233, 65278, (Object) null);
+                c03232 = c03233;
                 if (objPost$default == obj) {
                     return obj;
                 }
@@ -231,23 +231,23 @@ public final class Wootly extends ExtractorApi {
                         z = false;
                     }
                     if (!z) {
-                        c03122.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c03122.L$1 = referer4;
-                        c03122.L$2 = SpillingKt.nullOutSpilledVariable(iframe2);
-                        c03122.L$3 = SpillingKt.nullOutSpilledVariable(body);
-                        c03122.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp);
-                        c03122.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
-                        c03122.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex);
-                        c03122.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex);
-                        c03122.L$8 = SpillingKt.nullOutSpilledVariable(continuation3);
-                        c03122.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
-                        c03122.label = 3;
-                        C03121 c03124 = c03122;
+                        c03232.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c03232.L$1 = referer4;
+                        c03232.L$2 = SpillingKt.nullOutSpilledVariable(iframe2);
+                        c03232.L$3 = SpillingKt.nullOutSpilledVariable(body);
+                        c03232.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp);
+                        c03232.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
+                        c03232.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex);
+                        c03232.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex);
+                        c03232.L$8 = SpillingKt.nullOutSpilledVariable(continuation3);
+                        c03232.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
+                        c03232.label = 3;
+                        C03231 c03234 = c03232;
                         referer5 = referer4;
                         tkRegex2 = tkRegex;
                         continuation5 = continuation3;
-                        obj3 = Requests.get$default(MainActivityKt.getApp(), "https://web.wootly.ch/grabm?t=" + ((String) continuation4) + "&id=" + ((String) continuation3), (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03124, 4094, (Object) null);
-                        c03122 = c03124;
+                        obj3 = Requests.get$default(MainActivityKt.getApp(), "https://web.wootly.ch/grabm?t=" + ((String) continuation4) + "&id=" + ((String) continuation3), (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03234, 4094, (Object) null);
+                        c03232 = c03234;
                         if (obj3 == obj) {
                             return obj;
                         }
@@ -261,20 +261,20 @@ public final class Wootly extends ExtractorApi {
                         String name = getName();
                         String name2 = getName();
                         ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
-                        C03132 c03132 = new C03132(iframe4, continuation2);
-                        c03122.L$0 = SpillingKt.nullOutSpilledVariable(referer6);
-                        c03122.L$1 = SpillingKt.nullOutSpilledVariable(iframe4);
-                        c03122.L$2 = SpillingKt.nullOutSpilledVariable(iframe3);
-                        c03122.L$3 = SpillingKt.nullOutSpilledVariable(body2);
-                        c03122.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp2);
-                        c03122.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
-                        c03122.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex2);
-                        c03122.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex2);
-                        c03122.L$8 = SpillingKt.nullOutSpilledVariable(continuation5);
-                        c03122.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
-                        c03122.L$10 = SpillingKt.nullOutSpilledVariable(iframeurl);
-                        c03122.label = 4;
-                        $result = ExtractorApiKt.newExtractorLink(name, name2, iframeurl, infer_type, c03132, c03122);
+                        C03242 c03242 = new C03242(iframe4, continuation2);
+                        c03232.L$0 = SpillingKt.nullOutSpilledVariable(referer6);
+                        c03232.L$1 = SpillingKt.nullOutSpilledVariable(iframe4);
+                        c03232.L$2 = SpillingKt.nullOutSpilledVariable(iframe3);
+                        c03232.L$3 = SpillingKt.nullOutSpilledVariable(body2);
+                        c03232.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp2);
+                        c03232.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
+                        c03232.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex2);
+                        c03232.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex2);
+                        c03232.L$8 = SpillingKt.nullOutSpilledVariable(continuation5);
+                        c03232.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
+                        c03232.L$10 = SpillingKt.nullOutSpilledVariable(iframeurl);
+                        c03232.label = 4;
+                        $result = ExtractorApiKt.newExtractorLink(name, name2, iframeurl, infer_type, c03242, c03232);
                         if ($result == obj) {
                             return obj;
                         }
@@ -283,8 +283,8 @@ public final class Wootly extends ExtractorApi {
                 }
                 return continuation2;
             case 1:
-                String referer7 = (String) c03122.L$1;
-                String url3 = (String) c03122.L$0;
+                String referer7 = (String) c03232.L$1;
+                String url3 = (String) c03232.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 referer2 = referer7;
@@ -293,16 +293,16 @@ public final class Wootly extends ExtractorApi {
                 continuation2 = null;
                 iframe = ((NiceResponse) obj2).getDocument().select("iframe").attr("src");
                 body = new FormBody.Builder(continuation2, 1, continuation2).add("qdfx", "1").build();
-                c03122.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c03122.L$1 = referer2;
-                c03122.L$2 = SpillingKt.nullOutSpilledVariable(iframe);
-                c03122.L$3 = SpillingKt.nullOutSpilledVariable(body);
-                c03122.label = 2;
+                c03232.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c03232.L$1 = referer2;
+                c03232.L$2 = SpillingKt.nullOutSpilledVariable(iframe);
+                c03232.L$3 = SpillingKt.nullOutSpilledVariable(body);
+                c03232.label = 2;
                 referer3 = referer2;
-                C03121 c03125 = c03122;
+                C03231 c03235 = c03232;
                 i = 2;
-                objPost$default = Requests.post$default(MainActivityKt.getApp(), iframe, (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, (RequestBody) body, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03125, 65278, (Object) null);
-                c03122 = c03125;
+                objPost$default = Requests.post$default(MainActivityKt.getApp(), iframe, (Map) null, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, (RequestBody) body, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03235, 65278, (Object) null);
+                c03232 = c03235;
                 if (objPost$default == obj) {
                     return obj;
                 }
@@ -338,23 +338,23 @@ public final class Wootly extends ExtractorApi {
                         z = false;
                     }
                     if (!z) {
-                        c03122.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c03122.L$1 = referer4;
-                        c03122.L$2 = SpillingKt.nullOutSpilledVariable(iframe2);
-                        c03122.L$3 = SpillingKt.nullOutSpilledVariable(body);
-                        c03122.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp);
-                        c03122.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
-                        c03122.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex);
-                        c03122.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex);
-                        c03122.L$8 = SpillingKt.nullOutSpilledVariable(continuation3);
-                        c03122.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
-                        c03122.label = 3;
-                        C03121 c03126 = c03122;
+                        c03232.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c03232.L$1 = referer4;
+                        c03232.L$2 = SpillingKt.nullOutSpilledVariable(iframe2);
+                        c03232.L$3 = SpillingKt.nullOutSpilledVariable(body);
+                        c03232.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp);
+                        c03232.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
+                        c03232.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex);
+                        c03232.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex);
+                        c03232.L$8 = SpillingKt.nullOutSpilledVariable(continuation3);
+                        c03232.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
+                        c03232.label = 3;
+                        C03231 c03236 = c03232;
                         referer5 = referer4;
                         tkRegex2 = tkRegex;
                         continuation5 = continuation3;
-                        obj3 = Requests.get$default(MainActivityKt.getApp(), "https://web.wootly.ch/grabm?t=" + ((String) continuation4) + "&id=" + ((String) continuation3), (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03126, 4094, (Object) null);
-                        c03122 = c03126;
+                        obj3 = Requests.get$default(MainActivityKt.getApp(), "https://web.wootly.ch/grabm?t=" + ((String) continuation4) + "&id=" + ((String) continuation3), (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03236, 4094, (Object) null);
+                        c03232 = c03236;
                         if (obj3 == obj) {
                             return obj;
                         }
@@ -368,20 +368,20 @@ public final class Wootly extends ExtractorApi {
                         String name3 = getName();
                         String name4 = getName();
                         ExtractorLinkType infer_type2 = ExtractorApiKt.getINFER_TYPE();
-                        C03132 c03133 = new C03132(iframe4, continuation2);
-                        c03122.L$0 = SpillingKt.nullOutSpilledVariable(referer6);
-                        c03122.L$1 = SpillingKt.nullOutSpilledVariable(iframe4);
-                        c03122.L$2 = SpillingKt.nullOutSpilledVariable(iframe3);
-                        c03122.L$3 = SpillingKt.nullOutSpilledVariable(body2);
-                        c03122.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp2);
-                        c03122.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
-                        c03122.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex2);
-                        c03122.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex2);
-                        c03122.L$8 = SpillingKt.nullOutSpilledVariable(continuation5);
-                        c03122.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
-                        c03122.L$10 = SpillingKt.nullOutSpilledVariable(iframeurl2);
-                        c03122.label = 4;
-                        $result = ExtractorApiKt.newExtractorLink(name3, name4, iframeurl2, infer_type2, c03133, c03122);
+                        C03242 c03243 = new C03242(iframe4, continuation2);
+                        c03232.L$0 = SpillingKt.nullOutSpilledVariable(referer6);
+                        c03232.L$1 = SpillingKt.nullOutSpilledVariable(iframe4);
+                        c03232.L$2 = SpillingKt.nullOutSpilledVariable(iframe3);
+                        c03232.L$3 = SpillingKt.nullOutSpilledVariable(body2);
+                        c03232.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp2);
+                        c03232.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
+                        c03232.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex2);
+                        c03232.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex2);
+                        c03232.L$8 = SpillingKt.nullOutSpilledVariable(continuation5);
+                        c03232.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
+                        c03232.L$10 = SpillingKt.nullOutSpilledVariable(iframeurl2);
+                        c03232.label = 4;
+                        $result = ExtractorApiKt.newExtractorLink(name3, name4, iframeurl2, infer_type2, c03243, c03232);
                         if ($result == obj) {
                             return obj;
                         }
@@ -390,10 +390,10 @@ public final class Wootly extends ExtractorApi {
                 }
                 return continuation2;
             case 2:
-                FormBody body3 = (FormBody) c03122.L$3;
-                String iframe5 = (String) c03122.L$2;
-                String referer8 = (String) c03122.L$1;
-                String url4 = (String) c03122.L$0;
+                FormBody body3 = (FormBody) c03232.L$3;
+                String iframe5 = (String) c03232.L$2;
+                String referer8 = (String) c03232.L$1;
+                String url4 = (String) c03232.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 body = body3;
@@ -433,23 +433,23 @@ public final class Wootly extends ExtractorApi {
                         z = false;
                     }
                     if (!z) {
-                        c03122.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                        c03122.L$1 = referer4;
-                        c03122.L$2 = SpillingKt.nullOutSpilledVariable(iframe2);
-                        c03122.L$3 = SpillingKt.nullOutSpilledVariable(body);
-                        c03122.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp);
-                        c03122.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
-                        c03122.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex);
-                        c03122.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex);
-                        c03122.L$8 = SpillingKt.nullOutSpilledVariable(continuation3);
-                        c03122.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
-                        c03122.label = 3;
-                        C03121 c03127 = c03122;
+                        c03232.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                        c03232.L$1 = referer4;
+                        c03232.L$2 = SpillingKt.nullOutSpilledVariable(iframe2);
+                        c03232.L$3 = SpillingKt.nullOutSpilledVariable(body);
+                        c03232.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp);
+                        c03232.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
+                        c03232.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex);
+                        c03232.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex);
+                        c03232.L$8 = SpillingKt.nullOutSpilledVariable(continuation3);
+                        c03232.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
+                        c03232.label = 3;
+                        C03231 c03237 = c03232;
                         referer5 = referer4;
                         tkRegex2 = tkRegex;
                         continuation5 = continuation3;
-                        obj3 = Requests.get$default(MainActivityKt.getApp(), "https://web.wootly.ch/grabm?t=" + ((String) continuation4) + "&id=" + ((String) continuation3), (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03127, 4094, (Object) null);
-                        c03122 = c03127;
+                        obj3 = Requests.get$default(MainActivityKt.getApp(), "https://web.wootly.ch/grabm?t=" + ((String) continuation4) + "&id=" + ((String) continuation3), (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c03237, 4094, (Object) null);
+                        c03232 = c03237;
                         if (obj3 == obj) {
                             return obj;
                         }
@@ -463,20 +463,20 @@ public final class Wootly extends ExtractorApi {
                         String name5 = getName();
                         String name6 = getName();
                         ExtractorLinkType infer_type3 = ExtractorApiKt.getINFER_TYPE();
-                        C03132 c03134 = new C03132(iframe4, continuation2);
-                        c03122.L$0 = SpillingKt.nullOutSpilledVariable(referer6);
-                        c03122.L$1 = SpillingKt.nullOutSpilledVariable(iframe4);
-                        c03122.L$2 = SpillingKt.nullOutSpilledVariable(iframe3);
-                        c03122.L$3 = SpillingKt.nullOutSpilledVariable(body2);
-                        c03122.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp2);
-                        c03122.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
-                        c03122.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex2);
-                        c03122.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex2);
-                        c03122.L$8 = SpillingKt.nullOutSpilledVariable(continuation5);
-                        c03122.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
-                        c03122.L$10 = SpillingKt.nullOutSpilledVariable(iframeurl3);
-                        c03122.label = 4;
-                        $result = ExtractorApiKt.newExtractorLink(name5, name6, iframeurl3, infer_type3, c03134, c03122);
+                        C03242 c03244 = new C03242(iframe4, continuation2);
+                        c03232.L$0 = SpillingKt.nullOutSpilledVariable(referer6);
+                        c03232.L$1 = SpillingKt.nullOutSpilledVariable(iframe4);
+                        c03232.L$2 = SpillingKt.nullOutSpilledVariable(iframe3);
+                        c03232.L$3 = SpillingKt.nullOutSpilledVariable(body2);
+                        c03232.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp2);
+                        c03232.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
+                        c03232.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex2);
+                        c03232.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex2);
+                        c03232.L$8 = SpillingKt.nullOutSpilledVariable(continuation5);
+                        c03232.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
+                        c03232.L$10 = SpillingKt.nullOutSpilledVariable(iframeurl3);
+                        c03232.label = 4;
+                        $result = ExtractorApiKt.newExtractorLink(name5, name6, iframeurl3, infer_type3, c03244, c03232);
                         if ($result == obj) {
                             return obj;
                         }
@@ -485,16 +485,16 @@ public final class Wootly extends ExtractorApi {
                 }
                 return continuation2;
             case 3:
-                Continuation continuation6 = (String) c03122.L$9;
-                Continuation continuation7 = (String) c03122.L$8;
-                Regex tkRegex3 = (Regex) c03122.L$7;
-                vdRegex2 = (Regex) c03122.L$6;
-                String iframeHtml2 = (String) c03122.L$5;
-                NiceResponse iframeResp3 = (NiceResponse) c03122.L$4;
-                FormBody body4 = (FormBody) c03122.L$3;
-                String iframe6 = (String) c03122.L$2;
-                String referer9 = (String) c03122.L$1;
-                String url5 = (String) c03122.L$0;
+                Continuation continuation6 = (String) c03232.L$9;
+                Continuation continuation7 = (String) c03232.L$8;
+                Regex tkRegex3 = (Regex) c03232.L$7;
+                vdRegex2 = (Regex) c03232.L$6;
+                String iframeHtml2 = (String) c03232.L$5;
+                NiceResponse iframeResp3 = (NiceResponse) c03232.L$4;
+                FormBody body4 = (FormBody) c03232.L$3;
+                String iframe6 = (String) c03232.L$2;
+                String referer9 = (String) c03232.L$1;
+                String url5 = (String) c03232.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 continuation4 = continuation6;
@@ -512,20 +512,20 @@ public final class Wootly extends ExtractorApi {
                 String name7 = getName();
                 String name8 = getName();
                 ExtractorLinkType infer_type4 = ExtractorApiKt.getINFER_TYPE();
-                C03132 c03135 = new C03132(iframe4, continuation2);
-                c03122.L$0 = SpillingKt.nullOutSpilledVariable(referer6);
-                c03122.L$1 = SpillingKt.nullOutSpilledVariable(iframe4);
-                c03122.L$2 = SpillingKt.nullOutSpilledVariable(iframe3);
-                c03122.L$3 = SpillingKt.nullOutSpilledVariable(body2);
-                c03122.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp2);
-                c03122.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
-                c03122.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex2);
-                c03122.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex2);
-                c03122.L$8 = SpillingKt.nullOutSpilledVariable(continuation5);
-                c03122.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
-                c03122.L$10 = SpillingKt.nullOutSpilledVariable(iframeurl4);
-                c03122.label = 4;
-                $result = ExtractorApiKt.newExtractorLink(name7, name8, iframeurl4, infer_type4, c03135, c03122);
+                C03242 c03245 = new C03242(iframe4, continuation2);
+                c03232.L$0 = SpillingKt.nullOutSpilledVariable(referer6);
+                c03232.L$1 = SpillingKt.nullOutSpilledVariable(iframe4);
+                c03232.L$2 = SpillingKt.nullOutSpilledVariable(iframe3);
+                c03232.L$3 = SpillingKt.nullOutSpilledVariable(body2);
+                c03232.L$4 = SpillingKt.nullOutSpilledVariable(iframeResp2);
+                c03232.L$5 = SpillingKt.nullOutSpilledVariable(iframeHtml);
+                c03232.L$6 = SpillingKt.nullOutSpilledVariable(vdRegex2);
+                c03232.L$7 = SpillingKt.nullOutSpilledVariable(tkRegex2);
+                c03232.L$8 = SpillingKt.nullOutSpilledVariable(continuation5);
+                c03232.L$9 = SpillingKt.nullOutSpilledVariable(continuation4);
+                c03232.L$10 = SpillingKt.nullOutSpilledVariable(iframeurl4);
+                c03232.label = 4;
+                $result = ExtractorApiKt.newExtractorLink(name7, name8, iframeurl4, infer_type4, c03245, c03232);
                 if ($result == obj) {
                     return obj;
                 }
@@ -542,21 +542,21 @@ public final class Wootly extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Wootly$getUrl$2", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C03132 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C03242 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $referer;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C03132(String str, Continuation<? super C03132> continuation) {
+        C03242(String str, Continuation<? super C03242> continuation) {
             super(2, continuation);
             this.$referer = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c03132 = new C03132(this.$referer, continuation);
-            c03132.L$0 = obj;
-            return c03132;
+            Continuation<Unit> c03242 = new C03242(this.$referer, continuation);
+            c03242.L$0 = obj;
+            return c03242;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

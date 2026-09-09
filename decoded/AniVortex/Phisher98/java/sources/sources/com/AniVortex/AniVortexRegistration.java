@@ -1,9 +1,11 @@
 package com.AniVortex;
 
 import android.content.Context;
+import android.os.Build;
 import android.security.keystore.KeyGenParameterSpec;
 import android.util.Base64;
 import android.util.Log;
+import androidx.annotation.RequiresApi;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lagradost.cloudstream3.CloudStreamApp;
@@ -32,11 +34,15 @@ import java.security.cert.Certificate;
 import java.security.cert.CertificateFactory;
 import java.security.interfaces.ECPublicKey;
 import java.security.spec.ECGenParameterSpec;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 import kotlin.Metadata;
 import kotlin.Pair;
@@ -47,19 +53,25 @@ import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.collections.MapsKt;
 import kotlin.coroutines.Continuation;
+import kotlin.coroutines.CoroutineContext;
 import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.Boxing;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
 import kotlin.coroutines.jvm.internal.SpillingKt;
+import kotlin.enums.EnumEntries;
+import kotlin.enums.EnumEntriesKt;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.MagicApiIntrinsics;
 import kotlin.jvm.internal.Reflection;
 import kotlin.jvm.internal.SourceDebugExtension;
+import kotlin.ranges.RangesKt;
 import kotlin.reflect.KType;
 import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
+import kotlinx.coroutines.BuildersKt;
+import kotlinx.coroutines.NonCancellable;
 import kotlinx.coroutines.sync.Mutex;
 import kotlinx.coroutines.sync.MutexKt;
 import kotlinx.serialization.DeserializationStrategy;
@@ -75,8 +87,8 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: AniVortexRegistration.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AniVortex/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u0000f\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0005\n\u0002\b\u0004\n\u0002\u0010\u0011\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\b\t\bÆ\u0002\u0018\u00002\u00020\u0001:\u0002BCB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u000e\u001a\u00020\u000fJ\b\u0010\u0010\u001a\u0004\u0018\u00010\u0011J\u000e\u0010\u0012\u001a\u00020\u000fH\u0086@¢\u0006\u0002\u0010\u0013J\u000e\u0010\u0014\u001a\u00020\u000fH\u0086@¢\u0006\u0002\u0010\u0013J\u000e\u0010\u0015\u001a\u00020\u000fH\u0082@¢\u0006\u0002\u0010\u0013J\u0016\u0010\u0016\u001a\u00020\u000f2\u0006\u0010\u0017\u001a\u00020\u000fH\u0082@¢\u0006\u0002\u0010\u0018J\u000e\u0010\u0016\u001a\u00020\u000fH\u0082@¢\u0006\u0002\u0010\u0013J\u0018\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u00112\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\u0010\u0010\u001e\u001a\u00020\u001a2\u0006\u0010\u001c\u001a\u00020\u001dH\u0002J\b\u0010\u001f\u001a\u00020\u001aH\u0002J\u0010\u0010 \u001a\u00020\u001a2\u0006\u0010!\u001a\u00020\"H\u0002J\"\u0010#\u001a\u00020\u001a2\u0006\u0010$\u001a\u00020%2\u0006\u0010&\u001a\u00020\u001a2\b\b\u0002\u0010'\u001a\u00020\u000fH\u0002J!\u0010(\u001a\u00020\u001a2\u0012\u0010)\u001a\n\u0012\u0006\b\u0001\u0012\u00020\u001a0*\"\u00020\u001aH\u0002¢\u0006\u0002\u0010+J\u0010\u0010,\u001a\u00020\u001a2\u0006\u0010&\u001a\u00020\u001aH\u0002J\u0010\u0010-\u001a\u00020\u001a2\u0006\u0010&\u001a\u00020\u001aH\u0002J\u0010\u0010.\u001a\u00020\u001a2\u0006\u0010/\u001a\u000200H\u0002J\u0010\u00101\u001a\u00020\u001a2\u0006\u00102\u001a\u00020\u001aH\u0002J\u0010\u00103\u001a\u00020\u001a2\u0006\u0010/\u001a\u00020\u0005H\u0002J\u0010\u00104\u001a\u00020\u001a2\u0006\u0010/\u001a\u00020\u0005H\u0002J\u0010\u00105\u001a\u00020\u001a2\u0006\u0010/\u001a\u00020\u0005H\u0002J\u0010\u00106\u001a\u00020\u001a2\u0006\u0010&\u001a\u00020\u001aH\u0002J(\u0010:\u001a\u00020;2\u0006\u0010/\u001a\u0002002\u0006\u0010<\u001a\u00020\u001a2\u0006\u0010=\u001a\u00020\"2\u0006\u0010>\u001a\u00020\"H\u0002J\u0010\u0010?\u001a\u00020\u001a2\u0006\u0010@\u001a\u00020\u001aH\u0002J\u0010\u0010A\u001a\u00020\u00052\u0006\u0010@\u001a\u00020\u001aH\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00107\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00108\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u00109\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006D"}, d2 = {"Lcom/AniVortex/AniVortexRegistration;", "", "<init>", "()V", "TAG", "", "BASE_URL", "KEY_ALIAS_DER_CN", "REGISTER_PREFIX", "KEYSTORE_ALIAS", "regHeaders", "", "mutex", "Lkotlinx/coroutines/sync/Mutex;", "hasCredentials", "", "getKeystorePrivateKey", "Ljava/security/PrivateKey;", "ensureRegistered", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "reRegister", "resolveCredentials", "performRegistration", "attested", "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "buildLeafCertificate", "", "privateKey", "publicKey", "Ljava/security/interfaces/ECPublicKey;", "buildTbsCertificate", "derCnName", "derLength", "len", "", "derTagged", "tag", "", "content", "primitive", "derSequence", "parts", "", "([[B)[B", "derSet", "derExplicitContextZero", "derInteger", "value", "Ljava/math/BigInteger;", "derOid", "oidBytes", "derUtf8String", "derUtcTime", "derGeneralizedTime", "derBitString", "ECDSA_WITH_SHA256", "ID_EC_PUBLIC_KEY", "PRIME256V1", "toFixedLengthBytes", "", "out", "offset", "length", "sha256", "data", "b64UrlNoPad", "ChallengeResponse", "RegisterResponse", "AniVortex"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAniVortexRegistration.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexRegistration.kt\ncom/AniVortex/AniVortexRegistration\n+ 2 CloudStreamApp.kt\ncom/lagradost/cloudstream3/CloudStreamApp$Companion\n+ 3 DataStore.kt\ncom/lagradost/cloudstream3/utils/DataStore\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 7 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 8 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,445:1\n144#2:446\n231#3:447\n222#3,3:448\n225#3,2:470\n63#4:451\n64#4,15:453\n93#4,2:493\n63#4:495\n64#4,15:497\n95#4,2:514\n93#4,2:521\n63#4:523\n64#4,15:525\n95#4,2:542\n93#4,2:544\n63#4:546\n64#4,15:548\n95#4,2:565\n93#4,2:567\n63#4:569\n64#4,15:571\n95#4,2:588\n1#5:452\n1#5:472\n1#5:496\n1#5:516\n1#5:524\n1#5:547\n1#5:570\n1#5:590\n50#6:468\n43#6:469\n50#6:512\n43#6:513\n50#6:540\n43#6:541\n50#6:563\n43#6:564\n50#6:586\n43#6:587\n117#7,10:473\n117#7,10:483\n12746#8:517\n13093#8,3:518\n14512#8,3:591\n*S KotlinDebug\n*F\n+ 1 AniVortexRegistration.kt\ncom/AniVortex/AniVortexRegistration\n*L\n81#1:446\n81#1:447\n81#1:448,3\n81#1:470,2\n81#1:451\n81#1:453,15\n133#1:493,2\n133#1:495\n133#1:497,15\n133#1:514,2\n217#1:521,2\n217#1:523\n217#1:525,15\n217#1:542,2\n258#1:544,2\n258#1:546\n258#1:548,15\n258#1:565,2\n304#1:567,2\n304#1:569\n304#1:571,15\n304#1:588,2\n81#1:452\n133#1:496\n217#1:524\n258#1:547\n304#1:570\n81#1:468\n81#1:469\n133#1:512\n133#1:513\n217#1:540\n217#1:541\n258#1:563\n258#1:564\n304#1:586\n304#1:587\n94#1:473,10\n102#1:483,10\n173#1:517\n173#1:518,3\n393#1:591,3\n*E\n"})
+@Metadata(d1 = {"\u0000\u0080\u0001\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\t\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0012\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0010\u0005\n\u0002\b\u0004\n\u0002\u0010\u0011\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0016\bÆ\u0002\u0018\u00002\u00020\u0001:\u0003PQRB\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0012\u001a\u00020\u0013J\u0006\u0010\u0014\u001a\u00020\u0015J\b\u0010\u0016\u001a\u0004\u0018\u00010\u0017J\u000e\u0010\u001b\u001a\u00020\u0013H\u0086@¢\u0006\u0002\u0010\u001cJ\u000e\u0010\u001d\u001a\u00020\u0013H\u0086@¢\u0006\u0002\u0010\u001cJ\u000e\u0010\u001e\u001a\u00020\u0013H\u0082@¢\u0006\u0002\u0010\u001cJ,\u0010\u001f\u001a\u00020 2\u0006\u0010!\u001a\u00020\u00132\u0006\u0010\"\u001a\u00020\u0013H\u0083@b\f\b$\u0012\b\b\u000e\u0012\u0004\b\u0003\u0010.¢\u0006\u0002\u0010#J\u001a\u0010%\u001a\u000e\u0012\u0004\u0012\u00020\u0013\u0012\u0004\u0012\u00020\u00050&H\u0086@¢\u0006\u0002\u0010\u001cJ\u0018\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020\u00172\u0006\u0010*\u001a\u00020+H\u0002J\u0010\u0010,\u001a\u00020(2\u0006\u0010*\u001a\u00020+H\u0002J\b\u0010-\u001a\u00020(H\u0002J\u0010\u0010.\u001a\u00020(2\u0006\u0010/\u001a\u000200H\u0002J\"\u00101\u001a\u00020(2\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u00020(2\b\b\u0002\u00105\u001a\u00020\u0013H\u0002J!\u00106\u001a\u00020(2\u0012\u00107\u001a\n\u0012\u0006\b\u0001\u0012\u00020(08\"\u00020(H\u0002¢\u0006\u0002\u00109J\u0010\u0010:\u001a\u00020(2\u0006\u00104\u001a\u00020(H\u0002J\u0010\u0010;\u001a\u00020(2\u0006\u00104\u001a\u00020(H\u0002J\u0010\u0010<\u001a\u00020(2\u0006\u0010\u000e\u001a\u00020=H\u0002J\u0010\u0010>\u001a\u00020(2\u0006\u0010?\u001a\u00020(H\u0002J\u0010\u0010@\u001a\u00020(2\u0006\u0010\u000e\u001a\u00020\u0005H\u0002J\u0010\u0010A\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u0019H\u0002J\u0010\u0010C\u001a\u00020(2\u0006\u0010\u000e\u001a\u00020\u0005H\u0002J\u0010\u0010D\u001a\u00020(2\u0006\u0010\u000e\u001a\u00020\u0005H\u0002J\u0010\u0010E\u001a\u00020(2\u0006\u00104\u001a\u00020(H\u0002J(\u0010I\u001a\u00020\u00152\u0006\u0010\u000e\u001a\u00020=2\u0006\u0010J\u001a\u00020(2\u0006\u0010K\u001a\u0002002\u0006\u0010L\u001a\u000200H\u0002J\u0010\u0010M\u001a\u00020(2\u0006\u0010N\u001a\u00020(H\u0002J\u0010\u0010O\u001a\u00020\u00052\u0006\u0010N\u001a\u00020(H\u0002R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\b\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\u0005X\u0082T¢\u0006\u0002\n\u0000R\u001a\u0010\n\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u000bX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u0004¢\u0006\u0002\n\u0000R\"\u0010\u000f\u001a\u0004\u0018\u00010\u00052\b\u0010\u000e\u001a\u0004\u0018\u00010\u0005@BX\u0086\u000e¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u000e\u0010\u0018\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0019X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010F\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010G\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010H\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006S"}, d2 = {"Lcom/AniVortex/AniVortexRegistration;", "", "<init>", "()V", "TAG", "", "BASE_URL", "KEY_ALIAS_DER_CN", "REGISTER_PREFIX", "KEYSTORE_ALIAS", "regHeaders", "", "mutex", "Lkotlinx/coroutines/sync/Mutex;", "value", "lastFailure", "getLastFailure", "()Ljava/lang/String;", "hasCredentials", "", "clearKeystoreKey", "", "getKeystorePrivateKey", "Ljava/security/PrivateKey;", "lastAttemptMs", "", "rateLimitUntilMs", "ensureRegistered", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "reRegister", "resolveCredentials", "performRegistration", "Lcom/AniVortex/AniVortexRegistration$RegOutcome;", "attested", "includeDeviceProps", "(ZZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Landroidx/annotation/RequiresApi;", "testApiConnection", "Lkotlin/Pair;", "buildLeafCertificate", "", "privateKey", "publicKey", "Ljava/security/interfaces/ECPublicKey;", "buildTbsCertificate", "derCnName", "derLength", "len", "", "derTagged", "tag", "", "content", "primitive", "derSequence", "parts", "", "([[B)[B", "derSet", "derExplicitContextZero", "derInteger", "Ljava/math/BigInteger;", "derOid", "oidBytes", "derUtf8String", "getUtcTime", "epochMs", "derUtcTime", "derGeneralizedTime", "derBitString", "ECDSA_WITH_SHA256", "ID_EC_PUBLIC_KEY", "PRIME256V1", "toFixedLengthBytes", "out", "offset", "length", "sha256", "data", "b64UrlNoPad", "ChallengeResponse", "RegisterResponse", "RegOutcome", "AniVortex"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nAniVortexRegistration.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexRegistration.kt\ncom/AniVortex/AniVortexRegistration\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 CloudStreamApp.kt\ncom/lagradost/cloudstream3/CloudStreamApp$Companion\n+ 4 DataStore.kt\ncom/lagradost/cloudstream3/utils/DataStore\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 7 Mutex.kt\nkotlinx/coroutines/sync/MutexKt\n+ 8 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,498:1\n1#2:499\n1#2:506\n1#2:549\n1#2:576\n144#3:500\n231#4:501\n222#4,3:502\n225#4,2:524\n63#5:505\n64#5,15:507\n93#5,2:546\n63#5:548\n64#5,15:550\n95#5,2:567\n93#5,2:573\n63#5:575\n64#5,15:577\n95#5,2:594\n50#6:522\n43#6:523\n50#6:565\n43#6:566\n50#6:592\n43#6:593\n117#7,10:526\n117#7,10:536\n12746#8:569\n13093#8,3:570\n14512#8,3:596\n*S KotlinDebug\n*F\n+ 1 AniVortexRegistration.kt\ncom/AniVortex/AniVortexRegistration\n*L\n100#1:506\n204#1:549\n306#1:576\n100#1:500\n100#1:501\n100#1:502,3\n100#1:524,2\n100#1:505\n100#1:507,15\n204#1:546,2\n204#1:548\n204#1:550,15\n204#1:567,2\n306#1:573,2\n306#1:575\n306#1:577,15\n306#1:594,2\n100#1:522\n100#1:523\n204#1:565\n204#1:566\n306#1:592\n306#1:593\n129#1:526,10\n144#1:536,10\n251#1:569\n251#1:570,3\n440#1:596,3\n*E\n"})
 public final class AniVortexRegistration {
 
     @NotNull
@@ -93,6 +105,11 @@ public final class AniVortexRegistration {
 
     @NotNull
     private static final String TAG = "AniVortexReg";
+    private static volatile long lastAttemptMs;
+
+    @Nullable
+    private static volatile String lastFailure;
+    private static volatile long rateLimitUntilMs;
 
     @NotNull
     public static final AniVortexRegistration INSTANCE = new AniVortexRegistration();
@@ -112,16 +129,31 @@ public final class AniVortexRegistration {
     @NotNull
     private static final byte[] PRIME256V1 = {42, -122, 72, -50, 61, 3, 1, 7};
 
+    /* JADX INFO: compiled from: AniVortexRegistration.kt */
+    @Metadata(d1 = {"\u0000\f\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\b\u0006\b\u0082\u0081\u0002\u0018\u00002\b\u0012\u0004\u0012\u00020\u00000\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003j\u0002\b\u0004j\u0002\b\u0005j\u0002\b\u0006¨\u0006\u0007"}, d2 = {"Lcom/AniVortex/AniVortexRegistration$RegOutcome;", "", "<init>", "(Ljava/lang/String;I)V", "SUCCESS", "RATE_LIMITED", "FAILED", "AniVortex"}, k = 1, mv = {2, 4, 0}, xi = 48)
+    private enum RegOutcome {
+        SUCCESS,
+        RATE_LIMITED,
+        FAILED;
+
+        private static final /* synthetic */ EnumEntries $ENTRIES = EnumEntriesKt.enumEntries($VALUES);
+
+        @NotNull
+        public static EnumEntries<RegOutcome> getEntries() {
+            return $ENTRIES;
+        }
+    }
+
     /* JADX INFO: renamed from: com.AniVortex.AniVortexRegistration$ensureRegistered$1 */
     /* JADX INFO: compiled from: AniVortexRegistration.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexRegistration", f = "AniVortexRegistration.kt", i = {0, 1}, l = {450, 96}, m = "ensureRegistered", n = {"$this$withLock_u24default$iv", "$this$withLock_u24default$iv"}, nl = {451, 452}, s = {"L$0", "L$0"}, v = 2)
-    static final class C00111 extends ContinuationImpl {
+    @DebugMetadata(c = "com.AniVortex.AniVortexRegistration", f = "AniVortexRegistration.kt", i = {0, 1}, l = {503, 138}, m = "ensureRegistered", n = {"$this$withLock_u24default$iv", "$this$withLock_u24default$iv"}, nl = {504, 505}, s = {"L$0", "L$0"}, v = 2)
+    static final class C00131 extends ContinuationImpl {
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00111(Continuation<? super C00111> continuation) {
+        C00131(Continuation<? super C00131> continuation) {
             super(continuation);
         }
 
@@ -136,12 +168,13 @@ public final class AniVortexRegistration {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexRegistration$performRegistration$1 */
     /* JADX INFO: compiled from: AniVortexRegistration.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexRegistration", f = "AniVortexRegistration.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {124, 207}, m = "performRegistration", n = {"challengeBody", "attested", "challengeBody", "challengeResp", "challenge", "challengeId", "challengeBytes", "privateKey", "chainB64", "canonical", "signer", "proofSig", "chainJson", "registerBody", "attested"}, nl = {129, 212}, s = {"L$0", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.AniVortex.AniVortexRegistration", f = "AniVortexRegistration.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {187, 288}, m = "performRegistration", n = {"challengeBody", "attested", "includeDeviceProps", "challengeBody", "challengeResp", "challenge", "challengeId", "challengeStr", "challengeBytes", "privateKey", "chainB64", "canonical", "signer", "proofSig", "chainJson", "registerBody", "attested", "includeDeviceProps"}, nl = {192, 293}, s = {"L$0", "Z$0", "Z$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "Z$0", "Z$1"}, v = 2)
     static final class C00161 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
         Object L$11;
+        Object L$12;
         Object L$2;
         Object L$3;
         Object L$4;
@@ -151,6 +184,7 @@ public final class AniVortexRegistration {
         Object L$8;
         Object L$9;
         boolean Z$0;
+        boolean Z$1;
         int label;
         /* synthetic */ Object result;
 
@@ -162,55 +196,20 @@ public final class AniVortexRegistration {
         public final Object invokeSuspend(@NotNull Object obj) {
             this.result = obj;
             this.label |= Integer.MIN_VALUE;
-            return AniVortexRegistration.this.performRegistration(false, (Continuation) this);
-        }
-    }
-
-    /* JADX INFO: renamed from: com.AniVortex.AniVortexRegistration$performRegistration$3 */
-    /* JADX INFO: compiled from: AniVortexRegistration.kt */
-    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexRegistration", f = "AniVortexRegistration.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {249, 294}, m = "performRegistration", n = {"challengeBody", "challengeBody", "challengeResp", "challenge", "challengeId", "challengeBytes", "keyPairGen", "keyPair", "privateKey", "publicKey", "leafDer", "canonical", "signer", "proofSig", "leafB64", "registerBody"}, nl = {254, 299}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14"}, v = 2)
-    static final class C00173 extends ContinuationImpl {
-        Object L$0;
-        Object L$1;
-        Object L$10;
-        Object L$11;
-        Object L$12;
-        Object L$13;
-        Object L$14;
-        Object L$2;
-        Object L$3;
-        Object L$4;
-        Object L$5;
-        Object L$6;
-        Object L$7;
-        Object L$8;
-        Object L$9;
-        int label;
-        /* synthetic */ Object result;
-
-        C00173(Continuation<? super C00173> continuation) {
-            super(continuation);
-        }
-
-        @Nullable
-        public final Object invokeSuspend(@NotNull Object obj) {
-            this.result = obj;
-            this.label |= Integer.MIN_VALUE;
-            return AniVortexRegistration.this.performRegistration((Continuation) this);
+            return AniVortexRegistration.this.performRegistration(false, false, (Continuation) this);
         }
     }
 
     /* JADX INFO: renamed from: com.AniVortex.AniVortexRegistration$reRegister$1 */
     /* JADX INFO: compiled from: AniVortexRegistration.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexRegistration", f = "AniVortexRegistration.kt", i = {0, 1}, l = {450, 104}, m = "reRegister", n = {"$this$withLock_u24default$iv", "$this$withLock_u24default$iv"}, nl = {451, 452}, s = {"L$0", "L$0"}, v = 2)
-    static final class C00181 extends ContinuationImpl {
+    @DebugMetadata(c = "com.AniVortex.AniVortexRegistration", f = "AniVortexRegistration.kt", i = {0, 1}, l = {503, 148}, m = "reRegister", n = {"$this$withLock_u24default$iv", "$this$withLock_u24default$iv"}, nl = {504, 505}, s = {"L$0", "L$0"}, v = 2)
+    static final class C00171 extends ContinuationImpl {
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00181(Continuation<? super C00181> continuation) {
+        C00171(Continuation<? super C00171> continuation) {
             super(continuation);
         }
 
@@ -225,12 +224,14 @@ public final class AniVortexRegistration {
     /* JADX INFO: renamed from: com.AniVortex.AniVortexRegistration$resolveCredentials$1 */
     /* JADX INFO: compiled from: AniVortexRegistration.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.AniVortex.AniVortexRegistration", f = "AniVortexRegistration.kt", i = {}, l = {115, 116}, m = "resolveCredentials", n = {}, nl = {116, -1}, s = {}, v = 2)
-    static final class C00191 extends ContinuationImpl {
+    @DebugMetadata(c = "com.AniVortex.AniVortexRegistration", f = "AniVortexRegistration.kt", i = {0, 1, 1}, l = {170, 175}, m = "resolveCredentials", n = {"now", "outcome", "now"}, nl = {173, 178}, s = {"J$0", "L$0", "J$0"}, v = 2)
+    static final class C00181 extends ContinuationImpl {
+        long J$0;
+        Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00191(Continuation<? super C00191> continuation) {
+        C00181(Continuation<? super C00181> continuation) {
             super(continuation);
         }
 
@@ -242,7 +243,36 @@ public final class AniVortexRegistration {
         }
     }
 
+    /* JADX INFO: renamed from: com.AniVortex.AniVortexRegistration$testApiConnection$1 */
+    /* JADX INFO: compiled from: AniVortexRegistration.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.AniVortex.AniVortexRegistration", f = "AniVortexRegistration.kt", i = {1, 1, 1, 1}, l = {342, 353}, m = "testApiConnection", n = {"query", "headers", "url", "registered"}, nl = {343, 354}, s = {"L$0", "L$1", "L$2", "Z$0"}, v = 2)
+    static final class C00191 extends ContinuationImpl {
+        Object L$0;
+        Object L$1;
+        Object L$2;
+        boolean Z$0;
+        int label;
+        /* synthetic */ Object result;
+
+        C00191(Continuation<? super C00191> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return AniVortexRegistration.this.testApiConnection((Continuation) this);
+        }
+    }
+
     private AniVortexRegistration() {
+    }
+
+    @Nullable
+    public final String getLastFailure() {
+        return lastFailure;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -469,6 +499,18 @@ public final class AniVortexRegistration {
         return AniVortexAuth.INSTANCE.hasValidCredentials();
     }
 
+    public final void clearKeystoreKey() {
+        try {
+            KeyStore ks = KeyStore.getInstance("AndroidKeyStore");
+            ks.load(null);
+            if (ks.containsAlias(KEYSTORE_ALIAS)) {
+                ks.deleteEntry(KEYSTORE_ALIAS);
+            }
+        } catch (Throwable e) {
+            Log.w(TAG, "Failed to clear keystore key: " + e.getMessage());
+        }
+    }
+
     @Nullable
     public final PrivateKey getKeystorePrivateKey() {
         Boolean bool;
@@ -594,111 +636,131 @@ public final class AniVortexRegistration {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:29:0x0072  */
-    /* JADX WARN: Code duplicated, block: B:30:0x0074 A[Catch: all -> 0x0099, TRY_LEAVE, TryCatch #1 {all -> 0x0099, blocks: (B:27:0x006a, B:30:0x0074), top: B:46:0x006a }] */
-    /* JADX WARN: Code duplicated, block: B:32:0x0081 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:33:0x0082  */
-    /* JADX WARN: Code duplicated, block: B:7:0x0014  */
+    /* JADX WARN: Code duplicated, block: B:33:0x008e  */
+    /* JADX WARN: Code duplicated, block: B:34:0x0091 A[Catch: all -> 0x00d2, TryCatch #0 {all -> 0x00d2, blocks: (B:31:0x0086, B:34:0x0091, B:37:0x009e), top: B:51:0x0086 }] */
+    /* JADX WARN: Code duplicated, block: B:36:0x009c  */
+    /* JADX WARN: Code duplicated, block: B:37:0x009e A[Catch: all -> 0x00d2, TRY_LEAVE, TryCatch #0 {all -> 0x00d2, blocks: (B:31:0x0086, B:34:0x0091, B:37:0x009e), top: B:51:0x0086 }] */
+    /* JADX WARN: Code duplicated, block: B:39:0x00bb A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:40:0x00bc  */
+    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public final Object ensureRegistered(@NotNull Continuation<? super Boolean> continuation) throws Throwable {
-        C00111 c00111;
+        C00131 c00131;
+        AniVortexRegistration aniVortexRegistration;
+        Object owner$iv;
         Mutex $this$withLock_u24default$iv;
-        Mutex $this$withLock_u24default$iv2;
-        Mutex $this$withLock_u24default$iv3;
-        Throwable th;
-        Mutex owner$iv;
-        Mutex $this$withLock_u24default$iv4;
         Object owner$iv2;
-        if (continuation instanceof C00111) {
-            c00111 = (C00111) continuation;
-            if ((c00111.label & Integer.MIN_VALUE) != 0) {
-                c00111.label -= Integer.MIN_VALUE;
+        Mutex $this$withLock_u24default$iv2;
+        Object owner$iv3;
+        if (continuation instanceof C00131) {
+            c00131 = (C00131) continuation;
+            if ((c00131.label & Integer.MIN_VALUE) != 0) {
+                c00131.label -= Integer.MIN_VALUE;
+                aniVortexRegistration = this;
             } else {
-                c00111 = new C00111(continuation);
+                aniVortexRegistration = this;
+                c00131 = aniVortexRegistration.new C00131(continuation);
             }
         } else {
-            c00111 = new C00111(continuation);
+            aniVortexRegistration = this;
+            c00131 = aniVortexRegistration.new C00131(continuation);
         }
-        Object $result = c00111.result;
+        C00131 c00132 = c00131;
+        Object $result = c00132.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        boolean zBooleanValue = true;
-        switch (c00111.label) {
+        boolean zBooleanValue = false;
+        switch (c00132.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (hasCredentials()) {
+                if (aniVortexRegistration.hasCredentials()) {
                     return Boxing.boxBoolean(true);
                 }
-                Mutex $this$withLock_u24default$iv5 = mutex;
-                $this$withLock_u24default$iv = null;
-                c00111.L$0 = $this$withLock_u24default$iv5;
-                c00111.label = 1;
-                if ($this$withLock_u24default$iv5.lock((Object) null, c00111) == coroutine_suspended) {
+                if (System.currentTimeMillis() - lastAttemptMs < 15000) {
+                    return Boxing.boxBoolean(false);
+                }
+                Mutex $this$withLock_u24default$iv3 = mutex;
+                owner$iv = null;
+                c00132.L$0 = $this$withLock_u24default$iv3;
+                c00132.label = 1;
+                if ($this$withLock_u24default$iv3.lock((Object) null, c00132) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                $this$withLock_u24default$iv2 = $this$withLock_u24default$iv5;
-                $this$withLock_u24default$iv3 = null;
+                $this$withLock_u24default$iv = $this$withLock_u24default$iv3;
                 try {
                     if (INSTANCE.hasCredentials()) {
-                        AniVortexRegistration aniVortexRegistration = INSTANCE;
-                        c00111.L$0 = $this$withLock_u24default$iv2;
-                        c00111.label = 2;
-                        owner$iv2 = aniVortexRegistration.resolveCredentials(c00111);
-                        if (owner$iv2 == coroutine_suspended) {
+                        $this$withLock_u24default$iv2 = $this$withLock_u24default$iv;
+                        zBooleanValue = true;
+                    } else if (System.currentTimeMillis() - lastAttemptMs < 15000) {
+                        $this$withLock_u24default$iv2 = $this$withLock_u24default$iv;
+                    } else {
+                        lastAttemptMs = System.currentTimeMillis();
+                        CoroutineContext coroutineContext = NonCancellable.INSTANCE;
+                        AniVortexRegistration$ensureRegistered$2$1 aniVortexRegistration$ensureRegistered$2$1 = new AniVortexRegistration$ensureRegistered$2$1(null);
+                        c00132.L$0 = $this$withLock_u24default$iv;
+                        c00132.label = 2;
+                        owner$iv3 = BuildersKt.withContext(coroutineContext, aniVortexRegistration$ensureRegistered$2$1, c00132);
+                        if (owner$iv3 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
+                        $this$withLock_u24default$iv2 = $this$withLock_u24default$iv;
                         try {
-                            zBooleanValue = ((Boolean) owner$iv2).booleanValue();
-                        } catch (Throwable th2) {
-                            th = th2;
-                            owner$iv = $this$withLock_u24default$iv;
-                            $this$withLock_u24default$iv4 = $this$withLock_u24default$iv2;
-                            $this$withLock_u24default$iv4.unlock(owner$iv);
+                            zBooleanValue = ((Boolean) owner$iv3).booleanValue();
+                        } catch (Throwable th) {
+                            th = th;
+                            owner$iv2 = owner$iv;
+                            $this$withLock_u24default$iv2.unlock(owner$iv2);
                             throw th;
                         }
                     }
                     Boolean boolBoxBoolean = Boxing.boxBoolean(zBooleanValue);
-                    $this$withLock_u24default$iv2.unlock($this$withLock_u24default$iv);
+                    $this$withLock_u24default$iv2.unlock(owner$iv);
                     return boolBoxBoolean;
-                } catch (Throwable th3) {
-                    th = th3;
-                    owner$iv = $this$withLock_u24default$iv;
-                    $this$withLock_u24default$iv4 = $this$withLock_u24default$iv2;
-                    $this$withLock_u24default$iv4.unlock(owner$iv);
+                } catch (Throwable th2) {
+                    th = th2;
+                    owner$iv2 = owner$iv;
+                    $this$withLock_u24default$iv2 = $this$withLock_u24default$iv;
+                    $this$withLock_u24default$iv2.unlock(owner$iv2);
                     throw th;
                 }
             case 1:
-                $this$withLock_u24default$iv3 = null;
-                $this$withLock_u24default$iv = null;
-                $this$withLock_u24default$iv2 = (Mutex) c00111.L$0;
+                owner$iv = null;
+                $this$withLock_u24default$iv = (Mutex) c00132.L$0;
                 ResultKt.throwOnFailure($result);
                 if (INSTANCE.hasCredentials()) {
-                    AniVortexRegistration aniVortexRegistration2 = INSTANCE;
-                    c00111.L$0 = $this$withLock_u24default$iv2;
-                    c00111.label = 2;
-                    owner$iv2 = aniVortexRegistration2.resolveCredentials(c00111);
-                    if (owner$iv2 == coroutine_suspended) {
+                    $this$withLock_u24default$iv2 = $this$withLock_u24default$iv;
+                    zBooleanValue = true;
+                } else if (System.currentTimeMillis() - lastAttemptMs < 15000) {
+                    $this$withLock_u24default$iv2 = $this$withLock_u24default$iv;
+                } else {
+                    lastAttemptMs = System.currentTimeMillis();
+                    CoroutineContext coroutineContext2 = NonCancellable.INSTANCE;
+                    AniVortexRegistration$ensureRegistered$2$1 aniVortexRegistration$ensureRegistered$2$2 = new AniVortexRegistration$ensureRegistered$2$1(null);
+                    c00132.L$0 = $this$withLock_u24default$iv;
+                    c00132.label = 2;
+                    owner$iv3 = BuildersKt.withContext(coroutineContext2, aniVortexRegistration$ensureRegistered$2$2, c00132);
+                    if (owner$iv3 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    zBooleanValue = ((Boolean) owner$iv2).booleanValue();
+                    $this$withLock_u24default$iv2 = $this$withLock_u24default$iv;
+                    zBooleanValue = ((Boolean) owner$iv3).booleanValue();
                 }
                 Boolean boolBoxBoolean2 = Boxing.boxBoolean(zBooleanValue);
-                $this$withLock_u24default$iv2.unlock($this$withLock_u24default$iv);
+                $this$withLock_u24default$iv2.unlock(owner$iv);
                 return boolBoxBoolean2;
             case 2:
-                owner$iv = null;
-                $this$withLock_u24default$iv4 = (Mutex) c00111.L$0;
+                owner$iv2 = null;
+                $this$withLock_u24default$iv2 = (Mutex) c00132.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
-                    $this$withLock_u24default$iv2 = $this$withLock_u24default$iv4;
-                    $this$withLock_u24default$iv = null;
-                    owner$iv2 = $result;
-                    zBooleanValue = ((Boolean) owner$iv2).booleanValue();
+                    owner$iv = null;
+                    owner$iv3 = $result;
+                    zBooleanValue = ((Boolean) owner$iv3).booleanValue();
                     Boolean boolBoxBoolean3 = Boxing.boxBoolean(zBooleanValue);
-                    $this$withLock_u24default$iv2.unlock($this$withLock_u24default$iv);
+                    $this$withLock_u24default$iv2.unlock(owner$iv);
                     return boolBoxBoolean3;
-                } catch (Throwable th4) {
-                    th = th4;
-                    $this$withLock_u24default$iv4.unlock(owner$iv);
+                } catch (Throwable th3) {
+                    th = th3;
+                    $this$withLock_u24default$iv2.unlock(owner$iv2);
                     throw th;
                 }
             default:
@@ -706,17 +768,112 @@ public final class AniVortexRegistration {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:25:0x006e A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:26:0x006f  */
+    /* JADX WARN: Code duplicated, block: B:25:0x007e A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:26:0x007f  */
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public final Object reRegister(@NotNull Continuation<? super Boolean> continuation) throws Throwable {
-        C00181 c00181;
+        C00171 c00171;
         Object owner$iv;
         Mutex $this$withLock_u24default$iv;
         Mutex $this$withLock_u24default$iv2;
         Throwable th;
-        Object objResolveCredentials;
+        Object objWithContext;
+        if (continuation instanceof C00171) {
+            c00171 = (C00171) continuation;
+            if ((c00171.label & Integer.MIN_VALUE) != 0) {
+                c00171.label -= Integer.MIN_VALUE;
+            } else {
+                c00171 = new C00171(continuation);
+            }
+        } else {
+            c00171 = new C00171(continuation);
+        }
+        Object $result = c00171.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        switch (c00171.label) {
+            case 0:
+                ResultKt.throwOnFailure($result);
+                Mutex $this$withLock_u24default$iv3 = mutex;
+                owner$iv = null;
+                c00171.L$0 = $this$withLock_u24default$iv3;
+                c00171.label = 1;
+                if ($this$withLock_u24default$iv3.lock((Object) null, c00171) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                $this$withLock_u24default$iv = $this$withLock_u24default$iv3;
+                $this$withLock_u24default$iv2 = null;
+                try {
+                    lastAttemptMs = 0L;
+                    rateLimitUntilMs = 0L;
+                    AniVortexAuth.INSTANCE.markCurrentCredentialsInvalid();
+                    CoroutineContext coroutineContext = NonCancellable.INSTANCE;
+                    AniVortexRegistration$reRegister$2$1 aniVortexRegistration$reRegister$2$1 = new AniVortexRegistration$reRegister$2$1(null);
+                    c00171.L$0 = $this$withLock_u24default$iv;
+                    c00171.label = 2;
+                    objWithContext = BuildersKt.withContext(coroutineContext, aniVortexRegistration$reRegister$2$1, c00171);
+                    if (objWithContext == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    Boolean boolBoxBoolean = Boxing.boxBoolean(((Boolean) objWithContext).booleanValue());
+                    $this$withLock_u24default$iv.unlock(owner$iv);
+                    return boolBoxBoolean;
+                } catch (Throwable th2) {
+                    th = th2;
+                    $this$withLock_u24default$iv.unlock(owner$iv);
+                    throw th;
+                }
+            case 1:
+                $this$withLock_u24default$iv2 = null;
+                owner$iv = null;
+                $this$withLock_u24default$iv = (Mutex) c00171.L$0;
+                ResultKt.throwOnFailure($result);
+                lastAttemptMs = 0L;
+                rateLimitUntilMs = 0L;
+                AniVortexAuth.INSTANCE.markCurrentCredentialsInvalid();
+                CoroutineContext coroutineContext2 = NonCancellable.INSTANCE;
+                AniVortexRegistration$reRegister$2$1 aniVortexRegistration$reRegister$2$2 = new AniVortexRegistration$reRegister$2$1(null);
+                c00171.L$0 = $this$withLock_u24default$iv;
+                c00171.label = 2;
+                objWithContext = BuildersKt.withContext(coroutineContext2, aniVortexRegistration$reRegister$2$2, c00171);
+                if (objWithContext == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                Boolean boolBoxBoolean2 = Boxing.boxBoolean(((Boolean) objWithContext).booleanValue());
+                $this$withLock_u24default$iv.unlock(owner$iv);
+                return boolBoxBoolean2;
+            case 2:
+                owner$iv = null;
+                $this$withLock_u24default$iv = (Mutex) c00171.L$0;
+                try {
+                    ResultKt.throwOnFailure($result);
+                    objWithContext = $result;
+                    Boolean boolBoxBoolean3 = Boxing.boxBoolean(((Boolean) objWithContext).booleanValue());
+                    $this$withLock_u24default$iv.unlock(owner$iv);
+                    return boolBoxBoolean3;
+                } catch (Throwable th3) {
+                    th = th3;
+                    $this$withLock_u24default$iv.unlock(owner$iv);
+                    throw th;
+                }
+            default:
+                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code duplicated, block: B:23:0x0099  */
+    /* JADX WARN: Code duplicated, block: B:25:0x00af A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:26:0x00b0  */
+    /* JADX WARN: Code duplicated, block: B:31:0x00bc  */
+    /* JADX WARN: Code duplicated, block: B:7:0x0014  */
+    public final Object resolveCredentials(Continuation<? super Boolean> continuation) {
+        C00181 c00181;
+        long now;
+        Object objPerformRegistration;
+        RegOutcome outcome;
+        Object objPerformRegistration2;
+        long now2;
         if (continuation instanceof C00181) {
             c00181 = (C00181) continuation;
             if ((c00181.label & Integer.MIN_VALUE) != 0) {
@@ -732,72 +889,1489 @@ public final class AniVortexRegistration {
         switch (c00181.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                Mutex $this$withLock_u24default$iv3 = mutex;
-                owner$iv = null;
-                c00181.L$0 = $this$withLock_u24default$iv3;
+                lastFailure = null;
+                now = System.currentTimeMillis();
+                if (now < rateLimitUntilMs) {
+                    long waitSec = RangesKt.coerceAtLeast((rateLimitUntilMs - now) / 1000, 1L);
+                    lastFailure = "Server rate-limited (HTTP 429: too many requests). Please wait " + waitSec + " seconds before retrying.";
+                    String str = lastFailure;
+                    Intrinsics.checkNotNull(str);
+                    Log.w(TAG, str);
+                    return Boxing.boxBoolean(false);
+                }
+                c00181.J$0 = now;
                 c00181.label = 1;
-                if ($this$withLock_u24default$iv3.lock((Object) null, c00181) == coroutine_suspended) {
+                objPerformRegistration = performRegistration(false, false, c00181);
+                if (objPerformRegistration == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                $this$withLock_u24default$iv = $this$withLock_u24default$iv3;
-                $this$withLock_u24default$iv2 = null;
-                try {
-                    AniVortexAuth.INSTANCE.markCurrentCredentialsInvalid();
-                    AniVortexRegistration aniVortexRegistration = INSTANCE;
-                    c00181.L$0 = $this$withLock_u24default$iv;
+                outcome = (RegOutcome) objPerformRegistration;
+                if (outcome == RegOutcome.FAILED) {
+                    Log.i(TAG, "Software key registration failed, attempting KeyStore attestation fallback...");
+                    c00181.L$0 = SpillingKt.nullOutSpilledVariable(outcome);
+                    c00181.J$0 = now;
                     c00181.label = 2;
-                    objResolveCredentials = aniVortexRegistration.resolveCredentials(c00181);
-                    if (objResolveCredentials == coroutine_suspended) {
+                    objPerformRegistration2 = performRegistration(true, false, c00181);
+                    if (objPerformRegistration2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    Boolean boolBoxBoolean = Boxing.boxBoolean(((Boolean) objResolveCredentials).booleanValue());
-                    $this$withLock_u24default$iv.unlock(owner$iv);
-                    return boolBoxBoolean;
-                } catch (Throwable th2) {
-                    th = th2;
-                    $this$withLock_u24default$iv.unlock(owner$iv);
-                    throw th;
+                    now2 = now;
+                    outcome = (RegOutcome) objPerformRegistration2;
                 }
+                return Boxing.boxBoolean(outcome == RegOutcome.SUCCESS);
             case 1:
-                $this$withLock_u24default$iv2 = null;
-                owner$iv = null;
-                $this$withLock_u24default$iv = (Mutex) c00181.L$0;
+                now = c00181.J$0;
                 ResultKt.throwOnFailure($result);
-                AniVortexAuth.INSTANCE.markCurrentCredentialsInvalid();
-                AniVortexRegistration aniVortexRegistration2 = INSTANCE;
-                c00181.L$0 = $this$withLock_u24default$iv;
-                c00181.label = 2;
-                objResolveCredentials = aniVortexRegistration2.resolveCredentials(c00181);
-                if (objResolveCredentials == coroutine_suspended) {
-                    return coroutine_suspended;
+                objPerformRegistration = $result;
+                outcome = (RegOutcome) objPerformRegistration;
+                if (outcome == RegOutcome.FAILED) {
+                    Log.i(TAG, "Software key registration failed, attempting KeyStore attestation fallback...");
+                    c00181.L$0 = SpillingKt.nullOutSpilledVariable(outcome);
+                    c00181.J$0 = now;
+                    c00181.label = 2;
+                    objPerformRegistration2 = performRegistration(true, false, c00181);
+                    if (objPerformRegistration2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    now2 = now;
+                    outcome = (RegOutcome) objPerformRegistration2;
                 }
-                Boolean boolBoxBoolean2 = Boxing.boxBoolean(((Boolean) objResolveCredentials).booleanValue());
-                $this$withLock_u24default$iv.unlock(owner$iv);
-                return boolBoxBoolean2;
+                return Boxing.boxBoolean(outcome == RegOutcome.SUCCESS);
             case 2:
-                owner$iv = null;
-                $this$withLock_u24default$iv = (Mutex) c00181.L$0;
-                try {
-                    ResultKt.throwOnFailure($result);
-                    objResolveCredentials = $result;
-                    Boolean boolBoxBoolean3 = Boxing.boxBoolean(((Boolean) objResolveCredentials).booleanValue());
-                    $this$withLock_u24default$iv.unlock(owner$iv);
-                    return boolBoxBoolean3;
-                } catch (Throwable th3) {
-                    th = th3;
-                    $this$withLock_u24default$iv.unlock(owner$iv);
-                    throw th;
-                }
+                now2 = c00181.J$0;
+                ResultKt.throwOnFailure($result);
+                objPerformRegistration2 = $result;
+                outcome = (RegOutcome) objPerformRegistration2;
+                return Boxing.boxBoolean(outcome == RegOutcome.SUCCESS);
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code duplicated, block: B:7:0x0014  */
-    public final Object resolveCredentials(Continuation<? super Boolean> continuation) {
+    /* JADX WARN: Code duplicated, block: B:105:0x031d  */
+    /* JADX WARN: Code duplicated, block: B:118:0x0348 A[Catch: all -> 0x026d, TRY_ENTER, TryCatch #9 {all -> 0x026d, blocks: (B:53:0x021b, B:60:0x0235, B:118:0x0348, B:122:0x0351, B:127:0x035c, B:135:0x036d, B:189:0x048f, B:193:0x049f, B:198:0x04e0, B:201:0x04e6, B:74:0x02b2, B:86:0x02f0, B:89:0x02f7, B:106:0x031f, B:104:0x0316, B:85:0x02e6, B:73:0x02a8), top: B:340:0x01ae }] */
+    /* JADX WARN: Code duplicated, block: B:119:0x034d  */
+    /* JADX WARN: Code duplicated, block: B:122:0x0351 A[Catch: all -> 0x026d, TRY_LEAVE, TryCatch #9 {all -> 0x026d, blocks: (B:53:0x021b, B:60:0x0235, B:118:0x0348, B:122:0x0351, B:127:0x035c, B:135:0x036d, B:189:0x048f, B:193:0x049f, B:198:0x04e0, B:201:0x04e6, B:74:0x02b2, B:86:0x02f0, B:89:0x02f7, B:106:0x031f, B:104:0x0316, B:85:0x02e6, B:73:0x02a8), top: B:340:0x01ae }] */
+    /* JADX WARN: Code duplicated, block: B:124:0x0356  */
+    /* JADX WARN: Code duplicated, block: B:127:0x035c A[Catch: all -> 0x026d, TRY_ENTER, TRY_LEAVE, TryCatch #9 {all -> 0x026d, blocks: (B:53:0x021b, B:60:0x0235, B:118:0x0348, B:122:0x0351, B:127:0x035c, B:135:0x036d, B:189:0x048f, B:193:0x049f, B:198:0x04e0, B:201:0x04e6, B:74:0x02b2, B:86:0x02f0, B:89:0x02f7, B:106:0x031f, B:104:0x0316, B:85:0x02e6, B:73:0x02a8), top: B:340:0x01ae }] */
+    /* JADX WARN: Code duplicated, block: B:131:0x0365  */
+    /* JADX WARN: Code duplicated, block: B:133:0x0368 A[Catch: all -> 0x092f, TRY_ENTER, TRY_LEAVE, TryCatch #11 {all -> 0x092f, blocks: (B:58:0x022f, B:65:0x027b, B:115:0x0343, B:125:0x0357, B:133:0x0368, B:143:0x038c, B:205:0x052b, B:196:0x04c2, B:204:0x04fd), top: B:343:0x022f }] */
+    /* JADX WARN: Code duplicated, block: B:135:0x036d A[Catch: all -> 0x026d, TRY_ENTER, TRY_LEAVE, TryCatch #9 {all -> 0x026d, blocks: (B:53:0x021b, B:60:0x0235, B:118:0x0348, B:122:0x0351, B:127:0x035c, B:135:0x036d, B:189:0x048f, B:193:0x049f, B:198:0x04e0, B:201:0x04e6, B:74:0x02b2, B:86:0x02f0, B:89:0x02f7, B:106:0x031f, B:104:0x0316, B:85:0x02e6, B:73:0x02a8), top: B:340:0x01ae }] */
+    /* JADX WARN: Code duplicated, block: B:139:0x0376  */
+    /* JADX WARN: Code duplicated, block: B:141:0x0379  */
+    /* JADX WARN: Code duplicated, block: B:142:0x0388  */
+    /* JADX WARN: Code duplicated, block: B:159:0x03f3  */
+    /* JADX WARN: Code duplicated, block: B:163:0x03fc  */
+    /* JADX WARN: Code duplicated, block: B:167:0x0426 A[Catch: all -> 0x0484, TryCatch #17 {all -> 0x0484, blocks: (B:165:0x040e, B:167:0x0426, B:176:0x0434, B:178:0x0443, B:180:0x045d, B:181:0x0479), top: B:353:0x040e }] */
+    /* JADX WARN: Code duplicated, block: B:169:0x0429  */
+    /* JADX WARN: Code duplicated, block: B:170:0x042b  */
+    /* JADX WARN: Code duplicated, block: B:172:0x042e  */
+    /* JADX WARN: Code duplicated, block: B:173:0x042f  */
+    /* JADX WARN: Code duplicated, block: B:174:0x0431  */
+    /* JADX WARN: Code duplicated, block: B:176:0x0434 A[Catch: all -> 0x0484, TryCatch #17 {all -> 0x0484, blocks: (B:165:0x040e, B:167:0x0426, B:176:0x0434, B:178:0x0443, B:180:0x045d, B:181:0x0479), top: B:353:0x040e }] */
+    /* JADX WARN: Code duplicated, block: B:178:0x0443 A[Catch: all -> 0x0484, TryCatch #17 {all -> 0x0484, blocks: (B:165:0x040e, B:167:0x0426, B:176:0x0434, B:178:0x0443, B:180:0x045d, B:181:0x0479), top: B:353:0x040e }] */
+    /* JADX WARN: Code duplicated, block: B:180:0x045d A[Catch: all -> 0x0484, LOOP:0: B:179:0x045b->B:180:0x045d, LOOP_END, TryCatch #17 {all -> 0x0484, blocks: (B:165:0x040e, B:167:0x0426, B:176:0x0434, B:178:0x0443, B:180:0x045d, B:181:0x0479), top: B:353:0x040e }] */
+    /* JADX WARN: Code duplicated, block: B:191:0x049c  */
+    /* JADX WARN: Code duplicated, block: B:192:0x049e  */
+    /* JADX WARN: Code duplicated, block: B:195:0x04c0  */
+    /* JADX WARN: Code duplicated, block: B:198:0x04e0 A[Catch: all -> 0x026d, TRY_ENTER, TryCatch #9 {all -> 0x026d, blocks: (B:53:0x021b, B:60:0x0235, B:118:0x0348, B:122:0x0351, B:127:0x035c, B:135:0x036d, B:189:0x048f, B:193:0x049f, B:198:0x04e0, B:201:0x04e6, B:74:0x02b2, B:86:0x02f0, B:89:0x02f7, B:106:0x031f, B:104:0x0316, B:85:0x02e6, B:73:0x02a8), top: B:340:0x01ae }] */
+    /* JADX WARN: Code duplicated, block: B:199:0x04e3  */
+    /* JADX WARN: Code duplicated, block: B:201:0x04e6 A[Catch: all -> 0x026d, TRY_LEAVE, TryCatch #9 {all -> 0x026d, blocks: (B:53:0x021b, B:60:0x0235, B:118:0x0348, B:122:0x0351, B:127:0x035c, B:135:0x036d, B:189:0x048f, B:193:0x049f, B:198:0x04e0, B:201:0x04e6, B:74:0x02b2, B:86:0x02f0, B:89:0x02f7, B:106:0x031f, B:104:0x0316, B:85:0x02e6, B:73:0x02a8), top: B:340:0x01ae }] */
+    /* JADX WARN: Code duplicated, block: B:203:0x04fa  */
+    /* JADX WARN: Code duplicated, block: B:211:0x0685 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:212:0x0686  */
+    /* JADX WARN: Code duplicated, block: B:215:0x069f A[Catch: all -> 0x08eb, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:217:0x06a9 A[Catch: all -> 0x08eb, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:222:0x06ff A[Catch: all -> 0x08eb, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:224:0x0705 A[Catch: all -> 0x08eb, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:226:0x073b A[Catch: all -> 0x08eb, TRY_LEAVE, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:229:0x0746  */
+    /* JADX WARN: Code duplicated, block: B:230:0x0749  */
+    /* JADX WARN: Code duplicated, block: B:237:0x0774  */
+    /* JADX WARN: Code duplicated, block: B:253:0x07c1  */
+    /* JADX WARN: Code duplicated, block: B:263:0x07dd A[Catch: Exception -> 0x07f7, all -> 0x08eb, TRY_LEAVE, TryCatch #7 {Exception -> 0x07f7, blocks: (B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1), top: B:337:0x07b1 }] */
+    /* JADX WARN: Code duplicated, block: B:274:0x0806 A[Catch: all -> 0x08eb, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:276:0x080e A[Catch: all -> 0x08eb, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:280:0x0817  */
+    /* JADX WARN: Code duplicated, block: B:282:0x081a A[Catch: all -> 0x08eb, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:284:0x0822 A[Catch: all -> 0x08eb, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:288:0x082b  */
+    /* JADX WARN: Code duplicated, block: B:290:0x082e  */
+    /* JADX WARN: Code duplicated, block: B:291:0x0830 A[Catch: all -> 0x08eb, TRY_LEAVE, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:294:0x084a A[Catch: all -> 0x08eb, TRY_ENTER, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:295:0x085f A[Catch: all -> 0x08eb, TryCatch #8 {all -> 0x08eb, blocks: (B:213:0x0695, B:215:0x069f, B:217:0x06a9, B:219:0x06af, B:220:0x06b3, B:222:0x06ff, B:224:0x0705, B:226:0x073b, B:272:0x0802, B:274:0x0806, B:276:0x080e, B:282:0x081a, B:284:0x0822, B:291:0x0830, B:294:0x084a, B:296:0x087d, B:300:0x08b2, B:295:0x085f, B:301:0x08c1, B:235:0x076e, B:251:0x07bb, B:254:0x07c2, B:263:0x07dd, B:262:0x07d7, B:250:0x07b1, B:234:0x0764, B:308:0x0905, B:209:0x067f), top: B:339:0x0046 }] */
+    /* JADX WARN: Code duplicated, block: B:298:0x08af  */
+    /* JADX WARN: Code duplicated, block: B:299:0x08b1  */
+    /* JADX WARN: Code duplicated, block: B:307:0x08f8  */
+    /* JADX WARN: Code duplicated, block: B:323:0x02be A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:327:0x01b0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:335:0x077c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:345:0x03ed A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:349:0x03b7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:354:0x01ba A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:360:0x039f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:374:0x07c8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:376:0x02fd A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:44:0x01c0 A[Catch: all -> 0x01c5, TRY_LEAVE, TryCatch #18 {all -> 0x01c5, blocks: (B:42:0x01ba, B:44:0x01c0), top: B:354:0x01ba }] */
+    /* JADX WARN: Code duplicated, block: B:57:0x022d  */
+    /* JADX WARN: Code duplicated, block: B:60:0x0235 A[Catch: all -> 0x026d, TRY_ENTER, TRY_LEAVE, TryCatch #9 {all -> 0x026d, blocks: (B:53:0x021b, B:60:0x0235, B:118:0x0348, B:122:0x0351, B:127:0x035c, B:135:0x036d, B:189:0x048f, B:193:0x049f, B:198:0x04e0, B:201:0x04e6, B:74:0x02b2, B:86:0x02f0, B:89:0x02f7, B:106:0x031f, B:104:0x0316, B:85:0x02e6, B:73:0x02a8), top: B:340:0x01ae }] */
+    /* JADX WARN: Code duplicated, block: B:64:0x0277  */
+    /* JADX WARN: Code duplicated, block: B:68:0x0286  */
+    /* JADX WARN: Code duplicated, block: B:69:0x0289  */
+    /* JADX WARN: Code duplicated, block: B:76:0x02b8  */
+    /* JADX WARN: Code duplicated, block: B:7:0x0020  */
+    /* JADX WARN: Code duplicated, block: B:88:0x02f6  */
+    @RequiresApi(23)
+    public final Object performRegistration(boolean attested, boolean includeDeviceProps, Continuation<? super RegOutcome> continuation) {
+        C00161 c00161;
+        String str;
+        Object obj;
+        String str2;
+        String str3;
+        String str4;
+        String str5;
+        String str6;
+        int i;
+        boolean includeDeviceProps2;
+        String challengeBody;
+        Object obj2;
+        boolean attested2;
+        NiceResponse challengeResp;
+        String str7;
+        Long longOrNull;
+        String str8;
+        String str9;
+        String value$iv;
+        Object obj3;
+        Object obj4;
+        DeserializationStrategy deserializationStrategy;
+        String value$iv$iv;
+        Object objDecodeFromString;
+        ChallengeResponse challenge;
+        String challenge_id;
+        String challengeId;
+        String challengeStr;
+        String str10;
+        boolean z;
+        String str11;
+        boolean z2;
+        byte[] challengeBytes;
+        boolean z3;
+        KeyStore $this$performRegistration_u24lambda_u240;
+        KeyGenParameterSpec.Builder specBuilder;
+        PrivateKey privateKey;
+        Certificate[] chain;
+        boolean z4;
+        Collection destination$iv$iv;
+        int length;
+        int i2;
+        List chainB64;
+        AniVortexRegistration aniVortexRegistration;
+        PrivateKey privateKey2;
+        boolean z5;
+        boolean z6;
+        boolean attested3;
+        PrivateKey privateKey3;
+        String chainJson;
+        String proofSig;
+        PrivateKey privateKey4;
+        PrivateKey privateKey5;
+        PublicKey publicKey;
+        ECPublicKey publicKey2;
+        NiceResponse registerResp;
+        String value$iv2;
+        Object obj5;
+        Object objDecodeFromString2;
+        DeserializationStrategy deserializationStrategy2;
+        RegisterResponse reg;
+        String installation_id;
+        boolean z7;
+        String key_id;
+        boolean z8;
+        boolean z9;
+        String str12;
+        Long longOrNull2;
+        String str13 = KEYSTORE_ALIAS;
+        if (continuation instanceof C00161) {
+            c00161 = (C00161) continuation;
+            if ((c00161.label & Integer.MIN_VALUE) != 0) {
+                c00161.label -= Integer.MIN_VALUE;
+            } else {
+                c00161 = new C00161(continuation);
+            }
+        } else {
+            c00161 = new C00161(continuation);
+        }
+        C00161 c00162 = c00161;
+        Object $result = c00162.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        int i3 = c00162.label;
+        long jLongValue = 60;
+        String str14 = TAG;
+        try {
+            try {
+                switch (i3) {
+                    case 0:
+                        ResultKt.throwOnFailure($result);
+                        try {
+                            Log.i(TAG, "Attempting registration flow (attested=" + (attested) + ", deviceProps=" + (includeDeviceProps) + ")...");
+                            Requests app = MainActivityKt.getApp();
+                            try {
+                                Map<String, String> map = regHeaders;
+                                RequestBody requestBodyCreate = RequestBody.Companion.create("{\"platform\":\"android\",\"package_name\":\"app.anivortex.mobile\",\"version_name\":\"5.0.1\",\"version_code\":503}", MediaType.Companion.parse("application/json; charset=utf-8"));
+                                c00162.L$0 = SpillingKt.nullOutSpilledVariable("{\"platform\":\"android\",\"package_name\":\"app.anivortex.mobile\",\"version_name\":\"5.0.1\",\"version_code\":503}");
+                                c00162.Z$0 = attested;
+                                c00162.Z$1 = includeDeviceProps;
+                                c00162.label = 1;
+                                str14 = null;
+                                str = "retry-after";
+                                obj = coroutine_suspended;
+                                str2 = "): ";
+                                str3 = " (headers: ";
+                                str4 = " seconds.";
+                                str5 = TAG;
+                                str6 = "application/json; charset=utf-8";
+                                i = 429;
+                                try {
+                                    Object objPost$default = Requests.post$default(app, "https://api.anivortex.in/api/v1/install/challenge", map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00162, 65276, (Object) null);
+                                    c00162 = c00162;
+                                    if (objPost$default == obj) {
+                                        return obj;
+                                    }
+                                    includeDeviceProps2 = includeDeviceProps;
+                                    challengeBody = "{\"platform\":\"android\",\"package_name\":\"app.anivortex.mobile\",\"version_name\":\"5.0.1\",\"version_code\":503}";
+                                    obj2 = objPost$default;
+                                    attested2 = attested;
+                                    try {
+                                        challengeResp = (NiceResponse) obj2;
+                                        try {
+                                            if (challengeResp.getCode() == i) {
+                                                try {
+                                                    str7 = challengeResp.getHeaders().get(str);
+                                                    if (str7 != null) {
+                                                        try {
+                                                            longOrNull = StringsKt.toLongOrNull(str7);
+                                                            if (longOrNull != null) {
+                                                                jLongValue = longOrNull.longValue();
+                                                            }
+                                                        } catch (Throwable th) {
+                                                            e = th;
+                                                            str13 = str5;
+                                                        }
+                                                        break;
+                                                    }
+                                                    long retryAfterSec = jLongValue;
+                                                    long jCurrentTimeMillis = System.currentTimeMillis();
+                                                    Long.signum(retryAfterSec);
+                                                    rateLimitUntilMs = jCurrentTimeMillis + (1000 * retryAfterSec);
+                                                    lastFailure = "Challenge rate-limited (HTTP 429: too many requests). Server throttled your IP. Please wait " + retryAfterSec + str4;
+                                                    Log.w(str5, lastFailure + str3 + challengeResp.getHeaders() + ')');
+                                                    return RegOutcome.RATE_LIMITED;
+                                                } catch (Throwable th2) {
+                                                    e = th2;
+                                                    str13 = str5;
+                                                }
+                                            } else {
+                                                str8 = str5;
+                                                try {
+                                                    if (!challengeResp.isSuccessful()) {
+                                                        lastFailure = "Challenge failed (HTTP " + challengeResp.getCode() + str2 + StringsKt.take(challengeResp.getText(), 120);
+                                                        String str15 = lastFailure;
+                                                        Intrinsics.checkNotNull(str15);
+                                                        Log.w(str8, str15);
+                                                        return RegOutcome.FAILED;
+                                                    }
+                                                    str9 = str2;
+                                                    AppUtils appUtils = AppUtils.INSTANCE;
+                                                    value$iv = challengeResp.getText();
+                                                    if (value$iv != null) {
+                                                        try {
+                                                            Result.Companion companion = Result.Companion;
+                                                            KType kTypeTypeOf = Reflection.typeOf(ChallengeResponse.class);
+                                                            MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
+                                                            obj3 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf));
+                                                            break;
+                                                        } catch (Throwable th3) {
+                                                            try {
+                                                                Result.Companion companion2 = Result.Companion;
+                                                                obj3 = Result.constructor-impl(ResultKt.createFailure(th3));
+                                                            } catch (Exception e) {
+                                                                obj4 = null;
+                                                                challenge = (ChallengeResponse) obj4;
+                                                                if (challenge != null) {
+                                                                    challenge_id = challenge.getChallenge_id();
+                                                                } else {
+                                                                    challenge_id = null;
+                                                                }
+                                                                challengeId = challenge_id;
+                                                                if (challenge != null) {
+                                                                    challengeStr = challenge.getChallenge();
+                                                                } else {
+                                                                    challengeStr = null;
+                                                                }
+                                                                str10 = challengeId;
+                                                                if (str10 != null) {
+                                                                    z = true;
+                                                                } else {
+                                                                    z = true;
+                                                                }
+                                                                if (!z) {
+                                                                    str11 = challengeStr;
+                                                                    if (str11 != null) {
+                                                                        z2 = true;
+                                                                    } else {
+                                                                        z2 = true;
+                                                                    }
+                                                                    if (!z2) {
+                                                                        challengeBytes = Base64.decode(challengeStr, 11);
+                                                                        String challengeStr2 = challengeStr;
+                                                                        if (attested2) {
+                                                                            try {
+                                                                                $this$performRegistration_u24lambda_u240 = KeyStore.getInstance(r5);
+                                                                                $this$performRegistration_u24lambda_u240.load(null);
+                                                                                if ($this$performRegistration_u24lambda_u240.containsAlias(KEYSTORE_ALIAS)) {
+                                                                                    try {
+                                                                                        $this$performRegistration_u24lambda_u240.deleteEntry(KEYSTORE_ALIAS);
+                                                                                        break;
+                                                                                    } catch (Throwable th4) {
+                                                                                    }
+                                                                                }
+                                                                                KeyPairGenerator kpg = KeyPairGenerator.getInstance("EC", "AndroidKeyStore");
+                                                                                specBuilder = new KeyGenParameterSpec.Builder(KEYSTORE_ALIAS, 4).setAlgorithmParameterSpec(new ECGenParameterSpec("secp256r1")).setDigests("SHA-256").setUserAuthenticationRequired(false).setAttestationChallenge(challengeBytes);
+                                                                                if (includeDeviceProps2) {
+                                                                                    try {
+                                                                                        if (Build.VERSION.SDK_INT >= 31) {
+                                                                                            specBuilder.setDevicePropertiesAttestationIncluded(true);
+                                                                                        }
+                                                                                    } catch (Throwable th5) {
+                                                                                        e = th5;
+                                                                                        StringBuilder sbAppend = new StringBuilder().append("Attested keygen failed (deviceProps=");
+                                                                                        if (includeDeviceProps2) {
+                                                                                            z3 = true;
+                                                                                        } else {
+                                                                                            z3 = false;
+                                                                                        }
+                                                                                        lastFailure = sbAppend.append(z3).append(str9).append(e.getMessage()).toString();
+                                                                                        String str16 = lastFailure;
+                                                                                        Intrinsics.checkNotNull(str16);
+                                                                                        Log.w(str8, str16);
+                                                                                        return RegOutcome.FAILED;
+                                                                                    }
+                                                                                }
+                                                                                kpg.initialize(specBuilder.build());
+                                                                                privateKey = kpg.generateKeyPair().getPrivate();
+                                                                                try {
+                                                                                    KeyStore $this$performRegistration_u24lambda_u241 = KeyStore.getInstance("AndroidKeyStore");
+                                                                                    $this$performRegistration_u24lambda_u241.load(null);
+                                                                                    chain = $this$performRegistration_u24lambda_u241.getCertificateChain(KEYSTORE_ALIAS);
+                                                                                    if (chain == null) {
+                                                                                        z4 = true;
+                                                                                    } else {
+                                                                                        if (chain.length == 0) {
+                                                                                            z5 = true;
+                                                                                        } else {
+                                                                                            z5 = false;
+                                                                                        }
+                                                                                        if (z5) {
+                                                                                            z4 = true;
+                                                                                        } else {
+                                                                                            z4 = false;
+                                                                                        }
+                                                                                    }
+                                                                                    if (z4) {
+                                                                                        lastFailure = "AndroidKeyStore returned no attestation chain";
+                                                                                        String str17 = lastFailure;
+                                                                                        Intrinsics.checkNotNull(str17);
+                                                                                        Log.w(str8, str17);
+                                                                                        return RegOutcome.FAILED;
+                                                                                    }
+                                                                                    destination$iv$iv = new ArrayList(chain.length);
+                                                                                    i2 = 0;
+                                                                                    for (length = chain.length; i2 < length; length = length) {
+                                                                                        destination$iv$iv.add(Base64.encodeToString(chain[i2].getEncoded(), 2));
+                                                                                        i2++;
+                                                                                    }
+                                                                                    chainB64 = (List) destination$iv$iv;
+                                                                                    aniVortexRegistration = this;
+                                                                                    privateKey2 = privateKey;
+                                                                                } catch (Throwable th6) {
+                                                                                    e = th6;
+                                                                                    StringBuilder sbAppend2 = new StringBuilder().append("Attested keygen failed (deviceProps=");
+                                                                                    if (includeDeviceProps2) {
+                                                                                        z3 = true;
+                                                                                    } else {
+                                                                                        z3 = false;
+                                                                                    }
+                                                                                    lastFailure = sbAppend2.append(z3).append(str9).append(e.getMessage()).toString();
+                                                                                    String str18 = lastFailure;
+                                                                                    Intrinsics.checkNotNull(str18);
+                                                                                    Log.w(str8, str18);
+                                                                                    return RegOutcome.FAILED;
+                                                                                }
+                                                                            } catch (Throwable th7) {
+                                                                                e = th7;
+                                                                            }
+                                                                        } else {
+                                                                            KeyPairGenerator kpg2 = KeyPairGenerator.getInstance("EC");
+                                                                            kpg2.initialize(new ECGenParameterSpec("secp256r1"));
+                                                                            KeyPair keyPair = kpg2.generateKeyPair();
+                                                                            privateKey5 = keyPair.getPrivate();
+                                                                            publicKey = keyPair.getPublic();
+                                                                            if (publicKey instanceof ECPublicKey) {
+                                                                                publicKey2 = (ECPublicKey) publicKey;
+                                                                            } else {
+                                                                                publicKey2 = null;
+                                                                            }
+                                                                            if (publicKey2 == null) {
+                                                                                AniVortexRegistration aniVortexRegistration2 = this;
+                                                                                lastFailure = "Generated software key is not EC";
+                                                                                String str19 = lastFailure;
+                                                                                Intrinsics.checkNotNull(str19);
+                                                                                Log.w(str8, str19);
+                                                                                return RegOutcome.FAILED;
+                                                                            }
+                                                                            aniVortexRegistration = this;
+                                                                            byte[] leafDer = aniVortexRegistration.buildLeafCertificate(privateKey5, publicKey2);
+                                                                            CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(leafDer));
+                                                                            String leafB64 = Base64.encodeToString(leafDer, 2);
+                                                                            List chainB65 = CollectionsKt.listOf(new String[]{leafB64, leafB64});
+                                                                            chainB64 = chainB65;
+                                                                            privateKey2 = privateKey5;
+                                                                        }
+                                                                        String canonical = "ANIVORTEX-INSTALL-REGISTER-V1\n" + challengeId + '\n' + aniVortexRegistration.b64UrlNoPad(aniVortexRegistration.sha256(challengeBytes));
+                                                                        Signature signer = Signature.getInstance("SHA256withECDSA");
+                                                                        signer.initSign(privateKey2);
+                                                                        List chainB66 = chainB64;
+                                                                        byte[] bytes = canonical.getBytes(Charsets.UTF_8);
+                                                                        Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
+                                                                        signer.update(bytes);
+                                                                        String proofSig2 = aniVortexRegistration.b64UrlNoPad(signer.sign());
+                                                                        String chainJson2 = CollectionsKt.joinToString$default(chainB66, ",", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.AniVortex.AniVortexRegistration$$ExternalSyntheticLambda0
+                                                                            public final Object invoke(Object obj6) {
+                                                                                return AniVortexRegistration.performRegistration$lambda$4((String) obj6);
+                                                                            }
+                                                                        }, 30, (Object) null);
+                                                                        try {
+                                                                            String registerBody = "{\"challenge_id\":\"" + challengeId + "\",\"certificate_chain\":[" + chainJson2 + "],\"proof_signature\":\"" + proofSig2 + "\"}";
+                                                                            Requests app2 = MainActivityKt.getApp();
+                                                                            Map<String, String> map2 = regHeaders;
+                                                                            RequestBody requestBodyCreate2 = RequestBody.Companion.create(registerBody, MediaType.Companion.parse(str6));
+                                                                            c00162.L$0 = SpillingKt.nullOutSpilledVariable(challengeBody);
+                                                                            c00162.L$1 = SpillingKt.nullOutSpilledVariable(challengeResp);
+                                                                            c00162.L$2 = SpillingKt.nullOutSpilledVariable(challenge);
+                                                                            c00162.L$3 = SpillingKt.nullOutSpilledVariable(challengeId);
+                                                                            c00162.L$4 = SpillingKt.nullOutSpilledVariable(challengeStr2);
+                                                                            c00162.L$5 = SpillingKt.nullOutSpilledVariable(challengeBytes);
+                                                                            c00162.L$6 = privateKey2;
+                                                                            c00162.L$7 = SpillingKt.nullOutSpilledVariable(chainB66);
+                                                                            c00162.L$8 = SpillingKt.nullOutSpilledVariable(canonical);
+                                                                            c00162.L$9 = SpillingKt.nullOutSpilledVariable(signer);
+                                                                            c00162.L$10 = SpillingKt.nullOutSpilledVariable(proofSig2);
+                                                                            c00162.L$11 = SpillingKt.nullOutSpilledVariable(chainJson2);
+                                                                            c00162.L$12 = SpillingKt.nullOutSpilledVariable(registerBody);
+                                                                            c00162.Z$0 = attested2;
+                                                                            c00162.Z$1 = includeDeviceProps2;
+                                                                            c00162.label = 2;
+                                                                            z6 = true;
+                                                                            attested3 = attested2;
+                                                                            privateKey3 = privateKey2;
+                                                                            chainJson = str9;
+                                                                            proofSig = str8;
+                                                                            $result = Requests.post$default(app2, "https://api.anivortex.in/api/v1/install/register", map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00162, 65276, (Object) null);
+                                                                            if ($result == obj) {
+                                                                                return obj;
+                                                                            }
+                                                                            privateKey4 = privateKey3;
+                                                                            registerResp = (NiceResponse) $result;
+                                                                            if (registerResp.getCode() == 429) {
+                                                                                str12 = registerResp.getHeaders().get(str);
+                                                                                if (str12 != null) {
+                                                                                    jLongValue = longOrNull2.longValue();
+                                                                                }
+                                                                                long retryAfterSec2 = jLongValue;
+                                                                                rateLimitUntilMs = System.currentTimeMillis() + (1000 * retryAfterSec2);
+                                                                                lastFailure = "Registration rate-limited (HTTP 429: too many requests). Server throttled your IP. Please wait " + retryAfterSec2 + str4;
+                                                                                Log.w(proofSig, lastFailure + str3 + registerResp.getHeaders() + ')');
+                                                                                return RegOutcome.RATE_LIMITED;
+                                                                            }
+                                                                            if (!registerResp.isSuccessful()) {
+                                                                                lastFailure = "Register rejected (HTTP " + registerResp.getCode() + chainJson + StringsKt.take(registerResp.getText(), 120);
+                                                                                String str20 = lastFailure;
+                                                                                Intrinsics.checkNotNull(str20);
+                                                                                Log.w(proofSig, str20);
+                                                                                return RegOutcome.FAILED;
+                                                                            }
+                                                                            AppUtils appUtils2 = AppUtils.INSTANCE;
+                                                                            value$iv2 = registerResp.getText();
+                                                                            if (value$iv2 == null) {
+                                                                                try {
+                                                                                    Result.Companion companion3 = Result.Companion;
+                                                                                    KType kTypeTypeOf2 = Reflection.typeOf(RegisterResponse.class);
+                                                                                    MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
+                                                                                    obj5 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf2));
+                                                                                    break;
+                                                                                } catch (Throwable th8) {
+                                                                                    try {
+                                                                                        Result.Companion companion4 = Result.Companion;
+                                                                                        obj5 = Result.constructor-impl(ResultKt.createFailure(th8));
+                                                                                    } catch (Exception e2) {
+                                                                                        objDecodeFromString2 = null;
+                                                                                        reg = (RegisterResponse) objDecodeFromString2;
+                                                                                        if (reg != null) {
+                                                                                            installation_id = reg.getInstallation_id();
+                                                                                            if (installation_id != null) {
+                                                                                                z7 = true;
+                                                                                            } else {
+                                                                                                z7 = true;
+                                                                                            }
+                                                                                            if (!z7) {
+                                                                                                key_id = reg.getKey_id();
+                                                                                                if (key_id != null) {
+                                                                                                    z8 = true;
+                                                                                                } else {
+                                                                                                    z8 = true;
+                                                                                                }
+                                                                                                if (!z8) {
+                                                                                                    CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
+                                                                                                    CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
+                                                                                                    if (attested3) {
+                                                                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z6));
+                                                                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", "");
+                                                                                                    } else {
+                                                                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(false));
+                                                                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey4.getEncoded(), 2));
+                                                                                                        clearKeystoreKey();
+                                                                                                    }
+                                                                                                    AniVortexAuth.INSTANCE.invalidateCache();
+                                                                                                    lastFailure = null;
+                                                                                                    StringBuilder sbAppend3 = new StringBuilder().append("Registration complete! installation_id=").append(reg.getInstallation_id()).append(" key_id=").append(reg.getKey_id()).append(" attested=");
+                                                                                                    if (attested3) {
+                                                                                                        z9 = true;
+                                                                                                    } else {
+                                                                                                        z9 = false;
+                                                                                                    }
+                                                                                                    Log.i(proofSig, sbAppend3.append(z9).toString());
+                                                                                                    return RegOutcome.SUCCESS;
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                        lastFailure = "Register response missing fields: " + StringsKt.take(registerResp.getText(), 120);
+                                                                                        String str21 = lastFailure;
+                                                                                        Intrinsics.checkNotNull(str21);
+                                                                                        Log.w(proofSig, str21);
+                                                                                        return RegOutcome.FAILED;
+                                                                                    }
+                                                                                }
+                                                                                if (Result.exceptionOrNull-impl(obj5) == null) {
+                                                                                    try {
+                                                                                        Result.Companion companion5 = Result.Companion;
+                                                                                        try {
+                                                                                            try {
+                                                                                                obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
+                                                                                                break;
+                                                                                            } catch (Throwable th9) {
+                                                                                                th = th9;
+                                                                                                try {
+                                                                                                    Result.Companion companion6 = Result.Companion;
+                                                                                                    obj5 = Result.constructor-impl(ResultKt.createFailure(th));
+                                                                                                } catch (Exception e3) {
+                                                                                                    objDecodeFromString2 = null;
+                                                                                                }
+                                                                                            }
+                                                                                        } catch (Throwable th10) {
+                                                                                            th = th10;
+                                                                                        }
+                                                                                    } catch (Throwable th11) {
+                                                                                        th = th11;
+                                                                                    }
+                                                                                }
+                                                                                if (Result.isFailure-impl(obj5)) {
+                                                                                    obj5 = null;
+                                                                                }
+                                                                                deserializationStrategy2 = (KSerializer) obj5;
+                                                                                if (deserializationStrategy2 != null) {
+                                                                                    try {
+                                                                                        objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv2);
+                                                                                    } catch (SerializationException e4) {
+                                                                                        ArchComponentExtKt.logError(e4);
+                                                                                        ObjectMapper $this$readValue$iv$iv$iv = MainAPIKt.getMapper();
+                                                                                        objDecodeFromString2 = $this$readValue$iv$iv$iv.readValue(value$iv2, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
+                                                                                        });
+                                                                                    } catch (Throwable th12) {
+                                                                                        ObjectMapper $this$readValue$iv$iv$iv2 = MainAPIKt.getMapper();
+                                                                                        objDecodeFromString2 = $this$readValue$iv$iv$iv2.readValue(value$iv2, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
+                                                                                        });
+                                                                                    }
+                                                                                } else {
+                                                                                    ObjectMapper $this$readValue$iv$iv$iv3 = MainAPIKt.getMapper();
+                                                                                    objDecodeFromString2 = $this$readValue$iv$iv$iv3.readValue(value$iv2, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
+                                                                                    });
+                                                                                }
+                                                                                break;
+                                                                            } else {
+                                                                                objDecodeFromString2 = null;
+                                                                            }
+                                                                            reg = (RegisterResponse) objDecodeFromString2;
+                                                                            if (reg != null) {
+                                                                                installation_id = reg.getInstallation_id();
+                                                                                if (installation_id != null) {
+                                                                                    z7 = true;
+                                                                                } else {
+                                                                                    z7 = true;
+                                                                                }
+                                                                                if (!z7) {
+                                                                                    key_id = reg.getKey_id();
+                                                                                    if (key_id != null) {
+                                                                                        z8 = true;
+                                                                                    } else {
+                                                                                        z8 = true;
+                                                                                    }
+                                                                                    if (!z8) {
+                                                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
+                                                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
+                                                                                        if (attested3) {
+                                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z6));
+                                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", "");
+                                                                                        } else {
+                                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(false));
+                                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey4.getEncoded(), 2));
+                                                                                            clearKeystoreKey();
+                                                                                        }
+                                                                                        AniVortexAuth.INSTANCE.invalidateCache();
+                                                                                        lastFailure = null;
+                                                                                        StringBuilder sbAppend4 = new StringBuilder().append("Registration complete! installation_id=").append(reg.getInstallation_id()).append(" key_id=").append(reg.getKey_id()).append(" attested=");
+                                                                                        if (attested3) {
+                                                                                            z9 = true;
+                                                                                        } else {
+                                                                                            z9 = false;
+                                                                                        }
+                                                                                        Log.i(proofSig, sbAppend4.append(z9).toString());
+                                                                                        return RegOutcome.SUCCESS;
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                            lastFailure = "Register response missing fields: " + StringsKt.take(registerResp.getText(), 120);
+                                                                            String str22 = lastFailure;
+                                                                            Intrinsics.checkNotNull(str22);
+                                                                            Log.w(proofSig, str22);
+                                                                            return RegOutcome.FAILED;
+                                                                        } catch (Throwable th13) {
+                                                                            e = th13;
+                                                                            str13 = str8;
+                                                                        }
+                                                                    }
+                                                                    lastFailure = "Registration error: " + e.getMessage();
+                                                                    String str23 = lastFailure;
+                                                                    Intrinsics.checkNotNull(str23);
+                                                                    Log.w(str13, str23);
+                                                                    Log.d(str13, "Registration failed stacktrace", e);
+                                                                    return RegOutcome.FAILED;
+                                                                }
+                                                                lastFailure = "Invalid challenge response: " + StringsKt.take(challengeResp.getText(), 120);
+                                                                String str24 = lastFailure;
+                                                                Intrinsics.checkNotNull(str24);
+                                                                Log.w(str8, str24);
+                                                                return RegOutcome.FAILED;
+                                                            }
+                                                        }
+                                                        if (Result.exceptionOrNull-impl(obj3) == null) {
+                                                            try {
+                                                                Result.Companion companion7 = Result.Companion;
+                                                                try {
+                                                                    obj3 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(ChallengeResponse.class), (List) null, 2, (Object) null));
+                                                                    break;
+                                                                } catch (Throwable th14) {
+                                                                    th = th14;
+                                                                    try {
+                                                                        Result.Companion companion8 = Result.Companion;
+                                                                        obj3 = Result.constructor-impl(ResultKt.createFailure(th));
+                                                                    } catch (Exception e5) {
+                                                                        obj4 = null;
+                                                                    }
+                                                                }
+                                                            } catch (Throwable th15) {
+                                                                th = th15;
+                                                            }
+                                                        }
+                                                        if (Result.isFailure-impl(obj3)) {
+                                                            obj3 = null;
+                                                        }
+                                                        deserializationStrategy = (KSerializer) obj3;
+                                                        if (deserializationStrategy != null) {
+                                                            try {
+                                                                value$iv$iv = value$iv;
+                                                                try {
+                                                                    objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, value$iv$iv);
+                                                                } catch (SerializationException e6) {
+                                                                    e$iv$iv = e6;
+                                                                    ArchComponentExtKt.logError((Throwable) e$iv$iv);
+                                                                    ObjectMapper $this$readValue$iv$iv$iv4 = MainAPIKt.getMapper();
+                                                                    String content$iv$iv$iv = value$iv$iv;
+                                                                    objDecodeFromString = $this$readValue$iv$iv$iv4.readValue(content$iv$iv$iv, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$1
+                                                                    });
+                                                                } catch (Throwable th16) {
+                                                                    ObjectMapper $this$readValue$iv$iv$iv5 = MainAPIKt.getMapper();
+                                                                    String content$iv$iv$iv2 = value$iv$iv;
+                                                                    objDecodeFromString = $this$readValue$iv$iv$iv5.readValue(content$iv$iv$iv2, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$1
+                                                                    });
+                                                                }
+                                                            } catch (SerializationException e7) {
+                                                                e$iv$iv = e7;
+                                                                value$iv$iv = value$iv;
+                                                            } catch (Throwable th17) {
+                                                                value$iv$iv = value$iv;
+                                                            }
+                                                            obj4 = objDecodeFromString;
+                                                        } else {
+                                                            value$iv$iv = value$iv;
+                                                        }
+                                                        ObjectMapper $this$readValue$iv$iv$iv6 = MainAPIKt.getMapper();
+                                                        String content$iv$iv$iv3 = value$iv$iv;
+                                                        objDecodeFromString = $this$readValue$iv$iv$iv6.readValue(content$iv$iv$iv3, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$1
+                                                        });
+                                                        obj4 = objDecodeFromString;
+                                                        break;
+                                                    } else {
+                                                        obj4 = null;
+                                                    }
+                                                    challenge = (ChallengeResponse) obj4;
+                                                    if (challenge != null) {
+                                                        challenge_id = challenge.getChallenge_id();
+                                                    } else {
+                                                        challenge_id = null;
+                                                    }
+                                                    challengeId = challenge_id;
+                                                    if (challenge != null) {
+                                                        challengeStr = challenge.getChallenge();
+                                                    } else {
+                                                        challengeStr = null;
+                                                    }
+                                                    str10 = challengeId;
+                                                    if (str10 != null || str10.length() == 0) {
+                                                        z = true;
+                                                    } else {
+                                                        z = false;
+                                                    }
+                                                    if (!z) {
+                                                        str11 = challengeStr;
+                                                        if (str11 != null || str11.length() == 0) {
+                                                            z2 = true;
+                                                        } else {
+                                                            z2 = false;
+                                                        }
+                                                        if (!z2) {
+                                                            challengeBytes = Base64.decode(challengeStr, 11);
+                                                            String challengeStr3 = challengeStr;
+                                                            if (attested2) {
+                                                                $this$performRegistration_u24lambda_u240 = KeyStore.getInstance(r5);
+                                                                $this$performRegistration_u24lambda_u240.load(null);
+                                                                if ($this$performRegistration_u24lambda_u240.containsAlias(KEYSTORE_ALIAS)) {
+                                                                    $this$performRegistration_u24lambda_u240.deleteEntry(KEYSTORE_ALIAS);
+                                                                }
+                                                                KeyPairGenerator kpg3 = KeyPairGenerator.getInstance("EC", "AndroidKeyStore");
+                                                                specBuilder = new KeyGenParameterSpec.Builder(KEYSTORE_ALIAS, 4).setAlgorithmParameterSpec(new ECGenParameterSpec("secp256r1")).setDigests("SHA-256").setUserAuthenticationRequired(false).setAttestationChallenge(challengeBytes);
+                                                                if (includeDeviceProps2) {
+                                                                    if (Build.VERSION.SDK_INT >= 31) {
+                                                                        specBuilder.setDevicePropertiesAttestationIncluded(true);
+                                                                    }
+                                                                }
+                                                                kpg3.initialize(specBuilder.build());
+                                                                privateKey = kpg3.generateKeyPair().getPrivate();
+                                                                KeyStore $this$performRegistration_u24lambda_u242 = KeyStore.getInstance("AndroidKeyStore");
+                                                                $this$performRegistration_u24lambda_u242.load(null);
+                                                                chain = $this$performRegistration_u24lambda_u242.getCertificateChain(KEYSTORE_ALIAS);
+                                                                if (chain == null) {
+                                                                    z4 = true;
+                                                                } else {
+                                                                    if (chain.length == 0) {
+                                                                        z5 = true;
+                                                                    } else {
+                                                                        z5 = false;
+                                                                    }
+                                                                    if (z5) {
+                                                                        z4 = true;
+                                                                    } else {
+                                                                        z4 = false;
+                                                                    }
+                                                                }
+                                                                if (z4) {
+                                                                    lastFailure = "AndroidKeyStore returned no attestation chain";
+                                                                    String str110 = lastFailure;
+                                                                    Intrinsics.checkNotNull(str110);
+                                                                    Log.w(str8, str110);
+                                                                    return RegOutcome.FAILED;
+                                                                }
+                                                                destination$iv$iv = new ArrayList(chain.length);
+                                                                i2 = 0;
+                                                                while (i2 < length) {
+                                                                    destination$iv$iv.add(Base64.encodeToString(chain[i2].getEncoded(), 2));
+                                                                    i2++;
+                                                                }
+                                                                chainB64 = (List) destination$iv$iv;
+                                                                aniVortexRegistration = this;
+                                                                privateKey2 = privateKey;
+                                                                break;
+                                                            } else {
+                                                                KeyPairGenerator kpg4 = KeyPairGenerator.getInstance("EC");
+                                                                kpg4.initialize(new ECGenParameterSpec("secp256r1"));
+                                                                KeyPair keyPair2 = kpg4.generateKeyPair();
+                                                                privateKey5 = keyPair2.getPrivate();
+                                                                publicKey = keyPair2.getPublic();
+                                                                if (publicKey instanceof ECPublicKey) {
+                                                                    publicKey2 = (ECPublicKey) publicKey;
+                                                                } else {
+                                                                    publicKey2 = null;
+                                                                }
+                                                                if (publicKey2 == null) {
+                                                                    AniVortexRegistration aniVortexRegistration3 = this;
+                                                                    lastFailure = "Generated software key is not EC";
+                                                                    String str111 = lastFailure;
+                                                                    Intrinsics.checkNotNull(str111);
+                                                                    Log.w(str8, str111);
+                                                                    return RegOutcome.FAILED;
+                                                                }
+                                                                aniVortexRegistration = this;
+                                                                byte[] leafDer2 = aniVortexRegistration.buildLeafCertificate(privateKey5, publicKey2);
+                                                                CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(leafDer2));
+                                                                String leafB65 = Base64.encodeToString(leafDer2, 2);
+                                                                List chainB67 = CollectionsKt.listOf(new String[]{leafB65, leafB65});
+                                                                chainB64 = chainB67;
+                                                                privateKey2 = privateKey5;
+                                                            }
+                                                            String canonical2 = "ANIVORTEX-INSTALL-REGISTER-V1\n" + challengeId + '\n' + aniVortexRegistration.b64UrlNoPad(aniVortexRegistration.sha256(challengeBytes));
+                                                            Signature signer2 = Signature.getInstance("SHA256withECDSA");
+                                                            signer2.initSign(privateKey2);
+                                                            List chainB68 = chainB64;
+                                                            byte[] bytes2 = canonical2.getBytes(Charsets.UTF_8);
+                                                            Intrinsics.checkNotNullExpressionValue(bytes2, "getBytes(...)");
+                                                            signer2.update(bytes2);
+                                                            String proofSig3 = aniVortexRegistration.b64UrlNoPad(signer2.sign());
+                                                            String chainJson3 = CollectionsKt.joinToString$default(chainB68, ",", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.AniVortex.AniVortexRegistration$$ExternalSyntheticLambda0
+                                                                public final Object invoke(Object obj6) {
+                                                                    return AniVortexRegistration.performRegistration$lambda$4((String) obj6);
+                                                                }
+                                                            }, 30, (Object) null);
+                                                            String registerBody2 = "{\"challenge_id\":\"" + challengeId + "\",\"certificate_chain\":[" + chainJson3 + "],\"proof_signature\":\"" + proofSig3 + "\"}";
+                                                            Requests app3 = MainActivityKt.getApp();
+                                                            Map<String, String> map3 = regHeaders;
+                                                            RequestBody requestBodyCreate3 = RequestBody.Companion.create(registerBody2, MediaType.Companion.parse(str6));
+                                                            c00162.L$0 = SpillingKt.nullOutSpilledVariable(challengeBody);
+                                                            c00162.L$1 = SpillingKt.nullOutSpilledVariable(challengeResp);
+                                                            c00162.L$2 = SpillingKt.nullOutSpilledVariable(challenge);
+                                                            c00162.L$3 = SpillingKt.nullOutSpilledVariable(challengeId);
+                                                            c00162.L$4 = SpillingKt.nullOutSpilledVariable(challengeStr3);
+                                                            c00162.L$5 = SpillingKt.nullOutSpilledVariable(challengeBytes);
+                                                            c00162.L$6 = privateKey2;
+                                                            c00162.L$7 = SpillingKt.nullOutSpilledVariable(chainB68);
+                                                            c00162.L$8 = SpillingKt.nullOutSpilledVariable(canonical2);
+                                                            c00162.L$9 = SpillingKt.nullOutSpilledVariable(signer2);
+                                                            c00162.L$10 = SpillingKt.nullOutSpilledVariable(proofSig3);
+                                                            c00162.L$11 = SpillingKt.nullOutSpilledVariable(chainJson3);
+                                                            c00162.L$12 = SpillingKt.nullOutSpilledVariable(registerBody2);
+                                                            c00162.Z$0 = attested2;
+                                                            c00162.Z$1 = includeDeviceProps2;
+                                                            c00162.label = 2;
+                                                            z6 = true;
+                                                            attested3 = attested2;
+                                                            privateKey3 = privateKey2;
+                                                            chainJson = str9;
+                                                            proofSig = str8;
+                                                            $result = Requests.post$default(app3, "https://api.anivortex.in/api/v1/install/register", map3, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00162, 65276, (Object) null);
+                                                            if ($result == obj) {
+                                                                return obj;
+                                                            }
+                                                            privateKey4 = privateKey3;
+                                                            registerResp = (NiceResponse) $result;
+                                                            if (registerResp.getCode() == 429) {
+                                                                str12 = registerResp.getHeaders().get(str);
+                                                                if (str12 != null && (longOrNull2 = StringsKt.toLongOrNull(str12)) != null) {
+                                                                    jLongValue = longOrNull2.longValue();
+                                                                }
+                                                                long retryAfterSec3 = jLongValue;
+                                                                rateLimitUntilMs = System.currentTimeMillis() + (1000 * retryAfterSec3);
+                                                                lastFailure = "Registration rate-limited (HTTP 429: too many requests). Server throttled your IP. Please wait " + retryAfterSec3 + str4;
+                                                                Log.w(proofSig, lastFailure + str3 + registerResp.getHeaders() + ')');
+                                                                return RegOutcome.RATE_LIMITED;
+                                                            }
+                                                            if (!registerResp.isSuccessful()) {
+                                                                lastFailure = "Register rejected (HTTP " + registerResp.getCode() + chainJson + StringsKt.take(registerResp.getText(), 120);
+                                                                String str25 = lastFailure;
+                                                                Intrinsics.checkNotNull(str25);
+                                                                Log.w(proofSig, str25);
+                                                                return RegOutcome.FAILED;
+                                                            }
+                                                            AppUtils appUtils3 = AppUtils.INSTANCE;
+                                                            value$iv2 = registerResp.getText();
+                                                            if (value$iv2 == null) {
+                                                                Result.Companion companion9 = Result.Companion;
+                                                                KType kTypeTypeOf3 = Reflection.typeOf(RegisterResponse.class);
+                                                                MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
+                                                                obj5 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf3));
+                                                                if (Result.exceptionOrNull-impl(obj5) == null) {
+                                                                    Result.Companion companion10 = Result.Companion;
+                                                                    obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
+                                                                    break;
+                                                                }
+                                                                if (Result.isFailure-impl(obj5)) {
+                                                                    obj5 = null;
+                                                                }
+                                                                deserializationStrategy2 = (KSerializer) obj5;
+                                                                if (deserializationStrategy2 != null) {
+                                                                    objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv2);
+                                                                } else {
+                                                                    ObjectMapper $this$readValue$iv$iv$iv7 = MainAPIKt.getMapper();
+                                                                    objDecodeFromString2 = $this$readValue$iv$iv$iv7.readValue(value$iv2, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
+                                                                    });
+                                                                }
+                                                                break;
+                                                            } else {
+                                                                objDecodeFromString2 = null;
+                                                            }
+                                                            reg = (RegisterResponse) objDecodeFromString2;
+                                                            if (reg != null) {
+                                                                installation_id = reg.getInstallation_id();
+                                                                if (installation_id != null || installation_id.length() == 0) {
+                                                                    z7 = true;
+                                                                } else {
+                                                                    z7 = false;
+                                                                }
+                                                                if (!z7) {
+                                                                    key_id = reg.getKey_id();
+                                                                    if (key_id != null || key_id.length() == 0) {
+                                                                        z8 = true;
+                                                                    } else {
+                                                                        z8 = false;
+                                                                    }
+                                                                    if (!z8) {
+                                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
+                                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
+                                                                        if (attested3) {
+                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z6));
+                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", "");
+                                                                        } else {
+                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(false));
+                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey4.getEncoded(), 2));
+                                                                            clearKeystoreKey();
+                                                                        }
+                                                                        AniVortexAuth.INSTANCE.invalidateCache();
+                                                                        lastFailure = null;
+                                                                        StringBuilder sbAppend5 = new StringBuilder().append("Registration complete! installation_id=").append(reg.getInstallation_id()).append(" key_id=").append(reg.getKey_id()).append(" attested=");
+                                                                        if (attested3) {
+                                                                            z9 = true;
+                                                                        } else {
+                                                                            z9 = false;
+                                                                        }
+                                                                        Log.i(proofSig, sbAppend5.append(z9).toString());
+                                                                        return RegOutcome.SUCCESS;
+                                                                    }
+                                                                }
+                                                            }
+                                                            lastFailure = "Register response missing fields: " + StringsKt.take(registerResp.getText(), 120);
+                                                            String str26 = lastFailure;
+                                                            Intrinsics.checkNotNull(str26);
+                                                            Log.w(proofSig, str26);
+                                                            return RegOutcome.FAILED;
+                                                        }
+                                                    }
+                                                    lastFailure = "Invalid challenge response: " + StringsKt.take(challengeResp.getText(), 120);
+                                                    String str27 = lastFailure;
+                                                    Intrinsics.checkNotNull(str27);
+                                                    Log.w(str8, str27);
+                                                    return RegOutcome.FAILED;
+                                                } catch (Throwable th18) {
+                                                    e = th18;
+                                                    str13 = str8;
+                                                }
+                                            }
+                                        } catch (Throwable th19) {
+                                            e = th19;
+                                            str13 = str14;
+                                        }
+                                    } catch (Throwable th20) {
+                                        e = th20;
+                                        str13 = str5;
+                                    }
+                                    lastFailure = "Registration error: " + e.getMessage();
+                                    String str28 = lastFailure;
+                                    Intrinsics.checkNotNull(str28);
+                                    Log.w(str13, str28);
+                                    Log.d(str13, "Registration failed stacktrace", e);
+                                    return RegOutcome.FAILED;
+                                } catch (Throwable th21) {
+                                    e = th21;
+                                    str13 = str5;
+                                }
+                            } catch (Throwable th22) {
+                                e = th22;
+                                str13 = TAG;
+                            }
+                        } catch (Throwable th23) {
+                            e = th23;
+                            str13 = TAG;
+                        }
+                        break;
+                    case 1:
+                        boolean includeDeviceProps3 = c00162.Z$1;
+                        boolean attested4 = c00162.Z$0;
+                        String challengeBody2 = (String) c00162.L$0;
+                        ResultKt.throwOnFailure($result);
+                        challengeBody = challengeBody2;
+                        obj2 = $result;
+                        obj = coroutine_suspended;
+                        str5 = TAG;
+                        str6 = "application/json; charset=utf-8";
+                        str = "retry-after";
+                        str2 = "): ";
+                        i = 429;
+                        attested2 = attested4;
+                        includeDeviceProps2 = includeDeviceProps3;
+                        str3 = " (headers: ";
+                        str4 = " seconds.";
+                        challengeResp = (NiceResponse) obj2;
+                        if (challengeResp.getCode() == i) {
+                            str7 = challengeResp.getHeaders().get(str);
+                            if (str7 != null) {
+                                longOrNull = StringsKt.toLongOrNull(str7);
+                                if (longOrNull != null) {
+                                    jLongValue = longOrNull.longValue();
+                                }
+                                break;
+                            }
+                            long retryAfterSec4 = jLongValue;
+                            long jCurrentTimeMillis2 = System.currentTimeMillis();
+                            Long.signum(retryAfterSec4);
+                            rateLimitUntilMs = jCurrentTimeMillis2 + (1000 * retryAfterSec4);
+                            lastFailure = "Challenge rate-limited (HTTP 429: too many requests). Server throttled your IP. Please wait " + retryAfterSec4 + str4;
+                            Log.w(str5, lastFailure + str3 + challengeResp.getHeaders() + ')');
+                            return RegOutcome.RATE_LIMITED;
+                        }
+                        str8 = str5;
+                        if (!challengeResp.isSuccessful()) {
+                            lastFailure = "Challenge failed (HTTP " + challengeResp.getCode() + str2 + StringsKt.take(challengeResp.getText(), 120);
+                            String str112 = lastFailure;
+                            Intrinsics.checkNotNull(str112);
+                            Log.w(str8, str112);
+                            return RegOutcome.FAILED;
+                        }
+                        str9 = str2;
+                        AppUtils appUtils4 = AppUtils.INSTANCE;
+                        value$iv = challengeResp.getText();
+                        if (value$iv != null) {
+                            obj4 = null;
+                        } else {
+                            Result.Companion companion11 = Result.Companion;
+                            KType kTypeTypeOf4 = Reflection.typeOf(ChallengeResponse.class);
+                            MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
+                            obj3 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf4));
+                            if (Result.exceptionOrNull-impl(obj3) == null) {
+                                Result.Companion companion12 = Result.Companion;
+                                obj3 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(ChallengeResponse.class), (List) null, 2, (Object) null));
+                                break;
+                            }
+                            if (Result.isFailure-impl(obj3)) {
+                                obj3 = null;
+                            }
+                            deserializationStrategy = (KSerializer) obj3;
+                            if (deserializationStrategy != null) {
+                                value$iv$iv = value$iv;
+                                objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, value$iv$iv);
+                                obj4 = objDecodeFromString;
+                            } else {
+                                value$iv$iv = value$iv;
+                            }
+                            ObjectMapper $this$readValue$iv$iv$iv8 = MainAPIKt.getMapper();
+                            String content$iv$iv$iv4 = value$iv$iv;
+                            objDecodeFromString = $this$readValue$iv$iv$iv8.readValue(content$iv$iv$iv4, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$1
+                            });
+                            obj4 = objDecodeFromString;
+                        }
+                        challenge = (ChallengeResponse) obj4;
+                        if (challenge != null) {
+                            challenge_id = challenge.getChallenge_id();
+                        } else {
+                            challenge_id = null;
+                        }
+                        challengeId = challenge_id;
+                        if (challenge != null) {
+                            challengeStr = challenge.getChallenge();
+                        } else {
+                            challengeStr = null;
+                        }
+                        str10 = challengeId;
+                        if (str10 != null) {
+                            z = true;
+                        } else {
+                            z = true;
+                        }
+                        if (!z) {
+                            str11 = challengeStr;
+                            if (str11 != null) {
+                                z2 = true;
+                            } else {
+                                z2 = true;
+                            }
+                            if (!z2) {
+                                challengeBytes = Base64.decode(challengeStr, 11);
+                                String challengeStr4 = challengeStr;
+                                if (attested2) {
+                                    $this$performRegistration_u24lambda_u240 = KeyStore.getInstance(r5);
+                                    $this$performRegistration_u24lambda_u240.load(null);
+                                    if ($this$performRegistration_u24lambda_u240.containsAlias(KEYSTORE_ALIAS)) {
+                                        $this$performRegistration_u24lambda_u240.deleteEntry(KEYSTORE_ALIAS);
+                                    }
+                                    KeyPairGenerator kpg5 = KeyPairGenerator.getInstance("EC", "AndroidKeyStore");
+                                    specBuilder = new KeyGenParameterSpec.Builder(KEYSTORE_ALIAS, 4).setAlgorithmParameterSpec(new ECGenParameterSpec("secp256r1")).setDigests("SHA-256").setUserAuthenticationRequired(false).setAttestationChallenge(challengeBytes);
+                                    if (includeDeviceProps2) {
+                                        if (Build.VERSION.SDK_INT >= 31) {
+                                            specBuilder.setDevicePropertiesAttestationIncluded(true);
+                                        }
+                                    }
+                                    kpg5.initialize(specBuilder.build());
+                                    privateKey = kpg5.generateKeyPair().getPrivate();
+                                    KeyStore $this$performRegistration_u24lambda_u243 = KeyStore.getInstance("AndroidKeyStore");
+                                    $this$performRegistration_u24lambda_u243.load(null);
+                                    chain = $this$performRegistration_u24lambda_u243.getCertificateChain(KEYSTORE_ALIAS);
+                                    if (chain == null) {
+                                        z4 = true;
+                                    } else {
+                                        if (chain.length == 0) {
+                                            z5 = true;
+                                        } else {
+                                            z5 = false;
+                                        }
+                                        if (z5) {
+                                            z4 = true;
+                                        } else {
+                                            z4 = false;
+                                        }
+                                    }
+                                    if (z4) {
+                                        lastFailure = "AndroidKeyStore returned no attestation chain";
+                                        String str113 = lastFailure;
+                                        Intrinsics.checkNotNull(str113);
+                                        Log.w(str8, str113);
+                                        return RegOutcome.FAILED;
+                                    }
+                                    destination$iv$iv = new ArrayList(chain.length);
+                                    i2 = 0;
+                                    while (i2 < length) {
+                                        destination$iv$iv.add(Base64.encodeToString(chain[i2].getEncoded(), 2));
+                                        i2++;
+                                    }
+                                    chainB64 = (List) destination$iv$iv;
+                                    aniVortexRegistration = this;
+                                    privateKey2 = privateKey;
+                                    break;
+                                } else {
+                                    KeyPairGenerator kpg6 = KeyPairGenerator.getInstance("EC");
+                                    kpg6.initialize(new ECGenParameterSpec("secp256r1"));
+                                    KeyPair keyPair3 = kpg6.generateKeyPair();
+                                    privateKey5 = keyPair3.getPrivate();
+                                    publicKey = keyPair3.getPublic();
+                                    if (publicKey instanceof ECPublicKey) {
+                                        publicKey2 = (ECPublicKey) publicKey;
+                                    } else {
+                                        publicKey2 = null;
+                                    }
+                                    if (publicKey2 == null) {
+                                        AniVortexRegistration aniVortexRegistration4 = this;
+                                        lastFailure = "Generated software key is not EC";
+                                        String str114 = lastFailure;
+                                        Intrinsics.checkNotNull(str114);
+                                        Log.w(str8, str114);
+                                        return RegOutcome.FAILED;
+                                    }
+                                    aniVortexRegistration = this;
+                                    byte[] leafDer3 = aniVortexRegistration.buildLeafCertificate(privateKey5, publicKey2);
+                                    CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(leafDer3));
+                                    String leafB66 = Base64.encodeToString(leafDer3, 2);
+                                    List chainB69 = CollectionsKt.listOf(new String[]{leafB66, leafB66});
+                                    chainB64 = chainB69;
+                                    privateKey2 = privateKey5;
+                                }
+                                String canonical3 = "ANIVORTEX-INSTALL-REGISTER-V1\n" + challengeId + '\n' + aniVortexRegistration.b64UrlNoPad(aniVortexRegistration.sha256(challengeBytes));
+                                Signature signer3 = Signature.getInstance("SHA256withECDSA");
+                                signer3.initSign(privateKey2);
+                                List chainB610 = chainB64;
+                                byte[] bytes3 = canonical3.getBytes(Charsets.UTF_8);
+                                Intrinsics.checkNotNullExpressionValue(bytes3, "getBytes(...)");
+                                signer3.update(bytes3);
+                                String proofSig4 = aniVortexRegistration.b64UrlNoPad(signer3.sign());
+                                String chainJson4 = CollectionsKt.joinToString$default(chainB610, ",", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.AniVortex.AniVortexRegistration$$ExternalSyntheticLambda0
+                                    public final Object invoke(Object obj6) {
+                                        return AniVortexRegistration.performRegistration$lambda$4((String) obj6);
+                                    }
+                                }, 30, (Object) null);
+                                String registerBody3 = "{\"challenge_id\":\"" + challengeId + "\",\"certificate_chain\":[" + chainJson4 + "],\"proof_signature\":\"" + proofSig4 + "\"}";
+                                Requests app4 = MainActivityKt.getApp();
+                                Map<String, String> map4 = regHeaders;
+                                RequestBody requestBodyCreate4 = RequestBody.Companion.create(registerBody3, MediaType.Companion.parse(str6));
+                                c00162.L$0 = SpillingKt.nullOutSpilledVariable(challengeBody);
+                                c00162.L$1 = SpillingKt.nullOutSpilledVariable(challengeResp);
+                                c00162.L$2 = SpillingKt.nullOutSpilledVariable(challenge);
+                                c00162.L$3 = SpillingKt.nullOutSpilledVariable(challengeId);
+                                c00162.L$4 = SpillingKt.nullOutSpilledVariable(challengeStr4);
+                                c00162.L$5 = SpillingKt.nullOutSpilledVariable(challengeBytes);
+                                c00162.L$6 = privateKey2;
+                                c00162.L$7 = SpillingKt.nullOutSpilledVariable(chainB610);
+                                c00162.L$8 = SpillingKt.nullOutSpilledVariable(canonical3);
+                                c00162.L$9 = SpillingKt.nullOutSpilledVariable(signer3);
+                                c00162.L$10 = SpillingKt.nullOutSpilledVariable(proofSig4);
+                                c00162.L$11 = SpillingKt.nullOutSpilledVariable(chainJson4);
+                                c00162.L$12 = SpillingKt.nullOutSpilledVariable(registerBody3);
+                                c00162.Z$0 = attested2;
+                                c00162.Z$1 = includeDeviceProps2;
+                                c00162.label = 2;
+                                z6 = true;
+                                attested3 = attested2;
+                                privateKey3 = privateKey2;
+                                chainJson = str9;
+                                proofSig = str8;
+                                $result = Requests.post$default(app4, "https://api.anivortex.in/api/v1/install/register", map4, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00162, 65276, (Object) null);
+                                if ($result == obj) {
+                                    return obj;
+                                }
+                                privateKey4 = privateKey3;
+                                registerResp = (NiceResponse) $result;
+                                if (registerResp.getCode() == 429) {
+                                    str12 = registerResp.getHeaders().get(str);
+                                    if (str12 != null) {
+                                        jLongValue = longOrNull2.longValue();
+                                    }
+                                    long retryAfterSec5 = jLongValue;
+                                    rateLimitUntilMs = System.currentTimeMillis() + (1000 * retryAfterSec5);
+                                    lastFailure = "Registration rate-limited (HTTP 429: too many requests). Server throttled your IP. Please wait " + retryAfterSec5 + str4;
+                                    Log.w(proofSig, lastFailure + str3 + registerResp.getHeaders() + ')');
+                                    return RegOutcome.RATE_LIMITED;
+                                }
+                                if (!registerResp.isSuccessful()) {
+                                    lastFailure = "Register rejected (HTTP " + registerResp.getCode() + chainJson + StringsKt.take(registerResp.getText(), 120);
+                                    String str29 = lastFailure;
+                                    Intrinsics.checkNotNull(str29);
+                                    Log.w(proofSig, str29);
+                                    return RegOutcome.FAILED;
+                                }
+                                AppUtils appUtils5 = AppUtils.INSTANCE;
+                                value$iv2 = registerResp.getText();
+                                if (value$iv2 == null) {
+                                    Result.Companion companion13 = Result.Companion;
+                                    KType kTypeTypeOf5 = Reflection.typeOf(RegisterResponse.class);
+                                    MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
+                                    obj5 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf5));
+                                    if (Result.exceptionOrNull-impl(obj5) == null) {
+                                        Result.Companion companion14 = Result.Companion;
+                                        obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
+                                        break;
+                                    }
+                                    if (Result.isFailure-impl(obj5)) {
+                                        obj5 = null;
+                                    }
+                                    deserializationStrategy2 = (KSerializer) obj5;
+                                    if (deserializationStrategy2 != null) {
+                                        objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv2);
+                                    } else {
+                                        ObjectMapper $this$readValue$iv$iv$iv9 = MainAPIKt.getMapper();
+                                        objDecodeFromString2 = $this$readValue$iv$iv$iv9.readValue(value$iv2, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
+                                        });
+                                    }
+                                    break;
+                                } else {
+                                    objDecodeFromString2 = null;
+                                }
+                                reg = (RegisterResponse) objDecodeFromString2;
+                                if (reg != null) {
+                                    installation_id = reg.getInstallation_id();
+                                    if (installation_id != null) {
+                                        z7 = true;
+                                    } else {
+                                        z7 = true;
+                                    }
+                                    if (!z7) {
+                                        key_id = reg.getKey_id();
+                                        if (key_id != null) {
+                                            z8 = true;
+                                        } else {
+                                            z8 = true;
+                                        }
+                                        if (!z8) {
+                                            CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
+                                            CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
+                                            if (attested3) {
+                                                CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z6));
+                                                CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", "");
+                                            } else {
+                                                CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(false));
+                                                CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey4.getEncoded(), 2));
+                                                clearKeystoreKey();
+                                            }
+                                            AniVortexAuth.INSTANCE.invalidateCache();
+                                            lastFailure = null;
+                                            StringBuilder sbAppend6 = new StringBuilder().append("Registration complete! installation_id=").append(reg.getInstallation_id()).append(" key_id=").append(reg.getKey_id()).append(" attested=");
+                                            if (attested3) {
+                                                z9 = true;
+                                            } else {
+                                                z9 = false;
+                                            }
+                                            Log.i(proofSig, sbAppend6.append(z9).toString());
+                                            return RegOutcome.SUCCESS;
+                                        }
+                                    }
+                                }
+                                lastFailure = "Register response missing fields: " + StringsKt.take(registerResp.getText(), 120);
+                                String str210 = lastFailure;
+                                Intrinsics.checkNotNull(str210);
+                                Log.w(proofSig, str210);
+                                return RegOutcome.FAILED;
+                            }
+                        }
+                        lastFailure = "Invalid challenge response: " + StringsKt.take(challengeResp.getText(), 120);
+                        String str211 = lastFailure;
+                        Intrinsics.checkNotNull(str211);
+                        Log.w(str8, str211);
+                        return RegOutcome.FAILED;
+                        lastFailure = "Registration error: " + e.getMessage();
+                        String str212 = lastFailure;
+                        Intrinsics.checkNotNull(str212);
+                        Log.w(str13, str212);
+                        Log.d(str13, "Registration failed stacktrace", e);
+                        return RegOutcome.FAILED;
+                    case 2:
+                        boolean z10 = c00162.Z$1;
+                        boolean attested5 = c00162.Z$0;
+                        privateKey4 = (PrivateKey) c00162.L$6;
+                        ResultKt.throwOnFailure($result);
+                        attested3 = attested5;
+                        proofSig = TAG;
+                        str = "retry-after";
+                        chainJson = "): ";
+                        str3 = " (headers: ";
+                        str4 = " seconds.";
+                        z6 = true;
+                        registerResp = (NiceResponse) $result;
+                        if (registerResp.getCode() == 429) {
+                            str12 = registerResp.getHeaders().get(str);
+                            if (str12 != null) {
+                                jLongValue = longOrNull2.longValue();
+                            }
+                            long retryAfterSec6 = jLongValue;
+                            rateLimitUntilMs = System.currentTimeMillis() + (1000 * retryAfterSec6);
+                            lastFailure = "Registration rate-limited (HTTP 429: too many requests). Server throttled your IP. Please wait " + retryAfterSec6 + str4;
+                            Log.w(proofSig, lastFailure + str3 + registerResp.getHeaders() + ')');
+                            return RegOutcome.RATE_LIMITED;
+                        }
+                        if (!registerResp.isSuccessful()) {
+                            lastFailure = "Register rejected (HTTP " + registerResp.getCode() + chainJson + StringsKt.take(registerResp.getText(), 120);
+                            String str213 = lastFailure;
+                            Intrinsics.checkNotNull(str213);
+                            Log.w(proofSig, str213);
+                            return RegOutcome.FAILED;
+                        }
+                        AppUtils appUtils6 = AppUtils.INSTANCE;
+                        value$iv2 = registerResp.getText();
+                        if (value$iv2 == null) {
+                            Result.Companion companion15 = Result.Companion;
+                            KType kTypeTypeOf6 = Reflection.typeOf(RegisterResponse.class);
+                            MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
+                            obj5 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf6));
+                            if (Result.exceptionOrNull-impl(obj5) == null) {
+                                Result.Companion companion16 = Result.Companion;
+                                obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
+                                break;
+                            }
+                            if (Result.isFailure-impl(obj5)) {
+                                obj5 = null;
+                            }
+                            deserializationStrategy2 = (KSerializer) obj5;
+                            if (deserializationStrategy2 != null) {
+                                objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv2);
+                            } else {
+                                ObjectMapper $this$readValue$iv$iv$iv10 = MainAPIKt.getMapper();
+                                objDecodeFromString2 = $this$readValue$iv$iv$iv10.readValue(value$iv2, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
+                                });
+                            }
+                            break;
+                        } else {
+                            objDecodeFromString2 = null;
+                        }
+                        reg = (RegisterResponse) objDecodeFromString2;
+                        if (reg != null) {
+                            installation_id = reg.getInstallation_id();
+                            if (installation_id != null) {
+                                z7 = true;
+                            } else {
+                                z7 = true;
+                            }
+                            if (!z7) {
+                                key_id = reg.getKey_id();
+                                if (key_id != null) {
+                                    z8 = true;
+                                } else {
+                                    z8 = true;
+                                }
+                                if (!z8) {
+                                    CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
+                                    CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
+                                    if (attested3) {
+                                        CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z6));
+                                        CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", "");
+                                    } else {
+                                        CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(false));
+                                        CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey4.getEncoded(), 2));
+                                        clearKeystoreKey();
+                                    }
+                                    AniVortexAuth.INSTANCE.invalidateCache();
+                                    lastFailure = null;
+                                    StringBuilder sbAppend7 = new StringBuilder().append("Registration complete! installation_id=").append(reg.getInstallation_id()).append(" key_id=").append(reg.getKey_id()).append(" attested=");
+                                    if (attested3) {
+                                        z9 = true;
+                                    } else {
+                                        z9 = false;
+                                    }
+                                    Log.i(proofSig, sbAppend7.append(z9).toString());
+                                    return RegOutcome.SUCCESS;
+                                }
+                            }
+                        }
+                        lastFailure = "Register response missing fields: " + StringsKt.take(registerResp.getText(), 120);
+                        String str214 = lastFailure;
+                        Intrinsics.checkNotNull(str214);
+                        Log.w(proofSig, str214);
+                        return RegOutcome.FAILED;
+                    default:
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                }
+            } catch (Throwable th24) {
+                e = th24;
+            }
+        } catch (Throwable th25) {
+            e = th25;
+            str13 = TAG;
+        }
+    }
+
+    static final CharSequence performRegistration$lambda$4(String it) {
+        return '\"' + it + '\"';
+    }
+
+    /* JADX WARN: Code duplicated, block: B:23:0x006f  */
+    /* JADX WARN: Code duplicated, block: B:25:0x0084  */
+    /* JADX WARN: Code duplicated, block: B:33:0x0115 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:34:0x0116  */
+    /* JADX WARN: Code duplicated, block: B:37:0x0125 A[Catch: all -> 0x01ab, TryCatch #1 {all -> 0x01ab, blocks: (B:35:0x011d, B:37:0x0125, B:38:0x0176), top: B:51:0x011d }] */
+    /* JADX WARN: Code duplicated, block: B:38:0x0176 A[Catch: all -> 0x01ab, TRY_LEAVE, TryCatch #1 {all -> 0x01ab, blocks: (B:35:0x011d, B:37:0x0125, B:38:0x0176), top: B:51:0x011d }] */
+    /* JADX WARN: Code duplicated, block: B:48:0x0093 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
+    @Nullable
+    public final Object testApiConnection(@NotNull Continuation<? super Pair<Boolean, String>> continuation) throws Throwable {
         C00191 c00191;
-        Object objPerformRegistration;
+        Object objEnsureRegistered;
+        boolean registered;
+        boolean z;
+        Object obj;
+        String str;
+        NiceResponse resp;
+        Pair pair;
         if (continuation instanceof C00191) {
             c00191 = (C00191) continuation;
             if ((c00191.label & Integer.MIN_VALUE) != 0) {
@@ -808,1954 +2382,119 @@ public final class AniVortexRegistration {
         } else {
             c00191 = new C00191(continuation);
         }
-        Object $result = c00191.result;
+        C00191 c00192 = c00191;
+        Object $result = c00192.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00191.label) {
+        switch (c00192.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                c00191.label = 1;
-                objPerformRegistration = performRegistration(true, c00191);
-                if (objPerformRegistration == coroutine_suspended) {
+                c00192.label = 1;
+                objEnsureRegistered = ensureRegistered(c00192);
+                if (objEnsureRegistered == coroutine_suspended) {
                     return coroutine_suspended;
+                }
+                registered = ((Boolean) objEnsureRegistered).booleanValue();
+                if (!registered) {
+                    Boolean boolBoxBoolean = Boxing.boxBoolean(false);
+                    StringBuilder sbAppend = new StringBuilder().append("Registration failed: ");
+                    str = lastFailure;
+                    if (str == null) {
+                        str = "unknown error";
+                    }
+                    return new Pair(boolBoxBoolean, sbAppend.append(str).toString());
+                }
+                try {
+                    Pair pairBuildHeaders$default = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", "/api/v1/catalog/ott-platforms/netflix/titles", MapsKt.mapOf(TuplesKt.to("limit", "1")), null, 8, null);
+                    String query = (String) pairBuildHeaders$default.component1();
+                    Map headers = (Map) pairBuildHeaders$default.component2();
+                    String url = "https://api.anivortex.in/api/v1/catalog/ott-platforms/netflix/titles?" + query;
+                    Requests app = MainActivityKt.getApp();
+                    c00192.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                    c00192.L$1 = SpillingKt.nullOutSpilledVariable(headers);
+                    c00192.L$2 = SpillingKt.nullOutSpilledVariable(url);
+                    c00192.Z$0 = registered;
+                    c00192.label = 2;
+                    z = true;
+                    try {
+                        obj = Requests.get$default(app, url, headers, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00192, 4092, (Object) null);
+                        if (obj == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        $result = obj;
+                        try {
+                            resp = (NiceResponse) $result;
+                            if (resp.isSuccessful()) {
+                                pair = new Pair(Boxing.boxBoolean(z), "API connection OK (HTTP " + resp.getCode() + ")!\n\nInstall ID: " + StringsKt.take(AniVortexAuth.INSTANCE.getInstallationId(), 16) + "…\nKey ID: " + StringsKt.take(AniVortexAuth.INSTANCE.getKeyId(), 16) + "…\nSigned requests are working properly.");
+                            } else {
+                                pair = new Pair(Boxing.boxBoolean(false), "API test returned HTTP " + resp.getCode() + ": " + StringsKt.take(resp.getText(), 150));
+                            }
+                            return pair;
+                        } catch (Throwable th) {
+                            e = th;
+                            return new Pair(Boxing.boxBoolean(false), "API test exception: " + e.getMessage());
+                        }
+                    } catch (Throwable th2) {
+                        e = th2;
+                        return new Pair(Boxing.boxBoolean(false), "API test exception: " + e.getMessage());
+                    }
+                } catch (Throwable th3) {
+                    e = th3;
                 }
                 break;
             case 1:
                 ResultKt.throwOnFailure($result);
-                objPerformRegistration = $result;
-                break;
+                objEnsureRegistered = $result;
+                registered = ((Boolean) objEnsureRegistered).booleanValue();
+                if (!registered) {
+                    Boolean boolBoxBoolean2 = Boxing.boxBoolean(false);
+                    StringBuilder sbAppend2 = new StringBuilder().append("Registration failed: ");
+                    str = lastFailure;
+                    if (str == null) {
+                        str = "unknown error";
+                    }
+                    return new Pair(boolBoxBoolean2, sbAppend2.append(str).toString());
+                }
+                Pair pairBuildHeaders$default2 = AniVortexAuth.buildHeaders$default(AniVortexAuth.INSTANCE, "GET", "/api/v1/catalog/ott-platforms/netflix/titles", MapsKt.mapOf(TuplesKt.to("limit", "1")), null, 8, null);
+                String query2 = (String) pairBuildHeaders$default2.component1();
+                Map headers2 = (Map) pairBuildHeaders$default2.component2();
+                String url2 = "https://api.anivortex.in/api/v1/catalog/ott-platforms/netflix/titles?" + query2;
+                Requests app2 = MainActivityKt.getApp();
+                c00192.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00192.L$1 = SpillingKt.nullOutSpilledVariable(headers2);
+                c00192.L$2 = SpillingKt.nullOutSpilledVariable(url2);
+                c00192.Z$0 = registered;
+                c00192.label = 2;
+                z = true;
+                obj = Requests.get$default(app2, url2, headers2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00192, 4092, (Object) null);
+                if (obj == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                $result = obj;
+                resp = (NiceResponse) $result;
+                if (resp.isSuccessful()) {
+                    pair = new Pair(Boxing.boxBoolean(z), "API connection OK (HTTP " + resp.getCode() + ")!\n\nInstall ID: " + StringsKt.take(AniVortexAuth.INSTANCE.getInstallationId(), 16) + "…\nKey ID: " + StringsKt.take(AniVortexAuth.INSTANCE.getKeyId(), 16) + "…\nSigned requests are working properly.");
+                } else {
+                    pair = new Pair(Boxing.boxBoolean(false), "API test returned HTTP " + resp.getCode() + ": " + StringsKt.take(resp.getText(), 150));
+                }
+                return pair;
             case 2:
-                ResultKt.throwOnFailure($result);
-                return $result;
+                boolean z2 = c00192.Z$0;
+                try {
+                    ResultKt.throwOnFailure($result);
+                    z = true;
+                    resp = (NiceResponse) $result;
+                    if (resp.isSuccessful()) {
+                        pair = new Pair(Boxing.boxBoolean(z), "API connection OK (HTTP " + resp.getCode() + ")!\n\nInstall ID: " + StringsKt.take(AniVortexAuth.INSTANCE.getInstallationId(), 16) + "…\nKey ID: " + StringsKt.take(AniVortexAuth.INSTANCE.getKeyId(), 16) + "…\nSigned requests are working properly.");
+                    } else {
+                        pair = new Pair(Boxing.boxBoolean(false), "API test returned HTTP " + resp.getCode() + ": " + StringsKt.take(resp.getText(), 150));
+                    }
+                    return pair;
+                } catch (Throwable th4) {
+                    e = th4;
+                    return new Pair(Boxing.boxBoolean(false), "API test exception: " + e.getMessage());
+                }
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-        }
-        if (((Boolean) objPerformRegistration).booleanValue()) {
-            return Boxing.boxBoolean(true);
-        }
-        c00191.label = 2;
-        Object objPerformRegistration2 = performRegistration(false, c00191);
-        if (objPerformRegistration2 == coroutine_suspended) {
-            return coroutine_suspended;
-        }
-        return objPerformRegistration2;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code duplicated, block: B:102:0x026c  */
-    /* JADX WARN: Code duplicated, block: B:104:0x026f  */
-    /* JADX WARN: Code duplicated, block: B:105:0x0276 A[Catch: all -> 0x074e, TRY_ENTER, TRY_LEAVE, TryCatch #20 {all -> 0x074e, blocks: (B:34:0x0141, B:40:0x0186, B:82:0x023f, B:88:0x024b, B:96:0x025b, B:105:0x0276, B:159:0x03e1, B:150:0x038b, B:158:0x03bf), top: B:297:0x0141 }] */
-    /* JADX WARN: Code duplicated, block: B:118:0x02f8 A[Catch: all -> 0x02ac, TRY_ENTER, TryCatch #11 {all -> 0x02ac, blocks: (B:112:0x02a8, B:118:0x02f8, B:127:0x0306, B:132:0x0319), top: B:293:0x02a8 }] */
-    /* JADX WARN: Code duplicated, block: B:120:0x02fb  */
-    /* JADX WARN: Code duplicated, block: B:121:0x02fd  */
-    /* JADX WARN: Code duplicated, block: B:123:0x0300  */
-    /* JADX WARN: Code duplicated, block: B:124:0x0301  */
-    /* JADX WARN: Code duplicated, block: B:125:0x0303  */
-    /* JADX WARN: Code duplicated, block: B:127:0x0306 A[Catch: all -> 0x02ac, TRY_LEAVE, TryCatch #11 {all -> 0x02ac, blocks: (B:112:0x02a8, B:118:0x02f8, B:127:0x0306, B:132:0x0319), top: B:293:0x02a8 }] */
-    /* JADX WARN: Code duplicated, block: B:129:0x0310  */
-    /* JADX WARN: Code duplicated, block: B:132:0x0319 A[Catch: all -> 0x02ac, TRY_ENTER, TRY_LEAVE, TryCatch #11 {all -> 0x02ac, blocks: (B:112:0x02a8, B:118:0x02f8, B:127:0x0306, B:132:0x0319), top: B:293:0x02a8 }] */
-    /* JADX WARN: Code duplicated, block: B:134:0x031c  */
-    /* JADX WARN: Code duplicated, block: B:138:0x0336 A[Catch: all -> 0x035a, LOOP:0: B:137:0x0334->B:138:0x0336, LOOP_END, TryCatch #24 {all -> 0x035a, blocks: (B:136:0x0321, B:138:0x0336, B:139:0x0352), top: B:303:0x0321 }] */
-    /* JADX WARN: Code duplicated, block: B:149:0x0387  */
-    /* JADX WARN: Code duplicated, block: B:152:0x03a9 A[Catch: all -> 0x017e, TRY_ENTER, TryCatch #16 {all -> 0x017e, blocks: (B:36:0x014b, B:85:0x0245, B:90:0x024f, B:98:0x0263, B:147:0x0368, B:152:0x03a9, B:155:0x03b0, B:49:0x01b9, B:62:0x01f9, B:65:0x0200, B:73:0x021b, B:72:0x0215, B:60:0x01ee, B:48:0x01af), top: B:296:0x0149 }] */
-    /* JADX WARN: Code duplicated, block: B:153:0x03ad  */
-    /* JADX WARN: Code duplicated, block: B:155:0x03b0 A[Catch: all -> 0x017e, TRY_LEAVE, TryCatch #16 {all -> 0x017e, blocks: (B:36:0x014b, B:85:0x0245, B:90:0x024f, B:98:0x0263, B:147:0x0368, B:152:0x03a9, B:155:0x03b0, B:49:0x01b9, B:62:0x01f9, B:65:0x0200, B:73:0x021b, B:72:0x0215, B:60:0x01ee, B:48:0x01af), top: B:296:0x0149 }] */
-    /* JADX WARN: Code duplicated, block: B:158:0x03bf A[Catch: all -> 0x074e, TRY_ENTER, TryCatch #20 {all -> 0x074e, blocks: (B:34:0x0141, B:40:0x0186, B:82:0x023f, B:88:0x024b, B:96:0x025b, B:105:0x0276, B:159:0x03e1, B:150:0x038b, B:158:0x03bf), top: B:297:0x0141 }] */
-    /* JADX WARN: Code duplicated, block: B:163:0x0521 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:164:0x0522  */
-    /* JADX WARN: Code duplicated, block: B:167:0x0539 A[Catch: all -> 0x056c, TRY_ENTER, TRY_LEAVE, TryCatch #12 {all -> 0x056c, blocks: (B:167:0x0539, B:260:0x0729, B:161:0x051b), top: B:277:0x0032 }] */
-    /* JADX WARN: Code duplicated, block: B:171:0x056f  */
-    /* JADX WARN: Code duplicated, block: B:175:0x057d  */
-    /* JADX WARN: Code duplicated, block: B:176:0x0582  */
-    /* JADX WARN: Code duplicated, block: B:183:0x05b1  */
-    /* JADX WARN: Code duplicated, block: B:195:0x05f1  */
-    /* JADX WARN: Code duplicated, block: B:212:0x0618  */
-    /* JADX WARN: Code duplicated, block: B:224:0x0643 A[Catch: all -> 0x071c, TryCatch #27 {all -> 0x071c, blocks: (B:222:0x063f, B:224:0x0643, B:226:0x064c, B:228:0x0650, B:234:0x065c, B:236:0x0664, B:243:0x0672, B:246:0x068e, B:248:0x06b6, B:252:0x06e7, B:247:0x069f, B:253:0x06f7, B:193:0x05eb, B:196:0x05f2, B:213:0x061a, B:211:0x0611, B:192:0x05e1), top: B:291:0x05e1 }] */
-    /* JADX WARN: Code duplicated, block: B:225:0x064a  */
-    /* JADX WARN: Code duplicated, block: B:228:0x0650 A[Catch: all -> 0x071c, TryCatch #27 {all -> 0x071c, blocks: (B:222:0x063f, B:224:0x0643, B:226:0x064c, B:228:0x0650, B:234:0x065c, B:236:0x0664, B:243:0x0672, B:246:0x068e, B:248:0x06b6, B:252:0x06e7, B:247:0x069f, B:253:0x06f7, B:193:0x05eb, B:196:0x05f2, B:213:0x061a, B:211:0x0611, B:192:0x05e1), top: B:291:0x05e1 }] */
-    /* JADX WARN: Code duplicated, block: B:232:0x0659  */
-    /* JADX WARN: Code duplicated, block: B:234:0x065c A[Catch: all -> 0x071c, TryCatch #27 {all -> 0x071c, blocks: (B:222:0x063f, B:224:0x0643, B:226:0x064c, B:228:0x0650, B:234:0x065c, B:236:0x0664, B:243:0x0672, B:246:0x068e, B:248:0x06b6, B:252:0x06e7, B:247:0x069f, B:253:0x06f7, B:193:0x05eb, B:196:0x05f2, B:213:0x061a, B:211:0x0611, B:192:0x05e1), top: B:291:0x05e1 }] */
-    /* JADX WARN: Code duplicated, block: B:236:0x0664 A[Catch: all -> 0x071c, TryCatch #27 {all -> 0x071c, blocks: (B:222:0x063f, B:224:0x0643, B:226:0x064c, B:228:0x0650, B:234:0x065c, B:236:0x0664, B:243:0x0672, B:246:0x068e, B:248:0x06b6, B:252:0x06e7, B:247:0x069f, B:253:0x06f7, B:193:0x05eb, B:196:0x05f2, B:213:0x061a, B:211:0x0611, B:192:0x05e1), top: B:291:0x05e1 }] */
-    /* JADX WARN: Code duplicated, block: B:240:0x066d  */
-    /* JADX WARN: Code duplicated, block: B:242:0x0670  */
-    /* JADX WARN: Code duplicated, block: B:243:0x0672 A[Catch: all -> 0x071c, TRY_LEAVE, TryCatch #27 {all -> 0x071c, blocks: (B:222:0x063f, B:224:0x0643, B:226:0x064c, B:228:0x0650, B:234:0x065c, B:236:0x0664, B:243:0x0672, B:246:0x068e, B:248:0x06b6, B:252:0x06e7, B:247:0x069f, B:253:0x06f7, B:193:0x05eb, B:196:0x05f2, B:213:0x061a, B:211:0x0611, B:192:0x05e1), top: B:291:0x05e1 }] */
-    /* JADX WARN: Code duplicated, block: B:246:0x068e A[Catch: all -> 0x071c, TRY_ENTER, TryCatch #27 {all -> 0x071c, blocks: (B:222:0x063f, B:224:0x0643, B:226:0x064c, B:228:0x0650, B:234:0x065c, B:236:0x0664, B:243:0x0672, B:246:0x068e, B:248:0x06b6, B:252:0x06e7, B:247:0x069f, B:253:0x06f7, B:193:0x05eb, B:196:0x05f2, B:213:0x061a, B:211:0x0611, B:192:0x05e1), top: B:291:0x05e1 }] */
-    /* JADX WARN: Code duplicated, block: B:247:0x069f A[Catch: all -> 0x071c, TryCatch #27 {all -> 0x071c, blocks: (B:222:0x063f, B:224:0x0643, B:226:0x064c, B:228:0x0650, B:234:0x065c, B:236:0x0664, B:243:0x0672, B:246:0x068e, B:248:0x06b6, B:252:0x06e7, B:247:0x069f, B:253:0x06f7, B:193:0x05eb, B:196:0x05f2, B:213:0x061a, B:211:0x0611, B:192:0x05e1), top: B:291:0x05e1 }] */
-    /* JADX WARN: Code duplicated, block: B:250:0x06e4  */
-    /* JADX WARN: Code duplicated, block: B:251:0x06e6  */
-    /* JADX WARN: Code duplicated, block: B:259:0x0724  */
-    /* JADX WARN: Code duplicated, block: B:278:0x0296 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:287:0x01c5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:293:0x02a8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:307:0x05b7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:311:0x05f8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:315:0x0206 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:36:0x014b A[Catch: all -> 0x017e, TRY_ENTER, TRY_LEAVE, TryCatch #16 {all -> 0x017e, blocks: (B:36:0x014b, B:85:0x0245, B:90:0x024f, B:98:0x0263, B:147:0x0368, B:152:0x03a9, B:155:0x03b0, B:49:0x01b9, B:62:0x01f9, B:65:0x0200, B:73:0x021b, B:72:0x0215, B:60:0x01ee, B:48:0x01af), top: B:296:0x0149 }] */
-    /* JADX WARN: Code duplicated, block: B:40:0x0186 A[Catch: all -> 0x074e, TRY_ENTER, TRY_LEAVE, TryCatch #20 {all -> 0x074e, blocks: (B:34:0x0141, B:40:0x0186, B:82:0x023f, B:88:0x024b, B:96:0x025b, B:105:0x0276, B:159:0x03e1, B:150:0x038b, B:158:0x03bf), top: B:297:0x0141 }] */
-    /* JADX WARN: Code duplicated, block: B:43:0x0191  */
-    /* JADX WARN: Code duplicated, block: B:44:0x0194  */
-    /* JADX WARN: Code duplicated, block: B:51:0x01bf  */
-    /* JADX WARN: Code duplicated, block: B:64:0x01ff  */
-    /* JADX WARN: Code duplicated, block: B:73:0x021b A[Catch: all -> 0x017e, Exception -> 0x0236, TRY_LEAVE, TryCatch #9 {Exception -> 0x0236, blocks: (B:62:0x01f9, B:65:0x0200, B:73:0x021b, B:72:0x0215, B:60:0x01ee), top: B:289:0x01ee }] */
-    /* JADX WARN: Code duplicated, block: B:7:0x001e  */
-    /* JADX WARN: Code duplicated, block: B:85:0x0245 A[Catch: all -> 0x017e, TRY_ENTER, TRY_LEAVE, TryCatch #16 {all -> 0x017e, blocks: (B:36:0x014b, B:85:0x0245, B:90:0x024f, B:98:0x0263, B:147:0x0368, B:152:0x03a9, B:155:0x03b0, B:49:0x01b9, B:62:0x01f9, B:65:0x0200, B:73:0x021b, B:72:0x0215, B:60:0x01ee, B:48:0x01af), top: B:296:0x0149 }] */
-    /* JADX WARN: Code duplicated, block: B:87:0x024a  */
-    /* JADX WARN: Code duplicated, block: B:90:0x024f A[Catch: all -> 0x017e, TRY_ENTER, TRY_LEAVE, TryCatch #16 {all -> 0x017e, blocks: (B:36:0x014b, B:85:0x0245, B:90:0x024f, B:98:0x0263, B:147:0x0368, B:152:0x03a9, B:155:0x03b0, B:49:0x01b9, B:62:0x01f9, B:65:0x0200, B:73:0x021b, B:72:0x0215, B:60:0x01ee, B:48:0x01af), top: B:296:0x0149 }] */
-    /* JADX WARN: Code duplicated, block: B:94:0x0258  */
-    /* JADX WARN: Code duplicated, block: B:96:0x025b A[Catch: all -> 0x074e, TRY_ENTER, TRY_LEAVE, TryCatch #20 {all -> 0x074e, blocks: (B:34:0x0141, B:40:0x0186, B:82:0x023f, B:88:0x024b, B:96:0x025b, B:105:0x0276, B:159:0x03e1, B:150:0x038b, B:158:0x03bf), top: B:297:0x0141 }] */
-    /* JADX WARN: Code duplicated, block: B:98:0x0263 A[Catch: all -> 0x017e, TRY_ENTER, TRY_LEAVE, TryCatch #16 {all -> 0x017e, blocks: (B:36:0x014b, B:85:0x0245, B:90:0x024f, B:98:0x0263, B:147:0x0368, B:152:0x03a9, B:155:0x03b0, B:49:0x01b9, B:62:0x01f9, B:65:0x0200, B:73:0x021b, B:72:0x0215, B:60:0x01ee, B:48:0x01af), top: B:296:0x0149 }] */
-    public final Object performRegistration(boolean attested, Continuation<? super Boolean> continuation) {
-        C00161 c00161;
-        boolean z;
-        String canonical;
-        boolean z2;
-        boolean z3;
-        Object obj;
-        String challengeBody;
-        Object obj2;
-        boolean attested2;
-        NiceResponse challengeResp;
-        String value$iv;
-        Object obj3;
-        Object obj4;
-        Object obj5;
-        Object obj6;
-        DeserializationStrategy deserializationStrategy;
-        Object objDecodeFromString;
-        ChallengeResponse challenge;
-        String challenge_id;
-        String str;
-        boolean z4;
-        boolean z5;
-        String challenge2;
-        boolean z6;
-        byte[] challengeBytes;
-        boolean z7;
-        KeyStore ks;
-        KeyStore ks2;
-        Certificate[] chain;
-        boolean z8;
-        Key key;
-        PrivateKey privateKey;
-        Collection destination$iv$iv;
-        int length;
-        int i;
-        List chainB64;
-        boolean z9;
-        boolean z10;
-        boolean attested3;
-        PrivateKey privateKey2;
-        PublicKey publicKey;
-        ECPublicKey publicKey2;
-        NiceResponse registerResp;
-        String value$iv2;
-        Object obj7;
-        boolean attested4;
-        Object objDecodeFromString2;
-        String value$iv3;
-        DeserializationStrategy deserializationStrategy2;
-        String value$iv$iv;
-        RegisterResponse reg;
-        String installation_id;
-        String str2;
-        boolean z11;
-        String key_id;
-        boolean z12;
-        boolean z13;
-        Continuation<? super Boolean> continuation2 = continuation;
-        if (continuation2 instanceof C00161) {
-            c00161 = (C00161) continuation2;
-            if ((c00161.label & Integer.MIN_VALUE) != 0) {
-                c00161.label -= Integer.MIN_VALUE;
-            } else {
-                c00161 = new C00161(continuation2);
-            }
-        } else {
-            c00161 = new C00161(continuation2);
-        }
-        C00161 c00162 = c00161;
-        Object $result = c00162.result;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        try {
-            try {
-                switch (c00162.label) {
-                    case 0:
-                        ResultKt.throwOnFailure($result);
-                        try {
-                            Log.i(TAG, "Attempting registration flow (attested=" + (attested) + ")...");
-                            Requests app = MainActivityKt.getApp();
-                            try {
-                                Map<String, String> map = regHeaders;
-                                RequestBody requestBodyCreate = RequestBody.Companion.create("{\"platform\":\"android\",\"package_name\":\"app.anivortex.mobile\",\"version_name\":\"5.0.1\",\"version_code\":503}", MediaType.Companion.parse("application/json; charset=utf-8"));
-                                c00162.L$0 = SpillingKt.nullOutSpilledVariable("{\"platform\":\"android\",\"package_name\":\"app.anivortex.mobile\",\"version_name\":\"5.0.1\",\"version_code\":503}");
-                                c00162.Z$0 = attested;
-                                c00162.label = 1;
-                                canonical = "application/json; charset=utf-8";
-                                z2 = false;
-                                z3 = true;
-                                continuation2 = TAG;
-                                obj = coroutine_suspended;
-                                try {
-                                    Object objPost$default = Requests.post$default(app, "https://api.anivortex.in/api/v1/install/challenge", map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00162, 65276, (Object) null);
-                                    c00162 = c00162;
-                                    if (objPost$default == obj) {
-                                        return obj;
-                                    }
-                                    challengeBody = "{\"platform\":\"android\",\"package_name\":\"app.anivortex.mobile\",\"version_name\":\"5.0.1\",\"version_code\":503}";
-                                    obj2 = objPost$default;
-                                    attested2 = attested;
-                                    try {
-                                        challengeResp = (NiceResponse) obj2;
-                                        try {
-                                            if (!challengeResp.isSuccessful()) {
-                                                Log.w((String) continuation2, "Challenge request returned " + challengeResp.getCode() + ": " + StringsKt.take(challengeResp.getText(), 200));
-                                                return Boxing.boxBoolean(z2);
-                                            }
-                                            AppUtils appUtils = AppUtils.INSTANCE;
-                                            value$iv = challengeResp.getText();
-                                            if (value$iv == null) {
-                                                try {
-                                                    Result.Companion companion = Result.Companion;
-                                                    KType kTypeTypeOf = Reflection.typeOf(ChallengeResponse.class);
-                                                    MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                                                    obj3 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf));
-                                                    break;
-                                                } catch (Throwable th) {
-                                                    try {
-                                                        Result.Companion companion2 = Result.Companion;
-                                                        obj3 = Result.constructor-impl(ResultKt.createFailure(th));
-                                                    } catch (Exception e) {
-                                                        obj4 = null;
-                                                        challenge = (ChallengeResponse) obj4;
-                                                        if (challenge != null) {
-                                                            challenge_id = challenge.getChallenge_id();
-                                                        } else {
-                                                            challenge_id = null;
-                                                        }
-                                                        str = challenge_id;
-                                                        if (str != null) {
-                                                            z4 = true;
-                                                        } else {
-                                                            z4 = true;
-                                                        }
-                                                        if (!z4) {
-                                                            challenge2 = challenge.getChallenge();
-                                                            if (challenge2 != null) {
-                                                                z6 = true;
-                                                            } else {
-                                                                z6 = true;
-                                                            }
-                                                            if (z6) {
-                                                                z5 = false;
-                                                            } else {
-                                                                String challengeId = challenge.getChallenge_id();
-                                                                Intrinsics.checkNotNull(challengeId);
-                                                                String challenge3 = challenge.getChallenge();
-                                                                Intrinsics.checkNotNull(challenge3);
-                                                                challengeBytes = Base64.decode(challenge3, 11);
-                                                                if (attested2) {
-                                                                    try {
-                                                                        ks = KeyStore.getInstance("AndroidKeyStore");
-                                                                        try {
-                                                                            ks.load(null);
-                                                                            if (ks.containsAlias(KEYSTORE_ALIAS)) {
-                                                                                try {
-                                                                                    ks.deleteEntry(KEYSTORE_ALIAS);
-                                                                                } catch (Throwable th2) {
-                                                                                    e = th2;
-                                                                                    z7 = false;
-                                                                                }
-                                                                            }
-                                                                            KeyPairGenerator kpg = KeyPairGenerator.getInstance("EC", "AndroidKeyStore");
-                                                                            kpg.initialize(new KeyGenParameterSpec.Builder(KEYSTORE_ALIAS, 4).setAlgorithmParameterSpec(new ECGenParameterSpec("secp256r1")).setDigests("SHA-256").setUserAuthenticationRequired(false).setAttestationChallenge(challengeBytes).build());
-                                                                            kpg.generateKeyPair();
-                                                                            ks2 = KeyStore.getInstance("AndroidKeyStore");
-                                                                            ks2.load(null);
-                                                                            chain = ks2.getCertificateChain(KEYSTORE_ALIAS);
-                                                                            if (chain == null) {
-                                                                                z8 = true;
-                                                                            } else {
-                                                                                if (chain.length == 0) {
-                                                                                    z9 = true;
-                                                                                } else {
-                                                                                    z9 = false;
-                                                                                }
-                                                                                if (z9) {
-                                                                                    z8 = true;
-                                                                                } else {
-                                                                                    z8 = false;
-                                                                                }
-                                                                            }
-                                                                            if (z8) {
-                                                                                Log.w((String) continuation2, "AndroidKeyStore returned no attestation chain");
-                                                                                return Boxing.boxBoolean(false);
-                                                                            }
-                                                                            key = ks2.getKey(KEYSTORE_ALIAS, null);
-                                                                            if (key instanceof PrivateKey) {
-                                                                                privateKey = (PrivateKey) key;
-                                                                            } else {
-                                                                                privateKey = null;
-                                                                            }
-                                                                            z7 = false;
-                                                                            try {
-                                                                                destination$iv$iv = new ArrayList(chain.length);
-                                                                                i = 0;
-                                                                                for (length = chain.length; i < length; length = length) {
-                                                                                    destination$iv$iv.add(Base64.encodeToString(chain[i].getEncoded(), 2));
-                                                                                    i++;
-                                                                                }
-                                                                                chainB64 = (List) destination$iv$iv;
-                                                                            } catch (Throwable th3) {
-                                                                                e = th3;
-                                                                            }
-                                                                        } catch (Throwable th4) {
-                                                                            e = th4;
-                                                                            z7 = false;
-                                                                        }
-                                                                        break;
-                                                                    } catch (Throwable th5) {
-                                                                        e = th5;
-                                                                        z7 = false;
-                                                                    }
-                                                                    Log.w((String) continuation2, "Attested key generation failed: " + e.getMessage());
-                                                                    return Boxing.boxBoolean(z7);
-                                                                }
-                                                                KeyPairGenerator kpg2 = KeyPairGenerator.getInstance("EC");
-                                                                kpg2.initialize(new ECGenParameterSpec("secp256r1"));
-                                                                KeyPair keyPair = kpg2.generateKeyPair();
-                                                                privateKey = keyPair.getPrivate();
-                                                                publicKey = keyPair.getPublic();
-                                                                if (publicKey instanceof ECPublicKey) {
-                                                                    publicKey2 = (ECPublicKey) publicKey;
-                                                                } else {
-                                                                    publicKey2 = null;
-                                                                }
-                                                                if (publicKey2 == null) {
-                                                                    AniVortexRegistration aniVortexRegistration = this;
-                                                                    Log.w((String) continuation2, "Generated key is not EC");
-                                                                    return Boxing.boxBoolean(false);
-                                                                }
-                                                                byte[] leafDer = buildLeafCertificate(privateKey, publicKey2);
-                                                                CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(leafDer));
-                                                                String leafB64 = Base64.encodeToString(leafDer, 2);
-                                                                List chainB65 = CollectionsKt.listOf(new String[]{leafB64, leafB64});
-                                                                chainB64 = chainB65;
-                                                                String canonical2 = "ANIVORTEX-INSTALL-REGISTER-V1\n" + challengeId + '\n' + b64UrlNoPad(sha256(challengeBytes));
-                                                                Signature signer = Signature.getInstance("SHA256withECDSA");
-                                                                Intrinsics.checkNotNull(privateKey);
-                                                                signer.initSign(privateKey);
-                                                                byte[] bytes = canonical2.getBytes(Charsets.UTF_8);
-                                                                Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
-                                                                signer.update(bytes);
-                                                                String proofSig = b64UrlNoPad(signer.sign());
-                                                                String chainJson = CollectionsKt.joinToString$default(chainB64, ",", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.AniVortex.AniVortexRegistration$$ExternalSyntheticLambda0
-                                                                    public final Object invoke(Object obj8) {
-                                                                        return AniVortexRegistration.performRegistration$lambda$4((String) obj8);
-                                                                    }
-                                                                }, 30, (Object) null);
-                                                                String registerBody = "{\"challenge_id\":\"" + challengeId + "\",\"certificate_chain\":[" + chainJson + "],\"proof_signature\":\"" + proofSig + "\"}";
-                                                                Requests app2 = MainActivityKt.getApp();
-                                                                Map<String, String> map2 = regHeaders;
-                                                                List chainB66 = chainB64;
-                                                                RequestBody requestBodyCreate2 = RequestBody.Companion.create(registerBody, MediaType.Companion.parse(canonical));
-                                                                c00162.L$0 = SpillingKt.nullOutSpilledVariable(challengeBody);
-                                                                c00162.L$1 = SpillingKt.nullOutSpilledVariable(challengeResp);
-                                                                c00162.L$2 = SpillingKt.nullOutSpilledVariable(challenge);
-                                                                c00162.L$3 = SpillingKt.nullOutSpilledVariable(challengeId);
-                                                                c00162.L$4 = SpillingKt.nullOutSpilledVariable(challengeBytes);
-                                                                c00162.L$5 = privateKey;
-                                                                c00162.L$6 = SpillingKt.nullOutSpilledVariable(chainB66);
-                                                                c00162.L$7 = SpillingKt.nullOutSpilledVariable(canonical2);
-                                                                c00162.L$8 = SpillingKt.nullOutSpilledVariable(signer);
-                                                                c00162.L$9 = SpillingKt.nullOutSpilledVariable(proofSig);
-                                                                c00162.L$10 = SpillingKt.nullOutSpilledVariable(chainJson);
-                                                                c00162.L$11 = SpillingKt.nullOutSpilledVariable(registerBody);
-                                                                c00162.Z$0 = attested2;
-                                                                c00162.label = 2;
-                                                                z10 = false;
-                                                                attested3 = attested2;
-                                                                $result = Requests.post$default(app2, "https://api.anivortex.in/api/v1/install/register", map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00162, 65276, (Object) null);
-                                                                if ($result == obj) {
-                                                                    return obj;
-                                                                }
-                                                                privateKey2 = privateKey;
-                                                                try {
-                                                                    registerResp = (NiceResponse) $result;
-                                                                    if (!registerResp.isSuccessful()) {
-                                                                        Log.w((String) continuation2, "Register returned (" + registerResp.getCode() + "): " + StringsKt.take(registerResp.getText(), 300));
-                                                                        return Boxing.boxBoolean(z10);
-                                                                    }
-                                                                    AppUtils appUtils2 = AppUtils.INSTANCE;
-                                                                    value$iv2 = registerResp.getText();
-                                                                    if (value$iv2 == null) {
-                                                                        try {
-                                                                            Result.Companion companion3 = Result.Companion;
-                                                                            KType kTypeTypeOf2 = Reflection.typeOf(RegisterResponse.class);
-                                                                            MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                                                                            obj7 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf2));
-                                                                            break;
-                                                                        } catch (Throwable th6) {
-                                                                            try {
-                                                                                Result.Companion companion4 = Result.Companion;
-                                                                                obj7 = Result.constructor-impl(ResultKt.createFailure(th6));
-                                                                            } catch (Exception e2) {
-                                                                                attested4 = attested3;
-                                                                                objDecodeFromString2 = null;
-                                                                                reg = (RegisterResponse) objDecodeFromString2;
-                                                                                if (reg != null) {
-                                                                                    installation_id = reg.getInstallation_id();
-                                                                                } else {
-                                                                                    installation_id = null;
-                                                                                }
-                                                                                str2 = installation_id;
-                                                                                if (str2 != null) {
-                                                                                    z11 = true;
-                                                                                } else {
-                                                                                    z11 = true;
-                                                                                }
-                                                                                if (!z11) {
-                                                                                    key_id = reg.getKey_id();
-                                                                                    if (key_id != null) {
-                                                                                        z12 = true;
-                                                                                    } else {
-                                                                                        z12 = true;
-                                                                                    }
-                                                                                    if (!z12) {
-                                                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
-                                                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
-                                                                                        if (attested4) {
-                                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z3));
-                                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", "");
-                                                                                        } else {
-                                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z10));
-                                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey2.getEncoded(), 2));
-                                                                                        }
-                                                                                        AniVortexAuth.INSTANCE.invalidateCache();
-                                                                                        StringBuilder sbAppend = new StringBuilder().append("Registration complete! installation_id=").append(reg.getInstallation_id()).append(" key_id=").append(reg.getKey_id()).append(" attested=");
-                                                                                        if (attested4) {
-                                                                                            z13 = true;
-                                                                                        } else {
-                                                                                            z13 = false;
-                                                                                        }
-                                                                                        Log.i(continuation2, sbAppend.append(z13).toString());
-                                                                                        z = true;
-                                                                                        return Boxing.boxBoolean(z);
-                                                                                    }
-                                                                                }
-                                                                                Log.w((String) continuation2, "Register response missing fields: " + StringsKt.take(registerResp.getText(), 300));
-                                                                                return Boxing.boxBoolean(z10);
-                                                                            }
-                                                                        }
-                                                                        if (Result.exceptionOrNull-impl(obj7) != null) {
-                                                                            attested4 = attested3;
-                                                                            value$iv3 = null;
-                                                                        } else {
-                                                                            try {
-                                                                                Result.Companion companion5 = Result.Companion;
-                                                                                attested4 = attested3;
-                                                                                value$iv3 = null;
-                                                                                try {
-                                                                                    obj7 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
-                                                                                    break;
-                                                                                } catch (Throwable th7) {
-                                                                                    th = th7;
-                                                                                    try {
-                                                                                        try {
-                                                                                            Result.Companion companion6 = Result.Companion;
-                                                                                            obj7 = Result.constructor-impl(ResultKt.createFailure(th));
-                                                                                        } catch (Exception e3) {
-                                                                                            objDecodeFromString2 = null;
-                                                                                        }
-                                                                                    } catch (Throwable th8) {
-                                                                                        e = th8;
-                                                                                        Log.w((String) continuation2, "Registration failed: " + e.getMessage());
-                                                                                        z = false;
-                                                                                    }
-                                                                                }
-                                                                            } catch (Throwable th9) {
-                                                                                th = th9;
-                                                                                attested4 = attested3;
-                                                                                value$iv3 = null;
-                                                                            }
-                                                                        }
-                                                                        if (Result.isFailure-impl(obj7)) {
-                                                                            obj7 = value$iv3;
-                                                                        }
-                                                                        deserializationStrategy2 = (KSerializer) obj7;
-                                                                        if (deserializationStrategy2 != null) {
-                                                                            try {
-                                                                                value$iv$iv = value$iv2;
-                                                                                try {
-                                                                                    objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv$iv);
-                                                                                } catch (SerializationException e4) {
-                                                                                    e$iv$iv = e4;
-                                                                                    ArchComponentExtKt.logError((Throwable) e$iv$iv);
-                                                                                    ObjectMapper $this$readValue$iv$iv$iv = MainAPIKt.getMapper();
-                                                                                    String content$iv$iv$iv = value$iv$iv;
-                                                                                    objDecodeFromString2 = $this$readValue$iv$iv$iv.readValue(content$iv$iv$iv, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
-                                                                                    });
-                                                                                } catch (Throwable th10) {
-                                                                                    ObjectMapper $this$readValue$iv$iv$iv2 = MainAPIKt.getMapper();
-                                                                                    String content$iv$iv$iv2 = value$iv$iv;
-                                                                                    objDecodeFromString2 = $this$readValue$iv$iv$iv2.readValue(content$iv$iv$iv2, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
-                                                                                    });
-                                                                                }
-                                                                            } catch (SerializationException e5) {
-                                                                                e$iv$iv = e5;
-                                                                                value$iv$iv = value$iv2;
-                                                                            } catch (Throwable th11) {
-                                                                                value$iv$iv = value$iv2;
-                                                                            }
-                                                                        } else {
-                                                                            value$iv$iv = value$iv2;
-                                                                        }
-                                                                        ObjectMapper $this$readValue$iv$iv$iv3 = MainAPIKt.getMapper();
-                                                                        String content$iv$iv$iv3 = value$iv$iv;
-                                                                        objDecodeFromString2 = $this$readValue$iv$iv$iv3.readValue(content$iv$iv$iv3, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
-                                                                        });
-                                                                        break;
-                                                                    } else {
-                                                                        attested4 = attested3;
-                                                                        objDecodeFromString2 = null;
-                                                                    }
-                                                                    reg = (RegisterResponse) objDecodeFromString2;
-                                                                    if (reg != null) {
-                                                                        installation_id = reg.getInstallation_id();
-                                                                    } else {
-                                                                        installation_id = null;
-                                                                    }
-                                                                    str2 = installation_id;
-                                                                    if (str2 != null) {
-                                                                        z11 = true;
-                                                                    } else {
-                                                                        z11 = true;
-                                                                    }
-                                                                    if (!z11) {
-                                                                        key_id = reg.getKey_id();
-                                                                        if (key_id != null) {
-                                                                            z12 = true;
-                                                                        } else {
-                                                                            z12 = true;
-                                                                        }
-                                                                        if (!z12) {
-                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
-                                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
-                                                                            if (attested4) {
-                                                                                CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z3));
-                                                                                CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", "");
-                                                                            } else {
-                                                                                CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z10));
-                                                                                CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey2.getEncoded(), 2));
-                                                                            }
-                                                                            AniVortexAuth.INSTANCE.invalidateCache();
-                                                                            StringBuilder sbAppend2 = new StringBuilder().append("Registration complete! installation_id=").append(reg.getInstallation_id()).append(" key_id=").append(reg.getKey_id()).append(" attested=");
-                                                                            if (attested4) {
-                                                                                z13 = true;
-                                                                            } else {
-                                                                                z13 = false;
-                                                                            }
-                                                                            Log.i(continuation2, sbAppend2.append(z13).toString());
-                                                                            z = true;
-                                                                            return Boxing.boxBoolean(z);
-                                                                        }
-                                                                    }
-                                                                    Log.w((String) continuation2, "Register response missing fields: " + StringsKt.take(registerResp.getText(), 300));
-                                                                    return Boxing.boxBoolean(z10);
-                                                                } catch (Throwable th12) {
-                                                                    e = th12;
-                                                                }
-                                                            }
-                                                            Log.w((String) continuation2, "Registration failed: " + e.getMessage());
-                                                            z = false;
-                                                            return Boxing.boxBoolean(z);
-                                                        }
-                                                        z5 = false;
-                                                        Log.w((String) continuation2, "Invalid challenge response: " + StringsKt.take(challengeResp.getText(), 300));
-                                                        return Boxing.boxBoolean(z5);
-                                                    }
-                                                }
-                                                if (Result.exceptionOrNull-impl(obj3) == null) {
-                                                    obj6 = obj3;
-                                                } else {
-                                                    try {
-                                                        Result.Companion companion7 = Result.Companion;
-                                                        try {
-                                                            obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(ChallengeResponse.class), (List) null, 2, (Object) null));
-                                                            break;
-                                                        } catch (Throwable th13) {
-                                                            th = th13;
-                                                            try {
-                                                                Result.Companion companion8 = Result.Companion;
-                                                                obj5 = Result.constructor-impl(ResultKt.createFailure(th));
-                                                            } catch (Exception e6) {
-                                                                obj4 = null;
-                                                            }
-                                                        }
-                                                    } catch (Throwable th14) {
-                                                        th = th14;
-                                                    }
-                                                    obj6 = obj5;
-                                                }
-                                                if (Result.isFailure-impl(obj6)) {
-                                                    obj6 = null;
-                                                }
-                                                deserializationStrategy = (KSerializer) obj6;
-                                                if (deserializationStrategy != null) {
-                                                    try {
-                                                        objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, value$iv);
-                                                    } catch (SerializationException e7) {
-                                                        ArchComponentExtKt.logError(e7);
-                                                        ObjectMapper $this$readValue$iv$iv$iv4 = MainAPIKt.getMapper();
-                                                        objDecodeFromString = $this$readValue$iv$iv$iv4.readValue(value$iv, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$1
-                                                        });
-                                                    } catch (Throwable th15) {
-                                                        ObjectMapper $this$readValue$iv$iv$iv5 = MainAPIKt.getMapper();
-                                                        objDecodeFromString = $this$readValue$iv$iv$iv5.readValue(value$iv, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$1
-                                                        });
-                                                    }
-                                                } else {
-                                                    ObjectMapper $this$readValue$iv$iv$iv6 = MainAPIKt.getMapper();
-                                                    objDecodeFromString = $this$readValue$iv$iv$iv6.readValue(value$iv, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$1
-                                                    });
-                                                }
-                                                obj4 = objDecodeFromString;
-                                                break;
-                                            } else {
-                                                obj4 = null;
-                                            }
-                                            challenge = (ChallengeResponse) obj4;
-                                            if (challenge != null) {
-                                                challenge_id = challenge.getChallenge_id();
-                                            } else {
-                                                challenge_id = null;
-                                            }
-                                            str = challenge_id;
-                                            if (str != null || str.length() == 0) {
-                                                z4 = true;
-                                            } else {
-                                                z4 = false;
-                                            }
-                                            if (!z4) {
-                                                challenge2 = challenge.getChallenge();
-                                                if (challenge2 != null || challenge2.length() == 0) {
-                                                    z6 = true;
-                                                } else {
-                                                    z6 = false;
-                                                }
-                                                if (z6) {
-                                                    String challengeId2 = challenge.getChallenge_id();
-                                                    Intrinsics.checkNotNull(challengeId2);
-                                                    String challenge4 = challenge.getChallenge();
-                                                    Intrinsics.checkNotNull(challenge4);
-                                                    challengeBytes = Base64.decode(challenge4, 11);
-                                                    if (attested2) {
-                                                        ks = KeyStore.getInstance("AndroidKeyStore");
-                                                        ks.load(null);
-                                                        if (ks.containsAlias(KEYSTORE_ALIAS)) {
-                                                            ks.deleteEntry(KEYSTORE_ALIAS);
-                                                        }
-                                                        KeyPairGenerator kpg3 = KeyPairGenerator.getInstance("EC", "AndroidKeyStore");
-                                                        kpg3.initialize(new KeyGenParameterSpec.Builder(KEYSTORE_ALIAS, 4).setAlgorithmParameterSpec(new ECGenParameterSpec("secp256r1")).setDigests("SHA-256").setUserAuthenticationRequired(false).setAttestationChallenge(challengeBytes).build());
-                                                        kpg3.generateKeyPair();
-                                                        ks2 = KeyStore.getInstance("AndroidKeyStore");
-                                                        ks2.load(null);
-                                                        chain = ks2.getCertificateChain(KEYSTORE_ALIAS);
-                                                        if (chain == null) {
-                                                            z8 = true;
-                                                        } else {
-                                                            if (chain.length == 0) {
-                                                                z9 = true;
-                                                            } else {
-                                                                z9 = false;
-                                                            }
-                                                            if (z9) {
-                                                                z8 = true;
-                                                            } else {
-                                                                z8 = false;
-                                                            }
-                                                        }
-                                                        if (z8) {
-                                                            Log.w((String) continuation2, "AndroidKeyStore returned no attestation chain");
-                                                            return Boxing.boxBoolean(false);
-                                                        }
-                                                        key = ks2.getKey(KEYSTORE_ALIAS, null);
-                                                        if (key instanceof PrivateKey) {
-                                                            privateKey = (PrivateKey) key;
-                                                        } else {
-                                                            privateKey = null;
-                                                        }
-                                                        z7 = false;
-                                                        destination$iv$iv = new ArrayList(chain.length);
-                                                        i = 0;
-                                                        while (i < length) {
-                                                            destination$iv$iv.add(Base64.encodeToString(chain[i].getEncoded(), 2));
-                                                            i++;
-                                                        }
-                                                        chainB64 = (List) destination$iv$iv;
-                                                        break;
-                                                        Log.w((String) continuation2, "Attested key generation failed: " + e.getMessage());
-                                                        return Boxing.boxBoolean(z7);
-                                                    }
-                                                    KeyPairGenerator kpg4 = KeyPairGenerator.getInstance("EC");
-                                                    kpg4.initialize(new ECGenParameterSpec("secp256r1"));
-                                                    KeyPair keyPair2 = kpg4.generateKeyPair();
-                                                    privateKey = keyPair2.getPrivate();
-                                                    publicKey = keyPair2.getPublic();
-                                                    if (publicKey instanceof ECPublicKey) {
-                                                        publicKey2 = (ECPublicKey) publicKey;
-                                                    } else {
-                                                        publicKey2 = null;
-                                                    }
-                                                    if (publicKey2 == null) {
-                                                        AniVortexRegistration aniVortexRegistration2 = this;
-                                                        Log.w((String) continuation2, "Generated key is not EC");
-                                                        return Boxing.boxBoolean(false);
-                                                    }
-                                                    byte[] leafDer2 = buildLeafCertificate(privateKey, publicKey2);
-                                                    CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(leafDer2));
-                                                    String leafB65 = Base64.encodeToString(leafDer2, 2);
-                                                    List chainB67 = CollectionsKt.listOf(new String[]{leafB65, leafB65});
-                                                    chainB64 = chainB67;
-                                                    String canonical3 = "ANIVORTEX-INSTALL-REGISTER-V1\n" + challengeId2 + '\n' + b64UrlNoPad(sha256(challengeBytes));
-                                                    Signature signer2 = Signature.getInstance("SHA256withECDSA");
-                                                    Intrinsics.checkNotNull(privateKey);
-                                                    signer2.initSign(privateKey);
-                                                    byte[] bytes2 = canonical3.getBytes(Charsets.UTF_8);
-                                                    Intrinsics.checkNotNullExpressionValue(bytes2, "getBytes(...)");
-                                                    signer2.update(bytes2);
-                                                    String proofSig2 = b64UrlNoPad(signer2.sign());
-                                                    String chainJson2 = CollectionsKt.joinToString$default(chainB64, ",", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.AniVortex.AniVortexRegistration$$ExternalSyntheticLambda0
-                                                        public final Object invoke(Object obj8) {
-                                                            return AniVortexRegistration.performRegistration$lambda$4((String) obj8);
-                                                        }
-                                                    }, 30, (Object) null);
-                                                    String registerBody2 = "{\"challenge_id\":\"" + challengeId2 + "\",\"certificate_chain\":[" + chainJson2 + "],\"proof_signature\":\"" + proofSig2 + "\"}";
-                                                    Requests app3 = MainActivityKt.getApp();
-                                                    Map<String, String> map3 = regHeaders;
-                                                    List chainB68 = chainB64;
-                                                    RequestBody requestBodyCreate3 = RequestBody.Companion.create(registerBody2, MediaType.Companion.parse(canonical));
-                                                    c00162.L$0 = SpillingKt.nullOutSpilledVariable(challengeBody);
-                                                    c00162.L$1 = SpillingKt.nullOutSpilledVariable(challengeResp);
-                                                    c00162.L$2 = SpillingKt.nullOutSpilledVariable(challenge);
-                                                    c00162.L$3 = SpillingKt.nullOutSpilledVariable(challengeId2);
-                                                    c00162.L$4 = SpillingKt.nullOutSpilledVariable(challengeBytes);
-                                                    c00162.L$5 = privateKey;
-                                                    c00162.L$6 = SpillingKt.nullOutSpilledVariable(chainB68);
-                                                    c00162.L$7 = SpillingKt.nullOutSpilledVariable(canonical3);
-                                                    c00162.L$8 = SpillingKt.nullOutSpilledVariable(signer2);
-                                                    c00162.L$9 = SpillingKt.nullOutSpilledVariable(proofSig2);
-                                                    c00162.L$10 = SpillingKt.nullOutSpilledVariable(chainJson2);
-                                                    c00162.L$11 = SpillingKt.nullOutSpilledVariable(registerBody2);
-                                                    c00162.Z$0 = attested2;
-                                                    c00162.label = 2;
-                                                    z10 = false;
-                                                    attested3 = attested2;
-                                                    $result = Requests.post$default(app3, "https://api.anivortex.in/api/v1/install/register", map3, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00162, 65276, (Object) null);
-                                                    if ($result == obj) {
-                                                        return obj;
-                                                    }
-                                                    privateKey2 = privateKey;
-                                                    registerResp = (NiceResponse) $result;
-                                                    if (!registerResp.isSuccessful()) {
-                                                        Log.w((String) continuation2, "Register returned (" + registerResp.getCode() + "): " + StringsKt.take(registerResp.getText(), 300));
-                                                        return Boxing.boxBoolean(z10);
-                                                    }
-                                                    AppUtils appUtils3 = AppUtils.INSTANCE;
-                                                    value$iv2 = registerResp.getText();
-                                                    if (value$iv2 == null) {
-                                                        Result.Companion companion9 = Result.Companion;
-                                                        KType kTypeTypeOf3 = Reflection.typeOf(RegisterResponse.class);
-                                                        MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                                                        obj7 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf3));
-                                                        if (Result.exceptionOrNull-impl(obj7) != null) {
-                                                            Result.Companion companion10 = Result.Companion;
-                                                            attested4 = attested3;
-                                                            value$iv3 = null;
-                                                            obj7 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
-                                                        } else {
-                                                            attested4 = attested3;
-                                                            value$iv3 = null;
-                                                        }
-                                                        if (Result.isFailure-impl(obj7)) {
-                                                            obj7 = value$iv3;
-                                                        }
-                                                        deserializationStrategy2 = (KSerializer) obj7;
-                                                        if (deserializationStrategy2 != null) {
-                                                            value$iv$iv = value$iv2;
-                                                            objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv$iv);
-                                                        } else {
-                                                            value$iv$iv = value$iv2;
-                                                        }
-                                                        ObjectMapper $this$readValue$iv$iv$iv7 = MainAPIKt.getMapper();
-                                                        String content$iv$iv$iv4 = value$iv$iv;
-                                                        objDecodeFromString2 = $this$readValue$iv$iv$iv7.readValue(content$iv$iv$iv4, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
-                                                        });
-                                                        break;
-                                                    } else {
-                                                        attested4 = attested3;
-                                                        objDecodeFromString2 = null;
-                                                    }
-                                                    reg = (RegisterResponse) objDecodeFromString2;
-                                                    if (reg != null) {
-                                                        installation_id = reg.getInstallation_id();
-                                                    } else {
-                                                        installation_id = null;
-                                                    }
-                                                    str2 = installation_id;
-                                                    if (str2 != null || str2.length() == 0) {
-                                                        z11 = true;
-                                                    } else {
-                                                        z11 = false;
-                                                    }
-                                                    if (!z11) {
-                                                        key_id = reg.getKey_id();
-                                                        if (key_id != null || key_id.length() == 0) {
-                                                            z12 = true;
-                                                        } else {
-                                                            z12 = false;
-                                                        }
-                                                        if (!z12) {
-                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
-                                                            CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
-                                                            if (attested4) {
-                                                                CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z3));
-                                                                CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", "");
-                                                            } else {
-                                                                CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z10));
-                                                                CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey2.getEncoded(), 2));
-                                                            }
-                                                            AniVortexAuth.INSTANCE.invalidateCache();
-                                                            StringBuilder sbAppend3 = new StringBuilder().append("Registration complete! installation_id=").append(reg.getInstallation_id()).append(" key_id=").append(reg.getKey_id()).append(" attested=");
-                                                            if (attested4) {
-                                                                z13 = true;
-                                                            } else {
-                                                                z13 = false;
-                                                            }
-                                                            Log.i(continuation2, sbAppend3.append(z13).toString());
-                                                            z = true;
-                                                            return Boxing.boxBoolean(z);
-                                                        }
-                                                    }
-                                                    Log.w((String) continuation2, "Register response missing fields: " + StringsKt.take(registerResp.getText(), 300));
-                                                    return Boxing.boxBoolean(z10);
-                                                }
-                                                z5 = false;
-                                            } else {
-                                                z5 = false;
-                                            }
-                                            Log.w((String) continuation2, "Invalid challenge response: " + StringsKt.take(challengeResp.getText(), 300));
-                                            return Boxing.boxBoolean(z5);
-                                        } catch (Throwable th16) {
-                                            e = th16;
-                                        }
-                                    } catch (Throwable th17) {
-                                        e = th17;
-                                    }
-                                    Log.w((String) continuation2, "Registration failed: " + e.getMessage());
-                                    z = false;
-                                    return Boxing.boxBoolean(z);
-                                } catch (Throwable th18) {
-                                    e = th18;
-                                }
-                            } catch (Throwable th19) {
-                                e = th19;
-                                continuation2 = TAG;
-                            }
-                        } catch (Throwable th20) {
-                            e = th20;
-                            continuation2 = TAG;
-                        }
-                        break;
-                    case 1:
-                        boolean attested5 = c00162.Z$0;
-                        String challengeBody2 = (String) c00162.L$0;
-                        ResultKt.throwOnFailure($result);
-                        challengeBody = challengeBody2;
-                        obj2 = $result;
-                        canonical = "application/json; charset=utf-8";
-                        continuation2 = TAG;
-                        z2 = false;
-                        z3 = true;
-                        attested2 = attested5;
-                        obj = coroutine_suspended;
-                        challengeResp = (NiceResponse) obj2;
-                        if (!challengeResp.isSuccessful()) {
-                            Log.w((String) continuation2, "Challenge request returned " + challengeResp.getCode() + ": " + StringsKt.take(challengeResp.getText(), 200));
-                            return Boxing.boxBoolean(z2);
-                        }
-                        AppUtils appUtils4 = AppUtils.INSTANCE;
-                        value$iv = challengeResp.getText();
-                        if (value$iv == null) {
-                            Result.Companion companion11 = Result.Companion;
-                            KType kTypeTypeOf4 = Reflection.typeOf(ChallengeResponse.class);
-                            MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                            obj3 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf4));
-                            if (Result.exceptionOrNull-impl(obj3) == null) {
-                                obj6 = obj3;
-                            } else {
-                                Result.Companion companion12 = Result.Companion;
-                                obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(ChallengeResponse.class), (List) null, 2, (Object) null));
-                                obj6 = obj5;
-                            }
-                            if (Result.isFailure-impl(obj6)) {
-                                obj6 = null;
-                            }
-                            deserializationStrategy = (KSerializer) obj6;
-                            if (deserializationStrategy != null) {
-                                objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, value$iv);
-                            } else {
-                                ObjectMapper $this$readValue$iv$iv$iv8 = MainAPIKt.getMapper();
-                                objDecodeFromString = $this$readValue$iv$iv$iv8.readValue(value$iv, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$1
-                                });
-                            }
-                            obj4 = objDecodeFromString;
-                            break;
-                        } else {
-                            obj4 = null;
-                        }
-                        challenge = (ChallengeResponse) obj4;
-                        if (challenge != null) {
-                            challenge_id = challenge.getChallenge_id();
-                        } else {
-                            challenge_id = null;
-                        }
-                        str = challenge_id;
-                        if (str != null) {
-                            z4 = true;
-                        } else {
-                            z4 = true;
-                        }
-                        if (!z4) {
-                            challenge2 = challenge.getChallenge();
-                            if (challenge2 != null) {
-                                z6 = true;
-                            } else {
-                                z6 = true;
-                            }
-                            if (z6) {
-                                String challengeId3 = challenge.getChallenge_id();
-                                Intrinsics.checkNotNull(challengeId3);
-                                String challenge5 = challenge.getChallenge();
-                                Intrinsics.checkNotNull(challenge5);
-                                challengeBytes = Base64.decode(challenge5, 11);
-                                if (attested2) {
-                                    ks = KeyStore.getInstance("AndroidKeyStore");
-                                    ks.load(null);
-                                    if (ks.containsAlias(KEYSTORE_ALIAS)) {
-                                        ks.deleteEntry(KEYSTORE_ALIAS);
-                                    }
-                                    KeyPairGenerator kpg5 = KeyPairGenerator.getInstance("EC", "AndroidKeyStore");
-                                    kpg5.initialize(new KeyGenParameterSpec.Builder(KEYSTORE_ALIAS, 4).setAlgorithmParameterSpec(new ECGenParameterSpec("secp256r1")).setDigests("SHA-256").setUserAuthenticationRequired(false).setAttestationChallenge(challengeBytes).build());
-                                    kpg5.generateKeyPair();
-                                    ks2 = KeyStore.getInstance("AndroidKeyStore");
-                                    ks2.load(null);
-                                    chain = ks2.getCertificateChain(KEYSTORE_ALIAS);
-                                    if (chain == null) {
-                                        z8 = true;
-                                    } else {
-                                        if (chain.length == 0) {
-                                            z9 = true;
-                                        } else {
-                                            z9 = false;
-                                        }
-                                        if (z9) {
-                                            z8 = true;
-                                        } else {
-                                            z8 = false;
-                                        }
-                                    }
-                                    if (z8) {
-                                        Log.w((String) continuation2, "AndroidKeyStore returned no attestation chain");
-                                        return Boxing.boxBoolean(false);
-                                    }
-                                    key = ks2.getKey(KEYSTORE_ALIAS, null);
-                                    if (key instanceof PrivateKey) {
-                                        privateKey = (PrivateKey) key;
-                                    } else {
-                                        privateKey = null;
-                                    }
-                                    z7 = false;
-                                    destination$iv$iv = new ArrayList(chain.length);
-                                    i = 0;
-                                    while (i < length) {
-                                        destination$iv$iv.add(Base64.encodeToString(chain[i].getEncoded(), 2));
-                                        i++;
-                                    }
-                                    chainB64 = (List) destination$iv$iv;
-                                    break;
-                                    Log.w((String) continuation2, "Attested key generation failed: " + e.getMessage());
-                                    return Boxing.boxBoolean(z7);
-                                }
-                                KeyPairGenerator kpg6 = KeyPairGenerator.getInstance("EC");
-                                kpg6.initialize(new ECGenParameterSpec("secp256r1"));
-                                KeyPair keyPair3 = kpg6.generateKeyPair();
-                                privateKey = keyPair3.getPrivate();
-                                publicKey = keyPair3.getPublic();
-                                if (publicKey instanceof ECPublicKey) {
-                                    publicKey2 = (ECPublicKey) publicKey;
-                                } else {
-                                    publicKey2 = null;
-                                }
-                                if (publicKey2 == null) {
-                                    AniVortexRegistration aniVortexRegistration3 = this;
-                                    Log.w((String) continuation2, "Generated key is not EC");
-                                    return Boxing.boxBoolean(false);
-                                }
-                                byte[] leafDer3 = buildLeafCertificate(privateKey, publicKey2);
-                                CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(leafDer3));
-                                String leafB66 = Base64.encodeToString(leafDer3, 2);
-                                List chainB69 = CollectionsKt.listOf(new String[]{leafB66, leafB66});
-                                chainB64 = chainB69;
-                                String canonical4 = "ANIVORTEX-INSTALL-REGISTER-V1\n" + challengeId3 + '\n' + b64UrlNoPad(sha256(challengeBytes));
-                                Signature signer3 = Signature.getInstance("SHA256withECDSA");
-                                Intrinsics.checkNotNull(privateKey);
-                                signer3.initSign(privateKey);
-                                byte[] bytes3 = canonical4.getBytes(Charsets.UTF_8);
-                                Intrinsics.checkNotNullExpressionValue(bytes3, "getBytes(...)");
-                                signer3.update(bytes3);
-                                String proofSig3 = b64UrlNoPad(signer3.sign());
-                                String chainJson3 = CollectionsKt.joinToString$default(chainB64, ",", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.AniVortex.AniVortexRegistration$$ExternalSyntheticLambda0
-                                    public final Object invoke(Object obj8) {
-                                        return AniVortexRegistration.performRegistration$lambda$4((String) obj8);
-                                    }
-                                }, 30, (Object) null);
-                                String registerBody3 = "{\"challenge_id\":\"" + challengeId3 + "\",\"certificate_chain\":[" + chainJson3 + "],\"proof_signature\":\"" + proofSig3 + "\"}";
-                                Requests app4 = MainActivityKt.getApp();
-                                Map<String, String> map4 = regHeaders;
-                                List chainB610 = chainB64;
-                                RequestBody requestBodyCreate4 = RequestBody.Companion.create(registerBody3, MediaType.Companion.parse(canonical));
-                                c00162.L$0 = SpillingKt.nullOutSpilledVariable(challengeBody);
-                                c00162.L$1 = SpillingKt.nullOutSpilledVariable(challengeResp);
-                                c00162.L$2 = SpillingKt.nullOutSpilledVariable(challenge);
-                                c00162.L$3 = SpillingKt.nullOutSpilledVariable(challengeId3);
-                                c00162.L$4 = SpillingKt.nullOutSpilledVariable(challengeBytes);
-                                c00162.L$5 = privateKey;
-                                c00162.L$6 = SpillingKt.nullOutSpilledVariable(chainB610);
-                                c00162.L$7 = SpillingKt.nullOutSpilledVariable(canonical4);
-                                c00162.L$8 = SpillingKt.nullOutSpilledVariable(signer3);
-                                c00162.L$9 = SpillingKt.nullOutSpilledVariable(proofSig3);
-                                c00162.L$10 = SpillingKt.nullOutSpilledVariable(chainJson3);
-                                c00162.L$11 = SpillingKt.nullOutSpilledVariable(registerBody3);
-                                c00162.Z$0 = attested2;
-                                c00162.label = 2;
-                                z10 = false;
-                                attested3 = attested2;
-                                $result = Requests.post$default(app4, "https://api.anivortex.in/api/v1/install/register", map4, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00162, 65276, (Object) null);
-                                if ($result == obj) {
-                                    return obj;
-                                }
-                                privateKey2 = privateKey;
-                                registerResp = (NiceResponse) $result;
-                                if (!registerResp.isSuccessful()) {
-                                    Log.w((String) continuation2, "Register returned (" + registerResp.getCode() + "): " + StringsKt.take(registerResp.getText(), 300));
-                                    return Boxing.boxBoolean(z10);
-                                }
-                                AppUtils appUtils5 = AppUtils.INSTANCE;
-                                value$iv2 = registerResp.getText();
-                                if (value$iv2 == null) {
-                                    Result.Companion companion13 = Result.Companion;
-                                    KType kTypeTypeOf5 = Reflection.typeOf(RegisterResponse.class);
-                                    MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                                    obj7 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf5));
-                                    if (Result.exceptionOrNull-impl(obj7) != null) {
-                                        Result.Companion companion14 = Result.Companion;
-                                        attested4 = attested3;
-                                        value$iv3 = null;
-                                        obj7 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
-                                    } else {
-                                        attested4 = attested3;
-                                        value$iv3 = null;
-                                    }
-                                    if (Result.isFailure-impl(obj7)) {
-                                        obj7 = value$iv3;
-                                    }
-                                    deserializationStrategy2 = (KSerializer) obj7;
-                                    if (deserializationStrategy2 != null) {
-                                        value$iv$iv = value$iv2;
-                                        objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv$iv);
-                                    } else {
-                                        value$iv$iv = value$iv2;
-                                    }
-                                    ObjectMapper $this$readValue$iv$iv$iv9 = MainAPIKt.getMapper();
-                                    String content$iv$iv$iv5 = value$iv$iv;
-                                    objDecodeFromString2 = $this$readValue$iv$iv$iv9.readValue(content$iv$iv$iv5, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
-                                    });
-                                    break;
-                                } else {
-                                    attested4 = attested3;
-                                    objDecodeFromString2 = null;
-                                }
-                                reg = (RegisterResponse) objDecodeFromString2;
-                                if (reg != null) {
-                                    installation_id = reg.getInstallation_id();
-                                } else {
-                                    installation_id = null;
-                                }
-                                str2 = installation_id;
-                                if (str2 != null) {
-                                    z11 = true;
-                                } else {
-                                    z11 = true;
-                                }
-                                if (!z11) {
-                                    key_id = reg.getKey_id();
-                                    if (key_id != null) {
-                                        z12 = true;
-                                    } else {
-                                        z12 = true;
-                                    }
-                                    if (!z12) {
-                                        CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
-                                        CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
-                                        if (attested4) {
-                                            CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z3));
-                                            CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", "");
-                                        } else {
-                                            CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z10));
-                                            CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey2.getEncoded(), 2));
-                                        }
-                                        AniVortexAuth.INSTANCE.invalidateCache();
-                                        StringBuilder sbAppend4 = new StringBuilder().append("Registration complete! installation_id=").append(reg.getInstallation_id()).append(" key_id=").append(reg.getKey_id()).append(" attested=");
-                                        if (attested4) {
-                                            z13 = true;
-                                        } else {
-                                            z13 = false;
-                                        }
-                                        Log.i(continuation2, sbAppend4.append(z13).toString());
-                                        z = true;
-                                        return Boxing.boxBoolean(z);
-                                    }
-                                }
-                                Log.w((String) continuation2, "Register response missing fields: " + StringsKt.take(registerResp.getText(), 300));
-                                return Boxing.boxBoolean(z10);
-                            }
-                            z5 = false;
-                        } else {
-                            z5 = false;
-                        }
-                        Log.w((String) continuation2, "Invalid challenge response: " + StringsKt.take(challengeResp.getText(), 300));
-                        return Boxing.boxBoolean(z5);
-                        Log.w((String) continuation2, "Registration failed: " + e.getMessage());
-                        z = false;
-                        return Boxing.boxBoolean(z);
-                    case 2:
-                        boolean attested6 = c00162.Z$0;
-                        privateKey2 = (PrivateKey) c00162.L$5;
-                        ResultKt.throwOnFailure($result);
-                        attested3 = attested6;
-                        continuation2 = TAG;
-                        z3 = true;
-                        z10 = false;
-                        registerResp = (NiceResponse) $result;
-                        if (!registerResp.isSuccessful()) {
-                            Log.w((String) continuation2, "Register returned (" + registerResp.getCode() + "): " + StringsKt.take(registerResp.getText(), 300));
-                            return Boxing.boxBoolean(z10);
-                        }
-                        AppUtils appUtils6 = AppUtils.INSTANCE;
-                        value$iv2 = registerResp.getText();
-                        if (value$iv2 == null) {
-                            Result.Companion companion15 = Result.Companion;
-                            KType kTypeTypeOf6 = Reflection.typeOf(RegisterResponse.class);
-                            MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                            obj7 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf6));
-                            if (Result.exceptionOrNull-impl(obj7) != null) {
-                                Result.Companion companion16 = Result.Companion;
-                                attested4 = attested3;
-                                value$iv3 = null;
-                                obj7 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
-                            } else {
-                                attested4 = attested3;
-                                value$iv3 = null;
-                            }
-                            if (Result.isFailure-impl(obj7)) {
-                                obj7 = value$iv3;
-                            }
-                            deserializationStrategy2 = (KSerializer) obj7;
-                            if (deserializationStrategy2 != null) {
-                                value$iv$iv = value$iv2;
-                                objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv$iv);
-                            } else {
-                                value$iv$iv = value$iv2;
-                            }
-                            ObjectMapper $this$readValue$iv$iv$iv10 = MainAPIKt.getMapper();
-                            String content$iv$iv$iv6 = value$iv$iv;
-                            objDecodeFromString2 = $this$readValue$iv$iv$iv10.readValue(content$iv$iv$iv6, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$2
-                            });
-                            break;
-                        } else {
-                            attested4 = attested3;
-                            objDecodeFromString2 = null;
-                        }
-                        reg = (RegisterResponse) objDecodeFromString2;
-                        if (reg != null) {
-                            installation_id = reg.getInstallation_id();
-                        } else {
-                            installation_id = null;
-                        }
-                        str2 = installation_id;
-                        if (str2 != null) {
-                            z11 = true;
-                        } else {
-                            z11 = true;
-                        }
-                        if (!z11) {
-                            key_id = reg.getKey_id();
-                            if (key_id != null) {
-                                z12 = true;
-                            } else {
-                                z12 = true;
-                            }
-                            if (!z12) {
-                                CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
-                                CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
-                                if (attested4) {
-                                    CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z3));
-                                    CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", "");
-                                } else {
-                                    CloudStreamApp.Companion.setKey("ANIVORTEX_USE_KEYSTORE", Boxing.boxBoolean(z10));
-                                    CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey2.getEncoded(), 2));
-                                }
-                                AniVortexAuth.INSTANCE.invalidateCache();
-                                StringBuilder sbAppend5 = new StringBuilder().append("Registration complete! installation_id=").append(reg.getInstallation_id()).append(" key_id=").append(reg.getKey_id()).append(" attested=");
-                                if (attested4) {
-                                    z13 = true;
-                                } else {
-                                    z13 = false;
-                                }
-                                Log.i(continuation2, sbAppend5.append(z13).toString());
-                                z = true;
-                                return Boxing.boxBoolean(z);
-                            }
-                        }
-                        Log.w((String) continuation2, "Register response missing fields: " + StringsKt.take(registerResp.getText(), 300));
-                        return Boxing.boxBoolean(z10);
-                        Log.w((String) continuation2, "Registration failed: " + e.getMessage());
-                        z = false;
-                        return Boxing.boxBoolean(z);
-                    default:
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                }
-            } catch (Throwable th21) {
-                e = th21;
-                continuation2 = TAG;
-            }
-        } catch (Throwable th22) {
-            e = th22;
-        }
-    }
-
-    static final CharSequence performRegistration$lambda$4(String it) {
-        return '\"' + it + '\"';
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code duplicated, block: B:104:0x03d3 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:105:0x03d4  */
-    /* JADX WARN: Code duplicated, block: B:108:0x03f4 A[Catch: all -> 0x05a1, TryCatch #2 {all -> 0x05a1, blocks: (B:106:0x03ec, B:108:0x03f4, B:110:0x0427, B:160:0x04f7, B:162:0x04fb, B:164:0x0501, B:166:0x0505, B:172:0x0511, B:174:0x0519, B:181:0x0526, B:182:0x057c, B:119:0x0463, B:131:0x04a3, B:134:0x04aa, B:151:0x04d2, B:149:0x04c9, B:130:0x0499, B:118:0x0459, B:187:0x05a7, B:102:0x03cd, B:25:0x010f), top: B:200:0x010f }] */
-    /* JADX WARN: Code duplicated, block: B:110:0x0427 A[Catch: all -> 0x05a1, TRY_LEAVE, TryCatch #2 {all -> 0x05a1, blocks: (B:106:0x03ec, B:108:0x03f4, B:110:0x0427, B:160:0x04f7, B:162:0x04fb, B:164:0x0501, B:166:0x0505, B:172:0x0511, B:174:0x0519, B:181:0x0526, B:182:0x057c, B:119:0x0463, B:131:0x04a3, B:134:0x04aa, B:151:0x04d2, B:149:0x04c9, B:130:0x0499, B:118:0x0459, B:187:0x05a7, B:102:0x03cd, B:25:0x010f), top: B:200:0x010f }] */
-    /* JADX WARN: Code duplicated, block: B:113:0x0435  */
-    /* JADX WARN: Code duplicated, block: B:114:0x043a  */
-    /* JADX WARN: Code duplicated, block: B:121:0x0469  */
-    /* JADX WARN: Code duplicated, block: B:133:0x04a9  */
-    /* JADX WARN: Code duplicated, block: B:150:0x04d0  */
-    /* JADX WARN: Code duplicated, block: B:162:0x04fb A[Catch: all -> 0x05a1, TryCatch #2 {all -> 0x05a1, blocks: (B:106:0x03ec, B:108:0x03f4, B:110:0x0427, B:160:0x04f7, B:162:0x04fb, B:164:0x0501, B:166:0x0505, B:172:0x0511, B:174:0x0519, B:181:0x0526, B:182:0x057c, B:119:0x0463, B:131:0x04a3, B:134:0x04aa, B:151:0x04d2, B:149:0x04c9, B:130:0x0499, B:118:0x0459, B:187:0x05a7, B:102:0x03cd, B:25:0x010f), top: B:200:0x010f }] */
-    /* JADX WARN: Code duplicated, block: B:163:0x0500  */
-    /* JADX WARN: Code duplicated, block: B:166:0x0505 A[Catch: all -> 0x05a1, TryCatch #2 {all -> 0x05a1, blocks: (B:106:0x03ec, B:108:0x03f4, B:110:0x0427, B:160:0x04f7, B:162:0x04fb, B:164:0x0501, B:166:0x0505, B:172:0x0511, B:174:0x0519, B:181:0x0526, B:182:0x057c, B:119:0x0463, B:131:0x04a3, B:134:0x04aa, B:151:0x04d2, B:149:0x04c9, B:130:0x0499, B:118:0x0459, B:187:0x05a7, B:102:0x03cd, B:25:0x010f), top: B:200:0x010f }] */
-    /* JADX WARN: Code duplicated, block: B:170:0x050e  */
-    /* JADX WARN: Code duplicated, block: B:172:0x0511 A[Catch: all -> 0x05a1, TryCatch #2 {all -> 0x05a1, blocks: (B:106:0x03ec, B:108:0x03f4, B:110:0x0427, B:160:0x04f7, B:162:0x04fb, B:164:0x0501, B:166:0x0505, B:172:0x0511, B:174:0x0519, B:181:0x0526, B:182:0x057c, B:119:0x0463, B:131:0x04a3, B:134:0x04aa, B:151:0x04d2, B:149:0x04c9, B:130:0x0499, B:118:0x0459, B:187:0x05a7, B:102:0x03cd, B:25:0x010f), top: B:200:0x010f }] */
-    /* JADX WARN: Code duplicated, block: B:174:0x0519 A[Catch: all -> 0x05a1, TryCatch #2 {all -> 0x05a1, blocks: (B:106:0x03ec, B:108:0x03f4, B:110:0x0427, B:160:0x04f7, B:162:0x04fb, B:164:0x0501, B:166:0x0505, B:172:0x0511, B:174:0x0519, B:181:0x0526, B:182:0x057c, B:119:0x0463, B:131:0x04a3, B:134:0x04aa, B:151:0x04d2, B:149:0x04c9, B:130:0x0499, B:118:0x0459, B:187:0x05a7, B:102:0x03cd, B:25:0x010f), top: B:200:0x010f }] */
-    /* JADX WARN: Code duplicated, block: B:178:0x0522  */
-    /* JADX WARN: Code duplicated, block: B:180:0x0525  */
-    /* JADX WARN: Code duplicated, block: B:181:0x0526 A[Catch: all -> 0x05a1, TryCatch #2 {all -> 0x05a1, blocks: (B:106:0x03ec, B:108:0x03f4, B:110:0x0427, B:160:0x04f7, B:162:0x04fb, B:164:0x0501, B:166:0x0505, B:172:0x0511, B:174:0x0519, B:181:0x0526, B:182:0x057c, B:119:0x0463, B:131:0x04a3, B:134:0x04aa, B:151:0x04d2, B:149:0x04c9, B:130:0x0499, B:118:0x0459, B:187:0x05a7, B:102:0x03cd, B:25:0x010f), top: B:200:0x010f }] */
-    /* JADX WARN: Code duplicated, block: B:186:0x05a3  */
-    /* JADX WARN: Code duplicated, block: B:214:0x0197 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:216:0x046f A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:225:0x04b0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:227:0x01cc A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:32:0x0124 A[Catch: all -> 0x0157, TRY_ENTER, TRY_LEAVE, TryCatch #15 {all -> 0x0157, blocks: (B:32:0x0124, B:72:0x0200, B:77:0x020a, B:85:0x021e, B:94:0x0269, B:97:0x0270, B:45:0x018f, B:52:0x01bf, B:55:0x01c6, B:63:0x01e1, B:62:0x01db, B:51:0x01b4, B:44:0x0185), top: B:220:0x0122 }] */
-    /* JADX WARN: Code duplicated, block: B:36:0x015c A[Catch: all -> 0x05cc, TRY_ENTER, TRY_LEAVE, TryCatch #9 {all -> 0x05cc, blocks: (B:30:0x011a, B:36:0x015c, B:69:0x01fb, B:75:0x0206, B:83:0x0216, B:92:0x0230, B:100:0x0282), top: B:208:0x011a }] */
-    /* JADX WARN: Code duplicated, block: B:39:0x0167  */
-    /* JADX WARN: Code duplicated, block: B:40:0x016a  */
-    /* JADX WARN: Code duplicated, block: B:54:0x01c5  */
-    /* JADX WARN: Code duplicated, block: B:63:0x01e1 A[Catch: all -> 0x0157, Exception -> 0x01f8, TRY_LEAVE, TryCatch #8 {Exception -> 0x01f8, blocks: (B:45:0x018f, B:52:0x01bf, B:55:0x01c6, B:63:0x01e1, B:62:0x01db, B:51:0x01b4, B:44:0x0185), top: B:206:0x0185 }] */
-    /* JADX WARN: Code duplicated, block: B:72:0x0200 A[Catch: all -> 0x0157, TRY_ENTER, TRY_LEAVE, TryCatch #15 {all -> 0x0157, blocks: (B:32:0x0124, B:72:0x0200, B:77:0x020a, B:85:0x021e, B:94:0x0269, B:97:0x0270, B:45:0x018f, B:52:0x01bf, B:55:0x01c6, B:63:0x01e1, B:62:0x01db, B:51:0x01b4, B:44:0x0185), top: B:220:0x0122 }] */
-    /* JADX WARN: Code duplicated, block: B:74:0x0205  */
-    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:81:0x0213  */
-    /* JADX WARN: Code duplicated, block: B:83:0x0216 A[Catch: all -> 0x05cc, TRY_ENTER, TRY_LEAVE, TryCatch #9 {all -> 0x05cc, blocks: (B:30:0x011a, B:36:0x015c, B:69:0x01fb, B:75:0x0206, B:83:0x0216, B:92:0x0230, B:100:0x0282), top: B:208:0x011a }] */
-    /* JADX WARN: Code duplicated, block: B:89:0x0227  */
-    /* JADX WARN: Code duplicated, block: B:91:0x022a  */
-    /* JADX WARN: Code duplicated, block: B:92:0x0230 A[Catch: all -> 0x05cc, TRY_ENTER, TRY_LEAVE, TryCatch #9 {all -> 0x05cc, blocks: (B:30:0x011a, B:36:0x015c, B:69:0x01fb, B:75:0x0206, B:83:0x0216, B:92:0x0230, B:100:0x0282), top: B:208:0x011a }] */
-    /* JADX WARN: Code duplicated, block: B:94:0x0269 A[Catch: all -> 0x0157, TRY_ENTER, TryCatch #15 {all -> 0x0157, blocks: (B:32:0x0124, B:72:0x0200, B:77:0x020a, B:85:0x021e, B:94:0x0269, B:97:0x0270, B:45:0x018f, B:52:0x01bf, B:55:0x01c6, B:63:0x01e1, B:62:0x01db, B:51:0x01b4, B:44:0x0185), top: B:220:0x0122 }] */
-    /* JADX WARN: Code duplicated, block: B:95:0x026d  */
-    /* JADX WARN: Code duplicated, block: B:97:0x0270 A[Catch: all -> 0x0157, TRY_LEAVE, TryCatch #15 {all -> 0x0157, blocks: (B:32:0x0124, B:72:0x0200, B:77:0x020a, B:85:0x021e, B:94:0x0269, B:97:0x0270, B:45:0x018f, B:52:0x01bf, B:55:0x01c6, B:63:0x01e1, B:62:0x01db, B:51:0x01b4, B:44:0x0185), top: B:220:0x0122 }] */
-    /* JADX WARN: Code duplicated, block: B:99:0x027f  */
-    public final Object performRegistration(Continuation<? super Boolean> continuation) {
-        C00173 c00173;
-        String str;
-        boolean z;
-        Object obj;
-        String str2;
-        String challengeBody;
-        NiceResponse challengeResp;
-        String value$iv;
-        Object obj2;
-        Object obj3;
-        Object obj4;
-        DeserializationStrategy deserializationStrategy;
-        Object objDecodeFromString;
-        ChallengeResponse challenge;
-        String challenge_id;
-        String str3;
-        boolean z2;
-        String challenge2;
-        boolean z3;
-        String challengeId;
-        byte[] challengeBytes;
-        KeyPairGenerator keyPairGen;
-        KeyPair keyPair;
-        PrivateKey privateKey;
-        PublicKey publicKey;
-        ECPublicKey eCPublicKey;
-        PrivateKey privateKey2;
-        NiceResponse registerResp;
-        String value$iv2;
-        Object obj5;
-        NiceResponse registerResp2;
-        Object objDecodeFromString2;
-        NiceResponse registerResp3;
-        DeserializationStrategy deserializationStrategy2;
-        String value$iv$iv;
-        RegisterResponse reg;
-        String installation_id;
-        String str4;
-        boolean z4;
-        String key_id;
-        boolean z5;
-        if (continuation instanceof C00173) {
-            c00173 = (C00173) continuation;
-            if ((c00173.label & Integer.MIN_VALUE) != 0) {
-                c00173.label -= Integer.MIN_VALUE;
-            } else {
-                c00173 = new C00173(continuation);
-            }
-        } else {
-            c00173 = new C00173(continuation);
-        }
-        C00173 c00174 = c00173;
-        Object $result = c00174.result;
-        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        try {
-            switch (c00174.label) {
-                case 0:
-                    ResultKt.throwOnFailure($result);
-                    try {
-                        Log.i(TAG, "Attempting software-key registration flow...");
-                        Requests app = MainActivityKt.getApp();
-                        try {
-                            Map<String, String> map = regHeaders;
-                            RequestBody requestBodyCreate = RequestBody.Companion.create("{\"platform\":\"android\",\"package_name\":\"app.anivortex.mobile\",\"version_name\":\"5.0.1\",\"version_code\":503}", MediaType.Companion.parse("application/json; charset=utf-8"));
-                            c00174.L$0 = SpillingKt.nullOutSpilledVariable("{\"platform\":\"android\",\"package_name\":\"app.anivortex.mobile\",\"version_name\":\"5.0.1\",\"version_code\":503}");
-                            c00174.label = 1;
-                            obj = coroutine_suspended;
-                            str = TAG;
-                            str2 = "application/json; charset=utf-8";
-                            try {
-                                $result = Requests.post$default(app, "https://api.anivortex.in/api/v1/install/challenge", map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00174, 65276, (Object) null);
-                                c00174 = c00174;
-                                if ($result == obj) {
-                                    return obj;
-                                }
-                                challengeBody = "{\"platform\":\"android\",\"package_name\":\"app.anivortex.mobile\",\"version_name\":\"5.0.1\",\"version_code\":503}";
-                                try {
-                                    challengeResp = (NiceResponse) $result;
-                                    try {
-                                        if (!challengeResp.isSuccessful()) {
-                                            Log.w(str, "Challenge request returned " + challengeResp.getCode() + ": " + StringsKt.take(challengeResp.getText(), 200));
-                                            return Boxing.boxBoolean(false);
-                                        }
-                                        AppUtils appUtils = AppUtils.INSTANCE;
-                                        value$iv = challengeResp.getText();
-                                        if (value$iv == null) {
-                                            try {
-                                                Result.Companion companion = Result.Companion;
-                                                KType kTypeTypeOf = Reflection.typeOf(ChallengeResponse.class);
-                                                MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                                                obj2 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf));
-                                                break;
-                                            } catch (Throwable th) {
-                                                try {
-                                                    Result.Companion companion2 = Result.Companion;
-                                                    obj2 = Result.constructor-impl(ResultKt.createFailure(th));
-                                                } catch (Exception e) {
-                                                    obj3 = null;
-                                                }
-                                            }
-                                            if (Result.exceptionOrNull-impl(obj2) != null) {
-                                                try {
-                                                    Result.Companion companion3 = Result.Companion;
-                                                    obj2 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(ChallengeResponse.class), (List) null, 2, (Object) null));
-                                                } catch (Throwable th2) {
-                                                    Result.Companion companion4 = Result.Companion;
-                                                    obj2 = Result.constructor-impl(ResultKt.createFailure(th2));
-                                                }
-                                            }
-                                            obj4 = obj2;
-                                            if (Result.isFailure-impl(obj4)) {
-                                                obj4 = null;
-                                            }
-                                            deserializationStrategy = (KSerializer) obj4;
-                                            if (deserializationStrategy != null) {
-                                                try {
-                                                    objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, value$iv);
-                                                } catch (SerializationException e2) {
-                                                    ArchComponentExtKt.logError(e2);
-                                                    ObjectMapper $this$readValue$iv$iv$iv = MainAPIKt.getMapper();
-                                                    objDecodeFromString = $this$readValue$iv$iv$iv.readValue(value$iv, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$3
-                                                    });
-                                                } catch (Throwable th3) {
-                                                    ObjectMapper $this$readValue$iv$iv$iv2 = MainAPIKt.getMapper();
-                                                    objDecodeFromString = $this$readValue$iv$iv$iv2.readValue(value$iv, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$3
-                                                    });
-                                                }
-                                            } else {
-                                                ObjectMapper $this$readValue$iv$iv$iv3 = MainAPIKt.getMapper();
-                                                objDecodeFromString = $this$readValue$iv$iv$iv3.readValue(value$iv, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$3
-                                                });
-                                            }
-                                            obj3 = objDecodeFromString;
-                                            break;
-                                        } else {
-                                            obj3 = null;
-                                        }
-                                        challenge = (ChallengeResponse) obj3;
-                                        if (challenge != null) {
-                                            challenge_id = challenge.getChallenge_id();
-                                        } else {
-                                            challenge_id = null;
-                                        }
-                                        str3 = challenge_id;
-                                        if (str3 != null || str3.length() == 0) {
-                                            z2 = true;
-                                        } else {
-                                            z2 = false;
-                                        }
-                                        if (z2) {
-                                            challenge2 = challenge.getChallenge();
-                                            if (challenge2 != null || challenge2.length() == 0) {
-                                                z3 = true;
-                                            } else {
-                                                z3 = false;
-                                            }
-                                            if (z3) {
-                                                challengeId = challenge.getChallenge_id();
-                                                Intrinsics.checkNotNull(challengeId);
-                                                String challenge3 = challenge.getChallenge();
-                                                Intrinsics.checkNotNull(challenge3);
-                                                challengeBytes = Base64.decode(challenge3, 11);
-                                                keyPairGen = KeyPairGenerator.getInstance("EC");
-                                                keyPairGen.initialize(new ECGenParameterSpec("secp256r1"));
-                                                keyPair = keyPairGen.generateKeyPair();
-                                                privateKey = keyPair.getPrivate();
-                                                publicKey = keyPair.getPublic();
-                                                if (publicKey instanceof ECPublicKey) {
-                                                    eCPublicKey = (ECPublicKey) publicKey;
-                                                } else {
-                                                    eCPublicKey = null;
-                                                }
-                                                if (eCPublicKey == null) {
-                                                    AniVortexRegistration aniVortexRegistration = this;
-                                                    Log.w(str, "Generated key is not EC");
-                                                    return Boxing.boxBoolean(false);
-                                                }
-                                                ECPublicKey publicKey2 = eCPublicKey;
-                                                byte[] leafDer = buildLeafCertificate(privateKey, publicKey2);
-                                                CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(leafDer));
-                                                String canonical = "ANIVORTEX-INSTALL-REGISTER-V1\n" + challengeId + '\n' + b64UrlNoPad(sha256(challengeBytes));
-                                                Signature signer = Signature.getInstance("SHA256withECDSA");
-                                                signer.initSign(privateKey);
-                                                byte[] bytes = canonical.getBytes(Charsets.UTF_8);
-                                                Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
-                                                signer.update(bytes);
-                                                String proofSig = b64UrlNoPad(signer.sign());
-                                                String leafB64 = Base64.encodeToString(leafDer, 2);
-                                                String registerBody = "{\"challenge_id\":\"" + challengeId + "\",\"certificate_chain\":[\"" + leafB64 + "\",\"" + leafB64 + "\"],\"proof_signature\":\"" + proofSig + "\"}";
-                                                Requests app2 = MainActivityKt.getApp();
-                                                Map<String, String> map2 = regHeaders;
-                                                RequestBody requestBodyCreate2 = RequestBody.Companion.create(registerBody, MediaType.Companion.parse(str2));
-                                                c00174.L$0 = SpillingKt.nullOutSpilledVariable(challengeBody);
-                                                c00174.L$1 = SpillingKt.nullOutSpilledVariable(challengeResp);
-                                                c00174.L$2 = SpillingKt.nullOutSpilledVariable(challenge);
-                                                c00174.L$3 = SpillingKt.nullOutSpilledVariable(challengeId);
-                                                c00174.L$4 = SpillingKt.nullOutSpilledVariable(challengeBytes);
-                                                c00174.L$5 = SpillingKt.nullOutSpilledVariable(keyPairGen);
-                                                c00174.L$6 = SpillingKt.nullOutSpilledVariable(keyPair);
-                                                c00174.L$7 = privateKey;
-                                                c00174.L$8 = SpillingKt.nullOutSpilledVariable(publicKey2);
-                                                c00174.L$9 = SpillingKt.nullOutSpilledVariable(leafDer);
-                                                c00174.L$10 = SpillingKt.nullOutSpilledVariable(canonical);
-                                                c00174.L$11 = SpillingKt.nullOutSpilledVariable(signer);
-                                                c00174.L$12 = SpillingKt.nullOutSpilledVariable(proofSig);
-                                                c00174.L$13 = SpillingKt.nullOutSpilledVariable(leafB64);
-                                                c00174.L$14 = SpillingKt.nullOutSpilledVariable(registerBody);
-                                                c00174.label = 2;
-                                                $result = Requests.post$default(app2, "https://api.anivortex.in/api/v1/install/register", map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00174, 65276, (Object) null);
-                                                if ($result == obj) {
-                                                    return obj;
-                                                }
-                                                privateKey2 = privateKey;
-                                                registerResp = (NiceResponse) $result;
-                                                if (!registerResp.isSuccessful()) {
-                                                    Log.w(str, "Register returned (" + registerResp.getCode() + "): " + StringsKt.take(registerResp.getText(), 300));
-                                                    return Boxing.boxBoolean(false);
-                                                }
-                                                AppUtils appUtils2 = AppUtils.INSTANCE;
-                                                value$iv2 = registerResp.getText();
-                                                if (value$iv2 != null) {
-                                                    try {
-                                                        Result.Companion companion5 = Result.Companion;
-                                                        KType kTypeTypeOf2 = Reflection.typeOf(RegisterResponse.class);
-                                                        MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                                                        obj5 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf2));
-                                                        break;
-                                                    } catch (Throwable th4) {
-                                                        try {
-                                                            Result.Companion companion6 = Result.Companion;
-                                                            obj5 = Result.constructor-impl(ResultKt.createFailure(th4));
-                                                        } catch (Exception e3) {
-                                                            registerResp2 = registerResp;
-                                                            objDecodeFromString2 = null;
-                                                            reg = (RegisterResponse) objDecodeFromString2;
-                                                            if (reg != null) {
-                                                                installation_id = reg.getInstallation_id();
-                                                            } else {
-                                                                installation_id = null;
-                                                            }
-                                                            str4 = installation_id;
-                                                            if (str4 != null) {
-                                                                z4 = true;
-                                                            } else {
-                                                                z4 = true;
-                                                            }
-                                                            if (!z4) {
-                                                                key_id = reg.getKey_id();
-                                                                if (key_id != null) {
-                                                                    z5 = true;
-                                                                } else {
-                                                                    z5 = true;
-                                                                }
-                                                                if (z5) {
-                                                                    CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
-                                                                    CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
-                                                                    CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey2.getEncoded(), 2));
-                                                                    AniVortexAuth.INSTANCE.invalidateCache();
-                                                                    Log.i(str, "Registration complete! installation_id=" + reg.getInstallation_id() + " key_id=" + reg.getKey_id());
-                                                                    z = true;
-                                                                    return Boxing.boxBoolean(z);
-                                                                }
-                                                            }
-                                                            Log.w(str, "Register response missing fields: " + StringsKt.take(registerResp2.getText(), 300));
-                                                            return Boxing.boxBoolean(false);
-                                                        }
-                                                    }
-                                                    if (Result.exceptionOrNull-impl(obj5) == null) {
-                                                        registerResp2 = registerResp;
-                                                        registerResp3 = null;
-                                                    } else {
-                                                        try {
-                                                            Result.Companion companion7 = Result.Companion;
-                                                            registerResp2 = registerResp;
-                                                            registerResp3 = null;
-                                                            try {
-                                                                obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
-                                                                break;
-                                                            } catch (Throwable th5) {
-                                                                th = th5;
-                                                                try {
-                                                                    Result.Companion companion8 = Result.Companion;
-                                                                    obj5 = Result.constructor-impl(ResultKt.createFailure(th));
-                                                                } catch (Exception e4) {
-                                                                    objDecodeFromString2 = null;
-                                                                }
-                                                            }
-                                                        } catch (Throwable th6) {
-                                                            th = th6;
-                                                            registerResp2 = registerResp;
-                                                            registerResp3 = null;
-                                                        }
-                                                    }
-                                                    if (Result.isFailure-impl(obj5)) {
-                                                        obj5 = registerResp3;
-                                                    }
-                                                    deserializationStrategy2 = (KSerializer) obj5;
-                                                    if (deserializationStrategy2 != null) {
-                                                        try {
-                                                            value$iv$iv = value$iv2;
-                                                            try {
-                                                                objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv$iv);
-                                                            } catch (SerializationException e5) {
-                                                                e$iv$iv = e5;
-                                                                ArchComponentExtKt.logError((Throwable) e$iv$iv);
-                                                                ObjectMapper $this$readValue$iv$iv$iv4 = MainAPIKt.getMapper();
-                                                                String content$iv$iv$iv = value$iv$iv;
-                                                                objDecodeFromString2 = $this$readValue$iv$iv$iv4.readValue(content$iv$iv$iv, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$4
-                                                                });
-                                                            } catch (Throwable th7) {
-                                                                ObjectMapper $this$readValue$iv$iv$iv5 = MainAPIKt.getMapper();
-                                                                String content$iv$iv$iv2 = value$iv$iv;
-                                                                objDecodeFromString2 = $this$readValue$iv$iv$iv5.readValue(content$iv$iv$iv2, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$4
-                                                                });
-                                                            }
-                                                        } catch (SerializationException e6) {
-                                                            e$iv$iv = e6;
-                                                            value$iv$iv = value$iv2;
-                                                        } catch (Throwable th8) {
-                                                            value$iv$iv = value$iv2;
-                                                        }
-                                                    } else {
-                                                        value$iv$iv = value$iv2;
-                                                    }
-                                                    ObjectMapper $this$readValue$iv$iv$iv6 = MainAPIKt.getMapper();
-                                                    String content$iv$iv$iv3 = value$iv$iv;
-                                                    objDecodeFromString2 = $this$readValue$iv$iv$iv6.readValue(content$iv$iv$iv3, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$4
-                                                    });
-                                                    break;
-                                                } else {
-                                                    registerResp2 = registerResp;
-                                                    objDecodeFromString2 = null;
-                                                }
-                                                reg = (RegisterResponse) objDecodeFromString2;
-                                                if (reg != null) {
-                                                    installation_id = reg.getInstallation_id();
-                                                } else {
-                                                    installation_id = null;
-                                                }
-                                                str4 = installation_id;
-                                                if (str4 != null || str4.length() == 0) {
-                                                    z4 = true;
-                                                } else {
-                                                    z4 = false;
-                                                }
-                                                if (!z4) {
-                                                    key_id = reg.getKey_id();
-                                                    if (key_id != null || key_id.length() == 0) {
-                                                        z5 = true;
-                                                    } else {
-                                                        z5 = false;
-                                                    }
-                                                    if (z5) {
-                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
-                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
-                                                        CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey2.getEncoded(), 2));
-                                                        AniVortexAuth.INSTANCE.invalidateCache();
-                                                        Log.i(str, "Registration complete! installation_id=" + reg.getInstallation_id() + " key_id=" + reg.getKey_id());
-                                                        z = true;
-                                                        return Boxing.boxBoolean(z);
-                                                    }
-                                                }
-                                                Log.w(str, "Register response missing fields: " + StringsKt.take(registerResp2.getText(), 300));
-                                                return Boxing.boxBoolean(false);
-                                            }
-                                        }
-                                        Log.w(str, "Invalid challenge response: " + StringsKt.take(challengeResp.getText(), 300));
-                                        return Boxing.boxBoolean(false);
-                                    } catch (Throwable th9) {
-                                        e = th9;
-                                        Log.w(str, "Registration failed: " + e.getMessage());
-                                        z = false;
-                                    }
-                                } catch (Throwable th10) {
-                                    e = th10;
-                                }
-                                Log.w(str, "Registration failed: " + e.getMessage());
-                                z = false;
-                                return Boxing.boxBoolean(z);
-                            } catch (Throwable th11) {
-                                e = th11;
-                            }
-                        } catch (Throwable th12) {
-                            e = th12;
-                            str = TAG;
-                        }
-                    } catch (Throwable th13) {
-                        e = th13;
-                        str = TAG;
-                    }
-                    break;
-                case 1:
-                    String challengeBody2 = (String) c00174.L$0;
-                    ResultKt.throwOnFailure($result);
-                    obj = coroutine_suspended;
-                    str2 = "application/json; charset=utf-8";
-                    str = TAG;
-                    challengeBody = challengeBody2;
-                    challengeResp = (NiceResponse) $result;
-                    if (!challengeResp.isSuccessful()) {
-                        Log.w(str, "Challenge request returned " + challengeResp.getCode() + ": " + StringsKt.take(challengeResp.getText(), 200));
-                        return Boxing.boxBoolean(false);
-                    }
-                    AppUtils appUtils3 = AppUtils.INSTANCE;
-                    value$iv = challengeResp.getText();
-                    if (value$iv == null) {
-                        Result.Companion companion9 = Result.Companion;
-                        KType kTypeTypeOf3 = Reflection.typeOf(ChallengeResponse.class);
-                        MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                        obj2 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf3));
-                        if (Result.exceptionOrNull-impl(obj2) != null) {
-                            Result.Companion companion10 = Result.Companion;
-                            obj2 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(ChallengeResponse.class), (List) null, 2, (Object) null));
-                        }
-                        obj4 = obj2;
-                        if (Result.isFailure-impl(obj4)) {
-                            obj4 = null;
-                        }
-                        deserializationStrategy = (KSerializer) obj4;
-                        if (deserializationStrategy != null) {
-                            objDecodeFromString = MainAPIKt.getJson().decodeFromString(deserializationStrategy, value$iv);
-                        } else {
-                            ObjectMapper $this$readValue$iv$iv$iv7 = MainAPIKt.getMapper();
-                            objDecodeFromString = $this$readValue$iv$iv$iv7.readValue(value$iv, new TypeReference<ChallengeResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$3
-                            });
-                        }
-                        obj3 = objDecodeFromString;
-                        break;
-                    } else {
-                        obj3 = null;
-                    }
-                    challenge = (ChallengeResponse) obj3;
-                    if (challenge != null) {
-                        challenge_id = challenge.getChallenge_id();
-                    } else {
-                        challenge_id = null;
-                    }
-                    str3 = challenge_id;
-                    if (str3 != null) {
-                        z2 = true;
-                    } else {
-                        z2 = true;
-                    }
-                    if (z2) {
-                        challenge2 = challenge.getChallenge();
-                        if (challenge2 != null) {
-                            z3 = true;
-                        } else {
-                            z3 = true;
-                        }
-                        if (z3) {
-                            challengeId = challenge.getChallenge_id();
-                            Intrinsics.checkNotNull(challengeId);
-                            String challenge4 = challenge.getChallenge();
-                            Intrinsics.checkNotNull(challenge4);
-                            challengeBytes = Base64.decode(challenge4, 11);
-                            keyPairGen = KeyPairGenerator.getInstance("EC");
-                            keyPairGen.initialize(new ECGenParameterSpec("secp256r1"));
-                            keyPair = keyPairGen.generateKeyPair();
-                            privateKey = keyPair.getPrivate();
-                            publicKey = keyPair.getPublic();
-                            if (publicKey instanceof ECPublicKey) {
-                                eCPublicKey = (ECPublicKey) publicKey;
-                            } else {
-                                eCPublicKey = null;
-                            }
-                            if (eCPublicKey == null) {
-                                AniVortexRegistration aniVortexRegistration2 = this;
-                                Log.w(str, "Generated key is not EC");
-                                return Boxing.boxBoolean(false);
-                            }
-                            ECPublicKey publicKey3 = eCPublicKey;
-                            byte[] leafDer2 = buildLeafCertificate(privateKey, publicKey3);
-                            CertificateFactory.getInstance("X.509").generateCertificate(new ByteArrayInputStream(leafDer2));
-                            String canonical2 = "ANIVORTEX-INSTALL-REGISTER-V1\n" + challengeId + '\n' + b64UrlNoPad(sha256(challengeBytes));
-                            Signature signer2 = Signature.getInstance("SHA256withECDSA");
-                            signer2.initSign(privateKey);
-                            byte[] bytes2 = canonical2.getBytes(Charsets.UTF_8);
-                            Intrinsics.checkNotNullExpressionValue(bytes2, "getBytes(...)");
-                            signer2.update(bytes2);
-                            String proofSig2 = b64UrlNoPad(signer2.sign());
-                            String leafB65 = Base64.encodeToString(leafDer2, 2);
-                            String registerBody2 = "{\"challenge_id\":\"" + challengeId + "\",\"certificate_chain\":[\"" + leafB65 + "\",\"" + leafB65 + "\"],\"proof_signature\":\"" + proofSig2 + "\"}";
-                            Requests app3 = MainActivityKt.getApp();
-                            Map<String, String> map3 = regHeaders;
-                            RequestBody requestBodyCreate3 = RequestBody.Companion.create(registerBody2, MediaType.Companion.parse(str2));
-                            c00174.L$0 = SpillingKt.nullOutSpilledVariable(challengeBody);
-                            c00174.L$1 = SpillingKt.nullOutSpilledVariable(challengeResp);
-                            c00174.L$2 = SpillingKt.nullOutSpilledVariable(challenge);
-                            c00174.L$3 = SpillingKt.nullOutSpilledVariable(challengeId);
-                            c00174.L$4 = SpillingKt.nullOutSpilledVariable(challengeBytes);
-                            c00174.L$5 = SpillingKt.nullOutSpilledVariable(keyPairGen);
-                            c00174.L$6 = SpillingKt.nullOutSpilledVariable(keyPair);
-                            c00174.L$7 = privateKey;
-                            c00174.L$8 = SpillingKt.nullOutSpilledVariable(publicKey3);
-                            c00174.L$9 = SpillingKt.nullOutSpilledVariable(leafDer2);
-                            c00174.L$10 = SpillingKt.nullOutSpilledVariable(canonical2);
-                            c00174.L$11 = SpillingKt.nullOutSpilledVariable(signer2);
-                            c00174.L$12 = SpillingKt.nullOutSpilledVariable(proofSig2);
-                            c00174.L$13 = SpillingKt.nullOutSpilledVariable(leafB65);
-                            c00174.L$14 = SpillingKt.nullOutSpilledVariable(registerBody2);
-                            c00174.label = 2;
-                            $result = Requests.post$default(app3, "https://api.anivortex.in/api/v1/install/register", map3, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00174, 65276, (Object) null);
-                            if ($result == obj) {
-                                return obj;
-                            }
-                            privateKey2 = privateKey;
-                            registerResp = (NiceResponse) $result;
-                            if (!registerResp.isSuccessful()) {
-                                Log.w(str, "Register returned (" + registerResp.getCode() + "): " + StringsKt.take(registerResp.getText(), 300));
-                                return Boxing.boxBoolean(false);
-                            }
-                            AppUtils appUtils4 = AppUtils.INSTANCE;
-                            value$iv2 = registerResp.getText();
-                            if (value$iv2 != null) {
-                                Result.Companion companion11 = Result.Companion;
-                                KType kTypeTypeOf4 = Reflection.typeOf(RegisterResponse.class);
-                                MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                                obj5 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf4));
-                                if (Result.exceptionOrNull-impl(obj5) == null) {
-                                    Result.Companion companion12 = Result.Companion;
-                                    registerResp2 = registerResp;
-                                    registerResp3 = null;
-                                    obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
-                                } else {
-                                    registerResp2 = registerResp;
-                                    registerResp3 = null;
-                                }
-                                if (Result.isFailure-impl(obj5)) {
-                                    obj5 = registerResp3;
-                                }
-                                deserializationStrategy2 = (KSerializer) obj5;
-                                if (deserializationStrategy2 != null) {
-                                    value$iv$iv = value$iv2;
-                                    objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv$iv);
-                                } else {
-                                    value$iv$iv = value$iv2;
-                                }
-                                ObjectMapper $this$readValue$iv$iv$iv8 = MainAPIKt.getMapper();
-                                String content$iv$iv$iv4 = value$iv$iv;
-                                objDecodeFromString2 = $this$readValue$iv$iv$iv8.readValue(content$iv$iv$iv4, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$4
-                                });
-                                break;
-                            } else {
-                                registerResp2 = registerResp;
-                                objDecodeFromString2 = null;
-                            }
-                            reg = (RegisterResponse) objDecodeFromString2;
-                            if (reg != null) {
-                                installation_id = reg.getInstallation_id();
-                            } else {
-                                installation_id = null;
-                            }
-                            str4 = installation_id;
-                            if (str4 != null) {
-                                z4 = true;
-                            } else {
-                                z4 = true;
-                            }
-                            if (!z4) {
-                                key_id = reg.getKey_id();
-                                if (key_id != null) {
-                                    z5 = true;
-                                } else {
-                                    z5 = true;
-                                }
-                                if (z5) {
-                                    CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
-                                    CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
-                                    CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey2.getEncoded(), 2));
-                                    AniVortexAuth.INSTANCE.invalidateCache();
-                                    Log.i(str, "Registration complete! installation_id=" + reg.getInstallation_id() + " key_id=" + reg.getKey_id());
-                                    z = true;
-                                    return Boxing.boxBoolean(z);
-                                }
-                            }
-                            Log.w(str, "Register response missing fields: " + StringsKt.take(registerResp2.getText(), 300));
-                            return Boxing.boxBoolean(false);
-                        }
-                    }
-                    Log.w(str, "Invalid challenge response: " + StringsKt.take(challengeResp.getText(), 300));
-                    return Boxing.boxBoolean(false);
-                    Log.w(str, "Registration failed: " + e.getMessage());
-                    z = false;
-                    return Boxing.boxBoolean(z);
-                case 2:
-                    privateKey2 = (PrivateKey) c00174.L$7;
-                    ResultKt.throwOnFailure($result);
-                    str = TAG;
-                    registerResp = (NiceResponse) $result;
-                    if (!registerResp.isSuccessful()) {
-                        Log.w(str, "Register returned (" + registerResp.getCode() + "): " + StringsKt.take(registerResp.getText(), 300));
-                        return Boxing.boxBoolean(false);
-                    }
-                    AppUtils appUtils5 = AppUtils.INSTANCE;
-                    value$iv2 = registerResp.getText();
-                    if (value$iv2 != null) {
-                        Result.Companion companion13 = Result.Companion;
-                        KType kTypeTypeOf5 = Reflection.typeOf(RegisterResponse.class);
-                        MagicApiIntrinsics.voidMagicApiCall("kotlinx.serialization.serializer.simple");
-                        obj5 = Result.constructor-impl(SerializersKt.serializer(kTypeTypeOf5));
-                        if (Result.exceptionOrNull-impl(obj5) == null) {
-                            Result.Companion companion14 = Result.Companion;
-                            registerResp2 = registerResp;
-                            registerResp3 = null;
-                            obj5 = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(RegisterResponse.class), (List) null, 2, (Object) null));
-                        } else {
-                            registerResp2 = registerResp;
-                            registerResp3 = null;
-                        }
-                        if (Result.isFailure-impl(obj5)) {
-                            obj5 = registerResp3;
-                        }
-                        deserializationStrategy2 = (KSerializer) obj5;
-                        if (deserializationStrategy2 != null) {
-                            value$iv$iv = value$iv2;
-                            objDecodeFromString2 = MainAPIKt.getJson().decodeFromString(deserializationStrategy2, value$iv$iv);
-                        } else {
-                            value$iv$iv = value$iv2;
-                        }
-                        ObjectMapper $this$readValue$iv$iv$iv9 = MainAPIKt.getMapper();
-                        String content$iv$iv$iv5 = value$iv$iv;
-                        objDecodeFromString2 = $this$readValue$iv$iv$iv9.readValue(content$iv$iv$iv5, new TypeReference<RegisterResponse>() { // from class: com.AniVortex.AniVortexRegistration$performRegistration$$inlined$tryParseJson$4
-                        });
-                        break;
-                    } else {
-                        registerResp2 = registerResp;
-                        objDecodeFromString2 = null;
-                    }
-                    reg = (RegisterResponse) objDecodeFromString2;
-                    if (reg != null) {
-                        installation_id = reg.getInstallation_id();
-                    } else {
-                        installation_id = null;
-                    }
-                    str4 = installation_id;
-                    if (str4 != null) {
-                        z4 = true;
-                    } else {
-                        z4 = true;
-                    }
-                    if (!z4) {
-                        key_id = reg.getKey_id();
-                        if (key_id != null) {
-                            z5 = true;
-                        } else {
-                            z5 = true;
-                        }
-                        if (z5) {
-                            CloudStreamApp.Companion.setKey("ANIVORTEX_INSTALL_ID", reg.getInstallation_id());
-                            CloudStreamApp.Companion.setKey("ANIVORTEX_KEY_ID", reg.getKey_id());
-                            CloudStreamApp.Companion.setKey("ANIVORTEX_PRIVATE_KEY", Base64.encodeToString(privateKey2.getEncoded(), 2));
-                            AniVortexAuth.INSTANCE.invalidateCache();
-                            Log.i(str, "Registration complete! installation_id=" + reg.getInstallation_id() + " key_id=" + reg.getKey_id());
-                            z = true;
-                            return Boxing.boxBoolean(z);
-                        }
-                    }
-                    Log.w(str, "Register response missing fields: " + StringsKt.take(registerResp2.getText(), 300));
-                    return Boxing.boxBoolean(false);
-                default:
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            }
-        } catch (Throwable th14) {
-            e = th14;
-            str = TAG;
         }
     }
 
@@ -2773,7 +2512,7 @@ public final class AniVortexRegistration {
         point[0] = 4;
         toFixedLengthBytes(publicKey.getW().getAffineX(), point, 1, 32);
         toFixedLengthBytes(publicKey.getW().getAffineY(), point, 33, 32);
-        return derSequence(derExplicitContextZero(derInteger(BigInteger.valueOf(2L))), derInteger(BigInteger.ONE), derSequence(derOid(ECDSA_WITH_SHA256)), derCnName(), derSequence(derUtcTime("700101000000Z"), derGeneralizedTime("99991231235959Z")), derCnName(), derSequence(derSequence(derOid(ID_EC_PUBLIC_KEY), derOid(PRIME256V1)), derBitString(point)));
+        return derSequence(derExplicitContextZero(derInteger(BigInteger.valueOf(2L))), derInteger(BigInteger.ONE), derSequence(derOid(ECDSA_WITH_SHA256)), derCnName(), derSequence(derUtcTime(getUtcTime(System.currentTimeMillis() - 86400000)), derUtcTime(getUtcTime(System.currentTimeMillis() + 31536000000L))), derCnName(), derSequence(derSequence(derOid(ID_EC_PUBLIC_KEY), derOid(PRIME256V1)), derBitString(point)));
     }
 
     private final byte[] derCnName() {
@@ -2843,6 +2582,12 @@ public final class AniVortexRegistration {
         byte[] bytes = value.getBytes(Charsets.UTF_8);
         Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
         return derTagged((byte) 12, bytes, true);
+    }
+
+    private final String getUtcTime(long epochMs) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyMMddHHmmss'Z'", Locale.US);
+        sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+        return sdf.format(new Date(epochMs));
     }
 
     private final byte[] derUtcTime(String value) {

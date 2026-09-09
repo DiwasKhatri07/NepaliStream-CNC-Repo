@@ -59,14 +59,14 @@ public final class StreamPlayCache {
     /* JADX INFO: compiled from: StreamPlayCache.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayCache", f = "StreamPlayCache.kt", i = {0, 0, 0}, l = {289}, m = "cacheApiBase", n = {"url", "$this$withLock_u24default$iv", "success"}, nl = {290}, s = {"L$0", "L$1", "Z$0"}, v = 2)
-    static final class C00991 extends ContinuationImpl {
+    static final class C01041 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         boolean Z$0;
         int label;
         /* synthetic */ Object result;
 
-        C00991(Continuation<? super C00991> continuation) {
+        C01041(Continuation<? super C01041> continuation) {
             super(continuation);
         }
 
@@ -82,12 +82,12 @@ public final class StreamPlayCache {
     /* JADX INFO: compiled from: StreamPlayCache.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.StreamPlayCache", f = "StreamPlayCache.kt", i = {0}, l = {289}, m = "getCachedApiBase", n = {"$this$withLock_u24default$iv"}, nl = {290}, s = {"L$0"}, v = 2)
-    static final class C01001 extends ContinuationImpl {
+    static final class C01051 extends ContinuationImpl {
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C01001(Continuation<? super C01001> continuation) {
+        C01051(Continuation<? super C01051> continuation) {
             super(continuation);
         }
 
@@ -214,37 +214,37 @@ public final class StreamPlayCache {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public final Object getCachedApiBase(@NotNull Continuation<? super String> continuation) {
-        C01001 c01001;
+        C01051 c01051;
         Mutex $this$withLock_u24default$iv;
         Object owner$iv;
         String url;
-        if (continuation instanceof C01001) {
-            c01001 = (C01001) continuation;
-            if ((c01001.label & Integer.MIN_VALUE) != 0) {
-                c01001.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C01051) {
+            c01051 = (C01051) continuation;
+            if ((c01051.label & Integer.MIN_VALUE) != 0) {
+                c01051.label -= Integer.MIN_VALUE;
             } else {
-                c01001 = new C01001(continuation);
+                c01051 = new C01051(continuation);
             }
         } else {
-            c01001 = new C01001(continuation);
+            c01051 = new C01051(continuation);
         }
-        C01001 c01002 = c01001;
-        Object $result = c01002.result;
+        C01051 c01052 = c01051;
+        Object $result = c01052.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c01002.label) {
+        switch (c01052.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 $this$withLock_u24default$iv = apiCacheMutex;
                 owner$iv = null;
-                c01002.L$0 = $this$withLock_u24default$iv;
-                c01002.label = 1;
-                if ($this$withLock_u24default$iv.lock((Object) null, c01002) == coroutine_suspended) {
+                c01052.L$0 = $this$withLock_u24default$iv;
+                c01052.label = 1;
+                if ($this$withLock_u24default$iv.lock((Object) null, c01052) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 break;
             case 1:
                 owner$iv = null;
-                $this$withLock_u24default$iv = (Mutex) c01002.L$0;
+                $this$withLock_u24default$iv = (Mutex) c01052.L$0;
                 ResultKt.throwOnFailure($result);
                 break;
             default:
@@ -288,34 +288,34 @@ public final class StreamPlayCache {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public final Object cacheApiBase(@NotNull String url, boolean success, @NotNull Continuation<? super Unit> continuation) {
-        C00991 c00991;
+        C01041 c01041;
         String url2;
         Mutex $this$withLock_u24default$iv;
         Mutex $this$withLock_u24default$iv2;
         boolean success2;
         ApiCacheEntry apiCacheEntry2;
-        if (continuation instanceof C00991) {
-            c00991 = (C00991) continuation;
-            if ((c00991.label & Integer.MIN_VALUE) != 0) {
-                c00991.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C01041) {
+            c01041 = (C01041) continuation;
+            if ((c01041.label & Integer.MIN_VALUE) != 0) {
+                c01041.label -= Integer.MIN_VALUE;
             } else {
-                c00991 = new C00991(continuation);
+                c01041 = new C01041(continuation);
             }
         } else {
-            c00991 = new C00991(continuation);
+            c01041 = new C01041(continuation);
         }
-        C00991 c00992 = c00991;
-        Object $result = c00992.result;
+        C01041 c01042 = c01041;
+        Object $result = c01042.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00992.label) {
+        switch (c01042.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Mutex $this$withLock_u24default$iv3 = apiCacheMutex;
-                c00992.L$0 = url;
-                c00992.L$1 = $this$withLock_u24default$iv3;
-                c00992.Z$0 = success;
-                c00992.label = 1;
-                if ($this$withLock_u24default$iv3.lock((Object) null, c00992) == coroutine_suspended) {
+                c01042.L$0 = url;
+                c01042.L$1 = $this$withLock_u24default$iv3;
+                c01042.Z$0 = success;
+                c01042.label = 1;
+                if ($this$withLock_u24default$iv3.lock((Object) null, c01042) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 url2 = url;
@@ -325,9 +325,9 @@ public final class StreamPlayCache {
                 break;
                 break;
             case 1:
-                success2 = c00992.Z$0;
-                Mutex $this$withLock_u24default$iv4 = (Mutex) c00992.L$1;
-                String url3 = (String) c00992.L$0;
+                success2 = c01042.Z$0;
+                Mutex $this$withLock_u24default$iv4 = (Mutex) c01042.L$1;
+                String url3 = (String) c01042.L$0;
                 ResultKt.throwOnFailure($result);
                 url2 = url3;
                 $this$withLock_u24default$iv = $this$withLock_u24default$iv4;

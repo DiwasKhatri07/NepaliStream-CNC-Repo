@@ -42,7 +42,7 @@ public final class OFile extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.OFile", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {1200, 1209, 1215}, m = "getUrl", n = {"url", "referer", "subtitleCallback", "callback", "cf", "url", "referer", "subtitleCallback", "callback", "cf", "redirectedUrl", "baseDomain", "id", "idIndex", "url", "referer", "subtitleCallback", "callback", "cf", "redirectedUrl", "baseDomain", "id", "hubcloudUrl", "idIndex"}, nl = {1202, 1212, 1221}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0"}, v = 2)
-    static final class C00501 extends ContinuationImpl {
+    static final class C00511 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -56,7 +56,7 @@ public final class OFile extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00501(Continuation<? super C00501> continuation) {
+        C00511(Continuation<? super C00511> continuation) {
             super(continuation);
         }
 
@@ -96,9 +96,9 @@ public final class OFile extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getUrl(@NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Unit> continuation) {
-        C00501 c00501;
+        C00511 c00511;
         Object obj;
-        C00501 c00502;
+        C00511 c00512;
         Function1<? super SubtitleFile, Unit> function3;
         Function1<? super ExtractorLink, Unit> function4;
         Object obj2;
@@ -113,7 +113,7 @@ public final class OFile extends ExtractorApi {
         Function1<? super SubtitleFile, Unit> function5;
         Function1<? super ExtractorLink, Unit> function6;
         String referer3;
-        C00501 c00503;
+        C00511 c00513;
         String id2;
         String url3;
         CloudflareKiller cf2;
@@ -125,32 +125,32 @@ public final class OFile extends ExtractorApi {
         String baseDomain2;
         String hubcloudUrl;
         String str;
-        if (continuation instanceof C00501) {
-            c00501 = (C00501) continuation;
-            if ((c00501.label & Integer.MIN_VALUE) != 0) {
-                c00501.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00511) {
+            c00511 = (C00511) continuation;
+            if ((c00511.label & Integer.MIN_VALUE) != 0) {
+                c00511.label -= Integer.MIN_VALUE;
             } else {
-                c00501 = new C00501(continuation);
+                c00511 = new C00511(continuation);
             }
         } else {
-            c00501 = new C00501(continuation);
+            c00511 = new C00511(continuation);
         }
-        Object $result = c00501.result;
+        Object $result = c00511.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00501.label) {
+        switch (c00511.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 CloudflareKiller cf3 = new CloudflareKiller();
-                c00501.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                c00501.L$1 = referer;
-                c00501.L$2 = function1;
-                c00501.L$3 = function2;
-                c00501.L$4 = cf3;
-                c00501.label = 1;
-                C00501 c00504 = c00501;
+                c00511.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                c00511.L$1 = referer;
+                c00511.L$2 = function1;
+                c00511.L$3 = function2;
+                c00511.L$4 = cf3;
+                c00511.label = 1;
+                C00511 c00514 = c00511;
                 obj = coroutine_suspended;
-                Object obj3 = Requests.get$default(MainActivityKt.getApp(), url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) cf3, false, (ResponseParser) null, c00504, 3582, (Object) null);
-                c00502 = c00504;
+                Object obj3 = Requests.get$default(MainActivityKt.getApp(), url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) cf3, false, (ResponseParser) null, c00514, 3582, (Object) null);
+                c00512 = c00514;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -178,22 +178,22 @@ public final class OFile extends ExtractorApi {
                 if (z) {
                     return Unit.INSTANCE;
                 }
-                c00502.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c00502.L$1 = referer2;
-                c00502.L$2 = function3;
-                c00502.L$3 = function4;
-                c00502.L$4 = SpillingKt.nullOutSpilledVariable(cf);
-                c00502.L$5 = SpillingKt.nullOutSpilledVariable(redirectedUrl);
-                c00502.L$6 = baseDomain;
-                c00502.L$7 = SpillingKt.nullOutSpilledVariable(id);
-                c00502.I$0 = idIndex;
-                c00502.label = 2;
+                c00512.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c00512.L$1 = referer2;
+                c00512.L$2 = function3;
+                c00512.L$3 = function4;
+                c00512.L$4 = SpillingKt.nullOutSpilledVariable(cf);
+                c00512.L$5 = SpillingKt.nullOutSpilledVariable(redirectedUrl);
+                c00512.L$6 = baseDomain;
+                c00512.L$7 = SpillingKt.nullOutSpilledVariable(id);
+                c00512.I$0 = idIndex;
+                c00512.label = 2;
                 function5 = function3;
                 function6 = function4;
                 referer3 = referer2;
-                C00501 c00505 = c00502;
-                $result = Requests.get$default(MainActivityKt.getApp(), baseDomain + "/api/s/" + id + "/hubcloud", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) cf, false, (ResponseParser) null, c00505, 3582, (Object) null);
-                c00503 = c00505;
+                C00511 c00515 = c00512;
+                $result = Requests.get$default(MainActivityKt.getApp(), baseDomain + "/api/s/" + id + "/hubcloud", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) cf, false, (ResponseParser) null, c00515, 3582, (Object) null);
+                c00513 = c00515;
                 if ($result == obj) {
                     return obj;
                 }
@@ -212,29 +212,29 @@ public final class OFile extends ExtractorApi {
                 } else {
                     str = referer4;
                 }
-                c00503.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                c00503.L$1 = SpillingKt.nullOutSpilledVariable(referer4);
-                c00503.L$2 = SpillingKt.nullOutSpilledVariable(function7);
-                c00503.L$3 = SpillingKt.nullOutSpilledVariable(function8);
-                c00503.L$4 = SpillingKt.nullOutSpilledVariable(cf2);
-                c00503.L$5 = SpillingKt.nullOutSpilledVariable(redirectedUrl2);
-                c00503.L$6 = SpillingKt.nullOutSpilledVariable(baseDomain2);
-                c00503.L$7 = SpillingKt.nullOutSpilledVariable(id2);
-                c00503.L$8 = SpillingKt.nullOutSpilledVariable(hubcloudUrl);
-                c00503.I$0 = idIndex2;
-                c00503.label = 3;
-                if (ExtractorApiKt.loadExtractor(hubcloudUrl, str, function7, function8, c00503) == obj) {
+                c00513.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                c00513.L$1 = SpillingKt.nullOutSpilledVariable(referer4);
+                c00513.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                c00513.L$3 = SpillingKt.nullOutSpilledVariable(function8);
+                c00513.L$4 = SpillingKt.nullOutSpilledVariable(cf2);
+                c00513.L$5 = SpillingKt.nullOutSpilledVariable(redirectedUrl2);
+                c00513.L$6 = SpillingKt.nullOutSpilledVariable(baseDomain2);
+                c00513.L$7 = SpillingKt.nullOutSpilledVariable(id2);
+                c00513.L$8 = SpillingKt.nullOutSpilledVariable(hubcloudUrl);
+                c00513.I$0 = idIndex2;
+                c00513.label = 3;
+                if (ExtractorApiKt.loadExtractor(hubcloudUrl, str, function7, function8, c00513) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 1:
-                CloudflareKiller cf4 = (CloudflareKiller) c00501.L$4;
-                Function1<? super ExtractorLink, Unit> function9 = (Function1) c00501.L$3;
-                Function1<? super SubtitleFile, Unit> function10 = (Function1) c00501.L$2;
-                String referer5 = (String) c00501.L$1;
-                String url4 = (String) c00501.L$0;
+                CloudflareKiller cf4 = (CloudflareKiller) c00511.L$4;
+                Function1<? super ExtractorLink, Unit> function9 = (Function1) c00511.L$3;
+                Function1<? super SubtitleFile, Unit> function10 = (Function1) c00511.L$2;
+                String referer5 = (String) c00511.L$1;
+                String url4 = (String) c00511.L$0;
                 ResultKt.throwOnFailure($result);
-                c00502 = c00501;
+                c00512 = c00511;
                 obj = coroutine_suspended;
                 cf = cf4;
                 function4 = function9;
@@ -260,22 +260,22 @@ public final class OFile extends ExtractorApi {
                 if (z) {
                     return Unit.INSTANCE;
                 }
-                c00502.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                c00502.L$1 = referer2;
-                c00502.L$2 = function3;
-                c00502.L$3 = function4;
-                c00502.L$4 = SpillingKt.nullOutSpilledVariable(cf);
-                c00502.L$5 = SpillingKt.nullOutSpilledVariable(redirectedUrl);
-                c00502.L$6 = baseDomain;
-                c00502.L$7 = SpillingKt.nullOutSpilledVariable(id);
-                c00502.I$0 = idIndex;
-                c00502.label = 2;
+                c00512.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                c00512.L$1 = referer2;
+                c00512.L$2 = function3;
+                c00512.L$3 = function4;
+                c00512.L$4 = SpillingKt.nullOutSpilledVariable(cf);
+                c00512.L$5 = SpillingKt.nullOutSpilledVariable(redirectedUrl);
+                c00512.L$6 = baseDomain;
+                c00512.L$7 = SpillingKt.nullOutSpilledVariable(id);
+                c00512.I$0 = idIndex;
+                c00512.label = 2;
                 function5 = function3;
                 function6 = function4;
                 referer3 = referer2;
-                C00501 c00506 = c00502;
-                $result = Requests.get$default(MainActivityKt.getApp(), baseDomain + "/api/s/" + id + "/hubcloud", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) cf, false, (ResponseParser) null, c00506, 3582, (Object) null);
-                c00503 = c00506;
+                C00511 c00516 = c00512;
+                $result = Requests.get$default(MainActivityKt.getApp(), baseDomain + "/api/s/" + id + "/hubcloud", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) cf, false, (ResponseParser) null, c00516, 3582, (Object) null);
+                c00513 = c00516;
                 if ($result == obj) {
                     return obj;
                 }
@@ -294,33 +294,33 @@ public final class OFile extends ExtractorApi {
                 } else {
                     str = referer4;
                 }
-                c00503.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                c00503.L$1 = SpillingKt.nullOutSpilledVariable(referer4);
-                c00503.L$2 = SpillingKt.nullOutSpilledVariable(function7);
-                c00503.L$3 = SpillingKt.nullOutSpilledVariable(function8);
-                c00503.L$4 = SpillingKt.nullOutSpilledVariable(cf2);
-                c00503.L$5 = SpillingKt.nullOutSpilledVariable(redirectedUrl2);
-                c00503.L$6 = SpillingKt.nullOutSpilledVariable(baseDomain2);
-                c00503.L$7 = SpillingKt.nullOutSpilledVariable(id2);
-                c00503.L$8 = SpillingKt.nullOutSpilledVariable(hubcloudUrl);
-                c00503.I$0 = idIndex2;
-                c00503.label = 3;
-                if (ExtractorApiKt.loadExtractor(hubcloudUrl, str, function7, function8, c00503) == obj) {
+                c00513.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                c00513.L$1 = SpillingKt.nullOutSpilledVariable(referer4);
+                c00513.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                c00513.L$3 = SpillingKt.nullOutSpilledVariable(function8);
+                c00513.L$4 = SpillingKt.nullOutSpilledVariable(cf2);
+                c00513.L$5 = SpillingKt.nullOutSpilledVariable(redirectedUrl2);
+                c00513.L$6 = SpillingKt.nullOutSpilledVariable(baseDomain2);
+                c00513.L$7 = SpillingKt.nullOutSpilledVariable(id2);
+                c00513.L$8 = SpillingKt.nullOutSpilledVariable(hubcloudUrl);
+                c00513.I$0 = idIndex2;
+                c00513.label = 3;
+                if (ExtractorApiKt.loadExtractor(hubcloudUrl, str, function7, function8, c00513) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 2:
-                idIndex2 = c00501.I$0;
-                id2 = (String) c00501.L$7;
-                baseDomain2 = (String) c00501.L$6;
-                redirectedUrl2 = (String) c00501.L$5;
-                cf2 = (CloudflareKiller) c00501.L$4;
-                function8 = (Function1) c00501.L$3;
-                function7 = (Function1) c00501.L$2;
-                referer4 = (String) c00501.L$1;
-                url3 = (String) c00501.L$0;
+                idIndex2 = c00511.I$0;
+                id2 = (String) c00511.L$7;
+                baseDomain2 = (String) c00511.L$6;
+                redirectedUrl2 = (String) c00511.L$5;
+                cf2 = (CloudflareKiller) c00511.L$4;
+                function8 = (Function1) c00511.L$3;
+                function7 = (Function1) c00511.L$2;
+                referer4 = (String) c00511.L$1;
+                url3 = (String) c00511.L$0;
                 ResultKt.throwOnFailure($result);
-                c00503 = c00501;
+                c00513 = c00511;
                 obj = coroutine_suspended;
                 hubcloudUrl = ((NiceResponse) $result).getUrl();
                 if (referer4 == null) {
@@ -328,23 +328,23 @@ public final class OFile extends ExtractorApi {
                 } else {
                     str = referer4;
                 }
-                c00503.L$0 = SpillingKt.nullOutSpilledVariable(url3);
-                c00503.L$1 = SpillingKt.nullOutSpilledVariable(referer4);
-                c00503.L$2 = SpillingKt.nullOutSpilledVariable(function7);
-                c00503.L$3 = SpillingKt.nullOutSpilledVariable(function8);
-                c00503.L$4 = SpillingKt.nullOutSpilledVariable(cf2);
-                c00503.L$5 = SpillingKt.nullOutSpilledVariable(redirectedUrl2);
-                c00503.L$6 = SpillingKt.nullOutSpilledVariable(baseDomain2);
-                c00503.L$7 = SpillingKt.nullOutSpilledVariable(id2);
-                c00503.L$8 = SpillingKt.nullOutSpilledVariable(hubcloudUrl);
-                c00503.I$0 = idIndex2;
-                c00503.label = 3;
-                if (ExtractorApiKt.loadExtractor(hubcloudUrl, str, function7, function8, c00503) == obj) {
+                c00513.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                c00513.L$1 = SpillingKt.nullOutSpilledVariable(referer4);
+                c00513.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                c00513.L$3 = SpillingKt.nullOutSpilledVariable(function8);
+                c00513.L$4 = SpillingKt.nullOutSpilledVariable(cf2);
+                c00513.L$5 = SpillingKt.nullOutSpilledVariable(redirectedUrl2);
+                c00513.L$6 = SpillingKt.nullOutSpilledVariable(baseDomain2);
+                c00513.L$7 = SpillingKt.nullOutSpilledVariable(id2);
+                c00513.L$8 = SpillingKt.nullOutSpilledVariable(hubcloudUrl);
+                c00513.I$0 = idIndex2;
+                c00513.label = 3;
+                if (ExtractorApiKt.loadExtractor(hubcloudUrl, str, function7, function8, c00513) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 3:
-                int i = c00501.I$0;
+                int i = c00511.I$0;
                 ResultKt.throwOnFailure($result);
                 return Unit.INSTANCE;
             default:

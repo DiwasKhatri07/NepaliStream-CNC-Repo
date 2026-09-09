@@ -4,7 +4,7 @@ package nepali.stream.decoded.torrastream
 object PluginMetadata {
     const val name: String = "TorraStream"
     const val originalPluginClass: String = "com.phisher98.TorraStreamProvider"
-    const val version: Int = 94
+    const val version: Int = 95
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

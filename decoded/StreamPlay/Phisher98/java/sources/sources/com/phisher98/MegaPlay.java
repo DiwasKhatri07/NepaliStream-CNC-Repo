@@ -5,6 +5,7 @@ import com.lagradost.cloudstream3.utils.ExtractorApi;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import java.util.Base64;
 import java.util.List;
+import java.util.Map;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
 import javax.crypto.spec.IvParameterSpec;
@@ -15,9 +16,12 @@ import kotlin.ResultKt;
 import kotlin.Unit;
 import kotlin.collections.ArraysKt;
 import kotlin.coroutines.Continuation;
+import kotlin.coroutines.intrinsics.IntrinsicsKt;
 import kotlin.coroutines.jvm.internal.ContinuationImpl;
 import kotlin.coroutines.jvm.internal.DebugMetadata;
+import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function1;
+import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SourceDebugExtension;
@@ -33,7 +37,7 @@ import org.json.JSONObject;
 /* JADX INFO: compiled from: Extractors.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/StreamPlay/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000b\b\u0016\u0018\u0000 \u001b2\u00020\u0001:\u0006\u001b\u001c\u001d\u001e\u001f B\u0007¢\u0006\u0004\b\u0002\u0010\u0003JH\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u00052\b\u0010\u0011\u001a\u0004\u0018\u00010\u00052\u0012\u0010\u0012\u001a\u000e\u0012\u0004\u0012\u00020\u0014\u0012\u0004\u0012\u00020\u000f0\u00132\u0012\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\u0016\u0012\u0004\u0012\u00020\u000f0\u0013H\u0096@¢\u0006\u0002\u0010\u0017J\u0010\u0010\u0018\u001a\u00020\u00052\u0006\u0010\u0010\u001a\u00020\u0005H\u0002J\u0012\u0010\u0019\u001a\u0004\u0018\u00010\u00052\u0006\u0010\u001a\u001a\u00020\u0005H\u0002R\u0014\u0010\u0004\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007R\u0014\u0010\b\u001a\u00020\u0005X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\t\u0010\u0007R\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\r¨\u0006!"}, d2 = {"Lcom/phisher98/MegaPlay;", "Lcom/lagradost/cloudstream3/utils/ExtractorApi;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "mainUrl", "getMainUrl", "requiresReferer", "", "getRequiresReferer", "()Z", "getUrl", "", "url", "referer", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "signMegaPlayUrl", "decryptMegaPlaySources", "enc", "Companion", "MegaPlayResponse", "Source", "Track", "Intro", "Outro", "StreamPlay"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/MegaPlay\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,4049:1\n73#2,5:4050\n1#3:4055\n2068#4,2:4056\n2068#4,2:4058\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/MegaPlay\n*L\n3197#1:4050,5\n3205#1:4056,2\n3207#1:4058,2\n*E\n"})
+@SourceDebugExtension({"SMAP\nExtractors.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Extractors.kt\ncom/phisher98/MegaPlay\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,4076:1\n73#2,5:4077\n1#3:4082\n2068#4,2:4083\n2068#4,2:4085\n*S KotlinDebug\n*F\n+ 1 Extractors.kt\ncom/phisher98/MegaPlay\n*L\n3212#1:4077,5\n3223#1:4083,2\n3231#1:4085,2\n*E\n"})
 public class MegaPlay extends ExtractorApi {
 
     @NotNull
@@ -55,7 +59,7 @@ public class MegaPlay extends ExtractorApi {
     /* JADX INFO: renamed from: com.phisher98.MegaPlay$getUrl$1 */
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.MegaPlay", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {3180, 3196, 3204, 3213}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "mainHeaders", "headers", "$this", "url", "referer", "subtitleCallback", "callback", "mainHeaders", "headers", "page", "id", "apiUrl", "$this", "url", "referer", "subtitleCallback", "callback", "mainHeaders", "headers", "page", "id", "apiUrl", "response", "m3u8", "$this", "url", "referer", "subtitleCallback", "callback", "mainHeaders", "headers", "page", "id", "apiUrl", "response", "m3u8", "$this$forEach$iv", "element$iv", "track", "label", "file"}, nl = {3182, 3197, 3205, 3212}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$14", "L$15", "L$16", "L$17"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.MegaPlay", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {3191, 3211, 3221, 3225, 3238}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "origin", "mainHeaders", "headers", "$this", "url", "referer", "subtitleCallback", "callback", "origin", "mainHeaders", "headers", "page", "id", "type", "apiUrl", "$this", "url", "referer", "subtitleCallback", "callback", "origin", "mainHeaders", "headers", "page", "id", "type", "apiUrl", "response", "m3u8", "streamType", "streamLabel", "$this", "url", "referer", "subtitleCallback", "callback", "origin", "mainHeaders", "headers", "page", "id", "type", "apiUrl", "response", "m3u8", "streamType", "streamLabel", "generated", "$this", "url", "referer", "subtitleCallback", "callback", "origin", "mainHeaders", "headers", "page", "id", "type", "apiUrl", "response", "m3u8", "streamType", "streamLabel", "generated", "$this$forEach$iv", "element$iv", "track", "trackUrl", "file", "label"}, nl = {3193, 3212, 3222, 3231, 3237}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$19", "L$20", "L$21", "L$22", "L$23"}, v = 2)
     static final class C00451 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -68,7 +72,13 @@ public class MegaPlay extends ExtractorApi {
         Object L$16;
         Object L$17;
         Object L$18;
+        Object L$19;
         Object L$2;
+        Object L$20;
+        Object L$21;
+        Object L$22;
+        Object L$23;
+        Object L$24;
         Object L$3;
         Object L$4;
         Object L$5;
@@ -110,26 +120,74 @@ public class MegaPlay extends ExtractorApi {
         return this.requiresReferer;
     }
 
-    /* JADX WARN: Code duplicated, block: B:104:0x0402  */
-    /* JADX WARN: Code duplicated, block: B:126:0x04b6 A[Catch: Exception -> 0x0606, TRY_LEAVE, TryCatch #17 {Exception -> 0x0606, blocks: (B:124:0x04b0, B:126:0x04b6), top: B:217:0x04b0 }] */
-    /* JADX WARN: Code duplicated, block: B:133:0x04dd  */
-    /* JADX WARN: Code duplicated, block: B:189:0x04d0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Path cross not found for [B:189:0x04d0, B:136:0x04ef], limit reached: 216 */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:133:0x04dd -> B:153:0x05d7). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:138:0x04f5 -> B:153:0x05d7). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:149:0x0592 -> B:203:0x05b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Code duplicated, block: B:137:0x05a1  */
+    /* JADX WARN: Code duplicated, block: B:178:0x074a A[Catch: Exception -> 0x08cc, TRY_LEAVE, TryCatch #3 {Exception -> 0x08cc, blocks: (B:176:0x0744, B:178:0x074a), top: B:242:0x0744 }] */
+    /* JADX WARN: Code duplicated, block: B:182:0x0764 A[Catch: Exception -> 0x08c0, TryCatch #8 {Exception -> 0x08c0, blocks: (B:180:0x075c, B:182:0x0764, B:186:0x077b, B:189:0x078b, B:193:0x07c5, B:196:0x07cd, B:192:0x07a0, B:207:0x08b4), top: B:252:0x075c }] */
+    /* JADX WARN: Code duplicated, block: B:186:0x077b A[Catch: Exception -> 0x08c0, TryCatch #8 {Exception -> 0x08c0, blocks: (B:180:0x075c, B:182:0x0764, B:186:0x077b, B:189:0x078b, B:193:0x07c5, B:196:0x07cd, B:192:0x07a0, B:207:0x08b4), top: B:252:0x075c }] */
+    /* JADX WARN: Code duplicated, block: B:188:0x0781  */
+    /* JADX WARN: Code duplicated, block: B:189:0x078b A[Catch: Exception -> 0x08c0, TryCatch #8 {Exception -> 0x08c0, blocks: (B:180:0x075c, B:182:0x0764, B:186:0x077b, B:189:0x078b, B:193:0x07c5, B:196:0x07cd, B:192:0x07a0, B:207:0x08b4), top: B:252:0x075c }] */
+    /* JADX WARN: Code duplicated, block: B:191:0x079c  */
+    /* JADX WARN: Code duplicated, block: B:192:0x07a0 A[Catch: Exception -> 0x08c0, TryCatch #8 {Exception -> 0x08c0, blocks: (B:180:0x075c, B:182:0x0764, B:186:0x077b, B:189:0x078b, B:193:0x07c5, B:196:0x07cd, B:192:0x07a0, B:207:0x08b4), top: B:252:0x075c }] */
+    /* JADX WARN: Code duplicated, block: B:195:0x07cb  */
+    /* JADX WARN: Code duplicated, block: B:198:0x0861 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:199:0x0862  */
+    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:185:0x0771 -> B:203:0x089c). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:188:0x0781 -> B:203:0x089c). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:199:0x0862 -> B:277:0x0884). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
-    static /* synthetic */ java.lang.Object getUrl$suspendImpl(com.phisher98.MegaPlay r28, java.lang.String r29, java.lang.String r30, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r31, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r32, kotlin.coroutines.Continuation<? super kotlin.Unit> r33) {
+    static /* synthetic */ java.lang.Object getUrl$suspendImpl(com.phisher98.MegaPlay r39, java.lang.String r40, java.lang.String r41, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r42, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r43, kotlin.coroutines.Continuation<? super kotlin.Unit> r44) {
         /*
-            Method dump skipped, instruction units count: 1742
+            Method dump skipped, instruction units count: 2472
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.phisher98.MegaPlay.getUrl$suspendImpl(com.phisher98.MegaPlay, java.lang.String, java.lang.String, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.MegaPlay$getUrl$2 */
+    /* JADX INFO: compiled from: Extractors.kt */
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.MegaPlay$getUrl$2", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00462 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+        final /* synthetic */ Map<String, String> $mainHeaders;
+        final /* synthetic */ String $origin;
+        private /* synthetic */ Object L$0;
+        int label;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        C00462(String str, Map<String, String> map, Continuation<? super C00462> continuation) {
+            super(2, continuation);
+            this.$origin = str;
+            this.$mainHeaders = map;
+        }
+
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            Continuation<Unit> c00462 = new C00462(this.$origin, this.$mainHeaders, continuation);
+            c00462.L$0 = obj;
+            return c00462;
+        }
+
+        public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
+            return create(extractorLink, continuation).invokeSuspend(Unit.INSTANCE);
+        }
+
+        public final Object invokeSuspend(Object $result) {
+            ExtractorLink $this$newExtractorLink = (ExtractorLink) this.L$0;
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            switch (this.label) {
+                case 0:
+                    ResultKt.throwOnFailure($result);
+                    $this$newExtractorLink.setReferer(this.$origin + '/');
+                    $this$newExtractorLink.setHeaders(this.$mainHeaders);
+                    return Unit.INSTANCE;
+                default:
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+        }
     }
 
     private final String signMegaPlayUrl(String url) {

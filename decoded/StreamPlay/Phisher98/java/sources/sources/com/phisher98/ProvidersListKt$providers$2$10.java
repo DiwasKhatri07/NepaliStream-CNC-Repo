@@ -37,9 +37,10 @@ final class ProvidersListKt$providers$2$10 extends SuspendLambda implements Func
     }
 
     /* JADX WARN: Code duplicated, block: B:15:0x0057  */
-    /* JADX WARN: Code duplicated, block: B:18:0x0087 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:18:0x008f A[RETURN] */
     public final Object invokeSuspend(Object $result) {
         Object animeIds;
+        StreamPlayExtractor.AnimeResolvedIds ids;
         StreamPlayExtractor streamPlayExtractor;
         Integer anilistId;
         String title;
@@ -59,7 +60,7 @@ final class ProvidersListKt$providers$2$10 extends SuspendLambda implements Func
                     if (animeIds == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    StreamPlayExtractor.AnimeResolvedIds ids = (StreamPlayExtractor.AnimeResolvedIds) animeIds;
+                    ids = (StreamPlayExtractor.AnimeResolvedIds) animeIds;
                     streamPlayExtractor = StreamPlayExtractor.INSTANCE;
                     anilistId = ids.getAnilistId();
                     title = res.getTitle();
@@ -71,7 +72,7 @@ final class ProvidersListKt$providers$2$10 extends SuspendLambda implements Func
                     this.L$2 = SpillingKt.nullOutSpilledVariable(function2);
                     this.L$3 = SpillingKt.nullOutSpilledVariable(ids);
                     this.label = 2;
-                    if (streamPlayExtractor.invokeAnikoto(anilistId, title, res.getEpisode(), function1, function2, ProvidersListKt.getDubStatus(res), (Continuation) this) == coroutine_suspended) {
+                    if (streamPlayExtractor.invokeAnikoto(anilistId, title, res.getEpisode(), function1, function2, ProvidersListKt.getDubStatus(res), ids.getMalId(), res.getJpTitle(), (Continuation) this) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                 }
@@ -79,9 +80,9 @@ final class ProvidersListKt$providers$2$10 extends SuspendLambda implements Func
             case 1:
                 ResultKt.throwOnFailure($result);
                 animeIds = $result;
-                StreamPlayExtractor.AnimeResolvedIds ids2 = (StreamPlayExtractor.AnimeResolvedIds) animeIds;
+                ids = (StreamPlayExtractor.AnimeResolvedIds) animeIds;
                 streamPlayExtractor = StreamPlayExtractor.INSTANCE;
-                anilistId = ids2.getAnilistId();
+                anilistId = ids.getAnilistId();
                 title = res.getTitle();
                 if (title == null) {
                     title = res.getJpTitle();
@@ -89,9 +90,9 @@ final class ProvidersListKt$providers$2$10 extends SuspendLambda implements Func
                 this.L$0 = SpillingKt.nullOutSpilledVariable(res);
                 this.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                 this.L$2 = SpillingKt.nullOutSpilledVariable(function2);
-                this.L$3 = SpillingKt.nullOutSpilledVariable(ids2);
+                this.L$3 = SpillingKt.nullOutSpilledVariable(ids);
                 this.label = 2;
-                if (streamPlayExtractor.invokeAnikoto(anilistId, title, res.getEpisode(), function1, function2, ProvidersListKt.getDubStatus(res), (Continuation) this) == coroutine_suspended) {
+                if (streamPlayExtractor.invokeAnikoto(anilistId, title, res.getEpisode(), function1, function2, ProvidersListKt.getDubStatus(res), ids.getMalId(), res.getJpTitle(), (Continuation) this) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 return Unit.INSTANCE;

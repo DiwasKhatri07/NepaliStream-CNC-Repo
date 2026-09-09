@@ -50,7 +50,7 @@ public class Ridoo extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Ridoo", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {600, 609}, m = "getUrl$suspendImpl", n = {"$this", "url", "referer", "subtitleCallback", "callback", "$this", "url", "referer", "subtitleCallback", "callback", "response", "script", "m3u8", "quality"}, nl = {601, 608}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
-    static final class C00611 extends ContinuationImpl {
+    static final class C00621 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -64,7 +64,7 @@ public class Ridoo extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00611(Continuation<? super C00611> continuation) {
+        C00621(Continuation<? super C00621> continuation) {
             super(continuation);
         }
 
@@ -118,7 +118,7 @@ public class Ridoo extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:55:0x01bf  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     static /* synthetic */ Object getUrl$suspendImpl(Ridoo $this, String url, String referer, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C00611 c00611;
+        C00621 c00621;
         Object obj;
         Object obj2;
         Ridoo $this2;
@@ -143,32 +143,32 @@ public class Ridoo extends ExtractorApi {
         Function1<? super ExtractorLink, Unit> function5;
         List groupValues;
         List groupValues2;
-        if (continuation instanceof C00611) {
-            c00611 = (C00611) continuation;
-            if ((c00611.label & Integer.MIN_VALUE) != 0) {
-                c00611.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00621) {
+            c00621 = (C00621) continuation;
+            if ((c00621.label & Integer.MIN_VALUE) != 0) {
+                c00621.label -= Integer.MIN_VALUE;
             } else {
-                c00611 = $this.new C00611(continuation);
+                c00621 = $this.new C00621(continuation);
             }
         } else {
-            c00611 = $this.new C00611(continuation);
+            c00621 = $this.new C00621(continuation);
         }
-        C00611 c00612 = c00611;
-        Object $result = c00612.result;
+        C00621 c00622 = c00621;
+        Object $result = c00622.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00612.label) {
+        switch (c00622.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
-                c00612.L$0 = $this;
-                c00612.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c00612.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                c00612.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                c00612.L$4 = function2;
-                c00612.label = 1;
+                c00622.L$0 = $this;
+                c00622.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00622.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                c00622.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c00622.L$4 = function2;
+                c00622.label = 1;
                 obj = coroutine_suspended;
-                obj2 = Requests.get$default(app, url, (Map) null, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00612, 4090, (Object) null);
-                c00612 = c00612;
+                obj2 = Requests.get$default(app, url, (Map) null, referer, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00622, 4090, (Object) null);
+                c00622 = c00622;
                 if (obj2 == obj) {
                     return obj;
                 }
@@ -218,19 +218,19 @@ public class Ridoo extends ExtractorApi {
                     return Unit.INSTANCE;
                 }
                 ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
-                C00622 c00622 = $this2.new C00622(quality, null);
-                c00612.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c00612.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00612.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00612.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c00612.L$4 = SpillingKt.nullOutSpilledVariable(function4);
-                c00612.L$5 = SpillingKt.nullOutSpilledVariable(response);
-                c00612.L$6 = SpillingKt.nullOutSpilledVariable(script);
-                c00612.L$7 = SpillingKt.nullOutSpilledVariable(m3u9);
-                c00612.L$8 = SpillingKt.nullOutSpilledVariable(quality);
-                c00612.L$9 = function4;
-                c00612.label = 2;
-                $result = ExtractorApiKt.newExtractorLink(m3u10, name, m3u9, infer_type, c00622, c00612);
+                C00632 c00632 = $this2.new C00632(quality, null);
+                c00622.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c00622.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00622.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00622.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c00622.L$4 = SpillingKt.nullOutSpilledVariable(function4);
+                c00622.L$5 = SpillingKt.nullOutSpilledVariable(response);
+                c00622.L$6 = SpillingKt.nullOutSpilledVariable(script);
+                c00622.L$7 = SpillingKt.nullOutSpilledVariable(m3u9);
+                c00622.L$8 = SpillingKt.nullOutSpilledVariable(quality);
+                c00622.L$9 = function4;
+                c00622.label = 2;
+                $result = ExtractorApiKt.newExtractorLink(m3u10, name, m3u9, infer_type, c00632, c00622);
                 if ($result == obj) {
                     return obj;
                 }
@@ -238,11 +238,11 @@ public class Ridoo extends ExtractorApi {
                 function5.invoke($result);
                 return Unit.INSTANCE;
             case 1:
-                Function1<? super ExtractorLink, Unit> function6 = (Function1) c00612.L$4;
-                Function1<? super SubtitleFile, Unit> function7 = (Function1) c00612.L$3;
-                String referer3 = (String) c00612.L$2;
-                String url3 = (String) c00612.L$1;
-                Ridoo $this3 = (Ridoo) c00612.L$0;
+                Function1<? super ExtractorLink, Unit> function6 = (Function1) c00622.L$4;
+                Function1<? super SubtitleFile, Unit> function7 = (Function1) c00622.L$3;
+                String referer3 = (String) c00622.L$2;
+                String url3 = (String) c00622.L$1;
+                Ridoo $this3 = (Ridoo) c00622.L$0;
                 ResultKt.throwOnFailure($result);
                 function4 = function6;
                 function3 = function7;
@@ -292,19 +292,19 @@ public class Ridoo extends ExtractorApi {
                     return Unit.INSTANCE;
                 }
                 ExtractorLinkType infer_type2 = ExtractorApiKt.getINFER_TYPE();
-                C00622 c00623 = $this2.new C00622(quality, null);
-                c00612.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c00612.L$1 = SpillingKt.nullOutSpilledVariable(url2);
-                c00612.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
-                c00612.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c00612.L$4 = SpillingKt.nullOutSpilledVariable(function4);
-                c00612.L$5 = SpillingKt.nullOutSpilledVariable(response);
-                c00612.L$6 = SpillingKt.nullOutSpilledVariable(script);
-                c00612.L$7 = SpillingKt.nullOutSpilledVariable(m3u9);
-                c00612.L$8 = SpillingKt.nullOutSpilledVariable(quality);
-                c00612.L$9 = function4;
-                c00612.label = 2;
-                $result = ExtractorApiKt.newExtractorLink(m3u10, name, m3u9, infer_type2, c00623, c00612);
+                C00632 c00633 = $this2.new C00632(quality, null);
+                c00622.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c00622.L$1 = SpillingKt.nullOutSpilledVariable(url2);
+                c00622.L$2 = SpillingKt.nullOutSpilledVariable(referer2);
+                c00622.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c00622.L$4 = SpillingKt.nullOutSpilledVariable(function4);
+                c00622.L$5 = SpillingKt.nullOutSpilledVariable(response);
+                c00622.L$6 = SpillingKt.nullOutSpilledVariable(script);
+                c00622.L$7 = SpillingKt.nullOutSpilledVariable(m3u9);
+                c00622.L$8 = SpillingKt.nullOutSpilledVariable(quality);
+                c00622.L$9 = function4;
+                c00622.label = 2;
+                $result = ExtractorApiKt.newExtractorLink(m3u10, name, m3u9, infer_type2, c00633, c00622);
                 if ($result == obj) {
                     return obj;
                 }
@@ -312,7 +312,7 @@ public class Ridoo extends ExtractorApi {
                 function5.invoke($result);
                 return Unit.INSTANCE;
             case 2:
-                function5 = (Function1) c00612.L$9;
+                function5 = (Function1) c00622.L$9;
                 ResultKt.throwOnFailure($result);
                 function5.invoke($result);
                 return Unit.INSTANCE;
@@ -325,21 +325,21 @@ public class Ridoo extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Ridoo$getUrl$2", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00622 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00632 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $quality;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00622(String str, Continuation<? super C00622> continuation) {
+        C00632(String str, Continuation<? super C00632> continuation) {
             super(2, continuation);
             this.$quality = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00622 = Ridoo.this.new C00622(this.$quality, continuation);
-            c00622.L$0 = obj;
-            return c00622;
+            Continuation<Unit> c00632 = Ridoo.this.new C00632(this.$quality, continuation);
+            c00632.L$0 = obj;
+            return c00632;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

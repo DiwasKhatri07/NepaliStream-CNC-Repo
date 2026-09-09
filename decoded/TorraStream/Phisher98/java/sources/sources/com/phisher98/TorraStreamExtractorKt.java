@@ -58,7 +58,7 @@ public final class TorraStreamExtractorKt {
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {389, 405}, m = "invokeAIOStreamsDebian", n = {"mainUrl", "id", "season", "episode", "filtered", "base", "url", "mainUrl", "id", "season", "episode", "filtered", "base", "url", "res", "qualityRegex", "$this$forEach$iv", "element$iv", "stream", "nameSource", "streamUrl", "qualityMatch", "linkName", "quality"}, nl = {824, 415}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "I$0"}, v = 2)
-    static final class C00351 extends ContinuationImpl {
+    static final class C00391 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -80,7 +80,7 @@ public final class TorraStreamExtractorKt {
         int label;
         /* synthetic */ Object result;
 
-        C00351(Continuation<? super C00351> continuation) {
+        C00391(Continuation<? super C00391> continuation) {
             super(continuation);
         }
 
@@ -96,7 +96,7 @@ public final class TorraStreamExtractorKt {
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {293, 314}, m = "invokeAnimetosho", n = {"id", "callback", "url", "id", "callback", "url", "response", "$this$forEach$iv", "element$iv", "item", "tags", "displayName"}, nl = {294, 313}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$6", "L$7", "L$8", "L$9"}, v = 2)
-    static final class C00371 extends ContinuationImpl {
+    static final class C00411 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -111,7 +111,7 @@ public final class TorraStreamExtractorKt {
         int label;
         /* synthetic */ Object result;
 
-        C00371(Continuation<? super C00371> continuation) {
+        C00411(Continuation<? super C00411> continuation) {
             super(continuation);
         }
 
@@ -127,7 +127,7 @@ public final class TorraStreamExtractorKt {
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {550, 595}, m = "invokeKnaben", n = {"knaben", "title", "year", "season", "episode", "filtered", "host", "baseQuery", "category", "url", "isAnime", "isTv", "page", "knaben", "title", "year", "season", "episode", "filtered", "host", "baseQuery", "category", "url", "doc", "$this$forEach$iv", "element$iv", "row", "titleElement", "infoTd", "rawTitle", "magnet", "source", "tds", "sizeText", "seedsText", "qualityMatch", "formattedTitleName", "isAnime", "isTv", "page", "seeds"}, nl = {552, 594}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "Z$0", "I$0", "I$1", "I$2"}, v = 2)
-    static final class C00381 extends ContinuationImpl {
+    static final class C00421 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -161,7 +161,7 @@ public final class TorraStreamExtractorKt {
         int label;
         /* synthetic */ Object result;
 
-        C00381(Continuation<? super C00381> continuation) {
+        C00421(Continuation<? super C00421> continuation) {
             super(continuation);
         }
 
@@ -177,121 +177,22 @@ public final class TorraStreamExtractorKt {
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {779, 812}, m = "invokeMeteorAnimeDebian", n = {"mainUrl", "type", "id", "episode", "filtered", "url", "mainUrl", "type", "id", "episode", "filtered", "url", "res", "$this$forEach$iv", "element$iv", "stream", "fileUrl", "name", "formattedName", "cache", "parts", "suffix", "size", "audio", "resolution", "finalTitle"}, nl = {824, 811}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20"}, v = 2)
-    static final class C00391 extends ContinuationImpl {
-        Object L$0;
-        Object L$1;
-        Object L$10;
-        Object L$11;
-        Object L$12;
-        Object L$13;
-        Object L$14;
-        Object L$15;
-        Object L$16;
-        Object L$17;
-        Object L$18;
-        Object L$19;
-        Object L$2;
-        Object L$20;
-        Object L$21;
-        Object L$3;
-        Object L$4;
-        Object L$5;
-        Object L$6;
-        Object L$7;
-        Object L$8;
-        Object L$9;
-        int label;
-        /* synthetic */ Object result;
-
-        C00391(Continuation<? super C00391> continuation) {
-            super(continuation);
-        }
-
-        @Nullable
-        public final Object invokeSuspend(@NotNull Object obj) {
-            this.result = obj;
-            this.label |= Integer.MIN_VALUE;
-            return TorraStreamExtractorKt.invokeMeteorAnimeDebian(null, null, null, null, null, (Continuation) this);
-        }
-    }
-
-    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeMeteorDebian$1 */
-    /* JADX INFO: compiled from: TorraStreamExtractor.kt */
-    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {716, 752}, m = "invokeMeteorDebian", n = {"mainUrl", "id", "season", "episode", "filtered", "url", "mainUrl", "id", "season", "episode", "filtered", "url", "res", "$this$forEach$iv", "element$iv", "stream", "fileUrl", "name", "formattedName", "parts", "cache", "suffix", "size", "audio", "resolution", "finalTitle"}, nl = {824, 751}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20"}, v = 2)
-    static final class C00401 extends ContinuationImpl {
-        Object L$0;
-        Object L$1;
-        Object L$10;
-        Object L$11;
-        Object L$12;
-        Object L$13;
-        Object L$14;
-        Object L$15;
-        Object L$16;
-        Object L$17;
-        Object L$18;
-        Object L$19;
-        Object L$2;
-        Object L$20;
-        Object L$21;
-        Object L$3;
-        Object L$4;
-        Object L$5;
-        Object L$6;
-        Object L$7;
-        Object L$8;
-        Object L$9;
-        int label;
-        /* synthetic */ Object result;
-
-        C00401(Continuation<? super C00401> continuation) {
-            super(continuation);
-        }
-
-        @Nullable
-        public final Object invokeSuspend(@NotNull Object obj) {
-            this.result = obj;
-            this.label |= Integer.MIN_VALUE;
-            return TorraStreamExtractorKt.invokeMeteorDebian(null, null, null, null, null, (Continuation) this);
-        }
-    }
-
-    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeSubtitleAPI$1 */
-    /* JADX INFO: compiled from: TorraStreamExtractor.kt */
-    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {274, 275}, m = "invokeSubtitleAPI", n = {"id", "season", "episode", "subtitleCallback", "url", "headers", "id", "season", "episode", "subtitleCallback", "url", "headers"}, nl = {275, 285}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    static final class C00411 extends ContinuationImpl {
-        Object L$0;
-        Object L$1;
-        Object L$2;
-        Object L$3;
-        Object L$4;
-        Object L$5;
-        int label;
-        /* synthetic */ Object result;
-
-        C00411(Continuation<? super C00411> continuation) {
-            super(continuation);
-        }
-
-        @Nullable
-        public final Object invokeSuspend(@NotNull Object obj) {
-            this.result = obj;
-            this.label |= Integer.MIN_VALUE;
-            return TorraStreamExtractorKt.invokeSubtitleAPI(null, null, null, null, (Continuation) this);
-        }
-    }
-
-    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeThepiratebay$1 */
-    /* JADX INFO: compiled from: TorraStreamExtractor.kt */
-    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {241, 244, 246}, m = "invokeThepiratebay", n = {"thepiratebayApi", "imdbId", "season", "episode", "callback", "url", "thepiratebayApi", "imdbId", "season", "episode", "callback", "url", "res", "stream", "thepiratebayApi", "imdbId", "season", "episode", "callback", "url", "res", "stream", "magnetLink"}, nl = {824, 244, 245}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9"}, v = 2)
     static final class C00431 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
+        Object L$11;
+        Object L$12;
+        Object L$13;
+        Object L$14;
+        Object L$15;
+        Object L$16;
+        Object L$17;
+        Object L$18;
+        Object L$19;
         Object L$2;
+        Object L$20;
+        Object L$21;
         Object L$3;
         Object L$4;
         Object L$5;
@@ -310,88 +211,15 @@ public final class TorraStreamExtractorKt {
         public final Object invokeSuspend(@NotNull Object obj) {
             this.result = obj;
             this.label |= Integer.MIN_VALUE;
-            return TorraStreamExtractorKt.invokeThepiratebay(null, null, null, null, null, (Continuation) this);
+            return TorraStreamExtractorKt.invokeMeteorAnimeDebian(null, null, null, null, null, (Continuation) this);
         }
     }
 
-    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeTorrentio$1 */
+    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeMeteorDebian$1 */
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {35, 54, 57}, m = "invokeTorrentio", n = {"mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "qualityMatch", "formattedTitleName", "mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "qualityMatch", "magnet", "formattedTitleName"}, nl = {824, 56, 56}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15"}, v = 2)
-    static final class C00451 extends ContinuationImpl {
-        Object L$0;
-        Object L$1;
-        Object L$10;
-        Object L$11;
-        Object L$12;
-        Object L$13;
-        Object L$14;
-        Object L$15;
-        Object L$16;
-        Object L$2;
-        Object L$3;
-        Object L$4;
-        Object L$5;
-        Object L$6;
-        Object L$7;
-        Object L$8;
-        Object L$9;
-        int label;
-        /* synthetic */ Object result;
-
-        C00451(Continuation<? super C00451> continuation) {
-            super(continuation);
-        }
-
-        @Nullable
-        public final Object invokeSuspend(@NotNull Object obj) {
-            this.result = obj;
-            this.label |= Integer.MIN_VALUE;
-            return TorraStreamExtractorKt.invokeTorrentio(null, null, null, null, null, (Continuation) this);
-        }
-    }
-
-    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeTorrentioAnime$1 */
-    /* JADX INFO: compiled from: TorraStreamExtractor.kt */
-    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {346, 348, 360}, m = "invokeTorrentioAnime", n = {"mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "magnet", "formattedTitleName"}, nl = {824, 350, 359}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14"}, v = 2)
-    static final class C00461 extends ContinuationImpl {
-        Object L$0;
-        Object L$1;
-        Object L$10;
-        Object L$11;
-        Object L$12;
-        Object L$13;
-        Object L$14;
-        Object L$15;
-        Object L$2;
-        Object L$3;
-        Object L$4;
-        Object L$5;
-        Object L$6;
-        Object L$7;
-        Object L$8;
-        Object L$9;
-        int label;
-        /* synthetic */ Object result;
-
-        C00461(Continuation<? super C00461> continuation) {
-            super(continuation);
-        }
-
-        @Nullable
-        public final Object invokeSuspend(@NotNull Object obj) {
-            this.result = obj;
-            this.label |= Integer.MIN_VALUE;
-            return TorraStreamExtractorKt.invokeTorrentioAnime(null, null, null, null, null, (Continuation) this);
-        }
-    }
-
-    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeTorrentioAnimeDebian$1 */
-    /* JADX INFO: compiled from: TorraStreamExtractor.kt */
-    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {135, 162}, m = "invokeTorrentioAnimeDebian", n = {"mainUrl", "type", "id", "episode", "filtered", "url", "mainUrl", "type", "id", "episode", "filtered", "url", "res", "$this$forEach$iv", "element$iv", "stream", "fileUrl", "seedersNum", "name", "cache", "formattedName", "size", "parts", "suffix", "finalTitle"}, nl = {824, 161}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19"}, v = 2)
-    static final class C00471 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {716, 752}, m = "invokeMeteorDebian", n = {"mainUrl", "id", "season", "episode", "filtered", "url", "mainUrl", "id", "season", "episode", "filtered", "url", "res", "$this$forEach$iv", "element$iv", "stream", "fileUrl", "name", "formattedName", "parts", "cache", "suffix", "size", "audio", "resolution", "finalTitle"}, nl = {824, 751}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20"}, v = 2)
+    static final class C00441 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -406,6 +234,64 @@ public final class TorraStreamExtractorKt {
         Object L$19;
         Object L$2;
         Object L$20;
+        Object L$21;
+        Object L$3;
+        Object L$4;
+        Object L$5;
+        Object L$6;
+        Object L$7;
+        Object L$8;
+        Object L$9;
+        int label;
+        /* synthetic */ Object result;
+
+        C00441(Continuation<? super C00441> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return TorraStreamExtractorKt.invokeMeteorDebian(null, null, null, null, null, (Continuation) this);
+        }
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeSubtitleAPI$1 */
+    /* JADX INFO: compiled from: TorraStreamExtractor.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {274, 275}, m = "invokeSubtitleAPI", n = {"id", "season", "episode", "subtitleCallback", "url", "headers", "id", "season", "episode", "subtitleCallback", "url", "headers"}, nl = {275, 285}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    static final class C00451 extends ContinuationImpl {
+        Object L$0;
+        Object L$1;
+        Object L$2;
+        Object L$3;
+        Object L$4;
+        Object L$5;
+        int label;
+        /* synthetic */ Object result;
+
+        C00451(Continuation<? super C00451> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return TorraStreamExtractorKt.invokeSubtitleAPI(null, null, null, null, (Continuation) this);
+        }
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeThepiratebay$1 */
+    /* JADX INFO: compiled from: TorraStreamExtractor.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {241, 244, 246}, m = "invokeThepiratebay", n = {"thepiratebayApi", "imdbId", "season", "episode", "callback", "url", "thepiratebayApi", "imdbId", "season", "episode", "callback", "url", "res", "stream", "thepiratebayApi", "imdbId", "season", "episode", "callback", "url", "res", "stream", "magnetLink"}, nl = {824, 244, 245}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9"}, v = 2)
+    static final class C00471 extends ContinuationImpl {
+        Object L$0;
+        Object L$1;
+        Object L$10;
+        Object L$2;
         Object L$3;
         Object L$4;
         Object L$5;
@@ -424,15 +310,52 @@ public final class TorraStreamExtractorKt {
         public final Object invokeSuspend(@NotNull Object obj) {
             this.result = obj;
             this.label |= Integer.MIN_VALUE;
-            return TorraStreamExtractorKt.invokeTorrentioAnimeDebian(null, null, null, null, null, (Continuation) this);
+            return TorraStreamExtractorKt.invokeThepiratebay(null, null, null, null, null, (Continuation) this);
         }
     }
 
-    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeTorrentioAnimeType$1 */
+    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeTorrentio$1 */
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {192, 211, 213}, m = "invokeTorrentioAnimeType", n = {"mainUrl", "type", "id", "episode", "callback", "url", "headers", "mainUrl", "type", "id", "episode", "callback", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "qualityMatch", "formattedTitleName", "mainUrl", "type", "id", "episode", "callback", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "qualityMatch", "magnet", "formattedTitleName"}, nl = {824, 212, 212}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$11", "L$12", "L$13", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$11", "L$12", "L$13", "L$14"}, v = 2)
-    static final class C00481 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {35, 54, 57}, m = "invokeTorrentio", n = {"mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "qualityMatch", "formattedTitleName", "mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "qualityMatch", "magnet", "formattedTitleName"}, nl = {824, 56, 56}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15"}, v = 2)
+    static final class C00491 extends ContinuationImpl {
+        Object L$0;
+        Object L$1;
+        Object L$10;
+        Object L$11;
+        Object L$12;
+        Object L$13;
+        Object L$14;
+        Object L$15;
+        Object L$16;
+        Object L$2;
+        Object L$3;
+        Object L$4;
+        Object L$5;
+        Object L$6;
+        Object L$7;
+        Object L$8;
+        Object L$9;
+        int label;
+        /* synthetic */ Object result;
+
+        C00491(Continuation<? super C00491> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return TorraStreamExtractorKt.invokeTorrentio(null, null, null, null, null, (Continuation) this);
+        }
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeTorrentioAnime$1 */
+    /* JADX INFO: compiled from: TorraStreamExtractor.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {346, 348, 360}, m = "invokeTorrentioAnime", n = {"mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "mainUrl", "id", "season", "episode", "filtered", "torrentioAPI", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "magnet", "formattedTitleName"}, nl = {824, 350, 359}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14"}, v = 2)
+    static final class C00501 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -452,7 +375,7 @@ public final class TorraStreamExtractorKt {
         int label;
         /* synthetic */ Object result;
 
-        C00481(Continuation<? super C00481> continuation) {
+        C00501(Continuation<? super C00501> continuation) {
             super(continuation);
         }
 
@@ -460,15 +383,15 @@ public final class TorraStreamExtractorKt {
         public final Object invokeSuspend(@NotNull Object obj) {
             this.result = obj;
             this.label |= Integer.MIN_VALUE;
-            return TorraStreamExtractorKt.invokeTorrentioAnimeType(null, null, null, null, null, (Continuation) this);
+            return TorraStreamExtractorKt.invokeTorrentioAnime(null, null, null, null, null, (Continuation) this);
         }
     }
 
-    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeTorrentioDebian$1 */
+    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeTorrentioAnimeDebian$1 */
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {83, 109}, m = "invokeTorrentioDebian", n = {"mainUrl", "id", "season", "episode", "filtered", "url", "mainUrl", "id", "season", "episode", "filtered", "url", "res", "$this$forEach$iv", "element$iv", "stream", "fileUrl", "seedersNum", "name", "cache", "formattedName", "size", "parts", "suffix", "finalTitle"}, nl = {824, 108}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19"}, v = 2)
-    static final class C00491 extends ContinuationImpl {
+    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {135, 162}, m = "invokeTorrentioAnimeDebian", n = {"mainUrl", "type", "id", "episode", "filtered", "url", "mainUrl", "type", "id", "episode", "filtered", "url", "res", "$this$forEach$iv", "element$iv", "stream", "fileUrl", "seedersNum", "name", "cache", "formattedName", "size", "parts", "suffix", "finalTitle"}, nl = {824, 161}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19"}, v = 2)
+    static final class C00511 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -493,7 +416,84 @@ public final class TorraStreamExtractorKt {
         int label;
         /* synthetic */ Object result;
 
-        C00491(Continuation<? super C00491> continuation) {
+        C00511(Continuation<? super C00511> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return TorraStreamExtractorKt.invokeTorrentioAnimeDebian(null, null, null, null, null, (Continuation) this);
+        }
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeTorrentioAnimeType$1 */
+    /* JADX INFO: compiled from: TorraStreamExtractor.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {192, 211, 213}, m = "invokeTorrentioAnimeType", n = {"mainUrl", "type", "id", "episode", "callback", "url", "headers", "mainUrl", "type", "id", "episode", "callback", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "qualityMatch", "formattedTitleName", "mainUrl", "type", "id", "episode", "callback", "url", "headers", "res", "$this$forEach$iv", "element$iv", "stream", "qualityMatch", "magnet", "formattedTitleName"}, nl = {824, 212, 212}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$11", "L$12", "L$13", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$11", "L$12", "L$13", "L$14"}, v = 2)
+    static final class C00521 extends ContinuationImpl {
+        Object L$0;
+        Object L$1;
+        Object L$10;
+        Object L$11;
+        Object L$12;
+        Object L$13;
+        Object L$14;
+        Object L$15;
+        Object L$2;
+        Object L$3;
+        Object L$4;
+        Object L$5;
+        Object L$6;
+        Object L$7;
+        Object L$8;
+        Object L$9;
+        int label;
+        /* synthetic */ Object result;
+
+        C00521(Continuation<? super C00521> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return TorraStreamExtractorKt.invokeTorrentioAnimeType(null, null, null, null, null, (Continuation) this);
+        }
+    }
+
+    /* JADX INFO: renamed from: com.phisher98.TorraStreamExtractorKt$invokeTorrentioDebian$1 */
+    /* JADX INFO: compiled from: TorraStreamExtractor.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {83, 109}, m = "invokeTorrentioDebian", n = {"mainUrl", "id", "season", "episode", "filtered", "url", "mainUrl", "id", "season", "episode", "filtered", "url", "res", "$this$forEach$iv", "element$iv", "stream", "fileUrl", "seedersNum", "name", "cache", "formattedName", "size", "parts", "suffix", "finalTitle"}, nl = {824, 108}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19"}, v = 2)
+    static final class C00531 extends ContinuationImpl {
+        Object L$0;
+        Object L$1;
+        Object L$10;
+        Object L$11;
+        Object L$12;
+        Object L$13;
+        Object L$14;
+        Object L$15;
+        Object L$16;
+        Object L$17;
+        Object L$18;
+        Object L$19;
+        Object L$2;
+        Object L$20;
+        Object L$3;
+        Object L$4;
+        Object L$5;
+        Object L$6;
+        Object L$7;
+        Object L$8;
+        Object L$9;
+        int label;
+        /* synthetic */ Object result;
+
+        C00531(Continuation<? super C00531> continuation) {
             super(continuation);
         }
 
@@ -509,7 +509,7 @@ public final class TorraStreamExtractorKt {
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {625, 628}, m = "invokeTorrentsDB", n = {"mainUrl", "id", "season", "episode", "callback", "url", "headers", "mainUrl", "id", "season", "episode", "callback", "url", "headers", "response"}, nl = {626, 651}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C00501 extends ContinuationImpl {
+    static final class C00541 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -521,7 +521,7 @@ public final class TorraStreamExtractorKt {
         int label;
         /* synthetic */ Object result;
 
-        C00501(Continuation<? super C00501> continuation) {
+        C00541(Continuation<? super C00541> continuation) {
             super(continuation);
         }
 
@@ -537,7 +537,7 @@ public final class TorraStreamExtractorKt {
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {674, 677}, m = "invokeTorrentsDBAnime", n = {"mainUrl", "id", "season", "episode", "filtered", "url", "headers", "mainUrl", "id", "season", "episode", "filtered", "url", "headers", "response"}, nl = {675, 700}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C00531 extends ContinuationImpl {
+    static final class C00571 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -549,7 +549,7 @@ public final class TorraStreamExtractorKt {
         int label;
         /* synthetic */ Object result;
 
-        C00531(Continuation<? super C00531> continuation) {
+        C00571(Continuation<? super C00571> continuation) {
             super(continuation);
         }
 
@@ -565,7 +565,7 @@ public final class TorraStreamExtractorKt {
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {444, 461}, m = "invokeUindex", n = {"uindex", "title", "year", "season", "episode", "filtered", "searchQuery", "url", "headers", "isTv", "uindex", "title", "year", "season", "episode", "filtered", "searchQuery", "url", "headers", "rows", "episodePatterns", "isTv"}, nl = {446, 508}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0"}, v = 2)
-    static final class C00561 extends ContinuationImpl {
+    static final class C00601 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -581,7 +581,7 @@ public final class TorraStreamExtractorKt {
         int label;
         /* synthetic */ Object result;
 
-        C00561(Continuation<? super C00561> continuation) {
+        C00601(Continuation<? super C00601> continuation) {
             super(continuation);
         }
 
@@ -612,11 +612,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:80:0x04d3 A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:81:0x04d4  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:81:0x04d4 -> B:82:0x04f0). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeTorrentio(@org.jetbrains.annotations.NotNull java.lang.String r35, @org.jetbrains.annotations.Nullable java.lang.String r36, @org.jetbrains.annotations.Nullable java.lang.Integer r37, @org.jetbrains.annotations.Nullable java.lang.Integer r38, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r39, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r40) {
@@ -665,11 +664,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:67:0x0458  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:67:0x0458 -> B:68:0x0477). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeTorrentioDebian(@org.jetbrains.annotations.NotNull java.lang.String r38, @org.jetbrains.annotations.Nullable java.lang.String r39, @org.jetbrains.annotations.Nullable java.lang.Integer r40, @org.jetbrains.annotations.Nullable java.lang.Integer r41, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r42, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r43) {
@@ -711,11 +709,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:67:0x0450  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:67:0x0450 -> B:68:0x046f). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeTorrentioAnimeDebian(@org.jetbrains.annotations.NotNull java.lang.String r38, @org.jetbrains.annotations.NotNull com.lagradost.cloudstream3.TvType r39, @org.jetbrains.annotations.Nullable java.lang.Integer r40, @org.jetbrains.annotations.Nullable java.lang.Integer r41, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r42, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r43) {
@@ -755,11 +752,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:80:0x049f A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:81:0x04a0  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:81:0x04a0 -> B:82:0x04b7). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeTorrentioAnimeType(@org.jetbrains.annotations.NotNull java.lang.String r35, @org.jetbrains.annotations.NotNull com.lagradost.cloudstream3.TvType r36, @org.jetbrains.annotations.Nullable java.lang.Integer r37, @org.jetbrains.annotations.Nullable java.lang.Integer r38, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r39, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r40) {
@@ -794,11 +790,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:65:0x02da  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:65:0x02da -> B:97:0x02e8). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeThepiratebay(@org.jetbrains.annotations.Nullable java.lang.String r24, @org.jetbrains.annotations.Nullable java.lang.String r25, @org.jetbrains.annotations.Nullable java.lang.Integer r26, @org.jetbrains.annotations.Nullable java.lang.Integer r27, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r28, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r29) {
@@ -829,21 +824,21 @@ public final class TorraStreamExtractorKt {
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt$invokeThepiratebay$2", f = "TorraStreamExtractor.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00442 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00482 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ TBPStream $stream;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00442(TBPStream tBPStream, Continuation<? super C00442> continuation) {
+        C00482(TBPStream tBPStream, Continuation<? super C00482> continuation) {
             super(2, continuation);
             this.$stream = tBPStream;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00442 = new C00442(this.$stream, continuation);
-            c00442.L$0 = obj;
-            return c00442;
+            Continuation<Unit> c00482 = new C00482(this.$stream, continuation);
+            c00482.L$0 = obj;
+            return c00482;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -868,11 +863,11 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public static final Object invokeSubtitleAPI(@Nullable String id, @Nullable Integer season, @Nullable Integer episode, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Continuation<? super Unit> continuation) {
-        C00411 c00411;
+        C00451 c00451;
         Integer num;
         String url;
         Object obj;
-        C00411 c00412;
+        C00451 c00452;
         Object $result;
         Object obj2;
         String url2;
@@ -883,19 +878,19 @@ public final class TorraStreamExtractorKt {
         Object safe;
         SubtitlesAPI subtitlesAPI;
         List<Subtitle1> subtitles;
-        if (continuation instanceof C00411) {
-            c00411 = (C00411) continuation;
-            if ((c00411.label & Integer.MIN_VALUE) != 0) {
-                c00411.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00451) {
+            c00451 = (C00451) continuation;
+            if ((c00451.label & Integer.MIN_VALUE) != 0) {
+                c00451.label -= Integer.MIN_VALUE;
             } else {
-                c00411 = new C00411(continuation);
+                c00451 = new C00451(continuation);
             }
         } else {
-            c00411 = new C00411(continuation);
+            c00451 = new C00451(continuation);
         }
-        Object $result2 = c00411.result;
+        Object $result2 = c00451.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00411.label) {
+        switch (c00451.label) {
             case 0:
                 ResultKt.throwOnFailure($result2);
                 if (season == null) {
@@ -907,18 +902,18 @@ public final class TorraStreamExtractorKt {
                 }
                 Map headers2 = MapsKt.mapOf(TuplesKt.to("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"));
                 Requests app = MainActivityKt.getApp();
-                c00411.L$0 = SpillingKt.nullOutSpilledVariable(id);
-                c00411.L$1 = SpillingKt.nullOutSpilledVariable(season);
-                c00411.L$2 = SpillingKt.nullOutSpilledVariable(num);
-                c00411.L$3 = function1;
-                c00411.L$4 = SpillingKt.nullOutSpilledVariable(url);
-                c00411.L$5 = SpillingKt.nullOutSpilledVariable(headers2);
-                c00411.label = 1;
+                c00451.L$0 = SpillingKt.nullOutSpilledVariable(id);
+                c00451.L$1 = SpillingKt.nullOutSpilledVariable(season);
+                c00451.L$2 = SpillingKt.nullOutSpilledVariable(num);
+                c00451.L$3 = function1;
+                c00451.L$4 = SpillingKt.nullOutSpilledVariable(url);
+                c00451.L$5 = SpillingKt.nullOutSpilledVariable(headers2);
+                c00451.label = 1;
                 String url3 = url;
-                C00411 c00413 = c00411;
+                C00451 c00453 = c00451;
                 obj = coroutine_suspended;
-                Object obj3 = Requests.get$default(app, url3, headers2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 100L, (Interceptor) null, false, (ResponseParser) null, c00413, 3836, (Object) null);
-                c00412 = c00413;
+                Object obj3 = Requests.get$default(app, url3, headers2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 100L, (Interceptor) null, false, (ResponseParser) null, c00453, 3836, (Object) null);
+                c00452 = c00453;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -943,24 +938,24 @@ public final class TorraStreamExtractorKt {
                 if (subtitlesAPI != null || (subtitles = subtitlesAPI.getSubtitles()) == null) {
                     return Unit.INSTANCE;
                 }
-                C00422 c00422 = new C00422(function2, null);
-                c00412.L$0 = SpillingKt.nullOutSpilledVariable($result);
-                c00412.L$1 = SpillingKt.nullOutSpilledVariable(season2);
-                c00412.L$2 = SpillingKt.nullOutSpilledVariable(episode2);
-                c00412.L$3 = SpillingKt.nullOutSpilledVariable(function2);
-                c00412.L$4 = SpillingKt.nullOutSpilledVariable(url2);
-                c00412.L$5 = SpillingKt.nullOutSpilledVariable(headers);
-                c00412.label = 2;
-                return ParCollectionsKt.amap(subtitles, c00422, c00412) == obj ? obj : Unit.INSTANCE;
+                C00462 c00462 = new C00462(function2, null);
+                c00452.L$0 = SpillingKt.nullOutSpilledVariable($result);
+                c00452.L$1 = SpillingKt.nullOutSpilledVariable(season2);
+                c00452.L$2 = SpillingKt.nullOutSpilledVariable(episode2);
+                c00452.L$3 = SpillingKt.nullOutSpilledVariable(function2);
+                c00452.L$4 = SpillingKt.nullOutSpilledVariable(url2);
+                c00452.L$5 = SpillingKt.nullOutSpilledVariable(headers);
+                c00452.label = 2;
+                return ParCollectionsKt.amap(subtitles, c00462, c00452) == obj ? obj : Unit.INSTANCE;
             case 1:
-                headers = (Map) c00411.L$5;
-                url2 = (String) c00411.L$4;
-                function2 = (Function1) c00411.L$3;
-                episode2 = (Integer) c00411.L$2;
-                season2 = (Integer) c00411.L$1;
-                Object id2 = (String) c00411.L$0;
+                headers = (Map) c00451.L$5;
+                url2 = (String) c00451.L$4;
+                function2 = (Function1) c00451.L$3;
+                episode2 = (Integer) c00451.L$2;
+                season2 = (Integer) c00451.L$1;
+                Object id2 = (String) c00451.L$0;
                 ResultKt.throwOnFailure($result2);
-                c00412 = c00411;
+                c00452 = c00451;
                 obj = coroutine_suspended;
                 $result = id2;
                 obj2 = $result2;
@@ -998,7 +993,7 @@ public final class TorraStreamExtractorKt {
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", "Lcom/phisher98/Subtitle1;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt$invokeSubtitleAPI$2", f = "TorraStreamExtractor.kt", i = {0, 0, 0}, l = {279}, m = "invokeSuspend", n = {"it", "lan", "suburl"}, nl = {278}, s = {"L$0", "L$1", "L$2"}, v = 2)
     @SourceDebugExtension({"SMAP\nTorraStreamExtractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TorraStreamExtractor.kt\ncom/phisher98/TorraStreamExtractorKt$invokeSubtitleAPI$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,823:1\n1#2:824\n*E\n"})
-    static final class C00422 extends SuspendLambda implements Function2<Subtitle1, Continuation<? super Unit>, Object> {
+    static final class C00462 extends SuspendLambda implements Function2<Subtitle1, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
         /* synthetic */ Object L$0;
         Object L$1;
@@ -1007,15 +1002,15 @@ public final class TorraStreamExtractorKt {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00422(Function1<? super SubtitleFile, Unit> function1, Continuation<? super C00422> continuation) {
+        C00462(Function1<? super SubtitleFile, Unit> function1, Continuation<? super C00462> continuation) {
             super(2, continuation);
             this.$subtitleCallback = function1;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00422 = new C00422(this.$subtitleCallback, continuation);
-            c00422.L$0 = obj;
-            return c00422;
+            Continuation<Unit> c00462 = new C00462(this.$subtitleCallback, continuation);
+            c00462.L$0 = obj;
+            return c00462;
         }
 
         public final Object invoke(Subtitle1 subtitle1, Continuation<? super Unit> continuation) {
@@ -1079,11 +1074,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:40:0x0238  */
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:40:0x0238 -> B:41:0x0245). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeAnimetosho(@org.jetbrains.annotations.Nullable java.lang.Integer r30, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r31, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r32) {
@@ -1114,11 +1108,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:68:0x0453  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:68:0x0453 -> B:69:0x0474). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeTorrentioAnime(@org.jetbrains.annotations.NotNull java.lang.String r39, @org.jetbrains.annotations.Nullable java.lang.Integer r40, @org.jetbrains.annotations.Nullable java.lang.Integer r41, @org.jetbrains.annotations.Nullable java.lang.Integer r42, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r43, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r44) {
@@ -1161,11 +1154,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:46:0x021e -> B:65:0x032e). Please report as a decompilation issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:63:0x0309 -> B:64:0x0320). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeAIOStreamsDebian(@org.jetbrains.annotations.NotNull java.lang.String r35, @org.jetbrains.annotations.Nullable java.lang.String r36, @org.jetbrains.annotations.Nullable java.lang.Integer r37, @org.jetbrains.annotations.Nullable java.lang.Integer r38, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r39, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r40) {
@@ -1197,11 +1189,11 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public static final Object invokeUindex(@NotNull String uindex, @Nullable String title, @Nullable Integer year, @Nullable Integer season, @Nullable Integer episode, @NotNull Function1<? super ExtractorLink, Unit> function1, @NotNull Continuation<? super Unit> continuation) {
-        C00561 c00561;
+        C00601 c00601;
         char c;
         int i;
         Object obj;
-        C00561 c00562;
+        C00601 c00602;
         String uindex2;
         Integer year2;
         Integer episode2;
@@ -1217,20 +1209,20 @@ public final class TorraStreamExtractorKt {
         List listEmptyList;
         List list;
         boolean z;
-        C00572 c00572;
-        if (continuation instanceof C00561) {
-            c00561 = (C00561) continuation;
-            if ((c00561.label & Integer.MIN_VALUE) != 0) {
-                c00561.label -= Integer.MIN_VALUE;
+        C00612 c00612;
+        if (continuation instanceof C00601) {
+            c00601 = (C00601) continuation;
+            if ((c00601.label & Integer.MIN_VALUE) != 0) {
+                c00601.label -= Integer.MIN_VALUE;
             } else {
-                c00561 = new C00561(continuation);
+                c00601 = new C00601(continuation);
             }
         } else {
-            c00561 = new C00561(continuation);
+            c00601 = new C00601(continuation);
         }
-        Object $result = c00561.result;
+        Object $result = c00601.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00561.label) {
+        switch (c00601.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 int i3 = season != null ? 1 : 0;
@@ -1249,24 +1241,24 @@ public final class TorraStreamExtractorKt {
                 String url3 = uindex + "/search.php?search=" + searchQuery + "&c=" + (i3 != 0 ? 2 : 1);
                 Map headers2 = MapsKt.mapOf(new Pair[]{TuplesKt.to("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"), TuplesKt.to("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")});
                 Requests app = MainActivityKt.getApp();
-                c00561.L$0 = SpillingKt.nullOutSpilledVariable(uindex);
-                c00561.L$1 = SpillingKt.nullOutSpilledVariable(title);
-                c00561.L$2 = SpillingKt.nullOutSpilledVariable(year);
-                c00561.L$3 = season;
-                c00561.L$4 = episode;
-                c00561.L$5 = function1;
-                c00561.L$6 = SpillingKt.nullOutSpilledVariable(searchQuery);
-                c00561.L$7 = SpillingKt.nullOutSpilledVariable(url3);
-                c00561.L$8 = SpillingKt.nullOutSpilledVariable(headers2);
-                c00561.I$0 = i3;
-                c00561.label = 1;
+                c00601.L$0 = SpillingKt.nullOutSpilledVariable(uindex);
+                c00601.L$1 = SpillingKt.nullOutSpilledVariable(title);
+                c00601.L$2 = SpillingKt.nullOutSpilledVariable(year);
+                c00601.L$3 = season;
+                c00601.L$4 = episode;
+                c00601.L$5 = function1;
+                c00601.L$6 = SpillingKt.nullOutSpilledVariable(searchQuery);
+                c00601.L$7 = SpillingKt.nullOutSpilledVariable(url3);
+                c00601.L$8 = SpillingKt.nullOutSpilledVariable(headers2);
+                c00601.I$0 = i3;
+                c00601.label = 1;
                 int i4 = i3;
                 c = 1;
                 i = 2;
-                C00561 c00563 = c00561;
+                C00601 c00603 = c00601;
                 obj = coroutine_suspended;
-                Object obj3 = Requests.get$default(app, url3, headers2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00563, 4092, (Object) null);
-                c00562 = c00563;
+                Object obj3 = Requests.get$default(app, url3, headers2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00603, 4092, (Object) null);
+                c00602 = c00603;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -1332,37 +1324,37 @@ public final class TorraStreamExtractorKt {
                 } else {
                     z = false;
                 }
-                c00572 = new C00572(z, episodePatterns2, function2, null);
-                c00562.L$0 = SpillingKt.nullOutSpilledVariable(uindex2);
-                c00562.L$1 = SpillingKt.nullOutSpilledVariable(title2);
-                c00562.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                c00562.L$3 = SpillingKt.nullOutSpilledVariable(season3);
-                c00562.L$4 = SpillingKt.nullOutSpilledVariable(episode2);
-                c00562.L$5 = SpillingKt.nullOutSpilledVariable(function2);
-                c00562.L$6 = SpillingKt.nullOutSpilledVariable(url2);
-                c00562.L$7 = SpillingKt.nullOutSpilledVariable(url);
-                c00562.L$8 = SpillingKt.nullOutSpilledVariable(headers);
-                c00562.L$9 = SpillingKt.nullOutSpilledVariable(episodePatterns);
-                c00562.L$10 = SpillingKt.nullOutSpilledVariable(episodePatterns2);
-                c00562.I$0 = i2;
-                c00562.label = 2;
-                if (ParCollectionsKt.amap(list, c00572, c00562) == obj) {
+                c00612 = new C00612(z, episodePatterns2, function2, null);
+                c00602.L$0 = SpillingKt.nullOutSpilledVariable(uindex2);
+                c00602.L$1 = SpillingKt.nullOutSpilledVariable(title2);
+                c00602.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                c00602.L$3 = SpillingKt.nullOutSpilledVariable(season3);
+                c00602.L$4 = SpillingKt.nullOutSpilledVariable(episode2);
+                c00602.L$5 = SpillingKt.nullOutSpilledVariable(function2);
+                c00602.L$6 = SpillingKt.nullOutSpilledVariable(url2);
+                c00602.L$7 = SpillingKt.nullOutSpilledVariable(url);
+                c00602.L$8 = SpillingKt.nullOutSpilledVariable(headers);
+                c00602.L$9 = SpillingKt.nullOutSpilledVariable(episodePatterns);
+                c00602.L$10 = SpillingKt.nullOutSpilledVariable(episodePatterns2);
+                c00602.I$0 = i2;
+                c00602.label = 2;
+                if (ParCollectionsKt.amap(list, c00612, c00602) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 1:
-                int i5 = c00561.I$0;
-                Map headers3 = (Map) c00561.L$8;
-                String url4 = (String) c00561.L$7;
-                String searchQuery2 = (String) c00561.L$6;
-                function2 = (Function1) c00561.L$5;
-                episode2 = (Integer) c00561.L$4;
-                Integer season4 = (Integer) c00561.L$3;
-                year2 = (Integer) c00561.L$2;
-                String title3 = (String) c00561.L$1;
-                uindex2 = (String) c00561.L$0;
+                int i5 = c00601.I$0;
+                Map headers3 = (Map) c00601.L$8;
+                String url4 = (String) c00601.L$7;
+                String searchQuery2 = (String) c00601.L$6;
+                function2 = (Function1) c00601.L$5;
+                episode2 = (Integer) c00601.L$4;
+                Integer season4 = (Integer) c00601.L$3;
+                year2 = (Integer) c00601.L$2;
+                String title3 = (String) c00601.L$1;
+                uindex2 = (String) c00601.L$0;
                 ResultKt.throwOnFailure($result);
-                c00562 = c00561;
+                c00602 = c00601;
                 obj = coroutine_suspended;
                 i2 = i5;
                 headers = headers3;
@@ -1388,26 +1380,26 @@ public final class TorraStreamExtractorKt {
                 } else {
                     z = false;
                 }
-                c00572 = new C00572(z, episodePatterns4, function2, null);
-                c00562.L$0 = SpillingKt.nullOutSpilledVariable(uindex2);
-                c00562.L$1 = SpillingKt.nullOutSpilledVariable(title2);
-                c00562.L$2 = SpillingKt.nullOutSpilledVariable(year2);
-                c00562.L$3 = SpillingKt.nullOutSpilledVariable(season3);
-                c00562.L$4 = SpillingKt.nullOutSpilledVariable(episode2);
-                c00562.L$5 = SpillingKt.nullOutSpilledVariable(function2);
-                c00562.L$6 = SpillingKt.nullOutSpilledVariable(url2);
-                c00562.L$7 = SpillingKt.nullOutSpilledVariable(url);
-                c00562.L$8 = SpillingKt.nullOutSpilledVariable(headers);
-                c00562.L$9 = SpillingKt.nullOutSpilledVariable(episodePatterns3);
-                c00562.L$10 = SpillingKt.nullOutSpilledVariable(episodePatterns4);
-                c00562.I$0 = i2;
-                c00562.label = 2;
-                if (ParCollectionsKt.amap(list, c00572, c00562) == obj) {
+                c00612 = new C00612(z, episodePatterns4, function2, null);
+                c00602.L$0 = SpillingKt.nullOutSpilledVariable(uindex2);
+                c00602.L$1 = SpillingKt.nullOutSpilledVariable(title2);
+                c00602.L$2 = SpillingKt.nullOutSpilledVariable(year2);
+                c00602.L$3 = SpillingKt.nullOutSpilledVariable(season3);
+                c00602.L$4 = SpillingKt.nullOutSpilledVariable(episode2);
+                c00602.L$5 = SpillingKt.nullOutSpilledVariable(function2);
+                c00602.L$6 = SpillingKt.nullOutSpilledVariable(url2);
+                c00602.L$7 = SpillingKt.nullOutSpilledVariable(url);
+                c00602.L$8 = SpillingKt.nullOutSpilledVariable(headers);
+                c00602.L$9 = SpillingKt.nullOutSpilledVariable(episodePatterns3);
+                c00602.L$10 = SpillingKt.nullOutSpilledVariable(episodePatterns4);
+                c00602.I$0 = i2;
+                c00602.label = 2;
+                if (ParCollectionsKt.amap(list, c00612, c00602) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 2:
-                int i6 = c00561.I$0;
+                int i6 = c00601.I$0;
                 ResultKt.throwOnFailure($result);
                 return Unit.INSTANCE;
             default:
@@ -1436,7 +1428,7 @@ public final class TorraStreamExtractorKt {
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u000b\u0010\u0002\u001a\u00070\u0003¢\u0006\u0002\b\u0004H\n"}, d2 = {"<anonymous>", "", "row", "Lorg/jsoup/nodes/Element;", "Lkotlin/jvm/internal/EnhancedNullability;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt$invokeUindex$2", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {498}, m = "invokeSuspend", n = {"row", "rowTitle", "magnet", "qualityMatch", "seeder", "fileSize", "formattedTitleName"}, nl = {497}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
     @SourceDebugExtension({"SMAP\nTorraStreamExtractor.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TorraStreamExtractor.kt\ncom/phisher98/TorraStreamExtractorKt$invokeUindex$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,823:1\n2945#2,3:824\n1#3:827\n*S KotlinDebug\n*F\n+ 1 TorraStreamExtractor.kt\ncom/phisher98/TorraStreamExtractorKt$invokeUindex$2\n*L\n468#1:824,3\n*E\n"})
-    static final class C00572 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
+    static final class C00612 extends SuspendLambda implements Function2<Element, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<Regex> $episodePatterns;
         final /* synthetic */ Function1<ExtractorLink, Unit> $filtered;
         final /* synthetic */ boolean $isTv;
@@ -1451,7 +1443,7 @@ public final class TorraStreamExtractorKt {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00572(boolean z, List<Regex> list, Function1<? super ExtractorLink, Unit> function1, Continuation<? super C00572> continuation) {
+        C00612(boolean z, List<Regex> list, Function1<? super ExtractorLink, Unit> function1, Continuation<? super C00612> continuation) {
             super(2, continuation);
             this.$isTv = z;
             this.$episodePatterns = list;
@@ -1459,9 +1451,9 @@ public final class TorraStreamExtractorKt {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00572 = new C00572(this.$isTv, this.$episodePatterns, this.$filtered, continuation);
-            c00572.L$0 = obj;
-            return c00572;
+            Continuation<Unit> c00612 = new C00612(this.$isTv, this.$episodePatterns, this.$filtered, continuation);
+            c00612.L$0 = obj;
+            return c00612;
         }
 
         public final Object invoke(Element element, Continuation<? super Unit> continuation) {
@@ -1515,7 +1507,7 @@ public final class TorraStreamExtractorKt {
                     Regex qualityTermsRegex = new Regex("(WEBRip|WEB-DL|x265|x264|10bit|HEVC|H264)", RegexOption.IGNORE_CASE);
                     String tags = SequencesKt.joinToString$default(SequencesKt.distinct(SequencesKt.map(Regex.findAll$default(qualityTermsRegex, rowTitle, 0, 2, (Object) null), new Function1() { // from class: com.phisher98.TorraStreamExtractorKt$invokeUindex$2$$ExternalSyntheticLambda0
                         public final Object invoke(Object obj) {
-                            return TorraStreamExtractorKt.C00572.invokeSuspend$lambda$2$0((MatchResult) obj);
+                            return TorraStreamExtractorKt.C00612.invokeSuspend$lambda$2$0((MatchResult) obj);
                         }
                     })), " | ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) null, 62, (Object) null);
                     String formattedTitleName = StringsKt.trim("UIndex | " + tags + " | Seeder: " + seeder + " | FileSize: " + fileSize).toString();
@@ -1614,11 +1606,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:113:0x0547 -> B:114:0x0563). Please report as a decompilation issue!!! */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:116:0x058b -> B:117:0x05a4). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeKnaben(@org.jetbrains.annotations.NotNull java.lang.String r39, boolean r40, @org.jetbrains.annotations.Nullable java.lang.String r41, @org.jetbrains.annotations.Nullable java.lang.Integer r42, @org.jetbrains.annotations.Nullable java.lang.Integer r43, @org.jetbrains.annotations.Nullable java.lang.Integer r44, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r45, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r46) {
@@ -1654,12 +1645,12 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public static final Object invokeTorrentsDB(@NotNull String mainUrl, @Nullable String id, @Nullable Integer season, @Nullable Integer episode, @NotNull Function1<? super ExtractorLink, Unit> function1, @NotNull Continuation<? super Unit> continuation) {
-        C00501 c00501;
+        C00541 c00541;
         Integer num;
         String url;
         Object obj;
         Map headers;
-        C00501 c00502;
+        C00541 c00542;
         Object $result;
         Object obj2;
         Integer season2;
@@ -1670,20 +1661,20 @@ public final class TorraStreamExtractorKt {
         Object safe;
         TorrentsDBResponse response;
         List<TorrentsDBStream> streams;
-        C00512 c00512;
-        if (continuation instanceof C00501) {
-            c00501 = (C00501) continuation;
-            if ((c00501.label & Integer.MIN_VALUE) != 0) {
-                c00501.label -= Integer.MIN_VALUE;
+        C00552 c00552;
+        if (continuation instanceof C00541) {
+            c00541 = (C00541) continuation;
+            if ((c00541.label & Integer.MIN_VALUE) != 0) {
+                c00541.label -= Integer.MIN_VALUE;
             } else {
-                c00501 = new C00501(continuation);
+                c00541 = new C00541(continuation);
             }
         } else {
-            c00501 = new C00501(continuation);
+            c00541 = new C00541(continuation);
         }
-        Object $result2 = c00501.result;
+        Object $result2 = c00541.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00501.label) {
+        switch (c00541.label) {
             case 0:
                 ResultKt.throwOnFailure($result2);
                 if (id == null) {
@@ -1698,20 +1689,20 @@ public final class TorraStreamExtractorKt {
                 }
                 Map headers2 = MapsKt.mapOf(new Pair[]{TuplesKt.to("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"), TuplesKt.to("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")});
                 Requests app = MainActivityKt.getApp();
-                c00501.L$0 = SpillingKt.nullOutSpilledVariable(mainUrl);
-                c00501.L$1 = SpillingKt.nullOutSpilledVariable(id);
-                c00501.L$2 = SpillingKt.nullOutSpilledVariable(season);
-                c00501.L$3 = SpillingKt.nullOutSpilledVariable(num);
-                c00501.L$4 = function1;
-                c00501.L$5 = SpillingKt.nullOutSpilledVariable(url);
-                c00501.L$6 = SpillingKt.nullOutSpilledVariable(headers2);
-                c00501.label = 1;
+                c00541.L$0 = SpillingKt.nullOutSpilledVariable(mainUrl);
+                c00541.L$1 = SpillingKt.nullOutSpilledVariable(id);
+                c00541.L$2 = SpillingKt.nullOutSpilledVariable(season);
+                c00541.L$3 = SpillingKt.nullOutSpilledVariable(num);
+                c00541.L$4 = function1;
+                c00541.L$5 = SpillingKt.nullOutSpilledVariable(url);
+                c00541.L$6 = SpillingKt.nullOutSpilledVariable(headers2);
+                c00541.label = 1;
                 String url3 = url;
-                C00501 c00503 = c00501;
+                C00541 c00543 = c00541;
                 obj = coroutine_suspended;
-                Object obj3 = Requests.get$default(app, url3, headers2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 100L, (Interceptor) null, false, (ResponseParser) null, c00503, 3836, (Object) null);
+                Object obj3 = Requests.get$default(app, url3, headers2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 100L, (Interceptor) null, false, (ResponseParser) null, c00543, 3836, (Object) null);
                 headers = headers2;
-                c00502 = c00503;
+                c00542 = c00543;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -1740,30 +1731,30 @@ public final class TorraStreamExtractorKt {
                 if (streams != null) {
                     return Unit.INSTANCE;
                 }
-                c00512 = new C00512(function2, null);
-                c00502.L$0 = SpillingKt.nullOutSpilledVariable($result);
-                c00502.L$1 = SpillingKt.nullOutSpilledVariable(id2);
-                c00502.L$2 = SpillingKt.nullOutSpilledVariable(season2);
-                c00502.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
-                c00502.L$4 = SpillingKt.nullOutSpilledVariable(function2);
-                c00502.L$5 = SpillingKt.nullOutSpilledVariable(url2);
-                c00502.L$6 = SpillingKt.nullOutSpilledVariable(headers);
-                c00502.L$7 = SpillingKt.nullOutSpilledVariable(response);
-                c00502.label = 2;
-                if (ParCollectionsKt.amap(streams, c00512, c00502) == obj) {
+                c00552 = new C00552(function2, null);
+                c00542.L$0 = SpillingKt.nullOutSpilledVariable($result);
+                c00542.L$1 = SpillingKt.nullOutSpilledVariable(id2);
+                c00542.L$2 = SpillingKt.nullOutSpilledVariable(season2);
+                c00542.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
+                c00542.L$4 = SpillingKt.nullOutSpilledVariable(function2);
+                c00542.L$5 = SpillingKt.nullOutSpilledVariable(url2);
+                c00542.L$6 = SpillingKt.nullOutSpilledVariable(headers);
+                c00542.L$7 = SpillingKt.nullOutSpilledVariable(response);
+                c00542.label = 2;
+                if (ParCollectionsKt.amap(streams, c00552, c00542) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 1:
-                Map headers3 = (Map) c00501.L$6;
-                url2 = (String) c00501.L$5;
-                function2 = (Function1) c00501.L$4;
-                episode2 = (Integer) c00501.L$3;
-                season2 = (Integer) c00501.L$2;
-                String id3 = (String) c00501.L$1;
-                Object mainUrl2 = (String) c00501.L$0;
+                Map headers3 = (Map) c00541.L$6;
+                url2 = (String) c00541.L$5;
+                function2 = (Function1) c00541.L$4;
+                episode2 = (Integer) c00541.L$3;
+                season2 = (Integer) c00541.L$2;
+                String id3 = (String) c00541.L$1;
+                Object mainUrl2 = (String) c00541.L$0;
                 ResultKt.throwOnFailure($result2);
-                c00502 = c00501;
+                c00542 = c00541;
                 obj = coroutine_suspended;
                 headers = headers3;
                 $result = mainUrl2;
@@ -1781,17 +1772,17 @@ public final class TorraStreamExtractorKt {
                 if (streams != null) {
                     return Unit.INSTANCE;
                 }
-                c00512 = new C00512(function2, null);
-                c00502.L$0 = SpillingKt.nullOutSpilledVariable($result);
-                c00502.L$1 = SpillingKt.nullOutSpilledVariable(id2);
-                c00502.L$2 = SpillingKt.nullOutSpilledVariable(season2);
-                c00502.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
-                c00502.L$4 = SpillingKt.nullOutSpilledVariable(function2);
-                c00502.L$5 = SpillingKt.nullOutSpilledVariable(url2);
-                c00502.L$6 = SpillingKt.nullOutSpilledVariable(headers);
-                c00502.L$7 = SpillingKt.nullOutSpilledVariable(response);
-                c00502.label = 2;
-                if (ParCollectionsKt.amap(streams, c00512, c00502) == obj) {
+                c00552 = new C00552(function2, null);
+                c00542.L$0 = SpillingKt.nullOutSpilledVariable($result);
+                c00542.L$1 = SpillingKt.nullOutSpilledVariable(id2);
+                c00542.L$2 = SpillingKt.nullOutSpilledVariable(season2);
+                c00542.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
+                c00542.L$4 = SpillingKt.nullOutSpilledVariable(function2);
+                c00542.L$5 = SpillingKt.nullOutSpilledVariable(url2);
+                c00542.L$6 = SpillingKt.nullOutSpilledVariable(headers);
+                c00542.L$7 = SpillingKt.nullOutSpilledVariable(response);
+                c00542.label = 2;
+                if (ParCollectionsKt.amap(streams, c00552, c00542) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
@@ -1820,7 +1811,7 @@ public final class TorraStreamExtractorKt {
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "stream", "Lcom/phisher98/TorrentsDBStream;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt$invokeTorrentsDB$2", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {637, 640}, m = "invokeSuspend", n = {"stream", "title", "qualityMatch", "tags", "seeder", "provider", "formattedTitle", "stream", "title", "qualityMatch", "tags", "seeder", "provider", "formattedTitle", "magnet"}, nl = {639, 639}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C00512 extends SuspendLambda implements Function2<TorrentsDBStream, Continuation<? super Unit>, Object> {
+    static final class C00552 extends SuspendLambda implements Function2<TorrentsDBStream, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         /* synthetic */ Object L$0;
         Object L$1;
@@ -1834,15 +1825,15 @@ public final class TorraStreamExtractorKt {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00512(Function1<? super ExtractorLink, Unit> function1, Continuation<? super C00512> continuation) {
+        C00552(Function1<? super ExtractorLink, Unit> function1, Continuation<? super C00552> continuation) {
             super(2, continuation);
             this.$callback = function1;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00512 = new C00512(this.$callback, continuation);
-            c00512.L$0 = obj;
-            return c00512;
+            Continuation<Unit> c00552 = new C00552(this.$callback, continuation);
+            c00552.L$0 = obj;
+            return c00552;
         }
 
         public final Object invoke(TorrentsDBStream torrentsDBStream, Continuation<? super Unit> continuation) {
@@ -1887,7 +1878,7 @@ public final class TorraStreamExtractorKt {
                     }
                     String tags2 = SequencesKt.joinToString$default(SequencesKt.distinct(SequencesKt.map(Regex.findAll$default(new Regex("(2160p|1080p|720p|WEBRip|WEB-DL|x265|x264|10bit|HEVC|H264)", RegexOption.IGNORE_CASE), formattedTitle, 0, 2, (Object) null), new Function1() { // from class: com.phisher98.TorraStreamExtractorKt$invokeTorrentsDB$2$$ExternalSyntheticLambda0
                         public final Object invoke(Object obj) {
-                            return TorraStreamExtractorKt.C00512.invokeSuspend$lambda$0((MatchResult) obj);
+                            return TorraStreamExtractorKt.C00552.invokeSuspend$lambda$0((MatchResult) obj);
                         }
                     })), " | ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) null, 62, (Object) null);
                     MatchResult matchResultFind$default2 = Regex.find$default(new Regex("👤\\s*(\\d+)"), formattedTitle, 0, 2, (Object) null);
@@ -2037,12 +2028,12 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public static final Object invokeTorrentsDBAnime(@NotNull String mainUrl, @Nullable Integer id, @Nullable Integer season, @Nullable Integer episode, @NotNull Function1<? super ExtractorLink, Unit> function1, @NotNull Continuation<? super Unit> continuation) {
-        C00531 c00531;
+        C00571 c00571;
         Integer num;
         String url;
         Object obj;
         int i;
-        C00531 c00532;
+        C00571 c00572;
         Object $result;
         Object obj2;
         String url2;
@@ -2054,20 +2045,20 @@ public final class TorraStreamExtractorKt {
         Object safe;
         TorrentsDBResponse response;
         List<TorrentsDBStream> streams;
-        C00542 c00542;
-        if (continuation instanceof C00531) {
-            c00531 = (C00531) continuation;
-            if ((c00531.label & Integer.MIN_VALUE) != 0) {
-                c00531.label -= Integer.MIN_VALUE;
+        C00582 c00582;
+        if (continuation instanceof C00571) {
+            c00571 = (C00571) continuation;
+            if ((c00571.label & Integer.MIN_VALUE) != 0) {
+                c00571.label -= Integer.MIN_VALUE;
             } else {
-                c00531 = new C00531(continuation);
+                c00571 = new C00571(continuation);
             }
         } else {
-            c00531 = new C00531(continuation);
+            c00571 = new C00571(continuation);
         }
-        Object $result2 = c00531.result;
+        Object $result2 = c00571.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00531.label) {
+        switch (c00571.label) {
             case 0:
                 ResultKt.throwOnFailure($result2);
                 if (id == null) {
@@ -2082,20 +2073,20 @@ public final class TorraStreamExtractorKt {
                 }
                 Map headers2 = MapsKt.mapOf(new Pair[]{TuplesKt.to("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"), TuplesKt.to("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")});
                 Requests app = MainActivityKt.getApp();
-                c00531.L$0 = SpillingKt.nullOutSpilledVariable(mainUrl);
-                c00531.L$1 = SpillingKt.nullOutSpilledVariable(id);
-                c00531.L$2 = SpillingKt.nullOutSpilledVariable(season);
-                c00531.L$3 = SpillingKt.nullOutSpilledVariable(num);
-                c00531.L$4 = function1;
-                c00531.L$5 = SpillingKt.nullOutSpilledVariable(url);
-                c00531.L$6 = SpillingKt.nullOutSpilledVariable(headers2);
-                c00531.label = 1;
+                c00571.L$0 = SpillingKt.nullOutSpilledVariable(mainUrl);
+                c00571.L$1 = SpillingKt.nullOutSpilledVariable(id);
+                c00571.L$2 = SpillingKt.nullOutSpilledVariable(season);
+                c00571.L$3 = SpillingKt.nullOutSpilledVariable(num);
+                c00571.L$4 = function1;
+                c00571.L$5 = SpillingKt.nullOutSpilledVariable(url);
+                c00571.L$6 = SpillingKt.nullOutSpilledVariable(headers2);
+                c00571.label = 1;
                 String url3 = url;
-                C00531 c00533 = c00531;
+                C00571 c00573 = c00571;
                 obj = coroutine_suspended;
                 i = 2;
-                Object obj3 = Requests.get$default(app, url3, headers2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 100L, (Interceptor) null, false, (ResponseParser) null, c00533, 3836, (Object) null);
-                c00532 = c00533;
+                Object obj3 = Requests.get$default(app, url3, headers2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 100L, (Interceptor) null, false, (ResponseParser) null, c00573, 3836, (Object) null);
+                c00572 = c00573;
                 if (obj3 == obj) {
                     return obj;
                 }
@@ -2125,30 +2116,30 @@ public final class TorraStreamExtractorKt {
                 if (streams != null) {
                     return Unit.INSTANCE;
                 }
-                c00542 = new C00542(function2, null);
-                c00532.L$0 = SpillingKt.nullOutSpilledVariable($result);
-                c00532.L$1 = SpillingKt.nullOutSpilledVariable(id2);
-                c00532.L$2 = SpillingKt.nullOutSpilledVariable(season2);
-                c00532.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
-                c00532.L$4 = SpillingKt.nullOutSpilledVariable(function2);
-                c00532.L$5 = SpillingKt.nullOutSpilledVariable(url2);
-                c00532.L$6 = SpillingKt.nullOutSpilledVariable(headers);
-                c00532.L$7 = SpillingKt.nullOutSpilledVariable(response);
-                c00532.label = i;
-                if (ParCollectionsKt.amap(streams, c00542, c00532) == obj) {
+                c00582 = new C00582(function2, null);
+                c00572.L$0 = SpillingKt.nullOutSpilledVariable($result);
+                c00572.L$1 = SpillingKt.nullOutSpilledVariable(id2);
+                c00572.L$2 = SpillingKt.nullOutSpilledVariable(season2);
+                c00572.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
+                c00572.L$4 = SpillingKt.nullOutSpilledVariable(function2);
+                c00572.L$5 = SpillingKt.nullOutSpilledVariable(url2);
+                c00572.L$6 = SpillingKt.nullOutSpilledVariable(headers);
+                c00572.L$7 = SpillingKt.nullOutSpilledVariable(response);
+                c00572.label = i;
+                if (ParCollectionsKt.amap(streams, c00582, c00572) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
             case 1:
-                headers = (Map) c00531.L$6;
-                String url4 = (String) c00531.L$5;
-                function2 = (Function1) c00531.L$4;
-                episode2 = (Integer) c00531.L$3;
-                season2 = (Integer) c00531.L$2;
-                id2 = (Integer) c00531.L$1;
-                Object mainUrl2 = (String) c00531.L$0;
+                headers = (Map) c00571.L$6;
+                String url4 = (String) c00571.L$5;
+                function2 = (Function1) c00571.L$4;
+                episode2 = (Integer) c00571.L$3;
+                season2 = (Integer) c00571.L$2;
+                id2 = (Integer) c00571.L$1;
+                Object mainUrl2 = (String) c00571.L$0;
                 ResultKt.throwOnFailure($result2);
-                c00532 = c00531;
+                c00572 = c00571;
                 obj = coroutine_suspended;
                 url2 = url4;
                 i = 2;
@@ -2166,17 +2157,17 @@ public final class TorraStreamExtractorKt {
                 if (streams != null) {
                     return Unit.INSTANCE;
                 }
-                c00542 = new C00542(function2, null);
-                c00532.L$0 = SpillingKt.nullOutSpilledVariable($result);
-                c00532.L$1 = SpillingKt.nullOutSpilledVariable(id2);
-                c00532.L$2 = SpillingKt.nullOutSpilledVariable(season2);
-                c00532.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
-                c00532.L$4 = SpillingKt.nullOutSpilledVariable(function2);
-                c00532.L$5 = SpillingKt.nullOutSpilledVariable(url2);
-                c00532.L$6 = SpillingKt.nullOutSpilledVariable(headers);
-                c00532.L$7 = SpillingKt.nullOutSpilledVariable(response);
-                c00532.label = i;
-                if (ParCollectionsKt.amap(streams, c00542, c00532) == obj) {
+                c00582 = new C00582(function2, null);
+                c00572.L$0 = SpillingKt.nullOutSpilledVariable($result);
+                c00572.L$1 = SpillingKt.nullOutSpilledVariable(id2);
+                c00572.L$2 = SpillingKt.nullOutSpilledVariable(season2);
+                c00572.L$3 = SpillingKt.nullOutSpilledVariable(episode2);
+                c00572.L$4 = SpillingKt.nullOutSpilledVariable(function2);
+                c00572.L$5 = SpillingKt.nullOutSpilledVariable(url2);
+                c00572.L$6 = SpillingKt.nullOutSpilledVariable(headers);
+                c00572.L$7 = SpillingKt.nullOutSpilledVariable(response);
+                c00572.label = i;
+                if (ParCollectionsKt.amap(streams, c00582, c00572) == obj) {
                     return obj;
                 }
                 return Unit.INSTANCE;
@@ -2205,7 +2196,7 @@ public final class TorraStreamExtractorKt {
     /* JADX INFO: compiled from: TorraStreamExtractor.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "stream", "Lcom/phisher98/TorrentsDBStream;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.TorraStreamExtractorKt$invokeTorrentsDBAnime$2", f = "TorraStreamExtractor.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {686, 689}, m = "invokeSuspend", n = {"stream", "title", "qualityMatch", "tags", "seeder", "provider", "formattedTitle", "stream", "title", "qualityMatch", "tags", "seeder", "provider", "formattedTitle", "magnet"}, nl = {688, 688}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
-    static final class C00542 extends SuspendLambda implements Function2<TorrentsDBStream, Continuation<? super Unit>, Object> {
+    static final class C00582 extends SuspendLambda implements Function2<TorrentsDBStream, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $filtered;
         /* synthetic */ Object L$0;
         Object L$1;
@@ -2219,15 +2210,15 @@ public final class TorraStreamExtractorKt {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00542(Function1<? super ExtractorLink, Unit> function1, Continuation<? super C00542> continuation) {
+        C00582(Function1<? super ExtractorLink, Unit> function1, Continuation<? super C00582> continuation) {
             super(2, continuation);
             this.$filtered = function1;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00542 = new C00542(this.$filtered, continuation);
-            c00542.L$0 = obj;
-            return c00542;
+            Continuation<Unit> c00582 = new C00582(this.$filtered, continuation);
+            c00582.L$0 = obj;
+            return c00582;
         }
 
         public final Object invoke(TorrentsDBStream torrentsDBStream, Continuation<? super Unit> continuation) {
@@ -2272,7 +2263,7 @@ public final class TorraStreamExtractorKt {
                     }
                     String tags2 = SequencesKt.joinToString$default(SequencesKt.distinct(SequencesKt.map(Regex.findAll$default(new Regex("(2160p|1080p|720p|WEBRip|WEB-DL|x265|x264|10bit|HEVC|H264)", RegexOption.IGNORE_CASE), formattedTitle, 0, 2, (Object) null), new Function1() { // from class: com.phisher98.TorraStreamExtractorKt$invokeTorrentsDBAnime$2$$ExternalSyntheticLambda0
                         public final Object invoke(Object obj) {
-                            return TorraStreamExtractorKt.C00542.invokeSuspend$lambda$0((MatchResult) obj);
+                            return TorraStreamExtractorKt.C00582.invokeSuspend$lambda$0((MatchResult) obj);
                         }
                     })), " | ", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) null, 62, (Object) null);
                     MatchResult matchResultFind$default2 = Regex.find$default(new Regex("👤\\s*(\\d+)"), formattedTitle, 0, 2, (Object) null);
@@ -2439,11 +2430,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:84:0x048e A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:85:0x048f  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:85:0x048f -> B:86:0x04b3). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeMeteorDebian(@org.jetbrains.annotations.NotNull java.lang.String r40, @org.jetbrains.annotations.Nullable java.lang.String r41, @org.jetbrains.annotations.Nullable java.lang.Integer r42, @org.jetbrains.annotations.Nullable java.lang.Integer r43, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r44, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r45) {
@@ -2492,11 +2482,10 @@ public final class TorraStreamExtractorKt {
     /* JADX WARN: Code duplicated, block: B:89:0x04bc A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:90:0x04bd  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:90:0x04bd -> B:91:0x04d9). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object invokeMeteorAnimeDebian(@org.jetbrains.annotations.NotNull java.lang.String r40, @org.jetbrains.annotations.NotNull com.lagradost.cloudstream3.TvType r41, @org.jetbrains.annotations.Nullable java.lang.Integer r42, @org.jetbrains.annotations.Nullable java.lang.Integer r43, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r44, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Unit> r45) {

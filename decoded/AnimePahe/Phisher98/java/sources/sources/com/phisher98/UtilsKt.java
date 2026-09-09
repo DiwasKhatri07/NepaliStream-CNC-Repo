@@ -47,7 +47,7 @@ public final class UtilsKt {
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.UtilsKt", f = "Utils.kt", i = {0, 0, 0, 0, 0, 0}, l = {31}, m = "loadCustomExtractor", n = {"name", "url", "referer", "subtitleCallback", "callback", "quality"}, nl = {57}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
-    static final class C00181 extends ContinuationImpl {
+    static final class C00161 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -57,7 +57,7 @@ public final class UtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C00181(Continuation<? super C00181> continuation) {
+        C00161(Continuation<? super C00161> continuation) {
             super(continuation);
         }
 
@@ -72,22 +72,22 @@ public final class UtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public static final Object loadCustomExtractor(@Nullable final String name, @NotNull String url, @Nullable String referer, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull final Function1<? super ExtractorLink, Unit> function2, @Nullable final Integer quality, @NotNull Continuation<? super Unit> continuation) {
-        C00181 c00181;
+        C00161 c00161;
         Object objLoadExtractor;
-        if (continuation instanceof C00181) {
-            c00181 = (C00181) continuation;
-            if ((c00181.label & Integer.MIN_VALUE) != 0) {
-                c00181.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00161) {
+            c00161 = (C00161) continuation;
+            if ((c00161.label & Integer.MIN_VALUE) != 0) {
+                c00161.label -= Integer.MIN_VALUE;
             } else {
-                c00181 = new C00181(continuation);
+                c00161 = new C00161(continuation);
             }
         } else {
-            c00181 = new C00181(continuation);
+            c00161 = new C00161(continuation);
         }
-        Object $result = c00181.result;
+        Object $result = c00161.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         try {
-            switch (c00181.label) {
+            switch (c00161.label) {
                 case 0:
                     ResultKt.throwOnFailure($result);
                     Result.Companion companion = Result.Companion;
@@ -96,14 +96,14 @@ public final class UtilsKt {
                             return UtilsKt.loadCustomExtractor$lambda$0$0(name, function2, quality, (ExtractorLink) obj);
                         }
                     };
-                    c00181.L$0 = SpillingKt.nullOutSpilledVariable(name);
-                    c00181.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                    c00181.L$2 = SpillingKt.nullOutSpilledVariable(referer);
-                    c00181.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                    c00181.L$4 = SpillingKt.nullOutSpilledVariable(function2);
-                    c00181.L$5 = SpillingKt.nullOutSpilledVariable(quality);
-                    c00181.label = 1;
-                    objLoadExtractor = ExtractorApiKt.loadExtractor(url, referer, function1, function3, c00181);
+                    c00161.L$0 = SpillingKt.nullOutSpilledVariable(name);
+                    c00161.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                    c00161.L$2 = SpillingKt.nullOutSpilledVariable(referer);
+                    c00161.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                    c00161.L$4 = SpillingKt.nullOutSpilledVariable(function2);
+                    c00161.L$5 = SpillingKt.nullOutSpilledVariable(quality);
+                    c00161.label = 1;
+                    objLoadExtractor = ExtractorApiKt.loadExtractor(url, referer, function1, function3, c00161);
                     if (objLoadExtractor == coroutine_suspended) {
                         return coroutine_suspended;
                     }

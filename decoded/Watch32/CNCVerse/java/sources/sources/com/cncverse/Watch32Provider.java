@@ -520,10 +520,11 @@ public final class Watch32Provider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:111:0x0717 A[LOOP:0: B:109:0x0711->B:111:0x0717, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:107:0x06c4 -> B:108:0x06db). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-        java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
     @org.jetbrains.annotations.Nullable
     public java.lang.Object load(@org.jetbrains.annotations.NotNull java.lang.String r58, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r59) {

@@ -48,7 +48,7 @@ public class Modflix extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Modflix", f = "Extractors.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {909, 926}, m = "getUrl$suspendImpl", n = {"$this", "finallink", "quality", "subtitleCallback", "callback", "token", "$this", "finallink", "quality", "subtitleCallback", "callback", "token", "downloadlink", "finaldownloadlink", "link"}, nl = {921, 925}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
-    static final class C00461 extends ContinuationImpl {
+    static final class C00471 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -62,7 +62,7 @@ public class Modflix extends ExtractorApi {
         int label;
         /* synthetic */ Object result;
 
-        C00461(Continuation<? super C00461> continuation) {
+        C00471(Continuation<? super C00471> continuation) {
             super(continuation);
         }
 
@@ -97,7 +97,7 @@ public class Modflix extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:21:0x01b9  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     static /* synthetic */ Object getUrl$suspendImpl(Modflix $this, String finallink, String quality, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Unit> continuation) {
-        C00461 c00461;
+        C00471 c00471;
         String token;
         Object obj;
         int i;
@@ -109,38 +109,38 @@ public class Modflix extends ExtractorApi {
         Function1<? super ExtractorLink, Unit> function4;
         Object objNewExtractorLink$default;
         Function1<? super ExtractorLink, Unit> function5;
-        if (continuation instanceof C00461) {
-            c00461 = (C00461) continuation;
-            if ((c00461.label & Integer.MIN_VALUE) != 0) {
-                c00461.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00471) {
+            c00471 = (C00471) continuation;
+            if ((c00471.label & Integer.MIN_VALUE) != 0) {
+                c00471.label -= Integer.MIN_VALUE;
             } else {
-                c00461 = $this.new C00461(continuation);
+                c00471 = $this.new C00471(continuation);
             }
         } else {
-            c00461 = $this.new C00461(continuation);
+            c00471 = $this.new C00471(continuation);
         }
-        C00461 c00462 = c00461;
-        Object $result = c00462.result;
+        C00471 c00472 = c00471;
+        Object $result = c00472.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00462.label) {
+        switch (c00472.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String token2 = StringsKt.substringAfter$default(finallink, "https://video-seed.xyz/?url=", (String) null, 2, (Object) null);
                 Requests app = MainActivityKt.getApp();
                 Map mapMapOf = MapsKt.mapOf(TuplesKt.to("keys", token2));
                 Map mapMapOf2 = MapsKt.mapOf(new Pair[]{TuplesKt.to("x-token", "video-seed.xyz"), TuplesKt.to("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:125.0) Gecko/20100101 Firefox/125.0")});
-                c00462.L$0 = $this;
-                c00462.L$1 = SpillingKt.nullOutSpilledVariable(finallink);
-                c00462.L$2 = quality;
-                c00462.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                c00462.L$4 = function2;
-                c00462.L$5 = SpillingKt.nullOutSpilledVariable(token2);
-                c00462.label = 1;
+                c00472.L$0 = $this;
+                c00472.L$1 = SpillingKt.nullOutSpilledVariable(finallink);
+                c00472.L$2 = quality;
+                c00472.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c00472.L$4 = function2;
+                c00472.L$5 = SpillingKt.nullOutSpilledVariable(token2);
+                c00472.label = 1;
                 token = token2;
                 obj = coroutine_suspended;
                 i = 2;
-                objPost$default = Requests.post$default(app, "https://video-seed.xyz/api", mapMapOf2, finallink, (Map) null, (Map) null, mapMapOf, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00462, 65496, (Object) null);
-                c00462 = c00462;
+                objPost$default = Requests.post$default(app, "https://video-seed.xyz/api", mapMapOf2, finallink, (Map) null, (Map) null, mapMapOf, (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00472, 65496, (Object) null);
+                c00472 = c00472;
                 if (objPost$default == obj) {
                     return obj;
                 }
@@ -153,19 +153,19 @@ public class Modflix extends ExtractorApi {
                 String finaldownloadlink = StringsKt.replace$default(StringsKt.substringBefore$default(StringsKt.substringAfter$default(downloadlink.toString(), "url\":\"", (String) r6, i, (Object) r6), "\",\"name", (String) r6, i, (Object) r6), "\\/", "/", false, 4, (Object) null);
                 String name = $this2.getName();
                 String name2 = $this2.getName();
-                C00472 c00472 = new C00472(quality2, 0);
-                c00462.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c00462.L$1 = SpillingKt.nullOutSpilledVariable(finallink2);
-                c00462.L$2 = SpillingKt.nullOutSpilledVariable(quality2);
-                c00462.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c00462.L$4 = SpillingKt.nullOutSpilledVariable(function4);
-                c00462.L$5 = SpillingKt.nullOutSpilledVariable(token);
-                c00462.L$6 = SpillingKt.nullOutSpilledVariable(downloadlink);
-                c00462.L$7 = SpillingKt.nullOutSpilledVariable(finaldownloadlink);
-                c00462.L$8 = SpillingKt.nullOutSpilledVariable(finaldownloadlink);
-                c00462.L$9 = function4;
-                c00462.label = i;
-                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default(name, name2, finaldownloadlink, (ExtractorLinkType) null, c00472, c00462, 8, (Object) null);
+                C00482 c00482 = new C00482(quality2, 0);
+                c00472.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c00472.L$1 = SpillingKt.nullOutSpilledVariable(finallink2);
+                c00472.L$2 = SpillingKt.nullOutSpilledVariable(quality2);
+                c00472.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c00472.L$4 = SpillingKt.nullOutSpilledVariable(function4);
+                c00472.L$5 = SpillingKt.nullOutSpilledVariable(token);
+                c00472.L$6 = SpillingKt.nullOutSpilledVariable(downloadlink);
+                c00472.L$7 = SpillingKt.nullOutSpilledVariable(finaldownloadlink);
+                c00472.L$8 = SpillingKt.nullOutSpilledVariable(finaldownloadlink);
+                c00472.L$9 = function4;
+                c00472.label = i;
+                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default(name, name2, finaldownloadlink, (ExtractorLinkType) null, c00482, c00472, 8, (Object) null);
                 if (objNewExtractorLink$default == obj) {
                     return obj;
                 }
@@ -173,12 +173,12 @@ public class Modflix extends ExtractorApi {
                 function5.invoke(objNewExtractorLink$default);
                 return Unit.INSTANCE;
             case 1:
-                String token3 = (String) c00462.L$5;
-                Function1<? super ExtractorLink, Unit> function6 = (Function1) c00462.L$4;
-                Function1<? super SubtitleFile, Unit> function7 = (Function1) c00462.L$3;
-                String quality3 = (String) c00462.L$2;
-                String finallink3 = (String) c00462.L$1;
-                Modflix $this3 = (Modflix) c00462.L$0;
+                String token3 = (String) c00472.L$5;
+                Function1<? super ExtractorLink, Unit> function6 = (Function1) c00472.L$4;
+                Function1<? super SubtitleFile, Unit> function7 = (Function1) c00472.L$3;
+                String quality3 = (String) c00472.L$2;
+                String finallink3 = (String) c00472.L$1;
+                Modflix $this3 = (Modflix) c00472.L$0;
                 ResultKt.throwOnFailure($result);
                 token = token3;
                 function4 = function6;
@@ -193,19 +193,19 @@ public class Modflix extends ExtractorApi {
                 String finaldownloadlink2 = StringsKt.replace$default(StringsKt.substringBefore$default(StringsKt.substringAfter$default(downloadlink2.toString(), "url\":\"", (String) r6, i, (Object) r6), "\",\"name", (String) r6, i, (Object) r6), "\\/", "/", false, 4, (Object) null);
                 String name3 = $this2.getName();
                 String name4 = $this2.getName();
-                C00472 c00473 = new C00472(quality2, 0);
-                c00462.L$0 = SpillingKt.nullOutSpilledVariable($this2);
-                c00462.L$1 = SpillingKt.nullOutSpilledVariable(finallink2);
-                c00462.L$2 = SpillingKt.nullOutSpilledVariable(quality2);
-                c00462.L$3 = SpillingKt.nullOutSpilledVariable(function3);
-                c00462.L$4 = SpillingKt.nullOutSpilledVariable(function4);
-                c00462.L$5 = SpillingKt.nullOutSpilledVariable(token);
-                c00462.L$6 = SpillingKt.nullOutSpilledVariable(downloadlink2);
-                c00462.L$7 = SpillingKt.nullOutSpilledVariable(finaldownloadlink2);
-                c00462.L$8 = SpillingKt.nullOutSpilledVariable(finaldownloadlink2);
-                c00462.L$9 = function4;
-                c00462.label = i;
-                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default(name3, name4, finaldownloadlink2, (ExtractorLinkType) null, c00473, c00462, 8, (Object) null);
+                C00482 c00483 = new C00482(quality2, 0);
+                c00472.L$0 = SpillingKt.nullOutSpilledVariable($this2);
+                c00472.L$1 = SpillingKt.nullOutSpilledVariable(finallink2);
+                c00472.L$2 = SpillingKt.nullOutSpilledVariable(quality2);
+                c00472.L$3 = SpillingKt.nullOutSpilledVariable(function3);
+                c00472.L$4 = SpillingKt.nullOutSpilledVariable(function4);
+                c00472.L$5 = SpillingKt.nullOutSpilledVariable(token);
+                c00472.L$6 = SpillingKt.nullOutSpilledVariable(downloadlink2);
+                c00472.L$7 = SpillingKt.nullOutSpilledVariable(finaldownloadlink2);
+                c00472.L$8 = SpillingKt.nullOutSpilledVariable(finaldownloadlink2);
+                c00472.L$9 = function4;
+                c00472.label = i;
+                objNewExtractorLink$default = ExtractorApiKt.newExtractorLink$default(name3, name4, finaldownloadlink2, (ExtractorLinkType) null, c00483, c00472, 8, (Object) null);
                 if (objNewExtractorLink$default == obj) {
                     return obj;
                 }
@@ -213,7 +213,7 @@ public class Modflix extends ExtractorApi {
                 function5.invoke(objNewExtractorLink$default);
                 return Unit.INSTANCE;
             case 2:
-                function5 = (Function1) c00462.L$9;
+                function5 = (Function1) c00472.L$9;
                 ResultKt.throwOnFailure($result);
                 objNewExtractorLink$default = $result;
                 function5.invoke(objNewExtractorLink$default);
@@ -227,21 +227,21 @@ public class Modflix extends ExtractorApi {
     /* JADX INFO: compiled from: Extractors.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.Modflix$getUrl$2", f = "Extractors.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00472 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00482 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $quality;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00472(String str, Continuation<? super C00472> continuation) {
+        C00482(String str, Continuation<? super C00482> continuation) {
             super(2, continuation);
             this.$quality = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00472 = new C00472(this.$quality, continuation);
-            c00472.L$0 = obj;
-            return c00472;
+            Continuation<Unit> c00482 = new C00482(this.$quality, continuation);
+            c00482.L$0 = obj;
+            return c00482;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

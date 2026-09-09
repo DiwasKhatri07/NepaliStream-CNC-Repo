@@ -91,7 +91,7 @@ import org.json.JSONObject;
 /* JADX INFO: compiled from: TorraStream.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/TorraStream/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u0090\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 P2\u00020\u0001:\u0001PB\u000f\u0012\u0006\u0010\u0002\u001a\u00020\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\u0014\u0010'\u001a\u0004\u0018\u00010\u00072\b\u0010(\u001a\u0004\u0018\u00010\u0007H\u0002J\u0014\u0010)\u001a\u0004\u0018\u00010\u00072\b\u0010(\u001a\u0004\u0018\u00010\u0007H\u0002J\u001e\u0010%\u001a\u00020*2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020.H\u0096@¢\u0006\u0002\u0010/J\u001a\u00100\u001a\u0004\u0018\u000101*\u0002022\n\b\u0002\u00103\u001a\u0004\u0018\u00010\u0007H\u0002J\u001e\u00104\u001a\n\u0012\u0004\u0012\u000201\u0018\u00010#2\u0006\u00105\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u00106J \u00107\u001a\u0004\u0018\u0001082\u0006\u00105\u001a\u00020\u00072\u0006\u0010+\u001a\u00020,H\u0096@¢\u0006\u0002\u00109J\u0018\u0010:\u001a\u0004\u0018\u00010;2\u0006\u0010<\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u00106JF\u0010=\u001a\u00020\u001d2\u0006\u0010>\u001a\u00020\u00072\u0006\u0010?\u001a\u00020\u001d2\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020C0A2\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020E\u0012\u0004\u0012\u00020C0AH\u0096@¢\u0006\u0002\u0010FJ\u0012\u0010G\u001a\u00020H2\b\u0010I\u001a\u0004\u0018\u00010\u0007H\u0002J\u0012\u0010J\u001a\u00020\u001d2\b\u0010K\u001a\u0004\u0018\u00010\u0007H\u0002J\u0018\u0010L\u001a\u00020\u00072\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010\f\u001a\u00020\u0007H\u0002J\u001e\u0010M\u001a\u00020\u00072\u0006\u0010\u0002\u001a\u00020\u00032\u0006\u0010N\u001a\u00020\u0007H\u0086@¢\u0006\u0002\u0010OR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR \u0010\u000f\u001a\b\u0012\u0004\u0012\u00020\u00110\u0010X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0013\"\u0004\b\u0014\u0010\u0015R\u001a\u0010\u0016\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\t\"\u0004\b\u0018\u0010\u000bR\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0010X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u0013R\u0014\u0010\u001c\u001a\u00020\u001dX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0014\u0010 \u001a\u00020\u001dX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\u001fR\u001a\u0010\"\u001a\b\u0012\u0004\u0012\u00020$0#X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b%\u0010&¨\u0006Q"}, d2 = {"Lcom/phisher98/TorraStream;", "Lcom/lagradost/cloudstream3/metaproviders/TmdbProvider;", "sharedPref", "Landroid/content/SharedPreferences;", "<init>", "(Landroid/content/SharedPreferences;)V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "setSupportedTypes", "(Ljava/util/Set;)V", "lang", "getLang", "setLang", "supportedSyncNames", "Lcom/lagradost/cloudstream3/syncproviders/SyncIdName;", "getSupportedSyncNames", "hasMainPage", "", "getHasMainPage", "()Z", "hasQuickSearch", "getHasQuickSearch", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "getImageUrl", "link", "getOriImageUrl", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResponse", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lcom/phisher98/Media;", "type", "quickSearch", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getStatus", "Lcom/lagradost/cloudstream3/ShowStatus;", "t", "isUpcoming", "dateString", "buildTorrentioApiUrl", "buildMeteorUrl", "baseUrl", "(Landroid/content/SharedPreferences;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "TorraStream"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nTorraStream.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TorraStream.kt\ncom/phisher98/TorraStream\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,550:1\n73#2,5:551\n73#2,5:570\n73#2,5:608\n73#2,5:691\n1795#3,10:556\n2068#3:566\n2069#3:568\n1805#3:569\n1795#3,10:575\n2068#3:585\n2069#3:587\n1805#3:588\n1795#3,10:613\n2068#3:623\n2069#3:625\n1805#3:626\n1960#3,3:627\n1795#3,10:630\n2068#3:640\n2069#3:642\n1805#3:643\n1795#3,10:645\n2068#3:655\n2069#3:657\n1805#3:658\n1795#3,10:659\n2068#3:669\n2069#3:671\n1805#3:672\n1795#3,10:673\n2068#3:683\n2069#3:685\n1805#3:686\n1739#3:687\n1814#3,3:688\n777#3:696\n873#3,2:697\n1739#3:720\n1814#3,3:721\n1#4:567\n1#4:586\n1#4:590\n1#4:624\n1#4:641\n1#4:644\n1#4:656\n1#4:670\n1#4:684\n1#4:699\n1#4:701\n1#4:719\n63#5:589\n64#5,15:591\n63#5:700\n64#5,15:702\n50#6:606\n43#6:607\n50#6:717\n43#6:718\n*S KotlinDebug\n*F\n+ 1 TorraStream.kt\ncom/phisher98/TorraStream\n*L\n122#1:551,5\n144#1:570,5\n158#1:608,5\n204#1:691,5\n122#1:556,10\n122#1:566\n122#1:568\n122#1:569\n144#1:575,10\n144#1:585\n144#1:587\n144#1:588\n166#1:613,10\n166#1:623\n166#1:625\n166#1:626\n170#1:627,3\n173#1:630,10\n173#1:640\n173#1:642\n173#1:643\n174#1:645,10\n174#1:655\n174#1:657\n174#1:658\n176#1:659,10\n176#1:669\n176#1:671\n176#1:672\n185#1:673,10\n185#1:683\n185#1:685\n185#1:686\n187#1:687\n187#1:688,3\n232#1:696\n232#1:697,2\n238#1:720\n238#1:721,3\n122#1:567\n144#1:586\n151#1:590\n166#1:624\n173#1:641\n174#1:656\n176#1:670\n185#1:684\n348#1:701\n151#1:589\n151#1:591,15\n348#1:700\n348#1:702,15\n151#1:606\n151#1:607\n348#1:717\n348#1:718\n*E\n"})
+@SourceDebugExtension({"SMAP\nTorraStream.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TorraStream.kt\ncom/phisher98/TorraStream\n+ 2 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,550:1\n73#2,5:551\n73#2,5:570\n73#2,5:608\n73#2,5:691\n1795#3,10:556\n2068#3:566\n2069#3:568\n1805#3:569\n1795#3,10:575\n2068#3:585\n2069#3:587\n1805#3:588\n1795#3,10:613\n2068#3:623\n2069#3:625\n1805#3:626\n1960#3,3:627\n1795#3,10:630\n2068#3:640\n2069#3:642\n1805#3:643\n1795#3,10:645\n2068#3:655\n2069#3:657\n1805#3:658\n1795#3,10:659\n2068#3:669\n2069#3:671\n1805#3:672\n1795#3,10:673\n2068#3:683\n2069#3:685\n1805#3:686\n1739#3:687\n1814#3,3:688\n777#3:696\n873#3,2:697\n1739#3:700\n1814#3,3:701\n1#4:567\n1#4:586\n1#4:590\n1#4:624\n1#4:641\n1#4:644\n1#4:656\n1#4:670\n1#4:684\n1#4:699\n1#4:705\n1#4:723\n63#5:589\n64#5,15:591\n63#5:704\n64#5,15:706\n50#6:606\n43#6:607\n50#6:721\n43#6:722\n*S KotlinDebug\n*F\n+ 1 TorraStream.kt\ncom/phisher98/TorraStream\n*L\n122#1:551,5\n144#1:570,5\n158#1:608,5\n204#1:691,5\n122#1:556,10\n122#1:566\n122#1:568\n122#1:569\n144#1:575,10\n144#1:585\n144#1:587\n144#1:588\n166#1:613,10\n166#1:623\n166#1:625\n166#1:626\n170#1:627,3\n173#1:630,10\n173#1:640\n173#1:642\n173#1:643\n174#1:645,10\n174#1:655\n174#1:657\n174#1:658\n176#1:659,10\n176#1:669\n176#1:671\n176#1:672\n185#1:673,10\n185#1:683\n185#1:685\n185#1:686\n187#1:687\n187#1:688,3\n232#1:696\n232#1:697,2\n238#1:700\n238#1:701,3\n122#1:567\n144#1:586\n151#1:590\n166#1:624\n173#1:641\n174#1:656\n176#1:670\n185#1:684\n348#1:705\n151#1:589\n151#1:591,15\n348#1:704\n348#1:706,15\n151#1:606\n151#1:607\n348#1:721\n348#1:722\n*E\n"})
 public final class TorraStream extends TmdbProvider {
 
     @NotNull
@@ -213,7 +213,7 @@ public final class TorraStream extends TmdbProvider {
     /* JADX INFO: renamed from: com.phisher98.TorraStream$load$1 */
     /* JADX INFO: compiled from: TorraStream.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.phisher98.TorraStream", f = "TorraStream.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {158, 195, 204, 207, 235, 276, 296, 315}, m = "load", n = {"url", "data", "type", "resUrl", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "cineRes", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "cineRes", "episodes", "animeVideos", "jpTitle", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "cineRes", "episodes", "animeVideos", "jpTitle", "syncMetaData", "animeMetaData", "kitsuid", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "cineRes", "episodes", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "cineRes", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag"}, nl = {570, 202, 653, 229, 236, 296, 315, 206}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0", "I$1", "I$2", "I$3", "I$4"}, v = 2)
+    @DebugMetadata(c = "com.phisher98.TorraStream", f = "TorraStream.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {158, 195, 204, 207, 235, 276, 296, 315}, m = "load", n = {"url", "data", "type", "resUrl", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "cineRes", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "cineRes", "episodes", "animeVideos", "jpTitle", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "cineRes", "episodes", "animeVideos", "jpTitle", "syncMetaData", "animeMetaData", "kitsuid", "subbedList", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "cineRes", "episodes", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag", "url", "data", "type", "resUrl", "res", "title", "poster", "bgPoster", "releaseDate", "year", "genres", "keywords", "actors", "recommendations", "trailer", "logoUrl", "animeType", "imdbId", "cineRes", "isCartoon", "isAnime", "isAsian", "isBollywood", "comingSoonFlag"}, nl = {570, 202, 653, 229, 236, 296, 315, 206}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0", "I$1", "I$2", "I$3", "I$4"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -238,6 +238,7 @@ public final class TorraStream extends TmdbProvider {
         Object L$22;
         Object L$23;
         Object L$24;
+        Object L$25;
         Object L$3;
         Object L$4;
         Object L$5;
@@ -664,124 +665,145 @@ public final class TorraStream extends TmdbProvider {
 
     /* JADX INFO: Thrown type has an unknown type hierarchy: com.lagradost.cloudstream3.ErrorLoadingException */
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code duplicated, block: B:101:0x06bf  */
+    /* JADX WARN: Code duplicated, block: B:102:0x06c0  */
     /* JADX WARN: Code duplicated, block: B:104:0x06c4  */
-    /* JADX WARN: Code duplicated, block: B:109:0x06dc  */
-    /* JADX WARN: Code duplicated, block: B:112:0x06e4  */
-    /* JADX WARN: Code duplicated, block: B:114:0x06ee  */
-    /* JADX WARN: Code duplicated, block: B:117:0x06f9  */
-    /* JADX WARN: Code duplicated, block: B:120:0x0703  */
-    /* JADX WARN: Code duplicated, block: B:123:0x071f A[LOOP:8: B:118:0x06fd->B:123:0x071f, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:126:0x0728  */
-    /* JADX WARN: Code duplicated, block: B:129:0x0732  */
-    /* JADX WARN: Code duplicated, block: B:140:0x0785  */
-    /* JADX WARN: Code duplicated, block: B:142:0x078a  */
-    /* JADX WARN: Code duplicated, block: B:145:0x0796  */
-    /* JADX WARN: Code duplicated, block: B:147:0x079d  */
-    /* JADX WARN: Code duplicated, block: B:158:0x07f0  */
-    /* JADX WARN: Code duplicated, block: B:161:0x07fc  */
-    /* JADX WARN: Code duplicated, block: B:215:0x0996  */
-    /* JADX WARN: Code duplicated, block: B:220:0x09a3  */
-    /* JADX WARN: Code duplicated, block: B:227:0x0a45  */
-    /* JADX WARN: Code duplicated, block: B:229:0x0a5a  */
-    /* JADX WARN: Code duplicated, block: B:230:0x0a5c  */
-    /* JADX WARN: Code duplicated, block: B:233:0x0a64  */
-    /* JADX WARN: Code duplicated, block: B:234:0x0a67  */
-    /* JADX WARN: Code duplicated, block: B:237:0x0a6f  */
-    /* JADX WARN: Code duplicated, block: B:238:0x0a74  */
-    /* JADX WARN: Code duplicated, block: B:240:0x0a78  */
-    /* JADX WARN: Code duplicated, block: B:243:0x0b44 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:244:0x0b45  */
-    /* JADX WARN: Code duplicated, block: B:261:0x0ba8  */
-    /* JADX WARN: Code duplicated, block: B:263:0x0bae  */
-    /* JADX WARN: Code duplicated, block: B:265:0x0bb7  */
-    /* JADX WARN: Code duplicated, block: B:266:0x0bb9  */
-    /* JADX WARN: Code duplicated, block: B:269:0x0c42 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:270:0x0c43  */
-    /* JADX WARN: Code duplicated, block: B:273:0x0c66  */
-    /* JADX WARN: Code duplicated, block: B:277:0x0cbb  */
-    /* JADX WARN: Code duplicated, block: B:281:0x0d09  */
-    /* JADX WARN: Code duplicated, block: B:282:0x0d0b  */
-    /* JADX WARN: Code duplicated, block: B:301:0x0d6d  */
-    /* JADX WARN: Code duplicated, block: B:304:0x0d7b  */
-    /* JADX WARN: Code duplicated, block: B:319:0x0dbc  */
-    /* JADX WARN: Code duplicated, block: B:321:0x0dc0  */
-    /* JADX WARN: Code duplicated, block: B:324:0x0dcb  */
-    /* JADX WARN: Code duplicated, block: B:327:0x0e9d A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:328:0x0e9e  */
-    /* JADX WARN: Code duplicated, block: B:331:0x0ec3  */
-    /* JADX WARN: Code duplicated, block: B:334:0x0ece  */
-    /* JADX WARN: Code duplicated, block: B:337:0x0edc  */
-    /* JADX WARN: Code duplicated, block: B:338:0x0edf  */
-    /* JADX WARN: Code duplicated, block: B:340:0x0ee3  */
-    /* JADX WARN: Code duplicated, block: B:341:0x0ee6  */
-    /* JADX WARN: Code duplicated, block: B:343:0x0eea  */
-    /* JADX WARN: Code duplicated, block: B:344:0x0eed  */
-    /* JADX WARN: Code duplicated, block: B:347:0x0fde A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:348:0x0fdf  */
-    /* JADX WARN: Code duplicated, block: B:350:0x0ff9  */
-    /* JADX WARN: Code duplicated, block: B:352:0x10f2 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:353:0x10f3  */
-    /* JADX WARN: Code duplicated, block: B:355:0x110d  */
-    /* JADX WARN: Code duplicated, block: B:357:0x1138  */
-    /* JADX WARN: Code duplicated, block: B:358:0x113b  */
-    /* JADX WARN: Code duplicated, block: B:361:0x1143  */
-    /* JADX WARN: Code duplicated, block: B:362:0x114a  */
-    /* JADX WARN: Code duplicated, block: B:366:0x1166  */
-    /* JADX WARN: Code duplicated, block: B:369:0x1210 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:370:0x1211  */
-    /* JADX WARN: Code duplicated, block: B:375:0x1273  */
-    /* JADX WARN: Code duplicated, block: B:412:0x0724 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:413:0x071d A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:59:0x05df  */
-    /* JADX WARN: Code duplicated, block: B:67:0x0605  */
-    /* JADX WARN: Code duplicated, block: B:75:0x0631  */
-    /* JADX WARN: Code duplicated, block: B:78:0x0638  */
+    /* JADX WARN: Code duplicated, block: B:107:0x06c9  */
+    /* JADX WARN: Code duplicated, block: B:112:0x06e1  */
+    /* JADX WARN: Code duplicated, block: B:115:0x06e8  */
+    /* JADX WARN: Code duplicated, block: B:117:0x06f2  */
+    /* JADX WARN: Code duplicated, block: B:120:0x06fd  */
+    /* JADX WARN: Code duplicated, block: B:123:0x0707  */
+    /* JADX WARN: Code duplicated, block: B:126:0x0723 A[LOOP:9: B:121:0x0701->B:126:0x0723, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:129:0x072c  */
+    /* JADX WARN: Code duplicated, block: B:132:0x0735  */
+    /* JADX WARN: Code duplicated, block: B:143:0x0789  */
+    /* JADX WARN: Code duplicated, block: B:145:0x078e  */
+    /* JADX WARN: Code duplicated, block: B:148:0x079a  */
+    /* JADX WARN: Code duplicated, block: B:150:0x07a1  */
+    /* JADX WARN: Code duplicated, block: B:161:0x07f4  */
+    /* JADX WARN: Code duplicated, block: B:164:0x0800  */
+    /* JADX WARN: Code duplicated, block: B:218:0x0997  */
+    /* JADX WARN: Code duplicated, block: B:223:0x09a4  */
+    /* JADX WARN: Code duplicated, block: B:230:0x0a3f  */
+    /* JADX WARN: Code duplicated, block: B:232:0x0a56  */
+    /* JADX WARN: Code duplicated, block: B:233:0x0a58  */
+    /* JADX WARN: Code duplicated, block: B:236:0x0a62  */
+    /* JADX WARN: Code duplicated, block: B:237:0x0a65  */
+    /* JADX WARN: Code duplicated, block: B:240:0x0a6d  */
+    /* JADX WARN: Code duplicated, block: B:241:0x0a72  */
+    /* JADX WARN: Code duplicated, block: B:243:0x0a75  */
+    /* JADX WARN: Code duplicated, block: B:246:0x0b38 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:247:0x0b39  */
+    /* JADX WARN: Code duplicated, block: B:264:0x0b9a  */
+    /* JADX WARN: Code duplicated, block: B:266:0x0ba0  */
+    /* JADX WARN: Code duplicated, block: B:268:0x0ba9  */
+    /* JADX WARN: Code duplicated, block: B:269:0x0bab  */
+    /* JADX WARN: Code duplicated, block: B:272:0x0c41 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:273:0x0c42  */
+    /* JADX WARN: Code duplicated, block: B:276:0x0c65  */
+    /* JADX WARN: Code duplicated, block: B:280:0x0cbf  */
+    /* JADX WARN: Code duplicated, block: B:284:0x0d2a  */
+    /* JADX WARN: Code duplicated, block: B:285:0x0d2c  */
+    /* JADX WARN: Code duplicated, block: B:304:0x0d8e  */
+    /* JADX WARN: Code duplicated, block: B:307:0x0d9c  */
+    /* JADX WARN: Code duplicated, block: B:322:0x0ddd  */
+    /* JADX WARN: Code duplicated, block: B:324:0x0de1  */
+    /* JADX WARN: Code duplicated, block: B:327:0x0dec  */
+    /* JADX WARN: Code duplicated, block: B:330:0x0eba A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:331:0x0ebb  */
+    /* JADX WARN: Code duplicated, block: B:334:0x0ee5  */
+    /* JADX WARN: Code duplicated, block: B:337:0x0ef0  */
+    /* JADX WARN: Code duplicated, block: B:341:0x0f18  */
+    /* JADX WARN: Code duplicated, block: B:343:0x0f2a  */
+    /* JADX WARN: Code duplicated, block: B:350:0x0f4f A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:351:0x0f51  */
+    /* JADX WARN: Code duplicated, block: B:356:0x0f62  */
+    /* JADX WARN: Code duplicated, block: B:358:0x0f66 A[PHI: r39
+      0x0f66: PHI (r39v19 java.lang.Integer) = (r39v13 java.lang.Integer), (r39v24 java.lang.Integer) binds: [B:357:0x0f64, B:348:0x0f4c] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Code duplicated, block: B:359:0x0f6b  */
+    /* JADX WARN: Code duplicated, block: B:362:0x0f85  */
+    /* JADX WARN: Code duplicated, block: B:363:0x0f8c  */
+    /* JADX WARN: Code duplicated, block: B:366:0x0fb3  */
+    /* JADX WARN: Code duplicated, block: B:369:0x0fbb  */
+    /* JADX WARN: Code duplicated, block: B:370:0x0fbe  */
+    /* JADX WARN: Code duplicated, block: B:372:0x0fc2  */
+    /* JADX WARN: Code duplicated, block: B:373:0x0fc5  */
+    /* JADX WARN: Code duplicated, block: B:375:0x0fc9  */
+    /* JADX WARN: Code duplicated, block: B:376:0x0fcc  */
+    /* JADX WARN: Code duplicated, block: B:380:0x102c  */
+    /* JADX WARN: Code duplicated, block: B:383:0x1133 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:384:0x1134  */
+    /* JADX WARN: Code duplicated, block: B:386:0x115a  */
+    /* JADX WARN: Code duplicated, block: B:388:0x125d A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:389:0x125e  */
+    /* JADX WARN: Code duplicated, block: B:391:0x1286  */
+    /* JADX WARN: Code duplicated, block: B:393:0x12c0  */
+    /* JADX WARN: Code duplicated, block: B:394:0x12c3  */
+    /* JADX WARN: Code duplicated, block: B:397:0x12cb  */
+    /* JADX WARN: Code duplicated, block: B:398:0x12d2  */
+    /* JADX WARN: Code duplicated, block: B:401:0x12eb  */
+    /* JADX WARN: Code duplicated, block: B:402:0x12ee  */
+    /* JADX WARN: Code duplicated, block: B:405:0x139a A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:406:0x139b  */
+    /* JADX WARN: Code duplicated, block: B:411:0x13ea  */
+    /* JADX WARN: Code duplicated, block: B:453:0x0728 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:454:0x0721 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:64:0x05f1  */
+    /* JADX WARN: Code duplicated, block: B:71:0x0615  */
+    /* JADX WARN: Code duplicated, block: B:78:0x063e  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:81:0x0657  */
-    /* JADX WARN: Code duplicated, block: B:83:0x066b  */
-    /* JADX WARN: Code duplicated, block: B:84:0x067a  */
-    /* JADX WARN: Code duplicated, block: B:87:0x068e  */
-    /* JADX WARN: Code duplicated, block: B:90:0x0694  */
-    /* JADX WARN: Code duplicated, block: B:91:0x069b  */
-    /* JADX WARN: Code duplicated, block: B:94:0x06a2  */
-    /* JADX WARN: Code duplicated, block: B:96:0x06ac  */
-    /* JADX WARN: Code duplicated, block: B:99:0x06bb  */
+    /* JADX WARN: Code duplicated, block: B:81:0x0648  */
+    /* JADX WARN: Code duplicated, block: B:84:0x0667  */
+    /* JADX WARN: Code duplicated, block: B:86:0x067b  */
+    /* JADX WARN: Code duplicated, block: B:87:0x0687  */
+    /* JADX WARN: Code duplicated, block: B:90:0x0695  */
+    /* JADX WARN: Code duplicated, block: B:93:0x0699  */
+    /* JADX WARN: Code duplicated, block: B:94:0x06a0  */
+    /* JADX WARN: Code duplicated, block: B:97:0x06a7  */
+    /* JADX WARN: Code duplicated, block: B:99:0x06b1  */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r22v2 */
-    /* JADX WARN: Type inference failed for: r2v131 */
-    /* JADX WARN: Type inference failed for: r2v30, types: [int] */
-    /* JADX WARN: Type inference failed for: r2v34 */
-    /* JADX WARN: Type inference failed for: r2v37 */
+    /* JADX WARN: Type inference failed for: r0v68 */
+    /* JADX WARN: Type inference failed for: r12v42 */
+    /* JADX WARN: Type inference failed for: r13v20, types: [java.lang.Object, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r18v17 */
+    /* JADX WARN: Type inference failed for: r18v19 */
+    /* JADX WARN: Type inference failed for: r18v4 */
+    /* JADX WARN: Type inference failed for: r40v3 */
+    /* JADX WARN: Type inference failed for: r6v15, types: [int] */
+    /* JADX WARN: Type inference failed for: r6v18 */
+    /* JADX WARN: Type inference failed for: r6v21 */
+    /* JADX WARN: Type inference failed for: r6v89 */
+    /* JADX WARN: Type inference failed for: r78v0 */
+    /* JADX WARN: Type inference failed for: r78v1, types: [java.lang.Object, java.lang.String] */
+    /* JADX WARN: Type inference failed for: r78v2 */
     @Nullable
     public Object load(@NotNull String str, @NotNull Continuation<? super LoadResponse> continuation) throws ErrorLoadingException {
         C00021 c00021;
         Object obj;
+        Integer num;
         Object objDecodeFromString;
-        TvType type;
-        String str2;
+        Integer num2;
         Object obj2;
-        String str3;
         Data data;
+        TvType tvType;
+        String str2;
+        String str3;
         Object safe;
         MediaDetail mediaDetail;
         String title;
         String releaseDate;
-        String str4;
         Integer intOrNull;
         ArrayList<Genres> genres;
         ArrayList arrayList;
         boolean zContains;
-        String str5;
+        String str4;
         int i;
         int i2;
-        int i3;
         ArrayList<ProductionCountries> production_countries;
-        int i4;
-        int i5;
-        int i6;
+        Object obj3;
+        int i3;
         KeywordResults keywords;
-        int i7;
+        int i4;
         Collection collectionEmptyList;
         boolean zIsEmpty;
         Collection collection;
@@ -789,32 +811,30 @@ public final class TorraStream extends TmdbProvider {
         ArrayList<Cast> cast;
         ArrayList arrayList2;
         ArrayList arrayList3;
-        String str6;
+        String str5;
         String lowerCase;
         ?? IsUpcoming;
-        TvType tvType;
-        String str7;
-        String str8;
-        Object obj3;
-        String str9;
-        String str10;
         List list;
-        Object obj4;
-        String str11;
-        String str12;
-        String str13;
-        int i8;
-        MediaDetail mediaDetail2;
+        TvType tvType2;
+        Integer num3;
+        String str6;
         List list2;
-        int i9;
-        Integer num;
+        int i5;
+        int i6;
         List list3;
-        int i10;
-        int i11;
+        String str7;
+        Object obj4;
         List list4;
-        String str14;
-        int i12;
+        ?? r18;
+        String str8;
+        MediaDetail mediaDetail2;
+        String str9;
+        Object obj5;
+        String str10;
+        String str11;
+        int i7;
         Data data2;
+        int i8;
         ArrayList<Trailers> results;
         ArrayList<Media> results2;
         KeywordResults keywords2;
@@ -822,218 +842,239 @@ public final class TorraStream extends TmdbProvider {
         ArrayList<Keywords> results3;
         ArrayList<ProductionCountries> arrayList4;
         Iterator it;
-        ArrayList<ProductionCountries> arrayList5;
         Iterator it2;
+        ArrayList<ProductionCountries> arrayList5;
         ArrayList arrayList6;
         Iterator it3;
         String name;
         ArrayList arrayList7;
         List listSplit$default;
+        String str12;
+        int i9;
+        String str13;
+        String type;
+        int i10;
+        String str14;
         String str15;
-        String str16;
-        String type2;
-        String str17;
-        int i13;
         boolean z;
-        String str18;
+        String str16;
         ExternalIds external_ids;
         String imdb_id;
-        int i14;
         List list5;
+        Integer num4;
+        String str17;
+        Data data3;
         List list6;
         List list7;
+        String str18;
         List list8;
         String str19;
-        Data data3;
-        int i15;
-        int i16;
-        int i17;
         String str20;
-        boolean z2;
-        Integer num2;
-        Object obj5;
-        int i18;
+        ?? r40;
+        int i11;
+        int i12;
         Object obj6;
-        C00021 c00022;
+        Object obj7;
+        MediaDetail mediaDetail3;
         String str21;
         String str22;
-        MediaDetail mediaDetail3;
         String str23;
-        String str24;
-        Object obj7;
-        Data data4;
         List list9;
+        String str24;
+        Data data4;
         List list10;
         String str25;
-        String str26;
-        Integer num3;
         List list11;
+        String str26;
+        int i13;
+        int i14;
         List list12;
         String str27;
-        TvType tvType2;
         String str28;
+        int i15;
+        Integer num5;
         String str29;
-        int i19;
-        int i20;
-        int i21;
-        int i22;
+        Object obj8;
+        TvType tvType3;
+        int i16;
         Data data5;
-        int i23;
         Object safe2;
         CinemetaRes cinemetaRes;
-        Integer num4;
-        int i24;
+        int i17;
         String str30;
-        List list13;
         String str31;
-        int i25;
-        Object obj8;
         String str32;
-        boolean z3;
+        List list13;
+        String str33;
+        int i18;
+        Object obj9;
+        int i19;
+        boolean z2;
         ExternalIds external_ids2;
         String imdb_id2;
+        boolean z3;
+        String str34;
         List list14;
         List list15;
         List list16;
-        int i26;
         Data data6;
-        String str33;
-        int i27;
-        String str34;
-        int i28;
-        MediaDetail mediaDetail4;
-        List list17;
-        List list18;
-        List list19;
-        CinemetaRes cinemetaRes2;
         String str35;
         String str36;
         String str37;
-        Integer num5;
-        int i29;
-        Data data7;
         String str38;
         String str39;
-        List list20;
         String str40;
-        ArrayList<Seasons> seasons;
-        TvType tvType3;
-        int i30;
-        int i31;
-        Object obj9;
-        int i32;
+        List list17;
+        List list18;
+        CinemetaRes cinemetaRes2;
+        int i20;
         String str41;
-        int i33;
-        int i34;
-        Data data8;
-        int i35;
-        boolean z4;
-        int i36;
-        int i37;
+        ArrayList<Seasons> seasons;
         Integer num6;
-        int i38;
-        int i39;
-        List list21;
+        Object obj10;
+        int i21;
+        List list19;
+        Data data7;
+        int i22;
+        int i23;
+        TvType tvType4;
+        int i24;
         String str42;
         String str43;
         String str44;
+        int i25;
+        boolean z4;
+        int i26;
+        TvType tvType5;
         String str45;
-        Object objAmap;
+        Integer num7;
+        List list20;
         String str46;
-        int i40;
-        Data data9;
-        int i41;
-        List list22;
+        MediaDetail mediaDetail4;
         String str47;
-        List list23;
+        int i27;
         String str48;
         String str49;
         String str50;
-        Integer num7;
-        int i42;
+        int i28;
+        List list21;
+        int i29;
+        Object objAmap;
+        Object obj11;
         String str51;
-        int i43;
+        MediaDetail mediaDetail5;
+        Data data8;
         String str52;
-        int i44;
-        Object obj10;
-        int i45;
-        int i46;
-        List list24;
+        TvType tvType6;
         String str53;
-        Integer num8;
+        List list22;
         String str54;
         String str55;
         String str56;
-        List listEmptyList;
-        Data data10;
         String str57;
-        List list25;
-        MediaDetail mediaDetail5;
-        int i47;
-        List list26;
-        int i48;
-        String str58;
-        List list27;
         CinemetaRes cinemetaRes3;
-        List list28;
-        Object obj11;
-        Object objNewTvSeriesLoadResponse;
-        C00021 c00023;
+        int i30;
+        int i31;
+        int i32;
         Object obj12;
+        String str58;
         String str59;
-        CinemetaRes cinemetaRes4;
-        ArrayList arrayListEmptyList;
-        ResultsAltTitles alternative_titles;
-        List list29;
-        String name2;
-        CinemetaRes.Meta meta;
+        int i33;
         String str60;
         String str61;
+        Integer num8;
+        List list23;
+        CinemetaRes cinemetaRes4;
+        List listEmptyList;
+        List list24;
+        List list25;
+        List list26;
         String str62;
-        List list30;
-        List list31;
+        Data data9;
         String str63;
-        Data data11;
-        int i49;
-        int i50;
-        int i51;
-        String str64;
-        Integer num9;
         MediaDetail mediaDetail6;
-        List list32;
-        int i52;
-        List list33;
-        int i53;
-        Object obj13;
-        C00021 c00024;
-        Object obj14;
-        int i54;
+        String str64;
         String str65;
+        List list27;
+        Object obj13;
         String str66;
+        Object objNewTvSeriesLoadResponse;
+        C00021 c00022;
+        Object obj14;
         String str67;
         String str68;
-        List list34;
+        CinemetaRes cinemetaRes5;
+        ArrayList arrayListEmptyList;
+        ResultsAltTitles alternative_titles;
+        List list28;
+        Object name2;
+        CinemetaRes.Meta meta;
+        Object obj15;
         String str69;
-        List list35;
-        Data data12;
         String str70;
+        int i34;
+        List list29;
+        List list30;
+        C00021 c00023;
         String str71;
+        Data data10;
+        List list31;
+        int i35;
+        int i36;
+        List list32;
+        int i37;
+        CinemetaRes cinemetaRes6;
+        int i38;
+        MediaDetail mediaDetail7;
+        List list33;
+        Object obj16;
+        Object obj17;
+        List list34;
         String str72;
+        String str73;
+        String str74;
+        String str75;
+        Integer num9;
+        Object obj18;
+        String str76;
+        ?? r78;
+        String str77;
+        MediaDetail mediaDetail8;
+        List list35;
+        CinemetaRes cinemetaRes7;
+        String str78;
+        int i39;
+        int i40;
         List list36;
-        int i55;
+        List list37;
         ArrayList<AltTitles> results4;
         Object next;
         CinemetaRes.Meta meta2;
         List<CinemetaRes.Meta.Video> videos;
-        List list37;
+        List list38;
         List listFlatten;
         MetaAnimeData animeData;
-        String kitsuid;
+        Object kitsuid;
+        List list39;
+        String str79;
+        ArrayList arrayList8;
+        List<CinemetaRes.Meta.Video> list40;
+        ArrayList arrayList9;
+        Object obj19;
+        Object objNewAnimeLoadResponse$default;
+        String released;
+        Integer intOrNull2;
+        int iIntValue;
+        CinemetaRes.Meta meta3;
+        String year;
+        ExternalIds external_ids3;
+        Integer tvdb_id;
+        String releaseDate2;
         boolean z5;
         boolean z6;
         boolean z7;
-        Object obj15;
-        Object objNewAnimeLoadResponse$default;
+        List listSplit$default2;
+        String str80;
         MetaMappings mappings;
         if (continuation instanceof C00021) {
             c00021 = (C00021) continuation;
@@ -1045,10 +1086,10 @@ public final class TorraStream extends TmdbProvider {
         } else {
             c00021 = new C00021(continuation);
         }
-        C00021 c00025 = c00021;
-        Object objNewMovieLoadResponse = c00025.result;
+        C00021 c00024 = c00021;
+        Object objNewMovieLoadResponse = c00024.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00025.label) {
+        switch (c00024.label) {
             case 0:
                 ResultKt.throwOnFailure(objNewMovieLoadResponse);
                 AppUtils appUtils = AppUtils.INSTANCE;
@@ -1065,15 +1106,24 @@ public final class TorraStream extends TmdbProvider {
                 if (Result.exceptionOrNull-impl(obj) != null) {
                     try {
                         Result.Companion companion3 = Result.Companion;
-                        obj = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(Data.class), (List) null, 2, (Object) null));
-                    } catch (Throwable th2) {
-                        Result.Companion companion4 = Result.Companion;
-                        obj = Result.constructor-impl(ResultKt.createFailure(th2));
+                        num = null;
+                        try {
+                            obj = Result.constructor-impl(SerializersModule.getContextual$default(MainAPIKt.getJson().getSerializersModule(), Reflection.getOrCreateKotlinClass(Data.class), (List) null, 2, (Object) null));
+                        } catch (Throwable th2) {
+                            th = th2;
+                            Result.Companion companion4 = Result.Companion;
+                            obj = Result.constructor-impl(ResultKt.createFailure(th));
+                        }
+                    } catch (Throwable th3) {
+                        th = th3;
+                        num = null;
                     }
                     break;
+                } else {
+                    num = null;
                 }
                 if (Result.isFailure-impl(obj)) {
-                    obj = null;
+                    obj = num;
                 }
                 DeserializationStrategy deserializationStrategy = (KSerializer) obj;
                 if (deserializationStrategy != null) {
@@ -1083,7 +1133,7 @@ public final class TorraStream extends TmdbProvider {
                         ArchComponentExtKt.logError(e);
                         objDecodeFromString = MainAPIKt.getMapper().readValue(str, new TypeReference<Data>() { // from class: com.phisher98.TorraStream$load$$inlined$parseJson$1
                         });
-                    } catch (Throwable th3) {
+                    } catch (Throwable th4) {
                         objDecodeFromString = MainAPIKt.getMapper().readValue(str, new TypeReference<Data>() { // from class: com.phisher98.TorraStream$load$$inlined$parseJson$1
                         });
                     }
@@ -1092,30 +1142,33 @@ public final class TorraStream extends TmdbProvider {
                     objDecodeFromString = MainAPIKt.getMapper().readValue(str, new TypeReference<Data>() { // from class: com.phisher98.TorraStream$load$$inlined$parseJson$1
                     });
                 }
-                Data data13 = (Data) objDecodeFromString;
-                type = INSTANCE.getType(data13.getType());
-                str2 = type == TvType.Movie ? "https://api.themoviedb.org/3/movie/" + data13.getId() + "?api_key=1865f43a0549ca50d341dd9ab8b29f49&append_to_response=keywords,credits,external_ids,videos,recommendations" : "https://api.themoviedb.org/3/tv/" + data13.getId() + "?api_key=1865f43a0549ca50d341dd9ab8b29f49&append_to_response=keywords,credits,external_ids,videos,recommendations";
+                Data data11 = (Data) objDecodeFromString;
+                TvType type2 = INSTANCE.getType(data11.getType());
+                String str81 = type2 == TvType.Movie ? "https://api.themoviedb.org/3/movie/" + data11.getId() + "?api_key=1865f43a0549ca50d341dd9ab8b29f49&append_to_response=keywords,credits,external_ids,videos,recommendations" : "https://api.themoviedb.org/3/tv/" + data11.getId() + "?api_key=1865f43a0549ca50d341dd9ab8b29f49&append_to_response=keywords,credits,external_ids,videos,recommendations";
                 Requests app = MainActivityKt.getApp();
-                c00025.L$0 = str;
-                c00025.L$1 = data13;
-                c00025.L$2 = type;
-                c00025.L$3 = SpillingKt.nullOutSpilledVariable(str2);
-                c00025.label = 1;
-                obj2 = Requests.get$default(app, str2, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00025, 4094, (Object) null);
+                c00024.L$0 = str;
+                c00024.L$1 = data11;
+                c00024.L$2 = type2;
+                c00024.L$3 = SpillingKt.nullOutSpilledVariable(str81);
+                c00024.label = 1;
+                num2 = num;
+                obj2 = Requests.get$default(app, str81, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00024, 4094, (Object) null);
+                c00024 = c00024;
                 if (obj2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
+                data = data11;
+                tvType = type2;
+                str2 = str81;
                 str3 = str;
-                data = data13;
                 NiceResponse niceResponse = (NiceResponse) obj2;
                 try {
                     ResponseParser parser = niceResponse.getParser();
                     Intrinsics.checkNotNull(parser);
                     safe = parser.parseSafe(niceResponse.getText(), Reflection.getOrCreateKotlinClass(MediaDetail.class));
-                    break;
                 } catch (Exception e2) {
                     e2.printStackTrace();
-                    safe = null;
+                    safe = num2;
                 }
                 mediaDetail = (MediaDetail) safe;
                 if (mediaDetail != null) {
@@ -1123,21 +1176,20 @@ public final class TorraStream extends TmdbProvider {
                 }
                 title = mediaDetail.getTitle();
                 if (title != null && (title = mediaDetail.getName()) == null) {
-                    return null;
+                    return num2;
                 }
-                String str73 = title;
                 String oriImageUrl = getOriImageUrl(mediaDetail.getPosterPath());
                 String oriImageUrl2 = getOriImageUrl(mediaDetail.getBackdropPath());
                 releaseDate = mediaDetail.getReleaseDate();
                 if (releaseDate == null) {
                     releaseDate = mediaDetail.getFirstAirDate();
                 }
-                str4 = releaseDate;
-                if (str4 != null || (listSplit$default = StringsKt.split$default(str4, new String[]{"-"}, false, 0, 6, (Object) null)) == null || (str15 = (String) CollectionsKt.first(listSplit$default)) == null) {
-                    intOrNull = null;
+                if (releaseDate != null || (listSplit$default = StringsKt.split$default(releaseDate, new String[]{"-"}, false, 0, 6, (Object) null)) == null || (str12 = (String) CollectionsKt.first(listSplit$default)) == null) {
+                    intOrNull = num2;
                 } else {
-                    intOrNull = StringsKt.toIntOrNull(str15);
+                    intOrNull = StringsKt.toIntOrNull(str12);
                 }
+                Integer num10 = intOrNull;
                 genres = mediaDetail.getGenres();
                 if (genres != null) {
                     arrayList6 = new ArrayList();
@@ -1151,7 +1203,6 @@ public final class TorraStream extends TmdbProvider {
                             arrayList7 = arrayList6;
                         }
                         arrayList6 = arrayList7;
-                        objNewMovieLoadResponse = objNewMovieLoadResponse;
                     }
                     arrayList = arrayList6;
                 } else {
@@ -1164,7 +1215,7 @@ public final class TorraStream extends TmdbProvider {
                 }
                 if (zContains) {
                     if (!Intrinsics.areEqual(mediaDetail.getOriginal_language(), "zh")) {
-                        str5 = str2;
+                        str4 = str2;
                         if (Intrinsics.areEqual(mediaDetail.getOriginal_language(), "ja")) {
                         }
                         if (i == 0 || !(Intrinsics.areEqual(mediaDetail.getOriginal_language(), "zh") || Intrinsics.areEqual(mediaDetail.getOriginal_language(), "ko"))) {
@@ -1172,52 +1223,50 @@ public final class TorraStream extends TmdbProvider {
                         } else {
                             i2 = 1;
                         }
-                        i3 = i2;
                         production_countries = mediaDetail.getProduction_countries();
                         if (production_countries != null) {
                             arrayList4 = production_countries;
-                            i4 = i3;
+                            obj3 = coroutine_suspended;
                             if ((arrayList4 instanceof Collection) || !arrayList4.isEmpty()) {
                                 it = arrayList4.iterator();
                                 while (true) {
                                     if (it.hasNext()) {
-                                        arrayList5 = arrayList4;
                                         it2 = it;
+                                        arrayList5 = arrayList4;
                                         if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                            i5 = 1;
+                                            i3 = 1;
                                         } else {
-                                            arrayList4 = arrayList5;
                                             it = it2;
+                                            arrayList4 = arrayList5;
                                         }
                                     } else {
-                                        i5 = 0;
+                                        i3 = 0;
                                     }
                                 }
                             } else {
-                                i5 = 0;
+                                i3 = 0;
                             }
                         } else {
-                            i4 = i3;
-                            i5 = 0;
+                            obj3 = coroutine_suspended;
+                            i3 = 0;
                         }
-                        i6 = i5;
                         keywords = mediaDetail.getKeywords();
                         if (keywords != null || (results3 = keywords.getResults()) == null) {
-                            i7 = i6;
+                            i4 = i3;
                             collectionEmptyList = null;
                         } else {
-                            ArrayList<Keywords> arrayList8 = results3;
-                            ArrayList arrayList9 = new ArrayList();
-                            Iterator it4 = arrayList8.iterator();
+                            ArrayList<Keywords> arrayList10 = results3;
+                            ArrayList arrayList11 = new ArrayList();
+                            Iterator it4 = arrayList10.iterator();
                             while (it4.hasNext()) {
                                 String name3 = ((Keywords) it4.next()).getName();
                                 if (name3 != null) {
-                                    arrayList9.add(name3);
+                                    arrayList11.add(name3);
                                 }
-                                i6 = i6;
+                                i3 = i3;
                             }
-                            i7 = i6;
-                            collectionEmptyList = arrayList9;
+                            i4 = i3;
+                            collectionEmptyList = arrayList11;
                         }
                         if (collectionEmptyList == null) {
                             collectionEmptyList = CollectionsKt.emptyList();
@@ -1230,81 +1279,78 @@ public final class TorraStream extends TmdbProvider {
                             if (keywords2 != null || (keywords3 = keywords2.getKeywords()) == null) {
                                 collection = null;
                             } else {
-                                ArrayList<Keywords> arrayList10 = keywords3;
-                                ArrayList arrayList11 = new ArrayList();
-                                Iterator it5 = arrayList10.iterator();
+                                ArrayList<Keywords> arrayList12 = keywords3;
+                                ArrayList arrayList13 = new ArrayList();
+                                Iterator it5 = arrayList12.iterator();
                                 while (it5.hasNext()) {
                                     String name4 = ((Keywords) it5.next()).getName();
                                     if (name4 != null) {
-                                        arrayList11.add(name4);
+                                        arrayList13.add(name4);
                                     }
-                                    arrayList10 = arrayList10;
+                                    arrayList12 = arrayList12;
                                 }
-                                collection = arrayList11;
+                                collection = arrayList13;
                             }
                         }
-                        List list38 = (List) collection;
+                        List list41 = (List) collection;
                         credits = mediaDetail.getCredits();
                         if (credits != null || (cast = credits.getCast()) == null) {
                             return null;
                         }
-                        ArrayList<Cast> arrayList12 = cast;
-                        ArrayList arrayList13 = new ArrayList();
-                        for (Cast cast2 : arrayList12) {
+                        ArrayList<Cast> arrayList14 = cast;
+                        ArrayList arrayList15 = new ArrayList();
+                        for (Cast cast2 : arrayList14) {
                             String name5 = cast2.getName();
                             ActorData actorData = (name5 == null && (name5 = cast2.getOriginalName()) == null) ? null : new ActorData(new Actor(name5, getImageUrl(cast2.getProfilePath())), (ActorRole) null, cast2.getCharacter(), (Actor) null, 10, (DefaultConstructorMarker) null);
                             if (actorData != null) {
-                                arrayList13.add(actorData);
+                                arrayList15.add(actorData);
                             }
-                            zContains = zContains;
                             i = i;
-                            list38 = list38;
+                            i2 = i2;
+                            zContains = zContains;
                         }
+                        int i41 = i2;
                         boolean z8 = zContains;
-                        int i56 = i;
-                        List list39 = list38;
-                        ArrayList arrayList14 = arrayList13;
+                        int i42 = i;
+                        ArrayList arrayList16 = arrayList15;
                         ResultsRecommendations recommendations = mediaDetail.getRecommendations();
                         if (recommendations == null || (results2 = recommendations.getResults()) == null) {
-                            arrayList2 = arrayList14;
+                            arrayList2 = arrayList16;
                             arrayList3 = null;
                         } else {
-                            ArrayList<Media> arrayList15 = results2;
-                            int i57 = 0;
-                            ArrayList arrayList16 = new ArrayList();
-                            Iterator it6 = arrayList15.iterator();
+                            ArrayList<Media> arrayList17 = results2;
+                            int i43 = 0;
+                            ArrayList arrayList18 = new ArrayList();
+                            Iterator it6 = arrayList17.iterator();
                             while (it6.hasNext()) {
-                                ArrayList<Media> arrayList17 = arrayList15;
-                                int i58 = i57;
-                                ArrayList arrayList18 = arrayList14;
+                                ArrayList<Media> arrayList19 = arrayList17;
+                                ArrayList arrayList20 = arrayList16;
+                                int i44 = i43;
                                 SearchResponse searchResponse$default = toSearchResponse$default(this, (Media) it6.next(), null, 1, null);
                                 if (searchResponse$default != null) {
-                                    arrayList16.add(searchResponse$default);
+                                    arrayList18.add(searchResponse$default);
                                 }
-                                arrayList14 = arrayList18;
-                                arrayList15 = arrayList17;
-                                i57 = i58;
+                                arrayList17 = arrayList19;
+                                arrayList16 = arrayList20;
+                                i43 = i44;
                             }
-                            arrayList2 = arrayList14;
-                            arrayList3 = arrayList16;
+                            arrayList2 = arrayList16;
+                            arrayList3 = arrayList18;
                         }
-                        ArrayList arrayList19 = arrayList3;
                         ResultsTrailer videos2 = mediaDetail.getVideos();
                         if (videos2 == null || (results = videos2.getResults()) == null) {
-                            str6 = null;
+                            str5 = null;
                         } else {
-                            ArrayList<Trailers> arrayList20 = results;
-                            ArrayList arrayList21 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList20, 10));
-                            ArrayList<Trailers> arrayList22 = arrayList20;
-                            Iterator it7 = arrayList22.iterator();
+                            ArrayList<Trailers> arrayList21 = results;
+                            ArrayList arrayList22 = new ArrayList(CollectionsKt.collectionSizeOrDefault(arrayList21, 10));
+                            ArrayList<Trailers> arrayList23 = arrayList21;
+                            Iterator it7 = arrayList23.iterator();
                             while (it7.hasNext()) {
-                                arrayList21.add("https://www.youtube.com/watch?v=" + ((Trailers) it7.next()).getKey());
-                                arrayList20 = arrayList20;
-                                arrayList22 = arrayList22;
+                                arrayList22.add("https://www.youtube.com/watch?v=" + ((Trailers) it7.next()).getKey());
+                                arrayList23 = arrayList23;
                             }
-                            str6 = (String) CollectionsKt.randomOrNull(arrayList21, Random.Default);
+                            str5 = (String) CollectionsKt.randomOrNull(arrayList22, Random.Default);
                         }
-                        String str74 = str6;
                         String status = mediaDetail.getStatus();
                         if (status != null) {
                             lowerCase = status.toLowerCase(Locale.ROOT);
@@ -1323,1611 +1369,1898 @@ public final class TorraStream extends TmdbProvider {
                                     IsUpcoming = 1;
                                     break;
                                 default:
-                                    IsUpcoming = isUpcoming(str4);
+                                    IsUpcoming = isUpcoming(releaseDate);
                                     break;
                             }
                         } else {
-                            IsUpcoming = isUpcoming(str4);
+                            IsUpcoming = isUpcoming(releaseDate);
                         }
                         Integer id = mediaDetail.getId();
-                        c00025.L$0 = str3;
-                        c00025.L$1 = data;
-                        c00025.L$2 = type;
-                        c00025.L$3 = SpillingKt.nullOutSpilledVariable(str5);
-                        c00025.L$4 = mediaDetail;
-                        c00025.L$5 = str73;
-                        c00025.L$6 = oriImageUrl;
-                        c00025.L$7 = oriImageUrl2;
-                        c00025.L$8 = SpillingKt.nullOutSpilledVariable(str4);
-                        c00025.L$9 = intOrNull;
-                        c00025.L$10 = arrayList;
-                        c00025.L$11 = list39;
-                        c00025.L$12 = arrayList2;
-                        c00025.L$13 = arrayList19;
-                        c00025.L$14 = str74;
-                        c00025.I$0 = z8 ? 1 : 0;
-                        c00025.I$1 = i56;
-                        c00025.I$2 = i4;
-                        int i59 = i7;
-                        c00025.I$3 = i59;
-                        c00025.I$4 = IsUpcoming;
-                        List list40 = arrayList;
-                        c00025.label = 2;
-                        ?? r22 = IsUpcoming;
-                        Integer num10 = intOrNull;
-                        tvType = type;
-                        Data data14 = data;
-                        str7 = null;
-                        Object objFetchTmdbLogoUrl = TorraStreamUtilsKt.fetchTmdbLogoUrl(tmdbAPI, apiKey, tvType, id, "en", c00025);
-                        if (objFetchTmdbLogoUrl == coroutine_suspended) {
-                            return coroutine_suspended;
+                        c00024.L$0 = str3;
+                        c00024.L$1 = data;
+                        c00024.L$2 = tvType;
+                        c00024.L$3 = SpillingKt.nullOutSpilledVariable(str4);
+                        c00024.L$4 = mediaDetail;
+                        c00024.L$5 = title;
+                        c00024.L$6 = oriImageUrl;
+                        c00024.L$7 = oriImageUrl2;
+                        c00024.L$8 = SpillingKt.nullOutSpilledVariable(releaseDate);
+                        c00024.L$9 = num10;
+                        c00024.L$10 = arrayList;
+                        c00024.L$11 = list41;
+                        c00024.L$12 = arrayList2;
+                        c00024.L$13 = arrayList3;
+                        c00024.L$14 = str5;
+                        c00024.I$0 = z8 ? 1 : 0;
+                        c00024.I$1 = i42;
+                        c00024.I$2 = i41;
+                        int i45 = i4;
+                        c00024.I$3 = i45;
+                        c00024.I$4 = IsUpcoming;
+                        String str82 = str5;
+                        c00024.label = 2;
+                        String str83 = title;
+                        String str84 = releaseDate;
+                        Object objFetchTmdbLogoUrl = TorraStreamUtilsKt.fetchTmdbLogoUrl(tmdbAPI, apiKey, tvType, id, "en", c00024);
+                        Object obj20 = obj3;
+                        if (objFetchTmdbLogoUrl == obj20) {
+                            return obj20;
                         }
-                        str8 = str5;
-                        obj3 = objFetchTmdbLogoUrl;
-                        str9 = str74;
-                        str10 = str3;
-                        list = arrayList19;
-                        obj4 = coroutine_suspended;
-                        str11 = oriImageUrl;
-                        str12 = oriImageUrl2;
-                        str13 = str73;
-                        i8 = i4;
+                        list = list41;
+                        tvType2 = tvType;
+                        num3 = num10;
+                        str6 = str84;
+                        list2 = arrayList2;
+                        i5 = i41;
+                        i6 = z8 ? 1 : 0;
+                        list3 = arrayList;
+                        str7 = str82;
+                        obj4 = obj20;
+                        list4 = arrayList3;
+                        r18 = IsUpcoming;
+                        str8 = str83;
                         mediaDetail2 = mediaDetail;
-                        list2 = list40;
-                        i9 = r22 == true ? 1 : 0;
-                        num = num10;
-                        list3 = arrayList2;
-                        i10 = z8 ? 1 : 0;
-                        i11 = i56;
-                        list4 = list39;
-                        str14 = str4;
-                        i12 = i59;
-                        data2 = data14;
-                        str16 = (String) obj3;
-                        type2 = data2.getType();
-                        if (type2 != null) {
-                            str17 = str8;
-                            i13 = i9;
-                            z = StringsKt.contains(type2, "tv", true);
+                        str9 = str4;
+                        obj5 = objFetchTmdbLogoUrl;
+                        str10 = oriImageUrl2;
+                        str11 = oriImageUrl;
+                        i7 = i45;
+                        data2 = data;
+                        i8 = i42;
+                        i9 = i8;
+                        str13 = (String) obj5;
+                        type = data2.getType();
+                        if (type != null) {
+                            i10 = i6;
+                            str15 = str13;
+                            str14 = str7;
+                            z = StringsKt.contains(type, "tv", true);
                             if (z) {
-                                str18 = "series";
+                                str16 = "series";
                             } else {
-                                str18 = "movie";
+                                str16 = "movie";
                             }
                             external_ids = mediaDetail2.getExternal_ids();
                             if (external_ids != null) {
                                 imdb_id = external_ids.getImdb_id();
                             } else {
-                                imdb_id = str7;
+                                imdb_id = null;
                             }
                             if (imdb_id == null) {
                                 imdb_id = "";
                             }
-                            i14 = i12;
-                            c00025.L$0 = str10;
-                            c00025.L$1 = data2;
-                            c00025.L$2 = tvType;
-                            c00025.L$3 = SpillingKt.nullOutSpilledVariable(str17);
-                            c00025.L$4 = mediaDetail2;
-                            c00025.L$5 = str13;
-                            c00025.L$6 = str11;
-                            c00025.L$7 = str12;
-                            c00025.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                            c00025.L$9 = num;
-                            list5 = list2;
-                            c00025.L$10 = list5;
-                            list6 = list4;
-                            c00025.L$11 = list6;
-                            list7 = list3;
-                            c00025.L$12 = list7;
-                            list8 = list;
-                            c00025.L$13 = list8;
-                            str19 = str9;
-                            c00025.L$14 = str19;
-                            c00025.L$15 = str16;
+                            list5 = list4;
+                            c00024.L$0 = str3;
+                            c00024.L$1 = data2;
+                            c00024.L$2 = tvType2;
+                            c00024.L$3 = SpillingKt.nullOutSpilledVariable(str9);
+                            c00024.L$4 = mediaDetail2;
+                            c00024.L$5 = str8;
+                            c00024.L$6 = str11;
+                            c00024.L$7 = str10;
+                            c00024.L$8 = SpillingKt.nullOutSpilledVariable(str6);
+                            c00024.L$9 = num3;
+                            c00024.L$10 = list3;
+                            c00024.L$11 = list;
+                            c00024.L$12 = list2;
+                            c00024.L$13 = list5;
+                            num4 = num3;
+                            str17 = str14;
+                            c00024.L$14 = str17;
                             data3 = data2;
-                            c00025.L$16 = SpillingKt.nullOutSpilledVariable(str18);
-                            c00025.L$17 = imdb_id;
-                            i15 = i10;
-                            c00025.I$0 = i15 == true ? 1 : 0;
-                            c00025.I$1 = i11;
-                            c00025.I$2 = i8;
-                            c00025.I$3 = i14;
-                            c00025.I$4 = i13 == true ? 1 : 0;
-                            c00025.label = 3;
-                            i16 = i8;
-                            i17 = i11;
-                            str20 = str12;
-                            z2 = true;
-                            num2 = num;
-                            obj5 = obj4;
-                            i18 = i13 == true ? 1 : 0;
-                            obj6 = Requests.get$default(MainActivityKt.getApp(), "https://aiometadata.elfhosted.com/stremio/b7cb164b-074b-41d5-b458-b3a834e197bb/meta/" + str18 + '/' + imdb_id + ".json", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00025, 4094, (Object) null);
-                            c00022 = c00025;
-                            if (obj6 == obj5) {
-                                return obj5;
+                            c00024.L$15 = str15;
+                            c00024.L$16 = SpillingKt.nullOutSpilledVariable(str16);
+                            c00024.L$17 = imdb_id;
+                            c00024.I$0 = i10 == true ? 1 : 0 ? 1 : 0;
+                            c00024.I$1 = i9;
+                            c00024.I$2 = i5;
+                            c00024.I$3 = i7;
+                            c00024.I$4 = r18 == true ? 1 : 0;
+                            c00024.label = 3;
+                            list6 = list2;
+                            list7 = list;
+                            str18 = str15;
+                            C00021 c00025 = c00024;
+                            list8 = list3;
+                            str19 = imdb_id;
+                            str20 = str10;
+                            r40 = r18;
+                            i11 = i7;
+                            i12 = i5;
+                            obj6 = obj4;
+                            obj7 = Requests.get$default(MainActivityKt.getApp(), "https://aiometadata.elfhosted.com/stremio/b7cb164b-074b-41d5-b458-b3a834e197bb/meta/" + str16 + '/' + imdb_id + ".json", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00025, 4030, (Object) null);
+                            c00024 = c00025;
+                            if (obj7 == obj6) {
+                                return obj6;
                             }
-                            str21 = str17;
-                            str22 = str16;
                             mediaDetail3 = mediaDetail2;
+                            str21 = str16;
+                            str22 = str8;
                             str23 = str11;
-                            str24 = imdb_id;
-                            obj7 = obj6;
+                            list9 = list5;
+                            str24 = str6;
                             data4 = data3;
-                            list9 = list7;
-                            list10 = list5;
-                            str25 = str19;
-                            str26 = str20;
-                            num3 = num2;
+                            list10 = list7;
+                            str25 = str17;
                             list11 = list8;
+                            str26 = str20;
+                            i13 = r40 == true ? 1 : 0;
+                            i14 = i9;
                             list12 = list6;
-                            str27 = str10;
-                            tvType2 = tvType;
-                            str28 = str18;
-                            str29 = str13;
-                            i19 = i15 == true ? 1 : 0;
-                            i20 = i17;
-                            i21 = i14;
-                            i22 = i16;
-                            NiceResponse niceResponse2 = (NiceResponse) obj7;
+                            str27 = str9;
+                            str28 = str3;
+                            i15 = i12;
+                            num5 = num4;
+                            str29 = str18;
+                            obj8 = obj7;
+                            tvType3 = tvType2;
+                            i16 = i11;
+                            NiceResponse niceResponse2 = (NiceResponse) obj8;
                             try {
                                 ResponseParser parser2 = niceResponse2.getParser();
                                 Intrinsics.checkNotNull(parser2);
                                 data5 = data4;
                                 try {
-                                    i23 = i21;
                                     try {
                                         safe2 = parser2.parseSafe(niceResponse2.getText(), Reflection.getOrCreateKotlinClass(CinemetaRes.class));
                                     } catch (Exception e3) {
                                         e = e3;
                                         e.printStackTrace();
-                                        safe2 = str7;
+                                        safe2 = null;
                                     }
                                 } catch (Exception e4) {
                                     e = e4;
-                                    i23 = i21;
                                 }
                                 break;
                             } catch (Exception e5) {
                                 e = e5;
                                 data5 = data4;
-                                i23 = i21;
                             }
                             cinemetaRes = (CinemetaRes) safe2;
-                            if (tvType2 != TvType.TvSeries) {
-                                int i60 = i22;
-                                TvType tvType4 = tvType2;
-                                num4 = num3;
-                                int i61 = i23;
-                                i24 = i18;
-                                str30 = str24;
-                                list13 = list11;
-                                int i62 = i19;
-                                String str75 = str29;
-                                str31 = str25;
-                                i25 = i20;
-                                C00021 c00026 = c00022;
-                                obj8 = obj5;
-                                str32 = str22;
+                            if (tvType3 != TvType.TvSeries) {
+                                i17 = i13;
+                                List list42 = list11;
+                                int i46 = i15;
+                                TvType tvType7 = tvType3;
+                                String str85 = str22;
+                                str30 = str23;
+                                str31 = str26;
+                                C00021 c00026 = c00024;
+                                boolean z9 = i10 == true ? 1 : 0;
+                                str32 = str19;
+                                list13 = list9;
+                                str33 = str25;
+                                i18 = i16;
+                                obj9 = obj6;
+                                i19 = i14;
+                                String str86 = str29;
+                                MediaDetail mediaDetail9 = mediaDetail3;
                                 MainAPI mainAPI = (MainAPI) this;
-                                TvType tvType5 = TvType.Movie;
+                                TvType tvType8 = TvType.Movie;
                                 AppUtils appUtils2 = AppUtils.INSTANCE;
-                                String title2 = mediaDetail3.getTitle();
-                                if (i25 != 0) {
+                                String title2 = mediaDetail9.getTitle();
+                                if (i19 != 0) {
+                                    z2 = true;
+                                } else {
+                                    z2 = false;
+                                }
+                                external_ids2 = mediaDetail9.getExternal_ids();
+                                if (external_ids2 != null) {
+                                    imdb_id2 = external_ids2.getImdb_id();
+                                } else {
+                                    imdb_id2 = null;
+                                }
+                                String json = appUtils2.toJson(new LoadData(title2, num5, z2, imdb_id2, null, null, 48, null));
+                                if (i17 != 0) {
                                     z3 = true;
                                 } else {
                                     z3 = false;
                                 }
-                                external_ids2 = mediaDetail3.getExternal_ids();
-                                if (external_ids2 != null) {
-                                    imdb_id2 = external_ids2.getImdb_id();
-                                } else {
-                                    imdb_id2 = str7;
-                                }
-                                String json = appUtils2.toJson(new LoadData(title2, num4, z3, imdb_id2, null, null, 48, null));
+                                str34 = str86;
                                 list14 = list10;
-                                if (i24 == 0) {
-                                    z2 = false;
-                                }
                                 list15 = list12;
-                                list16 = list9;
-                                C00054 c00054 = new C00054(str23, z2, str26, str32, num4, mediaDetail3, list15, list14, list13, list16, cinemetaRes, str31, null);
-                                c00026.L$0 = SpillingKt.nullOutSpilledVariable(str27);
+                                list16 = list42;
+                                C00054 c00054 = new C00054(str30, z3, str31, str34, num5, mediaDetail9, list14, list16, list13, list15, cinemetaRes, str33, null);
+                                c00026.L$0 = SpillingKt.nullOutSpilledVariable(str28);
                                 c00026.L$1 = SpillingKt.nullOutSpilledVariable(data5);
-                                c00026.L$2 = SpillingKt.nullOutSpilledVariable(tvType4);
-                                c00026.L$3 = SpillingKt.nullOutSpilledVariable(str21);
-                                c00026.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail3);
-                                c00026.L$5 = SpillingKt.nullOutSpilledVariable(str75);
-                                c00026.L$6 = SpillingKt.nullOutSpilledVariable(str23);
-                                c00026.L$7 = SpillingKt.nullOutSpilledVariable(str26);
-                                c00026.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                                c00026.L$9 = SpillingKt.nullOutSpilledVariable(num4);
-                                c00026.L$10 = SpillingKt.nullOutSpilledVariable(list14);
-                                c00026.L$11 = SpillingKt.nullOutSpilledVariable(list15);
-                                c00026.L$12 = SpillingKt.nullOutSpilledVariable(list16);
+                                c00026.L$2 = SpillingKt.nullOutSpilledVariable(tvType7);
+                                c00026.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                                c00026.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail9);
+                                c00026.L$5 = SpillingKt.nullOutSpilledVariable(str85);
+                                c00026.L$6 = SpillingKt.nullOutSpilledVariable(str30);
+                                c00026.L$7 = SpillingKt.nullOutSpilledVariable(str31);
+                                c00026.L$8 = SpillingKt.nullOutSpilledVariable(str24);
+                                c00026.L$9 = SpillingKt.nullOutSpilledVariable(num5);
+                                c00026.L$10 = SpillingKt.nullOutSpilledVariable(list16);
+                                c00026.L$11 = SpillingKt.nullOutSpilledVariable(list14);
+                                c00026.L$12 = SpillingKt.nullOutSpilledVariable(list15);
                                 c00026.L$13 = SpillingKt.nullOutSpilledVariable(list13);
-                                c00026.L$14 = SpillingKt.nullOutSpilledVariable(str31);
-                                c00026.L$15 = SpillingKt.nullOutSpilledVariable(str32);
-                                c00026.L$16 = SpillingKt.nullOutSpilledVariable(str28);
-                                c00026.L$17 = SpillingKt.nullOutSpilledVariable(str30);
+                                c00026.L$14 = SpillingKt.nullOutSpilledVariable(str33);
+                                c00026.L$15 = SpillingKt.nullOutSpilledVariable(str34);
+                                c00026.L$16 = SpillingKt.nullOutSpilledVariable(str21);
+                                c00026.L$17 = SpillingKt.nullOutSpilledVariable(str32);
                                 c00026.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes);
-                                c00026.I$0 = i62 == true ? 1 : 0;
-                                c00026.I$1 = i25;
-                                c00026.I$2 = i60;
-                                c00026.I$3 = i61;
-                                c00026.I$4 = i24 == true ? 1 : 0;
+                                c00026.I$0 = z9 ? 1 : 0;
+                                c00026.I$1 = i19;
+                                c00026.I$2 = i46;
+                                c00026.I$3 = i18;
+                                c00026.I$4 = i17 == true ? 1 : 0;
                                 c00026.label = 8;
-                                i26 = i60;
                                 data6 = data5;
-                                str33 = str27;
-                                i27 = i61;
-                                str34 = str75;
-                                objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(mainAPI, str34, str33, tvType5, json, c00054, c00026);
-                                if (objNewMovieLoadResponse == obj8) {
-                                    return obj8;
+                                str35 = str28;
+                                str36 = str85;
+                                objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(mainAPI, str36, str35, tvType8, json, c00054, c00026);
+                                if (objNewMovieLoadResponse == obj9) {
+                                    return obj9;
                                 }
-                                i28 = i25;
-                                mediaDetail4 = mediaDetail3;
-                                list17 = list15;
-                                list18 = list14;
-                                list19 = list13;
-                                cinemetaRes2 = cinemetaRes;
-                                str35 = str31;
-                                str36 = str14;
-                                str37 = str30;
-                                num5 = num4;
-                                i29 = i24 == true ? 1 : 0;
-                                data7 = data6;
-                                str38 = str23;
+                                str37 = str21;
+                                str38 = str24;
                                 str39 = str32;
-                                list20 = list16;
-                                str40 = str28;
+                                str40 = str31;
+                                list17 = list13;
+                                list18 = list15;
+                                cinemetaRes2 = cinemetaRes;
+                                i20 = i17 == true ? 1 : 0;
+                                str41 = str33;
                                 return (LoadResponse) objNewMovieLoadResponse;
                             }
                             seasons = mediaDetail3.getSeasons();
                             if (seasons != null) {
-                                ArrayList<Seasons> arrayList23 = seasons;
-                                i35 = i19;
-                                if (i20 != 0) {
+                                ArrayList<Seasons> arrayList24 = seasons;
+                                i25 = i15;
+                                if (i14 != 0) {
                                     z4 = true;
                                 } else {
                                     z4 = false;
                                 }
-                                Object obj16 = obj5;
-                                i36 = i22;
-                                i37 = i20;
-                                tvType3 = tvType2;
-                                num6 = num3;
-                                MediaDetail mediaDetail7 = mediaDetail3;
-                                i38 = i18;
-                                Data data15 = data5;
-                                i39 = i23;
-                                TorraStream$load$episodes$1 torraStream$load$episodes$1 = new TorraStream$load$episodes$1(data15, this, mediaDetail7, num6, z4, null);
-                                c00022.L$0 = str27;
-                                c00022.L$1 = data15;
-                                c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                                c00022.L$3 = SpillingKt.nullOutSpilledVariable(str21);
-                                c00022.L$4 = mediaDetail7;
-                                c00022.L$5 = str29;
-                                c00022.L$6 = str23;
-                                c00022.L$7 = str26;
-                                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                                c00022.L$9 = num6;
-                                c00022.L$10 = list10;
-                                c00022.L$11 = list12;
-                                c00022.L$12 = list9;
+                                i26 = i14;
+                                num6 = null;
+                                Object obj21 = obj6;
+                                tvType5 = tvType3;
+                                int i47 = i13;
+                                boolean z10 = i10 == true ? 1 : 0;
+                                str45 = str19;
+                                num7 = num5;
+                                list20 = list9;
+                                str46 = str25;
+                                Data data12 = data5;
+                                int i48 = i16;
+                                mediaDetail4 = mediaDetail3;
+                                TorraStream$load$episodes$1 torraStream$load$episodes$1 = new TorraStream$load$episodes$1(data12, this, mediaDetail4, num7, z4, null);
+                                c00024.L$0 = str28;
+                                c00024.L$1 = data12;
+                                c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType5);
+                                c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                                c00024.L$4 = mediaDetail4;
+                                c00024.L$5 = str22;
+                                c00024.L$6 = str23;
+                                c00024.L$7 = str26;
+                                c00024.L$8 = SpillingKt.nullOutSpilledVariable(str24);
+                                c00024.L$9 = num7;
+                                c00024.L$10 = list11;
+                                c00024.L$11 = list10;
+                                c00024.L$12 = list12;
+                                c00024.L$13 = list20;
+                                c00024.L$14 = str46;
+                                str47 = str29;
+                                c00024.L$15 = str47;
+                                c00024.L$16 = SpillingKt.nullOutSpilledVariable(str21);
+                                c00024.L$17 = str45;
+                                c00024.L$18 = cinemetaRes;
+                                i27 = z10 ? 1 : 0;
+                                c00024.I$0 = i27;
+                                str48 = str22;
+                                c00024.I$1 = i26;
+                                str49 = str23;
+                                c00024.I$2 = i25;
+                                str50 = str26;
+                                i28 = i48;
+                                c00024.I$3 = i28;
                                 list21 = list11;
-                                c00022.L$13 = list21;
-                                str42 = str25;
-                                c00022.L$14 = str42;
-                                str43 = str22;
-                                c00022.L$15 = str43;
-                                c00022.L$16 = SpillingKt.nullOutSpilledVariable(str28);
-                                str44 = str24;
-                                c00022.L$17 = str44;
-                                c00022.L$18 = cinemetaRes;
-                                c00022.I$0 = i35 == true ? 1 : 0;
-                                str45 = str29;
-                                c00022.I$1 = i37;
-                                c00022.I$2 = i36;
-                                c00022.I$3 = i39;
-                                c00022.I$4 = i38 == true ? 1 : 0;
-                                c00022.label = 4;
-                                objAmap = ParCollectionsKt.amap(arrayList23, torraStream$load$episodes$1, c00022);
-                                obj9 = obj16;
-                                if (objAmap == obj9) {
-                                    return obj9;
+                                i29 = i47 == true ? 1 : 0;
+                                c00024.I$4 = i29 == true ? 1 : 0;
+                                c00024.label = 4;
+                                objAmap = ParCollectionsKt.amap(arrayList24, torraStream$load$episodes$1, c00024);
+                                obj10 = obj21;
+                                if (objAmap == obj10) {
+                                    return obj10;
                                 }
-                                str46 = str42;
-                                i32 = i37;
-                                i40 = i35 == true ? 1 : 0;
-                                data9 = data5;
-                                i41 = i38 == true ? 1 : 0;
-                                list22 = list10;
-                                str47 = str23;
-                                list23 = list21;
-                                str48 = str14;
-                                str49 = str28;
-                                str50 = str44;
-                                num7 = num6;
-                                i42 = i39;
-                                str51 = str21;
-                                i43 = i36;
-                                objNewMovieLoadResponse = objAmap;
-                                str52 = str45;
-                                list37 = (List) objNewMovieLoadResponse;
-                                if (list37 != null || (listFlatten = CollectionsKt.flatten(list37)) == null) {
-                                    int i63 = i42;
-                                    i34 = i43;
-                                    i30 = i63;
-                                    str25 = str46;
-                                    i31 = i40;
-                                    str24 = str50;
-                                    i33 = i41;
-                                    list11 = list23;
-                                    list10 = list22;
-                                    num3 = num7;
-                                    str14 = str48;
-                                    str21 = str51;
-                                    data8 = data9;
-                                    str41 = str52;
-                                    str28 = str49;
-                                    str23 = str47;
-                                    str22 = str43;
+                                obj11 = objAmap;
+                                str51 = str27;
+                                mediaDetail5 = mediaDetail4;
+                                data8 = data5;
+                                str52 = str46;
+                                tvType6 = tvType5;
+                                i24 = i25;
+                                str53 = str48;
+                                list22 = list20;
+                                str43 = str49;
+                                str54 = str47;
+                                i22 = i26;
+                                str55 = str21;
+                                str56 = str45;
+                                str57 = str50;
+                                cinemetaRes3 = cinemetaRes;
+                                list38 = (List) obj11;
+                                if (list38 != null || (listFlatten = CollectionsKt.flatten(list38)) == null) {
+                                    TvType tvType9 = tvType6;
+                                    i10 = i27;
+                                    tvType4 = tvType9;
+                                    List list43 = list21;
+                                    i21 = i29;
+                                    list19 = list43;
+                                    cinemetaRes = cinemetaRes3;
+                                    i23 = i28;
+                                    str19 = str56;
+                                    str21 = str55;
+                                    str29 = str54;
+                                    str25 = str52;
+                                    list9 = list22;
+                                    str44 = str57;
+                                    mediaDetail3 = mediaDetail5;
+                                    str42 = str53;
+                                    str27 = str51;
+                                    data7 = data8;
+                                    num5 = num7;
                                 } else {
-                                    int i64 = i41;
+                                    MediaDetail mediaDetail10 = mediaDetail5;
+                                    str27 = str51;
+                                    str63 = str28;
+                                    mediaDetail6 = mediaDetail10;
+                                    i32 = i22;
+                                    i33 = i27;
+                                    obj12 = obj10;
+                                    list25 = list10;
+                                    str60 = str56;
+                                    str59 = str55;
+                                    str62 = str52;
                                     listEmptyList = listFlatten;
-                                    str57 = str27;
-                                    mediaDetail5 = mediaDetail3;
-                                    i47 = i64 == true ? 1 : 0;
-                                    List list41 = list12;
-                                    str56 = str46;
-                                    list24 = list41;
-                                    List list42 = list22;
-                                    i46 = i40;
-                                    list25 = list42;
-                                    i48 = i42;
-                                    obj10 = obj9;
-                                    i45 = i32;
-                                    str55 = str50;
-                                    str53 = str26;
-                                    list26 = list23;
                                     num8 = num7;
-                                    str14 = str48;
-                                    data10 = data9;
-                                    i44 = i43;
-                                    str54 = str49;
-                                    str58 = str47;
-                                    list27 = list9;
-                                    cinemetaRes3 = cinemetaRes;
+                                    i31 = i24;
+                                    cinemetaRes4 = cinemetaRes3;
+                                    list24 = list21;
+                                    str61 = str54;
+                                    str58 = str57;
+                                    i21 = i29;
+                                    list26 = list12;
+                                    data9 = data8;
+                                    i30 = i28;
+                                    list23 = list22;
+                                    str64 = str24;
+                                    str65 = str43;
                                 }
-                                list28 = listEmptyList;
-                                if (i45 == 0) {
-                                    String str76 = str52;
-                                    String str77 = str55;
+                                list27 = listEmptyList;
+                                if (i32 == 0) {
+                                    String str87 = str53;
+                                    String str88 = str61;
+                                    MediaDetail mediaDetail11 = mediaDetail6;
+                                    List list44 = list24;
+                                    CinemetaRes cinemetaRes8 = cinemetaRes4;
+                                    List list45 = list23;
+                                    List list46 = list26;
+                                    C00021 c00027 = c00024;
+                                    String str89 = str62;
+                                    int i49 = i21;
+                                    int i50 = i31;
+                                    obj13 = obj12;
+                                    List list47 = list25;
+                                    TvType tvType10 = TvType.TvSeries;
+                                    String str90 = str63;
+                                    String str91 = str60;
+                                    String str92 = str65;
+                                    str66 = str58;
                                     Integer num11 = num8;
-                                    String str78 = str43;
-                                    MediaDetail mediaDetail8 = mediaDetail5;
-                                    List list43 = list24;
-                                    List list44 = list25;
-                                    C00021 c00027 = c00022;
-                                    List list45 = list26;
-                                    List list46 = list27;
-                                    CinemetaRes cinemetaRes5 = cinemetaRes3;
-                                    int i65 = i47;
-                                    obj11 = obj10;
-                                    TvType tvType6 = TvType.TvSeries;
-                                    String str79 = str57;
-                                    String str80 = str58;
-                                    String str81 = str53;
-                                    C00043 c00043 = new C00043(str80, str81, str78, num11, mediaDetail8, list43, list44, this, list45, list46, list28, cinemetaRes5, str56, null);
-                                    c00027.L$0 = SpillingKt.nullOutSpilledVariable(str79);
-                                    c00027.L$1 = SpillingKt.nullOutSpilledVariable(data10);
-                                    c00027.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                                    c00027.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                                    c00027.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail8);
-                                    c00027.L$5 = SpillingKt.nullOutSpilledVariable(str76);
-                                    c00027.L$6 = SpillingKt.nullOutSpilledVariable(str80);
-                                    c00027.L$7 = SpillingKt.nullOutSpilledVariable(str81);
-                                    c00027.L$8 = SpillingKt.nullOutSpilledVariable(str14);
+                                    C00043 c00043 = new C00043(str92, str66, str88, num11, mediaDetail11, list47, list44, this, list45, list46, list27, cinemetaRes8, str89, null);
+                                    c00027.L$0 = SpillingKt.nullOutSpilledVariable(str90);
+                                    c00027.L$1 = SpillingKt.nullOutSpilledVariable(data9);
+                                    c00027.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                                    c00027.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                                    c00027.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail11);
+                                    c00027.L$5 = SpillingKt.nullOutSpilledVariable(str87);
+                                    c00027.L$6 = SpillingKt.nullOutSpilledVariable(str92);
+                                    c00027.L$7 = SpillingKt.nullOutSpilledVariable(str66);
+                                    c00027.L$8 = SpillingKt.nullOutSpilledVariable(str64);
                                     c00027.L$9 = SpillingKt.nullOutSpilledVariable(num11);
                                     c00027.L$10 = SpillingKt.nullOutSpilledVariable(list44);
-                                    c00027.L$11 = SpillingKt.nullOutSpilledVariable(list43);
+                                    c00027.L$11 = SpillingKt.nullOutSpilledVariable(list47);
                                     c00027.L$12 = SpillingKt.nullOutSpilledVariable(list46);
                                     c00027.L$13 = SpillingKt.nullOutSpilledVariable(list45);
-                                    c00027.L$14 = SpillingKt.nullOutSpilledVariable(str56);
-                                    c00027.L$15 = SpillingKt.nullOutSpilledVariable(str78);
-                                    c00027.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                                    c00027.L$17 = SpillingKt.nullOutSpilledVariable(str77);
-                                    c00027.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes5);
-                                    c00027.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                                    c00027.I$0 = i46 == true ? 1 : 0;
-                                    c00027.I$1 = i45;
-                                    c00027.I$2 = i44;
-                                    c00027.I$3 = i48;
-                                    c00027.I$4 = i65 == true ? 1 : 0;
+                                    c00027.L$14 = SpillingKt.nullOutSpilledVariable(str89);
+                                    c00027.L$15 = SpillingKt.nullOutSpilledVariable(str88);
+                                    c00027.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                                    c00027.L$17 = SpillingKt.nullOutSpilledVariable(str91);
+                                    c00027.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes8);
+                                    c00027.L$19 = SpillingKt.nullOutSpilledVariable(list27);
+                                    c00027.I$0 = i33 == true ? 1 : 0;
+                                    c00027.I$1 = i32;
+                                    c00027.I$2 = i50;
+                                    c00027.I$3 = i30;
+                                    c00027.I$4 = i49 == true ? 1 : 0;
                                     c00027.label = 7;
-                                    objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str76, str79, tvType6, list28, c00043, c00027);
-                                    c00023 = c00027;
-                                    if (objNewTvSeriesLoadResponse == obj11) {
-                                        return obj11;
+                                    objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str87, str90, tvType10, list27, c00043, c00027);
+                                    c00022 = c00027;
+                                    if (objNewTvSeriesLoadResponse == obj13) {
+                                        return obj13;
                                     }
-                                    obj12 = objNewTvSeriesLoadResponse;
-                                    return (LoadResponse) obj12;
+                                    obj14 = objNewTvSeriesLoadResponse;
+                                    str67 = str66;
+                                    return (LoadResponse) obj14;
                                 }
-                                if (cinemetaRes3 != null || (meta2 = cinemetaRes3.getMeta()) == null || (videos = meta2.getVideos()) == null) {
-                                    str59 = str43;
-                                    cinemetaRes4 = cinemetaRes3;
+                                if (cinemetaRes4 != null || (meta2 = cinemetaRes4.getMeta()) == null || (videos = meta2.getVideos()) == null) {
+                                    str68 = str61;
+                                    cinemetaRes5 = cinemetaRes4;
                                     arrayListEmptyList = CollectionsKt.emptyList();
                                 } else {
-                                    ArrayList arrayList24 = new ArrayList();
-                                    for (Object obj17 : videos) {
-                                        CinemetaRes cinemetaRes6 = cinemetaRes3;
-                                        Integer season = ((CinemetaRes.Meta.Video) obj17).getSeason();
+                                    ArrayList arrayList25 = new ArrayList();
+                                    for (Object obj22 : videos) {
+                                        CinemetaRes cinemetaRes9 = cinemetaRes4;
+                                        Integer season = ((CinemetaRes.Meta.Video) obj22).getSeason();
                                         if (season == null || season.intValue() != 0) {
-                                            arrayList24.add(obj17);
+                                            arrayList25.add(obj22);
                                         }
-                                        cinemetaRes3 = cinemetaRes6;
-                                        str43 = str43;
+                                        cinemetaRes4 = cinemetaRes9;
+                                        str61 = str61;
                                     }
-                                    str59 = str43;
-                                    cinemetaRes4 = cinemetaRes3;
-                                    arrayListEmptyList = arrayList24;
+                                    str68 = str61;
+                                    cinemetaRes5 = cinemetaRes4;
+                                    arrayListEmptyList = arrayList25;
                                 }
-                                alternative_titles = mediaDetail5.getAlternative_titles();
+                                alternative_titles = mediaDetail6.getAlternative_titles();
                                 if (alternative_titles == null && (results4 = alternative_titles.getResults()) != null) {
                                     Iterator it8 = results4.iterator();
                                     while (true) {
                                         if (it8.hasNext()) {
                                             next = it8.next();
                                             Iterator it9 = it8;
-                                            list29 = arrayListEmptyList;
+                                            list28 = arrayListEmptyList;
                                             if (!Intrinsics.areEqual(((AltTitles) next).getIso_3166_1(), "JP")) {
                                                 it8 = it9;
-                                                arrayListEmptyList = list29;
+                                                arrayListEmptyList = list28;
                                             }
                                         } else {
-                                            list29 = arrayListEmptyList;
-                                            next = str7;
+                                            list28 = arrayListEmptyList;
+                                            next = num6;
                                         }
                                     }
                                     AltTitles altTitles = (AltTitles) next;
                                     if (altTitles == null || (name2 = altTitles.getTitle()) == null) {
                                     }
-                                    Requests app2 = MainActivityKt.getApp();
-                                    str60 = name2;
-                                    String str82 = "https://api.ani.zip/mappings?imdb_id=" + str55;
-                                    c00022.L$0 = str57;
-                                    c00022.L$1 = data10;
-                                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                                    c00022.L$4 = mediaDetail5;
-                                    c00022.L$5 = str52;
-                                    c00022.L$6 = str58;
-                                    c00022.L$7 = str53;
-                                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                                    c00022.L$9 = num8;
-                                    c00022.L$10 = list25;
-                                    c00022.L$11 = list24;
-                                    c00022.L$12 = list27;
-                                    c00022.L$13 = list26;
-                                    c00022.L$14 = str56;
-                                    str61 = str59;
-                                    c00022.L$15 = str61;
-                                    str62 = str52;
-                                    c00022.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                                    c00022.L$17 = str55;
-                                    c00022.L$18 = cinemetaRes4;
-                                    c00022.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                                    c00022.L$20 = list29;
+                                    obj15 = name2;
+                                    c00024.L$0 = str63;
+                                    c00024.L$1 = data9;
+                                    c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                                    c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                                    c00024.L$4 = mediaDetail6;
+                                    c00024.L$5 = str53;
+                                    c00024.L$6 = str65;
+                                    c00024.L$7 = str58;
+                                    c00024.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                                    c00024.L$9 = num8;
+                                    c00024.L$10 = list24;
+                                    c00024.L$11 = list25;
+                                    c00024.L$12 = list26;
+                                    c00024.L$13 = list23;
+                                    c00024.L$14 = str62;
+                                    str69 = str68;
+                                    c00024.L$15 = str69;
+                                    str70 = str53;
+                                    c00024.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                                    c00024.L$17 = str60;
+                                    c00024.L$18 = cinemetaRes5;
+                                    c00024.L$19 = list27;
+                                    c00024.L$20 = list28;
+                                    c00024.L$21 = obj15;
+                                    int i51 = i33;
+                                    c00024.I$0 = i51 == true ? 1 : 0;
+                                    int i52 = i32;
+                                    c00024.I$1 = i52;
+                                    i34 = i31;
+                                    c00024.I$2 = i34;
+                                    int i53 = i30;
+                                    c00024.I$3 = i53;
+                                    c00024.I$4 = i21 == true ? 1 : 0;
+                                    c00024.label = 5;
+                                    list29 = list23;
                                     list30 = list26;
-                                    c00022.L$21 = str60;
-                                    c00022.I$0 = i46 == true ? 1 : 0;
-                                    int i66 = i45;
-                                    c00022.I$1 = i66;
-                                    int i67 = i44;
-                                    c00022.I$2 = i67;
-                                    int i68 = i48;
-                                    c00022.I$3 = i68;
-                                    c00022.I$4 = i47 == true ? 1 : 0;
-                                    c00022.label = 5;
-                                    C00021 c00028 = c00022;
-                                    list31 = list27;
-                                    str63 = str56;
-                                    data11 = data10;
-                                    i49 = i47;
-                                    i50 = i66;
-                                    i51 = i46;
-                                    str64 = str55;
-                                    num9 = num8;
-                                    mediaDetail6 = mediaDetail5;
-                                    list32 = list25;
-                                    i52 = i67;
+                                    c00023 = c00024;
+                                    str71 = str62;
+                                    data10 = data9;
+                                    list31 = list25;
+                                    i35 = i21;
+                                    i36 = i52;
+                                    list32 = list27;
+                                    i37 = i51 == true ? 1 : 0;
+                                    cinemetaRes6 = cinemetaRes5;
+                                    i38 = i53;
+                                    mediaDetail7 = mediaDetail6;
                                     list33 = list24;
-                                    i53 = i68;
-                                    obj13 = Requests.get$default(app2, str82, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00028, 4094, (Object) null);
-                                    c00024 = c00028;
-                                    obj14 = obj10;
-                                    if (obj13 == obj14) {
-                                        return obj14;
+                                    obj16 = obj12;
+                                    obj17 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?imdb_id=" + str60, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 4094, (Object) null);
+                                    if (obj17 == obj16) {
+                                        return obj16;
                                     }
-                                    i54 = i51 == true ? 1 : 0;
-                                    str65 = str57;
-                                    str66 = str58;
-                                    str67 = str53;
-                                    str68 = str62;
-                                    list34 = list29;
-                                    str69 = str60;
-                                    list35 = list31;
-                                    data12 = data11;
-                                    str70 = str64;
-                                    str71 = str61;
+                                    list34 = list30;
                                     str72 = str63;
-                                    list36 = list30;
-                                    i55 = i49 == true ? 1 : 0;
-                                    String string = ((NiceResponse) obj13).toString();
-                                    animeData = TorraStreamUtilsKt.parseAnimeData(string);
+                                    str73 = str60;
+                                    str74 = str65;
+                                    str75 = str58;
+                                    num9 = num8;
+                                    obj18 = obj17;
+                                    str76 = str70;
+                                    r78 = obj15;
+                                    str77 = str69;
+                                    mediaDetail8 = mediaDetail7;
+                                    list35 = list29;
+                                    cinemetaRes7 = cinemetaRes6;
+                                    str78 = str71;
+                                    i39 = i34;
+                                    i40 = i35 == true ? 1 : 0;
+                                    list36 = list33;
+                                    list37 = list31;
+                                    String text = ((NiceResponse) obj18).getText();
+                                    animeData = TorraStreamUtilsKt.parseAnimeData(text);
                                     if (animeData != null || (mappings = animeData.getMappings()) == null) {
-                                        kitsuid = str7;
+                                        kitsuid = num6;
                                     } else {
                                         kitsuid = mappings.getKitsuid();
                                     }
-                                    MainAPI mainAPI2 = (MainAPI) this;
-                                    TvType tvType7 = TvType.Anime;
-                                    int i69 = i55;
-                                    if (i52 != 0) {
+                                    String str93 = str74;
+                                    list39 = list28;
+                                    int i54 = i40;
+                                    str79 = str76;
+                                    arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list39, 10));
+                                    list40 = list39;
+                                    for (final CinemetaRes.Meta.Video video : list40) {
+                                        List list48 = list39;
+                                        released = video.getReleased();
+                                        if (released != null || (listSplit$default2 = StringsKt.split$default(released, new String[]{"-"}, false, 0, 6, (Object) null)) == null || (str80 = (String) CollectionsKt.firstOrNull(listSplit$default2)) == null || (intOrNull2 = StringsKt.toIntOrNull(str80)) == null) {
+                                            if (cinemetaRes7 != null || (meta3 = cinemetaRes7.getMeta()) == null || (year = meta3.getYear()) == null) {
+                                                intOrNull2 = num6;
+                                            } else {
+                                                intOrNull2 = StringsKt.toIntOrNull(year);
+                                            }
+                                            if (intOrNull2 != null) {
+                                                iIntValue = intOrNull2.intValue();
+                                            } else {
+                                                iIntValue = 0;
+                                            }
+                                        } else {
+                                            iIntValue = intOrNull2.intValue();
+                                        }
+                                        List list49 = list40;
+                                        MainAPI mainAPI2 = (MainAPI) this;
+                                        String str94 = str75;
+                                        AppUtils appUtils3 = AppUtils.INSTANCE;
+                                        Integer id2 = data10.getId();
+                                        external_ids3 = mediaDetail8.getExternal_ids();
+                                        if (external_ids3 != null) {
+                                            tvdb_id = external_ids3.getTvdb_id();
+                                        } else {
+                                            tvdb_id = num6;
+                                        }
+                                        String type3 = data10.getType();
+                                        Integer season2 = video.getSeason();
+                                        Integer episode = video.getEpisode();
+                                        Integer numBoxInt = Boxing.boxInt(iIntValue);
+                                        String title3 = video.getTitle();
+                                        String released2 = video.getReleased();
+                                        releaseDate2 = mediaDetail8.getReleaseDate();
+                                        if (releaseDate2 == null) {
+                                            releaseDate2 = mediaDetail8.getFirstAirDate();
+                                        }
+                                        String str95 = releaseDate2;
+                                        if (i39 != 0) {
+                                            z5 = true;
+                                        } else {
+                                            z5 = false;
+                                        }
+                                        if (i38 != 0) {
+                                            z6 = true;
+                                        } else {
+                                            z6 = false;
+                                        }
+                                        if (i37 != 0) {
+                                            z7 = true;
+                                        } else {
+                                            z7 = false;
+                                        }
+                                        String str96 = str73;
+                                        arrayList8.add(MainAPIKt.newEpisode(mainAPI2, appUtils3.toJson(new LinkData(id2, str96, tvdb_id, type3, season2, episode, null, null, null, str79, numBoxInt, "", true, num9, null, title3, r78, released2, str95, z5, z6, z7, mediaDetail8.getTitle(), mediaDetail8.getName(), false, null, 33571264, null)), new Function1() { // from class: com.phisher98.TorraStream$$ExternalSyntheticLambda1
+                                            public final Object invoke(Object obj23) {
+                                                return TorraStream.load$lambda$9$0(video, this, (Episode) obj23);
+                                            }
+                                        }));
+                                        list39 = list48;
+                                        list40 = list49;
+                                        str75 = str94;
+                                        str77 = str77;
+                                        str73 = str96;
+                                    }
+                                    String str97 = str75;
+                                    String str98 = str77;
+                                    String str99 = str73;
+                                    arrayList9 = arrayList8;
+                                    if (arrayList9.isEmpty()) {
+                                        arrayList9 = list32;
+                                    }
+                                    List list50 = arrayList9;
+                                    TvType tvType11 = TvType.Anime;
+                                    obj19 = obj16;
+                                    int i55 = i39;
+                                    C00021 c00028 = c00023;
+                                    ?? r13 = kitsuid;
+                                    C00032 c00032 = new C00032(list50, str93, str97, str98, num9, mediaDetail8, list37, list36, this, list35, list34, str78, r13, cinemetaRes7, str99, null);
+                                    c00028.L$0 = SpillingKt.nullOutSpilledVariable(str72);
+                                    c00028.L$1 = SpillingKt.nullOutSpilledVariable(data10);
+                                    c00028.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                                    c00028.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                                    c00028.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail8);
+                                    c00028.L$5 = SpillingKt.nullOutSpilledVariable(str79);
+                                    c00028.L$6 = SpillingKt.nullOutSpilledVariable(str93);
+                                    c00028.L$7 = SpillingKt.nullOutSpilledVariable(str97);
+                                    c00028.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                                    c00028.L$9 = SpillingKt.nullOutSpilledVariable(num9);
+                                    c00028.L$10 = SpillingKt.nullOutSpilledVariable(list36);
+                                    c00028.L$11 = SpillingKt.nullOutSpilledVariable(list37);
+                                    c00028.L$12 = SpillingKt.nullOutSpilledVariable(list34);
+                                    c00028.L$13 = SpillingKt.nullOutSpilledVariable(list35);
+                                    c00028.L$14 = SpillingKt.nullOutSpilledVariable(str78);
+                                    c00028.L$15 = SpillingKt.nullOutSpilledVariable(str98);
+                                    c00028.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                                    c00028.L$17 = SpillingKt.nullOutSpilledVariable(str99);
+                                    c00028.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes7);
+                                    c00028.L$19 = SpillingKt.nullOutSpilledVariable(list32);
+                                    c00028.L$20 = SpillingKt.nullOutSpilledVariable(list28);
+                                    c00028.L$21 = SpillingKt.nullOutSpilledVariable((Object) r78);
+                                    c00028.L$22 = SpillingKt.nullOutSpilledVariable(text);
+                                    c00028.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
+                                    c00028.L$24 = SpillingKt.nullOutSpilledVariable((Object) r13);
+                                    c00028.L$25 = SpillingKt.nullOutSpilledVariable(list50);
+                                    c00028.I$0 = i37 == true ? 1 : 0;
+                                    c00028.I$1 = i36;
+                                    c00028.I$2 = i55;
+                                    c00028.I$3 = i38;
+                                    c00028.I$4 = i54 == true ? 1 : 0;
+                                    c00028.label = 6;
+                                    objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default((MainAPI) this, str79, str72, tvType11, false, c00032, c00028, 8, (Object) null);
+                                    if (objNewAnimeLoadResponse$default == obj19) {
+                                        return obj19;
+                                    }
+                                    return objNewAnimeLoadResponse$default;
+                                }
+                                list28 = arrayListEmptyList;
+                                if (cinemetaRes5 != null || (meta = cinemetaRes5.getMeta()) == null) {
+                                    name2 = num6;
+                                } else {
+                                    name2 = meta.getName();
+                                }
+                                obj15 = name2;
+                                c00024.L$0 = str63;
+                                c00024.L$1 = data9;
+                                c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                                c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                                c00024.L$4 = mediaDetail6;
+                                c00024.L$5 = str53;
+                                c00024.L$6 = str65;
+                                c00024.L$7 = str58;
+                                c00024.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                                c00024.L$9 = num8;
+                                c00024.L$10 = list24;
+                                c00024.L$11 = list25;
+                                c00024.L$12 = list26;
+                                c00024.L$13 = list23;
+                                c00024.L$14 = str62;
+                                str69 = str68;
+                                c00024.L$15 = str69;
+                                str70 = str53;
+                                c00024.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                                c00024.L$17 = str60;
+                                c00024.L$18 = cinemetaRes5;
+                                c00024.L$19 = list27;
+                                c00024.L$20 = list28;
+                                c00024.L$21 = obj15;
+                                int i56 = i33;
+                                c00024.I$0 = i56 == true ? 1 : 0;
+                                int i57 = i32;
+                                c00024.I$1 = i57;
+                                i34 = i31;
+                                c00024.I$2 = i34;
+                                int i58 = i30;
+                                c00024.I$3 = i58;
+                                c00024.I$4 = i21 == true ? 1 : 0;
+                                c00024.label = 5;
+                                list29 = list23;
+                                list30 = list26;
+                                c00023 = c00024;
+                                str71 = str62;
+                                data10 = data9;
+                                list31 = list25;
+                                i35 = i21;
+                                i36 = i57;
+                                list32 = list27;
+                                i37 = i56 == true ? 1 : 0;
+                                cinemetaRes6 = cinemetaRes5;
+                                i38 = i58;
+                                mediaDetail7 = mediaDetail6;
+                                list33 = list24;
+                                obj16 = obj12;
+                                obj17 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?imdb_id=" + str60, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 4094, (Object) null);
+                                if (obj17 == obj16) {
+                                    return obj16;
+                                }
+                                list34 = list30;
+                                str72 = str63;
+                                str73 = str60;
+                                str74 = str65;
+                                str75 = str58;
+                                num9 = num8;
+                                obj18 = obj17;
+                                str76 = str70;
+                                r78 = obj15;
+                                str77 = str69;
+                                mediaDetail8 = mediaDetail7;
+                                list35 = list29;
+                                cinemetaRes7 = cinemetaRes6;
+                                str78 = str71;
+                                i39 = i34;
+                                i40 = i35 == true ? 1 : 0;
+                                list36 = list33;
+                                list37 = list31;
+                                String text2 = ((NiceResponse) obj18).getText();
+                                animeData = TorraStreamUtilsKt.parseAnimeData(text2);
+                                if (animeData != null) {
+                                    kitsuid = num6;
+                                } else {
+                                    kitsuid = num6;
+                                }
+                                String str910 = str74;
+                                list39 = list28;
+                                int i59 = i40;
+                                str79 = str76;
+                                arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list39, 10));
+                                list40 = list39;
+                                while (r23.hasNext()) {
+                                    List list410 = list39;
+                                    released = video.getReleased();
+                                    if (released != null) {
+                                        if (cinemetaRes7 != null) {
+                                            intOrNull2 = num6;
+                                        } else {
+                                            intOrNull2 = num6;
+                                        }
+                                        if (intOrNull2 != null) {
+                                            iIntValue = intOrNull2.intValue();
+                                        } else {
+                                            iIntValue = 0;
+                                        }
+                                    } else {
+                                        if (cinemetaRes7 != null) {
+                                            intOrNull2 = num6;
+                                        } else {
+                                            intOrNull2 = num6;
+                                        }
+                                        if (intOrNull2 != null) {
+                                            iIntValue = intOrNull2.intValue();
+                                        } else {
+                                            iIntValue = 0;
+                                        }
+                                    }
+                                    List list411 = list40;
+                                    MainAPI mainAPI3 = (MainAPI) this;
+                                    String str911 = str75;
+                                    AppUtils appUtils4 = AppUtils.INSTANCE;
+                                    Integer id3 = data10.getId();
+                                    external_ids3 = mediaDetail8.getExternal_ids();
+                                    if (external_ids3 != null) {
+                                        tvdb_id = external_ids3.getTvdb_id();
+                                    } else {
+                                        tvdb_id = num6;
+                                    }
+                                    String type4 = data10.getType();
+                                    Integer season3 = video.getSeason();
+                                    Integer episode2 = video.getEpisode();
+                                    Integer numBoxInt2 = Boxing.boxInt(iIntValue);
+                                    String title4 = video.getTitle();
+                                    String released3 = video.getReleased();
+                                    releaseDate2 = mediaDetail8.getReleaseDate();
+                                    if (releaseDate2 == null) {
+                                        releaseDate2 = mediaDetail8.getFirstAirDate();
+                                    }
+                                    String str912 = releaseDate2;
+                                    if (i39 != 0) {
                                         z5 = true;
                                     } else {
                                         z5 = false;
                                     }
-                                    if (i53 != 0) {
+                                    if (i38 != 0) {
                                         z6 = true;
                                     } else {
                                         z6 = false;
                                     }
-                                    if (i54 != 0) {
+                                    if (i37 != 0) {
                                         z7 = true;
                                     } else {
                                         z7 = false;
                                     }
-                                    obj15 = obj14;
-                                    int i70 = i54;
-                                    C00021 c00029 = c00024;
-                                    int i71 = i53;
-                                    CinemetaRes cinemetaRes7 = cinemetaRes4;
-                                    String str83 = kitsuid;
-                                    C00032 c00032 = new C00032(str66, str67, str71, num9, mediaDetail6, list33, list32, this, list36, list35, str72, str83, cinemetaRes7, str70, list34, data12, str68, str69, z5, z6, z7, null);
-                                    String str84 = str67;
-                                    String str85 = str68;
-                                    c00029.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                                    c00029.L$1 = SpillingKt.nullOutSpilledVariable(data12);
-                                    c00029.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                                    c00029.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                                    c00029.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail6);
-                                    c00029.L$5 = SpillingKt.nullOutSpilledVariable(str85);
-                                    c00029.L$6 = SpillingKt.nullOutSpilledVariable(str66);
-                                    c00029.L$7 = SpillingKt.nullOutSpilledVariable(str84);
-                                    c00029.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                                    c00029.L$9 = SpillingKt.nullOutSpilledVariable(num9);
-                                    c00029.L$10 = SpillingKt.nullOutSpilledVariable(list32);
-                                    c00029.L$11 = SpillingKt.nullOutSpilledVariable(list33);
-                                    c00029.L$12 = SpillingKt.nullOutSpilledVariable(list35);
-                                    c00029.L$13 = SpillingKt.nullOutSpilledVariable(list36);
-                                    c00029.L$14 = SpillingKt.nullOutSpilledVariable(str72);
-                                    c00029.L$15 = SpillingKt.nullOutSpilledVariable(str71);
-                                    c00029.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                                    c00029.L$17 = SpillingKt.nullOutSpilledVariable(str70);
-                                    c00029.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes7);
-                                    c00029.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                                    c00029.L$20 = SpillingKt.nullOutSpilledVariable(list34);
-                                    c00029.L$21 = SpillingKt.nullOutSpilledVariable(str69);
-                                    c00029.L$22 = SpillingKt.nullOutSpilledVariable(string);
-                                    c00029.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
-                                    c00029.L$24 = SpillingKt.nullOutSpilledVariable(str83);
-                                    c00029.I$0 = i70 == true ? 1 : 0;
-                                    c00029.I$1 = i50;
-                                    c00029.I$2 = i52;
-                                    c00029.I$3 = i71;
-                                    c00029.I$4 = i69 == true ? 1 : 0;
-                                    c00029.label = 6;
-                                    objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(mainAPI2, str85, str65, tvType7, false, c00032, c00029, 8, (Object) null);
-                                    if (objNewAnimeLoadResponse$default == obj15) {
-                                        return obj15;
-                                    }
-                                    return objNewAnimeLoadResponse$default;
+                                    String str913 = str73;
+                                    arrayList8.add(MainAPIKt.newEpisode(mainAPI3, appUtils4.toJson(new LinkData(id3, str913, tvdb_id, type4, season3, episode2, null, null, null, str79, numBoxInt2, "", true, num9, null, title4, r78, released3, str912, z5, z6, z7, mediaDetail8.getTitle(), mediaDetail8.getName(), false, null, 33571264, null)), new Function1() { // from class: com.phisher98.TorraStream$$ExternalSyntheticLambda1
+                                        public final Object invoke(Object obj23) {
+                                            return TorraStream.load$lambda$9$0(video, this, (Episode) obj23);
+                                        }
+                                    }));
+                                    list39 = list410;
+                                    list40 = list411;
+                                    str75 = str911;
+                                    str77 = str77;
+                                    str73 = str913;
                                 }
-                                list29 = arrayListEmptyList;
-                                if (cinemetaRes4 != null || (meta = cinemetaRes4.getMeta()) == null) {
-                                    name2 = str7;
-                                } else {
-                                    name2 = meta.getName();
+                                String str914 = str75;
+                                String str915 = str77;
+                                String str916 = str73;
+                                arrayList9 = arrayList8;
+                                if (arrayList9.isEmpty()) {
+                                    arrayList9 = list32;
                                 }
-                                Requests app3 = MainActivityKt.getApp();
-                                str60 = name2;
-                                String str86 = "https://api.ani.zip/mappings?imdb_id=" + str55;
-                                c00022.L$0 = str57;
-                                c00022.L$1 = data10;
-                                c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                                c00022.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                                c00022.L$4 = mediaDetail5;
-                                c00022.L$5 = str52;
-                                c00022.L$6 = str58;
-                                c00022.L$7 = str53;
-                                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                                c00022.L$9 = num8;
-                                c00022.L$10 = list25;
-                                c00022.L$11 = list24;
-                                c00022.L$12 = list27;
-                                c00022.L$13 = list26;
-                                c00022.L$14 = str56;
-                                str61 = str59;
-                                c00022.L$15 = str61;
-                                str62 = str52;
-                                c00022.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                                c00022.L$17 = str55;
-                                c00022.L$18 = cinemetaRes4;
-                                c00022.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                                c00022.L$20 = list29;
-                                list30 = list26;
-                                c00022.L$21 = str60;
-                                c00022.I$0 = i46 == true ? 1 : 0;
-                                int i610 = i45;
-                                c00022.I$1 = i610;
-                                int i611 = i44;
-                                c00022.I$2 = i611;
-                                int i612 = i48;
-                                c00022.I$3 = i612;
-                                c00022.I$4 = i47 == true ? 1 : 0;
-                                c00022.label = 5;
-                                C00021 c000210 = c00022;
-                                list31 = list27;
-                                str63 = str56;
-                                data11 = data10;
-                                i49 = i47;
-                                i50 = i610;
-                                i51 = i46;
-                                str64 = str55;
-                                num9 = num8;
-                                mediaDetail6 = mediaDetail5;
-                                list32 = list25;
-                                i52 = i611;
-                                list33 = list24;
-                                i53 = i612;
-                                obj13 = Requests.get$default(app3, str86, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000210, 4094, (Object) null);
-                                c00024 = c000210;
-                                obj14 = obj10;
-                                if (obj13 == obj14) {
-                                    return obj14;
+                                List list51 = arrayList9;
+                                TvType tvType12 = TvType.Anime;
+                                obj19 = obj16;
+                                int i510 = i39;
+                                C00021 c00029 = c00023;
+                                ?? r14 = kitsuid;
+                                C00032 c00033 = new C00032(list51, str910, str914, str915, num9, mediaDetail8, list37, list36, this, list35, list34, str78, r14, cinemetaRes7, str916, null);
+                                c00029.L$0 = SpillingKt.nullOutSpilledVariable(str72);
+                                c00029.L$1 = SpillingKt.nullOutSpilledVariable(data10);
+                                c00029.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                                c00029.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                                c00029.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail8);
+                                c00029.L$5 = SpillingKt.nullOutSpilledVariable(str79);
+                                c00029.L$6 = SpillingKt.nullOutSpilledVariable(str910);
+                                c00029.L$7 = SpillingKt.nullOutSpilledVariable(str914);
+                                c00029.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                                c00029.L$9 = SpillingKt.nullOutSpilledVariable(num9);
+                                c00029.L$10 = SpillingKt.nullOutSpilledVariable(list36);
+                                c00029.L$11 = SpillingKt.nullOutSpilledVariable(list37);
+                                c00029.L$12 = SpillingKt.nullOutSpilledVariable(list34);
+                                c00029.L$13 = SpillingKt.nullOutSpilledVariable(list35);
+                                c00029.L$14 = SpillingKt.nullOutSpilledVariable(str78);
+                                c00029.L$15 = SpillingKt.nullOutSpilledVariable(str915);
+                                c00029.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                                c00029.L$17 = SpillingKt.nullOutSpilledVariable(str916);
+                                c00029.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes7);
+                                c00029.L$19 = SpillingKt.nullOutSpilledVariable(list32);
+                                c00029.L$20 = SpillingKt.nullOutSpilledVariable(list28);
+                                c00029.L$21 = SpillingKt.nullOutSpilledVariable((Object) r78);
+                                c00029.L$22 = SpillingKt.nullOutSpilledVariable(text2);
+                                c00029.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
+                                c00029.L$24 = SpillingKt.nullOutSpilledVariable((Object) r14);
+                                c00029.L$25 = SpillingKt.nullOutSpilledVariable(list51);
+                                c00029.I$0 = i37 == true ? 1 : 0;
+                                c00029.I$1 = i36;
+                                c00029.I$2 = i510;
+                                c00029.I$3 = i38;
+                                c00029.I$4 = i59 == true ? 1 : 0;
+                                c00029.label = 6;
+                                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default((MainAPI) this, str79, str72, tvType12, false, c00033, c00029, 8, (Object) null);
+                                if (objNewAnimeLoadResponse$default == obj19) {
+                                    return obj19;
                                 }
-                                i54 = i51 == true ? 1 : 0;
-                                str65 = str57;
+                                return objNewAnimeLoadResponse$default;
+                            }
+                            String str100 = str23;
+                            boolean z11 = i10 == true ? 1 : 0;
+                            num6 = null;
+                            obj10 = obj6;
+                            i21 = i13 == true ? 1 : 0;
+                            list19 = list11;
+                            data7 = data5;
+                            i22 = i14;
+                            i23 = i16;
+                            tvType4 = tvType3;
+                            i24 = i15;
+                            str42 = str22;
+                            str43 = str100;
+                            str44 = str26;
+                            i30 = i23;
+                            i31 = i24;
+                            i32 = i22;
+                            obj12 = obj10;
+                            str58 = str44;
+                            str59 = str21;
+                            i33 = i10;
+                            str60 = str19;
+                            str61 = str29;
+                            num8 = num5;
+                            list23 = list9;
+                            cinemetaRes4 = cinemetaRes;
+                            listEmptyList = CollectionsKt.emptyList();
+                            tvType6 = tvType4;
+                            str53 = str42;
+                            list24 = list19;
+                            list25 = list10;
+                            list26 = list12;
+                            str62 = str25;
+                            data9 = data7;
+                            str63 = str28;
+                            mediaDetail6 = mediaDetail3;
+                            str64 = str24;
+                            str65 = str43;
+                            list27 = listEmptyList;
+                            if (i32 == 0) {
+                                String str810 = str53;
+                                String str811 = str61;
+                                MediaDetail mediaDetail12 = mediaDetail6;
+                                List list412 = list24;
+                                CinemetaRes cinemetaRes10 = cinemetaRes4;
+                                List list413 = list23;
+                                List list414 = list26;
+                                C00021 c000210 = c00024;
+                                String str812 = str62;
+                                int i410 = i21;
+                                int i511 = i31;
+                                obj13 = obj12;
+                                List list415 = list25;
+                                TvType tvType13 = TvType.TvSeries;
+                                String str917 = str63;
+                                String str918 = str60;
+                                String str919 = str65;
                                 str66 = str58;
-                                str67 = str53;
-                                str68 = str62;
-                                list34 = list29;
-                                str69 = str60;
-                                list35 = list31;
-                                data12 = data11;
-                                str70 = str64;
-                                str71 = str61;
-                                str72 = str63;
-                                list36 = list30;
-                                i55 = i49 == true ? 1 : 0;
-                                String string2 = ((NiceResponse) obj13).toString();
-                                animeData = TorraStreamUtilsKt.parseAnimeData(string2);
-                                if (animeData != null) {
-                                    kitsuid = str7;
-                                } else {
-                                    kitsuid = str7;
+                                Integer num12 = num8;
+                                C00043 c00044 = new C00043(str919, str66, str811, num12, mediaDetail12, list415, list412, this, list413, list414, list27, cinemetaRes10, str812, null);
+                                c000210.L$0 = SpillingKt.nullOutSpilledVariable(str917);
+                                c000210.L$1 = SpillingKt.nullOutSpilledVariable(data9);
+                                c000210.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                                c000210.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                                c000210.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail12);
+                                c000210.L$5 = SpillingKt.nullOutSpilledVariable(str810);
+                                c000210.L$6 = SpillingKt.nullOutSpilledVariable(str919);
+                                c000210.L$7 = SpillingKt.nullOutSpilledVariable(str66);
+                                c000210.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                                c000210.L$9 = SpillingKt.nullOutSpilledVariable(num12);
+                                c000210.L$10 = SpillingKt.nullOutSpilledVariable(list412);
+                                c000210.L$11 = SpillingKt.nullOutSpilledVariable(list415);
+                                c000210.L$12 = SpillingKt.nullOutSpilledVariable(list414);
+                                c000210.L$13 = SpillingKt.nullOutSpilledVariable(list413);
+                                c000210.L$14 = SpillingKt.nullOutSpilledVariable(str812);
+                                c000210.L$15 = SpillingKt.nullOutSpilledVariable(str811);
+                                c000210.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                                c000210.L$17 = SpillingKt.nullOutSpilledVariable(str918);
+                                c000210.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes10);
+                                c000210.L$19 = SpillingKt.nullOutSpilledVariable(list27);
+                                c000210.I$0 = i33 == true ? 1 : 0;
+                                c000210.I$1 = i32;
+                                c000210.I$2 = i511;
+                                c000210.I$3 = i30;
+                                c000210.I$4 = i410 == true ? 1 : 0;
+                                c000210.label = 7;
+                                objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str810, str917, tvType13, list27, c00044, c000210);
+                                c00022 = c000210;
+                                if (objNewTvSeriesLoadResponse == obj13) {
+                                    return obj13;
                                 }
-                                MainAPI mainAPI3 = (MainAPI) this;
-                                TvType tvType8 = TvType.Anime;
-                                int i613 = i55;
-                                if (i52 != 0) {
+                                obj14 = objNewTvSeriesLoadResponse;
+                                str67 = str66;
+                                return (LoadResponse) obj14;
+                            }
+                            if (cinemetaRes4 != null) {
+                                str68 = str61;
+                                cinemetaRes5 = cinemetaRes4;
+                                arrayListEmptyList = CollectionsKt.emptyList();
+                            } else {
+                                str68 = str61;
+                                cinemetaRes5 = cinemetaRes4;
+                                arrayListEmptyList = CollectionsKt.emptyList();
+                            }
+                            alternative_titles = mediaDetail6.getAlternative_titles();
+                            if (alternative_titles == null) {
+                                list28 = arrayListEmptyList;
+                                if (cinemetaRes5 != null) {
+                                    name2 = num6;
+                                } else {
+                                    name2 = num6;
+                                }
+                            } else {
+                                list28 = arrayListEmptyList;
+                                if (cinemetaRes5 != null) {
+                                    name2 = num6;
+                                } else {
+                                    name2 = num6;
+                                }
+                            }
+                            obj15 = name2;
+                            c00024.L$0 = str63;
+                            c00024.L$1 = data9;
+                            c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                            c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                            c00024.L$4 = mediaDetail6;
+                            c00024.L$5 = str53;
+                            c00024.L$6 = str65;
+                            c00024.L$7 = str58;
+                            c00024.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                            c00024.L$9 = num8;
+                            c00024.L$10 = list24;
+                            c00024.L$11 = list25;
+                            c00024.L$12 = list26;
+                            c00024.L$13 = list23;
+                            c00024.L$14 = str62;
+                            str69 = str68;
+                            c00024.L$15 = str69;
+                            str70 = str53;
+                            c00024.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                            c00024.L$17 = str60;
+                            c00024.L$18 = cinemetaRes5;
+                            c00024.L$19 = list27;
+                            c00024.L$20 = list28;
+                            c00024.L$21 = obj15;
+                            int i512 = i33;
+                            c00024.I$0 = i512 == true ? 1 : 0;
+                            int i513 = i32;
+                            c00024.I$1 = i513;
+                            i34 = i31;
+                            c00024.I$2 = i34;
+                            int i514 = i30;
+                            c00024.I$3 = i514;
+                            c00024.I$4 = i21 == true ? 1 : 0;
+                            c00024.label = 5;
+                            list29 = list23;
+                            list30 = list26;
+                            c00023 = c00024;
+                            str71 = str62;
+                            data10 = data9;
+                            list31 = list25;
+                            i35 = i21;
+                            i36 = i513;
+                            list32 = list27;
+                            i37 = i512 == true ? 1 : 0;
+                            cinemetaRes6 = cinemetaRes5;
+                            i38 = i514;
+                            mediaDetail7 = mediaDetail6;
+                            list33 = list24;
+                            obj16 = obj12;
+                            obj17 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?imdb_id=" + str60, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 4094, (Object) null);
+                            if (obj17 == obj16) {
+                                return obj16;
+                            }
+                            list34 = list30;
+                            str72 = str63;
+                            str73 = str60;
+                            str74 = str65;
+                            str75 = str58;
+                            num9 = num8;
+                            obj18 = obj17;
+                            str76 = str70;
+                            r78 = obj15;
+                            str77 = str69;
+                            mediaDetail8 = mediaDetail7;
+                            list35 = list29;
+                            cinemetaRes7 = cinemetaRes6;
+                            str78 = str71;
+                            i39 = i34;
+                            i40 = i35 == true ? 1 : 0;
+                            list36 = list33;
+                            list37 = list31;
+                            String text3 = ((NiceResponse) obj18).getText();
+                            animeData = TorraStreamUtilsKt.parseAnimeData(text3);
+                            if (animeData != null) {
+                                kitsuid = num6;
+                            } else {
+                                kitsuid = num6;
+                            }
+                            String str9110 = str74;
+                            list39 = list28;
+                            int i515 = i40;
+                            str79 = str76;
+                            arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list39, 10));
+                            list40 = list39;
+                            while (r23.hasNext()) {
+                                List list416 = list39;
+                                released = video.getReleased();
+                                if (released != null) {
+                                    if (cinemetaRes7 != null) {
+                                        intOrNull2 = num6;
+                                    } else {
+                                        intOrNull2 = num6;
+                                    }
+                                    if (intOrNull2 != null) {
+                                        iIntValue = intOrNull2.intValue();
+                                    } else {
+                                        iIntValue = 0;
+                                    }
+                                } else {
+                                    if (cinemetaRes7 != null) {
+                                        intOrNull2 = num6;
+                                    } else {
+                                        intOrNull2 = num6;
+                                    }
+                                    if (intOrNull2 != null) {
+                                        iIntValue = intOrNull2.intValue();
+                                    } else {
+                                        iIntValue = 0;
+                                    }
+                                }
+                                List list417 = list40;
+                                MainAPI mainAPI4 = (MainAPI) this;
+                                String str9111 = str75;
+                                AppUtils appUtils5 = AppUtils.INSTANCE;
+                                Integer id4 = data10.getId();
+                                external_ids3 = mediaDetail8.getExternal_ids();
+                                if (external_ids3 != null) {
+                                    tvdb_id = external_ids3.getTvdb_id();
+                                } else {
+                                    tvdb_id = num6;
+                                }
+                                String type5 = data10.getType();
+                                Integer season4 = video.getSeason();
+                                Integer episode3 = video.getEpisode();
+                                Integer numBoxInt3 = Boxing.boxInt(iIntValue);
+                                String title5 = video.getTitle();
+                                String released4 = video.getReleased();
+                                releaseDate2 = mediaDetail8.getReleaseDate();
+                                if (releaseDate2 == null) {
+                                    releaseDate2 = mediaDetail8.getFirstAirDate();
+                                }
+                                String str9112 = releaseDate2;
+                                if (i39 != 0) {
                                     z5 = true;
                                 } else {
                                     z5 = false;
                                 }
-                                if (i53 != 0) {
+                                if (i38 != 0) {
                                     z6 = true;
                                 } else {
                                     z6 = false;
                                 }
-                                if (i54 != 0) {
+                                if (i37 != 0) {
                                     z7 = true;
                                 } else {
                                     z7 = false;
                                 }
-                                obj15 = obj14;
-                                int i72 = i54;
-                                C00021 c000211 = c00024;
-                                int i73 = i53;
-                                CinemetaRes cinemetaRes8 = cinemetaRes4;
-                                String str87 = kitsuid;
-                                C00032 c00033 = new C00032(str66, str67, str71, num9, mediaDetail6, list33, list32, this, list36, list35, str72, str87, cinemetaRes8, str70, list34, data12, str68, str69, z5, z6, z7, null);
-                                String str88 = str67;
-                                String str89 = str68;
-                                c000211.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                                c000211.L$1 = SpillingKt.nullOutSpilledVariable(data12);
-                                c000211.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                                c000211.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                                c000211.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail6);
-                                c000211.L$5 = SpillingKt.nullOutSpilledVariable(str89);
-                                c000211.L$6 = SpillingKt.nullOutSpilledVariable(str66);
-                                c000211.L$7 = SpillingKt.nullOutSpilledVariable(str88);
-                                c000211.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                                c000211.L$9 = SpillingKt.nullOutSpilledVariable(num9);
-                                c000211.L$10 = SpillingKt.nullOutSpilledVariable(list32);
-                                c000211.L$11 = SpillingKt.nullOutSpilledVariable(list33);
-                                c000211.L$12 = SpillingKt.nullOutSpilledVariable(list35);
-                                c000211.L$13 = SpillingKt.nullOutSpilledVariable(list36);
-                                c000211.L$14 = SpillingKt.nullOutSpilledVariable(str72);
-                                c000211.L$15 = SpillingKt.nullOutSpilledVariable(str71);
-                                c000211.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                                c000211.L$17 = SpillingKt.nullOutSpilledVariable(str70);
-                                c000211.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes8);
-                                c000211.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                                c000211.L$20 = SpillingKt.nullOutSpilledVariable(list34);
-                                c000211.L$21 = SpillingKt.nullOutSpilledVariable(str69);
-                                c000211.L$22 = SpillingKt.nullOutSpilledVariable(string2);
-                                c000211.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
-                                c000211.L$24 = SpillingKt.nullOutSpilledVariable(str87);
-                                c000211.I$0 = i72 == true ? 1 : 0;
-                                c000211.I$1 = i50;
-                                c000211.I$2 = i52;
-                                c000211.I$3 = i73;
-                                c000211.I$4 = i613 == true ? 1 : 0;
-                                c000211.label = 6;
-                                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(mainAPI3, str89, str65, tvType8, false, c00033, c000211, 8, (Object) null);
-                                if (objNewAnimeLoadResponse$default == obj15) {
-                                    return obj15;
-                                }
-                                return objNewAnimeLoadResponse$default;
+                                String str9113 = str73;
+                                arrayList8.add(MainAPIKt.newEpisode(mainAPI4, appUtils5.toJson(new LinkData(id4, str9113, tvdb_id, type5, season4, episode3, null, null, null, str79, numBoxInt3, "", true, num9, null, title5, r78, released4, str9112, z5, z6, z7, mediaDetail8.getTitle(), mediaDetail8.getName(), false, null, 33571264, null)), new Function1() { // from class: com.phisher98.TorraStream$$ExternalSyntheticLambda1
+                                    public final Object invoke(Object obj23) {
+                                        return TorraStream.load$lambda$9$0(video, this, (Episode) obj23);
+                                    }
+                                }));
+                                list39 = list416;
+                                list40 = list417;
+                                str75 = str9111;
+                                str77 = str77;
+                                str73 = str9113;
                             }
-                            int i74 = i22;
-                            tvType3 = tvType2;
-                            i30 = i23;
-                            int i75 = i18;
-                            i31 = i19;
-                            String str90 = str29;
-                            int i76 = i20;
-                            obj9 = obj5;
-                            i32 = i76;
-                            str41 = str90;
-                            i33 = i75 == true ? 1 : 0;
-                            i34 = i74;
-                            data8 = data5;
-                            i44 = i34;
-                            obj10 = obj9;
-                            i45 = i32;
-                            i46 = i31;
-                            list24 = list12;
-                            str53 = str26;
-                            num8 = num3;
-                            str54 = str28;
-                            str55 = str24;
-                            str43 = str22;
-                            str56 = str25;
-                            listEmptyList = CollectionsKt.emptyList();
-                            data10 = data8;
-                            str57 = str27;
-                            str52 = str41;
-                            list25 = list10;
-                            mediaDetail5 = mediaDetail3;
-                            str51 = str21;
-                            i47 = i33;
-                            list26 = list11;
-                            i48 = i30;
-                            str58 = str23;
-                            list27 = list9;
-                            cinemetaRes3 = cinemetaRes;
-                            list28 = listEmptyList;
-                            if (i45 == 0) {
-                                String str710 = str52;
-                                String str711 = str55;
-                                Integer num12 = num8;
-                                String str712 = str43;
-                                MediaDetail mediaDetail9 = mediaDetail5;
-                                List list47 = list24;
-                                List list48 = list25;
-                                C00021 c000212 = c00022;
-                                List list49 = list26;
-                                List list410 = list27;
-                                CinemetaRes cinemetaRes9 = cinemetaRes3;
-                                int i614 = i47;
-                                obj11 = obj10;
-                                TvType tvType9 = TvType.TvSeries;
-                                String str713 = str57;
-                                String str810 = str58;
-                                String str811 = str53;
-                                C00043 c00044 = new C00043(str810, str811, str712, num12, mediaDetail9, list47, list48, this, list49, list410, list28, cinemetaRes9, str56, null);
-                                c000212.L$0 = SpillingKt.nullOutSpilledVariable(str713);
-                                c000212.L$1 = SpillingKt.nullOutSpilledVariable(data10);
-                                c000212.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                                c000212.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                                c000212.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail9);
-                                c000212.L$5 = SpillingKt.nullOutSpilledVariable(str710);
-                                c000212.L$6 = SpillingKt.nullOutSpilledVariable(str810);
-                                c000212.L$7 = SpillingKt.nullOutSpilledVariable(str811);
-                                c000212.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                                c000212.L$9 = SpillingKt.nullOutSpilledVariable(num12);
-                                c000212.L$10 = SpillingKt.nullOutSpilledVariable(list48);
-                                c000212.L$11 = SpillingKt.nullOutSpilledVariable(list47);
-                                c000212.L$12 = SpillingKt.nullOutSpilledVariable(list410);
-                                c000212.L$13 = SpillingKt.nullOutSpilledVariable(list49);
-                                c000212.L$14 = SpillingKt.nullOutSpilledVariable(str56);
-                                c000212.L$15 = SpillingKt.nullOutSpilledVariable(str712);
-                                c000212.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                                c000212.L$17 = SpillingKt.nullOutSpilledVariable(str711);
-                                c000212.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes9);
-                                c000212.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                                c000212.I$0 = i46 == true ? 1 : 0;
-                                c000212.I$1 = i45;
-                                c000212.I$2 = i44;
-                                c000212.I$3 = i48;
-                                c000212.I$4 = i614 == true ? 1 : 0;
-                                c000212.label = 7;
-                                objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str710, str713, tvType9, list28, c00044, c000212);
-                                c00023 = c000212;
-                                if (objNewTvSeriesLoadResponse == obj11) {
-                                    return obj11;
-                                }
-                                obj12 = objNewTvSeriesLoadResponse;
-                                return (LoadResponse) obj12;
+                            String str9114 = str75;
+                            String str9115 = str77;
+                            String str9116 = str73;
+                            arrayList9 = arrayList8;
+                            if (arrayList9.isEmpty()) {
+                                arrayList9 = list32;
                             }
-                            if (cinemetaRes3 != null) {
-                                str59 = str43;
-                                cinemetaRes4 = cinemetaRes3;
-                                arrayListEmptyList = CollectionsKt.emptyList();
-                            } else {
-                                str59 = str43;
-                                cinemetaRes4 = cinemetaRes3;
-                                arrayListEmptyList = CollectionsKt.emptyList();
-                            }
-                            alternative_titles = mediaDetail5.getAlternative_titles();
-                            if (alternative_titles == null) {
-                                list29 = arrayListEmptyList;
-                                if (cinemetaRes4 != null) {
-                                    name2 = str7;
-                                } else {
-                                    name2 = str7;
-                                }
-                            } else {
-                                list29 = arrayListEmptyList;
-                                if (cinemetaRes4 != null) {
-                                    name2 = str7;
-                                } else {
-                                    name2 = str7;
-                                }
-                            }
-                            Requests app4 = MainActivityKt.getApp();
-                            str60 = name2;
-                            String str812 = "https://api.ani.zip/mappings?imdb_id=" + str55;
-                            c00022.L$0 = str57;
-                            c00022.L$1 = data10;
-                            c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                            c00022.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                            c00022.L$4 = mediaDetail5;
-                            c00022.L$5 = str52;
-                            c00022.L$6 = str58;
-                            c00022.L$7 = str53;
-                            c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                            c00022.L$9 = num8;
-                            c00022.L$10 = list25;
-                            c00022.L$11 = list24;
-                            c00022.L$12 = list27;
-                            c00022.L$13 = list26;
-                            c00022.L$14 = str56;
-                            str61 = str59;
-                            c00022.L$15 = str61;
-                            str62 = str52;
-                            c00022.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                            c00022.L$17 = str55;
-                            c00022.L$18 = cinemetaRes4;
-                            c00022.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                            c00022.L$20 = list29;
-                            list30 = list26;
-                            c00022.L$21 = str60;
-                            c00022.I$0 = i46 == true ? 1 : 0;
-                            int i615 = i45;
-                            c00022.I$1 = i615;
-                            int i616 = i44;
-                            c00022.I$2 = i616;
-                            int i617 = i48;
-                            c00022.I$3 = i617;
-                            c00022.I$4 = i47 == true ? 1 : 0;
-                            c00022.label = 5;
-                            C00021 c000213 = c00022;
-                            list31 = list27;
-                            str63 = str56;
-                            data11 = data10;
-                            i49 = i47;
-                            i50 = i615;
-                            i51 = i46;
-                            str64 = str55;
-                            num9 = num8;
-                            mediaDetail6 = mediaDetail5;
-                            list32 = list25;
-                            i52 = i616;
-                            list33 = list24;
-                            i53 = i617;
-                            obj13 = Requests.get$default(app4, str812, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000213, 4094, (Object) null);
-                            c00024 = c000213;
-                            obj14 = obj10;
-                            if (obj13 == obj14) {
-                                return obj14;
-                            }
-                            i54 = i51 == true ? 1 : 0;
-                            str65 = str57;
-                            str66 = str58;
-                            str67 = str53;
-                            str68 = str62;
-                            list34 = list29;
-                            str69 = str60;
-                            list35 = list31;
-                            data12 = data11;
-                            str70 = str64;
-                            str71 = str61;
-                            str72 = str63;
-                            list36 = list30;
-                            i55 = i49 == true ? 1 : 0;
-                            String string3 = ((NiceResponse) obj13).toString();
-                            animeData = TorraStreamUtilsKt.parseAnimeData(string3);
-                            if (animeData != null) {
-                                kitsuid = str7;
-                            } else {
-                                kitsuid = str7;
-                            }
-                            MainAPI mainAPI4 = (MainAPI) this;
-                            TvType tvType10 = TvType.Anime;
-                            int i618 = i55;
-                            if (i52 != 0) {
-                                z5 = true;
-                            } else {
-                                z5 = false;
-                            }
-                            if (i53 != 0) {
-                                z6 = true;
-                            } else {
-                                z6 = false;
-                            }
-                            if (i54 != 0) {
-                                z7 = true;
-                            } else {
-                                z7 = false;
-                            }
-                            obj15 = obj14;
-                            int i77 = i54;
-                            C00021 c000214 = c00024;
-                            int i78 = i53;
-                            CinemetaRes cinemetaRes10 = cinemetaRes4;
-                            String str813 = kitsuid;
-                            C00032 c00034 = new C00032(str66, str67, str71, num9, mediaDetail6, list33, list32, this, list36, list35, str72, str813, cinemetaRes10, str70, list34, data12, str68, str69, z5, z6, z7, null);
-                            String str814 = str67;
-                            String str815 = str68;
-                            c000214.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                            c000214.L$1 = SpillingKt.nullOutSpilledVariable(data12);
-                            c000214.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                            c000214.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                            c000214.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail6);
-                            c000214.L$5 = SpillingKt.nullOutSpilledVariable(str815);
-                            c000214.L$6 = SpillingKt.nullOutSpilledVariable(str66);
-                            c000214.L$7 = SpillingKt.nullOutSpilledVariable(str814);
-                            c000214.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                            c000214.L$9 = SpillingKt.nullOutSpilledVariable(num9);
-                            c000214.L$10 = SpillingKt.nullOutSpilledVariable(list32);
-                            c000214.L$11 = SpillingKt.nullOutSpilledVariable(list33);
-                            c000214.L$12 = SpillingKt.nullOutSpilledVariable(list35);
-                            c000214.L$13 = SpillingKt.nullOutSpilledVariable(list36);
-                            c000214.L$14 = SpillingKt.nullOutSpilledVariable(str72);
-                            c000214.L$15 = SpillingKt.nullOutSpilledVariable(str71);
-                            c000214.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                            c000214.L$17 = SpillingKt.nullOutSpilledVariable(str70);
-                            c000214.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes10);
-                            c000214.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                            c000214.L$20 = SpillingKt.nullOutSpilledVariable(list34);
-                            c000214.L$21 = SpillingKt.nullOutSpilledVariable(str69);
-                            c000214.L$22 = SpillingKt.nullOutSpilledVariable(string3);
-                            c000214.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
-                            c000214.L$24 = SpillingKt.nullOutSpilledVariable(str813);
-                            c000214.I$0 = i77 == true ? 1 : 0;
-                            c000214.I$1 = i50;
-                            c000214.I$2 = i52;
-                            c000214.I$3 = i78;
-                            c000214.I$4 = i618 == true ? 1 : 0;
-                            c000214.label = 6;
-                            objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(mainAPI4, str815, str65, tvType10, false, c00034, c000214, 8, (Object) null);
-                            if (objNewAnimeLoadResponse$default == obj15) {
-                                return obj15;
+                            List list52 = arrayList9;
+                            TvType tvType14 = TvType.Anime;
+                            obj19 = obj16;
+                            int i516 = i39;
+                            C00021 c000211 = c00023;
+                            ?? r15 = kitsuid;
+                            C00032 c00034 = new C00032(list52, str9110, str9114, str9115, num9, mediaDetail8, list37, list36, this, list35, list34, str78, r15, cinemetaRes7, str9116, null);
+                            c000211.L$0 = SpillingKt.nullOutSpilledVariable(str72);
+                            c000211.L$1 = SpillingKt.nullOutSpilledVariable(data10);
+                            c000211.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                            c000211.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                            c000211.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail8);
+                            c000211.L$5 = SpillingKt.nullOutSpilledVariable(str79);
+                            c000211.L$6 = SpillingKt.nullOutSpilledVariable(str9110);
+                            c000211.L$7 = SpillingKt.nullOutSpilledVariable(str9114);
+                            c000211.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                            c000211.L$9 = SpillingKt.nullOutSpilledVariable(num9);
+                            c000211.L$10 = SpillingKt.nullOutSpilledVariable(list36);
+                            c000211.L$11 = SpillingKt.nullOutSpilledVariable(list37);
+                            c000211.L$12 = SpillingKt.nullOutSpilledVariable(list34);
+                            c000211.L$13 = SpillingKt.nullOutSpilledVariable(list35);
+                            c000211.L$14 = SpillingKt.nullOutSpilledVariable(str78);
+                            c000211.L$15 = SpillingKt.nullOutSpilledVariable(str9115);
+                            c000211.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                            c000211.L$17 = SpillingKt.nullOutSpilledVariable(str9116);
+                            c000211.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes7);
+                            c000211.L$19 = SpillingKt.nullOutSpilledVariable(list32);
+                            c000211.L$20 = SpillingKt.nullOutSpilledVariable(list28);
+                            c000211.L$21 = SpillingKt.nullOutSpilledVariable((Object) r78);
+                            c000211.L$22 = SpillingKt.nullOutSpilledVariable(text3);
+                            c000211.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
+                            c000211.L$24 = SpillingKt.nullOutSpilledVariable((Object) r15);
+                            c000211.L$25 = SpillingKt.nullOutSpilledVariable(list52);
+                            c000211.I$0 = i37 == true ? 1 : 0;
+                            c000211.I$1 = i36;
+                            c000211.I$2 = i516;
+                            c000211.I$3 = i38;
+                            c000211.I$4 = i515 == true ? 1 : 0;
+                            c000211.label = 6;
+                            objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default((MainAPI) this, str79, str72, tvType14, false, c00034, c000211, 8, (Object) null);
+                            if (objNewAnimeLoadResponse$default == obj19) {
+                                return obj19;
                             }
                             return objNewAnimeLoadResponse$default;
                         }
-                        str17 = str8;
-                        i13 = i9;
+                        i10 = i6;
+                        str14 = str7;
+                        str15 = str13;
                         if (z) {
-                            str18 = "series";
+                            str16 = "series";
                         } else {
-                            str18 = "movie";
+                            str16 = "movie";
                         }
                         external_ids = mediaDetail2.getExternal_ids();
                         if (external_ids != null) {
                             imdb_id = external_ids.getImdb_id();
                         } else {
-                            imdb_id = str7;
+                            imdb_id = null;
                         }
                         if (imdb_id == null) {
                             imdb_id = "";
                         }
-                        i14 = i12;
-                        c00025.L$0 = str10;
-                        c00025.L$1 = data2;
-                        c00025.L$2 = tvType;
-                        c00025.L$3 = SpillingKt.nullOutSpilledVariable(str17);
-                        c00025.L$4 = mediaDetail2;
-                        c00025.L$5 = str13;
-                        c00025.L$6 = str11;
-                        c00025.L$7 = str12;
-                        c00025.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                        c00025.L$9 = num;
-                        list5 = list2;
-                        c00025.L$10 = list5;
-                        list6 = list4;
-                        c00025.L$11 = list6;
-                        list7 = list3;
-                        c00025.L$12 = list7;
-                        list8 = list;
-                        c00025.L$13 = list8;
-                        str19 = str9;
-                        c00025.L$14 = str19;
-                        c00025.L$15 = str16;
+                        list5 = list4;
+                        c00024.L$0 = str3;
+                        c00024.L$1 = data2;
+                        c00024.L$2 = tvType2;
+                        c00024.L$3 = SpillingKt.nullOutSpilledVariable(str9);
+                        c00024.L$4 = mediaDetail2;
+                        c00024.L$5 = str8;
+                        c00024.L$6 = str11;
+                        c00024.L$7 = str10;
+                        c00024.L$8 = SpillingKt.nullOutSpilledVariable(str6);
+                        c00024.L$9 = num3;
+                        c00024.L$10 = list3;
+                        c00024.L$11 = list;
+                        c00024.L$12 = list2;
+                        c00024.L$13 = list5;
+                        num4 = num3;
+                        str17 = str14;
+                        c00024.L$14 = str17;
                         data3 = data2;
-                        c00025.L$16 = SpillingKt.nullOutSpilledVariable(str18);
-                        c00025.L$17 = imdb_id;
-                        i15 = i10;
-                        c00025.I$0 = i15 == true ? 1 : 0;
-                        c00025.I$1 = i11;
-                        c00025.I$2 = i8;
-                        c00025.I$3 = i14;
-                        c00025.I$4 = i13 == true ? 1 : 0;
-                        c00025.label = 3;
-                        i16 = i8;
-                        i17 = i11;
-                        str20 = str12;
-                        z2 = true;
-                        num2 = num;
-                        obj5 = obj4;
-                        i18 = i13 == true ? 1 : 0;
-                        obj6 = Requests.get$default(MainActivityKt.getApp(), "https://aiometadata.elfhosted.com/stremio/b7cb164b-074b-41d5-b458-b3a834e197bb/meta/" + str18 + '/' + imdb_id + ".json", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00025, 4094, (Object) null);
-                        c00022 = c00025;
-                        if (obj6 == obj5) {
-                            return obj5;
+                        c00024.L$15 = str15;
+                        c00024.L$16 = SpillingKt.nullOutSpilledVariable(str16);
+                        c00024.L$17 = imdb_id;
+                        c00024.I$0 = i10 == true ? 1 : 0 ? 1 : 0;
+                        c00024.I$1 = i9;
+                        c00024.I$2 = i5;
+                        c00024.I$3 = i7;
+                        c00024.I$4 = r18 == true ? 1 : 0;
+                        c00024.label = 3;
+                        list6 = list2;
+                        list7 = list;
+                        str18 = str15;
+                        C00021 c000212 = c00024;
+                        list8 = list3;
+                        str19 = imdb_id;
+                        str20 = str10;
+                        r40 = r18;
+                        i11 = i7;
+                        i12 = i5;
+                        obj6 = obj4;
+                        obj7 = Requests.get$default(MainActivityKt.getApp(), "https://aiometadata.elfhosted.com/stremio/b7cb164b-074b-41d5-b458-b3a834e197bb/meta/" + str16 + '/' + imdb_id + ".json", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000212, 4030, (Object) null);
+                        c00024 = c000212;
+                        if (obj7 == obj6) {
+                            return obj6;
                         }
-                        str21 = str17;
-                        str22 = str16;
                         mediaDetail3 = mediaDetail2;
+                        str21 = str16;
+                        str22 = str8;
                         str23 = str11;
-                        str24 = imdb_id;
-                        obj7 = obj6;
+                        list9 = list5;
+                        str24 = str6;
                         data4 = data3;
-                        list9 = list7;
-                        list10 = list5;
-                        str25 = str19;
-                        str26 = str20;
-                        num3 = num2;
+                        list10 = list7;
+                        str25 = str17;
                         list11 = list8;
+                        str26 = str20;
+                        i13 = r40 == true ? 1 : 0;
+                        i14 = i9;
                         list12 = list6;
-                        str27 = str10;
-                        tvType2 = tvType;
-                        str28 = str18;
-                        str29 = str13;
-                        i19 = i15 == true ? 1 : 0;
-                        i20 = i17;
-                        i21 = i14;
-                        i22 = i16;
-                        NiceResponse niceResponse3 = (NiceResponse) obj7;
+                        str27 = str9;
+                        str28 = str3;
+                        i15 = i12;
+                        num5 = num4;
+                        str29 = str18;
+                        obj8 = obj7;
+                        tvType3 = tvType2;
+                        i16 = i11;
+                        NiceResponse niceResponse3 = (NiceResponse) obj8;
                         ResponseParser parser3 = niceResponse3.getParser();
                         Intrinsics.checkNotNull(parser3);
                         data5 = data4;
-                        i23 = i21;
                         safe2 = parser3.parseSafe(niceResponse3.getText(), Reflection.getOrCreateKotlinClass(CinemetaRes.class));
                         cinemetaRes = (CinemetaRes) safe2;
-                        if (tvType2 != TvType.TvSeries) {
-                            int i619 = i22;
-                            TvType tvType11 = tvType2;
-                            num4 = num3;
-                            int i620 = i23;
-                            i24 = i18;
-                            str30 = str24;
-                            list13 = list11;
-                            int i621 = i19;
-                            String str714 = str29;
-                            str31 = str25;
-                            i25 = i20;
-                            C00021 c000215 = c00022;
-                            obj8 = obj5;
-                            str32 = str22;
+                        if (tvType3 != TvType.TvSeries) {
+                            i17 = i13;
+                            List list418 = list11;
+                            int i411 = i15;
+                            TvType tvType15 = tvType3;
+                            String str813 = str22;
+                            str30 = str23;
+                            str31 = str26;
+                            C00021 c000213 = c00024;
+                            boolean z12 = i10 == true ? 1 : 0;
+                            str32 = str19;
+                            list13 = list9;
+                            str33 = str25;
+                            i18 = i16;
+                            obj9 = obj6;
+                            i19 = i14;
+                            String str814 = str29;
+                            MediaDetail mediaDetail13 = mediaDetail3;
                             MainAPI mainAPI5 = (MainAPI) this;
-                            TvType tvType12 = TvType.Movie;
-                            AppUtils appUtils3 = AppUtils.INSTANCE;
-                            String title3 = mediaDetail3.getTitle();
-                            if (i25 != 0) {
+                            TvType tvType16 = TvType.Movie;
+                            AppUtils appUtils6 = AppUtils.INSTANCE;
+                            String title6 = mediaDetail13.getTitle();
+                            if (i19 != 0) {
+                                z2 = true;
+                            } else {
+                                z2 = false;
+                            }
+                            external_ids2 = mediaDetail13.getExternal_ids();
+                            if (external_ids2 != null) {
+                                imdb_id2 = external_ids2.getImdb_id();
+                            } else {
+                                imdb_id2 = null;
+                            }
+                            String json2 = appUtils6.toJson(new LoadData(title6, num5, z2, imdb_id2, null, null, 48, null));
+                            if (i17 != 0) {
                                 z3 = true;
                             } else {
                                 z3 = false;
                             }
-                            external_ids2 = mediaDetail3.getExternal_ids();
-                            if (external_ids2 != null) {
-                                imdb_id2 = external_ids2.getImdb_id();
-                            } else {
-                                imdb_id2 = str7;
-                            }
-                            String json2 = appUtils3.toJson(new LoadData(title3, num4, z3, imdb_id2, null, null, 48, null));
+                            str34 = str814;
                             list14 = list10;
-                            if (i24 == 0) {
-                                z2 = false;
-                            }
                             list15 = list12;
-                            list16 = list9;
-                            C00054 c00055 = new C00054(str23, z2, str26, str32, num4, mediaDetail3, list15, list14, list13, list16, cinemetaRes, str31, null);
-                            c000215.L$0 = SpillingKt.nullOutSpilledVariable(str27);
-                            c000215.L$1 = SpillingKt.nullOutSpilledVariable(data5);
-                            c000215.L$2 = SpillingKt.nullOutSpilledVariable(tvType11);
-                            c000215.L$3 = SpillingKt.nullOutSpilledVariable(str21);
-                            c000215.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail3);
-                            c000215.L$5 = SpillingKt.nullOutSpilledVariable(str714);
-                            c000215.L$6 = SpillingKt.nullOutSpilledVariable(str23);
-                            c000215.L$7 = SpillingKt.nullOutSpilledVariable(str26);
-                            c000215.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                            c000215.L$9 = SpillingKt.nullOutSpilledVariable(num4);
-                            c000215.L$10 = SpillingKt.nullOutSpilledVariable(list14);
-                            c000215.L$11 = SpillingKt.nullOutSpilledVariable(list15);
-                            c000215.L$12 = SpillingKt.nullOutSpilledVariable(list16);
-                            c000215.L$13 = SpillingKt.nullOutSpilledVariable(list13);
-                            c000215.L$14 = SpillingKt.nullOutSpilledVariable(str31);
-                            c000215.L$15 = SpillingKt.nullOutSpilledVariable(str32);
-                            c000215.L$16 = SpillingKt.nullOutSpilledVariable(str28);
-                            c000215.L$17 = SpillingKt.nullOutSpilledVariable(str30);
-                            c000215.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes);
-                            c000215.I$0 = i621 == true ? 1 : 0;
-                            c000215.I$1 = i25;
-                            c000215.I$2 = i619;
-                            c000215.I$3 = i620;
-                            c000215.I$4 = i24 == true ? 1 : 0;
-                            c000215.label = 8;
-                            i26 = i619;
+                            list16 = list418;
+                            C00054 c00055 = new C00054(str30, z3, str31, str34, num5, mediaDetail13, list14, list16, list13, list15, cinemetaRes, str33, null);
+                            c000213.L$0 = SpillingKt.nullOutSpilledVariable(str28);
+                            c000213.L$1 = SpillingKt.nullOutSpilledVariable(data5);
+                            c000213.L$2 = SpillingKt.nullOutSpilledVariable(tvType15);
+                            c000213.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                            c000213.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail13);
+                            c000213.L$5 = SpillingKt.nullOutSpilledVariable(str813);
+                            c000213.L$6 = SpillingKt.nullOutSpilledVariable(str30);
+                            c000213.L$7 = SpillingKt.nullOutSpilledVariable(str31);
+                            c000213.L$8 = SpillingKt.nullOutSpilledVariable(str24);
+                            c000213.L$9 = SpillingKt.nullOutSpilledVariable(num5);
+                            c000213.L$10 = SpillingKt.nullOutSpilledVariable(list16);
+                            c000213.L$11 = SpillingKt.nullOutSpilledVariable(list14);
+                            c000213.L$12 = SpillingKt.nullOutSpilledVariable(list15);
+                            c000213.L$13 = SpillingKt.nullOutSpilledVariable(list13);
+                            c000213.L$14 = SpillingKt.nullOutSpilledVariable(str33);
+                            c000213.L$15 = SpillingKt.nullOutSpilledVariable(str34);
+                            c000213.L$16 = SpillingKt.nullOutSpilledVariable(str21);
+                            c000213.L$17 = SpillingKt.nullOutSpilledVariable(str32);
+                            c000213.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes);
+                            c000213.I$0 = z12 ? 1 : 0;
+                            c000213.I$1 = i19;
+                            c000213.I$2 = i411;
+                            c000213.I$3 = i18;
+                            c000213.I$4 = i17 == true ? 1 : 0;
+                            c000213.label = 8;
                             data6 = data5;
-                            str33 = str27;
-                            i27 = i620;
-                            str34 = str714;
-                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(mainAPI5, str34, str33, tvType12, json2, c00055, c000215);
-                            if (objNewMovieLoadResponse == obj8) {
-                                return obj8;
+                            str35 = str28;
+                            str36 = str813;
+                            objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(mainAPI5, str36, str35, tvType16, json2, c00055, c000213);
+                            if (objNewMovieLoadResponse == obj9) {
+                                return obj9;
                             }
-                            i28 = i25;
-                            mediaDetail4 = mediaDetail3;
-                            list17 = list15;
-                            list18 = list14;
-                            list19 = list13;
-                            cinemetaRes2 = cinemetaRes;
-                            str35 = str31;
-                            str36 = str14;
-                            str37 = str30;
-                            num5 = num4;
-                            i29 = i24 == true ? 1 : 0;
-                            data7 = data6;
-                            str38 = str23;
+                            str37 = str21;
+                            str38 = str24;
                             str39 = str32;
-                            list20 = list16;
-                            str40 = str28;
+                            str40 = str31;
+                            list17 = list13;
+                            list18 = list15;
+                            cinemetaRes2 = cinemetaRes;
+                            i20 = i17 == true ? 1 : 0;
+                            str41 = str33;
                             return (LoadResponse) objNewMovieLoadResponse;
                         }
                         seasons = mediaDetail3.getSeasons();
                         if (seasons != null) {
-                            ArrayList<Seasons> arrayList25 = seasons;
-                            i35 = i19;
-                            if (i20 != 0) {
+                            ArrayList<Seasons> arrayList26 = seasons;
+                            i25 = i15;
+                            if (i14 != 0) {
                                 z4 = true;
                             } else {
                                 z4 = false;
                             }
-                            Object obj18 = obj5;
-                            i36 = i22;
-                            i37 = i20;
-                            tvType3 = tvType2;
-                            num6 = num3;
-                            MediaDetail mediaDetail10 = mediaDetail3;
-                            i38 = i18;
-                            Data data16 = data5;
-                            i39 = i23;
-                            TorraStream$load$episodes$1 torraStream$load$episodes$2 = new TorraStream$load$episodes$1(data16, this, mediaDetail10, num6, z4, null);
-                            c00022.L$0 = str27;
-                            c00022.L$1 = data16;
-                            c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                            c00022.L$3 = SpillingKt.nullOutSpilledVariable(str21);
-                            c00022.L$4 = mediaDetail10;
-                            c00022.L$5 = str29;
-                            c00022.L$6 = str23;
-                            c00022.L$7 = str26;
-                            c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                            c00022.L$9 = num6;
-                            c00022.L$10 = list10;
-                            c00022.L$11 = list12;
-                            c00022.L$12 = list9;
+                            i26 = i14;
+                            num6 = null;
+                            Object obj23 = obj6;
+                            tvType5 = tvType3;
+                            int i412 = i13;
+                            boolean z13 = i10 == true ? 1 : 0;
+                            str45 = str19;
+                            num7 = num5;
+                            list20 = list9;
+                            str46 = str25;
+                            Data data13 = data5;
+                            int i413 = i16;
+                            mediaDetail4 = mediaDetail3;
+                            TorraStream$load$episodes$1 torraStream$load$episodes$2 = new TorraStream$load$episodes$1(data13, this, mediaDetail4, num7, z4, null);
+                            c00024.L$0 = str28;
+                            c00024.L$1 = data13;
+                            c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType5);
+                            c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                            c00024.L$4 = mediaDetail4;
+                            c00024.L$5 = str22;
+                            c00024.L$6 = str23;
+                            c00024.L$7 = str26;
+                            c00024.L$8 = SpillingKt.nullOutSpilledVariable(str24);
+                            c00024.L$9 = num7;
+                            c00024.L$10 = list11;
+                            c00024.L$11 = list10;
+                            c00024.L$12 = list12;
+                            c00024.L$13 = list20;
+                            c00024.L$14 = str46;
+                            str47 = str29;
+                            c00024.L$15 = str47;
+                            c00024.L$16 = SpillingKt.nullOutSpilledVariable(str21);
+                            c00024.L$17 = str45;
+                            c00024.L$18 = cinemetaRes;
+                            i27 = z13 ? 1 : 0;
+                            c00024.I$0 = i27;
+                            str48 = str22;
+                            c00024.I$1 = i26;
+                            str49 = str23;
+                            c00024.I$2 = i25;
+                            str50 = str26;
+                            i28 = i413;
+                            c00024.I$3 = i28;
                             list21 = list11;
-                            c00022.L$13 = list21;
-                            str42 = str25;
-                            c00022.L$14 = str42;
-                            str43 = str22;
-                            c00022.L$15 = str43;
-                            c00022.L$16 = SpillingKt.nullOutSpilledVariable(str28);
-                            str44 = str24;
-                            c00022.L$17 = str44;
-                            c00022.L$18 = cinemetaRes;
-                            c00022.I$0 = i35 == true ? 1 : 0;
-                            str45 = str29;
-                            c00022.I$1 = i37;
-                            c00022.I$2 = i36;
-                            c00022.I$3 = i39;
-                            c00022.I$4 = i38 == true ? 1 : 0;
-                            c00022.label = 4;
-                            objAmap = ParCollectionsKt.amap(arrayList25, torraStream$load$episodes$2, c00022);
-                            obj9 = obj18;
-                            if (objAmap == obj9) {
-                                return obj9;
+                            i29 = i412 == true ? 1 : 0;
+                            c00024.I$4 = i29 == true ? 1 : 0;
+                            c00024.label = 4;
+                            objAmap = ParCollectionsKt.amap(arrayList26, torraStream$load$episodes$2, c00024);
+                            obj10 = obj23;
+                            if (objAmap == obj10) {
+                                return obj10;
                             }
-                            str46 = str42;
-                            i32 = i37;
-                            i40 = i35 == true ? 1 : 0;
-                            data9 = data5;
-                            i41 = i38 == true ? 1 : 0;
-                            list22 = list10;
-                            str47 = str23;
-                            list23 = list21;
-                            str48 = str14;
-                            str49 = str28;
-                            str50 = str44;
-                            num7 = num6;
-                            i42 = i39;
-                            str51 = str21;
-                            i43 = i36;
-                            objNewMovieLoadResponse = objAmap;
-                            str52 = str45;
-                            list37 = (List) objNewMovieLoadResponse;
-                            if (list37 != null) {
-                            }
-                            int i622 = i42;
-                            i34 = i43;
-                            i30 = i622;
-                            str25 = str46;
-                            i31 = i40;
-                            str24 = str50;
-                            i33 = i41;
-                            list11 = list23;
-                            list10 = list22;
-                            num3 = num7;
-                            str14 = str48;
-                            str21 = str51;
-                            data8 = data9;
-                            str41 = str52;
-                            str28 = str49;
-                            str23 = str47;
-                            str22 = str43;
-                        } else {
-                            int i79 = i22;
-                            tvType3 = tvType2;
-                            i30 = i23;
-                            int i710 = i18;
-                            i31 = i19;
-                            String str91 = str29;
-                            int i711 = i20;
-                            obj9 = obj5;
-                            i32 = i711;
-                            str41 = str91;
-                            i33 = i710 == true ? 1 : 0;
-                            i34 = i79;
+                            obj11 = objAmap;
+                            str51 = str27;
+                            mediaDetail5 = mediaDetail4;
                             data8 = data5;
+                            str52 = str46;
+                            tvType6 = tvType5;
+                            i24 = i25;
+                            str53 = str48;
+                            list22 = list20;
+                            str43 = str49;
+                            str54 = str47;
+                            i22 = i26;
+                            str55 = str21;
+                            str56 = str45;
+                            str57 = str50;
+                            cinemetaRes3 = cinemetaRes;
+                            list38 = (List) obj11;
+                            if (list38 != null) {
+                            }
+                            TvType tvType17 = tvType6;
+                            i10 = i27;
+                            tvType4 = tvType17;
+                            List list419 = list21;
+                            i21 = i29;
+                            list19 = list419;
+                            cinemetaRes = cinemetaRes3;
+                            i23 = i28;
+                            str19 = str56;
+                            str21 = str55;
+                            str29 = str54;
+                            str25 = str52;
+                            list9 = list22;
+                            str44 = str57;
+                            mediaDetail3 = mediaDetail5;
+                            str42 = str53;
+                            str27 = str51;
+                            data7 = data8;
+                            num5 = num7;
+                        } else {
+                            String str101 = str23;
+                            boolean z14 = i10 == true ? 1 : 0;
+                            num6 = null;
+                            obj10 = obj6;
+                            i21 = i13 == true ? 1 : 0;
+                            list19 = list11;
+                            data7 = data5;
+                            i22 = i14;
+                            i23 = i16;
+                            tvType4 = tvType3;
+                            i24 = i15;
+                            str42 = str22;
+                            str43 = str101;
+                            str44 = str26;
                         }
-                        i44 = i34;
-                        obj10 = obj9;
-                        i45 = i32;
-                        i46 = i31;
-                        list24 = list12;
-                        str53 = str26;
-                        num8 = num3;
-                        str54 = str28;
-                        str55 = str24;
-                        str43 = str22;
-                        str56 = str25;
+                        i30 = i23;
+                        i31 = i24;
+                        i32 = i22;
+                        obj12 = obj10;
+                        str58 = str44;
+                        str59 = str21;
+                        i33 = i10;
+                        str60 = str19;
+                        str61 = str29;
+                        num8 = num5;
+                        list23 = list9;
+                        cinemetaRes4 = cinemetaRes;
                         listEmptyList = CollectionsKt.emptyList();
-                        data10 = data8;
-                        str57 = str27;
-                        str52 = str41;
+                        tvType6 = tvType4;
+                        str53 = str42;
+                        list24 = list19;
                         list25 = list10;
-                        mediaDetail5 = mediaDetail3;
-                        str51 = str21;
-                        i47 = i33;
-                        list26 = list11;
-                        i48 = i30;
-                        str58 = str23;
-                        list27 = list9;
-                        cinemetaRes3 = cinemetaRes;
-                        list28 = listEmptyList;
-                        if (i45 == 0) {
-                            String str715 = str52;
-                            String str716 = str55;
+                        list26 = list12;
+                        str62 = str25;
+                        data9 = data7;
+                        str63 = str28;
+                        mediaDetail6 = mediaDetail3;
+                        str64 = str24;
+                        str65 = str43;
+                        list27 = listEmptyList;
+                        if (i32 == 0) {
+                            String str815 = str53;
+                            String str816 = str61;
+                            MediaDetail mediaDetail14 = mediaDetail6;
+                            List list4110 = list24;
+                            CinemetaRes cinemetaRes11 = cinemetaRes4;
+                            List list4111 = list23;
+                            List list4112 = list26;
+                            C00021 c000214 = c00024;
+                            String str817 = str62;
+                            int i414 = i21;
+                            int i517 = i31;
+                            obj13 = obj12;
+                            List list4113 = list25;
+                            TvType tvType18 = TvType.TvSeries;
+                            String str9117 = str63;
+                            String str9118 = str60;
+                            String str9119 = str65;
+                            str66 = str58;
                             Integer num13 = num8;
-                            String str717 = str43;
-                            MediaDetail mediaDetail11 = mediaDetail5;
-                            List list411 = list24;
-                            List list412 = list25;
-                            C00021 c000216 = c00022;
-                            List list413 = list26;
-                            List list414 = list27;
-                            CinemetaRes cinemetaRes11 = cinemetaRes3;
-                            int i6110 = i47;
-                            obj11 = obj10;
-                            TvType tvType13 = TvType.TvSeries;
-                            String str718 = str57;
-                            String str816 = str58;
-                            String str817 = str53;
-                            C00043 c00045 = new C00043(str816, str817, str717, num13, mediaDetail11, list411, list412, this, list413, list414, list28, cinemetaRes11, str56, null);
-                            c000216.L$0 = SpillingKt.nullOutSpilledVariable(str718);
-                            c000216.L$1 = SpillingKt.nullOutSpilledVariable(data10);
-                            c000216.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                            c000216.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                            c000216.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail11);
-                            c000216.L$5 = SpillingKt.nullOutSpilledVariable(str715);
-                            c000216.L$6 = SpillingKt.nullOutSpilledVariable(str816);
-                            c000216.L$7 = SpillingKt.nullOutSpilledVariable(str817);
-                            c000216.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                            c000216.L$9 = SpillingKt.nullOutSpilledVariable(num13);
-                            c000216.L$10 = SpillingKt.nullOutSpilledVariable(list412);
-                            c000216.L$11 = SpillingKt.nullOutSpilledVariable(list411);
-                            c000216.L$12 = SpillingKt.nullOutSpilledVariable(list414);
-                            c000216.L$13 = SpillingKt.nullOutSpilledVariable(list413);
-                            c000216.L$14 = SpillingKt.nullOutSpilledVariable(str56);
-                            c000216.L$15 = SpillingKt.nullOutSpilledVariable(str717);
-                            c000216.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                            c000216.L$17 = SpillingKt.nullOutSpilledVariable(str716);
-                            c000216.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes11);
-                            c000216.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                            c000216.I$0 = i46 == true ? 1 : 0;
-                            c000216.I$1 = i45;
-                            c000216.I$2 = i44;
-                            c000216.I$3 = i48;
-                            c000216.I$4 = i6110 == true ? 1 : 0;
-                            c000216.label = 7;
-                            objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str715, str718, tvType13, list28, c00045, c000216);
-                            c00023 = c000216;
-                            if (objNewTvSeriesLoadResponse == obj11) {
-                                return obj11;
+                            C00043 c00045 = new C00043(str9119, str66, str816, num13, mediaDetail14, list4113, list4110, this, list4111, list4112, list27, cinemetaRes11, str817, null);
+                            c000214.L$0 = SpillingKt.nullOutSpilledVariable(str9117);
+                            c000214.L$1 = SpillingKt.nullOutSpilledVariable(data9);
+                            c000214.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                            c000214.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                            c000214.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail14);
+                            c000214.L$5 = SpillingKt.nullOutSpilledVariable(str815);
+                            c000214.L$6 = SpillingKt.nullOutSpilledVariable(str9119);
+                            c000214.L$7 = SpillingKt.nullOutSpilledVariable(str66);
+                            c000214.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                            c000214.L$9 = SpillingKt.nullOutSpilledVariable(num13);
+                            c000214.L$10 = SpillingKt.nullOutSpilledVariable(list4110);
+                            c000214.L$11 = SpillingKt.nullOutSpilledVariable(list4113);
+                            c000214.L$12 = SpillingKt.nullOutSpilledVariable(list4112);
+                            c000214.L$13 = SpillingKt.nullOutSpilledVariable(list4111);
+                            c000214.L$14 = SpillingKt.nullOutSpilledVariable(str817);
+                            c000214.L$15 = SpillingKt.nullOutSpilledVariable(str816);
+                            c000214.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                            c000214.L$17 = SpillingKt.nullOutSpilledVariable(str9118);
+                            c000214.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes11);
+                            c000214.L$19 = SpillingKt.nullOutSpilledVariable(list27);
+                            c000214.I$0 = i33 == true ? 1 : 0;
+                            c000214.I$1 = i32;
+                            c000214.I$2 = i517;
+                            c000214.I$3 = i30;
+                            c000214.I$4 = i414 == true ? 1 : 0;
+                            c000214.label = 7;
+                            objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str815, str9117, tvType18, list27, c00045, c000214);
+                            c00022 = c000214;
+                            if (objNewTvSeriesLoadResponse == obj13) {
+                                return obj13;
                             }
-                            obj12 = objNewTvSeriesLoadResponse;
-                            return (LoadResponse) obj12;
+                            obj14 = objNewTvSeriesLoadResponse;
+                            str67 = str66;
+                            return (LoadResponse) obj14;
                         }
-                        if (cinemetaRes3 != null) {
-                            str59 = str43;
-                            cinemetaRes4 = cinemetaRes3;
+                        if (cinemetaRes4 != null) {
+                            str68 = str61;
+                            cinemetaRes5 = cinemetaRes4;
                             arrayListEmptyList = CollectionsKt.emptyList();
                         } else {
-                            str59 = str43;
-                            cinemetaRes4 = cinemetaRes3;
+                            str68 = str61;
+                            cinemetaRes5 = cinemetaRes4;
                             arrayListEmptyList = CollectionsKt.emptyList();
                         }
-                        alternative_titles = mediaDetail5.getAlternative_titles();
+                        alternative_titles = mediaDetail6.getAlternative_titles();
                         if (alternative_titles == null) {
-                            list29 = arrayListEmptyList;
-                            if (cinemetaRes4 != null) {
-                                name2 = str7;
+                            list28 = arrayListEmptyList;
+                            if (cinemetaRes5 != null) {
+                                name2 = num6;
                             } else {
-                                name2 = str7;
+                                name2 = num6;
                             }
                         } else {
-                            list29 = arrayListEmptyList;
-                            if (cinemetaRes4 != null) {
-                                name2 = str7;
+                            list28 = arrayListEmptyList;
+                            if (cinemetaRes5 != null) {
+                                name2 = num6;
                             } else {
-                                name2 = str7;
+                                name2 = num6;
                             }
                         }
-                        Requests app5 = MainActivityKt.getApp();
-                        str60 = name2;
-                        String str818 = "https://api.ani.zip/mappings?imdb_id=" + str55;
-                        c00022.L$0 = str57;
-                        c00022.L$1 = data10;
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                        c00022.L$4 = mediaDetail5;
-                        c00022.L$5 = str52;
-                        c00022.L$6 = str58;
-                        c00022.L$7 = str53;
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                        c00022.L$9 = num8;
-                        c00022.L$10 = list25;
-                        c00022.L$11 = list24;
-                        c00022.L$12 = list27;
-                        c00022.L$13 = list26;
-                        c00022.L$14 = str56;
-                        str61 = str59;
-                        c00022.L$15 = str61;
-                        str62 = str52;
-                        c00022.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$17 = str55;
-                        c00022.L$18 = cinemetaRes4;
-                        c00022.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                        c00022.L$20 = list29;
+                        obj15 = name2;
+                        c00024.L$0 = str63;
+                        c00024.L$1 = data9;
+                        c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                        c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00024.L$4 = mediaDetail6;
+                        c00024.L$5 = str53;
+                        c00024.L$6 = str65;
+                        c00024.L$7 = str58;
+                        c00024.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                        c00024.L$9 = num8;
+                        c00024.L$10 = list24;
+                        c00024.L$11 = list25;
+                        c00024.L$12 = list26;
+                        c00024.L$13 = list23;
+                        c00024.L$14 = str62;
+                        str69 = str68;
+                        c00024.L$15 = str69;
+                        str70 = str53;
+                        c00024.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00024.L$17 = str60;
+                        c00024.L$18 = cinemetaRes5;
+                        c00024.L$19 = list27;
+                        c00024.L$20 = list28;
+                        c00024.L$21 = obj15;
+                        int i518 = i33;
+                        c00024.I$0 = i518 == true ? 1 : 0;
+                        int i519 = i32;
+                        c00024.I$1 = i519;
+                        i34 = i31;
+                        c00024.I$2 = i34;
+                        int i5110 = i30;
+                        c00024.I$3 = i5110;
+                        c00024.I$4 = i21 == true ? 1 : 0;
+                        c00024.label = 5;
+                        list29 = list23;
                         list30 = list26;
-                        c00022.L$21 = str60;
-                        c00022.I$0 = i46 == true ? 1 : 0;
-                        int i6111 = i45;
-                        c00022.I$1 = i6111;
-                        int i6112 = i44;
-                        c00022.I$2 = i6112;
-                        int i6113 = i48;
-                        c00022.I$3 = i6113;
-                        c00022.I$4 = i47 == true ? 1 : 0;
-                        c00022.label = 5;
-                        C00021 c000217 = c00022;
-                        list31 = list27;
-                        str63 = str56;
-                        data11 = data10;
-                        i49 = i47;
-                        i50 = i6111;
-                        i51 = i46;
-                        str64 = str55;
-                        num9 = num8;
-                        mediaDetail6 = mediaDetail5;
-                        list32 = list25;
-                        i52 = i6112;
+                        c00023 = c00024;
+                        str71 = str62;
+                        data10 = data9;
+                        list31 = list25;
+                        i35 = i21;
+                        i36 = i519;
+                        list32 = list27;
+                        i37 = i518 == true ? 1 : 0;
+                        cinemetaRes6 = cinemetaRes5;
+                        i38 = i5110;
+                        mediaDetail7 = mediaDetail6;
                         list33 = list24;
-                        i53 = i6113;
-                        obj13 = Requests.get$default(app5, str818, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000217, 4094, (Object) null);
-                        c00024 = c000217;
-                        obj14 = obj10;
-                        if (obj13 == obj14) {
-                            return obj14;
+                        obj16 = obj12;
+                        obj17 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?imdb_id=" + str60, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 4094, (Object) null);
+                        if (obj17 == obj16) {
+                            return obj16;
                         }
-                        i54 = i51 == true ? 1 : 0;
-                        str65 = str57;
-                        str66 = str58;
-                        str67 = str53;
-                        str68 = str62;
-                        list34 = list29;
-                        str69 = str60;
-                        list35 = list31;
-                        data12 = data11;
-                        str70 = str64;
-                        str71 = str61;
+                        list34 = list30;
                         str72 = str63;
-                        list36 = list30;
-                        i55 = i49 == true ? 1 : 0;
-                        String string4 = ((NiceResponse) obj13).toString();
-                        animeData = TorraStreamUtilsKt.parseAnimeData(string4);
+                        str73 = str60;
+                        str74 = str65;
+                        str75 = str58;
+                        num9 = num8;
+                        obj18 = obj17;
+                        str76 = str70;
+                        r78 = obj15;
+                        str77 = str69;
+                        mediaDetail8 = mediaDetail7;
+                        list35 = list29;
+                        cinemetaRes7 = cinemetaRes6;
+                        str78 = str71;
+                        i39 = i34;
+                        i40 = i35 == true ? 1 : 0;
+                        list36 = list33;
+                        list37 = list31;
+                        String text4 = ((NiceResponse) obj18).getText();
+                        animeData = TorraStreamUtilsKt.parseAnimeData(text4);
                         if (animeData != null) {
-                            kitsuid = str7;
+                            kitsuid = num6;
                         } else {
-                            kitsuid = str7;
+                            kitsuid = num6;
                         }
-                        MainAPI mainAPI6 = (MainAPI) this;
-                        TvType tvType14 = TvType.Anime;
-                        int i6114 = i55;
-                        if (i52 != 0) {
-                            z5 = true;
-                        } else {
-                            z5 = false;
+                        String str91110 = str74;
+                        list39 = list28;
+                        int i5111 = i40;
+                        str79 = str76;
+                        arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list39, 10));
+                        list40 = list39;
+                        while (r23.hasNext()) {
+                            List list4114 = list39;
+                            released = video.getReleased();
+                            if (released != null) {
+                                if (cinemetaRes7 != null) {
+                                    intOrNull2 = num6;
+                                } else {
+                                    intOrNull2 = num6;
+                                }
+                                if (intOrNull2 != null) {
+                                    iIntValue = intOrNull2.intValue();
+                                } else {
+                                    iIntValue = 0;
+                                }
+                            } else {
+                                if (cinemetaRes7 != null) {
+                                    intOrNull2 = num6;
+                                } else {
+                                    intOrNull2 = num6;
+                                }
+                                if (intOrNull2 != null) {
+                                    iIntValue = intOrNull2.intValue();
+                                } else {
+                                    iIntValue = 0;
+                                }
+                            }
+                            List list4115 = list40;
+                            MainAPI mainAPI6 = (MainAPI) this;
+                            String str91111 = str75;
+                            AppUtils appUtils7 = AppUtils.INSTANCE;
+                            Integer id5 = data10.getId();
+                            external_ids3 = mediaDetail8.getExternal_ids();
+                            if (external_ids3 != null) {
+                                tvdb_id = external_ids3.getTvdb_id();
+                            } else {
+                                tvdb_id = num6;
+                            }
+                            String type6 = data10.getType();
+                            Integer season5 = video.getSeason();
+                            Integer episode4 = video.getEpisode();
+                            Integer numBoxInt4 = Boxing.boxInt(iIntValue);
+                            String title7 = video.getTitle();
+                            String released5 = video.getReleased();
+                            releaseDate2 = mediaDetail8.getReleaseDate();
+                            if (releaseDate2 == null) {
+                                releaseDate2 = mediaDetail8.getFirstAirDate();
+                            }
+                            String str91112 = releaseDate2;
+                            if (i39 != 0) {
+                                z5 = true;
+                            } else {
+                                z5 = false;
+                            }
+                            if (i38 != 0) {
+                                z6 = true;
+                            } else {
+                                z6 = false;
+                            }
+                            if (i37 != 0) {
+                                z7 = true;
+                            } else {
+                                z7 = false;
+                            }
+                            String str91113 = str73;
+                            arrayList8.add(MainAPIKt.newEpisode(mainAPI6, appUtils7.toJson(new LinkData(id5, str91113, tvdb_id, type6, season5, episode4, null, null, null, str79, numBoxInt4, "", true, num9, null, title7, r78, released5, str91112, z5, z6, z7, mediaDetail8.getTitle(), mediaDetail8.getName(), false, null, 33571264, null)), new Function1() { // from class: com.phisher98.TorraStream$$ExternalSyntheticLambda1
+                                public final Object invoke(Object obj24) {
+                                    return TorraStream.load$lambda$9$0(video, this, (Episode) obj24);
+                                }
+                            }));
+                            list39 = list4114;
+                            list40 = list4115;
+                            str75 = str91111;
+                            str77 = str77;
+                            str73 = str91113;
                         }
-                        if (i53 != 0) {
-                            z6 = true;
-                        } else {
-                            z6 = false;
+                        String str91114 = str75;
+                        String str91115 = str77;
+                        String str91116 = str73;
+                        arrayList9 = arrayList8;
+                        if (arrayList9.isEmpty()) {
+                            arrayList9 = list32;
                         }
-                        if (i54 != 0) {
-                            z7 = true;
-                        } else {
-                            z7 = false;
-                        }
-                        obj15 = obj14;
-                        int i712 = i54;
-                        C00021 c000218 = c00024;
-                        int i713 = i53;
-                        CinemetaRes cinemetaRes12 = cinemetaRes4;
-                        String str819 = kitsuid;
-                        C00032 c00035 = new C00032(str66, str67, str71, num9, mediaDetail6, list33, list32, this, list36, list35, str72, str819, cinemetaRes12, str70, list34, data12, str68, str69, z5, z6, z7, null);
-                        String str8110 = str67;
-                        String str8111 = str68;
-                        c000218.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                        c000218.L$1 = SpillingKt.nullOutSpilledVariable(data12);
-                        c000218.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                        c000218.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                        c000218.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail6);
-                        c000218.L$5 = SpillingKt.nullOutSpilledVariable(str8111);
-                        c000218.L$6 = SpillingKt.nullOutSpilledVariable(str66);
-                        c000218.L$7 = SpillingKt.nullOutSpilledVariable(str8110);
-                        c000218.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                        c000218.L$9 = SpillingKt.nullOutSpilledVariable(num9);
-                        c000218.L$10 = SpillingKt.nullOutSpilledVariable(list32);
-                        c000218.L$11 = SpillingKt.nullOutSpilledVariable(list33);
-                        c000218.L$12 = SpillingKt.nullOutSpilledVariable(list35);
-                        c000218.L$13 = SpillingKt.nullOutSpilledVariable(list36);
-                        c000218.L$14 = SpillingKt.nullOutSpilledVariable(str72);
-                        c000218.L$15 = SpillingKt.nullOutSpilledVariable(str71);
-                        c000218.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                        c000218.L$17 = SpillingKt.nullOutSpilledVariable(str70);
-                        c000218.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes12);
-                        c000218.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                        c000218.L$20 = SpillingKt.nullOutSpilledVariable(list34);
-                        c000218.L$21 = SpillingKt.nullOutSpilledVariable(str69);
-                        c000218.L$22 = SpillingKt.nullOutSpilledVariable(string4);
-                        c000218.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
-                        c000218.L$24 = SpillingKt.nullOutSpilledVariable(str819);
-                        c000218.I$0 = i712 == true ? 1 : 0;
-                        c000218.I$1 = i50;
-                        c000218.I$2 = i52;
-                        c000218.I$3 = i713;
-                        c000218.I$4 = i6114 == true ? 1 : 0;
-                        c000218.label = 6;
-                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(mainAPI6, str8111, str65, tvType14, false, c00035, c000218, 8, (Object) null);
-                        if (objNewAnimeLoadResponse$default == obj15) {
-                            return obj15;
+                        List list53 = arrayList9;
+                        TvType tvType19 = TvType.Anime;
+                        obj19 = obj16;
+                        int i5112 = i39;
+                        C00021 c000215 = c00023;
+                        ?? r16 = kitsuid;
+                        C00032 c00035 = new C00032(list53, str91110, str91114, str91115, num9, mediaDetail8, list37, list36, this, list35, list34, str78, r16, cinemetaRes7, str91116, null);
+                        c000215.L$0 = SpillingKt.nullOutSpilledVariable(str72);
+                        c000215.L$1 = SpillingKt.nullOutSpilledVariable(data10);
+                        c000215.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                        c000215.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                        c000215.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail8);
+                        c000215.L$5 = SpillingKt.nullOutSpilledVariable(str79);
+                        c000215.L$6 = SpillingKt.nullOutSpilledVariable(str91110);
+                        c000215.L$7 = SpillingKt.nullOutSpilledVariable(str91114);
+                        c000215.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                        c000215.L$9 = SpillingKt.nullOutSpilledVariable(num9);
+                        c000215.L$10 = SpillingKt.nullOutSpilledVariable(list36);
+                        c000215.L$11 = SpillingKt.nullOutSpilledVariable(list37);
+                        c000215.L$12 = SpillingKt.nullOutSpilledVariable(list34);
+                        c000215.L$13 = SpillingKt.nullOutSpilledVariable(list35);
+                        c000215.L$14 = SpillingKt.nullOutSpilledVariable(str78);
+                        c000215.L$15 = SpillingKt.nullOutSpilledVariable(str91115);
+                        c000215.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                        c000215.L$17 = SpillingKt.nullOutSpilledVariable(str91116);
+                        c000215.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes7);
+                        c000215.L$19 = SpillingKt.nullOutSpilledVariable(list32);
+                        c000215.L$20 = SpillingKt.nullOutSpilledVariable(list28);
+                        c000215.L$21 = SpillingKt.nullOutSpilledVariable((Object) r78);
+                        c000215.L$22 = SpillingKt.nullOutSpilledVariable(text4);
+                        c000215.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
+                        c000215.L$24 = SpillingKt.nullOutSpilledVariable((Object) r16);
+                        c000215.L$25 = SpillingKt.nullOutSpilledVariable(list53);
+                        c000215.I$0 = i37 == true ? 1 : 0;
+                        c000215.I$1 = i36;
+                        c000215.I$2 = i5112;
+                        c000215.I$3 = i38;
+                        c000215.I$4 = i5111 == true ? 1 : 0;
+                        c000215.label = 6;
+                        objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default((MainAPI) this, str79, str72, tvType19, false, c00035, c000215, 8, (Object) null);
+                        if (objNewAnimeLoadResponse$default == obj19) {
+                            return obj19;
                         }
                         return objNewAnimeLoadResponse$default;
                     }
-                    str5 = str2;
+                    str4 = str2;
                     i = 1;
                     if (i == 0) {
                         i2 = 0;
                     } else {
                         i2 = 0;
                     }
-                    i3 = i2;
                     production_countries = mediaDetail.getProduction_countries();
                     if (production_countries != null) {
                         arrayList4 = production_countries;
-                        i4 = i3;
+                        obj3 = coroutine_suspended;
                         if (arrayList4 instanceof Collection) {
                             it = arrayList4.iterator();
                             while (true) {
                                 if (it.hasNext()) {
-                                    arrayList5 = arrayList4;
                                     it2 = it;
+                                    arrayList5 = arrayList4;
                                     if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                        i5 = 1;
+                                        i3 = 1;
                                     } else {
-                                        arrayList4 = arrayList5;
                                         it = it2;
+                                        arrayList4 = arrayList5;
                                     }
                                 } else {
-                                    i5 = 0;
+                                    i3 = 0;
                                 }
                             }
                         } else {
                             it = arrayList4.iterator();
                             while (true) {
                                 if (it.hasNext()) {
-                                    arrayList5 = arrayList4;
                                     it2 = it;
+                                    arrayList5 = arrayList4;
                                     if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                        i5 = 1;
+                                        i3 = 1;
                                     } else {
-                                        arrayList4 = arrayList5;
                                         it = it2;
+                                        arrayList4 = arrayList5;
                                     }
                                 } else {
-                                    i5 = 0;
+                                    i3 = 0;
                                 }
                             }
                         }
                     } else {
-                        i4 = i3;
-                        i5 = 0;
+                        obj3 = coroutine_suspended;
+                        i3 = 0;
                     }
-                    i6 = i5;
                     keywords = mediaDetail.getKeywords();
                     if (keywords != null) {
-                        i7 = i6;
+                        i4 = i3;
                         collectionEmptyList = null;
                     } else {
-                        i7 = i6;
+                        i4 = i3;
                         collectionEmptyList = null;
                     }
                     if (collectionEmptyList == null) {
@@ -2944,68 +3277,66 @@ public final class TorraStream extends TmdbProvider {
                             collection = null;
                         }
                     }
-                    List list310 = (List) collection;
+                    List list420 = (List) collection;
                     credits = mediaDetail.getCredits();
                     if (credits != null) {
                     }
                     return null;
                 }
-                str5 = str2;
+                str4 = str2;
                 i = 0;
                 if (i == 0) {
                     i2 = 0;
                 } else {
                     i2 = 0;
                 }
-                i3 = i2;
                 production_countries = mediaDetail.getProduction_countries();
                 if (production_countries != null) {
                     arrayList4 = production_countries;
-                    i4 = i3;
+                    obj3 = coroutine_suspended;
                     if (arrayList4 instanceof Collection) {
                         it = arrayList4.iterator();
                         while (true) {
                             if (it.hasNext()) {
-                                arrayList5 = arrayList4;
                                 it2 = it;
+                                arrayList5 = arrayList4;
                                 if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                    i5 = 1;
+                                    i3 = 1;
                                 } else {
-                                    arrayList4 = arrayList5;
                                     it = it2;
+                                    arrayList4 = arrayList5;
                                 }
                             } else {
-                                i5 = 0;
+                                i3 = 0;
                             }
                         }
                     } else {
                         it = arrayList4.iterator();
                         while (true) {
                             if (it.hasNext()) {
-                                arrayList5 = arrayList4;
                                 it2 = it;
+                                arrayList5 = arrayList4;
                                 if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                    i5 = 1;
+                                    i3 = 1;
                                 } else {
-                                    arrayList4 = arrayList5;
                                     it = it2;
+                                    arrayList4 = arrayList5;
                                 }
                             } else {
-                                i5 = 0;
+                                i3 = 0;
                             }
                         }
                     }
                 } else {
-                    i4 = i3;
-                    i5 = 0;
+                    obj3 = coroutine_suspended;
+                    i3 = 0;
                 }
-                i6 = i5;
                 keywords = mediaDetail.getKeywords();
                 if (keywords != null) {
-                    i7 = i6;
+                    i4 = i3;
                     collectionEmptyList = null;
                 } else {
-                    i7 = i6;
+                    i4 = i3;
                     collectionEmptyList = null;
                 }
                 if (collectionEmptyList == null) {
@@ -3022,20 +3353,23 @@ public final class TorraStream extends TmdbProvider {
                         collection = null;
                     }
                 }
-                List list311 = (List) collection;
+                List list421 = (List) collection;
                 credits = mediaDetail.getCredits();
                 if (credits != null) {
                 }
                 return null;
             case 1:
-                String str92 = (String) c00025.L$3;
-                type = (TvType) c00025.L$2;
-                Data data17 = (Data) c00025.L$1;
-                str3 = (String) c00025.L$0;
+                String str102 = (String) c00024.L$3;
+                TvType tvType20 = (TvType) c00024.L$2;
+                Data data14 = (Data) c00024.L$1;
+                String str103 = (String) c00024.L$0;
                 ResultKt.throwOnFailure(objNewMovieLoadResponse);
-                str2 = str92;
+                str2 = str102;
+                tvType = tvType20;
+                data = data14;
+                str3 = str103;
+                num2 = null;
                 obj2 = objNewMovieLoadResponse;
-                data = data17;
                 NiceResponse niceResponse4 = (NiceResponse) obj2;
                 ResponseParser parser4 = niceResponse4.getParser();
                 Intrinsics.checkNotNull(parser4);
@@ -3048,19 +3382,18 @@ public final class TorraStream extends TmdbProvider {
                 if (title != null) {
                     break;
                 }
-                String str719 = title;
                 String oriImageUrl3 = getOriImageUrl(mediaDetail.getPosterPath());
                 String oriImageUrl4 = getOriImageUrl(mediaDetail.getBackdropPath());
                 releaseDate = mediaDetail.getReleaseDate();
                 if (releaseDate == null) {
                     releaseDate = mediaDetail.getFirstAirDate();
                 }
-                str4 = releaseDate;
-                if (str4 != null) {
-                    intOrNull = null;
+                if (releaseDate != null) {
+                    intOrNull = num2;
                 } else {
-                    intOrNull = null;
+                    intOrNull = num2;
                 }
+                Integer num14 = intOrNull;
                 genres = mediaDetail.getGenres();
                 if (genres != null) {
                     arrayList6 = new ArrayList();
@@ -3074,7 +3407,6 @@ public final class TorraStream extends TmdbProvider {
                             arrayList7 = arrayList6;
                         }
                         arrayList6 = arrayList7;
-                        objNewMovieLoadResponse = objNewMovieLoadResponse;
                     }
                     arrayList = arrayList6;
                 } else {
@@ -3087,7 +3419,7 @@ public final class TorraStream extends TmdbProvider {
                 }
                 if (zContains) {
                     if (!Intrinsics.areEqual(mediaDetail.getOriginal_language(), "zh")) {
-                        str5 = str2;
+                        str4 = str2;
                         if (Intrinsics.areEqual(mediaDetail.getOriginal_language(), "ja")) {
                         }
                         if (i == 0) {
@@ -3095,55 +3427,53 @@ public final class TorraStream extends TmdbProvider {
                         } else {
                             i2 = 0;
                         }
-                        i3 = i2;
                         production_countries = mediaDetail.getProduction_countries();
                         if (production_countries != null) {
                             arrayList4 = production_countries;
-                            i4 = i3;
+                            obj3 = coroutine_suspended;
                             if (arrayList4 instanceof Collection) {
                                 it = arrayList4.iterator();
                                 while (true) {
                                     if (it.hasNext()) {
-                                        arrayList5 = arrayList4;
                                         it2 = it;
+                                        arrayList5 = arrayList4;
                                         if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                            i5 = 1;
+                                            i3 = 1;
                                         } else {
-                                            arrayList4 = arrayList5;
                                             it = it2;
+                                            arrayList4 = arrayList5;
                                         }
                                     } else {
-                                        i5 = 0;
+                                        i3 = 0;
                                     }
                                 }
                             } else {
                                 it = arrayList4.iterator();
                                 while (true) {
                                     if (it.hasNext()) {
-                                        arrayList5 = arrayList4;
                                         it2 = it;
+                                        arrayList5 = arrayList4;
                                         if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                            i5 = 1;
+                                            i3 = 1;
                                         } else {
-                                            arrayList4 = arrayList5;
                                             it = it2;
+                                            arrayList4 = arrayList5;
                                         }
                                     } else {
-                                        i5 = 0;
+                                        i3 = 0;
                                     }
                                 }
                             }
                         } else {
-                            i4 = i3;
-                            i5 = 0;
+                            obj3 = coroutine_suspended;
+                            i3 = 0;
                         }
-                        i6 = i5;
                         keywords = mediaDetail.getKeywords();
                         if (keywords != null) {
-                            i7 = i6;
+                            i4 = i3;
                             collectionEmptyList = null;
                         } else {
-                            i7 = i6;
+                            i4 = i3;
                             collectionEmptyList = null;
                         }
                         if (collectionEmptyList == null) {
@@ -3160,69 +3490,67 @@ public final class TorraStream extends TmdbProvider {
                                 collection = null;
                             }
                         }
-                        List list312 = (List) collection;
+                        List list422 = (List) collection;
                         credits = mediaDetail.getCredits();
                         if (credits != null) {
                             break;
                         }
                         return null;
                     }
-                    str5 = str2;
+                    str4 = str2;
                     i = 1;
                     if (i == 0) {
                         i2 = 0;
                     } else {
                         i2 = 0;
                     }
-                    i3 = i2;
                     production_countries = mediaDetail.getProduction_countries();
                     if (production_countries != null) {
                         arrayList4 = production_countries;
-                        i4 = i3;
+                        obj3 = coroutine_suspended;
                         if (arrayList4 instanceof Collection) {
                             it = arrayList4.iterator();
                             while (true) {
                                 if (it.hasNext()) {
-                                    arrayList5 = arrayList4;
                                     it2 = it;
+                                    arrayList5 = arrayList4;
                                     if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                        i5 = 1;
+                                        i3 = 1;
                                     } else {
-                                        arrayList4 = arrayList5;
                                         it = it2;
+                                        arrayList4 = arrayList5;
                                     }
                                 } else {
-                                    i5 = 0;
+                                    i3 = 0;
                                 }
                             }
                         } else {
                             it = arrayList4.iterator();
                             while (true) {
                                 if (it.hasNext()) {
-                                    arrayList5 = arrayList4;
                                     it2 = it;
+                                    arrayList5 = arrayList4;
                                     if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                        i5 = 1;
+                                        i3 = 1;
                                     } else {
-                                        arrayList4 = arrayList5;
                                         it = it2;
+                                        arrayList4 = arrayList5;
                                     }
                                 } else {
-                                    i5 = 0;
+                                    i3 = 0;
                                 }
                             }
                         }
                     } else {
-                        i4 = i3;
-                        i5 = 0;
+                        obj3 = coroutine_suspended;
+                        i3 = 0;
                     }
-                    i6 = i5;
                     keywords = mediaDetail.getKeywords();
                     if (keywords != null) {
-                        i7 = i6;
+                        i4 = i3;
                         collectionEmptyList = null;
                     } else {
-                        i7 = i6;
+                        i4 = i3;
                         collectionEmptyList = null;
                     }
                     if (collectionEmptyList == null) {
@@ -3239,69 +3567,67 @@ public final class TorraStream extends TmdbProvider {
                             collection = null;
                         }
                     }
-                    List list313 = (List) collection;
+                    List list423 = (List) collection;
                     credits = mediaDetail.getCredits();
                     if (credits != null) {
                         break;
                     }
                     return null;
                 }
-                str5 = str2;
+                str4 = str2;
                 i = 0;
                 if (i == 0) {
                     i2 = 0;
                 } else {
                     i2 = 0;
                 }
-                i3 = i2;
                 production_countries = mediaDetail.getProduction_countries();
                 if (production_countries != null) {
                     arrayList4 = production_countries;
-                    i4 = i3;
+                    obj3 = coroutine_suspended;
                     if (arrayList4 instanceof Collection) {
                         it = arrayList4.iterator();
                         while (true) {
                             if (it.hasNext()) {
-                                arrayList5 = arrayList4;
                                 it2 = it;
+                                arrayList5 = arrayList4;
                                 if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                    i5 = 1;
+                                    i3 = 1;
                                 } else {
-                                    arrayList4 = arrayList5;
                                     it = it2;
+                                    arrayList4 = arrayList5;
                                 }
                             } else {
-                                i5 = 0;
+                                i3 = 0;
                             }
                         }
                     } else {
                         it = arrayList4.iterator();
                         while (true) {
                             if (it.hasNext()) {
-                                arrayList5 = arrayList4;
                                 it2 = it;
+                                arrayList5 = arrayList4;
                                 if (Intrinsics.areEqual(((ProductionCountries) it.next()).getName(), "India")) {
-                                    i5 = 1;
+                                    i3 = 1;
                                 } else {
-                                    arrayList4 = arrayList5;
                                     it = it2;
+                                    arrayList4 = arrayList5;
                                 }
                             } else {
-                                i5 = 0;
+                                i3 = 0;
                             }
                         }
                     }
                 } else {
-                    i4 = i3;
-                    i5 = 0;
+                    obj3 = coroutine_suspended;
+                    i3 = 0;
                 }
-                i6 = i5;
                 keywords = mediaDetail.getKeywords();
                 if (keywords != null) {
-                    i7 = i6;
+                    i4 = i3;
                     collectionEmptyList = null;
                 } else {
-                    i7 = i6;
+                    i4 = i3;
                     collectionEmptyList = null;
                 }
                 if (collectionEmptyList == null) {
@@ -3318,2107 +3644,2482 @@ public final class TorraStream extends TmdbProvider {
                         collection = null;
                     }
                 }
-                List list314 = (List) collection;
+                List list424 = (List) collection;
                 credits = mediaDetail.getCredits();
                 if (credits != null) {
                     break;
                 }
                 return null;
             case 2:
-                int i80 = c00025.I$4;
-                int i81 = c00025.I$3;
-                int i82 = c00025.I$2;
-                int i83 = c00025.I$1;
-                int i84 = c00025.I$0;
-                String str93 = (String) c00025.L$14;
-                List list50 = (List) c00025.L$13;
-                List list51 = (List) c00025.L$12;
-                List list52 = (List) c00025.L$11;
-                List list53 = (List) c00025.L$10;
-                Integer num14 = (Integer) c00025.L$9;
-                String str94 = (String) c00025.L$8;
-                String str95 = (String) c00025.L$7;
-                String str96 = (String) c00025.L$6;
-                String str97 = (String) c00025.L$5;
-                MediaDetail mediaDetail12 = (MediaDetail) c00025.L$4;
-                String str98 = (String) c00025.L$3;
-                TvType tvType15 = (TvType) c00025.L$2;
-                Data data18 = (Data) c00025.L$1;
-                String str99 = (String) c00025.L$0;
+                int i60 = c00024.I$4;
+                int i61 = c00024.I$3;
+                int i62 = c00024.I$2;
+                int i63 = c00024.I$1;
+                int i64 = c00024.I$0;
+                String str104 = (String) c00024.L$14;
+                List list54 = (List) c00024.L$13;
+                list2 = (List) c00024.L$12;
+                list = (List) c00024.L$11;
+                list3 = (List) c00024.L$10;
+                Integer num15 = (Integer) c00024.L$9;
+                String str105 = (String) c00024.L$8;
+                String str106 = (String) c00024.L$7;
+                String str107 = (String) c00024.L$6;
+                String str108 = (String) c00024.L$5;
+                MediaDetail mediaDetail15 = (MediaDetail) c00024.L$4;
+                String str109 = (String) c00024.L$3;
+                TvType tvType21 = (TvType) c00024.L$2;
+                Data data15 = (Data) c00024.L$1;
+                String str110 = (String) c00024.L$0;
                 ResultKt.throwOnFailure(objNewMovieLoadResponse);
-                obj3 = objNewMovieLoadResponse;
-                i10 = i84;
-                str9 = str93;
-                list = list50;
-                list3 = list51;
-                list4 = list52;
-                list2 = list53;
-                num = num14;
-                i9 = i80;
-                str14 = str94;
-                str12 = str95;
-                str11 = str96;
-                mediaDetail2 = mediaDetail12;
-                str7 = null;
+                obj5 = objNewMovieLoadResponse;
+                i6 = i64;
+                str6 = str105;
+                str10 = str106;
+                str11 = str107;
+                str9 = str109;
+                i7 = i61;
+                i5 = i62;
+                str7 = str104;
+                list4 = list54;
+                num3 = num15;
+                r18 = i60;
+                mediaDetail2 = mediaDetail15;
+                str3 = str110;
                 obj4 = coroutine_suspended;
-                i12 = i81;
-                i8 = i82;
-                i11 = i83;
-                str13 = str97;
-                str8 = str98;
-                tvType = tvType15;
-                str10 = str99;
-                data2 = data18;
-                str16 = (String) obj3;
-                type2 = data2.getType();
-                if (type2 != null) {
-                    str17 = str8;
-                    i13 = i9;
-                    if (StringsKt.contains(type2, "tv", true)) {
+                i8 = i63;
+                str8 = str108;
+                tvType2 = tvType21;
+                data2 = data15;
+                i9 = i8;
+                str13 = (String) obj5;
+                type = data2.getType();
+                if (type != null) {
+                    i10 = i6;
+                    str15 = str13;
+                    str14 = str7;
+                    if (StringsKt.contains(type, "tv", true)) {
                     }
                     if (z) {
-                        str18 = "series";
+                        str16 = "series";
                     } else {
-                        str18 = "movie";
+                        str16 = "movie";
                     }
                     external_ids = mediaDetail2.getExternal_ids();
                     if (external_ids != null) {
                         imdb_id = external_ids.getImdb_id();
                     } else {
-                        imdb_id = str7;
+                        imdb_id = null;
                     }
                     if (imdb_id == null) {
                         imdb_id = "";
                     }
-                    i14 = i12;
-                    c00025.L$0 = str10;
-                    c00025.L$1 = data2;
-                    c00025.L$2 = tvType;
-                    c00025.L$3 = SpillingKt.nullOutSpilledVariable(str17);
-                    c00025.L$4 = mediaDetail2;
-                    c00025.L$5 = str13;
-                    c00025.L$6 = str11;
-                    c00025.L$7 = str12;
-                    c00025.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                    c00025.L$9 = num;
-                    list5 = list2;
-                    c00025.L$10 = list5;
-                    list6 = list4;
-                    c00025.L$11 = list6;
-                    list7 = list3;
-                    c00025.L$12 = list7;
-                    list8 = list;
-                    c00025.L$13 = list8;
-                    str19 = str9;
-                    c00025.L$14 = str19;
-                    c00025.L$15 = str16;
+                    list5 = list4;
+                    c00024.L$0 = str3;
+                    c00024.L$1 = data2;
+                    c00024.L$2 = tvType2;
+                    c00024.L$3 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00024.L$4 = mediaDetail2;
+                    c00024.L$5 = str8;
+                    c00024.L$6 = str11;
+                    c00024.L$7 = str10;
+                    c00024.L$8 = SpillingKt.nullOutSpilledVariable(str6);
+                    c00024.L$9 = num3;
+                    c00024.L$10 = list3;
+                    c00024.L$11 = list;
+                    c00024.L$12 = list2;
+                    c00024.L$13 = list5;
+                    num4 = num3;
+                    str17 = str14;
+                    c00024.L$14 = str17;
                     data3 = data2;
-                    c00025.L$16 = SpillingKt.nullOutSpilledVariable(str18);
-                    c00025.L$17 = imdb_id;
-                    i15 = i10;
-                    c00025.I$0 = i15 == true ? 1 : 0;
-                    c00025.I$1 = i11;
-                    c00025.I$2 = i8;
-                    c00025.I$3 = i14;
-                    c00025.I$4 = i13 == true ? 1 : 0;
-                    c00025.label = 3;
-                    i16 = i8;
-                    i17 = i11;
-                    str20 = str12;
-                    z2 = true;
-                    num2 = num;
-                    obj5 = obj4;
-                    i18 = i13 == true ? 1 : 0;
-                    obj6 = Requests.get$default(MainActivityKt.getApp(), "https://aiometadata.elfhosted.com/stremio/b7cb164b-074b-41d5-b458-b3a834e197bb/meta/" + str18 + '/' + imdb_id + ".json", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00025, 4094, (Object) null);
-                    c00022 = c00025;
-                    if (obj6 == obj5) {
-                        return obj5;
+                    c00024.L$15 = str15;
+                    c00024.L$16 = SpillingKt.nullOutSpilledVariable(str16);
+                    c00024.L$17 = imdb_id;
+                    c00024.I$0 = i10 == true ? 1 : 0 ? 1 : 0;
+                    c00024.I$1 = i9;
+                    c00024.I$2 = i5;
+                    c00024.I$3 = i7;
+                    c00024.I$4 = r18 == true ? 1 : 0;
+                    c00024.label = 3;
+                    list6 = list2;
+                    list7 = list;
+                    str18 = str15;
+                    C00021 c000216 = c00024;
+                    list8 = list3;
+                    str19 = imdb_id;
+                    str20 = str10;
+                    r40 = r18;
+                    i11 = i7;
+                    i12 = i5;
+                    obj6 = obj4;
+                    obj7 = Requests.get$default(MainActivityKt.getApp(), "https://aiometadata.elfhosted.com/stremio/b7cb164b-074b-41d5-b458-b3a834e197bb/meta/" + str16 + '/' + imdb_id + ".json", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c000216, 4030, (Object) null);
+                    c00024 = c000216;
+                    if (obj7 == obj6) {
+                        return obj6;
                     }
-                    str21 = str17;
-                    str22 = str16;
                     mediaDetail3 = mediaDetail2;
+                    str21 = str16;
+                    str22 = str8;
                     str23 = str11;
-                    str24 = imdb_id;
-                    obj7 = obj6;
+                    list9 = list5;
+                    str24 = str6;
                     data4 = data3;
-                    list9 = list7;
-                    list10 = list5;
-                    str25 = str19;
-                    str26 = str20;
-                    num3 = num2;
+                    list10 = list7;
+                    str25 = str17;
                     list11 = list8;
+                    str26 = str20;
+                    i13 = r40 == true ? 1 : 0;
+                    i14 = i9;
                     list12 = list6;
-                    str27 = str10;
-                    tvType2 = tvType;
-                    str28 = str18;
-                    str29 = str13;
-                    i19 = i15 == true ? 1 : 0;
-                    i20 = i17;
-                    i21 = i14;
-                    i22 = i16;
-                    NiceResponse niceResponse5 = (NiceResponse) obj7;
+                    str27 = str9;
+                    str28 = str3;
+                    i15 = i12;
+                    num5 = num4;
+                    str29 = str18;
+                    obj8 = obj7;
+                    tvType3 = tvType2;
+                    i16 = i11;
+                    NiceResponse niceResponse5 = (NiceResponse) obj8;
                     ResponseParser parser5 = niceResponse5.getParser();
                     Intrinsics.checkNotNull(parser5);
                     data5 = data4;
-                    i23 = i21;
                     safe2 = parser5.parseSafe(niceResponse5.getText(), Reflection.getOrCreateKotlinClass(CinemetaRes.class));
                     cinemetaRes = (CinemetaRes) safe2;
-                    if (tvType2 != TvType.TvSeries) {
-                        int i6115 = i22;
-                        TvType tvType16 = tvType2;
-                        num4 = num3;
-                        int i623 = i23;
-                        i24 = i18;
-                        str30 = str24;
-                        list13 = list11;
-                        int i624 = i19;
-                        String str7110 = str29;
-                        str31 = str25;
-                        i25 = i20;
-                        C00021 c000219 = c00022;
-                        obj8 = obj5;
-                        str32 = str22;
+                    if (tvType3 != TvType.TvSeries) {
+                        i17 = i13;
+                        List list4116 = list11;
+                        int i415 = i15;
+                        TvType tvType110 = tvType3;
+                        String str818 = str22;
+                        str30 = str23;
+                        str31 = str26;
+                        C00021 c000217 = c00024;
+                        boolean z15 = i10 == true ? 1 : 0;
+                        str32 = str19;
+                        list13 = list9;
+                        str33 = str25;
+                        i18 = i16;
+                        obj9 = obj6;
+                        i19 = i14;
+                        String str819 = str29;
+                        MediaDetail mediaDetail16 = mediaDetail3;
                         MainAPI mainAPI7 = (MainAPI) this;
-                        TvType tvType17 = TvType.Movie;
-                        AppUtils appUtils4 = AppUtils.INSTANCE;
-                        String title4 = mediaDetail3.getTitle();
-                        if (i25 != 0) {
+                        TvType tvType111 = TvType.Movie;
+                        AppUtils appUtils8 = AppUtils.INSTANCE;
+                        String title8 = mediaDetail16.getTitle();
+                        if (i19 != 0) {
+                            z2 = true;
+                        } else {
+                            z2 = false;
+                        }
+                        external_ids2 = mediaDetail16.getExternal_ids();
+                        if (external_ids2 != null) {
+                            imdb_id2 = external_ids2.getImdb_id();
+                        } else {
+                            imdb_id2 = null;
+                        }
+                        String json3 = appUtils8.toJson(new LoadData(title8, num5, z2, imdb_id2, null, null, 48, null));
+                        if (i17 != 0) {
                             z3 = true;
                         } else {
                             z3 = false;
                         }
-                        external_ids2 = mediaDetail3.getExternal_ids();
-                        if (external_ids2 != null) {
-                            imdb_id2 = external_ids2.getImdb_id();
-                        } else {
-                            imdb_id2 = str7;
-                        }
-                        String json3 = appUtils4.toJson(new LoadData(title4, num4, z3, imdb_id2, null, null, 48, null));
+                        str34 = str819;
                         list14 = list10;
-                        if (i24 == 0) {
-                            z2 = false;
-                        }
                         list15 = list12;
-                        list16 = list9;
-                        C00054 c00056 = new C00054(str23, z2, str26, str32, num4, mediaDetail3, list15, list14, list13, list16, cinemetaRes, str31, null);
-                        c000219.L$0 = SpillingKt.nullOutSpilledVariable(str27);
-                        c000219.L$1 = SpillingKt.nullOutSpilledVariable(data5);
-                        c000219.L$2 = SpillingKt.nullOutSpilledVariable(tvType16);
-                        c000219.L$3 = SpillingKt.nullOutSpilledVariable(str21);
-                        c000219.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail3);
-                        c000219.L$5 = SpillingKt.nullOutSpilledVariable(str7110);
-                        c000219.L$6 = SpillingKt.nullOutSpilledVariable(str23);
-                        c000219.L$7 = SpillingKt.nullOutSpilledVariable(str26);
-                        c000219.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                        c000219.L$9 = SpillingKt.nullOutSpilledVariable(num4);
-                        c000219.L$10 = SpillingKt.nullOutSpilledVariable(list14);
-                        c000219.L$11 = SpillingKt.nullOutSpilledVariable(list15);
-                        c000219.L$12 = SpillingKt.nullOutSpilledVariable(list16);
-                        c000219.L$13 = SpillingKt.nullOutSpilledVariable(list13);
-                        c000219.L$14 = SpillingKt.nullOutSpilledVariable(str31);
-                        c000219.L$15 = SpillingKt.nullOutSpilledVariable(str32);
-                        c000219.L$16 = SpillingKt.nullOutSpilledVariable(str28);
-                        c000219.L$17 = SpillingKt.nullOutSpilledVariable(str30);
-                        c000219.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes);
-                        c000219.I$0 = i624 == true ? 1 : 0;
-                        c000219.I$1 = i25;
-                        c000219.I$2 = i6115;
-                        c000219.I$3 = i623;
-                        c000219.I$4 = i24 == true ? 1 : 0;
-                        c000219.label = 8;
-                        i26 = i6115;
+                        list16 = list4116;
+                        C00054 c00056 = new C00054(str30, z3, str31, str34, num5, mediaDetail16, list14, list16, list13, list15, cinemetaRes, str33, null);
+                        c000217.L$0 = SpillingKt.nullOutSpilledVariable(str28);
+                        c000217.L$1 = SpillingKt.nullOutSpilledVariable(data5);
+                        c000217.L$2 = SpillingKt.nullOutSpilledVariable(tvType110);
+                        c000217.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                        c000217.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail16);
+                        c000217.L$5 = SpillingKt.nullOutSpilledVariable(str818);
+                        c000217.L$6 = SpillingKt.nullOutSpilledVariable(str30);
+                        c000217.L$7 = SpillingKt.nullOutSpilledVariable(str31);
+                        c000217.L$8 = SpillingKt.nullOutSpilledVariable(str24);
+                        c000217.L$9 = SpillingKt.nullOutSpilledVariable(num5);
+                        c000217.L$10 = SpillingKt.nullOutSpilledVariable(list16);
+                        c000217.L$11 = SpillingKt.nullOutSpilledVariable(list14);
+                        c000217.L$12 = SpillingKt.nullOutSpilledVariable(list15);
+                        c000217.L$13 = SpillingKt.nullOutSpilledVariable(list13);
+                        c000217.L$14 = SpillingKt.nullOutSpilledVariable(str33);
+                        c000217.L$15 = SpillingKt.nullOutSpilledVariable(str34);
+                        c000217.L$16 = SpillingKt.nullOutSpilledVariable(str21);
+                        c000217.L$17 = SpillingKt.nullOutSpilledVariable(str32);
+                        c000217.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes);
+                        c000217.I$0 = z15 ? 1 : 0;
+                        c000217.I$1 = i19;
+                        c000217.I$2 = i415;
+                        c000217.I$3 = i18;
+                        c000217.I$4 = i17 == true ? 1 : 0;
+                        c000217.label = 8;
                         data6 = data5;
-                        str33 = str27;
-                        i27 = i623;
-                        str34 = str7110;
-                        objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(mainAPI7, str34, str33, tvType17, json3, c00056, c000219);
-                        if (objNewMovieLoadResponse == obj8) {
-                            return obj8;
+                        str35 = str28;
+                        str36 = str818;
+                        objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(mainAPI7, str36, str35, tvType111, json3, c00056, c000217);
+                        if (objNewMovieLoadResponse == obj9) {
+                            return obj9;
                         }
-                        i28 = i25;
-                        mediaDetail4 = mediaDetail3;
-                        list17 = list15;
-                        list18 = list14;
-                        list19 = list13;
-                        cinemetaRes2 = cinemetaRes;
-                        str35 = str31;
-                        str36 = str14;
-                        str37 = str30;
-                        num5 = num4;
-                        i29 = i24 == true ? 1 : 0;
-                        data7 = data6;
-                        str38 = str23;
+                        str37 = str21;
+                        str38 = str24;
                         str39 = str32;
-                        list20 = list16;
-                        str40 = str28;
+                        str40 = str31;
+                        list17 = list13;
+                        list18 = list15;
+                        cinemetaRes2 = cinemetaRes;
+                        i20 = i17 == true ? 1 : 0;
+                        str41 = str33;
                         return (LoadResponse) objNewMovieLoadResponse;
                     }
                     seasons = mediaDetail3.getSeasons();
                     if (seasons != null) {
-                        ArrayList<Seasons> arrayList26 = seasons;
-                        i35 = i19;
-                        if (i20 != 0) {
+                        ArrayList<Seasons> arrayList27 = seasons;
+                        i25 = i15;
+                        if (i14 != 0) {
                             z4 = true;
                         } else {
                             z4 = false;
                         }
-                        Object obj19 = obj5;
-                        i36 = i22;
-                        i37 = i20;
-                        tvType3 = tvType2;
-                        num6 = num3;
-                        MediaDetail mediaDetail13 = mediaDetail3;
-                        i38 = i18;
-                        Data data19 = data5;
-                        i39 = i23;
-                        TorraStream$load$episodes$1 torraStream$load$episodes$3 = new TorraStream$load$episodes$1(data19, this, mediaDetail13, num6, z4, null);
-                        c00022.L$0 = str27;
-                        c00022.L$1 = data19;
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(str21);
-                        c00022.L$4 = mediaDetail13;
-                        c00022.L$5 = str29;
-                        c00022.L$6 = str23;
-                        c00022.L$7 = str26;
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                        c00022.L$9 = num6;
-                        c00022.L$10 = list10;
-                        c00022.L$11 = list12;
-                        c00022.L$12 = list9;
+                        i26 = i14;
+                        num6 = null;
+                        Object obj24 = obj6;
+                        tvType5 = tvType3;
+                        int i416 = i13;
+                        boolean z16 = i10 == true ? 1 : 0;
+                        str45 = str19;
+                        num7 = num5;
+                        list20 = list9;
+                        str46 = str25;
+                        Data data16 = data5;
+                        int i417 = i16;
+                        mediaDetail4 = mediaDetail3;
+                        TorraStream$load$episodes$1 torraStream$load$episodes$3 = new TorraStream$load$episodes$1(data16, this, mediaDetail4, num7, z4, null);
+                        c00024.L$0 = str28;
+                        c00024.L$1 = data16;
+                        c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType5);
+                        c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00024.L$4 = mediaDetail4;
+                        c00024.L$5 = str22;
+                        c00024.L$6 = str23;
+                        c00024.L$7 = str26;
+                        c00024.L$8 = SpillingKt.nullOutSpilledVariable(str24);
+                        c00024.L$9 = num7;
+                        c00024.L$10 = list11;
+                        c00024.L$11 = list10;
+                        c00024.L$12 = list12;
+                        c00024.L$13 = list20;
+                        c00024.L$14 = str46;
+                        str47 = str29;
+                        c00024.L$15 = str47;
+                        c00024.L$16 = SpillingKt.nullOutSpilledVariable(str21);
+                        c00024.L$17 = str45;
+                        c00024.L$18 = cinemetaRes;
+                        i27 = z16 ? 1 : 0;
+                        c00024.I$0 = i27;
+                        str48 = str22;
+                        c00024.I$1 = i26;
+                        str49 = str23;
+                        c00024.I$2 = i25;
+                        str50 = str26;
+                        i28 = i417;
+                        c00024.I$3 = i28;
                         list21 = list11;
-                        c00022.L$13 = list21;
-                        str42 = str25;
-                        c00022.L$14 = str42;
-                        str43 = str22;
-                        c00022.L$15 = str43;
-                        c00022.L$16 = SpillingKt.nullOutSpilledVariable(str28);
-                        str44 = str24;
-                        c00022.L$17 = str44;
-                        c00022.L$18 = cinemetaRes;
-                        c00022.I$0 = i35 == true ? 1 : 0;
-                        str45 = str29;
-                        c00022.I$1 = i37;
-                        c00022.I$2 = i36;
-                        c00022.I$3 = i39;
-                        c00022.I$4 = i38 == true ? 1 : 0;
-                        c00022.label = 4;
-                        objAmap = ParCollectionsKt.amap(arrayList26, torraStream$load$episodes$3, c00022);
-                        obj9 = obj19;
-                        if (objAmap == obj9) {
-                            return obj9;
+                        i29 = i416 == true ? 1 : 0;
+                        c00024.I$4 = i29 == true ? 1 : 0;
+                        c00024.label = 4;
+                        objAmap = ParCollectionsKt.amap(arrayList27, torraStream$load$episodes$3, c00024);
+                        obj10 = obj24;
+                        if (objAmap == obj10) {
+                            return obj10;
                         }
-                        str46 = str42;
-                        i32 = i37;
-                        i40 = i35 == true ? 1 : 0;
-                        data9 = data5;
-                        i41 = i38 == true ? 1 : 0;
-                        list22 = list10;
-                        str47 = str23;
-                        list23 = list21;
-                        str48 = str14;
-                        str49 = str28;
-                        str50 = str44;
-                        num7 = num6;
-                        i42 = i39;
-                        str51 = str21;
-                        i43 = i36;
-                        objNewMovieLoadResponse = objAmap;
-                        str52 = str45;
-                        list37 = (List) objNewMovieLoadResponse;
-                        if (list37 != null) {
+                        obj11 = objAmap;
+                        str51 = str27;
+                        mediaDetail5 = mediaDetail4;
+                        data8 = data5;
+                        str52 = str46;
+                        tvType6 = tvType5;
+                        i24 = i25;
+                        str53 = str48;
+                        list22 = list20;
+                        str43 = str49;
+                        str54 = str47;
+                        i22 = i26;
+                        str55 = str21;
+                        str56 = str45;
+                        str57 = str50;
+                        cinemetaRes3 = cinemetaRes;
+                        list38 = (List) obj11;
+                        if (list38 != null) {
                         }
-                        int i625 = i42;
-                        i34 = i43;
-                        i30 = i625;
-                        str25 = str46;
-                        i31 = i40;
-                        str24 = str50;
-                        i33 = i41;
-                        list11 = list23;
-                        list10 = list22;
-                        num3 = num7;
-                        str14 = str48;
-                        str21 = str51;
-                        data8 = data9;
-                        str41 = str52;
-                        str28 = str49;
-                        str23 = str47;
-                        str22 = str43;
+                        TvType tvType112 = tvType6;
+                        i10 = i27;
+                        tvType4 = tvType112;
+                        List list4117 = list21;
+                        i21 = i29;
+                        list19 = list4117;
+                        cinemetaRes = cinemetaRes3;
+                        i23 = i28;
+                        str19 = str56;
+                        str21 = str55;
+                        str29 = str54;
+                        str25 = str52;
+                        list9 = list22;
+                        str44 = str57;
+                        mediaDetail3 = mediaDetail5;
+                        str42 = str53;
+                        str27 = str51;
+                        data7 = data8;
+                        num5 = num7;
                         break;
                     } else {
-                        int i714 = i22;
-                        tvType3 = tvType2;
-                        i30 = i23;
-                        int i715 = i18;
-                        i31 = i19;
-                        String str910 = str29;
-                        int i716 = i20;
-                        obj9 = obj5;
-                        i32 = i716;
-                        str41 = str910;
-                        i33 = i715 == true ? 1 : 0;
-                        i34 = i714;
-                        data8 = data5;
+                        String str1010 = str23;
+                        boolean z17 = i10 == true ? 1 : 0;
+                        num6 = null;
+                        obj10 = obj6;
+                        i21 = i13 == true ? 1 : 0;
+                        list19 = list11;
+                        data7 = data5;
+                        i22 = i14;
+                        i23 = i16;
+                        tvType4 = tvType3;
+                        i24 = i15;
+                        str42 = str22;
+                        str43 = str1010;
+                        str44 = str26;
                     }
-                    i44 = i34;
-                    obj10 = obj9;
-                    i45 = i32;
-                    i46 = i31;
-                    list24 = list12;
-                    str53 = str26;
-                    num8 = num3;
-                    str54 = str28;
-                    str55 = str24;
-                    str43 = str22;
-                    str56 = str25;
+                    i30 = i23;
+                    i31 = i24;
+                    i32 = i22;
+                    obj12 = obj10;
+                    str58 = str44;
+                    str59 = str21;
+                    i33 = i10;
+                    str60 = str19;
+                    str61 = str29;
+                    num8 = num5;
+                    list23 = list9;
+                    cinemetaRes4 = cinemetaRes;
                     listEmptyList = CollectionsKt.emptyList();
-                    data10 = data8;
-                    str57 = str27;
-                    str52 = str41;
+                    tvType6 = tvType4;
+                    str53 = str42;
+                    list24 = list19;
                     list25 = list10;
-                    mediaDetail5 = mediaDetail3;
-                    str51 = str21;
-                    i47 = i33;
-                    list26 = list11;
-                    i48 = i30;
-                    str58 = str23;
-                    list27 = list9;
-                    cinemetaRes3 = cinemetaRes;
-                    list28 = listEmptyList;
-                    if (i45 == 0) {
-                        String str7111 = str52;
-                        String str7112 = str55;
-                        Integer num15 = num8;
-                        String str7113 = str43;
-                        MediaDetail mediaDetail14 = mediaDetail5;
-                        List list415 = list24;
-                        List list416 = list25;
-                        C00021 c0002110 = c00022;
-                        List list417 = list26;
-                        List list418 = list27;
-                        CinemetaRes cinemetaRes13 = cinemetaRes3;
-                        int i6116 = i47;
-                        obj11 = obj10;
-                        TvType tvType18 = TvType.TvSeries;
-                        String str7114 = str57;
-                        String str8112 = str58;
-                        String str8113 = str53;
-                        C00043 c00046 = new C00043(str8112, str8113, str7113, num15, mediaDetail14, list415, list416, this, list417, list418, list28, cinemetaRes13, str56, null);
-                        c0002110.L$0 = SpillingKt.nullOutSpilledVariable(str7114);
-                        c0002110.L$1 = SpillingKt.nullOutSpilledVariable(data10);
-                        c0002110.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                        c0002110.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                        c0002110.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail14);
-                        c0002110.L$5 = SpillingKt.nullOutSpilledVariable(str7111);
-                        c0002110.L$6 = SpillingKt.nullOutSpilledVariable(str8112);
-                        c0002110.L$7 = SpillingKt.nullOutSpilledVariable(str8113);
-                        c0002110.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                        c0002110.L$9 = SpillingKt.nullOutSpilledVariable(num15);
-                        c0002110.L$10 = SpillingKt.nullOutSpilledVariable(list416);
-                        c0002110.L$11 = SpillingKt.nullOutSpilledVariable(list415);
-                        c0002110.L$12 = SpillingKt.nullOutSpilledVariable(list418);
-                        c0002110.L$13 = SpillingKt.nullOutSpilledVariable(list417);
-                        c0002110.L$14 = SpillingKt.nullOutSpilledVariable(str56);
-                        c0002110.L$15 = SpillingKt.nullOutSpilledVariable(str7113);
-                        c0002110.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                        c0002110.L$17 = SpillingKt.nullOutSpilledVariable(str7112);
-                        c0002110.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes13);
-                        c0002110.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                        c0002110.I$0 = i46 == true ? 1 : 0;
-                        c0002110.I$1 = i45;
-                        c0002110.I$2 = i44;
-                        c0002110.I$3 = i48;
-                        c0002110.I$4 = i6116 == true ? 1 : 0;
-                        c0002110.label = 7;
-                        objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str7111, str7114, tvType18, list28, c00046, c0002110);
-                        c00023 = c0002110;
-                        if (objNewTvSeriesLoadResponse == obj11) {
-                            return obj11;
+                    list26 = list12;
+                    str62 = str25;
+                    data9 = data7;
+                    str63 = str28;
+                    mediaDetail6 = mediaDetail3;
+                    str64 = str24;
+                    str65 = str43;
+                    list27 = listEmptyList;
+                    if (i32 == 0) {
+                        String str8110 = str53;
+                        String str8111 = str61;
+                        MediaDetail mediaDetail17 = mediaDetail6;
+                        List list4118 = list24;
+                        CinemetaRes cinemetaRes12 = cinemetaRes4;
+                        List list4119 = list23;
+                        List list41110 = list26;
+                        C00021 c000218 = c00024;
+                        String str8112 = str62;
+                        int i418 = i21;
+                        int i5113 = i31;
+                        obj13 = obj12;
+                        List list41111 = list25;
+                        TvType tvType113 = TvType.TvSeries;
+                        String str91117 = str63;
+                        String str91118 = str60;
+                        String str91119 = str65;
+                        str66 = str58;
+                        Integer num16 = num8;
+                        C00043 c00046 = new C00043(str91119, str66, str8111, num16, mediaDetail17, list41111, list4118, this, list4119, list41110, list27, cinemetaRes12, str8112, null);
+                        c000218.L$0 = SpillingKt.nullOutSpilledVariable(str91117);
+                        c000218.L$1 = SpillingKt.nullOutSpilledVariable(data9);
+                        c000218.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                        c000218.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                        c000218.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail17);
+                        c000218.L$5 = SpillingKt.nullOutSpilledVariable(str8110);
+                        c000218.L$6 = SpillingKt.nullOutSpilledVariable(str91119);
+                        c000218.L$7 = SpillingKt.nullOutSpilledVariable(str66);
+                        c000218.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                        c000218.L$9 = SpillingKt.nullOutSpilledVariable(num16);
+                        c000218.L$10 = SpillingKt.nullOutSpilledVariable(list4118);
+                        c000218.L$11 = SpillingKt.nullOutSpilledVariable(list41111);
+                        c000218.L$12 = SpillingKt.nullOutSpilledVariable(list41110);
+                        c000218.L$13 = SpillingKt.nullOutSpilledVariable(list4119);
+                        c000218.L$14 = SpillingKt.nullOutSpilledVariable(str8112);
+                        c000218.L$15 = SpillingKt.nullOutSpilledVariable(str8111);
+                        c000218.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                        c000218.L$17 = SpillingKt.nullOutSpilledVariable(str91118);
+                        c000218.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes12);
+                        c000218.L$19 = SpillingKt.nullOutSpilledVariable(list27);
+                        c000218.I$0 = i33 == true ? 1 : 0;
+                        c000218.I$1 = i32;
+                        c000218.I$2 = i5113;
+                        c000218.I$3 = i30;
+                        c000218.I$4 = i418 == true ? 1 : 0;
+                        c000218.label = 7;
+                        objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str8110, str91117, tvType113, list27, c00046, c000218);
+                        c00022 = c000218;
+                        if (objNewTvSeriesLoadResponse == obj13) {
+                            return obj13;
                         }
-                        obj12 = objNewTvSeriesLoadResponse;
-                        return (LoadResponse) obj12;
+                        obj14 = objNewTvSeriesLoadResponse;
+                        str67 = str66;
+                        return (LoadResponse) obj14;
                     }
-                    if (cinemetaRes3 != null) {
-                        str59 = str43;
-                        cinemetaRes4 = cinemetaRes3;
+                    if (cinemetaRes4 != null) {
+                        str68 = str61;
+                        cinemetaRes5 = cinemetaRes4;
                         arrayListEmptyList = CollectionsKt.emptyList();
                     } else {
-                        str59 = str43;
-                        cinemetaRes4 = cinemetaRes3;
+                        str68 = str61;
+                        cinemetaRes5 = cinemetaRes4;
                         arrayListEmptyList = CollectionsKt.emptyList();
                     }
-                    alternative_titles = mediaDetail5.getAlternative_titles();
+                    alternative_titles = mediaDetail6.getAlternative_titles();
                     if (alternative_titles == null) {
-                        list29 = arrayListEmptyList;
-                        if (cinemetaRes4 != null) {
-                            name2 = str7;
+                        list28 = arrayListEmptyList;
+                        if (cinemetaRes5 != null) {
+                            name2 = num6;
                         } else {
-                            name2 = str7;
+                            name2 = num6;
                         }
                     } else {
-                        list29 = arrayListEmptyList;
-                        if (cinemetaRes4 != null) {
-                            name2 = str7;
+                        list28 = arrayListEmptyList;
+                        if (cinemetaRes5 != null) {
+                            name2 = num6;
                         } else {
-                            name2 = str7;
+                            name2 = num6;
                         }
                     }
-                    Requests app6 = MainActivityKt.getApp();
-                    str60 = name2;
-                    String str8114 = "https://api.ani.zip/mappings?imdb_id=" + str55;
-                    c00022.L$0 = str57;
-                    c00022.L$1 = data10;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                    c00022.L$4 = mediaDetail5;
-                    c00022.L$5 = str52;
-                    c00022.L$6 = str58;
-                    c00022.L$7 = str53;
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                    c00022.L$9 = num8;
-                    c00022.L$10 = list25;
-                    c00022.L$11 = list24;
-                    c00022.L$12 = list27;
-                    c00022.L$13 = list26;
-                    c00022.L$14 = str56;
-                    str61 = str59;
-                    c00022.L$15 = str61;
-                    str62 = str52;
-                    c00022.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$17 = str55;
-                    c00022.L$18 = cinemetaRes4;
-                    c00022.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                    c00022.L$20 = list29;
+                    obj15 = name2;
+                    c00024.L$0 = str63;
+                    c00024.L$1 = data9;
+                    c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                    c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00024.L$4 = mediaDetail6;
+                    c00024.L$5 = str53;
+                    c00024.L$6 = str65;
+                    c00024.L$7 = str58;
+                    c00024.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                    c00024.L$9 = num8;
+                    c00024.L$10 = list24;
+                    c00024.L$11 = list25;
+                    c00024.L$12 = list26;
+                    c00024.L$13 = list23;
+                    c00024.L$14 = str62;
+                    str69 = str68;
+                    c00024.L$15 = str69;
+                    str70 = str53;
+                    c00024.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00024.L$17 = str60;
+                    c00024.L$18 = cinemetaRes5;
+                    c00024.L$19 = list27;
+                    c00024.L$20 = list28;
+                    c00024.L$21 = obj15;
+                    int i5114 = i33;
+                    c00024.I$0 = i5114 == true ? 1 : 0;
+                    int i5115 = i32;
+                    c00024.I$1 = i5115;
+                    i34 = i31;
+                    c00024.I$2 = i34;
+                    int i5116 = i30;
+                    c00024.I$3 = i5116;
+                    c00024.I$4 = i21 == true ? 1 : 0;
+                    c00024.label = 5;
+                    list29 = list23;
                     list30 = list26;
-                    c00022.L$21 = str60;
-                    c00022.I$0 = i46 == true ? 1 : 0;
-                    int i6117 = i45;
-                    c00022.I$1 = i6117;
-                    int i6118 = i44;
-                    c00022.I$2 = i6118;
-                    int i6119 = i48;
-                    c00022.I$3 = i6119;
-                    c00022.I$4 = i47 == true ? 1 : 0;
-                    c00022.label = 5;
-                    C00021 c0002111 = c00022;
-                    list31 = list27;
-                    str63 = str56;
-                    data11 = data10;
-                    i49 = i47;
-                    i50 = i6117;
-                    i51 = i46;
-                    str64 = str55;
-                    num9 = num8;
-                    mediaDetail6 = mediaDetail5;
-                    list32 = list25;
-                    i52 = i6118;
+                    c00023 = c00024;
+                    str71 = str62;
+                    data10 = data9;
+                    list31 = list25;
+                    i35 = i21;
+                    i36 = i5115;
+                    list32 = list27;
+                    i37 = i5114 == true ? 1 : 0;
+                    cinemetaRes6 = cinemetaRes5;
+                    i38 = i5116;
+                    mediaDetail7 = mediaDetail6;
                     list33 = list24;
-                    i53 = i6119;
-                    obj13 = Requests.get$default(app6, str8114, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002111, 4094, (Object) null);
-                    c00024 = c0002111;
-                    obj14 = obj10;
-                    if (obj13 == obj14) {
-                        return obj14;
+                    obj16 = obj12;
+                    obj17 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?imdb_id=" + str60, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 4094, (Object) null);
+                    if (obj17 == obj16) {
+                        return obj16;
                     }
-                    i54 = i51 == true ? 1 : 0;
-                    str65 = str57;
-                    str66 = str58;
-                    str67 = str53;
-                    str68 = str62;
-                    list34 = list29;
-                    str69 = str60;
-                    list35 = list31;
-                    data12 = data11;
-                    str70 = str64;
-                    str71 = str61;
+                    list34 = list30;
                     str72 = str63;
-                    list36 = list30;
-                    i55 = i49 == true ? 1 : 0;
-                    String string5 = ((NiceResponse) obj13).toString();
-                    animeData = TorraStreamUtilsKt.parseAnimeData(string5);
+                    str73 = str60;
+                    str74 = str65;
+                    str75 = str58;
+                    num9 = num8;
+                    obj18 = obj17;
+                    str76 = str70;
+                    r78 = obj15;
+                    str77 = str69;
+                    mediaDetail8 = mediaDetail7;
+                    list35 = list29;
+                    cinemetaRes7 = cinemetaRes6;
+                    str78 = str71;
+                    i39 = i34;
+                    i40 = i35 == true ? 1 : 0;
+                    list36 = list33;
+                    list37 = list31;
+                    String text5 = ((NiceResponse) obj18).getText();
+                    animeData = TorraStreamUtilsKt.parseAnimeData(text5);
                     if (animeData != null) {
-                        kitsuid = str7;
+                        kitsuid = num6;
                     } else {
-                        kitsuid = str7;
+                        kitsuid = num6;
                     }
-                    MainAPI mainAPI8 = (MainAPI) this;
-                    TvType tvType19 = TvType.Anime;
-                    int i61110 = i55;
-                    if (i52 != 0) {
-                        z5 = true;
-                    } else {
-                        z5 = false;
+                    String str911110 = str74;
+                    list39 = list28;
+                    int i5117 = i40;
+                    str79 = str76;
+                    arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list39, 10));
+                    list40 = list39;
+                    while (r23.hasNext()) {
+                        List list41112 = list39;
+                        released = video.getReleased();
+                        if (released != null) {
+                            if (cinemetaRes7 != null) {
+                                intOrNull2 = num6;
+                            } else {
+                                intOrNull2 = num6;
+                            }
+                            if (intOrNull2 != null) {
+                                iIntValue = intOrNull2.intValue();
+                            } else {
+                                iIntValue = 0;
+                            }
+                        } else {
+                            if (cinemetaRes7 != null) {
+                                intOrNull2 = num6;
+                            } else {
+                                intOrNull2 = num6;
+                            }
+                            if (intOrNull2 != null) {
+                                iIntValue = intOrNull2.intValue();
+                            } else {
+                                iIntValue = 0;
+                            }
+                        }
+                        List list41113 = list40;
+                        MainAPI mainAPI8 = (MainAPI) this;
+                        String str911111 = str75;
+                        AppUtils appUtils9 = AppUtils.INSTANCE;
+                        Integer id6 = data10.getId();
+                        external_ids3 = mediaDetail8.getExternal_ids();
+                        if (external_ids3 != null) {
+                            tvdb_id = external_ids3.getTvdb_id();
+                        } else {
+                            tvdb_id = num6;
+                        }
+                        String type7 = data10.getType();
+                        Integer season6 = video.getSeason();
+                        Integer episode5 = video.getEpisode();
+                        Integer numBoxInt5 = Boxing.boxInt(iIntValue);
+                        String title9 = video.getTitle();
+                        String released6 = video.getReleased();
+                        releaseDate2 = mediaDetail8.getReleaseDate();
+                        if (releaseDate2 == null) {
+                            releaseDate2 = mediaDetail8.getFirstAirDate();
+                        }
+                        String str911112 = releaseDate2;
+                        if (i39 != 0) {
+                            z5 = true;
+                        } else {
+                            z5 = false;
+                        }
+                        if (i38 != 0) {
+                            z6 = true;
+                        } else {
+                            z6 = false;
+                        }
+                        if (i37 != 0) {
+                            z7 = true;
+                        } else {
+                            z7 = false;
+                        }
+                        String str911113 = str73;
+                        arrayList8.add(MainAPIKt.newEpisode(mainAPI8, appUtils9.toJson(new LinkData(id6, str911113, tvdb_id, type7, season6, episode5, null, null, null, str79, numBoxInt5, "", true, num9, null, title9, r78, released6, str911112, z5, z6, z7, mediaDetail8.getTitle(), mediaDetail8.getName(), false, null, 33571264, null)), new Function1() { // from class: com.phisher98.TorraStream$$ExternalSyntheticLambda1
+                            public final Object invoke(Object obj25) {
+                                return TorraStream.load$lambda$9$0(video, this, (Episode) obj25);
+                            }
+                        }));
+                        list39 = list41112;
+                        list40 = list41113;
+                        str75 = str911111;
+                        str77 = str77;
+                        str73 = str911113;
                     }
-                    if (i53 != 0) {
-                        z6 = true;
-                    } else {
-                        z6 = false;
+                    String str911114 = str75;
+                    String str911115 = str77;
+                    String str911116 = str73;
+                    arrayList9 = arrayList8;
+                    if (arrayList9.isEmpty()) {
+                        arrayList9 = list32;
                     }
-                    if (i54 != 0) {
-                        z7 = true;
-                    } else {
-                        z7 = false;
-                    }
-                    obj15 = obj14;
-                    int i717 = i54;
-                    C00021 c0002112 = c00024;
-                    int i718 = i53;
-                    CinemetaRes cinemetaRes14 = cinemetaRes4;
-                    String str8115 = kitsuid;
-                    C00032 c00036 = new C00032(str66, str67, str71, num9, mediaDetail6, list33, list32, this, list36, list35, str72, str8115, cinemetaRes14, str70, list34, data12, str68, str69, z5, z6, z7, null);
-                    String str8116 = str67;
-                    String str8117 = str68;
-                    c0002112.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                    c0002112.L$1 = SpillingKt.nullOutSpilledVariable(data12);
-                    c0002112.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                    c0002112.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                    c0002112.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail6);
-                    c0002112.L$5 = SpillingKt.nullOutSpilledVariable(str8117);
-                    c0002112.L$6 = SpillingKt.nullOutSpilledVariable(str66);
-                    c0002112.L$7 = SpillingKt.nullOutSpilledVariable(str8116);
-                    c0002112.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                    c0002112.L$9 = SpillingKt.nullOutSpilledVariable(num9);
-                    c0002112.L$10 = SpillingKt.nullOutSpilledVariable(list32);
-                    c0002112.L$11 = SpillingKt.nullOutSpilledVariable(list33);
-                    c0002112.L$12 = SpillingKt.nullOutSpilledVariable(list35);
-                    c0002112.L$13 = SpillingKt.nullOutSpilledVariable(list36);
-                    c0002112.L$14 = SpillingKt.nullOutSpilledVariable(str72);
-                    c0002112.L$15 = SpillingKt.nullOutSpilledVariable(str71);
-                    c0002112.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                    c0002112.L$17 = SpillingKt.nullOutSpilledVariable(str70);
-                    c0002112.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes14);
-                    c0002112.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                    c0002112.L$20 = SpillingKt.nullOutSpilledVariable(list34);
-                    c0002112.L$21 = SpillingKt.nullOutSpilledVariable(str69);
-                    c0002112.L$22 = SpillingKt.nullOutSpilledVariable(string5);
-                    c0002112.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
-                    c0002112.L$24 = SpillingKt.nullOutSpilledVariable(str8115);
-                    c0002112.I$0 = i717 == true ? 1 : 0;
-                    c0002112.I$1 = i50;
-                    c0002112.I$2 = i52;
-                    c0002112.I$3 = i718;
-                    c0002112.I$4 = i61110 == true ? 1 : 0;
-                    c0002112.label = 6;
-                    objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(mainAPI8, str8117, str65, tvType19, false, c00036, c0002112, 8, (Object) null);
-                    if (objNewAnimeLoadResponse$default == obj15) {
-                        return obj15;
+                    List list55 = arrayList9;
+                    TvType tvType114 = TvType.Anime;
+                    obj19 = obj16;
+                    int i5118 = i39;
+                    C00021 c000219 = c00023;
+                    ?? r17 = kitsuid;
+                    C00032 c00036 = new C00032(list55, str911110, str911114, str911115, num9, mediaDetail8, list37, list36, this, list35, list34, str78, r17, cinemetaRes7, str911116, null);
+                    c000219.L$0 = SpillingKt.nullOutSpilledVariable(str72);
+                    c000219.L$1 = SpillingKt.nullOutSpilledVariable(data10);
+                    c000219.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                    c000219.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                    c000219.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail8);
+                    c000219.L$5 = SpillingKt.nullOutSpilledVariable(str79);
+                    c000219.L$6 = SpillingKt.nullOutSpilledVariable(str911110);
+                    c000219.L$7 = SpillingKt.nullOutSpilledVariable(str911114);
+                    c000219.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                    c000219.L$9 = SpillingKt.nullOutSpilledVariable(num9);
+                    c000219.L$10 = SpillingKt.nullOutSpilledVariable(list36);
+                    c000219.L$11 = SpillingKt.nullOutSpilledVariable(list37);
+                    c000219.L$12 = SpillingKt.nullOutSpilledVariable(list34);
+                    c000219.L$13 = SpillingKt.nullOutSpilledVariable(list35);
+                    c000219.L$14 = SpillingKt.nullOutSpilledVariable(str78);
+                    c000219.L$15 = SpillingKt.nullOutSpilledVariable(str911115);
+                    c000219.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                    c000219.L$17 = SpillingKt.nullOutSpilledVariable(str911116);
+                    c000219.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes7);
+                    c000219.L$19 = SpillingKt.nullOutSpilledVariable(list32);
+                    c000219.L$20 = SpillingKt.nullOutSpilledVariable(list28);
+                    c000219.L$21 = SpillingKt.nullOutSpilledVariable((Object) r78);
+                    c000219.L$22 = SpillingKt.nullOutSpilledVariable(text5);
+                    c000219.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
+                    c000219.L$24 = SpillingKt.nullOutSpilledVariable((Object) r17);
+                    c000219.L$25 = SpillingKt.nullOutSpilledVariable(list55);
+                    c000219.I$0 = i37 == true ? 1 : 0;
+                    c000219.I$1 = i36;
+                    c000219.I$2 = i5118;
+                    c000219.I$3 = i38;
+                    c000219.I$4 = i5117 == true ? 1 : 0;
+                    c000219.label = 6;
+                    objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default((MainAPI) this, str79, str72, tvType114, false, c00036, c000219, 8, (Object) null);
+                    if (objNewAnimeLoadResponse$default == obj19) {
+                        return obj19;
                     }
                     return objNewAnimeLoadResponse$default;
                 }
-                str17 = str8;
-                i13 = i9;
+                i10 = i6;
+                str14 = str7;
+                str15 = str13;
                 if (z) {
-                    str18 = "series";
+                    str16 = "series";
                 } else {
-                    str18 = "movie";
+                    str16 = "movie";
                 }
                 external_ids = mediaDetail2.getExternal_ids();
                 if (external_ids != null) {
                     imdb_id = external_ids.getImdb_id();
                 } else {
-                    imdb_id = str7;
+                    imdb_id = null;
                 }
                 if (imdb_id == null) {
                     imdb_id = "";
                 }
-                i14 = i12;
-                c00025.L$0 = str10;
-                c00025.L$1 = data2;
-                c00025.L$2 = tvType;
-                c00025.L$3 = SpillingKt.nullOutSpilledVariable(str17);
-                c00025.L$4 = mediaDetail2;
-                c00025.L$5 = str13;
-                c00025.L$6 = str11;
-                c00025.L$7 = str12;
-                c00025.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                c00025.L$9 = num;
-                list5 = list2;
-                c00025.L$10 = list5;
-                list6 = list4;
-                c00025.L$11 = list6;
-                list7 = list3;
-                c00025.L$12 = list7;
-                list8 = list;
-                c00025.L$13 = list8;
-                str19 = str9;
-                c00025.L$14 = str19;
-                c00025.L$15 = str16;
+                list5 = list4;
+                c00024.L$0 = str3;
+                c00024.L$1 = data2;
+                c00024.L$2 = tvType2;
+                c00024.L$3 = SpillingKt.nullOutSpilledVariable(str9);
+                c00024.L$4 = mediaDetail2;
+                c00024.L$5 = str8;
+                c00024.L$6 = str11;
+                c00024.L$7 = str10;
+                c00024.L$8 = SpillingKt.nullOutSpilledVariable(str6);
+                c00024.L$9 = num3;
+                c00024.L$10 = list3;
+                c00024.L$11 = list;
+                c00024.L$12 = list2;
+                c00024.L$13 = list5;
+                num4 = num3;
+                str17 = str14;
+                c00024.L$14 = str17;
                 data3 = data2;
-                c00025.L$16 = SpillingKt.nullOutSpilledVariable(str18);
-                c00025.L$17 = imdb_id;
-                i15 = i10;
-                c00025.I$0 = i15 == true ? 1 : 0;
-                c00025.I$1 = i11;
-                c00025.I$2 = i8;
-                c00025.I$3 = i14;
-                c00025.I$4 = i13 == true ? 1 : 0;
-                c00025.label = 3;
-                i16 = i8;
-                i17 = i11;
-                str20 = str12;
-                z2 = true;
-                num2 = num;
-                obj5 = obj4;
-                i18 = i13 == true ? 1 : 0;
-                obj6 = Requests.get$default(MainActivityKt.getApp(), "https://aiometadata.elfhosted.com/stremio/b7cb164b-074b-41d5-b458-b3a834e197bb/meta/" + str18 + '/' + imdb_id + ".json", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00025, 4094, (Object) null);
-                c00022 = c00025;
-                if (obj6 == obj5) {
-                    return obj5;
+                c00024.L$15 = str15;
+                c00024.L$16 = SpillingKt.nullOutSpilledVariable(str16);
+                c00024.L$17 = imdb_id;
+                c00024.I$0 = i10 == true ? 1 : 0 ? 1 : 0;
+                c00024.I$1 = i9;
+                c00024.I$2 = i5;
+                c00024.I$3 = i7;
+                c00024.I$4 = r18 == true ? 1 : 0;
+                c00024.label = 3;
+                list6 = list2;
+                list7 = list;
+                str18 = str15;
+                C00021 c0002110 = c00024;
+                list8 = list3;
+                str19 = imdb_id;
+                str20 = str10;
+                r40 = r18;
+                i11 = i7;
+                i12 = i5;
+                obj6 = obj4;
+                obj7 = Requests.get$default(MainActivityKt.getApp(), "https://aiometadata.elfhosted.com/stremio/b7cb164b-074b-41d5-b458-b3a834e197bb/meta/" + str16 + '/' + imdb_id + ".json", (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002110, 4030, (Object) null);
+                c00024 = c0002110;
+                if (obj7 == obj6) {
+                    return obj6;
                 }
-                str21 = str17;
-                str22 = str16;
                 mediaDetail3 = mediaDetail2;
+                str21 = str16;
+                str22 = str8;
                 str23 = str11;
-                str24 = imdb_id;
-                obj7 = obj6;
+                list9 = list5;
+                str24 = str6;
                 data4 = data3;
-                list9 = list7;
-                list10 = list5;
-                str25 = str19;
-                str26 = str20;
-                num3 = num2;
+                list10 = list7;
+                str25 = str17;
                 list11 = list8;
+                str26 = str20;
+                i13 = r40 == true ? 1 : 0;
+                i14 = i9;
                 list12 = list6;
-                str27 = str10;
-                tvType2 = tvType;
-                str28 = str18;
-                str29 = str13;
-                i19 = i15 == true ? 1 : 0;
-                i20 = i17;
-                i21 = i14;
-                i22 = i16;
-                NiceResponse niceResponse6 = (NiceResponse) obj7;
+                str27 = str9;
+                str28 = str3;
+                i15 = i12;
+                num5 = num4;
+                str29 = str18;
+                obj8 = obj7;
+                tvType3 = tvType2;
+                i16 = i11;
+                NiceResponse niceResponse6 = (NiceResponse) obj8;
                 ResponseParser parser6 = niceResponse6.getParser();
                 Intrinsics.checkNotNull(parser6);
                 data5 = data4;
-                i23 = i21;
                 safe2 = parser6.parseSafe(niceResponse6.getText(), Reflection.getOrCreateKotlinClass(CinemetaRes.class));
                 cinemetaRes = (CinemetaRes) safe2;
-                if (tvType2 != TvType.TvSeries) {
-                    int i61111 = i22;
-                    TvType tvType110 = tvType2;
-                    num4 = num3;
-                    int i626 = i23;
-                    i24 = i18;
-                    str30 = str24;
-                    list13 = list11;
-                    int i627 = i19;
-                    String str7115 = str29;
-                    str31 = str25;
-                    i25 = i20;
-                    C00021 c0002113 = c00022;
-                    obj8 = obj5;
-                    str32 = str22;
+                if (tvType3 != TvType.TvSeries) {
+                    i17 = i13;
+                    List list41114 = list11;
+                    int i419 = i15;
+                    TvType tvType115 = tvType3;
+                    String str8113 = str22;
+                    str30 = str23;
+                    str31 = str26;
+                    C00021 c0002111 = c00024;
+                    boolean z18 = i10 == true ? 1 : 0;
+                    str32 = str19;
+                    list13 = list9;
+                    str33 = str25;
+                    i18 = i16;
+                    obj9 = obj6;
+                    i19 = i14;
+                    String str8114 = str29;
+                    MediaDetail mediaDetail18 = mediaDetail3;
                     MainAPI mainAPI9 = (MainAPI) this;
-                    TvType tvType111 = TvType.Movie;
-                    AppUtils appUtils5 = AppUtils.INSTANCE;
-                    String title5 = mediaDetail3.getTitle();
-                    if (i25 != 0) {
+                    TvType tvType116 = TvType.Movie;
+                    AppUtils appUtils10 = AppUtils.INSTANCE;
+                    String title10 = mediaDetail18.getTitle();
+                    if (i19 != 0) {
+                        z2 = true;
+                    } else {
+                        z2 = false;
+                    }
+                    external_ids2 = mediaDetail18.getExternal_ids();
+                    if (external_ids2 != null) {
+                        imdb_id2 = external_ids2.getImdb_id();
+                    } else {
+                        imdb_id2 = null;
+                    }
+                    String json4 = appUtils10.toJson(new LoadData(title10, num5, z2, imdb_id2, null, null, 48, null));
+                    if (i17 != 0) {
                         z3 = true;
                     } else {
                         z3 = false;
                     }
-                    external_ids2 = mediaDetail3.getExternal_ids();
-                    if (external_ids2 != null) {
-                        imdb_id2 = external_ids2.getImdb_id();
-                    } else {
-                        imdb_id2 = str7;
-                    }
-                    String json4 = appUtils5.toJson(new LoadData(title5, num4, z3, imdb_id2, null, null, 48, null));
+                    str34 = str8114;
                     list14 = list10;
-                    if (i24 == 0) {
-                        z2 = false;
-                    }
                     list15 = list12;
-                    list16 = list9;
-                    C00054 c00057 = new C00054(str23, z2, str26, str32, num4, mediaDetail3, list15, list14, list13, list16, cinemetaRes, str31, null);
-                    c0002113.L$0 = SpillingKt.nullOutSpilledVariable(str27);
-                    c0002113.L$1 = SpillingKt.nullOutSpilledVariable(data5);
-                    c0002113.L$2 = SpillingKt.nullOutSpilledVariable(tvType110);
-                    c0002113.L$3 = SpillingKt.nullOutSpilledVariable(str21);
-                    c0002113.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail3);
-                    c0002113.L$5 = SpillingKt.nullOutSpilledVariable(str7115);
-                    c0002113.L$6 = SpillingKt.nullOutSpilledVariable(str23);
-                    c0002113.L$7 = SpillingKt.nullOutSpilledVariable(str26);
-                    c0002113.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                    c0002113.L$9 = SpillingKt.nullOutSpilledVariable(num4);
-                    c0002113.L$10 = SpillingKt.nullOutSpilledVariable(list14);
-                    c0002113.L$11 = SpillingKt.nullOutSpilledVariable(list15);
-                    c0002113.L$12 = SpillingKt.nullOutSpilledVariable(list16);
-                    c0002113.L$13 = SpillingKt.nullOutSpilledVariable(list13);
-                    c0002113.L$14 = SpillingKt.nullOutSpilledVariable(str31);
-                    c0002113.L$15 = SpillingKt.nullOutSpilledVariable(str32);
-                    c0002113.L$16 = SpillingKt.nullOutSpilledVariable(str28);
-                    c0002113.L$17 = SpillingKt.nullOutSpilledVariable(str30);
-                    c0002113.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes);
-                    c0002113.I$0 = i627 == true ? 1 : 0;
-                    c0002113.I$1 = i25;
-                    c0002113.I$2 = i61111;
-                    c0002113.I$3 = i626;
-                    c0002113.I$4 = i24 == true ? 1 : 0;
-                    c0002113.label = 8;
-                    i26 = i61111;
+                    list16 = list41114;
+                    C00054 c00057 = new C00054(str30, z3, str31, str34, num5, mediaDetail18, list14, list16, list13, list15, cinemetaRes, str33, null);
+                    c0002111.L$0 = SpillingKt.nullOutSpilledVariable(str28);
+                    c0002111.L$1 = SpillingKt.nullOutSpilledVariable(data5);
+                    c0002111.L$2 = SpillingKt.nullOutSpilledVariable(tvType115);
+                    c0002111.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                    c0002111.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail18);
+                    c0002111.L$5 = SpillingKt.nullOutSpilledVariable(str8113);
+                    c0002111.L$6 = SpillingKt.nullOutSpilledVariable(str30);
+                    c0002111.L$7 = SpillingKt.nullOutSpilledVariable(str31);
+                    c0002111.L$8 = SpillingKt.nullOutSpilledVariable(str24);
+                    c0002111.L$9 = SpillingKt.nullOutSpilledVariable(num5);
+                    c0002111.L$10 = SpillingKt.nullOutSpilledVariable(list16);
+                    c0002111.L$11 = SpillingKt.nullOutSpilledVariable(list14);
+                    c0002111.L$12 = SpillingKt.nullOutSpilledVariable(list15);
+                    c0002111.L$13 = SpillingKt.nullOutSpilledVariable(list13);
+                    c0002111.L$14 = SpillingKt.nullOutSpilledVariable(str33);
+                    c0002111.L$15 = SpillingKt.nullOutSpilledVariable(str34);
+                    c0002111.L$16 = SpillingKt.nullOutSpilledVariable(str21);
+                    c0002111.L$17 = SpillingKt.nullOutSpilledVariable(str32);
+                    c0002111.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes);
+                    c0002111.I$0 = z18 ? 1 : 0;
+                    c0002111.I$1 = i19;
+                    c0002111.I$2 = i419;
+                    c0002111.I$3 = i18;
+                    c0002111.I$4 = i17 == true ? 1 : 0;
+                    c0002111.label = 8;
                     data6 = data5;
-                    str33 = str27;
-                    i27 = i626;
-                    str34 = str7115;
-                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(mainAPI9, str34, str33, tvType111, json4, c00057, c0002113);
-                    if (objNewMovieLoadResponse == obj8) {
-                        return obj8;
-                    }
-                    i28 = i25;
-                    mediaDetail4 = mediaDetail3;
-                    list17 = list15;
-                    list18 = list14;
-                    list19 = list13;
-                    cinemetaRes2 = cinemetaRes;
-                    str35 = str31;
-                    str36 = str14;
-                    str37 = str30;
-                    num5 = num4;
-                    i29 = i24 == true ? 1 : 0;
-                    data7 = data6;
-                    str38 = str23;
-                    str39 = str32;
-                    list20 = list16;
-                    str40 = str28;
-                    return (LoadResponse) objNewMovieLoadResponse;
-                }
-                seasons = mediaDetail3.getSeasons();
-                if (seasons != null) {
-                    ArrayList<Seasons> arrayList27 = seasons;
-                    i35 = i19;
-                    if (i20 != 0) {
-                        z4 = true;
-                    } else {
-                        z4 = false;
-                    }
-                    Object obj110 = obj5;
-                    i36 = i22;
-                    i37 = i20;
-                    tvType3 = tvType2;
-                    num6 = num3;
-                    MediaDetail mediaDetail15 = mediaDetail3;
-                    i38 = i18;
-                    Data data110 = data5;
-                    i39 = i23;
-                    TorraStream$load$episodes$1 torraStream$load$episodes$4 = new TorraStream$load$episodes$1(data110, this, mediaDetail15, num6, z4, null);
-                    c00022.L$0 = str27;
-                    c00022.L$1 = data110;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(str21);
-                    c00022.L$4 = mediaDetail15;
-                    c00022.L$5 = str29;
-                    c00022.L$6 = str23;
-                    c00022.L$7 = str26;
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                    c00022.L$9 = num6;
-                    c00022.L$10 = list10;
-                    c00022.L$11 = list12;
-                    c00022.L$12 = list9;
-                    list21 = list11;
-                    c00022.L$13 = list21;
-                    str42 = str25;
-                    c00022.L$14 = str42;
-                    str43 = str22;
-                    c00022.L$15 = str43;
-                    c00022.L$16 = SpillingKt.nullOutSpilledVariable(str28);
-                    str44 = str24;
-                    c00022.L$17 = str44;
-                    c00022.L$18 = cinemetaRes;
-                    c00022.I$0 = i35 == true ? 1 : 0;
-                    str45 = str29;
-                    c00022.I$1 = i37;
-                    c00022.I$2 = i36;
-                    c00022.I$3 = i39;
-                    c00022.I$4 = i38 == true ? 1 : 0;
-                    c00022.label = 4;
-                    objAmap = ParCollectionsKt.amap(arrayList27, torraStream$load$episodes$4, c00022);
-                    obj9 = obj110;
-                    if (objAmap == obj9) {
+                    str35 = str28;
+                    str36 = str8113;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(mainAPI9, str36, str35, tvType116, json4, c00057, c0002111);
+                    if (objNewMovieLoadResponse == obj9) {
                         return obj9;
                     }
-                    str46 = str42;
-                    i32 = i37;
-                    i40 = i35 == true ? 1 : 0;
-                    data9 = data5;
-                    i41 = i38 == true ? 1 : 0;
-                    list22 = list10;
-                    str47 = str23;
-                    list23 = list21;
-                    str48 = str14;
-                    str49 = str28;
-                    str50 = str44;
-                    num7 = num6;
-                    i42 = i39;
-                    str51 = str21;
-                    i43 = i36;
-                    objNewMovieLoadResponse = objAmap;
-                    str52 = str45;
-                    list37 = (List) objNewMovieLoadResponse;
-                    if (list37 != null) {
-                    }
-                    int i628 = i42;
-                    i34 = i43;
-                    i30 = i628;
-                    str25 = str46;
-                    i31 = i40;
-                    str24 = str50;
-                    i33 = i41;
-                    list11 = list23;
-                    list10 = list22;
-                    num3 = num7;
-                    str14 = str48;
-                    str21 = str51;
-                    data8 = data9;
-                    str41 = str52;
-                    str28 = str49;
-                    str23 = str47;
-                    str22 = str43;
-                    break;
-                } else {
-                    int i719 = i22;
-                    tvType3 = tvType2;
-                    i30 = i23;
-                    int i7110 = i18;
-                    i31 = i19;
-                    String str911 = str29;
-                    int i7111 = i20;
-                    obj9 = obj5;
-                    i32 = i7111;
-                    str41 = str911;
-                    i33 = i7110 == true ? 1 : 0;
-                    i34 = i719;
-                    data8 = data5;
-                }
-                i44 = i34;
-                obj10 = obj9;
-                i45 = i32;
-                i46 = i31;
-                list24 = list12;
-                str53 = str26;
-                num8 = num3;
-                str54 = str28;
-                str55 = str24;
-                str43 = str22;
-                str56 = str25;
-                listEmptyList = CollectionsKt.emptyList();
-                data10 = data8;
-                str57 = str27;
-                str52 = str41;
-                list25 = list10;
-                mediaDetail5 = mediaDetail3;
-                str51 = str21;
-                i47 = i33;
-                list26 = list11;
-                i48 = i30;
-                str58 = str23;
-                list27 = list9;
-                cinemetaRes3 = cinemetaRes;
-                list28 = listEmptyList;
-                if (i45 == 0) {
-                    String str7116 = str52;
-                    String str7117 = str55;
-                    Integer num16 = num8;
-                    String str7118 = str43;
-                    MediaDetail mediaDetail16 = mediaDetail5;
-                    List list419 = list24;
-                    List list4110 = list25;
-                    C00021 c0002114 = c00022;
-                    List list4111 = list26;
-                    List list4112 = list27;
-                    CinemetaRes cinemetaRes15 = cinemetaRes3;
-                    int i61112 = i47;
-                    obj11 = obj10;
-                    TvType tvType112 = TvType.TvSeries;
-                    String str7119 = str57;
-                    String str8118 = str58;
-                    String str8119 = str53;
-                    C00043 c00047 = new C00043(str8118, str8119, str7118, num16, mediaDetail16, list419, list4110, this, list4111, list4112, list28, cinemetaRes15, str56, null);
-                    c0002114.L$0 = SpillingKt.nullOutSpilledVariable(str7119);
-                    c0002114.L$1 = SpillingKt.nullOutSpilledVariable(data10);
-                    c0002114.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                    c0002114.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                    c0002114.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail16);
-                    c0002114.L$5 = SpillingKt.nullOutSpilledVariable(str7116);
-                    c0002114.L$6 = SpillingKt.nullOutSpilledVariable(str8118);
-                    c0002114.L$7 = SpillingKt.nullOutSpilledVariable(str8119);
-                    c0002114.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                    c0002114.L$9 = SpillingKt.nullOutSpilledVariable(num16);
-                    c0002114.L$10 = SpillingKt.nullOutSpilledVariable(list4110);
-                    c0002114.L$11 = SpillingKt.nullOutSpilledVariable(list419);
-                    c0002114.L$12 = SpillingKt.nullOutSpilledVariable(list4112);
-                    c0002114.L$13 = SpillingKt.nullOutSpilledVariable(list4111);
-                    c0002114.L$14 = SpillingKt.nullOutSpilledVariable(str56);
-                    c0002114.L$15 = SpillingKt.nullOutSpilledVariable(str7118);
-                    c0002114.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                    c0002114.L$17 = SpillingKt.nullOutSpilledVariable(str7117);
-                    c0002114.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes15);
-                    c0002114.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                    c0002114.I$0 = i46 == true ? 1 : 0;
-                    c0002114.I$1 = i45;
-                    c0002114.I$2 = i44;
-                    c0002114.I$3 = i48;
-                    c0002114.I$4 = i61112 == true ? 1 : 0;
-                    c0002114.label = 7;
-                    objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str7116, str7119, tvType112, list28, c00047, c0002114);
-                    c00023 = c0002114;
-                    if (objNewTvSeriesLoadResponse == obj11) {
-                        return obj11;
-                    }
-                    obj12 = objNewTvSeriesLoadResponse;
-                    return (LoadResponse) obj12;
-                }
-                if (cinemetaRes3 != null) {
-                    str59 = str43;
-                    cinemetaRes4 = cinemetaRes3;
-                    arrayListEmptyList = CollectionsKt.emptyList();
-                } else {
-                    str59 = str43;
-                    cinemetaRes4 = cinemetaRes3;
-                    arrayListEmptyList = CollectionsKt.emptyList();
-                }
-                alternative_titles = mediaDetail5.getAlternative_titles();
-                if (alternative_titles == null) {
-                    list29 = arrayListEmptyList;
-                    if (cinemetaRes4 != null) {
-                        name2 = str7;
-                    } else {
-                        name2 = str7;
-                    }
-                } else {
-                    list29 = arrayListEmptyList;
-                    if (cinemetaRes4 != null) {
-                        name2 = str7;
-                    } else {
-                        name2 = str7;
-                    }
-                }
-                Requests app7 = MainActivityKt.getApp();
-                str60 = name2;
-                String str81110 = "https://api.ani.zip/mappings?imdb_id=" + str55;
-                c00022.L$0 = str57;
-                c00022.L$1 = data10;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                c00022.L$4 = mediaDetail5;
-                c00022.L$5 = str52;
-                c00022.L$6 = str58;
-                c00022.L$7 = str53;
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                c00022.L$9 = num8;
-                c00022.L$10 = list25;
-                c00022.L$11 = list24;
-                c00022.L$12 = list27;
-                c00022.L$13 = list26;
-                c00022.L$14 = str56;
-                str61 = str59;
-                c00022.L$15 = str61;
-                str62 = str52;
-                c00022.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                c00022.L$17 = str55;
-                c00022.L$18 = cinemetaRes4;
-                c00022.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                c00022.L$20 = list29;
-                list30 = list26;
-                c00022.L$21 = str60;
-                c00022.I$0 = i46 == true ? 1 : 0;
-                int i61113 = i45;
-                c00022.I$1 = i61113;
-                int i61114 = i44;
-                c00022.I$2 = i61114;
-                int i61115 = i48;
-                c00022.I$3 = i61115;
-                c00022.I$4 = i47 == true ? 1 : 0;
-                c00022.label = 5;
-                C00021 c0002115 = c00022;
-                list31 = list27;
-                str63 = str56;
-                data11 = data10;
-                i49 = i47;
-                i50 = i61113;
-                i51 = i46;
-                str64 = str55;
-                num9 = num8;
-                mediaDetail6 = mediaDetail5;
-                list32 = list25;
-                i52 = i61114;
-                list33 = list24;
-                i53 = i61115;
-                obj13 = Requests.get$default(app7, str81110, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002115, 4094, (Object) null);
-                c00024 = c0002115;
-                obj14 = obj10;
-                if (obj13 == obj14) {
-                    return obj14;
-                }
-                i54 = i51 == true ? 1 : 0;
-                str65 = str57;
-                str66 = str58;
-                str67 = str53;
-                str68 = str62;
-                list34 = list29;
-                str69 = str60;
-                list35 = list31;
-                data12 = data11;
-                str70 = str64;
-                str71 = str61;
-                str72 = str63;
-                list36 = list30;
-                i55 = i49 == true ? 1 : 0;
-                String string6 = ((NiceResponse) obj13).toString();
-                animeData = TorraStreamUtilsKt.parseAnimeData(string6);
-                if (animeData != null) {
-                    kitsuid = str7;
-                } else {
-                    kitsuid = str7;
-                }
-                MainAPI mainAPI10 = (MainAPI) this;
-                TvType tvType113 = TvType.Anime;
-                int i61116 = i55;
-                if (i52 != 0) {
-                    z5 = true;
-                } else {
-                    z5 = false;
-                }
-                if (i53 != 0) {
-                    z6 = true;
-                } else {
-                    z6 = false;
-                }
-                if (i54 != 0) {
-                    z7 = true;
-                } else {
-                    z7 = false;
-                }
-                obj15 = obj14;
-                int i7112 = i54;
-                C00021 c0002116 = c00024;
-                int i7113 = i53;
-                CinemetaRes cinemetaRes16 = cinemetaRes4;
-                String str81111 = kitsuid;
-                C00032 c00037 = new C00032(str66, str67, str71, num9, mediaDetail6, list33, list32, this, list36, list35, str72, str81111, cinemetaRes16, str70, list34, data12, str68, str69, z5, z6, z7, null);
-                String str81112 = str67;
-                String str81113 = str68;
-                c0002116.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                c0002116.L$1 = SpillingKt.nullOutSpilledVariable(data12);
-                c0002116.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                c0002116.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                c0002116.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail6);
-                c0002116.L$5 = SpillingKt.nullOutSpilledVariable(str81113);
-                c0002116.L$6 = SpillingKt.nullOutSpilledVariable(str66);
-                c0002116.L$7 = SpillingKt.nullOutSpilledVariable(str81112);
-                c0002116.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                c0002116.L$9 = SpillingKt.nullOutSpilledVariable(num9);
-                c0002116.L$10 = SpillingKt.nullOutSpilledVariable(list32);
-                c0002116.L$11 = SpillingKt.nullOutSpilledVariable(list33);
-                c0002116.L$12 = SpillingKt.nullOutSpilledVariable(list35);
-                c0002116.L$13 = SpillingKt.nullOutSpilledVariable(list36);
-                c0002116.L$14 = SpillingKt.nullOutSpilledVariable(str72);
-                c0002116.L$15 = SpillingKt.nullOutSpilledVariable(str71);
-                c0002116.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                c0002116.L$17 = SpillingKt.nullOutSpilledVariable(str70);
-                c0002116.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes16);
-                c0002116.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                c0002116.L$20 = SpillingKt.nullOutSpilledVariable(list34);
-                c0002116.L$21 = SpillingKt.nullOutSpilledVariable(str69);
-                c0002116.L$22 = SpillingKt.nullOutSpilledVariable(string6);
-                c0002116.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
-                c0002116.L$24 = SpillingKt.nullOutSpilledVariable(str81111);
-                c0002116.I$0 = i7112 == true ? 1 : 0;
-                c0002116.I$1 = i50;
-                c0002116.I$2 = i52;
-                c0002116.I$3 = i7113;
-                c0002116.I$4 = i61116 == true ? 1 : 0;
-                c0002116.label = 6;
-                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(mainAPI10, str81113, str65, tvType113, false, c00037, c0002116, 8, (Object) null);
-                if (objNewAnimeLoadResponse$default == obj15) {
-                    return obj15;
-                }
-                return objNewAnimeLoadResponse$default;
-            case 3:
-                int i85 = c00025.I$4;
-                int i86 = c00025.I$3;
-                int i87 = c00025.I$2;
-                int i88 = c00025.I$1;
-                int i89 = c00025.I$0;
-                String str100 = (String) c00025.L$17;
-                String str101 = (String) c00025.L$16;
-                String str102 = (String) c00025.L$15;
-                String str103 = (String) c00025.L$14;
-                List list54 = (List) c00025.L$13;
-                list9 = (List) c00025.L$12;
-                List list55 = (List) c00025.L$11;
-                List list56 = (List) c00025.L$10;
-                Integer num17 = (Integer) c00025.L$9;
-                String str104 = (String) c00025.L$8;
-                String str105 = (String) c00025.L$7;
-                String str106 = (String) c00025.L$6;
-                String str107 = (String) c00025.L$5;
-                MediaDetail mediaDetail17 = (MediaDetail) c00025.L$4;
-                str21 = (String) c00025.L$3;
-                TvType tvType20 = (TvType) c00025.L$2;
-                Data data20 = (Data) c00025.L$1;
-                String str108 = (String) c00025.L$0;
-                ResultKt.throwOnFailure(objNewMovieLoadResponse);
-                str27 = str108;
-                obj7 = objNewMovieLoadResponse;
-                str24 = str100;
-                str22 = str102;
-                str25 = str103;
-                list11 = list54;
-                i18 = i85;
-                list12 = list55;
-                num3 = num17;
-                str14 = str104;
-                str26 = str105;
-                str23 = str106;
-                mediaDetail3 = mediaDetail17;
-                tvType2 = tvType20;
-                str7 = null;
-                z2 = true;
-                c00022 = c00025;
-                str28 = str101;
-                list10 = list56;
-                data4 = data20;
-                obj5 = coroutine_suspended;
-                i21 = i86;
-                i22 = i87;
-                i20 = i88;
-                i19 = i89;
-                str29 = str107;
-                NiceResponse niceResponse7 = (NiceResponse) obj7;
-                ResponseParser parser7 = niceResponse7.getParser();
-                Intrinsics.checkNotNull(parser7);
-                data5 = data4;
-                i23 = i21;
-                safe2 = parser7.parseSafe(niceResponse7.getText(), Reflection.getOrCreateKotlinClass(CinemetaRes.class));
-                cinemetaRes = (CinemetaRes) safe2;
-                if (tvType2 != TvType.TvSeries) {
-                    int i61117 = i22;
-                    TvType tvType114 = tvType2;
-                    num4 = num3;
-                    int i629 = i23;
-                    i24 = i18;
-                    str30 = str24;
-                    list13 = list11;
-                    int i6210 = i19;
-                    String str71110 = str29;
-                    str31 = str25;
-                    i25 = i20;
-                    C00021 c0002117 = c00022;
-                    obj8 = obj5;
-                    str32 = str22;
-                    MainAPI mainAPI11 = (MainAPI) this;
-                    TvType tvType115 = TvType.Movie;
-                    AppUtils appUtils6 = AppUtils.INSTANCE;
-                    String title6 = mediaDetail3.getTitle();
-                    if (i25 != 0) {
-                        z3 = true;
-                    } else {
-                        z3 = false;
-                    }
-                    external_ids2 = mediaDetail3.getExternal_ids();
-                    if (external_ids2 != null) {
-                        imdb_id2 = external_ids2.getImdb_id();
-                    } else {
-                        imdb_id2 = str7;
-                    }
-                    String json5 = appUtils6.toJson(new LoadData(title6, num4, z3, imdb_id2, null, null, 48, null));
-                    list14 = list10;
-                    if (i24 == 0) {
-                        z2 = false;
-                    }
-                    list15 = list12;
-                    list16 = list9;
-                    C00054 c00058 = new C00054(str23, z2, str26, str32, num4, mediaDetail3, list15, list14, list13, list16, cinemetaRes, str31, null);
-                    c0002117.L$0 = SpillingKt.nullOutSpilledVariable(str27);
-                    c0002117.L$1 = SpillingKt.nullOutSpilledVariable(data5);
-                    c0002117.L$2 = SpillingKt.nullOutSpilledVariable(tvType114);
-                    c0002117.L$3 = SpillingKt.nullOutSpilledVariable(str21);
-                    c0002117.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail3);
-                    c0002117.L$5 = SpillingKt.nullOutSpilledVariable(str71110);
-                    c0002117.L$6 = SpillingKt.nullOutSpilledVariable(str23);
-                    c0002117.L$7 = SpillingKt.nullOutSpilledVariable(str26);
-                    c0002117.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                    c0002117.L$9 = SpillingKt.nullOutSpilledVariable(num4);
-                    c0002117.L$10 = SpillingKt.nullOutSpilledVariable(list14);
-                    c0002117.L$11 = SpillingKt.nullOutSpilledVariable(list15);
-                    c0002117.L$12 = SpillingKt.nullOutSpilledVariable(list16);
-                    c0002117.L$13 = SpillingKt.nullOutSpilledVariable(list13);
-                    c0002117.L$14 = SpillingKt.nullOutSpilledVariable(str31);
-                    c0002117.L$15 = SpillingKt.nullOutSpilledVariable(str32);
-                    c0002117.L$16 = SpillingKt.nullOutSpilledVariable(str28);
-                    c0002117.L$17 = SpillingKt.nullOutSpilledVariable(str30);
-                    c0002117.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes);
-                    c0002117.I$0 = i6210 == true ? 1 : 0;
-                    c0002117.I$1 = i25;
-                    c0002117.I$2 = i61117;
-                    c0002117.I$3 = i629;
-                    c0002117.I$4 = i24 == true ? 1 : 0;
-                    c0002117.label = 8;
-                    i26 = i61117;
-                    data6 = data5;
-                    str33 = str27;
-                    i27 = i629;
-                    str34 = str71110;
-                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(mainAPI11, str34, str33, tvType115, json5, c00058, c0002117);
-                    if (objNewMovieLoadResponse == obj8) {
-                        return obj8;
-                    }
-                    i28 = i25;
-                    mediaDetail4 = mediaDetail3;
-                    list17 = list15;
-                    list18 = list14;
-                    list19 = list13;
-                    cinemetaRes2 = cinemetaRes;
-                    str35 = str31;
-                    str36 = str14;
-                    str37 = str30;
-                    num5 = num4;
-                    i29 = i24 == true ? 1 : 0;
-                    data7 = data6;
-                    str38 = str23;
+                    str37 = str21;
+                    str38 = str24;
                     str39 = str32;
-                    list20 = list16;
-                    str40 = str28;
+                    str40 = str31;
+                    list17 = list13;
+                    list18 = list15;
+                    cinemetaRes2 = cinemetaRes;
+                    i20 = i17 == true ? 1 : 0;
+                    str41 = str33;
                     return (LoadResponse) objNewMovieLoadResponse;
                 }
                 seasons = mediaDetail3.getSeasons();
                 if (seasons != null) {
                     ArrayList<Seasons> arrayList28 = seasons;
-                    i35 = i19;
-                    if (i20 != 0) {
+                    i25 = i15;
+                    if (i14 != 0) {
                         z4 = true;
                     } else {
                         z4 = false;
                     }
-                    Object obj111 = obj5;
-                    i36 = i22;
-                    i37 = i20;
-                    tvType3 = tvType2;
-                    num6 = num3;
-                    MediaDetail mediaDetail18 = mediaDetail3;
-                    i38 = i18;
-                    Data data111 = data5;
-                    i39 = i23;
-                    TorraStream$load$episodes$1 torraStream$load$episodes$5 = new TorraStream$load$episodes$1(data111, this, mediaDetail18, num6, z4, null);
-                    c00022.L$0 = str27;
-                    c00022.L$1 = data111;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(str21);
-                    c00022.L$4 = mediaDetail18;
-                    c00022.L$5 = str29;
-                    c00022.L$6 = str23;
-                    c00022.L$7 = str26;
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                    c00022.L$9 = num6;
-                    c00022.L$10 = list10;
-                    c00022.L$11 = list12;
-                    c00022.L$12 = list9;
+                    i26 = i14;
+                    num6 = null;
+                    Object obj25 = obj6;
+                    tvType5 = tvType3;
+                    int i4110 = i13;
+                    boolean z19 = i10 == true ? 1 : 0;
+                    str45 = str19;
+                    num7 = num5;
+                    list20 = list9;
+                    str46 = str25;
+                    Data data17 = data5;
+                    int i4111 = i16;
+                    mediaDetail4 = mediaDetail3;
+                    TorraStream$load$episodes$1 torraStream$load$episodes$4 = new TorraStream$load$episodes$1(data17, this, mediaDetail4, num7, z4, null);
+                    c00024.L$0 = str28;
+                    c00024.L$1 = data17;
+                    c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType5);
+                    c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00024.L$4 = mediaDetail4;
+                    c00024.L$5 = str22;
+                    c00024.L$6 = str23;
+                    c00024.L$7 = str26;
+                    c00024.L$8 = SpillingKt.nullOutSpilledVariable(str24);
+                    c00024.L$9 = num7;
+                    c00024.L$10 = list11;
+                    c00024.L$11 = list10;
+                    c00024.L$12 = list12;
+                    c00024.L$13 = list20;
+                    c00024.L$14 = str46;
+                    str47 = str29;
+                    c00024.L$15 = str47;
+                    c00024.L$16 = SpillingKt.nullOutSpilledVariable(str21);
+                    c00024.L$17 = str45;
+                    c00024.L$18 = cinemetaRes;
+                    i27 = z19 ? 1 : 0;
+                    c00024.I$0 = i27;
+                    str48 = str22;
+                    c00024.I$1 = i26;
+                    str49 = str23;
+                    c00024.I$2 = i25;
+                    str50 = str26;
+                    i28 = i4111;
+                    c00024.I$3 = i28;
                     list21 = list11;
-                    c00022.L$13 = list21;
-                    str42 = str25;
-                    c00022.L$14 = str42;
-                    str43 = str22;
-                    c00022.L$15 = str43;
-                    c00022.L$16 = SpillingKt.nullOutSpilledVariable(str28);
-                    str44 = str24;
-                    c00022.L$17 = str44;
-                    c00022.L$18 = cinemetaRes;
-                    c00022.I$0 = i35 == true ? 1 : 0;
-                    str45 = str29;
-                    c00022.I$1 = i37;
-                    c00022.I$2 = i36;
-                    c00022.I$3 = i39;
-                    c00022.I$4 = i38 == true ? 1 : 0;
-                    c00022.label = 4;
-                    objAmap = ParCollectionsKt.amap(arrayList28, torraStream$load$episodes$5, c00022);
-                    obj9 = obj111;
-                    if (objAmap == obj9) {
-                        return obj9;
+                    i29 = i4110 == true ? 1 : 0;
+                    c00024.I$4 = i29 == true ? 1 : 0;
+                    c00024.label = 4;
+                    objAmap = ParCollectionsKt.amap(arrayList28, torraStream$load$episodes$4, c00024);
+                    obj10 = obj25;
+                    if (objAmap == obj10) {
+                        return obj10;
                     }
-                    str46 = str42;
-                    i32 = i37;
-                    i40 = i35 == true ? 1 : 0;
-                    data9 = data5;
-                    i41 = i38 == true ? 1 : 0;
-                    list22 = list10;
-                    str47 = str23;
-                    list23 = list21;
-                    str48 = str14;
-                    str49 = str28;
-                    str50 = str44;
-                    num7 = num6;
-                    i42 = i39;
-                    str51 = str21;
-                    i43 = i36;
-                    objNewMovieLoadResponse = objAmap;
-                    str52 = str45;
-                    list37 = (List) objNewMovieLoadResponse;
-                    if (list37 != null) {
+                    obj11 = objAmap;
+                    str51 = str27;
+                    mediaDetail5 = mediaDetail4;
+                    data8 = data5;
+                    str52 = str46;
+                    tvType6 = tvType5;
+                    i24 = i25;
+                    str53 = str48;
+                    list22 = list20;
+                    str43 = str49;
+                    str54 = str47;
+                    i22 = i26;
+                    str55 = str21;
+                    str56 = str45;
+                    str57 = str50;
+                    cinemetaRes3 = cinemetaRes;
+                    list38 = (List) obj11;
+                    if (list38 != null) {
                     }
-                    int i6211 = i42;
-                    i34 = i43;
-                    i30 = i6211;
-                    str25 = str46;
-                    i31 = i40;
-                    str24 = str50;
-                    i33 = i41;
-                    list11 = list23;
-                    list10 = list22;
-                    num3 = num7;
-                    str14 = str48;
-                    str21 = str51;
-                    data8 = data9;
-                    str41 = str52;
-                    str28 = str49;
-                    str23 = str47;
-                    str22 = str43;
+                    TvType tvType117 = tvType6;
+                    i10 = i27;
+                    tvType4 = tvType117;
+                    List list41115 = list21;
+                    i21 = i29;
+                    list19 = list41115;
+                    cinemetaRes = cinemetaRes3;
+                    i23 = i28;
+                    str19 = str56;
+                    str21 = str55;
+                    str29 = str54;
+                    str25 = str52;
+                    list9 = list22;
+                    str44 = str57;
+                    mediaDetail3 = mediaDetail5;
+                    str42 = str53;
+                    str27 = str51;
+                    data7 = data8;
+                    num5 = num7;
                     break;
                 } else {
-                    int i7114 = i22;
-                    tvType3 = tvType2;
-                    i30 = i23;
-                    int i7115 = i18;
-                    i31 = i19;
-                    String str912 = str29;
-                    int i7116 = i20;
-                    obj9 = obj5;
-                    i32 = i7116;
-                    str41 = str912;
-                    i33 = i7115 == true ? 1 : 0;
-                    i34 = i7114;
-                    data8 = data5;
+                    String str1011 = str23;
+                    boolean z110 = i10 == true ? 1 : 0;
+                    num6 = null;
+                    obj10 = obj6;
+                    i21 = i13 == true ? 1 : 0;
+                    list19 = list11;
+                    data7 = data5;
+                    i22 = i14;
+                    i23 = i16;
+                    tvType4 = tvType3;
+                    i24 = i15;
+                    str42 = str22;
+                    str43 = str1011;
+                    str44 = str26;
                 }
-                i44 = i34;
-                obj10 = obj9;
-                i45 = i32;
-                i46 = i31;
-                list24 = list12;
-                str53 = str26;
-                num8 = num3;
-                str54 = str28;
-                str55 = str24;
-                str43 = str22;
-                str56 = str25;
+                i30 = i23;
+                i31 = i24;
+                i32 = i22;
+                obj12 = obj10;
+                str58 = str44;
+                str59 = str21;
+                i33 = i10;
+                str60 = str19;
+                str61 = str29;
+                num8 = num5;
+                list23 = list9;
+                cinemetaRes4 = cinemetaRes;
                 listEmptyList = CollectionsKt.emptyList();
-                data10 = data8;
-                str57 = str27;
-                str52 = str41;
+                tvType6 = tvType4;
+                str53 = str42;
+                list24 = list19;
                 list25 = list10;
-                mediaDetail5 = mediaDetail3;
-                str51 = str21;
-                i47 = i33;
-                list26 = list11;
-                i48 = i30;
-                str58 = str23;
-                list27 = list9;
-                cinemetaRes3 = cinemetaRes;
-                list28 = listEmptyList;
-                if (i45 == 0) {
-                    String str71111 = str52;
-                    String str71112 = str55;
-                    Integer num18 = num8;
-                    String str71113 = str43;
-                    MediaDetail mediaDetail19 = mediaDetail5;
-                    List list4113 = list24;
-                    List list4114 = list25;
-                    C00021 c0002118 = c00022;
-                    List list4115 = list26;
-                    List list4116 = list27;
-                    CinemetaRes cinemetaRes17 = cinemetaRes3;
-                    int i61118 = i47;
-                    obj11 = obj10;
-                    TvType tvType116 = TvType.TvSeries;
-                    String str71114 = str57;
-                    String str81114 = str58;
-                    String str81115 = str53;
-                    C00043 c00048 = new C00043(str81114, str81115, str71113, num18, mediaDetail19, list4113, list4114, this, list4115, list4116, list28, cinemetaRes17, str56, null);
-                    c0002118.L$0 = SpillingKt.nullOutSpilledVariable(str71114);
-                    c0002118.L$1 = SpillingKt.nullOutSpilledVariable(data10);
-                    c0002118.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                    c0002118.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                    c0002118.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail19);
-                    c0002118.L$5 = SpillingKt.nullOutSpilledVariable(str71111);
-                    c0002118.L$6 = SpillingKt.nullOutSpilledVariable(str81114);
-                    c0002118.L$7 = SpillingKt.nullOutSpilledVariable(str81115);
-                    c0002118.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                    c0002118.L$9 = SpillingKt.nullOutSpilledVariable(num18);
-                    c0002118.L$10 = SpillingKt.nullOutSpilledVariable(list4114);
-                    c0002118.L$11 = SpillingKt.nullOutSpilledVariable(list4113);
-                    c0002118.L$12 = SpillingKt.nullOutSpilledVariable(list4116);
-                    c0002118.L$13 = SpillingKt.nullOutSpilledVariable(list4115);
-                    c0002118.L$14 = SpillingKt.nullOutSpilledVariable(str56);
-                    c0002118.L$15 = SpillingKt.nullOutSpilledVariable(str71113);
-                    c0002118.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                    c0002118.L$17 = SpillingKt.nullOutSpilledVariable(str71112);
-                    c0002118.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes17);
-                    c0002118.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                    c0002118.I$0 = i46 == true ? 1 : 0;
-                    c0002118.I$1 = i45;
-                    c0002118.I$2 = i44;
-                    c0002118.I$3 = i48;
-                    c0002118.I$4 = i61118 == true ? 1 : 0;
-                    c0002118.label = 7;
-                    objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str71111, str71114, tvType116, list28, c00048, c0002118);
-                    c00023 = c0002118;
-                    if (objNewTvSeriesLoadResponse == obj11) {
-                        return obj11;
+                list26 = list12;
+                str62 = str25;
+                data9 = data7;
+                str63 = str28;
+                mediaDetail6 = mediaDetail3;
+                str64 = str24;
+                str65 = str43;
+                list27 = listEmptyList;
+                if (i32 == 0) {
+                    String str8115 = str53;
+                    String str8116 = str61;
+                    MediaDetail mediaDetail19 = mediaDetail6;
+                    List list41116 = list24;
+                    CinemetaRes cinemetaRes13 = cinemetaRes4;
+                    List list41117 = list23;
+                    List list41118 = list26;
+                    C00021 c0002112 = c00024;
+                    String str8117 = str62;
+                    int i4112 = i21;
+                    int i5119 = i31;
+                    obj13 = obj12;
+                    List list41119 = list25;
+                    TvType tvType118 = TvType.TvSeries;
+                    String str911117 = str63;
+                    String str911118 = str60;
+                    String str911119 = str65;
+                    str66 = str58;
+                    Integer num17 = num8;
+                    C00043 c00047 = new C00043(str911119, str66, str8116, num17, mediaDetail19, list41119, list41116, this, list41117, list41118, list27, cinemetaRes13, str8117, null);
+                    c0002112.L$0 = SpillingKt.nullOutSpilledVariable(str911117);
+                    c0002112.L$1 = SpillingKt.nullOutSpilledVariable(data9);
+                    c0002112.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                    c0002112.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                    c0002112.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail19);
+                    c0002112.L$5 = SpillingKt.nullOutSpilledVariable(str8115);
+                    c0002112.L$6 = SpillingKt.nullOutSpilledVariable(str911119);
+                    c0002112.L$7 = SpillingKt.nullOutSpilledVariable(str66);
+                    c0002112.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                    c0002112.L$9 = SpillingKt.nullOutSpilledVariable(num17);
+                    c0002112.L$10 = SpillingKt.nullOutSpilledVariable(list41116);
+                    c0002112.L$11 = SpillingKt.nullOutSpilledVariable(list41119);
+                    c0002112.L$12 = SpillingKt.nullOutSpilledVariable(list41118);
+                    c0002112.L$13 = SpillingKt.nullOutSpilledVariable(list41117);
+                    c0002112.L$14 = SpillingKt.nullOutSpilledVariable(str8117);
+                    c0002112.L$15 = SpillingKt.nullOutSpilledVariable(str8116);
+                    c0002112.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                    c0002112.L$17 = SpillingKt.nullOutSpilledVariable(str911118);
+                    c0002112.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes13);
+                    c0002112.L$19 = SpillingKt.nullOutSpilledVariable(list27);
+                    c0002112.I$0 = i33 == true ? 1 : 0;
+                    c0002112.I$1 = i32;
+                    c0002112.I$2 = i5119;
+                    c0002112.I$3 = i30;
+                    c0002112.I$4 = i4112 == true ? 1 : 0;
+                    c0002112.label = 7;
+                    objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str8115, str911117, tvType118, list27, c00047, c0002112);
+                    c00022 = c0002112;
+                    if (objNewTvSeriesLoadResponse == obj13) {
+                        return obj13;
                     }
-                    obj12 = objNewTvSeriesLoadResponse;
-                    return (LoadResponse) obj12;
+                    obj14 = objNewTvSeriesLoadResponse;
+                    str67 = str66;
+                    return (LoadResponse) obj14;
                 }
-                if (cinemetaRes3 != null) {
-                    str59 = str43;
-                    cinemetaRes4 = cinemetaRes3;
+                if (cinemetaRes4 != null) {
+                    str68 = str61;
+                    cinemetaRes5 = cinemetaRes4;
                     arrayListEmptyList = CollectionsKt.emptyList();
                 } else {
-                    str59 = str43;
-                    cinemetaRes4 = cinemetaRes3;
+                    str68 = str61;
+                    cinemetaRes5 = cinemetaRes4;
                     arrayListEmptyList = CollectionsKt.emptyList();
                 }
-                alternative_titles = mediaDetail5.getAlternative_titles();
+                alternative_titles = mediaDetail6.getAlternative_titles();
                 if (alternative_titles == null) {
-                    list29 = arrayListEmptyList;
-                    if (cinemetaRes4 != null) {
-                        name2 = str7;
+                    list28 = arrayListEmptyList;
+                    if (cinemetaRes5 != null) {
+                        name2 = num6;
                     } else {
-                        name2 = str7;
+                        name2 = num6;
                     }
                 } else {
-                    list29 = arrayListEmptyList;
-                    if (cinemetaRes4 != null) {
-                        name2 = str7;
+                    list28 = arrayListEmptyList;
+                    if (cinemetaRes5 != null) {
+                        name2 = num6;
                     } else {
-                        name2 = str7;
+                        name2 = num6;
                     }
                 }
-                Requests app8 = MainActivityKt.getApp();
-                str60 = name2;
-                String str81116 = "https://api.ani.zip/mappings?imdb_id=" + str55;
-                c00022.L$0 = str57;
-                c00022.L$1 = data10;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                c00022.L$4 = mediaDetail5;
-                c00022.L$5 = str52;
-                c00022.L$6 = str58;
-                c00022.L$7 = str53;
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                c00022.L$9 = num8;
-                c00022.L$10 = list25;
-                c00022.L$11 = list24;
-                c00022.L$12 = list27;
-                c00022.L$13 = list26;
-                c00022.L$14 = str56;
-                str61 = str59;
-                c00022.L$15 = str61;
-                str62 = str52;
-                c00022.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                c00022.L$17 = str55;
-                c00022.L$18 = cinemetaRes4;
-                c00022.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                c00022.L$20 = list29;
+                obj15 = name2;
+                c00024.L$0 = str63;
+                c00024.L$1 = data9;
+                c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                c00024.L$4 = mediaDetail6;
+                c00024.L$5 = str53;
+                c00024.L$6 = str65;
+                c00024.L$7 = str58;
+                c00024.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                c00024.L$9 = num8;
+                c00024.L$10 = list24;
+                c00024.L$11 = list25;
+                c00024.L$12 = list26;
+                c00024.L$13 = list23;
+                c00024.L$14 = str62;
+                str69 = str68;
+                c00024.L$15 = str69;
+                str70 = str53;
+                c00024.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                c00024.L$17 = str60;
+                c00024.L$18 = cinemetaRes5;
+                c00024.L$19 = list27;
+                c00024.L$20 = list28;
+                c00024.L$21 = obj15;
+                int i51110 = i33;
+                c00024.I$0 = i51110 == true ? 1 : 0;
+                int i51111 = i32;
+                c00024.I$1 = i51111;
+                i34 = i31;
+                c00024.I$2 = i34;
+                int i51112 = i30;
+                c00024.I$3 = i51112;
+                c00024.I$4 = i21 == true ? 1 : 0;
+                c00024.label = 5;
+                list29 = list23;
                 list30 = list26;
-                c00022.L$21 = str60;
-                c00022.I$0 = i46 == true ? 1 : 0;
-                int i61119 = i45;
-                c00022.I$1 = i61119;
-                int i611110 = i44;
-                c00022.I$2 = i611110;
-                int i611111 = i48;
-                c00022.I$3 = i611111;
-                c00022.I$4 = i47 == true ? 1 : 0;
-                c00022.label = 5;
-                C00021 c0002119 = c00022;
-                list31 = list27;
-                str63 = str56;
-                data11 = data10;
-                i49 = i47;
-                i50 = i61119;
-                i51 = i46;
-                str64 = str55;
-                num9 = num8;
-                mediaDetail6 = mediaDetail5;
-                list32 = list25;
-                i52 = i611110;
+                c00023 = c00024;
+                str71 = str62;
+                data10 = data9;
+                list31 = list25;
+                i35 = i21;
+                i36 = i51111;
+                list32 = list27;
+                i37 = i51110 == true ? 1 : 0;
+                cinemetaRes6 = cinemetaRes5;
+                i38 = i51112;
+                mediaDetail7 = mediaDetail6;
                 list33 = list24;
-                i53 = i611111;
-                obj13 = Requests.get$default(app8, str81116, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c0002119, 4094, (Object) null);
-                c00024 = c0002119;
-                obj14 = obj10;
-                if (obj13 == obj14) {
-                    return obj14;
+                obj16 = obj12;
+                obj17 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?imdb_id=" + str60, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 4094, (Object) null);
+                if (obj17 == obj16) {
+                    return obj16;
                 }
-                i54 = i51 == true ? 1 : 0;
-                str65 = str57;
-                str66 = str58;
-                str67 = str53;
-                str68 = str62;
-                list34 = list29;
-                str69 = str60;
-                list35 = list31;
-                data12 = data11;
-                str70 = str64;
-                str71 = str61;
+                list34 = list30;
                 str72 = str63;
-                list36 = list30;
-                i55 = i49 == true ? 1 : 0;
-                String string7 = ((NiceResponse) obj13).toString();
-                animeData = TorraStreamUtilsKt.parseAnimeData(string7);
+                str73 = str60;
+                str74 = str65;
+                str75 = str58;
+                num9 = num8;
+                obj18 = obj17;
+                str76 = str70;
+                r78 = obj15;
+                str77 = str69;
+                mediaDetail8 = mediaDetail7;
+                list35 = list29;
+                cinemetaRes7 = cinemetaRes6;
+                str78 = str71;
+                i39 = i34;
+                i40 = i35 == true ? 1 : 0;
+                list36 = list33;
+                list37 = list31;
+                String text6 = ((NiceResponse) obj18).getText();
+                animeData = TorraStreamUtilsKt.parseAnimeData(text6);
                 if (animeData != null) {
-                    kitsuid = str7;
+                    kitsuid = num6;
                 } else {
-                    kitsuid = str7;
+                    kitsuid = num6;
                 }
-                MainAPI mainAPI12 = (MainAPI) this;
-                TvType tvType117 = TvType.Anime;
-                int i611112 = i55;
-                if (i52 != 0) {
-                    z5 = true;
+                String str9111110 = str74;
+                list39 = list28;
+                int i51113 = i40;
+                str79 = str76;
+                arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list39, 10));
+                list40 = list39;
+                while (r23.hasNext()) {
+                    List list411110 = list39;
+                    released = video.getReleased();
+                    if (released != null) {
+                        if (cinemetaRes7 != null) {
+                            intOrNull2 = num6;
+                        } else {
+                            intOrNull2 = num6;
+                        }
+                        if (intOrNull2 != null) {
+                            iIntValue = intOrNull2.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                    } else {
+                        if (cinemetaRes7 != null) {
+                            intOrNull2 = num6;
+                        } else {
+                            intOrNull2 = num6;
+                        }
+                        if (intOrNull2 != null) {
+                            iIntValue = intOrNull2.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                    }
+                    List list411111 = list40;
+                    MainAPI mainAPI10 = (MainAPI) this;
+                    String str9111111 = str75;
+                    AppUtils appUtils11 = AppUtils.INSTANCE;
+                    Integer id7 = data10.getId();
+                    external_ids3 = mediaDetail8.getExternal_ids();
+                    if (external_ids3 != null) {
+                        tvdb_id = external_ids3.getTvdb_id();
+                    } else {
+                        tvdb_id = num6;
+                    }
+                    String type8 = data10.getType();
+                    Integer season7 = video.getSeason();
+                    Integer episode6 = video.getEpisode();
+                    Integer numBoxInt6 = Boxing.boxInt(iIntValue);
+                    String title11 = video.getTitle();
+                    String released7 = video.getReleased();
+                    releaseDate2 = mediaDetail8.getReleaseDate();
+                    if (releaseDate2 == null) {
+                        releaseDate2 = mediaDetail8.getFirstAirDate();
+                    }
+                    String str9111112 = releaseDate2;
+                    if (i39 != 0) {
+                        z5 = true;
+                    } else {
+                        z5 = false;
+                    }
+                    if (i38 != 0) {
+                        z6 = true;
+                    } else {
+                        z6 = false;
+                    }
+                    if (i37 != 0) {
+                        z7 = true;
+                    } else {
+                        z7 = false;
+                    }
+                    String str9111113 = str73;
+                    arrayList8.add(MainAPIKt.newEpisode(mainAPI10, appUtils11.toJson(new LinkData(id7, str9111113, tvdb_id, type8, season7, episode6, null, null, null, str79, numBoxInt6, "", true, num9, null, title11, r78, released7, str9111112, z5, z6, z7, mediaDetail8.getTitle(), mediaDetail8.getName(), false, null, 33571264, null)), new Function1() { // from class: com.phisher98.TorraStream$$ExternalSyntheticLambda1
+                        public final Object invoke(Object obj26) {
+                            return TorraStream.load$lambda$9$0(video, this, (Episode) obj26);
+                        }
+                    }));
+                    list39 = list411110;
+                    list40 = list411111;
+                    str75 = str9111111;
+                    str77 = str77;
+                    str73 = str9111113;
+                }
+                String str9111114 = str75;
+                String str9111115 = str77;
+                String str9111116 = str73;
+                arrayList9 = arrayList8;
+                if (arrayList9.isEmpty()) {
+                    arrayList9 = list32;
+                }
+                List list56 = arrayList9;
+                TvType tvType119 = TvType.Anime;
+                obj19 = obj16;
+                int i51114 = i39;
+                C00021 c0002113 = c00023;
+                ?? r19 = kitsuid;
+                C00032 c00037 = new C00032(list56, str9111110, str9111114, str9111115, num9, mediaDetail8, list37, list36, this, list35, list34, str78, r19, cinemetaRes7, str9111116, null);
+                c0002113.L$0 = SpillingKt.nullOutSpilledVariable(str72);
+                c0002113.L$1 = SpillingKt.nullOutSpilledVariable(data10);
+                c0002113.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                c0002113.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                c0002113.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail8);
+                c0002113.L$5 = SpillingKt.nullOutSpilledVariable(str79);
+                c0002113.L$6 = SpillingKt.nullOutSpilledVariable(str9111110);
+                c0002113.L$7 = SpillingKt.nullOutSpilledVariable(str9111114);
+                c0002113.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                c0002113.L$9 = SpillingKt.nullOutSpilledVariable(num9);
+                c0002113.L$10 = SpillingKt.nullOutSpilledVariable(list36);
+                c0002113.L$11 = SpillingKt.nullOutSpilledVariable(list37);
+                c0002113.L$12 = SpillingKt.nullOutSpilledVariable(list34);
+                c0002113.L$13 = SpillingKt.nullOutSpilledVariable(list35);
+                c0002113.L$14 = SpillingKt.nullOutSpilledVariable(str78);
+                c0002113.L$15 = SpillingKt.nullOutSpilledVariable(str9111115);
+                c0002113.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                c0002113.L$17 = SpillingKt.nullOutSpilledVariable(str9111116);
+                c0002113.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes7);
+                c0002113.L$19 = SpillingKt.nullOutSpilledVariable(list32);
+                c0002113.L$20 = SpillingKt.nullOutSpilledVariable(list28);
+                c0002113.L$21 = SpillingKt.nullOutSpilledVariable((Object) r78);
+                c0002113.L$22 = SpillingKt.nullOutSpilledVariable(text6);
+                c0002113.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
+                c0002113.L$24 = SpillingKt.nullOutSpilledVariable((Object) r19);
+                c0002113.L$25 = SpillingKt.nullOutSpilledVariable(list56);
+                c0002113.I$0 = i37 == true ? 1 : 0;
+                c0002113.I$1 = i36;
+                c0002113.I$2 = i51114;
+                c0002113.I$3 = i38;
+                c0002113.I$4 = i51113 == true ? 1 : 0;
+                c0002113.label = 6;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default((MainAPI) this, str79, str72, tvType119, false, c00037, c0002113, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj19) {
+                    return obj19;
+                }
+                return objNewAnimeLoadResponse$default;
+            case 3:
+                int i65 = c00024.I$4;
+                int i66 = c00024.I$3;
+                i15 = c00024.I$2;
+                i14 = c00024.I$1;
+                int i67 = c00024.I$0;
+                String str111 = (String) c00024.L$17;
+                String str112 = (String) c00024.L$16;
+                String str113 = (String) c00024.L$15;
+                String str114 = (String) c00024.L$14;
+                List list57 = (List) c00024.L$13;
+                list12 = (List) c00024.L$12;
+                i13 = i65;
+                List list58 = (List) c00024.L$11;
+                List list59 = (List) c00024.L$10;
+                Integer num18 = (Integer) c00024.L$9;
+                str24 = (String) c00024.L$8;
+                String str115 = (String) c00024.L$7;
+                String str116 = (String) c00024.L$6;
+                String str117 = (String) c00024.L$5;
+                MediaDetail mediaDetail20 = (MediaDetail) c00024.L$4;
+                str27 = (String) c00024.L$3;
+                TvType tvType22 = (TvType) c00024.L$2;
+                Data data18 = (Data) c00024.L$1;
+                String str118 = (String) c00024.L$0;
+                ResultKt.throwOnFailure(objNewMovieLoadResponse);
+                obj6 = coroutine_suspended;
+                i16 = i66;
+                str28 = str118;
+                obj8 = objNewMovieLoadResponse;
+                str19 = str111;
+                str21 = str112;
+                str29 = str113;
+                str25 = str114;
+                list9 = list57;
+                list10 = list58;
+                list11 = list59;
+                num5 = num18;
+                str26 = str115;
+                str23 = str116;
+                str22 = str117;
+                mediaDetail3 = mediaDetail20;
+                data4 = data18;
+                i10 = i67;
+                tvType3 = tvType22;
+                NiceResponse niceResponse7 = (NiceResponse) obj8;
+                ResponseParser parser7 = niceResponse7.getParser();
+                Intrinsics.checkNotNull(parser7);
+                data5 = data4;
+                safe2 = parser7.parseSafe(niceResponse7.getText(), Reflection.getOrCreateKotlinClass(CinemetaRes.class));
+                cinemetaRes = (CinemetaRes) safe2;
+                if (tvType3 != TvType.TvSeries) {
+                    i17 = i13;
+                    List list411112 = list11;
+                    int i4113 = i15;
+                    TvType tvType1110 = tvType3;
+                    String str8118 = str22;
+                    str30 = str23;
+                    str31 = str26;
+                    C00021 c0002114 = c00024;
+                    boolean z111 = i10 == true ? 1 : 0;
+                    str32 = str19;
+                    list13 = list9;
+                    str33 = str25;
+                    i18 = i16;
+                    obj9 = obj6;
+                    i19 = i14;
+                    String str8119 = str29;
+                    MediaDetail mediaDetail110 = mediaDetail3;
+                    MainAPI mainAPI11 = (MainAPI) this;
+                    TvType tvType1111 = TvType.Movie;
+                    AppUtils appUtils12 = AppUtils.INSTANCE;
+                    String title12 = mediaDetail110.getTitle();
+                    if (i19 != 0) {
+                        z2 = true;
+                    } else {
+                        z2 = false;
+                    }
+                    external_ids2 = mediaDetail110.getExternal_ids();
+                    if (external_ids2 != null) {
+                        imdb_id2 = external_ids2.getImdb_id();
+                    } else {
+                        imdb_id2 = null;
+                    }
+                    String json5 = appUtils12.toJson(new LoadData(title12, num5, z2, imdb_id2, null, null, 48, null));
+                    if (i17 != 0) {
+                        z3 = true;
+                    } else {
+                        z3 = false;
+                    }
+                    str34 = str8119;
+                    list14 = list10;
+                    list15 = list12;
+                    list16 = list411112;
+                    C00054 c00058 = new C00054(str30, z3, str31, str34, num5, mediaDetail110, list14, list16, list13, list15, cinemetaRes, str33, null);
+                    c0002114.L$0 = SpillingKt.nullOutSpilledVariable(str28);
+                    c0002114.L$1 = SpillingKt.nullOutSpilledVariable(data5);
+                    c0002114.L$2 = SpillingKt.nullOutSpilledVariable(tvType1110);
+                    c0002114.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                    c0002114.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail110);
+                    c0002114.L$5 = SpillingKt.nullOutSpilledVariable(str8118);
+                    c0002114.L$6 = SpillingKt.nullOutSpilledVariable(str30);
+                    c0002114.L$7 = SpillingKt.nullOutSpilledVariable(str31);
+                    c0002114.L$8 = SpillingKt.nullOutSpilledVariable(str24);
+                    c0002114.L$9 = SpillingKt.nullOutSpilledVariable(num5);
+                    c0002114.L$10 = SpillingKt.nullOutSpilledVariable(list16);
+                    c0002114.L$11 = SpillingKt.nullOutSpilledVariable(list14);
+                    c0002114.L$12 = SpillingKt.nullOutSpilledVariable(list15);
+                    c0002114.L$13 = SpillingKt.nullOutSpilledVariable(list13);
+                    c0002114.L$14 = SpillingKt.nullOutSpilledVariable(str33);
+                    c0002114.L$15 = SpillingKt.nullOutSpilledVariable(str34);
+                    c0002114.L$16 = SpillingKt.nullOutSpilledVariable(str21);
+                    c0002114.L$17 = SpillingKt.nullOutSpilledVariable(str32);
+                    c0002114.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes);
+                    c0002114.I$0 = z111 ? 1 : 0;
+                    c0002114.I$1 = i19;
+                    c0002114.I$2 = i4113;
+                    c0002114.I$3 = i18;
+                    c0002114.I$4 = i17 == true ? 1 : 0;
+                    c0002114.label = 8;
+                    data6 = data5;
+                    str35 = str28;
+                    str36 = str8118;
+                    objNewMovieLoadResponse = MainAPIKt.newMovieLoadResponse(mainAPI11, str36, str35, tvType1111, json5, c00058, c0002114);
+                    if (objNewMovieLoadResponse == obj9) {
+                        return obj9;
+                    }
+                    str37 = str21;
+                    str38 = str24;
+                    str39 = str32;
+                    str40 = str31;
+                    list17 = list13;
+                    list18 = list15;
+                    cinemetaRes2 = cinemetaRes;
+                    i20 = i17 == true ? 1 : 0;
+                    str41 = str33;
+                    return (LoadResponse) objNewMovieLoadResponse;
+                }
+                seasons = mediaDetail3.getSeasons();
+                if (seasons != null) {
+                    ArrayList<Seasons> arrayList29 = seasons;
+                    i25 = i15;
+                    if (i14 != 0) {
+                        z4 = true;
+                    } else {
+                        z4 = false;
+                    }
+                    i26 = i14;
+                    num6 = null;
+                    Object obj26 = obj6;
+                    tvType5 = tvType3;
+                    int i4114 = i13;
+                    boolean z112 = i10 == true ? 1 : 0;
+                    str45 = str19;
+                    num7 = num5;
+                    list20 = list9;
+                    str46 = str25;
+                    Data data19 = data5;
+                    int i4115 = i16;
+                    mediaDetail4 = mediaDetail3;
+                    TorraStream$load$episodes$1 torraStream$load$episodes$5 = new TorraStream$load$episodes$1(data19, this, mediaDetail4, num7, z4, null);
+                    c00024.L$0 = str28;
+                    c00024.L$1 = data19;
+                    c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType5);
+                    c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00024.L$4 = mediaDetail4;
+                    c00024.L$5 = str22;
+                    c00024.L$6 = str23;
+                    c00024.L$7 = str26;
+                    c00024.L$8 = SpillingKt.nullOutSpilledVariable(str24);
+                    c00024.L$9 = num7;
+                    c00024.L$10 = list11;
+                    c00024.L$11 = list10;
+                    c00024.L$12 = list12;
+                    c00024.L$13 = list20;
+                    c00024.L$14 = str46;
+                    str47 = str29;
+                    c00024.L$15 = str47;
+                    c00024.L$16 = SpillingKt.nullOutSpilledVariable(str21);
+                    c00024.L$17 = str45;
+                    c00024.L$18 = cinemetaRes;
+                    i27 = z112 ? 1 : 0;
+                    c00024.I$0 = i27;
+                    str48 = str22;
+                    c00024.I$1 = i26;
+                    str49 = str23;
+                    c00024.I$2 = i25;
+                    str50 = str26;
+                    i28 = i4115;
+                    c00024.I$3 = i28;
+                    list21 = list11;
+                    i29 = i4114 == true ? 1 : 0;
+                    c00024.I$4 = i29 == true ? 1 : 0;
+                    c00024.label = 4;
+                    objAmap = ParCollectionsKt.amap(arrayList29, torraStream$load$episodes$5, c00024);
+                    obj10 = obj26;
+                    if (objAmap == obj10) {
+                        return obj10;
+                    }
+                    obj11 = objAmap;
+                    str51 = str27;
+                    mediaDetail5 = mediaDetail4;
+                    data8 = data5;
+                    str52 = str46;
+                    tvType6 = tvType5;
+                    i24 = i25;
+                    str53 = str48;
+                    list22 = list20;
+                    str43 = str49;
+                    str54 = str47;
+                    i22 = i26;
+                    str55 = str21;
+                    str56 = str45;
+                    str57 = str50;
+                    cinemetaRes3 = cinemetaRes;
+                    list38 = (List) obj11;
+                    if (list38 != null) {
+                    }
+                    TvType tvType1112 = tvType6;
+                    i10 = i27;
+                    tvType4 = tvType1112;
+                    List list411113 = list21;
+                    i21 = i29;
+                    list19 = list411113;
+                    cinemetaRes = cinemetaRes3;
+                    i23 = i28;
+                    str19 = str56;
+                    str21 = str55;
+                    str29 = str54;
+                    str25 = str52;
+                    list9 = list22;
+                    str44 = str57;
+                    mediaDetail3 = mediaDetail5;
+                    str42 = str53;
+                    str27 = str51;
+                    data7 = data8;
+                    num5 = num7;
+                    break;
                 } else {
-                    z5 = false;
+                    String str1012 = str23;
+                    boolean z113 = i10 == true ? 1 : 0;
+                    num6 = null;
+                    obj10 = obj6;
+                    i21 = i13 == true ? 1 : 0;
+                    list19 = list11;
+                    data7 = data5;
+                    i22 = i14;
+                    i23 = i16;
+                    tvType4 = tvType3;
+                    i24 = i15;
+                    str42 = str22;
+                    str43 = str1012;
+                    str44 = str26;
                 }
-                if (i53 != 0) {
-                    z6 = true;
+                i30 = i23;
+                i31 = i24;
+                i32 = i22;
+                obj12 = obj10;
+                str58 = str44;
+                str59 = str21;
+                i33 = i10;
+                str60 = str19;
+                str61 = str29;
+                num8 = num5;
+                list23 = list9;
+                cinemetaRes4 = cinemetaRes;
+                listEmptyList = CollectionsKt.emptyList();
+                tvType6 = tvType4;
+                str53 = str42;
+                list24 = list19;
+                list25 = list10;
+                list26 = list12;
+                str62 = str25;
+                data9 = data7;
+                str63 = str28;
+                mediaDetail6 = mediaDetail3;
+                str64 = str24;
+                str65 = str43;
+                list27 = listEmptyList;
+                if (i32 == 0) {
+                    String str81110 = str53;
+                    String str81111 = str61;
+                    MediaDetail mediaDetail111 = mediaDetail6;
+                    List list411114 = list24;
+                    CinemetaRes cinemetaRes14 = cinemetaRes4;
+                    List list411115 = list23;
+                    List list411116 = list26;
+                    C00021 c0002115 = c00024;
+                    String str81112 = str62;
+                    int i4116 = i21;
+                    int i51115 = i31;
+                    obj13 = obj12;
+                    List list411117 = list25;
+                    TvType tvType1113 = TvType.TvSeries;
+                    String str9111117 = str63;
+                    String str9111118 = str60;
+                    String str9111119 = str65;
+                    str66 = str58;
+                    Integer num19 = num8;
+                    C00043 c00048 = new C00043(str9111119, str66, str81111, num19, mediaDetail111, list411117, list411114, this, list411115, list411116, list27, cinemetaRes14, str81112, null);
+                    c0002115.L$0 = SpillingKt.nullOutSpilledVariable(str9111117);
+                    c0002115.L$1 = SpillingKt.nullOutSpilledVariable(data9);
+                    c0002115.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                    c0002115.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                    c0002115.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail111);
+                    c0002115.L$5 = SpillingKt.nullOutSpilledVariable(str81110);
+                    c0002115.L$6 = SpillingKt.nullOutSpilledVariable(str9111119);
+                    c0002115.L$7 = SpillingKt.nullOutSpilledVariable(str66);
+                    c0002115.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                    c0002115.L$9 = SpillingKt.nullOutSpilledVariable(num19);
+                    c0002115.L$10 = SpillingKt.nullOutSpilledVariable(list411114);
+                    c0002115.L$11 = SpillingKt.nullOutSpilledVariable(list411117);
+                    c0002115.L$12 = SpillingKt.nullOutSpilledVariable(list411116);
+                    c0002115.L$13 = SpillingKt.nullOutSpilledVariable(list411115);
+                    c0002115.L$14 = SpillingKt.nullOutSpilledVariable(str81112);
+                    c0002115.L$15 = SpillingKt.nullOutSpilledVariable(str81111);
+                    c0002115.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                    c0002115.L$17 = SpillingKt.nullOutSpilledVariable(str9111118);
+                    c0002115.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes14);
+                    c0002115.L$19 = SpillingKt.nullOutSpilledVariable(list27);
+                    c0002115.I$0 = i33 == true ? 1 : 0;
+                    c0002115.I$1 = i32;
+                    c0002115.I$2 = i51115;
+                    c0002115.I$3 = i30;
+                    c0002115.I$4 = i4116 == true ? 1 : 0;
+                    c0002115.label = 7;
+                    objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str81110, str9111117, tvType1113, list27, c00048, c0002115);
+                    c00022 = c0002115;
+                    if (objNewTvSeriesLoadResponse == obj13) {
+                        return obj13;
+                    }
+                    obj14 = objNewTvSeriesLoadResponse;
+                    str67 = str66;
+                    return (LoadResponse) obj14;
+                }
+                if (cinemetaRes4 != null) {
+                    str68 = str61;
+                    cinemetaRes5 = cinemetaRes4;
+                    arrayListEmptyList = CollectionsKt.emptyList();
                 } else {
-                    z6 = false;
+                    str68 = str61;
+                    cinemetaRes5 = cinemetaRes4;
+                    arrayListEmptyList = CollectionsKt.emptyList();
                 }
-                if (i54 != 0) {
-                    z7 = true;
+                alternative_titles = mediaDetail6.getAlternative_titles();
+                if (alternative_titles == null) {
+                    list28 = arrayListEmptyList;
+                    if (cinemetaRes5 != null) {
+                        name2 = num6;
+                    } else {
+                        name2 = num6;
+                    }
                 } else {
-                    z7 = false;
+                    list28 = arrayListEmptyList;
+                    if (cinemetaRes5 != null) {
+                        name2 = num6;
+                    } else {
+                        name2 = num6;
+                    }
                 }
-                obj15 = obj14;
-                int i7117 = i54;
-                C00021 c00021110 = c00024;
-                int i7118 = i53;
-                CinemetaRes cinemetaRes18 = cinemetaRes4;
-                String str81117 = kitsuid;
-                C00032 c00038 = new C00032(str66, str67, str71, num9, mediaDetail6, list33, list32, this, list36, list35, str72, str81117, cinemetaRes18, str70, list34, data12, str68, str69, z5, z6, z7, null);
-                String str81118 = str67;
-                String str81119 = str68;
-                c00021110.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                c00021110.L$1 = SpillingKt.nullOutSpilledVariable(data12);
-                c00021110.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                c00021110.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                c00021110.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail6);
-                c00021110.L$5 = SpillingKt.nullOutSpilledVariable(str81119);
-                c00021110.L$6 = SpillingKt.nullOutSpilledVariable(str66);
-                c00021110.L$7 = SpillingKt.nullOutSpilledVariable(str81118);
-                c00021110.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                c00021110.L$9 = SpillingKt.nullOutSpilledVariable(num9);
-                c00021110.L$10 = SpillingKt.nullOutSpilledVariable(list32);
-                c00021110.L$11 = SpillingKt.nullOutSpilledVariable(list33);
-                c00021110.L$12 = SpillingKt.nullOutSpilledVariable(list35);
-                c00021110.L$13 = SpillingKt.nullOutSpilledVariable(list36);
-                c00021110.L$14 = SpillingKt.nullOutSpilledVariable(str72);
-                c00021110.L$15 = SpillingKt.nullOutSpilledVariable(str71);
-                c00021110.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                c00021110.L$17 = SpillingKt.nullOutSpilledVariable(str70);
-                c00021110.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes18);
-                c00021110.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                c00021110.L$20 = SpillingKt.nullOutSpilledVariable(list34);
-                c00021110.L$21 = SpillingKt.nullOutSpilledVariable(str69);
-                c00021110.L$22 = SpillingKt.nullOutSpilledVariable(string7);
-                c00021110.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
-                c00021110.L$24 = SpillingKt.nullOutSpilledVariable(str81117);
-                c00021110.I$0 = i7117 == true ? 1 : 0;
-                c00021110.I$1 = i50;
-                c00021110.I$2 = i52;
-                c00021110.I$3 = i7118;
-                c00021110.I$4 = i611112 == true ? 1 : 0;
-                c00021110.label = 6;
-                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(mainAPI12, str81119, str65, tvType117, false, c00038, c00021110, 8, (Object) null);
-                if (objNewAnimeLoadResponse$default == obj15) {
-                    return obj15;
+                obj15 = name2;
+                c00024.L$0 = str63;
+                c00024.L$1 = data9;
+                c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                c00024.L$4 = mediaDetail6;
+                c00024.L$5 = str53;
+                c00024.L$6 = str65;
+                c00024.L$7 = str58;
+                c00024.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                c00024.L$9 = num8;
+                c00024.L$10 = list24;
+                c00024.L$11 = list25;
+                c00024.L$12 = list26;
+                c00024.L$13 = list23;
+                c00024.L$14 = str62;
+                str69 = str68;
+                c00024.L$15 = str69;
+                str70 = str53;
+                c00024.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                c00024.L$17 = str60;
+                c00024.L$18 = cinemetaRes5;
+                c00024.L$19 = list27;
+                c00024.L$20 = list28;
+                c00024.L$21 = obj15;
+                int i51116 = i33;
+                c00024.I$0 = i51116 == true ? 1 : 0;
+                int i51117 = i32;
+                c00024.I$1 = i51117;
+                i34 = i31;
+                c00024.I$2 = i34;
+                int i51118 = i30;
+                c00024.I$3 = i51118;
+                c00024.I$4 = i21 == true ? 1 : 0;
+                c00024.label = 5;
+                list29 = list23;
+                list30 = list26;
+                c00023 = c00024;
+                str71 = str62;
+                data10 = data9;
+                list31 = list25;
+                i35 = i21;
+                i36 = i51117;
+                list32 = list27;
+                i37 = i51116 == true ? 1 : 0;
+                cinemetaRes6 = cinemetaRes5;
+                i38 = i51118;
+                mediaDetail7 = mediaDetail6;
+                list33 = list24;
+                obj16 = obj12;
+                obj17 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?imdb_id=" + str60, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 4094, (Object) null);
+                if (obj17 == obj16) {
+                    return obj16;
+                }
+                list34 = list30;
+                str72 = str63;
+                str73 = str60;
+                str74 = str65;
+                str75 = str58;
+                num9 = num8;
+                obj18 = obj17;
+                str76 = str70;
+                r78 = obj15;
+                str77 = str69;
+                mediaDetail8 = mediaDetail7;
+                list35 = list29;
+                cinemetaRes7 = cinemetaRes6;
+                str78 = str71;
+                i39 = i34;
+                i40 = i35 == true ? 1 : 0;
+                list36 = list33;
+                list37 = list31;
+                String text7 = ((NiceResponse) obj18).getText();
+                animeData = TorraStreamUtilsKt.parseAnimeData(text7);
+                if (animeData != null) {
+                    kitsuid = num6;
+                } else {
+                    kitsuid = num6;
+                }
+                String str91111110 = str74;
+                list39 = list28;
+                int i51119 = i40;
+                str79 = str76;
+                arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list39, 10));
+                list40 = list39;
+                while (r23.hasNext()) {
+                    List list411118 = list39;
+                    released = video.getReleased();
+                    if (released != null) {
+                        if (cinemetaRes7 != null) {
+                            intOrNull2 = num6;
+                        } else {
+                            intOrNull2 = num6;
+                        }
+                        if (intOrNull2 != null) {
+                            iIntValue = intOrNull2.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                    } else {
+                        if (cinemetaRes7 != null) {
+                            intOrNull2 = num6;
+                        } else {
+                            intOrNull2 = num6;
+                        }
+                        if (intOrNull2 != null) {
+                            iIntValue = intOrNull2.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                    }
+                    List list411119 = list40;
+                    MainAPI mainAPI12 = (MainAPI) this;
+                    String str91111111 = str75;
+                    AppUtils appUtils13 = AppUtils.INSTANCE;
+                    Integer id8 = data10.getId();
+                    external_ids3 = mediaDetail8.getExternal_ids();
+                    if (external_ids3 != null) {
+                        tvdb_id = external_ids3.getTvdb_id();
+                    } else {
+                        tvdb_id = num6;
+                    }
+                    String type9 = data10.getType();
+                    Integer season8 = video.getSeason();
+                    Integer episode7 = video.getEpisode();
+                    Integer numBoxInt7 = Boxing.boxInt(iIntValue);
+                    String title13 = video.getTitle();
+                    String released8 = video.getReleased();
+                    releaseDate2 = mediaDetail8.getReleaseDate();
+                    if (releaseDate2 == null) {
+                        releaseDate2 = mediaDetail8.getFirstAirDate();
+                    }
+                    String str91111112 = releaseDate2;
+                    if (i39 != 0) {
+                        z5 = true;
+                    } else {
+                        z5 = false;
+                    }
+                    if (i38 != 0) {
+                        z6 = true;
+                    } else {
+                        z6 = false;
+                    }
+                    if (i37 != 0) {
+                        z7 = true;
+                    } else {
+                        z7 = false;
+                    }
+                    String str91111113 = str73;
+                    arrayList8.add(MainAPIKt.newEpisode(mainAPI12, appUtils13.toJson(new LinkData(id8, str91111113, tvdb_id, type9, season8, episode7, null, null, null, str79, numBoxInt7, "", true, num9, null, title13, r78, released8, str91111112, z5, z6, z7, mediaDetail8.getTitle(), mediaDetail8.getName(), false, null, 33571264, null)), new Function1() { // from class: com.phisher98.TorraStream$$ExternalSyntheticLambda1
+                        public final Object invoke(Object obj27) {
+                            return TorraStream.load$lambda$9$0(video, this, (Episode) obj27);
+                        }
+                    }));
+                    list39 = list411118;
+                    list40 = list411119;
+                    str75 = str91111111;
+                    str77 = str77;
+                    str73 = str91111113;
+                }
+                String str91111114 = str75;
+                String str91111115 = str77;
+                String str91111116 = str73;
+                arrayList9 = arrayList8;
+                if (arrayList9.isEmpty()) {
+                    arrayList9 = list32;
+                }
+                List list510 = arrayList9;
+                TvType tvType1114 = TvType.Anime;
+                obj19 = obj16;
+                int i511110 = i39;
+                C00021 c0002116 = c00023;
+                ?? r110 = kitsuid;
+                C00032 c00038 = new C00032(list510, str91111110, str91111114, str91111115, num9, mediaDetail8, list37, list36, this, list35, list34, str78, r110, cinemetaRes7, str91111116, null);
+                c0002116.L$0 = SpillingKt.nullOutSpilledVariable(str72);
+                c0002116.L$1 = SpillingKt.nullOutSpilledVariable(data10);
+                c0002116.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                c0002116.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                c0002116.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail8);
+                c0002116.L$5 = SpillingKt.nullOutSpilledVariable(str79);
+                c0002116.L$6 = SpillingKt.nullOutSpilledVariable(str91111110);
+                c0002116.L$7 = SpillingKt.nullOutSpilledVariable(str91111114);
+                c0002116.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                c0002116.L$9 = SpillingKt.nullOutSpilledVariable(num9);
+                c0002116.L$10 = SpillingKt.nullOutSpilledVariable(list36);
+                c0002116.L$11 = SpillingKt.nullOutSpilledVariable(list37);
+                c0002116.L$12 = SpillingKt.nullOutSpilledVariable(list34);
+                c0002116.L$13 = SpillingKt.nullOutSpilledVariable(list35);
+                c0002116.L$14 = SpillingKt.nullOutSpilledVariable(str78);
+                c0002116.L$15 = SpillingKt.nullOutSpilledVariable(str91111115);
+                c0002116.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                c0002116.L$17 = SpillingKt.nullOutSpilledVariable(str91111116);
+                c0002116.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes7);
+                c0002116.L$19 = SpillingKt.nullOutSpilledVariable(list32);
+                c0002116.L$20 = SpillingKt.nullOutSpilledVariable(list28);
+                c0002116.L$21 = SpillingKt.nullOutSpilledVariable((Object) r78);
+                c0002116.L$22 = SpillingKt.nullOutSpilledVariable(text7);
+                c0002116.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
+                c0002116.L$24 = SpillingKt.nullOutSpilledVariable((Object) r110);
+                c0002116.L$25 = SpillingKt.nullOutSpilledVariable(list510);
+                c0002116.I$0 = i37 == true ? 1 : 0;
+                c0002116.I$1 = i36;
+                c0002116.I$2 = i511110;
+                c0002116.I$3 = i38;
+                c0002116.I$4 = i51119 == true ? 1 : 0;
+                c0002116.label = 6;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default((MainAPI) this, str79, str72, tvType1114, false, c00038, c0002116, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj19) {
+                    return obj19;
                 }
                 return objNewAnimeLoadResponse$default;
             case 4:
-                int i90 = c00025.I$4;
-                i42 = c00025.I$3;
-                int i91 = c00025.I$2;
-                i32 = c00025.I$1;
-                i40 = c00025.I$0;
-                CinemetaRes cinemetaRes19 = (CinemetaRes) c00025.L$18;
-                str50 = (String) c00025.L$17;
-                str49 = (String) c00025.L$16;
-                String str109 = (String) c00025.L$15;
-                String str110 = (String) c00025.L$14;
-                List list57 = (List) c00025.L$13;
-                i41 = i90;
-                List list58 = (List) c00025.L$12;
-                List list59 = (List) c00025.L$11;
-                list22 = (List) c00025.L$10;
-                num7 = (Integer) c00025.L$9;
-                str48 = (String) c00025.L$8;
-                String str111 = (String) c00025.L$7;
-                str47 = (String) c00025.L$6;
-                String str112 = (String) c00025.L$5;
-                MediaDetail mediaDetail20 = (MediaDetail) c00025.L$4;
-                str51 = (String) c00025.L$3;
-                TvType tvType21 = (TvType) c00025.L$2;
-                data9 = (Data) c00025.L$1;
-                String str113 = (String) c00025.L$0;
+                int i68 = c00024.I$4;
+                int i69 = c00024.I$3;
+                i24 = c00024.I$2;
+                i22 = c00024.I$1;
+                i27 = c00024.I$0;
+                cinemetaRes3 = (CinemetaRes) c00024.L$18;
+                String str119 = (String) c00024.L$17;
+                String str120 = (String) c00024.L$16;
+                String str121 = (String) c00024.L$15;
+                String str122 = (String) c00024.L$14;
+                List list60 = (List) c00024.L$13;
+                List list61 = (List) c00024.L$12;
+                List list62 = (List) c00024.L$11;
+                List list63 = (List) c00024.L$10;
+                Integer num20 = (Integer) c00024.L$9;
+                String str123 = (String) c00024.L$8;
+                str57 = (String) c00024.L$7;
+                str43 = (String) c00024.L$6;
+                String str124 = (String) c00024.L$5;
+                mediaDetail5 = (MediaDetail) c00024.L$4;
+                String str125 = (String) c00024.L$3;
+                tvType6 = (TvType) c00024.L$2;
+                data8 = (Data) c00024.L$1;
+                String str126 = (String) c00024.L$0;
                 ResultKt.throwOnFailure(objNewMovieLoadResponse);
-                obj9 = coroutine_suspended;
-                i43 = i91;
-                str27 = str113;
-                str46 = str110;
-                str26 = str111;
-                str52 = str112;
-                tvType3 = tvType21;
-                str7 = null;
-                cinemetaRes = cinemetaRes19;
-                c00022 = c00025;
-                str43 = str109;
-                list12 = list59;
-                list23 = list57;
-                list9 = list58;
-                mediaDetail3 = mediaDetail20;
-                list37 = (List) objNewMovieLoadResponse;
-                if (list37 != null) {
+                i28 = i69;
+                num7 = num20;
+                str24 = str123;
+                list22 = list60;
+                list12 = list61;
+                str55 = str120;
+                str54 = str121;
+                i29 = i68;
+                list21 = list63;
+                str52 = str122;
+                list10 = list62;
+                str28 = str126;
+                str56 = str119;
+                str53 = str124;
+                obj10 = coroutine_suspended;
+                obj11 = objNewMovieLoadResponse;
+                str51 = str125;
+                num6 = null;
+                list38 = (List) obj11;
+                if (list38 != null) {
                     break;
                 }
-                int i6212 = i42;
-                i34 = i43;
-                i30 = i6212;
-                str25 = str46;
-                i31 = i40;
-                str24 = str50;
-                i33 = i41;
-                list11 = list23;
-                list10 = list22;
-                num3 = num7;
-                str14 = str48;
-                str21 = str51;
-                data8 = data9;
-                str41 = str52;
-                str28 = str49;
-                str23 = str47;
-                str22 = str43;
-                i44 = i34;
-                obj10 = obj9;
-                i45 = i32;
-                i46 = i31;
-                list24 = list12;
-                str53 = str26;
-                num8 = num3;
-                str54 = str28;
-                str55 = str24;
-                str43 = str22;
-                str56 = str25;
+                TvType tvType1115 = tvType6;
+                i10 = i27;
+                tvType4 = tvType1115;
+                List list4111110 = list21;
+                i21 = i29;
+                list19 = list4111110;
+                cinemetaRes = cinemetaRes3;
+                i23 = i28;
+                str19 = str56;
+                str21 = str55;
+                str29 = str54;
+                str25 = str52;
+                list9 = list22;
+                str44 = str57;
+                mediaDetail3 = mediaDetail5;
+                str42 = str53;
+                str27 = str51;
+                data7 = data8;
+                num5 = num7;
+                i30 = i23;
+                i31 = i24;
+                i32 = i22;
+                obj12 = obj10;
+                str58 = str44;
+                str59 = str21;
+                i33 = i10;
+                str60 = str19;
+                str61 = str29;
+                num8 = num5;
+                list23 = list9;
+                cinemetaRes4 = cinemetaRes;
                 listEmptyList = CollectionsKt.emptyList();
-                data10 = data8;
-                str57 = str27;
-                str52 = str41;
+                tvType6 = tvType4;
+                str53 = str42;
+                list24 = list19;
                 list25 = list10;
-                mediaDetail5 = mediaDetail3;
-                str51 = str21;
-                i47 = i33;
-                list26 = list11;
-                i48 = i30;
-                str58 = str23;
-                list27 = list9;
-                cinemetaRes3 = cinemetaRes;
-                list28 = listEmptyList;
-                if (i45 == 0) {
-                    String str71115 = str52;
-                    String str71116 = str55;
-                    Integer num19 = num8;
-                    String str71117 = str43;
-                    MediaDetail mediaDetail110 = mediaDetail5;
-                    List list4117 = list24;
-                    List list4118 = list25;
-                    C00021 c00021111 = c00022;
-                    List list4119 = list26;
-                    List list41110 = list27;
-                    CinemetaRes cinemetaRes110 = cinemetaRes3;
-                    int i611113 = i47;
-                    obj11 = obj10;
-                    TvType tvType118 = TvType.TvSeries;
-                    String str71118 = str57;
-                    String str811110 = str58;
-                    String str811111 = str53;
-                    C00043 c00049 = new C00043(str811110, str811111, str71117, num19, mediaDetail110, list4117, list4118, this, list4119, list41110, list28, cinemetaRes110, str56, null);
-                    c00021111.L$0 = SpillingKt.nullOutSpilledVariable(str71118);
-                    c00021111.L$1 = SpillingKt.nullOutSpilledVariable(data10);
-                    c00021111.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                    c00021111.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                    c00021111.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail110);
-                    c00021111.L$5 = SpillingKt.nullOutSpilledVariable(str71115);
-                    c00021111.L$6 = SpillingKt.nullOutSpilledVariable(str811110);
-                    c00021111.L$7 = SpillingKt.nullOutSpilledVariable(str811111);
-                    c00021111.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                    c00021111.L$9 = SpillingKt.nullOutSpilledVariable(num19);
-                    c00021111.L$10 = SpillingKt.nullOutSpilledVariable(list4118);
-                    c00021111.L$11 = SpillingKt.nullOutSpilledVariable(list4117);
-                    c00021111.L$12 = SpillingKt.nullOutSpilledVariable(list41110);
-                    c00021111.L$13 = SpillingKt.nullOutSpilledVariable(list4119);
-                    c00021111.L$14 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00021111.L$15 = SpillingKt.nullOutSpilledVariable(str71117);
-                    c00021111.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00021111.L$17 = SpillingKt.nullOutSpilledVariable(str71116);
-                    c00021111.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes110);
-                    c00021111.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                    c00021111.I$0 = i46 == true ? 1 : 0;
-                    c00021111.I$1 = i45;
-                    c00021111.I$2 = i44;
-                    c00021111.I$3 = i48;
-                    c00021111.I$4 = i611113 == true ? 1 : 0;
-                    c00021111.label = 7;
-                    objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str71115, str71118, tvType118, list28, c00049, c00021111);
-                    c00023 = c00021111;
-                    if (objNewTvSeriesLoadResponse == obj11) {
-                        return obj11;
+                list26 = list12;
+                str62 = str25;
+                data9 = data7;
+                str63 = str28;
+                mediaDetail6 = mediaDetail3;
+                str64 = str24;
+                str65 = str43;
+                list27 = listEmptyList;
+                if (i32 == 0) {
+                    String str81113 = str53;
+                    String str81114 = str61;
+                    MediaDetail mediaDetail112 = mediaDetail6;
+                    List list4111111 = list24;
+                    CinemetaRes cinemetaRes15 = cinemetaRes4;
+                    List list4111112 = list23;
+                    List list4111113 = list26;
+                    C00021 c0002117 = c00024;
+                    String str81115 = str62;
+                    int i4117 = i21;
+                    int i511111 = i31;
+                    obj13 = obj12;
+                    List list4111114 = list25;
+                    TvType tvType1116 = TvType.TvSeries;
+                    String str91111117 = str63;
+                    String str91111118 = str60;
+                    String str91111119 = str65;
+                    str66 = str58;
+                    Integer num110 = num8;
+                    C00043 c00049 = new C00043(str91111119, str66, str81114, num110, mediaDetail112, list4111114, list4111111, this, list4111112, list4111113, list27, cinemetaRes15, str81115, null);
+                    c0002117.L$0 = SpillingKt.nullOutSpilledVariable(str91111117);
+                    c0002117.L$1 = SpillingKt.nullOutSpilledVariable(data9);
+                    c0002117.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                    c0002117.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                    c0002117.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail112);
+                    c0002117.L$5 = SpillingKt.nullOutSpilledVariable(str81113);
+                    c0002117.L$6 = SpillingKt.nullOutSpilledVariable(str91111119);
+                    c0002117.L$7 = SpillingKt.nullOutSpilledVariable(str66);
+                    c0002117.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                    c0002117.L$9 = SpillingKt.nullOutSpilledVariable(num110);
+                    c0002117.L$10 = SpillingKt.nullOutSpilledVariable(list4111111);
+                    c0002117.L$11 = SpillingKt.nullOutSpilledVariable(list4111114);
+                    c0002117.L$12 = SpillingKt.nullOutSpilledVariable(list4111113);
+                    c0002117.L$13 = SpillingKt.nullOutSpilledVariable(list4111112);
+                    c0002117.L$14 = SpillingKt.nullOutSpilledVariable(str81115);
+                    c0002117.L$15 = SpillingKt.nullOutSpilledVariable(str81114);
+                    c0002117.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                    c0002117.L$17 = SpillingKt.nullOutSpilledVariable(str91111118);
+                    c0002117.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes15);
+                    c0002117.L$19 = SpillingKt.nullOutSpilledVariable(list27);
+                    c0002117.I$0 = i33 == true ? 1 : 0;
+                    c0002117.I$1 = i32;
+                    c0002117.I$2 = i511111;
+                    c0002117.I$3 = i30;
+                    c0002117.I$4 = i4117 == true ? 1 : 0;
+                    c0002117.label = 7;
+                    objNewTvSeriesLoadResponse = MainAPIKt.newTvSeriesLoadResponse((MainAPI) this, str81113, str91111117, tvType1116, list27, c00049, c0002117);
+                    c00022 = c0002117;
+                    if (objNewTvSeriesLoadResponse == obj13) {
+                        return obj13;
                     }
-                    obj12 = objNewTvSeriesLoadResponse;
-                    return (LoadResponse) obj12;
+                    obj14 = objNewTvSeriesLoadResponse;
+                    str67 = str66;
+                    return (LoadResponse) obj14;
                 }
-                if (cinemetaRes3 != null) {
-                    str59 = str43;
-                    cinemetaRes4 = cinemetaRes3;
+                if (cinemetaRes4 != null) {
+                    str68 = str61;
+                    cinemetaRes5 = cinemetaRes4;
                     arrayListEmptyList = CollectionsKt.emptyList();
                 } else {
-                    str59 = str43;
-                    cinemetaRes4 = cinemetaRes3;
+                    str68 = str61;
+                    cinemetaRes5 = cinemetaRes4;
                     arrayListEmptyList = CollectionsKt.emptyList();
                 }
-                alternative_titles = mediaDetail5.getAlternative_titles();
+                alternative_titles = mediaDetail6.getAlternative_titles();
                 if (alternative_titles == null) {
-                    list29 = arrayListEmptyList;
-                    if (cinemetaRes4 != null) {
-                        name2 = str7;
+                    list28 = arrayListEmptyList;
+                    if (cinemetaRes5 != null) {
+                        name2 = num6;
                     } else {
-                        name2 = str7;
+                        name2 = num6;
                     }
                 } else {
-                    list29 = arrayListEmptyList;
-                    if (cinemetaRes4 != null) {
-                        name2 = str7;
+                    list28 = arrayListEmptyList;
+                    if (cinemetaRes5 != null) {
+                        name2 = num6;
                     } else {
-                        name2 = str7;
+                        name2 = num6;
                     }
                 }
-                Requests app9 = MainActivityKt.getApp();
-                str60 = name2;
-                String str811112 = "https://api.ani.zip/mappings?imdb_id=" + str55;
-                c00022.L$0 = str57;
-                c00022.L$1 = data10;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                c00022.L$4 = mediaDetail5;
-                c00022.L$5 = str52;
-                c00022.L$6 = str58;
-                c00022.L$7 = str53;
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                c00022.L$9 = num8;
-                c00022.L$10 = list25;
-                c00022.L$11 = list24;
-                c00022.L$12 = list27;
-                c00022.L$13 = list26;
-                c00022.L$14 = str56;
-                str61 = str59;
-                c00022.L$15 = str61;
-                str62 = str52;
-                c00022.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                c00022.L$17 = str55;
-                c00022.L$18 = cinemetaRes4;
-                c00022.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                c00022.L$20 = list29;
+                obj15 = name2;
+                c00024.L$0 = str63;
+                c00024.L$1 = data9;
+                c00024.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                c00024.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                c00024.L$4 = mediaDetail6;
+                c00024.L$5 = str53;
+                c00024.L$6 = str65;
+                c00024.L$7 = str58;
+                c00024.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                c00024.L$9 = num8;
+                c00024.L$10 = list24;
+                c00024.L$11 = list25;
+                c00024.L$12 = list26;
+                c00024.L$13 = list23;
+                c00024.L$14 = str62;
+                str69 = str68;
+                c00024.L$15 = str69;
+                str70 = str53;
+                c00024.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                c00024.L$17 = str60;
+                c00024.L$18 = cinemetaRes5;
+                c00024.L$19 = list27;
+                c00024.L$20 = list28;
+                c00024.L$21 = obj15;
+                int i511112 = i33;
+                c00024.I$0 = i511112 == true ? 1 : 0;
+                int i511113 = i32;
+                c00024.I$1 = i511113;
+                i34 = i31;
+                c00024.I$2 = i34;
+                int i511114 = i30;
+                c00024.I$3 = i511114;
+                c00024.I$4 = i21 == true ? 1 : 0;
+                c00024.label = 5;
+                list29 = list23;
                 list30 = list26;
-                c00022.L$21 = str60;
-                c00022.I$0 = i46 == true ? 1 : 0;
-                int i611114 = i45;
-                c00022.I$1 = i611114;
-                int i611115 = i44;
-                c00022.I$2 = i611115;
-                int i611116 = i48;
-                c00022.I$3 = i611116;
-                c00022.I$4 = i47 == true ? 1 : 0;
-                c00022.label = 5;
-                C00021 c00021112 = c00022;
-                list31 = list27;
-                str63 = str56;
-                data11 = data10;
-                i49 = i47;
-                i50 = i611114;
-                i51 = i46;
-                str64 = str55;
-                num9 = num8;
-                mediaDetail6 = mediaDetail5;
-                list32 = list25;
-                i52 = i611115;
+                c00023 = c00024;
+                str71 = str62;
+                data10 = data9;
+                list31 = list25;
+                i35 = i21;
+                i36 = i511113;
+                list32 = list27;
+                i37 = i511112 == true ? 1 : 0;
+                cinemetaRes6 = cinemetaRes5;
+                i38 = i511114;
+                mediaDetail7 = mediaDetail6;
                 list33 = list24;
-                i53 = i611116;
-                obj13 = Requests.get$default(app9, str811112, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00021112, 4094, (Object) null);
-                c00024 = c00021112;
-                obj14 = obj10;
-                if (obj13 == obj14) {
-                    return obj14;
+                obj16 = obj12;
+                obj17 = Requests.get$default(MainActivityKt.getApp(), "https://api.ani.zip/mappings?imdb_id=" + str60, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00023, 4094, (Object) null);
+                if (obj17 == obj16) {
+                    return obj16;
                 }
-                i54 = i51 == true ? 1 : 0;
-                str65 = str57;
-                str66 = str58;
-                str67 = str53;
-                str68 = str62;
-                list34 = list29;
-                str69 = str60;
-                list35 = list31;
-                data12 = data11;
-                str70 = str64;
-                str71 = str61;
+                list34 = list30;
                 str72 = str63;
-                list36 = list30;
-                i55 = i49 == true ? 1 : 0;
-                String string8 = ((NiceResponse) obj13).toString();
-                animeData = TorraStreamUtilsKt.parseAnimeData(string8);
+                str73 = str60;
+                str74 = str65;
+                str75 = str58;
+                num9 = num8;
+                obj18 = obj17;
+                str76 = str70;
+                r78 = obj15;
+                str77 = str69;
+                mediaDetail8 = mediaDetail7;
+                list35 = list29;
+                cinemetaRes7 = cinemetaRes6;
+                str78 = str71;
+                i39 = i34;
+                i40 = i35 == true ? 1 : 0;
+                list36 = list33;
+                list37 = list31;
+                String text8 = ((NiceResponse) obj18).getText();
+                animeData = TorraStreamUtilsKt.parseAnimeData(text8);
                 if (animeData != null) {
-                    kitsuid = str7;
+                    kitsuid = num6;
                 } else {
-                    kitsuid = str7;
+                    kitsuid = num6;
                 }
-                MainAPI mainAPI13 = (MainAPI) this;
-                TvType tvType119 = TvType.Anime;
-                int i611117 = i55;
-                if (i52 != 0) {
-                    z5 = true;
-                } else {
-                    z5 = false;
+                String str911111110 = str74;
+                list39 = list28;
+                int i511115 = i40;
+                str79 = str76;
+                arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list39, 10));
+                list40 = list39;
+                while (r23.hasNext()) {
+                    List list4111115 = list39;
+                    released = video.getReleased();
+                    if (released != null) {
+                        if (cinemetaRes7 != null) {
+                            intOrNull2 = num6;
+                        } else {
+                            intOrNull2 = num6;
+                        }
+                        if (intOrNull2 != null) {
+                            iIntValue = intOrNull2.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                    } else {
+                        if (cinemetaRes7 != null) {
+                            intOrNull2 = num6;
+                        } else {
+                            intOrNull2 = num6;
+                        }
+                        if (intOrNull2 != null) {
+                            iIntValue = intOrNull2.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                    }
+                    List list4111116 = list40;
+                    MainAPI mainAPI13 = (MainAPI) this;
+                    String str911111111 = str75;
+                    AppUtils appUtils14 = AppUtils.INSTANCE;
+                    Integer id9 = data10.getId();
+                    external_ids3 = mediaDetail8.getExternal_ids();
+                    if (external_ids3 != null) {
+                        tvdb_id = external_ids3.getTvdb_id();
+                    } else {
+                        tvdb_id = num6;
+                    }
+                    String type10 = data10.getType();
+                    Integer season9 = video.getSeason();
+                    Integer episode8 = video.getEpisode();
+                    Integer numBoxInt8 = Boxing.boxInt(iIntValue);
+                    String title14 = video.getTitle();
+                    String released9 = video.getReleased();
+                    releaseDate2 = mediaDetail8.getReleaseDate();
+                    if (releaseDate2 == null) {
+                        releaseDate2 = mediaDetail8.getFirstAirDate();
+                    }
+                    String str911111112 = releaseDate2;
+                    if (i39 != 0) {
+                        z5 = true;
+                    } else {
+                        z5 = false;
+                    }
+                    if (i38 != 0) {
+                        z6 = true;
+                    } else {
+                        z6 = false;
+                    }
+                    if (i37 != 0) {
+                        z7 = true;
+                    } else {
+                        z7 = false;
+                    }
+                    String str911111113 = str73;
+                    arrayList8.add(MainAPIKt.newEpisode(mainAPI13, appUtils14.toJson(new LinkData(id9, str911111113, tvdb_id, type10, season9, episode8, null, null, null, str79, numBoxInt8, "", true, num9, null, title14, r78, released9, str911111112, z5, z6, z7, mediaDetail8.getTitle(), mediaDetail8.getName(), false, null, 33571264, null)), new Function1() { // from class: com.phisher98.TorraStream$$ExternalSyntheticLambda1
+                        public final Object invoke(Object obj27) {
+                            return TorraStream.load$lambda$9$0(video, this, (Episode) obj27);
+                        }
+                    }));
+                    list39 = list4111115;
+                    list40 = list4111116;
+                    str75 = str911111111;
+                    str77 = str77;
+                    str73 = str911111113;
                 }
-                if (i53 != 0) {
-                    z6 = true;
-                } else {
-                    z6 = false;
+                String str911111114 = str75;
+                String str911111115 = str77;
+                String str911111116 = str73;
+                arrayList9 = arrayList8;
+                if (arrayList9.isEmpty()) {
+                    arrayList9 = list32;
                 }
-                if (i54 != 0) {
-                    z7 = true;
-                } else {
-                    z7 = false;
-                }
-                obj15 = obj14;
-                int i7119 = i54;
-                C00021 c00021113 = c00024;
-                int i71110 = i53;
-                CinemetaRes cinemetaRes111 = cinemetaRes4;
-                String str811113 = kitsuid;
-                C00032 c00039 = new C00032(str66, str67, str71, num9, mediaDetail6, list33, list32, this, list36, list35, str72, str811113, cinemetaRes111, str70, list34, data12, str68, str69, z5, z6, z7, null);
-                String str811114 = str67;
-                String str811115 = str68;
-                c00021113.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                c00021113.L$1 = SpillingKt.nullOutSpilledVariable(data12);
-                c00021113.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                c00021113.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                c00021113.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail6);
-                c00021113.L$5 = SpillingKt.nullOutSpilledVariable(str811115);
-                c00021113.L$6 = SpillingKt.nullOutSpilledVariable(str66);
-                c00021113.L$7 = SpillingKt.nullOutSpilledVariable(str811114);
-                c00021113.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                c00021113.L$9 = SpillingKt.nullOutSpilledVariable(num9);
-                c00021113.L$10 = SpillingKt.nullOutSpilledVariable(list32);
-                c00021113.L$11 = SpillingKt.nullOutSpilledVariable(list33);
-                c00021113.L$12 = SpillingKt.nullOutSpilledVariable(list35);
-                c00021113.L$13 = SpillingKt.nullOutSpilledVariable(list36);
-                c00021113.L$14 = SpillingKt.nullOutSpilledVariable(str72);
-                c00021113.L$15 = SpillingKt.nullOutSpilledVariable(str71);
-                c00021113.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                c00021113.L$17 = SpillingKt.nullOutSpilledVariable(str70);
-                c00021113.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes111);
-                c00021113.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                c00021113.L$20 = SpillingKt.nullOutSpilledVariable(list34);
-                c00021113.L$21 = SpillingKt.nullOutSpilledVariable(str69);
-                c00021113.L$22 = SpillingKt.nullOutSpilledVariable(string8);
-                c00021113.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
-                c00021113.L$24 = SpillingKt.nullOutSpilledVariable(str811113);
-                c00021113.I$0 = i7119 == true ? 1 : 0;
-                c00021113.I$1 = i50;
-                c00021113.I$2 = i52;
-                c00021113.I$3 = i71110;
-                c00021113.I$4 = i611117 == true ? 1 : 0;
-                c00021113.label = 6;
-                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(mainAPI13, str811115, str65, tvType119, false, c00039, c00021113, 8, (Object) null);
-                if (objNewAnimeLoadResponse$default == obj15) {
-                    return obj15;
+                List list511 = arrayList9;
+                TvType tvType1117 = TvType.Anime;
+                obj19 = obj16;
+                int i511116 = i39;
+                C00021 c0002118 = c00023;
+                ?? r111 = kitsuid;
+                C00032 c00039 = new C00032(list511, str911111110, str911111114, str911111115, num9, mediaDetail8, list37, list36, this, list35, list34, str78, r111, cinemetaRes7, str911111116, null);
+                c0002118.L$0 = SpillingKt.nullOutSpilledVariable(str72);
+                c0002118.L$1 = SpillingKt.nullOutSpilledVariable(data10);
+                c0002118.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                c0002118.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                c0002118.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail8);
+                c0002118.L$5 = SpillingKt.nullOutSpilledVariable(str79);
+                c0002118.L$6 = SpillingKt.nullOutSpilledVariable(str911111110);
+                c0002118.L$7 = SpillingKt.nullOutSpilledVariable(str911111114);
+                c0002118.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                c0002118.L$9 = SpillingKt.nullOutSpilledVariable(num9);
+                c0002118.L$10 = SpillingKt.nullOutSpilledVariable(list36);
+                c0002118.L$11 = SpillingKt.nullOutSpilledVariable(list37);
+                c0002118.L$12 = SpillingKt.nullOutSpilledVariable(list34);
+                c0002118.L$13 = SpillingKt.nullOutSpilledVariable(list35);
+                c0002118.L$14 = SpillingKt.nullOutSpilledVariable(str78);
+                c0002118.L$15 = SpillingKt.nullOutSpilledVariable(str911111115);
+                c0002118.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                c0002118.L$17 = SpillingKt.nullOutSpilledVariable(str911111116);
+                c0002118.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes7);
+                c0002118.L$19 = SpillingKt.nullOutSpilledVariable(list32);
+                c0002118.L$20 = SpillingKt.nullOutSpilledVariable(list28);
+                c0002118.L$21 = SpillingKt.nullOutSpilledVariable((Object) r78);
+                c0002118.L$22 = SpillingKt.nullOutSpilledVariable(text8);
+                c0002118.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
+                c0002118.L$24 = SpillingKt.nullOutSpilledVariable((Object) r111);
+                c0002118.L$25 = SpillingKt.nullOutSpilledVariable(list511);
+                c0002118.I$0 = i37 == true ? 1 : 0;
+                c0002118.I$1 = i36;
+                c0002118.I$2 = i511116;
+                c0002118.I$3 = i38;
+                c0002118.I$4 = i511115 == true ? 1 : 0;
+                c0002118.label = 6;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default((MainAPI) this, str79, str72, tvType1117, false, c00039, c0002118, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj19) {
+                    return obj19;
                 }
                 return objNewAnimeLoadResponse$default;
             case 5:
-                int i92 = c00025.I$4;
-                int i93 = c00025.I$3;
-                int i94 = c00025.I$2;
-                int i95 = c00025.I$1;
-                int i96 = c00025.I$0;
-                String str114 = (String) c00025.L$21;
-                List list60 = (List) c00025.L$20;
-                List list61 = (List) c00025.L$19;
-                CinemetaRes cinemetaRes20 = (CinemetaRes) c00025.L$18;
-                String str115 = (String) c00025.L$17;
-                String str116 = (String) c00025.L$16;
-                String str117 = (String) c00025.L$15;
-                String str118 = (String) c00025.L$14;
-                List list62 = (List) c00025.L$13;
-                List list63 = (List) c00025.L$12;
-                List list64 = (List) c00025.L$11;
-                List list65 = (List) c00025.L$10;
-                Integer num20 = (Integer) c00025.L$9;
-                String str119 = (String) c00025.L$8;
-                String str120 = (String) c00025.L$7;
-                String str121 = (String) c00025.L$6;
-                String str122 = (String) c00025.L$5;
-                MediaDetail mediaDetail21 = (MediaDetail) c00025.L$4;
-                String str123 = (String) c00025.L$3;
-                TvType tvType22 = (TvType) c00025.L$2;
-                Data data21 = (Data) c00025.L$1;
-                String str124 = (String) c00025.L$0;
+                int i70 = c00024.I$4;
+                int i71 = c00024.I$3;
+                int i72 = c00024.I$2;
+                int i73 = c00024.I$1;
+                int i74 = c00024.I$0;
+                String str127 = (String) c00024.L$21;
+                List list64 = (List) c00024.L$20;
+                List list65 = (List) c00024.L$19;
+                CinemetaRes cinemetaRes16 = (CinemetaRes) c00024.L$18;
+                String str128 = (String) c00024.L$17;
+                String str129 = (String) c00024.L$16;
+                String str130 = (String) c00024.L$15;
+                String str131 = (String) c00024.L$14;
+                List list66 = (List) c00024.L$13;
+                List list67 = (List) c00024.L$12;
+                List list68 = (List) c00024.L$11;
+                List list69 = (List) c00024.L$10;
+                Integer num21 = (Integer) c00024.L$9;
+                String str132 = (String) c00024.L$8;
+                String str133 = (String) c00024.L$7;
+                String str134 = (String) c00024.L$6;
+                String str135 = (String) c00024.L$5;
+                MediaDetail mediaDetail21 = (MediaDetail) c00024.L$4;
+                String str136 = (String) c00024.L$3;
+                TvType tvType23 = (TvType) c00024.L$2;
+                Data data20 = (Data) c00024.L$1;
+                String str137 = (String) c00024.L$0;
                 ResultKt.throwOnFailure(objNewMovieLoadResponse);
-                str54 = str116;
-                mediaDetail6 = mediaDetail21;
-                obj13 = objNewMovieLoadResponse;
-                i52 = i94;
-                i50 = i95;
-                list36 = list62;
-                list35 = list63;
+                i36 = i73;
+                i37 = i74;
+                r78 = str127;
+                list28 = list64;
                 list32 = list65;
-                str14 = str119;
-                str7 = null;
-                str65 = str124;
-                i55 = i92;
-                str66 = str121;
-                str51 = str123;
-                tvType3 = tvType22;
-                data12 = data21;
-                list28 = list61;
-                cinemetaRes4 = cinemetaRes20;
-                str70 = str115;
-                list34 = list60;
-                num9 = num20;
-                c00024 = c00025;
-                i54 = i96;
-                str72 = str118;
-                list33 = list64;
-                str69 = str114;
-                obj14 = coroutine_suspended;
-                str67 = str120;
-                i53 = i93;
-                str71 = str117;
-                str68 = str122;
-                String string9 = ((NiceResponse) obj13).toString();
-                animeData = TorraStreamUtilsKt.parseAnimeData(string9);
+                str78 = str131;
+                list35 = list66;
+                list34 = list67;
+                list37 = list68;
+                num9 = num21;
+                str64 = str132;
+                str76 = str135;
+                tvType6 = tvType23;
+                cinemetaRes7 = cinemetaRes16;
+                str73 = str128;
+                str59 = str129;
+                c00023 = c00024;
+                list36 = list69;
+                mediaDetail8 = mediaDetail21;
+                obj16 = coroutine_suspended;
+                i38 = i71;
+                i39 = i72;
+                i40 = i70;
+                str77 = str130;
+                str75 = str133;
+                str27 = str136;
+                data10 = data20;
+                str72 = str137;
+                obj18 = objNewMovieLoadResponse;
+                str74 = str134;
+                num6 = null;
+                String text9 = ((NiceResponse) obj18).getText();
+                animeData = TorraStreamUtilsKt.parseAnimeData(text9);
                 if (animeData != null) {
-                    kitsuid = str7;
+                    kitsuid = num6;
                 } else {
-                    kitsuid = str7;
+                    kitsuid = num6;
                 }
-                MainAPI mainAPI14 = (MainAPI) this;
-                TvType tvType1110 = TvType.Anime;
-                int i611118 = i55;
-                if (i52 != 0) {
-                    z5 = true;
-                } else {
-                    z5 = false;
+                String str911111117 = str74;
+                list39 = list28;
+                int i511117 = i40;
+                str79 = str76;
+                arrayList8 = new ArrayList(CollectionsKt.collectionSizeOrDefault(list39, 10));
+                list40 = list39;
+                while (r23.hasNext()) {
+                    List list4111117 = list39;
+                    released = video.getReleased();
+                    if (released != null) {
+                        if (cinemetaRes7 != null) {
+                            intOrNull2 = num6;
+                        } else {
+                            intOrNull2 = num6;
+                        }
+                        if (intOrNull2 != null) {
+                            iIntValue = intOrNull2.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                    } else {
+                        if (cinemetaRes7 != null) {
+                            intOrNull2 = num6;
+                        } else {
+                            intOrNull2 = num6;
+                        }
+                        if (intOrNull2 != null) {
+                            iIntValue = intOrNull2.intValue();
+                        } else {
+                            iIntValue = 0;
+                        }
+                    }
+                    List list4111118 = list40;
+                    MainAPI mainAPI14 = (MainAPI) this;
+                    String str911111118 = str75;
+                    AppUtils appUtils15 = AppUtils.INSTANCE;
+                    Integer id10 = data10.getId();
+                    external_ids3 = mediaDetail8.getExternal_ids();
+                    if (external_ids3 != null) {
+                        tvdb_id = external_ids3.getTvdb_id();
+                    } else {
+                        tvdb_id = num6;
+                    }
+                    String type11 = data10.getType();
+                    Integer season10 = video.getSeason();
+                    Integer episode9 = video.getEpisode();
+                    Integer numBoxInt9 = Boxing.boxInt(iIntValue);
+                    String title15 = video.getTitle();
+                    String released10 = video.getReleased();
+                    releaseDate2 = mediaDetail8.getReleaseDate();
+                    if (releaseDate2 == null) {
+                        releaseDate2 = mediaDetail8.getFirstAirDate();
+                    }
+                    String str911111119 = releaseDate2;
+                    if (i39 != 0) {
+                        z5 = true;
+                    } else {
+                        z5 = false;
+                    }
+                    if (i38 != 0) {
+                        z6 = true;
+                    } else {
+                        z6 = false;
+                    }
+                    if (i37 != 0) {
+                        z7 = true;
+                    } else {
+                        z7 = false;
+                    }
+                    String str9111111110 = str73;
+                    arrayList8.add(MainAPIKt.newEpisode(mainAPI14, appUtils15.toJson(new LinkData(id10, str9111111110, tvdb_id, type11, season10, episode9, null, null, null, str79, numBoxInt9, "", true, num9, null, title15, r78, released10, str911111119, z5, z6, z7, mediaDetail8.getTitle(), mediaDetail8.getName(), false, null, 33571264, null)), new Function1() { // from class: com.phisher98.TorraStream$$ExternalSyntheticLambda1
+                        public final Object invoke(Object obj27) {
+                            return TorraStream.load$lambda$9$0(video, this, (Episode) obj27);
+                        }
+                    }));
+                    list39 = list4111117;
+                    list40 = list4111118;
+                    str75 = str911111118;
+                    str77 = str77;
+                    str73 = str9111111110;
                 }
-                if (i53 != 0) {
-                    z6 = true;
-                } else {
-                    z6 = false;
+                String str9111111111 = str75;
+                String str9111111112 = str77;
+                String str9111111113 = str73;
+                arrayList9 = arrayList8;
+                if (arrayList9.isEmpty()) {
+                    arrayList9 = list32;
                 }
-                if (i54 != 0) {
-                    z7 = true;
-                } else {
-                    z7 = false;
-                }
-                obj15 = obj14;
-                int i71111 = i54;
-                C00021 c00021114 = c00024;
-                int i71112 = i53;
-                CinemetaRes cinemetaRes112 = cinemetaRes4;
-                String str811116 = kitsuid;
-                C00032 c000310 = new C00032(str66, str67, str71, num9, mediaDetail6, list33, list32, this, list36, list35, str72, str811116, cinemetaRes112, str70, list34, data12, str68, str69, z5, z6, z7, null);
-                String str811117 = str67;
-                String str811118 = str68;
-                c00021114.L$0 = SpillingKt.nullOutSpilledVariable(str65);
-                c00021114.L$1 = SpillingKt.nullOutSpilledVariable(data12);
-                c00021114.L$2 = SpillingKt.nullOutSpilledVariable(tvType3);
-                c00021114.L$3 = SpillingKt.nullOutSpilledVariable(str51);
-                c00021114.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail6);
-                c00021114.L$5 = SpillingKt.nullOutSpilledVariable(str811118);
-                c00021114.L$6 = SpillingKt.nullOutSpilledVariable(str66);
-                c00021114.L$7 = SpillingKt.nullOutSpilledVariable(str811117);
-                c00021114.L$8 = SpillingKt.nullOutSpilledVariable(str14);
-                c00021114.L$9 = SpillingKt.nullOutSpilledVariable(num9);
-                c00021114.L$10 = SpillingKt.nullOutSpilledVariable(list32);
-                c00021114.L$11 = SpillingKt.nullOutSpilledVariable(list33);
-                c00021114.L$12 = SpillingKt.nullOutSpilledVariable(list35);
-                c00021114.L$13 = SpillingKt.nullOutSpilledVariable(list36);
-                c00021114.L$14 = SpillingKt.nullOutSpilledVariable(str72);
-                c00021114.L$15 = SpillingKt.nullOutSpilledVariable(str71);
-                c00021114.L$16 = SpillingKt.nullOutSpilledVariable(str54);
-                c00021114.L$17 = SpillingKt.nullOutSpilledVariable(str70);
-                c00021114.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes112);
-                c00021114.L$19 = SpillingKt.nullOutSpilledVariable(list28);
-                c00021114.L$20 = SpillingKt.nullOutSpilledVariable(list34);
-                c00021114.L$21 = SpillingKt.nullOutSpilledVariable(str69);
-                c00021114.L$22 = SpillingKt.nullOutSpilledVariable(string9);
-                c00021114.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
-                c00021114.L$24 = SpillingKt.nullOutSpilledVariable(str811116);
-                c00021114.I$0 = i71111 == true ? 1 : 0;
-                c00021114.I$1 = i50;
-                c00021114.I$2 = i52;
-                c00021114.I$3 = i71112;
-                c00021114.I$4 = i611118 == true ? 1 : 0;
-                c00021114.label = 6;
-                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default(mainAPI14, str811118, str65, tvType1110, false, c000310, c00021114, 8, (Object) null);
-                if (objNewAnimeLoadResponse$default == obj15) {
-                    return obj15;
+                List list512 = arrayList9;
+                TvType tvType1118 = TvType.Anime;
+                obj19 = obj16;
+                int i511118 = i39;
+                C00021 c0002119 = c00023;
+                ?? r112 = kitsuid;
+                C00032 c000310 = new C00032(list512, str911111117, str9111111111, str9111111112, num9, mediaDetail8, list37, list36, this, list35, list34, str78, r112, cinemetaRes7, str9111111113, null);
+                c0002119.L$0 = SpillingKt.nullOutSpilledVariable(str72);
+                c0002119.L$1 = SpillingKt.nullOutSpilledVariable(data10);
+                c0002119.L$2 = SpillingKt.nullOutSpilledVariable(tvType6);
+                c0002119.L$3 = SpillingKt.nullOutSpilledVariable(str27);
+                c0002119.L$4 = SpillingKt.nullOutSpilledVariable(mediaDetail8);
+                c0002119.L$5 = SpillingKt.nullOutSpilledVariable(str79);
+                c0002119.L$6 = SpillingKt.nullOutSpilledVariable(str911111117);
+                c0002119.L$7 = SpillingKt.nullOutSpilledVariable(str9111111111);
+                c0002119.L$8 = SpillingKt.nullOutSpilledVariable(str64);
+                c0002119.L$9 = SpillingKt.nullOutSpilledVariable(num9);
+                c0002119.L$10 = SpillingKt.nullOutSpilledVariable(list36);
+                c0002119.L$11 = SpillingKt.nullOutSpilledVariable(list37);
+                c0002119.L$12 = SpillingKt.nullOutSpilledVariable(list34);
+                c0002119.L$13 = SpillingKt.nullOutSpilledVariable(list35);
+                c0002119.L$14 = SpillingKt.nullOutSpilledVariable(str78);
+                c0002119.L$15 = SpillingKt.nullOutSpilledVariable(str9111111112);
+                c0002119.L$16 = SpillingKt.nullOutSpilledVariable(str59);
+                c0002119.L$17 = SpillingKt.nullOutSpilledVariable(str9111111113);
+                c0002119.L$18 = SpillingKt.nullOutSpilledVariable(cinemetaRes7);
+                c0002119.L$19 = SpillingKt.nullOutSpilledVariable(list32);
+                c0002119.L$20 = SpillingKt.nullOutSpilledVariable(list28);
+                c0002119.L$21 = SpillingKt.nullOutSpilledVariable((Object) r78);
+                c0002119.L$22 = SpillingKt.nullOutSpilledVariable(text9);
+                c0002119.L$23 = SpillingKt.nullOutSpilledVariable(animeData);
+                c0002119.L$24 = SpillingKt.nullOutSpilledVariable((Object) r112);
+                c0002119.L$25 = SpillingKt.nullOutSpilledVariable(list512);
+                c0002119.I$0 = i37 == true ? 1 : 0;
+                c0002119.I$1 = i36;
+                c0002119.I$2 = i511118;
+                c0002119.I$3 = i38;
+                c0002119.I$4 = i511117 == true ? 1 : 0;
+                c0002119.label = 6;
+                objNewAnimeLoadResponse$default = MainAPIKt.newAnimeLoadResponse$default((MainAPI) this, str79, str72, tvType1118, false, c000310, c0002119, 8, (Object) null);
+                if (objNewAnimeLoadResponse$default == obj19) {
+                    return obj19;
                 }
                 return objNewAnimeLoadResponse$default;
             case 6:
-                int i97 = c00025.I$4;
-                int i98 = c00025.I$3;
-                int i99 = c00025.I$2;
-                int i100 = c00025.I$1;
-                int i101 = c00025.I$0;
+                int i75 = c00024.I$4;
+                int i76 = c00024.I$3;
+                int i77 = c00024.I$2;
+                int i78 = c00024.I$1;
+                int i79 = c00024.I$0;
                 ResultKt.throwOnFailure(objNewMovieLoadResponse);
                 return objNewMovieLoadResponse;
             case 7:
-                int i102 = c00025.I$4;
-                int i103 = c00025.I$3;
-                int i104 = c00025.I$2;
-                int i105 = c00025.I$1;
-                int i106 = c00025.I$0;
+                int i80 = c00024.I$4;
+                int i81 = c00024.I$3;
+                int i82 = c00024.I$2;
+                int i83 = c00024.I$1;
+                int i84 = c00024.I$0;
+                str67 = (String) c00024.L$7;
                 ResultKt.throwOnFailure(objNewMovieLoadResponse);
-                c00023 = c00025;
-                obj12 = objNewMovieLoadResponse;
-                return (LoadResponse) obj12;
+                c00022 = c00024;
+                obj14 = objNewMovieLoadResponse;
+                return (LoadResponse) obj14;
             case 8:
-                int i107 = c00025.I$4;
-                int i108 = c00025.I$3;
-                int i109 = c00025.I$2;
-                i28 = c00025.I$1;
-                int i110 = c00025.I$0;
-                cinemetaRes2 = (CinemetaRes) c00025.L$18;
-                str37 = (String) c00025.L$17;
-                str40 = (String) c00025.L$16;
-                str39 = (String) c00025.L$15;
-                str35 = (String) c00025.L$14;
-                List list66 = (List) c00025.L$13;
-                list20 = (List) c00025.L$12;
-                i29 = i107;
-                list17 = (List) c00025.L$11;
-                list18 = (List) c00025.L$10;
-                num5 = (Integer) c00025.L$9;
-                str36 = (String) c00025.L$8;
-                str38 = (String) c00025.L$6;
-                String str125 = (String) c00025.L$5;
-                mediaDetail4 = (MediaDetail) c00025.L$4;
-                str21 = (String) c00025.L$3;
-                data7 = (Data) c00025.L$1;
-                String str126 = (String) c00025.L$0;
+                int i85 = c00024.I$4;
+                int i86 = c00024.I$3;
+                int i87 = c00024.I$2;
+                int i88 = c00024.I$1;
+                int i89 = c00024.I$0;
+                cinemetaRes2 = (CinemetaRes) c00024.L$18;
+                str39 = (String) c00024.L$17;
+                str37 = (String) c00024.L$16;
+                String str138 = (String) c00024.L$15;
+                str41 = (String) c00024.L$14;
+                list17 = (List) c00024.L$13;
+                list18 = (List) c00024.L$12;
+                i20 = i85;
+                List list70 = (List) c00024.L$11;
+                List list71 = (List) c00024.L$10;
+                str38 = (String) c00024.L$8;
+                str40 = (String) c00024.L$7;
+                String str139 = (String) c00024.L$6;
+                String str140 = (String) c00024.L$5;
+                Data data21 = (Data) c00024.L$1;
+                String str141 = (String) c00024.L$0;
                 ResultKt.throwOnFailure(objNewMovieLoadResponse);
-                i27 = i108;
-                i26 = i109;
-                list19 = list66;
-                str34 = str125;
-                str33 = str126;
+                str34 = str138;
+                list14 = list70;
+                list16 = list71;
+                str30 = str139;
+                str36 = str140;
+                data6 = data21;
+                i18 = i86;
+                str35 = str141;
                 return (LoadResponse) objNewMovieLoadResponse;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -5426,56 +6127,7 @@ public final class TorraStream extends TmdbProvider {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Code duplicated, block: B:22:0x0069 A[PHI: r10
-      0x0069: PHI (r10v8 java.lang.Integer) = (r10v2 java.lang.Integer), (r10v14 java.lang.Integer) binds: [B:21:0x0067, B:12:0x0050] A[DONT_GENERATE, DONT_INLINE]] */
-    public static final List<Episode> load$buildEpisodeList(List<CinemetaRes.Meta.Video> list, CinemetaRes cineRes, final TorraStream this$0, Data data, String imdbId, MediaDetail res, String title, Integer year, String jpTitle, boolean isAsian, boolean isBollywood, boolean isCartoon, boolean isDub) {
-        Integer intOrNull;
-        int videoYear;
-        CinemetaRes.Meta meta;
-        String year2;
-        List listSplit$default;
-        String str;
-        List<CinemetaRes.Meta.Video> $this$map$iv = list;
-        Collection destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
-        for (Object item$iv$iv : $this$map$iv) {
-            final CinemetaRes.Meta.Video video = (CinemetaRes.Meta.Video) item$iv$iv;
-            String released = video.getReleased();
-            if (released == null || (listSplit$default = StringsKt.split$default(released, new String[]{"-"}, false, 0, 6, (Object) null)) == null || (str = (String) CollectionsKt.firstOrNull(listSplit$default)) == null || (intOrNull = StringsKt.toIntOrNull(str)) == null) {
-                intOrNull = (cineRes == null || (meta = cineRes.getMeta()) == null || (year2 = meta.getYear()) == null) ? null : StringsKt.toIntOrNull(year2);
-                if (intOrNull != null) {
-                    videoYear = intOrNull.intValue();
-                } else {
-                    videoYear = 0;
-                }
-            } else {
-                videoYear = intOrNull.intValue();
-            }
-            MainAPI mainAPI = (MainAPI) this$0;
-            AppUtils appUtils = AppUtils.INSTANCE;
-            Integer id = data.getId();
-            ExternalIds external_ids = res.getExternal_ids();
-            Integer tvdb_id = external_ids != null ? external_ids.getTvdb_id() : null;
-            String type = data.getType();
-            Integer season = video.getSeason();
-            Integer episode = video.getEpisode();
-            Integer numValueOf = Integer.valueOf(videoYear);
-            String title2 = video.getTitle();
-            String released2 = video.getReleased();
-            String releaseDate = res.getReleaseDate();
-            if (releaseDate == null) {
-                releaseDate = res.getFirstAirDate();
-            }
-            destination$iv$iv.add(MainAPIKt.newEpisode(mainAPI, appUtils.toJson(new LinkData(id, imdbId, tvdb_id, type, season, episode, null, null, null, title, numValueOf, "", true, year, null, title2, jpTitle, released2, releaseDate, isAsian, isBollywood, isCartoon, res.getTitle(), res.getName(), isDub, null, 33571264, null)), new Function1() { // from class: com.phisher98.TorraStream$$ExternalSyntheticLambda1
-                public final Object invoke(Object obj) {
-                    return TorraStream.load$buildEpisodeList$lambda$9$0(video, this$0, (Episode) obj);
-                }
-            }));
-        }
-        return (List) destination$iv$iv;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit load$buildEpisodeList$lambda$9$0(CinemetaRes.Meta.Video $video, TorraStream this$0, Episode $this$newEpisode) {
+    public static final Unit load$lambda$9$0(CinemetaRes.Meta.Video $video, TorraStream this$0, Episode $this$newEpisode) {
         $this$newEpisode.setName($video.getTitle() + (this$0.isUpcoming($video.getReleased()) ? " • [UPCOMING]" : ""));
         $this$newEpisode.setSeason($video.getSeason());
         $this$newEpisode.setEpisode($video.getEpisode());
@@ -5492,23 +6144,17 @@ public final class TorraStream extends TmdbProvider {
     @SourceDebugExtension({"SMAP\nTorraStream.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TorraStream.kt\ncom/phisher98/TorraStream$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,550:1\n1739#2:551\n1814#2,2:552\n1816#2:555\n1#3:554\n*S KotlinDebug\n*F\n+ 1 TorraStream.kt\ncom/phisher98/TorraStream$load$2\n*L\n283#1:551\n283#1:552,2\n283#1:555\n*E\n"})
     static final class C00032 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<ActorData> $actors;
-        final /* synthetic */ List<CinemetaRes.Meta.Video> $animeVideos;
         final /* synthetic */ String $bgPoster;
         final /* synthetic */ CinemetaRes $cineRes;
-        final /* synthetic */ Data $data;
         final /* synthetic */ List<String> $genres;
         final /* synthetic */ String $imdbId;
-        final /* synthetic */ boolean $isAsian;
-        final /* synthetic */ boolean $isBollywood;
-        final /* synthetic */ boolean $isCartoon;
-        final /* synthetic */ String $jpTitle;
         final /* synthetic */ List<String> $keywords;
         final /* synthetic */ String $kitsuid;
         final /* synthetic */ String $logoUrl;
         final /* synthetic */ String $poster;
         final /* synthetic */ List<SearchResponse> $recommendations;
         final /* synthetic */ MediaDetail $res;
-        final /* synthetic */ String $title;
+        final /* synthetic */ List<Episode> $subbedList;
         final /* synthetic */ String $trailer;
         final /* synthetic */ Integer $year;
         private /* synthetic */ Object L$0;
@@ -5516,33 +6162,27 @@ public final class TorraStream extends TmdbProvider {
         final /* synthetic */ TorraStream this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00032(String str, String str2, String str3, Integer num, MediaDetail mediaDetail, List<String> list, List<String> list2, TorraStream torraStream, List<? extends SearchResponse> list3, List<ActorData> list4, String str4, String str5, CinemetaRes cinemetaRes, String str6, List<CinemetaRes.Meta.Video> list5, Data data, String str7, String str8, boolean z, boolean z2, boolean z3, Continuation<? super C00032> continuation) {
+        C00032(List<Episode> list, String str, String str2, String str3, Integer num, MediaDetail mediaDetail, List<String> list2, List<String> list3, TorraStream torraStream, List<? extends SearchResponse> list4, List<ActorData> list5, String str4, String str5, CinemetaRes cinemetaRes, String str6, Continuation<? super C00032> continuation) {
             super(2, continuation);
+            this.$subbedList = list;
             this.$poster = str;
             this.$bgPoster = str2;
             this.$logoUrl = str3;
             this.$year = num;
             this.$res = mediaDetail;
-            this.$keywords = list;
-            this.$genres = list2;
+            this.$keywords = list2;
+            this.$genres = list3;
             this.this$0 = torraStream;
-            this.$recommendations = list3;
-            this.$actors = list4;
+            this.$recommendations = list4;
+            this.$actors = list5;
             this.$trailer = str4;
             this.$kitsuid = str5;
             this.$cineRes = cinemetaRes;
             this.$imdbId = str6;
-            this.$animeVideos = list5;
-            this.$data = data;
-            this.$title = str7;
-            this.$jpTitle = str8;
-            this.$isAsian = z;
-            this.$isBollywood = z2;
-            this.$isCartoon = z3;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00032 = new C00032(this.$poster, this.$bgPoster, this.$logoUrl, this.$year, this.$res, this.$keywords, this.$genres, this.this$0, this.$recommendations, this.$actors, this.$trailer, this.$kitsuid, this.$cineRes, this.$imdbId, this.$animeVideos, this.$data, this.$title, this.$jpTitle, this.$isAsian, this.$isBollywood, this.$isCartoon, continuation);
+            Continuation<Unit> c00032 = new C00032(this.$subbedList, this.$poster, this.$bgPoster, this.$logoUrl, this.$year, this.$res, this.$keywords, this.$genres, this.this$0, this.$recommendations, this.$actors, this.$trailer, this.$kitsuid, this.$cineRes, this.$imdbId, continuation);
             c00032.L$0 = obj;
             return c00032;
         }
@@ -5551,7 +6191,7 @@ public final class TorraStream extends TmdbProvider {
             return create(animeLoadResponse, continuation).invokeSuspend(Unit.INSTANCE);
         }
 
-        /* JADX WARN: Code duplicated, block: B:29:0x00e3  */
+        /* JADX WARN: Code duplicated, block: B:29:0x00c6  */
         public final Object invokeSuspend(Object $result) {
             List<String> list;
             String string;
@@ -5562,7 +6202,7 @@ public final class TorraStream extends TmdbProvider {
             switch (this.label) {
                 case 0:
                     ResultKt.throwOnFailure($result);
-                    MainAPIKt.addEpisodes(loadResponse, DubStatus.Subbed, TorraStream.load$buildEpisodeList(this.$animeVideos, this.$cineRes, this.this$0, this.$data, this.$imdbId, this.$res, this.$title, this.$year, this.$jpTitle, this.$isAsian, this.$isBollywood, this.$isCartoon, false));
+                    MainAPIKt.addEpisodes(loadResponse, DubStatus.Subbed, this.$subbedList);
                     loadResponse.setPosterUrl(this.$poster);
                     loadResponse.setBackgroundPosterUrl(this.$bgPoster);
                     try {
