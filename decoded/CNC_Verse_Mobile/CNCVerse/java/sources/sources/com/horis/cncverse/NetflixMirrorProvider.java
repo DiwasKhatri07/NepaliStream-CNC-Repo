@@ -1776,51 +1776,13 @@ public final class NetflixMirrorProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x014a -> B:18:0x0150). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
-        */
-    public final java.lang.Object getEpisodes(java.lang.String r29, java.lang.String r30, java.lang.String r31, int r32, kotlin.coroutines.Continuation<? super java.util.List<com.lagradost.cloudstream3.Episode>> r33) {
-        /*
-            Method dump skipped, instruction units count: 476
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: com.horis.cncverse.NetflixMirrorProvider.getEpisodes(java.lang.String, java.lang.String, java.lang.String, int, kotlin.coroutines.Continuation):java.lang.Object");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit getEpisodes$lambda$0$0(com.horis.cncverse.entities.Episode $it, Episode $this$newEpisode) {
-        $this$newEpisode.setName($it.getT());
-        $this$newEpisode.setEpisode(StringsKt.toIntOrNull(StringsKt.replace$default($it.getEp(), "E", "", false, 4, (Object) null)));
-        $this$newEpisode.setSeason(StringsKt.toIntOrNull(StringsKt.replace$default($it.getS(), "S", "", false, 4, (Object) null)));
-        $this$newEpisode.setPosterUrl("https://imgcdn.kim/epimg/150/" + $it.getId() + ".jpg");
-        $this$newEpisode.setRunTime(StringsKt.toIntOrNull(StringsKt.replace$default($it.getTime(), "m", "", false, 4, (Object) null)));
-        return Unit.INSTANCE;
-    }
-
-    /* JADX WARN: Code duplicated, block: B:27:0x03d0  */
-    /* JADX WARN: Code duplicated, block: B:30:0x03fb  */
-    /* JADX WARN: Code duplicated, block: B:33:0x0494  */
-    /* JADX WARN: Code duplicated, block: B:37:0x04b6  */
-    /* JADX WARN: Code duplicated, block: B:40:0x04cc  */
-    /* JADX WARN: Code duplicated, block: B:42:0x04e6  */
-    /* JADX WARN: Code duplicated, block: B:53:0x063c  */
-    /* JADX WARN: Code duplicated, block: B:58:0x0493 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:62:0x04e9 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:44:0x04ef -> B:45:0x0526). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:50:0x05d0 -> B:51:0x05f3). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:53:0x063c -> B:25:0x03ca). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-        java.lang.StackOverflowError
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextBlockInIfSuccessorChain(IfRegionMaker.java:646)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIfNodeInfo(IfRegionMaker.java:620)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIfNodeInfo(IfRegionMaker.java:633)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.getNextIf(IfRegionMaker.java:602)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.mergeNestedIfNodes(IfRegionMaker.java:409)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:68)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.process(LoopRegionMaker.java:162)
+        	at jadx.core.dex.attributes.AttributeStorage.contains(AttributeStorage.java:94)
+        	at jadx.core.dex.attributes.AttrNode.contains(AttrNode.java:103)
+        	at jadx.core.utils.BlockUtils.isExceptionHandlerPath(BlockUtils.java:92)
+        	at jadx.core.dex.attributes.nodes.LoopInfo.getExitEdges(LoopInfo.java:66)
+        	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.checkLoopExits(LoopRegionMaker.java:265)
+        	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.makeLoopRegion(LoopRegionMaker.java:237)
+        	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.process(LoopRegionMaker.java:80)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:92)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
@@ -2835,6 +2797,44 @@ public final class NetflixMirrorProvider extends MainAPI {
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
+        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
+        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
+        */
+    public final java.lang.Object getEpisodes(java.lang.String r29, java.lang.String r30, java.lang.String r31, int r32, kotlin.coroutines.Continuation<? super java.util.List<com.lagradost.cloudstream3.Episode>> r33) {
+        /*
+            Method dump skipped, instruction units count: 476
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: com.horis.cncverse.NetflixMirrorProvider.getEpisodes(java.lang.String, java.lang.String, java.lang.String, int, kotlin.coroutines.Continuation):java.lang.Object");
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    public static final Unit getEpisodes$lambda$0$0(com.horis.cncverse.entities.Episode $it, Episode $this$newEpisode) {
+        $this$newEpisode.setName($it.getT());
+        $this$newEpisode.setEpisode(StringsKt.toIntOrNull(StringsKt.replace$default($it.getEp(), "E", "", false, 4, (Object) null)));
+        $this$newEpisode.setSeason(StringsKt.toIntOrNull(StringsKt.replace$default($it.getS(), "S", "", false, 4, (Object) null)));
+        $this$newEpisode.setPosterUrl("https://imgcdn.kim/epimg/150/" + $it.getId() + ".jpg");
+        $this$newEpisode.setRunTime(StringsKt.toIntOrNull(StringsKt.replace$default($it.getTime(), "m", "", false, 4, (Object) null)));
+        return Unit.INSTANCE;
+    }
+
+    /* JADX WARN: Code duplicated, block: B:27:0x03d0  */
+    /* JADX WARN: Code duplicated, block: B:30:0x03fb  */
+    /* JADX WARN: Code duplicated, block: B:33:0x0494  */
+    /* JADX WARN: Code duplicated, block: B:37:0x04b6  */
+    /* JADX WARN: Code duplicated, block: B:40:0x04cc  */
+    /* JADX WARN: Code duplicated, block: B:42:0x04e6  */
+    /* JADX WARN: Code duplicated, block: B:53:0x063c  */
+    /* JADX WARN: Code duplicated, block: B:58:0x0493 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:62:0x04e9 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:44:0x04ef -> B:45:0x0526). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:50:0x05d0 -> B:51:0x05f3). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:53:0x063c -> B:25:0x03ca). Please report as a decompilation issue!!! */
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r37, boolean r38, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r39, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r40, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r41) {
