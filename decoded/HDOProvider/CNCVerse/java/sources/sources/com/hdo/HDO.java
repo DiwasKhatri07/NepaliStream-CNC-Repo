@@ -1,25 +1,8 @@
 package com.hdo;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Base64;
 import android.util.Log;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -31,7 +14,6 @@ import com.lagradost.cloudstream3.TvType;
 import com.lagradost.cloudstream3.metaproviders.TmdbLink;
 import com.lagradost.cloudstream3.metaproviders.TmdbProvider;
 import com.lagradost.cloudstream3.mvvm.ArchComponentExtKt;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import java.util.List;
@@ -59,7 +41,6 @@ import kotlin.jvm.internal.MagicApiIntrinsics;
 import kotlin.jvm.internal.Reflection;
 import kotlin.jvm.internal.SourceDebugExtension;
 import kotlin.reflect.KType;
-import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.DeserializationStrategy;
 import kotlinx.serialization.KSerializer;
@@ -71,23 +52,16 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: HDO.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/HDOProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\r\u0018\u0000 72\u00020\u0001:\u0005789:;B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"JF\u0010#\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u000b2\u0012\u0010&\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020)0'2\u0012\u0010*\u001a\u000e\u0012\u0004\u0012\u00020+\u0012\u0004\u0012\u00020)0'H\u0096@¢\u0006\u0002\u0010,J\f\u0010-\u001a\u00020.*\u00020/H\u0002J*\u00100\u001a\u00020\u000b2\u0006\u00101\u001a\u00020.2\u0012\u0010*\u001a\u000e\u0012\u0004\u0012\u00020+\u0012\u0004\u0012\u00020)0'H\u0082@¢\u0006\u0002\u00102J\b\u00103\u001a\u00020)H\u0002J\b\u00104\u001a\u00020)H\u0002J\u0010\u00105\u001a\u00020)2\u0006\u00106\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u001a\u0010\u000e\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0007\"\u0004\b\u0010\u0010\tR\u0014\u0010\u0011\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\rR\u0014\u0010\u0013\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\rR\u0014\u0010\u0015\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\rR\u001a\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001b¨\u0006<"}, d2 = {"Lcom/hdo/HDO;", "Lcom/lagradost/cloudstream3/metaproviders/TmdbProvider;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "instantLinkLoading", "getInstantLinkLoading", "useMetaLoadResponse", "getUseMetaLoadResponse", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toLinkData", "Lcom/hdo/HDO$HulaMovieInfo;", "Lcom/lagradost/cloudstream3/metaproviders/TmdbLink;", "callHulaApiServer", "mediaData", "(Lcom/hdo/HDO$HulaMovieInfo;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "url", "Companion", "HulaMovieInfo", "HulaApiResponse", "HulaResult", "HulaTrack", "HDOProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nHDO.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HDO.kt\ncom/hdo/HDO\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,489:1\n63#2:490\n64#2,15:492\n63#2:510\n64#2,15:512\n1#3:491\n1#3:509\n1#3:511\n1#3:529\n50#4:507\n43#4:508\n50#4:527\n43#4:528\n*S KotlinDebug\n*F\n+ 1 HDO.kt\ncom/hdo/HDO\n*L\n70#1:490\n70#1:492,15\n184#1:510\n184#1:512,15\n70#1:491\n184#1:511\n70#1:507\n70#1:508\n184#1:527\n184#1:528\n*E\n"})
+@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 32\u00020\u0001:\u000534567B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"JF\u0010#\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u000b2\u0012\u0010&\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020)0'2\u0012\u0010*\u001a\u000e\u0012\u0004\u0012\u00020+\u0012\u0004\u0012\u00020)0'H\u0096@¢\u0006\u0002\u0010,J\f\u0010-\u001a\u00020.*\u00020/H\u0002J*\u00100\u001a\u00020\u000b2\u0006\u00101\u001a\u00020.2\u0012\u0010*\u001a\u000e\u0012\u0004\u0012\u00020+\u0012\u0004\u0012\u00020)0'H\u0082@¢\u0006\u0002\u00102R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u001a\u0010\u000e\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0007\"\u0004\b\u0010\u0010\tR\u0014\u0010\u0011\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\rR\u0014\u0010\u0013\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\rR\u0014\u0010\u0015\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\rR\u001a\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001b¨\u00068"}, d2 = {"Lcom/hdo/HDO;", "Lcom/lagradost/cloudstream3/metaproviders/TmdbProvider;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "instantLinkLoading", "getInstantLinkLoading", "useMetaLoadResponse", "getUseMetaLoadResponse", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toLinkData", "Lcom/hdo/HDO$HulaMovieInfo;", "Lcom/lagradost/cloudstream3/metaproviders/TmdbLink;", "callHulaApiServer", "mediaData", "(Lcom/hdo/HDO$HulaMovieInfo;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "HulaMovieInfo", "HulaApiResponse", "HulaResult", "HulaTrack", "HDOProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nHDO.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HDO.kt\ncom/hdo/HDO\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,223:1\n63#2:224\n64#2,15:226\n63#2:244\n64#2,15:246\n1#3:225\n1#3:243\n1#3:245\n50#4:241\n43#4:242\n50#4:261\n43#4:262\n*S KotlinDebug\n*F\n+ 1 HDO.kt\ncom/hdo/HDO\n*L\n48#1:224\n48#1:226,15\n160#1:244\n160#1:246,15\n48#1:225\n160#1:245\n48#1:241\n48#1:242\n160#1:261\n160#1:262\n*E\n"})
 public final class HDO extends TmdbProvider {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context cont;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private String name = "HDO";
@@ -105,8 +79,8 @@ public final class HDO extends TmdbProvider {
     /* JADX INFO: renamed from: com.hdo.HDO$callHulaApiServer$1 */
     /* JADX INFO: compiled from: HDO.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hdo.HDO", f = "HDO.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {178, 203, 220}, m = "callHulaApiServer", n = {"mediaData", "callback", "apiUrl", "mediaData", "callback", "apiUrl", "response", "apiResponse", "result", "referer", "headers", "track", "quality", "mediaData", "callback", "apiUrl", "response", "apiResponse", "result", "referer", "headers"}, nl = {179, 202, 219}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$6", "L$7", "L$8", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$6", "L$7", "L$8"}, v = 2)
-    static final class C00001 extends ContinuationImpl {
+    @DebugMetadata(c = "com.hdo.HDO", f = "HDO.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2}, l = {154, 179, 196}, m = "callHulaApiServer", n = {"mediaData", "callback", "apiUrl", "mediaData", "callback", "apiUrl", "response", "apiResponse", "result", "referer", "headers", "track", "quality", "mediaData", "callback", "apiUrl", "response", "apiResponse", "result", "referer", "headers"}, nl = {155, 178, 195}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$6", "L$7", "L$8", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$6", "L$7", "L$8"}, v = 2)
+    static final class C00021 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -123,7 +97,7 @@ public final class HDO extends TmdbProvider {
         int label;
         /* synthetic */ Object result;
 
-        C00001(Continuation<? super C00001> continuation) {
+        C00021(Continuation<? super C00021> continuation) {
             super(continuation);
         }
 
@@ -138,8 +112,8 @@ public final class HDO extends TmdbProvider {
     /* JADX INFO: renamed from: com.hdo.HDO$loadLinks$1 */
     /* JADX INFO: compiled from: HDO.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hdo.HDO", f = "HDO.kt", i = {0, 0, 0, 0, 0}, l = {75}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mediaData", "isCasting"}, nl = {103}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
-    static final class C00031 extends ContinuationImpl {
+    @DebugMetadata(c = "com.hdo.HDO", f = "HDO.kt", i = {0, 0, 0, 0, 0}, l = {53}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mediaData", "isCasting"}, nl = {79}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -148,7 +122,7 @@ public final class HDO extends TmdbProvider {
         int label;
         /* synthetic */ Object result;
 
-        C00031(Continuation<? super C00031> continuation) {
+        C00051(Continuation<? super C00051> continuation) {
             super(continuation);
         }
 
@@ -200,7 +174,7 @@ public final class HDO extends TmdbProvider {
     }
 
     /* JADX INFO: compiled from: HDO.kt */
-    @Metadata(d1 = {"\u0000(\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0012"}, d2 = {"Lcom/hdo/HDO$Companion;", "", "<init>", "()V", "cont", "Landroid/content/Context;", "getCont", "()Landroid/content/Context;", "setCont", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "HDOProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/hdo/HDO$Companion;", "", "<init>", "()V", "cont", "Landroid/content/Context;", "getCont", "()Landroid/content/Context;", "setCont", "(Landroid/content/Context;)V", "HDOProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -221,52 +195,32 @@ public final class HDO extends TmdbProvider {
 
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
-        showTelegramPopup();
-        showSubscriptionPopupIfNeeded();
+        DonationManager.INSTANCE.checkAndShow(getName());
         return super.getMainPage(page, request, continuation);
     }
 
-    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
+    /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
-        C00031 c00031;
+        C00051 c00051;
         Object obj;
         Object objDecodeFromString;
-        boolean z;
-        if (continuation instanceof C00031) {
-            c00031 = (C00031) continuation;
-            if ((c00031.label & Integer.MIN_VALUE) != 0) {
-                c00031.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00051) {
+            c00051 = (C00051) continuation;
+            if ((c00051.label & Integer.MIN_VALUE) != 0) {
+                c00051.label -= Integer.MIN_VALUE;
             } else {
-                c00031 = new C00031(continuation);
+                c00051 = new C00051(continuation);
             }
         } else {
-            c00031 = new C00031(continuation);
+            c00051 = new C00051(continuation);
         }
-        C00031 c00032 = c00031;
-        Object $result = c00032.result;
+        C00051 c00052 = c00051;
+        Object $result = c00052.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00032.label) {
+        switch (c00052.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                HDO $this$loadLinks_u24lambda_u240 = this;
-                final Context _ctx = cont;
-                SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                long _nowSec = System.currentTimeMillis() / 1000;
-                boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                if (!_isSubscribed) {
-                    if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.hdo.HDO$$ExternalSyntheticLambda1
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                HDO.loadLinks$lambda$0$0(_ctx);
-                            }
-                        });
-                    }
-                    $this$loadLinks_u24lambda_u240.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                }
                 AppUtils appUtils = AppUtils.INSTANCE;
                 try {
                     Result.Companion companion = Result.Companion;
@@ -307,39 +261,32 @@ public final class HDO extends TmdbProvider {
                 }
                 HulaMovieInfo mediaData = toLinkData((TmdbLink) objDecodeFromString);
                 Log.d("HDOProvider", "Loading links for: " + mediaData.getTitle() + " (" + mediaData.getType() + ')');
-                C00043 c00043 = new C00043(mediaData, function1, this, function2, null);
-                c00032.L$0 = SpillingKt.nullOutSpilledVariable(data);
-                c00032.L$1 = SpillingKt.nullOutSpilledVariable(function1);
-                c00032.L$2 = SpillingKt.nullOutSpilledVariable(function2);
-                c00032.L$3 = SpillingKt.nullOutSpilledVariable(mediaData);
-                c00032.Z$0 = isCasting;
-                z = true;
-                c00032.label = 1;
-                if (ArchComponentExtKt.safeApiCall(c00043, c00032) == coroutine_suspended) {
+                C00062 c00062 = new C00062(mediaData, function1, this, function2, null);
+                c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
+                c00052.L$1 = SpillingKt.nullOutSpilledVariable(function1);
+                c00052.L$2 = SpillingKt.nullOutSpilledVariable(function2);
+                c00052.L$3 = SpillingKt.nullOutSpilledVariable(mediaData);
+                c00052.Z$0 = isCasting;
+                c00052.label = 1;
+                if (ArchComponentExtKt.safeApiCall(c00062, c00052) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 break;
             case 1:
-                boolean z2 = c00032.Z$0;
+                boolean z = c00052.Z$0;
                 ResultKt.throwOnFailure($result);
-                z = true;
                 break;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-        return Boxing.boxBoolean(z);
+        return Boxing.boxBoolean(true);
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
-    /* JADX INFO: renamed from: com.hdo.HDO$loadLinks$3 */
+    /* JADX INFO: renamed from: com.hdo.HDO$loadLinks$2 */
     /* JADX INFO: compiled from: HDO.kt */
     @Metadata(d1 = {"\u0000\u0006\n\u0000\n\u0002\u0010\b\u0010\u0000\u001a\u00020\u0001H\n"}, d2 = {"<anonymous>", ""}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hdo.HDO$loadLinks$3", f = "HDO.kt", i = {}, l = {76, 83, 92}, m = "invokeSuspend", n = {}, nl = {83, 91, 94}, s = {}, v = 2)
-    static final class C00043 extends SuspendLambda implements Function1<Continuation<? super Integer>, Object> {
+    @DebugMetadata(c = "com.hdo.HDO$loadLinks$2", f = "HDO.kt", i = {}, l = {54, 61, 70}, m = "invokeSuspend", n = {}, nl = {61, 69, 72}, s = {}, v = 2)
+    static final class C00062 extends SuspendLambda implements Function1<Continuation<? super Integer>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ HulaMovieInfo $mediaData;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
@@ -347,7 +294,7 @@ public final class HDO extends TmdbProvider {
         final /* synthetic */ HDO this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00043(HulaMovieInfo hulaMovieInfo, Function1<? super SubtitleFile, Unit> function1, HDO hdo, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00043> continuation) {
+        C00062(HulaMovieInfo hulaMovieInfo, Function1<? super SubtitleFile, Unit> function1, HDO hdo, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00062> continuation) {
             super(1, continuation);
             this.$mediaData = hulaMovieInfo;
             this.$subtitleCallback = function1;
@@ -356,7 +303,7 @@ public final class HDO extends TmdbProvider {
         }
 
         public final Continuation<Unit> create(Continuation<?> continuation) {
-            return new C00043(this.$mediaData, this.$subtitleCallback, this.this$0, this.$callback, continuation);
+            return new C00062(this.$mediaData, this.$subtitleCallback, this.this$0, this.$callback, continuation);
         }
 
         public final Object invoke(Continuation<? super Integer> continuation) {
@@ -1029,7 +976,7 @@ public final class HDO extends TmdbProvider {
     /* JADX INFO: compiled from: HDO.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.hdo.HDO$callHulaApiServer$2", f = "HDO.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00012 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00032 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ int $quality;
         final /* synthetic */ String $referer;
@@ -1037,7 +984,7 @@ public final class HDO extends TmdbProvider {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00012(int i, String str, Map<String, String> map, Continuation<? super C00012> continuation) {
+        C00032(int i, String str, Map<String, String> map, Continuation<? super C00032> continuation) {
             super(2, continuation);
             this.$quality = i;
             this.$referer = str;
@@ -1045,9 +992,9 @@ public final class HDO extends TmdbProvider {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00012 = new C00012(this.$quality, this.$referer, this.$headers, continuation);
-            c00012.L$0 = obj;
-            return c00012;
+            Continuation<Unit> c00032 = new C00032(this.$quality, this.$referer, this.$headers, continuation);
+            c00032.L$0 = obj;
+            return c00032;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -1074,23 +1021,23 @@ public final class HDO extends TmdbProvider {
     /* JADX INFO: compiled from: HDO.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.hdo.HDO$callHulaApiServer$3", f = "HDO.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00023 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00043 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ String $referer;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00023(String str, Map<String, String> map, Continuation<? super C00023> continuation) {
+        C00043(String str, Map<String, String> map, Continuation<? super C00043> continuation) {
             super(2, continuation);
             this.$referer = str;
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00023 = new C00023(this.$referer, this.$headers, continuation);
-            c00023.L$0 = obj;
-            return c00023;
+            Continuation<Unit> c00043 = new C00043(this.$referer, this.$headers, continuation);
+            c00043.L$0 = obj;
+            return c00043;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -1110,296 +1057,6 @@ public final class HDO extends TmdbProvider {
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = cont;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.hdo.HDO$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    HDO.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.hdo.HDO$$ExternalSyntheticLambda5
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HDO.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.hdo.HDO$$ExternalSyntheticLambda6
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HDO.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = cont) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.hdo.HDO$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                HDO.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.hdo.HDO$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.hdo.HDO$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HDO.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = cont) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.hdo.HDO$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                HDO.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
         }
     }
 }

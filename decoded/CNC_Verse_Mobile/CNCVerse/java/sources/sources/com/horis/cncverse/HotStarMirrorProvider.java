@@ -1,23 +1,7 @@
 package com.horis.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.horis.cncverse.entities.PostData;
 import com.horis.cncverse.entities.SearchData;
 import com.horis.cncverse.entities.SearchResult;
@@ -41,19 +25,16 @@ import com.lagradost.cloudstream3.Score;
 import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -89,24 +70,16 @@ import org.jsoup.nodes.Element;
 
 /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/CNC_Verse_Mobile/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u0000 E2\u00020\u0001:\u0003EFGB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"J\f\u0010#\u001a\u00020$*\u00020%H\u0002J\u000e\u0010&\u001a\u0004\u0018\u00010'*\u00020%H\u0002J\u001c\u0010(\u001a\b\u0012\u0004\u0012\u00020'0)2\u0006\u0010*\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J\u0018\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J4\u0010/\u001a\b\u0012\u0004\u0012\u0002000)2\u0006\u00101\u001a\u00020\n2\u0006\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\n2\u0006\u0010\u001e\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u00104JF\u00105\u001a\u00020\u00162\u0006\u00106\u001a\u00020\n2\u0006\u00107\u001a\u00020\u00162\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020;092\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020;09H\u0096@¢\u0006\u0002\u0010>J\u0012\u0010?\u001a\u0004\u0018\u00010@2\u0006\u0010A\u001a\u00020=H\u0016J\b\u0010B\u001a\u00020;H\u0002J\b\u0010C\u001a\u00020;H\u0002J\u0010\u0010D\u001a\u00020;2\u0006\u0010.\u001a\u00020\nH\u0002R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\f\"\u0004\b\u0011\u0010\u000eR\u001a\u0010\u0012\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\f\"\u0004\b\u0014\u0010\u000eR\u0014\u0010\u0015\u001a\u00020\u0016X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Lcom/horis/cncverse/HotStarMirrorProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "cookie_value", "headers", "", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toHomePageList", "Lcom/lagradost/cloudstream3/HomePageList;", "Lorg/jsoup/nodes/Element;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "search", "", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "getEpisodes", "Lcom/lagradost/cloudstream3/Episode;", "title", "eid", "sid", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVideoInterceptor", "Lokhttp3/Interceptor;", "extractorLink", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "Id", "LoadData", "CNC Verse Mobile_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nHotStarMirrorProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HotStarMirrorProvider.kt\ncom/horis/cncverse/HotStarMirrorProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 Utils.kt\ncom/horis/cncverse/UtilsKt\n*L\n1#1,616:1\n1586#2:617\n1661#2,3:618\n1642#2,10:621\n1915#2:631\n1916#2:633\n1652#2:634\n1586#2:636\n1661#2,3:637\n1586#2:642\n1661#2,3:643\n1586#2:646\n1661#2,3:647\n1586#2:650\n1661#2,3:651\n777#2:654\n873#2,2:655\n1586#2:657\n1661#2,3:658\n1661#2,3:661\n1661#2,3:665\n777#2:670\n873#2,2:671\n1586#2:673\n1661#2,3:674\n1#3:632\n1#3:677\n62#4:635\n62#4:641\n62#4:664\n62#4:669\n218#5:640\n218#5:668\n*S KotlinDebug\n*F\n+ 1 HotStarMirrorProvider.kt\ncom/horis/cncverse/HotStarMirrorProvider\n*L\n106#1:617\n106#1:618,3\n114#1:621,10\n114#1:631\n114#1:633\n114#1:634\n142#1:636\n142#1:637,3\n169#1:642\n169#1:643,3\n170#1:646\n170#1:647,3\n176#1:650\n176#1:651,3\n177#1:654\n177#1:655,2\n182#1:657\n182#1:658,3\n194#1:661,3\n247#1:665,3\n333#1:670\n333#1:671,2\n333#1:673\n333#1:674,3\n114#1:632\n140#1:635\n164#1:641\n246#1:664\n315#1:669\n153#1:640\n288#1:668\n*E\n"})
+@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u0000 B2\u00020\u0001:\u0003BCDB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"J\f\u0010#\u001a\u00020$*\u00020%H\u0002J\u000e\u0010&\u001a\u0004\u0018\u00010'*\u00020%H\u0002J\u001c\u0010(\u001a\b\u0012\u0004\u0012\u00020'0)2\u0006\u0010*\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J\u0018\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J4\u0010/\u001a\b\u0012\u0004\u0012\u0002000)2\u0006\u00101\u001a\u00020\n2\u0006\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\n2\u0006\u0010\u001e\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u00104JF\u00105\u001a\u00020\u00162\u0006\u00106\u001a\u00020\n2\u0006\u00107\u001a\u00020\u00162\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020;092\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020;09H\u0096@¢\u0006\u0002\u0010>J\u0012\u0010?\u001a\u0004\u0018\u00010@2\u0006\u0010A\u001a\u00020=H\u0016R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\f\"\u0004\b\u0011\u0010\u000eR\u001a\u0010\u0012\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\f\"\u0004\b\u0014\u0010\u000eR\u0014\u0010\u0015\u001a\u00020\u0016X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006E"}, d2 = {"Lcom/horis/cncverse/HotStarMirrorProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "cookie_value", "headers", "", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toHomePageList", "Lcom/lagradost/cloudstream3/HomePageList;", "Lorg/jsoup/nodes/Element;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "search", "", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "getEpisodes", "Lcom/lagradost/cloudstream3/Episode;", "title", "eid", "sid", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVideoInterceptor", "Lokhttp3/Interceptor;", "extractorLink", "Companion", "Id", "LoadData", "CNC Verse Mobile_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nHotStarMirrorProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HotStarMirrorProvider.kt\ncom/horis/cncverse/HotStarMirrorProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 Utils.kt\ncom/horis/cncverse/UtilsKt\n*L\n1#1,323:1\n1586#2:324\n1661#2,3:325\n1642#2,10:328\n1915#2:338\n1916#2:340\n1652#2:341\n1586#2:343\n1661#2,3:344\n1586#2:349\n1661#2,3:350\n1586#2:353\n1661#2,3:354\n1586#2:357\n1661#2,3:358\n777#2:361\n873#2,2:362\n1586#2:364\n1661#2,3:365\n1661#2,3:368\n1661#2,3:372\n777#2:377\n873#2,2:378\n1586#2:380\n1661#2,3:381\n1#3:339\n62#4:342\n62#4:348\n62#4:371\n62#4:376\n53#5:347\n53#5:375\n*S KotlinDebug\n*F\n+ 1 HotStarMirrorProvider.kt\ncom/horis/cncverse/HotStarMirrorProvider\n*L\n74#1:324\n74#1:325,3\n82#1:328,10\n82#1:338\n82#1:340\n82#1:341\n110#1:343\n110#1:344,3\n137#1:349\n137#1:350,3\n138#1:353\n138#1:354,3\n144#1:357\n144#1:358,3\n145#1:361\n145#1:362,2\n150#1:364\n150#1:365,3\n162#1:368,3\n215#1:372,3\n282#1:377\n282#1:378,2\n282#1:380\n282#1:381,3\n82#1:339\n108#1:342\n132#1:348\n214#1:371\n264#1:376\n121#1:347\n237#1:375\n*E\n"})
 public final class HotStarMirrorProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private final Set<TvType> supportedTypes = SetsKt.setOf(new TvType[]{TvType.Movie, TvType.TvSeries, TvType.Anime, TvType.AsianDrama});
@@ -130,8 +103,8 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$getEpisodes$1 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {241}, m = "getEpisodes", n = {"title", "eid", "sid", "episodes", "cookies", "page", "pg"}, nl = {246}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1"}, v = 2)
-    static final class C00091 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {209}, m = "getEpisodes", n = {"title", "eid", "sid", "episodes", "cookies", "page", "pg"}, nl = {214}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1"}, v = 2)
+    static final class C00111 extends ContinuationImpl {
         int I$0;
         int I$1;
         Object L$0;
@@ -142,7 +115,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00091(Continuation<? super C00091> continuation) {
+        C00111(Continuation<? super C00111> continuation) {
             super(continuation);
         }
 
@@ -157,15 +130,15 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$getMainPage$1 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 1, 1, 1}, l = {94, 100}, m = "getMainPage", n = {"request", "page", "request", "cookies", "page"}, nl = {96, 105}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
-    static final class C00101 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 1, 1, 1}, l = {62, 68}, m = "getMainPage", n = {"request", "page", "request", "cookies", "page"}, nl = {64, 73}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
+    static final class C00121 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C00101(Continuation<? super C00101> continuation) {
+        C00121(Continuation<? super C00121> continuation) {
             super(continuation);
         }
 
@@ -180,8 +153,8 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$load$1 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {152, 159, 205, 208, 215}, m = "load", n = {"url", "url", "id", "cookies", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "type", "runTime"}, nl = {153, 164, 208, 213, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
-    static final class C00121 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {120, 127, 173, 176, 183}, m = "load", n = {"url", "url", "id", "cookies", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "type", "runTime"}, nl = {121, 132, 176, 181, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
+    static final class C00141 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -198,7 +171,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00121(Continuation<? super C00121> continuation) {
+        C00141(Continuation<? super C00141> continuation) {
             super(continuation);
         }
 
@@ -213,8 +186,8 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$loadLinks$1 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {287, 310, 320, 335}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "title", "id", "cookies", "cookieStr", "playlistHeaders", "isCasting", "data", "subtitleCallback", "callback", "title", "id", "cookies", "cookieStr", "playlistHeaders", "playlist", "item", "source", "isCasting", "data", "subtitleCallback", "callback", "title", "id", "cookies", "cookieStr", "playlistHeaders", "playlist", "item", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "track", "isCasting", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HotStarMirrorProvider$loadLinks$5"}, nl = {288, 315, 319, 334}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$12", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "Z$0", "I$0", "I$1", "I$2"}, v = 2)
-    static final class C00151 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {236, 259, 269, 284}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "title", "id", "cookies", "cookieStr", "playlistHeaders", "isCasting", "data", "subtitleCallback", "callback", "title", "id", "cookies", "cookieStr", "playlistHeaders", "playlist", "item", "source", "isCasting", "data", "subtitleCallback", "callback", "title", "id", "cookies", "cookieStr", "playlistHeaders", "playlist", "item", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "track", "isCasting", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HotStarMirrorProvider$loadLinks$4"}, nl = {237, 264, 268, 283}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$12", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "Z$0", "I$0", "I$1", "I$2"}, v = 2)
+    static final class C00171 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -241,7 +214,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00151(Continuation<? super C00151> continuation) {
+        C00171(Continuation<? super C00171> continuation) {
             super(continuation);
         }
 
@@ -256,15 +229,15 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$search$1 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 1, 1, 1}, l = {133, 140}, m = "search", n = {"query", "query", "cookies", "url"}, nl = {135, 617}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
-    static final class C00171 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 1, 1, 1}, l = {101, 108}, m = "search", n = {"query", "query", "cookies", "url"}, nl = {103, 324}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
+    static final class C00191 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C00171(Continuation<? super C00171> continuation) {
+        C00191(Continuation<? super C00191> continuation) {
             super(continuation);
         }
 
@@ -277,65 +250,13 @@ public final class HotStarMirrorProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/horis/cncverse/HotStarMirrorProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "CNC Verse Mobile_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nHotStarMirrorProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HotStarMirrorProvider.kt\ncom/horis/cncverse/HotStarMirrorProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,616:1\n1#2:617\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/horis/cncverse/HotStarMirrorProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "CNC Verse Mobile_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                HotStarMirrorProvider.csGuardWasEverActive = true;
-            }
-            return HotStarMirrorProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.HotStarMirrorProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    HotStarMirrorProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -384,45 +305,40 @@ public final class HotStarMirrorProvider extends MainAPI {
         return this.hasMainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:24:0x0141 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:25:0x0142  */
-    /* JADX WARN: Code duplicated, block: B:29:0x0170 A[LOOP:0: B:27:0x016a->B:29:0x0170, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:20:0x012d A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:21:0x012e  */
+    /* JADX WARN: Code duplicated, block: B:25:0x015c A[LOOP:0: B:23:0x0156->B:25:0x015c, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
-        C00101 c00101;
+        C00121 c00121;
         Object obj;
         int page2;
         MainPageRequest request2;
         HotStarMirrorProvider hotStarMirrorProvider;
         Collection destination$iv$iv;
-        if (continuation instanceof C00101) {
-            c00101 = (C00101) continuation;
-            if ((c00101.label & Integer.MIN_VALUE) != 0) {
-                c00101.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00121) {
+            c00121 = (C00121) continuation;
+            if ((c00121.label & Integer.MIN_VALUE) != 0) {
+                c00121.label -= Integer.MIN_VALUE;
             } else {
-                c00101 = new C00101(continuation);
+                c00121 = new C00121(continuation);
             }
         } else {
-            c00101 = new C00101(continuation);
+            c00121 = new C00121(continuation);
         }
-        Object $result = c00101.result;
+        Object $result = c00121.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00101.label) {
+        switch (c00121.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String mainUrl = getMainUrl();
-                c00101.L$0 = SpillingKt.nullOutSpilledVariable(request);
-                c00101.L$1 = this;
-                c00101.I$0 = page;
-                c00101.label = 1;
-                Object objBypass = UtilsKt.bypass(mainUrl, c00101);
+                c00121.L$0 = SpillingKt.nullOutSpilledVariable(request);
+                c00121.L$1 = this;
+                c00121.I$0 = page;
+                c00121.label = 1;
+                Object objBypass = UtilsKt.bypass(mainUrl, c00121);
                 if (objBypass == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -436,11 +352,11 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String str = getMainUrl() + "/mobile/home?app=1";
                 Map<String, String> map = this.headers;
                 String str2 = getMainUrl() + "/mobile/home?app=1";
-                c00101.L$0 = SpillingKt.nullOutSpilledVariable(request2);
-                c00101.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00101.I$0 = page2;
-                c00101.label = 2;
-                $result = Requests.get$default(app, str, map, str2, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00101, 4072, (Object) null);
+                c00121.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                c00121.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00121.I$0 = page2;
+                c00121.label = 2;
+                $result = Requests.get$default(app, str, map, str2, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00121, 4072, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -454,9 +370,9 @@ public final class HotStarMirrorProvider extends MainAPI {
                 List items = (List) destination$iv$iv;
                 return MainAPIKt.newHomePageResponse(items, Boxing.boxBoolean(false));
             case 1:
-                page2 = c00101.I$0;
-                HotStarMirrorProvider hotStarMirrorProvider2 = (HotStarMirrorProvider) c00101.L$1;
-                MainPageRequest request3 = (MainPageRequest) c00101.L$0;
+                page2 = c00121.I$0;
+                HotStarMirrorProvider hotStarMirrorProvider2 = (HotStarMirrorProvider) c00121.L$1;
+                MainPageRequest request3 = (MainPageRequest) c00121.L$0;
                 ResultKt.throwOnFailure($result);
                 request2 = request3;
                 hotStarMirrorProvider = hotStarMirrorProvider2;
@@ -467,11 +383,11 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String str3 = getMainUrl() + "/mobile/home?app=1";
                 Map<String, String> map2 = this.headers;
                 String str4 = getMainUrl() + "/mobile/home?app=1";
-                c00101.L$0 = SpillingKt.nullOutSpilledVariable(request2);
-                c00101.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
-                c00101.I$0 = page2;
-                c00101.label = 2;
-                $result = Requests.get$default(app2, str3, map2, str4, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00101, 4072, (Object) null);
+                c00121.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                c00121.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
+                c00121.I$0 = page2;
+                c00121.label = 2;
+                $result = Requests.get$default(app2, str3, map2, str4, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00121, 4072, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -485,7 +401,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                 List items2 = (List) destination$iv$iv;
                 return MainAPIKt.newHomePageResponse(items2, Boxing.boxBoolean(false));
             case 2:
-                int i = c00101.I$0;
+                int i = c00121.I$0;
                 ResultKt.throwOnFailure($result);
                 Document document3 = ((NiceResponse) $result).getDocument();
                 Iterable $this$map$iv3 = document3.select(".tray-container, #top10");
@@ -522,7 +438,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         if (elementSelectFirst == null || (id = elementSelectFirst.attr("data-post")) == null) {
             id = $this$toSearchResult.attr("data-post");
         }
-        return MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(id)), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda14
+        return MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(id)), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda6
             public final Object invoke(Object obj) {
                 return HotStarMirrorProvider.toSearchResult$lambda$0(id, this, (AnimeSearchResponse) obj);
             }
@@ -536,42 +452,38 @@ public final class HotStarMirrorProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code duplicated, block: B:24:0x013d A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:25:0x013e  */
-    /* JADX WARN: Code duplicated, block: B:29:0x017c A[LOOP:0: B:27:0x0176->B:29:0x017c, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:20:0x0129 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:21:0x012a  */
+    /* JADX WARN: Code duplicated, block: B:25:0x0168 A[LOOP:0: B:23:0x0162->B:25:0x0168, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
-        C00171 c00171;
+        C00191 c00191;
         Object obj;
         String query2;
         HotStarMirrorProvider hotStarMirrorProvider;
         SearchData data;
         Collection destination$iv$iv;
-        if (continuation instanceof C00171) {
-            c00171 = (C00171) continuation;
-            if ((c00171.label & Integer.MIN_VALUE) != 0) {
-                c00171.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00191) {
+            c00191 = (C00191) continuation;
+            if ((c00191.label & Integer.MIN_VALUE) != 0) {
+                c00191.label -= Integer.MIN_VALUE;
             } else {
-                c00171 = new C00171(continuation);
+                c00191 = new C00191(continuation);
             }
         } else {
-            c00171 = new C00171(continuation);
+            c00191 = new C00191(continuation);
         }
-        Object $result = c00171.result;
+        Object $result = c00191.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00171.label) {
+        switch (c00191.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 String mainUrl = getMainUrl();
-                c00171.L$0 = query;
-                c00171.L$1 = this;
-                c00171.label = 1;
-                Object objBypass = UtilsKt.bypass(mainUrl, c00171);
+                c00191.L$0 = query;
+                c00191.L$1 = this;
+                c00191.label = 1;
+                Object objBypass = UtilsKt.bypass(mainUrl, c00191);
                 if (objBypass == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -583,11 +495,11 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String url = getMainUrl() + "/mobile/hs/search.php?s=" + query2 + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Requests app = UtilsKt.getApp();
                 String str = getMainUrl() + "/home";
-                c00171.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                c00171.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00171.L$2 = SpillingKt.nullOutSpilledVariable(url);
-                c00171.label = 2;
-                $result = Requests.get$default(app, url, (Map) null, str, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00171, 4074, (Object) null);
+                c00191.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00191.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00191.L$2 = SpillingKt.nullOutSpilledVariable(url);
+                c00191.label = 2;
+                $result = Requests.get$default(app, url, (Map) null, str, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00191, 4074, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -599,7 +511,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                 destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     final SearchResult it = (SearchResult) item$iv$iv;
-                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it.getT(), AppUtils.INSTANCE.toJson(new Id(it.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda8
+                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it.getT(), AppUtils.INSTANCE.toJson(new Id(it.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda4
                         public final Object invoke(Object obj2) {
                             return HotStarMirrorProvider.search$lambda$0$0(it, this, (AnimeSearchResponse) obj2);
                         }
@@ -608,8 +520,8 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 return (List) destination$iv$iv;
             case 1:
-                HotStarMirrorProvider hotStarMirrorProvider2 = (HotStarMirrorProvider) c00171.L$1;
-                String query3 = (String) c00171.L$0;
+                HotStarMirrorProvider hotStarMirrorProvider2 = (HotStarMirrorProvider) c00191.L$1;
+                String query3 = (String) c00191.L$0;
                 ResultKt.throwOnFailure($result);
                 hotStarMirrorProvider = hotStarMirrorProvider2;
                 query2 = query3;
@@ -619,11 +531,11 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String url2 = getMainUrl() + "/mobile/hs/search.php?s=" + query2 + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Requests app2 = UtilsKt.getApp();
                 String str2 = getMainUrl() + "/home";
-                c00171.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                c00171.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
-                c00171.L$2 = SpillingKt.nullOutSpilledVariable(url2);
-                c00171.label = 2;
-                $result = Requests.get$default(app2, url2, (Map) null, str2, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00171, 4074, (Object) null);
+                c00191.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00191.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
+                c00191.L$2 = SpillingKt.nullOutSpilledVariable(url2);
+                c00191.label = 2;
+                $result = Requests.get$default(app2, url2, (Map) null, str2, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00191, 4074, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -635,7 +547,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                 destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv2, 10));
                 while (r11.hasNext()) {
                     final SearchResult it2 = (SearchResult) item$iv$iv;
-                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it2.getT(), AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda8
+                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it2.getT(), AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda4
                         public final Object invoke(Object obj2) {
                             return HotStarMirrorProvider.search$lambda$0$0(it2, this, (AnimeSearchResponse) obj2);
                         }
@@ -653,7 +565,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                 destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv3, 10));
                 while (r11.hasNext()) {
                     final SearchResult it3 = (SearchResult) item$iv$iv;
-                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it3.getT(), AppUtils.INSTANCE.toJson(new Id(it3.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda8
+                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it3.getT(), AppUtils.INSTANCE.toJson(new Id(it3.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda4
                         public final Object invoke(Object obj2) {
                             return HotStarMirrorProvider.search$lambda$0$0(it3, this, (AnimeSearchResponse) obj2);
                         }
@@ -700,14 +612,14 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:92:0x0524  */
     @Nullable
     public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) {
-        C00121 c00121;
+        C00141 c00141;
         String url2;
         Object obj;
         HotStarMirrorProvider hotStarMirrorProvider;
         String id;
         Map cookies;
         Object obj2;
-        C00121 c00122;
+        C00141 c00142;
         String url3;
         String url4;
         final PostData data;
@@ -783,28 +695,28 @@ public final class HotStarMirrorProvider extends MainAPI {
         List castList3;
         String rating3;
         TvType tvType;
-        if (continuation instanceof C00121) {
-            c00121 = (C00121) continuation;
-            if ((c00121.label & Integer.MIN_VALUE) != 0) {
-                c00121.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00141) {
+            c00141 = (C00141) continuation;
+            if ((c00141.label & Integer.MIN_VALUE) != 0) {
+                c00141.label -= Integer.MIN_VALUE;
             } else {
-                c00121 = new C00121(continuation);
+                c00141 = new C00141(continuation);
             }
         } else {
-            c00121 = new C00121(continuation);
+            c00141 = new C00141(continuation);
         }
-        C00121 c00123 = c00121;
-        Object $result = c00123.result;
+        C00141 c00143 = c00141;
+        Object $result = c00143.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00123.label) {
+        switch (c00143.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 String mainUrl = getMainUrl();
                 url2 = url;
-                c00123.L$0 = url2;
-                c00123.L$1 = this;
-                c00123.label = 1;
-                Object objBypass = UtilsKt.bypass(mainUrl, c00123);
+                c00143.L$0 = url2;
+                c00143.L$1 = this;
+                c00143.label = 1;
+                Object objBypass = UtilsKt.bypass(mainUrl, c00143);
                 if (objBypass == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -818,12 +730,12 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String str = getMainUrl() + "/mobile/hs/post.php?id=" + id + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Map<String, String> map = this.headers;
                 String str2 = getMainUrl() + "/home";
-                c00123.L$0 = url2;
-                c00123.L$1 = id;
-                c00123.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00123.label = 2;
-                obj2 = Requests.get$default(app, str, map, str2, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00123, 4072, (Object) null);
-                c00122 = c00123;
+                c00143.L$0 = url2;
+                c00143.L$1 = id;
+                c00143.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00143.label = 2;
+                obj2 = Requests.get$default(app, str, map, str2, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00143, 4072, (Object) null);
+                c00142 = c00143;
                 if (obj2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -897,7 +809,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     for (Object item$iv$iv4 : $this$mapTo$iv$iv2) {
                         Iterable $this$map$iv5 = $this$map$iv2;
                         final Suggest it2 = (Suggest) item$iv$iv4;
-                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
+                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda0
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$4$0(it2, this, (AnimeSearchResponse) obj4);
                             }
@@ -917,13 +829,13 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 suggest2 = arrayList2;
                 if (CollectionsKt.first(data.getEpisodes()) == null) {
-                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda3
+                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda1
                         public final Object invoke(Object obj4) {
                             return HotStarMirrorProvider.load$lambda$5(data, (Episode) obj4);
                         }
                     })));
                     cast5 = cast2;
-                    c00122 = c00122;
+                    c00142 = c00142;
                     genre4 = genre2;
                     id4 = rating;
                     obj3 = obj3;
@@ -941,7 +853,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     for (it = $this$mapTo$iv.iterator(); it.hasNext(); it = it) {
                         Object item$iv = it.next();
                         final com.horis.cncverse.entities.Episode it3 = (com.horis.cncverse.entities.Episode) item$iv;
-                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it3.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda4
+                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it3.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$6$0(it3, (Episode) obj4);
                             }
@@ -953,24 +865,24 @@ public final class HotStarMirrorProvider extends MainAPI {
                     if (nextPageShow == null && nextPageShow.intValue() == 1) {
                         String url8 = data.getNextPageSeason();
                         Intrinsics.checkNotNull(url8);
-                        c00122.L$0 = url4;
-                        c00122.L$1 = url3;
-                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                        c00122.L$3 = data;
-                        c00122.L$4 = episodes;
-                        c00122.L$5 = title;
-                        c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                        c00122.L$7 = cast2;
-                        c00122.L$8 = genre2;
-                        c00122.L$9 = rating;
-                        c00122.L$10 = suggest2;
-                        c00122.L$11 = episodes;
-                        c00122.I$0 = runTime;
-                        c00122.label = 3;
-                        C00121 c00124 = c00122;
+                        c00142.L$0 = url4;
+                        c00142.L$1 = url3;
+                        c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                        c00142.L$3 = data;
+                        c00142.L$4 = episodes;
+                        c00142.L$5 = title;
+                        c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                        c00142.L$7 = cast2;
+                        c00142.L$8 = genre2;
+                        c00142.L$9 = rating;
+                        c00142.L$10 = suggest2;
+                        c00142.L$11 = episodes;
+                        c00142.I$0 = runTime;
+                        c00142.label = 3;
+                        C00141 c00144 = c00142;
                         url5 = url4;
-                        episodes2 = getEpisodes(title, url5, url8, 2, c00124);
-                        c00122 = c00124;
+                        episodes2 = getEpisodes(title, url5, url8, 2, c00144);
+                        c00142 = c00144;
                         obj3 = obj3;
                         if (episodes2 == obj3) {
                             return obj3;
@@ -1010,22 +922,22 @@ public final class HotStarMirrorProvider extends MainAPI {
                             id5 = id3;
                             id4 = rating;
                         } else {
-                            C00134 c00134 = new C00134(episodes4, this, title3, url7, null);
-                            c00122.L$0 = url7;
-                            c00122.L$1 = id3;
-                            c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                            c00122.L$3 = data;
-                            c00122.L$4 = episodes4;
-                            c00122.L$5 = title3;
-                            c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                            c00122.L$7 = cast4;
-                            c00122.L$8 = genre2;
-                            c00122.L$9 = rating;
-                            c00122.L$10 = suggest2;
-                            c00122.L$11 = null;
-                            c00122.I$0 = runTime;
-                            c00122.label = 4;
-                            objAmap = ParCollectionsKt.amap(listDropLast, c00134, c00122);
+                            C00154 c00154 = new C00154(episodes4, this, title3, url7, null);
+                            c00142.L$0 = url7;
+                            c00142.L$1 = id3;
+                            c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                            c00142.L$3 = data;
+                            c00142.L$4 = episodes4;
+                            c00142.L$5 = title3;
+                            c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                            c00142.L$7 = cast4;
+                            c00142.L$8 = genre2;
+                            c00142.L$9 = rating;
+                            c00142.L$10 = suggest2;
+                            c00142.L$11 = null;
+                            c00142.I$0 = runTime;
+                            c00142.label = 4;
+                            objAmap = ParCollectionsKt.amap(listDropLast, c00154, c00142);
                             if (objAmap == obj3) {
                                 return obj3;
                             }
@@ -1081,30 +993,30 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 TvType type = tvType;
                 String rating4 = id4;
-                C00145 c00145 = new C00145(id5, this, data3, genre4, cast5, id4, runTime3, cast6, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(title5);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(id5);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(title4);
-                c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00122.L$7 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00122.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00122.L$9 = SpillingKt.nullOutSpilledVariable(rating4);
-                c00122.L$10 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00122.L$11 = SpillingKt.nullOutSpilledVariable(type);
-                c00122.I$0 = runTime3;
-                c00122.label = 5;
+                C00165 c00165 = new C00165(id5, this, data3, genre4, cast5, id4, runTime3, cast6, null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(title5);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(id5);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(title4);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(rating4);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(type);
+                c00142.I$0 = runTime3;
+                c00142.label = 5;
                 String url9 = title5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title4, url9, type, genre5, c00145, c00122);
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title4, url9, type, genre5, c00165, c00142);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 1:
-                hotStarMirrorProvider = (HotStarMirrorProvider) c00123.L$1;
-                url2 = (String) c00123.L$0;
+                hotStarMirrorProvider = (HotStarMirrorProvider) c00143.L$1;
+                url2 = (String) c00143.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 hotStarMirrorProvider.cookie_value = (String) obj;
@@ -1115,12 +1027,12 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String str6 = getMainUrl() + "/mobile/hs/post.php?id=" + id + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Map<String, String> map2 = this.headers;
                 String str7 = getMainUrl() + "/home";
-                c00123.L$0 = url2;
-                c00123.L$1 = id;
-                c00123.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00123.label = 2;
-                obj2 = Requests.get$default(app2, str6, map2, str7, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00123, 4072, (Object) null);
-                c00122 = c00123;
+                c00143.L$0 = url2;
+                c00143.L$1 = id;
+                c00143.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00143.label = 2;
+                obj2 = Requests.get$default(app2, str6, map2, str7, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00143, 4072, (Object) null);
+                c00142 = c00143;
                 if (obj2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -1174,7 +1086,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     while (r19.hasNext()) {
                         Iterable $this$map$iv6 = $this$map$iv2;
                         final Suggest it4 = (Suggest) item$iv$iv4;
-                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it4.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
+                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it4.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda0
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$4$0(it4, this, (AnimeSearchResponse) obj4);
                             }
@@ -1200,7 +1112,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     while (it.hasNext()) {
                         Object item$iv2 = it.next();
                         final com.horis.cncverse.entities.Episode it5 = (com.horis.cncverse.entities.Episode) item$iv2;
-                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it5.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda4
+                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it5.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$6$0(it5, (Episode) obj4);
                             }
@@ -1212,24 +1124,24 @@ public final class HotStarMirrorProvider extends MainAPI {
                     if (nextPageShow == null) {
                         String url10 = data.getNextPageSeason();
                         Intrinsics.checkNotNull(url10);
-                        c00122.L$0 = url4;
-                        c00122.L$1 = url3;
-                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                        c00122.L$3 = data;
-                        c00122.L$4 = episodes;
-                        c00122.L$5 = title;
-                        c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                        c00122.L$7 = cast2;
-                        c00122.L$8 = genre2;
-                        c00122.L$9 = rating;
-                        c00122.L$10 = suggest2;
-                        c00122.L$11 = episodes;
-                        c00122.I$0 = runTime;
-                        c00122.label = 3;
-                        C00121 c00125 = c00122;
+                        c00142.L$0 = url4;
+                        c00142.L$1 = url3;
+                        c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                        c00142.L$3 = data;
+                        c00142.L$4 = episodes;
+                        c00142.L$5 = title;
+                        c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                        c00142.L$7 = cast2;
+                        c00142.L$8 = genre2;
+                        c00142.L$9 = rating;
+                        c00142.L$10 = suggest2;
+                        c00142.L$11 = episodes;
+                        c00142.I$0 = runTime;
+                        c00142.label = 3;
+                        C00141 c00145 = c00142;
                         url5 = url4;
-                        episodes2 = getEpisodes(title, url5, url10, 2, c00125);
-                        c00122 = c00125;
+                        episodes2 = getEpisodes(title, url5, url10, 2, c00145);
+                        c00142 = c00145;
                         obj3 = obj3;
                         if (episodes2 == obj3) {
                             return obj3;
@@ -1292,13 +1204,13 @@ public final class HotStarMirrorProvider extends MainAPI {
                     id4 = rating;
                     break;
                 } else {
-                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda3
+                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda1
                         public final Object invoke(Object obj4) {
                             return HotStarMirrorProvider.load$lambda$5(data, (Episode) obj4);
                         }
                     })));
                     cast5 = cast2;
-                    c00122 = c00122;
+                    c00142 = c00142;
                     genre4 = genre2;
                     id4 = rating;
                     obj3 = obj3;
@@ -1317,35 +1229,35 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 TvType type2 = tvType;
                 String rating5 = id4;
-                C00145 c00146 = new C00145(id5, this, data3, genre4, cast5, id4, runTime3, cast6, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(title5);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(id5);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(title4);
-                c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00122.L$7 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00122.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00122.L$9 = SpillingKt.nullOutSpilledVariable(rating5);
-                c00122.L$10 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00122.L$11 = SpillingKt.nullOutSpilledVariable(type2);
-                c00122.I$0 = runTime3;
-                c00122.label = 5;
+                C00165 c00166 = new C00165(id5, this, data3, genre4, cast5, id4, runTime3, cast6, null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(title5);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(id5);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(title4);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(rating5);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(type2);
+                c00142.I$0 = runTime3;
+                c00142.label = 5;
                 String url11 = title5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title4, url11, type2, genre5, c00146, c00122);
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title4, url11, type2, genre5, c00166, c00142);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 2:
-                Map cookies4 = (Map) c00123.L$2;
-                url3 = (String) c00123.L$1;
-                String url12 = (String) c00123.L$0;
+                Map cookies4 = (Map) c00143.L$2;
+                url3 = (String) c00143.L$1;
+                String url12 = (String) c00143.L$0;
                 ResultKt.throwOnFailure($result);
                 cookies = cookies4;
                 url4 = url12;
-                c00122 = c00123;
+                c00142 = c00143;
                 obj2 = $result;
                 NiceResponse this_$iv3 = (NiceResponse) obj2;
                 ResponseParser parser3 = this_$iv3.getParser();
@@ -1394,7 +1306,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     while (r19.hasNext()) {
                         Iterable $this$map$iv7 = $this$map$iv2;
                         final Suggest it6 = (Suggest) item$iv$iv4;
-                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it6.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
+                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it6.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda0
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$4$0(it6, this, (AnimeSearchResponse) obj4);
                             }
@@ -1420,7 +1332,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     while (it.hasNext()) {
                         Object item$iv3 = it.next();
                         final com.horis.cncverse.entities.Episode it7 = (com.horis.cncverse.entities.Episode) item$iv3;
-                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it7.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda4
+                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it7.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$6$0(it7, (Episode) obj4);
                             }
@@ -1432,24 +1344,24 @@ public final class HotStarMirrorProvider extends MainAPI {
                     if (nextPageShow == null) {
                         String url13 = data.getNextPageSeason();
                         Intrinsics.checkNotNull(url13);
-                        c00122.L$0 = url4;
-                        c00122.L$1 = url3;
-                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                        c00122.L$3 = data;
-                        c00122.L$4 = episodes;
-                        c00122.L$5 = title;
-                        c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                        c00122.L$7 = cast2;
-                        c00122.L$8 = genre2;
-                        c00122.L$9 = rating;
-                        c00122.L$10 = suggest2;
-                        c00122.L$11 = episodes;
-                        c00122.I$0 = runTime;
-                        c00122.label = 3;
-                        C00121 c00126 = c00122;
+                        c00142.L$0 = url4;
+                        c00142.L$1 = url3;
+                        c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                        c00142.L$3 = data;
+                        c00142.L$4 = episodes;
+                        c00142.L$5 = title;
+                        c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                        c00142.L$7 = cast2;
+                        c00142.L$8 = genre2;
+                        c00142.L$9 = rating;
+                        c00142.L$10 = suggest2;
+                        c00142.L$11 = episodes;
+                        c00142.I$0 = runTime;
+                        c00142.label = 3;
+                        C00141 c00146 = c00142;
                         url5 = url4;
-                        episodes2 = getEpisodes(title, url5, url13, 2, c00126);
-                        c00122 = c00126;
+                        episodes2 = getEpisodes(title, url5, url13, 2, c00146);
+                        c00142 = c00146;
                         obj3 = obj3;
                         if (episodes2 == obj3) {
                             return obj3;
@@ -1512,13 +1424,13 @@ public final class HotStarMirrorProvider extends MainAPI {
                     id4 = rating;
                     break;
                 } else {
-                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda3
+                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda1
                         public final Object invoke(Object obj4) {
                             return HotStarMirrorProvider.load$lambda$5(data, (Episode) obj4);
                         }
                     })));
                     cast5 = cast2;
-                    c00122 = c00122;
+                    c00142 = c00142;
                     genre4 = genre2;
                     id4 = rating;
                     obj3 = obj3;
@@ -1537,44 +1449,44 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 TvType type3 = tvType;
                 String rating6 = id4;
-                C00145 c00147 = new C00145(id5, this, data3, genre4, cast5, id4, runTime3, cast6, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(title5);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(id5);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(title4);
-                c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00122.L$7 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00122.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00122.L$9 = SpillingKt.nullOutSpilledVariable(rating6);
-                c00122.L$10 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00122.L$11 = SpillingKt.nullOutSpilledVariable(type3);
-                c00122.I$0 = runTime3;
-                c00122.label = 5;
+                C00165 c00167 = new C00165(id5, this, data3, genre4, cast5, id4, runTime3, cast6, null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(title5);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(id5);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(title4);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(rating6);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(type3);
+                c00142.I$0 = runTime3;
+                c00142.label = 5;
                 String url14 = title5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title4, url14, type3, genre5, c00147, c00122);
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title4, url14, type3, genre5, c00167, c00142);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 3:
-                int runTime5 = c00123.I$0;
-                arrayList3 = (ArrayList) c00123.L$11;
-                List suggest4 = (List) c00123.L$10;
-                rating2 = (String) c00123.L$9;
-                genre3 = (List) c00123.L$8;
-                cast3 = (List) c00123.L$7;
-                List castList4 = (List) c00123.L$6;
-                title2 = (String) c00123.L$5;
-                episodes3 = (ArrayList) c00123.L$4;
-                data2 = (PostData) c00123.L$3;
-                cookies2 = (Map) c00123.L$2;
+                int runTime5 = c00143.I$0;
+                arrayList3 = (ArrayList) c00143.L$11;
+                List suggest4 = (List) c00143.L$10;
+                rating2 = (String) c00143.L$9;
+                genre3 = (List) c00143.L$8;
+                cast3 = (List) c00143.L$7;
+                List castList4 = (List) c00143.L$6;
+                title2 = (String) c00143.L$5;
+                episodes3 = (ArrayList) c00143.L$4;
+                data2 = (PostData) c00143.L$3;
+                cookies2 = (Map) c00143.L$2;
                 runTime2 = runTime5;
-                id2 = (String) c00123.L$1;
-                url6 = (String) c00123.L$0;
+                id2 = (String) c00143.L$1;
+                url6 = (String) c00143.L$0;
                 ResultKt.throwOnFailure($result);
-                c00122 = c00123;
+                c00142 = c00143;
                 castList2 = castList4;
                 obj3 = coroutine_suspended;
                 suggest2 = suggest4;
@@ -1611,43 +1523,43 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 TvType type4 = tvType;
                 String rating7 = id4;
-                C00145 c00148 = new C00145(id5, this, data3, genre4, cast5, id4, runTime3, cast6, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(title5);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(id5);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(title4);
-                c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00122.L$7 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00122.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00122.L$9 = SpillingKt.nullOutSpilledVariable(rating7);
-                c00122.L$10 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00122.L$11 = SpillingKt.nullOutSpilledVariable(type4);
-                c00122.I$0 = runTime3;
-                c00122.label = 5;
+                C00165 c00168 = new C00165(id5, this, data3, genre4, cast5, id4, runTime3, cast6, null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(title5);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(id5);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(title4);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(rating7);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(type4);
+                c00142.I$0 = runTime3;
+                c00142.label = 5;
                 String url15 = title5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title4, url15, type4, genre5, c00148, c00122);
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title4, url15, type4, genre5, c00168, c00142);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 4:
-                int runTime6 = c00123.I$0;
-                suggest3 = (List) c00123.L$10;
-                title7 = (String) c00123.L$9;
-                List genre6 = (List) c00123.L$8;
-                cast4 = (List) c00123.L$7;
-                castList3 = (List) c00123.L$6;
-                title6 = (String) c00123.L$5;
-                episodes5 = (ArrayList) c00123.L$4;
-                PostData data5 = (PostData) c00123.L$3;
-                Map cookies5 = (Map) c00123.L$2;
-                rating3 = (String) c00123.L$1;
+                int runTime6 = c00143.I$0;
+                suggest3 = (List) c00143.L$10;
+                title7 = (String) c00143.L$9;
+                List genre6 = (List) c00143.L$8;
+                cast4 = (List) c00143.L$7;
+                castList3 = (List) c00143.L$6;
+                title6 = (String) c00143.L$5;
+                episodes5 = (ArrayList) c00143.L$4;
+                PostData data5 = (PostData) c00143.L$3;
+                Map cookies5 = (Map) c00143.L$2;
+                rating3 = (String) c00143.L$1;
                 runTime4 = runTime6;
-                String url16 = (String) c00123.L$0;
+                String url16 = (String) c00143.L$0;
                 ResultKt.throwOnFailure($result);
-                c00122 = c00123;
+                c00142 = c00143;
                 data4 = data5;
                 cookies3 = cookies5;
                 genre2 = genre6;
@@ -1674,29 +1586,29 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 TvType type5 = tvType;
                 String rating8 = id4;
-                C00145 c00149 = new C00145(id5, this, data3, genre4, cast5, id4, runTime3, cast6, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(title5);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(id5);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(title4);
-                c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00122.L$7 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00122.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00122.L$9 = SpillingKt.nullOutSpilledVariable(rating8);
-                c00122.L$10 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00122.L$11 = SpillingKt.nullOutSpilledVariable(type5);
-                c00122.I$0 = runTime3;
-                c00122.label = 5;
+                C00165 c00169 = new C00165(id5, this, data3, genre4, cast5, id4, runTime3, cast6, null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(title5);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(id5);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(title4);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(rating8);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(type5);
+                c00142.I$0 = runTime3;
+                c00142.label = 5;
                 String url17 = title5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title4, url17, type5, genre5, c00149, c00122);
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title4, url17, type5, genre5, c00169, c00142);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 5:
-                int i = c00123.I$0;
+                int i = c00143.I$0;
                 ResultKt.throwOnFailure($result);
                 return $result;
             default:
@@ -1730,8 +1642,8 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$load$4 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", "Lcom/horis/cncverse/entities/Season;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider$load$4", f = "HotStarMirrorProvider.kt", i = {0}, l = {209}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
-    static final class C00134 extends SuspendLambda implements Function2<Season, Continuation<? super Boolean>, Object> {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider$load$4", f = "HotStarMirrorProvider.kt", i = {0}, l = {177}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
+    static final class C00154 extends SuspendLambda implements Function2<Season, Continuation<? super Boolean>, Object> {
         final /* synthetic */ ArrayList<Episode> $episodes;
         final /* synthetic */ String $title;
         final /* synthetic */ String $url;
@@ -1741,7 +1653,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         final /* synthetic */ HotStarMirrorProvider this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00134(ArrayList<Episode> arrayList, HotStarMirrorProvider hotStarMirrorProvider, String str, String str2, Continuation<? super C00134> continuation) {
+        C00154(ArrayList<Episode> arrayList, HotStarMirrorProvider hotStarMirrorProvider, String str, String str2, Continuation<? super C00154> continuation) {
             super(2, continuation);
             this.$episodes = arrayList;
             this.this$0 = hotStarMirrorProvider;
@@ -1750,9 +1662,9 @@ public final class HotStarMirrorProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00134 = new C00134(this.$episodes, this.this$0, this.$title, this.$url, continuation);
-            c00134.L$0 = obj;
-            return c00134;
+            Continuation<Unit> c00154 = new C00154(this.$episodes, this.this$0, this.$title, this.$url, continuation);
+            c00154.L$0 = obj;
+            return c00154;
         }
 
         public final Object invoke(Season season, Continuation<? super Boolean> continuation) {
@@ -1794,7 +1706,7 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider$load$5", f = "HotStarMirrorProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00145 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    static final class C00165 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<ActorData> $cast;
         final /* synthetic */ PostData $data;
         final /* synthetic */ List<String> $genre;
@@ -1807,7 +1719,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         final /* synthetic */ HotStarMirrorProvider this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00145(String str, HotStarMirrorProvider hotStarMirrorProvider, PostData postData, List<String> list, List<ActorData> list2, String str2, int i, List<AnimeSearchResponse> list3, Continuation<? super C00145> continuation) {
+        C00165(String str, HotStarMirrorProvider hotStarMirrorProvider, PostData postData, List<String> list, List<ActorData> list2, String str2, int i, List<AnimeSearchResponse> list3, Continuation<? super C00165> continuation) {
             super(2, continuation);
             this.$id = str;
             this.this$0 = hotStarMirrorProvider;
@@ -1820,9 +1732,9 @@ public final class HotStarMirrorProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00145 = new C00145(this.$id, this.this$0, this.$data, this.$genre, this.$cast, this.$rating, this.$runTime, this.$suggest, continuation);
-            c00145.L$0 = obj;
-            return c00145;
+            Continuation<Unit> c00165 = new C00165(this.$id, this.this$0, this.$data, this.$genre, this.$cast, this.$rating, this.$runTime, this.$suggest, continuation);
+            c00165.L$0 = obj;
+            return c00165;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -1864,6 +1776,9 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x014a -> B:18:0x0150). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
+        	at java.base/java.util.HashMap$KeyIterator.<init>(HashMap.java:1618)
+        	at java.base/java.util.HashMap$KeySet.iterator(HashMap.java:983)
+        	at java.base/java.util.HashSet.iterator(HashSet.java:174)
         	at jadx.core.dex.attributes.nodes.LoopInfo.getExitEdges(LoopInfo.java:64)
         	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.checkLoopExits(LoopRegionMaker.java:265)
         	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.makeLoopRegion(LoopRegionMaker.java:237)
@@ -2884,9 +2799,6 @@ public final class HotStarMirrorProvider extends MainAPI {
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         */
     public final java.lang.Object getEpisodes(java.lang.String r29, java.lang.String r30, java.lang.String r31, int r32, kotlin.coroutines.Continuation<? super java.util.List<com.lagradost.cloudstream3.Episode>> r33) {
         /*
@@ -2906,48 +2818,43 @@ public final class HotStarMirrorProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code duplicated, block: B:60:0x044c  */
-    /* JADX WARN: Code duplicated, block: B:63:0x046f  */
-    /* JADX WARN: Code duplicated, block: B:66:0x0500  */
-    /* JADX WARN: Code duplicated, block: B:70:0x0544  */
-    /* JADX WARN: Code duplicated, block: B:73:0x055c  */
-    /* JADX WARN: Code duplicated, block: B:75:0x0576  */
+    /* JADX WARN: Code duplicated, block: B:27:0x03d0  */
+    /* JADX WARN: Code duplicated, block: B:30:0x03fb  */
+    /* JADX WARN: Code duplicated, block: B:33:0x0494  */
+    /* JADX WARN: Code duplicated, block: B:37:0x04b6  */
+    /* JADX WARN: Code duplicated, block: B:40:0x04cc  */
+    /* JADX WARN: Code duplicated, block: B:42:0x04e6  */
+    /* JADX WARN: Code duplicated, block: B:53:0x063c  */
+    /* JADX WARN: Code duplicated, block: B:58:0x0493 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:62:0x04e9 A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:86:0x06d7  */
-    /* JADX WARN: Code duplicated, block: B:90:0x04ff A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:95:0x0579 A[SYNTHETIC] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:77:0x057f -> B:78:0x05ba). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:83:0x0664 -> B:84:0x0689). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:86:0x06d7 -> B:58:0x0446). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:44:0x04ef -> B:45:0x0526). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:50:0x05d0 -> B:51:0x05f3). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:53:0x063c -> B:25:0x03ca). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
-    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r39, boolean r40, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r41, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r42, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r43) {
+    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r37, boolean r38, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r39, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r40, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r41) {
         /*
-            Method dump skipped, instruction units count: 1794
+            Method dump skipped, instruction units count: 1642
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.horis.cncverse.HotStarMirrorProvider.loadLinks(java.lang.String, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final CharSequence loadLinks$lambda$1(Map.Entry it) {
+    public static final CharSequence loadLinks$lambda$0(Map.Entry it) {
         return ((String) it.getKey()) + '=' + ((String) it.getValue());
     }
 
-    /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$loadLinks$3 */
+    /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$loadLinks$2 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider$loadLinks$3", f = "HotStarMirrorProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00163 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider$loadLinks$2", f = "HotStarMirrorProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00182 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $playlistHeaders;
         final /* synthetic */ Source $source;
         private /* synthetic */ Object L$0;
@@ -2955,7 +2862,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         final /* synthetic */ HotStarMirrorProvider this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00163(Map<String, String> map, HotStarMirrorProvider hotStarMirrorProvider, Source source, Continuation<? super C00163> continuation) {
+        C00182(Map<String, String> map, HotStarMirrorProvider hotStarMirrorProvider, Source source, Continuation<? super C00182> continuation) {
             super(2, continuation);
             this.$playlistHeaders = map;
             this.this$0 = hotStarMirrorProvider;
@@ -2963,9 +2870,9 @@ public final class HotStarMirrorProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00163 = new C00163(this.$playlistHeaders, this.this$0, this.$source, continuation);
-            c00163.L$0 = obj;
-            return c00163;
+            Continuation<Unit> c00182 = new C00182(this.$playlistHeaders, this.this$0, this.$source, continuation);
+            c00182.L$0 = obj;
+            return c00182;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -3123,296 +3030,6 @@ public final class HotStarMirrorProvider extends MainAPI {
         @NotNull
         public final String getTitle() {
             return this.title;
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda7
-                @Override // java.lang.Runnable
-                public final void run() {
-                    HotStarMirrorProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HotStarMirrorProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda1
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HotStarMirrorProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda12
-            @Override // java.lang.Runnable
-            public final void run() {
-                HotStarMirrorProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda10
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda11
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HotStarMirrorProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda9
-            @Override // java.lang.Runnable
-            public final void run() {
-                HotStarMirrorProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
         }
     }
 }

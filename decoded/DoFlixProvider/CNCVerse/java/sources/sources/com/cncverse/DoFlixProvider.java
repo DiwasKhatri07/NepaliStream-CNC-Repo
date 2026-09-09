@@ -1,23 +1,7 @@
 package com.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -41,10 +25,8 @@ import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvSeriesSearchResponse;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.Qualities;
 import java.io.Closeable;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -89,24 +71,16 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: DoFlixProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/DoFlixProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u008e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u001b\u0018\u0000 J2\u00020\u0001:\u0016JKLMNOPQRSTUVWXYZ[\\]^_B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\"\u001a\u00020\u00052\u0006\u0010#\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010$J\u0014\u0010*\u001a\u0004\u0018\u00010+2\b\u0010,\u001a\u0004\u0018\u00010\u0005H\u0002J\u0012\u0010-\u001a\u00020(2\b\u0010,\u001a\u0004\u0018\u00010\u0005H\u0002J \u00101\u001a\u0004\u0018\u0001032\u0006\u00104\u001a\u00020(2\u0006\u00105\u001a\u000206H\u0096@¢\u0006\u0002\u00107J\u001c\u00108\u001a\b\u0012\u0004\u0012\u0002090/2\u0006\u0010:\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010$J\u0018\u0010;\u001a\u0004\u0018\u00010<2\u0006\u0010#\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010$JF\u0010=\u001a\u00020\u000f2\u0006\u0010>\u001a\u00020\u00052\u0006\u0010?\u001a\u00020\u000f2\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020C0A2\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020E\u0012\u0004\u0012\u00020C0AH\u0096@¢\u0006\u0002\u0010FJ\b\u0010G\u001a\u00020CH\u0002J\b\u0010H\u001a\u00020CH\u0002J\u0010\u0010I\u001a\u00020C2\u0006\u0010#\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u000e\u0010\r\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\u00020\u000fX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0012\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0007\"\u0004\b\u0014\u0010\tR\u001a\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u001a\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001c\u001a\u00020\u001d8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b \u0010!\u001a\u0004\b\u001e\u0010\u001fR\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u00050\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010)\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u00050\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010.\u001a\b\u0012\u0004\u0012\u0002000/X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u00102¨\u0006`"}, d2 = {"Lcom/cncverse/DoFlixProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "apiKey", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "customClient", "Lokhttp3/OkHttpClient;", "getCustomClient", "()Lokhttp3/OkHttpClient;", "customClient$delegate", "Lkotlin/Lazy;", "getWithCustomHeaders", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "movieGenres", "", "seriesGenres", "getQualityFromString", "Lcom/lagradost/cloudstream3/SearchQuality;", "qualityString", "getQualityValue", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "MovieResult", "SeriesResult", "HomePageApiResponse", "SeriesPageApiResponse", "VideoItem", "SearchApiResponse", "TMDBGenre", "ProductionCountry", "CastMember", "CrewMember", "Credits", "SimilarResults", "MultiSearchResponse", "MovieDetails", "SeasonInfo", "TvDetails", "TvEpisode", "SeasonDetails", "StreamLink", "MovieLinksResponse", "EpisodeLinksResponse", "DoFlixProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nDoFlixProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider\n+ 2 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,1126:1\n116#2:1127\n54#2:1128\n117#2:1129\n61#2,8:1130\n71#2:1139\n116#2:1144\n54#2:1145\n117#2:1146\n61#2,8:1147\n71#2:1156\n116#2:1179\n54#2:1180\n117#2:1181\n61#2,8:1182\n71#2:1191\n116#2:1196\n54#2:1197\n117#2:1198\n61#2,8:1199\n71#2:1208\n116#2:1231\n54#2:1232\n117#2:1233\n61#2,8:1234\n71#2:1243\n116#2:1244\n54#2:1245\n117#2:1246\n61#2,8:1247\n71#2:1256\n116#2:1261\n54#2:1262\n117#2:1263\n61#2,8:1264\n71#2:1273\n116#2:1274\n54#2:1275\n117#2:1276\n61#2,8:1277\n71#2:1286\n116#2:1290\n54#2:1291\n117#2:1292\n61#2,8:1293\n71#2:1302\n116#2:1305\n54#2:1306\n117#2:1307\n61#2,8:1308\n71#2:1317\n116#2:1320\n54#2:1321\n117#2:1322\n61#2,8:1323\n71#2:1332\n1#3:1138\n1#3:1155\n1#3:1190\n1#3:1207\n1#3:1242\n1#3:1255\n1#3:1272\n1#3:1285\n1#3:1301\n1#3:1316\n1#3:1331\n1#3:1335\n1586#4:1140\n1661#4,3:1141\n1586#4:1157\n1661#4,3:1158\n1915#4:1161\n1915#4:1162\n1916#4:1170\n1916#4:1171\n1080#4:1172\n1915#4:1173\n1586#4:1174\n1661#4,3:1175\n1916#4:1178\n1586#4:1192\n1661#4,3:1193\n1586#4:1209\n1661#4,3:1210\n1915#4:1213\n1915#4:1214\n1916#4:1222\n1916#4:1223\n1080#4:1224\n1915#4:1225\n1586#4:1226\n1661#4,3:1227\n1916#4:1230\n1915#4,2:1257\n1915#4,2:1259\n777#4:1287\n873#4,2:1288\n1915#4,2:1303\n1915#4,2:1318\n1915#4,2:1333\n383#5,7:1163\n383#5,7:1215\n*S KotlinDebug\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider\n*L\n492#1:1127\n492#1:1128\n492#1:1129\n492#1:1130,8\n492#1:1139\n513#1:1144\n513#1:1145\n513#1:1146\n513#1:1147,8\n513#1:1156\n566#1:1179\n566#1:1180\n566#1:1181\n566#1:1182,8\n566#1:1191\n587#1:1196\n587#1:1197\n587#1:1198\n587#1:1199,8\n587#1:1208\n651#1:1231\n651#1:1232\n651#1:1233\n651#1:1234,8\n651#1:1243\n656#1:1244\n656#1:1245\n656#1:1246\n656#1:1247,8\n656#1:1256\n702#1:1261\n702#1:1262\n702#1:1263\n702#1:1264,8\n702#1:1273\n741#1:1274\n741#1:1275\n741#1:1276\n741#1:1277,8\n741#1:1286\n749#1:1290\n749#1:1291\n749#1:1292\n749#1:1293,8\n749#1:1302\n836#1:1305\n836#1:1306\n836#1:1307\n836#1:1308,8\n836#1:1317\n861#1:1320\n861#1:1321\n861#1:1322\n861#1:1323,8\n861#1:1332\n492#1:1138\n513#1:1155\n566#1:1190\n587#1:1207\n651#1:1242\n656#1:1255\n702#1:1272\n741#1:1285\n749#1:1301\n836#1:1316\n861#1:1331\n494#1:1140\n494#1:1141,3\n515#1:1157\n515#1:1158,3\n534#1:1161\n535#1:1162\n535#1:1170\n534#1:1171\n542#1:1172\n544#1:1173\n546#1:1174\n546#1:1175,3\n544#1:1178\n568#1:1192\n568#1:1193,3\n589#1:1209\n589#1:1210,3\n608#1:1213\n609#1:1214\n609#1:1222\n608#1:1223\n616#1:1224\n618#1:1225\n620#1:1226\n620#1:1227,3\n618#1:1230\n659#1:1257,2\n672#1:1259,2\n745#1:1287\n745#1:1288,2\n751#1:1303,2\n838#1:1318,2\n863#1:1333,2\n536#1:1163,7\n610#1:1215,7\n*E\n"})
+@Metadata(d1 = {"\u0000\u008e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\t\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0018\u0018\u0000 G2\u00020\u0001:\u0016GHIJKLMNOPQRSTUVWXYZ[\\B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0016\u0010\"\u001a\u00020\u00052\u0006\u0010#\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010$J\u0014\u0010*\u001a\u0004\u0018\u00010+2\b\u0010,\u001a\u0004\u0018\u00010\u0005H\u0002J\u0012\u0010-\u001a\u00020(2\b\u0010,\u001a\u0004\u0018\u00010\u0005H\u0002J \u00101\u001a\u0004\u0018\u0001032\u0006\u00104\u001a\u00020(2\u0006\u00105\u001a\u000206H\u0096@¢\u0006\u0002\u00107J\u001c\u00108\u001a\b\u0012\u0004\u0012\u0002090/2\u0006\u0010:\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010$J\u0018\u0010;\u001a\u0004\u0018\u00010<2\u0006\u0010#\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010$JF\u0010=\u001a\u00020\u000f2\u0006\u0010>\u001a\u00020\u00052\u0006\u0010?\u001a\u00020\u000f2\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020C0A2\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020E\u0012\u0004\u0012\u00020C0AH\u0096@¢\u0006\u0002\u0010FR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u000e\u0010\r\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u0014\u0010\u000e\u001a\u00020\u000fX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0010\u0010\u0011R\u001a\u0010\u0012\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\u0007\"\u0004\b\u0014\u0010\tR\u001a\u0010\u0015\u001a\b\u0012\u0004\u0012\u00020\u00170\u0016X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0018\u0010\u0019R\u001a\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001c\u001a\u00020\u001d8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b \u0010!\u001a\u0004\b\u001e\u0010\u001fR\u000e\u0010%\u001a\u00020&X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u00050\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010)\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020\u00050\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010.\u001a\b\u0012\u0004\u0012\u0002000/X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b1\u00102¨\u0006]"}, d2 = {"Lcom/cncverse/DoFlixProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "apiKey", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "customClient", "Lokhttp3/OkHttpClient;", "getCustomClient", "()Lokhttp3/OkHttpClient;", "customClient$delegate", "Lkotlin/Lazy;", "getWithCustomHeaders", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "movieGenres", "", "seriesGenres", "getQualityFromString", "Lcom/lagradost/cloudstream3/SearchQuality;", "qualityString", "getQualityValue", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "MovieResult", "SeriesResult", "HomePageApiResponse", "SeriesPageApiResponse", "VideoItem", "SearchApiResponse", "TMDBGenre", "ProductionCountry", "CastMember", "CrewMember", "Credits", "SimilarResults", "MultiSearchResponse", "MovieDetails", "SeasonInfo", "TvDetails", "TvEpisode", "SeasonDetails", "StreamLink", "MovieLinksResponse", "EpisodeLinksResponse", "DoFlixProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nDoFlixProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider\n+ 2 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,836:1\n116#2:837\n54#2:838\n117#2:839\n61#2,8:840\n71#2:849\n116#2:854\n54#2:855\n117#2:856\n61#2,8:857\n71#2:866\n116#2:889\n54#2:890\n117#2:891\n61#2,8:892\n71#2:901\n116#2:906\n54#2:907\n117#2:908\n61#2,8:909\n71#2:918\n116#2:941\n54#2:942\n117#2:943\n61#2,8:944\n71#2:953\n116#2:954\n54#2:955\n117#2:956\n61#2,8:957\n71#2:966\n116#2:971\n54#2:972\n117#2:973\n61#2,8:974\n71#2:983\n116#2:984\n54#2:985\n117#2:986\n61#2,8:987\n71#2:996\n116#2:1000\n54#2:1001\n117#2:1002\n61#2,8:1003\n71#2:1012\n116#2:1015\n54#2:1016\n117#2:1017\n61#2,8:1018\n71#2:1027\n116#2:1030\n54#2:1031\n117#2:1032\n61#2,8:1033\n71#2:1042\n1#3:848\n1#3:865\n1#3:900\n1#3:917\n1#3:952\n1#3:965\n1#3:982\n1#3:995\n1#3:1011\n1#3:1026\n1#3:1041\n1586#4:850\n1661#4,3:851\n1586#4:867\n1661#4,3:868\n1915#4:871\n1915#4:872\n1916#4:880\n1916#4:881\n1080#4:882\n1915#4:883\n1586#4:884\n1661#4,3:885\n1916#4:888\n1586#4:902\n1661#4,3:903\n1586#4:919\n1661#4,3:920\n1915#4:923\n1915#4:924\n1916#4:932\n1916#4:933\n1080#4:934\n1915#4:935\n1586#4:936\n1661#4,3:937\n1916#4:940\n1915#4,2:967\n1915#4,2:969\n777#4:997\n873#4,2:998\n1915#4,2:1013\n1915#4,2:1028\n1915#4,2:1043\n383#5,7:873\n383#5,7:925\n*S KotlinDebug\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider\n*L\n461#1:837\n461#1:838\n461#1:839\n461#1:840,8\n461#1:849\n482#1:854\n482#1:855\n482#1:856\n482#1:857,8\n482#1:866\n535#1:889\n535#1:890\n535#1:891\n535#1:892,8\n535#1:901\n556#1:906\n556#1:907\n556#1:908\n556#1:909,8\n556#1:918\n620#1:941\n620#1:942\n620#1:943\n620#1:944,8\n620#1:953\n625#1:954\n625#1:955\n625#1:956\n625#1:957,8\n625#1:966\n671#1:971\n671#1:972\n671#1:973\n671#1:974,8\n671#1:983\n710#1:984\n710#1:985\n710#1:986\n710#1:987,8\n710#1:996\n718#1:1000\n718#1:1001\n718#1:1002\n718#1:1003,8\n718#1:1012\n788#1:1015\n788#1:1016\n788#1:1017\n788#1:1018,8\n788#1:1027\n813#1:1030\n813#1:1031\n813#1:1032\n813#1:1033,8\n813#1:1042\n461#1:848\n482#1:865\n535#1:900\n556#1:917\n620#1:952\n625#1:965\n671#1:982\n710#1:995\n718#1:1011\n788#1:1026\n813#1:1041\n463#1:850\n463#1:851,3\n484#1:867\n484#1:868,3\n503#1:871\n504#1:872\n504#1:880\n503#1:881\n511#1:882\n513#1:883\n515#1:884\n515#1:885,3\n513#1:888\n537#1:902\n537#1:903,3\n558#1:919\n558#1:920,3\n577#1:923\n578#1:924\n578#1:932\n577#1:933\n585#1:934\n587#1:935\n589#1:936\n589#1:937,3\n587#1:940\n628#1:967,2\n641#1:969,2\n714#1:997\n714#1:998,2\n720#1:1013,2\n790#1:1028,2\n815#1:1043,2\n505#1:873,7\n579#1:925,7\n*E\n"})
 public final class DoFlixProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private String mainUrl = "https://panel.watchkaroabhi.com";
@@ -129,7 +103,7 @@ public final class DoFlixProvider extends MainAPI {
 
     /* JADX INFO: renamed from: customClient$delegate, reason: from kotlin metadata */
     @NotNull
-    private final Lazy customClient = LazyKt.lazy(new Function0() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda10
+    private final Lazy customClient = LazyKt.lazy(new Function0() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda8
         public final Object invoke() {
             return DoFlixProvider.customClient_delegate$lambda$0(this.f$0);
         }
@@ -150,7 +124,7 @@ public final class DoFlixProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.DoFlixProvider$getMainPage$1 */
     /* JADX INFO: compiled from: DoFlixProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.DoFlixProvider", f = "DoFlixProvider.kt", i = {0, 0}, l = {486}, m = "getMainPage", n = {"request", "page"}, nl = {487}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.DoFlixProvider", f = "DoFlixProvider.kt", i = {0, 0}, l = {455}, m = "getMainPage", n = {"request", "page"}, nl = {456}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -172,7 +146,7 @@ public final class DoFlixProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.DoFlixProvider$load$1 */
     /* JADX INFO: compiled from: DoFlixProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.DoFlixProvider", f = "DoFlixProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4}, l = {701, 704, 740, 748, 768}, m = "load", n = {"url", "parts", "type", "id", "detailsUrl", "url", "parts", "type", "id", "detailsUrl", "responseText", "details", "url", "parts", "type", "id", "detailsUrl", "url", "parts", "type", "id", "detailsUrl", "responseText", "details", "allEpisodes", "season", "seasonUrl", "url", "parts", "type", "id", "detailsUrl", "responseText", "details", "allEpisodes"}, nl = {702, 739, 741, 749, 698}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.DoFlixProvider", f = "DoFlixProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4}, l = {670, 673, 709, 717, 737}, m = "load", n = {"url", "parts", "type", "id", "detailsUrl", "url", "parts", "type", "id", "detailsUrl", "responseText", "details", "url", "parts", "type", "id", "detailsUrl", "url", "parts", "type", "id", "detailsUrl", "responseText", "details", "allEpisodes", "season", "seasonUrl", "url", "parts", "type", "id", "detailsUrl", "responseText", "details", "allEpisodes"}, nl = {671, 708, 710, 718, 667}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -203,7 +177,7 @@ public final class DoFlixProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.DoFlixProvider$loadLinks$1 */
     /* JADX INFO: compiled from: DoFlixProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.DoFlixProvider", f = "DoFlixProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {835, 840, 860, 865}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "movieId", "linksUrl", "isCasting", "data", "subtitleCallback", "callback", "parts", "movieId", "linksUrl", "responseText", "linksResponse", "$this$forEach$iv", "element$iv", "link", "isCasting", "$i$f$forEach", "$i$a$-forEach-DoFlixProvider$loadLinks$3", "data", "subtitleCallback", "callback", "parts", "tvId", "seasonNum", "episodeNum", "linksUrl", "isCasting", "data", "subtitleCallback", "callback", "parts", "tvId", "seasonNum", "episodeNum", "linksUrl", "responseText", "linksResponse", "$this$forEach$iv", "element$iv", "link", "isCasting", "$i$f$forEach", "$i$a$-forEach-DoFlixProvider$loadLinks$4"}, nl = {836, 839, 861, 864}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$12", "L$13", "Z$0", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.DoFlixProvider", f = "DoFlixProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {787, 792, 812, 817}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "movieId", "linksUrl", "isCasting", "data", "subtitleCallback", "callback", "parts", "movieId", "linksUrl", "responseText", "linksResponse", "$this$forEach$iv", "element$iv", "link", "isCasting", "$i$f$forEach", "$i$a$-forEach-DoFlixProvider$loadLinks$2", "data", "subtitleCallback", "callback", "parts", "tvId", "seasonNum", "episodeNum", "linksUrl", "isCasting", "data", "subtitleCallback", "callback", "parts", "tvId", "seasonNum", "episodeNum", "linksUrl", "responseText", "linksResponse", "$this$forEach$iv", "element$iv", "link", "isCasting", "$i$f$forEach", "$i$a$-forEach-DoFlixProvider$loadLinks$3"}, nl = {788, 791, 813, 816}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$12", "L$13", "Z$0", "I$0", "I$1"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -241,7 +215,7 @@ public final class DoFlixProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.DoFlixProvider$search$1 */
     /* JADX INFO: compiled from: DoFlixProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.DoFlixProvider", f = "DoFlixProvider.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {650, 655}, m = "search", n = {"query", "searchResults", "movieSearchUrl", "query", "searchResults", "movieSearchUrl", "movieResponseText", "movieSearchData", "tvSearchUrl"}, nl = {651, 656}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.DoFlixProvider", f = "DoFlixProvider.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1}, l = {619, 624}, m = "search", n = {"query", "searchResults", "movieSearchUrl", "query", "searchResults", "movieSearchUrl", "movieResponseText", "movieSearchData", "tvSearchUrl"}, nl = {620, 625}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -265,65 +239,13 @@ public final class DoFlixProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: DoFlixProvider.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/cncverse/DoFlixProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "DoFlixProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nDoFlixProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1126:1\n1#2:1127\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/cncverse/DoFlixProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "DoFlixProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                DoFlixProvider.csGuardWasEverActive = true;
-            }
-            return DoFlixProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.DoFlixProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    DoFlixProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -5358,7 +5280,7 @@ public final class DoFlixProvider extends MainAPI {
     }
 
     /* JADX INFO: Thrown type has an unknown type hierarchy: com.fasterxml.jackson.databind.RuntimeJsonMappingException */
-    /* JADX WARN: Code duplicated, block: B:69:0x02c6  */
+    /* JADX WARN: Code duplicated, block: B:65:0x02a9  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
     @Nullable
@@ -5388,12 +5310,7 @@ public final class DoFlixProvider extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                doFlixProvider.showTelegramPopup();
-                doFlixProvider.showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(doFlixProvider.getName());
                 String data = request.getData();
                 c00001.L$0 = request;
                 c00001.I$0 = page;
@@ -5439,7 +5356,7 @@ public final class DoFlixProvider extends MainAPI {
                             if (title == null && (title = movie.getName()) == null) {
                                 title = "Unknown";
                             }
-                            destination$iv$iv.add(MainAPIKt.newMovieSearchResponse$default(doFlixProvider2, title, "movie," + movie.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda5
+                            destination$iv$iv.add(MainAPIKt.newMovieSearchResponse$default(doFlixProvider2, title, "movie," + movie.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda3
                                 public final Object invoke(Object obj2) {
                                     return DoFlixProvider.getMainPage$lambda$1$0(movie, (MovieSearchResponse) obj2);
                                 }
@@ -5519,7 +5436,7 @@ public final class DoFlixProvider extends MainAPI {
                                 final MovieResult movie3 = (MovieResult) item$iv$iv2;
                                 DoFlixProvider doFlixProvider3 = this;
                                 String title2 = movie3.getTitle();
-                                destination$iv$iv2.add(MainAPIKt.newMovieSearchResponse$default(doFlixProvider3, (title2 == null && (title2 = movie3.getName()) == null) ? "Unknown" : title2, "movie," + movie3.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda6
+                                destination$iv$iv2.add(MainAPIKt.newMovieSearchResponse$default(doFlixProvider3, (title2 == null && (title2 = movie3.getName()) == null) ? "Unknown" : title2, "movie," + movie3.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda4
                                     public final Object invoke(Object obj2) {
                                         return DoFlixProvider.getMainPage$lambda$4$0$0(movie3, (MovieSearchResponse) obj2);
                                     }
@@ -5550,7 +5467,7 @@ public final class DoFlixProvider extends MainAPI {
                         Collection destination$iv$iv3 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv3, 10));
                         for (Object item$iv$iv3 : $this$map$iv3) {
                             final SeriesResult series = (SeriesResult) item$iv$iv3;
-                            destination$iv$iv3.add(MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider, series.getName(), "tvseries," + series.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda8
+                            destination$iv$iv3.add(MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider, series.getName(), "tvseries," + series.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda6
                                 public final Object invoke(Object obj2) {
                                     return DoFlixProvider.getMainPage$lambda$6$0(series, (TvSeriesSearchResponse) obj2);
                                 }
@@ -5616,7 +5533,7 @@ public final class DoFlixProvider extends MainAPI {
                             for (Object item$iv$iv4 : $this$mapTo$iv$iv2) {
                                 Iterable $this$mapTo$iv$iv3 = $this$mapTo$iv$iv2;
                                 final SeriesResult series3 = (SeriesResult) item$iv$iv4;
-                                destination$iv$iv4.add(MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider, series3.getName(), "tvseries," + series3.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda9
+                                destination$iv$iv4.add(MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider, series3.getName(), "tvseries," + series3.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda7
                                     public final Object invoke(Object obj2) {
                                         return DoFlixProvider.getMainPage$lambda$9$0$0(series3, (TvSeriesSearchResponse) obj2);
                                     }
@@ -5653,7 +5570,7 @@ public final class DoFlixProvider extends MainAPI {
                             if (title3 == null && (title3 = movie4.getName()) == null) {
                                 title3 = "Unknown";
                             }
-                            destination$iv$iv5.add(MainAPIKt.newMovieSearchResponse$default(doFlixProvider4, title3, "movie," + movie4.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda4
+                            destination$iv$iv5.add(MainAPIKt.newMovieSearchResponse$default(doFlixProvider4, title3, "movie," + movie4.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda2
                                 public final Object invoke(Object obj2) {
                                     return DoFlixProvider.getMainPage$lambda$0$0(movie4, (MovieSearchResponse) obj2);
                                 }
@@ -5681,7 +5598,7 @@ public final class DoFlixProvider extends MainAPI {
                         for (Object item$iv$iv6 : $this$map$iv6) {
                             SeriesPageApiResponse seriesData4 = seriesData3;
                             final SeriesResult series4 = (SeriesResult) item$iv$iv6;
-                            destination$iv$iv6.add(MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider, series4.getName(), "tvseries," + series4.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda7
+                            destination$iv$iv6.add(MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider, series4.getName(), "tvseries," + series4.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda5
                                 public final Object invoke(Object obj2) {
                                     return DoFlixProvider.getMainPage$lambda$5$0(series4, (TvSeriesSearchResponse) obj2);
                                 }
@@ -5806,22 +5723,22 @@ public final class DoFlixProvider extends MainAPI {
     }
 
     /* JADX INFO: Thrown type has an unknown type hierarchy: com.fasterxml.jackson.databind.RuntimeJsonMappingException */
-    /* JADX WARN: Code duplicated, block: B:23:0x00e1  */
-    /* JADX WARN: Code duplicated, block: B:25:0x0107  */
-    /* JADX WARN: Code duplicated, block: B:26:0x0116  */
-    /* JADX WARN: Code duplicated, block: B:29:0x0125  */
-    /* JADX WARN: Code duplicated, block: B:31:0x0174 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:32:0x0175  */
-    /* JADX WARN: Code duplicated, block: B:35:0x0195  */
-    /* JADX WARN: Code duplicated, block: B:37:0x01bd  */
-    /* JADX WARN: Code duplicated, block: B:38:0x01cc  */
-    /* JADX WARN: Code duplicated, block: B:41:0x01db  */
-    /* JADX WARN: Code duplicated, block: B:44:0x01f4  */
-    /* JADX WARN: Code duplicated, block: B:46:0x0206  */
-    /* JADX WARN: Code duplicated, block: B:53:0x0254  */
-    /* JADX WARN: Code duplicated, block: B:55:0x0266  */
-    /* JADX WARN: Code duplicated, block: B:63:0x020e A[ADDED_TO_REGION, REMOVE, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:67:0x026e A[ADDED_TO_REGION, REMOVE, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:19:0x00cd  */
+    /* JADX WARN: Code duplicated, block: B:21:0x00f3  */
+    /* JADX WARN: Code duplicated, block: B:22:0x0102  */
+    /* JADX WARN: Code duplicated, block: B:25:0x0111  */
+    /* JADX WARN: Code duplicated, block: B:27:0x0160 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:28:0x0161  */
+    /* JADX WARN: Code duplicated, block: B:31:0x0181  */
+    /* JADX WARN: Code duplicated, block: B:33:0x01a9  */
+    /* JADX WARN: Code duplicated, block: B:34:0x01b8  */
+    /* JADX WARN: Code duplicated, block: B:37:0x01c7  */
+    /* JADX WARN: Code duplicated, block: B:40:0x01e0  */
+    /* JADX WARN: Code duplicated, block: B:42:0x01f2  */
+    /* JADX WARN: Code duplicated, block: B:49:0x0240  */
+    /* JADX WARN: Code duplicated, block: B:51:0x0252  */
+    /* JADX WARN: Code duplicated, block: B:59:0x01fa A[ADDED_TO_REGION, REMOVE, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:63:0x025a A[ADDED_TO_REGION, REMOVE, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) throws RuntimeJsonMappingException {
@@ -5859,10 +5776,6 @@ public final class DoFlixProvider extends MainAPI {
         switch (c00051.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 searchResults = new ArrayList();
                 movieSearchUrl = getMainUrl() + "/api/3/search/movie?api_key=" + this.apiKey + "&language=en&page=1&query=" + query2;
                 c00051.L$0 = query2;
@@ -5924,7 +5837,7 @@ public final class DoFlixProvider extends MainAPI {
                         title = "Unknown";
                     }
                     MultiSearchResponse tvSearchData2 = tvSearchData;
-                    MovieSearchResponse movieResult = MainAPIKt.newMovieSearchResponse$default(doFlixProvider, title, "movie," + result.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda2
+                    MovieSearchResponse movieResult = MainAPIKt.newMovieSearchResponse$default(doFlixProvider, title, "movie," + result.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda0
                         public final Object invoke(Object obj) {
                             return DoFlixProvider.search$lambda$0$0(result, (MovieSearchResponse) obj);
                         }
@@ -5942,7 +5855,7 @@ public final class DoFlixProvider extends MainAPI {
                         name = "Unknown";
                     }
                     Iterable $this$forEach$iv2 = $this$forEach$iv;
-                    TvSeriesSearchResponse seriesResult = MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider2, name, "tvseries," + result2.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda3
+                    TvSeriesSearchResponse seriesResult = MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider2, name, "tvseries," + result2.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda1
                         public final Object invoke(Object obj) {
                             return DoFlixProvider.search$lambda$1$0(result2, (TvSeriesSearchResponse) obj);
                         }
@@ -6010,7 +5923,7 @@ public final class DoFlixProvider extends MainAPI {
                     if (title != null) {
                     }
                     MultiSearchResponse tvSearchData3 = tvSearchData;
-                    MovieSearchResponse movieResult2 = MainAPIKt.newMovieSearchResponse$default(doFlixProvider3, title, "movie," + result3.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda2
+                    MovieSearchResponse movieResult2 = MainAPIKt.newMovieSearchResponse$default(doFlixProvider3, title, "movie," + result3.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda0
                         public final Object invoke(Object obj) {
                             return DoFlixProvider.search$lambda$0$0(result3, (MovieSearchResponse) obj);
                         }
@@ -6027,7 +5940,7 @@ public final class DoFlixProvider extends MainAPI {
                     if (name != null) {
                     }
                     Iterable $this$forEach$iv3 = $this$forEach$iv;
-                    TvSeriesSearchResponse seriesResult2 = MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider4, name, "tvseries," + result4.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda3
+                    TvSeriesSearchResponse seriesResult2 = MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider4, name, "tvseries," + result4.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda1
                         public final Object invoke(Object obj) {
                             return DoFlixProvider.search$lambda$1$0(result4, (TvSeriesSearchResponse) obj);
                         }
@@ -6065,7 +5978,7 @@ public final class DoFlixProvider extends MainAPI {
                     if (title != null) {
                     }
                     MultiSearchResponse tvSearchData4 = tvSearchData;
-                    MovieSearchResponse movieResult3 = MainAPIKt.newMovieSearchResponse$default(doFlixProvider5, title, "movie," + result5.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda2
+                    MovieSearchResponse movieResult3 = MainAPIKt.newMovieSearchResponse$default(doFlixProvider5, title, "movie," + result5.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda0
                         public final Object invoke(Object obj) {
                             return DoFlixProvider.search$lambda$0$0(result5, (MovieSearchResponse) obj);
                         }
@@ -6082,7 +5995,7 @@ public final class DoFlixProvider extends MainAPI {
                     if (name != null) {
                     }
                     Iterable $this$forEach$iv4 = $this$forEach$iv;
-                    TvSeriesSearchResponse seriesResult3 = MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider6, name, "tvseries," + result6.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda3
+                    TvSeriesSearchResponse seriesResult3 = MainAPIKt.newTvSeriesSearchResponse$default(doFlixProvider6, name, "tvseries," + result6.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda1
                         public final Object invoke(Object obj) {
                             return DoFlixProvider.search$lambda$1$0(result6, (TvSeriesSearchResponse) obj);
                         }
@@ -6153,7 +6066,7 @@ public final class DoFlixProvider extends MainAPI {
     /* JADX INFO: compiled from: DoFlixProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.DoFlixProvider$load$2", f = "DoFlixProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nDoFlixProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1126:1\n1586#2:1127\n1661#2,3:1128\n1586#2:1131\n1661#2,3:1132\n1586#2:1135\n1661#2,3:1136\n*S KotlinDebug\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider$load$2\n*L\n714#1:1127\n714#1:1128,3\n718#1:1131\n718#1:1132,3\n726#1:1135\n726#1:1136,3\n*E\n"})
+    @SourceDebugExtension({"SMAP\nDoFlixProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,836:1\n1586#2:837\n1661#2,3:838\n1586#2:841\n1661#2,3:842\n1586#2:845\n1661#2,3:846\n*S KotlinDebug\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider$load$2\n*L\n683#1:837\n683#1:838,3\n687#1:841\n687#1:842,3\n695#1:845\n695#1:846,3\n*E\n"})
     static final class C00022 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ MovieDetails $details;
         private /* synthetic */ Object L$0;
@@ -6256,7 +6169,7 @@ public final class DoFlixProvider extends MainAPI {
     /* JADX INFO: compiled from: DoFlixProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.DoFlixProvider$load$5", f = "DoFlixProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nDoFlixProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider$load$5\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1126:1\n1586#2:1127\n1661#2,3:1128\n1586#2:1131\n1661#2,3:1132\n1586#2:1135\n1661#2,3:1136\n*S KotlinDebug\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider$load$5\n*L\n778#1:1127\n778#1:1128,3\n781#1:1131\n781#1:1132,3\n789#1:1135\n789#1:1136,3\n*E\n"})
+    @SourceDebugExtension({"SMAP\nDoFlixProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider$load$5\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,836:1\n1586#2:837\n1661#2,3:838\n1586#2:841\n1661#2,3:842\n1586#2:845\n1661#2,3:846\n*S KotlinDebug\n*F\n+ 1 DoFlixProvider.kt\ncom/cncverse/DoFlixProvider$load$5\n*L\n747#1:837\n747#1:838,3\n750#1:841\n750#1:842,3\n758#1:845\n758#1:846,3\n*E\n"})
     static final class C00035 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ TvDetails $details;
         private /* synthetic */ Object L$0;
@@ -6353,318 +6266,23 @@ public final class DoFlixProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:61:0x02e3  */
-    /* JADX WARN: Code duplicated, block: B:63:0x037c A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:64:0x037d  */
+    /* JADX WARN: Code duplicated, block: B:33:0x0262  */
+    /* JADX WARN: Code duplicated, block: B:35:0x02fa A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:36:0x02fb  */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:64:0x037d -> B:65:0x0394). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:88:0x05a8 -> B:89:0x05c5). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:36:0x02fb -> B:37:0x0313). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x051b -> B:61:0x0534). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
-    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r33, boolean r34, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r35, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r36, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r37) {
+    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r29, boolean r30, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r31, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r32, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r33) {
         /*
-            Method dump skipped, instruction units count: 1560
+            Method dump skipped, instruction units count: 1412
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.cncverse.DoFlixProvider.loadLinks(java.lang.String, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda15
-                @Override // java.lang.Runnable
-                public final void run() {
-                    DoFlixProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    DoFlixProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda1
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    DoFlixProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda17
-            @Override // java.lang.Runnable
-            public final void run() {
-                DoFlixProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda11
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda12
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    DoFlixProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.DoFlixProvider$$ExternalSyntheticLambda14
-            @Override // java.lang.Runnable
-            public final void run() {
-                DoFlixProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
-        }
     }
 }

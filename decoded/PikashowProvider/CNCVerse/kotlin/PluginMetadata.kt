@@ -4,7 +4,7 @@ package nepali.stream.decoded.pikashowprovider
 object PluginMetadata {
     const val name: String = "PikashowProvider"
     const val originalPluginClass: String = "com.cncverse.PikashowPlugin"
-    const val version: Int = 30
+    const val version: Int = 31
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

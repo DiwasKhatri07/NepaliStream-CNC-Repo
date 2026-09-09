@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
+import com.cncverse.donation.DonationManager;
 import com.lagradost.cloudstream3.CommonActivity;
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin;
 import com.lagradost.cloudstream3.plugins.Plugin;
@@ -37,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/SKTechProvider/CNCVerse/java/classes.dex */
 @CloudstreamPlugin
 @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0006\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lcom/cncverse/SKTechPlugin;", "Lcom/lagradost/cloudstream3/plugins/Plugin;", "<init>", "()V", "sharedPref", "Landroid/content/SharedPreferences;", "iptvProviders", "", "", "", "", "load", "", "context", "Landroid/content/Context;", "SKTechProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nSKTechPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SKTechPlugin.kt\ncom/cncverse/SKTechPlugin\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,59:1\n1642#2,10:60\n1915#2:70\n1916#2:72\n1652#2:73\n777#2:74\n873#2,2:75\n1915#2,2:77\n1642#2,10:79\n1915#2:89\n1916#2:91\n1652#2:92\n1#3:71\n1#3:90\n*S KotlinDebug\n*F\n+ 1 SKTechPlugin.kt\ncom/cncverse/SKTechPlugin\n*L\n29#1:60,10\n29#1:70\n29#1:72\n29#1:73\n34#1:74\n34#1:75,2\n39#1:77,2\n54#1:79,10\n54#1:89\n54#1:91\n54#1:92\n29#1:71\n54#1:90\n*E\n"})
+@SourceDebugExtension({"SMAP\nSKTechPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SKTechPlugin.kt\ncom/cncverse/SKTechPlugin\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,60:1\n1642#2,10:61\n1915#2:71\n1916#2:73\n1652#2:74\n777#2:75\n873#2,2:76\n1915#2,2:78\n1642#2,10:80\n1915#2:90\n1916#2:92\n1652#2:93\n1#3:72\n1#3:91\n*S KotlinDebug\n*F\n+ 1 SKTechPlugin.kt\ncom/cncverse/SKTechPlugin\n*L\n30#1:61,10\n30#1:71\n30#1:73\n30#1:74\n35#1:75\n35#1:76,2\n40#1:78,2\n55#1:80,10\n55#1:90\n55#1:92\n55#1:93\n30#1:72\n55#1:91\n*E\n"})
 public final class SKTechPlugin extends Plugin {
 
     @NotNull
@@ -54,10 +55,10 @@ public final class SKTechPlugin extends Plugin {
 
     public void load(@NotNull Context context) {
         Pair pair;
+        DonationManager.INSTANCE.setActivity(context);
         SKTech.INSTANCE.setContext(context);
         LiveEventsProvider.INSTANCE.setContext(context);
-        String str = null;
-        registerMainAPI(new LiveEventsProvider(str, str, 3, str));
+        registerMainAPI(new LiveEventsProvider(null, null, 3, null));
         this.iptvProviders = (List) BuildersKt.runBlocking$default((CoroutineContext) null, new C00461(null), 1, (Object) null);
         Iterable $this$mapNotNull$iv = this.iptvProviders;
         Collection destination$iv$iv = new ArrayList();
@@ -124,7 +125,7 @@ public final class SKTechPlugin extends Plugin {
     /* JADX INFO: renamed from: com.cncverse.SKTechPlugin$load$1 */
     /* JADX INFO: compiled from: SKTechPlugin.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010 \n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00040\u00020\u0001*\u00020\u0005H\n"}, d2 = {"<anonymous>", "", "", "", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SKTechPlugin$load$1", f = "SKTechPlugin.kt", i = {}, l = {26}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.cncverse.SKTechPlugin$load$1", f = "SKTechPlugin.kt", i = {}, l = {27}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00461 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Map<String, ? extends Object>>>, Object> {
         int label;
 

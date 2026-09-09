@@ -1,14 +1,9 @@
 package com.cncverse;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Base64;
 import android.util.Log;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.lagradost.cloudstream3.Episode;
 import com.lagradost.cloudstream3.HomePageList;
 import com.lagradost.cloudstream3.HomePageResponse;
@@ -26,13 +21,11 @@ import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvType;
 import com.lagradost.cloudstream3.network.CloudflareKiller;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.cloudstream3.utils.Qualities;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Field;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -72,7 +65,6 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SourceDebugExtension;
-import kotlin.text.Charsets;
 import kotlin.text.MatchResult;
 import kotlin.text.Regex;
 import kotlin.text.RegexOption;
@@ -98,10 +90,9 @@ import org.jsoup.select.Elements;
 
 /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/MovieLinkBDProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u008a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 a2\u00020\u0001:\u0001aB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010%\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010&J\u001e\u0010\u001b\u001a\u00020'2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+H\u0096@¢\u0006\u0002\u0010,J\u001c\u0010-\u001a\b\u0012\u0004\u0012\u00020.0\u00192\u0006\u0010/\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00100J\u001e\u00101\u001a\b\u0012\u0004\u0012\u00020.0\u00192\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u0005H\u0002J\u0010\u00105\u001a\u0002062\u0006\u00107\u001a\u00020\u0005H\u0002J\u0016\u00108\u001a\u0002092\u0006\u00107\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00100JF\u0010:\u001a\u00020\u00112\u0006\u0010;\u001a\u00020\u00052\u0006\u0010<\u001a\u00020\u00112\u0012\u0010=\u001a\u000e\u0012\u0004\u0012\u00020?\u0012\u0004\u0012\u0002060>2\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020A\u0012\u0004\u0012\u0002060>H\u0096@¢\u0006\u0002\u0010BJ:\u0010C\u001a\u0002062\u0006\u0010D\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0006\u0010F\u001a\u00020\u00052\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020A\u0012\u0004\u0012\u0002060>H\u0082@¢\u0006\u0002\u0010GJ:\u0010H\u001a\u0002062\u0006\u0010I\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0006\u0010F\u001a\u00020\u00052\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020A\u0012\u0004\u0012\u0002060>H\u0082@¢\u0006\u0002\u0010GJ:\u0010J\u001a\u0002062\u0006\u0010K\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0006\u0010F\u001a\u00020\u00052\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020A\u0012\u0004\u0012\u0002060>H\u0082@¢\u0006\u0002\u0010GJ:\u0010L\u001a\u0002062\u0006\u0010M\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0006\u0010F\u001a\u00020\u00052\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020A\u0012\u0004\u0012\u0002060>H\u0082@¢\u0006\u0002\u0010GJ2\u0010N\u001a\u0002062\u0006\u0010O\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020A\u0012\u0004\u0012\u0002060>H\u0082@¢\u0006\u0002\u0010PJ:\u0010Q\u001a\u0002062\u0006\u0010R\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0006\u0010F\u001a\u00020\u00052\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020A\u0012\u0004\u0012\u0002060>H\u0082@¢\u0006\u0002\u0010GJ\u0018\u0010S\u001a\u00020\u00052\u0006\u00107\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u0005H\u0002J\u0010\u0010T\u001a\u00020\u00052\u0006\u0010U\u001a\u00020\u0005H\u0002J\u0010\u0010V\u001a\u00020)2\u0006\u0010W\u001a\u00020\u0005H\u0002J,\u0010^\u001a\u00020\u00052\u0006\u00107\u001a\u00020\u00052\u0014\b\u0002\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050#H\u0082@¢\u0006\u0002\u0010_J,\u0010`\u001a\u0002032\u0006\u00107\u001a\u00020\u00052\u0014\b\u0002\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050#H\u0082@¢\u0006\u0002\u0010_R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u0014\u0010\u0010\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013R\u0014\u0010\u0016\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0013R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R\u001a\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010X\u001a\u00020Y8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b\\\u0010]\u001a\u0004\bZ\u0010[¨\u0006b"}, d2 = {"Lcom/cncverse/MovieLinkBDProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "hasDownloadSupport", "getHasDownloadSupport", "hasQuickSearch", "getHasQuickSearch", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "resolvedBase", "getBase", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "parseMovieCards", "doc", "Lorg/jsoup/nodes/Document;", "base", "openInExternalBrowser", "", "url", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveGetLink", "getLinkUrl", "qualityLabel", "refererUrl", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveCdnUrl", "cdnUrl", "resolveWatchUrl", "watchUrl", "resolveGetWatch", "getWatchUrl", "resolveXCloud", "xcloudUrl", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveDirectFile", "fileUrl", "fixUrlDomain", "extractQualityLabel", "text", "labelToQuality", "label", "cfClient", "Lokhttp3/OkHttpClient;", "getCfClient", "()Lokhttp3/OkHttpClient;", "cfClient$delegate", "Lkotlin/Lazy;", "httpGetText", "(Ljava/lang/String;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "httpGetDoc", "Companion", "MovieLinkBDProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 5 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,1186:1\n1#2:1187\n1#2:1236\n1#2:1261\n1#2:1275\n296#3,2:1188\n1915#3,2:1190\n1915#3,2:1192\n1915#3:1194\n1916#3:1197\n832#3:1198\n862#3,2:1199\n832#3:1201\n862#3,2:1202\n832#3:1204\n862#3,2:1205\n1512#3:1207\n1538#3,3:1208\n1541#3,3:1218\n1915#3:1221\n832#3:1222\n862#3,2:1223\n1642#3,10:1225\n1915#3:1235\n1916#3:1237\n1652#3:1238\n1916#3:1239\n1915#3:1240\n832#3:1241\n862#3,2:1242\n1915#3,2:1244\n1916#3:1246\n832#3:1247\n862#3,2:1248\n1642#3,10:1250\n1915#3:1260\n1916#3:1262\n1652#3:1263\n1642#3,10:1264\n1915#3:1274\n1916#3:1276\n1652#3:1277\n1021#3,2:1278\n296#3,2:1280\n1088#4,2:1195\n383#5,7:1211\n*S KotlinDebug\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider\n*L\n513#1:1236\n571#1:1261\n580#1:1275\n144#1:1188,2\n213#1:1190,2\n238#1:1192,2\n264#1:1194\n264#1:1197\n409#1:1198\n409#1:1199,2\n412#1:1201\n412#1:1202,2\n413#1:1204\n413#1:1205,2\n479#1:1207\n479#1:1208,3\n479#1:1218,3\n506#1:1221\n511#1:1222\n511#1:1223,2\n513#1:1225,10\n513#1:1235\n513#1:1237\n513#1:1238\n506#1:1239\n540#1:1240\n550#1:1241\n550#1:1242,2\n551#1:1244,2\n540#1:1246\n571#1:1247\n571#1:1248,2\n571#1:1250,10\n571#1:1260\n571#1:1262\n571#1:1263\n580#1:1264,10\n580#1:1274\n580#1:1276\n580#1:1277\n597#1:1278,2\n314#1:1280,2\n269#1:1195,2\n479#1:1211,7\n*E\n"})
+@Metadata(d1 = {"\u0000\u0086\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0007\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0017\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 `2\u00020\u0001:\u0001`B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010%\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010&J\u001e\u0010\u001b\u001a\u00020'2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+H\u0096@¢\u0006\u0002\u0010,J\u001c\u0010-\u001a\b\u0012\u0004\u0012\u00020.0\u00192\u0006\u0010/\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00100J\u001e\u00101\u001a\b\u0012\u0004\u0012\u00020.0\u00192\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u00020\u0005H\u0002J\u0016\u00105\u001a\u0002062\u0006\u00107\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00100JF\u00108\u001a\u00020\u00112\u0006\u00109\u001a\u00020\u00052\u0006\u0010:\u001a\u00020\u00112\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020>0<2\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020>0<H\u0096@¢\u0006\u0002\u0010AJ:\u0010B\u001a\u00020>2\u0006\u0010C\u001a\u00020\u00052\u0006\u0010D\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020>0<H\u0082@¢\u0006\u0002\u0010FJ:\u0010G\u001a\u00020>2\u0006\u0010H\u001a\u00020\u00052\u0006\u0010D\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020>0<H\u0082@¢\u0006\u0002\u0010FJ:\u0010I\u001a\u00020>2\u0006\u0010J\u001a\u00020\u00052\u0006\u0010D\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020>0<H\u0082@¢\u0006\u0002\u0010FJ:\u0010K\u001a\u00020>2\u0006\u0010L\u001a\u00020\u00052\u0006\u0010D\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020>0<H\u0082@¢\u0006\u0002\u0010FJ2\u0010M\u001a\u00020>2\u0006\u0010N\u001a\u00020\u00052\u0006\u0010D\u001a\u00020\u00052\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020>0<H\u0082@¢\u0006\u0002\u0010OJ:\u0010P\u001a\u00020>2\u0006\u0010Q\u001a\u00020\u00052\u0006\u0010D\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020>0<H\u0082@¢\u0006\u0002\u0010FJ\u0018\u0010R\u001a\u00020\u00052\u0006\u00107\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u0005H\u0002J\u0010\u0010S\u001a\u00020\u00052\u0006\u0010T\u001a\u00020\u0005H\u0002J\u0010\u0010U\u001a\u00020)2\u0006\u0010V\u001a\u00020\u0005H\u0002J,\u0010]\u001a\u00020\u00052\u0006\u00107\u001a\u00020\u00052\u0014\b\u0002\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050#H\u0082@¢\u0006\u0002\u0010^J,\u0010_\u001a\u0002032\u0006\u00107\u001a\u00020\u00052\u0014\b\u0002\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050#H\u0082@¢\u0006\u0002\u0010^R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u0014\u0010\u0010\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u0014\u0010\u0014\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0013R\u0014\u0010\u0016\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0013R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\b\u0012\u0004\u0012\u00020\u001f0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b \u0010!R\u001a\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050#X\u0082\u0004¢\u0006\u0002\n\u0000R\u0010\u0010$\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001b\u0010W\u001a\u00020X8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b[\u0010\\\u001a\u0004\bY\u0010Z¨\u0006a"}, d2 = {"Lcom/cncverse/MovieLinkBDProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "hasDownloadSupport", "getHasDownloadSupport", "hasQuickSearch", "getHasQuickSearch", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "resolvedBase", "getBase", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "parseMovieCards", "doc", "Lorg/jsoup/nodes/Document;", "base", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveGetLink", "getLinkUrl", "qualityLabel", "refererUrl", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveCdnUrl", "cdnUrl", "resolveWatchUrl", "watchUrl", "resolveGetWatch", "getWatchUrl", "resolveXCloud", "xcloudUrl", "(Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveDirectFile", "fileUrl", "fixUrlDomain", "extractQualityLabel", "text", "labelToQuality", "label", "cfClient", "Lokhttp3/OkHttpClient;", "getCfClient", "()Lokhttp3/OkHttpClient;", "cfClient$delegate", "Lkotlin/Lazy;", "httpGetText", "(Ljava/lang/String;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "httpGetDoc", "Companion", "MovieLinkBDProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 5 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,1124:1\n1#2:1125\n1#2:1174\n1#2:1199\n1#2:1213\n296#3,2:1126\n1915#3,2:1128\n1915#3,2:1130\n1915#3:1132\n1916#3:1135\n832#3:1136\n862#3,2:1137\n832#3:1139\n862#3,2:1140\n832#3:1142\n862#3,2:1143\n1512#3:1145\n1538#3,3:1146\n1541#3,3:1156\n1915#3:1159\n832#3:1160\n862#3,2:1161\n1642#3,10:1163\n1915#3:1173\n1916#3:1175\n1652#3:1176\n1916#3:1177\n1915#3:1178\n832#3:1179\n862#3,2:1180\n1915#3,2:1182\n1916#3:1184\n832#3:1185\n862#3,2:1186\n1642#3,10:1188\n1915#3:1198\n1916#3:1200\n1652#3:1201\n1642#3,10:1202\n1915#3:1212\n1916#3:1214\n1652#3:1215\n1021#3,2:1216\n296#3,2:1218\n1088#4,2:1133\n383#5,7:1149\n*S KotlinDebug\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider\n*L\n467#1:1174\n525#1:1199\n534#1:1213\n116#1:1126,2\n184#1:1128,2\n209#1:1130,2\n235#1:1132\n235#1:1135\n363#1:1136\n363#1:1137,2\n366#1:1139\n366#1:1140,2\n367#1:1142\n367#1:1143,2\n433#1:1145\n433#1:1146,3\n433#1:1156,3\n460#1:1159\n465#1:1160\n465#1:1161,2\n467#1:1163,10\n467#1:1173\n467#1:1175\n467#1:1176\n460#1:1177\n494#1:1178\n504#1:1179\n504#1:1180,2\n505#1:1182,2\n494#1:1184\n525#1:1185\n525#1:1186,2\n525#1:1188,10\n525#1:1198\n525#1:1200\n525#1:1201\n534#1:1202,10\n534#1:1212\n534#1:1214\n534#1:1215\n551#1:1216,2\n268#1:1218,2\n240#1:1133,2\n433#1:1149,7\n*E\n"})
 public final class MovieLinkBDProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
@@ -110,13 +101,8 @@ public final class MovieLinkBDProvider extends MainAPI {
     @NotNull
     private static final String FALLBACK_URL = "https://movielinkbd.one";
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context appContext;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
     private final boolean hasQuickSearch;
 
     @Nullable
@@ -153,7 +139,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$getBase$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0}, l = {142}, m = "getBase", n = {"currentUrl", "baseResult", "success"}, nl = {143}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0}, l = {114}, m = "getBase", n = {"currentUrl", "baseResult", "success"}, nl = {115}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -176,7 +162,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$getMainPage$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 1, 1, 1, 1, 1}, l = {180, 190}, m = "getMainPage", n = {"request", "page", "request", "base", "path", "url", "page"}, nl = {181, 191}, s = {"L$0", "I$0", "L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 1, 1, 1, 1, 1}, l = {152, 162}, m = "getMainPage", n = {"request", "page", "request", "base", "path", "url", "page"}, nl = {153, 163}, s = {"L$0", "I$0", "L$0", "L$1", "L$2", "L$3", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -201,7 +187,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$httpGetDoc$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0}, l = {1182}, m = "httpGetDoc", n = {"url", "headers"}, nl = {1183}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0}, l = {1120}, m = "httpGetDoc", n = {"url", "headers"}, nl = {1121}, s = {"L$0", "L$1"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -223,7 +209,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$load$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {298, 299, 465, 599}, m = "load", n = {"url", "url", "base", "url", "base", "doc", "rawTitle", "year", "posterElement", "poster", "plot", "genre", "cast", "language", "rating", "fullPlot", "jsonSources", "fileAnchors", "linkAnchors", "watchAnchors", "liveServerAnchors", "items", "linksData", "isSeries", "url", "base", "doc", "rawTitle", "year", "posterElement", "poster", "plot", "genre", "cast", "language", "rating", "fullPlot", "jsonSources", "fileAnchors", "linkAnchors", "watchAnchors", "liveServerAnchors", "episodesData", "isSeries"}, nl = {299, 302, 474, -1}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {252, 253, 419, 553}, m = "load", n = {"url", "url", "base", "url", "base", "doc", "rawTitle", "year", "posterElement", "poster", "plot", "genre", "cast", "language", "rating", "fullPlot", "jsonSources", "fileAnchors", "linkAnchors", "watchAnchors", "liveServerAnchors", "items", "linksData", "isSeries", "url", "base", "doc", "rawTitle", "year", "posterElement", "poster", "plot", "genre", "cast", "language", "rating", "fullPlot", "jsonSources", "fileAnchors", "linkAnchors", "watchAnchors", "liveServerAnchors", "episodesData", "isSeries"}, nl = {253, 256, 428, -1}, s = {"L$0", "L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -264,7 +250,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$resolveCdnUrl$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0}, l = {800}, m = "resolveCdnUrl", n = {"cdnUrl", "qualityLabel", "refererUrl", "callback", "type", "displayName", "reqHeaders", "quality"}, nl = {799}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0}, l = {738}, m = "resolveCdnUrl", n = {"cdnUrl", "qualityLabel", "refererUrl", "callback", "type", "displayName", "reqHeaders", "quality"}, nl = {737}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -293,7 +279,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$resolveDirectFile$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {1081, 1083, 1102}, m = "resolveDirectFile", n = {"fileUrl", "qualityLabel", "refererUrl", "callback", "fileUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "fileUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "unescapedHtml", "srcRegex", "watchRegex", "m3u8Regex", "mp4Regex", "streamUrl", "resolvedUrl", "fixedStreamUrl", "type", "quality"}, nl = {1082, 1084, 1101}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {1019, 1021, 1040}, m = "resolveDirectFile", n = {"fileUrl", "qualityLabel", "refererUrl", "callback", "fileUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "fileUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "unescapedHtml", "srcRegex", "watchRegex", "m3u8Regex", "mp4Regex", "streamUrl", "resolvedUrl", "fixedStreamUrl", "type", "quality"}, nl = {1020, 1022, 1039}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "I$0"}, v = 2)
     static final class C00101 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -331,7 +317,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$resolveGetLink$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {702, 704, 719, 722, 732, 753, 764, 769}, m = "resolveGetLink", n = {"getLinkUrl", "qualityLabel", "refererUrl", "callback", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "streamUrl", "fixedStreamUrl", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "streamUrl", "fixedStreamUrl", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "streamUrl", "fixedStreamUrl", "type", "quality", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "fileAnchor", "href", "fileUrl", "fixedFileUrl", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "fileAnchor", "a", "href", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "fileAnchor", "a", "href"}, nl = {703, 707, 720, 727, 731, 758, 768, 774}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {640, 642, 657, 660, 670, 691, 702, 707}, m = "resolveGetLink", n = {"getLinkUrl", "qualityLabel", "refererUrl", "callback", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "streamUrl", "fixedStreamUrl", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "streamUrl", "fixedStreamUrl", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "streamUrl", "fixedStreamUrl", "type", "quality", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "fileAnchor", "href", "fileUrl", "fixedFileUrl", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "fileAnchor", "a", "href", "getLinkUrl", "qualityLabel", "refererUrl", "callback", "base", "reqHeaders", "doc", "bodyText", "videoSrc", "fileAnchor", "a", "href"}, nl = {641, 645, 658, 665, 669, 696, 706, 712}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12"}, v = 2)
     static final class C00121 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -365,7 +351,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$resolveGetWatch$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8}, l = {863, 865, 877, 894, 900, 921, 932, 934, 943}, m = "resolveGetWatch", n = {"getWatchUrl", "qualityLabel", "refererUrl", "callback", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "href", "watchUrl", "fixedWatchUrl", "watchHeaders", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "href", "watchUrl", "fixedWatchUrl", "watchHeaders", "watchHtml", "unescapedWatchHtml", "srcRegex", "watchRegex", "m3u8Regex", "mp4Regex", "streamUrl", "resolvedUrl", "fixedStreamUrl", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "href", "watchUrl", "fixedWatchUrl", "watchHeaders", "watchHtml", "unescapedWatchHtml", "srcRegex", "watchRegex", "m3u8Regex", "mp4Regex", "streamUrl", "resolvedUrl", "fixedStreamUrl", "type", "quality", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "fileAnchor", "href", "fileUrl", "fixedFileUrl", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "fileAnchor", "videoSrc", "resolvedUrl", "fixedResolvedUrl", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "fileAnchor", "videoSrc", "resolvedUrl", "fixedResolvedUrl", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "fileAnchor", "videoSrc", "resolvedUrl", "fixedResolvedUrl", "type", "quality"}, nl = {864, 866, 878, 895, 899, 922, 933, 940, 942}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8}, l = {801, 803, 815, 832, 838, 859, 870, 872, 881}, m = "resolveGetWatch", n = {"getWatchUrl", "qualityLabel", "refererUrl", "callback", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "href", "watchUrl", "fixedWatchUrl", "watchHeaders", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "href", "watchUrl", "fixedWatchUrl", "watchHeaders", "watchHtml", "unescapedWatchHtml", "srcRegex", "watchRegex", "m3u8Regex", "mp4Regex", "streamUrl", "resolvedUrl", "fixedStreamUrl", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "href", "watchUrl", "fixedWatchUrl", "watchHeaders", "watchHtml", "unescapedWatchHtml", "srcRegex", "watchRegex", "m3u8Regex", "mp4Regex", "streamUrl", "resolvedUrl", "fixedStreamUrl", "type", "quality", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "fileAnchor", "href", "fileUrl", "fixedFileUrl", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "fileAnchor", "videoSrc", "resolvedUrl", "fixedResolvedUrl", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "fileAnchor", "videoSrc", "resolvedUrl", "fixedResolvedUrl", "getWatchUrl", "qualityLabel", "refererUrl", "callback", "base", "requestHeaders", "html", "doc", "watchAnchor", "fileAnchor", "videoSrc", "resolvedUrl", "fixedResolvedUrl", "type", "quality"}, nl = {802, 804, 816, 833, 837, 860, 871, 878, 880}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0"}, v = 2)
     static final class C00141 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -410,7 +396,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$resolveWatchUrl$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {822, 830, 841, 849}, m = "resolveWatchUrl", n = {"watchUrl", "qualityLabel", "refererUrl", "callback", "reqHeaders", "type", "quality", "watchUrl", "qualityLabel", "refererUrl", "callback", "reqHeaders", "watchUrl", "qualityLabel", "refererUrl", "callback", "reqHeaders", "html", "unescaped", "srcRegex", "m3u8Regex", "mp4Regex", "streamUrl", "type", "quality", "watchUrl", "qualityLabel", "refererUrl", "callback", "reqHeaders", "html", "unescaped", "srcRegex", "m3u8Regex", "mp4Regex", "streamUrl"}, nl = {827, 831, 848, 850}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {760, 768, 779, 787}, m = "resolveWatchUrl", n = {"watchUrl", "qualityLabel", "refererUrl", "callback", "reqHeaders", "type", "quality", "watchUrl", "qualityLabel", "refererUrl", "callback", "reqHeaders", "watchUrl", "qualityLabel", "refererUrl", "callback", "reqHeaders", "html", "unescaped", "srcRegex", "m3u8Regex", "mp4Regex", "streamUrl", "type", "quality", "watchUrl", "qualityLabel", "refererUrl", "callback", "reqHeaders", "html", "unescaped", "srcRegex", "m3u8Regex", "mp4Regex", "streamUrl"}, nl = {765, 769, 786, 788}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10"}, v = 2)
     static final class C00171 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -444,7 +430,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$resolveXCloud$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {1030, 1043, 1057}, m = "resolveXCloud", n = {"xcloudUrl", "qualityLabel", "callback", "TAG", "userAgent", "streamPlayerUrl", "streamUrl", "simpleHeaders", "tryUrl", "quality", "xcloudUrl", "qualityLabel", "callback", "TAG", "userAgent", "streamPlayerUrl", "streamUrl", "simpleHeaders", "tryUrl", "quality", "xcloudUrl", "qualityLabel", "callback", "TAG", "userAgent", "streamPlayerUrl", "streamUrl", "simpleHeaders", "type", "quality"}, nl = {1031, 1044, 1056}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {968, 981, 995}, m = "resolveXCloud", n = {"xcloudUrl", "qualityLabel", "callback", "TAG", "userAgent", "streamPlayerUrl", "streamUrl", "simpleHeaders", "tryUrl", "quality", "xcloudUrl", "qualityLabel", "callback", "TAG", "userAgent", "streamPlayerUrl", "streamUrl", "simpleHeaders", "tryUrl", "quality", "xcloudUrl", "qualityLabel", "callback", "TAG", "userAgent", "streamPlayerUrl", "streamUrl", "simpleHeaders", "type", "quality"}, nl = {969, 982, 994}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "I$0"}, v = 2)
     static final class C00201 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -475,7 +461,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$search$1 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 1, 1, 1}, l = {198, 200}, m = "search", n = {"query", "query", "base", "encodedQuery"}, nl = {199, 201}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider", f = "MovieLinkBDProvider.kt", i = {0, 1, 1, 1}, l = {169, 171}, m = "search", n = {"query", "query", "base", "encodedQuery"}, nl = {170, 172}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
     static final class C00221 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -496,65 +482,13 @@ public final class MovieLinkBDProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
-    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0015X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0015X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lcom/cncverse/MovieLinkBDProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "appContext", "getAppContext", "()Landroid/content/Context;", "setAppContext", "(Landroid/content/Context;)V", "FALLBACK_URL", "", "OMG10", "lastBrowserOpenMs", "", "BROWSER_DEBOUNCE_MS", "MovieLinkBDProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1186:1\n1#2:1187\n*E\n"})
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/cncverse/MovieLinkBDProvider$Companion;", "", "<init>", "()V", "appContext", "Landroid/content/Context;", "getAppContext", "()Landroid/content/Context;", "setAppContext", "(Landroid/content/Context;)V", "FALLBACK_URL", "", "MovieLinkBDProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                MovieLinkBDProvider.csGuardWasEverActive = true;
-            }
-            return MovieLinkBDProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.MovieLinkBDProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    MovieLinkBDProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -881,13 +815,13 @@ public final class MovieLinkBDProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:26:0x00af  */
-    /* JADX WARN: Code duplicated, block: B:28:0x00b7  */
-    /* JADX WARN: Code duplicated, block: B:29:0x00cd A[DONT_INVERT] */
-    /* JADX WARN: Code duplicated, block: B:30:0x00cf  */
-    /* JADX WARN: Code duplicated, block: B:31:0x00e1  */
-    /* JADX WARN: Code duplicated, block: B:34:0x0117 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:35:0x0118  */
+    /* JADX WARN: Code duplicated, block: B:22:0x009f  */
+    /* JADX WARN: Code duplicated, block: B:24:0x00a7  */
+    /* JADX WARN: Code duplicated, block: B:25:0x00bd A[DONT_INVERT] */
+    /* JADX WARN: Code duplicated, block: B:26:0x00bf  */
+    /* JADX WARN: Code duplicated, block: B:27:0x00d1  */
+    /* JADX WARN: Code duplicated, block: B:30:0x0108 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:31:0x0109  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
@@ -900,7 +834,6 @@ public final class MovieLinkBDProvider extends MainAPI {
         String url;
         Object objHttpGetDoc;
         MainPageRequest request3;
-        String base3;
         if (continuation instanceof C00011) {
             c00011 = (C00011) continuation;
             if ((c00011.label & Integer.MIN_VALUE) != 0) {
@@ -916,10 +849,7 @@ public final class MovieLinkBDProvider extends MainAPI {
         switch (c00011.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(null);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
+                DonationManager.INSTANCE.checkAndShow(getName());
                 c00011.L$0 = request;
                 c00011.I$0 = page;
                 c00011.label = 1;
@@ -952,9 +882,8 @@ public final class MovieLinkBDProvider extends MainAPI {
                     return coroutine_suspended;
                 }
                 request3 = request2;
-                base3 = base2;
                 Document doc = (Document) objHttpGetDoc;
-                List<SearchResponse> movieCards = parseMovieCards(doc, base3);
+                List<SearchResponse> movieCards = parseMovieCards(doc, base2);
                 return MainAPIKt.newHomePageResponse(new HomePageList(request3.getName(), movieCards, false, 4, (DefaultConstructorMarker) null), Boxing.boxBoolean(true ^ movieCards.isEmpty()));
             case 1:
                 page2 = c00011.I$0;
@@ -990,26 +919,25 @@ public final class MovieLinkBDProvider extends MainAPI {
                     return coroutine_suspended;
                 }
                 request3 = request2;
-                base3 = base2;
                 Document doc2 = (Document) objHttpGetDoc;
-                List<SearchResponse> movieCards2 = parseMovieCards(doc2, base3);
+                List<SearchResponse> movieCards2 = parseMovieCards(doc2, base2);
                 return MainAPIKt.newHomePageResponse(new HomePageList(request3.getName(), movieCards2, false, 4, (DefaultConstructorMarker) null), Boxing.boxBoolean(true ^ movieCards2.isEmpty()));
             case 2:
                 int i = c00011.I$0;
-                base3 = (String) c00011.L$1;
+                base2 = (String) c00011.L$1;
                 request3 = (MainPageRequest) c00011.L$0;
                 ResultKt.throwOnFailure($result);
                 objHttpGetDoc = $result;
                 Document doc3 = (Document) objHttpGetDoc;
-                List<SearchResponse> movieCards3 = parseMovieCards(doc3, base3);
+                List<SearchResponse> movieCards3 = parseMovieCards(doc3, base2);
                 return MainAPIKt.newHomePageResponse(new HomePageList(request3.getName(), movieCards3, false, 4, (DefaultConstructorMarker) null), Boxing.boxBoolean(true ^ movieCards3.isEmpty()));
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:23:0x00ad A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:24:0x00ae  */
+    /* JADX WARN: Code duplicated, block: B:19:0x009a A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:20:0x009b  */
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) throws UnsupportedEncodingException {
@@ -1032,10 +960,6 @@ public final class MovieLinkBDProvider extends MainAPI {
         switch (c00221.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(null);
-                    return CollectionsKt.emptyList();
-                }
                 c00221.L$0 = query;
                 c00221.label = 1;
                 base = getBase(c00221);
@@ -1193,7 +1117,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                 tvType2 = TvType.Movie;
                             }
                             TvType type = tvType2;
-                            results.add(MainAPIKt.newMovieSearchResponse$default(this, title, href, type, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda8
+                            results.add(MainAPIKt.newMovieSearchResponse$default(this, title, href, type, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda7
                                 public final Object invoke(Object obj) {
                                     return MovieLinkBDProvider.parseMovieCards$lambda$0$4(poster, (MovieSearchResponse) obj);
                                 }
@@ -1236,7 +1160,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                     tvType2 = TvType.TvSeries;
                                 }
                                 TvType type2 = tvType2;
-                                results.add(MainAPIKt.newMovieSearchResponse$default(this, title2, href, type2, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda8
+                                results.add(MainAPIKt.newMovieSearchResponse$default(this, title2, href, type2, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda7
                                     public final Object invoke(Object obj) {
                                         return MovieLinkBDProvider.parseMovieCards$lambda$0$4(poster, (MovieSearchResponse) obj);
                                     }
@@ -1263,7 +1187,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                 tvType2 = TvType.TvSeries;
                             }
                             TvType type3 = tvType2;
-                            results.add(MainAPIKt.newMovieSearchResponse$default(this, title3, href, type3, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda8
+                            results.add(MainAPIKt.newMovieSearchResponse$default(this, title3, href, type3, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda7
                                 public final Object invoke(Object obj) {
                                     return MovieLinkBDProvider.parseMovieCards$lambda$0$4(poster, (MovieSearchResponse) obj);
                                 }
@@ -1331,7 +1255,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                     tvType = TvType.Movie;
                                 }
                                 TvType type4 = tvType;
-                                results.add(MainAPIKt.newMovieSearchResponse$default(this, title4, href2, type4, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda9
+                                results.add(MainAPIKt.newMovieSearchResponse$default(this, title4, href2, type4, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda8
                                     public final Object invoke(Object obj) {
                                         return MovieLinkBDProvider.parseMovieCards$lambda$1$5(poster2, (MovieSearchResponse) obj);
                                     }
@@ -1345,7 +1269,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                 tvType = TvType.TvSeries;
                             }
                             TvType type5 = tvType;
-                            results.add(MainAPIKt.newMovieSearchResponse$default(this, title5, href2, type5, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda9
+                            results.add(MainAPIKt.newMovieSearchResponse$default(this, title5, href2, type5, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda8
                                 public final Object invoke(Object obj) {
                                     return MovieLinkBDProvider.parseMovieCards$lambda$1$5(poster2, (MovieSearchResponse) obj);
                                 }
@@ -1383,7 +1307,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                         tvType = TvType.TvSeries;
                                     }
                                     TvType type6 = tvType;
-                                    results.add(MainAPIKt.newMovieSearchResponse$default(this, title6, href2, type6, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda9
+                                    results.add(MainAPIKt.newMovieSearchResponse$default(this, title6, href2, type6, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda8
                                         public final Object invoke(Object obj) {
                                             return MovieLinkBDProvider.parseMovieCards$lambda$1$5(poster2, (MovieSearchResponse) obj);
                                         }
@@ -1397,7 +1321,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                     tvType = TvType.TvSeries;
                                 }
                                 TvType type7 = tvType;
-                                results.add(MainAPIKt.newMovieSearchResponse$default(this, title7, href2, type7, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda9
+                                results.add(MainAPIKt.newMovieSearchResponse$default(this, title7, href2, type7, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda8
                                     public final Object invoke(Object obj) {
                                         return MovieLinkBDProvider.parseMovieCards$lambda$1$5(poster2, (MovieSearchResponse) obj);
                                     }
@@ -1411,7 +1335,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                 tvType = TvType.TvSeries;
                             }
                             TvType type8 = tvType;
-                            results.add(MainAPIKt.newMovieSearchResponse$default(this, title8, href2, type8, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda9
+                            results.add(MainAPIKt.newMovieSearchResponse$default(this, title8, href2, type8, false, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda8
                                 public final Object invoke(Object obj) {
                                     return MovieLinkBDProvider.parseMovieCards$lambda$1$5(poster2, (MovieSearchResponse) obj);
                                 }
@@ -1492,35 +1416,6 @@ public final class MovieLinkBDProvider extends MainAPI {
     public static final Unit parseMovieCards$lambda$1$5(String $poster, MovieSearchResponse $this$newMovieSearchResponse) {
         $this$newMovieSearchResponse.setPosterUrl($poster.length() > 0 ? $poster : null);
         return Unit.INSTANCE;
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = appContext) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                MovieLinkBDProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
-        }
     }
 
     /* JADX WARN: Code duplicated, block: B:104:0x035c  */
@@ -2307,7 +2202,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                         }
                         String str22 = epLinks;
                         String epLinks2 = CollectionsKt.joinToString$default(epLinksList, str3, (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) null, 62, (Object) null);
-                        episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epLinks2, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda5
+                        episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epLinks2, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda4
                             public final Object invoke(Object obj5) {
                                 return MovieLinkBDProvider.load$lambda$13(epLabel, epNum3, (Episode) obj5);
                             }
@@ -2425,7 +2320,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                     Unit unit2 = Unit.INSTANCE;
                                 } else {
                                     str11 = str3;
-                                    Boxing.boxBoolean(episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epUrl2, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda6
+                                    Boxing.boxBoolean(episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epUrl2, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda5
                                         public final Object invoke(Object obj5) {
                                             return MovieLinkBDProvider.load$lambda$14$4(epNum2, (Episode) obj5);
                                         }
@@ -2671,7 +2566,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                     List allLive = (List) destination$iv$iv9;
                     String allLinks = CollectionsKt.joinToString$default(CollectionsKt.plus(allDownload, allLive), str6, (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) null, 62, (Object) null);
                     episodesData3 = episodesData2;
-                    episodesData3.add(MainAPIKt.newEpisode(this, allLinks, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda7
+                    episodesData3.add(MainAPIKt.newEpisode(this, allLinks, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda6
                         public final Object invoke(Object obj5) {
                             return MovieLinkBDProvider.load$lambda$19((Episode) obj5);
                         }
@@ -3046,7 +2941,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                         }
                         String str27 = epLinks;
                         String epLinks3 = CollectionsKt.joinToString$default(epLinksList, str3, (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) null, 62, (Object) null);
-                        episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epLinks3, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda5
+                        episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epLinks3, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda4
                             public final Object invoke(Object obj6) {
                                 return MovieLinkBDProvider.load$lambda$13(epLabel, epNum3, (Episode) obj6);
                             }
@@ -3162,7 +3057,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                     Unit unit4 = Unit.INSTANCE;
                                 } else {
                                     str11 = str3;
-                                    Boxing.boxBoolean(episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epUrl2, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda6
+                                    Boxing.boxBoolean(episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epUrl2, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda5
                                         public final Object invoke(Object obj6) {
                                             return MovieLinkBDProvider.load$lambda$14$4(epNum2, (Episode) obj6);
                                         }
@@ -3695,7 +3590,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                         }
                         String str211 = epLinks;
                         String epLinks4 = CollectionsKt.joinToString$default(epLinksList, str3, (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, (Function1) null, 62, (Object) null);
-                        episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epLinks4, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda5
+                        episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epLinks4, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda4
                             public final Object invoke(Object obj7) {
                                 return MovieLinkBDProvider.load$lambda$13(epLabel, epNum3, (Episode) obj7);
                             }
@@ -3811,7 +3706,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                     Unit unit6 = Unit.INSTANCE;
                                 } else {
                                     str11 = str3;
-                                    Boxing.boxBoolean(episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epUrl2, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda6
+                                    Boxing.boxBoolean(episodesData.add(MainAPIKt.newEpisode(movieLinkBDProvider, epUrl2, new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda5
                                         public final Object invoke(Object obj7) {
                                             return MovieLinkBDProvider.load$lambda$14$4(epNum2, (Episode) obj7);
                                         }
@@ -4214,7 +4109,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider$load$3", f = "MovieLinkBDProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$load$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1186:1\n1#2:1187\n*E\n"})
+    @SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$load$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1124:1\n1#2:1125\n*E\n"})
     static final class C00053 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $fullPlot;
         final /* synthetic */ String $poster;
@@ -4296,7 +4191,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider$load$9", f = "MovieLinkBDProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$load$9\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1186:1\n1#2:1187\n*E\n"})
+    @SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$load$9\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1124:1\n1#2:1125\n*E\n"})
     static final class C00069 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $fullPlot;
         final /* synthetic */ String $poster;
@@ -4353,8 +4248,8 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.MovieLinkBDProvider$loadLinks$2 */
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000b\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider$loadLinks$2", f = "MovieLinkBDProvider.kt", i = {0, 1, 1, 1, 1}, l = {630, 690}, m = "invokeSuspend", n = {"$this$coroutineScope", "$this$coroutineScope", "base", "items", "deferreds"}, nl = {631, 691}, s = {"L$0", "L$0", "L$1", "L$2", "L$3"}, v = 2)
-    @SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$loadLinks$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1186:1\n1586#2:1187\n1661#2,3:1188\n*S KotlinDebug\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$loadLinks$2\n*L\n632#1:1187\n632#1:1188,3\n*E\n"})
+    @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider$loadLinks$2", f = "MovieLinkBDProvider.kt", i = {0, 1, 1, 1, 1}, l = {568, 628}, m = "invokeSuspend", n = {"$this$coroutineScope", "$this$coroutineScope", "base", "items", "deferreds"}, nl = {569, 629}, s = {"L$0", "L$0", "L$1", "L$2", "L$3"}, v = 2)
+    @SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$loadLinks$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1124:1\n1586#2:1125\n1661#2,3:1126\n*S KotlinDebug\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$loadLinks$2\n*L\n570#1:1125\n570#1:1126,3\n*E\n"})
     static final class C00072 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Boolean>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ String $data;
@@ -4383,12 +4278,13 @@ public final class MovieLinkBDProvider extends MainAPI {
             return create(coroutineScope, continuation).invokeSuspend(Unit.INSTANCE);
         }
 
-        /* JADX WARN: Code duplicated, block: B:41:0x00fb A[LOOP:0: B:39:0x00f5->B:41:0x00fb, LOOP_END] */
-        /* JADX WARN: Code duplicated, block: B:44:0x0154 A[RETURN] */
-        /* JADX WARN: Code duplicated, block: B:45:0x0155  */
+        /* JADX WARN: Code duplicated, block: B:14:0x0082 A[LOOP:0: B:12:0x007c->B:14:0x0082, LOOP_END] */
+        /* JADX WARN: Code duplicated, block: B:17:0x00d4 A[RETURN] */
+        /* JADX WARN: Code duplicated, block: B:18:0x00d5  */
         public final Object invokeSuspend(Object $result) {
             Object base;
             String base2;
+            Iterable $this$map$iv;
             MovieLinkBDProvider movieLinkBDProvider;
             Function1<ExtractorLink, Unit> function1;
             Function1<SubtitleFile, Unit> function2;
@@ -4399,24 +4295,6 @@ public final class MovieLinkBDProvider extends MainAPI {
             switch (this.label) {
                 case 0:
                     ResultKt.throwOnFailure($result);
-                    MovieLinkBDProvider movieLinkBDProvider2 = MovieLinkBDProvider.this;
-                    final Context _ctx = MovieLinkBDProvider.INSTANCE.getAppContext();
-                    SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                    String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                    long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                    long _nowSec = System.currentTimeMillis() / 1000;
-                    boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                    if (!_isSubscribed) {
-                        if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.MovieLinkBDProvider$loadLinks$2$$ExternalSyntheticLambda0
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    MovieLinkBDProvider.C00072.invokeSuspend$lambda$0$0(_ctx);
-                                }
-                            });
-                        }
-                        movieLinkBDProvider2.openInExternalBrowser(new String(Base64.decode(MovieLinkBDProvider.OMG10, 0), Charsets.UTF_8));
-                    }
                     this.L$0 = $this$coroutineScope;
                     this.label = 1;
                     base = MovieLinkBDProvider.this.getBase((Continuation) this);
@@ -4425,18 +4303,17 @@ public final class MovieLinkBDProvider extends MainAPI {
                     }
                     base2 = (String) base;
                     Iterable items = StringsKt.split$default(this.$data, new String[]{" ; "}, false, 0, 6, (Object) null);
-                    Iterable $this$map$iv = items;
+                    $this$map$iv = items;
                     movieLinkBDProvider = MovieLinkBDProvider.this;
                     function1 = this.$callback;
                     function2 = this.$subtitleCallback;
                     destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                     for (Object item$iv$iv : $this$map$iv) {
                         String item = (String) item$iv$iv;
-                        destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new MovieLinkBDProvider$loadLinks$2$deferreds$1$1(item, base2, movieLinkBDProvider, function1, function2, null), 3, (Object) null));
-                        base2 = base2;
-                        movieLinkBDProvider = movieLinkBDProvider;
-                        function1 = function1;
-                        function2 = function2;
+                        Collection destination$iv$iv2 = destination$iv$iv;
+                        destination$iv$iv2.add(BuildersKt.async$default($this$coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new MovieLinkBDProvider$loadLinks$2$deferreds$1$1(item, base2, movieLinkBDProvider, function1, function2, null), 3, (Object) null));
+                        $this$map$iv = $this$map$iv;
+                        destination$iv$iv = destination$iv$iv2;
                     }
                     deferreds = (List) destination$iv$iv;
                     this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);
@@ -4453,18 +4330,17 @@ public final class MovieLinkBDProvider extends MainAPI {
                     base = $result;
                     base2 = (String) base;
                     Iterable items2 = StringsKt.split$default(this.$data, new String[]{" ; "}, false, 0, 6, (Object) null);
-                    Iterable $this$map$iv2 = items2;
+                    $this$map$iv = items2;
                     movieLinkBDProvider = MovieLinkBDProvider.this;
                     function1 = this.$callback;
                     function2 = this.$subtitleCallback;
-                    destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv2, 10));
-                    while (r18.hasNext()) {
+                    destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
+                    while (r20.hasNext()) {
                         String item2 = (String) item$iv$iv;
-                        destination$iv$iv.add(BuildersKt.async$default($this$coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new MovieLinkBDProvider$loadLinks$2$deferreds$1$1(item2, base2, movieLinkBDProvider, function1, function2, null), 3, (Object) null));
-                        base2 = base2;
-                        movieLinkBDProvider = movieLinkBDProvider;
-                        function1 = function1;
-                        function2 = function2;
+                        Collection destination$iv$iv3 = destination$iv$iv;
+                        destination$iv$iv3.add(BuildersKt.async$default($this$coroutineScope, (CoroutineContext) null, (CoroutineStart) null, new MovieLinkBDProvider$loadLinks$2$deferreds$1$1(item2, base2, movieLinkBDProvider, function1, function2, null), 3, (Object) null));
+                        $this$map$iv = $this$map$iv;
+                        destination$iv$iv = destination$iv$iv3;
                     }
                     deferreds = (List) destination$iv$iv;
                     this.L$0 = SpillingKt.nullOutSpilledVariable($this$coroutineScope);
@@ -4482,11 +4358,6 @@ public final class MovieLinkBDProvider extends MainAPI {
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void invokeSuspend$lambda$0$0(Context $_ctx) {
-            Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
         }
     }
 
@@ -6124,7 +5995,7 @@ public final class MovieLinkBDProvider extends MainAPI {
                                                                                                             getWatchUrl3 = getWatchUrl5;
                                                                                                         }
                                                                                                     } else {
-                                                                                                        Function1 function18 = new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda10
+                                                                                                        Function1 function18 = new Function1() { // from class: com.cncverse.MovieLinkBDProvider$$ExternalSyntheticLambda9
                                                                                                             public final Object invoke(Object obj5) {
                                                                                                                 return MovieLinkBDProvider.resolveGetWatch$lambda$0((SubtitleFile) obj5);
                                                                                                             }
@@ -8651,7 +8522,7 @@ public final class MovieLinkBDProvider extends MainAPI {
     /* JADX INFO: compiled from: MovieLinkBDProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.MovieLinkBDProvider$httpGetText$2", f = "MovieLinkBDProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$httpGetText$2\n+ 2 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,1186:1\n221#2,2:1187\n*S KotlinDebug\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$httpGetText$2\n*L\n1168#1:1187,2\n*E\n"})
+    @SourceDebugExtension({"SMAP\nMovieLinkBDProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$httpGetText$2\n+ 2 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,1124:1\n221#2,2:1125\n*S KotlinDebug\n*F\n+ 1 MovieLinkBDProvider.kt\ncom/cncverse/MovieLinkBDProvider$httpGetText$2\n*L\n1106#1:1125,2\n*E\n"})
     static final class C00032 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ String $url;

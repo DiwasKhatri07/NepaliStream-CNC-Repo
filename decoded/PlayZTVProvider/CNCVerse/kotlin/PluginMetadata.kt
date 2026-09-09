@@ -4,7 +4,7 @@ package nepali.stream.decoded.playztvprovider
 object PluginMetadata {
     const val name: String = "PlayZTVProvider"
     const val originalPluginClass: String = "com.cncverse.PlayZTVPlugin"
-    const val version: Int = 35
+    const val version: Int = 36
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

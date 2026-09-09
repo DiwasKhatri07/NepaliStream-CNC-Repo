@@ -378,11 +378,11 @@ public final class SportzxCryptoUtils {
             if ((i2 & 2) != 0) {
                 i = 0;
             }
-            sxrSponge.m1final(bArr, i);
+            sxrSponge.m3final(bArr, i);
         }
 
         /* JADX INFO: renamed from: final, reason: not valid java name */
-        public final void m1final(@NotNull byte[] out, int outOffset) {
+        public final void m3final(@NotNull byte[] out, int outOffset) {
             byte[] bArr = this.buf;
             int i = this.pos;
             this.pos = i + 1;

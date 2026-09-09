@@ -3,6 +3,7 @@ package com.cncverse;
 import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
+import com.cncverse.donation.DonationManager;
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin;
 import com.lagradost.cloudstream3.plugins.Plugin;
 import kotlin.Metadata;
@@ -36,6 +37,7 @@ public final class SubscriptionManagerPlugin extends Plugin {
     public static final String PREFS_NAME = "CNCVerseSubscription";
 
     public void load(@NotNull Context context) {
+        DonationManager.INSTANCE.setActivity(context);
         final SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, 0);
         Intrinsics.checkNotNull(context, "null cannot be cast to non-null type androidx.appcompat.app.AppCompatActivity");
         final AppCompatActivity activity = (AppCompatActivity) context;

@@ -1,20 +1,9 @@
 package com.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Base64;
-import android.view.View;
-import android.view.Window;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
@@ -22,10 +11,7 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lagradost.cloudstream3.HomePageList;
@@ -39,10 +25,8 @@ import com.lagradost.cloudstream3.MainPageRequest;
 import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.TvType;
 import com.lagradost.cloudstream3.mvvm.ArchComponentExtKt;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Field;
 import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -103,10 +87,9 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: LiveEventsProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/SKTechProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u0094\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0010$\n\u0002\b\u0007\u0018\u0000 X2\u00020\u0001:\u0005XYZ[\\B\u001d\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010\u001f\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u0010 J\u0010\u0010!\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010$\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010%\u001a\u00020\u00132\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010&\u001a\u00020\u00132\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010'\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020#H\u0002J\b\u0010(\u001a\u00020)H\u0002J\b\u0010*\u001a\u00020)H\u0002J\u0010\u0010+\u001a\u00020)2\u0006\u0010,\u001a\u00020\u0003H\u0002J\u001e\u0010-\u001a\u00020.2\u0006\u0010/\u001a\u0002002\u0006\u00101\u001a\u000202H\u0096@¢\u0006\u0002\u00103J\u001c\u00104\u001a\b\u0012\u0004\u0012\u000206052\u0006\u00107\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u00108J\u0016\u00109\u001a\u00020:2\u0006\u0010,\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u00108JF\u0010;\u001a\u00020\u00132\u0006\u0010<\u001a\u00020\u00032\u0006\u0010=\u001a\u00020\u00132\u0012\u0010>\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020)0?2\u0012\u0010A\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020)0?H\u0096@¢\u0006\u0002\u0010CJ\u0018\u0010D\u001a\u0004\u0018\u00010E2\u0006\u0010F\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u00108J\u0018\u0010G\u001a\u0004\u0018\u00010\u00032\u0006\u0010H\u001a\u00020IH\u0082@¢\u0006\u0002\u0010JJ\u0018\u0010K\u001a\u0004\u0018\u00010\u00032\u0006\u0010H\u001a\u00020IH\u0082@¢\u0006\u0002\u0010JJ \u0010L\u001a\u0004\u0018\u00010\u00032\u0006\u0010M\u001a\u00020\u00032\u0006\u0010H\u001a\u00020IH\u0082@¢\u0006\u0002\u0010NJ\u0018\u0010O\u001a\u0004\u0018\u00010\u00032\u0006\u0010H\u001a\u00020IH\u0082@¢\u0006\u0002\u0010JJ\u0018\u0010P\u001a\u0004\u0018\u00010\u00032\u0006\u0010H\u001a\u00020IH\u0082@¢\u0006\u0002\u0010JJ\u0018\u0010Q\u001a\u0004\u0018\u00010\u00032\u0006\u0010H\u001a\u00020IH\u0082@¢\u0006\u0002\u0010JJ\u0018\u0010R\u001a\u0004\u0018\u00010\u00032\u0006\u0010H\u001a\u00020IH\u0082@¢\u0006\u0002\u0010JJ\u0018\u0010S\u001a\u0004\u0018\u00010\u00032\u0006\u0010H\u001a\u00020IH\u0082@¢\u0006\u0002\u0010JJ(\u0010T\u001a\u001a\u0012\u0004\u0012\u00020\u0003\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030V0U2\u0006\u0010W\u001a\u00020\u0003H\u0002R\u001a\u0010\u0002\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\nR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\bR\u001a\u0010\f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\b\"\u0004\b\u000e\u0010\nR\u001a\u0010\u000f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\b\"\u0004\b\u0011\u0010\nR\u0014\u0010\u0012\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0015R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006]"}, d2 = {"Lcom/cncverse/LiveEventsProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "name", "", "customCatLink", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "getCustomCatLink", "mainUrl", "getMainUrl", "setMainUrl", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "client", "Lokhttp3/OkHttpClient;", "getWebUrl", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "createDisplayTitle", "event", "Lcom/cncverse/LiveEventData;", "getEventStatus", "isEventLive", "isEventEnded", "generateMatchCardUrl", "showSubscriptionPopupIfNeeded", "", "showTelegramPopup", "openInExternalBrowser", "url", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchChannelStreams", "Lcom/cncverse/LiveEventsProvider$ChannelStreamResponse;", "slug", "fetchStreamFromTokenApi", "config", "Lcom/cncverse/LiveEventsProvider$TokenApiConfig;", "(Lcom/cncverse/LiveEventsProvider$TokenApiConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "handleEmbedExtraction", "loadEmbedInWebView", "embedUrl", "(Ljava/lang/String;Lcom/cncverse/LiveEventsProvider$TokenApiConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "handleJsonExtraction", "handleHtmlExtraction", "handleYoutubeExtraction", "handleLocationServiceExtraction", "handleDirectApiCall", "parseStreamLink", "Lkotlin/Pair;", "", "link", "Companion", "ChannelStreamResponse", "StreamUrl", "TokenApiConfig", "LiveEventLoadData", "SKTechProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 6 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 7 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,1354:1\n1#2:1355\n1#2:1387\n1#2:1406\n1#2:1426\n1512#3:1356\n1538#3,3:1357\n1541#3,3:1367\n1586#3:1373\n1661#3,3:1374\n1068#3:1378\n777#3:1379\n873#3,2:1380\n1586#3:1382\n1661#3,3:1383\n1915#3:1424\n1586#3:1444\n1661#3,3:1445\n1586#3:1448\n1661#3,3:1449\n1916#3:1452\n1915#3,2:1453\n383#4,7:1360\n129#5:1370\n158#5,2:1371\n160#5:1377\n63#6:1386\n64#6,15:1388\n63#6:1405\n64#6,15:1407\n63#6:1425\n64#6,15:1427\n50#7:1403\n43#7:1404\n50#7:1422\n43#7:1423\n50#7:1442\n43#7:1443\n*S KotlinDebug\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider\n*L\n662#1:1387\n711#1:1406\n727#1:1426\n528#1:1356\n528#1:1357,3\n528#1:1367,3\n565#1:1373\n565#1:1374,3\n602#1:1378\n620#1:1379\n620#1:1380,2\n633#1:1382\n633#1:1383,3\n720#1:1424\n754#1:1444\n754#1:1445,3\n765#1:1448\n765#1:1449,3\n720#1:1452\n1332#1:1453,2\n528#1:1360,7\n532#1:1370\n532#1:1371,2\n532#1:1377\n662#1:1386\n662#1:1388,15\n711#1:1405\n711#1:1407,15\n727#1:1425\n727#1:1427,15\n662#1:1403\n662#1:1404\n711#1:1422\n711#1:1423\n727#1:1442\n727#1:1443\n*E\n"})
+@Metadata(d1 = {"\u0000\u0090\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u000b\n\u0002\u0018\u0002\n\u0002\u0010$\n\u0002\b\u0007\u0018\u0000 U2\u00020\u0001:\u0005UVWXYB\u001d\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\n\b\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u000e\u0010\u001f\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u0010 J\u0010\u0010!\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010$\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010%\u001a\u00020\u00132\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010&\u001a\u00020\u00132\u0006\u0010\"\u001a\u00020#H\u0002J\u0010\u0010'\u001a\u00020\u00032\u0006\u0010\"\u001a\u00020#H\u0002J\u001e\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020-H\u0096@¢\u0006\u0002\u0010.J\u001c\u0010/\u001a\b\u0012\u0004\u0012\u000201002\u0006\u00102\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u00103J\u0016\u00104\u001a\u0002052\u0006\u00106\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u00103JF\u00107\u001a\u00020\u00132\u0006\u00108\u001a\u00020\u00032\u0006\u00109\u001a\u00020\u00132\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020=0;2\u0012\u0010>\u001a\u000e\u0012\u0004\u0012\u00020?\u0012\u0004\u0012\u00020=0;H\u0096@¢\u0006\u0002\u0010@J\u0018\u0010A\u001a\u0004\u0018\u00010B2\u0006\u0010C\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u00103J\u0018\u0010D\u001a\u0004\u0018\u00010\u00032\u0006\u0010E\u001a\u00020FH\u0082@¢\u0006\u0002\u0010GJ\u0018\u0010H\u001a\u0004\u0018\u00010\u00032\u0006\u0010E\u001a\u00020FH\u0082@¢\u0006\u0002\u0010GJ \u0010I\u001a\u0004\u0018\u00010\u00032\u0006\u0010J\u001a\u00020\u00032\u0006\u0010E\u001a\u00020FH\u0082@¢\u0006\u0002\u0010KJ\u0018\u0010L\u001a\u0004\u0018\u00010\u00032\u0006\u0010E\u001a\u00020FH\u0082@¢\u0006\u0002\u0010GJ\u0018\u0010M\u001a\u0004\u0018\u00010\u00032\u0006\u0010E\u001a\u00020FH\u0082@¢\u0006\u0002\u0010GJ\u0018\u0010N\u001a\u0004\u0018\u00010\u00032\u0006\u0010E\u001a\u00020FH\u0082@¢\u0006\u0002\u0010GJ\u0018\u0010O\u001a\u0004\u0018\u00010\u00032\u0006\u0010E\u001a\u00020FH\u0082@¢\u0006\u0002\u0010GJ\u0018\u0010P\u001a\u0004\u0018\u00010\u00032\u0006\u0010E\u001a\u00020FH\u0082@¢\u0006\u0002\u0010GJ(\u0010Q\u001a\u001a\u0012\u0004\u0012\u00020\u0003\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030S0R2\u0006\u0010T\u001a\u00020\u0003H\u0002R\u001a\u0010\u0002\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0007\u0010\b\"\u0004\b\t\u0010\nR\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0003¢\u0006\b\n\u0000\u001a\u0004\b\u000b\u0010\bR\u001a\u0010\f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\b\"\u0004\b\u000e\u0010\nR\u001a\u0010\u000f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\b\"\u0004\b\u0011\u0010\nR\u0014\u0010\u0012\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0015R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006Z"}, d2 = {"Lcom/cncverse/LiveEventsProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "name", "", "customCatLink", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "getCustomCatLink", "mainUrl", "getMainUrl", "setMainUrl", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "client", "Lokhttp3/OkHttpClient;", "getWebUrl", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "createDisplayTitle", "event", "Lcom/cncverse/LiveEventData;", "getEventStatus", "isEventLive", "isEventEnded", "generateMatchCardUrl", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchChannelStreams", "Lcom/cncverse/LiveEventsProvider$ChannelStreamResponse;", "slug", "fetchStreamFromTokenApi", "config", "Lcom/cncverse/LiveEventsProvider$TokenApiConfig;", "(Lcom/cncverse/LiveEventsProvider$TokenApiConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "handleEmbedExtraction", "loadEmbedInWebView", "embedUrl", "(Ljava/lang/String;Lcom/cncverse/LiveEventsProvider$TokenApiConfig;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "handleJsonExtraction", "handleHtmlExtraction", "handleYoutubeExtraction", "handleLocationServiceExtraction", "handleDirectApiCall", "parseStreamLink", "Lkotlin/Pair;", "", "link", "Companion", "ChannelStreamResponse", "StreamUrl", "TokenApiConfig", "LiveEventLoadData", "SKTechProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 6 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 7 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,1065:1\n1#2:1066\n1#2:1098\n1#2:1117\n1#2:1137\n1512#3:1067\n1538#3,3:1068\n1541#3,3:1078\n1586#3:1084\n1661#3,3:1085\n1068#3:1089\n777#3:1090\n873#3,2:1091\n1586#3:1093\n1661#3,3:1094\n1915#3:1135\n1586#3:1155\n1661#3,3:1156\n1586#3:1159\n1661#3,3:1160\n1916#3:1163\n1915#3,2:1164\n383#4,7:1071\n129#5:1081\n158#5,2:1082\n160#5:1088\n63#6:1097\n64#6,15:1099\n63#6:1116\n64#6,15:1118\n63#6:1136\n64#6,15:1138\n50#7:1114\n43#7:1115\n50#7:1133\n43#7:1134\n50#7:1153\n43#7:1154\n*S KotlinDebug\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider\n*L\n389#1:1098\n422#1:1117\n438#1:1137\n255#1:1067\n255#1:1068,3\n255#1:1078,3\n292#1:1084\n292#1:1085,3\n329#1:1089\n347#1:1090\n347#1:1091,2\n360#1:1093\n360#1:1094,3\n431#1:1135\n465#1:1155\n465#1:1156,3\n476#1:1159\n476#1:1160,3\n431#1:1163\n1043#1:1164,2\n255#1:1071,7\n259#1:1081\n259#1:1082,2\n259#1:1088\n389#1:1097\n389#1:1099,15\n422#1:1116\n422#1:1118,15\n438#1:1136\n438#1:1138,15\n389#1:1114\n389#1:1115\n422#1:1133\n422#1:1134\n438#1:1153\n438#1:1154\n*E\n"})
 public final class LiveEventsProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
@@ -115,18 +98,11 @@ public final class LiveEventsProvider extends MainAPI {
     @NotNull
     private static final String DEFAULT_WEB_URL = "https://welalagaa.site";
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static String cachedWebUrl;
 
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private final OkHttpClient client;
@@ -151,7 +127,7 @@ public final class LiveEventsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.LiveEventsProvider$getMainPage$1 */
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.LiveEventsProvider", f = "LiveEventsProvider.kt", i = {0, 0, 1, 1}, l = {522, 524}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {524, 521}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.LiveEventsProvider", f = "LiveEventsProvider.kt", i = {0, 0, 1, 1}, l = {249, 251}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {251, 248}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -173,7 +149,7 @@ public final class LiveEventsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.LiveEventsProvider$getWebUrl$1 */
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.LiveEventsProvider", f = "LiveEventsProvider.kt", i = {}, l = {94}, m = "getWebUrl", n = {}, nl = {95}, s = {}, v = 2)
+    @DebugMetadata(c = "com.cncverse.LiveEventsProvider", f = "LiveEventsProvider.kt", i = {}, l = {64}, m = "getWebUrl", n = {}, nl = {65}, s = {}, v = 2)
     static final class C00091 extends ContinuationImpl {
         int label;
         /* synthetic */ Object result;
@@ -193,7 +169,7 @@ public final class LiveEventsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.LiveEventsProvider$loadLinks$1 */
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.LiveEventsProvider", f = "LiveEventsProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {714, 728, 772, 790, 811, 831}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "isCasting", "data", "subtitleCallback", "callback", "loadData", "streamResponse", "$this$forEach$iv", "element$iv", "stream", "serverName", "tokenConfig", "isCasting", "$i$f$forEach", "$i$a$-forEach-LiveEventsProvider$loadLinks$3", "data", "subtitleCallback", "callback", "loadData", "streamResponse", "$this$forEach$iv", "element$iv", "stream", "streamLink", "serverName", "url", "headers", "drmInfo", "drmKidBytes", "drmKidBase64", "drmKeyBytes", "drmKeyBase64", "isCasting", "$i$f$forEach", "$i$a$-forEach-LiveEventsProvider$loadLinks$3", "data", "subtitleCallback", "callback", "loadData", "streamResponse", "$this$forEach$iv", "element$iv", "stream", "streamLink", "serverName", "url", "headers", "drmInfo", "isCasting", "$i$f$forEach", "$i$a$-forEach-LiveEventsProvider$loadLinks$3", "data", "subtitleCallback", "callback", "loadData", "streamResponse", "$this$forEach$iv", "element$iv", "stream", "streamLink", "serverName", "url", "headers", "finalHeaders", "isCasting", "$i$f$forEach", "$i$a$-forEach-LiveEventsProvider$loadLinks$3", "data", "subtitleCallback", "callback", "loadData", "streamResponse", "$this$forEach$iv", "element$iv", "stream", "streamLink", "serverName", "url", "headers", "finalHeaders", "isCasting", "$i$f$forEach", "$i$a$-forEach-LiveEventsProvider$loadLinks$3"}, nl = {715, 729, 771, 789, 810, 830}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.LiveEventsProvider", f = "LiveEventsProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {425, 439, 483, 501, 522, 542}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "isCasting", "data", "subtitleCallback", "callback", "loadData", "streamResponse", "$this$forEach$iv", "element$iv", "stream", "serverName", "tokenConfig", "isCasting", "$i$f$forEach", "$i$a$-forEach-LiveEventsProvider$loadLinks$2", "data", "subtitleCallback", "callback", "loadData", "streamResponse", "$this$forEach$iv", "element$iv", "stream", "streamLink", "serverName", "url", "headers", "drmInfo", "drmKidBytes", "drmKidBase64", "drmKeyBytes", "drmKeyBase64", "isCasting", "$i$f$forEach", "$i$a$-forEach-LiveEventsProvider$loadLinks$2", "data", "subtitleCallback", "callback", "loadData", "streamResponse", "$this$forEach$iv", "element$iv", "stream", "streamLink", "serverName", "url", "headers", "drmInfo", "isCasting", "$i$f$forEach", "$i$a$-forEach-LiveEventsProvider$loadLinks$2", "data", "subtitleCallback", "callback", "loadData", "streamResponse", "$this$forEach$iv", "element$iv", "stream", "streamLink", "serverName", "url", "headers", "finalHeaders", "isCasting", "$i$f$forEach", "$i$a$-forEach-LiveEventsProvider$loadLinks$2", "data", "subtitleCallback", "callback", "loadData", "streamResponse", "$this$forEach$iv", "element$iv", "stream", "streamLink", "serverName", "url", "headers", "finalHeaders", "isCasting", "$i$f$forEach", "$i$a$-forEach-LiveEventsProvider$loadLinks$2"}, nl = {426, 440, 482, 500, 521, 541}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "I$1"}, v = 2)
     static final class C00231 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -235,7 +211,7 @@ public final class LiveEventsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.LiveEventsProvider$search$1 */
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.LiveEventsProvider", f = "LiveEventsProvider.kt", i = {0}, l = {617}, m = "search", n = {"query"}, nl = {619}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.LiveEventsProvider", f = "LiveEventsProvider.kt", i = {0}, l = {344}, m = "search", n = {"query"}, nl = {346}, s = {"L$0"}, v = 2)
     static final class C00241 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -260,65 +236,13 @@ public final class LiveEventsProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
-    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u0010\u0010\u0011\u001a\u0004\u0018\u00010\u0012X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0016X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0016X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001a"}, d2 = {"Lcom/cncverse/LiveEventsProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "cachedWebUrl", "", "DEFAULT_WEB_URL", "OMG10", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "SKTechProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1354:1\n1#2:1355\n*E\n"})
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u0010\u0010\n\u001a\u0004\u0018\u00010\u000bX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Lcom/cncverse/LiveEventsProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "cachedWebUrl", "", "DEFAULT_WEB_URL", "SKTechProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                LiveEventsProvider.csGuardWasEverActive = true;
-            }
-            return LiveEventsProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.LiveEventsProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    LiveEventsProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -1183,329 +1107,39 @@ public final class LiveEventsProvider extends MainAPI {
         return $this$generateMatchCardUrl_u24lambda_u241.toString();
     }
 
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda5
-                @Override // java.lang.Runnable
-                public final void run() {
-                    LiveEventsProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    LiveEventsProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda1
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    LiveEventsProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda6
-            @Override // java.lang.Runnable
-            public final void run() {
-                LiveEventsProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    LiveEventsProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                LiveEventsProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
-        }
-    }
-
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code duplicated, block: B:101:0x0270  */
-    /* JADX WARN: Code duplicated, block: B:112:0x0274 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:33:0x00bb  */
-    /* JADX WARN: Code duplicated, block: B:35:0x00ca  */
-    /* JADX WARN: Code duplicated, block: B:37:0x00d0  */
-    /* JADX WARN: Code duplicated, block: B:42:0x00e7  */
-    /* JADX WARN: Code duplicated, block: B:43:0x00fb  */
-    /* JADX WARN: Code duplicated, block: B:48:0x012b  */
-    /* JADX WARN: Code duplicated, block: B:51:0x0157  */
-    /* JADX WARN: Code duplicated, block: B:54:0x0160  */
-    /* JADX WARN: Code duplicated, block: B:55:0x0163  */
-    /* JADX WARN: Code duplicated, block: B:58:0x016c  */
-    /* JADX WARN: Code duplicated, block: B:59:0x016f  */
-    /* JADX WARN: Code duplicated, block: B:62:0x0178  */
-    /* JADX WARN: Code duplicated, block: B:63:0x017b  */
-    /* JADX WARN: Code duplicated, block: B:66:0x0184  */
-    /* JADX WARN: Code duplicated, block: B:67:0x0187  */
-    /* JADX WARN: Code duplicated, block: B:70:0x0190  */
-    /* JADX WARN: Code duplicated, block: B:71:0x0193  */
-    /* JADX WARN: Code duplicated, block: B:74:0x019c  */
-    /* JADX WARN: Code duplicated, block: B:75:0x019f  */
-    /* JADX WARN: Code duplicated, block: B:78:0x01a8  */
-    /* JADX WARN: Code duplicated, block: B:79:0x01ab  */
+    /* JADX WARN: Code duplicated, block: B:108:0x025e A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:29:0x00a5  */
+    /* JADX WARN: Code duplicated, block: B:31:0x00b4  */
+    /* JADX WARN: Code duplicated, block: B:33:0x00ba  */
+    /* JADX WARN: Code duplicated, block: B:38:0x00d1  */
+    /* JADX WARN: Code duplicated, block: B:39:0x00e5  */
+    /* JADX WARN: Code duplicated, block: B:44:0x0115  */
+    /* JADX WARN: Code duplicated, block: B:47:0x0141  */
+    /* JADX WARN: Code duplicated, block: B:50:0x014a  */
+    /* JADX WARN: Code duplicated, block: B:51:0x014d  */
+    /* JADX WARN: Code duplicated, block: B:54:0x0156  */
+    /* JADX WARN: Code duplicated, block: B:55:0x0159  */
+    /* JADX WARN: Code duplicated, block: B:58:0x0162  */
+    /* JADX WARN: Code duplicated, block: B:59:0x0165  */
+    /* JADX WARN: Code duplicated, block: B:62:0x016e  */
+    /* JADX WARN: Code duplicated, block: B:63:0x0171  */
+    /* JADX WARN: Code duplicated, block: B:66:0x017a  */
+    /* JADX WARN: Code duplicated, block: B:67:0x017d  */
+    /* JADX WARN: Code duplicated, block: B:70:0x0186  */
+    /* JADX WARN: Code duplicated, block: B:71:0x0189  */
+    /* JADX WARN: Code duplicated, block: B:74:0x0192  */
+    /* JADX WARN: Code duplicated, block: B:75:0x0195  */
+    /* JADX WARN: Code duplicated, block: B:79:0x01d6  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Code duplicated, block: B:83:0x01ec  */
-    /* JADX WARN: Code duplicated, block: B:85:0x020c  */
-    /* JADX WARN: Code duplicated, block: B:86:0x0228  */
-    /* JADX WARN: Code duplicated, block: B:89:0x023c  */
-    /* JADX WARN: Code duplicated, block: B:91:0x0244  */
-    /* JADX WARN: Code duplicated, block: B:95:0x024d  */
-    /* JADX WARN: Code duplicated, block: B:97:0x0250  */
-    /* JADX WARN: Code duplicated, block: B:98:0x0257  */
+    /* JADX WARN: Code duplicated, block: B:81:0x01f6  */
+    /* JADX WARN: Code duplicated, block: B:82:0x0212  */
+    /* JADX WARN: Code duplicated, block: B:85:0x0226  */
+    /* JADX WARN: Code duplicated, block: B:87:0x022e  */
+    /* JADX WARN: Code duplicated, block: B:91:0x0237  */
+    /* JADX WARN: Code duplicated, block: B:93:0x023a  */
+    /* JADX WARN: Code duplicated, block: B:94:0x0241  */
+    /* JADX WARN: Code duplicated, block: B:97:0x025a  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws UnsupportedEncodingException {
         C00081 c00081;
@@ -1551,12 +1185,7 @@ public final class LiveEventsProvider extends MainAPI {
         switch (c00081.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 if (this.customCatLink == null) {
                     ProviderManager providerManager = ProviderManager.INSTANCE;
                     c00081.L$0 = SpillingKt.nullOutSpilledVariable(request);
@@ -1731,7 +1360,7 @@ public final class LiveEventsProvider extends MainAPI {
                                 }
                                 LiveEventLoadData loadData = new LiveEventLoadData(id, displayTitle, posterUrl, slug, formats, event.getEventInfo());
                                 final String posterUrl2 = posterUrl;
-                                destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, fullTitle, AppUtils.INSTANCE.toJson(loadData), TvType.Live, false, new Function1() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda7
+                                destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, fullTitle, AppUtils.INSTANCE.toJson(loadData), TvType.Live, false, new Function1() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda0
                                     public final Object invoke(Object obj) {
                                         return LiveEventsProvider.getMainPage$lambda$1$2$0(posterUrl2, (LiveSearchResponse) obj);
                                     }
@@ -1978,7 +1607,7 @@ public final class LiveEventsProvider extends MainAPI {
                             }
                             LiveEventLoadData loadData2 = new LiveEventLoadData(id2, displayTitle, posterUrl, slug2, formats, event.getEventInfo());
                             final String posterUrl3 = posterUrl;
-                            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, fullTitle2, AppUtils.INSTANCE.toJson(loadData2), TvType.Live, false, new Function1() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda7
+                            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, fullTitle2, AppUtils.INSTANCE.toJson(loadData2), TvType.Live, false, new Function1() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj) {
                                     return LiveEventsProvider.getMainPage$lambda$1$2$0(posterUrl3, (LiveSearchResponse) obj);
                                 }
@@ -2219,7 +1848,7 @@ public final class LiveEventsProvider extends MainAPI {
                             }
                             LiveEventLoadData loadData3 = new LiveEventLoadData(id3, displayTitle, posterUrl, slug3, formats, event.getEventInfo());
                             final String posterUrl4 = posterUrl;
-                            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, fullTitle3, AppUtils.INSTANCE.toJson(loadData3), TvType.Live, false, new Function1() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda7
+                            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, fullTitle3, AppUtils.INSTANCE.toJson(loadData3), TvType.Live, false, new Function1() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj) {
                                     return LiveEventsProvider.getMainPage$lambda$1$2$0(posterUrl4, (LiveSearchResponse) obj);
                                 }
@@ -2460,7 +2089,7 @@ public final class LiveEventsProvider extends MainAPI {
                             }
                             LiveEventLoadData loadData4 = new LiveEventLoadData(id4, displayTitle, posterUrl, slug4, formats, event.getEventInfo());
                             final String posterUrl5 = posterUrl;
-                            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, fullTitle4, AppUtils.INSTANCE.toJson(loadData4), TvType.Live, false, new Function1() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda7
+                            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, fullTitle4, AppUtils.INSTANCE.toJson(loadData4), TvType.Live, false, new Function1() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj) {
                                     return LiveEventsProvider.getMainPage$lambda$1$2$0(posterUrl5, (LiveSearchResponse) obj);
                                 }
@@ -2536,10 +2165,6 @@ public final class LiveEventsProvider extends MainAPI {
         switch (c00241.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 ProviderManager providerManager = ProviderManager.INSTANCE;
                 c00241.L$0 = query;
                 c00241.label = 1;
@@ -2595,7 +2220,7 @@ public final class LiveEventsProvider extends MainAPI {
                 formats = CollectionsKt.emptyList();
             }
             LiveEventLoadData loadData = new LiveEventLoadData(id, displayTitle, posterUrl, slug, formats, event2.getEventInfo());
-            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(liveEventsProvider, fullTitle, AppUtils.INSTANCE.toJson(loadData), TvType.Live, false, new Function1() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda8
+            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(liveEventsProvider, fullTitle, AppUtils.INSTANCE.toJson(loadData), TvType.Live, false, new Function1() { // from class: com.cncverse.LiveEventsProvider$$ExternalSyntheticLambda1
                 public final Object invoke(Object obj) {
                     return LiveEventsProvider.search$lambda$1$0(posterUrl, (LiveSearchResponse) obj);
                 }
@@ -2729,63 +2354,64 @@ public final class LiveEventsProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:111:0x04ab  */
-    /* JADX WARN: Code duplicated, block: B:113:0x04bb  */
-    /* JADX WARN: Code duplicated, block: B:116:0x04c7  */
-    /* JADX WARN: Code duplicated, block: B:120:0x04d0  */
-    /* JADX WARN: Code duplicated, block: B:122:0x04d3  */
-    /* JADX WARN: Code duplicated, block: B:124:0x04db  */
-    /* JADX WARN: Code duplicated, block: B:128:0x04e4  */
-    /* JADX WARN: Code duplicated, block: B:138:0x051d  */
-    /* JADX WARN: Code duplicated, block: B:154:0x0567  */
-    /* JADX WARN: Code duplicated, block: B:174:0x059b  */
-    /* JADX WARN: Code duplicated, block: B:180:0x060e A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:181:0x060f  */
-    /* JADX WARN: Code duplicated, block: B:184:0x061e  */
-    /* JADX WARN: Code duplicated, block: B:185:0x062a  */
-    /* JADX WARN: Code duplicated, block: B:210:0x0754  */
-    /* JADX WARN: Code duplicated, block: B:213:0x0758 A[Catch: Exception -> 0x072b, TryCatch #1 {Exception -> 0x072b, blocks: (B:207:0x0714, B:213:0x0758, B:215:0x075f, B:216:0x0797, B:218:0x079f, B:219:0x07c4, B:220:0x0814, B:222:0x081a, B:223:0x0841), top: B:333:0x0714 }] */
-    /* JADX WARN: Code duplicated, block: B:240:0x09f5 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:241:0x09f6  */
-    /* JADX WARN: Code duplicated, block: B:250:0x0a92  */
-    /* JADX WARN: Code duplicated, block: B:260:0x0ac4  */
-    /* JADX WARN: Code duplicated, block: B:261:0x0aca A[Catch: Exception -> 0x0bdc, TRY_LEAVE, TryCatch #10 {Exception -> 0x0bdc, blocks: (B:258:0x0abe, B:261:0x0aca, B:268:0x0b02), top: B:346:0x0abe }] */
-    /* JADX WARN: Code duplicated, block: B:272:0x0b81 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:273:0x0b82  */
-    /* JADX WARN: Code duplicated, block: B:284:0x0c20  */
-    /* JADX WARN: Code duplicated, block: B:303:0x0cd5 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:304:0x0cd6  */
-    /* JADX WARN: Code duplicated, block: B:329:0x0e8d  */
-    /* JADX WARN: Code duplicated, block: B:333:0x0714 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:338:0x0c2f A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:354:0x04e8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:360:0x070e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:374:0x0ad4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:386:0x0524 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:392:0x06f7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:394:0x0ab0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:408:0x056e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:108:0x049d  */
+    /* JADX WARN: Code duplicated, block: B:124:0x04e7  */
+    /* JADX WARN: Code duplicated, block: B:144:0x051b  */
+    /* JADX WARN: Code duplicated, block: B:150:0x058e A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:151:0x058f  */
+    /* JADX WARN: Code duplicated, block: B:154:0x059e  */
+    /* JADX WARN: Code duplicated, block: B:155:0x05a8  */
+    /* JADX WARN: Code duplicated, block: B:180:0x06c9  */
+    /* JADX WARN: Code duplicated, block: B:183:0x06cd A[Catch: Exception -> 0x06a2, TryCatch #18 {Exception -> 0x06a2, blocks: (B:177:0x068b, B:183:0x06cd, B:185:0x06d4, B:186:0x070c, B:188:0x0714, B:189:0x0739, B:190:0x0789, B:192:0x078f, B:193:0x07b6), top: B:329:0x068b }] */
+    /* JADX WARN: Code duplicated, block: B:210:0x0966 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:211:0x0967  */
+    /* JADX WARN: Code duplicated, block: B:220:0x09fd  */
+    /* JADX WARN: Code duplicated, block: B:230:0x0a2f  */
+    /* JADX WARN: Code duplicated, block: B:231:0x0a35 A[Catch: Exception -> 0x0b3d, TRY_LEAVE, TryCatch #34 {Exception -> 0x0b3d, blocks: (B:228:0x0a29, B:231:0x0a35, B:238:0x0a6b), top: B:359:0x0a29 }] */
+    /* JADX WARN: Code duplicated, block: B:242:0x0aea A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:243:0x0aeb  */
+    /* JADX WARN: Code duplicated, block: B:254:0x0b79  */
+    /* JADX WARN: Code duplicated, block: B:273:0x0c2c A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:274:0x0c2d  */
+    /* JADX WARN: Code duplicated, block: B:299:0x0dd1  */
+    /* JADX WARN: Code duplicated, block: B:325:0x0a1b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:329:0x068b A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:331:0x0468 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:335:0x0685 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:339:0x0b88 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:357:0x04a4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:368:0x0a3f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:370:0x066e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:378:0x04ee A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Not initialized variable reg: 10, insn: 0x01bf: MOVE (r6 I:??[OBJECT, ARRAY]) = (r10 I:??[OBJECT, ARRAY] A[D('streamLink' java.lang.String)]), block:B:24:0x01b4 */
-    /* JADX WARN: Not initialized variable reg: 13, insn: 0x01cd: MOVE (r15 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('headers' java.util.Map)]) = (r13 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('isCasting' boolean)]), block:B:24:0x01b4 */
-    /* JADX WARN: Not initialized variable reg: 14, insn: 0x01b4: MOVE (r2 I:??[OBJECT, ARRAY]) = (r14 I:??[OBJECT, ARRAY] A[D('element$iv' java.lang.Object)]), block:B:24:0x01b4 */
-    /* JADX WARN: Not initialized variable reg: 15, insn: 0x01cb: MOVE (r20 I:??[OBJECT, ARRAY]) = (r15 I:??[OBJECT, ARRAY] A[D('headers' java.util.Map)]), block:B:24:0x01b4 */
-    /* JADX WARN: Not initialized variable reg: 20, insn: 0x01c9: MOVE (r21 I:??[OBJECT, ARRAY] A[D('$this$forEach$iv' java.lang.Iterable)]) = (r20 I:??[OBJECT, ARRAY]), block:B:24:0x01b4 */
-    /* JADX WARN: Not initialized variable reg: 21, insn: 0x01c7: MOVE (r22 I:??[OBJECT, ARRAY] A[D('streamResponse' com.cncverse.LiveEventsProvider$ChannelStreamResponse)]) = (r21 I:??[OBJECT, ARRAY] A[D('$this$forEach$iv' java.lang.Iterable)]), block:B:24:0x01b4 */
-    /* JADX WARN: Not initialized variable reg: 22, insn: 0x01c5: MOVE (r23 I:??[OBJECT, ARRAY] A[D('loadData' com.cncverse.LiveEventsProvider$LiveEventLoadData)]) = (r22 I:??[OBJECT, ARRAY] A[D('streamResponse' com.cncverse.LiveEventsProvider$ChannelStreamResponse)]), block:B:24:0x01b4 */
-    /* JADX WARN: Not initialized variable reg: 23, insn: 0x01c3: MOVE (r24 I:??[OBJECT, ARRAY] A[D('callback' kotlin.jvm.functions.Function1)]) = (r23 I:??[OBJECT, ARRAY] A[D('loadData' com.cncverse.LiveEventsProvider$LiveEventLoadData)]), block:B:24:0x01b4 */
-    /* JADX WARN: Not initialized variable reg: 24, insn: 0x01c0: MOVE (r26 I:??[OBJECT, ARRAY] A[D('data' java.lang.String)]) = (r24 I:??[OBJECT, ARRAY] A[D('callback' kotlin.jvm.functions.Function1)]), block:B:24:0x01b4 */
-    /* JADX WARN: Not initialized variable reg: 25, insn: 0x01b5: MOVE (r27 I:??[OBJECT, ARRAY]) = (r25 I:??[OBJECT, ARRAY] A[D('subtitleCallback' kotlin.jvm.functions.Function1)]), block:B:24:0x01b4 */
-    /* JADX WARN: Not initialized variable reg: 26, insn: 0x01b7: MOVE (r28 I:??[OBJECT, ARRAY]) = (r26 I:??[OBJECT, ARRAY] A[D('data' java.lang.String)]), block:B:24:0x01b4 */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:184:0x061e -> B:330:0x0eb4). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:194:0x0679 -> B:330:0x0eb4). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:197:0x06af -> B:330:0x0eb4). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:230:0x0909 -> B:328:0x0e81). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:243:0x0a1c -> B:328:0x0e81). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:273:0x0b82 -> B:388:0x0ba5). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:306:0x0cfd -> B:328:0x0e81). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:327:0x0e70 -> B:328:0x0e81). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:329:0x0e8d -> B:330:0x0eb4). Please report as a decompilation issue!!! */
+    /* JADX WARN: Code duplicated, block: B:81:0x042b  */
+    /* JADX WARN: Code duplicated, block: B:83:0x043b  */
+    /* JADX WARN: Code duplicated, block: B:86:0x0447  */
+    /* JADX WARN: Code duplicated, block: B:90:0x0450  */
+    /* JADX WARN: Code duplicated, block: B:92:0x0453  */
+    /* JADX WARN: Code duplicated, block: B:94:0x045b  */
+    /* JADX WARN: Code duplicated, block: B:98:0x0464  */
+    /* JADX WARN: Not initialized variable reg: 10, insn: 0x01c7: MOVE (r13 I:??[OBJECT, ARRAY] A[D('isCasting' boolean)]) = (r10 I:??[OBJECT, ARRAY] A[D('stream' com.cncverse.LiveEventsProvider$StreamUrl)]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 12, insn: 0x01d3: MOVE (r15 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('headers' java.util.Map)]) = (r12 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('$i$f$forEach' int)]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 13, insn: 0x01c4: MOVE (r6 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY]) = (r13 I:??[int, float, boolean, short, byte, char, OBJECT, ARRAY] A[D('isCasting' boolean)]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 14, insn: 0x01bb: MOVE (r2 I:??[OBJECT, ARRAY]) = (r14 I:??[OBJECT, ARRAY] A[D('element$iv' java.lang.Object)]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 15, insn: 0x01d1: MOVE (r20 I:??[OBJECT, ARRAY]) = (r15 I:??[OBJECT, ARRAY] A[D('headers' java.util.Map)]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 20, insn: 0x01cf: MOVE (r21 I:??[OBJECT, ARRAY] A[D('$this$forEach$iv' java.lang.Iterable)]) = (r20 I:??[OBJECT, ARRAY]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 21, insn: 0x01cd: MOVE (r22 I:??[OBJECT, ARRAY] A[D('streamResponse' com.cncverse.LiveEventsProvider$ChannelStreamResponse)]) = (r21 I:??[OBJECT, ARRAY] A[D('$this$forEach$iv' java.lang.Iterable)]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 22, insn: 0x01cb: MOVE (r23 I:??[OBJECT, ARRAY] A[D('loadData' com.cncverse.LiveEventsProvider$LiveEventLoadData)]) = (r22 I:??[OBJECT, ARRAY] A[D('streamResponse' com.cncverse.LiveEventsProvider$ChannelStreamResponse)]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 23, insn: 0x01c8: MOVE (r24 I:??[OBJECT, ARRAY] A[D('callback' kotlin.jvm.functions.Function1)]) = (r23 I:??[OBJECT, ARRAY] A[D('loadData' com.cncverse.LiveEventsProvider$LiveEventLoadData)]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 24, insn: 0x01c5: MOVE (r26 I:??[OBJECT, ARRAY] A[D('data' java.lang.String)]) = (r24 I:??[OBJECT, ARRAY] A[D('callback' kotlin.jvm.functions.Function1)]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 25, insn: 0x01bc: MOVE (r27 I:??[OBJECT, ARRAY]) = (r25 I:??[OBJECT, ARRAY] A[D('subtitleCallback' kotlin.jvm.functions.Function1)]), block:B:24:0x01bb */
+    /* JADX WARN: Not initialized variable reg: 26, insn: 0x01be: MOVE (r28 I:??[OBJECT, ARRAY]) = (r26 I:??[OBJECT, ARRAY] A[D('data' java.lang.String)]), block:B:24:0x01bb */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:154:0x059e -> B:300:0x0df6). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:164:0x05f4 -> B:300:0x0df6). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:167:0x0628 -> B:300:0x0df6). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:200:0x087e -> B:298:0x0dc5). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:213:0x098b -> B:298:0x0dc5). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:243:0x0aeb -> B:327:0x0b0c). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:276:0x0c53 -> B:298:0x0dc5). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:297:0x0db4 -> B:298:0x0dc5). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:299:0x0dd1 -> B:300:0x0df6). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
@@ -2794,22 +2420,17 @@ public final class LiveEventsProvider extends MainAPI {
     @org.jetbrains.annotations.Nullable
     public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r41, boolean r42, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r43, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r44, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r45) {
         /*
-            Method dump skipped, instruction units count: 3798
+            Method dump skipped, instruction units count: 3608
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.cncverse.LiveEventsProvider.loadLinks(java.lang.String, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
     /* JADX INFO: renamed from: com.cncverse.LiveEventsProvider$fetchChannelStreams$2 */
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "Lcom/cncverse/LiveEventsProvider$ChannelStreamResponse;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.LiveEventsProvider$fetchChannelStreams$2", f = "LiveEventsProvider.kt", i = {}, l = {858}, m = "invokeSuspend", n = {}, nl = {859}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$fetchChannelStreams$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,1354:1\n63#2:1355\n64#2,15:1357\n1#3:1356\n50#4:1372\n43#4:1373\n*S KotlinDebug\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$fetchChannelStreams$2\n*L\n884#1:1355\n884#1:1357,15\n884#1:1356\n884#1:1372\n884#1:1373\n*E\n"})
+    @DebugMetadata(c = "com.cncverse.LiveEventsProvider$fetchChannelStreams$2", f = "LiveEventsProvider.kt", i = {}, l = {569}, m = "invokeSuspend", n = {}, nl = {570}, s = {}, v = 2)
+    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$fetchChannelStreams$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,1065:1\n63#2:1066\n64#2,15:1068\n1#3:1067\n50#4:1083\n43#4:1084\n*S KotlinDebug\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$fetchChannelStreams$2\n*L\n595#1:1066\n595#1:1068,15\n595#1:1067\n595#1:1083\n595#1:1084\n*E\n"})
     static final class C00052 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super ChannelStreamResponse>, Object> {
         final /* synthetic */ String $slug;
         int label;
@@ -2940,7 +2561,7 @@ public final class LiveEventsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.LiveEventsProvider$fetchStreamFromTokenApi$2 */
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.LiveEventsProvider$fetchStreamFromTokenApi$2", f = "LiveEventsProvider.kt", i = {}, l = {920, 921, 922, 923, 924, 925}, m = "invokeSuspend", n = {}, nl = {921, 922, 923, 924, 925, 919}, s = {}, v = 2)
+    @DebugMetadata(c = "com.cncverse.LiveEventsProvider$fetchStreamFromTokenApi$2", f = "LiveEventsProvider.kt", i = {}, l = {631, 632, 633, 634, 635, 636}, m = "invokeSuspend", n = {}, nl = {632, 633, 634, 635, 636, 630}, s = {}, v = 2)
     static final class C00072 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ TokenApiConfig $config;
         int label;
@@ -3099,8 +2720,8 @@ public final class LiveEventsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.LiveEventsProvider$handleEmbedExtraction$2 */
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.LiveEventsProvider$handleEmbedExtraction$2", f = "LiveEventsProvider.kt", i = {0}, l = {959}, m = "invokeSuspend", n = {"embedUrl"}, nl = {960}, s = {"L$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleEmbedExtraction$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1354:1\n1#2:1355\n*E\n"})
+    @DebugMetadata(c = "com.cncverse.LiveEventsProvider$handleEmbedExtraction$2", f = "LiveEventsProvider.kt", i = {0}, l = {670}, m = "invokeSuspend", n = {"embedUrl"}, nl = {671}, s = {"L$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleEmbedExtraction$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1065:1\n1#2:1066\n*E\n"})
     static final class C00122 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ TokenApiConfig $config;
         Object L$0;
@@ -3190,7 +2811,7 @@ public final class LiveEventsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.LiveEventsProvider$loadEmbedInWebView$2 */
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.LiveEventsProvider$loadEmbedInWebView$2", f = "LiveEventsProvider.kt", i = {}, l = {973}, m = "invokeSuspend", n = {}, nl = {1114}, s = {}, v = 2)
+    @DebugMetadata(c = "com.cncverse.LiveEventsProvider$loadEmbedInWebView$2", f = "LiveEventsProvider.kt", i = {}, l = {684}, m = "invokeSuspend", n = {}, nl = {825}, s = {}, v = 2)
     static final class C00202 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ String $embedUrl;
         Object L$0;
@@ -3390,7 +3011,7 @@ public final class LiveEventsProvider extends MainAPI {
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.LiveEventsProvider$handleJsonExtraction$2", f = "LiveEventsProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleJsonExtraction$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,1354:1\n63#2:1355\n64#2,15:1357\n1#3:1356\n50#4:1372\n43#4:1373\n*S KotlinDebug\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleJsonExtraction$2\n*L\n1140#1:1355\n1140#1:1357,15\n1140#1:1356\n1140#1:1372\n1140#1:1373\n*E\n"})
+    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleJsonExtraction$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,1065:1\n63#2:1066\n64#2,15:1068\n1#3:1067\n50#4:1083\n43#4:1084\n*S KotlinDebug\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleJsonExtraction$2\n*L\n851#1:1066\n851#1:1068,15\n851#1:1067\n851#1:1083\n851#1:1084\n*E\n"})
     static final class C00142 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ TokenApiConfig $config;
         int label;
@@ -3660,7 +3281,7 @@ public final class LiveEventsProvider extends MainAPI {
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.LiveEventsProvider$handleLocationServiceExtraction$2", f = "LiveEventsProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleLocationServiceExtraction$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,1354:1\n63#2:1355\n64#2,15:1357\n1#3:1356\n50#4:1372\n43#4:1373\n*S KotlinDebug\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleLocationServiceExtraction$2\n*L\n1253#1:1355\n1253#1:1357,15\n1253#1:1356\n1253#1:1372\n1253#1:1373\n*E\n"})
+    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleLocationServiceExtraction$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,1065:1\n63#2:1066\n64#2,15:1068\n1#3:1067\n50#4:1083\n43#4:1084\n*S KotlinDebug\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleLocationServiceExtraction$2\n*L\n964#1:1066\n964#1:1068,15\n964#1:1067\n964#1:1083\n964#1:1084\n*E\n"})
     static final class C00162 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ TokenApiConfig $config;
         int label;
@@ -3817,7 +3438,7 @@ public final class LiveEventsProvider extends MainAPI {
     /* JADX INFO: compiled from: LiveEventsProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.LiveEventsProvider$handleDirectApiCall$2", f = "LiveEventsProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleDirectApiCall$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,1354:1\n63#2:1355\n64#2,15:1357\n1#3:1356\n50#4:1372\n43#4:1373\n*S KotlinDebug\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleDirectApiCall$2\n*L\n1295#1:1355\n1295#1:1357,15\n1295#1:1356\n1295#1:1372\n1295#1:1373\n*E\n"})
+    @SourceDebugExtension({"SMAP\nLiveEventsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleDirectApiCall$2\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,1065:1\n63#2:1066\n64#2,15:1068\n1#3:1067\n50#4:1083\n43#4:1084\n*S KotlinDebug\n*F\n+ 1 LiveEventsProvider.kt\ncom/cncverse/LiveEventsProvider$handleDirectApiCall$2\n*L\n1006#1:1066\n1006#1:1068,15\n1006#1:1067\n1006#1:1083\n1006#1:1084\n*E\n"})
     static final class C00102 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ TokenApiConfig $config;
         int label;

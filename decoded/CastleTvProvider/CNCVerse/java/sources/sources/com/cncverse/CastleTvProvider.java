@@ -1,23 +1,7 @@
 package com.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -42,12 +26,10 @@ import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.ShowStatus;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
-import java.lang.reflect.Field;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
@@ -56,7 +38,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -92,24 +73,16 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: CastleTvProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/CastleTvProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0012\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u001a\u0018\u0000 B2\u00020\u0001:\u0015BCDEFGHIJKLMNOPQRSTUVB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u0005H\u0082@¢\u0006\u0002\u0010\u001dJ\u0010\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u0005H\u0002J\u001a\u0010!\u001a\u0004\u0018\u00010\u00052\u0006\u0010\"\u001a\u00020\u00052\u0006\u0010 \u001a\u00020\u0005H\u0002J\u001e\u0010&\u001a\u00020(2\u0006\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020,H\u0096@¢\u0006\u0002\u0010-J\u001c\u0010.\u001a\b\u0012\u0004\u0012\u00020/0$2\u0006\u00100\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00101J\u0018\u00102\u001a\u0004\u0018\u0001032\u0006\u00104\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00101JF\u00105\u001a\u00020\u000e2\u0006\u00106\u001a\u00020\u00052\u0006\u00107\u001a\u00020\u000e2\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020;092\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020;09H\u0096@¢\u0006\u0002\u0010>J\b\u0010?\u001a\u00020;H\u0002J\b\u0010@\u001a\u00020;H\u0002J\u0010\u0010A\u001a\u00020;2\u0006\u00104\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010#\u001a\b\u0012\u0004\u0012\u00020%0$X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'¨\u0006W"}, d2 = {"Lcom/cncverse/CastleTvProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "keySupFixx", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "getSecurityKey", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "deriveKey", "", "apiKeyB64", "decryptData", "encryptedB64", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "CastleApiResponse", "SecurityKeyResponse", "DecryptedResponse", "HomePageData", "HomePageRow", "ContentItem", "MovieDetailsResponse", "MovieDetails", "Person", "ApiEpisode", "VideoQuality", "Track", "Season", "Titbit", "SearchApiResponse", "SearchData", "SearchResultItem", "VideoResponse", "VideoData", "SubtitleData", "CastleTvProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nCastleTvProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CastleTvProvider.kt\ncom/cncverse/CastleTvProvider\n+ 2 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1105:1\n116#2:1106\n54#2:1107\n117#2:1108\n61#2,8:1109\n71#2:1118\n116#2:1119\n54#2:1120\n117#2:1121\n61#2,8:1122\n71#2:1131\n116#2:1132\n54#2:1133\n117#2:1134\n61#2,8:1135\n71#2:1144\n116#2:1173\n54#2:1174\n117#2:1175\n61#2,8:1176\n71#2:1185\n116#2:1200\n54#2:1201\n117#2:1202\n61#2,8:1203\n71#2:1212\n116#2:1217\n54#2:1218\n117#2:1219\n61#2,8:1220\n71#2:1229\n116#2:1235\n54#2:1236\n117#2:1237\n61#2,8:1238\n71#2:1247\n116#2:1266\n54#2:1267\n117#2:1268\n61#2,8:1269\n71#2:1278\n116#2:1281\n54#2:1282\n117#2:1283\n61#2,8:1284\n71#2:1293\n1#3:1117\n1#3:1130\n1#3:1143\n1#3:1167\n1#3:1170\n1#3:1184\n1#3:1197\n1#3:1211\n1#3:1228\n1#3:1246\n1#3:1248\n1#3:1263\n1#3:1277\n1#3:1292\n1#3:1296\n1642#4,10:1145\n1915#4:1155\n1642#4,10:1156\n1915#4:1166\n1916#4:1168\n1652#4:1169\n1916#4:1171\n1652#4:1172\n1642#4,10:1186\n1915#4:1196\n1916#4:1198\n1652#4:1199\n1586#4:1213\n1661#4,3:1214\n1915#4,2:1230\n1924#4,3:1232\n1807#4,3:1249\n1642#4,10:1252\n1915#4:1262\n1916#4:1264\n1652#4:1265\n1915#4,2:1279\n1915#4,2:1294\n*S KotlinDebug\n*F\n+ 1 CastleTvProvider.kt\ncom/cncverse/CastleTvProvider\n*L\n303#1:1106\n303#1:1107\n303#1:1108\n303#1:1109,8\n303#1:1118\n363#1:1119\n363#1:1120\n363#1:1121\n363#1:1122,8\n363#1:1131\n377#1:1132\n377#1:1133\n377#1:1134\n377#1:1135,8\n377#1:1144\n439#1:1173\n439#1:1174\n439#1:1175\n439#1:1176,8\n439#1:1185\n490#1:1200\n490#1:1201\n490#1:1202\n490#1:1203,8\n490#1:1212\n534#1:1217\n534#1:1218\n534#1:1219\n534#1:1220,8\n534#1:1229\n652#1:1235\n652#1:1236\n652#1:1237\n652#1:1238,8\n652#1:1247\n709#1:1266\n709#1:1267\n709#1:1268\n709#1:1269,8\n709#1:1278\n801#1:1281\n801#1:1282\n801#1:1283\n801#1:1284,8\n801#1:1293\n303#1:1117\n363#1:1130\n377#1:1143\n382#1:1167\n380#1:1170\n439#1:1184\n442#1:1197\n490#1:1211\n534#1:1228\n652#1:1246\n674#1:1263\n709#1:1277\n801#1:1292\n380#1:1145,10\n380#1:1155\n382#1:1156,10\n382#1:1166\n382#1:1168\n382#1:1169\n380#1:1171\n380#1:1172\n442#1:1186,10\n442#1:1196\n442#1:1198\n442#1:1199\n502#1:1213\n502#1:1214,3\n536#1:1230,2\n554#1:1232,3\n670#1:1249,3\n674#1:1252,10\n674#1:1262\n674#1:1264\n674#1:1265\n742#1:1279,2\n834#1:1294,2\n*E\n"})
+@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0012\n\u0002\b\u0004\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0017\u0018\u0000 ?2\u00020\u0001:\u0015?@ABCDEFGHIJKLMNOPQRSB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u001c\u001a\u0004\u0018\u00010\u0005H\u0082@¢\u0006\u0002\u0010\u001dJ\u0010\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u0005H\u0002J\u001a\u0010!\u001a\u0004\u0018\u00010\u00052\u0006\u0010\"\u001a\u00020\u00052\u0006\u0010 \u001a\u00020\u0005H\u0002J\u001e\u0010&\u001a\u00020(2\u0006\u0010)\u001a\u00020*2\u0006\u0010+\u001a\u00020,H\u0096@¢\u0006\u0002\u0010-J\u001c\u0010.\u001a\b\u0012\u0004\u0012\u00020/0$2\u0006\u00100\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00101J\u0018\u00102\u001a\u0004\u0018\u0001032\u0006\u00104\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00101JF\u00105\u001a\u00020\u000e2\u0006\u00106\u001a\u00020\u00052\u0006\u00107\u001a\u00020\u000e2\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020;092\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020;09H\u0096@¢\u0006\u0002\u0010>R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u001bX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010#\u001a\b\u0012\u0004\u0012\u00020%0$X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b&\u0010'¨\u0006T"}, d2 = {"Lcom/cncverse/CastleTvProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "keySupFixx", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "getSecurityKey", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "deriveKey", "", "apiKeyB64", "decryptData", "encryptedB64", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "CastleApiResponse", "SecurityKeyResponse", "DecryptedResponse", "HomePageData", "HomePageRow", "ContentItem", "MovieDetailsResponse", "MovieDetails", "Person", "ApiEpisode", "VideoQuality", "Track", "Season", "Titbit", "SearchApiResponse", "SearchData", "SearchResultItem", "VideoResponse", "VideoData", "SubtitleData", "CastleTvProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nCastleTvProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CastleTvProvider.kt\ncom/cncverse/CastleTvProvider\n+ 2 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,807:1\n116#2:808\n54#2:809\n117#2:810\n61#2,8:811\n71#2:820\n116#2:821\n54#2:822\n117#2:823\n61#2,8:824\n71#2:833\n116#2:834\n54#2:835\n117#2:836\n61#2,8:837\n71#2:846\n116#2:875\n54#2:876\n117#2:877\n61#2,8:878\n71#2:887\n116#2:902\n54#2:903\n117#2:904\n61#2,8:905\n71#2:914\n116#2:919\n54#2:920\n117#2:921\n61#2,8:922\n71#2:931\n116#2:937\n54#2:938\n117#2:939\n61#2,8:940\n71#2:949\n116#2:968\n54#2:969\n117#2:970\n61#2,8:971\n71#2:980\n116#2:983\n54#2:984\n117#2:985\n61#2,8:986\n71#2:995\n1#3:819\n1#3:832\n1#3:845\n1#3:869\n1#3:872\n1#3:886\n1#3:899\n1#3:913\n1#3:930\n1#3:948\n1#3:950\n1#3:965\n1#3:979\n1#3:994\n1642#4,10:847\n1915#4:857\n1642#4,10:858\n1915#4:868\n1916#4:870\n1652#4:871\n1916#4:873\n1652#4:874\n1642#4,10:888\n1915#4:898\n1916#4:900\n1652#4:901\n1586#4:915\n1661#4,3:916\n1915#4,2:932\n1924#4,3:934\n1807#4,3:951\n1642#4,10:954\n1915#4:964\n1916#4:966\n1652#4:967\n1915#4,2:981\n1915#4,2:996\n*S KotlinDebug\n*F\n+ 1 CastleTvProvider.kt\ncom/cncverse/CastleTvProvider\n*L\n270#1:808\n270#1:809\n270#1:810\n270#1:811,8\n270#1:820\n326#1:821\n326#1:822\n326#1:823\n326#1:824,8\n326#1:833\n340#1:834\n340#1:835\n340#1:836\n340#1:837,8\n340#1:846\n399#1:875\n399#1:876\n399#1:877\n399#1:878,8\n399#1:887\n450#1:902\n450#1:903\n450#1:904\n450#1:905,8\n450#1:914\n494#1:919\n494#1:920\n494#1:921\n494#1:922,8\n494#1:931\n596#1:937\n596#1:938\n596#1:939\n596#1:940,8\n596#1:949\n653#1:968\n653#1:969\n653#1:970\n653#1:971,8\n653#1:980\n745#1:983\n745#1:984\n745#1:985\n745#1:986,8\n745#1:995\n270#1:819\n326#1:832\n340#1:845\n345#1:869\n343#1:872\n399#1:886\n402#1:899\n450#1:913\n494#1:930\n596#1:948\n618#1:965\n653#1:979\n745#1:994\n343#1:847,10\n343#1:857\n345#1:858,10\n345#1:868\n345#1:870\n345#1:871\n343#1:873\n343#1:874\n402#1:888,10\n402#1:898\n402#1:900\n402#1:901\n462#1:915\n462#1:916,3\n496#1:932,2\n514#1:934,3\n614#1:951,3\n618#1:954,10\n618#1:964\n618#1:966\n618#1:967\n686#1:981,2\n778#1:996,2\n*E\n"})
 public final class CastleTvProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private final List<MainPageData> mainPage;
@@ -136,7 +109,7 @@ public final class CastleTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CastleTvProvider$getMainPage$1 */
     /* JADX INFO: compiled from: CastleTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CastleTvProvider", f = "CastleTvProvider.kt", i = {0, 0, 1, 1, 1, 1}, l = {359, 361}, m = "getMainPage", n = {"request", "page", "request", "securityKey", "url", "page"}, nl = {360, 362}, s = {"L$0", "I$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CastleTvProvider", f = "CastleTvProvider.kt", i = {0, 0, 1, 1, 1, 1}, l = {322, 324}, m = "getMainPage", n = {"request", "page", "request", "securityKey", "url", "page"}, nl = {323, 325}, s = {"L$0", "I$0", "L$0", "L$1", "L$2", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -160,7 +133,7 @@ public final class CastleTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CastleTvProvider$getSecurityKey$1 */
     /* JADX INFO: compiled from: CastleTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CastleTvProvider", f = "CastleTvProvider.kt", i = {0}, l = {302}, m = "getSecurityKey", n = {"url"}, nl = {303}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CastleTvProvider", f = "CastleTvProvider.kt", i = {0}, l = {269}, m = "getSecurityKey", n = {"url"}, nl = {270}, s = {"L$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -181,7 +154,7 @@ public final class CastleTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CastleTvProvider$load$1 */
     /* JADX INFO: compiled from: CastleTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CastleTvProvider", f = "CastleTvProvider.kt", i = {0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {475, 478, 528, 566, 590}, m = "load", n = {"url", "movieId", "url", "movieId", "securityKey", "detailsUrl", "url", "movieId", "securityKey", "detailsUrl", "response", "encryptedData", "decryptedJson", "detailsResponse", "details", "title", "posterUrl", "backgroundPosterUrl", "plot", "year", "rating", "tags", "actors", "recommendations", "allEpisodes", "season", "seasonId", "seasonUrl", "isSeriesLike", "seasonNumber", "url", "movieId", "securityKey", "detailsUrl", "response", "encryptedData", "decryptedJson", "detailsResponse", "details", "title", "posterUrl", "backgroundPosterUrl", "plot", "year", "rating", "tags", "actors", "recommendations", "allEpisodes", "isSeriesLike", "url", "movieId", "securityKey", "detailsUrl", "response", "encryptedData", "decryptedJson", "detailsResponse", "details", "title", "posterUrl", "backgroundPosterUrl", "plot", "year", "rating", "tags", "actors", "recommendations", "episode", "isSeriesLike"}, nl = {476, 479, 529, 589, 609}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$20", "L$21", "L$22", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CastleTvProvider", f = "CastleTvProvider.kt", i = {0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {435, 438, 488, 526, 550}, m = "load", n = {"url", "movieId", "url", "movieId", "securityKey", "detailsUrl", "url", "movieId", "securityKey", "detailsUrl", "response", "encryptedData", "decryptedJson", "detailsResponse", "details", "title", "posterUrl", "backgroundPosterUrl", "plot", "year", "rating", "tags", "actors", "recommendations", "allEpisodes", "season", "seasonId", "seasonUrl", "isSeriesLike", "seasonNumber", "url", "movieId", "securityKey", "detailsUrl", "response", "encryptedData", "decryptedJson", "detailsResponse", "details", "title", "posterUrl", "backgroundPosterUrl", "plot", "year", "rating", "tags", "actors", "recommendations", "allEpisodes", "isSeriesLike", "url", "movieId", "securityKey", "detailsUrl", "response", "encryptedData", "decryptedJson", "detailsResponse", "details", "title", "posterUrl", "backgroundPosterUrl", "plot", "year", "rating", "tags", "actors", "recommendations", "episode", "isSeriesLike"}, nl = {436, 439, 489, 549, 569}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$20", "L$21", "L$22", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "I$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -226,7 +199,7 @@ public final class CastleTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CastleTvProvider$loadLinks$1 */
     /* JADX INFO: compiled from: CastleTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CastleTvProvider", f = "CastleTvProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {648, 650, 695, 720, 745, 785, 812, 837}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "isCasting", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "isCasting", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "firstTrack", "allLanguageNames", "videoUrl", "postBody", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "firstTrack", "allLanguageNames", "videoUrl", "postBody", "videoResponse", "encryptedData", "decryptedJson", "videoData", "qualityName", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "firstTrack", "allLanguageNames", "videoUrl", "postBody", "videoResponse", "encryptedData", "decryptedJson", "videoData", "qualityName", "$this$forEach$iv", "element$iv", "subtitle", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "$i$f$forEach", "$i$a$-forEach-CastleTvProvider$loadLinks$4", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "track", "languageName", "videoUrl", "postBody", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "track", "languageName", "videoUrl", "postBody", "videoResponse", "encryptedData", "decryptedJson", "videoData", "qualityName", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "track", "languageName", "videoUrl", "postBody", "videoResponse", "encryptedData", "decryptedJson", "videoData", "qualityName", "$this$forEach$iv", "element$iv", "subtitle", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "$i$f$forEach", "$i$a$-forEach-CastleTvProvider$loadLinks$6"}, nl = {649, 651, 700, 719, 744, 790, 811, 836}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "Z$0", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "Z$0", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$26", "L$27", "Z$0", "I$0", "I$1", "I$2", "I$3", "I$4", "I$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$18", "L$19", "Z$0", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "Z$0", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$27", "L$28", "Z$0", "I$0", "I$1", "I$2", "I$3", "I$4", "I$5"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CastleTvProvider", f = "CastleTvProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {592, 594, 639, 664, 689, 729, 756, 781}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "isCasting", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "isCasting", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "firstTrack", "allLanguageNames", "videoUrl", "postBody", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "firstTrack", "allLanguageNames", "videoUrl", "postBody", "videoResponse", "encryptedData", "decryptedJson", "videoData", "qualityName", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "firstTrack", "allLanguageNames", "videoUrl", "postBody", "videoResponse", "encryptedData", "decryptedJson", "videoData", "qualityName", "$this$forEach$iv", "element$iv", "subtitle", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "$i$f$forEach", "$i$a$-forEach-CastleTvProvider$loadLinks$3", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "track", "languageName", "videoUrl", "postBody", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "track", "languageName", "videoUrl", "postBody", "videoResponse", "encryptedData", "decryptedJson", "videoData", "qualityName", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "data", "subtitleCallback", "callback", "parts", "movieId", "episodeId", "securityKey", "detailsUrl", "detailsResponse", "detailsDecrypted", "details", "episode", "availableTracks", "resolutions", "track", "languageName", "videoUrl", "postBody", "videoResponse", "encryptedData", "decryptedJson", "videoData", "qualityName", "$this$forEach$iv", "element$iv", "subtitle", "isCasting", "videoLoaded", "hasIndividualVideo", "languageId", "resolution", "$i$f$forEach", "$i$a$-forEach-CastleTvProvider$loadLinks$5"}, nl = {593, 595, 644, 663, 688, 734, 755, 780}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "Z$0", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "Z$0", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$26", "L$27", "Z$0", "I$0", "I$1", "I$2", "I$3", "I$4", "I$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$18", "L$19", "Z$0", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "Z$0", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$27", "L$28", "Z$0", "I$0", "I$1", "I$2", "I$3", "I$4", "I$5"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -283,7 +256,7 @@ public final class CastleTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CastleTvProvider$search$1 */
     /* JADX INFO: compiled from: CastleTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CastleTvProvider", f = "CastleTvProvider.kt", i = {0, 1, 1, 1}, l = {424, 427}, m = "search", n = {"query", "query", "securityKey", "searchUrl"}, nl = {425, 428}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CastleTvProvider", f = "CastleTvProvider.kt", i = {0, 1, 1, 1}, l = {384, 387}, m = "search", n = {"query", "query", "securityKey", "searchUrl"}, nl = {385, 388}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -304,8 +277,7 @@ public final class CastleTvProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: CastleTvProvider.kt */
-    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\u0002\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0013\u001a\u00020\u000fJ\u0006\u0010\u0014\u001a\u00020\u000fJ\b\u0010\u0015\u001a\u00020\u0016H\u0002R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0017"}, d2 = {"Lcom/cncverse/CastleTvProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "csGuardWasEverActive", "isCsGuardActive", "isCsGuardBlocked", "showCsGuardToast", "", "CastleTvProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nCastleTvProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CastleTvProvider.kt\ncom/cncverse/CastleTvProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1105:1\n1#2:1106\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/cncverse/CastleTvProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "CastleTvProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -321,58 +293,6 @@ public final class CastleTvProvider extends MainAPI {
 
         public final void setContext(@Nullable Context context) {
             CastleTvProvider.context = context;
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                CastleTvProvider.csGuardWasEverActive = true;
-            }
-            return CastleTvProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast() {
-            final Context ctx = getContext();
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.CastleTvProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    CastleTvProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $ctx) {
-            Toast.makeText($ctx, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
     }
 
@@ -4122,49 +4042,49 @@ public final class CastleTvProvider extends MainAPI {
     }
 
     /* JADX INFO: Thrown type has an unknown type hierarchy: com.fasterxml.jackson.databind.RuntimeJsonMappingException */
-    /* JADX WARN: Code duplicated, block: B:122:0x031c A[Catch: Exception -> 0x03bc, PHI: r51
-      0x031c: PHI (r51v8 'decryptedResponse' com.cncverse.CastleTvProvider$DecryptedResponse) = 
+    /* JADX WARN: Code duplicated, block: B:118:0x0309 A[Catch: Exception -> 0x03a9, PHI: r51
+      0x0309: PHI (r51v8 'decryptedResponse' com.cncverse.CastleTvProvider$DecryptedResponse) = 
       (r51v7 'decryptedResponse' com.cncverse.CastleTvProvider$DecryptedResponse)
       (r51v10 'decryptedResponse' com.cncverse.CastleTvProvider$DecryptedResponse)
       (r51v10 'decryptedResponse' com.cncverse.CastleTvProvider$DecryptedResponse)
-     binds: [B:105:0x02f0, B:109:0x02fa, B:115:0x0307] A[DONT_GENERATE, DONT_INLINE], TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:124:0x033c A[ADDED_TO_REGION, REMOVE] */
-    /* JADX WARN: Code duplicated, block: B:127:0x0341 A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:128:0x034a  */
-    /* JADX WARN: Code duplicated, block: B:131:0x0360 A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:134:0x0373 A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:136:0x037d A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:140:0x0395  */
-    /* JADX WARN: Code duplicated, block: B:143:0x039a A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:146:0x03ae A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:171:0x00b2 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:180:0x03a0 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:39:0x00c6 A[Catch: Exception -> 0x03c2, TRY_ENTER, TRY_LEAVE, TryCatch #8 {Exception -> 0x03c2, blocks: (B:33:0x00ae, B:39:0x00c6), top: B:176:0x00ae }] */
-    /* JADX WARN: Code duplicated, block: B:43:0x013a A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:44:0x013b  */
-    /* JADX WARN: Code duplicated, block: B:48:0x015b A[Catch: Exception -> 0x01a8, TryCatch #7 {Exception -> 0x01a8, blocks: (B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:175:0x0142, outer: #4 }] */
-    /* JADX WARN: Code duplicated, block: B:50:0x0181 A[Catch: Exception -> 0x01a8, TryCatch #7 {Exception -> 0x01a8, blocks: (B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:175:0x0142, outer: #4 }] */
-    /* JADX WARN: Code duplicated, block: B:51:0x0193  */
-    /* JADX WARN: Code duplicated, block: B:54:0x01a2 A[Catch: Exception -> 0x01a8, TRY_LEAVE, TryCatch #7 {Exception -> 0x01a8, blocks: (B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:175:0x0142, outer: #4 }] */
-    /* JADX WARN: Code duplicated, block: B:60:0x01c1 A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:64:0x01ca  */
-    /* JADX WARN: Code duplicated, block: B:66:0x01cd A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:68:0x01d7 A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:70:0x01dd A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:72:0x01e7 A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:74:0x01fd A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:76:0x0225 A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:77:0x0236  */
+     binds: [B:101:0x02dd, B:105:0x02e7, B:111:0x02f4] A[DONT_GENERATE, DONT_INLINE], TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:120:0x0329 A[ADDED_TO_REGION, REMOVE] */
+    /* JADX WARN: Code duplicated, block: B:123:0x032e A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:124:0x0337  */
+    /* JADX WARN: Code duplicated, block: B:127:0x034d A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:130:0x0360 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:132:0x036a A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:136:0x0382  */
+    /* JADX WARN: Code duplicated, block: B:139:0x0387 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:142:0x039b A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:171:0x009f A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:176:0x038d A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:35:0x00b3 A[Catch: Exception -> 0x03af, TRY_ENTER, TRY_LEAVE, TryCatch #0 {Exception -> 0x03af, blocks: (B:29:0x009b, B:35:0x00b3), top: B:158:0x009b }] */
+    /* JADX WARN: Code duplicated, block: B:39:0x0127 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:40:0x0128  */
+    /* JADX WARN: Code duplicated, block: B:44:0x0148 A[Catch: Exception -> 0x0195, TryCatch #8 {Exception -> 0x0195, blocks: (B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:173:0x012f, outer: #5 }] */
+    /* JADX WARN: Code duplicated, block: B:46:0x016e A[Catch: Exception -> 0x0195, TryCatch #8 {Exception -> 0x0195, blocks: (B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:173:0x012f, outer: #5 }] */
+    /* JADX WARN: Code duplicated, block: B:47:0x0180  */
+    /* JADX WARN: Code duplicated, block: B:50:0x018f A[Catch: Exception -> 0x0195, TRY_LEAVE, TryCatch #8 {Exception -> 0x0195, blocks: (B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:173:0x012f, outer: #5 }] */
+    /* JADX WARN: Code duplicated, block: B:56:0x01ae A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:60:0x01b7  */
+    /* JADX WARN: Code duplicated, block: B:62:0x01ba A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:64:0x01c4 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:66:0x01ca A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:68:0x01d4 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:70:0x01ea A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:72:0x0212 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:73:0x0223  */
+    /* JADX WARN: Code duplicated, block: B:76:0x0232 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:78:0x0242 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
     /* JADX WARN: Code duplicated, block: B:7:0x001e  */
-    /* JADX WARN: Code duplicated, block: B:80:0x0245 A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:82:0x0255 A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:85:0x026d A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:87:0x0281  */
-    /* JADX WARN: Code duplicated, block: B:90:0x028b A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:93:0x02aa A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:95:0x02be  */
-    /* JADX WARN: Code duplicated, block: B:96:0x02c3 A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
-    /* JADX WARN: Code duplicated, block: B:98:0x02cb A[Catch: Exception -> 0x03bc, TryCatch #4 {Exception -> 0x03bc, blocks: (B:45:0x013f, B:58:0x01b7, B:60:0x01c1, B:66:0x01cd, B:68:0x01d7, B:70:0x01dd, B:72:0x01e7, B:74:0x01fd, B:76:0x0225, B:78:0x0237, B:79:0x0244, B:80:0x0245, B:82:0x0255, B:83:0x0267, B:85:0x026d, B:88:0x0283, B:90:0x028b, B:91:0x02a4, B:93:0x02aa, B:127:0x0341, B:96:0x02c3, B:98:0x02cb, B:101:0x02d9, B:121:0x0317, B:123:0x0320, B:118:0x030b, B:120:0x0312, B:113:0x0300, B:122:0x031c, B:108:0x02f5, B:104:0x02e9, B:130:0x0354, B:132:0x0368, B:134:0x0373, B:136:0x037d, B:138:0x0385, B:143:0x039a, B:131:0x0360, B:145:0x03a6, B:147:0x03b4, B:146:0x03ae, B:57:0x01a9, B:46:0x0142, B:48:0x015b, B:50:0x0181, B:52:0x0194, B:53:0x01a1, B:54:0x01a2), top: B:170:0x013f, inners: #7 }] */
+    /* JADX WARN: Code duplicated, block: B:81:0x025a A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:83:0x026e  */
+    /* JADX WARN: Code duplicated, block: B:86:0x0278 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:89:0x0297 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:91:0x02ab  */
+    /* JADX WARN: Code duplicated, block: B:92:0x02b0 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
+    /* JADX WARN: Code duplicated, block: B:94:0x02b8 A[Catch: Exception -> 0x03a9, TryCatch #5 {Exception -> 0x03a9, blocks: (B:41:0x012c, B:54:0x01a4, B:56:0x01ae, B:62:0x01ba, B:64:0x01c4, B:66:0x01ca, B:68:0x01d4, B:70:0x01ea, B:72:0x0212, B:74:0x0224, B:75:0x0231, B:76:0x0232, B:78:0x0242, B:79:0x0254, B:81:0x025a, B:84:0x0270, B:86:0x0278, B:87:0x0291, B:89:0x0297, B:123:0x032e, B:92:0x02b0, B:94:0x02b8, B:97:0x02c6, B:117:0x0304, B:119:0x030d, B:114:0x02f8, B:116:0x02ff, B:109:0x02ed, B:118:0x0309, B:104:0x02e2, B:100:0x02d6, B:126:0x0341, B:128:0x0355, B:130:0x0360, B:132:0x036a, B:134:0x0372, B:139:0x0387, B:127:0x034d, B:141:0x0393, B:143:0x03a1, B:142:0x039b, B:53:0x0196, B:42:0x012f, B:44:0x0148, B:46:0x016e, B:48:0x0181, B:49:0x018e, B:50:0x018f), top: B:168:0x012c, inners: #8 }] */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws RuntimeJsonMappingException {
         C00001 c00001;
@@ -4219,12 +4139,7 @@ public final class CastleTvProvider extends MainAPI {
         switch (c00002.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast();
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 try {
                     c00002.L$0 = SpillingKt.nullOutSpilledVariable(request);
                     page2 = page;
@@ -4662,32 +4577,32 @@ public final class CastleTvProvider extends MainAPI {
     }
 
     /* JADX INFO: Thrown type has an unknown type hierarchy: com.fasterxml.jackson.databind.RuntimeJsonMappingException */
-    /* JADX WARN: Code duplicated, block: B:103:0x0243 A[PHI: r36
-      0x0243: PHI (r36v5 'searchUrl' java.lang.String) = (r36v4 'searchUrl' java.lang.String), (r36v8 'searchUrl' java.lang.String) binds: [B:86:0x0215, B:90:0x021f] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Code duplicated, block: B:106:0x0266 A[ADDED_TO_REGION, REMOVE] */
-    /* JADX WARN: Code duplicated, block: B:109:0x026d A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:112:0x0280 A[Catch: Exception -> 0x0287, TRY_LEAVE, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:136:0x0271 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:36:0x009a A[Catch: Exception -> 0x0057, TRY_ENTER, TRY_LEAVE, TryCatch #4 {Exception -> 0x0057, blocks: (B:13:0x0042, B:16:0x0052, B:36:0x009a), top: B:131:0x002a }] */
-    /* JADX WARN: Code duplicated, block: B:38:0x009f A[Catch: Exception -> 0x028d, TRY_ENTER, TRY_LEAVE, TryCatch #0 {Exception -> 0x028d, blocks: (B:34:0x0096, B:38:0x009f), top: B:124:0x0096 }] */
-    /* JADX WARN: Code duplicated, block: B:42:0x010e A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:43:0x010f  */
-    /* JADX WARN: Code duplicated, block: B:46:0x0120 A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:50:0x0129  */
-    /* JADX WARN: Code duplicated, block: B:52:0x012c A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:54:0x0131 A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:56:0x0137 A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:58:0x013c A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:60:0x0152 A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:62:0x017b A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:63:0x018d  */
-    /* JADX WARN: Code duplicated, block: B:66:0x019c A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:68:0x01ab A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:71:0x01c5 A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:73:0x01db  */
-    /* JADX WARN: Code duplicated, block: B:74:0x01e0 A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
-    /* JADX WARN: Code duplicated, block: B:76:0x01e8 A[Catch: Exception -> 0x0287, TryCatch #3 {Exception -> 0x0287, blocks: (B:44:0x0115, B:46:0x0120, B:52:0x012c, B:54:0x0131, B:56:0x0137, B:58:0x013c, B:60:0x0152, B:62:0x017b, B:64:0x018e, B:65:0x019b, B:66:0x019c, B:68:0x01ab, B:69:0x01bf, B:71:0x01c5, B:109:0x026d, B:74:0x01e0, B:76:0x01e8, B:79:0x01f8, B:81:0x01fe, B:82:0x0202, B:102:0x023e, B:105:0x0248, B:99:0x0232, B:101:0x0239, B:94:0x0225, B:104:0x0244, B:89:0x021a, B:85:0x020e, B:111:0x0278, B:112:0x0280), top: B:130:0x0115 }] */
+    /* JADX WARN: Code duplicated, block: B:102:0x0254 A[ADDED_TO_REGION, REMOVE] */
+    /* JADX WARN: Code duplicated, block: B:105:0x025b A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:108:0x026e A[Catch: Exception -> 0x0275, TRY_LEAVE, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:132:0x025f A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:32:0x0088 A[Catch: Exception -> 0x0057, TRY_ENTER, TRY_LEAVE, TryCatch #2 {Exception -> 0x0057, blocks: (B:13:0x0042, B:16:0x0052, B:32:0x0088), top: B:124:0x002a }] */
+    /* JADX WARN: Code duplicated, block: B:34:0x008d A[Catch: Exception -> 0x027b, TRY_ENTER, TRY_LEAVE, TryCatch #0 {Exception -> 0x027b, blocks: (B:30:0x0084, B:34:0x008d), top: B:120:0x0084 }] */
+    /* JADX WARN: Code duplicated, block: B:38:0x00fc A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:39:0x00fd  */
+    /* JADX WARN: Code duplicated, block: B:42:0x010e A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:46:0x0117  */
+    /* JADX WARN: Code duplicated, block: B:48:0x011a A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:50:0x011f A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:52:0x0125 A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:54:0x012a A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:56:0x0140 A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:58:0x0169 A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:59:0x017b  */
+    /* JADX WARN: Code duplicated, block: B:62:0x018a A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:64:0x0199 A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:67:0x01b3 A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:69:0x01c9  */
+    /* JADX WARN: Code duplicated, block: B:70:0x01ce A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
+    /* JADX WARN: Code duplicated, block: B:72:0x01d6 A[Catch: Exception -> 0x0275, TryCatch #4 {Exception -> 0x0275, blocks: (B:40:0x0103, B:42:0x010e, B:48:0x011a, B:50:0x011f, B:52:0x0125, B:54:0x012a, B:56:0x0140, B:58:0x0169, B:60:0x017c, B:61:0x0189, B:62:0x018a, B:64:0x0199, B:65:0x01ad, B:67:0x01b3, B:105:0x025b, B:70:0x01ce, B:72:0x01d6, B:75:0x01e6, B:77:0x01ec, B:78:0x01f0, B:98:0x022c, B:101:0x0236, B:95:0x0220, B:97:0x0227, B:90:0x0213, B:100:0x0232, B:85:0x0208, B:81:0x01fc, B:107:0x0266, B:108:0x026e), top: B:127:0x0103 }] */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
+    /* JADX WARN: Code duplicated, block: B:99:0x0231 A[PHI: r36
+      0x0231: PHI (r36v5 'searchUrl' java.lang.String) = (r36v4 'searchUrl' java.lang.String), (r36v8 'searchUrl' java.lang.String) binds: [B:82:0x0203, B:86:0x020d] A[DONT_GENERATE, DONT_INLINE]] */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) throws RuntimeJsonMappingException {
         C00081 c00081;
@@ -4730,10 +4645,6 @@ public final class CastleTvProvider extends MainAPI {
             switch (c00082.label) {
                 case 0:
                     ResultKt.throwOnFailure($result);
-                    if (INSTANCE.isCsGuardBlocked()) {
-                        INSTANCE.showCsGuardToast();
-                        return CollectionsKt.emptyList();
-                    }
                     try {
                         if (StringsKt.isBlank(query2)) {
                             try {
@@ -4826,7 +4737,7 @@ public final class CastleTvProvider extends MainAPI {
                                                         if (movieType.intValue() == 1) {
                                                             type = TvType.TvSeries;
                                                         }
-                                                        movieSearchResponseNewMovieSearchResponse$default = MainAPIKt.newMovieSearchResponse$default(castleTvProvider, title, id2, type, false, new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda5
+                                                        movieSearchResponseNewMovieSearchResponse$default = MainAPIKt.newMovieSearchResponse$default(castleTvProvider, title, id2, type, false, new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda1
                                                             public final Object invoke(Object obj2) {
                                                                 return CastleTvProvider.search$lambda$0$0(posterUrl, item, (MovieSearchResponse) obj2);
                                                             }
@@ -4836,14 +4747,14 @@ public final class CastleTvProvider extends MainAPI {
                                                         if (movieType == null || movieType.intValue() != 5) {
                                                             type = (movieType != null && movieType.intValue() == 2) ? TvType.Movie : TvType.Movie;
                                                         }
-                                                        movieSearchResponseNewMovieSearchResponse$default = MainAPIKt.newMovieSearchResponse$default(castleTvProvider, title, id2, type, false, new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda5
+                                                        movieSearchResponseNewMovieSearchResponse$default = MainAPIKt.newMovieSearchResponse$default(castleTvProvider, title, id2, type, false, new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda1
                                                             public final Object invoke(Object obj2) {
                                                                 return CastleTvProvider.search$lambda$0$0(posterUrl, item, (MovieSearchResponse) obj2);
                                                             }
                                                         }, 8, (Object) null);
                                                     }
                                                     type = TvType.TvSeries;
-                                                    movieSearchResponseNewMovieSearchResponse$default = MainAPIKt.newMovieSearchResponse$default(castleTvProvider, title, id2, type, false, new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda5
+                                                    movieSearchResponseNewMovieSearchResponse$default = MainAPIKt.newMovieSearchResponse$default(castleTvProvider, title, id2, type, false, new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda1
                                                         public final Object invoke(Object obj2) {
                                                             return CastleTvProvider.search$lambda$0$0(posterUrl, item, (MovieSearchResponse) obj2);
                                                         }
@@ -5748,7 +5659,7 @@ public final class CastleTvProvider extends MainAPI {
                                                                                         CollectionsKt.throwIndexOverflow();
                                                                                     }
                                                                                     final ApiEpisode apiEpisode = (ApiEpisode) next;
-                                                                                    arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda7
+                                                                                    arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda3
                                                                                         public final Object invoke(Object obj8) {
                                                                                             return CastleTvProvider.load$lambda$3$0(apiEpisode, i4, data, (Episode) obj8);
                                                                                         }
@@ -5922,7 +5833,7 @@ public final class CastleTvProvider extends MainAPI {
                                                                                                             MovieDetails movieDetails4 = data2;
                                                                                                             continuation4 = continuation6;
                                                                                                             str37 = str55;
-                                                                                                            list11.add(MainAPIKt.newEpisode(castleTvProvider4, str45 + '_' + apiEpisode2.getId(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda6
+                                                                                                            list11.add(MainAPIKt.newEpisode(castleTvProvider4, str45 + '_' + apiEpisode2.getId(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda2
                                                                                                                 public final Object invoke(Object obj10) {
                                                                                                                     return CastleTvProvider.load$lambda$2$0(apiEpisode2, list11, i8, (Episode) obj10);
                                                                                                                 }
@@ -6372,7 +6283,7 @@ public final class CastleTvProvider extends MainAPI {
                                                             CollectionsKt.throwIndexOverflow();
                                                         }
                                                         final ApiEpisode apiEpisode3 = (ApiEpisode) next4;
-                                                        arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode3.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda7
+                                                        arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode3.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda3
                                                             public final Object invoke(Object obj10) {
                                                                 return CastleTvProvider.load$lambda$3$0(apiEpisode3, i4, data, (Episode) obj10);
                                                             }
@@ -6660,7 +6571,7 @@ public final class CastleTvProvider extends MainAPI {
                                     CollectionsKt.throwIndexOverflow();
                                 }
                                 final ApiEpisode apiEpisode4 = (ApiEpisode) next5;
-                                arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode4.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda7
+                                arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode4.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda3
                                     public final Object invoke(Object obj10) {
                                         return CastleTvProvider.load$lambda$3$0(apiEpisode4, i4, data, (Episode) obj10);
                                     }
@@ -6870,7 +6781,7 @@ public final class CastleTvProvider extends MainAPI {
                                 CollectionsKt.throwIndexOverflow();
                             }
                             final ApiEpisode apiEpisode5 = (ApiEpisode) next6;
-                            arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode5.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda7
+                            arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode5.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda3
                                 public final Object invoke(Object obj10) {
                                     return CastleTvProvider.load$lambda$3$0(apiEpisode5, i4, data, (Episode) obj10);
                                 }
@@ -7102,7 +7013,7 @@ public final class CastleTvProvider extends MainAPI {
                                     CollectionsKt.throwIndexOverflow();
                                 }
                                 final ApiEpisode apiEpisode6 = (ApiEpisode) next7;
-                                arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode6.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda7
+                                arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode6.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda3
                                     public final Object invoke(Object obj10) {
                                         return CastleTvProvider.load$lambda$3$0(apiEpisode6, i4, data, (Episode) obj10);
                                     }
@@ -7312,7 +7223,7 @@ public final class CastleTvProvider extends MainAPI {
                                 CollectionsKt.throwIndexOverflow();
                             }
                             final ApiEpisode apiEpisode7 = (ApiEpisode) next8;
-                            arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode7.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda7
+                            arrayList.add(MainAPIKt.newEpisode(this, new StringBuilder().append(data.getId()).append('_').append(apiEpisode7.getId()).toString(), new Function1() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda3
                                 public final Object invoke(Object obj10) {
                                     return CastleTvProvider.load$lambda$3$0(apiEpisode7, i4, data, (Episode) obj10);
                                 }
@@ -7996,33 +7907,33 @@ public final class CastleTvProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:461:0x16db A[Catch: Exception -> 0x2282, TRY_LEAVE, TryCatch #79 {Exception -> 0x2282, blocks: (B:459:0x16d5, B:461:0x16db), top: B:904:0x16d5 }] */
-    /* JADX WARN: Code duplicated, block: B:493:0x180a A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:494:0x180b  */
-    /* JADX WARN: Code duplicated, block: B:500:0x1847  */
-    /* JADX WARN: Code duplicated, block: B:505:0x186f  */
-    /* JADX WARN: Code duplicated, block: B:506:0x187c  */
-    /* JADX WARN: Code duplicated, block: B:511:0x18a8  */
-    /* JADX WARN: Code duplicated, block: B:512:0x18b1 A[Catch: Exception -> 0x2052, TRY_LEAVE, TryCatch #97 {Exception -> 0x2052, blocks: (B:509:0x188f, B:512:0x18b1), top: B:940:0x188f }] */
-    /* JADX WARN: Code duplicated, block: B:516:0x18d1  */
-    /* JADX WARN: Code duplicated, block: B:525:0x1901 A[Catch: Exception -> 0x1927, TryCatch #86 {Exception -> 0x1927, blocks: (B:523:0x18fb, B:525:0x1901, B:527:0x1919, B:528:0x1926), top: B:918:0x18fb }] */
-    /* JADX WARN: Code duplicated, block: B:526:0x1916  */
-    /* JADX WARN: Code duplicated, block: B:535:0x1989  */
-    /* JADX WARN: Code duplicated, block: B:538:0x199e A[Catch: Exception -> 0x2026, TRY_LEAVE, TryCatch #87 {Exception -> 0x2026, blocks: (B:536:0x1990, B:538:0x199e), top: B:920:0x1990 }] */
-    /* JADX WARN: Code duplicated, block: B:542:0x19ae A[Catch: Exception -> 0x202e, TryCatch #82 {Exception -> 0x202e, blocks: (B:514:0x18c0, B:540:0x19a4, B:542:0x19ae, B:543:0x19b1, B:547:0x19c3, B:548:0x19d4), top: B:910:0x18c0 }] */
-    /* JADX WARN: Code duplicated, block: B:543:0x19b1 A[Catch: Exception -> 0x202e, TryCatch #82 {Exception -> 0x202e, blocks: (B:514:0x18c0, B:540:0x19a4, B:542:0x19ae, B:543:0x19b1, B:547:0x19c3, B:548:0x19d4), top: B:910:0x18c0 }] */
-    /* JADX WARN: Code duplicated, block: B:544:0x19b4  */
-    /* JADX WARN: Code duplicated, block: B:545:0x19b9  */
-    /* JADX WARN: Code duplicated, block: B:546:0x19be  */
-    /* JADX WARN: Code duplicated, block: B:562:0x1a7e  */
-    /* JADX WARN: Code duplicated, block: B:581:0x1b48 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:582:0x1b49  */
-    /* JADX WARN: Code duplicated, block: B:646:0x1ebe  */
+    /* JADX WARN: Code duplicated, block: B:435:0x165b A[Catch: Exception -> 0x2202, TRY_LEAVE, TryCatch #22 {Exception -> 0x2202, blocks: (B:433:0x1655, B:435:0x165b), top: B:768:0x1655 }] */
+    /* JADX WARN: Code duplicated, block: B:467:0x178a A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:468:0x178b  */
+    /* JADX WARN: Code duplicated, block: B:474:0x17c7  */
+    /* JADX WARN: Code duplicated, block: B:479:0x17ef  */
+    /* JADX WARN: Code duplicated, block: B:480:0x17fc  */
+    /* JADX WARN: Code duplicated, block: B:485:0x1828  */
+    /* JADX WARN: Code duplicated, block: B:486:0x1831 A[Catch: Exception -> 0x1fd2, TRY_LEAVE, TryCatch #42 {Exception -> 0x1fd2, blocks: (B:483:0x180f, B:486:0x1831), top: B:808:0x180f }] */
+    /* JADX WARN: Code duplicated, block: B:490:0x1851  */
+    /* JADX WARN: Code duplicated, block: B:499:0x1881 A[Catch: Exception -> 0x18a7, TryCatch #31 {Exception -> 0x18a7, blocks: (B:497:0x187b, B:499:0x1881, B:501:0x1899, B:502:0x18a6), top: B:786:0x187b }] */
+    /* JADX WARN: Code duplicated, block: B:500:0x1896  */
+    /* JADX WARN: Code duplicated, block: B:509:0x1909  */
+    /* JADX WARN: Code duplicated, block: B:512:0x191e A[Catch: Exception -> 0x1fa6, TRY_LEAVE, TryCatch #32 {Exception -> 0x1fa6, blocks: (B:510:0x1910, B:512:0x191e), top: B:788:0x1910 }] */
+    /* JADX WARN: Code duplicated, block: B:516:0x192e A[Catch: Exception -> 0x1fae, TryCatch #25 {Exception -> 0x1fae, blocks: (B:488:0x1840, B:514:0x1924, B:516:0x192e, B:517:0x1931, B:521:0x1943, B:522:0x1954), top: B:774:0x1840 }] */
+    /* JADX WARN: Code duplicated, block: B:517:0x1931 A[Catch: Exception -> 0x1fae, TryCatch #25 {Exception -> 0x1fae, blocks: (B:488:0x1840, B:514:0x1924, B:516:0x192e, B:517:0x1931, B:521:0x1943, B:522:0x1954), top: B:774:0x1840 }] */
+    /* JADX WARN: Code duplicated, block: B:518:0x1934  */
+    /* JADX WARN: Code duplicated, block: B:519:0x1939  */
+    /* JADX WARN: Code duplicated, block: B:520:0x193e  */
+    /* JADX WARN: Code duplicated, block: B:536:0x19fe  */
+    /* JADX WARN: Code duplicated, block: B:555:0x1ac8 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:556:0x1ac9  */
+    /* JADX WARN: Code duplicated, block: B:620:0x1e3e  */
+    /* JADX WARN: Code duplicated, block: B:746:0x1971 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:796:0x17c0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:884:0x19f1 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:930:0x1840 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Failed to apply debug info
-    jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached with updateSeq = 91201. Try increasing type updates limit count.
+    jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached with updateSeq = 90041. Try increasing type updates limit count.
     	at jadx.core.dex.visitors.typeinference.TypeUpdateInfo.requestUpdate(TypeUpdateInfo.java:61)
     	at jadx.core.dex.visitors.typeinference.TypeUpdate.requestUpdate(TypeUpdate.java:298)
     	at jadx.core.dex.visitors.typeinference.TypeUpdate.runUpdate(TypeUpdate.java:124)
@@ -8055,60 +7966,60 @@ public final class CastleTvProvider extends MainAPI {
     /* JADX WARN: Type inference failed for: r1v7 */
     /* JADX WARN: Type inference failed for: r1v8 */
     /* JADX WARN: Type inference failed for: r1v9 */
-    /* JADX WARN: Type inference failed for: r2v376, names: [$completion], types: [kotlin.coroutines.Continuation] */
+    /* JADX WARN: Type inference failed for: r2v379, names: [$completion], types: [kotlin.coroutines.Continuation] */
     /* JADX WARN: Type inference failed for: r84v2, names: [data], types: [java.lang.String] */
-    /* JADX WARN: Type inference failed for: r84v33 */
     /* JADX WARN: Type inference failed for: r84v34 */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:236:0x0d00 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:263:0x0dd1 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:265:0x0deb -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:267:0x0e07 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:269:0x0e25 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:325:0x101a -> B:845:0x1046). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:354:0x1155 -> B:810:0x1189). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:363:0x121b -> B:364:0x1244). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:380:0x1331 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:382:0x1352 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:384:0x1370 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:386:0x1396 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:388:0x13bc -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:390:0x13e4 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:403:0x1473 -> B:950:0x0ba4). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:411:0x14d4 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:413:0x14fe -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:415:0x1528 -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:417:0x154a -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:419:0x156c -> B:439:0x1619). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:458:0x16ac -> B:904:0x16d5). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:502:0x184b -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:530:0x1928 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:532:0x1948 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:534:0x196a -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:557:0x1a19 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:559:0x1a3b -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:561:0x1a5d -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:588:0x1b87 -> B:902:0x1bad). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:621:0x1cd1 -> B:946:0x1d14). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:632:0x1da6 -> B:633:0x1dd8). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:649:0x1eef -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:651:0x1f13 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:653:0x1f33 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:655:0x1f55 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:657:0x1f79 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:659:0x1f9d -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:661:0x1fc1 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:670:0x2003 -> B:904:0x16d5). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:675:0x2033 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:677:0x2053 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:679:0x2076 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:681:0x209b -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:683:0x20c2 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:685:0x20e5 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:687:0x210a -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:689:0x2131 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:691:0x2158 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:698:0x21b4 -> B:709:0x2238). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:700:0x21db -> B:709:0x2238). Please report as a decompilation issue!!! */
+    /* JADX WARN: Type inference failed for: r84v35 */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:210:0x0c80 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:237:0x0d51 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:239:0x0d6b -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:241:0x0d87 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:243:0x0da5 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:299:0x0f9a -> B:929:0x0fc6). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:328:0x10d5 -> B:890:0x1109). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:337:0x119b -> B:338:0x11c4). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:354:0x12b1 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:356:0x12d2 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:358:0x12f0 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:360:0x1316 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:362:0x133c -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:364:0x1364 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:377:0x13f3 -> B:816:0x0b24). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:385:0x1454 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:387:0x147e -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:389:0x14a8 -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:391:0x14ca -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:393:0x14ec -> B:413:0x1599). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:432:0x162c -> B:768:0x1655). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:476:0x17cb -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:504:0x18a8 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:506:0x18c8 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:508:0x18ea -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:531:0x1999 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:533:0x19bb -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:535:0x19dd -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:562:0x1b07 -> B:766:0x1b2d). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:595:0x1c51 -> B:812:0x1c94). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:606:0x1d26 -> B:607:0x1d58). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:623:0x1e6f -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:625:0x1e93 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:627:0x1eb3 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:629:0x1ed5 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:631:0x1ef9 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:633:0x1f1d -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:635:0x1f41 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:644:0x1f83 -> B:768:0x1655). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:649:0x1fb3 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:651:0x1fd3 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:653:0x1ff6 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:655:0x201b -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:657:0x2042 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:659:0x2065 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:661:0x208a -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:663:0x20b1 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:665:0x20d8 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:672:0x2134 -> B:683:0x21b8). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:674:0x215b -> B:683:0x21b8). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
@@ -8117,36 +8028,31 @@ public final class CastleTvProvider extends MainAPI {
     @org.jetbrains.annotations.Nullable
     public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r83, boolean r84, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r85, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r86, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r87) {
         /*
-            Method dump skipped, instruction units count: 9120
+            Method dump skipped, instruction units count: 9004
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.cncverse.CastleTvProvider.loadLinks(java.lang.String, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
-    /* JADX INFO: renamed from: com.cncverse.CastleTvProvider$loadLinks$3 */
+    /* JADX INFO: renamed from: com.cncverse.CastleTvProvider$loadLinks$2 */
     /* JADX INFO: compiled from: CastleTvProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CastleTvProvider$loadLinks$3", f = "CastleTvProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00063 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.CastleTvProvider$loadLinks$2", f = "CastleTvProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00062 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ int $resolution;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00063(int i, Continuation<? super C00063> continuation) {
+        C00062(int i, Continuation<? super C00062> continuation) {
             super(2, continuation);
             this.$resolution = i;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00063 = CastleTvProvider.this.new C00063(this.$resolution, continuation);
-            c00063.L$0 = obj;
-            return c00063;
+            Continuation<Unit> c00062 = CastleTvProvider.this.new C00062(this.$resolution, continuation);
+            c00062.L$0 = obj;
+            return c00062;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -8183,25 +8089,25 @@ public final class CastleTvProvider extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.CastleTvProvider$loadLinks$5 */
+    /* JADX INFO: renamed from: com.cncverse.CastleTvProvider$loadLinks$4 */
     /* JADX INFO: compiled from: CastleTvProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CastleTvProvider$loadLinks$5", f = "CastleTvProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00075 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.CastleTvProvider$loadLinks$4", f = "CastleTvProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00074 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ int $resolution;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00075(int i, Continuation<? super C00075> continuation) {
+        C00074(int i, Continuation<? super C00074> continuation) {
             super(2, continuation);
             this.$resolution = i;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00075 = CastleTvProvider.this.new C00075(this.$resolution, continuation);
-            c00075.L$0 = obj;
-            return c00075;
+            Continuation<Unit> c00074 = CastleTvProvider.this.new C00074(this.$resolution, continuation);
+            c00074.L$0 = obj;
+            return c00074;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -8235,296 +8141,6 @@ public final class CastleTvProvider extends MainAPI {
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    CastleTvProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda10
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    CastleTvProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda11
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    CastleTvProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda2
-            @Override // java.lang.Runnable
-            public final void run() {
-                CastleTvProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda8
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda9
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    CastleTvProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.CastleTvProvider$$ExternalSyntheticLambda3
-            @Override // java.lang.Runnable
-            public final void run() {
-                CastleTvProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
         }
     }
 }

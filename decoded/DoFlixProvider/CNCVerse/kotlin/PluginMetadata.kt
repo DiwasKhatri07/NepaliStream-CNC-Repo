@@ -4,7 +4,7 @@ package nepali.stream.decoded.doflixprovider
 object PluginMetadata {
     const val name: String = "DoFlixProvider"
     const val originalPluginClass: String = "com.cncverse.DoFlixProviderPlugin"
-    const val version: Int = 33
+    const val version: Int = 34
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

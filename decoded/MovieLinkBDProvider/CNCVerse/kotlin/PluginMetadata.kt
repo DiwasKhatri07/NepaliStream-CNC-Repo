@@ -4,7 +4,7 @@ package nepali.stream.decoded.movielinkbdprovider
 object PluginMetadata {
     const val name: String = "MovieLinkBDProvider"
     const val originalPluginClass: String = "com.cncverse.MovieLinkBDPlugin"
-    const val version: Int = 17
+    const val version: Int = 18
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

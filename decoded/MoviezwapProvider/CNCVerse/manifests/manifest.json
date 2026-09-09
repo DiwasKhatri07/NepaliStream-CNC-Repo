@@ -1,6 +1,6 @@
 {
   "requiresResources": false,
-  "version": 30,
+  "version": 31,
   "pluginClassName": "com.cncverse.MoviezwapProviderPlugin",
   "name": "MoviezwapProvider"
 }

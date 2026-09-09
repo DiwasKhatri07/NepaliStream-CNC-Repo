@@ -4,7 +4,7 @@ package nepali.stream.decoded.xonprovider
 object PluginMetadata {
     const val name: String = "XonProvider"
     const val originalPluginClass: String = "com.cncverse.Xon"
-    const val version: Int = 33
+    const val version: Int = 34
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

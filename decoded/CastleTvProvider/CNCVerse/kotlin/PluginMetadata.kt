@@ -4,7 +4,7 @@ package nepali.stream.decoded.castletvprovider
 object PluginMetadata {
     const val name: String = "CastleTvProvider"
     const val originalPluginClass: String = "com.cncverse.CastleTvProviderPlugin"
-    const val version: Int = 38
+    const val version: Int = 39
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

@@ -1,24 +1,7 @@
 package com.horis.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.horis.cncverse.entities.PostData;
 import com.horis.cncverse.entities.SearchData;
 import com.horis.cncverse.entities.SearchResult;
@@ -42,7 +25,6 @@ import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
@@ -50,12 +32,10 @@ import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -81,7 +61,6 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlin.jvm.internal.Reflection;
 import kotlin.jvm.internal.SourceDebugExtension;
-import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -93,24 +72,16 @@ import org.jsoup.nodes.Element;
 
 /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/CNC_Verse/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u0000 E2\u00020\u0001:\u0003EFGB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"J\f\u0010#\u001a\u00020$*\u00020%H\u0002J\u000e\u0010&\u001a\u0004\u0018\u00010'*\u00020%H\u0002J\u001c\u0010(\u001a\b\u0012\u0004\u0012\u00020'0)2\u0006\u0010*\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J\u0018\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J4\u0010/\u001a\b\u0012\u0004\u0012\u0002000)2\u0006\u00101\u001a\u00020\n2\u0006\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\n2\u0006\u0010\u001e\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u00104JF\u00105\u001a\u00020\u00162\u0006\u00106\u001a\u00020\n2\u0006\u00107\u001a\u00020\u00162\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020;092\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020;09H\u0096@¢\u0006\u0002\u0010>J\u0012\u0010?\u001a\u0004\u0018\u00010@2\u0006\u0010A\u001a\u00020=H\u0016J\b\u0010B\u001a\u00020;H\u0002J\b\u0010C\u001a\u00020;H\u0002J\u0010\u0010D\u001a\u00020;2\u0006\u0010.\u001a\u00020\nH\u0002R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\f\"\u0004\b\u0011\u0010\u000eR\u001a\u0010\u0012\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\f\"\u0004\b\u0014\u0010\u000eR\u0014\u0010\u0015\u001a\u00020\u0016X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Lcom/horis/cncverse/HotStarMirrorProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "cookie_value", "headers", "", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toHomePageList", "Lcom/lagradost/cloudstream3/HomePageList;", "Lorg/jsoup/nodes/Element;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "search", "", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "getEpisodes", "Lcom/lagradost/cloudstream3/Episode;", "title", "eid", "sid", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVideoInterceptor", "Lokhttp3/Interceptor;", "extractorLink", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "Id", "LoadData", "CNC Verse_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nHotStarMirrorProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HotStarMirrorProvider.kt\ncom/horis/cncverse/HotStarMirrorProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 Utils.kt\ncom/horis/cncverse/UtilsKt\n*L\n1#1,580:1\n1586#2:581\n1661#2,3:582\n1642#2,10:585\n1915#2:595\n1916#2:597\n1652#2:598\n1586#2:600\n1661#2,3:601\n1586#2:606\n1661#2,3:607\n1586#2:610\n1661#2,3:611\n1586#2:614\n1661#2,3:615\n777#2:618\n873#2,2:619\n1586#2:621\n1661#2,3:622\n1661#2,3:625\n1661#2,3:629\n1#3:596\n1#3:635\n62#4:599\n62#4:605\n62#4:628\n62#4:633\n62#4:634\n231#5:604\n231#5:632\n*S KotlinDebug\n*F\n+ 1 HotStarMirrorProvider.kt\ncom/horis/cncverse/HotStarMirrorProvider\n*L\n104#1:581\n104#1:582,3\n112#1:585,10\n112#1:595\n112#1:597\n112#1:598\n140#1:600\n140#1:601,3\n167#1:606\n167#1:607,3\n168#1:610\n168#1:611,3\n174#1:614\n174#1:615,3\n175#1:618\n175#1:619,2\n180#1:621\n180#1:622,3\n192#1:625,3\n245#1:629,3\n112#1:596\n138#1:599\n162#1:605\n244#1:628\n292#1:633\n299#1:634\n151#1:604\n287#1:632\n*E\n"})
+@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u0000 B2\u00020\u0001:\u0003BCDB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"J\f\u0010#\u001a\u00020$*\u00020%H\u0002J\u000e\u0010&\u001a\u0004\u0018\u00010'*\u00020%H\u0002J\u001c\u0010(\u001a\b\u0012\u0004\u0012\u00020'0)2\u0006\u0010*\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J\u0018\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J4\u0010/\u001a\b\u0012\u0004\u0012\u0002000)2\u0006\u00101\u001a\u00020\n2\u0006\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\n2\u0006\u0010\u001e\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u00104JF\u00105\u001a\u00020\u00162\u0006\u00106\u001a\u00020\n2\u0006\u00107\u001a\u00020\u00162\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020;092\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020;09H\u0096@¢\u0006\u0002\u0010>J\u0012\u0010?\u001a\u0004\u0018\u00010@2\u0006\u0010A\u001a\u00020=H\u0016R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\f\"\u0004\b\u0011\u0010\u000eR\u001a\u0010\u0012\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\f\"\u0004\b\u0014\u0010\u000eR\u0014\u0010\u0015\u001a\u00020\u0016X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006E"}, d2 = {"Lcom/horis/cncverse/HotStarMirrorProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "cookie_value", "headers", "", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toHomePageList", "Lcom/lagradost/cloudstream3/HomePageList;", "Lorg/jsoup/nodes/Element;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "search", "", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "getEpisodes", "Lcom/lagradost/cloudstream3/Episode;", "title", "eid", "sid", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVideoInterceptor", "Lokhttp3/Interceptor;", "extractorLink", "Companion", "Id", "LoadData", "CNC Verse_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nHotStarMirrorProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HotStarMirrorProvider.kt\ncom/horis/cncverse/HotStarMirrorProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 Utils.kt\ncom/horis/cncverse/UtilsKt\n*L\n1#1,287:1\n1586#2:288\n1661#2,3:289\n1642#2,10:292\n1915#2:302\n1916#2:304\n1652#2:305\n1586#2:307\n1661#2,3:308\n1586#2:313\n1661#2,3:314\n1586#2:317\n1661#2,3:318\n1586#2:321\n1661#2,3:322\n777#2:325\n873#2,2:326\n1586#2:328\n1661#2,3:329\n1661#2,3:332\n1661#2,3:336\n1#3:303\n62#4:306\n62#4:312\n62#4:335\n62#4:340\n62#4:341\n66#5:311\n66#5:339\n*S KotlinDebug\n*F\n+ 1 HotStarMirrorProvider.kt\ncom/horis/cncverse/HotStarMirrorProvider\n*L\n72#1:288\n72#1:289,3\n80#1:292,10\n80#1:302\n80#1:304\n80#1:305\n108#1:307\n108#1:308,3\n135#1:313\n135#1:314,3\n136#1:317\n136#1:318,3\n142#1:321\n142#1:322,3\n143#1:325\n143#1:326,2\n148#1:328\n148#1:329,3\n160#1:332,3\n213#1:336,3\n80#1:303\n106#1:306\n130#1:312\n212#1:335\n241#1:340\n248#1:341\n119#1:311\n236#1:339\n*E\n"})
 public final class HotStarMirrorProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private final Set<TvType> supportedTypes = SetsKt.setOf(new TvType[]{TvType.Movie, TvType.TvSeries, TvType.Anime, TvType.AsianDrama});
@@ -134,8 +105,8 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$getEpisodes$1 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {239}, m = "getEpisodes", n = {"title", "eid", "sid", "episodes", "cookies", "page", "pg"}, nl = {244}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1"}, v = 2)
-    static final class C00091 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {207}, m = "getEpisodes", n = {"title", "eid", "sid", "episodes", "cookies", "page", "pg"}, nl = {212}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1"}, v = 2)
+    static final class C00111 extends ContinuationImpl {
         int I$0;
         int I$1;
         Object L$0;
@@ -146,7 +117,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00091(Continuation<? super C00091> continuation) {
+        C00111(Continuation<? super C00111> continuation) {
             super(continuation);
         }
 
@@ -161,15 +132,15 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$getMainPage$1 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 1, 1, 1}, l = {92, 98}, m = "getMainPage", n = {"request", "page", "request", "cookies", "page"}, nl = {94, 103}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
-    static final class C00101 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 1, 1, 1}, l = {60, 66}, m = "getMainPage", n = {"request", "page", "request", "cookies", "page"}, nl = {62, 71}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
+    static final class C00121 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C00101(Continuation<? super C00101> continuation) {
+        C00121(Continuation<? super C00121> continuation) {
             super(continuation);
         }
 
@@ -184,8 +155,8 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$load$1 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {150, 157, 203, 206, 213}, m = "load", n = {"url", "url", "id", "cookies", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "type", "runTime"}, nl = {151, 162, 206, 211, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
-    static final class C00121 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {118, 125, 171, 174, 181}, m = "load", n = {"url", "url", "id", "cookies", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "type", "runTime"}, nl = {119, 130, 174, 179, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
+    static final class C00141 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -202,7 +173,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00121(Continuation<? super C00121> continuation) {
+        C00141(Continuation<? super C00141> continuation) {
             super(continuation);
         }
 
@@ -217,8 +188,8 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$loadLinks$1 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5}, l = {286, 288, 289, 295, 296, 305}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting"}, nl = {287, 289, 292, 296, 299, 304}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
-    static final class C00151 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5}, l = {235, 237, 238, 244, 245, 254}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting"}, nl = {236, 238, 241, 245, 248, 253}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
+    static final class C00171 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -231,7 +202,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00151(Continuation<? super C00151> continuation) {
+        C00171(Continuation<? super C00171> continuation) {
             super(continuation);
         }
 
@@ -246,15 +217,15 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$search$1 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 1, 1, 1}, l = {131, 138}, m = "search", n = {"query", "query", "cookies", "url"}, nl = {133, 581}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
-    static final class C00171 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider", f = "HotStarMirrorProvider.kt", i = {0, 1, 1, 1}, l = {99, 106}, m = "search", n = {"query", "query", "cookies", "url"}, nl = {101, 288}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
+    static final class C00191 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C00171(Continuation<? super C00171> continuation) {
+        C00191(Continuation<? super C00191> continuation) {
             super(continuation);
         }
 
@@ -267,65 +238,13 @@ public final class HotStarMirrorProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/horis/cncverse/HotStarMirrorProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "CNC Verse_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nHotStarMirrorProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HotStarMirrorProvider.kt\ncom/horis/cncverse/HotStarMirrorProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,580:1\n1#2:581\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/horis/cncverse/HotStarMirrorProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "CNC Verse_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                HotStarMirrorProvider.csGuardWasEverActive = true;
-            }
-            return HotStarMirrorProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.HotStarMirrorProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    HotStarMirrorProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -374,13 +293,13 @@ public final class HotStarMirrorProvider extends MainAPI {
         return this.hasMainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:31:0x015b A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:32:0x015c  */
-    /* JADX WARN: Code duplicated, block: B:36:0x018a A[LOOP:0: B:34:0x0184->B:36:0x018a, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:27:0x0147 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:28:0x0148  */
+    /* JADX WARN: Code duplicated, block: B:32:0x0176 A[LOOP:0: B:30:0x0170->B:32:0x0176, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Exception {
-        C00101 c00101;
+        C00121 c00121;
         String str;
         int page2;
         MainPageRequest request2;
@@ -388,34 +307,29 @@ public final class HotStarMirrorProvider extends MainAPI {
         Object obj;
         MainPageRequest request3;
         Collection destination$iv$iv;
-        if (continuation instanceof C00101) {
-            c00101 = (C00101) continuation;
-            if ((c00101.label & Integer.MIN_VALUE) != 0) {
-                c00101.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00121) {
+            c00121 = (C00121) continuation;
+            if ((c00121.label & Integer.MIN_VALUE) != 0) {
+                c00121.label -= Integer.MIN_VALUE;
             } else {
-                c00101 = new C00101(continuation);
+                c00121 = new C00121(continuation);
             }
         } else {
-            c00101 = new C00101(continuation);
+            c00121 = new C00121(continuation);
         }
-        Object $result = c00101.result;
+        Object $result = c00121.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00101.label) {
+        switch (c00121.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 if (this.cookie_value.length() == 0) {
                     String mainUrl = getMainUrl();
-                    c00101.L$0 = SpillingKt.nullOutSpilledVariable(request);
-                    c00101.L$1 = this;
-                    c00101.I$0 = page;
-                    c00101.label = 1;
-                    Object objBypass = UtilsKt.bypass(mainUrl, c00101);
+                    c00121.L$0 = SpillingKt.nullOutSpilledVariable(request);
+                    c00121.L$1 = this;
+                    c00121.I$0 = page;
+                    c00121.label = 1;
+                    Object objBypass = UtilsKt.bypass(mainUrl, c00121);
                     if (objBypass == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -437,11 +351,11 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String str2 = getMainUrl() + "/mobile/home?app=1";
                 Map<String, String> map = this.headers;
                 String str3 = getMainUrl() + "/mobile/home?app=1";
-                c00101.L$0 = SpillingKt.nullOutSpilledVariable(request2);
-                c00101.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00101.I$0 = page2;
-                c00101.label = 2;
-                $result = Requests.get$default(app, str2, map, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00101, 4072, (Object) null);
+                c00121.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                c00121.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00121.I$0 = page2;
+                c00121.label = 2;
+                $result = Requests.get$default(app, str2, map, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00121, 4072, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -455,9 +369,9 @@ public final class HotStarMirrorProvider extends MainAPI {
                 List items = (List) destination$iv$iv;
                 return MainAPIKt.newHomePageResponse(items, Boxing.boxBoolean(false));
             case 1:
-                page2 = c00101.I$0;
-                HotStarMirrorProvider hotStarMirrorProvider2 = (HotStarMirrorProvider) c00101.L$1;
-                request3 = (MainPageRequest) c00101.L$0;
+                page2 = c00121.I$0;
+                HotStarMirrorProvider hotStarMirrorProvider2 = (HotStarMirrorProvider) c00121.L$1;
+                request3 = (MainPageRequest) c00121.L$0;
                 ResultKt.throwOnFailure($result);
                 hotStarMirrorProvider = hotStarMirrorProvider2;
                 obj = $result;
@@ -469,11 +383,11 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String str4 = getMainUrl() + "/mobile/home?app=1";
                 Map<String, String> map2 = this.headers;
                 String str5 = getMainUrl() + "/mobile/home?app=1";
-                c00101.L$0 = SpillingKt.nullOutSpilledVariable(request2);
-                c00101.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
-                c00101.I$0 = page2;
-                c00101.label = 2;
-                $result = Requests.get$default(app2, str4, map2, str5, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00101, 4072, (Object) null);
+                c00121.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                c00121.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
+                c00121.I$0 = page2;
+                c00121.label = 2;
+                $result = Requests.get$default(app2, str4, map2, str5, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00121, 4072, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -487,7 +401,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                 List items2 = (List) destination$iv$iv;
                 return MainAPIKt.newHomePageResponse(items2, Boxing.boxBoolean(false));
             case 2:
-                int i = c00101.I$0;
+                int i = c00121.I$0;
                 ResultKt.throwOnFailure($result);
                 Document document3 = ((NiceResponse) $result).getDocument();
                 Iterable $this$map$iv3 = document3.select(".tray-container, #top10");
@@ -524,7 +438,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         if (elementSelectFirst == null || (id = elementSelectFirst.attr("data-post")) == null) {
             id = $this$toSearchResult.attr("data-post");
         }
-        return MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(id)), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda13
+        return MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(id)), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda5
             public final Object invoke(Object obj) {
                 return HotStarMirrorProvider.toSearchResult$lambda$0(id, this, (AnimeSearchResponse) obj);
             }
@@ -538,13 +452,13 @@ public final class HotStarMirrorProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code duplicated, block: B:31:0x0155 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:32:0x0156  */
-    /* JADX WARN: Code duplicated, block: B:36:0x0194 A[LOOP:0: B:34:0x018e->B:36:0x0194, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:27:0x0141 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:28:0x0142  */
+    /* JADX WARN: Code duplicated, block: B:32:0x0180 A[LOOP:0: B:30:0x017a->B:32:0x0180, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) throws Exception {
-        C00171 c00171;
+        C00191 c00191;
         String str;
         String query2;
         HotStarMirrorProvider hotStarMirrorProvider;
@@ -553,32 +467,28 @@ public final class HotStarMirrorProvider extends MainAPI {
         HotStarMirrorProvider hotStarMirrorProvider2;
         SearchData data;
         Collection destination$iv$iv;
-        if (continuation instanceof C00171) {
-            c00171 = (C00171) continuation;
-            if ((c00171.label & Integer.MIN_VALUE) != 0) {
-                c00171.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00191) {
+            c00191 = (C00191) continuation;
+            if ((c00191.label & Integer.MIN_VALUE) != 0) {
+                c00191.label -= Integer.MIN_VALUE;
             } else {
-                c00171 = new C00171(continuation);
+                c00191 = new C00191(continuation);
             }
         } else {
-            c00171 = new C00171(continuation);
+            c00191 = new C00191(continuation);
         }
-        Object $result = c00171.result;
+        Object $result = c00191.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00171.label) {
+        switch (c00191.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 if (this.cookie_value.length() == 0) {
                     String mainUrl = getMainUrl();
                     query3 = query;
-                    c00171.L$0 = query3;
-                    c00171.L$1 = this;
-                    c00171.label = 1;
-                    Object objBypass = UtilsKt.bypass(mainUrl, c00171);
+                    c00191.L$0 = query3;
+                    c00191.L$1 = this;
+                    c00191.label = 1;
+                    Object objBypass = UtilsKt.bypass(mainUrl, c00191);
                     if (objBypass == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -598,11 +508,11 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String url = getMainUrl() + "/mobile/hs/search.php?s=" + query2 + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Requests app = UtilsKt.getApp();
                 String str3 = getMainUrl() + "/home";
-                c00171.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                c00171.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00171.L$2 = SpillingKt.nullOutSpilledVariable(url);
-                c00171.label = 2;
-                $result = Requests.get$default(app, url, (Map) null, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00171, 4074, (Object) null);
+                c00191.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00191.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00191.L$2 = SpillingKt.nullOutSpilledVariable(url);
+                c00191.label = 2;
+                $result = Requests.get$default(app, url, (Map) null, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00191, 4074, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -614,7 +524,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                 destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     final SearchResult it = (SearchResult) item$iv$iv;
-                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it.getT(), AppUtils.INSTANCE.toJson(new Id(it.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda7
+                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it.getT(), AppUtils.INSTANCE.toJson(new Id(it.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda3
                         public final Object invoke(Object obj2) {
                             return HotStarMirrorProvider.search$lambda$0$0(it, this, (AnimeSearchResponse) obj2);
                         }
@@ -623,8 +533,8 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 return (List) destination$iv$iv;
             case 1:
-                hotStarMirrorProvider2 = (HotStarMirrorProvider) c00171.L$1;
-                query3 = (String) c00171.L$0;
+                hotStarMirrorProvider2 = (HotStarMirrorProvider) c00191.L$1;
+                query3 = (String) c00191.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 str = (String) obj;
@@ -636,11 +546,11 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String url2 = getMainUrl() + "/mobile/hs/search.php?s=" + query2 + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Requests app2 = UtilsKt.getApp();
                 String str5 = getMainUrl() + "/home";
-                c00171.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                c00171.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
-                c00171.L$2 = SpillingKt.nullOutSpilledVariable(url2);
-                c00171.label = 2;
-                $result = Requests.get$default(app2, url2, (Map) null, str5, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00171, 4074, (Object) null);
+                c00191.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00191.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
+                c00191.L$2 = SpillingKt.nullOutSpilledVariable(url2);
+                c00191.label = 2;
+                $result = Requests.get$default(app2, url2, (Map) null, str5, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00191, 4074, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -652,7 +562,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                 destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv2, 10));
                 while (r11.hasNext()) {
                     final SearchResult it2 = (SearchResult) item$iv$iv;
-                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it2.getT(), AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda7
+                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it2.getT(), AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda3
                         public final Object invoke(Object obj2) {
                             return HotStarMirrorProvider.search$lambda$0$0(it2, this, (AnimeSearchResponse) obj2);
                         }
@@ -670,7 +580,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                 destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv3, 10));
                 while (r11.hasNext()) {
                     final SearchResult it3 = (SearchResult) item$iv$iv;
-                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it3.getT(), AppUtils.INSTANCE.toJson(new Id(it3.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda7
+                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it3.getT(), AppUtils.INSTANCE.toJson(new Id(it3.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda3
                         public final Object invoke(Object obj2) {
                             return HotStarMirrorProvider.search$lambda$0$0(it3, this, (AnimeSearchResponse) obj2);
                         }
@@ -717,7 +627,7 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:99:0x053e  */
     @Nullable
     public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) throws Exception {
-        C00121 c00121;
+        C00141 c00141;
         String url2;
         String str;
         HotStarMirrorProvider hotStarMirrorProvider;
@@ -725,7 +635,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         String id;
         Map cookies;
         Object obj2;
-        C00121 c00122;
+        C00141 c00142;
         String url3;
         String url4;
         final PostData data;
@@ -801,29 +711,29 @@ public final class HotStarMirrorProvider extends MainAPI {
         List castList3;
         String rating3;
         TvType tvType;
-        if (continuation instanceof C00121) {
-            c00121 = (C00121) continuation;
-            if ((c00121.label & Integer.MIN_VALUE) != 0) {
-                c00121.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00141) {
+            c00141 = (C00141) continuation;
+            if ((c00141.label & Integer.MIN_VALUE) != 0) {
+                c00141.label -= Integer.MIN_VALUE;
             } else {
-                c00121 = new C00121(continuation);
+                c00141 = new C00141(continuation);
             }
         } else {
-            c00121 = new C00121(continuation);
+            c00141 = new C00141(continuation);
         }
-        C00121 c00123 = c00121;
-        Object $result = c00123.result;
+        C00141 c00143 = c00141;
+        Object $result = c00143.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00123.label) {
+        switch (c00143.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (this.cookie_value.length() == 0) {
                     String mainUrl = getMainUrl();
                     url2 = url;
-                    c00123.L$0 = url2;
-                    c00123.L$1 = this;
-                    c00123.label = 1;
-                    Object objBypass = UtilsKt.bypass(mainUrl, c00123);
+                    c00143.L$0 = url2;
+                    c00143.L$1 = this;
+                    c00143.label = 1;
+                    Object objBypass = UtilsKt.bypass(mainUrl, c00143);
                     if (objBypass == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -843,12 +753,12 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String str2 = getMainUrl() + "/mobile/hs/post.php?id=" + id + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Map<String, String> map = this.headers;
                 String str3 = getMainUrl() + "/home";
-                c00123.L$0 = url2;
-                c00123.L$1 = id;
-                c00123.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00123.label = 2;
-                obj2 = Requests.get$default(app, str2, map, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00123, 4072, (Object) null);
-                c00122 = c00123;
+                c00143.L$0 = url2;
+                c00143.L$1 = id;
+                c00143.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00143.label = 2;
+                obj2 = Requests.get$default(app, str2, map, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00143, 4072, (Object) null);
+                c00142 = c00143;
                 if (obj2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -922,7 +832,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     for (Object item$iv$iv4 : $this$mapTo$iv$iv2) {
                         Iterable $this$map$iv5 = $this$map$iv2;
                         final Suggest it2 = (Suggest) item$iv$iv4;
-                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
+                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda0
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$4$0(it2, this, (AnimeSearchResponse) obj4);
                             }
@@ -942,7 +852,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 suggest2 = arrayList2;
                 if (CollectionsKt.first(data.getEpisodes()) == null) {
-                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda3
+                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda1
                         public final Object invoke(Object obj4) {
                             return HotStarMirrorProvider.load$lambda$5(data, (Episode) obj4);
                         }
@@ -950,7 +860,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     runTime3 = runTime;
                     id4 = url3;
                     cast5 = suggest2;
-                    c00122 = c00122;
+                    c00142 = c00142;
                     data3 = data;
                     genre4 = genre2;
                     obj3 = obj3;
@@ -966,7 +876,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     for (it = $this$mapTo$iv.iterator(); it.hasNext(); it = it) {
                         Object item$iv = it.next();
                         final com.horis.cncverse.entities.Episode it3 = (com.horis.cncverse.entities.Episode) item$iv;
-                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it3.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda4
+                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it3.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$6$0(it3, (Episode) obj4);
                             }
@@ -978,24 +888,24 @@ public final class HotStarMirrorProvider extends MainAPI {
                     if (nextPageShow == null && nextPageShow.intValue() == 1) {
                         String nextPageSeason = data.getNextPageSeason();
                         Intrinsics.checkNotNull(nextPageSeason);
-                        c00122.L$0 = url4;
-                        c00122.L$1 = url3;
-                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                        c00122.L$3 = data;
-                        c00122.L$4 = episodes;
-                        c00122.L$5 = title;
-                        c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                        c00122.L$7 = cast2;
-                        c00122.L$8 = genre2;
-                        c00122.L$9 = rating;
-                        c00122.L$10 = suggest2;
-                        c00122.L$11 = episodes;
-                        c00122.I$0 = runTime;
-                        c00122.label = 3;
-                        C00121 c00124 = c00122;
+                        c00142.L$0 = url4;
+                        c00142.L$1 = url3;
+                        c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                        c00142.L$3 = data;
+                        c00142.L$4 = episodes;
+                        c00142.L$5 = title;
+                        c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                        c00142.L$7 = cast2;
+                        c00142.L$8 = genre2;
+                        c00142.L$9 = rating;
+                        c00142.L$10 = suggest2;
+                        c00142.L$11 = episodes;
+                        c00142.I$0 = runTime;
+                        c00142.label = 3;
+                        C00141 c00144 = c00142;
                         url5 = url4;
-                        episodes2 = getEpisodes(title, url5, nextPageSeason, 2, c00124);
-                        c00122 = c00124;
+                        episodes2 = getEpisodes(title, url5, nextPageSeason, 2, c00144);
+                        c00142 = c00144;
                         obj3 = obj3;
                         if (episodes2 == obj3) {
                             return obj3;
@@ -1037,22 +947,22 @@ public final class HotStarMirrorProvider extends MainAPI {
                             id4 = id3;
                             id5 = rating;
                         } else {
-                            C00134 c00134 = new C00134(episodes4, this, title3, url7, null);
-                            c00122.L$0 = url7;
-                            c00122.L$1 = id3;
-                            c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                            c00122.L$3 = data;
-                            c00122.L$4 = episodes4;
-                            c00122.L$5 = title3;
-                            c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                            c00122.L$7 = cast4;
-                            c00122.L$8 = genre2;
-                            c00122.L$9 = rating;
-                            c00122.L$10 = suggest2;
-                            c00122.L$11 = null;
-                            c00122.I$0 = runTime;
-                            c00122.label = 4;
-                            objAmap = ParCollectionsKt.amap(listDropLast, c00134, c00122);
+                            C00154 c00154 = new C00154(episodes4, this, title3, url7, null);
+                            c00142.L$0 = url7;
+                            c00142.L$1 = id3;
+                            c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                            c00142.L$3 = data;
+                            c00142.L$4 = episodes4;
+                            c00142.L$5 = title3;
+                            c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                            c00142.L$7 = cast4;
+                            c00142.L$8 = genre2;
+                            c00142.L$9 = rating;
+                            c00142.L$10 = suggest2;
+                            c00142.L$11 = null;
+                            c00142.I$0 = runTime;
+                            c00142.label = 4;
+                            objAmap = ParCollectionsKt.amap(listDropLast, c00154, c00142);
                             if (objAmap == obj3) {
                                 return obj3;
                             }
@@ -1108,29 +1018,29 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 TvType type = tvType;
                 String rating4 = id5;
-                C00145 c00145 = new C00145(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(title4);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(id4);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(title5);
-                c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00122.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00122.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00122.L$9 = SpillingKt.nullOutSpilledVariable(rating4);
-                c00122.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00122.L$11 = SpillingKt.nullOutSpilledVariable(type);
-                c00122.I$0 = runTime3;
-                c00122.label = 5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type, genre5, c00145, c00122);
+                C00165 c00165 = new C00165(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(title4);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(id4);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(title5);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(rating4);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(type);
+                c00142.I$0 = runTime3;
+                c00142.label = 5;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type, genre5, c00165, c00142);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 1:
-                hotStarMirrorProvider = (HotStarMirrorProvider) c00123.L$1;
-                url2 = (String) c00123.L$0;
+                hotStarMirrorProvider = (HotStarMirrorProvider) c00143.L$1;
+                url2 = (String) c00143.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 str = (String) obj;
@@ -1142,12 +1052,12 @@ public final class HotStarMirrorProvider extends MainAPI {
                 String str7 = getMainUrl() + "/mobile/hs/post.php?id=" + id + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Map<String, String> map3 = this.headers;
                 String str8 = getMainUrl() + "/home";
-                c00123.L$0 = url2;
-                c00123.L$1 = id;
-                c00123.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00123.label = 2;
-                obj2 = Requests.get$default(app2, str7, map3, str8, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00123, 4072, (Object) null);
-                c00122 = c00123;
+                c00143.L$0 = url2;
+                c00143.L$1 = id;
+                c00143.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00143.label = 2;
+                obj2 = Requests.get$default(app2, str7, map3, str8, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00143, 4072, (Object) null);
+                c00142 = c00143;
                 if (obj2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -1201,7 +1111,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     while (r18.hasNext()) {
                         Iterable $this$map$iv6 = $this$map$iv2;
                         final Suggest it4 = (Suggest) item$iv$iv4;
-                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it4.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
+                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it4.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda0
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$4$0(it4, this, (AnimeSearchResponse) obj4);
                             }
@@ -1227,7 +1137,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     while (it.hasNext()) {
                         Object item$iv2 = it.next();
                         final com.horis.cncverse.entities.Episode it5 = (com.horis.cncverse.entities.Episode) item$iv2;
-                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it5.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda4
+                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it5.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$6$0(it5, (Episode) obj4);
                             }
@@ -1239,24 +1149,24 @@ public final class HotStarMirrorProvider extends MainAPI {
                     if (nextPageShow == null) {
                         String nextPageSeason2 = data.getNextPageSeason();
                         Intrinsics.checkNotNull(nextPageSeason2);
-                        c00122.L$0 = url4;
-                        c00122.L$1 = url3;
-                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                        c00122.L$3 = data;
-                        c00122.L$4 = episodes;
-                        c00122.L$5 = title;
-                        c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                        c00122.L$7 = cast2;
-                        c00122.L$8 = genre2;
-                        c00122.L$9 = rating;
-                        c00122.L$10 = suggest2;
-                        c00122.L$11 = episodes;
-                        c00122.I$0 = runTime;
-                        c00122.label = 3;
-                        C00121 c00125 = c00122;
+                        c00142.L$0 = url4;
+                        c00142.L$1 = url3;
+                        c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                        c00142.L$3 = data;
+                        c00142.L$4 = episodes;
+                        c00142.L$5 = title;
+                        c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                        c00142.L$7 = cast2;
+                        c00142.L$8 = genre2;
+                        c00142.L$9 = rating;
+                        c00142.L$10 = suggest2;
+                        c00142.L$11 = episodes;
+                        c00142.I$0 = runTime;
+                        c00142.label = 3;
+                        C00141 c00145 = c00142;
                         url5 = url4;
-                        episodes2 = getEpisodes(title, url5, nextPageSeason2, 2, c00125);
-                        c00122 = c00125;
+                        episodes2 = getEpisodes(title, url5, nextPageSeason2, 2, c00145);
+                        c00142 = c00145;
                         obj3 = obj3;
                         if (episodes2 == obj3) {
                             return obj3;
@@ -1321,7 +1231,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     id5 = rating;
                     break;
                 } else {
-                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda3
+                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda1
                         public final Object invoke(Object obj4) {
                             return HotStarMirrorProvider.load$lambda$5(data, (Episode) obj4);
                         }
@@ -1329,7 +1239,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     runTime3 = runTime;
                     id4 = url3;
                     cast5 = suggest2;
-                    c00122 = c00122;
+                    c00142 = c00142;
                     data3 = data;
                     genre4 = genre2;
                     obj3 = obj3;
@@ -1346,34 +1256,34 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 TvType type2 = tvType;
                 String rating5 = id5;
-                C00145 c00146 = new C00145(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(title4);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(id4);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(title5);
-                c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00122.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00122.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00122.L$9 = SpillingKt.nullOutSpilledVariable(rating5);
-                c00122.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00122.L$11 = SpillingKt.nullOutSpilledVariable(type2);
-                c00122.I$0 = runTime3;
-                c00122.label = 5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type2, genre5, c00146, c00122);
+                C00165 c00166 = new C00165(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(title4);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(id4);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(title5);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(rating5);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(type2);
+                c00142.I$0 = runTime3;
+                c00142.label = 5;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type2, genre5, c00166, c00142);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 2:
-                Map cookies4 = (Map) c00123.L$2;
-                url3 = (String) c00123.L$1;
-                String url8 = (String) c00123.L$0;
+                Map cookies4 = (Map) c00143.L$2;
+                url3 = (String) c00143.L$1;
+                String url8 = (String) c00143.L$0;
                 ResultKt.throwOnFailure($result);
                 cookies = cookies4;
                 url4 = url8;
-                c00122 = c00123;
+                c00142 = c00143;
                 obj2 = $result;
                 NiceResponse this_$iv3 = (NiceResponse) obj2;
                 ResponseParser parser3 = this_$iv3.getParser();
@@ -1422,7 +1332,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     while (r18.hasNext()) {
                         Iterable $this$map$iv7 = $this$map$iv2;
                         final Suggest it6 = (Suggest) item$iv$iv4;
-                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it6.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
+                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it6.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda0
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$4$0(it6, this, (AnimeSearchResponse) obj4);
                             }
@@ -1448,7 +1358,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     while (it.hasNext()) {
                         Object item$iv3 = it.next();
                         final com.horis.cncverse.entities.Episode it7 = (com.horis.cncverse.entities.Episode) item$iv3;
-                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it7.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda4
+                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it7.getId()), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda2
                             public final Object invoke(Object obj4) {
                                 return HotStarMirrorProvider.load$lambda$6$0(it7, (Episode) obj4);
                             }
@@ -1460,24 +1370,24 @@ public final class HotStarMirrorProvider extends MainAPI {
                     if (nextPageShow == null) {
                         String nextPageSeason3 = data.getNextPageSeason();
                         Intrinsics.checkNotNull(nextPageSeason3);
-                        c00122.L$0 = url4;
-                        c00122.L$1 = url3;
-                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                        c00122.L$3 = data;
-                        c00122.L$4 = episodes;
-                        c00122.L$5 = title;
-                        c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                        c00122.L$7 = cast2;
-                        c00122.L$8 = genre2;
-                        c00122.L$9 = rating;
-                        c00122.L$10 = suggest2;
-                        c00122.L$11 = episodes;
-                        c00122.I$0 = runTime;
-                        c00122.label = 3;
-                        C00121 c00126 = c00122;
+                        c00142.L$0 = url4;
+                        c00142.L$1 = url3;
+                        c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                        c00142.L$3 = data;
+                        c00142.L$4 = episodes;
+                        c00142.L$5 = title;
+                        c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                        c00142.L$7 = cast2;
+                        c00142.L$8 = genre2;
+                        c00142.L$9 = rating;
+                        c00142.L$10 = suggest2;
+                        c00142.L$11 = episodes;
+                        c00142.I$0 = runTime;
+                        c00142.label = 3;
+                        C00141 c00146 = c00142;
                         url5 = url4;
-                        episodes2 = getEpisodes(title, url5, nextPageSeason3, 2, c00126);
-                        c00122 = c00126;
+                        episodes2 = getEpisodes(title, url5, nextPageSeason3, 2, c00146);
+                        c00142 = c00146;
                         obj3 = obj3;
                         if (episodes2 == obj3) {
                             return obj3;
@@ -1542,7 +1452,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     id5 = rating;
                     break;
                 } else {
-                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda3
+                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda1
                         public final Object invoke(Object obj4) {
                             return HotStarMirrorProvider.load$lambda$5(data, (Episode) obj4);
                         }
@@ -1550,7 +1460,7 @@ public final class HotStarMirrorProvider extends MainAPI {
                     runTime3 = runTime;
                     id4 = url3;
                     cast5 = suggest2;
-                    c00122 = c00122;
+                    c00142 = c00142;
                     data3 = data;
                     genre4 = genre2;
                     obj3 = obj3;
@@ -1567,43 +1477,43 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 TvType type3 = tvType;
                 String rating6 = id5;
-                C00145 c00147 = new C00145(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(title4);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(id4);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(title5);
-                c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00122.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00122.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00122.L$9 = SpillingKt.nullOutSpilledVariable(rating6);
-                c00122.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00122.L$11 = SpillingKt.nullOutSpilledVariable(type3);
-                c00122.I$0 = runTime3;
-                c00122.label = 5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type3, genre5, c00147, c00122);
+                C00165 c00167 = new C00165(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(title4);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(id4);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(title5);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(rating6);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(type3);
+                c00142.I$0 = runTime3;
+                c00142.label = 5;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type3, genre5, c00167, c00142);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 3:
-                int runTime5 = c00123.I$0;
-                arrayList3 = (ArrayList) c00123.L$11;
-                List suggest4 = (List) c00123.L$10;
-                rating2 = (String) c00123.L$9;
-                genre3 = (List) c00123.L$8;
-                cast3 = (List) c00123.L$7;
-                List castList4 = (List) c00123.L$6;
-                title2 = (String) c00123.L$5;
-                episodes3 = (ArrayList) c00123.L$4;
-                data2 = (PostData) c00123.L$3;
-                cookies2 = (Map) c00123.L$2;
+                int runTime5 = c00143.I$0;
+                arrayList3 = (ArrayList) c00143.L$11;
+                List suggest4 = (List) c00143.L$10;
+                rating2 = (String) c00143.L$9;
+                genre3 = (List) c00143.L$8;
+                cast3 = (List) c00143.L$7;
+                List castList4 = (List) c00143.L$6;
+                title2 = (String) c00143.L$5;
+                episodes3 = (ArrayList) c00143.L$4;
+                data2 = (PostData) c00143.L$3;
+                cookies2 = (Map) c00143.L$2;
                 runTime2 = runTime5;
-                id2 = (String) c00123.L$1;
-                url6 = (String) c00123.L$0;
+                id2 = (String) c00143.L$1;
+                url6 = (String) c00143.L$0;
                 ResultKt.throwOnFailure($result);
-                c00122 = c00123;
+                c00142 = c00143;
                 castList2 = castList4;
                 obj3 = coroutine_suspended;
                 suggest2 = suggest4;
@@ -1641,42 +1551,42 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 TvType type4 = tvType;
                 String rating7 = id5;
-                C00145 c00148 = new C00145(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(title4);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(id4);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(title5);
-                c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00122.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00122.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00122.L$9 = SpillingKt.nullOutSpilledVariable(rating7);
-                c00122.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00122.L$11 = SpillingKt.nullOutSpilledVariable(type4);
-                c00122.I$0 = runTime3;
-                c00122.label = 5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type4, genre5, c00148, c00122);
+                C00165 c00168 = new C00165(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(title4);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(id4);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(title5);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(rating7);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(type4);
+                c00142.I$0 = runTime3;
+                c00142.label = 5;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type4, genre5, c00168, c00142);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 4:
-                int runTime6 = c00123.I$0;
-                suggest3 = (List) c00123.L$10;
-                title7 = (String) c00123.L$9;
-                List genre6 = (List) c00123.L$8;
-                cast4 = (List) c00123.L$7;
-                castList3 = (List) c00123.L$6;
-                title6 = (String) c00123.L$5;
-                episodes5 = (ArrayList) c00123.L$4;
-                PostData data5 = (PostData) c00123.L$3;
-                Map cookies5 = (Map) c00123.L$2;
-                rating3 = (String) c00123.L$1;
+                int runTime6 = c00143.I$0;
+                suggest3 = (List) c00143.L$10;
+                title7 = (String) c00143.L$9;
+                List genre6 = (List) c00143.L$8;
+                cast4 = (List) c00143.L$7;
+                castList3 = (List) c00143.L$6;
+                title6 = (String) c00143.L$5;
+                episodes5 = (ArrayList) c00143.L$4;
+                PostData data5 = (PostData) c00143.L$3;
+                Map cookies5 = (Map) c00143.L$2;
+                rating3 = (String) c00143.L$1;
                 runTime4 = runTime6;
-                String url9 = (String) c00123.L$0;
+                String url9 = (String) c00143.L$0;
                 ResultKt.throwOnFailure($result);
-                c00122 = c00123;
+                c00142 = c00143;
                 data4 = data5;
                 cookies3 = cookies5;
                 genre2 = genre6;
@@ -1703,28 +1613,28 @@ public final class HotStarMirrorProvider extends MainAPI {
                 }
                 TvType type5 = tvType;
                 String rating8 = id5;
-                C00145 c00149 = new C00145(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(title4);
-                c00122.L$1 = SpillingKt.nullOutSpilledVariable(id4);
-                c00122.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(title5);
-                c00122.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00122.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00122.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00122.L$9 = SpillingKt.nullOutSpilledVariable(rating8);
-                c00122.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00122.L$11 = SpillingKt.nullOutSpilledVariable(type5);
-                c00122.I$0 = runTime3;
-                c00122.label = 5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type5, genre5, c00149, c00122);
+                C00165 c00169 = new C00165(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
+                c00142.L$0 = SpillingKt.nullOutSpilledVariable(title4);
+                c00142.L$1 = SpillingKt.nullOutSpilledVariable(id4);
+                c00142.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00142.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00142.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00142.L$5 = SpillingKt.nullOutSpilledVariable(title5);
+                c00142.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00142.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00142.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00142.L$9 = SpillingKt.nullOutSpilledVariable(rating8);
+                c00142.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00142.L$11 = SpillingKt.nullOutSpilledVariable(type5);
+                c00142.I$0 = runTime3;
+                c00142.label = 5;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type5, genre5, c00169, c00142);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 5:
-                int i5 = c00123.I$0;
+                int i5 = c00143.I$0;
                 ResultKt.throwOnFailure($result);
                 return $result;
             default:
@@ -1758,8 +1668,8 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$load$4 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", "Lcom/horis/cncverse/entities/Season;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider$load$4", f = "HotStarMirrorProvider.kt", i = {0}, l = {207}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
-    static final class C00134 extends SuspendLambda implements Function2<Season, Continuation<? super Boolean>, Object> {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider$load$4", f = "HotStarMirrorProvider.kt", i = {0}, l = {175}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
+    static final class C00154 extends SuspendLambda implements Function2<Season, Continuation<? super Boolean>, Object> {
         final /* synthetic */ ArrayList<Episode> $episodes;
         final /* synthetic */ String $title;
         final /* synthetic */ String $url;
@@ -1769,7 +1679,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         final /* synthetic */ HotStarMirrorProvider this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00134(ArrayList<Episode> arrayList, HotStarMirrorProvider hotStarMirrorProvider, String str, String str2, Continuation<? super C00134> continuation) {
+        C00154(ArrayList<Episode> arrayList, HotStarMirrorProvider hotStarMirrorProvider, String str, String str2, Continuation<? super C00154> continuation) {
             super(2, continuation);
             this.$episodes = arrayList;
             this.this$0 = hotStarMirrorProvider;
@@ -1778,9 +1688,9 @@ public final class HotStarMirrorProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00134 = new C00134(this.$episodes, this.this$0, this.$title, this.$url, continuation);
-            c00134.L$0 = obj;
-            return c00134;
+            Continuation<Unit> c00154 = new C00154(this.$episodes, this.this$0, this.$title, this.$url, continuation);
+            c00154.L$0 = obj;
+            return c00154;
         }
 
         public final Object invoke(Season season, Continuation<? super Boolean> continuation) {
@@ -1822,7 +1732,7 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider$load$5", f = "HotStarMirrorProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00145 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    static final class C00165 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<ActorData> $cast;
         final /* synthetic */ PostData $data;
         final /* synthetic */ List<String> $genre;
@@ -1835,7 +1745,7 @@ public final class HotStarMirrorProvider extends MainAPI {
         final /* synthetic */ HotStarMirrorProvider this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00145(String str, HotStarMirrorProvider hotStarMirrorProvider, PostData postData, List<String> list, List<ActorData> list2, String str2, int i, List<AnimeSearchResponse> list3, Continuation<? super C00145> continuation) {
+        C00165(String str, HotStarMirrorProvider hotStarMirrorProvider, PostData postData, List<String> list, List<ActorData> list2, String str2, int i, List<AnimeSearchResponse> list3, Continuation<? super C00165> continuation) {
             super(2, continuation);
             this.$id = str;
             this.this$0 = hotStarMirrorProvider;
@@ -1848,9 +1758,9 @@ public final class HotStarMirrorProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00145 = new C00145(this.$id, this.this$0, this.$data, this.$genre, this.$cast, this.$rating, this.$runTime, this.$suggest, continuation);
-            c00145.L$0 = obj;
-            return c00145;
+            Continuation<Unit> c00165 = new C00165(this.$id, this.this$0, this.$data, this.$genre, this.$cast, this.$rating, this.$runTime, this.$suggest, continuation);
+            c00165.L$0 = obj;
+            return c00165;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -1892,1029 +1802,8 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:17:0x014a -> B:18:0x0150). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.getLastInsn(BlockUtils.java:217)
-        	at jadx.core.dex.regions.conditions.IfCondition.fromIfBlock(IfCondition.java:65)
-        	at jadx.core.dex.regions.conditions.ConditionRegion.updateCondition(ConditionRegion.java:84)
-        	at jadx.core.dex.regions.loops.LoopRegion.<init>(LoopRegion.java:40)
-        	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.makeLoopRegion(LoopRegionMaker.java:206)
-        	at jadx.core.dex.visitors.regions.maker.LoopRegionMaker.process(LoopRegionMaker.java:80)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:92)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     public final java.lang.Object getEpisodes(java.lang.String r29, java.lang.String r30, java.lang.String r31, int r32, kotlin.coroutines.Continuation<? super java.util.List<com.lagradost.cloudstream3.Episode>> r33) {
         /*
@@ -2934,26 +1823,27 @@ public final class HotStarMirrorProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code duplicated, block: B:55:0x0232 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:56:0x0233  */
-    /* JADX WARN: Code duplicated, block: B:59:0x02d4 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:60:0x02d5  */
-    /* JADX WARN: Code duplicated, block: B:63:0x0310  */
-    /* JADX WARN: Code duplicated, block: B:65:0x0339 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:66:0x033a  */
-    /* JADX WARN: Code duplicated, block: B:69:0x03c8 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:70:0x03c9  */
-    /* JADX WARN: Code duplicated, block: B:72:0x03fb  */
-    /* JADX WARN: Code duplicated, block: B:75:0x040e  */
-    /* JADX WARN: Code duplicated, block: B:79:0x0417  */
+    /* JADX WARN: Code duplicated, block: B:24:0x01a8 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:25:0x01a9  */
+    /* JADX WARN: Code duplicated, block: B:28:0x0248 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:29:0x0249  */
+    /* JADX WARN: Code duplicated, block: B:32:0x0284  */
+    /* JADX WARN: Code duplicated, block: B:34:0x02af A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:35:0x02b0  */
+    /* JADX WARN: Code duplicated, block: B:38:0x0341 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:39:0x0342  */
+    /* JADX WARN: Code duplicated, block: B:41:0x0372  */
+    /* JADX WARN: Code duplicated, block: B:44:0x0386  */
+    /* JADX WARN: Code duplicated, block: B:48:0x038f  */
+    /* JADX WARN: Code duplicated, block: B:50:0x0392  */
+    /* JADX WARN: Code duplicated, block: B:52:0x0397  */
+    /* JADX WARN: Code duplicated, block: B:54:0x03f1 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:55:0x03f2  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:81:0x041a  */
-    /* JADX WARN: Code duplicated, block: B:83:0x041f  */
-    /* JADX WARN: Code duplicated, block: B:85:0x0479 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:86:0x047a  */
     @Nullable
-    public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) throws Exception {
-        C00151 c00151;
+    public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
+        C00171 c00171;
+        HotStarMirrorProvider hotStarMirrorProvider;
         String data2;
         Function1<? super ExtractorLink, Unit> function3;
         Object objResolveApiUrl;
@@ -2974,98 +1864,79 @@ public final class HotStarMirrorProvider extends MainAPI {
         Function1<? super ExtractorLink, Unit> function8;
         boolean isCasting4;
         String userToken;
-        boolean z;
-        String str;
-        String str2;
         Object obj;
         Object obj2;
+        String str;
+        String str2;
         String id3;
         Object obj3;
         Object obj4;
         Function1<? super SubtitleFile, Unit> function9;
-        String data4;
-        String id4;
-        Function1<? super ExtractorLink, Unit> function10;
+        String apiBase4;
         Ref.ObjectRef objectRef;
         Ref.ObjectRef response2;
+        String id4;
         boolean isCasting5;
-        String data5;
-        boolean z2;
+        Function1<? super ExtractorLink, Unit> function10;
+        String data4;
         boolean isCasting6;
-        String apiBase4;
+        String apiBase5;
         Function1<? super ExtractorLink, Unit> function11;
         Function1<? super SubtitleFile, Unit> function12;
-        String data6;
+        String data5;
+        String apiBase6;
         Ref.ObjectRef response3;
+        String str3;
         Object newTvUserToken;
-        String data7;
+        String data6;
         boolean isCasting7;
         Ref.ObjectRef response4;
+        String apiBase7;
         String id5;
-        String apiBase5;
         Function1<? super ExtractorLink, Unit> function13;
         Function1<? super SubtitleFile, Unit> function14;
         String userToken2;
         String id6;
-        String apiBase6;
+        String apiBase8;
         Function1<? super ExtractorLink, Unit> function15;
-        boolean isCasting8;
         Ref.ObjectRef response5;
+        boolean isCasting8;
         Object obj5;
+        String userToken3;
         Ref.ObjectRef objectRef2;
         Ref.ObjectRef response6;
-        String data8;
-        String userToken3;
-        String apiBase7;
         String id7;
         String video_link;
-        boolean z3;
+        boolean z;
         Object objNewExtractorLink;
         Function1<? super ExtractorLink, Unit> function16;
-        if (continuation instanceof C00151) {
-            c00151 = (C00151) continuation;
-            if ((c00151.label & Integer.MIN_VALUE) != 0) {
-                c00151.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00171) {
+            c00171 = (C00171) continuation;
+            if ((c00171.label & Integer.MIN_VALUE) != 0) {
+                c00171.label -= Integer.MIN_VALUE;
+                hotStarMirrorProvider = this;
             } else {
-                c00151 = new C00151(continuation);
+                hotStarMirrorProvider = this;
+                c00171 = hotStarMirrorProvider.new C00171(continuation);
             }
         } else {
-            c00151 = new C00151(continuation);
+            hotStarMirrorProvider = this;
+            c00171 = hotStarMirrorProvider.new C00171(continuation);
         }
-        C00151 c00152 = c00151;
-        Object $result = c00152.result;
+        C00171 c00172 = c00171;
+        Object $result = c00172.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00152.label) {
+        switch (c00172.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (!SubscriptionHelper.INSTANCE.isSubscribed(context)) {
-                    HotStarMirrorProvider $this$loadLinks_u24lambda_u240 = this;
-                    final Context _ctx = context;
-                    SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                    String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                    long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                    long _nowSec = System.currentTimeMillis() / 1000;
-                    boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                    if (!_isSubscribed) {
-                        if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda5
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    HotStarMirrorProvider.loadLinks$lambda$0$0(_ctx);
-                                }
-                            });
-                        }
-                        $this$loadLinks_u24lambda_u240.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                    }
-                }
                 data2 = data;
-                c00152.L$0 = data2;
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function1);
+                c00172.L$0 = data2;
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                 function3 = function2;
-                c00152.L$2 = function3;
-                c00152.Z$0 = isCasting;
-                c00152.label = 1;
-                objResolveApiUrl = UtilsKt.resolveApiUrl(c00152);
+                c00172.L$2 = function3;
+                c00172.Z$0 = isCasting;
+                c00172.label = 1;
+                objResolveApiUrl = UtilsKt.resolveApiUrl(c00172);
                 if (objResolveApiUrl == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -3074,15 +1945,15 @@ public final class HotStarMirrorProvider extends MainAPI {
                 apiBase = (String) objResolveApiUrl;
                 String text$iv = data2;
                 id = ((LoadData) UtilsKt.getJSONParser().parse(text$iv, Reflection.getOrCreateKotlinClass(LoadData.class))).getId();
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function4);
-                c00152.L$2 = function3;
-                c00152.L$3 = apiBase;
-                c00152.L$4 = id;
-                c00152.Z$0 = isCasting2;
-                c00152.label = 2;
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function4);
+                c00172.L$2 = function3;
+                c00172.L$3 = apiBase;
+                c00172.L$4 = id;
+                c00172.Z$0 = isCasting2;
+                c00172.label = 2;
                 function5 = function3;
-                newTvUserToken$default = UtilsKt.getNewTvUserToken$default(apiBase, "hs", false, c00152, 4, null);
+                newTvUserToken$default = UtilsKt.getNewTvUserToken$default(apiBase, "hs", false, c00172, 4, null);
                 if (newTvUserToken$default == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -3095,170 +1966,167 @@ public final class HotStarMirrorProvider extends MainAPI {
                 response = new Ref.ObjectRef();
                 data3 = data2;
                 Map<String, String> mapBuildNewTvHeaders = UtilsKt.buildNewTvHeaders("hs", MapsKt.mapOf(TuplesKt.to("Usertoken", userToken4)));
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                c00152.L$2 = function7;
-                c00152.L$3 = apiBase2;
-                c00152.L$4 = id2;
-                c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken4);
-                c00152.L$6 = response;
-                c00152.L$7 = response;
-                c00152.Z$0 = isCasting3;
-                c00152.label = 3;
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                c00172.L$2 = function7;
+                c00172.L$3 = apiBase2;
+                c00172.L$4 = id2;
+                c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken4);
+                c00172.L$6 = response;
+                c00172.L$7 = response;
+                c00172.Z$0 = isCasting3;
+                c00172.label = 3;
                 apiBase3 = apiBase2;
                 function8 = function7;
                 isCasting4 = isCasting3;
                 userToken = userToken4;
-                z = false;
+                obj = coroutine_suspended;
+                obj2 = "Usertoken";
                 str = "/newtv/player.php?id=";
                 str2 = "hs";
-                obj = "Usertoken";
-                obj2 = coroutine_suspended;
                 id3 = id2;
-                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00152, 4092, (Object) null);
-                c00152 = c00152;
-                if (obj3 == obj2) {
-                    return obj2;
+                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00172, 4092, (Object) null);
+                c00172 = c00172;
+                if (obj3 == obj) {
+                    return obj;
                 }
                 obj4 = obj3;
                 function9 = function6;
-                data4 = apiBase3;
-                id4 = id3;
-                function10 = function8;
+                apiBase4 = apiBase3;
                 objectRef = response;
                 response2 = objectRef;
+                id4 = id3;
                 isCasting5 = isCasting4;
-                data5 = data3;
+                function10 = function8;
+                data4 = data3;
                 NiceResponse this_$iv = (NiceResponse) obj4;
                 ResponseParser parser = this_$iv.getParser();
                 Intrinsics.checkNotNull(parser);
                 objectRef.element = parser.parse(this_$iv.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 if (Intrinsics.areEqual(((NewTvPlayerResponse) response2.element).getStatus(), "otp")) {
-                    c00152.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00152.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00152.L$2 = function10;
-                    c00152.L$3 = data4;
-                    c00152.L$4 = id4;
-                    c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                    c00152.L$6 = response2;
-                    c00152.L$7 = null;
-                    c00152.Z$0 = isCasting5;
-                    c00152.label = 4;
-                    z2 = true;
-                    newTvUserToken = UtilsKt.getNewTvUserToken(data4, str2, true, c00152);
-                    if (newTvUserToken == obj2) {
-                        return obj2;
+                    c00172.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00172.L$1 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00172.L$2 = function10;
+                    c00172.L$3 = apiBase4;
+                    c00172.L$4 = id4;
+                    c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                    c00172.L$6 = response2;
+                    c00172.L$7 = null;
+                    c00172.Z$0 = isCasting5;
+                    c00172.label = 4;
+                    str3 = str2;
+                    newTvUserToken = UtilsKt.getNewTvUserToken(apiBase4, str3, true, c00172);
+                    if (newTvUserToken == obj) {
+                        return obj;
                     }
-                    data7 = data5;
+                    data6 = data4;
                     isCasting7 = isCasting5;
                     response4 = response2;
-                    id5 = id4;
-                    apiBase5 = data4;
+                    apiBase7 = id4;
+                    id5 = apiBase4;
                     function13 = function10;
                     function14 = function9;
                     userToken2 = (String) newTvUserToken;
-                    Map<String, String> mapBuildNewTvHeaders2 = UtilsKt.buildNewTvHeaders(str2, MapsKt.mapOf(TuplesKt.to(obj, userToken2)));
-                    c00152.L$0 = SpillingKt.nullOutSpilledVariable(data7);
-                    c00152.L$1 = SpillingKt.nullOutSpilledVariable(function14);
-                    c00152.L$2 = function13;
-                    c00152.L$3 = apiBase5;
-                    c00152.L$4 = SpillingKt.nullOutSpilledVariable(id5);
-                    c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
-                    c00152.L$6 = response4;
-                    c00152.L$7 = response4;
-                    c00152.Z$0 = isCasting7;
-                    c00152.label = 5;
-                    C00151 c00153 = c00152;
-                    id6 = id5;
-                    apiBase6 = apiBase5;
+                    Map<String, String> mapBuildNewTvHeaders2 = UtilsKt.buildNewTvHeaders(str3, MapsKt.mapOf(TuplesKt.to(obj2, userToken2)));
+                    c00172.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00172.L$1 = SpillingKt.nullOutSpilledVariable(function14);
+                    c00172.L$2 = function13;
+                    c00172.L$3 = id5;
+                    c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase7);
+                    c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
+                    c00172.L$6 = response4;
+                    c00172.L$7 = response4;
+                    c00172.Z$0 = isCasting7;
+                    c00172.label = 5;
+                    C00171 c00173 = c00172;
+                    id6 = apiBase7;
+                    apiBase8 = id5;
                     function15 = function13;
-                    isCasting8 = isCasting7;
                     response5 = response4;
-                    obj5 = Requests.get$default(UtilsKt.getApp(), apiBase5 + str + id5, mapBuildNewTvHeaders2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00153, 4092, (Object) null);
-                    c00152 = c00153;
-                    if (obj5 == obj2) {
-                        return obj2;
+                    isCasting8 = isCasting7;
+                    obj5 = Requests.get$default(UtilsKt.getApp(), id5 + str + apiBase7, mapBuildNewTvHeaders2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00173, 4092, (Object) null);
+                    c00172 = c00173;
+                    if (obj5 == obj) {
+                        return obj;
                     }
+                    userToken3 = userToken2;
+                    function12 = function14;
+                    data5 = data6;
+                    apiBase5 = apiBase8;
+                    function11 = function15;
                     objectRef2 = response5;
                     response6 = objectRef2;
-                    function12 = function14;
-                    data8 = data7;
-                    function11 = function15;
-                    userToken3 = userToken2;
-                    apiBase7 = apiBase6;
                     id7 = id6;
                     NiceResponse this_$iv2 = (NiceResponse) obj5;
                     ResponseParser parser2 = this_$iv2.getParser();
                     Intrinsics.checkNotNull(parser2);
                     objectRef2.element = parser2.parse(this_$iv2.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                     response3 = response6;
-                    userToken = userToken3;
-                    data6 = data8;
+                    apiBase6 = id7;
                     isCasting6 = isCasting8;
-                    data4 = apiBase7;
-                    apiBase4 = id7;
+                    userToken = userToken3;
                 } else {
-                    z2 = true;
                     isCasting6 = isCasting5;
-                    apiBase4 = id4;
+                    apiBase5 = apiBase4;
                     function11 = function10;
                     function12 = function9;
-                    data6 = data5;
+                    data5 = data4;
+                    apiBase6 = id4;
                     response3 = response2;
                 }
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null || StringsKt.isBlank(video_link)) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = false;
+                    z = false;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name = getName();
-                String name2 = getName();
+                String name = hotStarMirrorProvider.getName();
+                String name2 = hotStarMirrorProvider.getName();
                 String video_link2 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType = ExtractorLinkType.M3U8;
-                C00163 c00163 = new C00163(response3, data4, null);
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00152.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00152.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00152.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00152.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00152.L$7 = function11;
-                c00152.Z$0 = isCasting6;
-                c00152.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, video_link2, extractorLinkType, c00163, c00152);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00182 c00182 = new C00182(response3, apiBase5, null);
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00172.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00172.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00172.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00172.L$7 = function11;
+                c00172.Z$0 = isCasting6;
+                c00172.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, video_link2, extractorLinkType, c00182, c00172);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 1:
-                boolean isCasting9 = c00152.Z$0;
-                function3 = (Function1) c00152.L$2;
-                Function1<? super SubtitleFile, Unit> function17 = (Function1) c00152.L$1;
-                String data9 = (String) c00152.L$0;
+                boolean isCasting9 = c00172.Z$0;
+                function3 = (Function1) c00172.L$2;
+                Function1<? super SubtitleFile, Unit> function17 = (Function1) c00172.L$1;
+                String data7 = (String) c00172.L$0;
                 ResultKt.throwOnFailure($result);
                 isCasting2 = isCasting9;
                 function4 = function17;
-                data2 = data9;
+                data2 = data7;
                 objResolveApiUrl = $result;
                 apiBase = (String) objResolveApiUrl;
                 String text$iv2 = data2;
                 id = ((LoadData) UtilsKt.getJSONParser().parse(text$iv2, Reflection.getOrCreateKotlinClass(LoadData.class))).getId();
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function4);
-                c00152.L$2 = function3;
-                c00152.L$3 = apiBase;
-                c00152.L$4 = id;
-                c00152.Z$0 = isCasting2;
-                c00152.label = 2;
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function4);
+                c00172.L$2 = function3;
+                c00172.L$3 = apiBase;
+                c00172.L$4 = id;
+                c00172.Z$0 = isCasting2;
+                c00172.label = 2;
                 function5 = function3;
-                newTvUserToken$default = UtilsKt.getNewTvUserToken$default(apiBase, "hs", false, c00152, 4, null);
+                newTvUserToken$default = UtilsKt.getNewTvUserToken$default(apiBase, "hs", false, c00172, 4, null);
                 if (newTvUserToken$default == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -3271,330 +2139,323 @@ public final class HotStarMirrorProvider extends MainAPI {
                 response = new Ref.ObjectRef();
                 data3 = data2;
                 Map<String, String> mapBuildNewTvHeaders3 = UtilsKt.buildNewTvHeaders("hs", MapsKt.mapOf(TuplesKt.to("Usertoken", userToken5)));
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                c00152.L$2 = function7;
-                c00152.L$3 = apiBase2;
-                c00152.L$4 = id2;
-                c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken5);
-                c00152.L$6 = response;
-                c00152.L$7 = response;
-                c00152.Z$0 = isCasting3;
-                c00152.label = 3;
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                c00172.L$2 = function7;
+                c00172.L$3 = apiBase2;
+                c00172.L$4 = id2;
+                c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken5);
+                c00172.L$6 = response;
+                c00172.L$7 = response;
+                c00172.Z$0 = isCasting3;
+                c00172.label = 3;
                 apiBase3 = apiBase2;
                 function8 = function7;
                 isCasting4 = isCasting3;
                 userToken = userToken5;
-                z = false;
+                obj = coroutine_suspended;
+                obj2 = "Usertoken";
                 str = "/newtv/player.php?id=";
                 str2 = "hs";
-                obj = "Usertoken";
-                obj2 = coroutine_suspended;
                 id3 = id2;
-                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00152, 4092, (Object) null);
-                c00152 = c00152;
-                if (obj3 == obj2) {
-                    return obj2;
+                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00172, 4092, (Object) null);
+                c00172 = c00172;
+                if (obj3 == obj) {
+                    return obj;
                 }
                 obj4 = obj3;
                 function9 = function6;
-                data4 = apiBase3;
-                id4 = id3;
-                function10 = function8;
+                apiBase4 = apiBase3;
                 objectRef = response;
                 response2 = objectRef;
+                id4 = id3;
                 isCasting5 = isCasting4;
-                data5 = data3;
+                function10 = function8;
+                data4 = data3;
                 NiceResponse this_$iv3 = (NiceResponse) obj4;
                 ResponseParser parser3 = this_$iv3.getParser();
                 Intrinsics.checkNotNull(parser3);
                 objectRef.element = parser3.parse(this_$iv3.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 if (Intrinsics.areEqual(((NewTvPlayerResponse) response2.element).getStatus(), "otp")) {
-                    c00152.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00152.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00152.L$2 = function10;
-                    c00152.L$3 = data4;
-                    c00152.L$4 = id4;
-                    c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                    c00152.L$6 = response2;
-                    c00152.L$7 = null;
-                    c00152.Z$0 = isCasting5;
-                    c00152.label = 4;
-                    z2 = true;
-                    newTvUserToken = UtilsKt.getNewTvUserToken(data4, str2, true, c00152);
-                    if (newTvUserToken == obj2) {
-                        return obj2;
+                    c00172.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00172.L$1 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00172.L$2 = function10;
+                    c00172.L$3 = apiBase4;
+                    c00172.L$4 = id4;
+                    c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                    c00172.L$6 = response2;
+                    c00172.L$7 = null;
+                    c00172.Z$0 = isCasting5;
+                    c00172.label = 4;
+                    str3 = str2;
+                    newTvUserToken = UtilsKt.getNewTvUserToken(apiBase4, str3, true, c00172);
+                    if (newTvUserToken == obj) {
+                        return obj;
                     }
-                    data7 = data5;
+                    data6 = data4;
                     isCasting7 = isCasting5;
                     response4 = response2;
-                    id5 = id4;
-                    apiBase5 = data4;
+                    apiBase7 = id4;
+                    id5 = apiBase4;
                     function13 = function10;
                     function14 = function9;
                     userToken2 = (String) newTvUserToken;
-                    Map<String, String> mapBuildNewTvHeaders4 = UtilsKt.buildNewTvHeaders(str2, MapsKt.mapOf(TuplesKt.to(obj, userToken2)));
-                    c00152.L$0 = SpillingKt.nullOutSpilledVariable(data7);
-                    c00152.L$1 = SpillingKt.nullOutSpilledVariable(function14);
-                    c00152.L$2 = function13;
-                    c00152.L$3 = apiBase5;
-                    c00152.L$4 = SpillingKt.nullOutSpilledVariable(id5);
-                    c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
-                    c00152.L$6 = response4;
-                    c00152.L$7 = response4;
-                    c00152.Z$0 = isCasting7;
-                    c00152.label = 5;
-                    C00151 c00154 = c00152;
-                    id6 = id5;
-                    apiBase6 = apiBase5;
+                    Map<String, String> mapBuildNewTvHeaders4 = UtilsKt.buildNewTvHeaders(str3, MapsKt.mapOf(TuplesKt.to(obj2, userToken2)));
+                    c00172.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00172.L$1 = SpillingKt.nullOutSpilledVariable(function14);
+                    c00172.L$2 = function13;
+                    c00172.L$3 = id5;
+                    c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase7);
+                    c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
+                    c00172.L$6 = response4;
+                    c00172.L$7 = response4;
+                    c00172.Z$0 = isCasting7;
+                    c00172.label = 5;
+                    C00171 c00174 = c00172;
+                    id6 = apiBase7;
+                    apiBase8 = id5;
                     function15 = function13;
-                    isCasting8 = isCasting7;
                     response5 = response4;
-                    obj5 = Requests.get$default(UtilsKt.getApp(), apiBase5 + str + id5, mapBuildNewTvHeaders4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00154, 4092, (Object) null);
-                    c00152 = c00154;
-                    if (obj5 == obj2) {
-                        return obj2;
+                    isCasting8 = isCasting7;
+                    obj5 = Requests.get$default(UtilsKt.getApp(), id5 + str + apiBase7, mapBuildNewTvHeaders4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00174, 4092, (Object) null);
+                    c00172 = c00174;
+                    if (obj5 == obj) {
+                        return obj;
                     }
+                    userToken3 = userToken2;
+                    function12 = function14;
+                    data5 = data6;
+                    apiBase5 = apiBase8;
+                    function11 = function15;
                     objectRef2 = response5;
                     response6 = objectRef2;
-                    function12 = function14;
-                    data8 = data7;
-                    function11 = function15;
-                    userToken3 = userToken2;
-                    apiBase7 = apiBase6;
                     id7 = id6;
                     NiceResponse this_$iv4 = (NiceResponse) obj5;
                     ResponseParser parser4 = this_$iv4.getParser();
                     Intrinsics.checkNotNull(parser4);
                     objectRef2.element = parser4.parse(this_$iv4.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                     response3 = response6;
-                    userToken = userToken3;
-                    data6 = data8;
+                    apiBase6 = id7;
                     isCasting6 = isCasting8;
-                    data4 = apiBase7;
-                    apiBase4 = id7;
+                    userToken = userToken3;
                 } else {
-                    z2 = true;
                     isCasting6 = isCasting5;
-                    apiBase4 = id4;
+                    apiBase5 = apiBase4;
                     function11 = function10;
                     function12 = function9;
-                    data6 = data5;
+                    data5 = data4;
+                    apiBase6 = id4;
                     response3 = response2;
                 }
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = true;
+                    z = true;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name3 = getName();
-                String name4 = getName();
+                String name3 = hotStarMirrorProvider.getName();
+                String name4 = hotStarMirrorProvider.getName();
                 String video_link3 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType2 = ExtractorLinkType.M3U8;
-                C00163 c00164 = new C00163(response3, data4, null);
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00152.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00152.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00152.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00152.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00152.L$7 = function11;
-                c00152.Z$0 = isCasting6;
-                c00152.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name3, name4, video_link3, extractorLinkType2, c00164, c00152);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00182 c00183 = new C00182(response3, apiBase5, null);
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00172.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00172.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00172.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00172.L$7 = function11;
+                c00172.Z$0 = isCasting6;
+                c00172.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name3, name4, video_link3, extractorLinkType2, c00183, c00172);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 2:
-                boolean isCasting10 = c00152.Z$0;
-                String id8 = (String) c00152.L$4;
-                String apiBase8 = (String) c00152.L$3;
-                Function1<? super ExtractorLink, Unit> function18 = (Function1) c00152.L$2;
-                Function1<? super SubtitleFile, Unit> function19 = (Function1) c00152.L$1;
-                String data10 = (String) c00152.L$0;
+                boolean isCasting10 = c00172.Z$0;
+                String id8 = (String) c00172.L$4;
+                String apiBase9 = (String) c00172.L$3;
+                Function1<? super ExtractorLink, Unit> function18 = (Function1) c00172.L$2;
+                Function1<? super SubtitleFile, Unit> function19 = (Function1) c00172.L$1;
+                String data8 = (String) c00172.L$0;
                 ResultKt.throwOnFailure($result);
                 isCasting3 = isCasting10;
-                data2 = data10;
+                data2 = data8;
                 function7 = function18;
                 id2 = id8;
                 function6 = function19;
-                apiBase2 = apiBase8;
+                apiBase2 = apiBase9;
                 newTvUserToken$default = $result;
                 String userToken6 = (String) newTvUserToken$default;
                 response = new Ref.ObjectRef();
                 data3 = data2;
                 Map<String, String> mapBuildNewTvHeaders5 = UtilsKt.buildNewTvHeaders("hs", MapsKt.mapOf(TuplesKt.to("Usertoken", userToken6)));
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                c00152.L$2 = function7;
-                c00152.L$3 = apiBase2;
-                c00152.L$4 = id2;
-                c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken6);
-                c00152.L$6 = response;
-                c00152.L$7 = response;
-                c00152.Z$0 = isCasting3;
-                c00152.label = 3;
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                c00172.L$2 = function7;
+                c00172.L$3 = apiBase2;
+                c00172.L$4 = id2;
+                c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken6);
+                c00172.L$6 = response;
+                c00172.L$7 = response;
+                c00172.Z$0 = isCasting3;
+                c00172.label = 3;
                 apiBase3 = apiBase2;
                 function8 = function7;
                 isCasting4 = isCasting3;
                 userToken = userToken6;
-                z = false;
+                obj = coroutine_suspended;
+                obj2 = "Usertoken";
                 str = "/newtv/player.php?id=";
                 str2 = "hs";
-                obj = "Usertoken";
-                obj2 = coroutine_suspended;
                 id3 = id2;
-                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00152, 4092, (Object) null);
-                c00152 = c00152;
-                if (obj3 == obj2) {
-                    return obj2;
+                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00172, 4092, (Object) null);
+                c00172 = c00172;
+                if (obj3 == obj) {
+                    return obj;
                 }
                 obj4 = obj3;
                 function9 = function6;
-                data4 = apiBase3;
-                id4 = id3;
-                function10 = function8;
+                apiBase4 = apiBase3;
                 objectRef = response;
                 response2 = objectRef;
+                id4 = id3;
                 isCasting5 = isCasting4;
-                data5 = data3;
+                function10 = function8;
+                data4 = data3;
                 NiceResponse this_$iv5 = (NiceResponse) obj4;
                 ResponseParser parser5 = this_$iv5.getParser();
                 Intrinsics.checkNotNull(parser5);
                 objectRef.element = parser5.parse(this_$iv5.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 if (Intrinsics.areEqual(((NewTvPlayerResponse) response2.element).getStatus(), "otp")) {
-                    c00152.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00152.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00152.L$2 = function10;
-                    c00152.L$3 = data4;
-                    c00152.L$4 = id4;
-                    c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                    c00152.L$6 = response2;
-                    c00152.L$7 = null;
-                    c00152.Z$0 = isCasting5;
-                    c00152.label = 4;
-                    z2 = true;
-                    newTvUserToken = UtilsKt.getNewTvUserToken(data4, str2, true, c00152);
-                    if (newTvUserToken == obj2) {
-                        return obj2;
+                    c00172.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00172.L$1 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00172.L$2 = function10;
+                    c00172.L$3 = apiBase4;
+                    c00172.L$4 = id4;
+                    c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                    c00172.L$6 = response2;
+                    c00172.L$7 = null;
+                    c00172.Z$0 = isCasting5;
+                    c00172.label = 4;
+                    str3 = str2;
+                    newTvUserToken = UtilsKt.getNewTvUserToken(apiBase4, str3, true, c00172);
+                    if (newTvUserToken == obj) {
+                        return obj;
                     }
-                    data7 = data5;
+                    data6 = data4;
                     isCasting7 = isCasting5;
                     response4 = response2;
-                    id5 = id4;
-                    apiBase5 = data4;
+                    apiBase7 = id4;
+                    id5 = apiBase4;
                     function13 = function10;
                     function14 = function9;
                     userToken2 = (String) newTvUserToken;
-                    Map<String, String> mapBuildNewTvHeaders6 = UtilsKt.buildNewTvHeaders(str2, MapsKt.mapOf(TuplesKt.to(obj, userToken2)));
-                    c00152.L$0 = SpillingKt.nullOutSpilledVariable(data7);
-                    c00152.L$1 = SpillingKt.nullOutSpilledVariable(function14);
-                    c00152.L$2 = function13;
-                    c00152.L$3 = apiBase5;
-                    c00152.L$4 = SpillingKt.nullOutSpilledVariable(id5);
-                    c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
-                    c00152.L$6 = response4;
-                    c00152.L$7 = response4;
-                    c00152.Z$0 = isCasting7;
-                    c00152.label = 5;
-                    C00151 c00155 = c00152;
-                    id6 = id5;
-                    apiBase6 = apiBase5;
+                    Map<String, String> mapBuildNewTvHeaders6 = UtilsKt.buildNewTvHeaders(str3, MapsKt.mapOf(TuplesKt.to(obj2, userToken2)));
+                    c00172.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00172.L$1 = SpillingKt.nullOutSpilledVariable(function14);
+                    c00172.L$2 = function13;
+                    c00172.L$3 = id5;
+                    c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase7);
+                    c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
+                    c00172.L$6 = response4;
+                    c00172.L$7 = response4;
+                    c00172.Z$0 = isCasting7;
+                    c00172.label = 5;
+                    C00171 c00175 = c00172;
+                    id6 = apiBase7;
+                    apiBase8 = id5;
                     function15 = function13;
-                    isCasting8 = isCasting7;
                     response5 = response4;
-                    obj5 = Requests.get$default(UtilsKt.getApp(), apiBase5 + str + id5, mapBuildNewTvHeaders6, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00155, 4092, (Object) null);
-                    c00152 = c00155;
-                    if (obj5 == obj2) {
-                        return obj2;
+                    isCasting8 = isCasting7;
+                    obj5 = Requests.get$default(UtilsKt.getApp(), id5 + str + apiBase7, mapBuildNewTvHeaders6, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00175, 4092, (Object) null);
+                    c00172 = c00175;
+                    if (obj5 == obj) {
+                        return obj;
                     }
+                    userToken3 = userToken2;
+                    function12 = function14;
+                    data5 = data6;
+                    apiBase5 = apiBase8;
+                    function11 = function15;
                     objectRef2 = response5;
                     response6 = objectRef2;
-                    function12 = function14;
-                    data8 = data7;
-                    function11 = function15;
-                    userToken3 = userToken2;
-                    apiBase7 = apiBase6;
                     id7 = id6;
                     NiceResponse this_$iv6 = (NiceResponse) obj5;
                     ResponseParser parser6 = this_$iv6.getParser();
                     Intrinsics.checkNotNull(parser6);
                     objectRef2.element = parser6.parse(this_$iv6.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                     response3 = response6;
-                    userToken = userToken3;
-                    data6 = data8;
+                    apiBase6 = id7;
                     isCasting6 = isCasting8;
-                    data4 = apiBase7;
-                    apiBase4 = id7;
+                    userToken = userToken3;
                 } else {
-                    z2 = true;
                     isCasting6 = isCasting5;
-                    apiBase4 = id4;
+                    apiBase5 = apiBase4;
                     function11 = function10;
                     function12 = function9;
-                    data6 = data5;
+                    data5 = data4;
+                    apiBase6 = id4;
                     response3 = response2;
                 }
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = true;
+                    z = true;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name5 = getName();
-                String name6 = getName();
+                String name5 = hotStarMirrorProvider.getName();
+                String name6 = hotStarMirrorProvider.getName();
                 String video_link4 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType3 = ExtractorLinkType.M3U8;
-                C00163 c00165 = new C00163(response3, data4, null);
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00152.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00152.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00152.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00152.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00152.L$7 = function11;
-                c00152.Z$0 = isCasting6;
-                c00152.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, name6, video_link4, extractorLinkType3, c00165, c00152);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00182 c00184 = new C00182(response3, apiBase5, null);
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00172.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00172.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00172.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00172.L$7 = function11;
+                c00172.Z$0 = isCasting6;
+                c00172.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, name6, video_link4, extractorLinkType3, c00184, c00172);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 3:
-                boolean isCasting11 = c00152.Z$0;
-                Ref.ObjectRef objectRef3 = (Ref.ObjectRef) c00152.L$7;
-                Ref.ObjectRef response7 = (Ref.ObjectRef) c00152.L$6;
-                String userToken7 = (String) c00152.L$5;
-                String id9 = (String) c00152.L$4;
-                data4 = (String) c00152.L$3;
-                function10 = (Function1) c00152.L$2;
-                function9 = (Function1) c00152.L$1;
-                String data11 = (String) c00152.L$0;
+                boolean isCasting11 = c00172.Z$0;
+                Ref.ObjectRef objectRef3 = (Ref.ObjectRef) c00172.L$7;
+                Ref.ObjectRef response7 = (Ref.ObjectRef) c00172.L$6;
+                String userToken7 = (String) c00172.L$5;
+                String id9 = (String) c00172.L$4;
+                apiBase4 = (String) c00172.L$3;
+                function10 = (Function1) c00172.L$2;
+                function9 = (Function1) c00172.L$1;
+                String data9 = (String) c00172.L$0;
                 ResultKt.throwOnFailure($result);
-                data5 = data11;
-                obj2 = coroutine_suspended;
+                data4 = data9;
+                obj = coroutine_suspended;
                 id4 = id9;
                 response2 = response7;
                 isCasting5 = isCasting11;
                 userToken = userToken7;
-                obj = "Usertoken";
+                obj2 = "Usertoken";
                 str = "/newtv/player.php?id=";
                 str2 = "hs";
-                z = false;
                 objectRef = objectRef3;
                 obj4 = $result;
                 NiceResponse this_$iv7 = (NiceResponse) obj4;
@@ -3602,297 +2463,282 @@ public final class HotStarMirrorProvider extends MainAPI {
                 Intrinsics.checkNotNull(parser7);
                 objectRef.element = parser7.parse(this_$iv7.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 if (Intrinsics.areEqual(((NewTvPlayerResponse) response2.element).getStatus(), "otp")) {
-                    c00152.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00152.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00152.L$2 = function10;
-                    c00152.L$3 = data4;
-                    c00152.L$4 = id4;
-                    c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                    c00152.L$6 = response2;
-                    c00152.L$7 = null;
-                    c00152.Z$0 = isCasting5;
-                    c00152.label = 4;
-                    z2 = true;
-                    newTvUserToken = UtilsKt.getNewTvUserToken(data4, str2, true, c00152);
-                    if (newTvUserToken == obj2) {
-                        return obj2;
+                    c00172.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00172.L$1 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00172.L$2 = function10;
+                    c00172.L$3 = apiBase4;
+                    c00172.L$4 = id4;
+                    c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                    c00172.L$6 = response2;
+                    c00172.L$7 = null;
+                    c00172.Z$0 = isCasting5;
+                    c00172.label = 4;
+                    str3 = str2;
+                    newTvUserToken = UtilsKt.getNewTvUserToken(apiBase4, str3, true, c00172);
+                    if (newTvUserToken == obj) {
+                        return obj;
                     }
-                    data7 = data5;
+                    data6 = data4;
                     isCasting7 = isCasting5;
                     response4 = response2;
-                    id5 = id4;
-                    apiBase5 = data4;
+                    apiBase7 = id4;
+                    id5 = apiBase4;
                     function13 = function10;
                     function14 = function9;
                     userToken2 = (String) newTvUserToken;
-                    Map<String, String> mapBuildNewTvHeaders7 = UtilsKt.buildNewTvHeaders(str2, MapsKt.mapOf(TuplesKt.to(obj, userToken2)));
-                    c00152.L$0 = SpillingKt.nullOutSpilledVariable(data7);
-                    c00152.L$1 = SpillingKt.nullOutSpilledVariable(function14);
-                    c00152.L$2 = function13;
-                    c00152.L$3 = apiBase5;
-                    c00152.L$4 = SpillingKt.nullOutSpilledVariable(id5);
-                    c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
-                    c00152.L$6 = response4;
-                    c00152.L$7 = response4;
-                    c00152.Z$0 = isCasting7;
-                    c00152.label = 5;
-                    C00151 c00156 = c00152;
-                    id6 = id5;
-                    apiBase6 = apiBase5;
+                    Map<String, String> mapBuildNewTvHeaders7 = UtilsKt.buildNewTvHeaders(str3, MapsKt.mapOf(TuplesKt.to(obj2, userToken2)));
+                    c00172.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00172.L$1 = SpillingKt.nullOutSpilledVariable(function14);
+                    c00172.L$2 = function13;
+                    c00172.L$3 = id5;
+                    c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase7);
+                    c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
+                    c00172.L$6 = response4;
+                    c00172.L$7 = response4;
+                    c00172.Z$0 = isCasting7;
+                    c00172.label = 5;
+                    C00171 c00176 = c00172;
+                    id6 = apiBase7;
+                    apiBase8 = id5;
                     function15 = function13;
-                    isCasting8 = isCasting7;
                     response5 = response4;
-                    obj5 = Requests.get$default(UtilsKt.getApp(), apiBase5 + str + id5, mapBuildNewTvHeaders7, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00156, 4092, (Object) null);
-                    c00152 = c00156;
-                    if (obj5 == obj2) {
-                        return obj2;
+                    isCasting8 = isCasting7;
+                    obj5 = Requests.get$default(UtilsKt.getApp(), id5 + str + apiBase7, mapBuildNewTvHeaders7, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00176, 4092, (Object) null);
+                    c00172 = c00176;
+                    if (obj5 == obj) {
+                        return obj;
                     }
+                    userToken3 = userToken2;
+                    function12 = function14;
+                    data5 = data6;
+                    apiBase5 = apiBase8;
+                    function11 = function15;
                     objectRef2 = response5;
                     response6 = objectRef2;
-                    function12 = function14;
-                    data8 = data7;
-                    function11 = function15;
-                    userToken3 = userToken2;
-                    apiBase7 = apiBase6;
                     id7 = id6;
                     NiceResponse this_$iv8 = (NiceResponse) obj5;
                     ResponseParser parser8 = this_$iv8.getParser();
                     Intrinsics.checkNotNull(parser8);
                     objectRef2.element = parser8.parse(this_$iv8.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                     response3 = response6;
-                    userToken = userToken3;
-                    data6 = data8;
+                    apiBase6 = id7;
                     isCasting6 = isCasting8;
-                    data4 = apiBase7;
-                    apiBase4 = id7;
+                    userToken = userToken3;
                 } else {
-                    z2 = true;
                     isCasting6 = isCasting5;
-                    apiBase4 = id4;
+                    apiBase5 = apiBase4;
                     function11 = function10;
                     function12 = function9;
-                    data6 = data5;
+                    data5 = data4;
+                    apiBase6 = id4;
                     response3 = response2;
                 }
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = true;
+                    z = true;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name7 = getName();
-                String name8 = getName();
+                String name7 = hotStarMirrorProvider.getName();
+                String name8 = hotStarMirrorProvider.getName();
                 String video_link5 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType4 = ExtractorLinkType.M3U8;
-                C00163 c00166 = new C00163(response3, data4, null);
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00152.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00152.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00152.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00152.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00152.L$7 = function11;
-                c00152.Z$0 = isCasting6;
-                c00152.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name7, name8, video_link5, extractorLinkType4, c00166, c00152);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00182 c00185 = new C00182(response3, apiBase5, null);
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00172.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00172.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00172.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00172.L$7 = function11;
+                c00172.Z$0 = isCasting6;
+                c00172.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name7, name8, video_link5, extractorLinkType4, c00185, c00172);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 4:
-                isCasting7 = c00152.Z$0;
-                Ref.ObjectRef response8 = (Ref.ObjectRef) c00152.L$6;
-                id5 = (String) c00152.L$4;
-                apiBase5 = (String) c00152.L$3;
-                Function1<? super ExtractorLink, Unit> function20 = (Function1) c00152.L$2;
-                Function1<? super SubtitleFile, Unit> function21 = (Function1) c00152.L$1;
-                String data12 = (String) c00152.L$0;
+                isCasting7 = c00172.Z$0;
+                response4 = (Ref.ObjectRef) c00172.L$6;
+                String id10 = (String) c00172.L$4;
+                String apiBase10 = (String) c00172.L$3;
+                Function1<? super ExtractorLink, Unit> function20 = (Function1) c00172.L$2;
+                Function1<? super SubtitleFile, Unit> function21 = (Function1) c00172.L$1;
+                String data10 = (String) c00172.L$0;
                 ResultKt.throwOnFailure($result);
-                obj2 = coroutine_suspended;
-                obj = "Usertoken";
-                str = "/newtv/player.php?id=";
-                str2 = "hs";
-                function13 = function20;
-                data7 = data12;
-                z = false;
-                response4 = response8;
-                z2 = true;
-                newTvUserToken = $result;
+                obj = coroutine_suspended;
                 function14 = function21;
+                obj2 = "Usertoken";
+                str = "/newtv/player.php?id=";
+                data6 = data10;
+                function13 = function20;
+                id5 = apiBase10;
+                str3 = "hs";
+                apiBase7 = id10;
+                newTvUserToken = $result;
                 userToken2 = (String) newTvUserToken;
-                Map<String, String> mapBuildNewTvHeaders8 = UtilsKt.buildNewTvHeaders(str2, MapsKt.mapOf(TuplesKt.to(obj, userToken2)));
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data7);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function14);
-                c00152.L$2 = function13;
-                c00152.L$3 = apiBase5;
-                c00152.L$4 = SpillingKt.nullOutSpilledVariable(id5);
-                c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
-                c00152.L$6 = response4;
-                c00152.L$7 = response4;
-                c00152.Z$0 = isCasting7;
-                c00152.label = 5;
-                C00151 c00157 = c00152;
-                id6 = id5;
-                apiBase6 = apiBase5;
+                Map<String, String> mapBuildNewTvHeaders8 = UtilsKt.buildNewTvHeaders(str3, MapsKt.mapOf(TuplesKt.to(obj2, userToken2)));
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function14);
+                c00172.L$2 = function13;
+                c00172.L$3 = id5;
+                c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase7);
+                c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
+                c00172.L$6 = response4;
+                c00172.L$7 = response4;
+                c00172.Z$0 = isCasting7;
+                c00172.label = 5;
+                C00171 c00177 = c00172;
+                id6 = apiBase7;
+                apiBase8 = id5;
                 function15 = function13;
-                isCasting8 = isCasting7;
                 response5 = response4;
-                obj5 = Requests.get$default(UtilsKt.getApp(), apiBase5 + str + id5, mapBuildNewTvHeaders8, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00157, 4092, (Object) null);
-                c00152 = c00157;
-                if (obj5 == obj2) {
-                    return obj2;
+                isCasting8 = isCasting7;
+                obj5 = Requests.get$default(UtilsKt.getApp(), id5 + str + apiBase7, mapBuildNewTvHeaders8, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00177, 4092, (Object) null);
+                c00172 = c00177;
+                if (obj5 == obj) {
+                    return obj;
                 }
+                userToken3 = userToken2;
+                function12 = function14;
+                data5 = data6;
+                apiBase5 = apiBase8;
+                function11 = function15;
                 objectRef2 = response5;
                 response6 = objectRef2;
-                function12 = function14;
-                data8 = data7;
-                function11 = function15;
-                userToken3 = userToken2;
-                apiBase7 = apiBase6;
                 id7 = id6;
                 NiceResponse this_$iv9 = (NiceResponse) obj5;
                 ResponseParser parser9 = this_$iv9.getParser();
                 Intrinsics.checkNotNull(parser9);
                 objectRef2.element = parser9.parse(this_$iv9.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 response3 = response6;
-                userToken = userToken3;
-                data6 = data8;
+                apiBase6 = id7;
                 isCasting6 = isCasting8;
-                data4 = apiBase7;
-                apiBase4 = id7;
+                userToken = userToken3;
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = true;
+                    z = true;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name9 = getName();
-                String name10 = getName();
+                String name9 = hotStarMirrorProvider.getName();
+                String name10 = hotStarMirrorProvider.getName();
                 String video_link6 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType5 = ExtractorLinkType.M3U8;
-                C00163 c00167 = new C00163(response3, data4, null);
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00152.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00152.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00152.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00152.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00152.L$7 = function11;
-                c00152.Z$0 = isCasting6;
-                c00152.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name9, name10, video_link6, extractorLinkType5, c00167, c00152);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00182 c00186 = new C00182(response3, apiBase5, null);
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00172.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00172.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00172.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00172.L$7 = function11;
+                c00172.Z$0 = isCasting6;
+                c00172.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name9, name10, video_link6, extractorLinkType5, c00186, c00172);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 5:
-                boolean isCasting12 = c00152.Z$0;
-                objectRef2 = (Ref.ObjectRef) c00152.L$7;
-                response6 = (Ref.ObjectRef) c00152.L$6;
-                userToken3 = (String) c00152.L$5;
-                id7 = (String) c00152.L$4;
-                apiBase7 = (String) c00152.L$3;
-                function11 = (Function1) c00152.L$2;
-                function12 = (Function1) c00152.L$1;
-                data8 = (String) c00152.L$0;
+                boolean isCasting12 = c00172.Z$0;
+                objectRef2 = (Ref.ObjectRef) c00172.L$7;
+                response6 = (Ref.ObjectRef) c00172.L$6;
+                userToken3 = (String) c00172.L$5;
+                id7 = (String) c00172.L$4;
+                apiBase5 = (String) c00172.L$3;
+                function11 = (Function1) c00172.L$2;
+                function12 = (Function1) c00172.L$1;
+                data5 = (String) c00172.L$0;
                 ResultKt.throwOnFailure($result);
                 isCasting8 = isCasting12;
-                obj2 = coroutine_suspended;
-                z = false;
+                obj = coroutine_suspended;
                 obj5 = $result;
-                z2 = true;
                 NiceResponse this_$iv10 = (NiceResponse) obj5;
                 ResponseParser parser10 = this_$iv10.getParser();
                 Intrinsics.checkNotNull(parser10);
                 objectRef2.element = parser10.parse(this_$iv10.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 response3 = response6;
-                userToken = userToken3;
-                data6 = data8;
+                apiBase6 = id7;
                 isCasting6 = isCasting8;
-                data4 = apiBase7;
-                apiBase4 = id7;
+                userToken = userToken3;
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = true;
+                    z = true;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name11 = getName();
-                String name12 = getName();
+                String name11 = hotStarMirrorProvider.getName();
+                String name12 = hotStarMirrorProvider.getName();
                 String video_link7 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType6 = ExtractorLinkType.M3U8;
-                C00163 c00168 = new C00163(response3, data4, null);
-                c00152.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00152.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00152.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00152.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00152.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00152.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00152.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00152.L$7 = function11;
-                c00152.Z$0 = isCasting6;
-                c00152.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name11, name12, video_link7, extractorLinkType6, c00168, c00152);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00182 c00187 = new C00182(response3, apiBase5, null);
+                c00172.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00172.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00172.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00172.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00172.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00172.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00172.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00172.L$7 = function11;
+                c00172.Z$0 = isCasting6;
+                c00172.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name11, name12, video_link7, extractorLinkType6, c00187, c00172);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 6:
-                boolean z4 = c00152.Z$0;
-                function16 = (Function1) c00152.L$7;
+                boolean z2 = c00172.Z$0;
+                function16 = (Function1) c00172.L$7;
                 ResultKt.throwOnFailure($result);
                 objNewExtractorLink = $result;
-                z2 = true;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
-    /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$loadLinks$3 */
+    /* JADX INFO: renamed from: com.horis.cncverse.HotStarMirrorProvider$loadLinks$2 */
     /* JADX INFO: compiled from: HotStarMirrorProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider$loadLinks$3", f = "HotStarMirrorProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00163 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.horis.cncverse.HotStarMirrorProvider$loadLinks$2", f = "HotStarMirrorProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00182 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $apiBase;
         final /* synthetic */ Ref.ObjectRef<NewTvPlayerResponse> $response;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00163(Ref.ObjectRef<NewTvPlayerResponse> objectRef, String str, Continuation<? super C00163> continuation) {
+        C00182(Ref.ObjectRef<NewTvPlayerResponse> objectRef, String str, Continuation<? super C00182> continuation) {
             super(2, continuation);
             this.$response = objectRef;
             this.$apiBase = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00163 = new C00163(this.$response, this.$apiBase, continuation);
-            c00163.L$0 = obj;
-            return c00163;
+            Continuation<Unit> c00182 = new C00182(this.$response, this.$apiBase, continuation);
+            c00182.L$0 = obj;
+            return c00182;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -4052,296 +2898,6 @@ public final class HotStarMirrorProvider extends MainAPI {
         @NotNull
         public final String getTitle() {
             return this.title;
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda6
-                @Override // java.lang.Runnable
-                public final void run() {
-                    HotStarMirrorProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HotStarMirrorProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda1
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HotStarMirrorProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda11
-            @Override // java.lang.Runnable
-            public final void run() {
-                HotStarMirrorProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda9
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda10
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HotStarMirrorProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.HotStarMirrorProvider$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                HotStarMirrorProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
         }
     }
 }

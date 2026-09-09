@@ -4,7 +4,7 @@ package nepali.stream.decoded.moviezwapprovider
 object PluginMetadata {
     const val name: String = "MoviezwapProvider"
     const val originalPluginClass: String = "com.cncverse.MoviezwapProviderPlugin"
-    const val version: Int = 30
+    const val version: Int = 31
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

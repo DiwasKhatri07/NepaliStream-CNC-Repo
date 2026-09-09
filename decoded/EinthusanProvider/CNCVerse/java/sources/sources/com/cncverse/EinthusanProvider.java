@@ -1,24 +1,7 @@
 package com.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.lagradost.cloudstream3.Actor;
 import com.lagradost.cloudstream3.ActorData;
 import com.lagradost.cloudstream3.ActorRole;
@@ -37,7 +20,6 @@ import com.lagradost.cloudstream3.SearchQuality;
 import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorLinkType;
@@ -45,7 +27,6 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -75,7 +56,6 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SourceDebugExtension;
-import kotlin.text.Charsets;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import okhttp3.Interceptor;
@@ -86,24 +66,16 @@ import org.jsoup.nodes.Element;
 
 /* JADX INFO: compiled from: EinthusanProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/EinthusanProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 F2\u00020\u0001:\u0001FB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010(\u001a\u00020*2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020.H\u0096@¢\u0006\u0002\u0010/J\u000e\u00100\u001a\u0004\u0018\u000101*\u000202H\u0002J\u001c\u00103\u001a\b\u0012\u0004\u0012\u0002010&2\u0006\u00104\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00105J\u0018\u00106\u001a\u0004\u0018\u0001072\u0006\u00108\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00105JF\u00109\u001a\u00020\u000e2\u0006\u0010:\u001a\u00020\u00052\u0006\u0010;\u001a\u00020\u000e2\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u00020?0=2\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020A\u0012\u0004\u0012\u00020?0=H\u0096@¢\u0006\u0002\u0010BJ\b\u0010C\u001a\u00020?H\u0002J\b\u0010D\u001a\u00020?H\u0002J\u0010\u0010E\u001a\u00020?2\u0006\u00108\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\u00020\u000eX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0010\"\u0004\b\u0018\u0010\u0019R\u001a\u0010\u001a\u001a\u00020\u001bX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u001a\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u001a\u0010%\u001a\b\u0012\u0004\u0012\u00020'0&X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b(\u0010)¨\u0006G"}, d2 = {"Lcom/cncverse/EinthusanProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "sequentialMainPage", "getSequentialMainPage", "setSequentialMainPage", "(Z)V", "sequentialMainPageDelay", "", "getSequentialMainPageDelay", "()J", "setSequentialMainPageDelay", "(J)V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "EinthusanProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nEinthusanProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EinthusanProvider.kt\ncom/cncverse/EinthusanProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,490:1\n1642#2,10:491\n1915#2:501\n1916#2:503\n1652#2:504\n1642#2,10:505\n1915#2:515\n1916#2:517\n1652#2:518\n1642#2,10:519\n1915#2:529\n1916#2:531\n1652#2:532\n1642#2,10:533\n1915#2:543\n1916#2:545\n1652#2:546\n1642#2,10:547\n1915#2:557\n1916#2:559\n1652#2:560\n1642#2,10:561\n1915#2:571\n1916#2:573\n1652#2:574\n1642#2,10:575\n1915#2:585\n1916#2:587\n1652#2:588\n1642#2,10:589\n1915#2:599\n1916#2:601\n1652#2:602\n1642#2,10:603\n1915#2:613\n1916#2:615\n1652#2:616\n1068#2:617\n1586#2:619\n1661#2,3:620\n1586#2:623\n1661#2,3:624\n1#3:502\n1#3:516\n1#3:530\n1#3:544\n1#3:558\n1#3:572\n1#3:586\n1#3:600\n1#3:614\n1#3:618\n*S KotlinDebug\n*F\n+ 1 EinthusanProvider.kt\ncom/cncverse/EinthusanProvider\n*L\n93#1:491,10\n93#1:501\n93#1:503\n93#1:504\n116#1:505,10\n116#1:515\n116#1:517\n116#1:518\n119#1:519,10\n119#1:529\n119#1:531\n119#1:532\n122#1:533,10\n122#1:543\n122#1:545\n122#1:546\n125#1:547,10\n125#1:557\n125#1:559\n125#1:560\n128#1:561,10\n128#1:571\n128#1:573\n128#1:574\n131#1:575,10\n131#1:585\n131#1:587\n131#1:588\n134#1:589,10\n134#1:599\n134#1:601\n134#1:602\n137#1:603,10\n137#1:613\n137#1:615\n137#1:616\n142#1:617\n163#1:619\n163#1:620,3\n171#1:623\n171#1:624,3\n93#1:502\n116#1:516\n119#1:530\n122#1:544\n125#1:558\n128#1:572\n131#1:586\n134#1:600\n137#1:614\n*E\n"})
+@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 C2\u00020\u0001:\u0001CB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010(\u001a\u00020*2\u0006\u0010+\u001a\u00020,2\u0006\u0010-\u001a\u00020.H\u0096@¢\u0006\u0002\u0010/J\u000e\u00100\u001a\u0004\u0018\u000101*\u000202H\u0002J\u001c\u00103\u001a\b\u0012\u0004\u0012\u0002010&2\u0006\u00104\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00105J\u0018\u00106\u001a\u0004\u0018\u0001072\u0006\u00108\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00105JF\u00109\u001a\u00020\u000e2\u0006\u0010:\u001a\u00020\u00052\u0006\u0010;\u001a\u00020\u000e2\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u00020?0=2\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020A\u0012\u0004\u0012\u00020?0=H\u0096@¢\u0006\u0002\u0010BR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\u00020\u000eX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0017\u0010\u0010\"\u0004\b\u0018\u0010\u0019R\u001a\u0010\u001a\u001a\u00020\u001bX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u001c\u0010\u001d\"\u0004\b\u001e\u0010\u001fR\u001a\u0010 \u001a\b\u0012\u0004\u0012\u00020\"0!X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b#\u0010$R\u001a\u0010%\u001a\b\u0012\u0004\u0012\u00020'0&X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b(\u0010)¨\u0006D"}, d2 = {"Lcom/cncverse/EinthusanProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "sequentialMainPage", "getSequentialMainPage", "setSequentialMainPage", "(Z)V", "sequentialMainPageDelay", "", "getSequentialMainPageDelay", "()J", "setSequentialMainPageDelay", "(J)V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "EinthusanProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nEinthusanProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EinthusanProvider.kt\ncom/cncverse/EinthusanProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,200:1\n1642#2,10:201\n1915#2:211\n1916#2:213\n1652#2:214\n1642#2,10:215\n1915#2:225\n1916#2:227\n1652#2:228\n1642#2,10:229\n1915#2:239\n1916#2:241\n1652#2:242\n1642#2,10:243\n1915#2:253\n1916#2:255\n1652#2:256\n1642#2,10:257\n1915#2:267\n1916#2:269\n1652#2:270\n1642#2,10:271\n1915#2:281\n1916#2:283\n1652#2:284\n1642#2,10:285\n1915#2:295\n1916#2:297\n1652#2:298\n1642#2,10:299\n1915#2:309\n1916#2:311\n1652#2:312\n1642#2,10:313\n1915#2:323\n1916#2:325\n1652#2:326\n1068#2:327\n1586#2:329\n1661#2,3:330\n1586#2:333\n1661#2,3:334\n1#3:212\n1#3:226\n1#3:240\n1#3:254\n1#3:268\n1#3:282\n1#3:296\n1#3:310\n1#3:324\n1#3:328\n*S KotlinDebug\n*F\n+ 1 EinthusanProvider.kt\ncom/cncverse/EinthusanProvider\n*L\n61#1:201,10\n61#1:211\n61#1:213\n61#1:214\n84#1:215,10\n84#1:225\n84#1:227\n84#1:228\n87#1:229,10\n87#1:239\n87#1:241\n87#1:242\n90#1:243,10\n90#1:253\n90#1:255\n90#1:256\n93#1:257,10\n93#1:267\n93#1:269\n93#1:270\n96#1:271,10\n96#1:281\n96#1:283\n96#1:284\n99#1:285,10\n99#1:295\n99#1:297\n99#1:298\n102#1:299,10\n102#1:309\n102#1:311\n102#1:312\n105#1:313,10\n105#1:323\n105#1:325\n105#1:326\n110#1:327\n131#1:329\n131#1:330,3\n139#1:333\n139#1:334,3\n61#1:212\n84#1:226\n87#1:240\n90#1:254\n93#1:268\n96#1:282\n99#1:296\n102#1:310\n105#1:324\n*E\n"})
 public final class EinthusanProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private String mainUrl = "https://einthusan.tv";
@@ -127,7 +99,7 @@ public final class EinthusanProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.EinthusanProvider$getMainPage$1 */
     /* JADX INFO: compiled from: EinthusanProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.EinthusanProvider", f = "EinthusanProvider.kt", i = {0, 0, 1, 1}, l = {87, 89}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {89, 86}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.EinthusanProvider", f = "EinthusanProvider.kt", i = {0, 0, 1, 1}, l = {55, 57}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {57, 54}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -149,7 +121,7 @@ public final class EinthusanProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.EinthusanProvider$load$1 */
     /* JADX INFO: compiled from: EinthusanProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.EinthusanProvider", f = "EinthusanProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {155, 183}, m = "load", n = {"url", "url", "doc", "title", "href", "poster", "tags", "year", "description", "score", "actors", "mp4link", "m3u8link"}, nl = {157, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.EinthusanProvider", f = "EinthusanProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {123, 151}, m = "load", n = {"url", "url", "doc", "title", "href", "poster", "tags", "year", "description", "score", "actors", "mp4link", "m3u8link"}, nl = {125, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -181,7 +153,7 @@ public final class EinthusanProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.EinthusanProvider$loadLinks$1 */
     /* JADX INFO: compiled from: EinthusanProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.EinthusanProvider", f = "EinthusanProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {222, 233}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mp4link", "m3u8link", "ipfind", "fixedmp4link", "fixedm3u8link", "isCasting", "data", "subtitleCallback", "callback", "mp4link", "m3u8link", "ipfind", "fixedmp4link", "fixedm3u8link", "isCasting"}, nl = {221, 232}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.EinthusanProvider", f = "EinthusanProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {174, 185}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mp4link", "m3u8link", "ipfind", "fixedmp4link", "fixedm3u8link", "isCasting", "data", "subtitleCallback", "callback", "mp4link", "m3u8link", "ipfind", "fixedmp4link", "fixedm3u8link", "isCasting"}, nl = {173, 184}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -211,7 +183,7 @@ public final class EinthusanProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.EinthusanProvider$search$1 */
     /* JADX INFO: compiled from: EinthusanProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.EinthusanProvider", f = "EinthusanProvider.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {116, 119, 122, 125, 128, 131, 134, 137}, m = "search", n = {"query", "fixedQuery", "query", "fixedQuery", "resultTamil", "query", "fixedQuery", "resultTamil", "resultHindi", "query", "fixedQuery", "resultTamil", "resultHindi", "resultMalayalam", "query", "fixedQuery", "resultTamil", "resultHindi", "resultMalayalam", "resultTelugu", "query", "fixedQuery", "resultTamil", "resultHindi", "resultMalayalam", "resultTelugu", "resultKannada", "query", "fixedQuery", "resultTamil", "resultHindi", "resultMalayalam", "resultTelugu", "resultKannada", "resultBengali", "query", "fixedQuery", "resultTamil", "resultHindi", "resultMalayalam", "resultTelugu", "resultKannada", "resultBengali", "resultMarathi"}, nl = {491, 505, 519, 533, 547, 561, 575, 589}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.EinthusanProvider", f = "EinthusanProvider.kt", i = {0, 0, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {84, 87, 90, 93, 96, 99, 102, 105}, m = "search", n = {"query", "fixedQuery", "query", "fixedQuery", "resultTamil", "query", "fixedQuery", "resultTamil", "resultHindi", "query", "fixedQuery", "resultTamil", "resultHindi", "resultMalayalam", "query", "fixedQuery", "resultTamil", "resultHindi", "resultMalayalam", "resultTelugu", "query", "fixedQuery", "resultTamil", "resultHindi", "resultMalayalam", "resultTelugu", "resultKannada", "query", "fixedQuery", "resultTamil", "resultHindi", "resultMalayalam", "resultTelugu", "resultKannada", "resultBengali", "query", "fixedQuery", "resultTamil", "resultHindi", "resultMalayalam", "resultTelugu", "resultKannada", "resultBengali", "resultMarathi"}, nl = {201, 215, 229, 243, 257, 271, 285, 299}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -294,65 +266,13 @@ public final class EinthusanProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: EinthusanProvider.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/cncverse/EinthusanProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "EinthusanProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nEinthusanProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EinthusanProvider.kt\ncom/cncverse/EinthusanProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,490:1\n1#2:491\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/cncverse/EinthusanProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "EinthusanProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                EinthusanProvider.csGuardWasEverActive = true;
-            }
-            return EinthusanProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.EinthusanProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    EinthusanProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -370,9 +290,9 @@ public final class EinthusanProvider extends MainAPI {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:31:0x013b  */
-    /* JADX WARN: Code duplicated, block: B:33:0x014c  */
-    /* JADX WARN: Code duplicated, block: B:39:0x0151 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:27:0x0124  */
+    /* JADX WARN: Code duplicated, block: B:29:0x0135  */
+    /* JADX WARN: Code duplicated, block: B:35:0x013a A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
@@ -397,12 +317,7 @@ public final class EinthusanProvider extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 if (page != 1) {
                     C00001 c00003 = c00001;
                     Requests app = MainActivityKt.getApp();
@@ -503,7 +418,7 @@ public final class EinthusanProvider extends MainAPI {
         StringBuilder sbAppend2 = new StringBuilder().append("https:");
         Element elementSelectFirst3 = $this$toSearchResult.selectFirst("div.block1 > a > img");
         final String posterUrl = MainAPIKt.fixUrlNull(einthusanProvider2, sbAppend2.append(elementSelectFirst3 != null ? elementSelectFirst3.attr("src") : null).toString());
-        return MainAPIKt.newMovieSearchResponse$default(this, title, href, TvType.Movie, false, new Function1() { // from class: com.cncverse.EinthusanProvider$$ExternalSyntheticLambda8
+        return MainAPIKt.newMovieSearchResponse$default(this, title, href, TvType.Movie, false, new Function1() { // from class: com.cncverse.EinthusanProvider$$ExternalSyntheticLambda0
             public final Object invoke(Object obj) {
                 return EinthusanProvider.toSearchResult$lambda$0(posterUrl, (MovieSearchResponse) obj);
             }
@@ -517,45 +432,45 @@ public final class EinthusanProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code duplicated, block: B:103:0x06cd A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:104:0x06ce  */
-    /* JADX WARN: Code duplicated, block: B:108:0x0703  */
-    /* JADX WARN: Code duplicated, block: B:110:0x0719  */
-    /* JADX WARN: Code duplicated, block: B:116:0x071e A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:119:0x0655 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:122:0x0592 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:125:0x04d5 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:128:0x041f A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:131:0x036f A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:134:0x02c4 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:137:0x021d A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:31:0x0204  */
-    /* JADX WARN: Code duplicated, block: B:33:0x0218  */
-    /* JADX WARN: Code duplicated, block: B:37:0x0280 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:38:0x0281  */
-    /* JADX WARN: Code duplicated, block: B:42:0x02a9  */
-    /* JADX WARN: Code duplicated, block: B:44:0x02bf  */
-    /* JADX WARN: Code duplicated, block: B:48:0x0329 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:49:0x032a  */
-    /* JADX WARN: Code duplicated, block: B:53:0x0354  */
-    /* JADX WARN: Code duplicated, block: B:55:0x036a  */
-    /* JADX WARN: Code duplicated, block: B:59:0x03d7 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:60:0x03d8  */
-    /* JADX WARN: Code duplicated, block: B:64:0x0404  */
-    /* JADX WARN: Code duplicated, block: B:66:0x041a  */
-    /* JADX WARN: Code duplicated, block: B:70:0x048a A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:71:0x048b  */
-    /* JADX WARN: Code duplicated, block: B:75:0x04ba  */
-    /* JADX WARN: Code duplicated, block: B:77:0x04d0  */
+    /* JADX WARN: Code duplicated, block: B:100:0x06ba  */
+    /* JADX WARN: Code duplicated, block: B:104:0x06ef  */
+    /* JADX WARN: Code duplicated, block: B:106:0x0705  */
+    /* JADX WARN: Code duplicated, block: B:112:0x070a A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:115:0x0641 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:118:0x057e A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:121:0x04c1 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:124:0x040b A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:127:0x035b A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:130:0x02b0 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:133:0x0209 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:27:0x01f0  */
+    /* JADX WARN: Code duplicated, block: B:29:0x0204  */
+    /* JADX WARN: Code duplicated, block: B:33:0x026c A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:34:0x026d  */
+    /* JADX WARN: Code duplicated, block: B:38:0x0295  */
+    /* JADX WARN: Code duplicated, block: B:40:0x02ab  */
+    /* JADX WARN: Code duplicated, block: B:44:0x0315 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:45:0x0316  */
+    /* JADX WARN: Code duplicated, block: B:49:0x0340  */
+    /* JADX WARN: Code duplicated, block: B:51:0x0356  */
+    /* JADX WARN: Code duplicated, block: B:55:0x03c3 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:56:0x03c4  */
+    /* JADX WARN: Code duplicated, block: B:60:0x03f0  */
+    /* JADX WARN: Code duplicated, block: B:62:0x0406  */
+    /* JADX WARN: Code duplicated, block: B:66:0x0476 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:67:0x0477  */
+    /* JADX WARN: Code duplicated, block: B:71:0x04a6  */
+    /* JADX WARN: Code duplicated, block: B:73:0x04bc  */
+    /* JADX WARN: Code duplicated, block: B:77:0x0530 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:78:0x0531  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:81:0x0544 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:82:0x0545  */
-    /* JADX WARN: Code duplicated, block: B:86:0x0577  */
-    /* JADX WARN: Code duplicated, block: B:88:0x058d  */
-    /* JADX WARN: Code duplicated, block: B:92:0x0604 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:93:0x0605  */
-    /* JADX WARN: Code duplicated, block: B:97:0x063a  */
-    /* JADX WARN: Code duplicated, block: B:99:0x0650  */
+    /* JADX WARN: Code duplicated, block: B:82:0x0563  */
+    /* JADX WARN: Code duplicated, block: B:84:0x0579  */
+    /* JADX WARN: Code duplicated, block: B:88:0x05f0 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:89:0x05f1  */
+    /* JADX WARN: Code duplicated, block: B:93:0x0626  */
+    /* JADX WARN: Code duplicated, block: B:95:0x063c  */
+    /* JADX WARN: Code duplicated, block: B:99:0x06b9 A[RETURN] */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
         C00061 c00061;
@@ -692,10 +607,6 @@ public final class EinthusanProvider extends MainAPI {
         switch (c00061.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 String fixedQuery20 = StringsKt.replace$default(query, " ", "+", false, 4, (Object) null);
                 Requests app = MainActivityKt.getApp();
                 String str2 = getMainUrl() + "/movie/results/?lang=tamil&query=" + fixedQuery20;
@@ -2739,8 +2650,8 @@ public final class EinthusanProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:48:0x0237 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:49:0x0238  */
+    /* JADX WARN: Code duplicated, block: B:20:0x01bd A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:21:0x01be  */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
@@ -2774,24 +2685,6 @@ public final class EinthusanProvider extends MainAPI {
         switch (c00032.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                EinthusanProvider $this$loadLinks_u24lambda_u240 = this;
-                final Context _ctx = context;
-                SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                long _nowSec = System.currentTimeMillis() / 1000;
-                boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                if (!_isSubscribed) {
-                    if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.EinthusanProvider$$ExternalSyntheticLambda0
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                EinthusanProvider.loadLinks$lambda$0$0(_ctx);
-                            }
-                        });
-                    }
-                    $this$loadLinks_u24lambda_u240.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                }
                 String mp4link2 = StringsKt.substringBefore$default(data, ",", (String) null, 2, (Object) null);
                 String m3u8link2 = StringsKt.substringAfter$default(data, ",", (String) null, 2, (Object) null);
                 Regex ipfind2 = new Regex("\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\b");
@@ -2800,7 +2693,7 @@ public final class EinthusanProvider extends MainAPI {
                 String str = getName() + "-MP4";
                 String str2 = getName() + "-MP4";
                 ExtractorLinkType extractorLinkType = ExtractorLinkType.VIDEO;
-                C00043 c00043 = new C00043(null);
+                C00042 c00042 = new C00042(null);
                 c00032.L$0 = SpillingKt.nullOutSpilledVariable(data);
                 c00032.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                 c00032.L$2 = function2;
@@ -2812,7 +2705,7 @@ public final class EinthusanProvider extends MainAPI {
                 c00032.L$8 = function2;
                 c00032.Z$0 = isCasting;
                 c00032.label = 1;
-                Object objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(str, str2, fixedmp4link3, extractorLinkType, c00043, c00032);
+                Object objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(str, str2, fixedmp4link3, extractorLinkType, c00042, c00032);
                 if (objNewExtractorLink2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -2831,7 +2724,7 @@ public final class EinthusanProvider extends MainAPI {
                 String str3 = getName() + "-M3U8";
                 String str4 = getName() + "-M3U8";
                 ExtractorLinkType extractorLinkType2 = ExtractorLinkType.M3U8;
-                C00054 c00054 = new C00054(null);
+                C00053 c00053 = new C00053(null);
                 c00032.L$0 = SpillingKt.nullOutSpilledVariable(data2);
                 c00032.L$1 = SpillingKt.nullOutSpilledVariable(function4);
                 c00032.L$2 = SpillingKt.nullOutSpilledVariable(function5);
@@ -2843,7 +2736,7 @@ public final class EinthusanProvider extends MainAPI {
                 c00032.L$8 = function5;
                 c00032.Z$0 = isCasting2;
                 c00032.label = 2;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(str3, str4, fixedmp4link2, extractorLinkType2, c00054, c00032);
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(str3, str4, fixedmp4link2, extractorLinkType2, c00053, c00032);
                 if (objNewExtractorLink == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -2873,7 +2766,7 @@ public final class EinthusanProvider extends MainAPI {
                 String str5 = getName() + "-M3U8";
                 String str6 = getName() + "-M3U8";
                 ExtractorLinkType extractorLinkType3 = ExtractorLinkType.M3U8;
-                C00054 c00055 = new C00054(null);
+                C00053 c00054 = new C00053(null);
                 c00032.L$0 = SpillingKt.nullOutSpilledVariable(data2);
                 c00032.L$1 = SpillingKt.nullOutSpilledVariable(function4);
                 c00032.L$2 = SpillingKt.nullOutSpilledVariable(function5);
@@ -2885,7 +2778,7 @@ public final class EinthusanProvider extends MainAPI {
                 c00032.L$8 = function5;
                 c00032.Z$0 = isCasting2;
                 c00032.label = 2;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(str5, str6, fixedmp4link2, extractorLinkType3, c00055, c00032);
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(str5, str6, fixedmp4link2, extractorLinkType3, c00054, c00032);
                 if (objNewExtractorLink == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -2904,27 +2797,59 @@ public final class EinthusanProvider extends MainAPI {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
+    /* JADX INFO: renamed from: com.cncverse.EinthusanProvider$loadLinks$2 */
+    /* JADX INFO: compiled from: EinthusanProvider.kt */
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "com.cncverse.EinthusanProvider$loadLinks$2", f = "EinthusanProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00042 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+        private /* synthetic */ Object L$0;
+        int label;
+
+        C00042(Continuation<? super C00042> continuation) {
+            super(2, continuation);
+        }
+
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            Continuation<Unit> c00042 = EinthusanProvider.this.new C00042(continuation);
+            c00042.L$0 = obj;
+            return c00042;
+        }
+
+        public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
+            return create(extractorLink, continuation).invokeSuspend(Unit.INSTANCE);
+        }
+
+        public final Object invokeSuspend(Object $result) {
+            ExtractorLink $this$newExtractorLink = (ExtractorLink) this.L$0;
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            switch (this.label) {
+                case 0:
+                    ResultKt.throwOnFailure($result);
+                    $this$newExtractorLink.setHeaders(MapsKt.mapOf(TuplesKt.to("Referer", EinthusanProvider.this.getMainUrl() + '/')));
+                    $this$newExtractorLink.setQuality(Qualities.Unknown.getValue());
+                    return Unit.INSTANCE;
+                default:
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+        }
     }
 
     /* JADX INFO: renamed from: com.cncverse.EinthusanProvider$loadLinks$3 */
     /* JADX INFO: compiled from: EinthusanProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.EinthusanProvider$loadLinks$3", f = "EinthusanProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00043 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00053 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         private /* synthetic */ Object L$0;
         int label;
 
-        C00043(Continuation<? super C00043> continuation) {
+        C00053(Continuation<? super C00053> continuation) {
             super(2, continuation);
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00043 = EinthusanProvider.this.new C00043(continuation);
-            c00043.L$0 = obj;
-            return c00043;
+            Continuation<Unit> c00053 = EinthusanProvider.this.new C00053(continuation);
+            c00053.L$0 = obj;
+            return c00053;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -2943,333 +2868,6 @@ public final class EinthusanProvider extends MainAPI {
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-        }
-    }
-
-    /* JADX INFO: renamed from: com.cncverse.EinthusanProvider$loadLinks$4 */
-    /* JADX INFO: compiled from: EinthusanProvider.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.EinthusanProvider$loadLinks$4", f = "EinthusanProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00054 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
-        private /* synthetic */ Object L$0;
-        int label;
-
-        C00054(Continuation<? super C00054> continuation) {
-            super(2, continuation);
-        }
-
-        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00054 = EinthusanProvider.this.new C00054(continuation);
-            c00054.L$0 = obj;
-            return c00054;
-        }
-
-        public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
-            return create(extractorLink, continuation).invokeSuspend(Unit.INSTANCE);
-        }
-
-        public final Object invokeSuspend(Object $result) {
-            ExtractorLink $this$newExtractorLink = (ExtractorLink) this.L$0;
-            IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            switch (this.label) {
-                case 0:
-                    ResultKt.throwOnFailure($result);
-                    $this$newExtractorLink.setHeaders(MapsKt.mapOf(TuplesKt.to("Referer", EinthusanProvider.this.getMainUrl() + '/')));
-                    $this$newExtractorLink.setQuality(Qualities.Unknown.getValue());
-                    return Unit.INSTANCE;
-                default:
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            }
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.EinthusanProvider$$ExternalSyntheticLambda6
-                @Override // java.lang.Runnable
-                public final void run() {
-                    EinthusanProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.EinthusanProvider$$ExternalSyntheticLambda2
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    EinthusanProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.EinthusanProvider$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    EinthusanProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.EinthusanProvider$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                EinthusanProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.EinthusanProvider$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.EinthusanProvider$$ExternalSyntheticLambda5
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    EinthusanProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.EinthusanProvider$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                EinthusanProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
         }
     }
 }

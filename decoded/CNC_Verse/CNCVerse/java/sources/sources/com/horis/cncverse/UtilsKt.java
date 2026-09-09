@@ -86,7 +86,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: Utils.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/CNC_Verse/CNCVerse/java/classes.dex */
 @Metadata(d1 = {"\u0000@\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u0003\n\u0002\u0010\b\n\u0002\b\u0005\n\u0002\u0010$\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\b\r\n\u0002\u0010\u000b\n\u0002\b\u0006\u001a\"\u0010\b\u001a\u0002H\t\"\n\b\u0000\u0010\t\u0018\u0001*\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0086\b¢\u0006\u0002\u0010\r\u001a$\u0010\u000e\u001a\u0004\u0018\u0001H\t\"\n\b\u0000\u0010\t\u0018\u0001*\u00020\n2\u0006\u0010\u000b\u001a\u00020\fH\u0086\b¢\u0006\u0002\u0010\r\u001a\u000e\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\f\u001a\u0016\u0010\u0012\u001a\u00020\f2\u0006\u0010\u0013\u001a\u00020\fH\u0086@¢\u0006\u0002\u0010\u0014\u001a\u000e\u0010\u001d\u001a\u00020\f2\u0006\u0010\u001e\u001a\u00020\f\u001a\u000e\u0010 \u001a\u00020\fH\u0086@¢\u0006\u0002\u0010!\u001a0\u0010\"\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\f0\u00162\u0006\u0010#\u001a\u00020\f2\u0014\b\u0002\u0010$\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\f0\u0016\u001a(\u0010%\u001a\u00020\f2\u0006\u0010&\u001a\u00020\f2\u0006\u0010#\u001a\u00020\f2\b\b\u0002\u0010'\u001a\u00020(H\u0086@¢\u0006\u0002\u0010)\u001a\u000e\u0010+\u001a\u00020\fH\u0086@¢\u0006\u0002\u0010!\u001a\u0018\u0010,\u001a\u0004\u0018\u00010\f2\u0006\u0010-\u001a\u00020\fH\u0082@¢\u0006\u0002\u0010\u0014\"\u0011\u0010\u0000\u001a\u00020\u0001¢\u0006\b\n\u0000\u001a\u0004\b\u0002\u0010\u0003\"\u0011\u0010\u0004\u001a\u00020\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u001d\u0010\u0015\u001a\u000e\u0012\u0004\u0012\u00020\f\u0012\u0004\u0012\u00020\f0\u0016¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018\"\u0017\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\f0\u001a¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001c\"\u000e\u0010\u001f\u001a\u00020\fX\u0082\u000e¢\u0006\u0002\n\u0000\"\u000e\u0010*\u001a\u00020\fX\u0082T¢\u0006\u0002\n\u0000¨\u0006."}, d2 = {"JSONParser", "Lcom/lagradost/nicehttp/ResponseParser;", "getJSONParser", "()Lcom/lagradost/nicehttp/ResponseParser;", "app", "Lcom/lagradost/nicehttp/Requests;", "getApp", "()Lcom/lagradost/nicehttp/Requests;", "parseJson", "T", "", "text", "", "(Ljava/lang/String;)Ljava/lang/Object;", "tryParseJson", "convertRuntimeToMinutes", "", "runtime", "bypass", "mainUrl", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "newTvBaseHeaders", "", "getNewTvBaseHeaders", "()Ljava/util/Map;", "newTvDomains", "", "getNewTvDomains", "()Ljava/util/List;", "decodeBase64", "value", "resolvedApiUrl", "resolveApiUrl", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "buildNewTvHeaders", "ott", "extra", "getNewTvUserToken", "apiBase", "forceRefresh", "", "(Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "NETMIRROR_TV_URL", "fetchNetmirrorTvHtml", "solveCloudflareInWebView", "url", "CNC Verse_debug"}, k = 2, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Utils.kt\ncom/horis/cncverse/UtilsKt\n+ 2 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,780:1\n221#2,2:781\n221#2,2:786\n296#3,2:783\n62#4:785\n67#4,5:788\n67#4,5:794\n1#5:793\n*S KotlinDebug\n*F\n+ 1 Utils.kt\ncom/horis/cncverse/UtilsKt\n*L\n304#1:781,2\n401#1:786,2\n311#1:783,2\n384#1:785\n449#1:788,5\n467#1:794,5\n*E\n"})
+@SourceDebugExtension({"SMAP\nUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Utils.kt\ncom/horis/cncverse/UtilsKt\n+ 2 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,615:1\n221#2,2:616\n221#2,2:621\n296#3,2:618\n62#4:620\n67#4,5:623\n67#4,5:629\n1#5:628\n*S KotlinDebug\n*F\n+ 1 Utils.kt\ncom/horis/cncverse/UtilsKt\n*L\n139#1:616,2\n236#1:621,2\n146#1:618,2\n219#1:620\n284#1:623,5\n302#1:629,5\n*E\n"})
 public final class UtilsKt {
 
     @NotNull
@@ -132,8 +132,8 @@ public final class UtilsKt {
     /* JADX INFO: renamed from: com.horis.cncverse.UtilsKt$fetchNetmirrorTvHtml$1 */
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.UtilsKt", f = "Utils.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {541, 554, 561}, m = "fetchNetmirrorTvHtml", n = {"netmirrorTvUrl", "savedCf", "cfCookieToUse", "savedCfTs", "netmirrorTvUrl", "savedCf", "cfCookieToUse", "firstResponse", "savedCfTs", "netmirrorTvUrl", "savedCf", "cfCookieToUse", "firstResponse", "cfClearance", "savedCfTs"}, nl = {542, 555, 562}, s = {"L$0", "L$1", "L$2", "J$0", "L$0", "L$1", "L$2", "L$3", "J$0", "L$0", "L$1", "L$2", "L$3", "L$4", "J$0"}, v = 2)
-    static final class C00381 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.UtilsKt", f = "Utils.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2}, l = {376, 389, 396}, m = "fetchNetmirrorTvHtml", n = {"netmirrorTvUrl", "savedCf", "cfCookieToUse", "savedCfTs", "netmirrorTvUrl", "savedCf", "cfCookieToUse", "firstResponse", "savedCfTs", "netmirrorTvUrl", "savedCf", "cfCookieToUse", "firstResponse", "cfClearance", "savedCfTs"}, nl = {377, 390, 397}, s = {"L$0", "L$1", "L$2", "J$0", "L$0", "L$1", "L$2", "L$3", "J$0", "L$0", "L$1", "L$2", "L$3", "L$4", "J$0"}, v = 2)
+    static final class C00401 extends ContinuationImpl {
         long J$0;
         Object L$0;
         Object L$1;
@@ -143,7 +143,7 @@ public final class UtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C00381(Continuation<? super C00381> continuation) {
+        C00401(Continuation<? super C00401> continuation) {
             super(continuation);
         }
 
@@ -158,8 +158,8 @@ public final class UtilsKt {
     /* JADX INFO: renamed from: com.horis.cncverse.UtilsKt$getNewTvUserToken$1 */
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.UtilsKt", f = "Utils.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {446, 455, 464, 475, 481}, m = "getNewTvUserToken", n = {"apiBase", "ott", "savedToken", "currentOtp", "otpHeaders", "forceRefresh", "savedTimestamp", "apiBase", "ott", "savedToken", "currentOtp", "otpHeaders", "otpResponse", "forceRefresh", "savedTimestamp", "maxCaptchaAttempts", "attempt", "apiBase", "ott", "savedToken", "currentOtp", "otpHeaders", "otpResponse", "tvHtml", "otpMatch", "newOtp", "forceRefresh", "savedTimestamp", "maxCaptchaAttempts", "attempt", "apiBase", "ott", "savedToken", "currentOtp", "otpHeaders", "otpResponse", "tvHtml", "otpMatch", "forceRefresh", "savedTimestamp", "maxCaptchaAttempts", "attempt", "apiBase", "ott", "savedToken", "currentOtp", "otpHeaders", "otpResponse", "tvHtml", "otpMatch", "forceRefresh", "savedTimestamp", "maxCaptchaAttempts", "attempt"}, nl = {449, 456, 467, 480, 454}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "J$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "J$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "J$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "J$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "J$0", "I$0", "I$1"}, v = 2)
-    static final class C00391 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.UtilsKt", f = "Utils.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {281, 290, 299, 310, 316}, m = "getNewTvUserToken", n = {"apiBase", "ott", "savedToken", "currentOtp", "otpHeaders", "forceRefresh", "savedTimestamp", "apiBase", "ott", "savedToken", "currentOtp", "otpHeaders", "otpResponse", "forceRefresh", "savedTimestamp", "maxCaptchaAttempts", "attempt", "apiBase", "ott", "savedToken", "currentOtp", "otpHeaders", "otpResponse", "tvHtml", "otpMatch", "newOtp", "forceRefresh", "savedTimestamp", "maxCaptchaAttempts", "attempt", "apiBase", "ott", "savedToken", "currentOtp", "otpHeaders", "otpResponse", "tvHtml", "otpMatch", "forceRefresh", "savedTimestamp", "maxCaptchaAttempts", "attempt", "apiBase", "ott", "savedToken", "currentOtp", "otpHeaders", "otpResponse", "tvHtml", "otpMatch", "forceRefresh", "savedTimestamp", "maxCaptchaAttempts", "attempt"}, nl = {284, 291, 302, 315, 289}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "J$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "J$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "J$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "J$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "J$0", "I$0", "I$1"}, v = 2)
+    static final class C00411 extends ContinuationImpl {
         int I$0;
         int I$1;
         long J$0;
@@ -176,7 +176,7 @@ public final class UtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C00391(Continuation<? super C00391> continuation) {
+        C00411(Continuation<? super C00411> continuation) {
             super(continuation);
         }
 
@@ -191,8 +191,8 @@ public final class UtilsKt {
     /* JADX INFO: renamed from: com.horis.cncverse.UtilsKt$resolveApiUrl$1 */
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.UtilsKt", f = "Utils.kt", i = {0, 0, 0, 0}, l = {383}, m = "resolveApiUrl", n = {"savedApiBase", "encoded", "base", "savedTimestamp"}, nl = {384}, s = {"L$0", "L$2", "L$3", "J$0"}, v = 2)
-    static final class C00411 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.UtilsKt", f = "Utils.kt", i = {0, 0, 0, 0}, l = {218}, m = "resolveApiUrl", n = {"savedApiBase", "encoded", "base", "savedTimestamp"}, nl = {219}, s = {"L$0", "L$2", "L$3", "J$0"}, v = 2)
+    static final class C00431 extends ContinuationImpl {
         long J$0;
         Object L$0;
         Object L$1;
@@ -201,7 +201,7 @@ public final class UtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C00411(Continuation<? super C00411> continuation) {
+        C00431(Continuation<? super C00431> continuation) {
             super(continuation);
         }
 
@@ -456,15 +456,15 @@ public final class UtilsKt {
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.horis.cncverse.UtilsKt$getNewTvUserToken$3", f = "Utils.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00403 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    static final class C00423 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         int label;
 
-        C00403(Continuation<? super C00403> continuation) {
+        C00423(Continuation<? super C00423> continuation) {
             super(2, continuation);
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C00403(continuation);
+            return new C00423(continuation);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -502,9 +502,9 @@ public final class UtilsKt {
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     @Nullable
     public static final Object fetchNetmirrorTvHtml(@NotNull Continuation<? super String> continuation) {
-        C00381 c00381;
+        C00401 c00401;
         String cfCookieToUse;
-        C00381 c00382;
+        C00401 c00402;
         String netmirrorTvUrl;
         String savedCf;
         long savedCfTs;
@@ -519,20 +519,20 @@ public final class UtilsKt {
         NiceResponse firstResponse4;
         Object obj;
         NiceResponse retryResponse;
-        if (continuation instanceof C00381) {
-            c00381 = (C00381) continuation;
-            if ((c00381.label & Integer.MIN_VALUE) != 0) {
-                c00381.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00401) {
+            c00401 = (C00401) continuation;
+            if ((c00401.label & Integer.MIN_VALUE) != 0) {
+                c00401.label -= Integer.MIN_VALUE;
             } else {
-                c00381 = new C00381(continuation);
+                c00401 = new C00401(continuation);
             }
         } else {
-            c00381 = new C00381(continuation);
+            c00401 = new C00401(continuation);
         }
-        C00381 c00383 = c00381;
-        Object $result = c00383.result;
+        C00401 c00403 = c00401;
+        Object $result = c00403.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00383.label) {
+        switch (c00403.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Pair<String, Long> cfCookie = NetflixMirrorStorage.INSTANCE.getCfCookie();
@@ -544,15 +544,15 @@ public final class UtilsKt {
                     Requests requests = app;
                     try {
                         Map<String, String> mapFetchNetmirrorTvHtml$buildHeaders = fetchNetmirrorTvHtml$buildHeaders(cfCookieToUse2);
-                        c00383.L$0 = NETMIRROR_TV_URL;
-                        c00383.L$1 = SpillingKt.nullOutSpilledVariable(savedCf3);
-                        c00383.L$2 = cfCookieToUse2;
-                        c00383.J$0 = savedCfTs3;
-                        c00383.label = 1;
+                        c00403.L$0 = NETMIRROR_TV_URL;
+                        c00403.L$1 = SpillingKt.nullOutSpilledVariable(savedCf3);
+                        c00403.L$2 = cfCookieToUse2;
+                        c00403.J$0 = savedCfTs3;
+                        c00403.label = 1;
                         cfCookieToUse = cfCookieToUse2;
                         try {
-                            Object obj2 = Requests.get$default(requests, NETMIRROR_TV_URL, mapFetchNetmirrorTvHtml$buildHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00383, 4092, (Object) null);
-                            c00382 = c00383;
+                            Object obj2 = Requests.get$default(requests, NETMIRROR_TV_URL, mapFetchNetmirrorTvHtml$buildHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00403, 4092, (Object) null);
+                            c00402 = c00403;
                             if (obj2 == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -568,13 +568,13 @@ public final class UtilsKt {
                                 if (cfCookieToUse != null) {
                                     NetflixMirrorStorage.INSTANCE.clearCfCookie();
                                 }
-                                c00382.L$0 = netmirrorTvUrl;
-                                c00382.L$1 = SpillingKt.nullOutSpilledVariable(savedCf);
-                                c00382.L$2 = SpillingKt.nullOutSpilledVariable(cfCookieToUse);
-                                c00382.L$3 = firstResponse;
-                                c00382.J$0 = savedCfTs;
-                                c00382.label = 2;
-                                objSolveCloudflareInWebView = solveCloudflareInWebView(netmirrorTvUrl, c00382);
+                                c00402.L$0 = netmirrorTvUrl;
+                                c00402.L$1 = SpillingKt.nullOutSpilledVariable(savedCf);
+                                c00402.L$2 = SpillingKt.nullOutSpilledVariable(cfCookieToUse);
+                                c00402.L$3 = firstResponse;
+                                c00402.J$0 = savedCfTs;
+                                c00402.label = 2;
+                                objSolveCloudflareInWebView = solveCloudflareInWebView(netmirrorTvUrl, c00402);
                                 if (objSolveCloudflareInWebView == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -591,16 +591,16 @@ public final class UtilsKt {
                                 try {
                                     Requests requests2 = app;
                                     Map<String, String> mapFetchNetmirrorTvHtml$buildHeaders2 = fetchNetmirrorTvHtml$buildHeaders(cfClearance);
-                                    c00382.L$0 = SpillingKt.nullOutSpilledVariable(netmirrorTvUrl);
-                                    c00382.L$1 = SpillingKt.nullOutSpilledVariable(savedCf2);
-                                    c00382.L$2 = SpillingKt.nullOutSpilledVariable(cfCookieToUse);
-                                    c00382.L$3 = firstResponse2;
-                                    c00382.L$4 = SpillingKt.nullOutSpilledVariable(cfClearance);
-                                    c00382.J$0 = savedCfTs2;
-                                    c00382.label = 3;
+                                    c00402.L$0 = SpillingKt.nullOutSpilledVariable(netmirrorTvUrl);
+                                    c00402.L$1 = SpillingKt.nullOutSpilledVariable(savedCf2);
+                                    c00402.L$2 = SpillingKt.nullOutSpilledVariable(cfCookieToUse);
+                                    c00402.L$3 = firstResponse2;
+                                    c00402.L$4 = SpillingKt.nullOutSpilledVariable(cfClearance);
+                                    c00402.J$0 = savedCfTs2;
+                                    c00402.label = 3;
                                     firstResponse4 = firstResponse2;
                                     try {
-                                        obj = Requests.get$default(requests2, netmirrorTvUrl, mapFetchNetmirrorTvHtml$buildHeaders2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00382, 4092, (Object) null);
+                                        obj = Requests.get$default(requests2, netmirrorTvUrl, mapFetchNetmirrorTvHtml$buildHeaders2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00402, 4092, (Object) null);
                                         if (obj == coroutine_suspended) {
                                             return coroutine_suspended;
                                         }
@@ -635,15 +635,15 @@ public final class UtilsKt {
                 }
                 break;
             case 1:
-                savedCfTs = c00383.J$0;
-                String cfCookieToUse3 = (String) c00383.L$2;
-                savedCf = (String) c00383.L$1;
-                String netmirrorTvUrl2 = (String) c00383.L$0;
+                savedCfTs = c00403.J$0;
+                String cfCookieToUse3 = (String) c00403.L$2;
+                savedCf = (String) c00403.L$1;
+                String netmirrorTvUrl2 = (String) c00403.L$0;
                 try {
                     ResultKt.throwOnFailure($result);
                     cfCookieToUse = cfCookieToUse3;
                     netmirrorTvUrl = netmirrorTvUrl2;
-                    c00382 = c00383;
+                    c00402 = c00403;
                     firstResponse = (NiceResponse) $result;
                     if (!fetchNetmirrorTvHtml$isCloudflare(firstResponse.getText(), firstResponse.getCode())) {
                         return firstResponse.getText();
@@ -651,13 +651,13 @@ public final class UtilsKt {
                     if (cfCookieToUse != null) {
                         NetflixMirrorStorage.INSTANCE.clearCfCookie();
                     }
-                    c00382.L$0 = netmirrorTvUrl;
-                    c00382.L$1 = SpillingKt.nullOutSpilledVariable(savedCf);
-                    c00382.L$2 = SpillingKt.nullOutSpilledVariable(cfCookieToUse);
-                    c00382.L$3 = firstResponse;
-                    c00382.J$0 = savedCfTs;
-                    c00382.label = 2;
-                    objSolveCloudflareInWebView = solveCloudflareInWebView(netmirrorTvUrl, c00382);
+                    c00402.L$0 = netmirrorTvUrl;
+                    c00402.L$1 = SpillingKt.nullOutSpilledVariable(savedCf);
+                    c00402.L$2 = SpillingKt.nullOutSpilledVariable(cfCookieToUse);
+                    c00402.L$3 = firstResponse;
+                    c00402.J$0 = savedCfTs;
+                    c00402.label = 2;
+                    objSolveCloudflareInWebView = solveCloudflareInWebView(netmirrorTvUrl, c00402);
                     if (objSolveCloudflareInWebView == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -673,15 +673,15 @@ public final class UtilsKt {
                     NetflixMirrorStorage.INSTANCE.saveCfCookie(cfClearance);
                     Requests requests3 = app;
                     Map<String, String> mapFetchNetmirrorTvHtml$buildHeaders3 = fetchNetmirrorTvHtml$buildHeaders(cfClearance);
-                    c00382.L$0 = SpillingKt.nullOutSpilledVariable(netmirrorTvUrl);
-                    c00382.L$1 = SpillingKt.nullOutSpilledVariable(savedCf2);
-                    c00382.L$2 = SpillingKt.nullOutSpilledVariable(cfCookieToUse);
-                    c00382.L$3 = firstResponse2;
-                    c00382.L$4 = SpillingKt.nullOutSpilledVariable(cfClearance);
-                    c00382.J$0 = savedCfTs2;
-                    c00382.label = 3;
+                    c00402.L$0 = SpillingKt.nullOutSpilledVariable(netmirrorTvUrl);
+                    c00402.L$1 = SpillingKt.nullOutSpilledVariable(savedCf2);
+                    c00402.L$2 = SpillingKt.nullOutSpilledVariable(cfCookieToUse);
+                    c00402.L$3 = firstResponse2;
+                    c00402.L$4 = SpillingKt.nullOutSpilledVariable(cfClearance);
+                    c00402.J$0 = savedCfTs2;
+                    c00402.label = 3;
                     firstResponse4 = firstResponse2;
-                    obj = Requests.get$default(requests3, netmirrorTvUrl, mapFetchNetmirrorTvHtml$buildHeaders3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00382, 4092, (Object) null);
+                    obj = Requests.get$default(requests3, netmirrorTvUrl, mapFetchNetmirrorTvHtml$buildHeaders3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00402, 4092, (Object) null);
                     if (obj == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -697,13 +697,13 @@ public final class UtilsKt {
                     return "";
                 }
             case 2:
-                long savedCfTs4 = c00383.J$0;
-                NiceResponse firstResponse5 = (NiceResponse) c00383.L$3;
-                String cfCookieToUse4 = (String) c00383.L$2;
-                String savedCf4 = (String) c00383.L$1;
-                netmirrorTvUrl = (String) c00383.L$0;
+                long savedCfTs4 = c00403.J$0;
+                NiceResponse firstResponse5 = (NiceResponse) c00403.L$3;
+                String cfCookieToUse4 = (String) c00403.L$2;
+                String savedCf4 = (String) c00403.L$1;
+                netmirrorTvUrl = (String) c00403.L$0;
                 ResultKt.throwOnFailure($result);
-                c00382 = c00383;
+                c00402 = c00403;
                 cfCookieToUse = cfCookieToUse4;
                 savedCf2 = savedCf4;
                 firstResponse2 = firstResponse5;
@@ -716,15 +716,15 @@ public final class UtilsKt {
                 NetflixMirrorStorage.INSTANCE.saveCfCookie(cfClearance);
                 Requests requests4 = app;
                 Map<String, String> mapFetchNetmirrorTvHtml$buildHeaders4 = fetchNetmirrorTvHtml$buildHeaders(cfClearance);
-                c00382.L$0 = SpillingKt.nullOutSpilledVariable(netmirrorTvUrl);
-                c00382.L$1 = SpillingKt.nullOutSpilledVariable(savedCf2);
-                c00382.L$2 = SpillingKt.nullOutSpilledVariable(cfCookieToUse);
-                c00382.L$3 = firstResponse2;
-                c00382.L$4 = SpillingKt.nullOutSpilledVariable(cfClearance);
-                c00382.J$0 = savedCfTs2;
-                c00382.label = 3;
+                c00402.L$0 = SpillingKt.nullOutSpilledVariable(netmirrorTvUrl);
+                c00402.L$1 = SpillingKt.nullOutSpilledVariable(savedCf2);
+                c00402.L$2 = SpillingKt.nullOutSpilledVariable(cfCookieToUse);
+                c00402.L$3 = firstResponse2;
+                c00402.L$4 = SpillingKt.nullOutSpilledVariable(cfClearance);
+                c00402.J$0 = savedCfTs2;
+                c00402.label = 3;
                 firstResponse4 = firstResponse2;
-                obj = Requests.get$default(requests4, netmirrorTvUrl, mapFetchNetmirrorTvHtml$buildHeaders4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00382, 4092, (Object) null);
+                obj = Requests.get$default(requests4, netmirrorTvUrl, mapFetchNetmirrorTvHtml$buildHeaders4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00402, 4092, (Object) null);
                 if (obj == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -737,8 +737,8 @@ public final class UtilsKt {
                 NetflixMirrorStorage.INSTANCE.clearCfCookie();
                 return "";
             case 3:
-                long j = c00383.J$0;
-                firstResponse3 = (NiceResponse) c00383.L$3;
+                long j = c00403.J$0;
+                firstResponse3 = (NiceResponse) c00403.L$3;
                 try {
                     ResultKt.throwOnFailure($result);
                     retryResponse = (NiceResponse) $result;
@@ -793,15 +793,15 @@ public final class UtilsKt {
         if (ctx == null) {
             return null;
         }
-        return BuildersKt.withContext(Dispatchers.getMain(), new C00422(ctx, url, null), continuation);
+        return BuildersKt.withContext(Dispatchers.getMain(), new C00442(ctx, url, null), continuation);
     }
 
     /* JADX INFO: renamed from: com.horis.cncverse.UtilsKt$solveCloudflareInWebView$2 */
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u000e\n\u0002\u0018\u0002\u0010\u0000\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.UtilsKt$solveCloudflareInWebView$2", f = "Utils.kt", i = {}, l = {584}, m = "invokeSuspend", n = {}, nl = {778}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Utils.kt\ncom/horis/cncverse/UtilsKt$solveCloudflareInWebView$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,780:1\n1#2:781\n*E\n"})
-    static final class C00422 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
+    @DebugMetadata(c = "com.horis.cncverse.UtilsKt$solveCloudflareInWebView$2", f = "Utils.kt", i = {}, l = {419}, m = "invokeSuspend", n = {}, nl = {613}, s = {}, v = 2)
+    @SourceDebugExtension({"SMAP\nUtils.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Utils.kt\ncom/horis/cncverse/UtilsKt$solveCloudflareInWebView$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,615:1\n1#2:616\n*E\n"})
+    static final class C00442 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super String>, Object> {
         final /* synthetic */ Context $ctx;
         final /* synthetic */ String $url;
         Object L$0;
@@ -809,14 +809,14 @@ public final class UtilsKt {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00422(Context context, String str, Continuation<? super C00422> continuation) {
+        C00442(Context context, String str, Continuation<? super C00442> continuation) {
             super(2, continuation);
             this.$ctx = context;
             this.$url = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C00422(this.$ctx, this.$url, continuation);
+            return new C00442(this.$ctx, this.$url, continuation);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super String> continuation) {
@@ -861,7 +861,7 @@ public final class UtilsKt {
                             @Override // android.webkit.WebViewClient
                             public void onPageFinished(WebView view2, String pageUrl) {
                                 super.onPageFinished(view2, pageUrl);
-                                UtilsKt.C00422.invokeSuspend$lambda$0$extractAndFinish(resolved, cookieManager, str, wv, cont);
+                                UtilsKt.C00442.invokeSuspend$lambda$0$extractAndFinish(resolved, cookieManager, str, wv, cont);
                                 if (!resolved.element) {
                                     Handler handler = new Handler(Looper.getMainLooper());
                                     final Ref.BooleanRef booleanRef = resolved;
@@ -873,7 +873,7 @@ public final class UtilsKt {
                                         @Override // java.lang.Runnable
                                         public void run() {
                                             if (!booleanRef.element) {
-                                                UtilsKt.C00422.invokeSuspend$lambda$0$extractAndFinish(booleanRef, cookieManager2, str2, webView, continuation);
+                                                UtilsKt.C00442.invokeSuspend$lambda$0$extractAndFinish(booleanRef, cookieManager2, str2, webView, continuation);
                                                 if (!booleanRef.element) {
                                                     new Handler(Looper.getMainLooper()).postDelayed(this, 1000L);
                                                 }
@@ -969,20 +969,20 @@ public final class UtilsKt {
                                         float step = dp * 10.0f;
                                         switch (keyCode) {
                                             case 19:
-                                                UtilsKt.C00422.invokeSuspend$lambda$0$moveCursor(cursorX, $this$invokeSuspend_u24lambda_u240_u244, cursorY, cursorView, cursorSize, 0.0f, -step);
+                                                UtilsKt.C00442.invokeSuspend$lambda$0$moveCursor(cursorX, $this$invokeSuspend_u24lambda_u240_u244, cursorY, cursorView, cursorSize, 0.0f, -step);
                                                 return true;
                                             case 20:
-                                                UtilsKt.C00422.invokeSuspend$lambda$0$moveCursor(cursorX, $this$invokeSuspend_u24lambda_u240_u244, cursorY, cursorView, cursorSize, 0.0f, step);
+                                                UtilsKt.C00442.invokeSuspend$lambda$0$moveCursor(cursorX, $this$invokeSuspend_u24lambda_u240_u244, cursorY, cursorView, cursorSize, 0.0f, step);
                                                 return true;
                                             case 21:
-                                                UtilsKt.C00422.invokeSuspend$lambda$0$moveCursor(cursorX, $this$invokeSuspend_u24lambda_u240_u244, cursorY, cursorView, cursorSize, -step, 0.0f);
+                                                UtilsKt.C00442.invokeSuspend$lambda$0$moveCursor(cursorX, $this$invokeSuspend_u24lambda_u240_u244, cursorY, cursorView, cursorSize, -step, 0.0f);
                                                 return true;
                                             case 22:
-                                                UtilsKt.C00422.invokeSuspend$lambda$0$moveCursor(cursorX, $this$invokeSuspend_u24lambda_u240_u244, cursorY, cursorView, cursorSize, step, 0.0f);
+                                                UtilsKt.C00442.invokeSuspend$lambda$0$moveCursor(cursorX, $this$invokeSuspend_u24lambda_u240_u244, cursorY, cursorView, cursorSize, step, 0.0f);
                                                 return true;
                                             case 23:
                                             case 66:
-                                                UtilsKt.C00422.invokeSuspend$lambda$0$clickAtCursor(cursorX, cursorY, wv);
+                                                UtilsKt.C00442.invokeSuspend$lambda$0$clickAtCursor(cursorX, cursorY, wv);
                                                 return true;
                                             default:
                                                 return false;

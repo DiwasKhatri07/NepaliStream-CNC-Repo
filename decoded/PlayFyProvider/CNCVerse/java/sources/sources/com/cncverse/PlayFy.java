@@ -1,24 +1,8 @@
 package com.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lagradost.cloudstream3.HomePageList;
@@ -33,7 +17,6 @@ import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvType;
 import com.lagradost.cloudstream3.mvvm.ArchComponentExtKt;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.DrmExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
@@ -41,7 +24,6 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.cloudstream3.utils.Qualities;
 import java.io.Closeable;
-import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -87,7 +69,6 @@ import kotlin.jvm.internal.SourceDebugExtension;
 import kotlin.reflect.KType;
 import kotlin.reflect.KTypeProjection;
 import kotlin.text.CharsKt;
-import kotlin.text.Charsets;
 import kotlin.text.MatchGroup;
 import kotlin.text.MatchGroupCollection;
 import kotlin.text.MatchResult;
@@ -108,10 +89,9 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: PlayFy.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/PlayFyProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 J2\u00020\u0001:\u0002JKB\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0016\u0010%\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u0010'J\u000e\u0010(\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u000e\u0010)\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u0010\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u0003H\u0002J$\u0010,\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0012\u0010-\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eH\u0002J\u0018\u0010.\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0006\u0010/\u001a\u00020\u0003H\u0002J\u001e\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u000205H\u0096@¢\u0006\u0002\u00106J\u001c\u00107\u001a\b\u0012\u0004\u0012\u000209082\u0006\u0010:\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'J\u0016\u0010;\u001a\u00020<2\u0006\u0010&\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'J\b\u0010=\u001a\u00020>H\u0002J\b\u0010?\u001a\u00020>H\u0002J\u0010\u0010@\u001a\u00020>2\u0006\u0010&\u001a\u00020\u0003H\u0002JF\u0010A\u001a\u00020\u00132\u0006\u0010B\u001a\u00020\u00032\u0006\u0010C\u001a\u00020\u00132\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020F\u0012\u0004\u0012\u00020>0E2\u0012\u0010G\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020>0EH\u0096@¢\u0006\u0002\u0010IR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR\u001a\u0010\u000f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\t\"\u0004\b\u0011\u0010\u000bR\u0014\u0010\u0012\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0015R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001f\u001a\u00020 8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b#\u0010$\u001a\u0004\b!\u0010\"¨\u0006L"}, d2 = {"Lcom/cncverse/PlayFy;", "Lcom/lagradost/cloudstream3/MainAPI;", "customName", "", "customMainUrl", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "lang", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "customHttpClient", "Lokhttp3/OkHttpClient;", "getCustomHttpClient", "()Lokhttp3/OkHttpClient;", "customHttpClient$delegate", "Lkotlin/Lazy;", "getWithCustomHeaders", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "base64ToHexOrNull", "hexToBase64UrlOrNull", "decryptContent", "content", "getMpdStream", "customHeaders", "getDRMKeysFromLicenseServer", "kid", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "showSubscriptionPopupIfNeeded", "", "showTelegramPopup", "openInExternalBrowser", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "LoadData", "PlayFyProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nPlayFy.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlayFy.kt\ncom/cncverse/PlayFy\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 7 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 8 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,1422:1\n296#2,2:1423\n1586#2:1425\n1661#2,3:1426\n296#2,2:1450\n1512#2:1452\n1538#2,3:1453\n1541#2,3:1463\n1586#2:1469\n1661#2,3:1470\n777#2:1474\n873#2,2:1475\n1586#2:1477\n1661#2,3:1478\n1586#2:1519\n1661#2,3:1520\n1088#3,2:1429\n63#4:1431\n64#4,15:1433\n63#4:1481\n64#4,15:1483\n63#4:1500\n64#4,15:1502\n1#5:1432\n1#5:1482\n1#5:1501\n1#5:1523\n50#6:1448\n43#6:1449\n50#6:1498\n43#6:1499\n50#6:1517\n43#6:1518\n383#7,7:1456\n129#8:1466\n158#8,2:1467\n160#8:1473\n*S KotlinDebug\n*F\n+ 1 PlayFy.kt\ncom/cncverse/PlayFy\n*L\n137#1:1423,2\n193#1:1425\n193#1:1426,3\n325#1:1450,2\n343#1:1452\n343#1:1453,3\n343#1:1463,3\n345#1:1469\n345#1:1470,3\n376#1:1474\n376#1:1475,2\n376#1:1477\n376#1:1478,3\n740#1:1519\n740#1:1520,3\n222#1:1429,2\n322#1:1431\n322#1:1433,15\n397#1:1481\n397#1:1483,15\n666#1:1500\n666#1:1502,15\n322#1:1432\n397#1:1482\n666#1:1501\n322#1:1448\n322#1:1449\n397#1:1498\n397#1:1499\n666#1:1517\n666#1:1518\n343#1:1456,7\n343#1:1466\n343#1:1467,2\n343#1:1473\n*E\n"})
+@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 G2\u00020\u0001:\u0002GHB\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0016\u0010%\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u0010'J\u000e\u0010(\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u000e\u0010)\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u0010\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u0003H\u0002J$\u0010,\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0012\u0010-\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eH\u0002J\u0018\u0010.\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0006\u0010/\u001a\u00020\u0003H\u0002J\u001e\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u000205H\u0096@¢\u0006\u0002\u00106J\u001c\u00107\u001a\b\u0012\u0004\u0012\u000209082\u0006\u0010:\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'J\u0016\u0010;\u001a\u00020<2\u0006\u0010&\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'JF\u0010=\u001a\u00020\u00132\u0006\u0010>\u001a\u00020\u00032\u0006\u0010?\u001a\u00020\u00132\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020C0A2\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020E\u0012\u0004\u0012\u00020C0AH\u0096@¢\u0006\u0002\u0010FR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR\u001a\u0010\u000f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\t\"\u0004\b\u0011\u0010\u000bR\u0014\u0010\u0012\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0015R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001f\u001a\u00020 8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b#\u0010$\u001a\u0004\b!\u0010\"¨\u0006I"}, d2 = {"Lcom/cncverse/PlayFy;", "Lcom/lagradost/cloudstream3/MainAPI;", "customName", "", "customMainUrl", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "lang", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "customHttpClient", "Lokhttp3/OkHttpClient;", "getCustomHttpClient", "()Lokhttp3/OkHttpClient;", "customHttpClient$delegate", "Lkotlin/Lazy;", "getWithCustomHeaders", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "base64ToHexOrNull", "hexToBase64UrlOrNull", "decryptContent", "content", "getMpdStream", "customHeaders", "getDRMKeysFromLicenseServer", "kid", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "LoadData", "PlayFyProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nPlayFy.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlayFy.kt\ncom/cncverse/PlayFy\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 7 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 8 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,1148:1\n296#2,2:1149\n1586#2:1151\n1661#2,3:1152\n296#2,2:1176\n1512#2:1178\n1538#2,3:1179\n1541#2,3:1189\n1586#2:1195\n1661#2,3:1196\n777#2:1200\n873#2,2:1201\n1586#2:1203\n1661#2,3:1204\n1586#2:1245\n1661#2,3:1246\n1088#3,2:1155\n63#4:1157\n64#4,15:1159\n63#4:1207\n64#4,15:1209\n63#4:1226\n64#4,15:1228\n1#5:1158\n1#5:1208\n1#5:1227\n50#6:1174\n43#6:1175\n50#6:1224\n43#6:1225\n50#6:1243\n43#6:1244\n383#7,7:1182\n129#8:1192\n158#8,2:1193\n160#8:1199\n*S KotlinDebug\n*F\n+ 1 PlayFy.kt\ncom/cncverse/PlayFy\n*L\n106#1:1149,2\n162#1:1151\n162#1:1152,3\n294#1:1176,2\n310#1:1178\n310#1:1179,3\n310#1:1189,3\n312#1:1195\n312#1:1196,3\n343#1:1200\n343#1:1201,2\n343#1:1203\n343#1:1204,3\n466#1:1245\n466#1:1246,3\n191#1:1155,2\n291#1:1157\n291#1:1159,15\n364#1:1207\n364#1:1209,15\n392#1:1226\n392#1:1228,15\n291#1:1158\n364#1:1208\n392#1:1227\n291#1:1174\n291#1:1175\n364#1:1224\n364#1:1225\n392#1:1243\n392#1:1244\n310#1:1182,7\n310#1:1192\n310#1:1193,2\n310#1:1199\n*E\n"})
 public final class PlayFy extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
@@ -126,15 +106,8 @@ public final class PlayFy extends MainAPI {
     @NotNull
     public static final String EXT_VLC_OPT = "#EXTVLCOPT";
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     /* JADX INFO: renamed from: customHttpClient$delegate, reason: from kotlin metadata */
     @NotNull
@@ -166,7 +139,7 @@ public final class PlayFy extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PlayFy$getMainPage$1 */
     /* JADX INFO: compiled from: PlayFy.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayFy", f = "PlayFy.kt", i = {0, 0}, l = {340}, m = "getMainPage", n = {"request", "page"}, nl = {341}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PlayFy", f = "PlayFy.kt", i = {0, 0}, l = {307}, m = "getMainPage", n = {"request", "page"}, nl = {308}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -188,7 +161,7 @@ public final class PlayFy extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$1 */
     /* JADX INFO: compiled from: PlayFy.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayFy", f = "PlayFy.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6}, l = {712, 751, 771, 789, 815, 838, 862}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "headers", "normalizedKey", "normalizedKid", "playerKey", "playerKid", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting"}, nl = {711, 750, 770, 788, 814, 837, 861}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PlayFy", f = "PlayFy.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6}, l = {438, 477, 497, 515, 541, 564, 588}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "headers", "normalizedKey", "normalizedKid", "playerKey", "playerKid", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting"}, nl = {437, 476, 496, 514, 540, 563, 587}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -224,7 +197,7 @@ public final class PlayFy extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PlayFy$search$1 */
     /* JADX INFO: compiled from: PlayFy.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayFy", f = "PlayFy.kt", i = {0}, l = {373}, m = "search", n = {"query"}, nl = {374}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PlayFy", f = "PlayFy.kt", i = {0}, l = {340}, m = "search", n = {"query"}, nl = {341}, s = {"L$0"}, v = 2)
     static final class C00101 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -258,7 +231,7 @@ public final class PlayFy extends MainAPI {
         this.hasChromecastSupport = true;
         this.supportedTypes = SetsKt.setOf(TvType.Live);
         this.headers = MapsKt.mapOf(new Pair[]{TuplesKt.to("accept", "*/*"), TuplesKt.to("Cache-Control", "no-cache, no-store"), TuplesKt.to("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0")});
-        this.customHttpClient = LazyKt.lazy(new Function0() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda9
+        this.customHttpClient = LazyKt.lazy(new Function0() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda5
             public final Object invoke() {
                 return PlayFy.customHttpClient_delegate$lambda$0(this.f$0);
             }
@@ -270,65 +243,13 @@ public final class PlayFy extends MainAPI {
     }
 
     /* JADX INFO: compiled from: PlayFy.kt */
-    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\f\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u001c\u0010\u0013\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u000e\u0010\u0018\u001a\u00020\rX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\rX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\rX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lcom/cncverse/PlayFy$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "EXT_M3U", "EXT_INF", "EXT_VLC_OPT", "PlayFyProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nPlayFy.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlayFy.kt\ncom/cncverse/PlayFy$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1422:1\n1#2:1423\n*E\n"})
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lcom/cncverse/PlayFy$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "EXT_M3U", "", "EXT_INF", "EXT_VLC_OPT", "PlayFyProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                PlayFy.csGuardWasEverActive = true;
-            }
-            return PlayFy.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PlayFy$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    PlayFy.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -475,7 +396,7 @@ public final class PlayFy extends MainAPI {
             int padding = (4 - (value.length() % 4)) % 4;
             String normalized = value + StringsKt.repeat("=", padding);
             byte[] decoded = Base64.decode(normalized, 0);
-            return ArraysKt.joinToString$default(decoded, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda1
+            return ArraysKt.joinToString$default(decoded, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda0
                 public final Object invoke(Object obj) {
                     return PlayFy.base64ToHexOrNull$lambda$1(((Byte) obj).byteValue());
                 }
@@ -551,12 +472,12 @@ public final class PlayFy extends MainAPI {
                         i++;
                     }
                     if (isHex && hexStr.length() >= 64 && hexStr.length() % 2 == 0) {
-                        final Function1 getHexChar = new Function1() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda7
+                        final Function1 getHexChar = new Function1() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda3
                             public final Object invoke(Object obj) {
                                 return Character.valueOf(PlayFy.decryptContent$lambda$1(shift, hexStr, ((Integer) obj).intValue()));
                             }
                         };
-                        Function1 getByte = new Function1() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda8
+                        Function1 getByte = new Function1() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda4
                             public final Object invoke(Object obj) {
                                 return Byte.valueOf(PlayFy.decryptContent$lambda$2(getHexChar, ((Integer) obj).intValue()));
                             }
@@ -799,12 +720,7 @@ public final class PlayFy extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String mainUrl = getMainUrl();
                 c00001.L$0 = SpillingKt.nullOutSpilledVariable(request);
                 c00001.I$0 = page;
@@ -880,7 +796,7 @@ public final class PlayFy extends MainAPI {
                 String cookie2 = cookie == null ? "" : cookie;
                 String licenseUrl = channel.getLicenseUrl();
                 String licenseUrl2 = licenseUrl == null ? "" : licenseUrl;
-                destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), channel.getHeaders())), TvType.Live, false, new Function1() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda4
+                destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), channel.getHeaders())), TvType.Live, false, new Function1() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda1
                     public final Object invoke(Object obj2) {
                         return PlayFy.getMainPage$lambda$1$0$0(posterurl, channel, (LiveSearchResponse) obj2);
                     }
@@ -930,10 +846,6 @@ public final class PlayFy extends MainAPI {
         switch (c00101.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 String mainUrl = playFy.getMainUrl();
                 c00101.L$0 = query;
                 c00101.label = 1;
@@ -984,7 +896,7 @@ public final class PlayFy extends MainAPI {
             String cookie2 = cookie == null ? "" : cookie;
             String licenseUrl = channel.getLicenseUrl();
             String licenseUrl2 = licenseUrl == null ? "" : licenseUrl;
-            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(playFy, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), playFy.headers)), TvType.Live, false, new Function1() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda6
+            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(playFy, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), playFy.headers)), TvType.Live, false, new Function1() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda2
                 public final Object invoke(Object obj) {
                     return PlayFy.search$lambda$1$0(posterurl, channel, (LiveSearchResponse) obj);
                 }
@@ -1347,319 +1259,11 @@ public final class PlayFy extends MainAPI {
         }
     }
 
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda5
-                @Override // java.lang.Runnable
-                public final void run() {
-                    PlayFy.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹30/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda12
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    PlayFy.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda13
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    PlayFy.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        boolean isTV;
-        final Context ctx = context;
-        if (ctx == null || telegramPopupShown) {
-            return;
-        }
-        try {
-            isTV = Globals.INSTANCE.isLayout(2);
-        } catch (Exception e) {
-            isTV = false;
-        }
-        if (isTV) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                PlayFy.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda10
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda11
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    PlayFy.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        boolean isTV;
-        final Context ctx = context;
-        if (ctx == null) {
-            return;
-        }
-        try {
-            isTV = Globals.INSTANCE.isLayout(2);
-        } catch (Exception e) {
-            isTV = false;
-        }
-        if (isTV) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda3
-            @Override // java.lang.Runnable
-            public final void run() {
-                PlayFy.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX WARN: Code duplicated, block: B:101:0x034b  */
-    /* JADX WARN: Code duplicated, block: B:154:0x044b  */
-    /* JADX WARN: Code duplicated, block: B:157:0x0452  */
-    /* JADX WARN: Code duplicated, block: B:160:0x04cf A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:161:0x04d0  */
+    /* JADX WARN: Code duplicated, block: B:126:0x03cf  */
+    /* JADX WARN: Code duplicated, block: B:129:0x03d6  */
+    /* JADX WARN: Code duplicated, block: B:132:0x0452 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:133:0x0453  */
+    /* JADX WARN: Code duplicated, block: B:73:0x02d2  */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
@@ -1691,9 +1295,9 @@ public final class PlayFy extends MainAPI {
         LoadData loadData4;
         Function1<? super ExtractorLink, Unit> function10;
         String string;
+        LoadData loadData5;
         Function1<? super ExtractorLink, Unit> function11;
         Function1<? super SubtitleFile, Unit> function12;
-        LoadData loadData5;
         Object obj2;
         Function1<? super ExtractorLink, Unit> function13;
         Object objNewDrmExtractorLink;
@@ -1701,9 +1305,8 @@ public final class PlayFy extends MainAPI {
         MatchGroupCollection groups;
         MatchGroup matchGroup;
         String normalizedKey;
-        String normalizedKid;
-        String mappedKey;
         String mpdKidHex;
+        String mappedKey;
         String playerKey;
         String playerKid;
         Object objNewDrmExtractorLink2;
@@ -1728,24 +1331,6 @@ public final class PlayFy extends MainAPI {
         switch (c00022.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                PlayFy $this$loadLinks_u24lambda_u240 = this;
-                final Context _ctx = context;
-                SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                long _nowSec = System.currentTimeMillis() / 1000;
-                boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                if (!_isSubscribed) {
-                    if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PlayFy$$ExternalSyntheticLambda2
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                PlayFy.loadLinks$lambda$0$0(_ctx);
-                            }
-                        });
-                    }
-                    $this$loadLinks_u24lambda_u240.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                }
                 AppUtils appUtils = AppUtils.INSTANCE;
                 try {
                     Result.Companion companion = Result.Companion;
@@ -1805,7 +1390,7 @@ public final class PlayFy extends MainAPI {
                         String name2 = getName();
                         String url = loadData6.getUrl();
                         ExtractorLinkType extractorLinkType = ExtractorLinkType.M3U8;
-                        C00077 c00077 = new C00077(headers, null);
+                        C00076 c00076 = new C00076(headers, null);
                         c00022.L$0 = SpillingKt.nullOutSpilledVariable(data);
                         c00022.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                         c00022.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1814,7 +1399,7 @@ public final class PlayFy extends MainAPI {
                         c00022.L$5 = function15;
                         c00022.Z$0 = isCasting;
                         c00022.label = 5;
-                        objNewExtractorLink3 = ExtractorApiKt.newExtractorLink(name, name2, url, extractorLinkType, c00077, c00022);
+                        objNewExtractorLink3 = ExtractorApiKt.newExtractorLink(name, name2, url, extractorLinkType, c00076, c00022);
                         if (objNewExtractorLink3 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1836,7 +1421,7 @@ public final class PlayFy extends MainAPI {
                         String name4 = getName();
                         String url2 = loadData6.getUrl();
                         ExtractorLinkType extractorLinkType2 = ExtractorLinkType.M3U8;
-                        C00088 c00088 = new C00088(headers2, null);
+                        C00087 c00087 = new C00087(headers2, null);
                         c00022.L$0 = SpillingKt.nullOutSpilledVariable(data);
                         c00022.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                         c00022.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1845,7 +1430,7 @@ public final class PlayFy extends MainAPI {
                         c00022.L$5 = function15;
                         c00022.Z$0 = isCasting;
                         c00022.label = 6;
-                        objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name3, name4, url2, extractorLinkType2, c00088, c00022);
+                        objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name3, name4, url2, extractorLinkType2, c00087, c00022);
                         if (objNewExtractorLink2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1869,7 +1454,7 @@ public final class PlayFy extends MainAPI {
                     String title = loadData6.getTitle();
                     String url3 = loadData6.getUrl();
                     ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
-                    C00099 c00099 = new C00099(headers3, null);
+                    C00098 c00098 = new C00098(headers3, null);
                     c00022.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00022.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00022.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1878,7 +1463,7 @@ public final class PlayFy extends MainAPI {
                     c00022.L$5 = function15;
                     c00022.Z$0 = isCasting;
                     c00022.label = 7;
-                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, title, url3, infer_type, c00099, c00022);
+                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, title, url3, infer_type, c00098, c00022);
                     if (objNewExtractorLink == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1912,13 +1497,12 @@ public final class PlayFy extends MainAPI {
                     if (normalizedKey2 == null) {
                         normalizedKey2 = StringsKt.trim(loadData6.getKey()).toString();
                     }
-                    String normalizedKid2 = base64ToHexOrNull(loadData6.getKeyid());
-                    if (normalizedKid2 == null) {
-                        normalizedKid2 = StringsKt.trim(loadData6.getKeyid()).toString();
+                    String normalizedKid = base64ToHexOrNull(loadData6.getKeyid());
+                    if (normalizedKid == null) {
+                        normalizedKid = StringsKt.trim(loadData6.getKeyid()).toString();
                     }
                     if (!loadData6.getDrmKeys().isEmpty()) {
                         normalizedKey = normalizedKey2;
-                        normalizedKid = normalizedKid2;
                         MatchResult matchResultFind$default = Regex.find$default(new Regex("cenc:default_KID=[\"']([0-9a-fA-F\\-]{36})[\"']"), getMpdStream(loadData6.getUrl(), headers4), 0, 2, (Object) null);
                         if (matchResultFind$default == null || (groups2 = matchResultFind$default.getGroups()) == null || (matchGroup2 = groups2.get(1)) == null || (value = matchGroup2.getValue()) == null || (strReplace$default = StringsKt.replace$default(value, "-", "", false, 4, (Object) null)) == null) {
                             mpdKidHex = null;
@@ -1947,15 +1531,15 @@ public final class PlayFy extends MainAPI {
                         String playerKey2 = loadData6.getUrl();
                         ExtractorLinkType infer_type2 = ExtractorApiKt.getINFER_TYPE();
                         UUID clearkey_uuid = ExtractorApiKt.getCLEARKEY_UUID();
-                        String normalizedKid3 = mpdKidHex;
-                        C00033 c00033 = new C00033(headers4, playerKey, playerKid, null);
+                        String normalizedKid2 = mpdKidHex;
+                        C00032 c00032 = new C00032(headers4, playerKey, playerKid, null);
                         c00022.L$0 = SpillingKt.nullOutSpilledVariable(data);
                         c00022.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                         c00022.L$2 = SpillingKt.nullOutSpilledVariable(function15);
                         c00022.L$3 = SpillingKt.nullOutSpilledVariable(loadData6);
                         c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers4);
                         c00022.L$5 = SpillingKt.nullOutSpilledVariable(normalizedKey3);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid3);
+                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid2);
                         c00022.L$7 = SpillingKt.nullOutSpilledVariable(playerKey);
                         c00022.L$8 = SpillingKt.nullOutSpilledVariable(playerKid);
                         c00022.L$9 = function15;
@@ -1963,7 +1547,7 @@ public final class PlayFy extends MainAPI {
                         c00022.I$0 = i2;
                         c00022.I$1 = i3;
                         c00022.label = 1;
-                        objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name6, normalizedKey4, playerKey2, infer_type2, clearkey_uuid, c00033, c00022);
+                        objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name6, normalizedKey4, playerKey2, infer_type2, clearkey_uuid, c00032, c00022);
                         if (objNewDrmExtractorLink2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1971,9 +1555,8 @@ public final class PlayFy extends MainAPI {
                         return Boxing.boxBoolean(true);
                     }
                     normalizedKey = normalizedKey2;
-                    normalizedKid = normalizedKid2;
-                    mappedKey = normalizedKey;
                     mpdKidHex = normalizedKid;
+                    mappedKey = normalizedKey;
                     playerKey = hexToBase64UrlOrNull(mappedKey);
                     if (playerKey == null) {
                         playerKey = mappedKey;
@@ -1988,15 +1571,15 @@ public final class PlayFy extends MainAPI {
                     String playerKey3 = loadData6.getUrl();
                     ExtractorLinkType infer_type3 = ExtractorApiKt.getINFER_TYPE();
                     UUID clearkey_uuid2 = ExtractorApiKt.getCLEARKEY_UUID();
-                    String normalizedKid4 = mpdKidHex;
-                    C00033 c00034 = new C00033(headers4, playerKey, playerKid, null);
+                    String normalizedKid3 = mpdKidHex;
+                    C00032 c00033 = new C00032(headers4, playerKey, playerKid, null);
                     c00022.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00022.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00022.L$2 = SpillingKt.nullOutSpilledVariable(function15);
                     c00022.L$3 = SpillingKt.nullOutSpilledVariable(loadData6);
                     c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers4);
                     c00022.L$5 = SpillingKt.nullOutSpilledVariable(normalizedKey5);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid4);
+                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid3);
                     c00022.L$7 = SpillingKt.nullOutSpilledVariable(playerKey);
                     c00022.L$8 = SpillingKt.nullOutSpilledVariable(playerKid);
                     c00022.L$9 = function15;
@@ -2004,7 +1587,7 @@ public final class PlayFy extends MainAPI {
                     c00022.I$0 = i2;
                     c00022.I$1 = i3;
                     c00022.label = 1;
-                    objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name7, normalizedKey6, playerKey3, infer_type3, clearkey_uuid2, c00034, c00022);
+                    objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name7, normalizedKey6, playerKey3, infer_type3, clearkey_uuid2, c00033, c00022);
                     if (objNewDrmExtractorLink2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -2017,7 +1600,7 @@ public final class PlayFy extends MainAPI {
                     String name9 = getName();
                     String url4 = loadData6.getUrl();
                     ExtractorLinkType extractorLinkType3 = ExtractorLinkType.DASH;
-                    C00066 c00066 = new C00066(headers4, null);
+                    C00065 c00065 = new C00065(headers4, null);
                     c00022.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00022.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00022.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -2028,7 +1611,7 @@ public final class PlayFy extends MainAPI {
                     c00022.I$0 = i2;
                     c00022.I$1 = i4;
                     c00022.label = 4;
-                    objNewExtractorLink4 = ExtractorApiKt.newExtractorLink(name8, name9, url4, extractorLinkType3, c00066, c00022);
+                    objNewExtractorLink4 = ExtractorApiKt.newExtractorLink(name8, name9, url4, extractorLinkType3, c00065, c00022);
                     if (objNewExtractorLink4 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -2065,7 +1648,7 @@ public final class PlayFy extends MainAPI {
                     String keyBase65 = loadData6.getUrl();
                     ExtractorLinkType infer_type4 = ExtractorApiKt.getINFER_TYPE();
                     UUID clearkey_uuid3 = ExtractorApiKt.getCLEARKEY_UUID();
-                    C00044 c00044 = new C00044(headers4, keyBase64, drmKidBase64, null);
+                    C00043 c00043 = new C00043(headers4, keyBase64, drmKidBase64, null);
                     c00022.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00022.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00022.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -2083,7 +1666,7 @@ public final class PlayFy extends MainAPI {
                     c00022.I$0 = i2;
                     c00022.I$1 = i4;
                     c00022.label = 2;
-                    objNewDrmExtractorLink = ExtractorApiKt.newDrmExtractorLink(name10, drmKidBase65, keyBase65, infer_type4, clearkey_uuid3, c00044, c00022);
+                    objNewDrmExtractorLink = ExtractorApiKt.newDrmExtractorLink(name10, drmKidBase65, keyBase65, infer_type4, clearkey_uuid3, c00043, c00022);
                     if (objNewDrmExtractorLink == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -2096,7 +1679,7 @@ public final class PlayFy extends MainAPI {
                 String url5 = loadData6.getUrl();
                 ExtractorLinkType infer_type5 = ExtractorApiKt.getINFER_TYPE();
                 UUID clearkey_uuid4 = ExtractorApiKt.getCLEARKEY_UUID();
-                C00055 c00055 = new C00055(headers4, loadData6, null);
+                C00054 c00054 = new C00054(headers4, loadData6, null);
                 c00022.L$0 = SpillingKt.nullOutSpilledVariable(data);
                 c00022.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                 c00022.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -2114,13 +1697,13 @@ public final class PlayFy extends MainAPI {
                 c00022.I$0 = i2;
                 c00022.I$1 = i4;
                 c00022.label = 3;
-                Object objNewDrmExtractorLink3 = ExtractorApiKt.newDrmExtractorLink(name11, name12, url5, infer_type5, clearkey_uuid4, c00055, c00022);
+                Object objNewDrmExtractorLink3 = ExtractorApiKt.newDrmExtractorLink(name11, name12, url5, infer_type5, clearkey_uuid4, c00054, c00022);
                 if (objNewDrmExtractorLink3 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
+                loadData5 = loadData6;
                 function11 = function15;
                 function12 = function1;
-                loadData5 = loadData6;
                 obj2 = objNewDrmExtractorLink3;
                 function13 = function11;
                 function11.invoke(obj2);
@@ -2210,16 +1793,11 @@ public final class PlayFy extends MainAPI {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
-    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$3 */
+    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$2 */
     /* JADX INFO: compiled from: PlayFy.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/DrmExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$3", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00033 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$2", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00032 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ String $playerKey;
         final /* synthetic */ String $playerKid;
@@ -2227,7 +1805,7 @@ public final class PlayFy extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00033(Map<String, String> map, String str, String str2, Continuation<? super C00033> continuation) {
+        C00032(Map<String, String> map, String str, String str2, Continuation<? super C00032> continuation) {
             super(2, continuation);
             this.$headers = map;
             this.$playerKey = str;
@@ -2235,9 +1813,9 @@ public final class PlayFy extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00033 = new C00033(this.$headers, this.$playerKey, this.$playerKid, continuation);
-            c00033.L$0 = obj;
-            return c00033;
+            Continuation<Unit> c00032 = new C00032(this.$headers, this.$playerKey, this.$playerKid, continuation);
+            c00032.L$0 = obj;
+            return c00032;
         }
 
         public final Object invoke(DrmExtractorLink drmExtractorLink, Continuation<? super Unit> continuation) {
@@ -2263,11 +1841,11 @@ public final class PlayFy extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$4 */
+    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$3 */
     /* JADX INFO: compiled from: PlayFy.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/DrmExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$4", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00044 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$3", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00043 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $drmKidBase64;
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ String $keyBase64;
@@ -2275,7 +1853,7 @@ public final class PlayFy extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00044(Map<String, String> map, String str, String str2, Continuation<? super C00044> continuation) {
+        C00043(Map<String, String> map, String str, String str2, Continuation<? super C00043> continuation) {
             super(2, continuation);
             this.$headers = map;
             this.$keyBase64 = str;
@@ -2283,9 +1861,9 @@ public final class PlayFy extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00044 = new C00044(this.$headers, this.$keyBase64, this.$drmKidBase64, continuation);
-            c00044.L$0 = obj;
-            return c00044;
+            Continuation<Unit> c00043 = new C00043(this.$headers, this.$keyBase64, this.$drmKidBase64, continuation);
+            c00043.L$0 = obj;
+            return c00043;
         }
 
         public final Object invoke(DrmExtractorLink drmExtractorLink, Continuation<? super Unit> continuation) {
@@ -2311,27 +1889,27 @@ public final class PlayFy extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$5 */
+    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$4 */
     /* JADX INFO: compiled from: PlayFy.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/DrmExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$5", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00055 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$4", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00054 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ LoadData $loadData;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00055(Map<String, String> map, LoadData loadData, Continuation<? super C00055> continuation) {
+        C00054(Map<String, String> map, LoadData loadData, Continuation<? super C00054> continuation) {
             super(2, continuation);
             this.$headers = map;
             this.$loadData = loadData;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00055 = new C00055(this.$headers, this.$loadData, continuation);
-            c00055.L$0 = obj;
-            return c00055;
+            Continuation<Unit> c00054 = new C00054(this.$headers, this.$loadData, continuation);
+            c00054.L$0 = obj;
+            return c00054;
         }
 
         public final Object invoke(DrmExtractorLink drmExtractorLink, Continuation<? super Unit> continuation) {
@@ -2356,25 +1934,68 @@ public final class PlayFy extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$6 */
+    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$5 */
     /* JADX INFO: compiled from: PlayFy.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$6", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00066 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$5", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00065 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00066(Map<String, String> map, Continuation<? super C00066> continuation) {
+        C00065(Map<String, String> map, Continuation<? super C00065> continuation) {
             super(2, continuation);
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00066 = new C00066(this.$headers, continuation);
-            c00066.L$0 = obj;
-            return c00066;
+            Continuation<Unit> c00065 = new C00065(this.$headers, continuation);
+            c00065.L$0 = obj;
+            return c00065;
+        }
+
+        public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
+            return create(extractorLink, continuation).invokeSuspend(Unit.INSTANCE);
+        }
+
+        public final Object invokeSuspend(Object $result) {
+            ExtractorLink $this$newExtractorLink = (ExtractorLink) this.L$0;
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            switch (this.label) {
+                case 0:
+                    ResultKt.throwOnFailure($result);
+                    $this$newExtractorLink.setReferer("");
+                    $this$newExtractorLink.setQuality(Qualities.Unknown.getValue());
+                    if (!this.$headers.isEmpty()) {
+                        $this$newExtractorLink.setHeaders(this.$headers);
+                    }
+                    return Unit.INSTANCE;
+                default:
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+        }
+    }
+
+    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$6 */
+    /* JADX INFO: compiled from: PlayFy.kt */
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$6", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00076 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+        final /* synthetic */ Map<String, String> $headers;
+        private /* synthetic */ Object L$0;
+        int label;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        C00076(Map<String, String> map, Continuation<? super C00076> continuation) {
+            super(2, continuation);
+            this.$headers = map;
+        }
+
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            Continuation<Unit> c00076 = new C00076(this.$headers, continuation);
+            c00076.L$0 = obj;
+            return c00076;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -2403,64 +2024,21 @@ public final class PlayFy extends MainAPI {
     /* JADX INFO: compiled from: PlayFy.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$7", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00077 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00087 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00077(Map<String, String> map, Continuation<? super C00077> continuation) {
+        C00087(Map<String, String> map, Continuation<? super C00087> continuation) {
             super(2, continuation);
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00077 = new C00077(this.$headers, continuation);
-            c00077.L$0 = obj;
-            return c00077;
-        }
-
-        public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
-            return create(extractorLink, continuation).invokeSuspend(Unit.INSTANCE);
-        }
-
-        public final Object invokeSuspend(Object $result) {
-            ExtractorLink $this$newExtractorLink = (ExtractorLink) this.L$0;
-            IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            switch (this.label) {
-                case 0:
-                    ResultKt.throwOnFailure($result);
-                    $this$newExtractorLink.setReferer("");
-                    $this$newExtractorLink.setQuality(Qualities.Unknown.getValue());
-                    if (!this.$headers.isEmpty()) {
-                        $this$newExtractorLink.setHeaders(this.$headers);
-                    }
-                    return Unit.INSTANCE;
-                default:
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            }
-        }
-    }
-
-    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$8 */
-    /* JADX INFO: compiled from: PlayFy.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$8", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00088 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
-        final /* synthetic */ Map<String, String> $headers;
-        private /* synthetic */ Object L$0;
-        int label;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00088(Map<String, String> map, Continuation<? super C00088> continuation) {
-            super(2, continuation);
-            this.$headers = map;
-        }
-
-        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00088 = new C00088(this.$headers, continuation);
-            c00088.L$0 = obj;
-            return c00088;
+            Continuation<Unit> c00087 = new C00087(this.$headers, continuation);
+            c00087.L$0 = obj;
+            return c00087;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -2483,25 +2061,25 @@ public final class PlayFy extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$9 */
+    /* JADX INFO: renamed from: com.cncverse.PlayFy$loadLinks$8 */
     /* JADX INFO: compiled from: PlayFy.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$9", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00099 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.PlayFy$loadLinks$8", f = "PlayFy.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00098 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00099(Map<String, String> map, Continuation<? super C00099> continuation) {
+        C00098(Map<String, String> map, Continuation<? super C00098> continuation) {
             super(2, continuation);
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00099 = new C00099(this.$headers, continuation);
-            c00099.L$0 = obj;
-            return c00099;
+            Continuation<Unit> c00098 = new C00098(this.$headers, continuation);
+            c00098.L$0 = obj;
+            return c00098;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

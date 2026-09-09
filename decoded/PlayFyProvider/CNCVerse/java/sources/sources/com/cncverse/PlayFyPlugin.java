@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
+import com.cncverse.donation.DonationManager;
 import com.lagradost.cloudstream3.CommonActivity;
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin;
 import com.lagradost.cloudstream3.plugins.Plugin;
@@ -33,7 +34,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/PlayFyProvider/CNCVerse/java/classes.dex */
 @CloudstreamPlugin
 @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0006\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lcom/cncverse/PlayFyPlugin;", "Lcom/lagradost/cloudstream3/plugins/Plugin;", "<init>", "()V", "sharedPref", "Landroid/content/SharedPreferences;", "iptvProviders", "", "", "", "", "load", "", "context", "Landroid/content/Context;", "PlayFyProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nPlayFyPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlayFyPlugin.kt\ncom/cncverse/PlayFyPlugin\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,53:1\n777#2:54\n873#2,2:55\n1915#2,2:57\n1642#2,10:59\n1915#2:69\n1916#2:71\n1652#2:72\n1#3:70\n*S KotlinDebug\n*F\n+ 1 PlayFyPlugin.kt\ncom/cncverse/PlayFyPlugin\n*L\n31#1:54\n31#1:55,2\n36#1:57,2\n47#1:59,10\n47#1:69\n47#1:71\n47#1:72\n47#1:70\n*E\n"})
+@SourceDebugExtension({"SMAP\nPlayFyPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlayFyPlugin.kt\ncom/cncverse/PlayFyPlugin\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,54:1\n777#2:55\n873#2,2:56\n1915#2,2:58\n1642#2,10:60\n1915#2:70\n1916#2:72\n1652#2:73\n1#3:71\n*S KotlinDebug\n*F\n+ 1 PlayFyPlugin.kt\ncom/cncverse/PlayFyPlugin\n*L\n32#1:55\n32#1:56,2\n37#1:58,2\n48#1:60,10\n48#1:70\n48#1:72\n48#1:73\n48#1:71\n*E\n"})
 public final class PlayFyPlugin extends Plugin {
 
     @NotNull
@@ -49,6 +50,7 @@ public final class PlayFyPlugin extends Plugin {
     }
 
     public void load(@NotNull Context context) {
+        DonationManager.INSTANCE.setActivity(context);
         PlayFy.INSTANCE.setContext(context);
         PlayFyLiveEvents.INSTANCE.setContext(context);
         registerMainAPI(new PlayFyLiveEvents("⚡ PlayFy Live Events", "live"));
@@ -93,7 +95,7 @@ public final class PlayFyPlugin extends Plugin {
     /* JADX INFO: renamed from: com.cncverse.PlayFyPlugin$load$1 */
     /* JADX INFO: compiled from: PlayFyPlugin.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010 \n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00040\u00020\u0001*\u00020\u0005H\n"}, d2 = {"<anonymous>", "", "", "", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayFyPlugin$load$1", f = "PlayFyPlugin.kt", i = {}, l = {27}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PlayFyPlugin$load$1", f = "PlayFyPlugin.kt", i = {}, l = {28}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00271 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Map<String, ? extends Object>>>, Object> {
         int label;
 

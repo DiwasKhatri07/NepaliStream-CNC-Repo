@@ -1,24 +1,7 @@
 package com.horis.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.horis.cncverse.entities.PostData;
 import com.horis.cncverse.entities.SearchData;
 import com.horis.cncverse.entities.SearchResult;
@@ -42,7 +25,6 @@ import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
@@ -50,12 +32,10 @@ import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -81,7 +61,6 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref;
 import kotlin.jvm.internal.Reflection;
 import kotlin.jvm.internal.SourceDebugExtension;
-import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -93,24 +72,16 @@ import org.jsoup.nodes.Element;
 
 /* JADX INFO: compiled from: NetflixMirrorProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/CNC_Verse/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u008c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u0000 E2\u00020\u0001:\u0003EFGB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"J\f\u0010#\u001a\u00020$*\u00020%H\u0002J\u000e\u0010&\u001a\u0004\u0018\u00010'*\u00020%H\u0002J\u001c\u0010(\u001a\b\u0012\u0004\u0012\u00020'0)2\u0006\u0010*\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J\u0018\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J4\u0010/\u001a\b\u0012\u0004\u0012\u0002000)2\u0006\u00101\u001a\u00020\n2\u0006\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\n2\u0006\u0010\u001e\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u00104J\b\u00105\u001a\u000206H\u0002J\b\u00107\u001a\u000206H\u0002J\u0010\u00108\u001a\u0002062\u0006\u0010.\u001a\u00020\nH\u0002JF\u00109\u001a\u00020\u00162\u0006\u0010:\u001a\u00020\n2\u0006\u0010;\u001a\u00020\u00162\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020>\u0012\u0004\u0012\u0002060=2\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u0002060=H\u0096@¢\u0006\u0002\u0010AJ\u0012\u0010B\u001a\u0004\u0018\u00010C2\u0006\u0010D\u001a\u00020@H\u0016R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\f\"\u0004\b\u0011\u0010\u000eR\u001a\u0010\u0012\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\f\"\u0004\b\u0014\u0010\u000eR\u0014\u0010\u0015\u001a\u00020\u0016X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006H"}, d2 = {"Lcom/horis/cncverse/NetflixMirrorProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "cookie_value", "headers", "", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toHomePageList", "Lcom/lagradost/cloudstream3/HomePageList;", "Lorg/jsoup/nodes/Element;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "search", "", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "getEpisodes", "Lcom/lagradost/cloudstream3/Episode;", "title", "eid", "sid", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "", "showTelegramPopup", "openInExternalBrowser", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVideoInterceptor", "Lokhttp3/Interceptor;", "extractorLink", "Companion", "Id", "LoadData", "CNC Verse_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nNetflixMirrorProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetflixMirrorProvider.kt\ncom/horis/cncverse/NetflixMirrorProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 Utils.kt\ncom/horis/cncverse/UtilsKt\n*L\n1#1,582:1\n1586#2:583\n1661#2,3:584\n1642#2,10:587\n1915#2:597\n1916#2:599\n1652#2:600\n1586#2:602\n1661#2,3:603\n1586#2:608\n1661#2,3:609\n1586#2:612\n1661#2,3:613\n1586#2:616\n1661#2,3:617\n777#2:620\n873#2,2:621\n1586#2:623\n1661#2,3:624\n1661#2,3:627\n1661#2,3:631\n1#3:598\n1#3:637\n62#4:601\n62#4:607\n62#4:630\n62#4:635\n62#4:636\n231#5:606\n231#5:634\n*S KotlinDebug\n*F\n+ 1 NetflixMirrorProvider.kt\ncom/horis/cncverse/NetflixMirrorProvider\n*L\n104#1:583\n104#1:584,3\n112#1:587,10\n112#1:597\n112#1:599\n112#1:600\n140#1:602\n140#1:603,3\n166#1:608\n166#1:609,3\n167#1:612\n167#1:613,3\n173#1:616\n173#1:617,3\n174#1:620\n174#1:621,2\n179#1:623\n179#1:624,3\n191#1:627,3\n244#1:631,3\n112#1:598\n138#1:601\n161#1:607\n243#1:630\n537#1:635\n544#1:636\n150#1:606\n530#1:634\n*E\n"})
+@Metadata(d1 = {"\u0000\u0088\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0004\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\b\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u0000 B2\u00020\u0001:\u0003BCDB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J \u0010\u001c\u001a\u0004\u0018\u00010\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"J\f\u0010#\u001a\u00020$*\u00020%H\u0002J\u000e\u0010&\u001a\u0004\u0018\u00010'*\u00020%H\u0002J\u001c\u0010(\u001a\b\u0012\u0004\u0012\u00020'0)2\u0006\u0010*\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J\u0018\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\nH\u0096@¢\u0006\u0002\u0010+J4\u0010/\u001a\b\u0012\u0004\u0012\u0002000)2\u0006\u00101\u001a\u00020\n2\u0006\u00102\u001a\u00020\n2\u0006\u00103\u001a\u00020\n2\u0006\u0010\u001e\u001a\u00020\u001fH\u0082@¢\u0006\u0002\u00104JF\u00105\u001a\u00020\u00162\u0006\u00106\u001a\u00020\n2\u0006\u00107\u001a\u00020\u00162\u0012\u00108\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020;092\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020;09H\u0096@¢\u0006\u0002\u0010>J\u0012\u0010?\u001a\u0004\u0018\u00010@2\u0006\u0010A\u001a\u00020=H\u0016R\u001a\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001a\u0010\t\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\f\"\u0004\b\r\u0010\u000eR\u001a\u0010\u000f\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\f\"\u0004\b\u0011\u0010\u000eR\u001a\u0010\u0012\u001a\u00020\nX\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0013\u0010\f\"\u0004\b\u0014\u0010\u000eR\u0014\u0010\u0015\u001a\u00020\u0016X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\nX\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010\u001a\u001a\u000e\u0012\u0004\u0012\u00020\n\u0012\u0004\u0012\u00020\n0\u001bX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006E"}, d2 = {"Lcom/horis/cncverse/NetflixMirrorProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "lang", "", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "cookie_value", "headers", "", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toHomePageList", "Lcom/lagradost/cloudstream3/HomePageList;", "Lorg/jsoup/nodes/Element;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "search", "", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "getEpisodes", "Lcom/lagradost/cloudstream3/Episode;", "title", "eid", "sid", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVideoInterceptor", "Lokhttp3/Interceptor;", "extractorLink", "Companion", "Id", "LoadData", "CNC Verse_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nNetflixMirrorProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetflixMirrorProvider.kt\ncom/horis/cncverse/NetflixMirrorProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 5 Utils.kt\ncom/horis/cncverse/UtilsKt\n*L\n1#1,288:1\n1586#2:289\n1661#2,3:290\n1642#2,10:293\n1915#2:303\n1916#2:305\n1652#2:306\n1586#2:308\n1661#2,3:309\n1586#2:314\n1661#2,3:315\n1586#2:318\n1661#2,3:319\n1586#2:322\n1661#2,3:323\n777#2:326\n873#2,2:327\n1586#2:329\n1661#2,3:330\n1661#2,3:333\n1661#2,3:337\n1#3:304\n62#4:307\n62#4:313\n62#4:336\n62#4:341\n62#4:342\n66#5:312\n66#5:340\n*S KotlinDebug\n*F\n+ 1 NetflixMirrorProvider.kt\ncom/horis/cncverse/NetflixMirrorProvider\n*L\n72#1:289\n72#1:290,3\n80#1:293,10\n80#1:303\n80#1:305\n80#1:306\n108#1:308\n108#1:309,3\n134#1:314\n134#1:315,3\n135#1:318\n135#1:319,3\n141#1:322\n141#1:323,3\n142#1:326\n142#1:327,2\n147#1:329\n147#1:330,3\n159#1:333,3\n212#1:337,3\n80#1:304\n106#1:307\n129#1:313\n211#1:336\n243#1:341\n250#1:342\n118#1:312\n236#1:340\n*E\n"})
 public final class NetflixMirrorProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private final Set<TvType> supportedTypes = SetsKt.setOf(new TvType[]{TvType.Movie, TvType.TvSeries, TvType.Anime, TvType.AsianDrama});
@@ -134,8 +105,8 @@ public final class NetflixMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.NetflixMirrorProvider$getEpisodes$1 */
     /* JADX INFO: compiled from: NetflixMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider", f = "NetflixMirrorProvider.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {238}, m = "getEpisodes", n = {"title", "eid", "sid", "episodes", "cookies", "page", "pg"}, nl = {243}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1"}, v = 2)
-    static final class C00191 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider", f = "NetflixMirrorProvider.kt", i = {0, 0, 0, 0, 0, 0, 0}, l = {206}, m = "getEpisodes", n = {"title", "eid", "sid", "episodes", "cookies", "page", "pg"}, nl = {211}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1"}, v = 2)
+    static final class C00211 extends ContinuationImpl {
         int I$0;
         int I$1;
         Object L$0;
@@ -146,7 +117,7 @@ public final class NetflixMirrorProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00191(Continuation<? super C00191> continuation) {
+        C00211(Continuation<? super C00211> continuation) {
             super(continuation);
         }
 
@@ -161,15 +132,15 @@ public final class NetflixMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.NetflixMirrorProvider$getMainPage$1 */
     /* JADX INFO: compiled from: NetflixMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider", f = "NetflixMirrorProvider.kt", i = {0, 0, 1, 1, 1}, l = {92, 98}, m = "getMainPage", n = {"request", "page", "request", "cookies", "page"}, nl = {94, 103}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
-    static final class C00201 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider", f = "NetflixMirrorProvider.kt", i = {0, 0, 1, 1, 1}, l = {60, 66}, m = "getMainPage", n = {"request", "page", "request", "cookies", "page"}, nl = {62, 71}, s = {"L$0", "I$0", "L$0", "L$1", "I$0"}, v = 2)
+    static final class C00221 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C00201(Continuation<? super C00201> continuation) {
+        C00221(Continuation<? super C00221> continuation) {
             super(continuation);
         }
 
@@ -184,8 +155,8 @@ public final class NetflixMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.NetflixMirrorProvider$load$1 */
     /* JADX INFO: compiled from: NetflixMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider", f = "NetflixMirrorProvider.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {149, 156, 202, 205, 212}, m = "load", n = {"url", "url", "id", "cookies", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "type", "runTime"}, nl = {150, 161, 205, 210, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
-    static final class C00221 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider", f = "NetflixMirrorProvider.kt", i = {0, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {117, 124, 170, 173, 180}, m = "load", n = {"url", "url", "id", "cookies", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "runTime", "url", "id", "cookies", "data", "episodes", "title", "castList", "cast", "genre", "rating", "suggest", "type", "runTime"}, nl = {118, 129, 173, 178, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
+    static final class C00241 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
@@ -202,7 +173,7 @@ public final class NetflixMirrorProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00221(Continuation<? super C00221> continuation) {
+        C00241(Continuation<? super C00241> continuation) {
             super(continuation);
         }
 
@@ -217,8 +188,8 @@ public final class NetflixMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.NetflixMirrorProvider$loadLinks$1 */
     /* JADX INFO: compiled from: NetflixMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider", f = "NetflixMirrorProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5}, l = {529, 532, 534, 540, 541, 550}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting"}, nl = {530, 534, 537, 541, 544, 549}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
-    static final class C00251 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider", f = "NetflixMirrorProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5}, l = {235, 238, 240, 246, 247, 256}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting", "data", "subtitleCallback", "callback", "apiBase", "id", "userToken", "response", "isCasting"}, nl = {236, 240, 243, 247, 250, 255}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0"}, v = 2)
+    static final class C00271 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -231,7 +202,7 @@ public final class NetflixMirrorProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00251(Continuation<? super C00251> continuation) {
+        C00271(Continuation<? super C00271> continuation) {
             super(continuation);
         }
 
@@ -246,15 +217,15 @@ public final class NetflixMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.NetflixMirrorProvider$search$1 */
     /* JADX INFO: compiled from: NetflixMirrorProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider", f = "NetflixMirrorProvider.kt", i = {0, 1, 1, 1}, l = {131, 138}, m = "search", n = {"query", "query", "cookies", "url"}, nl = {133, 583}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
-    static final class C00271 extends ContinuationImpl {
+    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider", f = "NetflixMirrorProvider.kt", i = {0, 1, 1, 1}, l = {99, 106}, m = "search", n = {"query", "query", "cookies", "url"}, nl = {101, 289}, s = {"L$0", "L$0", "L$1", "L$2"}, v = 2)
+    static final class C00291 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
         int label;
         /* synthetic */ Object result;
 
-        C00271(Continuation<? super C00271> continuation) {
+        C00291(Continuation<? super C00291> continuation) {
             super(continuation);
         }
 
@@ -267,65 +238,13 @@ public final class NetflixMirrorProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: NetflixMirrorProvider.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/horis/cncverse/NetflixMirrorProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "CNC Verse_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nNetflixMirrorProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetflixMirrorProvider.kt\ncom/horis/cncverse/NetflixMirrorProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,582:1\n1#2:583\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/horis/cncverse/NetflixMirrorProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "CNC Verse_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                NetflixMirrorProvider.csGuardWasEverActive = true;
-            }
-            return NetflixMirrorProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.NetflixMirrorProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    NetflixMirrorProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -374,13 +293,13 @@ public final class NetflixMirrorProvider extends MainAPI {
         return this.hasMainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:31:0x015b A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:32:0x015c  */
-    /* JADX WARN: Code duplicated, block: B:36:0x018a A[LOOP:0: B:34:0x0184->B:36:0x018a, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:27:0x0147 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:28:0x0148  */
+    /* JADX WARN: Code duplicated, block: B:32:0x0176 A[LOOP:0: B:30:0x0170->B:32:0x0176, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Exception {
-        C00201 c00201;
+        C00221 c00221;
         String str;
         int page2;
         MainPageRequest request2;
@@ -388,34 +307,29 @@ public final class NetflixMirrorProvider extends MainAPI {
         Object obj;
         MainPageRequest request3;
         Collection destination$iv$iv;
-        if (continuation instanceof C00201) {
-            c00201 = (C00201) continuation;
-            if ((c00201.label & Integer.MIN_VALUE) != 0) {
-                c00201.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00221) {
+            c00221 = (C00221) continuation;
+            if ((c00221.label & Integer.MIN_VALUE) != 0) {
+                c00221.label -= Integer.MIN_VALUE;
             } else {
-                c00201 = new C00201(continuation);
+                c00221 = new C00221(continuation);
             }
         } else {
-            c00201 = new C00201(continuation);
+            c00221 = new C00221(continuation);
         }
-        Object $result = c00201.result;
+        Object $result = c00221.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00201.label) {
+        switch (c00221.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 if (this.cookie_value.length() == 0) {
                     String mainUrl = getMainUrl();
-                    c00201.L$0 = SpillingKt.nullOutSpilledVariable(request);
-                    c00201.L$1 = this;
-                    c00201.I$0 = page;
-                    c00201.label = 1;
-                    Object objBypass = UtilsKt.bypass(mainUrl, c00201);
+                    c00221.L$0 = SpillingKt.nullOutSpilledVariable(request);
+                    c00221.L$1 = this;
+                    c00221.I$0 = page;
+                    c00221.label = 1;
+                    Object objBypass = UtilsKt.bypass(mainUrl, c00221);
                     if (objBypass == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -437,11 +351,11 @@ public final class NetflixMirrorProvider extends MainAPI {
                 String str2 = getMainUrl() + "/mobile/home?app=1";
                 Map<String, String> map = this.headers;
                 String str3 = getMainUrl() + "/mobile/home?app=1";
-                c00201.L$0 = SpillingKt.nullOutSpilledVariable(request2);
-                c00201.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00201.I$0 = page2;
-                c00201.label = 2;
-                $result = Requests.get$default(app, str2, map, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00201, 4072, (Object) null);
+                c00221.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                c00221.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00221.I$0 = page2;
+                c00221.label = 2;
+                $result = Requests.get$default(app, str2, map, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00221, 4072, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -455,9 +369,9 @@ public final class NetflixMirrorProvider extends MainAPI {
                 List items = (List) destination$iv$iv;
                 return MainAPIKt.newHomePageResponse(items, Boxing.boxBoolean(false));
             case 1:
-                page2 = c00201.I$0;
-                NetflixMirrorProvider netflixMirrorProvider2 = (NetflixMirrorProvider) c00201.L$1;
-                request3 = (MainPageRequest) c00201.L$0;
+                page2 = c00221.I$0;
+                NetflixMirrorProvider netflixMirrorProvider2 = (NetflixMirrorProvider) c00221.L$1;
+                request3 = (MainPageRequest) c00221.L$0;
                 ResultKt.throwOnFailure($result);
                 netflixMirrorProvider = netflixMirrorProvider2;
                 obj = $result;
@@ -469,11 +383,11 @@ public final class NetflixMirrorProvider extends MainAPI {
                 String str4 = getMainUrl() + "/mobile/home?app=1";
                 Map<String, String> map2 = this.headers;
                 String str5 = getMainUrl() + "/mobile/home?app=1";
-                c00201.L$0 = SpillingKt.nullOutSpilledVariable(request2);
-                c00201.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
-                c00201.I$0 = page2;
-                c00201.label = 2;
-                $result = Requests.get$default(app2, str4, map2, str5, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00201, 4072, (Object) null);
+                c00221.L$0 = SpillingKt.nullOutSpilledVariable(request2);
+                c00221.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
+                c00221.I$0 = page2;
+                c00221.label = 2;
+                $result = Requests.get$default(app2, str4, map2, str5, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00221, 4072, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -487,7 +401,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                 List items2 = (List) destination$iv$iv;
                 return MainAPIKt.newHomePageResponse(items2, Boxing.boxBoolean(false));
             case 2:
-                int i = c00201.I$0;
+                int i = c00221.I$0;
                 ResultKt.throwOnFailure($result);
                 Document document3 = ((NiceResponse) $result).getDocument();
                 Iterable $this$map$iv3 = document3.select(".tray-container, #top10");
@@ -524,7 +438,7 @@ public final class NetflixMirrorProvider extends MainAPI {
         if (elementSelectFirst == null || (id = elementSelectFirst.attr("data-post")) == null) {
             id = $this$toSearchResult.attr("data-post");
         }
-        return MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(id)), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda8
+        return MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(id)), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda1
             public final Object invoke(Object obj) {
                 return NetflixMirrorProvider.toSearchResult$lambda$0(id, this, (AnimeSearchResponse) obj);
             }
@@ -538,13 +452,13 @@ public final class NetflixMirrorProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code duplicated, block: B:31:0x0155 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:32:0x0156  */
-    /* JADX WARN: Code duplicated, block: B:36:0x0194 A[LOOP:0: B:34:0x018e->B:36:0x0194, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:27:0x0141 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:28:0x0142  */
+    /* JADX WARN: Code duplicated, block: B:32:0x0180 A[LOOP:0: B:30:0x017a->B:32:0x0180, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) throws Exception {
-        C00271 c00271;
+        C00291 c00291;
         String str;
         String query2;
         NetflixMirrorProvider netflixMirrorProvider;
@@ -553,32 +467,28 @@ public final class NetflixMirrorProvider extends MainAPI {
         NetflixMirrorProvider netflixMirrorProvider2;
         SearchData data;
         Collection destination$iv$iv;
-        if (continuation instanceof C00271) {
-            c00271 = (C00271) continuation;
-            if ((c00271.label & Integer.MIN_VALUE) != 0) {
-                c00271.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00291) {
+            c00291 = (C00291) continuation;
+            if ((c00291.label & Integer.MIN_VALUE) != 0) {
+                c00291.label -= Integer.MIN_VALUE;
             } else {
-                c00271 = new C00271(continuation);
+                c00291 = new C00291(continuation);
             }
         } else {
-            c00271 = new C00271(continuation);
+            c00291 = new C00291(continuation);
         }
-        Object $result = c00271.result;
+        Object $result = c00291.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00271.label) {
+        switch (c00291.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 if (this.cookie_value.length() == 0) {
                     String mainUrl = getMainUrl();
                     query3 = query;
-                    c00271.L$0 = query3;
-                    c00271.L$1 = this;
-                    c00271.label = 1;
-                    Object objBypass = UtilsKt.bypass(mainUrl, c00271);
+                    c00291.L$0 = query3;
+                    c00291.L$1 = this;
+                    c00291.label = 1;
+                    Object objBypass = UtilsKt.bypass(mainUrl, c00291);
                     if (objBypass == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -598,11 +508,11 @@ public final class NetflixMirrorProvider extends MainAPI {
                 String url = getMainUrl() + "/mobile/search.php?s=" + query2 + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Requests app = UtilsKt.getApp();
                 String str3 = getMainUrl() + "/home";
-                c00271.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                c00271.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00271.L$2 = SpillingKt.nullOutSpilledVariable(url);
-                c00271.label = 2;
-                $result = Requests.get$default(app, url, (Map) null, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00271, 4074, (Object) null);
+                c00291.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00291.L$1 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00291.L$2 = SpillingKt.nullOutSpilledVariable(url);
+                c00291.label = 2;
+                $result = Requests.get$default(app, url, (Map) null, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00291, 4074, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -614,7 +524,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                 destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv, 10));
                 for (Object item$iv$iv : $this$map$iv) {
                     final SearchResult it = (SearchResult) item$iv$iv;
-                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it.getT(), AppUtils.INSTANCE.toJson(new Id(it.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda10
+                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it.getT(), AppUtils.INSTANCE.toJson(new Id(it.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda2
                         public final Object invoke(Object obj2) {
                             return NetflixMirrorProvider.search$lambda$0$0(it, this, (AnimeSearchResponse) obj2);
                         }
@@ -623,8 +533,8 @@ public final class NetflixMirrorProvider extends MainAPI {
                 }
                 return (List) destination$iv$iv;
             case 1:
-                netflixMirrorProvider2 = (NetflixMirrorProvider) c00271.L$1;
-                query3 = (String) c00271.L$0;
+                netflixMirrorProvider2 = (NetflixMirrorProvider) c00291.L$1;
+                query3 = (String) c00291.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 str = (String) obj;
@@ -636,11 +546,11 @@ public final class NetflixMirrorProvider extends MainAPI {
                 String url2 = getMainUrl() + "/mobile/search.php?s=" + query2 + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Requests app2 = UtilsKt.getApp();
                 String str5 = getMainUrl() + "/home";
-                c00271.L$0 = SpillingKt.nullOutSpilledVariable(query2);
-                c00271.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
-                c00271.L$2 = SpillingKt.nullOutSpilledVariable(url2);
-                c00271.label = 2;
-                $result = Requests.get$default(app2, url2, (Map) null, str5, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00271, 4074, (Object) null);
+                c00291.L$0 = SpillingKt.nullOutSpilledVariable(query2);
+                c00291.L$1 = SpillingKt.nullOutSpilledVariable(cookies2);
+                c00291.L$2 = SpillingKt.nullOutSpilledVariable(url2);
+                c00291.label = 2;
+                $result = Requests.get$default(app2, url2, (Map) null, str5, (Map) null, cookies2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00291, 4074, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -652,7 +562,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                 destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv2, 10));
                 while (r11.hasNext()) {
                     final SearchResult it2 = (SearchResult) item$iv$iv;
-                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it2.getT(), AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda10
+                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it2.getT(), AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda2
                         public final Object invoke(Object obj2) {
                             return NetflixMirrorProvider.search$lambda$0$0(it2, this, (AnimeSearchResponse) obj2);
                         }
@@ -670,7 +580,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                 destination$iv$iv = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv3, 10));
                 while (r11.hasNext()) {
                     final SearchResult it3 = (SearchResult) item$iv$iv;
-                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it3.getT(), AppUtils.INSTANCE.toJson(new Id(it3.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda10
+                    destination$iv$iv.add(MainAPIKt.newAnimeSearchResponse$default(this, it3.getT(), AppUtils.INSTANCE.toJson(new Id(it3.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda2
                         public final Object invoke(Object obj2) {
                             return NetflixMirrorProvider.search$lambda$0$0(it3, this, (AnimeSearchResponse) obj2);
                         }
@@ -717,7 +627,7 @@ public final class NetflixMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:99:0x053e  */
     @Nullable
     public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) throws Exception {
-        C00221 c00221;
+        C00241 c00241;
         String url2;
         String str;
         NetflixMirrorProvider netflixMirrorProvider;
@@ -725,7 +635,7 @@ public final class NetflixMirrorProvider extends MainAPI {
         String id;
         Map cookies;
         Object obj2;
-        C00221 c00222;
+        C00241 c00242;
         String url3;
         String url4;
         final PostData data;
@@ -801,29 +711,29 @@ public final class NetflixMirrorProvider extends MainAPI {
         List castList3;
         String rating3;
         TvType tvType;
-        if (continuation instanceof C00221) {
-            c00221 = (C00221) continuation;
-            if ((c00221.label & Integer.MIN_VALUE) != 0) {
-                c00221.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00241) {
+            c00241 = (C00241) continuation;
+            if ((c00241.label & Integer.MIN_VALUE) != 0) {
+                c00241.label -= Integer.MIN_VALUE;
             } else {
-                c00221 = new C00221(continuation);
+                c00241 = new C00241(continuation);
             }
         } else {
-            c00221 = new C00221(continuation);
+            c00241 = new C00241(continuation);
         }
-        C00221 c00223 = c00221;
-        Object $result = c00223.result;
+        C00241 c00243 = c00241;
+        Object $result = c00243.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00223.label) {
+        switch (c00243.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (this.cookie_value.length() == 0) {
                     String mainUrl = getMainUrl();
                     url2 = url;
-                    c00223.L$0 = url2;
-                    c00223.L$1 = this;
-                    c00223.label = 1;
-                    Object objBypass = UtilsKt.bypass(mainUrl, c00223);
+                    c00243.L$0 = url2;
+                    c00243.L$1 = this;
+                    c00243.label = 1;
+                    Object objBypass = UtilsKt.bypass(mainUrl, c00243);
                     if (objBypass == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -843,12 +753,12 @@ public final class NetflixMirrorProvider extends MainAPI {
                 String str2 = getMainUrl() + "/mobile/post.php?id=" + id + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Map<String, String> map = this.headers;
                 String str3 = getMainUrl() + "/home";
-                c00223.L$0 = url2;
-                c00223.L$1 = id;
-                c00223.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00223.label = 2;
-                obj2 = Requests.get$default(app, str2, map, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00223, 4072, (Object) null);
-                c00222 = c00223;
+                c00243.L$0 = url2;
+                c00243.L$1 = id;
+                c00243.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00243.label = 2;
+                obj2 = Requests.get$default(app, str2, map, str3, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00243, 4072, (Object) null);
+                c00242 = c00243;
                 if (obj2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -922,7 +832,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     for (Object item$iv$iv4 : $this$mapTo$iv$iv2) {
                         Iterable $this$map$iv5 = $this$map$iv2;
                         final Suggest it2 = (Suggest) item$iv$iv4;
-                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda11
+                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it2.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda3
                             public final Object invoke(Object obj4) {
                                 return NetflixMirrorProvider.load$lambda$4$0(it2, this, (AnimeSearchResponse) obj4);
                             }
@@ -942,7 +852,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                 }
                 suggest2 = arrayList2;
                 if (CollectionsKt.first(data.getEpisodes()) == null) {
-                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda12
+                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda4
                         public final Object invoke(Object obj4) {
                             return NetflixMirrorProvider.load$lambda$5(data, (Episode) obj4);
                         }
@@ -950,7 +860,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     runTime3 = runTime;
                     id4 = url3;
                     cast5 = suggest2;
-                    c00222 = c00222;
+                    c00242 = c00242;
                     data3 = data;
                     genre4 = genre2;
                     obj3 = obj3;
@@ -966,7 +876,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     for (it = $this$mapTo$iv.iterator(); it.hasNext(); it = it) {
                         Object item$iv = it.next();
                         final com.horis.cncverse.entities.Episode it3 = (com.horis.cncverse.entities.Episode) item$iv;
-                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it3.getId()), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda13
+                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it3.getId()), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda5
                             public final Object invoke(Object obj4) {
                                 return NetflixMirrorProvider.load$lambda$6$0(it3, (Episode) obj4);
                             }
@@ -978,24 +888,24 @@ public final class NetflixMirrorProvider extends MainAPI {
                     if (nextPageShow == null && nextPageShow.intValue() == 1) {
                         String nextPageSeason = data.getNextPageSeason();
                         Intrinsics.checkNotNull(nextPageSeason);
-                        c00222.L$0 = url4;
-                        c00222.L$1 = url3;
-                        c00222.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                        c00222.L$3 = data;
-                        c00222.L$4 = episodes;
-                        c00222.L$5 = title;
-                        c00222.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                        c00222.L$7 = cast2;
-                        c00222.L$8 = genre2;
-                        c00222.L$9 = rating;
-                        c00222.L$10 = suggest2;
-                        c00222.L$11 = episodes;
-                        c00222.I$0 = runTime;
-                        c00222.label = 3;
-                        C00221 c00224 = c00222;
+                        c00242.L$0 = url4;
+                        c00242.L$1 = url3;
+                        c00242.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                        c00242.L$3 = data;
+                        c00242.L$4 = episodes;
+                        c00242.L$5 = title;
+                        c00242.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                        c00242.L$7 = cast2;
+                        c00242.L$8 = genre2;
+                        c00242.L$9 = rating;
+                        c00242.L$10 = suggest2;
+                        c00242.L$11 = episodes;
+                        c00242.I$0 = runTime;
+                        c00242.label = 3;
+                        C00241 c00244 = c00242;
                         url5 = url4;
-                        episodes2 = getEpisodes(title, url5, nextPageSeason, 2, c00224);
-                        c00222 = c00224;
+                        episodes2 = getEpisodes(title, url5, nextPageSeason, 2, c00244);
+                        c00242 = c00244;
                         obj3 = obj3;
                         if (episodes2 == obj3) {
                             return obj3;
@@ -1037,22 +947,22 @@ public final class NetflixMirrorProvider extends MainAPI {
                             id4 = id3;
                             id5 = rating;
                         } else {
-                            C00234 c00234 = new C00234(episodes4, this, title3, url7, null);
-                            c00222.L$0 = url7;
-                            c00222.L$1 = id3;
-                            c00222.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                            c00222.L$3 = data;
-                            c00222.L$4 = episodes4;
-                            c00222.L$5 = title3;
-                            c00222.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                            c00222.L$7 = cast4;
-                            c00222.L$8 = genre2;
-                            c00222.L$9 = rating;
-                            c00222.L$10 = suggest2;
-                            c00222.L$11 = null;
-                            c00222.I$0 = runTime;
-                            c00222.label = 4;
-                            objAmap = ParCollectionsKt.amap(listDropLast, c00234, c00222);
+                            C00254 c00254 = new C00254(episodes4, this, title3, url7, null);
+                            c00242.L$0 = url7;
+                            c00242.L$1 = id3;
+                            c00242.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                            c00242.L$3 = data;
+                            c00242.L$4 = episodes4;
+                            c00242.L$5 = title3;
+                            c00242.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                            c00242.L$7 = cast4;
+                            c00242.L$8 = genre2;
+                            c00242.L$9 = rating;
+                            c00242.L$10 = suggest2;
+                            c00242.L$11 = null;
+                            c00242.I$0 = runTime;
+                            c00242.label = 4;
+                            objAmap = ParCollectionsKt.amap(listDropLast, c00254, c00242);
                             if (objAmap == obj3) {
                                 return obj3;
                             }
@@ -1108,29 +1018,29 @@ public final class NetflixMirrorProvider extends MainAPI {
                 }
                 TvType type = tvType;
                 String rating4 = id5;
-                C00245 c00245 = new C00245(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
-                c00222.L$0 = SpillingKt.nullOutSpilledVariable(title4);
-                c00222.L$1 = SpillingKt.nullOutSpilledVariable(id4);
-                c00222.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00222.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00222.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00222.L$5 = SpillingKt.nullOutSpilledVariable(title5);
-                c00222.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00222.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00222.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00222.L$9 = SpillingKt.nullOutSpilledVariable(rating4);
-                c00222.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00222.L$11 = SpillingKt.nullOutSpilledVariable(type);
-                c00222.I$0 = runTime3;
-                c00222.label = 5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type, genre5, c00245, c00222);
+                C00265 c00265 = new C00265(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
+                c00242.L$0 = SpillingKt.nullOutSpilledVariable(title4);
+                c00242.L$1 = SpillingKt.nullOutSpilledVariable(id4);
+                c00242.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00242.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00242.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00242.L$5 = SpillingKt.nullOutSpilledVariable(title5);
+                c00242.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00242.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00242.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00242.L$9 = SpillingKt.nullOutSpilledVariable(rating4);
+                c00242.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00242.L$11 = SpillingKt.nullOutSpilledVariable(type);
+                c00242.I$0 = runTime3;
+                c00242.label = 5;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type, genre5, c00265, c00242);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 1:
-                netflixMirrorProvider = (NetflixMirrorProvider) c00223.L$1;
-                url2 = (String) c00223.L$0;
+                netflixMirrorProvider = (NetflixMirrorProvider) c00243.L$1;
+                url2 = (String) c00243.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = $result;
                 str = (String) obj;
@@ -1142,12 +1052,12 @@ public final class NetflixMirrorProvider extends MainAPI {
                 String str7 = getMainUrl() + "/mobile/post.php?id=" + id + "&t=" + APIHolder.INSTANCE.getUnixTime();
                 Map<String, String> map3 = this.headers;
                 String str8 = getMainUrl() + "/home";
-                c00223.L$0 = url2;
-                c00223.L$1 = id;
-                c00223.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00223.label = 2;
-                obj2 = Requests.get$default(app2, str7, map3, str8, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00223, 4072, (Object) null);
-                c00222 = c00223;
+                c00243.L$0 = url2;
+                c00243.L$1 = id;
+                c00243.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00243.label = 2;
+                obj2 = Requests.get$default(app2, str7, map3, str8, (Map) null, cookies, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00243, 4072, (Object) null);
+                c00242 = c00243;
                 if (obj2 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -1201,7 +1111,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     while (r18.hasNext()) {
                         Iterable $this$map$iv6 = $this$map$iv2;
                         final Suggest it4 = (Suggest) item$iv$iv4;
-                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it4.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda11
+                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it4.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda3
                             public final Object invoke(Object obj4) {
                                 return NetflixMirrorProvider.load$lambda$4$0(it4, this, (AnimeSearchResponse) obj4);
                             }
@@ -1227,7 +1137,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     while (it.hasNext()) {
                         Object item$iv2 = it.next();
                         final com.horis.cncverse.entities.Episode it5 = (com.horis.cncverse.entities.Episode) item$iv2;
-                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it5.getId()), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda13
+                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it5.getId()), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda5
                             public final Object invoke(Object obj4) {
                                 return NetflixMirrorProvider.load$lambda$6$0(it5, (Episode) obj4);
                             }
@@ -1239,24 +1149,24 @@ public final class NetflixMirrorProvider extends MainAPI {
                     if (nextPageShow == null) {
                         String nextPageSeason2 = data.getNextPageSeason();
                         Intrinsics.checkNotNull(nextPageSeason2);
-                        c00222.L$0 = url4;
-                        c00222.L$1 = url3;
-                        c00222.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                        c00222.L$3 = data;
-                        c00222.L$4 = episodes;
-                        c00222.L$5 = title;
-                        c00222.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                        c00222.L$7 = cast2;
-                        c00222.L$8 = genre2;
-                        c00222.L$9 = rating;
-                        c00222.L$10 = suggest2;
-                        c00222.L$11 = episodes;
-                        c00222.I$0 = runTime;
-                        c00222.label = 3;
-                        C00221 c00225 = c00222;
+                        c00242.L$0 = url4;
+                        c00242.L$1 = url3;
+                        c00242.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                        c00242.L$3 = data;
+                        c00242.L$4 = episodes;
+                        c00242.L$5 = title;
+                        c00242.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                        c00242.L$7 = cast2;
+                        c00242.L$8 = genre2;
+                        c00242.L$9 = rating;
+                        c00242.L$10 = suggest2;
+                        c00242.L$11 = episodes;
+                        c00242.I$0 = runTime;
+                        c00242.label = 3;
+                        C00241 c00245 = c00242;
                         url5 = url4;
-                        episodes2 = getEpisodes(title, url5, nextPageSeason2, 2, c00225);
-                        c00222 = c00225;
+                        episodes2 = getEpisodes(title, url5, nextPageSeason2, 2, c00245);
+                        c00242 = c00245;
                         obj3 = obj3;
                         if (episodes2 == obj3) {
                             return obj3;
@@ -1321,7 +1231,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     id5 = rating;
                     break;
                 } else {
-                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda12
+                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda4
                         public final Object invoke(Object obj4) {
                             return NetflixMirrorProvider.load$lambda$5(data, (Episode) obj4);
                         }
@@ -1329,7 +1239,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     runTime3 = runTime;
                     id4 = url3;
                     cast5 = suggest2;
-                    c00222 = c00222;
+                    c00242 = c00242;
                     data3 = data;
                     genre4 = genre2;
                     obj3 = obj3;
@@ -1346,34 +1256,34 @@ public final class NetflixMirrorProvider extends MainAPI {
                 }
                 TvType type2 = tvType;
                 String rating5 = id5;
-                C00245 c00246 = new C00245(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
-                c00222.L$0 = SpillingKt.nullOutSpilledVariable(title4);
-                c00222.L$1 = SpillingKt.nullOutSpilledVariable(id4);
-                c00222.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00222.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00222.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00222.L$5 = SpillingKt.nullOutSpilledVariable(title5);
-                c00222.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00222.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00222.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00222.L$9 = SpillingKt.nullOutSpilledVariable(rating5);
-                c00222.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00222.L$11 = SpillingKt.nullOutSpilledVariable(type2);
-                c00222.I$0 = runTime3;
-                c00222.label = 5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type2, genre5, c00246, c00222);
+                C00265 c00266 = new C00265(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
+                c00242.L$0 = SpillingKt.nullOutSpilledVariable(title4);
+                c00242.L$1 = SpillingKt.nullOutSpilledVariable(id4);
+                c00242.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00242.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00242.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00242.L$5 = SpillingKt.nullOutSpilledVariable(title5);
+                c00242.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00242.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00242.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00242.L$9 = SpillingKt.nullOutSpilledVariable(rating5);
+                c00242.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00242.L$11 = SpillingKt.nullOutSpilledVariable(type2);
+                c00242.I$0 = runTime3;
+                c00242.label = 5;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type2, genre5, c00266, c00242);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 2:
-                Map cookies4 = (Map) c00223.L$2;
-                url3 = (String) c00223.L$1;
-                String url8 = (String) c00223.L$0;
+                Map cookies4 = (Map) c00243.L$2;
+                url3 = (String) c00243.L$1;
+                String url8 = (String) c00243.L$0;
                 ResultKt.throwOnFailure($result);
                 cookies = cookies4;
                 url4 = url8;
-                c00222 = c00223;
+                c00242 = c00243;
                 obj2 = $result;
                 NiceResponse this_$iv3 = (NiceResponse) obj2;
                 ResponseParser parser3 = this_$iv3.getParser();
@@ -1422,7 +1332,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     while (r18.hasNext()) {
                         Iterable $this$map$iv7 = $this$map$iv2;
                         final Suggest it6 = (Suggest) item$iv$iv4;
-                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it6.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda11
+                        destination$iv$iv3.add(MainAPIKt.newAnimeSearchResponse$default(this, "", AppUtils.INSTANCE.toJson(new Id(it6.getId())), (TvType) null, false, new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda3
                             public final Object invoke(Object obj4) {
                                 return NetflixMirrorProvider.load$lambda$4$0(it6, this, (AnimeSearchResponse) obj4);
                             }
@@ -1448,7 +1358,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     while (it.hasNext()) {
                         Object item$iv3 = it.next();
                         final com.horis.cncverse.entities.Episode it7 = (com.horis.cncverse.entities.Episode) item$iv3;
-                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it7.getId()), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda13
+                        destination$iv.add(MainAPIKt.newEpisode(this, new LoadData(title, it7.getId()), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda5
                             public final Object invoke(Object obj4) {
                                 return NetflixMirrorProvider.load$lambda$6$0(it7, (Episode) obj4);
                             }
@@ -1460,24 +1370,24 @@ public final class NetflixMirrorProvider extends MainAPI {
                     if (nextPageShow == null) {
                         String nextPageSeason3 = data.getNextPageSeason();
                         Intrinsics.checkNotNull(nextPageSeason3);
-                        c00222.L$0 = url4;
-                        c00222.L$1 = url3;
-                        c00222.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                        c00222.L$3 = data;
-                        c00222.L$4 = episodes;
-                        c00222.L$5 = title;
-                        c00222.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                        c00222.L$7 = cast2;
-                        c00222.L$8 = genre2;
-                        c00222.L$9 = rating;
-                        c00222.L$10 = suggest2;
-                        c00222.L$11 = episodes;
-                        c00222.I$0 = runTime;
-                        c00222.label = 3;
-                        C00221 c00226 = c00222;
+                        c00242.L$0 = url4;
+                        c00242.L$1 = url3;
+                        c00242.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                        c00242.L$3 = data;
+                        c00242.L$4 = episodes;
+                        c00242.L$5 = title;
+                        c00242.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                        c00242.L$7 = cast2;
+                        c00242.L$8 = genre2;
+                        c00242.L$9 = rating;
+                        c00242.L$10 = suggest2;
+                        c00242.L$11 = episodes;
+                        c00242.I$0 = runTime;
+                        c00242.label = 3;
+                        C00241 c00246 = c00242;
                         url5 = url4;
-                        episodes2 = getEpisodes(title, url5, nextPageSeason3, 2, c00226);
-                        c00222 = c00226;
+                        episodes2 = getEpisodes(title, url5, nextPageSeason3, 2, c00246);
+                        c00242 = c00246;
                         obj3 = obj3;
                         if (episodes2 == obj3) {
                             return obj3;
@@ -1542,7 +1452,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     id5 = rating;
                     break;
                 } else {
-                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda12
+                    Boxing.boxBoolean(episodes.add(MainAPIKt.newEpisode(this, new LoadData(title, url3), new Function1() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda4
                         public final Object invoke(Object obj4) {
                             return NetflixMirrorProvider.load$lambda$5(data, (Episode) obj4);
                         }
@@ -1550,7 +1460,7 @@ public final class NetflixMirrorProvider extends MainAPI {
                     runTime3 = runTime;
                     id4 = url3;
                     cast5 = suggest2;
-                    c00222 = c00222;
+                    c00242 = c00242;
                     data3 = data;
                     genre4 = genre2;
                     obj3 = obj3;
@@ -1567,43 +1477,43 @@ public final class NetflixMirrorProvider extends MainAPI {
                 }
                 TvType type3 = tvType;
                 String rating6 = id5;
-                C00245 c00247 = new C00245(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
-                c00222.L$0 = SpillingKt.nullOutSpilledVariable(title4);
-                c00222.L$1 = SpillingKt.nullOutSpilledVariable(id4);
-                c00222.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00222.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00222.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00222.L$5 = SpillingKt.nullOutSpilledVariable(title5);
-                c00222.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00222.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00222.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00222.L$9 = SpillingKt.nullOutSpilledVariable(rating6);
-                c00222.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00222.L$11 = SpillingKt.nullOutSpilledVariable(type3);
-                c00222.I$0 = runTime3;
-                c00222.label = 5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type3, genre5, c00247, c00222);
+                C00265 c00267 = new C00265(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
+                c00242.L$0 = SpillingKt.nullOutSpilledVariable(title4);
+                c00242.L$1 = SpillingKt.nullOutSpilledVariable(id4);
+                c00242.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00242.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00242.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00242.L$5 = SpillingKt.nullOutSpilledVariable(title5);
+                c00242.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00242.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00242.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00242.L$9 = SpillingKt.nullOutSpilledVariable(rating6);
+                c00242.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00242.L$11 = SpillingKt.nullOutSpilledVariable(type3);
+                c00242.I$0 = runTime3;
+                c00242.label = 5;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type3, genre5, c00267, c00242);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 3:
-                int runTime5 = c00223.I$0;
-                arrayList3 = (ArrayList) c00223.L$11;
-                List suggest4 = (List) c00223.L$10;
-                rating2 = (String) c00223.L$9;
-                genre3 = (List) c00223.L$8;
-                cast3 = (List) c00223.L$7;
-                List castList4 = (List) c00223.L$6;
-                title2 = (String) c00223.L$5;
-                episodes3 = (ArrayList) c00223.L$4;
-                data2 = (PostData) c00223.L$3;
-                cookies2 = (Map) c00223.L$2;
+                int runTime5 = c00243.I$0;
+                arrayList3 = (ArrayList) c00243.L$11;
+                List suggest4 = (List) c00243.L$10;
+                rating2 = (String) c00243.L$9;
+                genre3 = (List) c00243.L$8;
+                cast3 = (List) c00243.L$7;
+                List castList4 = (List) c00243.L$6;
+                title2 = (String) c00243.L$5;
+                episodes3 = (ArrayList) c00243.L$4;
+                data2 = (PostData) c00243.L$3;
+                cookies2 = (Map) c00243.L$2;
                 runTime2 = runTime5;
-                id2 = (String) c00223.L$1;
-                url6 = (String) c00223.L$0;
+                id2 = (String) c00243.L$1;
+                url6 = (String) c00243.L$0;
                 ResultKt.throwOnFailure($result);
-                c00222 = c00223;
+                c00242 = c00243;
                 castList2 = castList4;
                 obj3 = coroutine_suspended;
                 suggest2 = suggest4;
@@ -1641,42 +1551,42 @@ public final class NetflixMirrorProvider extends MainAPI {
                 }
                 TvType type4 = tvType;
                 String rating7 = id5;
-                C00245 c00248 = new C00245(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
-                c00222.L$0 = SpillingKt.nullOutSpilledVariable(title4);
-                c00222.L$1 = SpillingKt.nullOutSpilledVariable(id4);
-                c00222.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00222.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00222.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00222.L$5 = SpillingKt.nullOutSpilledVariable(title5);
-                c00222.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00222.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00222.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00222.L$9 = SpillingKt.nullOutSpilledVariable(rating7);
-                c00222.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00222.L$11 = SpillingKt.nullOutSpilledVariable(type4);
-                c00222.I$0 = runTime3;
-                c00222.label = 5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type4, genre5, c00248, c00222);
+                C00265 c00268 = new C00265(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
+                c00242.L$0 = SpillingKt.nullOutSpilledVariable(title4);
+                c00242.L$1 = SpillingKt.nullOutSpilledVariable(id4);
+                c00242.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00242.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00242.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00242.L$5 = SpillingKt.nullOutSpilledVariable(title5);
+                c00242.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00242.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00242.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00242.L$9 = SpillingKt.nullOutSpilledVariable(rating7);
+                c00242.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00242.L$11 = SpillingKt.nullOutSpilledVariable(type4);
+                c00242.I$0 = runTime3;
+                c00242.label = 5;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type4, genre5, c00268, c00242);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 4:
-                int runTime6 = c00223.I$0;
-                suggest3 = (List) c00223.L$10;
-                title7 = (String) c00223.L$9;
-                List genre6 = (List) c00223.L$8;
-                cast4 = (List) c00223.L$7;
-                castList3 = (List) c00223.L$6;
-                title6 = (String) c00223.L$5;
-                episodes5 = (ArrayList) c00223.L$4;
-                PostData data5 = (PostData) c00223.L$3;
-                Map cookies5 = (Map) c00223.L$2;
-                rating3 = (String) c00223.L$1;
+                int runTime6 = c00243.I$0;
+                suggest3 = (List) c00243.L$10;
+                title7 = (String) c00243.L$9;
+                List genre6 = (List) c00243.L$8;
+                cast4 = (List) c00243.L$7;
+                castList3 = (List) c00243.L$6;
+                title6 = (String) c00243.L$5;
+                episodes5 = (ArrayList) c00243.L$4;
+                PostData data5 = (PostData) c00243.L$3;
+                Map cookies5 = (Map) c00243.L$2;
+                rating3 = (String) c00243.L$1;
                 runTime4 = runTime6;
-                String url9 = (String) c00223.L$0;
+                String url9 = (String) c00243.L$0;
                 ResultKt.throwOnFailure($result);
-                c00222 = c00223;
+                c00242 = c00243;
                 data4 = data5;
                 cookies3 = cookies5;
                 genre2 = genre6;
@@ -1703,28 +1613,28 @@ public final class NetflixMirrorProvider extends MainAPI {
                 }
                 TvType type5 = tvType;
                 String rating8 = id5;
-                C00245 c00249 = new C00245(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
-                c00222.L$0 = SpillingKt.nullOutSpilledVariable(title4);
-                c00222.L$1 = SpillingKt.nullOutSpilledVariable(id4);
-                c00222.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
-                c00222.L$3 = SpillingKt.nullOutSpilledVariable(data3);
-                c00222.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
-                c00222.L$5 = SpillingKt.nullOutSpilledVariable(title5);
-                c00222.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
-                c00222.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
-                c00222.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
-                c00222.L$9 = SpillingKt.nullOutSpilledVariable(rating8);
-                c00222.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
-                c00222.L$11 = SpillingKt.nullOutSpilledVariable(type5);
-                c00222.I$0 = runTime3;
-                c00222.label = 5;
-                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type5, genre5, c00249, c00222);
+                C00265 c00269 = new C00265(id4, this, data3, genre4, cast6, id5, runTime3, cast5, null);
+                c00242.L$0 = SpillingKt.nullOutSpilledVariable(title4);
+                c00242.L$1 = SpillingKt.nullOutSpilledVariable(id4);
+                c00242.L$2 = SpillingKt.nullOutSpilledVariable(cookies);
+                c00242.L$3 = SpillingKt.nullOutSpilledVariable(data3);
+                c00242.L$4 = SpillingKt.nullOutSpilledVariable(genre5);
+                c00242.L$5 = SpillingKt.nullOutSpilledVariable(title5);
+                c00242.L$6 = SpillingKt.nullOutSpilledVariable(castList2);
+                c00242.L$7 = SpillingKt.nullOutSpilledVariable(cast6);
+                c00242.L$8 = SpillingKt.nullOutSpilledVariable(genre4);
+                c00242.L$9 = SpillingKt.nullOutSpilledVariable(rating8);
+                c00242.L$10 = SpillingKt.nullOutSpilledVariable(cast5);
+                c00242.L$11 = SpillingKt.nullOutSpilledVariable(type5);
+                c00242.I$0 = runTime3;
+                c00242.label = 5;
+                $result = MainAPIKt.newTvSeriesLoadResponse(this, title5, title4, type5, genre5, c00269, c00242);
                 if ($result == obj3) {
                     return obj3;
                 }
                 return $result;
             case 5:
-                int i5 = c00223.I$0;
+                int i5 = c00243.I$0;
                 ResultKt.throwOnFailure($result);
                 return $result;
             default:
@@ -1758,8 +1668,8 @@ public final class NetflixMirrorProvider extends MainAPI {
     /* JADX INFO: renamed from: com.horis.cncverse.NetflixMirrorProvider$load$4 */
     /* JADX INFO: compiled from: NetflixMirrorProvider.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "it", "Lcom/horis/cncverse/entities/Season;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider$load$4", f = "NetflixMirrorProvider.kt", i = {0}, l = {206}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
-    static final class C00234 extends SuspendLambda implements Function2<Season, Continuation<? super Boolean>, Object> {
+    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider$load$4", f = "NetflixMirrorProvider.kt", i = {0}, l = {174}, m = "invokeSuspend", n = {"it"}, nl = {-1}, s = {"L$0"}, v = 2)
+    static final class C00254 extends SuspendLambda implements Function2<Season, Continuation<? super Boolean>, Object> {
         final /* synthetic */ ArrayList<Episode> $episodes;
         final /* synthetic */ String $title;
         final /* synthetic */ String $url;
@@ -1769,7 +1679,7 @@ public final class NetflixMirrorProvider extends MainAPI {
         final /* synthetic */ NetflixMirrorProvider this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00234(ArrayList<Episode> arrayList, NetflixMirrorProvider netflixMirrorProvider, String str, String str2, Continuation<? super C00234> continuation) {
+        C00254(ArrayList<Episode> arrayList, NetflixMirrorProvider netflixMirrorProvider, String str, String str2, Continuation<? super C00254> continuation) {
             super(2, continuation);
             this.$episodes = arrayList;
             this.this$0 = netflixMirrorProvider;
@@ -1778,9 +1688,9 @@ public final class NetflixMirrorProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00234 = new C00234(this.$episodes, this.this$0, this.$title, this.$url, continuation);
-            c00234.L$0 = obj;
-            return c00234;
+            Continuation<Unit> c00254 = new C00254(this.$episodes, this.this$0, this.$title, this.$url, continuation);
+            c00254.L$0 = obj;
+            return c00254;
         }
 
         public final Object invoke(Season season, Continuation<? super Boolean> continuation) {
@@ -1822,7 +1732,7 @@ public final class NetflixMirrorProvider extends MainAPI {
     /* JADX INFO: compiled from: NetflixMirrorProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider$load$5", f = "NetflixMirrorProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00245 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    static final class C00265 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<ActorData> $cast;
         final /* synthetic */ PostData $data;
         final /* synthetic */ List<String> $genre;
@@ -1835,7 +1745,7 @@ public final class NetflixMirrorProvider extends MainAPI {
         final /* synthetic */ NetflixMirrorProvider this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00245(String str, NetflixMirrorProvider netflixMirrorProvider, PostData postData, List<String> list, List<ActorData> list2, String str2, int i, List<AnimeSearchResponse> list3, Continuation<? super C00245> continuation) {
+        C00265(String str, NetflixMirrorProvider netflixMirrorProvider, PostData postData, List<String> list, List<ActorData> list2, String str2, int i, List<AnimeSearchResponse> list3, Continuation<? super C00265> continuation) {
             super(2, continuation);
             this.$id = str;
             this.this$0 = netflixMirrorProvider;
@@ -1848,9 +1758,9 @@ public final class NetflixMirrorProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00245 = new C00245(this.$id, this.this$0, this.$data, this.$genre, this.$cast, this.$rating, this.$runTime, this.$suggest, continuation);
-            c00245.L$0 = obj;
-            return c00245;
+            Continuation<Unit> c00265 = new C00265(this.$id, this.this$0, this.$data, this.$genre, this.$cast, this.$rating, this.$runTime, this.$suggest, continuation);
+            c00265.L$0 = obj;
+            return c00265;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -1913,316 +1823,27 @@ public final class NetflixMirrorProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda9
-                @Override // java.lang.Runnable
-                public final void run() {
-                    NetflixMirrorProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda2
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    NetflixMirrorProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    NetflixMirrorProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                NetflixMirrorProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda5
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda6
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    NetflixMirrorProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                NetflixMirrorProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX WARN: Code duplicated, block: B:55:0x0232 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:56:0x0233  */
-    /* JADX WARN: Code duplicated, block: B:59:0x02d4 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:60:0x02d5  */
-    /* JADX WARN: Code duplicated, block: B:63:0x0310  */
-    /* JADX WARN: Code duplicated, block: B:65:0x0339 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:66:0x033a  */
-    /* JADX WARN: Code duplicated, block: B:69:0x03c8 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:70:0x03c9  */
-    /* JADX WARN: Code duplicated, block: B:72:0x03fb  */
-    /* JADX WARN: Code duplicated, block: B:75:0x040e  */
-    /* JADX WARN: Code duplicated, block: B:79:0x0417  */
+    /* JADX WARN: Code duplicated, block: B:24:0x01a8 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:25:0x01a9  */
+    /* JADX WARN: Code duplicated, block: B:28:0x0248 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:29:0x0249  */
+    /* JADX WARN: Code duplicated, block: B:32:0x0284  */
+    /* JADX WARN: Code duplicated, block: B:34:0x02af A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:35:0x02b0  */
+    /* JADX WARN: Code duplicated, block: B:38:0x0341 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:39:0x0342  */
+    /* JADX WARN: Code duplicated, block: B:41:0x0372  */
+    /* JADX WARN: Code duplicated, block: B:44:0x0386  */
+    /* JADX WARN: Code duplicated, block: B:48:0x038f  */
+    /* JADX WARN: Code duplicated, block: B:50:0x0392  */
+    /* JADX WARN: Code duplicated, block: B:52:0x0397  */
+    /* JADX WARN: Code duplicated, block: B:54:0x03f1 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:55:0x03f2  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:81:0x041a  */
-    /* JADX WARN: Code duplicated, block: B:83:0x041f  */
-    /* JADX WARN: Code duplicated, block: B:85:0x0479 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:86:0x047a  */
     @Nullable
-    public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) throws Exception {
-        C00251 c00251;
+    public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
+        C00271 c00271;
+        NetflixMirrorProvider netflixMirrorProvider;
         String data2;
         Function1<? super ExtractorLink, Unit> function3;
         Object objResolveApiUrl;
@@ -2243,98 +1864,79 @@ public final class NetflixMirrorProvider extends MainAPI {
         Function1<? super ExtractorLink, Unit> function8;
         boolean isCasting4;
         String userToken;
-        boolean z;
-        String str;
-        String str2;
         Object obj;
         Object obj2;
+        String str;
+        String str2;
         String id3;
         Object obj3;
         Object obj4;
         Function1<? super SubtitleFile, Unit> function9;
-        String data4;
-        String id4;
-        Function1<? super ExtractorLink, Unit> function10;
+        String apiBase4;
         Ref.ObjectRef objectRef;
         Ref.ObjectRef response2;
+        String id4;
         boolean isCasting5;
-        String data5;
-        boolean z2;
+        Function1<? super ExtractorLink, Unit> function10;
+        String data4;
         boolean isCasting6;
-        String apiBase4;
+        String apiBase5;
         Function1<? super ExtractorLink, Unit> function11;
         Function1<? super SubtitleFile, Unit> function12;
-        String data6;
+        String data5;
+        String apiBase6;
         Ref.ObjectRef response3;
+        String str3;
         Object newTvUserToken;
-        String data7;
+        String data6;
         boolean isCasting7;
         Ref.ObjectRef response4;
+        String apiBase7;
         String id5;
-        String apiBase5;
         Function1<? super ExtractorLink, Unit> function13;
         Function1<? super SubtitleFile, Unit> function14;
         String userToken2;
         String id6;
-        String apiBase6;
+        String apiBase8;
         Function1<? super ExtractorLink, Unit> function15;
-        boolean isCasting8;
         Ref.ObjectRef response5;
+        boolean isCasting8;
         Object obj5;
+        String userToken3;
         Ref.ObjectRef objectRef2;
         Ref.ObjectRef response6;
-        String data8;
-        String userToken3;
-        String apiBase7;
         String id7;
         String video_link;
-        boolean z3;
+        boolean z;
         Object objNewExtractorLink;
         Function1<? super ExtractorLink, Unit> function16;
-        if (continuation instanceof C00251) {
-            c00251 = (C00251) continuation;
-            if ((c00251.label & Integer.MIN_VALUE) != 0) {
-                c00251.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00271) {
+            c00271 = (C00271) continuation;
+            if ((c00271.label & Integer.MIN_VALUE) != 0) {
+                c00271.label -= Integer.MIN_VALUE;
+                netflixMirrorProvider = this;
             } else {
-                c00251 = new C00251(continuation);
+                netflixMirrorProvider = this;
+                c00271 = netflixMirrorProvider.new C00271(continuation);
             }
         } else {
-            c00251 = new C00251(continuation);
+            netflixMirrorProvider = this;
+            c00271 = netflixMirrorProvider.new C00271(continuation);
         }
-        C00251 c00252 = c00251;
-        Object $result = c00252.result;
+        C00271 c00272 = c00271;
+        Object $result = c00272.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00252.label) {
+        switch (c00272.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (!SubscriptionHelper.INSTANCE.isSubscribed(context)) {
-                    NetflixMirrorProvider $this$loadLinks_u24lambda_u240 = this;
-                    final Context _ctx = context;
-                    SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                    String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                    long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                    long _nowSec = System.currentTimeMillis() / 1000;
-                    boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                    if (!_isSubscribed) {
-                        if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.horis.cncverse.NetflixMirrorProvider$$ExternalSyntheticLambda7
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    NetflixMirrorProvider.loadLinks$lambda$0$0(_ctx);
-                                }
-                            });
-                        }
-                        $this$loadLinks_u24lambda_u240.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                    }
-                }
                 data2 = data;
-                c00252.L$0 = data2;
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function1);
+                c00272.L$0 = data2;
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                 function3 = function2;
-                c00252.L$2 = function3;
-                c00252.Z$0 = isCasting;
-                c00252.label = 1;
-                objResolveApiUrl = UtilsKt.resolveApiUrl(c00252);
+                c00272.L$2 = function3;
+                c00272.Z$0 = isCasting;
+                c00272.label = 1;
+                objResolveApiUrl = UtilsKt.resolveApiUrl(c00272);
                 if (objResolveApiUrl == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -2343,15 +1945,15 @@ public final class NetflixMirrorProvider extends MainAPI {
                 apiBase = (String) objResolveApiUrl;
                 String text$iv = data2;
                 id = ((LoadData) UtilsKt.getJSONParser().parse(text$iv, Reflection.getOrCreateKotlinClass(LoadData.class))).getId();
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function4);
-                c00252.L$2 = function3;
-                c00252.L$3 = apiBase;
-                c00252.L$4 = id;
-                c00252.Z$0 = isCasting2;
-                c00252.label = 2;
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function4);
+                c00272.L$2 = function3;
+                c00272.L$3 = apiBase;
+                c00272.L$4 = id;
+                c00272.Z$0 = isCasting2;
+                c00272.label = 2;
                 function5 = function3;
-                newTvUserToken$default = UtilsKt.getNewTvUserToken$default(apiBase, "nf", false, c00252, 4, null);
+                newTvUserToken$default = UtilsKt.getNewTvUserToken$default(apiBase, "nf", false, c00272, 4, null);
                 if (newTvUserToken$default == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -2364,170 +1966,167 @@ public final class NetflixMirrorProvider extends MainAPI {
                 response = new Ref.ObjectRef();
                 data3 = data2;
                 Map<String, String> mapBuildNewTvHeaders = UtilsKt.buildNewTvHeaders("nf", MapsKt.mapOf(TuplesKt.to("Usertoken", userToken4)));
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                c00252.L$2 = function7;
-                c00252.L$3 = apiBase2;
-                c00252.L$4 = id2;
-                c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken4);
-                c00252.L$6 = response;
-                c00252.L$7 = response;
-                c00252.Z$0 = isCasting3;
-                c00252.label = 3;
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                c00272.L$2 = function7;
+                c00272.L$3 = apiBase2;
+                c00272.L$4 = id2;
+                c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken4);
+                c00272.L$6 = response;
+                c00272.L$7 = response;
+                c00272.Z$0 = isCasting3;
+                c00272.label = 3;
                 apiBase3 = apiBase2;
                 function8 = function7;
                 isCasting4 = isCasting3;
                 userToken = userToken4;
-                z = false;
+                obj = coroutine_suspended;
+                obj2 = "Usertoken";
                 str = "/newtv/player.php?id=";
                 str2 = "nf";
-                obj = "Usertoken";
-                obj2 = coroutine_suspended;
                 id3 = id2;
-                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00252, 4092, (Object) null);
-                c00252 = c00252;
-                if (obj3 == obj2) {
-                    return obj2;
+                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00272, 4092, (Object) null);
+                c00272 = c00272;
+                if (obj3 == obj) {
+                    return obj;
                 }
                 obj4 = obj3;
                 function9 = function6;
-                data4 = apiBase3;
-                id4 = id3;
-                function10 = function8;
+                apiBase4 = apiBase3;
                 objectRef = response;
                 response2 = objectRef;
+                id4 = id3;
                 isCasting5 = isCasting4;
-                data5 = data3;
+                function10 = function8;
+                data4 = data3;
                 NiceResponse this_$iv = (NiceResponse) obj4;
                 ResponseParser parser = this_$iv.getParser();
                 Intrinsics.checkNotNull(parser);
                 objectRef.element = parser.parse(this_$iv.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 if (Intrinsics.areEqual(((NewTvPlayerResponse) response2.element).getStatus(), "otp")) {
-                    c00252.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00252.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00252.L$2 = function10;
-                    c00252.L$3 = data4;
-                    c00252.L$4 = id4;
-                    c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                    c00252.L$6 = response2;
-                    c00252.L$7 = null;
-                    c00252.Z$0 = isCasting5;
-                    c00252.label = 4;
-                    z2 = true;
-                    newTvUserToken = UtilsKt.getNewTvUserToken(data4, str2, true, c00252);
-                    if (newTvUserToken == obj2) {
-                        return obj2;
+                    c00272.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00272.L$1 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00272.L$2 = function10;
+                    c00272.L$3 = apiBase4;
+                    c00272.L$4 = id4;
+                    c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                    c00272.L$6 = response2;
+                    c00272.L$7 = null;
+                    c00272.Z$0 = isCasting5;
+                    c00272.label = 4;
+                    str3 = str2;
+                    newTvUserToken = UtilsKt.getNewTvUserToken(apiBase4, str3, true, c00272);
+                    if (newTvUserToken == obj) {
+                        return obj;
                     }
-                    data7 = data5;
+                    data6 = data4;
                     isCasting7 = isCasting5;
                     response4 = response2;
-                    id5 = id4;
-                    apiBase5 = data4;
+                    apiBase7 = id4;
+                    id5 = apiBase4;
                     function13 = function10;
                     function14 = function9;
                     userToken2 = (String) newTvUserToken;
-                    Map<String, String> mapBuildNewTvHeaders2 = UtilsKt.buildNewTvHeaders(str2, MapsKt.mapOf(TuplesKt.to(obj, userToken2)));
-                    c00252.L$0 = SpillingKt.nullOutSpilledVariable(data7);
-                    c00252.L$1 = SpillingKt.nullOutSpilledVariable(function14);
-                    c00252.L$2 = function13;
-                    c00252.L$3 = apiBase5;
-                    c00252.L$4 = SpillingKt.nullOutSpilledVariable(id5);
-                    c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
-                    c00252.L$6 = response4;
-                    c00252.L$7 = response4;
-                    c00252.Z$0 = isCasting7;
-                    c00252.label = 5;
-                    C00251 c00253 = c00252;
-                    id6 = id5;
-                    apiBase6 = apiBase5;
+                    Map<String, String> mapBuildNewTvHeaders2 = UtilsKt.buildNewTvHeaders(str3, MapsKt.mapOf(TuplesKt.to(obj2, userToken2)));
+                    c00272.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00272.L$1 = SpillingKt.nullOutSpilledVariable(function14);
+                    c00272.L$2 = function13;
+                    c00272.L$3 = id5;
+                    c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase7);
+                    c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
+                    c00272.L$6 = response4;
+                    c00272.L$7 = response4;
+                    c00272.Z$0 = isCasting7;
+                    c00272.label = 5;
+                    C00271 c00273 = c00272;
+                    id6 = apiBase7;
+                    apiBase8 = id5;
                     function15 = function13;
-                    isCasting8 = isCasting7;
                     response5 = response4;
-                    obj5 = Requests.get$default(UtilsKt.getApp(), apiBase5 + str + id5, mapBuildNewTvHeaders2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00253, 4092, (Object) null);
-                    c00252 = c00253;
-                    if (obj5 == obj2) {
-                        return obj2;
+                    isCasting8 = isCasting7;
+                    obj5 = Requests.get$default(UtilsKt.getApp(), id5 + str + apiBase7, mapBuildNewTvHeaders2, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00273, 4092, (Object) null);
+                    c00272 = c00273;
+                    if (obj5 == obj) {
+                        return obj;
                     }
+                    userToken3 = userToken2;
+                    function12 = function14;
+                    data5 = data6;
+                    apiBase5 = apiBase8;
+                    function11 = function15;
                     objectRef2 = response5;
                     response6 = objectRef2;
-                    function12 = function14;
-                    data8 = data7;
-                    function11 = function15;
-                    userToken3 = userToken2;
-                    apiBase7 = apiBase6;
                     id7 = id6;
                     NiceResponse this_$iv2 = (NiceResponse) obj5;
                     ResponseParser parser2 = this_$iv2.getParser();
                     Intrinsics.checkNotNull(parser2);
                     objectRef2.element = parser2.parse(this_$iv2.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                     response3 = response6;
-                    userToken = userToken3;
-                    data6 = data8;
+                    apiBase6 = id7;
                     isCasting6 = isCasting8;
-                    data4 = apiBase7;
-                    apiBase4 = id7;
+                    userToken = userToken3;
                 } else {
-                    z2 = true;
                     isCasting6 = isCasting5;
-                    apiBase4 = id4;
+                    apiBase5 = apiBase4;
                     function11 = function10;
                     function12 = function9;
-                    data6 = data5;
+                    data5 = data4;
+                    apiBase6 = id4;
                     response3 = response2;
                 }
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null || StringsKt.isBlank(video_link)) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = false;
+                    z = false;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name = getName();
-                String name2 = getName();
+                String name = netflixMirrorProvider.getName();
+                String name2 = netflixMirrorProvider.getName();
                 String video_link2 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType = ExtractorLinkType.M3U8;
-                C00263 c00263 = new C00263(response3, data4, null);
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00252.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00252.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00252.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00252.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00252.L$7 = function11;
-                c00252.Z$0 = isCasting6;
-                c00252.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, video_link2, extractorLinkType, c00263, c00252);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00282 c00282 = new C00282(response3, apiBase5, null);
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00272.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00272.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00272.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00272.L$7 = function11;
+                c00272.Z$0 = isCasting6;
+                c00272.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, video_link2, extractorLinkType, c00282, c00272);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 1:
-                boolean isCasting9 = c00252.Z$0;
-                function3 = (Function1) c00252.L$2;
-                Function1<? super SubtitleFile, Unit> function17 = (Function1) c00252.L$1;
-                String data9 = (String) c00252.L$0;
+                boolean isCasting9 = c00272.Z$0;
+                function3 = (Function1) c00272.L$2;
+                Function1<? super SubtitleFile, Unit> function17 = (Function1) c00272.L$1;
+                String data7 = (String) c00272.L$0;
                 ResultKt.throwOnFailure($result);
                 isCasting2 = isCasting9;
                 function4 = function17;
-                data2 = data9;
+                data2 = data7;
                 objResolveApiUrl = $result;
                 apiBase = (String) objResolveApiUrl;
                 String text$iv2 = data2;
                 id = ((LoadData) UtilsKt.getJSONParser().parse(text$iv2, Reflection.getOrCreateKotlinClass(LoadData.class))).getId();
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function4);
-                c00252.L$2 = function3;
-                c00252.L$3 = apiBase;
-                c00252.L$4 = id;
-                c00252.Z$0 = isCasting2;
-                c00252.label = 2;
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function4);
+                c00272.L$2 = function3;
+                c00272.L$3 = apiBase;
+                c00272.L$4 = id;
+                c00272.Z$0 = isCasting2;
+                c00272.label = 2;
                 function5 = function3;
-                newTvUserToken$default = UtilsKt.getNewTvUserToken$default(apiBase, "nf", false, c00252, 4, null);
+                newTvUserToken$default = UtilsKt.getNewTvUserToken$default(apiBase, "nf", false, c00272, 4, null);
                 if (newTvUserToken$default == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -2540,330 +2139,323 @@ public final class NetflixMirrorProvider extends MainAPI {
                 response = new Ref.ObjectRef();
                 data3 = data2;
                 Map<String, String> mapBuildNewTvHeaders3 = UtilsKt.buildNewTvHeaders("nf", MapsKt.mapOf(TuplesKt.to("Usertoken", userToken5)));
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                c00252.L$2 = function7;
-                c00252.L$3 = apiBase2;
-                c00252.L$4 = id2;
-                c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken5);
-                c00252.L$6 = response;
-                c00252.L$7 = response;
-                c00252.Z$0 = isCasting3;
-                c00252.label = 3;
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                c00272.L$2 = function7;
+                c00272.L$3 = apiBase2;
+                c00272.L$4 = id2;
+                c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken5);
+                c00272.L$6 = response;
+                c00272.L$7 = response;
+                c00272.Z$0 = isCasting3;
+                c00272.label = 3;
                 apiBase3 = apiBase2;
                 function8 = function7;
                 isCasting4 = isCasting3;
                 userToken = userToken5;
-                z = false;
+                obj = coroutine_suspended;
+                obj2 = "Usertoken";
                 str = "/newtv/player.php?id=";
                 str2 = "nf";
-                obj = "Usertoken";
-                obj2 = coroutine_suspended;
                 id3 = id2;
-                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00252, 4092, (Object) null);
-                c00252 = c00252;
-                if (obj3 == obj2) {
-                    return obj2;
+                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders3, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00272, 4092, (Object) null);
+                c00272 = c00272;
+                if (obj3 == obj) {
+                    return obj;
                 }
                 obj4 = obj3;
                 function9 = function6;
-                data4 = apiBase3;
-                id4 = id3;
-                function10 = function8;
+                apiBase4 = apiBase3;
                 objectRef = response;
                 response2 = objectRef;
+                id4 = id3;
                 isCasting5 = isCasting4;
-                data5 = data3;
+                function10 = function8;
+                data4 = data3;
                 NiceResponse this_$iv3 = (NiceResponse) obj4;
                 ResponseParser parser3 = this_$iv3.getParser();
                 Intrinsics.checkNotNull(parser3);
                 objectRef.element = parser3.parse(this_$iv3.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 if (Intrinsics.areEqual(((NewTvPlayerResponse) response2.element).getStatus(), "otp")) {
-                    c00252.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00252.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00252.L$2 = function10;
-                    c00252.L$3 = data4;
-                    c00252.L$4 = id4;
-                    c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                    c00252.L$6 = response2;
-                    c00252.L$7 = null;
-                    c00252.Z$0 = isCasting5;
-                    c00252.label = 4;
-                    z2 = true;
-                    newTvUserToken = UtilsKt.getNewTvUserToken(data4, str2, true, c00252);
-                    if (newTvUserToken == obj2) {
-                        return obj2;
+                    c00272.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00272.L$1 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00272.L$2 = function10;
+                    c00272.L$3 = apiBase4;
+                    c00272.L$4 = id4;
+                    c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                    c00272.L$6 = response2;
+                    c00272.L$7 = null;
+                    c00272.Z$0 = isCasting5;
+                    c00272.label = 4;
+                    str3 = str2;
+                    newTvUserToken = UtilsKt.getNewTvUserToken(apiBase4, str3, true, c00272);
+                    if (newTvUserToken == obj) {
+                        return obj;
                     }
-                    data7 = data5;
+                    data6 = data4;
                     isCasting7 = isCasting5;
                     response4 = response2;
-                    id5 = id4;
-                    apiBase5 = data4;
+                    apiBase7 = id4;
+                    id5 = apiBase4;
                     function13 = function10;
                     function14 = function9;
                     userToken2 = (String) newTvUserToken;
-                    Map<String, String> mapBuildNewTvHeaders4 = UtilsKt.buildNewTvHeaders(str2, MapsKt.mapOf(TuplesKt.to(obj, userToken2)));
-                    c00252.L$0 = SpillingKt.nullOutSpilledVariable(data7);
-                    c00252.L$1 = SpillingKt.nullOutSpilledVariable(function14);
-                    c00252.L$2 = function13;
-                    c00252.L$3 = apiBase5;
-                    c00252.L$4 = SpillingKt.nullOutSpilledVariable(id5);
-                    c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
-                    c00252.L$6 = response4;
-                    c00252.L$7 = response4;
-                    c00252.Z$0 = isCasting7;
-                    c00252.label = 5;
-                    C00251 c00254 = c00252;
-                    id6 = id5;
-                    apiBase6 = apiBase5;
+                    Map<String, String> mapBuildNewTvHeaders4 = UtilsKt.buildNewTvHeaders(str3, MapsKt.mapOf(TuplesKt.to(obj2, userToken2)));
+                    c00272.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00272.L$1 = SpillingKt.nullOutSpilledVariable(function14);
+                    c00272.L$2 = function13;
+                    c00272.L$3 = id5;
+                    c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase7);
+                    c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
+                    c00272.L$6 = response4;
+                    c00272.L$7 = response4;
+                    c00272.Z$0 = isCasting7;
+                    c00272.label = 5;
+                    C00271 c00274 = c00272;
+                    id6 = apiBase7;
+                    apiBase8 = id5;
                     function15 = function13;
-                    isCasting8 = isCasting7;
                     response5 = response4;
-                    obj5 = Requests.get$default(UtilsKt.getApp(), apiBase5 + str + id5, mapBuildNewTvHeaders4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00254, 4092, (Object) null);
-                    c00252 = c00254;
-                    if (obj5 == obj2) {
-                        return obj2;
+                    isCasting8 = isCasting7;
+                    obj5 = Requests.get$default(UtilsKt.getApp(), id5 + str + apiBase7, mapBuildNewTvHeaders4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00274, 4092, (Object) null);
+                    c00272 = c00274;
+                    if (obj5 == obj) {
+                        return obj;
                     }
+                    userToken3 = userToken2;
+                    function12 = function14;
+                    data5 = data6;
+                    apiBase5 = apiBase8;
+                    function11 = function15;
                     objectRef2 = response5;
                     response6 = objectRef2;
-                    function12 = function14;
-                    data8 = data7;
-                    function11 = function15;
-                    userToken3 = userToken2;
-                    apiBase7 = apiBase6;
                     id7 = id6;
                     NiceResponse this_$iv4 = (NiceResponse) obj5;
                     ResponseParser parser4 = this_$iv4.getParser();
                     Intrinsics.checkNotNull(parser4);
                     objectRef2.element = parser4.parse(this_$iv4.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                     response3 = response6;
-                    userToken = userToken3;
-                    data6 = data8;
+                    apiBase6 = id7;
                     isCasting6 = isCasting8;
-                    data4 = apiBase7;
-                    apiBase4 = id7;
+                    userToken = userToken3;
                 } else {
-                    z2 = true;
                     isCasting6 = isCasting5;
-                    apiBase4 = id4;
+                    apiBase5 = apiBase4;
                     function11 = function10;
                     function12 = function9;
-                    data6 = data5;
+                    data5 = data4;
+                    apiBase6 = id4;
                     response3 = response2;
                 }
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = true;
+                    z = true;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name3 = getName();
-                String name4 = getName();
+                String name3 = netflixMirrorProvider.getName();
+                String name4 = netflixMirrorProvider.getName();
                 String video_link3 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType2 = ExtractorLinkType.M3U8;
-                C00263 c00264 = new C00263(response3, data4, null);
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00252.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00252.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00252.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00252.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00252.L$7 = function11;
-                c00252.Z$0 = isCasting6;
-                c00252.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name3, name4, video_link3, extractorLinkType2, c00264, c00252);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00282 c00283 = new C00282(response3, apiBase5, null);
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00272.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00272.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00272.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00272.L$7 = function11;
+                c00272.Z$0 = isCasting6;
+                c00272.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name3, name4, video_link3, extractorLinkType2, c00283, c00272);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 2:
-                boolean isCasting10 = c00252.Z$0;
-                String id8 = (String) c00252.L$4;
-                String apiBase8 = (String) c00252.L$3;
-                Function1<? super ExtractorLink, Unit> function18 = (Function1) c00252.L$2;
-                Function1<? super SubtitleFile, Unit> function19 = (Function1) c00252.L$1;
-                String data10 = (String) c00252.L$0;
+                boolean isCasting10 = c00272.Z$0;
+                String id8 = (String) c00272.L$4;
+                String apiBase9 = (String) c00272.L$3;
+                Function1<? super ExtractorLink, Unit> function18 = (Function1) c00272.L$2;
+                Function1<? super SubtitleFile, Unit> function19 = (Function1) c00272.L$1;
+                String data8 = (String) c00272.L$0;
                 ResultKt.throwOnFailure($result);
                 isCasting3 = isCasting10;
-                data2 = data10;
+                data2 = data8;
                 function7 = function18;
                 id2 = id8;
                 function6 = function19;
-                apiBase2 = apiBase8;
+                apiBase2 = apiBase9;
                 newTvUserToken$default = $result;
                 String userToken6 = (String) newTvUserToken$default;
                 response = new Ref.ObjectRef();
                 data3 = data2;
                 Map<String, String> mapBuildNewTvHeaders5 = UtilsKt.buildNewTvHeaders("nf", MapsKt.mapOf(TuplesKt.to("Usertoken", userToken6)));
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                c00252.L$2 = function7;
-                c00252.L$3 = apiBase2;
-                c00252.L$4 = id2;
-                c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken6);
-                c00252.L$6 = response;
-                c00252.L$7 = response;
-                c00252.Z$0 = isCasting3;
-                c00252.label = 3;
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                c00272.L$2 = function7;
+                c00272.L$3 = apiBase2;
+                c00272.L$4 = id2;
+                c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken6);
+                c00272.L$6 = response;
+                c00272.L$7 = response;
+                c00272.Z$0 = isCasting3;
+                c00272.label = 3;
                 apiBase3 = apiBase2;
                 function8 = function7;
                 isCasting4 = isCasting3;
                 userToken = userToken6;
-                z = false;
+                obj = coroutine_suspended;
+                obj2 = "Usertoken";
                 str = "/newtv/player.php?id=";
                 str2 = "nf";
-                obj = "Usertoken";
-                obj2 = coroutine_suspended;
                 id3 = id2;
-                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00252, 4092, (Object) null);
-                c00252 = c00252;
-                if (obj3 == obj2) {
-                    return obj2;
+                obj3 = Requests.get$default(UtilsKt.getApp(), apiBase2 + "/newtv/player.php?id=" + id2, mapBuildNewTvHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00272, 4092, (Object) null);
+                c00272 = c00272;
+                if (obj3 == obj) {
+                    return obj;
                 }
                 obj4 = obj3;
                 function9 = function6;
-                data4 = apiBase3;
-                id4 = id3;
-                function10 = function8;
+                apiBase4 = apiBase3;
                 objectRef = response;
                 response2 = objectRef;
+                id4 = id3;
                 isCasting5 = isCasting4;
-                data5 = data3;
+                function10 = function8;
+                data4 = data3;
                 NiceResponse this_$iv5 = (NiceResponse) obj4;
                 ResponseParser parser5 = this_$iv5.getParser();
                 Intrinsics.checkNotNull(parser5);
                 objectRef.element = parser5.parse(this_$iv5.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 if (Intrinsics.areEqual(((NewTvPlayerResponse) response2.element).getStatus(), "otp")) {
-                    c00252.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00252.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00252.L$2 = function10;
-                    c00252.L$3 = data4;
-                    c00252.L$4 = id4;
-                    c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                    c00252.L$6 = response2;
-                    c00252.L$7 = null;
-                    c00252.Z$0 = isCasting5;
-                    c00252.label = 4;
-                    z2 = true;
-                    newTvUserToken = UtilsKt.getNewTvUserToken(data4, str2, true, c00252);
-                    if (newTvUserToken == obj2) {
-                        return obj2;
+                    c00272.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00272.L$1 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00272.L$2 = function10;
+                    c00272.L$3 = apiBase4;
+                    c00272.L$4 = id4;
+                    c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                    c00272.L$6 = response2;
+                    c00272.L$7 = null;
+                    c00272.Z$0 = isCasting5;
+                    c00272.label = 4;
+                    str3 = str2;
+                    newTvUserToken = UtilsKt.getNewTvUserToken(apiBase4, str3, true, c00272);
+                    if (newTvUserToken == obj) {
+                        return obj;
                     }
-                    data7 = data5;
+                    data6 = data4;
                     isCasting7 = isCasting5;
                     response4 = response2;
-                    id5 = id4;
-                    apiBase5 = data4;
+                    apiBase7 = id4;
+                    id5 = apiBase4;
                     function13 = function10;
                     function14 = function9;
                     userToken2 = (String) newTvUserToken;
-                    Map<String, String> mapBuildNewTvHeaders6 = UtilsKt.buildNewTvHeaders(str2, MapsKt.mapOf(TuplesKt.to(obj, userToken2)));
-                    c00252.L$0 = SpillingKt.nullOutSpilledVariable(data7);
-                    c00252.L$1 = SpillingKt.nullOutSpilledVariable(function14);
-                    c00252.L$2 = function13;
-                    c00252.L$3 = apiBase5;
-                    c00252.L$4 = SpillingKt.nullOutSpilledVariable(id5);
-                    c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
-                    c00252.L$6 = response4;
-                    c00252.L$7 = response4;
-                    c00252.Z$0 = isCasting7;
-                    c00252.label = 5;
-                    C00251 c00255 = c00252;
-                    id6 = id5;
-                    apiBase6 = apiBase5;
+                    Map<String, String> mapBuildNewTvHeaders6 = UtilsKt.buildNewTvHeaders(str3, MapsKt.mapOf(TuplesKt.to(obj2, userToken2)));
+                    c00272.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00272.L$1 = SpillingKt.nullOutSpilledVariable(function14);
+                    c00272.L$2 = function13;
+                    c00272.L$3 = id5;
+                    c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase7);
+                    c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
+                    c00272.L$6 = response4;
+                    c00272.L$7 = response4;
+                    c00272.Z$0 = isCasting7;
+                    c00272.label = 5;
+                    C00271 c00275 = c00272;
+                    id6 = apiBase7;
+                    apiBase8 = id5;
                     function15 = function13;
-                    isCasting8 = isCasting7;
                     response5 = response4;
-                    obj5 = Requests.get$default(UtilsKt.getApp(), apiBase5 + str + id5, mapBuildNewTvHeaders6, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00255, 4092, (Object) null);
-                    c00252 = c00255;
-                    if (obj5 == obj2) {
-                        return obj2;
+                    isCasting8 = isCasting7;
+                    obj5 = Requests.get$default(UtilsKt.getApp(), id5 + str + apiBase7, mapBuildNewTvHeaders6, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00275, 4092, (Object) null);
+                    c00272 = c00275;
+                    if (obj5 == obj) {
+                        return obj;
                     }
+                    userToken3 = userToken2;
+                    function12 = function14;
+                    data5 = data6;
+                    apiBase5 = apiBase8;
+                    function11 = function15;
                     objectRef2 = response5;
                     response6 = objectRef2;
-                    function12 = function14;
-                    data8 = data7;
-                    function11 = function15;
-                    userToken3 = userToken2;
-                    apiBase7 = apiBase6;
                     id7 = id6;
                     NiceResponse this_$iv6 = (NiceResponse) obj5;
                     ResponseParser parser6 = this_$iv6.getParser();
                     Intrinsics.checkNotNull(parser6);
                     objectRef2.element = parser6.parse(this_$iv6.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                     response3 = response6;
-                    userToken = userToken3;
-                    data6 = data8;
+                    apiBase6 = id7;
                     isCasting6 = isCasting8;
-                    data4 = apiBase7;
-                    apiBase4 = id7;
+                    userToken = userToken3;
                 } else {
-                    z2 = true;
                     isCasting6 = isCasting5;
-                    apiBase4 = id4;
+                    apiBase5 = apiBase4;
                     function11 = function10;
                     function12 = function9;
-                    data6 = data5;
+                    data5 = data4;
+                    apiBase6 = id4;
                     response3 = response2;
                 }
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = true;
+                    z = true;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name5 = getName();
-                String name6 = getName();
+                String name5 = netflixMirrorProvider.getName();
+                String name6 = netflixMirrorProvider.getName();
                 String video_link4 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType3 = ExtractorLinkType.M3U8;
-                C00263 c00265 = new C00263(response3, data4, null);
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00252.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00252.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00252.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00252.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00252.L$7 = function11;
-                c00252.Z$0 = isCasting6;
-                c00252.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, name6, video_link4, extractorLinkType3, c00265, c00252);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00282 c00284 = new C00282(response3, apiBase5, null);
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00272.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00272.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00272.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00272.L$7 = function11;
+                c00272.Z$0 = isCasting6;
+                c00272.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, name6, video_link4, extractorLinkType3, c00284, c00272);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 3:
-                boolean isCasting11 = c00252.Z$0;
-                Ref.ObjectRef objectRef3 = (Ref.ObjectRef) c00252.L$7;
-                Ref.ObjectRef response7 = (Ref.ObjectRef) c00252.L$6;
-                String userToken7 = (String) c00252.L$5;
-                String id9 = (String) c00252.L$4;
-                data4 = (String) c00252.L$3;
-                function10 = (Function1) c00252.L$2;
-                function9 = (Function1) c00252.L$1;
-                String data11 = (String) c00252.L$0;
+                boolean isCasting11 = c00272.Z$0;
+                Ref.ObjectRef objectRef3 = (Ref.ObjectRef) c00272.L$7;
+                Ref.ObjectRef response7 = (Ref.ObjectRef) c00272.L$6;
+                String userToken7 = (String) c00272.L$5;
+                String id9 = (String) c00272.L$4;
+                apiBase4 = (String) c00272.L$3;
+                function10 = (Function1) c00272.L$2;
+                function9 = (Function1) c00272.L$1;
+                String data9 = (String) c00272.L$0;
                 ResultKt.throwOnFailure($result);
-                data5 = data11;
-                obj2 = coroutine_suspended;
+                data4 = data9;
+                obj = coroutine_suspended;
                 id4 = id9;
                 response2 = response7;
                 isCasting5 = isCasting11;
                 userToken = userToken7;
-                obj = "Usertoken";
+                obj2 = "Usertoken";
                 str = "/newtv/player.php?id=";
                 str2 = "nf";
-                z = false;
                 objectRef = objectRef3;
                 obj4 = $result;
                 NiceResponse this_$iv7 = (NiceResponse) obj4;
@@ -2871,297 +2463,282 @@ public final class NetflixMirrorProvider extends MainAPI {
                 Intrinsics.checkNotNull(parser7);
                 objectRef.element = parser7.parse(this_$iv7.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 if (Intrinsics.areEqual(((NewTvPlayerResponse) response2.element).getStatus(), "otp")) {
-                    c00252.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00252.L$1 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00252.L$2 = function10;
-                    c00252.L$3 = data4;
-                    c00252.L$4 = id4;
-                    c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                    c00252.L$6 = response2;
-                    c00252.L$7 = null;
-                    c00252.Z$0 = isCasting5;
-                    c00252.label = 4;
-                    z2 = true;
-                    newTvUserToken = UtilsKt.getNewTvUserToken(data4, str2, true, c00252);
-                    if (newTvUserToken == obj2) {
-                        return obj2;
+                    c00272.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00272.L$1 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00272.L$2 = function10;
+                    c00272.L$3 = apiBase4;
+                    c00272.L$4 = id4;
+                    c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                    c00272.L$6 = response2;
+                    c00272.L$7 = null;
+                    c00272.Z$0 = isCasting5;
+                    c00272.label = 4;
+                    str3 = str2;
+                    newTvUserToken = UtilsKt.getNewTvUserToken(apiBase4, str3, true, c00272);
+                    if (newTvUserToken == obj) {
+                        return obj;
                     }
-                    data7 = data5;
+                    data6 = data4;
                     isCasting7 = isCasting5;
                     response4 = response2;
-                    id5 = id4;
-                    apiBase5 = data4;
+                    apiBase7 = id4;
+                    id5 = apiBase4;
                     function13 = function10;
                     function14 = function9;
                     userToken2 = (String) newTvUserToken;
-                    Map<String, String> mapBuildNewTvHeaders7 = UtilsKt.buildNewTvHeaders(str2, MapsKt.mapOf(TuplesKt.to(obj, userToken2)));
-                    c00252.L$0 = SpillingKt.nullOutSpilledVariable(data7);
-                    c00252.L$1 = SpillingKt.nullOutSpilledVariable(function14);
-                    c00252.L$2 = function13;
-                    c00252.L$3 = apiBase5;
-                    c00252.L$4 = SpillingKt.nullOutSpilledVariable(id5);
-                    c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
-                    c00252.L$6 = response4;
-                    c00252.L$7 = response4;
-                    c00252.Z$0 = isCasting7;
-                    c00252.label = 5;
-                    C00251 c00256 = c00252;
-                    id6 = id5;
-                    apiBase6 = apiBase5;
+                    Map<String, String> mapBuildNewTvHeaders7 = UtilsKt.buildNewTvHeaders(str3, MapsKt.mapOf(TuplesKt.to(obj2, userToken2)));
+                    c00272.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00272.L$1 = SpillingKt.nullOutSpilledVariable(function14);
+                    c00272.L$2 = function13;
+                    c00272.L$3 = id5;
+                    c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase7);
+                    c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
+                    c00272.L$6 = response4;
+                    c00272.L$7 = response4;
+                    c00272.Z$0 = isCasting7;
+                    c00272.label = 5;
+                    C00271 c00276 = c00272;
+                    id6 = apiBase7;
+                    apiBase8 = id5;
                     function15 = function13;
-                    isCasting8 = isCasting7;
                     response5 = response4;
-                    obj5 = Requests.get$default(UtilsKt.getApp(), apiBase5 + str + id5, mapBuildNewTvHeaders7, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00256, 4092, (Object) null);
-                    c00252 = c00256;
-                    if (obj5 == obj2) {
-                        return obj2;
+                    isCasting8 = isCasting7;
+                    obj5 = Requests.get$default(UtilsKt.getApp(), id5 + str + apiBase7, mapBuildNewTvHeaders7, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00276, 4092, (Object) null);
+                    c00272 = c00276;
+                    if (obj5 == obj) {
+                        return obj;
                     }
+                    userToken3 = userToken2;
+                    function12 = function14;
+                    data5 = data6;
+                    apiBase5 = apiBase8;
+                    function11 = function15;
                     objectRef2 = response5;
                     response6 = objectRef2;
-                    function12 = function14;
-                    data8 = data7;
-                    function11 = function15;
-                    userToken3 = userToken2;
-                    apiBase7 = apiBase6;
                     id7 = id6;
                     NiceResponse this_$iv8 = (NiceResponse) obj5;
                     ResponseParser parser8 = this_$iv8.getParser();
                     Intrinsics.checkNotNull(parser8);
                     objectRef2.element = parser8.parse(this_$iv8.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                     response3 = response6;
-                    userToken = userToken3;
-                    data6 = data8;
+                    apiBase6 = id7;
                     isCasting6 = isCasting8;
-                    data4 = apiBase7;
-                    apiBase4 = id7;
+                    userToken = userToken3;
                 } else {
-                    z2 = true;
                     isCasting6 = isCasting5;
-                    apiBase4 = id4;
+                    apiBase5 = apiBase4;
                     function11 = function10;
                     function12 = function9;
-                    data6 = data5;
+                    data5 = data4;
+                    apiBase6 = id4;
                     response3 = response2;
                 }
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = true;
+                    z = true;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name7 = getName();
-                String name8 = getName();
+                String name7 = netflixMirrorProvider.getName();
+                String name8 = netflixMirrorProvider.getName();
                 String video_link5 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType4 = ExtractorLinkType.M3U8;
-                C00263 c00266 = new C00263(response3, data4, null);
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00252.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00252.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00252.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00252.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00252.L$7 = function11;
-                c00252.Z$0 = isCasting6;
-                c00252.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name7, name8, video_link5, extractorLinkType4, c00266, c00252);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00282 c00285 = new C00282(response3, apiBase5, null);
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00272.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00272.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00272.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00272.L$7 = function11;
+                c00272.Z$0 = isCasting6;
+                c00272.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name7, name8, video_link5, extractorLinkType4, c00285, c00272);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 4:
-                isCasting7 = c00252.Z$0;
-                Ref.ObjectRef response8 = (Ref.ObjectRef) c00252.L$6;
-                id5 = (String) c00252.L$4;
-                apiBase5 = (String) c00252.L$3;
-                Function1<? super ExtractorLink, Unit> function20 = (Function1) c00252.L$2;
-                Function1<? super SubtitleFile, Unit> function21 = (Function1) c00252.L$1;
-                String data12 = (String) c00252.L$0;
+                isCasting7 = c00272.Z$0;
+                response4 = (Ref.ObjectRef) c00272.L$6;
+                String id10 = (String) c00272.L$4;
+                String apiBase10 = (String) c00272.L$3;
+                Function1<? super ExtractorLink, Unit> function20 = (Function1) c00272.L$2;
+                Function1<? super SubtitleFile, Unit> function21 = (Function1) c00272.L$1;
+                String data10 = (String) c00272.L$0;
                 ResultKt.throwOnFailure($result);
-                obj2 = coroutine_suspended;
-                obj = "Usertoken";
-                str = "/newtv/player.php?id=";
-                str2 = "nf";
-                function13 = function20;
-                data7 = data12;
-                z = false;
-                response4 = response8;
-                z2 = true;
-                newTvUserToken = $result;
+                obj = coroutine_suspended;
                 function14 = function21;
+                obj2 = "Usertoken";
+                str = "/newtv/player.php?id=";
+                data6 = data10;
+                function13 = function20;
+                id5 = apiBase10;
+                str3 = "nf";
+                apiBase7 = id10;
+                newTvUserToken = $result;
                 userToken2 = (String) newTvUserToken;
-                Map<String, String> mapBuildNewTvHeaders8 = UtilsKt.buildNewTvHeaders(str2, MapsKt.mapOf(TuplesKt.to(obj, userToken2)));
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data7);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function14);
-                c00252.L$2 = function13;
-                c00252.L$3 = apiBase5;
-                c00252.L$4 = SpillingKt.nullOutSpilledVariable(id5);
-                c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
-                c00252.L$6 = response4;
-                c00252.L$7 = response4;
-                c00252.Z$0 = isCasting7;
-                c00252.label = 5;
-                C00251 c00257 = c00252;
-                id6 = id5;
-                apiBase6 = apiBase5;
+                Map<String, String> mapBuildNewTvHeaders8 = UtilsKt.buildNewTvHeaders(str3, MapsKt.mapOf(TuplesKt.to(obj2, userToken2)));
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function14);
+                c00272.L$2 = function13;
+                c00272.L$3 = id5;
+                c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase7);
+                c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken2);
+                c00272.L$6 = response4;
+                c00272.L$7 = response4;
+                c00272.Z$0 = isCasting7;
+                c00272.label = 5;
+                C00271 c00277 = c00272;
+                id6 = apiBase7;
+                apiBase8 = id5;
                 function15 = function13;
-                isCasting8 = isCasting7;
                 response5 = response4;
-                obj5 = Requests.get$default(UtilsKt.getApp(), apiBase5 + str + id5, mapBuildNewTvHeaders8, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00257, 4092, (Object) null);
-                c00252 = c00257;
-                if (obj5 == obj2) {
-                    return obj2;
+                isCasting8 = isCasting7;
+                obj5 = Requests.get$default(UtilsKt.getApp(), id5 + str + apiBase7, mapBuildNewTvHeaders8, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00277, 4092, (Object) null);
+                c00272 = c00277;
+                if (obj5 == obj) {
+                    return obj;
                 }
+                userToken3 = userToken2;
+                function12 = function14;
+                data5 = data6;
+                apiBase5 = apiBase8;
+                function11 = function15;
                 objectRef2 = response5;
                 response6 = objectRef2;
-                function12 = function14;
-                data8 = data7;
-                function11 = function15;
-                userToken3 = userToken2;
-                apiBase7 = apiBase6;
                 id7 = id6;
                 NiceResponse this_$iv9 = (NiceResponse) obj5;
                 ResponseParser parser9 = this_$iv9.getParser();
                 Intrinsics.checkNotNull(parser9);
                 objectRef2.element = parser9.parse(this_$iv9.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 response3 = response6;
-                userToken = userToken3;
-                data6 = data8;
+                apiBase6 = id7;
                 isCasting6 = isCasting8;
-                data4 = apiBase7;
-                apiBase4 = id7;
+                userToken = userToken3;
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = true;
+                    z = true;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name9 = getName();
-                String name10 = getName();
+                String name9 = netflixMirrorProvider.getName();
+                String name10 = netflixMirrorProvider.getName();
                 String video_link6 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType5 = ExtractorLinkType.M3U8;
-                C00263 c00267 = new C00263(response3, data4, null);
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00252.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00252.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00252.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00252.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00252.L$7 = function11;
-                c00252.Z$0 = isCasting6;
-                c00252.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name9, name10, video_link6, extractorLinkType5, c00267, c00252);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00282 c00286 = new C00282(response3, apiBase5, null);
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00272.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00272.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00272.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00272.L$7 = function11;
+                c00272.Z$0 = isCasting6;
+                c00272.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name9, name10, video_link6, extractorLinkType5, c00286, c00272);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 5:
-                boolean isCasting12 = c00252.Z$0;
-                objectRef2 = (Ref.ObjectRef) c00252.L$7;
-                response6 = (Ref.ObjectRef) c00252.L$6;
-                userToken3 = (String) c00252.L$5;
-                id7 = (String) c00252.L$4;
-                apiBase7 = (String) c00252.L$3;
-                function11 = (Function1) c00252.L$2;
-                function12 = (Function1) c00252.L$1;
-                data8 = (String) c00252.L$0;
+                boolean isCasting12 = c00272.Z$0;
+                objectRef2 = (Ref.ObjectRef) c00272.L$7;
+                response6 = (Ref.ObjectRef) c00272.L$6;
+                userToken3 = (String) c00272.L$5;
+                id7 = (String) c00272.L$4;
+                apiBase5 = (String) c00272.L$3;
+                function11 = (Function1) c00272.L$2;
+                function12 = (Function1) c00272.L$1;
+                data5 = (String) c00272.L$0;
                 ResultKt.throwOnFailure($result);
                 isCasting8 = isCasting12;
-                obj2 = coroutine_suspended;
-                z = false;
+                obj = coroutine_suspended;
                 obj5 = $result;
-                z2 = true;
                 NiceResponse this_$iv10 = (NiceResponse) obj5;
                 ResponseParser parser10 = this_$iv10.getParser();
                 Intrinsics.checkNotNull(parser10);
                 objectRef2.element = parser10.parse(this_$iv10.getText(), Reflection.getOrCreateKotlinClass(NewTvPlayerResponse.class));
                 response3 = response6;
-                userToken = userToken3;
-                data6 = data8;
+                apiBase6 = id7;
                 isCasting6 = isCasting8;
-                data4 = apiBase7;
-                apiBase4 = id7;
+                userToken = userToken3;
                 video_link = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 if (video_link != null) {
-                    z3 = true;
+                    z = true;
                 } else {
-                    z3 = true;
+                    z = true;
                 }
-                if (z3) {
-                    return Boxing.boxBoolean(z);
+                if (z) {
+                    return Boxing.boxBoolean(false);
                 }
-                String name11 = getName();
-                String name12 = getName();
+                String name11 = netflixMirrorProvider.getName();
+                String name12 = netflixMirrorProvider.getName();
                 String video_link7 = ((NewTvPlayerResponse) response3.element).getVideo_link();
                 ExtractorLinkType extractorLinkType6 = ExtractorLinkType.M3U8;
-                C00263 c00268 = new C00263(response3, data4, null);
-                c00252.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                c00252.L$1 = SpillingKt.nullOutSpilledVariable(function12);
-                c00252.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                c00252.L$3 = SpillingKt.nullOutSpilledVariable(data4);
-                c00252.L$4 = SpillingKt.nullOutSpilledVariable(apiBase4);
-                c00252.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
-                c00252.L$6 = SpillingKt.nullOutSpilledVariable(response3);
-                c00252.L$7 = function11;
-                c00252.Z$0 = isCasting6;
-                c00252.label = 6;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name11, name12, video_link7, extractorLinkType6, c00268, c00252);
-                if (objNewExtractorLink == obj2) {
-                    return obj2;
+                C00282 c00287 = new C00282(response3, apiBase5, null);
+                c00272.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                c00272.L$1 = SpillingKt.nullOutSpilledVariable(function12);
+                c00272.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                c00272.L$3 = SpillingKt.nullOutSpilledVariable(apiBase5);
+                c00272.L$4 = SpillingKt.nullOutSpilledVariable(apiBase6);
+                c00272.L$5 = SpillingKt.nullOutSpilledVariable(userToken);
+                c00272.L$6 = SpillingKt.nullOutSpilledVariable(response3);
+                c00272.L$7 = function11;
+                c00272.Z$0 = isCasting6;
+                c00272.label = 6;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name11, name12, video_link7, extractorLinkType6, c00287, c00272);
+                if (objNewExtractorLink == obj) {
+                    return obj;
                 }
                 function16 = function11;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             case 6:
-                boolean z4 = c00252.Z$0;
-                function16 = (Function1) c00252.L$7;
+                boolean z2 = c00272.Z$0;
+                function16 = (Function1) c00272.L$7;
                 ResultKt.throwOnFailure($result);
                 objNewExtractorLink = $result;
-                z2 = true;
                 function16.invoke(objNewExtractorLink);
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(true);
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
-    /* JADX INFO: renamed from: com.horis.cncverse.NetflixMirrorProvider$loadLinks$3 */
+    /* JADX INFO: renamed from: com.horis.cncverse.NetflixMirrorProvider$loadLinks$2 */
     /* JADX INFO: compiled from: NetflixMirrorProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider$loadLinks$3", f = "NetflixMirrorProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00263 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.horis.cncverse.NetflixMirrorProvider$loadLinks$2", f = "NetflixMirrorProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00282 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $apiBase;
         final /* synthetic */ Ref.ObjectRef<NewTvPlayerResponse> $response;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00263(Ref.ObjectRef<NewTvPlayerResponse> objectRef, String str, Continuation<? super C00263> continuation) {
+        C00282(Ref.ObjectRef<NewTvPlayerResponse> objectRef, String str, Continuation<? super C00282> continuation) {
             super(2, continuation);
             this.$response = objectRef;
             this.$apiBase = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00263 = new C00263(this.$response, this.$apiBase, continuation);
-            c00263.L$0 = obj;
-            return c00263;
+            Continuation<Unit> c00282 = new C00282(this.$response, this.$apiBase, continuation);
+            c00282.L$0 = obj;
+            return c00282;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

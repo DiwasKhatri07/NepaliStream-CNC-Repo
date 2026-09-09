@@ -4,7 +4,7 @@ package nepali.stream.decoded.hdrezkaprovider
 object PluginMetadata {
     const val name: String = "HDrezkaProvider"
     const val originalPluginClass: String = "com.hexated.HDrezkaProviderPlugin"
-    const val version: Int = 33
+    const val version: Int = 34
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

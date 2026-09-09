@@ -201,7 +201,7 @@ public final /* data */ class DonationConfig {
     }
 
     public int hashCode() {
-        return (((((((((((((((((((((((((((((((DonationConfig$$ExternalSyntheticBackport0.m0m(this.enabled) * 31) + this.extensionName.hashCode()) * 31) + this.month.hashCode()) * 31) + this.title.hashCode()) * 31) + this.description.hashCode()) * 31) + this.currency.hashCode()) * 31) + DonationConfig$$ExternalSyntheticBackport1.m1m(this.targetAmount)) * 31) + DonationConfig$$ExternalSyntheticBackport1.m1m(this.currentAmount)) * 31) + this.supportersCount) * 31) + this.primaryDonateUrl.hashCode()) * 31) + this.primaryButtonText.hashCode()) * 31) + this.secondaryDonateUrl.hashCode()) * 31) + this.secondaryButtonText.hashCode()) * 31) + this.adSupportUrl.hashCode()) * 31) + this.adSupportButtonText.hashCode()) * 31) + this.cooldownHours) * 31) + this.cooldownScope.hashCode();
+        return (((((((((((((((((((((((((((((((DonationConfig$$ExternalSyntheticBackport0.m3m(this.enabled) * 31) + this.extensionName.hashCode()) * 31) + this.month.hashCode()) * 31) + this.title.hashCode()) * 31) + this.description.hashCode()) * 31) + this.currency.hashCode()) * 31) + DonationConfig$$ExternalSyntheticBackport1.m4m(this.targetAmount)) * 31) + DonationConfig$$ExternalSyntheticBackport1.m4m(this.currentAmount)) * 31) + this.supportersCount) * 31) + this.primaryDonateUrl.hashCode()) * 31) + this.primaryButtonText.hashCode()) * 31) + this.secondaryDonateUrl.hashCode()) * 31) + this.secondaryButtonText.hashCode()) * 31) + this.adSupportUrl.hashCode()) * 31) + this.adSupportButtonText.hashCode()) * 31) + this.cooldownHours) * 31) + this.cooldownScope.hashCode();
     }
 
     @NotNull

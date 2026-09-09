@@ -1,24 +1,6 @@
 package com.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -36,7 +18,6 @@ import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvSeriesSearchResponse;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorLinkType;
@@ -44,7 +25,6 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
-import java.lang.reflect.Field;
 import java.security.InvalidKeyException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -98,24 +78,16 @@ import org.jsoup.select.Elements;
 
 /* JADX INFO: compiled from: PikashowProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/PikashowProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u008c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b \u0018\u0000 R2\u00020\u0001:\u0011RSTUVWXYZ[\\]^_`abB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J%\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050 2\n\b\u0002\u0010!\u001a\u0004\u0018\u00010\"H\u0002¢\u0006\u0002\u0010#J\u0014\u0010$\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050 H\u0002J\u001e\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*H\u0096@¢\u0006\u0002\u0010+J\u0014\u0010,\u001a\u0004\u0018\u00010-2\b\u0010.\u001a\u0004\u0018\u00010\u0005H\u0002J\u001c\u0010/\u001a\b\u0012\u0004\u0012\u000201002\u0006\u00102\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00103J\u0018\u00104\u001a\u0004\u0018\u0001052\u0006\u00106\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00103JF\u00107\u001a\u00020\u000e2\u0006\u00108\u001a\u00020\u00052\u0006\u00109\u001a\u00020\u000e2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020=0;2\u0012\u0010>\u001a\u000e\u0012\u0004\u0012\u00020?\u0012\u0004\u0012\u00020=0;H\u0096@¢\u0006\u0002\u0010@J2\u0010A\u001a\u00020=2\u0006\u0010B\u001a\u00020C2\u0012\u0010>\u001a\u000e\u0012\u0004\u0012\u00020?\u0012\u0004\u0012\u00020=0;2\u0006\u0010D\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010EJ\u0016\u0010F\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u00103J\u0010\u0010H\u001a\u00020\u00052\u0006\u00106\u001a\u00020\u0005H\u0002JF\u0010I\u001a\u00020=2\u0006\u0010B\u001a\u00020C2\u0012\u0010>\u001a\u000e\u0012\u0004\u0012\u00020?\u0012\u0004\u0012\u00020=0;2\u0006\u0010D\u001a\u00020\u00052\u0012\u0010J\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050 H\u0082@¢\u0006\u0002\u0010KJ\u0012\u0010L\u001a\u00020(2\b\u0010.\u001a\u0004\u0018\u00010\u0005H\u0002J\u0012\u0010M\u001a\u00020(2\b\u0010N\u001a\u0004\u0018\u00010\u0005H\u0002J\b\u0010O\u001a\u00020=H\u0002J\b\u0010P\u001a\u00020=H\u0002J\u0010\u0010Q\u001a\u00020=2\u0006\u00106\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006c"}, d2 = {"Lcom/cncverse/PikashowProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "apiKey", "hmacSecret", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "deviceUuid", "gaid", "generateSignature", "", "timestampMs", "", "(Ljava/lang/Long;)Ljava/util/Map;", "getPikashowHeaders", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getQualityFromString", "Lcom/lagradost/cloudstream3/SearchQuality;", "qualityString", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "addVideoLinksToCallback", "videoData", "Lcom/cncverse/PikashowProvider$VideoData;", "contentName", "(Lcom/cncverse/PikashowProvider$VideoData;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "parseHDBVPlayerUrl", "playerUrl", "extractImdbIdFromUrl", "fallbackToDirectUrls", "finalHeaders", "(Lcom/cncverse/PikashowProvider$VideoData;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getQualityValue", "getQualityValueFromLabel", "label", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "PikashowSeries", "SeasonDetail", "PikashowSeriesResponse", "PikashowMovie", "ClientUrl", "PikashowMovieResponse", "VideoApiResponse", "VideoData", "VideoSeasonDetail", "VideoEpisode", "Resolution", "Language", "Keys", "Season", "HDBVEpisode", "FileData", "PikashowProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nPikashowProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PikashowProvider.kt\ncom/cncverse/PikashowProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1278:1\n1915#2:1279\n1642#2,10:1293\n1915#2:1303\n1916#2:1305\n1652#2:1306\n1642#2,10:1320\n1915#2:1330\n1916#2:1332\n1652#2:1333\n1916#2:1334\n1915#2:1335\n1915#2,2:1349\n1915#2,2:1364\n1916#2:1366\n1915#2,2:1381\n1807#2,3:1465\n1807#2,3:1468\n1915#2,2:1471\n1915#2:1473\n1915#2,2:1474\n1916#2:1476\n116#3:1280\n54#3:1281\n117#3:1282\n61#3,8:1283\n71#3:1292\n116#3:1307\n54#3:1308\n117#3:1309\n61#3,8:1310\n71#3:1319\n116#3:1336\n54#3:1337\n117#3:1338\n61#3,8:1339\n71#3:1348\n116#3:1351\n54#3:1352\n117#3:1353\n61#3,8:1354\n71#3:1363\n116#3:1367\n54#3:1368\n117#3:1369\n61#3,8:1370\n71#3:1379\n116#3:1383\n54#3:1384\n117#3:1385\n61#3,8:1386\n71#3:1395\n116#3:1397\n54#3:1398\n117#3:1399\n61#3,8:1400\n71#3:1409\n116#3:1410\n54#3:1411\n117#3:1412\n61#3,8:1413\n71#3:1422\n116#3:1424\n54#3:1425\n117#3:1426\n61#3,8:1427\n71#3:1436\n116#3:1438\n54#3:1439\n117#3:1440\n61#3,8:1441\n71#3:1450\n116#3:1452\n54#3:1453\n117#3:1454\n61#3,8:1455\n71#3:1464\n116#3:1477\n54#3:1478\n117#3:1479\n61#3,8:1480\n71#3:1489\n116#3:1490\n54#3:1491\n117#3:1492\n61#3,8:1493\n71#3:1502\n1#4:1291\n1#4:1304\n1#4:1318\n1#4:1331\n1#4:1347\n1#4:1362\n1#4:1378\n1#4:1380\n1#4:1394\n1#4:1396\n1#4:1408\n1#4:1421\n1#4:1423\n1#4:1435\n1#4:1437\n1#4:1449\n1#4:1451\n1#4:1463\n1#4:1488\n1#4:1501\n1#4:1503\n*S KotlinDebug\n*F\n+ 1 PikashowProvider.kt\ncom/cncverse/PikashowProvider\n*L\n254#1:1279\n274#1:1293,10\n274#1:1303\n274#1:1305\n274#1:1306\n295#1:1320,10\n295#1:1330\n295#1:1332\n295#1:1333\n254#1:1334\n373#1:1335\n393#1:1349,2\n421#1:1364,2\n373#1:1366\n508#1:1381,2\n770#1:1465,3\n771#1:1468,3\n775#1:1471,2\n798#1:1473\n799#1:1474,2\n798#1:1476\n273#1:1280\n273#1:1281\n273#1:1282\n273#1:1283,8\n273#1:1292\n294#1:1307\n294#1:1308\n294#1:1309\n294#1:1310,8\n294#1:1319\n392#1:1336\n392#1:1337\n392#1:1338\n392#1:1339,8\n392#1:1348\n420#1:1351\n420#1:1352\n420#1:1353\n420#1:1354,8\n420#1:1363\n501#1:1367\n501#1:1368\n501#1:1369\n501#1:1370,8\n501#1:1379\n555#1:1383\n555#1:1384\n555#1:1385\n555#1:1386,8\n555#1:1395\n637#1:1397\n637#1:1398\n637#1:1399\n637#1:1400,8\n637#1:1409\n673#1:1410\n673#1:1411\n673#1:1412\n673#1:1413,8\n673#1:1422\n681#1:1424\n681#1:1425\n681#1:1426\n681#1:1427,8\n681#1:1436\n710#1:1438\n710#1:1439\n710#1:1440\n710#1:1441,8\n710#1:1450\n748#1:1452\n748#1:1453\n748#1:1454\n748#1:1455,8\n748#1:1464\n898#1:1477\n898#1:1478\n898#1:1479\n898#1:1480,8\n898#1:1489\n935#1:1490\n935#1:1491\n935#1:1492\n935#1:1493,8\n935#1:1502\n273#1:1291\n274#1:1304\n294#1:1318\n295#1:1331\n392#1:1347\n420#1:1362\n501#1:1378\n555#1:1394\n637#1:1408\n673#1:1421\n681#1:1435\n710#1:1449\n748#1:1463\n898#1:1488\n935#1:1501\n*E\n"})
+@Metadata(d1 = {"\u0000\u008c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0010\t\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u001d\u0018\u0000 O2\u00020\u0001:\u0011OPQRSTUVWXYZ[\\]^_B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J%\u0010\u001f\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050 2\n\b\u0002\u0010!\u001a\u0004\u0018\u00010\"H\u0002¢\u0006\u0002\u0010#J\u0014\u0010$\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050 H\u0002J\u001e\u0010%\u001a\u00020&2\u0006\u0010'\u001a\u00020(2\u0006\u0010)\u001a\u00020*H\u0096@¢\u0006\u0002\u0010+J\u0014\u0010,\u001a\u0004\u0018\u00010-2\b\u0010.\u001a\u0004\u0018\u00010\u0005H\u0002J\u001c\u0010/\u001a\b\u0012\u0004\u0012\u000201002\u0006\u00102\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00103J\u0018\u00104\u001a\u0004\u0018\u0001052\u0006\u00106\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00103JF\u00107\u001a\u00020\u000e2\u0006\u00108\u001a\u00020\u00052\u0006\u00109\u001a\u00020\u000e2\u0012\u0010:\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020=0;2\u0012\u0010>\u001a\u000e\u0012\u0004\u0012\u00020?\u0012\u0004\u0012\u00020=0;H\u0096@¢\u0006\u0002\u0010@J2\u0010A\u001a\u00020=2\u0006\u0010B\u001a\u00020C2\u0012\u0010>\u001a\u000e\u0012\u0004\u0012\u00020?\u0012\u0004\u0012\u00020=0;2\u0006\u0010D\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010EJ\u0016\u0010F\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u00103J\u0010\u0010H\u001a\u00020\u00052\u0006\u00106\u001a\u00020\u0005H\u0002JF\u0010I\u001a\u00020=2\u0006\u0010B\u001a\u00020C2\u0012\u0010>\u001a\u000e\u0012\u0004\u0012\u00020?\u0012\u0004\u0012\u00020=0;2\u0006\u0010D\u001a\u00020\u00052\u0012\u0010J\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050 H\u0082@¢\u0006\u0002\u0010KJ\u0012\u0010L\u001a\u00020(2\b\u0010.\u001a\u0004\u0018\u00010\u0005H\u0002J\u0012\u0010M\u001a\u00020(2\b\u0010N\u001a\u0004\u0018\u00010\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001e\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006`"}, d2 = {"Lcom/cncverse/PikashowProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "apiKey", "hmacSecret", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "deviceUuid", "gaid", "generateSignature", "", "timestampMs", "", "(Ljava/lang/Long;)Ljava/util/Map;", "getPikashowHeaders", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getQualityFromString", "Lcom/lagradost/cloudstream3/SearchQuality;", "qualityString", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "addVideoLinksToCallback", "videoData", "Lcom/cncverse/PikashowProvider$VideoData;", "contentName", "(Lcom/cncverse/PikashowProvider$VideoData;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "parseHDBVPlayerUrl", "playerUrl", "extractImdbIdFromUrl", "fallbackToDirectUrls", "finalHeaders", "(Lcom/cncverse/PikashowProvider$VideoData;Lkotlin/jvm/functions/Function1;Ljava/lang/String;Ljava/util/Map;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getQualityValue", "getQualityValueFromLabel", "label", "Companion", "PikashowSeries", "SeasonDetail", "PikashowSeriesResponse", "PikashowMovie", "ClientUrl", "PikashowMovieResponse", "VideoApiResponse", "VideoData", "VideoSeasonDetail", "VideoEpisode", "Resolution", "Language", "Keys", "Season", "HDBVEpisode", "FileData", "PikashowProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nPikashowProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PikashowProvider.kt\ncom/cncverse/PikashowProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,988:1\n1915#2:989\n1642#2,10:1003\n1915#2:1013\n1916#2:1015\n1652#2:1016\n1642#2,10:1030\n1915#2:1040\n1916#2:1042\n1652#2:1043\n1916#2:1044\n1915#2:1045\n1915#2,2:1059\n1915#2,2:1074\n1916#2:1076\n1915#2,2:1091\n1807#2,3:1175\n1807#2,3:1178\n1915#2,2:1181\n1915#2:1183\n1915#2,2:1184\n1916#2:1186\n116#3:990\n54#3:991\n117#3:992\n61#3,8:993\n71#3:1002\n116#3:1017\n54#3:1018\n117#3:1019\n61#3,8:1020\n71#3:1029\n116#3:1046\n54#3:1047\n117#3:1048\n61#3,8:1049\n71#3:1058\n116#3:1061\n54#3:1062\n117#3:1063\n61#3,8:1064\n71#3:1073\n116#3:1077\n54#3:1078\n117#3:1079\n61#3,8:1080\n71#3:1089\n116#3:1093\n54#3:1094\n117#3:1095\n61#3,8:1096\n71#3:1105\n116#3:1107\n54#3:1108\n117#3:1109\n61#3,8:1110\n71#3:1119\n116#3:1120\n54#3:1121\n117#3:1122\n61#3,8:1123\n71#3:1132\n116#3:1134\n54#3:1135\n117#3:1136\n61#3,8:1137\n71#3:1146\n116#3:1148\n54#3:1149\n117#3:1150\n61#3,8:1151\n71#3:1160\n116#3:1162\n54#3:1163\n117#3:1164\n61#3,8:1165\n71#3:1174\n116#3:1187\n54#3:1188\n117#3:1189\n61#3,8:1190\n71#3:1199\n116#3:1200\n54#3:1201\n117#3:1202\n61#3,8:1203\n71#3:1212\n1#4:1001\n1#4:1014\n1#4:1028\n1#4:1041\n1#4:1057\n1#4:1072\n1#4:1088\n1#4:1090\n1#4:1104\n1#4:1106\n1#4:1118\n1#4:1131\n1#4:1133\n1#4:1145\n1#4:1147\n1#4:1159\n1#4:1161\n1#4:1173\n1#4:1198\n1#4:1211\n*S KotlinDebug\n*F\n+ 1 PikashowProvider.kt\ncom/cncverse/PikashowProvider\n*L\n222#1:989\n242#1:1003,10\n242#1:1013\n242#1:1015\n242#1:1016\n263#1:1030,10\n263#1:1040\n263#1:1042\n263#1:1043\n222#1:1044\n341#1:1045\n361#1:1059,2\n389#1:1074,2\n341#1:1076\n476#1:1091,2\n722#1:1175,3\n723#1:1178,3\n727#1:1181,2\n750#1:1183\n751#1:1184,2\n750#1:1186\n241#1:990\n241#1:991\n241#1:992\n241#1:993,8\n241#1:1002\n262#1:1017\n262#1:1018\n262#1:1019\n262#1:1020,8\n262#1:1029\n360#1:1046\n360#1:1047\n360#1:1048\n360#1:1049,8\n360#1:1058\n388#1:1061\n388#1:1062\n388#1:1063\n388#1:1064,8\n388#1:1073\n469#1:1077\n469#1:1078\n469#1:1079\n469#1:1080,8\n469#1:1089\n523#1:1093\n523#1:1094\n523#1:1095\n523#1:1096,8\n523#1:1105\n589#1:1107\n589#1:1108\n589#1:1109\n589#1:1110,8\n589#1:1119\n625#1:1120\n625#1:1121\n625#1:1122\n625#1:1123,8\n625#1:1132\n633#1:1134\n633#1:1135\n633#1:1136\n633#1:1137,8\n633#1:1146\n662#1:1148\n662#1:1149\n662#1:1150\n662#1:1151,8\n662#1:1160\n700#1:1162\n700#1:1163\n700#1:1164\n700#1:1165,8\n700#1:1174\n850#1:1187\n850#1:1188\n850#1:1189\n850#1:1190,8\n850#1:1199\n887#1:1200\n887#1:1201\n887#1:1202\n887#1:1203,8\n887#1:1212\n241#1:1001\n242#1:1014\n262#1:1028\n263#1:1041\n360#1:1057\n388#1:1072\n469#1:1088\n523#1:1104\n589#1:1118\n625#1:1131\n633#1:1145\n662#1:1159\n700#1:1173\n850#1:1198\n887#1:1211\n*E\n"})
 public final class PikashowProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private String mainUrl = "https://manoda.co";
@@ -148,7 +120,7 @@ public final class PikashowProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PikashowProvider$addVideoLinksToCallback$1 */
     /* JADX INFO: compiled from: PikashowProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6}, l = {783, 808, 826, 830, 843, 848, 852}, m = "addVideoLinksToCallback", n = {"videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "$this$forEach$iv", "element$iv", "resolution", "url", "linkType", "hasResolutions", "hasLanguageResolutions", "$i$f$forEach", "$i$a$-forEach-PikashowProvider$addVideoLinksToCallback$6", "$i$a$-let-PikashowProvider$addVideoLinksToCallback$6$1", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "$this$forEach$iv", "element$iv", "lang", "$this$forEach$iv", "element$iv", "resolution", "url", "linkType", "langName", "hasResolutions", "hasLanguageResolutions", "$i$f$forEach", "$i$a$-forEach-PikashowProvider$addVideoLinksToCallback$7", "$i$f$forEach", "$i$a$-forEach-PikashowProvider$addVideoLinksToCallback$7$1", "$i$a$-let-PikashowProvider$addVideoLinksToCallback$7$1$1", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "hasResolutions", "hasLanguageResolutions", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "streamingUrl", "urlOrigin", "hasResolutions", "hasLanguageResolutions", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "streamingUrl", "hasResolutions", "hasLanguageResolutions", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "e", "hasResolutions", "hasLanguageResolutions", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "hasResolutions", "hasLanguageResolutions"}, nl = {782, 807, 827, 829, 845, 852, 857}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "I$0", "I$1", "I$2", "I$3", "I$4", "I$5", "I$6", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6}, l = {735, 760, 778, 782, 795, 800, 804}, m = "addVideoLinksToCallback", n = {"videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "$this$forEach$iv", "element$iv", "resolution", "url", "linkType", "hasResolutions", "hasLanguageResolutions", "$i$f$forEach", "$i$a$-forEach-PikashowProvider$addVideoLinksToCallback$6", "$i$a$-let-PikashowProvider$addVideoLinksToCallback$6$1", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "$this$forEach$iv", "element$iv", "lang", "$this$forEach$iv", "element$iv", "resolution", "url", "linkType", "langName", "hasResolutions", "hasLanguageResolutions", "$i$f$forEach", "$i$a$-forEach-PikashowProvider$addVideoLinksToCallback$7", "$i$f$forEach", "$i$a$-forEach-PikashowProvider$addVideoLinksToCallback$7$1", "$i$a$-let-PikashowProvider$addVideoLinksToCallback$7$1$1", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "hasResolutions", "hasLanguageResolutions", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "streamingUrl", "urlOrigin", "hasResolutions", "hasLanguageResolutions", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "streamingUrl", "hasResolutions", "hasLanguageResolutions", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "e", "hasResolutions", "hasLanguageResolutions", "videoData", "callback", "contentName", "baseHeaders", "finalHeaders", "hasResolutions", "hasLanguageResolutions"}, nl = {734, 759, 779, 781, 797, 804, 809}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "I$0", "I$1", "I$2", "I$3", "I$4", "I$5", "I$6", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -192,7 +164,7 @@ public final class PikashowProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PikashowProvider$fallbackToDirectUrls$1 */
     /* JADX INFO: compiled from: PikashowProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {1000}, m = "fallbackToDirectUrls", n = {"videoData", "callback", "contentName", "finalHeaders", "directUrl", "url", "linkType", "$i$a$-let-PikashowProvider$fallbackToDirectUrls$2", "quality"}, nl = {999}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {952}, m = "fallbackToDirectUrls", n = {"videoData", "callback", "contentName", "finalHeaders", "directUrl", "url", "linkType", "$i$a$-let-PikashowProvider$fallbackToDirectUrls$2", "quality"}, nl = {951}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "I$1"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -222,7 +194,7 @@ public final class PikashowProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PikashowProvider$getMainPage$1 */
     /* JADX INFO: compiled from: PikashowProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {262}, m = "getMainPage", n = {"request", "headers", "homePageList", "categories", "$this$forEach$iv", "element$iv", "type", "displayName", "url", "params", "page", "$i$f$forEach", "$i$a$-forEach-PikashowProvider$getMainPage$2"}, nl = {269}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "I$1", "I$2"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {230}, m = "getMainPage", n = {"request", "headers", "homePageList", "categories", "$this$forEach$iv", "element$iv", "type", "displayName", "url", "params", "page", "$i$f$forEach", "$i$a$-forEach-PikashowProvider$getMainPage$2"}, nl = {237}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "I$1", "I$2"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -256,7 +228,7 @@ public final class PikashowProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PikashowProvider$load$1 */
     /* JADX INFO: compiled from: PikashowProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {493, 523, 547, 559}, m = "load", n = {"url", "withoutUrlScheme", "parts", "identifier", "type", "headers", "seriesUrl", "params", "url", "withoutUrlScheme", "parts", "identifier", "type", "headers", "seriesUrl", "params", "response", "seriesResponse", "series", "seriesData", "episodes", "$i$a$-let-PikashowProvider$load$2", "url", "withoutUrlScheme", "parts", "identifier", "type", "headers", "movieUrl", "params", "url", "withoutUrlScheme", "parts", "identifier", "type", "headers", "movieUrl", "params", "response", "movieResponse", "movie", "movieData", "$i$a$-let-PikashowProvider$load$3"}, nl = {500, 534, 554, 570}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {461, 491, 515, 527}, m = "load", n = {"url", "withoutUrlScheme", "parts", "identifier", "type", "headers", "seriesUrl", "params", "url", "withoutUrlScheme", "parts", "identifier", "type", "headers", "seriesUrl", "params", "response", "seriesResponse", "series", "seriesData", "episodes", "$i$a$-let-PikashowProvider$load$2", "url", "withoutUrlScheme", "parts", "identifier", "type", "headers", "movieUrl", "params", "url", "withoutUrlScheme", "parts", "identifier", "type", "headers", "movieUrl", "params", "response", "movieResponse", "movie", "movieData", "$i$a$-let-PikashowProvider$load$3"}, nl = {468, 502, 522, 538}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -290,7 +262,7 @@ public final class PikashowProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PikashowProvider$loadLinks$1 */
     /* JADX INFO: compiled from: PikashowProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {629, 639, 660, 703, 713}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "withoutUrlScheme", "headers", "parts", "seriesTitle", "season", "episode", "videoUrl", "params", "isCasting", "data", "subtitleCallback", "callback", "withoutUrlScheme", "headers", "parts", "seriesTitle", "season", "episode", "videoUrl", "params", "response", "videoResponse", "videoData", "isCasting", "$i$a$-let-PikashowProvider$loadLinks$3", "data", "subtitleCallback", "callback", "withoutUrlScheme", "headers", "parts", "identifier", "type", "listUrl", "listParams", "isCasting", "data", "subtitleCallback", "callback", "withoutUrlScheme", "headers", "parts", "identifier", "type", "listUrl", "listParams", "listResponse", "videoId", "title", "safeTitle", "videoUrl", "videoParams", "isCasting", "data", "subtitleCallback", "callback", "withoutUrlScheme", "headers", "parts", "identifier", "type", "listUrl", "listParams", "listResponse", "videoId", "title", "safeTitle", "videoUrl", "videoParams", "videoResponse", "videoApiResponse", "contentNameLocal", "videoData", "isCasting", "$i$a$-let-PikashowProvider$loadLinks$6"}, nl = {636, 640, 667, 709, 714}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "Z$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {581, 591, 612, 655, 665}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "withoutUrlScheme", "headers", "parts", "seriesTitle", "season", "episode", "videoUrl", "params", "isCasting", "data", "subtitleCallback", "callback", "withoutUrlScheme", "headers", "parts", "seriesTitle", "season", "episode", "videoUrl", "params", "response", "videoResponse", "videoData", "isCasting", "$i$a$-let-PikashowProvider$loadLinks$2", "data", "subtitleCallback", "callback", "withoutUrlScheme", "headers", "parts", "identifier", "type", "listUrl", "listParams", "isCasting", "data", "subtitleCallback", "callback", "withoutUrlScheme", "headers", "parts", "identifier", "type", "listUrl", "listParams", "listResponse", "videoId", "title", "safeTitle", "videoUrl", "videoParams", "isCasting", "data", "subtitleCallback", "callback", "withoutUrlScheme", "headers", "parts", "identifier", "type", "listUrl", "listParams", "listResponse", "videoId", "title", "safeTitle", "videoUrl", "videoParams", "videoResponse", "videoApiResponse", "contentNameLocal", "videoData", "isCasting", "$i$a$-let-PikashowProvider$loadLinks$5"}, nl = {588, 592, 619, 661, 666}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "Z$0", "I$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -332,7 +304,7 @@ public final class PikashowProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PikashowProvider$parseHDBVPlayerUrl$1 */
     /* JADX INFO: compiled from: PikashowProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {862, 915, 943}, m = "parseHDBVPlayerUrl", n = {"playerUrl", "playerUrl", "response", "doc", "scripts", "script", "regex", "matchResult", "jsonInsideHDVBPlayer", "fileKeys", "origin", "absoluteUrl", "headers", "referer", "playerUrl", "response", "doc", "scripts", "script", "regex", "matchResult", "jsonInsideHDVBPlayer", "fileKeys", "origin", "absoluteUrl", "headers", "referer", "postResponse", "responseText", "jsonArray", "seasons", "episodeDetails", "episode"}, nl = {885, 921, 949}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {814, 867, 895}, m = "parseHDBVPlayerUrl", n = {"playerUrl", "playerUrl", "response", "doc", "scripts", "script", "regex", "matchResult", "jsonInsideHDVBPlayer", "fileKeys", "origin", "absoluteUrl", "headers", "referer", "playerUrl", "response", "doc", "scripts", "script", "regex", "matchResult", "jsonInsideHDVBPlayer", "fileKeys", "origin", "absoluteUrl", "headers", "referer", "postResponse", "responseText", "jsonArray", "seasons", "episodeDetails", "episode"}, nl = {837, 873, 901}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18"}, v = 2)
     static final class C00071 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -371,7 +343,7 @@ public final class PikashowProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PikashowProvider$search$1 */
     /* JADX INFO: compiled from: PikashowProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {381}, m = "search", n = {"query", "searchResults", "headers", "searchQuery", "categories", "$this$forEach$iv", "element$iv", "type", "tvType", "url", "params", "$i$f$forEach", "$i$a$-forEach-PikashowProvider$search$2"}, nl = {388}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PikashowProvider", f = "PikashowProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {349}, m = "search", n = {"query", "searchResults", "headers", "searchQuery", "categories", "$this$forEach$iv", "element$iv", "type", "tvType", "url", "params", "$i$f$forEach", "$i$a$-forEach-PikashowProvider$search$2"}, nl = {356}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "I$1"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -439,65 +411,13 @@ public final class PikashowProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: PikashowProvider.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/cncverse/PikashowProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "PikashowProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nPikashowProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PikashowProvider.kt\ncom/cncverse/PikashowProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1278:1\n1#2:1279\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/cncverse/PikashowProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "PikashowProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                PikashowProvider.csGuardWasEverActive = true;
-            }
-            return PikashowProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PikashowProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    PikashowProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -2601,7 +2521,7 @@ public final class PikashowProvider extends MainAPI {
         byte[] bytes2 = message.getBytes(Charsets.UTF_8);
         Intrinsics.checkNotNullExpressionValue(bytes2, "getBytes(...)");
         byte[] signature = mac.doFinal(bytes2);
-        String signatureHex = ArraysKt.joinToString$default(signature, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda15
+        String signatureHex = ArraysKt.joinToString$default(signature, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda7
             public final Object invoke(Object obj) {
                 return PikashowProvider.generateSignature$lambda$0(((Byte) obj).byteValue());
             }
@@ -2627,64 +2547,54 @@ public final class PikashowProvider extends MainAPI {
         return MapsKt.mapOf(new Pair[]{TuplesKt.to("Host", "manoda.co"), TuplesKt.to("user-agent", "Pikashow/2509030 (Android 13; Pixel 5; Channel/pikashow; gaid/" + this.gaid + "); Uuid/" + this.deviceUuid), TuplesKt.to("X-API-Key", obj), TuplesKt.to("X-Signature", obj2), TuplesKt.to("X-Timestamp", obj3)});
     }
 
-    /* JADX WARN: Code duplicated, block: B:104:0x03d0 A[Catch: Exception -> 0x04c3, TryCatch #20 {Exception -> 0x04c3, blocks: (B:102:0x03bf, B:104:0x03d0, B:106:0x03f6, B:108:0x0408, B:109:0x0415, B:110:0x0416, B:112:0x0423, B:113:0x0437, B:115:0x043d, B:117:0x0453, B:121:0x04a0, B:123:0x04a9, B:127:0x04be), top: B:224:0x03bf }] */
-    /* JADX WARN: Code duplicated, block: B:106:0x03f6 A[Catch: Exception -> 0x04c3, TryCatch #20 {Exception -> 0x04c3, blocks: (B:102:0x03bf, B:104:0x03d0, B:106:0x03f6, B:108:0x0408, B:109:0x0415, B:110:0x0416, B:112:0x0423, B:113:0x0437, B:115:0x043d, B:117:0x0453, B:121:0x04a0, B:123:0x04a9, B:127:0x04be), top: B:224:0x03bf }] */
-    /* JADX WARN: Code duplicated, block: B:107:0x0407  */
-    /* JADX WARN: Code duplicated, block: B:110:0x0416 A[Catch: Exception -> 0x04c3, TryCatch #20 {Exception -> 0x04c3, blocks: (B:102:0x03bf, B:104:0x03d0, B:106:0x03f6, B:108:0x0408, B:109:0x0415, B:110:0x0416, B:112:0x0423, B:113:0x0437, B:115:0x043d, B:117:0x0453, B:121:0x04a0, B:123:0x04a9, B:127:0x04be), top: B:224:0x03bf }] */
-    /* JADX WARN: Code duplicated, block: B:112:0x0423 A[Catch: Exception -> 0x04c3, TryCatch #20 {Exception -> 0x04c3, blocks: (B:102:0x03bf, B:104:0x03d0, B:106:0x03f6, B:108:0x0408, B:109:0x0415, B:110:0x0416, B:112:0x0423, B:113:0x0437, B:115:0x043d, B:117:0x0453, B:121:0x04a0, B:123:0x04a9, B:127:0x04be), top: B:224:0x03bf }] */
-    /* JADX WARN: Code duplicated, block: B:115:0x043d A[Catch: Exception -> 0x04c3, TryCatch #20 {Exception -> 0x04c3, blocks: (B:102:0x03bf, B:104:0x03d0, B:106:0x03f6, B:108:0x0408, B:109:0x0415, B:110:0x0416, B:112:0x0423, B:113:0x0437, B:115:0x043d, B:117:0x0453, B:121:0x04a0, B:123:0x04a9, B:127:0x04be), top: B:224:0x03bf }] */
-    /* JADX WARN: Code duplicated, block: B:117:0x0453 A[Catch: Exception -> 0x04c3, TryCatch #20 {Exception -> 0x04c3, blocks: (B:102:0x03bf, B:104:0x03d0, B:106:0x03f6, B:108:0x0408, B:109:0x0415, B:110:0x0416, B:112:0x0423, B:113:0x0437, B:115:0x043d, B:117:0x0453, B:121:0x04a0, B:123:0x04a9, B:127:0x04be), top: B:224:0x03bf }] */
-    /* JADX WARN: Code duplicated, block: B:118:0x0496  */
-    /* JADX WARN: Code duplicated, block: B:121:0x04a0 A[Catch: Exception -> 0x04c3, TryCatch #20 {Exception -> 0x04c3, blocks: (B:102:0x03bf, B:104:0x03d0, B:106:0x03f6, B:108:0x0408, B:109:0x0415, B:110:0x0416, B:112:0x0423, B:113:0x0437, B:115:0x043d, B:117:0x0453, B:121:0x04a0, B:123:0x04a9, B:127:0x04be), top: B:224:0x03bf }] */
-    /* JADX WARN: Code duplicated, block: B:125:0x04bb  */
-    /* JADX WARN: Code duplicated, block: B:126:0x04bc  */
-    /* JADX WARN: Code duplicated, block: B:139:0x0507 A[Catch: Exception -> 0x0555, PHI: r0 r53
-      0x0507: PHI (r0v106 java.util.List) = (r0v57 java.util.List), (r0v84 java.util.List), (r0v90 java.util.List), (r0v94 java.util.List), (r0v110 java.util.List) binds: [B:93:0x0383, B:134:0x04e8, B:127:0x04be, B:124:0x04b9, B:138:0x0503] A[DONT_GENERATE, DONT_INLINE]
-      0x0507: PHI (r53v12 com.cncverse.PikashowProvider$getMainPage$1) = 
-      (r53v8 com.cncverse.PikashowProvider$getMainPage$1)
-      (r53v11 com.cncverse.PikashowProvider$getMainPage$1)
-      (r53v11 com.cncverse.PikashowProvider$getMainPage$1)
-      (r53v11 com.cncverse.PikashowProvider$getMainPage$1)
-      (r53v13 com.cncverse.PikashowProvider$getMainPage$1)
-     binds: [B:93:0x0383, B:134:0x04e8, B:127:0x04be, B:124:0x04b9, B:138:0x0503] A[DONT_GENERATE, DONT_INLINE], TRY_LEAVE, TryCatch #5 {Exception -> 0x0555, blocks: (B:138:0x0503, B:139:0x0507), top: B:194:0x0503 }] */
-    /* JADX WARN: Code duplicated, block: B:141:0x0511  */
-    /* JADX WARN: Code duplicated, block: B:150:0x0550  */
-    /* JADX WARN: Code duplicated, block: B:153:0x056e  */
-    /* JADX WARN: Code duplicated, block: B:198:0x0243 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:200:0x0218 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:218:0x0236 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:222:0x03af A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:230:0x04a4 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:233:0x033e A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:26:0x0121 A[Catch: Exception -> 0x06d2, TRY_LEAVE, TryCatch #6 {Exception -> 0x06d2, blocks: (B:24:0x011b, B:26:0x0121), top: B:196:0x011b }] */
-    /* JADX WARN: Code duplicated, block: B:42:0x01dd A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:43:0x01de  */
-    /* JADX WARN: Code duplicated, block: B:46:0x0203 A[Catch: Exception -> 0x058d, TRY_LEAVE, TryCatch #1 {Exception -> 0x058d, blocks: (B:44:0x01f9, B:46:0x0203), top: B:186:0x01f9 }] */
-    /* JADX WARN: Code duplicated, block: B:49:0x0212  */
-    /* JADX WARN: Code duplicated, block: B:57:0x023c  */
-    /* JADX WARN: Code duplicated, block: B:63:0x0269 A[Catch: Exception -> 0x035d, TryCatch #12 {Exception -> 0x035d, blocks: (B:61:0x025c, B:63:0x0269, B:65:0x028f, B:67:0x02a1, B:68:0x02ae, B:69:0x02af, B:71:0x02bc, B:72:0x02d1, B:74:0x02d7, B:76:0x02ed, B:80:0x033a, B:82:0x0343, B:86:0x0358), top: B:208:0x025c }] */
-    /* JADX WARN: Code duplicated, block: B:65:0x028f A[Catch: Exception -> 0x035d, TryCatch #12 {Exception -> 0x035d, blocks: (B:61:0x025c, B:63:0x0269, B:65:0x028f, B:67:0x02a1, B:68:0x02ae, B:69:0x02af, B:71:0x02bc, B:72:0x02d1, B:74:0x02d7, B:76:0x02ed, B:80:0x033a, B:82:0x0343, B:86:0x0358), top: B:208:0x025c }] */
-    /* JADX WARN: Code duplicated, block: B:66:0x02a0  */
-    /* JADX WARN: Code duplicated, block: B:69:0x02af A[Catch: Exception -> 0x035d, TryCatch #12 {Exception -> 0x035d, blocks: (B:61:0x025c, B:63:0x0269, B:65:0x028f, B:67:0x02a1, B:68:0x02ae, B:69:0x02af, B:71:0x02bc, B:72:0x02d1, B:74:0x02d7, B:76:0x02ed, B:80:0x033a, B:82:0x0343, B:86:0x0358), top: B:208:0x025c }] */
-    /* JADX WARN: Code duplicated, block: B:71:0x02bc A[Catch: Exception -> 0x035d, TryCatch #12 {Exception -> 0x035d, blocks: (B:61:0x025c, B:63:0x0269, B:65:0x028f, B:67:0x02a1, B:68:0x02ae, B:69:0x02af, B:71:0x02bc, B:72:0x02d1, B:74:0x02d7, B:76:0x02ed, B:80:0x033a, B:82:0x0343, B:86:0x0358), top: B:208:0x025c }] */
-    /* JADX WARN: Code duplicated, block: B:74:0x02d7 A[Catch: Exception -> 0x035d, TryCatch #12 {Exception -> 0x035d, blocks: (B:61:0x025c, B:63:0x0269, B:65:0x028f, B:67:0x02a1, B:68:0x02ae, B:69:0x02af, B:71:0x02bc, B:72:0x02d1, B:74:0x02d7, B:76:0x02ed, B:80:0x033a, B:82:0x0343, B:86:0x0358), top: B:208:0x025c }] */
-    /* JADX WARN: Code duplicated, block: B:76:0x02ed A[Catch: Exception -> 0x035d, TryCatch #12 {Exception -> 0x035d, blocks: (B:61:0x025c, B:63:0x0269, B:65:0x028f, B:67:0x02a1, B:68:0x02ae, B:69:0x02af, B:71:0x02bc, B:72:0x02d1, B:74:0x02d7, B:76:0x02ed, B:80:0x033a, B:82:0x0343, B:86:0x0358), top: B:208:0x025c }] */
-    /* JADX WARN: Code duplicated, block: B:77:0x0330  */
+    /* JADX WARN: Code duplicated, block: B:101:0x0396  */
+    /* JADX WARN: Code duplicated, block: B:104:0x03a2  */
+    /* JADX WARN: Code duplicated, block: B:110:0x03c8 A[Catch: Exception -> 0x04bb, TryCatch #10 {Exception -> 0x04bb, blocks: (B:108:0x03b7, B:110:0x03c8, B:112:0x03ee, B:114:0x0400, B:115:0x040d, B:116:0x040e, B:118:0x041b, B:119:0x042f, B:121:0x0435, B:123:0x044b, B:127:0x0498, B:129:0x04a1, B:133:0x04b6), top: B:204:0x03b7 }] */
+    /* JADX WARN: Code duplicated, block: B:112:0x03ee A[Catch: Exception -> 0x04bb, TryCatch #10 {Exception -> 0x04bb, blocks: (B:108:0x03b7, B:110:0x03c8, B:112:0x03ee, B:114:0x0400, B:115:0x040d, B:116:0x040e, B:118:0x041b, B:119:0x042f, B:121:0x0435, B:123:0x044b, B:127:0x0498, B:129:0x04a1, B:133:0x04b6), top: B:204:0x03b7 }] */
+    /* JADX WARN: Code duplicated, block: B:113:0x03ff  */
+    /* JADX WARN: Code duplicated, block: B:116:0x040e A[Catch: Exception -> 0x04bb, TryCatch #10 {Exception -> 0x04bb, blocks: (B:108:0x03b7, B:110:0x03c8, B:112:0x03ee, B:114:0x0400, B:115:0x040d, B:116:0x040e, B:118:0x041b, B:119:0x042f, B:121:0x0435, B:123:0x044b, B:127:0x0498, B:129:0x04a1, B:133:0x04b6), top: B:204:0x03b7 }] */
+    /* JADX WARN: Code duplicated, block: B:118:0x041b A[Catch: Exception -> 0x04bb, TryCatch #10 {Exception -> 0x04bb, blocks: (B:108:0x03b7, B:110:0x03c8, B:112:0x03ee, B:114:0x0400, B:115:0x040d, B:116:0x040e, B:118:0x041b, B:119:0x042f, B:121:0x0435, B:123:0x044b, B:127:0x0498, B:129:0x04a1, B:133:0x04b6), top: B:204:0x03b7 }] */
+    /* JADX WARN: Code duplicated, block: B:121:0x0435 A[Catch: Exception -> 0x04bb, TryCatch #10 {Exception -> 0x04bb, blocks: (B:108:0x03b7, B:110:0x03c8, B:112:0x03ee, B:114:0x0400, B:115:0x040d, B:116:0x040e, B:118:0x041b, B:119:0x042f, B:121:0x0435, B:123:0x044b, B:127:0x0498, B:129:0x04a1, B:133:0x04b6), top: B:204:0x03b7 }] */
+    /* JADX WARN: Code duplicated, block: B:123:0x044b A[Catch: Exception -> 0x04bb, TryCatch #10 {Exception -> 0x04bb, blocks: (B:108:0x03b7, B:110:0x03c8, B:112:0x03ee, B:114:0x0400, B:115:0x040d, B:116:0x040e, B:118:0x041b, B:119:0x042f, B:121:0x0435, B:123:0x044b, B:127:0x0498, B:129:0x04a1, B:133:0x04b6), top: B:204:0x03b7 }] */
+    /* JADX WARN: Code duplicated, block: B:124:0x048e  */
+    /* JADX WARN: Code duplicated, block: B:127:0x0498 A[Catch: Exception -> 0x04bb, TryCatch #10 {Exception -> 0x04bb, blocks: (B:108:0x03b7, B:110:0x03c8, B:112:0x03ee, B:114:0x0400, B:115:0x040d, B:116:0x040e, B:118:0x041b, B:119:0x042f, B:121:0x0435, B:123:0x044b, B:127:0x0498, B:129:0x04a1, B:133:0x04b6), top: B:204:0x03b7 }] */
+    /* JADX WARN: Code duplicated, block: B:131:0x04b3  */
+    /* JADX WARN: Code duplicated, block: B:132:0x04b4  */
+    /* JADX WARN: Code duplicated, block: B:140:0x04e1 A[PHI: r0 r33
+      0x04e1: PHI (r0v83 java.util.List) = (r0v82 java.util.List), (r0v87 java.util.List), (r0v91 java.util.List) binds: [B:139:0x04c0, B:133:0x04b6, B:130:0x04b1] A[DONT_GENERATE, DONT_INLINE]
+      0x04e1: PHI (r33v18 com.cncverse.PikashowProvider) = (r33v17 com.cncverse.PikashowProvider), (r33v19 com.cncverse.PikashowProvider), (r33v19 com.cncverse.PikashowProvider) binds: [B:139:0x04c0, B:133:0x04b6, B:130:0x04b1] A[DONT_GENERATE, DONT_INLINE]] */
+    /* JADX WARN: Code duplicated, block: B:146:0x04fd A[Catch: Exception -> 0x050e, TRY_LEAVE, TryCatch #1 {Exception -> 0x050e, blocks: (B:143:0x04ec, B:144:0x04f2, B:146:0x04fd, B:139:0x04c0), top: B:186:0x04ec }] */
+    /* JADX WARN: Code duplicated, block: B:153:0x0532  */
+    /* JADX WARN: Code duplicated, block: B:200:0x03a7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:202:0x01e0 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:218:0x01fd A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:220:0x0215 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:22:0x00fd A[Catch: Exception -> 0x06a8, TRY_LEAVE, TryCatch #13 {Exception -> 0x06a8, blocks: (B:20:0x00f7, B:22:0x00fd), top: B:210:0x00f7 }] */
+    /* JADX WARN: Code duplicated, block: B:232:0x049c A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:235:0x0325 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:38:0x01b9 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:39:0x01ba  */
+    /* JADX WARN: Code duplicated, block: B:46:0x01f3  */
+    /* JADX WARN: Code duplicated, block: B:54:0x021b  */
+    /* JADX WARN: Code duplicated, block: B:55:0x0225  */
+    /* JADX WARN: Code duplicated, block: B:62:0x0250 A[Catch: Exception -> 0x0344, TryCatch #16 {Exception -> 0x0344, blocks: (B:60:0x0243, B:62:0x0250, B:64:0x0276, B:66:0x0288, B:67:0x0295, B:68:0x0296, B:70:0x02a3, B:71:0x02b8, B:73:0x02be, B:75:0x02d4, B:79:0x0321, B:81:0x032a, B:85:0x033f), top: B:216:0x0243 }] */
+    /* JADX WARN: Code duplicated, block: B:64:0x0276 A[Catch: Exception -> 0x0344, TryCatch #16 {Exception -> 0x0344, blocks: (B:60:0x0243, B:62:0x0250, B:64:0x0276, B:66:0x0288, B:67:0x0295, B:68:0x0296, B:70:0x02a3, B:71:0x02b8, B:73:0x02be, B:75:0x02d4, B:79:0x0321, B:81:0x032a, B:85:0x033f), top: B:216:0x0243 }] */
+    /* JADX WARN: Code duplicated, block: B:65:0x0287  */
+    /* JADX WARN: Code duplicated, block: B:68:0x0296 A[Catch: Exception -> 0x0344, TryCatch #16 {Exception -> 0x0344, blocks: (B:60:0x0243, B:62:0x0250, B:64:0x0276, B:66:0x0288, B:67:0x0295, B:68:0x0296, B:70:0x02a3, B:71:0x02b8, B:73:0x02be, B:75:0x02d4, B:79:0x0321, B:81:0x032a, B:85:0x033f), top: B:216:0x0243 }] */
+    /* JADX WARN: Code duplicated, block: B:70:0x02a3 A[Catch: Exception -> 0x0344, TryCatch #16 {Exception -> 0x0344, blocks: (B:60:0x0243, B:62:0x0250, B:64:0x0276, B:66:0x0288, B:67:0x0295, B:68:0x0296, B:70:0x02a3, B:71:0x02b8, B:73:0x02be, B:75:0x02d4, B:79:0x0321, B:81:0x032a, B:85:0x033f), top: B:216:0x0243 }] */
+    /* JADX WARN: Code duplicated, block: B:73:0x02be A[Catch: Exception -> 0x0344, TryCatch #16 {Exception -> 0x0344, blocks: (B:60:0x0243, B:62:0x0250, B:64:0x0276, B:66:0x0288, B:67:0x0295, B:68:0x0296, B:70:0x02a3, B:71:0x02b8, B:73:0x02be, B:75:0x02d4, B:79:0x0321, B:81:0x032a, B:85:0x033f), top: B:216:0x0243 }] */
+    /* JADX WARN: Code duplicated, block: B:75:0x02d4 A[Catch: Exception -> 0x0344, TryCatch #16 {Exception -> 0x0344, blocks: (B:60:0x0243, B:62:0x0250, B:64:0x0276, B:66:0x0288, B:67:0x0295, B:68:0x0296, B:70:0x02a3, B:71:0x02b8, B:73:0x02be, B:75:0x02d4, B:79:0x0321, B:81:0x032a, B:85:0x033f), top: B:216:0x0243 }] */
+    /* JADX WARN: Code duplicated, block: B:76:0x0317  */
+    /* JADX WARN: Code duplicated, block: B:79:0x0321 A[Catch: Exception -> 0x0344, TryCatch #16 {Exception -> 0x0344, blocks: (B:60:0x0243, B:62:0x0250, B:64:0x0276, B:66:0x0288, B:67:0x0295, B:68:0x0296, B:70:0x02a3, B:71:0x02b8, B:73:0x02be, B:75:0x02d4, B:79:0x0321, B:81:0x032a, B:85:0x033f), top: B:216:0x0243 }] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:80:0x033a A[Catch: Exception -> 0x035d, TryCatch #12 {Exception -> 0x035d, blocks: (B:61:0x025c, B:63:0x0269, B:65:0x028f, B:67:0x02a1, B:68:0x02ae, B:69:0x02af, B:71:0x02bc, B:72:0x02d1, B:74:0x02d7, B:76:0x02ed, B:80:0x033a, B:82:0x0343, B:86:0x0358), top: B:208:0x025c }] */
-    /* JADX WARN: Code duplicated, block: B:84:0x0355  */
-    /* JADX WARN: Code duplicated, block: B:85:0x0356  */
-    /* JADX WARN: Code duplicated, block: B:93:0x0383 A[PHI: r0 r53
-      0x0383: PHI (r0v57 java.util.List) = (r0v56 java.util.List), (r0v63 java.util.List), (r0v67 java.util.List) binds: [B:92:0x0362, B:86:0x0358, B:83:0x0353] A[DONT_GENERATE, DONT_INLINE]
-      0x0383: PHI (r53v8 com.cncverse.PikashowProvider$getMainPage$1) = 
-      (r53v7 com.cncverse.PikashowProvider$getMainPage$1)
-      (r53v9 com.cncverse.PikashowProvider$getMainPage$1)
-      (r53v9 com.cncverse.PikashowProvider$getMainPage$1)
-     binds: [B:92:0x0362, B:86:0x0358, B:83:0x0353] A[DONT_GENERATE, DONT_INLINE]] */
-    /* JADX WARN: Code duplicated, block: B:96:0x03a2 A[Catch: Exception -> 0x04ea, TRY_LEAVE, TryCatch #3 {Exception -> 0x04ea, blocks: (B:92:0x0362, B:96:0x03a2, B:133:0x04c8), top: B:190:0x0362 }] */
-    /* JADX WARN: Code duplicated, block: B:98:0x03aa  */
+    /* JADX WARN: Code duplicated, block: B:83:0x033c  */
+    /* JADX WARN: Code duplicated, block: B:84:0x033d  */
+    /* JADX WARN: Code duplicated, block: B:96:0x036e A[PHI: r0 r31 r32
+      0x036e: PHI (r0v55 java.util.List) = (r0v54 java.util.List), (r0v60 java.util.List), (r0v64 java.util.List) binds: [B:95:0x036d, B:85:0x033f, B:82:0x033a] A[DONT_GENERATE, DONT_INLINE]
+      0x036e: PHI (r31v17 java.lang.String) = (r31v16 java.lang.String), (r31v18 java.lang.String), (r31v18 java.lang.String) binds: [B:95:0x036d, B:85:0x033f, B:82:0x033a] A[DONT_GENERATE, DONT_INLINE]
+      0x036e: PHI (r32v16 java.lang.String) = (r32v15 java.lang.String), (r32v17 java.lang.String), (r32v17 java.lang.String) binds: [B:95:0x036d, B:85:0x033f, B:82:0x033a] A[DONT_GENERATE, DONT_INLINE]] */
     /* JADX WARN: Failed to apply debug info
-    jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached with updateSeq = 18921. Try increasing type updates limit count.
+    jadx.core.utils.exceptions.JadxOverflowException: Type inference error: updates count limit reached with updateSeq = 18541. Try increasing type updates limit count.
     	at jadx.core.dex.visitors.typeinference.TypeUpdateInfo.requestUpdate(TypeUpdateInfo.java:61)
     	at jadx.core.dex.visitors.typeinference.TypeUpdate.requestUpdate(TypeUpdate.java:298)
     	at jadx.core.dex.visitors.typeinference.TypeUpdate.runUpdate(TypeUpdate.java:124)
@@ -2698,18 +2608,17 @@ public final class PikashowProvider extends MainAPI {
     	at jadx.core.dex.visitors.debuginfo.DebugInfoApplyVisitor.applyDebugInfo(DebugInfoApplyVisitor.java:68)
     	at jadx.core.dex.visitors.debuginfo.DebugInfoApplyVisitor.visit(DebugInfoApplyVisitor.java:55)
      */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:170:0x068a -> B:171:0x06a0). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:43:0x01de -> B:186:0x01f9). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached at block B:141:0x0511
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:170:0x065f -> B:171:0x066d). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:39:0x01ba -> B:188:0x01d4). Please report as a decompilation issue!!! */
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public java.lang.Object getMainPage(int r51, @org.jetbrains.annotations.NotNull com.lagradost.cloudstream3.MainPageRequest r52, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.HomePageResponse> r53) {
         /*
-            Method dump skipped, instruction units count: 1892
+            Method dump skipped, instruction units count: 1854
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.cncverse.PikashowProvider.getMainPage(int, com.lagradost.cloudstream3.MainPageRequest, kotlin.coroutines.Continuation):java.lang.Object");
@@ -2830,54 +2739,54 @@ public final class PikashowProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:101:0x03ba  */
-    /* JADX WARN: Code duplicated, block: B:115:0x0437  */
-    /* JADX WARN: Code duplicated, block: B:118:0x0441  */
-    /* JADX WARN: Code duplicated, block: B:125:0x046b A[Catch: Exception -> 0x05ab, TryCatch #2 {Exception -> 0x05ab, blocks: (B:123:0x045a, B:125:0x046b, B:127:0x0491, B:129:0x04a3, B:130:0x04b0, B:131:0x04b1, B:133:0x04bc, B:134:0x04c3, B:136:0x04c9, B:138:0x04d8), top: B:221:0x045a }] */
-    /* JADX WARN: Code duplicated, block: B:127:0x0491 A[Catch: Exception -> 0x05ab, TryCatch #2 {Exception -> 0x05ab, blocks: (B:123:0x045a, B:125:0x046b, B:127:0x0491, B:129:0x04a3, B:130:0x04b0, B:131:0x04b1, B:133:0x04bc, B:134:0x04c3, B:136:0x04c9, B:138:0x04d8), top: B:221:0x045a }] */
-    /* JADX WARN: Code duplicated, block: B:128:0x04a2  */
-    /* JADX WARN: Code duplicated, block: B:131:0x04b1 A[Catch: Exception -> 0x05ab, TryCatch #2 {Exception -> 0x05ab, blocks: (B:123:0x045a, B:125:0x046b, B:127:0x0491, B:129:0x04a3, B:130:0x04b0, B:131:0x04b1, B:133:0x04bc, B:134:0x04c3, B:136:0x04c9, B:138:0x04d8), top: B:221:0x045a }] */
-    /* JADX WARN: Code duplicated, block: B:133:0x04bc A[Catch: Exception -> 0x05ab, TryCatch #2 {Exception -> 0x05ab, blocks: (B:123:0x045a, B:125:0x046b, B:127:0x0491, B:129:0x04a3, B:130:0x04b0, B:131:0x04b1, B:133:0x04bc, B:134:0x04c3, B:136:0x04c9, B:138:0x04d8), top: B:221:0x045a }] */
-    /* JADX WARN: Code duplicated, block: B:136:0x04c9 A[Catch: Exception -> 0x05ab, TryCatch #2 {Exception -> 0x05ab, blocks: (B:123:0x045a, B:125:0x046b, B:127:0x0491, B:129:0x04a3, B:130:0x04b0, B:131:0x04b1, B:133:0x04bc, B:134:0x04c3, B:136:0x04c9, B:138:0x04d8), top: B:221:0x045a }] */
-    /* JADX WARN: Code duplicated, block: B:138:0x04d8 A[Catch: Exception -> 0x05ab, TRY_LEAVE, TryCatch #2 {Exception -> 0x05ab, blocks: (B:123:0x045a, B:125:0x046b, B:127:0x0491, B:129:0x04a3, B:130:0x04b0, B:131:0x04b1, B:133:0x04bc, B:134:0x04c3, B:136:0x04c9, B:138:0x04d8), top: B:221:0x045a }] */
-    /* JADX WARN: Code duplicated, block: B:144:0x0508 A[Catch: Exception -> 0x0534, TryCatch #6 {Exception -> 0x0534, blocks: (B:142:0x0502, B:144:0x0508, B:146:0x0513), top: B:229:0x0502 }] */
-    /* JADX WARN: Code duplicated, block: B:146:0x0513 A[Catch: Exception -> 0x0534, TRY_LEAVE, TryCatch #6 {Exception -> 0x0534, blocks: (B:142:0x0502, B:144:0x0508, B:146:0x0513), top: B:229:0x0502 }] */
-    /* JADX WARN: Code duplicated, block: B:151:0x0523  */
-    /* JADX WARN: Code duplicated, block: B:154:0x0529  */
-    /* JADX WARN: Code duplicated, block: B:158:0x0531  */
-    /* JADX WARN: Code duplicated, block: B:161:0x0538  */
-    /* JADX WARN: Code duplicated, block: B:167:0x0578  */
-    /* JADX WARN: Code duplicated, block: B:170:0x05a3  */
-    /* JADX WARN: Code duplicated, block: B:185:0x063e  */
-    /* JADX WARN: Code duplicated, block: B:225:0x0230 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:229:0x0502 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:235:0x044a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:253:0x020f A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:259:0x0259 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:261:0x0268 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:30:0x0130 A[Catch: Exception -> 0x07db, TRY_LEAVE, TryCatch #13 {Exception -> 0x07db, blocks: (B:28:0x012a, B:30:0x0130), top: B:243:0x012a }] */
-    /* JADX WARN: Code duplicated, block: B:46:0x01ea A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:47:0x01eb  */
-    /* JADX WARN: Code duplicated, block: B:54:0x0224  */
-    /* JADX WARN: Code duplicated, block: B:62:0x025f  */
-    /* JADX WARN: Code duplicated, block: B:70:0x0290 A[Catch: Exception -> 0x03c4, TryCatch #25 {Exception -> 0x03c4, blocks: (B:68:0x0283, B:70:0x0290, B:72:0x02b6, B:74:0x02c8, B:75:0x02d5, B:76:0x02d6, B:78:0x02e1, B:79:0x02e8, B:81:0x02ee, B:83:0x0300, B:85:0x032a, B:87:0x0330, B:89:0x033b, B:96:0x0354), top: B:267:0x0283 }] */
-    /* JADX WARN: Code duplicated, block: B:72:0x02b6 A[Catch: Exception -> 0x03c4, TryCatch #25 {Exception -> 0x03c4, blocks: (B:68:0x0283, B:70:0x0290, B:72:0x02b6, B:74:0x02c8, B:75:0x02d5, B:76:0x02d6, B:78:0x02e1, B:79:0x02e8, B:81:0x02ee, B:83:0x0300, B:85:0x032a, B:87:0x0330, B:89:0x033b, B:96:0x0354), top: B:267:0x0283 }] */
-    /* JADX WARN: Code duplicated, block: B:73:0x02c7  */
-    /* JADX WARN: Code duplicated, block: B:76:0x02d6 A[Catch: Exception -> 0x03c4, TryCatch #25 {Exception -> 0x03c4, blocks: (B:68:0x0283, B:70:0x0290, B:72:0x02b6, B:74:0x02c8, B:75:0x02d5, B:76:0x02d6, B:78:0x02e1, B:79:0x02e8, B:81:0x02ee, B:83:0x0300, B:85:0x032a, B:87:0x0330, B:89:0x033b, B:96:0x0354), top: B:267:0x0283 }] */
-    /* JADX WARN: Code duplicated, block: B:78:0x02e1 A[Catch: Exception -> 0x03c4, TryCatch #25 {Exception -> 0x03c4, blocks: (B:68:0x0283, B:70:0x0290, B:72:0x02b6, B:74:0x02c8, B:75:0x02d5, B:76:0x02d6, B:78:0x02e1, B:79:0x02e8, B:81:0x02ee, B:83:0x0300, B:85:0x032a, B:87:0x0330, B:89:0x033b, B:96:0x0354), top: B:267:0x0283 }] */
+    /* JADX WARN: Code duplicated, block: B:111:0x0423  */
+    /* JADX WARN: Code duplicated, block: B:114:0x042d  */
+    /* JADX WARN: Code duplicated, block: B:121:0x0457 A[Catch: Exception -> 0x0597, TryCatch #16 {Exception -> 0x0597, blocks: (B:119:0x0446, B:121:0x0457, B:123:0x047d, B:125:0x048f, B:126:0x049c, B:127:0x049d, B:129:0x04a8, B:130:0x04af, B:132:0x04b5, B:134:0x04c4), top: B:245:0x0446 }] */
+    /* JADX WARN: Code duplicated, block: B:123:0x047d A[Catch: Exception -> 0x0597, TryCatch #16 {Exception -> 0x0597, blocks: (B:119:0x0446, B:121:0x0457, B:123:0x047d, B:125:0x048f, B:126:0x049c, B:127:0x049d, B:129:0x04a8, B:130:0x04af, B:132:0x04b5, B:134:0x04c4), top: B:245:0x0446 }] */
+    /* JADX WARN: Code duplicated, block: B:124:0x048e  */
+    /* JADX WARN: Code duplicated, block: B:127:0x049d A[Catch: Exception -> 0x0597, TryCatch #16 {Exception -> 0x0597, blocks: (B:119:0x0446, B:121:0x0457, B:123:0x047d, B:125:0x048f, B:126:0x049c, B:127:0x049d, B:129:0x04a8, B:130:0x04af, B:132:0x04b5, B:134:0x04c4), top: B:245:0x0446 }] */
+    /* JADX WARN: Code duplicated, block: B:129:0x04a8 A[Catch: Exception -> 0x0597, TryCatch #16 {Exception -> 0x0597, blocks: (B:119:0x0446, B:121:0x0457, B:123:0x047d, B:125:0x048f, B:126:0x049c, B:127:0x049d, B:129:0x04a8, B:130:0x04af, B:132:0x04b5, B:134:0x04c4), top: B:245:0x0446 }] */
+    /* JADX WARN: Code duplicated, block: B:132:0x04b5 A[Catch: Exception -> 0x0597, TryCatch #16 {Exception -> 0x0597, blocks: (B:119:0x0446, B:121:0x0457, B:123:0x047d, B:125:0x048f, B:126:0x049c, B:127:0x049d, B:129:0x04a8, B:130:0x04af, B:132:0x04b5, B:134:0x04c4), top: B:245:0x0446 }] */
+    /* JADX WARN: Code duplicated, block: B:134:0x04c4 A[Catch: Exception -> 0x0597, TRY_LEAVE, TryCatch #16 {Exception -> 0x0597, blocks: (B:119:0x0446, B:121:0x0457, B:123:0x047d, B:125:0x048f, B:126:0x049c, B:127:0x049d, B:129:0x04a8, B:130:0x04af, B:132:0x04b5, B:134:0x04c4), top: B:245:0x0446 }] */
+    /* JADX WARN: Code duplicated, block: B:140:0x04f4 A[Catch: Exception -> 0x0520, TryCatch #5 {Exception -> 0x0520, blocks: (B:138:0x04ee, B:140:0x04f4, B:142:0x04ff), top: B:223:0x04ee }] */
+    /* JADX WARN: Code duplicated, block: B:142:0x04ff A[Catch: Exception -> 0x0520, TRY_LEAVE, TryCatch #5 {Exception -> 0x0520, blocks: (B:138:0x04ee, B:140:0x04f4, B:142:0x04ff), top: B:223:0x04ee }] */
+    /* JADX WARN: Code duplicated, block: B:147:0x050f  */
+    /* JADX WARN: Code duplicated, block: B:150:0x0515  */
+    /* JADX WARN: Code duplicated, block: B:154:0x051d  */
+    /* JADX WARN: Code duplicated, block: B:157:0x0524  */
+    /* JADX WARN: Code duplicated, block: B:163:0x0564  */
+    /* JADX WARN: Code duplicated, block: B:166:0x058f  */
+    /* JADX WARN: Code duplicated, block: B:181:0x062a  */
+    /* JADX WARN: Code duplicated, block: B:217:0x0254 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:223:0x04ee A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:231:0x0436 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:237:0x021c A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:253:0x0245 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:261:0x01fb A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:26:0x011c A[Catch: Exception -> 0x07c7, TRY_LEAVE, TryCatch #22 {Exception -> 0x07c7, blocks: (B:24:0x0116, B:26:0x011c), top: B:257:0x0116 }] */
+    /* JADX WARN: Code duplicated, block: B:42:0x01d6 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:43:0x01d7  */
+    /* JADX WARN: Code duplicated, block: B:50:0x0210  */
+    /* JADX WARN: Code duplicated, block: B:58:0x024b  */
+    /* JADX WARN: Code duplicated, block: B:66:0x027c A[Catch: Exception -> 0x03b0, TryCatch #0 {Exception -> 0x03b0, blocks: (B:64:0x026f, B:66:0x027c, B:68:0x02a2, B:70:0x02b4, B:71:0x02c1, B:72:0x02c2, B:74:0x02cd, B:75:0x02d4, B:77:0x02da, B:79:0x02ec, B:81:0x0316, B:83:0x031c, B:85:0x0327, B:92:0x0340), top: B:213:0x026f }] */
+    /* JADX WARN: Code duplicated, block: B:68:0x02a2 A[Catch: Exception -> 0x03b0, TryCatch #0 {Exception -> 0x03b0, blocks: (B:64:0x026f, B:66:0x027c, B:68:0x02a2, B:70:0x02b4, B:71:0x02c1, B:72:0x02c2, B:74:0x02cd, B:75:0x02d4, B:77:0x02da, B:79:0x02ec, B:81:0x0316, B:83:0x031c, B:85:0x0327, B:92:0x0340), top: B:213:0x026f }] */
+    /* JADX WARN: Code duplicated, block: B:69:0x02b3  */
+    /* JADX WARN: Code duplicated, block: B:72:0x02c2 A[Catch: Exception -> 0x03b0, TryCatch #0 {Exception -> 0x03b0, blocks: (B:64:0x026f, B:66:0x027c, B:68:0x02a2, B:70:0x02b4, B:71:0x02c1, B:72:0x02c2, B:74:0x02cd, B:75:0x02d4, B:77:0x02da, B:79:0x02ec, B:81:0x0316, B:83:0x031c, B:85:0x0327, B:92:0x0340), top: B:213:0x026f }] */
+    /* JADX WARN: Code duplicated, block: B:74:0x02cd A[Catch: Exception -> 0x03b0, TryCatch #0 {Exception -> 0x03b0, blocks: (B:64:0x026f, B:66:0x027c, B:68:0x02a2, B:70:0x02b4, B:71:0x02c1, B:72:0x02c2, B:74:0x02cd, B:75:0x02d4, B:77:0x02da, B:79:0x02ec, B:81:0x0316, B:83:0x031c, B:85:0x0327, B:92:0x0340), top: B:213:0x026f }] */
+    /* JADX WARN: Code duplicated, block: B:77:0x02da A[Catch: Exception -> 0x03b0, TryCatch #0 {Exception -> 0x03b0, blocks: (B:64:0x026f, B:66:0x027c, B:68:0x02a2, B:70:0x02b4, B:71:0x02c1, B:72:0x02c2, B:74:0x02cd, B:75:0x02d4, B:77:0x02da, B:79:0x02ec, B:81:0x0316, B:83:0x031c, B:85:0x0327, B:92:0x0340), top: B:213:0x026f }] */
+    /* JADX WARN: Code duplicated, block: B:79:0x02ec A[Catch: Exception -> 0x03b0, TryCatch #0 {Exception -> 0x03b0, blocks: (B:64:0x026f, B:66:0x027c, B:68:0x02a2, B:70:0x02b4, B:71:0x02c1, B:72:0x02c2, B:74:0x02cd, B:75:0x02d4, B:77:0x02da, B:79:0x02ec, B:81:0x0316, B:83:0x031c, B:85:0x0327, B:92:0x0340), top: B:213:0x026f }] */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Code duplicated, block: B:81:0x02ee A[Catch: Exception -> 0x03c4, TryCatch #25 {Exception -> 0x03c4, blocks: (B:68:0x0283, B:70:0x0290, B:72:0x02b6, B:74:0x02c8, B:75:0x02d5, B:76:0x02d6, B:78:0x02e1, B:79:0x02e8, B:81:0x02ee, B:83:0x0300, B:85:0x032a, B:87:0x0330, B:89:0x033b, B:96:0x0354), top: B:267:0x0283 }] */
-    /* JADX WARN: Code duplicated, block: B:83:0x0300 A[Catch: Exception -> 0x03c4, TryCatch #25 {Exception -> 0x03c4, blocks: (B:68:0x0283, B:70:0x0290, B:72:0x02b6, B:74:0x02c8, B:75:0x02d5, B:76:0x02d6, B:78:0x02e1, B:79:0x02e8, B:81:0x02ee, B:83:0x0300, B:85:0x032a, B:87:0x0330, B:89:0x033b, B:96:0x0354), top: B:267:0x0283 }] */
-    /* JADX WARN: Code duplicated, block: B:85:0x032a A[Catch: Exception -> 0x03c4, TryCatch #25 {Exception -> 0x03c4, blocks: (B:68:0x0283, B:70:0x0290, B:72:0x02b6, B:74:0x02c8, B:75:0x02d5, B:76:0x02d6, B:78:0x02e1, B:79:0x02e8, B:81:0x02ee, B:83:0x0300, B:85:0x032a, B:87:0x0330, B:89:0x033b, B:96:0x0354), top: B:267:0x0283 }] */
-    /* JADX WARN: Code duplicated, block: B:87:0x0330 A[Catch: Exception -> 0x03c4, TryCatch #25 {Exception -> 0x03c4, blocks: (B:68:0x0283, B:70:0x0290, B:72:0x02b6, B:74:0x02c8, B:75:0x02d5, B:76:0x02d6, B:78:0x02e1, B:79:0x02e8, B:81:0x02ee, B:83:0x0300, B:85:0x032a, B:87:0x0330, B:89:0x033b, B:96:0x0354), top: B:267:0x0283 }] */
-    /* JADX WARN: Code duplicated, block: B:89:0x033b A[Catch: Exception -> 0x03c4, TryCatch #25 {Exception -> 0x03c4, blocks: (B:68:0x0283, B:70:0x0290, B:72:0x02b6, B:74:0x02c8, B:75:0x02d5, B:76:0x02d6, B:78:0x02e1, B:79:0x02e8, B:81:0x02ee, B:83:0x0300, B:85:0x032a, B:87:0x0330, B:89:0x033b, B:96:0x0354), top: B:267:0x0283 }] */
-    /* JADX WARN: Code duplicated, block: B:92:0x034d  */
-    /* JADX WARN: Code duplicated, block: B:94:0x0350  */
-    /* JADX WARN: Code duplicated, block: B:95:0x0351  */
-    /* JADX WARN: Code duplicated, block: B:96:0x0354 A[Catch: Exception -> 0x03c4, TRY_LEAVE, TryCatch #25 {Exception -> 0x03c4, blocks: (B:68:0x0283, B:70:0x0290, B:72:0x02b6, B:74:0x02c8, B:75:0x02d5, B:76:0x02d6, B:78:0x02e1, B:79:0x02e8, B:81:0x02ee, B:83:0x0300, B:85:0x032a, B:87:0x0330, B:89:0x033b, B:96:0x0354), top: B:267:0x0283 }] */
-    /* JADX WARN: Code duplicated, block: B:98:0x0392  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:205:0x07a3 -> B:206:0x07ad). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:47:0x01eb -> B:239:0x0203). Please report as a decompilation issue!!! */
+    /* JADX WARN: Code duplicated, block: B:81:0x0316 A[Catch: Exception -> 0x03b0, TryCatch #0 {Exception -> 0x03b0, blocks: (B:64:0x026f, B:66:0x027c, B:68:0x02a2, B:70:0x02b4, B:71:0x02c1, B:72:0x02c2, B:74:0x02cd, B:75:0x02d4, B:77:0x02da, B:79:0x02ec, B:81:0x0316, B:83:0x031c, B:85:0x0327, B:92:0x0340), top: B:213:0x026f }] */
+    /* JADX WARN: Code duplicated, block: B:83:0x031c A[Catch: Exception -> 0x03b0, TryCatch #0 {Exception -> 0x03b0, blocks: (B:64:0x026f, B:66:0x027c, B:68:0x02a2, B:70:0x02b4, B:71:0x02c1, B:72:0x02c2, B:74:0x02cd, B:75:0x02d4, B:77:0x02da, B:79:0x02ec, B:81:0x0316, B:83:0x031c, B:85:0x0327, B:92:0x0340), top: B:213:0x026f }] */
+    /* JADX WARN: Code duplicated, block: B:85:0x0327 A[Catch: Exception -> 0x03b0, TryCatch #0 {Exception -> 0x03b0, blocks: (B:64:0x026f, B:66:0x027c, B:68:0x02a2, B:70:0x02b4, B:71:0x02c1, B:72:0x02c2, B:74:0x02cd, B:75:0x02d4, B:77:0x02da, B:79:0x02ec, B:81:0x0316, B:83:0x031c, B:85:0x0327, B:92:0x0340), top: B:213:0x026f }] */
+    /* JADX WARN: Code duplicated, block: B:88:0x0339  */
+    /* JADX WARN: Code duplicated, block: B:90:0x033c  */
+    /* JADX WARN: Code duplicated, block: B:91:0x033d  */
+    /* JADX WARN: Code duplicated, block: B:92:0x0340 A[Catch: Exception -> 0x03b0, TRY_LEAVE, TryCatch #0 {Exception -> 0x03b0, blocks: (B:64:0x026f, B:66:0x027c, B:68:0x02a2, B:70:0x02b4, B:71:0x02c1, B:72:0x02c2, B:74:0x02cd, B:75:0x02d4, B:77:0x02da, B:79:0x02ec, B:81:0x0316, B:83:0x031c, B:85:0x0327, B:92:0x0340), top: B:213:0x026f }] */
+    /* JADX WARN: Code duplicated, block: B:94:0x037e  */
+    /* JADX WARN: Code duplicated, block: B:97:0x03a6  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:201:0x078f -> B:202:0x0799). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:43:0x01d7 -> B:241:0x01ef). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
@@ -2886,7 +2795,7 @@ public final class PikashowProvider extends MainAPI {
     @org.jetbrains.annotations.Nullable
     public java.lang.Object search(@org.jetbrains.annotations.NotNull java.lang.String r50, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.util.List<? extends com.lagradost.cloudstream3.SearchResponse>> r51) {
         /*
-            Method dump skipped, instruction units count: 2122
+            Method dump skipped, instruction units count: 2102
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.cncverse.PikashowProvider.search(java.lang.String, kotlin.coroutines.Continuation):java.lang.Object");
@@ -3215,7 +3124,7 @@ public final class PikashowProvider extends MainAPI {
                                                                                 identifier5 = identifier3;
                                                                                 seasonNumber2 = seasonNumber;
                                                                                 url5 = url3;
-                                                                                episodes.add(MainAPIKt.newEpisode(this, "pikashow_episode:" + seriesData.getTitle() + ':' + seasonNumber2 + ':' + episodeNum, new Function1() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda9
+                                                                                episodes.add(MainAPIKt.newEpisode(this, "pikashow_episode:" + seriesData.getTitle() + ':' + seasonNumber2 + ':' + episodeNum, new Function1() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda5
                                                                                     public final Object invoke(Object obj4) {
                                                                                         return PikashowProvider.load$lambda$1$0$0(episodeNum, seasonNumber2, (Episode) obj4);
                                                                                     }
@@ -3434,7 +3343,7 @@ public final class PikashowProvider extends MainAPI {
                                                     identifier5 = identifier3;
                                                     seasonNumber2 = seasonNumber;
                                                     url5 = url3;
-                                                    episodes.add(MainAPIKt.newEpisode(this, "pikashow_episode:" + seriesData.getTitle() + ':' + seasonNumber2 + ':' + episodeNum, new Function1() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda9
+                                                    episodes.add(MainAPIKt.newEpisode(this, "pikashow_episode:" + seriesData.getTitle() + ':' + seasonNumber2 + ':' + episodeNum, new Function1() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda5
                                                         public final Object invoke(Object obj4) {
                                                             return PikashowProvider.load$lambda$1$0$0(episodeNum, seasonNumber2, (Episode) obj4);
                                                         }
@@ -3666,875 +3575,795 @@ public final class PikashowProvider extends MainAPI {
     }
 
     /* JADX INFO: Thrown type has an unknown type hierarchy: com.fasterxml.jackson.databind.RuntimeJsonMappingException */
-    /* JADX WARN: Code duplicated, block: B:101:0x0595  */
-    /* JADX WARN: Code duplicated, block: B:106:0x05a8  */
-    /* JADX WARN: Code duplicated, block: B:133:0x0733 A[Catch: Exception -> 0x0b4e, TRY_LEAVE, TryCatch #2 {Exception -> 0x0b4e, blocks: (B:131:0x0727, B:133:0x0733, B:192:0x08e2, B:194:0x08e6, B:196:0x08ea), top: B:258:0x0727 }] */
-    /* JADX WARN: Code duplicated, block: B:135:0x0744  */
-    /* JADX WARN: Code duplicated, block: B:136:0x074a A[Catch: Exception -> 0x0824, TRY_ENTER, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:138:0x0752  */
-    /* JADX WARN: Code duplicated, block: B:139:0x0753 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:141:0x075b  */
-    /* JADX WARN: Code duplicated, block: B:142:0x0761 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:144:0x0780 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:146:0x07a8 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:147:0x07b9  */
-    /* JADX WARN: Code duplicated, block: B:150:0x07c9 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:152:0x07d4 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:155:0x07e0 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:158:0x07fb A[LOOP:0: B:153:0x07da->B:158:0x07fb, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:161:0x0805  */
-    /* JADX WARN: Code duplicated, block: B:163:0x080b A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:167:0x0827 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:169:0x0831  */
-    /* JADX WARN: Code duplicated, block: B:170:0x0833 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:172:0x0852 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:174:0x0878 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:175:0x0887  */
-    /* JADX WARN: Code duplicated, block: B:178:0x0897 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:180:0x08a2 A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:183:0x08ae A[Catch: Exception -> 0x0824, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:186:0x08c5 A[LOOP:1: B:181:0x08a8->B:186:0x08c5, LOOP_END] */
-    /* JADX WARN: Code duplicated, block: B:189:0x08cf  */
-    /* JADX WARN: Code duplicated, block: B:191:0x08d5 A[Catch: Exception -> 0x0824, TRY_LEAVE, TryCatch #18 {Exception -> 0x0824, blocks: (B:136:0x074a, B:142:0x0761, B:144:0x0780, B:146:0x07a8, B:148:0x07bb, B:149:0x07c8, B:150:0x07c9, B:152:0x07d4, B:153:0x07da, B:155:0x07e0, B:160:0x0802, B:163:0x080b, B:139:0x0753, B:167:0x0827, B:170:0x0833, B:172:0x0852, B:174:0x0878, B:176:0x0889, B:177:0x0896, B:178:0x0897, B:180:0x08a2, B:181:0x08a8, B:183:0x08ae, B:188:0x08cc, B:191:0x08d5), top: B:288:0x0741 }] */
-    /* JADX WARN: Code duplicated, block: B:194:0x08e6 A[Catch: Exception -> 0x0b4e, TryCatch #2 {Exception -> 0x0b4e, blocks: (B:131:0x0727, B:133:0x0733, B:192:0x08e2, B:194:0x08e6, B:196:0x08ea), top: B:258:0x0727 }] */
-    /* JADX WARN: Code duplicated, block: B:205:0x0a08 A[Catch: Exception -> 0x0b29, TryCatch #5 {Exception -> 0x0b29, blocks: (B:203:0x09fa, B:205:0x0a08, B:207:0x0a2a, B:209:0x0a50, B:211:0x0a63, B:212:0x0a70, B:213:0x0a71, B:215:0x0a7f), top: B:264:0x09fa }] */
-    /* JADX WARN: Code duplicated, block: B:207:0x0a2a A[Catch: Exception -> 0x0b29, TryCatch #5 {Exception -> 0x0b29, blocks: (B:203:0x09fa, B:205:0x0a08, B:207:0x0a2a, B:209:0x0a50, B:211:0x0a63, B:212:0x0a70, B:213:0x0a71, B:215:0x0a7f), top: B:264:0x09fa }] */
-    /* JADX WARN: Code duplicated, block: B:209:0x0a50 A[Catch: Exception -> 0x0b29, TryCatch #5 {Exception -> 0x0b29, blocks: (B:203:0x09fa, B:205:0x0a08, B:207:0x0a2a, B:209:0x0a50, B:211:0x0a63, B:212:0x0a70, B:213:0x0a71, B:215:0x0a7f), top: B:264:0x09fa }] */
-    /* JADX WARN: Code duplicated, block: B:210:0x0a61  */
-    /* JADX WARN: Code duplicated, block: B:213:0x0a71 A[Catch: Exception -> 0x0b29, TryCatch #5 {Exception -> 0x0b29, blocks: (B:203:0x09fa, B:205:0x0a08, B:207:0x0a2a, B:209:0x0a50, B:211:0x0a63, B:212:0x0a70, B:213:0x0a71, B:215:0x0a7f), top: B:264:0x09fa }] */
-    /* JADX WARN: Code duplicated, block: B:215:0x0a7f A[Catch: Exception -> 0x0b29, TRY_LEAVE, TryCatch #5 {Exception -> 0x0b29, blocks: (B:203:0x09fa, B:205:0x0a08, B:207:0x0a2a, B:209:0x0a50, B:211:0x0a63, B:212:0x0a70, B:213:0x0a71, B:215:0x0a7f), top: B:264:0x09fa }] */
-    /* JADX WARN: Code duplicated, block: B:217:0x0b06 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:218:0x0b07  */
-    /* JADX WARN: Code duplicated, block: B:224:0x0b1f  */
-    /* JADX WARN: Code duplicated, block: B:231:0x0b45  */
-    /* JADX WARN: Code duplicated, block: B:295:0x07fe A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:296:0x07f9 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:297:0x08c8 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:298:0x08c3 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:80:0x0481  */
-    /* JADX WARN: Code duplicated, block: B:85:0x04a5 A[Catch: Exception -> 0x059a, TryCatch #13 {Exception -> 0x059a, blocks: (B:83:0x0494, B:85:0x04a5, B:87:0x04d1, B:89:0x04e4, B:90:0x04f1, B:91:0x04f2, B:93:0x04fe), top: B:279:0x0494 }] */
-    /* JADX WARN: Code duplicated, block: B:87:0x04d1 A[Catch: Exception -> 0x059a, TryCatch #13 {Exception -> 0x059a, blocks: (B:83:0x0494, B:85:0x04a5, B:87:0x04d1, B:89:0x04e4, B:90:0x04f1, B:91:0x04f2, B:93:0x04fe), top: B:279:0x0494 }] */
-    /* JADX WARN: Code duplicated, block: B:88:0x04e3  */
-    /* JADX WARN: Code duplicated, block: B:91:0x04f2 A[Catch: Exception -> 0x059a, TryCatch #13 {Exception -> 0x059a, blocks: (B:83:0x0494, B:85:0x04a5, B:87:0x04d1, B:89:0x04e4, B:90:0x04f1, B:91:0x04f2, B:93:0x04fe), top: B:279:0x0494 }] */
-    /* JADX WARN: Code duplicated, block: B:93:0x04fe A[Catch: Exception -> 0x059a, TRY_LEAVE, TryCatch #13 {Exception -> 0x059a, blocks: (B:83:0x0494, B:85:0x04a5, B:87:0x04d1, B:89:0x04e4, B:90:0x04f1, B:91:0x04f2, B:93:0x04fe), top: B:279:0x0494 }] */
-    /* JADX WARN: Code duplicated, block: B:95:0x0577 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:96:0x0578  */
+    /* JADX WARN: Code duplicated, block: B:100:0x0690 A[Catch: Exception -> 0x0ab4, TRY_LEAVE, TryCatch #7 {Exception -> 0x0ab4, blocks: (B:98:0x0684, B:100:0x0690, B:159:0x0841, B:161:0x0845, B:163:0x0849), top: B:237:0x0684 }] */
+    /* JADX WARN: Code duplicated, block: B:102:0x06a1  */
+    /* JADX WARN: Code duplicated, block: B:103:0x06a7 A[Catch: Exception -> 0x0781, TRY_ENTER, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:105:0x06af  */
+    /* JADX WARN: Code duplicated, block: B:106:0x06b0 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:108:0x06b8  */
+    /* JADX WARN: Code duplicated, block: B:109:0x06be A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:111:0x06dd A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:113:0x0705 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:114:0x0716  */
+    /* JADX WARN: Code duplicated, block: B:117:0x0726 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:119:0x0731 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:122:0x073d A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:125:0x0757 A[LOOP:0: B:120:0x0737->B:125:0x0757, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:128:0x0762  */
+    /* JADX WARN: Code duplicated, block: B:130:0x0768 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:134:0x0786 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:136:0x0790  */
+    /* JADX WARN: Code duplicated, block: B:137:0x0792 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:139:0x07b1 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:141:0x07d7 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:142:0x07e6  */
+    /* JADX WARN: Code duplicated, block: B:145:0x07f6 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:147:0x0801 A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:150:0x080d A[Catch: Exception -> 0x0781, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:153:0x0823 A[LOOP:1: B:148:0x0807->B:153:0x0823, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:156:0x082e  */
+    /* JADX WARN: Code duplicated, block: B:158:0x0834 A[Catch: Exception -> 0x0781, TRY_LEAVE, TryCatch #18 {Exception -> 0x0781, blocks: (B:103:0x06a7, B:109:0x06be, B:111:0x06dd, B:113:0x0705, B:115:0x0718, B:116:0x0725, B:117:0x0726, B:119:0x0731, B:120:0x0737, B:122:0x073d, B:127:0x075e, B:130:0x0768, B:106:0x06b0, B:134:0x0786, B:137:0x0792, B:139:0x07b1, B:141:0x07d7, B:143:0x07e8, B:144:0x07f5, B:145:0x07f6, B:147:0x0801, B:148:0x0807, B:150:0x080d, B:155:0x082a, B:158:0x0834), top: B:258:0x069e }] */
+    /* JADX WARN: Code duplicated, block: B:161:0x0845 A[Catch: Exception -> 0x0ab4, TryCatch #7 {Exception -> 0x0ab4, blocks: (B:98:0x0684, B:100:0x0690, B:159:0x0841, B:161:0x0845, B:163:0x0849), top: B:237:0x0684 }] */
+    /* JADX WARN: Code duplicated, block: B:172:0x096a A[Catch: Exception -> 0x0a89, TryCatch #3 {Exception -> 0x0a89, blocks: (B:170:0x095c, B:172:0x096a, B:174:0x098c, B:176:0x09b2, B:178:0x09c5, B:179:0x09d2, B:180:0x09d3, B:182:0x09e0), top: B:230:0x095c }] */
+    /* JADX WARN: Code duplicated, block: B:174:0x098c A[Catch: Exception -> 0x0a89, TryCatch #3 {Exception -> 0x0a89, blocks: (B:170:0x095c, B:172:0x096a, B:174:0x098c, B:176:0x09b2, B:178:0x09c5, B:179:0x09d2, B:180:0x09d3, B:182:0x09e0), top: B:230:0x095c }] */
+    /* JADX WARN: Code duplicated, block: B:176:0x09b2 A[Catch: Exception -> 0x0a89, TryCatch #3 {Exception -> 0x0a89, blocks: (B:170:0x095c, B:172:0x096a, B:174:0x098c, B:176:0x09b2, B:178:0x09c5, B:179:0x09d2, B:180:0x09d3, B:182:0x09e0), top: B:230:0x095c }] */
+    /* JADX WARN: Code duplicated, block: B:177:0x09c3  */
+    /* JADX WARN: Code duplicated, block: B:180:0x09d3 A[Catch: Exception -> 0x0a89, TryCatch #3 {Exception -> 0x0a89, blocks: (B:170:0x095c, B:172:0x096a, B:174:0x098c, B:176:0x09b2, B:178:0x09c5, B:179:0x09d2, B:180:0x09d3, B:182:0x09e0), top: B:230:0x095c }] */
+    /* JADX WARN: Code duplicated, block: B:182:0x09e0 A[Catch: Exception -> 0x0a89, TRY_LEAVE, TryCatch #3 {Exception -> 0x0a89, blocks: (B:170:0x095c, B:172:0x096a, B:174:0x098c, B:176:0x09b2, B:178:0x09c5, B:179:0x09d2, B:180:0x09d3, B:182:0x09e0), top: B:230:0x095c }] */
+    /* JADX WARN: Code duplicated, block: B:184:0x0a66 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:185:0x0a67  */
+    /* JADX WARN: Code duplicated, block: B:191:0x0a7d  */
+    /* JADX WARN: Code duplicated, block: B:198:0x0aa7  */
+    /* JADX WARN: Code duplicated, block: B:259:0x075a A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:260:0x0756 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:261:0x0826 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:262:0x0822 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:54:0x03f9  */
+    /* JADX WARN: Code duplicated, block: B:57:0x0421 A[Catch: Exception -> 0x0503, TryCatch #15 {Exception -> 0x0503, blocks: (B:69:0x04fe, B:55:0x03fb, B:57:0x0421, B:59:0x044d, B:61:0x0461, B:62:0x046e, B:63:0x046f, B:65:0x047b), top: B:253:0x03fb }] */
+    /* JADX WARN: Code duplicated, block: B:59:0x044d A[Catch: Exception -> 0x0503, TryCatch #15 {Exception -> 0x0503, blocks: (B:69:0x04fe, B:55:0x03fb, B:57:0x0421, B:59:0x044d, B:61:0x0461, B:62:0x046e, B:63:0x046f, B:65:0x047b), top: B:253:0x03fb }] */
+    /* JADX WARN: Code duplicated, block: B:60:0x045f  */
+    /* JADX WARN: Code duplicated, block: B:63:0x046f A[Catch: Exception -> 0x0503, TryCatch #15 {Exception -> 0x0503, blocks: (B:69:0x04fe, B:55:0x03fb, B:57:0x0421, B:59:0x044d, B:61:0x0461, B:62:0x046e, B:63:0x046f, B:65:0x047b), top: B:253:0x03fb }] */
+    /* JADX WARN: Code duplicated, block: B:65:0x047b A[Catch: Exception -> 0x0503, TryCatch #15 {Exception -> 0x0503, blocks: (B:69:0x04fe, B:55:0x03fb, B:57:0x0421, B:59:0x044d, B:61:0x0461, B:62:0x046e, B:63:0x046f, B:65:0x047b), top: B:253:0x03fb }] */
+    /* JADX WARN: Code duplicated, block: B:67:0x04f2 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:68:0x04f3  */
+    /* JADX WARN: Code duplicated, block: B:73:0x0505  */
+    /* JADX WARN: Code duplicated, block: B:74:0x0508  */
+    /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Unreachable blocks removed: 2, instructions: 2 */
     @Nullable
     public Object loadLinks(@NotNull String str, boolean z, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) throws RuntimeJsonMappingException {
         C00061 c00061;
-        boolean z2;
-        List list;
-        boolean z3;
         String str2;
         String str3;
-        int i;
-        Object obj;
-        C00061 c00062;
-        Function1<? super SubtitleFile, Unit> function3;
-        String str4;
-        String str5;
+        boolean z2;
         Map<String, String> map;
+        int i;
+        String str4;
+        C00061 c00062;
+        Object obj;
+        String str5;
         Map map2;
         String str6;
-        boolean z4;
+        Function1<? super SubtitleFile, Unit> function3;
         String str7;
-        Function1<? super ExtractorLink, Unit> function4;
         String str8;
-        boolean z5;
-        Function1<? super ExtractorLink, Unit> function5;
-        boolean z6;
+        String str9;
+        List list;
+        boolean z3;
+        Function1<? super ExtractorLink, Unit> function4;
+        String str10;
         Object obj2;
         Object obj3;
         Object obj4;
         Object obj5;
+        Object obj6;
+        Object obj7;
+        String str11;
         char c;
         PikashowSeries pikashowSeries;
-        String str9;
-        Object obj6;
-        String str10;
+        PikashowProvider pikashowProvider;
+        Object obj8;
+        boolean z4;
         C00061 c00063;
-        Object obj7;
+        String str12;
         Map<String, String> map3;
         Map map4;
-        String str11;
-        String str12;
         String str13;
         String str14;
-        boolean z7;
-        Function1<? super SubtitleFile, Unit> function6;
-        List list2;
         String str15;
-        Function1<? super ExtractorLink, Unit> function7;
-        PikashowProvider pikashowProvider;
-        NiceResponse niceResponse;
+        Function1<? super SubtitleFile, Unit> function5;
+        List list2;
         String str16;
+        PikashowProvider pikashowProvider2;
+        NiceResponse niceResponse;
+        Map<String, String> map5;
         Object value;
+        Map map6;
         VideoApiResponse videoApiResponse;
         VideoData data;
         String str17;
-        String str18;
-        boolean z8;
-        Function1<? super ExtractorLink, Unit> function8;
         String qualifiedName;
         NiceResponse niceResponse2;
         Ref.ObjectRef objectRef;
         Ref.ObjectRef objectRef2;
-        Map<String, String> map5;
-        String str19;
+        Map<String, String> map7;
+        String str18;
         Object value2;
         PikashowSeriesResponse pikashowSeriesResponse;
         List<PikashowSeries> series;
         PikashowSeries pikashowSeries2;
         Iterator<T> it;
-        Object obj8;
         Object next;
         PikashowSeriesResponse pikashowSeriesResponse2;
         String qualifiedName2;
         Object value3;
-        String str20;
+        String str19;
         List<PikashowMovie> records;
-        String str21;
+        String str20;
         Object obj9;
         Iterator<T> it2;
-        Object obj10;
         Object next2;
         String qualifiedName3;
-        String str22;
-        Ref.ObjectRef objectRef3;
-        String str23;
-        C00061 c00064;
-        Map<String, String> map6;
-        Map map7;
-        String str24;
-        Ref.ObjectRef objectRef4;
+        String str21;
         Map map8;
+        String str22;
+        C00061 c00064;
+        String str23;
+        String str24;
+        Map<String, String> map9;
         String str25;
-        NiceResponse niceResponse3;
+        Ref.ObjectRef objectRef3;
+        Ref.ObjectRef objectRef4;
+        boolean z5;
+        Function1<? super ExtractorLink, Unit> function6;
         String str26;
         String str27;
-        Object obj11;
-        boolean z9;
-        Function1<? super ExtractorLink, Unit> function9;
-        NiceResponse niceResponse4;
-        String str28;
-        String str29;
+        NiceResponse niceResponse3;
+        Map map10;
         Object value4;
         VideoApiResponse videoApiResponse2;
+        String str28;
         VideoData data2;
-        boolean z10;
-        Function1<? super ExtractorLink, Unit> function10;
+        String str29;
         String qualifiedName4;
-        PikashowProvider pikashowProvider2 = this;
+        boolean z6 = z;
+        Function1<? super ExtractorLink, Unit> function7 = function2;
         if (continuation instanceof C00061) {
             c00061 = (C00061) continuation;
             if ((c00061.label & Integer.MIN_VALUE) != 0) {
                 c00061.label -= Integer.MIN_VALUE;
             } else {
-                c00061 = pikashowProvider2.new C00061(continuation);
+                c00061 = new C00061(continuation);
             }
         } else {
-            c00061 = pikashowProvider2.new C00061(continuation);
+            c00061 = new C00061(continuation);
         }
         C00061 c00065 = c00061;
-        Object obj12 = c00065.result;
+        Object obj10 = c00065.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        Object obj11 = obj10;
         switch (c00065.label) {
             case 0:
-                ResultKt.throwOnFailure(obj12);
-                PikashowProvider pikashowProvider3 = pikashowProvider2;
-                final Context context2 = context;
-                SharedPreferences sharedPreferences = context2 != null ? context2.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                String string = sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null;
-                long j = sharedPreferences != null ? sharedPreferences.getLong("expires_at", 0L) : 0L;
-                long jCurrentTimeMillis = System.currentTimeMillis() / 1000;
-                if (!(Intrinsics.areEqual(string, "subscription") && (j == 0 || j > jCurrentTimeMillis))) {
-                    if (Intrinsics.areEqual(string, "subscription") && j > 0 && j <= jCurrentTimeMillis) {
-                        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda0
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                PikashowProvider.loadLinks$lambda$0$0(context2);
-                            }
-                        });
-                    }
-                    pikashowProvider3.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                }
+                ResultKt.throwOnFailure(obj11);
                 try {
                     String strRemovePrefix = StringsKt.removePrefix(str, getMainUrl() + '/');
                     Map<String, String> pikashowHeaders = getPikashowHeaders();
-                    if (StringsKt.startsWith$default(strRemovePrefix, "pikashow_episode:", false, 2, (Object) null)) {
-                        try {
-                            List listSplit$default = StringsKt.split$default(strRemovePrefix, new String[]{":"}, false, 0, 6, (Object) null);
-                            if (listSplit$default.size() >= 4) {
-                                String str30 = (String) listSplit$default.get(1);
-                                String str31 = (String) listSplit$default.get(2);
-                                String str32 = (String) listSplit$default.get(3);
-                                list = listSplit$default;
-                                String str33 = getMainUrl() + "/v1/api/video";
-                                Map mapMapOf = MapsKt.mapOf(new Pair[]{TuplesKt.to("type", "series"), TuplesKt.to("videoId", "0"), TuplesKt.to("title", str30), TuplesKt.to("noseasons", str31), TuplesKt.to("noepisodes", str32)});
-                                Requests app = MainActivityKt.getApp();
-                                c00065.L$0 = SpillingKt.nullOutSpilledVariable(str);
-                                c00065.L$1 = SpillingKt.nullOutSpilledVariable(function1);
-                                c00065.L$2 = function2;
-                                c00065.L$3 = SpillingKt.nullOutSpilledVariable(strRemovePrefix);
-                                c00065.L$4 = SpillingKt.nullOutSpilledVariable(pikashowHeaders);
-                                c00065.L$5 = SpillingKt.nullOutSpilledVariable(list);
-                                c00065.L$6 = SpillingKt.nullOutSpilledVariable(str30);
-                                c00065.L$7 = SpillingKt.nullOutSpilledVariable(str31);
-                                c00065.L$8 = str32;
-                                c00065.L$9 = SpillingKt.nullOutSpilledVariable(str33);
-                                c00065.L$10 = SpillingKt.nullOutSpilledVariable(mapMapOf);
-                                c00065.Z$0 = z;
-                                c00065.label = 1;
-                                z3 = true;
-                                str2 = str31;
-                                str3 = "Deserialized value did not match the specified type; specified ";
-                                i = 200;
-                                try {
-                                    obj = Requests.get$default(app, str33, pikashowHeaders, (String) null, mapMapOf, (Map) null, false, 0, (TimeUnit) null, 30L, (Interceptor) null, false, (ResponseParser) null, c00065, 3828, (Object) null);
-                                    c00062 = c00065;
-                                    if (obj == coroutine_suspended) {
-                                        return coroutine_suspended;
-                                    }
-                                    function3 = function1;
-                                    str4 = strRemovePrefix;
-                                    str5 = str32;
+                    str2 = " but was ";
+                    try {
+                        if (StringsKt.startsWith$default(strRemovePrefix, "pikashow_episode:", false, 2, (Object) null)) {
+                            try {
+                                List listSplit$default = StringsKt.split$default(strRemovePrefix, new String[]{":"}, false, 0, 6, (Object) null);
+                                if (listSplit$default.size() >= 4) {
+                                    String str30 = (String) listSplit$default.get(1);
+                                    String str31 = (String) listSplit$default.get(2);
+                                    String str32 = (String) listSplit$default.get(3);
+                                    str3 = strRemovePrefix;
+                                    String str33 = getMainUrl() + "/v1/api/video";
+                                    Map mapMapOf = MapsKt.mapOf(new Pair[]{TuplesKt.to("type", "series"), TuplesKt.to("videoId", "0"), TuplesKt.to("title", str30), TuplesKt.to("noseasons", str31), TuplesKt.to("noepisodes", str32)});
+                                    Requests app = MainActivityKt.getApp();
+                                    c00065.L$0 = SpillingKt.nullOutSpilledVariable(str);
+                                    c00065.L$1 = SpillingKt.nullOutSpilledVariable(function1);
+                                    c00065.L$2 = function7;
+                                    c00065.L$3 = SpillingKt.nullOutSpilledVariable(str3);
+                                    c00065.L$4 = SpillingKt.nullOutSpilledVariable(pikashowHeaders);
+                                    c00065.L$5 = SpillingKt.nullOutSpilledVariable(listSplit$default);
+                                    c00065.L$6 = SpillingKt.nullOutSpilledVariable(str30);
+                                    c00065.L$7 = SpillingKt.nullOutSpilledVariable(str31);
+                                    c00065.L$8 = str32;
+                                    c00065.L$9 = SpillingKt.nullOutSpilledVariable(str33);
+                                    c00065.L$10 = SpillingKt.nullOutSpilledVariable(mapMapOf);
+                                    c00065.Z$0 = z6;
+                                    c00065.label = 1;
+                                    z2 = true;
                                     map = pikashowHeaders;
-                                    map2 = mapMapOf;
-                                    str6 = str;
-                                    z4 = z;
-                                    str7 = str30;
-                                    function4 = function2;
-                                    str8 = str33;
+                                    i = 200;
+                                    str4 = null;
                                     try {
-                                        niceResponse = (NiceResponse) obj;
-                                        if (niceResponse.getCode() == i) {
-                                            pikashowProvider = this;
-                                            try {
-                                                str16 = str6;
+                                        Object obj12 = Requests.get$default(app, str33, map, (String) null, mapMapOf, (Map) null, false, 0, (TimeUnit) null, 30L, (Interceptor) null, false, (ResponseParser) null, c00065, 3828, (Object) null);
+                                        c00062 = c00065;
+                                        obj = coroutine_suspended;
+                                        if (obj12 == obj) {
+                                            return obj;
+                                        }
+                                        str5 = str33;
+                                        map2 = mapMapOf;
+                                        str6 = str;
+                                        function3 = function1;
+                                        str7 = str30;
+                                        obj11 = obj12;
+                                        str8 = str32;
+                                        str9 = str31;
+                                        list = listSplit$default;
+                                        try {
+                                            niceResponse = (NiceResponse) obj11;
+                                            if (niceResponse.getCode() == i) {
+                                                pikashowProvider2 = this;
                                                 try {
-                                                    value = pikashowProvider.mapper.readValue(niceResponse.getText(), new TypeReference<VideoApiResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$1
+                                                    map5 = map;
+                                                    value = pikashowProvider2.mapper.readValue(niceResponse.getText(), new TypeReference<VideoApiResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$1
                                                     });
                                                     if (!(value instanceof VideoApiResponse)) {
-                                                        StringBuilder sbAppend = new StringBuilder().append(str3).append(Reflection.getOrCreateKotlinClass(VideoApiResponse.class).getQualifiedName()).append("(non-null)").append(" but was ");
+                                                        StringBuilder sbAppend = new StringBuilder().append("Deserialized value did not match the specified type; specified ").append(Reflection.getOrCreateKotlinClass(VideoApiResponse.class).getQualifiedName()).append("(non-null)").append(str2);
                                                         if (value != null) {
                                                             qualifiedName = Reflection.getOrCreateKotlinClass(value.getClass()).getQualifiedName();
                                                         } else {
-                                                            qualifiedName = null;
+                                                            qualifiedName = str4;
                                                         }
                                                         throw new RuntimeJsonMappingException(sbAppend.append(qualifiedName).toString());
                                                     }
+                                                    map6 = map2;
                                                     videoApiResponse = (VideoApiResponse) value;
                                                     data = videoApiResponse.getData();
                                                     if (data != null) {
-                                                        String str34 = str7;
-                                                        str17 = "Episode " + str5;
-                                                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(str16);
+                                                        str17 = "Episode " + str8;
+                                                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(str6);
                                                         c00062.L$1 = SpillingKt.nullOutSpilledVariable(function3);
-                                                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(function4);
-                                                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(str4);
-                                                        c00062.L$4 = SpillingKt.nullOutSpilledVariable(map);
+                                                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                                                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(str3);
+                                                        c00062.L$4 = SpillingKt.nullOutSpilledVariable(map5);
                                                         c00062.L$5 = SpillingKt.nullOutSpilledVariable(list);
-                                                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(str34);
-                                                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(str2);
-                                                        c00062.L$8 = SpillingKt.nullOutSpilledVariable(str5);
-                                                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(str8);
-                                                        c00062.L$10 = SpillingKt.nullOutSpilledVariable(map2);
+                                                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(str7);
+                                                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(str9);
+                                                        c00062.L$8 = SpillingKt.nullOutSpilledVariable(str8);
+                                                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(str5);
+                                                        c00062.L$10 = SpillingKt.nullOutSpilledVariable(map6);
                                                         c00062.L$11 = SpillingKt.nullOutSpilledVariable(niceResponse);
                                                         c00062.L$12 = SpillingKt.nullOutSpilledVariable(videoApiResponse);
                                                         c00062.L$13 = SpillingKt.nullOutSpilledVariable(data);
-                                                        c00062.Z$0 = z4;
+                                                        c00062.Z$0 = z6;
                                                         c00062.I$0 = 0;
                                                         c00062.label = 2;
-                                                        if (pikashowProvider.addVideoLinksToCallback(data, function4, str17, c00062) == coroutine_suspended) {
-                                                            return coroutine_suspended;
+                                                        if (pikashowProvider2.addVideoLinksToCallback(data, function7, str17, c00062) == obj) {
+                                                            return obj;
                                                         }
-                                                        str18 = str16;
-                                                        z8 = z4;
-                                                        function8 = function4;
-                                                        try {
-                                                            return Boxing.boxBoolean(z3);
-                                                        } catch (Exception e) {
-                                                            e = e;
-                                                            z2 = false;
-                                                        }
+                                                        return Boxing.boxBoolean(z2);
                                                     }
-                                                } catch (Exception e2) {
-                                                    e = e2;
-                                                    z2 = false;
+                                                } catch (Exception e) {
+                                                    e = e;
                                                 }
-                                            } catch (Exception e3) {
-                                                e = e3;
-                                                z2 = false;
+                                            } else {
+                                                pikashowProvider2 = this;
+                                                map5 = map;
                                             }
-                                        } else {
-                                            pikashowProvider = this;
-                                            str16 = str6;
+                                            z3 = z6;
+                                            function4 = function7;
+                                        } catch (Exception e2) {
+                                            e = e2;
+                                            pikashowProvider2 = this;
                                         }
-                                        z5 = z4;
-                                        function5 = function4;
-                                        z2 = false;
-                                    } catch (Exception e4) {
-                                        e = e4;
-                                        pikashowProvider = this;
+                                    } catch (Exception e3) {
+                                        e = e3;
                                     }
-                                } catch (Exception e5) {
-                                    e = e5;
-                                    z2 = false;
+                                } else {
+                                    z3 = z;
+                                    function4 = function2;
                                 }
-                            } else {
-                                z2 = false;
-                                z5 = z;
-                                function5 = function2;
-                            }
-                        } catch (Exception e6) {
-                            e = e6;
-                            z2 = false;
-                        }
-                        System.out.println((Object) ("Error in loadLinks: " + e.getMessage()));
-                        return Boxing.boxBoolean(z2);
-                    }
-                    try {
-                        if (StringsKt.startsWith$default(strRemovePrefix, "pikashow:", false, 2, (Object) null)) {
-                            List listSplit$default2 = StringsKt.split$default(strRemovePrefix, new String[]{":"}, false, 0, 6, (Object) null);
-                            z2 = false;
-                            z2 = false;
-                            z2 = false;
-                            z2 = false;
-                            z2 = false;
-                            if (listSplit$default2.size() >= 3) {
-                                try {
-                                    String str35 = (String) listSplit$default2.get(1);
-                                    z6 = true;
-                                    String str36 = (String) listSplit$default2.get(2);
-                                    String str37 = getMainUrl() + "/v1/api/videos";
-                                    Map mapMapOf2 = MapsKt.mapOf(new Pair[]{TuplesKt.to("type", str36), TuplesKt.to("channel", "pikashow")});
-                                    try {
-                                        Requests app2 = MainActivityKt.getApp();
-                                        c00065.L$0 = SpillingKt.nullOutSpilledVariable(str);
-                                        c00065.L$1 = SpillingKt.nullOutSpilledVariable(function1);
-                                        c00065.L$2 = function2;
-                                        c00065.L$3 = SpillingKt.nullOutSpilledVariable(strRemovePrefix);
-                                        c00065.L$4 = pikashowHeaders;
-                                        c00065.L$5 = SpillingKt.nullOutSpilledVariable(listSplit$default2);
-                                        c00065.L$6 = str35;
-                                        c00065.L$7 = str36;
-                                        c00065.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                                        c00065.L$9 = SpillingKt.nullOutSpilledVariable(mapMapOf2);
-                                        c00065.Z$0 = z;
-                                        c00065.label = 3;
-                                        obj2 = "noseasons";
-                                        obj3 = "series";
-                                        obj4 = "0";
-                                        obj5 = "type";
-                                        c = 3;
-                                        pikashowSeries = null;
-                                        str9 = "/v1/api/video";
-                                        pikashowProvider2 = this;
-                                        obj6 = "videoId";
-                                        str10 = "Deserialized value did not match the specified type; specified ";
-                                        try {
-                                            Object obj13 = Requests.get$default(app2, str37, pikashowHeaders, (String) null, mapMapOf2, (Map) null, false, 0, (TimeUnit) null, 30L, (Interceptor) null, false, (ResponseParser) null, c00065, 3828, (Object) null);
-                                            c00063 = c00065;
-                                            if (obj13 == coroutine_suspended) {
-                                                return coroutine_suspended;
-                                            }
-                                            obj7 = obj13;
-                                            map3 = pikashowHeaders;
-                                            map4 = mapMapOf2;
-                                            str11 = str37;
-                                            str12 = str36;
-                                            str13 = strRemovePrefix;
-                                            str14 = str35;
-                                            z7 = z;
-                                            function6 = function1;
-                                            list2 = listSplit$default2;
-                                            str15 = str;
-                                            function7 = function2;
-                                            try {
-                                                niceResponse2 = (NiceResponse) obj7;
-                                                if (niceResponse2.getCode() == 200) {
-                                                    objectRef = new Ref.ObjectRef();
-                                                    objectRef2 = new Ref.ObjectRef();
-                                                    try {
-                                                        switch (str12.hashCode()) {
-                                                            case -905838985:
-                                                                map5 = map3;
-                                                                str19 = r19;
-                                                                if (!str12.equals(obj3)) {
-                                                                    value2 = pikashowProvider2.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowSeriesResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$2
-                                                                    });
-                                                                    if (!(value2 instanceof PikashowSeriesResponse)) {
-                                                                        StringBuilder sbAppend2 = new StringBuilder().append(str10).append(Reflection.getOrCreateKotlinClass(PikashowSeriesResponse.class).getQualifiedName()).append("(non-null)").append(str19);
-                                                                        if (value2 != null) {
-                                                                            qualifiedName2 = Reflection.getOrCreateKotlinClass(value2.getClass()).getQualifiedName();
-                                                                        } else {
-                                                                            qualifiedName2 = pikashowSeries;
-                                                                        }
-                                                                        throw new RuntimeJsonMappingException(sbAppend2.append(qualifiedName2).toString());
-                                                                    }
-                                                                    pikashowSeriesResponse = (PikashowSeriesResponse) value2;
-                                                                    series = pikashowSeriesResponse.getSeries();
-                                                                    if (series != null) {
-                                                                        it = series.iterator();
-                                                                        while (true) {
-                                                                            if (it.hasNext()) {
-                                                                                next = it.next();
-                                                                                pikashowSeriesResponse2 = pikashowSeriesResponse;
-                                                                                if (Intrinsics.areEqual(((PikashowSeries) next).getTitle(), str14)) {
-                                                                                    obj8 = next;
-                                                                                } else {
-                                                                                    pikashowSeriesResponse = pikashowSeriesResponse2;
-                                                                                }
-                                                                            } else {
-                                                                                obj8 = pikashowSeries;
-                                                                            }
-                                                                        }
-                                                                        pikashowSeries2 = (PikashowSeries) obj8;
-                                                                    } else {
-                                                                        pikashowSeries2 = pikashowSeries;
-                                                                    }
-                                                                    if (pikashowSeries2 != null) {
-                                                                        objectRef.element = obj4;
-                                                                        objectRef2.element = pikashowSeries2.getTitle();
-                                                                        Unit unit = Unit.INSTANCE;
-                                                                    }
-                                                                }
-                                                                if (objectRef.element == null && objectRef2.element != null) {
-                                                                    String str38 = (String) objectRef2.element;
-                                                                    String str39 = pikashowProvider2.getMainUrl() + str9;
-                                                                    Pair[] pairArr = new Pair[5];
-                                                                    pairArr[z2 ? 1 : 0] = TuplesKt.to(obj5, str12);
-                                                                    String str40 = str14;
-                                                                    pairArr[z6 ? 1 : 0] = TuplesKt.to(obj6, objectRef.element);
-                                                                    pairArr[2] = TuplesKt.to("title", str38);
-                                                                    pairArr[c] = TuplesKt.to(obj2, "1");
-                                                                    pairArr[4] = TuplesKt.to("noepisodes", obj4);
-                                                                    Map mapMapOf3 = MapsKt.mapOf(pairArr);
-                                                                    Requests app3 = MainActivityKt.getApp();
-                                                                    c00063.L$0 = SpillingKt.nullOutSpilledVariable(str15);
-                                                                    c00063.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                                                                    c00063.L$2 = function7;
-                                                                    c00063.L$3 = SpillingKt.nullOutSpilledVariable(str13);
-                                                                    c00063.L$4 = SpillingKt.nullOutSpilledVariable(map5);
-                                                                    c00063.L$5 = SpillingKt.nullOutSpilledVariable(list2);
-                                                                    c00063.L$6 = SpillingKt.nullOutSpilledVariable(str40);
-                                                                    c00063.L$7 = SpillingKt.nullOutSpilledVariable(str12);
-                                                                    c00063.L$8 = SpillingKt.nullOutSpilledVariable(str11);
-                                                                    c00063.L$9 = SpillingKt.nullOutSpilledVariable(map4);
-                                                                    c00063.L$10 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                                                                    c00063.L$11 = SpillingKt.nullOutSpilledVariable(objectRef);
-                                                                    c00063.L$12 = SpillingKt.nullOutSpilledVariable(objectRef2);
-                                                                    c00063.L$13 = str38;
-                                                                    c00063.L$14 = SpillingKt.nullOutSpilledVariable(str39);
-                                                                    c00063.L$15 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
-                                                                    c00063.Z$0 = z7;
-                                                                    c00063.label = 4;
-                                                                    C00061 c00066 = c00063;
-                                                                    boolean z11 = z7;
-                                                                    str22 = str40;
-                                                                    objectRef3 = objectRef;
-                                                                    String str41 = str12;
-                                                                    Function1<? super ExtractorLink, Unit> function11 = function7;
-                                                                    Map<String, String> map9 = map5;
-                                                                    str23 = str19;
-                                                                    try {
-                                                                        Object obj14 = Requests.get$default(app3, str39, map9, (String) null, mapMapOf3, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00066, 4084, (Object) null);
-                                                                        c00064 = c00066;
-                                                                        if (obj14 == coroutine_suspended) {
-                                                                            return coroutine_suspended;
-                                                                        }
-                                                                        map6 = map9;
-                                                                        map7 = mapMapOf3;
-                                                                        str24 = str39;
-                                                                        objectRef4 = objectRef2;
-                                                                        map8 = map4;
-                                                                        str25 = str11;
-                                                                        niceResponse3 = niceResponse2;
-                                                                        str26 = str38;
-                                                                        str27 = str41;
-                                                                        obj11 = obj14;
-                                                                        z9 = z11;
-                                                                        function9 = function11;
-                                                                        try {
-                                                                            niceResponse4 = (NiceResponse) obj11;
-                                                                            str28 = str24;
-                                                                            if (niceResponse4.getCode() != 404) {
-                                                                                str29 = str26;
-                                                                                value4 = pikashowProvider2.mapper.readValue(niceResponse4.getText(), new TypeReference<VideoApiResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$4
-                                                                                });
-                                                                                if (!(value4 instanceof VideoApiResponse)) {
-                                                                                    StringBuilder sbAppend3 = new StringBuilder().append(str10).append(Reflection.getOrCreateKotlinClass(VideoApiResponse.class).getQualifiedName()).append("(non-null)").append(str23);
-                                                                                    if (value4 != null) {
-                                                                                        qualifiedName4 = Reflection.getOrCreateKotlinClass(value4.getClass()).getQualifiedName();
-                                                                                    } else {
-                                                                                        qualifiedName4 = pikashowSeries;
-                                                                                    }
-                                                                                    throw new RuntimeJsonMappingException(sbAppend3.append(qualifiedName4).toString());
-                                                                                }
-                                                                                videoApiResponse2 = (VideoApiResponse) value4;
-                                                                                data2 = videoApiResponse2.getData();
-                                                                                if (data2 != null) {
-                                                                                    c00064.L$0 = SpillingKt.nullOutSpilledVariable(str15);
-                                                                                    c00064.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                                                                                    c00064.L$2 = SpillingKt.nullOutSpilledVariable(function9);
-                                                                                    c00064.L$3 = SpillingKt.nullOutSpilledVariable(str13);
-                                                                                    c00064.L$4 = SpillingKt.nullOutSpilledVariable(map6);
-                                                                                    c00064.L$5 = SpillingKt.nullOutSpilledVariable(list2);
-                                                                                    c00064.L$6 = SpillingKt.nullOutSpilledVariable(str22);
-                                                                                    c00064.L$7 = SpillingKt.nullOutSpilledVariable(str27);
-                                                                                    c00064.L$8 = SpillingKt.nullOutSpilledVariable(str25);
-                                                                                    c00064.L$9 = SpillingKt.nullOutSpilledVariable(map8);
-                                                                                    c00064.L$10 = SpillingKt.nullOutSpilledVariable(niceResponse3);
-                                                                                    c00064.L$11 = SpillingKt.nullOutSpilledVariable(objectRef3);
-                                                                                    c00064.L$12 = SpillingKt.nullOutSpilledVariable(objectRef4);
-                                                                                    c00064.L$13 = SpillingKt.nullOutSpilledVariable(str29);
-                                                                                    c00064.L$14 = SpillingKt.nullOutSpilledVariable(str28);
-                                                                                    c00064.L$15 = SpillingKt.nullOutSpilledVariable(map7);
-                                                                                    c00064.L$16 = SpillingKt.nullOutSpilledVariable(niceResponse4);
-                                                                                    c00064.L$17 = SpillingKt.nullOutSpilledVariable(videoApiResponse2);
-                                                                                    c00064.L$18 = SpillingKt.nullOutSpilledVariable(str29);
-                                                                                    c00064.L$19 = SpillingKt.nullOutSpilledVariable(data2);
-                                                                                    c00064.Z$0 = z9;
-                                                                                    c00064.I$0 = 0;
-                                                                                    c00064.label = 5;
-                                                                                    if (pikashowProvider2.addVideoLinksToCallback(data2, function9, str29, c00064) == coroutine_suspended) {
-                                                                                        return coroutine_suspended;
-                                                                                    }
-                                                                                    z10 = z9;
-                                                                                    function10 = function9;
-                                                                                    try {
-                                                                                        return Boxing.boxBoolean(z6);
-                                                                                    } catch (Exception e7) {
-                                                                                        e = e7;
-                                                                                    }
-                                                                                }
-                                                                                break;
-                                                                            }
-                                                                            z5 = z9;
-                                                                            function5 = function9;
-                                                                        } catch (Exception e8) {
-                                                                            e = e8;
-                                                                        }
-                                                                    } catch (Exception e9) {
-                                                                        e = e9;
-                                                                    }
-                                                                } else {
-                                                                    z5 = z7;
-                                                                    function5 = function7;
-                                                                }
-                                                                break;
-                                                            case -584959943:
-                                                                if (str12.equals("bollywood")) {
-                                                                    map5 = map3;
-                                                                    value3 = pikashowProvider2.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowMovieResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$3
-                                                                    });
-                                                                    if (!(value3 instanceof PikashowMovieResponse)) {
-                                                                        StringBuilder sbAppend4 = new StringBuilder().append(str10).append(Reflection.getOrCreateKotlinClass(PikashowMovieResponse.class).getQualifiedName()).append("(non-null)").append(r19);
-                                                                        if (value3 != null) {
-                                                                            qualifiedName3 = Reflection.getOrCreateKotlinClass(value3.getClass()).getQualifiedName();
-                                                                        } else {
-                                                                            qualifiedName3 = pikashowSeries;
-                                                                        }
-                                                                        throw new RuntimeJsonMappingException(sbAppend4.append(qualifiedName3).toString());
-                                                                    }
-                                                                    str20 = r19;
-                                                                    records = ((PikashowMovieResponse) value3).getRecords();
-                                                                    if (records != null) {
-                                                                        it2 = records.iterator();
-                                                                        while (true) {
-                                                                            if (it2.hasNext()) {
-                                                                                next2 = it2.next();
-                                                                                str21 = str20;
-                                                                                if (Intrinsics.areEqual(String.valueOf(((PikashowMovie) next2).getSortOrder()), str14)) {
-                                                                                    obj10 = next2;
-                                                                                } else {
-                                                                                    str20 = str21;
-                                                                                }
-                                                                            } else {
-                                                                                str21 = str20;
-                                                                                obj10 = pikashowSeries;
-                                                                            }
-                                                                        }
-                                                                        obj9 = (PikashowMovie) obj10;
-                                                                    } else {
-                                                                        str21 = str20;
-                                                                        obj9 = pikashowSeries;
-                                                                    }
-                                                                    if (obj9 != null) {
-                                                                        PikashowMovie pikashowMovie = obj9;
-                                                                        objectRef.element = String.valueOf(pikashowMovie.getSortOrder());
-                                                                        objectRef2.element = pikashowMovie.getTitle();
-                                                                        Unit unit2 = Unit.INSTANCE;
-                                                                    }
-                                                                    str19 = str21;
-                                                                } else {
-                                                                    map5 = map3;
-                                                                    str19 = r19;
-                                                                }
-                                                                if (objectRef.element == null) {
-                                                                }
-                                                                z5 = z7;
-                                                                function5 = function7;
-                                                                break;
-                                                            case 1455215167:
-                                                                if (str12.equals("hollywood")) {
-                                                                    map5 = map3;
-                                                                    value3 = pikashowProvider2.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowMovieResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$3
-                                                                    });
-                                                                    if (!(value3 instanceof PikashowMovieResponse)) {
-                                                                        StringBuilder sbAppend5 = new StringBuilder().append(str10).append(Reflection.getOrCreateKotlinClass(PikashowMovieResponse.class).getQualifiedName()).append("(non-null)").append(r19);
-                                                                        if (value3 != null) {
-                                                                            qualifiedName3 = Reflection.getOrCreateKotlinClass(value3.getClass()).getQualifiedName();
-                                                                        } else {
-                                                                            qualifiedName3 = pikashowSeries;
-                                                                        }
-                                                                        throw new RuntimeJsonMappingException(sbAppend5.append(qualifiedName3).toString());
-                                                                    }
-                                                                    str20 = r19;
-                                                                    records = ((PikashowMovieResponse) value3).getRecords();
-                                                                    if (records != null) {
-                                                                        it2 = records.iterator();
-                                                                        while (true) {
-                                                                            if (it2.hasNext()) {
-                                                                                next2 = it2.next();
-                                                                                str21 = str20;
-                                                                                if (Intrinsics.areEqual(String.valueOf(((PikashowMovie) next2).getSortOrder()), str14)) {
-                                                                                    obj10 = next2;
-                                                                                } else {
-                                                                                    str20 = str21;
-                                                                                }
-                                                                            } else {
-                                                                                str21 = str20;
-                                                                                obj10 = pikashowSeries;
-                                                                            }
-                                                                        }
-                                                                        obj9 = (PikashowMovie) obj10;
-                                                                    } else {
-                                                                        str21 = str20;
-                                                                        obj9 = pikashowSeries;
-                                                                    }
-                                                                    if (obj9 != null) {
-                                                                        PikashowMovie pikashowMovie2 = obj9;
-                                                                        objectRef.element = String.valueOf(pikashowMovie2.getSortOrder());
-                                                                        objectRef2.element = pikashowMovie2.getTitle();
-                                                                        Unit unit3 = Unit.INSTANCE;
-                                                                    }
-                                                                    str19 = str21;
-                                                                } else {
-                                                                    map5 = map3;
-                                                                    str19 = r19;
-                                                                }
-                                                                if (objectRef.element == null) {
-                                                                }
-                                                                z5 = z7;
-                                                                function5 = function7;
-                                                                break;
-                                                            default:
-                                                                map5 = map3;
-                                                                str19 = " but was ";
-                                                                if (objectRef.element == null) {
-                                                                }
-                                                                z5 = z7;
-                                                                function5 = function7;
-                                                                break;
-                                                        }
-                                                    } catch (Exception e10) {
-                                                        e = e10;
-                                                    }
-                                                } else {
-                                                    z5 = z7;
-                                                    function5 = function7;
-                                                }
-                                            } catch (Exception e11) {
-                                                e = e11;
-                                            }
-                                        } catch (Exception e12) {
-                                            e = e12;
-                                        }
-                                    } catch (Exception e13) {
-                                        e = e13;
-                                    }
-                                } catch (Exception e14) {
-                                    e = e14;
-                                }
+                            } catch (Exception e4) {
+                                e = e4;
                             }
                             System.out.println((Object) ("Error in loadLinks: " + e.getMessage()));
-                            return Boxing.boxBoolean(z2);
+                            return Boxing.boxBoolean(false);
                         }
-                        z2 = false;
-                        z5 = z;
-                        function5 = function2;
-                    } catch (Exception e15) {
-                        e = e15;
-                        z2 = false;
+                        str10 = str2;
+                        obj2 = coroutine_suspended;
+                        try {
+                            if (StringsKt.startsWith$default(strRemovePrefix, "pikashow:", false, 2, (Object) null)) {
+                                List listSplit$default2 = StringsKt.split$default(strRemovePrefix, new String[]{":"}, false, 0, 6, (Object) null);
+                                if (listSplit$default2.size() >= 3) {
+                                    String str34 = (String) listSplit$default2.get(1);
+                                    String str35 = (String) listSplit$default2.get(2);
+                                    String str36 = getMainUrl() + "/v1/api/videos";
+                                    Map mapMapOf2 = MapsKt.mapOf(new Pair[]{TuplesKt.to("type", str35), TuplesKt.to("channel", "pikashow")});
+                                    Requests app2 = MainActivityKt.getApp();
+                                    c00065.L$0 = SpillingKt.nullOutSpilledVariable(str);
+                                    c00065.L$1 = SpillingKt.nullOutSpilledVariable(function1);
+                                    c00065.L$2 = function7;
+                                    c00065.L$3 = SpillingKt.nullOutSpilledVariable(strRemovePrefix);
+                                    c00065.L$4 = pikashowHeaders;
+                                    c00065.L$5 = SpillingKt.nullOutSpilledVariable(listSplit$default2);
+                                    c00065.L$6 = str34;
+                                    c00065.L$7 = str35;
+                                    c00065.L$8 = SpillingKt.nullOutSpilledVariable(str36);
+                                    c00065.L$9 = SpillingKt.nullOutSpilledVariable(mapMapOf2);
+                                    c00065.Z$0 = z6;
+                                    c00065.label = 3;
+                                    obj3 = "noepisodes";
+                                    obj4 = "title";
+                                    obj5 = "videoId";
+                                    obj6 = "0";
+                                    obj7 = "type";
+                                    str11 = "Deserialized value did not match the specified type; specified ";
+                                    c = 3;
+                                    pikashowSeries = null;
+                                    pikashowProvider = this;
+                                    obj8 = "series";
+                                    z4 = true;
+                                    try {
+                                        Object obj13 = Requests.get$default(app2, str36, pikashowHeaders, (String) null, mapMapOf2, (Map) null, false, 0, (TimeUnit) null, 30L, (Interceptor) null, false, (ResponseParser) null, c00065, 3828, (Object) null);
+                                        c00063 = c00065;
+                                        if (obj13 == obj2) {
+                                            return obj2;
+                                        }
+                                        obj11 = obj13;
+                                        str12 = str36;
+                                        map3 = pikashowHeaders;
+                                        map4 = mapMapOf2;
+                                        str13 = str35;
+                                        str14 = strRemovePrefix;
+                                        str15 = str34;
+                                        function5 = function1;
+                                        list2 = listSplit$default2;
+                                        str16 = str;
+                                        z3 = z;
+                                        function4 = function2;
+                                        try {
+                                            niceResponse2 = (NiceResponse) obj11;
+                                            if (niceResponse2.getCode() == 200) {
+                                                objectRef = new Ref.ObjectRef();
+                                                objectRef2 = new Ref.ObjectRef();
+                                                try {
+                                                    switch (str13.hashCode()) {
+                                                        case -905838985:
+                                                            map7 = map3;
+                                                            str18 = str10;
+                                                            if (!str13.equals(obj8)) {
+                                                                value2 = pikashowProvider.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowSeriesResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$2
+                                                                });
+                                                                if (!(value2 instanceof PikashowSeriesResponse)) {
+                                                                    StringBuilder sbAppend2 = new StringBuilder().append(str11).append(Reflection.getOrCreateKotlinClass(PikashowSeriesResponse.class).getQualifiedName()).append("(non-null)").append(str18);
+                                                                    if (value2 != null) {
+                                                                        qualifiedName2 = Reflection.getOrCreateKotlinClass(value2.getClass()).getQualifiedName();
+                                                                    } else {
+                                                                        qualifiedName2 = pikashowSeries;
+                                                                    }
+                                                                    throw new RuntimeJsonMappingException(sbAppend2.append(qualifiedName2).toString());
+                                                                }
+                                                                pikashowSeriesResponse = (PikashowSeriesResponse) value2;
+                                                                series = pikashowSeriesResponse.getSeries();
+                                                                if (series != null) {
+                                                                    it = series.iterator();
+                                                                    while (true) {
+                                                                        if (it.hasNext()) {
+                                                                            next = it.next();
+                                                                            pikashowSeriesResponse2 = pikashowSeriesResponse;
+                                                                            if (Intrinsics.areEqual(((PikashowSeries) next).getTitle(), str15)) {
+                                                                                pikashowSeriesResponse = pikashowSeriesResponse2;
+                                                                            }
+                                                                        } else {
+                                                                            next = pikashowSeries;
+                                                                        }
+                                                                    }
+                                                                    pikashowSeries2 = (PikashowSeries) next;
+                                                                } else {
+                                                                    pikashowSeries2 = pikashowSeries;
+                                                                }
+                                                                if (pikashowSeries2 != null) {
+                                                                    objectRef.element = obj6;
+                                                                    objectRef2.element = pikashowSeries2.getTitle();
+                                                                    Unit unit = Unit.INSTANCE;
+                                                                }
+                                                            }
+                                                            if (objectRef.element == null && objectRef2.element != null) {
+                                                                String str37 = (String) objectRef2.element;
+                                                                String str38 = pikashowProvider.getMainUrl() + "/v1/api/video";
+                                                                Pair[] pairArr = new Pair[5];
+                                                                pairArr[0] = TuplesKt.to(obj7, str13);
+                                                                String str39 = str15;
+                                                                pairArr[z4 ? 1 : 0] = TuplesKt.to(obj5, objectRef.element);
+                                                                pairArr[2] = TuplesKt.to(obj4, str37);
+                                                                pairArr[c] = TuplesKt.to("noseasons", "1");
+                                                                pairArr[4] = TuplesKt.to(obj3, obj6);
+                                                                Map mapMapOf3 = MapsKt.mapOf(pairArr);
+                                                                Requests app3 = MainActivityKt.getApp();
+                                                                c00063.L$0 = SpillingKt.nullOutSpilledVariable(str16);
+                                                                c00063.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                                                                c00063.L$2 = function4;
+                                                                c00063.L$3 = SpillingKt.nullOutSpilledVariable(str14);
+                                                                c00063.L$4 = SpillingKt.nullOutSpilledVariable(map7);
+                                                                c00063.L$5 = SpillingKt.nullOutSpilledVariable(list2);
+                                                                c00063.L$6 = SpillingKt.nullOutSpilledVariable(str39);
+                                                                c00063.L$7 = SpillingKt.nullOutSpilledVariable(str13);
+                                                                c00063.L$8 = SpillingKt.nullOutSpilledVariable(str12);
+                                                                c00063.L$9 = SpillingKt.nullOutSpilledVariable(map4);
+                                                                c00063.L$10 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                                                                c00063.L$11 = SpillingKt.nullOutSpilledVariable(objectRef);
+                                                                c00063.L$12 = SpillingKt.nullOutSpilledVariable(objectRef2);
+                                                                c00063.L$13 = str37;
+                                                                c00063.L$14 = SpillingKt.nullOutSpilledVariable(str38);
+                                                                c00063.L$15 = SpillingKt.nullOutSpilledVariable(mapMapOf3);
+                                                                c00063.Z$0 = z3;
+                                                                c00063.label = 4;
+                                                                C00061 c00066 = c00063;
+                                                                Function1<? super ExtractorLink, Unit> function8 = function4;
+                                                                boolean z7 = z3;
+                                                                str21 = str39;
+                                                                Map<String, String> map11 = map7;
+                                                                String str40 = str13;
+                                                                map8 = mapMapOf3;
+                                                                str22 = str18;
+                                                                try {
+                                                                    Object obj14 = Requests.get$default(app3, str38, map11, (String) null, map8, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00066, 4084, (Object) null);
+                                                                    c00064 = c00066;
+                                                                    if (obj14 == obj2) {
+                                                                        return obj2;
+                                                                    }
+                                                                    str23 = str40;
+                                                                    str24 = str37;
+                                                                    obj11 = obj14;
+                                                                    map9 = map11;
+                                                                    str25 = str38;
+                                                                    objectRef3 = objectRef;
+                                                                    objectRef4 = objectRef2;
+                                                                    z5 = z7;
+                                                                    function6 = function8;
+                                                                    str26 = str14;
+                                                                    str27 = str12;
+                                                                    try {
+                                                                        niceResponse3 = (NiceResponse) obj11;
+                                                                        if (niceResponse3.getCode() != 404) {
+                                                                            map10 = map8;
+                                                                            value4 = pikashowProvider.mapper.readValue(niceResponse3.getText(), new TypeReference<VideoApiResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$4
+                                                                            });
+                                                                            if (!(value4 instanceof VideoApiResponse)) {
+                                                                                StringBuilder sbAppend3 = new StringBuilder().append(str11).append(Reflection.getOrCreateKotlinClass(VideoApiResponse.class).getQualifiedName()).append("(non-null)").append(str22);
+                                                                                if (value4 != null) {
+                                                                                    qualifiedName4 = Reflection.getOrCreateKotlinClass(value4.getClass()).getQualifiedName();
+                                                                                } else {
+                                                                                    qualifiedName4 = pikashowSeries;
+                                                                                }
+                                                                                throw new RuntimeJsonMappingException(sbAppend3.append(qualifiedName4).toString());
+                                                                            }
+                                                                            videoApiResponse2 = (VideoApiResponse) value4;
+                                                                            str28 = str24;
+                                                                            data2 = videoApiResponse2.getData();
+                                                                            if (data2 != null) {
+                                                                                c00064.L$0 = SpillingKt.nullOutSpilledVariable(str16);
+                                                                                c00064.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                                                                                c00064.L$2 = SpillingKt.nullOutSpilledVariable(function6);
+                                                                                c00064.L$3 = SpillingKt.nullOutSpilledVariable(str26);
+                                                                                c00064.L$4 = SpillingKt.nullOutSpilledVariable(map9);
+                                                                                c00064.L$5 = SpillingKt.nullOutSpilledVariable(list2);
+                                                                                c00064.L$6 = SpillingKt.nullOutSpilledVariable(str21);
+                                                                                c00064.L$7 = SpillingKt.nullOutSpilledVariable(str23);
+                                                                                c00064.L$8 = SpillingKt.nullOutSpilledVariable(str27);
+                                                                                c00064.L$9 = SpillingKt.nullOutSpilledVariable(map4);
+                                                                                c00064.L$10 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                                                                                c00064.L$11 = SpillingKt.nullOutSpilledVariable(objectRef3);
+                                                                                c00064.L$12 = SpillingKt.nullOutSpilledVariable(objectRef4);
+                                                                                c00064.L$13 = SpillingKt.nullOutSpilledVariable(str24);
+                                                                                c00064.L$14 = SpillingKt.nullOutSpilledVariable(str25);
+                                                                                c00064.L$15 = SpillingKt.nullOutSpilledVariable(map10);
+                                                                                c00064.L$16 = SpillingKt.nullOutSpilledVariable(niceResponse3);
+                                                                                c00064.L$17 = SpillingKt.nullOutSpilledVariable(videoApiResponse2);
+                                                                                c00064.L$18 = SpillingKt.nullOutSpilledVariable(str28);
+                                                                                c00064.L$19 = SpillingKt.nullOutSpilledVariable(data2);
+                                                                                c00064.Z$0 = z5;
+                                                                                c00064.I$0 = 0;
+                                                                                c00064.label = 5;
+                                                                                if (pikashowProvider.addVideoLinksToCallback(data2, function6, str28, c00064) == obj2) {
+                                                                                    return obj2;
+                                                                                }
+                                                                                str29 = str16;
+                                                                                try {
+                                                                                    return Boxing.boxBoolean(z4);
+                                                                                } catch (Exception e5) {
+                                                                                    e = e5;
+                                                                                }
+                                                                            }
+                                                                            break;
+                                                                        }
+                                                                        z3 = z5;
+                                                                        function4 = function6;
+                                                                    } catch (Exception e6) {
+                                                                        e = e6;
+                                                                    }
+                                                                } catch (Exception e7) {
+                                                                    e = e7;
+                                                                }
+                                                            }
+                                                            break;
+                                                        case -584959943:
+                                                            if (str13.equals("bollywood")) {
+                                                                map7 = map3;
+                                                                value3 = pikashowProvider.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowMovieResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$3
+                                                                });
+                                                                if (!(value3 instanceof PikashowMovieResponse)) {
+                                                                    StringBuilder sbAppend4 = new StringBuilder().append(str11).append(Reflection.getOrCreateKotlinClass(PikashowMovieResponse.class).getQualifiedName()).append("(non-null)").append(str10);
+                                                                    if (value3 != null) {
+                                                                        qualifiedName3 = Reflection.getOrCreateKotlinClass(value3.getClass()).getQualifiedName();
+                                                                    } else {
+                                                                        qualifiedName3 = pikashowSeries;
+                                                                    }
+                                                                    throw new RuntimeJsonMappingException(sbAppend4.append(qualifiedName3).toString());
+                                                                }
+                                                                str19 = str10;
+                                                                records = ((PikashowMovieResponse) value3).getRecords();
+                                                                if (records != null) {
+                                                                    it2 = records.iterator();
+                                                                    while (true) {
+                                                                        if (it2.hasNext()) {
+                                                                            next2 = it2.next();
+                                                                            str20 = str19;
+                                                                            if (Intrinsics.areEqual(String.valueOf(((PikashowMovie) next2).getSortOrder()), str15)) {
+                                                                                str19 = str20;
+                                                                            }
+                                                                        } else {
+                                                                            str20 = str19;
+                                                                            next2 = pikashowSeries;
+                                                                        }
+                                                                    }
+                                                                    obj9 = (PikashowMovie) next2;
+                                                                } else {
+                                                                    str20 = str19;
+                                                                    obj9 = pikashowSeries;
+                                                                }
+                                                                if (obj9 != null) {
+                                                                    PikashowMovie pikashowMovie = obj9;
+                                                                    objectRef.element = String.valueOf(pikashowMovie.getSortOrder());
+                                                                    objectRef2.element = pikashowMovie.getTitle();
+                                                                    Unit unit2 = Unit.INSTANCE;
+                                                                }
+                                                                str18 = str20;
+                                                            } else {
+                                                                map7 = map3;
+                                                                str18 = str10;
+                                                            }
+                                                            if (objectRef.element == null) {
+                                                            }
+                                                            break;
+                                                        case 1455215167:
+                                                            if (str13.equals("hollywood")) {
+                                                                map7 = map3;
+                                                                value3 = pikashowProvider.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowMovieResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$3
+                                                                });
+                                                                if (!(value3 instanceof PikashowMovieResponse)) {
+                                                                    StringBuilder sbAppend5 = new StringBuilder().append(str11).append(Reflection.getOrCreateKotlinClass(PikashowMovieResponse.class).getQualifiedName()).append("(non-null)").append(str10);
+                                                                    if (value3 != null) {
+                                                                        qualifiedName3 = Reflection.getOrCreateKotlinClass(value3.getClass()).getQualifiedName();
+                                                                    } else {
+                                                                        qualifiedName3 = pikashowSeries;
+                                                                    }
+                                                                    throw new RuntimeJsonMappingException(sbAppend5.append(qualifiedName3).toString());
+                                                                }
+                                                                str19 = str10;
+                                                                records = ((PikashowMovieResponse) value3).getRecords();
+                                                                if (records != null) {
+                                                                    it2 = records.iterator();
+                                                                    while (true) {
+                                                                        if (it2.hasNext()) {
+                                                                            next2 = it2.next();
+                                                                            str20 = str19;
+                                                                            if (Intrinsics.areEqual(String.valueOf(((PikashowMovie) next2).getSortOrder()), str15)) {
+                                                                                str19 = str20;
+                                                                            }
+                                                                        } else {
+                                                                            str20 = str19;
+                                                                            next2 = pikashowSeries;
+                                                                        }
+                                                                    }
+                                                                    obj9 = (PikashowMovie) next2;
+                                                                } else {
+                                                                    str20 = str19;
+                                                                    obj9 = pikashowSeries;
+                                                                }
+                                                                if (obj9 != null) {
+                                                                    PikashowMovie pikashowMovie2 = obj9;
+                                                                    objectRef.element = String.valueOf(pikashowMovie2.getSortOrder());
+                                                                    objectRef2.element = pikashowMovie2.getTitle();
+                                                                    Unit unit3 = Unit.INSTANCE;
+                                                                }
+                                                                str18 = str20;
+                                                            } else {
+                                                                map7 = map3;
+                                                                str18 = str10;
+                                                            }
+                                                            if (objectRef.element == null) {
+                                                            }
+                                                            break;
+                                                        default:
+                                                            map7 = map3;
+                                                            str18 = str10;
+                                                            if (objectRef.element == null) {
+                                                            }
+                                                            break;
+                                                    }
+                                                } catch (Exception e8) {
+                                                    e = e8;
+                                                }
+                                            }
+                                        } catch (Exception e9) {
+                                            e = e9;
+                                        }
+                                    } catch (Exception e10) {
+                                        e = e10;
+                                    }
+                                }
+                                System.out.println((Object) ("Error in loadLinks: " + e.getMessage()));
+                                return Boxing.boxBoolean(false);
+                            }
+                            z3 = z;
+                            function4 = function2;
+                        } catch (Exception e11) {
+                            e = e11;
+                        }
+                        try {
+                            return Boxing.boxBoolean(false);
+                        } catch (Exception e12) {
+                            e = e12;
+                        }
+                    } catch (Exception e13) {
+                        e = e13;
                     }
-                    try {
-                        return Boxing.boxBoolean(z2);
-                    } catch (Exception e16) {
-                        e = e16;
-                    }
-                } catch (Exception e17) {
-                    e = e17;
-                    z2 = false;
+                } catch (Exception e14) {
+                    e = e14;
                 }
                 break;
             case 1:
-                boolean z12 = c00065.Z$0;
-                Map map10 = (Map) c00065.L$10;
-                String str42 = (String) c00065.L$9;
-                String str43 = (String) c00065.L$8;
-                String str44 = (String) c00065.L$7;
-                String str45 = (String) c00065.L$6;
+                z6 = c00065.Z$0;
+                Map map12 = (Map) c00065.L$10;
+                String str41 = (String) c00065.L$9;
+                String str42 = (String) c00065.L$8;
+                String str43 = (String) c00065.L$7;
+                String str44 = (String) c00065.L$6;
                 List list3 = (List) c00065.L$5;
-                map = (Map) c00065.L$4;
-                str4 = (String) c00065.L$3;
-                Function1<? super ExtractorLink, Unit> function12 = (Function1) c00065.L$2;
+                Map<String, String> map13 = (Map) c00065.L$4;
+                String str45 = (String) c00065.L$3;
+                function7 = (Function1) c00065.L$2;
                 function3 = (Function1) c00065.L$1;
-                String str46 = (String) c00065.L$0;
+                str6 = (String) c00065.L$0;
                 try {
-                    ResultKt.throwOnFailure(obj12);
-                    str6 = str46;
-                    function4 = function12;
-                    str2 = str44;
-                    list = list3;
-                    z4 = z12;
-                    str3 = "Deserialized value did not match the specified type; specified ";
-                    i = 200;
-                    z3 = true;
-                    c00062 = c00065;
-                    obj = obj12;
-                    map2 = map10;
-                    str5 = str43;
-                    str7 = str45;
+                    ResultKt.throwOnFailure(obj11);
+                    str2 = " but was ";
                     str8 = str42;
-                    niceResponse = (NiceResponse) obj;
+                    str3 = str45;
+                    z2 = true;
+                    str4 = null;
+                    map2 = map12;
+                    list = list3;
+                    c00062 = c00065;
+                    str9 = str43;
+                    str5 = str41;
+                    map = map13;
+                    str7 = str44;
+                    obj = coroutine_suspended;
+                    i = 200;
+                    niceResponse = (NiceResponse) obj11;
                     if (niceResponse.getCode() == i) {
-                        pikashowProvider = this;
-                        str16 = str6;
-                        value = pikashowProvider.mapper.readValue(niceResponse.getText(), new TypeReference<VideoApiResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$1
+                        pikashowProvider2 = this;
+                        map5 = map;
+                        value = pikashowProvider2.mapper.readValue(niceResponse.getText(), new TypeReference<VideoApiResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$1
                         });
                         if (!(value instanceof VideoApiResponse)) {
-                            StringBuilder sbAppend6 = new StringBuilder().append(str3).append(Reflection.getOrCreateKotlinClass(VideoApiResponse.class).getQualifiedName()).append("(non-null)").append(" but was ");
+                            StringBuilder sbAppend6 = new StringBuilder().append("Deserialized value did not match the specified type; specified ").append(Reflection.getOrCreateKotlinClass(VideoApiResponse.class).getQualifiedName()).append("(non-null)").append(str2);
                             if (value != null) {
                                 qualifiedName = Reflection.getOrCreateKotlinClass(value.getClass()).getQualifiedName();
                             } else {
-                                qualifiedName = null;
+                                qualifiedName = str4;
                             }
                             throw new RuntimeJsonMappingException(sbAppend6.append(qualifiedName).toString());
                         }
+                        map6 = map2;
                         videoApiResponse = (VideoApiResponse) value;
                         data = videoApiResponse.getData();
                         if (data != null) {
-                            String str310 = str7;
-                            str17 = "Episode " + str5;
-                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(str16);
+                            str17 = "Episode " + str8;
+                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(str6);
                             c00062.L$1 = SpillingKt.nullOutSpilledVariable(function3);
-                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function4);
-                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(str4);
-                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(map);
+                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(str3);
+                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(map5);
                             c00062.L$5 = SpillingKt.nullOutSpilledVariable(list);
-                            c00062.L$6 = SpillingKt.nullOutSpilledVariable(str310);
-                            c00062.L$7 = SpillingKt.nullOutSpilledVariable(str2);
-                            c00062.L$8 = SpillingKt.nullOutSpilledVariable(str5);
-                            c00062.L$9 = SpillingKt.nullOutSpilledVariable(str8);
-                            c00062.L$10 = SpillingKt.nullOutSpilledVariable(map2);
+                            c00062.L$6 = SpillingKt.nullOutSpilledVariable(str7);
+                            c00062.L$7 = SpillingKt.nullOutSpilledVariable(str9);
+                            c00062.L$8 = SpillingKt.nullOutSpilledVariable(str8);
+                            c00062.L$9 = SpillingKt.nullOutSpilledVariable(str5);
+                            c00062.L$10 = SpillingKt.nullOutSpilledVariable(map6);
                             c00062.L$11 = SpillingKt.nullOutSpilledVariable(niceResponse);
                             c00062.L$12 = SpillingKt.nullOutSpilledVariable(videoApiResponse);
                             c00062.L$13 = SpillingKt.nullOutSpilledVariable(data);
-                            c00062.Z$0 = z4;
+                            c00062.Z$0 = z6;
                             c00062.I$0 = 0;
                             c00062.label = 2;
-                            if (pikashowProvider.addVideoLinksToCallback(data, function4, str17, c00062) == coroutine_suspended) {
-                                return coroutine_suspended;
+                            if (pikashowProvider2.addVideoLinksToCallback(data, function7, str17, c00062) == obj) {
+                                return obj;
                             }
-                            str18 = str16;
-                            z8 = z4;
-                            function8 = function4;
-                            return Boxing.boxBoolean(z3);
+                            return Boxing.boxBoolean(z2);
                         }
                     } else {
-                        pikashowProvider = this;
-                        str16 = str6;
+                        pikashowProvider2 = this;
+                        map5 = map;
                     }
-                    z5 = z4;
-                    function5 = function4;
-                    z2 = false;
-                    return Boxing.boxBoolean(z2);
-                } catch (Exception e18) {
-                    e = e18;
-                    z2 = false;
+                    z3 = z6;
+                    function4 = function7;
+                    return Boxing.boxBoolean(false);
+                } catch (Exception e15) {
+                    e = e15;
                 }
                 break;
             case 2:
                 int i2 = c00065.I$0;
-                z8 = c00065.Z$0;
-                function8 = (Function1) c00065.L$2;
-                Function1<? super SubtitleFile, Unit> function13 = (Function1) c00065.L$1;
-                str18 = (String) c00065.L$0;
+                boolean z8 = c00065.Z$0;
                 try {
-                    ResultKt.throwOnFailure(obj12);
-                    function3 = function13;
-                    z3 = true;
-                    pikashowProvider = pikashowProvider2;
-                    return Boxing.boxBoolean(z3);
-                } catch (Exception e19) {
-                    e = e19;
-                    z2 = false;
+                    ResultKt.throwOnFailure(obj11);
+                    z2 = true;
+                    return Boxing.boxBoolean(z2);
+                } catch (Exception e16) {
+                    e = e16;
                 }
                 break;
             case 3:
-                boolean z13 = c00065.Z$0;
-                Map map11 = (Map) c00065.L$9;
-                String str47 = (String) c00065.L$8;
-                String str48 = (String) c00065.L$7;
-                String str49 = (String) c00065.L$6;
+                boolean z9 = c00065.Z$0;
+                Map map14 = (Map) c00065.L$9;
+                String str46 = (String) c00065.L$8;
+                String str47 = (String) c00065.L$7;
+                String str48 = (String) c00065.L$6;
                 List list4 = (List) c00065.L$5;
-                Map<String, String> map12 = (Map) c00065.L$4;
-                String str50 = (String) c00065.L$3;
-                Function1<? super ExtractorLink, Unit> function14 = (Function1) c00065.L$2;
-                Function1<? super SubtitleFile, Unit> function15 = (Function1) c00065.L$1;
-                String str51 = (String) c00065.L$0;
+                Map<String, String> map15 = (Map) c00065.L$4;
+                String str49 = (String) c00065.L$3;
+                Function1<? super ExtractorLink, Unit> function9 = (Function1) c00065.L$2;
+                Function1<? super SubtitleFile, Unit> function10 = (Function1) c00065.L$1;
+                String str50 = (String) c00065.L$0;
                 try {
-                    ResultKt.throwOnFailure(obj12);
-                    str15 = str51;
-                    function6 = function15;
-                    map4 = map11;
-                    obj2 = "noseasons";
-                    str9 = "/v1/api/video";
-                    obj3 = "series";
-                    str11 = str47;
-                    obj4 = "0";
-                    obj5 = "type";
-                    str10 = "Deserialized value did not match the specified type; specified ";
+                    ResultKt.throwOnFailure(obj11);
+                    str10 = " but was ";
+                    map4 = map14;
+                    str12 = str46;
+                    obj3 = "noepisodes";
+                    obj4 = "title";
+                    obj8 = "series";
+                    obj7 = "type";
+                    str13 = str47;
+                    str15 = str48;
+                    map3 = map15;
                     str14 = str49;
-                    list2 = list4;
-                    str13 = str50;
-                    z6 = true;
-                    c = 3;
+                    z4 = true;
                     pikashowSeries = null;
-                    z2 = false;
-                    obj7 = obj12;
-                    obj6 = "videoId";
-                    map3 = map12;
+                    str16 = str50;
+                    function5 = function10;
                     c00063 = c00065;
-                    z7 = z13;
-                    str12 = str48;
-                    function7 = function14;
-                    niceResponse2 = (NiceResponse) obj7;
+                    obj5 = "videoId";
+                    str11 = "Deserialized value did not match the specified type; specified ";
+                    list2 = list4;
+                    c = 3;
+                    pikashowProvider = this;
+                    obj2 = coroutine_suspended;
+                    obj6 = "0";
+                    function4 = function9;
+                    z3 = z9;
+                    niceResponse2 = (NiceResponse) obj11;
                     if (niceResponse2.getCode() == 200) {
                         objectRef = new Ref.ObjectRef();
                         objectRef2 = new Ref.ObjectRef();
-                        switch (str12.hashCode()) {
+                        switch (str13.hashCode()) {
                             case -905838985:
-                                map5 = map3;
-                                str19 = r19;
-                                if (!str12.equals(obj3)) {
-                                    value2 = pikashowProvider2.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowSeriesResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$2
+                                map7 = map3;
+                                str18 = str10;
+                                if (!str13.equals(obj8)) {
+                                    value2 = pikashowProvider.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowSeriesResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$2
                                     });
                                     if (!(value2 instanceof PikashowSeriesResponse)) {
-                                        StringBuilder sbAppend7 = new StringBuilder().append(str10).append(Reflection.getOrCreateKotlinClass(PikashowSeriesResponse.class).getQualifiedName()).append("(non-null)").append(str19);
+                                        StringBuilder sbAppend7 = new StringBuilder().append(str11).append(Reflection.getOrCreateKotlinClass(PikashowSeriesResponse.class).getQualifiedName()).append("(non-null)").append(str18);
                                         if (value2 != null) {
                                             qualifiedName2 = Reflection.getOrCreateKotlinClass(value2.getClass()).getQualifiedName();
                                         } else {
@@ -4550,40 +4379,36 @@ public final class PikashowProvider extends MainAPI {
                                             if (it.hasNext()) {
                                                 next = it.next();
                                                 pikashowSeriesResponse2 = pikashowSeriesResponse;
-                                                if (Intrinsics.areEqual(((PikashowSeries) next).getTitle(), str14)) {
-                                                    obj8 = next;
-                                                } else {
+                                                if (Intrinsics.areEqual(((PikashowSeries) next).getTitle(), str15)) {
                                                     pikashowSeriesResponse = pikashowSeriesResponse2;
                                                 }
                                             } else {
-                                                obj8 = pikashowSeries;
+                                                next = pikashowSeries;
                                             }
                                         }
-                                        pikashowSeries2 = (PikashowSeries) obj8;
+                                        pikashowSeries2 = (PikashowSeries) next;
                                     } else {
                                         pikashowSeries2 = pikashowSeries;
                                     }
                                     if (pikashowSeries2 != null) {
-                                        objectRef.element = obj4;
+                                        objectRef.element = obj6;
                                         objectRef2.element = pikashowSeries2.getTitle();
                                         Unit unit4 = Unit.INSTANCE;
                                     }
                                 }
                                 if (objectRef.element == null) {
                                 }
-                                z5 = z7;
-                                function5 = function7;
                                 break;
                             case -584959943:
-                                if (str12.equals("bollywood")) {
-                                    map5 = map3;
-                                    str19 = r19;
+                                if (str13.equals("bollywood")) {
+                                    map7 = map3;
+                                    str18 = str10;
                                 } else {
-                                    map5 = map3;
-                                    value3 = pikashowProvider2.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowMovieResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$3
+                                    map7 = map3;
+                                    value3 = pikashowProvider.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowMovieResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$3
                                     });
                                     if (!(value3 instanceof PikashowMovieResponse)) {
-                                        StringBuilder sbAppend8 = new StringBuilder().append(str10).append(Reflection.getOrCreateKotlinClass(PikashowMovieResponse.class).getQualifiedName()).append("(non-null)").append(r19);
+                                        StringBuilder sbAppend8 = new StringBuilder().append(str11).append(Reflection.getOrCreateKotlinClass(PikashowMovieResponse.class).getQualifiedName()).append("(non-null)").append(str10);
                                         if (value3 != null) {
                                             qualifiedName3 = Reflection.getOrCreateKotlinClass(value3.getClass()).getQualifiedName();
                                         } else {
@@ -4591,27 +4416,25 @@ public final class PikashowProvider extends MainAPI {
                                         }
                                         throw new RuntimeJsonMappingException(sbAppend8.append(qualifiedName3).toString());
                                     }
-                                    str20 = r19;
+                                    str19 = str10;
                                     records = ((PikashowMovieResponse) value3).getRecords();
                                     if (records != null) {
                                         it2 = records.iterator();
                                         while (true) {
                                             if (it2.hasNext()) {
                                                 next2 = it2.next();
-                                                str21 = str20;
-                                                if (Intrinsics.areEqual(String.valueOf(((PikashowMovie) next2).getSortOrder()), str14)) {
-                                                    obj10 = next2;
-                                                } else {
-                                                    str20 = str21;
+                                                str20 = str19;
+                                                if (Intrinsics.areEqual(String.valueOf(((PikashowMovie) next2).getSortOrder()), str15)) {
+                                                    str19 = str20;
                                                 }
                                             } else {
-                                                str21 = str20;
-                                                obj10 = pikashowSeries;
+                                                str20 = str19;
+                                                next2 = pikashowSeries;
                                             }
                                         }
-                                        obj9 = (PikashowMovie) obj10;
+                                        obj9 = (PikashowMovie) next2;
                                     } else {
-                                        str21 = str20;
+                                        str20 = str19;
                                         obj9 = pikashowSeries;
                                     }
                                     if (obj9 != null) {
@@ -4620,23 +4443,21 @@ public final class PikashowProvider extends MainAPI {
                                         objectRef2.element = pikashowMovie3.getTitle();
                                         Unit unit5 = Unit.INSTANCE;
                                     }
-                                    str19 = str21;
+                                    str18 = str20;
                                 }
                                 if (objectRef.element == null) {
                                 }
-                                z5 = z7;
-                                function5 = function7;
                                 break;
                             case 1455215167:
-                                if (str12.equals("hollywood")) {
-                                    map5 = map3;
-                                    str19 = r19;
+                                if (str13.equals("hollywood")) {
+                                    map7 = map3;
+                                    str18 = str10;
                                 } else {
-                                    map5 = map3;
-                                    value3 = pikashowProvider2.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowMovieResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$3
+                                    map7 = map3;
+                                    value3 = pikashowProvider.mapper.readValue(niceResponse2.getText(), new TypeReference<PikashowMovieResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$3
                                     });
                                     if (!(value3 instanceof PikashowMovieResponse)) {
-                                        StringBuilder sbAppend9 = new StringBuilder().append(str10).append(Reflection.getOrCreateKotlinClass(PikashowMovieResponse.class).getQualifiedName()).append("(non-null)").append(r19);
+                                        StringBuilder sbAppend9 = new StringBuilder().append(str11).append(Reflection.getOrCreateKotlinClass(PikashowMovieResponse.class).getQualifiedName()).append("(non-null)").append(str10);
                                         if (value3 != null) {
                                             qualifiedName3 = Reflection.getOrCreateKotlinClass(value3.getClass()).getQualifiedName();
                                         } else {
@@ -4644,27 +4465,25 @@ public final class PikashowProvider extends MainAPI {
                                         }
                                         throw new RuntimeJsonMappingException(sbAppend9.append(qualifiedName3).toString());
                                     }
-                                    str20 = r19;
+                                    str19 = str10;
                                     records = ((PikashowMovieResponse) value3).getRecords();
                                     if (records != null) {
                                         it2 = records.iterator();
                                         while (true) {
                                             if (it2.hasNext()) {
                                                 next2 = it2.next();
-                                                str21 = str20;
-                                                if (Intrinsics.areEqual(String.valueOf(((PikashowMovie) next2).getSortOrder()), str14)) {
-                                                    obj10 = next2;
-                                                } else {
-                                                    str20 = str21;
+                                                str20 = str19;
+                                                if (Intrinsics.areEqual(String.valueOf(((PikashowMovie) next2).getSortOrder()), str15)) {
+                                                    str19 = str20;
                                                 }
                                             } else {
-                                                str21 = str20;
-                                                obj10 = pikashowSeries;
+                                                str20 = str19;
+                                                next2 = pikashowSeries;
                                             }
                                         }
-                                        obj9 = (PikashowMovie) obj10;
+                                        obj9 = (PikashowMovie) next2;
                                     } else {
-                                        str21 = str20;
+                                        str20 = str19;
                                         obj9 = pikashowSeries;
                                     }
                                     if (obj9 != null) {
@@ -4673,76 +4492,71 @@ public final class PikashowProvider extends MainAPI {
                                         objectRef2.element = pikashowMovie4.getTitle();
                                         Unit unit6 = Unit.INSTANCE;
                                     }
-                                    str19 = str21;
+                                    str18 = str20;
                                 }
                                 if (objectRef.element == null) {
                                 }
-                                z5 = z7;
-                                function5 = function7;
                                 break;
                             default:
-                                map5 = map3;
-                                str19 = " but was ";
+                                map7 = map3;
+                                str18 = str10;
                                 if (objectRef.element == null) {
                                 }
-                                z5 = z7;
-                                function5 = function7;
                                 break;
                         }
-                    } else {
-                        z5 = z7;
-                        function5 = function7;
                     }
-                    return Boxing.boxBoolean(z2);
-                } catch (Exception e20) {
-                    e = e20;
-                    z2 = false;
+                    return Boxing.boxBoolean(false);
+                } catch (Exception e17) {
+                    e = e17;
                 }
                 break;
             case 4:
-                boolean z14 = c00065.Z$0;
-                Map map13 = (Map) c00065.L$15;
-                str24 = (String) c00065.L$14;
-                str26 = (String) c00065.L$13;
-                objectRef4 = (Ref.ObjectRef) c00065.L$12;
-                Ref.ObjectRef objectRef5 = (Ref.ObjectRef) c00065.L$11;
-                niceResponse3 = (NiceResponse) c00065.L$10;
-                map8 = (Map) c00065.L$9;
-                str25 = (String) c00065.L$8;
-                str27 = (String) c00065.L$7;
-                String str52 = (String) c00065.L$6;
+                boolean z10 = c00065.Z$0;
+                Map map16 = (Map) c00065.L$15;
+                String str51 = (String) c00065.L$14;
+                String str52 = (String) c00065.L$13;
+                Ref.ObjectRef objectRef5 = (Ref.ObjectRef) c00065.L$12;
+                Ref.ObjectRef objectRef6 = (Ref.ObjectRef) c00065.L$11;
+                NiceResponse niceResponse4 = (NiceResponse) c00065.L$10;
+                Map map17 = (Map) c00065.L$9;
+                str27 = (String) c00065.L$8;
+                str23 = (String) c00065.L$7;
+                String str53 = (String) c00065.L$6;
                 List list5 = (List) c00065.L$5;
-                map6 = (Map) c00065.L$4;
-                String str53 = (String) c00065.L$3;
-                Function1<? super ExtractorLink, Unit> function16 = (Function1) c00065.L$2;
-                Function1<? super SubtitleFile, Unit> function17 = (Function1) c00065.L$1;
+                map9 = (Map) c00065.L$4;
+                str26 = (String) c00065.L$3;
+                Function1<? super ExtractorLink, Unit> function11 = (Function1) c00065.L$2;
+                Function1<? super SubtitleFile, Unit> function12 = (Function1) c00065.L$1;
                 String str54 = (String) c00065.L$0;
                 try {
-                    ResultKt.throwOnFailure(obj12);
-                    str15 = str54;
-                    function6 = function17;
-                    objectRef3 = objectRef5;
-                    z9 = z14;
+                    ResultKt.throwOnFailure(obj11);
                     list2 = list5;
-                    str23 = " but was ";
-                    str10 = "Deserialized value did not match the specified type; specified ";
-                    str13 = str53;
-                    z6 = true;
+                    str16 = str54;
+                    function5 = function12;
+                    str21 = str53;
+                    niceResponse2 = niceResponse4;
+                    map4 = map17;
+                    str11 = "Deserialized value did not match the specified type; specified ";
+                    z4 = true;
                     pikashowSeries = null;
-                    z2 = false;
-                    str22 = str52;
+                    pikashowProvider = this;
                     c00064 = c00065;
-                    map7 = map13;
-                    function9 = function16;
-                    obj11 = obj12;
-                    niceResponse4 = (NiceResponse) obj11;
-                    str28 = str24;
-                    if (niceResponse4.getCode() != 404) {
-                        str29 = str26;
-                        value4 = pikashowProvider2.mapper.readValue(niceResponse4.getText(), new TypeReference<VideoApiResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$4
+                    objectRef4 = objectRef5;
+                    objectRef3 = objectRef6;
+                    function6 = function11;
+                    obj2 = coroutine_suspended;
+                    str22 = " but was ";
+                    str25 = str51;
+                    str24 = str52;
+                    z5 = z10;
+                    map8 = map16;
+                    niceResponse3 = (NiceResponse) obj11;
+                    if (niceResponse3.getCode() != 404) {
+                        map10 = map8;
+                        value4 = pikashowProvider.mapper.readValue(niceResponse3.getText(), new TypeReference<VideoApiResponse>() { // from class: com.cncverse.PikashowProvider$loadLinks$$inlined$readValue$4
                         });
                         if (!(value4 instanceof VideoApiResponse)) {
-                            StringBuilder sbAppend10 = new StringBuilder().append(str10).append(Reflection.getOrCreateKotlinClass(VideoApiResponse.class).getQualifiedName()).append("(non-null)").append(str23);
+                            StringBuilder sbAppend10 = new StringBuilder().append(str11).append(Reflection.getOrCreateKotlinClass(VideoApiResponse.class).getQualifiedName()).append("(non-null)").append(str22);
                             if (value4 != null) {
                                 qualifiedName4 = Reflection.getOrCreateKotlinClass(value4.getClass()).getQualifiedName();
                             } else {
@@ -4751,69 +4565,62 @@ public final class PikashowProvider extends MainAPI {
                             throw new RuntimeJsonMappingException(sbAppend10.append(qualifiedName4).toString());
                         }
                         videoApiResponse2 = (VideoApiResponse) value4;
+                        str28 = str24;
                         data2 = videoApiResponse2.getData();
                         if (data2 != null) {
-                            c00064.L$0 = SpillingKt.nullOutSpilledVariable(str15);
-                            c00064.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                            c00064.L$2 = SpillingKt.nullOutSpilledVariable(function9);
-                            c00064.L$3 = SpillingKt.nullOutSpilledVariable(str13);
-                            c00064.L$4 = SpillingKt.nullOutSpilledVariable(map6);
+                            c00064.L$0 = SpillingKt.nullOutSpilledVariable(str16);
+                            c00064.L$1 = SpillingKt.nullOutSpilledVariable(function5);
+                            c00064.L$2 = SpillingKt.nullOutSpilledVariable(function6);
+                            c00064.L$3 = SpillingKt.nullOutSpilledVariable(str26);
+                            c00064.L$4 = SpillingKt.nullOutSpilledVariable(map9);
                             c00064.L$5 = SpillingKt.nullOutSpilledVariable(list2);
-                            c00064.L$6 = SpillingKt.nullOutSpilledVariable(str22);
-                            c00064.L$7 = SpillingKt.nullOutSpilledVariable(str27);
-                            c00064.L$8 = SpillingKt.nullOutSpilledVariable(str25);
-                            c00064.L$9 = SpillingKt.nullOutSpilledVariable(map8);
-                            c00064.L$10 = SpillingKt.nullOutSpilledVariable(niceResponse3);
+                            c00064.L$6 = SpillingKt.nullOutSpilledVariable(str21);
+                            c00064.L$7 = SpillingKt.nullOutSpilledVariable(str23);
+                            c00064.L$8 = SpillingKt.nullOutSpilledVariable(str27);
+                            c00064.L$9 = SpillingKt.nullOutSpilledVariable(map4);
+                            c00064.L$10 = SpillingKt.nullOutSpilledVariable(niceResponse2);
                             c00064.L$11 = SpillingKt.nullOutSpilledVariable(objectRef3);
                             c00064.L$12 = SpillingKt.nullOutSpilledVariable(objectRef4);
-                            c00064.L$13 = SpillingKt.nullOutSpilledVariable(str29);
-                            c00064.L$14 = SpillingKt.nullOutSpilledVariable(str28);
-                            c00064.L$15 = SpillingKt.nullOutSpilledVariable(map7);
-                            c00064.L$16 = SpillingKt.nullOutSpilledVariable(niceResponse4);
+                            c00064.L$13 = SpillingKt.nullOutSpilledVariable(str24);
+                            c00064.L$14 = SpillingKt.nullOutSpilledVariable(str25);
+                            c00064.L$15 = SpillingKt.nullOutSpilledVariable(map10);
+                            c00064.L$16 = SpillingKt.nullOutSpilledVariable(niceResponse3);
                             c00064.L$17 = SpillingKt.nullOutSpilledVariable(videoApiResponse2);
-                            c00064.L$18 = SpillingKt.nullOutSpilledVariable(str29);
+                            c00064.L$18 = SpillingKt.nullOutSpilledVariable(str28);
                             c00064.L$19 = SpillingKt.nullOutSpilledVariable(data2);
-                            c00064.Z$0 = z9;
+                            c00064.Z$0 = z5;
                             c00064.I$0 = 0;
                             c00064.label = 5;
-                            if (pikashowProvider2.addVideoLinksToCallback(data2, function9, str29, c00064) == coroutine_suspended) {
-                                return coroutine_suspended;
+                            if (pikashowProvider.addVideoLinksToCallback(data2, function6, str28, c00064) == obj2) {
+                                return obj2;
                             }
-                            z10 = z9;
-                            function10 = function9;
-                            return Boxing.boxBoolean(z6);
+                            str29 = str16;
+                            return Boxing.boxBoolean(z4);
                         }
                     }
-                    z5 = z9;
-                    function5 = function9;
-                    return Boxing.boxBoolean(z2);
-                } catch (Exception e21) {
-                    e = e21;
-                    z2 = false;
+                    z3 = z5;
+                    function4 = function6;
+                    return Boxing.boxBoolean(false);
+                } catch (Exception e18) {
+                    e = e18;
                 }
                 break;
             case 5:
                 int i3 = c00065.I$0;
-                z10 = c00065.Z$0;
-                function10 = (Function1) c00065.L$2;
+                boolean z11 = c00065.Z$0;
+                str29 = (String) c00065.L$0;
                 try {
-                    ResultKt.throwOnFailure(obj12);
-                    z6 = true;
-                    z2 = false;
-                    return Boxing.boxBoolean(z6);
-                } catch (Exception e22) {
-                    e = e22;
-                    z2 = false;
+                    ResultKt.throwOnFailure(obj11);
+                    z5 = z11;
+                    z4 = true;
+                    return Boxing.boxBoolean(z4);
+                } catch (Exception e19) {
+                    e = e19;
                 }
                 break;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5418,7 +5225,7 @@ public final class PikashowProvider extends MainAPI {
             byte[] bytes = url.getBytes(Charsets.UTF_8);
             Intrinsics.checkNotNullExpressionValue(bytes, "getBytes(...)");
             byte[] hash = messageDigest.digest(bytes);
-            return StringsKt.take(ArraysKt.joinToString$default(hash, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda13
+            return StringsKt.take(ArraysKt.joinToString$default(hash, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda6
                 public final Object invoke(Object obj) {
                     return PikashowProvider.extractImdbIdFromUrl$lambda$0(((Byte) obj).byteValue());
                 }
@@ -5709,295 +5516,5 @@ public final class PikashowProvider extends MainAPI {
             }
         }
         return Qualities.Unknown.getValue();
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda14
-                @Override // java.lang.Runnable
-                public final void run() {
-                    PikashowProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda11
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    PikashowProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda12
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    PikashowProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda10
-            @Override // java.lang.Runnable
-            public final void run() {
-                PikashowProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda1
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda2
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    PikashowProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PikashowProvider$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                PikashowProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
-        }
     }
 }

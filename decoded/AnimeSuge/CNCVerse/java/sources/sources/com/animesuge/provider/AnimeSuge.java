@@ -1,24 +1,8 @@
 package com.animesuge.provider;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -36,19 +20,16 @@ import com.lagradost.cloudstream3.MainPageRequest;
 import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.TvType;
 import com.lagradost.cloudstream3.mvvm.ArchComponentExtKt;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Field;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -94,24 +75,16 @@ import org.jsoup.nodes.Element;
 
 /* JADX INFO: compiled from: AnimeSuge.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AnimeSuge/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0012\n\u0002\b\b\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\t\u0018\u0000 E2\u00020\u0001:\u0004EFGHB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u001f2\u0006\u0010!\u001a\u00020\u001fH\u0002J\u0010\u0010\"\u001a\u00020\u001f2\u0006\u0010#\u001a\u00020\u0005H\u0002J\u0010\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u0005H\u0002J\u0010\u0010&\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0005H\u0002J\u001e\u0010\u001c\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020-H\u0096@¢\u0006\u0002\u0010.J\u000e\u0010/\u001a\u0004\u0018\u000100*\u000201H\u0002J\u001c\u00102\u001a\b\u0012\u0004\u0012\u0002000\u001a2\u0006\u00103\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00104J\u0018\u00105\u001a\u0004\u0018\u0001062\u0006\u00107\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00104JF\u00108\u001a\u00020\u000e2\u0006\u00109\u001a\u00020\u00052\u0006\u0010:\u001a\u00020\u000e2\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020>0<2\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020>0<H\u0096@¢\u0006\u0002\u0010AJ\b\u0010B\u001a\u00020>H\u0002J\b\u0010C\u001a\u00020>H\u0002J\u0010\u0010D\u001a\u00020>2\u0006\u00107\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050(X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006I"}, d2 = {"Lcom/animesuge/provider/AnimeSuge;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "rc4", "", "key", "input", "shiftCharcode", "t", "rot13", "s", "generateVrf", "ajaxHeaders", "", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "AjaxResponse", "ServerInfoResponse", "ServerInfoResult", "AnimeSuge_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAnimeSuge.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimeSuge.kt\ncom/animesuge/provider/AnimeSuge\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,574:1\n990#2:575\n1065#2,3:576\n1642#3,10:579\n1915#3:589\n1916#3:591\n1652#3:592\n1696#3,8:593\n1642#3,10:602\n1915#3:612\n1916#3:614\n1652#3:615\n1696#3,8:616\n1586#3:624\n1661#3,3:625\n1915#3:647\n1916#3:649\n1915#3:669\n1915#3:670\n1916#3:672\n1916#3:673\n1915#3:674\n1916#3:695\n1#4:590\n1#4:601\n1#4:613\n1#4:629\n1#4:648\n1#4:651\n1#4:671\n1#4:676\n1#4:694\n63#5:628\n64#5,15:630\n63#5:650\n64#5,15:652\n63#5:675\n64#5,15:677\n50#6:645\n43#6:646\n50#6:667\n43#6:668\n50#6:692\n43#6:693\n*S KotlinDebug\n*F\n+ 1 AnimeSuge.kt\ncom/animesuge/provider/AnimeSuge\n*L\n103#1:575\n103#1:576,3\n135#1:579,10\n135#1:589\n135#1:591\n135#1:592\n136#1:593,8\n157#1:602,10\n157#1:612\n157#1:614\n157#1:615\n157#1:616,8\n184#1:624\n184#1:625,3\n199#1:647\n199#1:649\n279#1:669\n287#1:670\n287#1:672\n279#1:673\n299#1:674\n299#1:695\n135#1:590\n157#1:613\n192#1:629\n273#1:651\n308#1:676\n192#1:628\n192#1:630,15\n273#1:650\n273#1:652,15\n308#1:675\n308#1:677,15\n192#1:645\n192#1:646\n273#1:667\n273#1:668\n308#1:692\n308#1:693\n*E\n"})
+@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0012\n\u0002\b\b\n\u0002\u0010$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 B2\u00020\u0001:\u0004BCDEB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0018\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020\u001f2\u0006\u0010!\u001a\u00020\u001fH\u0002J\u0010\u0010\"\u001a\u00020\u001f2\u0006\u0010#\u001a\u00020\u0005H\u0002J\u0010\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u0005H\u0002J\u0010\u0010&\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u0005H\u0002J\u001e\u0010\u001c\u001a\u00020)2\u0006\u0010*\u001a\u00020+2\u0006\u0010,\u001a\u00020-H\u0096@¢\u0006\u0002\u0010.J\u000e\u0010/\u001a\u0004\u0018\u000100*\u000201H\u0002J\u001c\u00102\u001a\b\u0012\u0004\u0012\u0002000\u001a2\u0006\u00103\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00104J\u0018\u00105\u001a\u0004\u0018\u0001062\u0006\u00107\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00104JF\u00108\u001a\u00020\u000e2\u0006\u00109\u001a\u00020\u00052\u0006\u0010:\u001a\u00020\u000e2\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020>0<2\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u00020>0<H\u0096@¢\u0006\u0002\u0010AR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u001a\u0010'\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050(X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006F"}, d2 = {"Lcom/animesuge/provider/AnimeSuge;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "rc4", "", "key", "input", "shiftCharcode", "t", "rot13", "s", "generateVrf", "ajaxHeaders", "", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "AjaxResponse", "ServerInfoResponse", "ServerInfoResult", "AnimeSuge_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nAnimeSuge.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimeSuge.kt\ncom/animesuge/provider/AnimeSuge\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,292:1\n990#2:293\n1065#2,3:294\n1642#3,10:297\n1915#3:307\n1916#3:309\n1652#3:310\n1696#3,8:311\n1642#3,10:320\n1915#3:330\n1916#3:332\n1652#3:333\n1696#3,8:334\n1586#3:342\n1661#3,3:343\n1915#3:365\n1916#3:367\n1915#3:387\n1915#3:388\n1916#3:390\n1916#3:391\n1915#3:392\n1916#3:413\n1#4:308\n1#4:319\n1#4:331\n1#4:347\n1#4:366\n1#4:369\n1#4:389\n1#4:394\n1#4:412\n63#5:346\n64#5,15:348\n63#5:368\n64#5,15:370\n63#5:393\n64#5,15:395\n50#6:363\n43#6:364\n50#6:385\n43#6:386\n50#6:410\n43#6:411\n*S KotlinDebug\n*F\n+ 1 AnimeSuge.kt\ncom/animesuge/provider/AnimeSuge\n*L\n73#1:293\n73#1:294,3\n104#1:297,10\n104#1:307\n104#1:309\n104#1:310\n105#1:311,8\n126#1:320,10\n126#1:330\n126#1:332\n126#1:333\n126#1:334,8\n153#1:342\n153#1:343,3\n168#1:365\n168#1:367\n232#1:387\n240#1:388\n240#1:390\n232#1:391\n252#1:392\n252#1:413\n104#1:308\n126#1:331\n161#1:347\n226#1:369\n261#1:394\n161#1:346\n161#1:348,15\n226#1:368\n226#1:370,15\n261#1:393\n261#1:395,15\n161#1:363\n161#1:364\n226#1:385\n226#1:386\n261#1:410\n261#1:411\n*E\n"})
 public final class AnimeSuge extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private String mainUrl = "https://animesuge.cz";
@@ -135,7 +108,7 @@ public final class AnimeSuge extends MainAPI {
     /* JADX INFO: renamed from: com.animesuge.provider.AnimeSuge$getMainPage$1 */
     /* JADX INFO: compiled from: AnimeSuge.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.animesuge.provider.AnimeSuge", f = "AnimeSuge.kt", i = {0, 0, 0}, l = {134}, m = "getMainPage", n = {"request", "url", "page"}, nl = {135}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.animesuge.provider.AnimeSuge", f = "AnimeSuge.kt", i = {0, 0, 0}, l = {103}, m = "getMainPage", n = {"request", "url", "page"}, nl = {104}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -158,7 +131,7 @@ public final class AnimeSuge extends MainAPI {
     /* JADX INFO: renamed from: com.animesuge.provider.AnimeSuge$load$1 */
     /* JADX INFO: compiled from: AnimeSuge.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.animesuge.provider.AnimeSuge", f = "AnimeSuge.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {164, 188, 215}, m = "load", n = {"url", "animeUrl", "url", "animeUrl", "doc", "dataId", "title", "poster", "plot", "genres", "vrf", "url", "animeUrl", "doc", "dataId", "title", "poster", "plot", "genres", "vrf", "epsText", "epsJson", "epsHtml", "epsSoup", "subEpisodes", "dubEpisodes"}, nl = {167, 191, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14"}, v = 2)
+    @DebugMetadata(c = "com.animesuge.provider.AnimeSuge", f = "AnimeSuge.kt", i = {0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {133, 157, 184}, m = "load", n = {"url", "animeUrl", "url", "animeUrl", "doc", "dataId", "title", "poster", "plot", "genres", "vrf", "url", "animeUrl", "doc", "dataId", "title", "poster", "plot", "genres", "vrf", "epsText", "epsJson", "epsHtml", "epsSoup", "subEpisodes", "dubEpisodes"}, nl = {136, 160, -1}, s = {"L$0", "L$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -193,7 +166,7 @@ public final class AnimeSuge extends MainAPI {
     /* JADX INFO: renamed from: com.animesuge.provider.AnimeSuge$loadLinks$1 */
     /* JADX INFO: compiled from: AnimeSuge.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.animesuge.provider.AnimeSuge", f = "AnimeSuge.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {266, 301, 312}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "animeUrl", "dataIds", "selectedType", "isCasting", "data", "subtitleCallback", "callback", "parts", "animeUrl", "dataIds", "selectedType", "serverListText", "serverListJson", "serverListHtml", "serverListSoup", "serversToLoad", "found", "$this$forEach$iv", "element$iv", "serverName", "linkId", "isCasting", "$i$f$forEach", "$i$a$-forEach-AnimeSuge$loadLinks$4", "data", "subtitleCallback", "callback", "parts", "animeUrl", "dataIds", "selectedType", "serverListText", "serverListJson", "serverListHtml", "serverListSoup", "serversToLoad", "found", "$this$forEach$iv", "element$iv", "serverName", "linkId", "serverInfoJson", "serverInfoText", "playerUrl", "isCasting", "$i$f$forEach", "$i$a$-forEach-AnimeSuge$loadLinks$4"}, nl = {272, 307, 313}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$17", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "Z$0", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.animesuge.provider.AnimeSuge", f = "AnimeSuge.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {219, 254, 265}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "animeUrl", "dataIds", "selectedType", "isCasting", "data", "subtitleCallback", "callback", "parts", "animeUrl", "dataIds", "selectedType", "serverListText", "serverListJson", "serverListHtml", "serverListSoup", "serversToLoad", "found", "$this$forEach$iv", "element$iv", "serverName", "linkId", "isCasting", "$i$f$forEach", "$i$a$-forEach-AnimeSuge$loadLinks$3", "data", "subtitleCallback", "callback", "parts", "animeUrl", "dataIds", "selectedType", "serverListText", "serverListJson", "serverListHtml", "serverListSoup", "serversToLoad", "found", "$this$forEach$iv", "element$iv", "serverName", "linkId", "serverInfoJson", "serverInfoText", "playerUrl", "isCasting", "$i$f$forEach", "$i$a$-forEach-AnimeSuge$loadLinks$3"}, nl = {225, 260, 266}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$17", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "Z$0", "I$0", "I$1"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -237,7 +210,7 @@ public final class AnimeSuge extends MainAPI {
     /* JADX INFO: renamed from: com.animesuge.provider.AnimeSuge$search$1 */
     /* JADX INFO: compiled from: AnimeSuge.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.animesuge.provider.AnimeSuge", f = "AnimeSuge.kt", i = {0, 0}, l = {156}, m = "search", n = {"query", "encoded"}, nl = {157}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.animesuge.provider.AnimeSuge", f = "AnimeSuge.kt", i = {0, 0}, l = {125}, m = "search", n = {"query", "encoded"}, nl = {126}, s = {"L$0", "L$1"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -257,65 +230,13 @@ public final class AnimeSuge extends MainAPI {
     }
 
     /* JADX INFO: compiled from: AnimeSuge.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/animesuge/provider/AnimeSuge$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "AnimeSuge_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nAnimeSuge.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnimeSuge.kt\ncom/animesuge/provider/AnimeSuge$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,574:1\n1#2:575\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/animesuge/provider/AnimeSuge$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "AnimeSuge_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                AnimeSuge.csGuardWasEverActive = true;
-            }
-            return AnimeSuge.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.animesuge.provider.AnimeSuge$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AnimeSuge.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -483,12 +404,7 @@ public final class AnimeSuge extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String url = request.getData() + (page > 1 ? "?page=" + page : "");
                 Requests app = MainActivityKt.getApp();
                 c00001.L$0 = request;
@@ -571,7 +487,7 @@ public final class AnimeSuge extends MainAPI {
                         poster = StringsKt.startsWith$default(it3, "http", false, 2, (Object) null) ? it3 : getMainUrl() + '/' + it3;
                     }
                 }
-                return MainAPIKt.newAnimeSearchResponse$default(this, title, href, (TvType) null, false, new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda10
+                return MainAPIKt.newAnimeSearchResponse$default(this, title, href, (TvType) null, false, new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda2
                     public final Object invoke(Object obj) {
                         return AnimeSuge.toSearchResult$lambda$4(poster, (AnimeSearchResponse) obj);
                     }
@@ -606,10 +522,6 @@ public final class AnimeSuge extends MainAPI {
         switch (c00041.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 String encoded = URLEncoder.encode(query, "UTF-8");
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + "/filter?keyword=" + encoded;
@@ -961,14 +873,14 @@ public final class AnimeSuge extends MainAPI {
                         hasSub = Intrinsics.areEqual(epLink.attr("data-sub"), "1");
                         hasDub = Intrinsics.areEqual(epLink.attr("data-dub"), "1");
                         if (hasSub) {
-                            subEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|sub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda8
+                            subEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|sub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj3) {
                                     return AnimeSuge.load$lambda$1$2(epNum, epTitle, (Episode) obj3);
                                 }
                             }));
                         }
                         if (hasDub) {
-                            dubEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|dub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda9
+                            dubEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|dub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda1
                                 public final Object invoke(Object obj3) {
                                     return AnimeSuge.load$lambda$1$3(epNum, epTitle, (Episode) obj3);
                                 }
@@ -1180,14 +1092,14 @@ public final class AnimeSuge extends MainAPI {
                         hasSub = Intrinsics.areEqual(epLink.attr("data-sub"), "1");
                         hasDub = Intrinsics.areEqual(epLink.attr("data-dub"), "1");
                         if (hasSub) {
-                            subEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|sub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda8
+                            subEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|sub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj3) {
                                     return AnimeSuge.load$lambda$1$2(epNum, epTitle, (Episode) obj3);
                                 }
                             }));
                         }
                         if (hasDub) {
-                            dubEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|dub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda9
+                            dubEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|dub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda1
                                 public final Object invoke(Object obj3) {
                                     return AnimeSuge.load$lambda$1$3(epNum, epTitle, (Episode) obj3);
                                 }
@@ -1318,14 +1230,14 @@ public final class AnimeSuge extends MainAPI {
                         hasSub = Intrinsics.areEqual(epLink.attr("data-sub"), "1");
                         hasDub = Intrinsics.areEqual(epLink.attr("data-dub"), "1");
                         if (hasSub) {
-                            subEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|sub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda8
+                            subEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|sub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda0
                                 public final Object invoke(Object obj3) {
                                     return AnimeSuge.load$lambda$1$2(epNum, epTitle, (Episode) obj3);
                                 }
                             }));
                         }
                         if (hasDub) {
-                            dubEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|dub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda9
+                            dubEpisodes.add(MainAPIKt.newEpisode(this, animeUrl4 + '|' + animeUrl5 + '|' + epNum + '|' + dataIds + "|dub", new Function1() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda1
                                 public final Object invoke(Object obj3) {
                                     return AnimeSuge.load$lambda$1$3(epNum, epTitle, (Episode) obj3);
                                 }
@@ -1439,33 +1351,33 @@ public final class AnimeSuge extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:129:0x051b  */
-    /* JADX WARN: Code duplicated, block: B:142:0x063b A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:143:0x063c  */
-    /* JADX WARN: Code duplicated, block: B:152:0x0691  */
-    /* JADX WARN: Code duplicated, block: B:168:0x06e1  */
-    /* JADX WARN: Code duplicated, block: B:192:0x073f A[Catch: Exception -> 0x081c, TryCatch #16 {Exception -> 0x081c, blocks: (B:166:0x06db, B:169:0x06e2, B:190:0x0735, B:192:0x073f, B:194:0x0746, B:199:0x0756, B:189:0x071a, B:165:0x06d1), top: B:266:0x06db }] */
-    /* JADX WARN: Code duplicated, block: B:194:0x0746 A[Catch: Exception -> 0x081c, TryCatch #16 {Exception -> 0x081c, blocks: (B:166:0x06db, B:169:0x06e2, B:190:0x0735, B:192:0x073f, B:194:0x0746, B:199:0x0756, B:189:0x071a, B:165:0x06d1), top: B:266:0x06db }] */
-    /* JADX WARN: Code duplicated, block: B:196:0x0752  */
-    /* JADX WARN: Code duplicated, block: B:197:0x0753  */
-    /* JADX WARN: Code duplicated, block: B:199:0x0756 A[Catch: Exception -> 0x081c, TRY_LEAVE, TryCatch #16 {Exception -> 0x081c, blocks: (B:166:0x06db, B:169:0x06e2, B:190:0x0735, B:192:0x073f, B:194:0x0746, B:199:0x0756, B:189:0x071a, B:165:0x06d1), top: B:266:0x06db }] */
-    /* JADX WARN: Code duplicated, block: B:201:0x07e6 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:202:0x07e7  */
-    /* JADX WARN: Code duplicated, block: B:205:0x0803  */
-    /* JADX WARN: Code duplicated, block: B:210:0x080a  */
-    /* JADX WARN: Code duplicated, block: B:214:0x0812  */
-    /* JADX WARN: Code duplicated, block: B:215:0x0814  */
-    /* JADX WARN: Code duplicated, block: B:257:0x069a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:280:0x06e8 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:112:0x05c6 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:113:0x05c7  */
+    /* JADX WARN: Code duplicated, block: B:122:0x0617  */
+    /* JADX WARN: Code duplicated, block: B:138:0x0667  */
+    /* JADX WARN: Code duplicated, block: B:154:0x06b7 A[Catch: Exception -> 0x079b, TryCatch #15 {Exception -> 0x079b, blocks: (B:136:0x0661, B:139:0x0668, B:152:0x06ac, B:154:0x06b7, B:156:0x06be, B:161:0x06cd, B:151:0x0693, B:135:0x0657), top: B:233:0x0661 }] */
+    /* JADX WARN: Code duplicated, block: B:156:0x06be A[Catch: Exception -> 0x079b, TryCatch #15 {Exception -> 0x079b, blocks: (B:136:0x0661, B:139:0x0668, B:152:0x06ac, B:154:0x06b7, B:156:0x06be, B:161:0x06cd, B:151:0x0693, B:135:0x0657), top: B:233:0x0661 }] */
+    /* JADX WARN: Code duplicated, block: B:158:0x06c9  */
+    /* JADX WARN: Code duplicated, block: B:159:0x06ca  */
+    /* JADX WARN: Code duplicated, block: B:161:0x06cd A[Catch: Exception -> 0x079b, TRY_LEAVE, TryCatch #15 {Exception -> 0x079b, blocks: (B:136:0x0661, B:139:0x0668, B:152:0x06ac, B:154:0x06b7, B:156:0x06be, B:161:0x06cd, B:151:0x0693, B:135:0x0657), top: B:233:0x0661 }] */
+    /* JADX WARN: Code duplicated, block: B:165:0x075d A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:166:0x075e  */
+    /* JADX WARN: Code duplicated, block: B:169:0x0777  */
+    /* JADX WARN: Code duplicated, block: B:174:0x077e  */
+    /* JADX WARN: Code duplicated, block: B:180:0x078c  */
+    /* JADX WARN: Code duplicated, block: B:181:0x078f  */
+    /* JADX WARN: Code duplicated, block: B:219:0x0620 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:244:0x066e A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Not initialized variable reg: 25, insn: 0x0164: MOVE (r7 I:??[OBJECT, ARRAY]) = (r25 I:??[OBJECT, ARRAY] A[D('found' kotlin.jvm.internal.Ref$BooleanRef)]), block:B:19:0x015e */
-    /* JADX WARN: Not initialized variable reg: 29, insn: 0x0166: MOVE (r21 I:??[OBJECT, ARRAY]) = (r29 I:??[OBJECT, ARRAY] A[D('serverListJson' com.animesuge.provider.AnimeSuge$AjaxResponse)]), block:B:19:0x015e */
-    /* JADX WARN: Not initialized variable reg: 31, insn: 0x0168: MOVE (r8 I:??[OBJECT, ARRAY]) = (r31 I:??[OBJECT, ARRAY] A[D('selectedType' java.lang.String)]), block:B:19:0x015e */
+    /* JADX WARN: Code duplicated, block: B:99:0x04aa  */
+    /* JADX WARN: Not initialized variable reg: 25, insn: 0x0171: MOVE (r6 I:??[OBJECT, ARRAY]) = (r25 I:??[OBJECT, ARRAY] A[D('found' kotlin.jvm.internal.Ref$BooleanRef)]), block:B:19:0x0169 */
+    /* JADX WARN: Not initialized variable reg: 29, insn: 0x0173: MOVE (r21 I:??[OBJECT, ARRAY]) = (r29 I:??[OBJECT, ARRAY] A[D('serverListJson' com.animesuge.provider.AnimeSuge$AjaxResponse)]), block:B:19:0x0169 */
+    /* JADX WARN: Not initialized variable reg: 33, insn: 0x0175: MOVE (r7 I:??[OBJECT, ARRAY]) = (r33 I:??[OBJECT, ARRAY] A[D('animeUrl' java.lang.String)]), block:B:19:0x0169 */
+    /* JADX WARN: Not initialized variable reg: 9, insn: 0x016f: MOVE (r43 I:??[OBJECT, ARRAY]) = (r9 I:??[OBJECT, ARRAY] A[D('linkId' java.lang.String)]), block:B:19:0x0169 */
     /* JADX WARN: Type inference failed for: r0v27, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r0v32, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r0v91, types: [java.lang.Throwable] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:202:0x07e7 -> B:251:0x07fb). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:238:0x0920 -> B:239:0x0921). Please report as a decompilation issue!!! */
+    /* JADX WARN: Type inference failed for: r0v89, types: [java.lang.Throwable] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:166:0x075e -> B:242:0x076f). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:202:0x087e -> B:203:0x0882). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
@@ -1474,15 +1386,10 @@ public final class AnimeSuge extends MainAPI {
     @org.jetbrains.annotations.Nullable
     public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r50, boolean r51, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r52, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r53, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r54) {
         /*
-            Method dump skipped, instruction units count: 2380
+            Method dump skipped, instruction units count: 2216
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.animesuge.provider.AnimeSuge.loadLinks(java.lang.String, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
     }
 
     /* JADX INFO: compiled from: AnimeSuge.kt */
@@ -1715,296 +1622,6 @@ public final class AnimeSuge extends MainAPI {
         @Nullable
         public final String getUrl() {
             return this.url;
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda2
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AnimeSuge.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AnimeSuge.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda1
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AnimeSuge.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                AnimeSuge.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AnimeSuge.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.animesuge.provider.AnimeSuge$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                AnimeSuge.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
         }
     }
 }

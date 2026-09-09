@@ -24,7 +24,7 @@ public final class SubUtils {
     /* JADX INFO: compiled from: SubUtils.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.hdo.SubUtils", f = "SubUtils.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {72, 77}, m = "invokeSubtitleAPI", n = {"id", "season", "episode", "subtitleCallback", "url", "headers", "id", "season", "episode", "subtitleCallback", "url", "headers", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "it", "suburl", "lan", "$i$f$map", "$i$f$mapTo", "$i$a$-map-SubUtils$invokeSubtitleAPI$2"}, nl = {73, 76}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$10", "L$11", "L$12", "L$13", "I$0", "I$1", "I$2"}, v = 2)
-    static final class C00051 extends ContinuationImpl {
+    static final class C00071 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -47,7 +47,7 @@ public final class SubUtils {
         int label;
         /* synthetic */ Object result;
 
-        C00051(Continuation<? super C00051> continuation) {
+        C00071(Continuation<? super C00071> continuation) {
             super(continuation);
         }
 
@@ -63,7 +63,7 @@ public final class SubUtils {
     /* JADX INFO: compiled from: SubUtils.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.hdo.SubUtils", f = "SubUtils.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {99, 105}, m = "invokeWyZIESUBAPI", n = {"id", "season", "episode", "subtitleCallback", "WyZIESUBAPI", "url", "id", "season", "episode", "subtitleCallback", "WyZIESUBAPI", "url", "res", "subtitles", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "it", "suburl", "lan", "$i$f$map", "$i$f$mapTo", "$i$a$-map-SubUtils$invokeWyZIESUBAPI$2"}, nl = {100, 104}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$12", "L$13", "L$14", "L$15", "I$0", "I$1", "I$2"}, v = 2)
-    static final class C00061 extends ContinuationImpl {
+    static final class C00081 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -88,7 +88,7 @@ public final class SubUtils {
         int label;
         /* synthetic */ Object result;
 
-        C00061(Continuation<? super C00061> continuation) {
+        C00081(Continuation<? super C00081> continuation) {
             super(continuation);
         }
 

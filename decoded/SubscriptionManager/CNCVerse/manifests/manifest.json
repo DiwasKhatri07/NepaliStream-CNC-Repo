@@ -1,6 +1,6 @@
 {
   "requiresResources": true,
-  "version": 14,
+  "version": 15,
   "pluginClassName": "com.cncverse.SubscriptionManagerPlugin",
   "name": "SubscriptionManager"
 }

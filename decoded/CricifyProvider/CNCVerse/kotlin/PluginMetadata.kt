@@ -4,7 +4,7 @@ package nepali.stream.decoded.cricifyprovider
 object PluginMetadata {
     const val name: String = "CricifyProvider"
     const val originalPluginClass: String = "com.cncverse.CricifyPlugin"
-    const val version: Int = 65
+    const val version: Int = 66
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

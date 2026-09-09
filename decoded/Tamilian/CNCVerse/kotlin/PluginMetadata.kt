@@ -4,7 +4,7 @@ package nepali.stream.decoded.tamilian
 object PluginMetadata {
     const val name: String = "Tamilian"
     const val originalPluginClass: String = "com.Tamilian.HiAnimeProviderPlugin"
-    const val version: Int = 30
+    const val version: Int = 31
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

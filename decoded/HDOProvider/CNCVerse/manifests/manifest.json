@@ -1,6 +1,6 @@
 {
   "requiresResources": false,
-  "version": 33,
+  "version": 34,
   "pluginClassName": "com.hdo.HDOProviderPlugin",
   "name": "HDOProvider"
 }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
+import com.cncverse.donation.DonationManager;
 import com.lagradost.cloudstream3.CommonActivity;
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin;
 import com.lagradost.cloudstream3.plugins.Plugin;
@@ -37,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/PlayZTVProvider/CNCVerse/java/classes.dex */
 @CloudstreamPlugin
 @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0006\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lcom/cncverse/PlayZTVPlugin;", "Lcom/lagradost/cloudstream3/plugins/Plugin;", "<init>", "()V", "sharedPref", "Landroid/content/SharedPreferences;", "iptvProviders", "", "", "", "", "load", "", "context", "Landroid/content/Context;", "PlayZTVProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nPlayZTVPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlayZTVPlugin.kt\ncom/cncverse/PlayZTVPlugin\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,70:1\n1642#2,10:71\n1915#2:81\n1916#2:83\n1652#2:84\n777#2:85\n873#2,2:86\n1915#2,2:88\n1642#2,10:90\n1915#2:100\n1916#2:102\n1652#2:103\n1#3:82\n1#3:101\n*S KotlinDebug\n*F\n+ 1 PlayZTVPlugin.kt\ncom/cncverse/PlayZTVPlugin\n*L\n36#1:71,10\n36#1:81\n36#1:83\n36#1:84\n42#1:85\n42#1:86,2\n46#1:88,2\n65#1:90,10\n65#1:100\n65#1:102\n65#1:103\n36#1:82\n65#1:101\n*E\n"})
+@SourceDebugExtension({"SMAP\nPlayZTVPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlayZTVPlugin.kt\ncom/cncverse/PlayZTVPlugin\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,71:1\n1642#2,10:72\n1915#2:82\n1916#2:84\n1652#2:85\n777#2:86\n873#2,2:87\n1915#2,2:89\n1642#2,10:91\n1915#2:101\n1916#2:103\n1652#2:104\n1#3:83\n1#3:102\n*S KotlinDebug\n*F\n+ 1 PlayZTVPlugin.kt\ncom/cncverse/PlayZTVPlugin\n*L\n37#1:72,10\n37#1:82\n37#1:84\n37#1:85\n43#1:86\n43#1:87,2\n47#1:89,2\n66#1:91,10\n66#1:101\n66#1:103\n66#1:104\n37#1:83\n66#1:102\n*E\n"})
 public final class PlayZTVPlugin extends Plugin {
 
     @NotNull
@@ -54,6 +55,7 @@ public final class PlayZTVPlugin extends Plugin {
 
     public void load(@NotNull Context context) {
         Pair pair;
+        DonationManager.INSTANCE.setActivity(context);
         PlayZTV.INSTANCE.setContext(context);
         PlayZTVLiveEventsProvider.INSTANCE.setContext(context);
         String str = null;
@@ -122,7 +124,7 @@ public final class PlayZTVPlugin extends Plugin {
     /* JADX INFO: renamed from: com.cncverse.PlayZTVPlugin$load$1 */
     /* JADX INFO: compiled from: PlayZTVPlugin.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010 \n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00040\u00020\u0001*\u00020\u0005H\n"}, d2 = {"<anonymous>", "", "", "", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayZTVPlugin$load$1", f = "PlayZTVPlugin.kt", i = {}, l = {33}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PlayZTVPlugin$load$1", f = "PlayZTVPlugin.kt", i = {}, l = {34}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00201 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Map<String, ? extends Object>>>, Object> {
         int label;
 

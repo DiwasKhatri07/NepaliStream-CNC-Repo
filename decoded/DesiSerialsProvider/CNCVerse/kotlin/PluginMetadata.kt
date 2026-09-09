@@ -4,7 +4,7 @@ package nepali.stream.decoded.desiserialsprovider
 object PluginMetadata {
     const val name: String = "DesiSerialsProvider"
     const val originalPluginClass: String = "com.cncverse.desiserials.DesiSerialsProviderPlugin"
-    const val version: Int = 30
+    const val version: Int = 31
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

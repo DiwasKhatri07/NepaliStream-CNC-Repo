@@ -1,28 +1,15 @@
 package com.hexated;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.View;
-import android.view.Window;
 import android.webkit.CookieManager;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.lagradost.cloudstream3.Actor;
 import com.lagradost.cloudstream3.AnimeSearchResponse;
@@ -40,7 +27,6 @@ import com.lagradost.cloudstream3.Score;
 import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
@@ -49,13 +35,11 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
@@ -98,24 +82,16 @@ import org.jsoup.nodes.Element;
 
 /* JADX INFO: compiled from: HDrezkaProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/HDrezkaProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u007f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\b\t*\u0001M\u0018\u0000 O2\u00020\u0001:\u0006OPQRSTB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\u001c\u0010)\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0016\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0010\u0010/\u001a\u00020\u00052\u0006\u00100\u001a\u00020\u0005H\u0002JB\u00101\u001a\u0002022\u0006\u00103\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u00052\u0006\u00105\u001a\u00020\u000e2\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020207H\u0082@¢\u0006\u0002\u00109J\u0010\u0010:\u001a\u00020\u00052\u0006\u0010;\u001a\u00020\u0005H\u0002J\u0010\u0010<\u001a\u00020\"2\u0006\u0010;\u001a\u00020\u0005H\u0002JN\u0010=\u001a\u0002022\u0006\u00103\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u00052\u0006\u0010>\u001a\u00020\u00052\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u000202072\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020207H\u0082@¢\u0006\u0002\u0010AJF\u0010B\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u00052\u0006\u0010C\u001a\u00020\u000e2\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u000202072\u0012\u0010E\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020207H\u0096@¢\u0006\u0002\u0010FJ\b\u0010G\u001a\u000202H\u0002J\b\u0010H\u001a\u000202H\u0002J\u0010\u0010I\u001a\u0002022\u0006\u0010.\u001a\u00020\u0005H\u0002J\u0012\u0010K\u001a\u0004\u0018\u00010\u00052\u0006\u0010.\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0010\u0010J\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010L\u001a\u00020MX\u0082\u0004¢\u0006\u0004\n\u0002\u0010N¨\u0006U"}, d2 = {"Lcom/hexated/HDrezkaProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "decryptStreamUrl", "data", "cleanCallback", "", "source", "quality", "isM3u8", "sourceCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getLanguage", "str", "getQuality", "invokeSources", "subtitle", "subCallback", "Lcom/lagradost/cloudstream3/SubtitleFile;", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "isCasting", "subtitleCallback", "callback", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "anubisCookie", "getAnubisCookie", "anubisKiller", "com/hexated/HDrezkaProvider$anubisKiller$1", "Lcom/hexated/HDrezkaProvider$anubisKiller$1;", "Companion", "LocalSources", "Sources", "Server", "Data", "Trailer", "HDrezkaProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nHDrezkaProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HDrezkaProvider.kt\ncom/hexated/HDrezkaProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 7 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,854:1\n1586#2:855\n1661#2,3:856\n1586#2:859\n1661#2,3:860\n1586#2:863\n1661#2,3:864\n1642#2,10:873\n1915#2:883\n1916#2:885\n1652#2:886\n1586#2:887\n1661#2,3:888\n1586#2:891\n1661#2,3:892\n1586#2:895\n1661#2,3:896\n1586#2:899\n1661#2,3:900\n1586#2:903\n1661#2,3:904\n1915#2,2:907\n1586#2:909\n1661#2,2:910\n1586#2:912\n1661#2,3:913\n1663#2:916\n1586#2:917\n1661#2,3:918\n1586#2:944\n1661#2,2:945\n1663#2:970\n1586#2:971\n1661#2,2:972\n1266#2,4:983\n1663#2:992\n2829#2,5:993\n1915#2:998\n1915#2,2:999\n1916#2:1001\n2835#2:1002\n67#3,5:867\n67#3,5:987\n1#4:872\n1#4:884\n1#4:924\n1#4:950\n93#5,2:921\n63#5:923\n64#5,15:925\n95#5,2:942\n93#5,2:947\n63#5:949\n64#5,15:951\n95#5,2:968\n50#6:940\n43#6:941\n50#6:966\n43#6:967\n507#7,7:974\n466#7:981\n415#7:982\n*S KotlinDebug\n*F\n+ 1 HDrezkaProvider.kt\ncom/hexated/HDrezkaProvider\n*L\n93#1:855\n93#1:856,3\n131#1:859\n131#1:860,3\n146#1:863\n146#1:864,3\n164#1:873,10\n164#1:883\n164#1:885\n164#1:886\n171#1:887\n171#1:888,3\n185#1:891\n185#1:892,3\n195#1:895\n195#1:896,3\n209#1:899\n209#1:900,3\n242#1:903\n242#1:904,3\n295#1:907,2\n353#1:909\n353#1:910,2\n358#1:912\n358#1:913,3\n353#1:916\n371#1:917\n371#1:918,3\n410#1:944\n410#1:945,2\n410#1:970\n426#1:971\n426#1:972,2\n440#1:983,4\n426#1:992\n280#1:993,5\n282#1:998\n283#1:999,2\n282#1:1001\n280#1:1002\n157#1:867,5\n442#1:987,5\n164#1:884\n407#1:924\n414#1:950\n407#1:921,2\n407#1:923\n407#1:925,15\n407#1:942,2\n414#1:947,2\n414#1:949\n414#1:951,15\n414#1:968,2\n407#1:940\n407#1:941\n414#1:966\n414#1:967\n440#1:974,7\n440#1:981\n440#1:982\n*E\n"})
+@Metadata(d1 = {"\u0000\u007f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\t\n\u0002\b\t*\u0001J\u0018\u0000 L2\u00020\u0001:\u0006LMNOPQB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\f\u0010&\u001a\u00020'*\u00020(H\u0002J\u001c\u0010)\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0016\u0010,\u001a\u00020-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0010\u0010/\u001a\u00020\u00052\u0006\u00100\u001a\u00020\u0005H\u0002JB\u00101\u001a\u0002022\u0006\u00103\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u00052\u0006\u00104\u001a\u00020\u00052\u0006\u00105\u001a\u00020\u000e2\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020207H\u0082@¢\u0006\u0002\u00109J\u0010\u0010:\u001a\u00020\u00052\u0006\u0010;\u001a\u00020\u0005H\u0002J\u0010\u0010<\u001a\u00020\"2\u0006\u0010;\u001a\u00020\u0005H\u0002JN\u0010=\u001a\u0002022\u0006\u00103\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u00052\u0006\u0010>\u001a\u00020\u00052\u0012\u0010?\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u000202072\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020207H\u0082@¢\u0006\u0002\u0010AJF\u0010B\u001a\u00020\u000e2\u0006\u00100\u001a\u00020\u00052\u0006\u0010C\u001a\u00020\u000e2\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020@\u0012\u0004\u0012\u000202072\u0012\u0010E\u001a\u000e\u0012\u0004\u0012\u000208\u0012\u0004\u0012\u00020207H\u0096@¢\u0006\u0002\u0010FJ\u0012\u0010H\u001a\u0004\u0018\u00010\u00052\u0006\u0010.\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001fR\u0010\u0010G\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u0010\u0010I\u001a\u00020JX\u0082\u0004¢\u0006\u0004\n\u0002\u0010K¨\u0006R"}, d2 = {"Lcom/hexated/HDrezkaProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "decryptStreamUrl", "data", "cleanCallback", "", "source", "quality", "isM3u8", "sourceCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getLanguage", "str", "getQuality", "invokeSources", "subtitle", "subCallback", "Lcom/lagradost/cloudstream3/SubtitleFile;", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "isCasting", "subtitleCallback", "callback", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "anubisCookie", "getAnubisCookie", "anubisKiller", "com/hexated/HDrezkaProvider$anubisKiller$1", "Lcom/hexated/HDrezkaProvider$anubisKiller$1;", "Companion", "LocalSources", "Sources", "Server", "Data", "Trailer", "HDrezkaProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nHDrezkaProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HDrezkaProvider.kt\ncom/hexated/HDrezkaProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 6 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 7 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,558:1\n1586#2:559\n1661#2,3:560\n1586#2:563\n1661#2,3:564\n1586#2:567\n1661#2,3:568\n1642#2,10:577\n1915#2:587\n1916#2:589\n1652#2:590\n1586#2:591\n1661#2,3:592\n1586#2:595\n1661#2,3:596\n1586#2:599\n1661#2,3:600\n1586#2:603\n1661#2,3:604\n1586#2:607\n1661#2,3:608\n1915#2,2:611\n1586#2:613\n1661#2,2:614\n1586#2:616\n1661#2,3:617\n1663#2:620\n1586#2:621\n1661#2,3:622\n1586#2:648\n1661#2,2:649\n1663#2:674\n1586#2:675\n1661#2,2:676\n1266#2,4:687\n1663#2:696\n2829#2,5:697\n1915#2:702\n1915#2,2:703\n1916#2:705\n2835#2:706\n67#3,5:571\n67#3,5:691\n1#4:576\n1#4:588\n1#4:628\n1#4:654\n93#5,2:625\n63#5:627\n64#5,15:629\n95#5,2:646\n93#5,2:651\n63#5:653\n64#5,15:655\n95#5,2:672\n50#6:644\n43#6:645\n50#6:670\n43#6:671\n507#7,7:678\n466#7:685\n415#7:686\n*S KotlinDebug\n*F\n+ 1 HDrezkaProvider.kt\ncom/hexated/HDrezkaProvider\n*L\n58#1:559\n58#1:560,3\n96#1:563\n96#1:564,3\n111#1:567\n111#1:568,3\n129#1:577,10\n129#1:587\n129#1:589\n129#1:590\n136#1:591\n136#1:592,3\n150#1:595\n150#1:596,3\n160#1:599\n160#1:600,3\n174#1:603\n174#1:604,3\n207#1:607\n207#1:608,3\n260#1:611,2\n318#1:613\n318#1:614,2\n323#1:616\n323#1:617,3\n318#1:620\n336#1:621\n336#1:622,3\n358#1:648\n358#1:649,2\n358#1:674\n374#1:675\n374#1:676,2\n388#1:687,4\n374#1:696\n245#1:697,5\n247#1:702\n248#1:703,2\n247#1:705\n245#1:706\n122#1:571,5\n390#1:691,5\n129#1:588\n355#1:628\n362#1:654\n355#1:625,2\n355#1:627\n355#1:629,15\n355#1:646,2\n362#1:651,2\n362#1:653\n362#1:655,15\n362#1:672,2\n355#1:644\n355#1:645\n362#1:670\n362#1:671\n388#1:678,7\n388#1:685\n388#1:686\n*E\n"})
 public final class HDrezkaProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @Nullable
     private String anubisCookie;
@@ -183,8 +159,8 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.hexated.HDrezkaProvider$cleanCallback$1 */
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 0, 0, 0, 0}, l = {312}, m = "cleanCallback", n = {"source", "url", "quality", "sourceCallback", "isM3u8"}, nl = {311}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
-    static final class C00001 extends ContinuationImpl {
+    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 0, 0, 0, 0}, l = {277}, m = "cleanCallback", n = {"source", "url", "quality", "sourceCallback", "isM3u8"}, nl = {276}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    static final class C00021 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$2;
@@ -194,7 +170,7 @@ public final class HDrezkaProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00001(Continuation<? super C00001> continuation) {
+        C00021(Continuation<? super C00021> continuation) {
             super(continuation);
         }
 
@@ -209,15 +185,15 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.hexated.HDrezkaProvider$getMainPage$1 */
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 0, 0}, l = {91}, m = "getMainPage", n = {"request", "url", "page"}, nl = {92}, s = {"L$0", "L$1", "I$0"}, v = 2)
-    static final class C00021 extends ContinuationImpl {
+    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 0, 0}, l = {56}, m = "getMainPage", n = {"request", "url", "page"}, nl = {57}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    static final class C00041 extends ContinuationImpl {
         int I$0;
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C00021(Continuation<? super C00021> continuation) {
+        C00041(Continuation<? super C00041> continuation) {
             super(continuation);
         }
 
@@ -232,8 +208,8 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.hexated.HDrezkaProvider$invokeSources$1 */
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {361, 376}, m = "invokeSources", n = {"source", "url", "subtitle", "subCallback", "sourceCallback", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "links", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "quality", "item$iv$iv", "it", "link", "type", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$invokeSources$2", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$invokeSources$2$1", "source", "url", "subtitle", "subCallback", "sourceCallback", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "sub", "link", "language", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$invokeSources$3"}, nl = {368, 375}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$16", "L$17", "L$19", "L$20", "I$0", "I$1", "I$2", "I$3", "I$4", "I$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "I$0", "I$1", "I$2"}, v = 2)
-    static final class C00031 extends ContinuationImpl {
+    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {326, 341}, m = "invokeSources", n = {"source", "url", "subtitle", "subCallback", "sourceCallback", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "links", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "quality", "item$iv$iv", "it", "link", "type", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$invokeSources$2", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$invokeSources$2$1", "source", "url", "subtitle", "subCallback", "sourceCallback", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "sub", "link", "language", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$invokeSources$3"}, nl = {333, 340}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$16", "L$17", "L$19", "L$20", "I$0", "I$1", "I$2", "I$3", "I$4", "I$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$11", "L$12", "I$0", "I$1", "I$2"}, v = 2)
+    static final class C00051 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -265,7 +241,7 @@ public final class HDrezkaProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00031(Continuation<? super C00031> continuation) {
+        C00051(Continuation<? super C00051> continuation) {
             super(continuation);
         }
 
@@ -280,8 +256,8 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.hexated.HDrezkaProvider$load$1 */
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {138, 152, 231, 257}, m = "load", n = {"url", "url", "document", "id", "title", "poster", "tags", "year", "tvType", "description", "url", "document", "id", "title", "poster", "tags", "year", "tvType", "description", "trailer", "ratingText", "score", "actors", "recommendations", "data", "server", "translators", "episodes", "url", "document", "id", "title", "poster", "tags", "year", "tvType", "description", "trailer", "ratingText", "score", "actors", "recommendations", "data", "server"}, nl = {140, 157, 242, 182}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15"}, v = 2)
-    static final class C00041 extends ContinuationImpl {
+    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {103, 117, 196, 222}, m = "load", n = {"url", "url", "document", "id", "title", "poster", "tags", "year", "tvType", "description", "url", "document", "id", "title", "poster", "tags", "year", "tvType", "description", "trailer", "ratingText", "score", "actors", "recommendations", "data", "server", "translators", "episodes", "url", "document", "id", "title", "poster", "tags", "year", "tvType", "description", "trailer", "ratingText", "score", "actors", "recommendations", "data", "server"}, nl = {105, 122, 207, 147}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15"}, v = 2)
+    static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -303,7 +279,7 @@ public final class HDrezkaProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00041(Continuation<? super C00041> continuation) {
+        C00061(Continuation<? super C00061> continuation) {
             super(continuation);
         }
 
@@ -318,8 +294,8 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.hexated.HDrezkaProvider$loadLinks$1 */
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {409, 415, 427, 443}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "res", "isCasting", "$i$a$-let-HDrezkaProvider$loadLinks$3", "data", "subtitleCallback", "callback", "res", "document", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "script", "dataJson", "source", "isCasting", "$i$a$-let-HDrezkaProvider$loadLinks$3", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$loadLinks$3$1", "$i$a$-let-HDrezkaProvider$loadLinks$3$1$1", "data", "subtitleCallback", "callback", "res", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "server", "isCasting", "$i$a$-let-HDrezkaProvider$loadLinks$3", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$loadLinks$3$2", "data", "subtitleCallback", "callback", "res", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "server", "source", "isCasting", "$i$a$-let-HDrezkaProvider$loadLinks$3", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$loadLinks$3$2", "$i$a$-let-HDrezkaProvider$loadLinks$3$2$3"}, nl = {410, 422, 442, 450}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$12", "L$13", "Z$0", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "Z$0", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "Z$0", "I$0", "I$1", "I$2", "I$3", "I$4"}, v = 2)
-    static final class C00071 extends ContinuationImpl {
+    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {357, 363, 375, 391}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "res", "isCasting", "$i$a$-let-HDrezkaProvider$loadLinks$2", "data", "subtitleCallback", "callback", "res", "document", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "script", "dataJson", "source", "isCasting", "$i$a$-let-HDrezkaProvider$loadLinks$2", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$loadLinks$2$1", "$i$a$-let-HDrezkaProvider$loadLinks$2$1$1", "data", "subtitleCallback", "callback", "res", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "server", "isCasting", "$i$a$-let-HDrezkaProvider$loadLinks$2", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$loadLinks$2$2", "data", "subtitleCallback", "callback", "res", "$this$map$iv", "$this$mapTo$iv$iv", "destination$iv$iv", "item$iv$iv", "server", "source", "isCasting", "$i$a$-let-HDrezkaProvider$loadLinks$2", "$i$f$map", "$i$f$mapTo", "$i$a$-map-HDrezkaProvider$loadLinks$2$2", "$i$a$-let-HDrezkaProvider$loadLinks$2$2$3"}, nl = {358, 370, 390, 398}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "L$12", "L$13", "Z$0", "I$0", "I$1", "I$2", "I$3", "I$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "Z$0", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$8", "L$9", "L$10", "Z$0", "I$0", "I$1", "I$2", "I$3", "I$4"}, v = 2)
+    static final class C00091 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -343,7 +319,7 @@ public final class HDrezkaProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00071(Continuation<? super C00071> continuation) {
+        C00091(Continuation<? super C00091> continuation) {
             super(continuation);
         }
 
@@ -358,14 +334,14 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.hexated.HDrezkaProvider$search$1 */
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 0}, l = {129}, m = "search", n = {"query", "link"}, nl = {131}, s = {"L$0", "L$1"}, v = 2)
-    static final class C00081 extends ContinuationImpl {
+    @DebugMetadata(c = "com.hexated.HDrezkaProvider", f = "HDrezkaProvider.kt", i = {0, 0}, l = {94}, m = "search", n = {"query", "link"}, nl = {96}, s = {"L$0", "L$1"}, v = 2)
+    static final class C00101 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         int label;
         /* synthetic */ Object result;
 
-        C00081(Continuation<? super C00081> continuation) {
+        C00101(Continuation<? super C00101> continuation) {
             super(continuation);
         }
 
@@ -378,65 +354,13 @@ public final class HDrezkaProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/hexated/HDrezkaProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "HDrezkaProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nHDrezkaProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 HDrezkaProvider.kt\ncom/hexated/HDrezkaProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,854:1\n1#2:855\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/hexated/HDrezkaProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "HDrezkaProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                HDrezkaProvider.csGuardWasEverActive = true;
-            }
-            return HDrezkaProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.hexated.HDrezkaProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    HDrezkaProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -497,40 +421,33 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
-        C00021 c00021;
-        Boolean bool;
+        C00041 c00041;
         MainPageRequest request2;
-        if (continuation instanceof C00021) {
-            c00021 = (C00021) continuation;
-            if ((c00021.label & Integer.MIN_VALUE) != 0) {
-                c00021.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00041) {
+            c00041 = (C00041) continuation;
+            if ((c00041.label & Integer.MIN_VALUE) != 0) {
+                c00041.label -= Integer.MIN_VALUE;
             } else {
-                c00021 = new C00021(continuation);
+                c00041 = new C00041(continuation);
             }
         } else {
-            c00021 = new C00021(continuation);
+            c00041 = new C00041(continuation);
         }
-        Object $result = c00021.result;
+        Object $result = c00041.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00021.label) {
+        switch (c00041.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 List url = StringsKt.split$default(request.getData(), new String[]{"?"}, false, 0, 6, (Object) null);
                 Requests app = MainActivityKt.getApp();
                 String str = ((String) CollectionsKt.first(url)) + "page/" + page + "/?" + ((String) CollectionsKt.last(url));
                 HDrezkaProvider$anubisKiller$1 hDrezkaProvider$anubisKiller$1 = this.anubisKiller;
-                c00021.L$0 = request;
-                c00021.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c00021.I$0 = page;
-                c00021.label = 1;
-                bool = null;
-                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, hDrezkaProvider$anubisKiller$1, false, (ResponseParser) null, c00021, 3582, (Object) null);
+                c00041.L$0 = request;
+                c00041.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00041.I$0 = page;
+                c00041.label = 1;
+                $result = Requests.get$default(app, str, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, hDrezkaProvider$anubisKiller$1, false, (ResponseParser) null, c00041, 3582, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -538,10 +455,9 @@ public final class HDrezkaProvider extends MainAPI {
                 break;
                 break;
             case 1:
-                int i = c00021.I$0;
-                request2 = (MainPageRequest) c00021.L$0;
+                int i = c00041.I$0;
+                request2 = (MainPageRequest) c00041.L$0;
                 ResultKt.throwOnFailure($result);
-                bool = null;
                 break;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
@@ -553,7 +469,7 @@ public final class HDrezkaProvider extends MainAPI {
             destination$iv$iv.add(toSearchResult(it));
         }
         List home = (List) destination$iv$iv;
-        return MainAPIKt.newHomePageResponse$default(request2.getName(), home, bool, 4, bool);
+        return MainAPIKt.newHomePageResponse$default(request2.getName(), home, (Boolean) null, 4, (Object) null);
     }
 
     private final SearchResponse toSearchResult(Element $this$toSearchResult) {
@@ -565,14 +481,14 @@ public final class HDrezkaProvider extends MainAPI {
         final String posterUrl = $this$toSearchResult.select("img").attr("src");
         TvType type = !$this$toSearchResult.select("span.info").isEmpty() ? TvType.TvSeries : TvType.Movie;
         if (type == TvType.Movie) {
-            return MainAPIKt.newMovieSearchResponse$default(this, title, href, TvType.Movie, false, new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda6
+            return MainAPIKt.newMovieSearchResponse$default(this, title, href, TvType.Movie, false, new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda1
                 public final Object invoke(Object obj) {
                     return HDrezkaProvider.toSearchResult$lambda$0(posterUrl, (MovieSearchResponse) obj);
                 }
             }, 8, (Object) null);
         }
         final Integer episode = StringsKt.toIntOrNull(new Regex("[^0-9]").replace(StringsKt.substringAfter$default($this$toSearchResult.select("span.info").text(), ",", (String) null, 2, (Object) null), ""));
-        return MainAPIKt.newAnimeSearchResponse$default(this, title, href, TvType.TvSeries, false, new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda7
+        return MainAPIKt.newAnimeSearchResponse$default(this, title, href, TvType.TvSeries, false, new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda2
             public final Object invoke(Object obj) {
                 return HDrezkaProvider.toSearchResult$lambda$1(posterUrl, episode, (AnimeSearchResponse) obj);
             }
@@ -595,33 +511,29 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
-        C00081 c00081;
-        if (continuation instanceof C00081) {
-            c00081 = (C00081) continuation;
-            if ((c00081.label & Integer.MIN_VALUE) != 0) {
-                c00081.label -= Integer.MIN_VALUE;
+        C00101 c00101;
+        if (continuation instanceof C00101) {
+            c00101 = (C00101) continuation;
+            if ((c00101.label & Integer.MIN_VALUE) != 0) {
+                c00101.label -= Integer.MIN_VALUE;
             } else {
-                c00081 = new C00081(continuation);
+                c00101 = new C00101(continuation);
             }
         } else {
-            c00081 = new C00081(continuation);
+            c00101 = new C00101(continuation);
         }
-        Object $result = c00081.result;
+        Object $result = c00101.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00081.label) {
+        switch (c00101.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 String link = getMainUrl() + "/search/?do=search&subaction=search&q=" + query;
                 Requests app = MainActivityKt.getApp();
                 HDrezkaProvider$anubisKiller$1 hDrezkaProvider$anubisKiller$1 = this.anubisKiller;
-                c00081.L$0 = SpillingKt.nullOutSpilledVariable(query);
-                c00081.L$1 = SpillingKt.nullOutSpilledVariable(link);
-                c00081.label = 1;
-                $result = Requests.get$default(app, link, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, hDrezkaProvider$anubisKiller$1, false, (ResponseParser) null, c00081, 3582, (Object) null);
+                c00101.L$0 = SpillingKt.nullOutSpilledVariable(query);
+                c00101.L$1 = SpillingKt.nullOutSpilledVariable(link);
+                c00101.label = 1;
+                $result = Requests.get$default(app, link, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, hDrezkaProvider$anubisKiller$1, false, (ResponseParser) null, c00101, 3582, (Object) null);
                 if ($result == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -689,7 +601,7 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:95:0x03fc  */
     @Nullable
     public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) {
-        C00041 c00041;
+        C00061 c00061;
         Object obj;
         Object obj2;
         String str;
@@ -796,32 +708,32 @@ public final class HDrezkaProvider extends MainAPI {
         Actor actor;
         String strText5;
         Double doubleOrNull;
-        if (continuation instanceof C00041) {
-            c00041 = (C00041) continuation;
-            if ((c00041.label & Integer.MIN_VALUE) != 0) {
-                c00041.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00061) {
+            c00061 = (C00061) continuation;
+            if ((c00061.label & Integer.MIN_VALUE) != 0) {
+                c00061.label -= Integer.MIN_VALUE;
             } else {
-                c00041 = new C00041(continuation);
+                c00061 = new C00061(continuation);
             }
         } else {
-            c00041 = new C00041(continuation);
+            c00061 = new C00061(continuation);
         }
-        C00041 c00042 = c00041;
-        Object $result = c00042.result;
+        C00061 c00062 = c00061;
+        Object $result = c00062.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00042.label) {
+        switch (c00062.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 Requests app = MainActivityKt.getApp();
                 HDrezkaProvider$anubisKiller$1 hDrezkaProvider$anubisKiller$1 = this.anubisKiller;
-                c00042.L$0 = url;
-                c00042.label = 1;
+                c00062.L$0 = url;
+                c00062.label = 1;
                 obj = coroutine_suspended;
                 obj2 = "id";
                 str = "src";
                 c = 0;
-                $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, hDrezkaProvider$anubisKiller$1, false, (ResponseParser) null, c00042, 3582, (Object) null);
-                c00042 = c00042;
+                $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, hDrezkaProvider$anubisKiller$1, false, (ResponseParser) null, c00062, 3582, (Object) null);
+                c00062 = c00062;
                 if ($result == obj) {
                     return obj;
                 }
@@ -875,21 +787,21 @@ public final class HDrezkaProvider extends MainAPI {
                 Requests app2 = MainActivityKt.getApp();
                 String str3 = getMainUrl() + "/engine/ajax/gettrailervideo.php";
                 HDrezkaProvider$anubisKiller$1 hDrezkaProvider$anubisKiller$2 = this.anubisKiller;
-                c00042.L$0 = url2;
-                c00042.L$1 = document;
-                c00042.L$2 = id;
-                c00042.L$3 = title;
-                c00042.L$4 = poster;
-                c00042.L$5 = tags;
-                c00042.L$6 = year;
-                c00042.L$7 = tvType;
-                c00042.L$8 = description;
-                c00042.label = 2;
+                c00062.L$0 = url2;
+                c00062.L$1 = document;
+                c00062.L$2 = id;
+                c00062.L$3 = title;
+                c00062.L$4 = poster;
+                c00062.L$5 = tags;
+                c00062.L$6 = year;
+                c00062.L$7 = tvType;
+                c00062.L$8 = description;
+                c00062.label = 2;
                 tvType2 = tvType;
-                C00041 c00043 = c00042;
+                C00061 c00063 = c00062;
                 obj3 = obj2;
-                $result = Requests.post$default(app2, str3, (Map) null, url2, (Map) null, (Map) null, MapsKt.mapOf(TuplesKt.to(obj2, id)), (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, hDrezkaProvider$anubisKiller$2, false, (ResponseParser) null, c00043, 57306, (Object) null);
-                c00042 = c00043;
+                $result = Requests.post$default(app2, str3, (Map) null, url2, (Map) null, (Map) null, MapsKt.mapOf(TuplesKt.to(obj2, id)), (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, hDrezkaProvider$anubisKiller$2, false, (ResponseParser) null, c00063, 57306, (Object) null);
+                c00062 = c00063;
                 if ($result == obj) {
                     return obj;
                 }
@@ -1054,7 +966,7 @@ public final class HDrezkaProvider extends MainAPI {
                             data.put("episode", String.valueOf(episode));
                             data.put("server", server);
                             data.put("action", "get_stream");
-                            destination$iv$iv6.add(MainAPIKt.newEpisode(this, AppUtils.INSTANCE.toJson(data), new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda12
+                            destination$iv$iv6.add(MainAPIKt.newEpisode(this, AppUtils.INSTANCE.toJson(data), new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda4
                                 public final Object invoke(Object obj4) {
                                     return HDrezkaProvider.load$lambda$7$1(name, season, episode, (Episode) obj4);
                                 }
@@ -1071,7 +983,7 @@ public final class HDrezkaProvider extends MainAPI {
                         data.put("episode", String.valueOf(episode));
                         data.put("server", server);
                         data.put("action", "get_stream");
-                        destination$iv$iv6.add(MainAPIKt.newEpisode(this, AppUtils.INSTANCE.toJson(data), new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda12
+                        destination$iv$iv6.add(MainAPIKt.newEpisode(this, AppUtils.INSTANCE.toJson(data), new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda4
                             public final Object invoke(Object obj4) {
                                 return HDrezkaProvider.load$lambda$7$1(name2, season, episode, (Episode) obj4);
                             }
@@ -1085,27 +997,27 @@ public final class HDrezkaProvider extends MainAPI {
                     List episodes = (List) destination$iv$iv6;
                     TvType tvType6 = TvType.TvSeries;
                     String poster6 = poster4;
-                    C00054 c00054 = new C00054(poster6, year2, description2, tags2, score, actors, recommendations, trailer2, null);
-                    c00042.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                    c00042.L$1 = SpillingKt.nullOutSpilledVariable(document2);
-                    c00042.L$2 = SpillingKt.nullOutSpilledVariable(id2);
-                    c00042.L$3 = SpillingKt.nullOutSpilledVariable(title3);
-                    c00042.L$4 = SpillingKt.nullOutSpilledVariable(poster6);
-                    c00042.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
-                    c00042.L$6 = SpillingKt.nullOutSpilledVariable(year2);
-                    c00042.L$7 = SpillingKt.nullOutSpilledVariable(tvType3);
-                    c00042.L$8 = SpillingKt.nullOutSpilledVariable(description2);
-                    c00042.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
-                    c00042.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
-                    c00042.L$11 = SpillingKt.nullOutSpilledVariable(score);
-                    c00042.L$12 = SpillingKt.nullOutSpilledVariable(actors);
-                    c00042.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
-                    c00042.L$14 = SpillingKt.nullOutSpilledVariable(data);
-                    c00042.L$15 = SpillingKt.nullOutSpilledVariable(server);
-                    c00042.L$16 = SpillingKt.nullOutSpilledVariable(server3);
-                    c00042.L$17 = SpillingKt.nullOutSpilledVariable(episodes);
-                    c00042.label = 3;
-                    $result = MainAPIKt.newTvSeriesLoadResponse(this, title3, url4, tvType6, episodes, c00054, c00042);
+                    C00074 c00074 = new C00074(poster6, year2, description2, tags2, score, actors, recommendations, trailer2, null);
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(url4);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(document2);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(id2);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(title3);
+                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(poster6);
+                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
+                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(year2);
+                    c00062.L$7 = SpillingKt.nullOutSpilledVariable(tvType3);
+                    c00062.L$8 = SpillingKt.nullOutSpilledVariable(description2);
+                    c00062.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
+                    c00062.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
+                    c00062.L$11 = SpillingKt.nullOutSpilledVariable(score);
+                    c00062.L$12 = SpillingKt.nullOutSpilledVariable(actors);
+                    c00062.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
+                    c00062.L$14 = SpillingKt.nullOutSpilledVariable(data);
+                    c00062.L$15 = SpillingKt.nullOutSpilledVariable(server);
+                    c00062.L$16 = SpillingKt.nullOutSpilledVariable(server3);
+                    c00062.L$17 = SpillingKt.nullOutSpilledVariable(episodes);
+                    c00062.label = 3;
+                    $result = MainAPIKt.newTvSeriesLoadResponse(this, title3, url4, tvType6, episodes, c00074, c00062);
                     if ($result == obj) {
                         return obj;
                     }
@@ -1124,25 +1036,25 @@ public final class HDrezkaProvider extends MainAPI {
                         data.put("action", "get_movie");
                         TvType tvType7 = TvType.Movie;
                         String json = AppUtils.INSTANCE.toJson(data);
-                        C00066 c00066 = new C00066(poster2, year2, description2, tags2, score, actors, recommendations, trailer2, null);
-                        c00042.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                        c00042.L$1 = SpillingKt.nullOutSpilledVariable(document2);
-                        c00042.L$2 = SpillingKt.nullOutSpilledVariable(id3);
-                        c00042.L$3 = SpillingKt.nullOutSpilledVariable(title3);
-                        c00042.L$4 = SpillingKt.nullOutSpilledVariable(poster2);
-                        c00042.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
-                        c00042.L$6 = SpillingKt.nullOutSpilledVariable(year2);
-                        c00042.L$7 = SpillingKt.nullOutSpilledVariable(tvType4);
-                        c00042.L$8 = SpillingKt.nullOutSpilledVariable(description2);
-                        c00042.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
-                        c00042.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
-                        c00042.L$11 = SpillingKt.nullOutSpilledVariable(score);
-                        c00042.L$12 = SpillingKt.nullOutSpilledVariable(actors);
-                        c00042.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
-                        c00042.L$14 = SpillingKt.nullOutSpilledVariable(data);
-                        c00042.L$15 = SpillingKt.nullOutSpilledVariable(server);
-                        c00042.label = 4;
-                        $result = MainAPIKt.newMovieLoadResponse(this, title3, url4, tvType7, json, c00066, c00042);
+                        C00086 c00086 = new C00086(poster2, year2, description2, tags2, score, actors, recommendations, trailer2, null);
+                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(url4);
+                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(document2);
+                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(id3);
+                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(title3);
+                        c00062.L$4 = SpillingKt.nullOutSpilledVariable(poster2);
+                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
+                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(year2);
+                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(tvType4);
+                        c00062.L$8 = SpillingKt.nullOutSpilledVariable(description2);
+                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
+                        c00062.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
+                        c00062.L$11 = SpillingKt.nullOutSpilledVariable(score);
+                        c00062.L$12 = SpillingKt.nullOutSpilledVariable(actors);
+                        c00062.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
+                        c00062.L$14 = SpillingKt.nullOutSpilledVariable(data);
+                        c00062.L$15 = SpillingKt.nullOutSpilledVariable(server);
+                        c00062.label = 4;
+                        $result = MainAPIKt.newMovieLoadResponse(this, title3, url4, tvType7, json, c00086, c00062);
                         if ($result == obj) {
                             return obj;
                         }
@@ -1173,7 +1085,7 @@ public final class HDrezkaProvider extends MainAPI {
                 break;
                 break;
             case 1:
-                String url6 = (String) c00042.L$0;
+                String url6 = (String) c00062.L$0;
                 ResultKt.throwOnFailure($result);
                 obj = coroutine_suspended;
                 obj2 = "id";
@@ -1236,21 +1148,21 @@ public final class HDrezkaProvider extends MainAPI {
                 Requests app3 = MainActivityKt.getApp();
                 String str5 = getMainUrl() + "/engine/ajax/gettrailervideo.php";
                 HDrezkaProvider$anubisKiller$1 hDrezkaProvider$anubisKiller$3 = this.anubisKiller;
-                c00042.L$0 = url2;
-                c00042.L$1 = document;
-                c00042.L$2 = id;
-                c00042.L$3 = title;
-                c00042.L$4 = poster;
-                c00042.L$5 = tags;
-                c00042.L$6 = year;
-                c00042.L$7 = tvType;
-                c00042.L$8 = description;
-                c00042.label = 2;
+                c00062.L$0 = url2;
+                c00062.L$1 = document;
+                c00062.L$2 = id;
+                c00062.L$3 = title;
+                c00062.L$4 = poster;
+                c00062.L$5 = tags;
+                c00062.L$6 = year;
+                c00062.L$7 = tvType;
+                c00062.L$8 = description;
+                c00062.label = 2;
                 tvType2 = tvType;
-                C00041 c00044 = c00042;
+                C00061 c00064 = c00062;
                 obj3 = obj2;
-                $result = Requests.post$default(app3, str5, (Map) null, url2, (Map) null, (Map) null, MapsKt.mapOf(TuplesKt.to(obj2, id)), (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, hDrezkaProvider$anubisKiller$3, false, (ResponseParser) null, c00044, 57306, (Object) null);
-                c00042 = c00044;
+                $result = Requests.post$default(app3, str5, (Map) null, url2, (Map) null, (Map) null, MapsKt.mapOf(TuplesKt.to(obj2, id)), (List) null, (Object) null, (RequestBody) null, false, 0, (TimeUnit) null, 0L, hDrezkaProvider$anubisKiller$3, false, (ResponseParser) null, c00064, 57306, (Object) null);
+                c00062 = c00064;
                 if ($result == obj) {
                     return obj;
                 }
@@ -1401,7 +1313,7 @@ public final class HDrezkaProvider extends MainAPI {
                         data.put("episode", String.valueOf(episode2));
                         data.put("server", server);
                         data.put("action", "get_stream");
-                        destination$iv$iv6.add(MainAPIKt.newEpisode(this, AppUtils.INSTANCE.toJson(data), new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda12
+                        destination$iv$iv6.add(MainAPIKt.newEpisode(this, AppUtils.INSTANCE.toJson(data), new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda4
                             public final Object invoke(Object obj4) {
                                 return HDrezkaProvider.load$lambda$7$1(name3, season2, episode2, (Episode) obj4);
                             }
@@ -1415,27 +1327,27 @@ public final class HDrezkaProvider extends MainAPI {
                     List episodes2 = (List) destination$iv$iv6;
                     TvType tvType8 = TvType.TvSeries;
                     String poster8 = poster4;
-                    C00054 c00055 = new C00054(poster8, year2, description2, tags2, score, actors, recommendations, trailer2, null);
-                    c00042.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                    c00042.L$1 = SpillingKt.nullOutSpilledVariable(document2);
-                    c00042.L$2 = SpillingKt.nullOutSpilledVariable(id2);
-                    c00042.L$3 = SpillingKt.nullOutSpilledVariable(title3);
-                    c00042.L$4 = SpillingKt.nullOutSpilledVariable(poster8);
-                    c00042.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
-                    c00042.L$6 = SpillingKt.nullOutSpilledVariable(year2);
-                    c00042.L$7 = SpillingKt.nullOutSpilledVariable(tvType3);
-                    c00042.L$8 = SpillingKt.nullOutSpilledVariable(description2);
-                    c00042.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
-                    c00042.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
-                    c00042.L$11 = SpillingKt.nullOutSpilledVariable(score);
-                    c00042.L$12 = SpillingKt.nullOutSpilledVariable(actors);
-                    c00042.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
-                    c00042.L$14 = SpillingKt.nullOutSpilledVariable(data);
-                    c00042.L$15 = SpillingKt.nullOutSpilledVariable(server);
-                    c00042.L$16 = SpillingKt.nullOutSpilledVariable(server3);
-                    c00042.L$17 = SpillingKt.nullOutSpilledVariable(episodes2);
-                    c00042.label = 3;
-                    $result = MainAPIKt.newTvSeriesLoadResponse(this, title3, url4, tvType8, episodes2, c00055, c00042);
+                    C00074 c00075 = new C00074(poster8, year2, description2, tags2, score, actors, recommendations, trailer2, null);
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(url4);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(document2);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(id2);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(title3);
+                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(poster8);
+                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
+                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(year2);
+                    c00062.L$7 = SpillingKt.nullOutSpilledVariable(tvType3);
+                    c00062.L$8 = SpillingKt.nullOutSpilledVariable(description2);
+                    c00062.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
+                    c00062.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
+                    c00062.L$11 = SpillingKt.nullOutSpilledVariable(score);
+                    c00062.L$12 = SpillingKt.nullOutSpilledVariable(actors);
+                    c00062.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
+                    c00062.L$14 = SpillingKt.nullOutSpilledVariable(data);
+                    c00062.L$15 = SpillingKt.nullOutSpilledVariable(server);
+                    c00062.L$16 = SpillingKt.nullOutSpilledVariable(server3);
+                    c00062.L$17 = SpillingKt.nullOutSpilledVariable(episodes2);
+                    c00062.label = 3;
+                    $result = MainAPIKt.newTvSeriesLoadResponse(this, title3, url4, tvType8, episodes2, c00075, c00062);
                     if ($result == obj) {
                         return obj;
                     }
@@ -1454,25 +1366,25 @@ public final class HDrezkaProvider extends MainAPI {
                         data.put("action", "get_movie");
                         TvType tvType9 = TvType.Movie;
                         String json2 = AppUtils.INSTANCE.toJson(data);
-                        C00066 c00067 = new C00066(poster2, year2, description2, tags2, score, actors, recommendations, trailer2, null);
-                        c00042.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                        c00042.L$1 = SpillingKt.nullOutSpilledVariable(document2);
-                        c00042.L$2 = SpillingKt.nullOutSpilledVariable(id3);
-                        c00042.L$3 = SpillingKt.nullOutSpilledVariable(title3);
-                        c00042.L$4 = SpillingKt.nullOutSpilledVariable(poster2);
-                        c00042.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
-                        c00042.L$6 = SpillingKt.nullOutSpilledVariable(year2);
-                        c00042.L$7 = SpillingKt.nullOutSpilledVariable(tvType4);
-                        c00042.L$8 = SpillingKt.nullOutSpilledVariable(description2);
-                        c00042.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
-                        c00042.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
-                        c00042.L$11 = SpillingKt.nullOutSpilledVariable(score);
-                        c00042.L$12 = SpillingKt.nullOutSpilledVariable(actors);
-                        c00042.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
-                        c00042.L$14 = SpillingKt.nullOutSpilledVariable(data);
-                        c00042.L$15 = SpillingKt.nullOutSpilledVariable(server);
-                        c00042.label = 4;
-                        $result = MainAPIKt.newMovieLoadResponse(this, title3, url4, tvType9, json2, c00067, c00042);
+                        C00086 c00087 = new C00086(poster2, year2, description2, tags2, score, actors, recommendations, trailer2, null);
+                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(url4);
+                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(document2);
+                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(id3);
+                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(title3);
+                        c00062.L$4 = SpillingKt.nullOutSpilledVariable(poster2);
+                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
+                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(year2);
+                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(tvType4);
+                        c00062.L$8 = SpillingKt.nullOutSpilledVariable(description2);
+                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
+                        c00062.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
+                        c00062.L$11 = SpillingKt.nullOutSpilledVariable(score);
+                        c00062.L$12 = SpillingKt.nullOutSpilledVariable(actors);
+                        c00062.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
+                        c00062.L$14 = SpillingKt.nullOutSpilledVariable(data);
+                        c00062.L$15 = SpillingKt.nullOutSpilledVariable(server);
+                        c00062.label = 4;
+                        $result = MainAPIKt.newMovieLoadResponse(this, title3, url4, tvType9, json2, c00087, c00062);
                         if ($result == obj) {
                             return obj;
                         }
@@ -1502,15 +1414,15 @@ public final class HDrezkaProvider extends MainAPI {
                 }
                 break;
             case 2:
-                String description4 = (String) c00042.L$8;
-                TvType tvType10 = (TvType) c00042.L$7;
-                Integer year4 = (Integer) c00042.L$6;
-                List tags4 = (List) c00042.L$5;
-                String poster9 = (String) c00042.L$4;
-                String title6 = (String) c00042.L$3;
-                id2 = (String) c00042.L$2;
-                document2 = (Document) c00042.L$1;
-                String url7 = (String) c00042.L$0;
+                String description4 = (String) c00062.L$8;
+                TvType tvType10 = (TvType) c00062.L$7;
+                Integer year4 = (Integer) c00062.L$6;
+                List tags4 = (List) c00062.L$5;
+                String poster9 = (String) c00062.L$4;
+                String title6 = (String) c00062.L$3;
+                id2 = (String) c00062.L$2;
+                document2 = (Document) c00062.L$1;
+                String url7 = (String) c00062.L$0;
                 ResultKt.throwOnFailure($result);
                 description2 = description4;
                 obj = coroutine_suspended;
@@ -1661,7 +1573,7 @@ public final class HDrezkaProvider extends MainAPI {
                         data.put("episode", String.valueOf(episode3));
                         data.put("server", server);
                         data.put("action", "get_stream");
-                        destination$iv$iv6.add(MainAPIKt.newEpisode(this, AppUtils.INSTANCE.toJson(data), new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda12
+                        destination$iv$iv6.add(MainAPIKt.newEpisode(this, AppUtils.INSTANCE.toJson(data), new Function1() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda4
                             public final Object invoke(Object obj4) {
                                 return HDrezkaProvider.load$lambda$7$1(name4, season3, episode3, (Episode) obj4);
                             }
@@ -1675,27 +1587,27 @@ public final class HDrezkaProvider extends MainAPI {
                     List episodes3 = (List) destination$iv$iv6;
                     TvType tvType11 = TvType.TvSeries;
                     String poster11 = poster4;
-                    C00054 c00056 = new C00054(poster11, year2, description2, tags2, score, actors, recommendations, trailer2, null);
-                    c00042.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                    c00042.L$1 = SpillingKt.nullOutSpilledVariable(document2);
-                    c00042.L$2 = SpillingKt.nullOutSpilledVariable(id2);
-                    c00042.L$3 = SpillingKt.nullOutSpilledVariable(title3);
-                    c00042.L$4 = SpillingKt.nullOutSpilledVariable(poster11);
-                    c00042.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
-                    c00042.L$6 = SpillingKt.nullOutSpilledVariable(year2);
-                    c00042.L$7 = SpillingKt.nullOutSpilledVariable(tvType3);
-                    c00042.L$8 = SpillingKt.nullOutSpilledVariable(description2);
-                    c00042.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
-                    c00042.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
-                    c00042.L$11 = SpillingKt.nullOutSpilledVariable(score);
-                    c00042.L$12 = SpillingKt.nullOutSpilledVariable(actors);
-                    c00042.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
-                    c00042.L$14 = SpillingKt.nullOutSpilledVariable(data);
-                    c00042.L$15 = SpillingKt.nullOutSpilledVariable(server);
-                    c00042.L$16 = SpillingKt.nullOutSpilledVariable(server3);
-                    c00042.L$17 = SpillingKt.nullOutSpilledVariable(episodes3);
-                    c00042.label = 3;
-                    $result = MainAPIKt.newTvSeriesLoadResponse(this, title3, url4, tvType11, episodes3, c00056, c00042);
+                    C00074 c00076 = new C00074(poster11, year2, description2, tags2, score, actors, recommendations, trailer2, null);
+                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(url4);
+                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(document2);
+                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(id2);
+                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(title3);
+                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(poster11);
+                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
+                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(year2);
+                    c00062.L$7 = SpillingKt.nullOutSpilledVariable(tvType3);
+                    c00062.L$8 = SpillingKt.nullOutSpilledVariable(description2);
+                    c00062.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
+                    c00062.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
+                    c00062.L$11 = SpillingKt.nullOutSpilledVariable(score);
+                    c00062.L$12 = SpillingKt.nullOutSpilledVariable(actors);
+                    c00062.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
+                    c00062.L$14 = SpillingKt.nullOutSpilledVariable(data);
+                    c00062.L$15 = SpillingKt.nullOutSpilledVariable(server);
+                    c00062.L$16 = SpillingKt.nullOutSpilledVariable(server3);
+                    c00062.L$17 = SpillingKt.nullOutSpilledVariable(episodes3);
+                    c00062.label = 3;
+                    $result = MainAPIKt.newTvSeriesLoadResponse(this, title3, url4, tvType11, episodes3, c00076, c00062);
                     if ($result == obj) {
                         return obj;
                     }
@@ -1714,25 +1626,25 @@ public final class HDrezkaProvider extends MainAPI {
                         data.put("action", "get_movie");
                         TvType tvType12 = TvType.Movie;
                         String json3 = AppUtils.INSTANCE.toJson(data);
-                        C00066 c00068 = new C00066(poster2, year2, description2, tags2, score, actors, recommendations, trailer2, null);
-                        c00042.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                        c00042.L$1 = SpillingKt.nullOutSpilledVariable(document2);
-                        c00042.L$2 = SpillingKt.nullOutSpilledVariable(id3);
-                        c00042.L$3 = SpillingKt.nullOutSpilledVariable(title3);
-                        c00042.L$4 = SpillingKt.nullOutSpilledVariable(poster2);
-                        c00042.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
-                        c00042.L$6 = SpillingKt.nullOutSpilledVariable(year2);
-                        c00042.L$7 = SpillingKt.nullOutSpilledVariable(tvType4);
-                        c00042.L$8 = SpillingKt.nullOutSpilledVariable(description2);
-                        c00042.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
-                        c00042.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
-                        c00042.L$11 = SpillingKt.nullOutSpilledVariable(score);
-                        c00042.L$12 = SpillingKt.nullOutSpilledVariable(actors);
-                        c00042.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
-                        c00042.L$14 = SpillingKt.nullOutSpilledVariable(data);
-                        c00042.L$15 = SpillingKt.nullOutSpilledVariable(server);
-                        c00042.label = 4;
-                        $result = MainAPIKt.newMovieLoadResponse(this, title3, url4, tvType12, json3, c00068, c00042);
+                        C00086 c00088 = new C00086(poster2, year2, description2, tags2, score, actors, recommendations, trailer2, null);
+                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(url4);
+                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(document2);
+                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(id3);
+                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(title3);
+                        c00062.L$4 = SpillingKt.nullOutSpilledVariable(poster2);
+                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(tags2);
+                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(year2);
+                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(tvType4);
+                        c00062.L$8 = SpillingKt.nullOutSpilledVariable(description2);
+                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(trailer2);
+                        c00062.L$10 = SpillingKt.nullOutSpilledVariable(ratingText2);
+                        c00062.L$11 = SpillingKt.nullOutSpilledVariable(score);
+                        c00062.L$12 = SpillingKt.nullOutSpilledVariable(actors);
+                        c00062.L$13 = SpillingKt.nullOutSpilledVariable(recommendations);
+                        c00062.L$14 = SpillingKt.nullOutSpilledVariable(data);
+                        c00062.L$15 = SpillingKt.nullOutSpilledVariable(server);
+                        c00062.label = 4;
+                        $result = MainAPIKt.newMovieLoadResponse(this, title3, url4, tvType12, json3, c00088, c00062);
                         if ($result == obj) {
                             return obj;
                         }
@@ -1765,22 +1677,22 @@ public final class HDrezkaProvider extends MainAPI {
                 ResultKt.throwOnFailure($result);
                 return (LoadResponse) $result;
             case 4:
-                ArrayList server4 = (ArrayList) c00042.L$15;
-                data2 = (HashMap) c00042.L$14;
-                recommendations2 = (List) c00042.L$13;
-                actors2 = (List) c00042.L$12;
-                score2 = (Score) c00042.L$11;
-                ratingText3 = (String) c00042.L$10;
-                trailer3 = (String) c00042.L$9;
-                description3 = (String) c00042.L$8;
-                tvType5 = (TvType) c00042.L$7;
-                year3 = (Integer) c00042.L$6;
-                tags3 = (List) c00042.L$5;
-                poster3 = (String) c00042.L$4;
+                ArrayList server4 = (ArrayList) c00062.L$15;
+                data2 = (HashMap) c00062.L$14;
+                recommendations2 = (List) c00062.L$13;
+                actors2 = (List) c00062.L$12;
+                score2 = (Score) c00062.L$11;
+                ratingText3 = (String) c00062.L$10;
+                trailer3 = (String) c00062.L$9;
+                description3 = (String) c00062.L$8;
+                tvType5 = (TvType) c00062.L$7;
+                year3 = (Integer) c00062.L$6;
+                tags3 = (List) c00062.L$5;
+                poster3 = (String) c00062.L$4;
                 server2 = server4;
-                title5 = (String) c00042.L$3;
-                String id4 = (String) c00042.L$2;
-                document3 = (Document) c00042.L$1;
+                title5 = (String) c00062.L$3;
+                String id4 = (String) c00062.L$2;
+                document3 = (Document) c00062.L$1;
                 ResultKt.throwOnFailure($result);
                 url5 = id4;
                 return (LoadResponse) $result;
@@ -1800,8 +1712,8 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.hexated.HDrezkaProvider$load$4 */
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hexated.HDrezkaProvider$load$4", f = "HDrezkaProvider.kt", i = {0}, l = {239}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {240}, s = {"L$0"}, v = 2)
-    static final class C00054 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.hexated.HDrezkaProvider$load$4", f = "HDrezkaProvider.kt", i = {0}, l = {204}, m = "invokeSuspend", n = {"$this$newTvSeriesLoadResponse"}, nl = {205}, s = {"L$0"}, v = 2)
+    static final class C00074 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<Actor> $actors;
         final /* synthetic */ String $description;
         final /* synthetic */ String $poster;
@@ -1814,7 +1726,7 @@ public final class HDrezkaProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00054(String str, Integer num, String str2, List<String> list, Score score, List<Actor> list2, List<? extends SearchResponse> list3, String str3, Continuation<? super C00054> continuation) {
+        C00074(String str, Integer num, String str2, List<String> list, Score score, List<Actor> list2, List<? extends SearchResponse> list3, String str3, Continuation<? super C00074> continuation) {
             super(2, continuation);
             this.$poster = str;
             this.$year = num;
@@ -1827,9 +1739,9 @@ public final class HDrezkaProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00054 = new C00054(this.$poster, this.$year, this.$description, this.$tags, this.$score, this.$actors, this.$recommendations, this.$trailer, continuation);
-            c00054.L$0 = obj;
-            return c00054;
+            Continuation<Unit> c00074 = new C00074(this.$poster, this.$year, this.$description, this.$tags, this.$score, this.$actors, this.$recommendations, this.$trailer, continuation);
+            c00074.L$0 = obj;
+            return c00074;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -1868,8 +1780,8 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX INFO: renamed from: com.hexated.HDrezkaProvider$load$6 */
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.hexated.HDrezkaProvider$load$6", f = "HDrezkaProvider.kt", i = {0}, l = {265}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {266}, s = {"L$0"}, v = 2)
-    static final class C00066 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.hexated.HDrezkaProvider$load$6", f = "HDrezkaProvider.kt", i = {0}, l = {230}, m = "invokeSuspend", n = {"$this$newMovieLoadResponse"}, nl = {231}, s = {"L$0"}, v = 2)
+    static final class C00086 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ List<Actor> $actors;
         final /* synthetic */ String $description;
         final /* synthetic */ String $poster;
@@ -1882,7 +1794,7 @@ public final class HDrezkaProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00066(String str, Integer num, String str2, List<String> list, Score score, List<Actor> list2, List<? extends SearchResponse> list3, String str3, Continuation<? super C00066> continuation) {
+        C00086(String str, Integer num, String str2, List<String> list, Score score, List<Actor> list2, List<? extends SearchResponse> list3, String str3, Continuation<? super C00086> continuation) {
             super(2, continuation);
             this.$poster = str;
             this.$year = num;
@@ -1895,9 +1807,9 @@ public final class HDrezkaProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00066 = new C00066(this.$poster, this.$year, this.$description, this.$tags, this.$score, this.$actors, this.$recommendations, this.$trailer, continuation);
-            c00066.L$0 = obj;
-            return c00066;
+            Continuation<Unit> c00086 = new C00086(this.$poster, this.$year, this.$description, this.$tags, this.$score, this.$actors, this.$recommendations, this.$trailer, continuation);
+            c00086.L$0 = obj;
+            return c00086;
         }
 
         public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
@@ -1992,41 +1904,41 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Code duplicated, block: B:7:0x0014  */
     public final Object cleanCallback(String source, String url, String quality, boolean isM3u8, Function1<? super ExtractorLink, Unit> function1, Continuation<? super Unit> continuation) {
-        C00001 c00001;
+        C00021 c00021;
         Object objNewExtractorLink;
-        if (continuation instanceof C00001) {
-            c00001 = (C00001) continuation;
-            if ((c00001.label & Integer.MIN_VALUE) != 0) {
-                c00001.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00021) {
+            c00021 = (C00021) continuation;
+            if ((c00021.label & Integer.MIN_VALUE) != 0) {
+                c00021.label -= Integer.MIN_VALUE;
             } else {
-                c00001 = new C00001(continuation);
+                c00021 = new C00021(continuation);
             }
         } else {
-            c00001 = new C00001(continuation);
+            c00021 = new C00021(continuation);
         }
-        C00001 c00002 = c00001;
-        Object $result = c00002.result;
+        C00021 c00022 = c00021;
+        Object $result = c00022.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00002.label) {
+        switch (c00022.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 ExtractorLinkType extractorLinkType = isM3u8 ? ExtractorLinkType.M3U8 : ExtractorLinkType.VIDEO;
-                C00012 c00012 = new C00012(quality, null);
-                c00002.L$0 = SpillingKt.nullOutSpilledVariable(source);
-                c00002.L$1 = SpillingKt.nullOutSpilledVariable(url);
-                c00002.L$2 = SpillingKt.nullOutSpilledVariable(quality);
-                c00002.L$3 = SpillingKt.nullOutSpilledVariable(function1);
-                c00002.L$4 = function1;
-                c00002.Z$0 = isM3u8;
-                c00002.label = 1;
-                objNewExtractorLink = ExtractorApiKt.newExtractorLink(source, source, url, extractorLinkType, c00012, c00002);
+                C00032 c00032 = new C00032(quality, null);
+                c00022.L$0 = SpillingKt.nullOutSpilledVariable(source);
+                c00022.L$1 = SpillingKt.nullOutSpilledVariable(url);
+                c00022.L$2 = SpillingKt.nullOutSpilledVariable(quality);
+                c00022.L$3 = SpillingKt.nullOutSpilledVariable(function1);
+                c00022.L$4 = function1;
+                c00022.Z$0 = isM3u8;
+                c00022.label = 1;
+                objNewExtractorLink = ExtractorApiKt.newExtractorLink(source, source, url, extractorLinkType, c00032, c00022);
                 if (objNewExtractorLink == coroutine_suspended) {
                     return coroutine_suspended;
                 }
                 break;
             case 1:
-                boolean isM3u9 = c00002.Z$0;
-                Function1<? super ExtractorLink, Unit> function2 = (Function1) c00002.L$4;
+                boolean isM3u9 = c00022.Z$0;
+                Function1<? super ExtractorLink, Unit> function2 = (Function1) c00022.L$4;
                 ResultKt.throwOnFailure($result);
                 function1 = function2;
                 objNewExtractorLink = $result;
@@ -2042,21 +1954,21 @@ public final class HDrezkaProvider extends MainAPI {
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.hexated.HDrezkaProvider$cleanCallback$2", f = "HDrezkaProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00012 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00032 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $quality;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00012(String str, Continuation<? super C00012> continuation) {
+        C00032(String str, Continuation<? super C00032> continuation) {
             super(2, continuation);
             this.$quality = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00012 = HDrezkaProvider.this.new C00012(this.$quality, continuation);
-            c00012.L$0 = obj;
-            return c00012;
+            Continuation<Unit> c00032 = HDrezkaProvider.this.new C00032(this.$quality, continuation);
+            c00032.L$0 = obj;
+            return c00032;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -2139,29 +2051,29 @@ public final class HDrezkaProvider extends MainAPI {
         throw new UnsupportedOperationException("Method not decompiled: com.hexated.HDrezkaProvider.invokeSources(java.lang.String, java.lang.String, java.lang.String, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
-    /* JADX WARN: Code duplicated, block: B:105:0x0396  */
-    /* JADX WARN: Code duplicated, block: B:107:0x03be  */
-    /* JADX WARN: Code duplicated, block: B:109:0x03f1  */
-    /* JADX WARN: Code duplicated, block: B:110:0x03f6  */
-    /* JADX WARN: Code duplicated, block: B:117:0x0425  */
-    /* JADX WARN: Code duplicated, block: B:129:0x0463  */
-    /* JADX WARN: Code duplicated, block: B:146:0x048a  */
-    /* JADX WARN: Code duplicated, block: B:158:0x04b5  */
-    /* JADX WARN: Code duplicated, block: B:160:0x0532 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:161:0x0533  */
-    /* JADX WARN: Code duplicated, block: B:163:0x056d  */
-    /* JADX WARN: Code duplicated, block: B:164:0x058e  */
-    /* JADX WARN: Code duplicated, block: B:237:0x042a A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:244:0x046a A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:100:0x03ee  */
+    /* JADX WARN: Code duplicated, block: B:117:0x0415  */
+    /* JADX WARN: Code duplicated, block: B:129:0x0440  */
+    /* JADX WARN: Code duplicated, block: B:131:0x04bc A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:132:0x04bd  */
+    /* JADX WARN: Code duplicated, block: B:134:0x04ed  */
+    /* JADX WARN: Code duplicated, block: B:135:0x0514  */
+    /* JADX WARN: Code duplicated, block: B:208:0x03b5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:217:0x03f5 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:76:0x0323  */
+    /* JADX WARN: Code duplicated, block: B:78:0x034b  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Type inference failed for: r0v26, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r0v83, types: [java.lang.Throwable] */
-    /* JADX WARN: Type inference failed for: r0v87, types: [java.lang.Throwable] */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:161:0x0533 -> B:162:0x0550). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:163:0x056d -> B:165:0x05b0). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:164:0x058e -> B:165:0x05b0). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:209:0x08ce -> B:210:0x08e6). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:211:0x08f8 -> B:212:0x0918). Please report as a decompilation issue!!! */
+    /* JADX WARN: Code duplicated, block: B:80:0x037c  */
+    /* JADX WARN: Code duplicated, block: B:81:0x0381  */
+    /* JADX WARN: Code duplicated, block: B:88:0x03b0  */
+    /* JADX WARN: Type inference failed for: r0v24, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r0v81, types: [java.lang.Throwable] */
+    /* JADX WARN: Type inference failed for: r0v85, types: [java.lang.Throwable] */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:132:0x04bd -> B:133:0x04d5). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:134:0x04ed -> B:136:0x053a). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:135:0x0514 -> B:136:0x053a). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:180:0x085f -> B:181:0x0876). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:182:0x0893 -> B:183:0x08b2). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
@@ -2170,15 +2082,10 @@ public final class HDrezkaProvider extends MainAPI {
     @org.jetbrains.annotations.Nullable
     public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r54, boolean r55, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r56, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r57, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r58) {
         /*
-            Method dump skipped, instruction units count: 2438
+            Method dump skipped, instruction units count: 2334
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.hexated.HDrezkaProvider.loadLinks(java.lang.String, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
     }
 
     /* JADX INFO: compiled from: HDrezkaProvider.kt */
@@ -2714,296 +2621,6 @@ public final class HDrezkaProvider extends MainAPI {
         }
     }
 
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda2
-                @Override // java.lang.Runnable
-                public final void run() {
-                    HDrezkaProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HDrezkaProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda5
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HDrezkaProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda1
-            @Override // java.lang.Runnable
-            public final void run() {
-                HDrezkaProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda9
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda10
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    HDrezkaProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                HDrezkaProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
-        }
-    }
-
     /* JADX INFO: Access modifiers changed from: private */
     public final String getAnubisCookie(final String url) throws InterruptedException {
         final CountDownLatch latch = new CountDownLatch(1);
@@ -3094,7 +2711,7 @@ public final class HDrezkaProvider extends MainAPI {
                         }
                     }
                 }, 250L);
-                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda11
+                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() { // from class: com.hexated.HDrezkaProvider$$ExternalSyntheticLambda3
                     @Override // java.lang.Runnable
                     public final void run() {
                         HDrezkaProvider.getAnubisCookie$lambda$0$0(polling, webView, $latch);

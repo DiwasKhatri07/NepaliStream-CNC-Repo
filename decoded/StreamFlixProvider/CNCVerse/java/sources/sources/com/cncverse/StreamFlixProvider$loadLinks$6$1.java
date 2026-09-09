@@ -45,7 +45,7 @@ final class StreamFlixProvider$loadLinks$6$1 extends SuspendLambda implements Fu
             case 0:
                 ResultKt.throwOnFailure($result);
                 $this$newExtractorLink.setHeaders(MapsKt.mapOf(TuplesKt.to("Referer", this.this$0.getMainUrl())));
-                $this$newExtractorLink.setQuality(Qualities.P720.getValue());
+                $this$newExtractorLink.setQuality(Qualities.P480.getValue());
                 return Unit.INSTANCE;
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");

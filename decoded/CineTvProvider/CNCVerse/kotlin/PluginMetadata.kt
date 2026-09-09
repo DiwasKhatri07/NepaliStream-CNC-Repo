@@ -4,7 +4,7 @@ package nepali.stream.decoded.cinetvprovider
 object PluginMetadata {
     const val name: String = "CineTvProvider"
     const val originalPluginClass: String = "com.cncverse.CineTvPlugin"
-    const val version: Int = 33
+    const val version: Int = 34
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

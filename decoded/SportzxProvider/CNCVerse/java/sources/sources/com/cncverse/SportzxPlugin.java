@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
+import com.cncverse.donation.DonationManager;
 import com.lagradost.cloudstream3.CommonActivity;
 import com.lagradost.cloudstream3.plugins.CloudstreamPlugin;
 import com.lagradost.cloudstream3.plugins.Plugin;
@@ -38,7 +39,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/SportzxProvider/CNCVerse/java/classes.dex */
 @CloudstreamPlugin
 @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u000b\u001a\u00020\f2\u0006\u0010\r\u001a\u00020\u000eH\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u0006\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\t\u0012\u0004\u0012\u00020\n0\b0\u0007X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u000f"}, d2 = {"Lcom/cncverse/SportzxPlugin;", "Lcom/lagradost/cloudstream3/plugins/Plugin;", "<init>", "()V", "sharedPref", "Landroid/content/SharedPreferences;", "iptvProviders", "", "", "", "", "load", "", "context", "Landroid/content/Context;", "SportzxProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nSportzxPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SportzxPlugin.kt\ncom/cncverse/SportzxPlugin\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,64:1\n1642#2,10:65\n1915#2:75\n1916#2:77\n1652#2:78\n777#2:79\n873#2,2:80\n1915#2,2:82\n1642#2,10:84\n1915#2:94\n1916#2:96\n1652#2:97\n1#3:76\n1#3:95\n*S KotlinDebug\n*F\n+ 1 SportzxPlugin.kt\ncom/cncverse/SportzxPlugin\n*L\n30#1:65,10\n30#1:75\n30#1:77\n30#1:78\n35#1:79\n35#1:80,2\n40#1:82,2\n58#1:84,10\n58#1:94\n58#1:96\n58#1:97\n30#1:76\n58#1:95\n*E\n"})
+@SourceDebugExtension({"SMAP\nSportzxPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SportzxPlugin.kt\ncom/cncverse/SportzxPlugin\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,65:1\n1642#2,10:66\n1915#2:76\n1916#2:78\n1652#2:79\n777#2:80\n873#2,2:81\n1915#2,2:83\n1642#2,10:85\n1915#2:95\n1916#2:97\n1652#2:98\n1#3:77\n1#3:96\n*S KotlinDebug\n*F\n+ 1 SportzxPlugin.kt\ncom/cncverse/SportzxPlugin\n*L\n31#1:66,10\n31#1:76\n31#1:78\n31#1:79\n36#1:80\n36#1:81,2\n41#1:83,2\n59#1:85,10\n59#1:95\n59#1:97\n59#1:98\n31#1:77\n59#1:96\n*E\n"})
 public final class SportzxPlugin extends Plugin {
 
     @NotNull
@@ -55,6 +56,7 @@ public final class SportzxPlugin extends Plugin {
 
     public void load(@NotNull Context context) {
         Pair pair;
+        DonationManager.INSTANCE.setActivity(context);
         SportzxLiveEventsProvider.INSTANCE.setContext(context);
         SportzxProvider.INSTANCE.setContext(context);
         String str = null;
@@ -121,7 +123,7 @@ public final class SportzxPlugin extends Plugin {
     /* JADX INFO: renamed from: com.cncverse.SportzxPlugin$load$1 */
     /* JADX INFO: compiled from: SportzxPlugin.kt */
     @Metadata(d1 = {"\u0000\u0016\n\u0000\n\u0002\u0010 \n\u0002\u0010$\n\u0002\u0010\u000e\n\u0002\u0010\u0000\n\u0002\u0018\u0002\u0010\u0000\u001a\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00040\u00020\u0001*\u00020\u0005H\n"}, d2 = {"<anonymous>", "", "", "", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SportzxPlugin$load$1", f = "SportzxPlugin.kt", i = {}, l = {27}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
+    @DebugMetadata(c = "com.cncverse.SportzxPlugin$load$1", f = "SportzxPlugin.kt", i = {}, l = {28}, m = "invokeSuspend", n = {}, nl = {-1}, s = {}, v = 2)
     static final class C00081 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends Map<String, ? extends Object>>>, Object> {
         int label;
 

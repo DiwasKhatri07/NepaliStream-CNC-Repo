@@ -1,23 +1,7 @@
 package com.anikoto;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -37,7 +21,6 @@ import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvType;
 import com.lagradost.cloudstream3.mvvm.ArchComponentExtKt;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
@@ -45,12 +28,10 @@ import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
 import java.io.UnsupportedEncodingException;
-import java.lang.reflect.Field;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -95,23 +76,16 @@ import org.jsoup.nodes.Element;
 
 /* JADX INFO: compiled from: AnikotoProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AniKoto/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u008a\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0002\n\u0002\u0010\t\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u0000 P2\u00020\u0001:\u0004PQRSB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001c\u0010%\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050$2\u0006\u0010&\u001a\u00020\u0005H\u0002J\u001e\u0010!\u001a\u00020'2\u0006\u0010(\u001a\u00020)2\u0006\u0010*\u001a\u00020+H\u0096@¢\u0006\u0002\u0010,J\u001c\u0010-\u001a\b\u0012\u0004\u0012\u00020.0\u001f2\u0006\u0010/\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00100J\u0018\u00101\u001a\u0004\u0018\u0001022\u0006\u00103\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u00100JF\u00104\u001a\u00020\u00112\u0006\u00105\u001a\u00020\u00052\u0006\u00106\u001a\u00020\u00112\u0012\u00107\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020:082\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020:08H\u0096@¢\u0006\u0002\u0010=J>\u0010>\u001a\u00020\u00112\u0006\u0010?\u001a\u00020\u00052\u0012\u00107\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020:082\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020:08H\u0082@¢\u0006\u0002\u0010@JN\u0010A\u001a\u00020\u00112\u0006\u00103\u001a\u00020\u00052\u0006\u0010&\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u00052\u0012\u00107\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020:082\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020:08H\u0082@¢\u0006\u0002\u0010CJV\u0010D\u001a\u00020\u00112\u0006\u00103\u001a\u00020\u00052\u0006\u0010&\u001a\u00020\u00052\u0006\u0010E\u001a\u00020\u00052\u0006\u0010B\u001a\u00020\u00052\u0012\u00107\u001a\u000e\u0012\u0004\u0012\u000209\u0012\u0004\u0012\u00020:082\u0012\u0010;\u001a\u000e\u0012\u0004\u0012\u00020<\u0012\u0004\u0012\u00020:08H\u0082@¢\u0006\u0002\u0010FJ\u0010\u0010G\u001a\u00020\u00052\u0006\u0010H\u001a\u00020\u0005H\u0002J\u0012\u0010I\u001a\u0004\u0018\u00010\u00052\u0006\u0010H\u001a\u00020\u0005H\u0002J\u000e\u0010J\u001a\u0004\u0018\u00010K*\u00020LH\u0002J\b\u0010M\u001a\u00020:H\u0002J\b\u0010N\u001a\u00020:H\u0002J\u0010\u0010O\u001a\u00020:2\u0006\u00103\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u000e\u0010\u0010\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u0011X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0014X\u0082D¢\u0006\u0002\n\u0000R\u0014\u0010\u0016\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u001a\u0010\u001e\u001a\b\u0012\u0004\u0012\u00020 0\u001fX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\"R\u001a\u0010#\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050$X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006T"}, d2 = {"Lcom/anikoto/AnikotoProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "lang", "getLang", "setLang", "subscriptionPopupShown", "", "telegramPopupShown", "lastBrowserOpenMs", "", "BROWSER_DEBOUNCE_MS", "hasMainPage", "getHasMainPage", "()Z", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "browserHeaders", "", "ajaxHeaders", "referer", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveFromWatchPage", "episodeUrl", "(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveEmbedInline", "audioType", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveMegaPlayInline", "domain", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "jsonResultString", "json", "jsonResultUrl", "toSearchResult", "Lcom/lagradost/cloudstream3/AnimeSearchResponse;", "Lorg/jsoup/nodes/Element;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "AjaxResponse", "SourcesResponse", "Track", "AniKoto_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nAnikotoProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnikotoProvider.kt\ncom/anikoto/AnikotoProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,769:1\n1642#2,10:770\n1915#2:780\n1916#2:782\n1652#2:783\n1642#2,10:784\n1915#2:794\n1916#2:796\n1652#2:797\n1586#2:798\n1661#2,3:799\n1915#2:802\n1916#2:804\n1596#2:805\n1629#2,4:806\n1391#2:810\n1480#2,5:811\n1586#2:816\n1661#2,3:817\n777#2:820\n873#2,2:821\n1586#2:823\n1661#2,3:824\n777#2:827\n873#2,2:828\n1915#2,2:849\n1915#2,2:851\n1#3:781\n1#3:795\n1#3:803\n1#3:831\n1#3:854\n1#3:873\n1#3:891\n63#4:830\n64#4,15:832\n63#4:853\n64#4,15:855\n63#4:872\n64#4,15:874\n50#5:847\n43#5:848\n50#5:870\n43#5:871\n50#5:889\n43#5:890\n*S KotlinDebug\n*F\n+ 1 AnikotoProvider.kt\ncom/anikoto/AnikotoProvider\n*L\n85#1:770,10\n85#1:780\n85#1:782\n85#1:783\n93#1:784,10\n93#1:794\n93#1:796\n93#1:797\n114#1:798\n114#1:799,3\n132#1:802\n132#1:804\n160#1:805\n160#1:806,4\n236#1:810\n236#1:811,5\n242#1:816\n242#1:817,3\n243#1:820\n243#1:821,2\n318#1:823\n318#1:824,3\n319#1:827\n319#1:828,2\n439#1:849,2\n453#1:851,2\n85#1:781\n93#1:795\n424#1:831\n469#1:854\n476#1:873\n424#1:830\n424#1:832,15\n469#1:853\n469#1:855,15\n476#1:872\n476#1:874,15\n424#1:847\n424#1:848\n469#1:870\n469#1:871\n476#1:889\n476#1:890\n*E\n"})
+@Metadata(d1 = {"\u0000\u0082\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u000b\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u000e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\u0018\u0000 H2\u00020\u0001:\u0004HIJKB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001c\u0010 \u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001f2\u0006\u0010!\u001a\u00020\u0005H\u0002J\u001e\u0010\u001c\u001a\u00020\"2\u0006\u0010#\u001a\u00020$2\u0006\u0010%\u001a\u00020&H\u0096@¢\u0006\u0002\u0010'J\u001c\u0010(\u001a\b\u0012\u0004\u0012\u00020)0\u001a2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0018\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+JF\u0010/\u001a\u00020\u00112\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u00112\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0096@¢\u0006\u0002\u00108J>\u00109\u001a\u00020\u00112\u0006\u0010:\u001a\u00020\u00052\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0082@¢\u0006\u0002\u0010;JN\u0010<\u001a\u00020\u00112\u0006\u0010.\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u00052\u0006\u0010=\u001a\u00020\u00052\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0082@¢\u0006\u0002\u0010>JV\u0010?\u001a\u00020\u00112\u0006\u0010.\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u00052\u0006\u0010@\u001a\u00020\u00052\u0006\u0010=\u001a\u00020\u00052\u0012\u00102\u001a\u000e\u0012\u0004\u0012\u000204\u0012\u0004\u0012\u000205032\u0012\u00106\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020503H\u0082@¢\u0006\u0002\u0010AJ\u0010\u0010B\u001a\u00020\u00052\u0006\u0010C\u001a\u00020\u0005H\u0002J\u0012\u0010D\u001a\u0004\u0018\u00010\u00052\u0006\u0010C\u001a\u00020\u0005H\u0002J\u000e\u0010E\u001a\u0004\u0018\u00010F*\u00020GH\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u001a\u0010\r\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000e\u0010\u0007\"\u0004\b\u000f\u0010\tR\u0014\u0010\u0010\u001a\u00020\u0011X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\u0013R\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u001a\u0010\u0019\u001a\b\u0012\u0004\u0012\u00020\u001b0\u001aX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001c\u0010\u001dR\u001a\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001fX\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006L"}, d2 = {"Lcom/anikoto/AnikotoProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "lang", "getLang", "setLang", "hasMainPage", "", "getHasMainPage", "()Z", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "browserHeaders", "", "ajaxHeaders", "referer", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveFromWatchPage", "episodeUrl", "(Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveEmbedInline", "audioType", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "resolveMegaPlayInline", "domain", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "jsonResultString", "json", "jsonResultUrl", "toSearchResult", "Lcom/lagradost/cloudstream3/AnimeSearchResponse;", "Lorg/jsoup/nodes/Element;", "Companion", "AjaxResponse", "SourcesResponse", "Track", "AniKoto_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nAnikotoProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnikotoProvider.kt\ncom/anikoto/AnikotoProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,484:1\n1642#2,10:485\n1915#2:495\n1916#2:497\n1652#2:498\n1642#2,10:499\n1915#2:509\n1916#2:511\n1652#2:512\n1586#2:513\n1661#2,3:514\n1915#2:517\n1916#2:519\n1596#2:520\n1629#2,4:521\n1391#2:525\n1480#2,5:526\n1586#2:531\n1661#2,3:532\n777#2:535\n873#2,2:536\n1586#2:538\n1661#2,3:539\n777#2:542\n873#2,2:543\n1915#2,2:564\n1915#2,2:566\n1#3:496\n1#3:510\n1#3:518\n1#3:546\n1#3:569\n1#3:588\n1#3:606\n63#4:545\n64#4,15:547\n63#4:568\n64#4,15:570\n63#4:587\n64#4,15:589\n50#5:562\n43#5:563\n50#5:585\n43#5:586\n50#5:604\n43#5:605\n*S KotlinDebug\n*F\n+ 1 AnikotoProvider.kt\ncom/anikoto/AnikotoProvider\n*L\n52#1:485,10\n52#1:495\n52#1:497\n52#1:498\n59#1:499,10\n59#1:509\n59#1:511\n59#1:512\n80#1:513\n80#1:514,3\n98#1:517\n98#1:519\n126#1:520\n126#1:521,4\n185#1:525\n185#1:526,5\n191#1:531\n191#1:532,3\n192#1:535\n192#1:536,2\n267#1:538\n267#1:539,3\n268#1:542\n268#1:543,2\n388#1:564,2\n402#1:566,2\n52#1:496\n59#1:510\n373#1:546\n418#1:569\n425#1:588\n373#1:545\n373#1:547,15\n418#1:568\n418#1:570,15\n425#1:587\n425#1:589,15\n373#1:562\n373#1:563\n418#1:585\n418#1:586\n425#1:604\n425#1:605\n*E\n"})
 public final class AnikotoProvider extends MainAPI {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private long lastBrowserOpenMs;
-    private boolean subscriptionPopupShown;
-    private boolean telegramPopupShown;
 
     @NotNull
     private String mainUrl = "https://anikototv.to";
@@ -121,7 +95,6 @@ public final class AnikotoProvider extends MainAPI {
 
     @NotNull
     private String lang = "en";
-    private final long BROWSER_DEBOUNCE_MS = 2000;
     private final boolean hasMainPage = true;
 
     @NotNull
@@ -136,7 +109,7 @@ public final class AnikotoProvider extends MainAPI {
     /* JADX INFO: renamed from: com.anikoto.AnikotoProvider$getMainPage$1 */
     /* JADX INFO: compiled from: AnikotoProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0}, l = {84}, m = "getMainPage", n = {"request", "page"}, nl = {85}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0}, l = {51}, m = "getMainPage", n = {"request", "page"}, nl = {52}, s = {"L$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -158,7 +131,7 @@ public final class AnikotoProvider extends MainAPI {
     /* JADX INFO: renamed from: com.anikoto.AnikotoProvider$load$1 */
     /* JADX INFO: compiled from: AnikotoProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {98, 127, 168}, m = "load", n = {"url", "url", "response", "doc", "title", "posterEl", "poster", "description", "genres", "animeId", "subEpisodes", "dubEpisodes", "isMovie", "url", "response", "doc", "title", "posterEl", "poster", "description", "genres", "animeId", "subEpisodes", "dubEpisodes", "isMovie"}, nl = {99, 130, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {64, 93, 134}, m = "load", n = {"url", "url", "response", "doc", "title", "posterEl", "poster", "description", "genres", "animeId", "subEpisodes", "dubEpisodes", "isMovie", "url", "response", "doc", "title", "posterEl", "poster", "description", "genres", "animeId", "subEpisodes", "dubEpisodes", "isMovie"}, nl = {65, 96, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -190,7 +163,7 @@ public final class AnikotoProvider extends MainAPI {
     /* JADX INFO: renamed from: com.anikoto.AnikotoProvider$loadLinks$1 */
     /* JADX INFO: compiled from: AnikotoProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4}, l = {220, 249, 255, 266, 270}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "ep", "parts", "referer", "serverIds", "audioType", "isCasting", "data", "subtitleCallback", "callback", "ep", "parts", "referer", "serverIds", "audioType", "serverListJson", "serverListHtml", "serverDoc", "typeSelectors", "preferredServers", "linkIds", "linkId", "isCasting", "found", "data", "subtitleCallback", "callback", "ep", "parts", "referer", "serverIds", "audioType", "serverListJson", "serverListHtml", "serverDoc", "typeSelectors", "preferredServers", "linkIds", "linkId", "serverJson", "embedUrl", "isCasting", "found", "data", "subtitleCallback", "callback", "ep", "episodeUrl", "isCasting", "data", "subtitleCallback", "callback", "ep", "isCasting"}, nl = {223, 252, 256, 270, -1}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$17", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4}, l = {169, 198, 204, 215, 219}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "ep", "parts", "referer", "serverIds", "audioType", "isCasting", "data", "subtitleCallback", "callback", "ep", "parts", "referer", "serverIds", "audioType", "serverListJson", "serverListHtml", "serverDoc", "typeSelectors", "preferredServers", "linkIds", "linkId", "isCasting", "found", "data", "subtitleCallback", "callback", "ep", "parts", "referer", "serverIds", "audioType", "serverListJson", "serverListHtml", "serverDoc", "typeSelectors", "preferredServers", "linkIds", "linkId", "serverJson", "embedUrl", "isCasting", "found", "data", "subtitleCallback", "callback", "ep", "episodeUrl", "isCasting", "data", "subtitleCallback", "callback", "ep", "isCasting"}, nl = {172, 201, 205, 219, -1}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$15", "L$16", "L$17", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -230,7 +203,7 @@ public final class AnikotoProvider extends MainAPI {
     /* JADX INFO: renamed from: com.anikoto.AnikotoProvider$resolveEmbedInline$1 */
     /* JADX INFO: compiled from: AnikotoProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {365, 368}, m = "resolveEmbedInline", n = {"url", "referer", "audioType", "subtitleCallback", "callback", "normalizedUrl", "domain", "isMegaPlayDomain", "url", "referer", "audioType", "subtitleCallback", "callback", "normalizedUrl", "domain", "isMegaPlayDomain"}, nl = {371, 369}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1}, l = {314, 317}, m = "resolveEmbedInline", n = {"url", "referer", "audioType", "subtitleCallback", "callback", "normalizedUrl", "domain", "isMegaPlayDomain", "url", "referer", "audioType", "subtitleCallback", "callback", "normalizedUrl", "domain", "isMegaPlayDomain"}, nl = {320, 318}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -258,7 +231,7 @@ public final class AnikotoProvider extends MainAPI {
     /* JADX INFO: renamed from: com.anikoto.AnikotoProvider$resolveFromWatchPage$1 */
     /* JADX INFO: compiled from: AnikotoProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {284, 291, 309, 325, 331}, m = "resolveFromWatchPage", n = {"episodeUrl", "subtitleCallback", "callback", "episodeUrl", "subtitleCallback", "callback", "doc", "watchMain", "animeId", "epName", "audioType", "episodeUrl", "subtitleCallback", "callback", "doc", "watchMain", "animeId", "epName", "audioType", "epListJson", "epListHtml", "epDoc", "targetEp", "serverIds", "episodeUrl", "subtitleCallback", "callback", "doc", "watchMain", "animeId", "epName", "audioType", "epListJson", "epListHtml", "epDoc", "targetEp", "serverIds", "serverListJson", "serverListHtml", "serverDoc", "linkIds", "linkId", "found", "episodeUrl", "subtitleCallback", "callback", "doc", "watchMain", "animeId", "epName", "audioType", "epListJson", "epListHtml", "epDoc", "targetEp", "serverIds", "serverListJson", "serverListHtml", "serverDoc", "linkIds", "linkId", "serverJson", "embedUrl", "found"}, nl = {285, 294, 312, 328, 332}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {233, 240, 258, 274, 280}, m = "resolveFromWatchPage", n = {"episodeUrl", "subtitleCallback", "callback", "episodeUrl", "subtitleCallback", "callback", "doc", "watchMain", "animeId", "epName", "audioType", "episodeUrl", "subtitleCallback", "callback", "doc", "watchMain", "animeId", "epName", "audioType", "epListJson", "epListHtml", "epDoc", "targetEp", "serverIds", "episodeUrl", "subtitleCallback", "callback", "doc", "watchMain", "animeId", "epName", "audioType", "epListJson", "epListHtml", "epDoc", "targetEp", "serverIds", "serverListJson", "serverListHtml", "serverDoc", "linkIds", "linkId", "found", "episodeUrl", "subtitleCallback", "callback", "doc", "watchMain", "animeId", "epName", "audioType", "epListJson", "epListHtml", "epDoc", "targetEp", "serverIds", "serverListJson", "serverListHtml", "serverDoc", "linkIds", "linkId", "serverJson", "embedUrl", "found"}, nl = {234, 243, 261, 277, 281}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$18", "L$19", "L$20", "I$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -300,7 +273,7 @@ public final class AnikotoProvider extends MainAPI {
     /* JADX INFO: renamed from: com.anikoto.AnikotoProvider$resolveMegaPlayInline$1 */
     /* JADX INFO: compiled from: AnikotoProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {412, 420, 437, 441, 458}, m = "resolveMegaPlayInline", n = {"url", "referer", "domain", "audioType", "subtitleCallback", "callback", "host", "serverName", "type", "pageHeaders", "ajaxH", "playbackHeaders", "url", "referer", "domain", "audioType", "subtitleCallback", "callback", "host", "serverName", "type", "pageHeaders", "ajaxH", "playbackHeaders", "doc", "playerEl", "streamId", "url", "referer", "domain", "audioType", "subtitleCallback", "callback", "host", "serverName", "type", "pageHeaders", "ajaxH", "playbackHeaders", "doc", "playerEl", "streamId", "sourcesText", "root", "m3u8", "displayType", "url", "referer", "domain", "audioType", "subtitleCallback", "callback", "host", "serverName", "type", "pageHeaders", "ajaxH", "playbackHeaders", "doc", "playerEl", "streamId", "sourcesText", "root", "m3u8", "displayType", "generated", "url", "referer", "domain", "audioType", "subtitleCallback", "callback", "host", "serverName", "type", "pageHeaders", "ajaxH", "playbackHeaders", "doc", "playerEl", "streamId", "sourcesText", "root", "m3u8", "displayType", "generated", "$this$forEach$iv", "element$iv", "track", "file", "kind", "label", "$i$f$forEach", "$i$a$-forEach-AnikotoProvider$resolveMegaPlayInline$3"}, nl = {413, 423, 438, 452, 461}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$22", "L$23", "L$24", "L$25", "L$26", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4}, l = {361, 369, 386, 390, 407}, m = "resolveMegaPlayInline", n = {"url", "referer", "domain", "audioType", "subtitleCallback", "callback", "host", "serverName", "type", "pageHeaders", "ajaxH", "playbackHeaders", "url", "referer", "domain", "audioType", "subtitleCallback", "callback", "host", "serverName", "type", "pageHeaders", "ajaxH", "playbackHeaders", "doc", "playerEl", "streamId", "url", "referer", "domain", "audioType", "subtitleCallback", "callback", "host", "serverName", "type", "pageHeaders", "ajaxH", "playbackHeaders", "doc", "playerEl", "streamId", "sourcesText", "root", "m3u8", "displayType", "url", "referer", "domain", "audioType", "subtitleCallback", "callback", "host", "serverName", "type", "pageHeaders", "ajaxH", "playbackHeaders", "doc", "playerEl", "streamId", "sourcesText", "root", "m3u8", "displayType", "generated", "url", "referer", "domain", "audioType", "subtitleCallback", "callback", "host", "serverName", "type", "pageHeaders", "ajaxH", "playbackHeaders", "doc", "playerEl", "streamId", "sourcesText", "root", "m3u8", "displayType", "generated", "$this$forEach$iv", "element$iv", "track", "file", "kind", "label", "$i$f$forEach", "$i$a$-forEach-AnikotoProvider$resolveMegaPlayInline$3"}, nl = {362, 372, 387, 401, 410}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$22", "L$23", "L$24", "L$25", "L$26", "I$0", "I$1"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -350,7 +323,7 @@ public final class AnikotoProvider extends MainAPI {
     /* JADX INFO: renamed from: com.anikoto.AnikotoProvider$search$1 */
     /* JADX INFO: compiled from: AnikotoProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0}, l = {92}, m = "search", n = {"query", "encodedQuery"}, nl = {93}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.anikoto.AnikotoProvider", f = "AnikotoProvider.kt", i = {0, 0}, l = {58}, m = "search", n = {"query", "encodedQuery"}, nl = {59}, s = {"L$0", "L$1"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -388,8 +361,7 @@ public final class AnikotoProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: AnikotoProvider.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0002\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\f\u001a\u00020\rJ\u0006\u0010\u000f\u001a\u00020\rJ\u0012\u0010\u0010\u001a\u00020\u00112\b\u0010\u0012\u001a\u0004\u0018\u00010\u0005H\u0002R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\rX\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Lcom/anikoto/AnikotoProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "AniKoto_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nAnikotoProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnikotoProvider.kt\ncom/anikoto/AnikotoProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,769:1\n1#2:770\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/anikoto/AnikotoProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "AniKoto_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -405,57 +377,6 @@ public final class AnikotoProvider extends MainAPI {
 
         public final void setContext(@Nullable Context context) {
             AnikotoProvider.context = context;
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                AnikotoProvider.csGuardWasEverActive = true;
-            }
-            return AnikotoProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.anikoto.AnikotoProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AnikotoProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
     }
 
@@ -491,6 +412,7 @@ public final class AnikotoProvider extends MainAPI {
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
         C00001 c00001;
         MainPageRequest request2;
+        int page2 = page;
         if (continuation instanceof C00001) {
             c00001 = (C00001) continuation;
             if ((c00001.label & Integer.MIN_VALUE) != 0) {
@@ -506,17 +428,12 @@ public final class AnikotoProvider extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 Requests app = MainActivityKt.getApp();
-                String str = request.getData() + "?page=" + page;
+                String str = request.getData() + "?page=" + page2;
                 Map<String, String> map = this.browserHeaders;
                 c00001.L$0 = request;
-                c00001.I$0 = page;
+                c00001.I$0 = page2;
                 c00001.label = 1;
                 $result = Requests.get$default(app, str, map, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00001, 4092, (Object) null);
                 if ($result == coroutine_suspended) {
@@ -526,7 +443,7 @@ public final class AnikotoProvider extends MainAPI {
                 break;
                 break;
             case 1:
-                int i = c00001.I$0;
+                page2 = c00001.I$0;
                 request2 = (MainPageRequest) c00001.L$0;
                 ResultKt.throwOnFailure($result);
                 break;
@@ -537,11 +454,13 @@ public final class AnikotoProvider extends MainAPI {
         Iterable $this$mapNotNull$iv = doc.select("div.item, div.flw-item");
         Collection destination$iv$iv = new ArrayList();
         for (Object element$iv$iv$iv : $this$mapNotNull$iv) {
+            int page3 = page2;
             Element it = (Element) element$iv$iv$iv;
             AnimeSearchResponse searchResult = toSearchResult(it);
             if (searchResult != null) {
                 destination$iv$iv.add(searchResult);
             }
+            page2 = page3;
         }
         List items = (List) destination$iv$iv;
         return MainAPIKt.newHomePageResponse$default(request2.getName(), items, (Boolean) null, 4, (Object) null);
@@ -566,10 +485,6 @@ public final class AnikotoProvider extends MainAPI {
         switch (c00081.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 String encodedQuery = URLEncoder.encode(query, "UTF-8");
                 Requests app = MainActivityKt.getApp();
                 String str = getMainUrl() + "/filter?keyword=" + encodedQuery;
@@ -1888,7 +1803,7 @@ public final class AnikotoProvider extends MainAPI {
     /* JADX INFO: compiled from: AnikotoProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/AnimeLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.anikoto.AnikotoProvider$load$4", f = "AnikotoProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nAnikotoProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnikotoProvider.kt\ncom/anikoto/AnikotoProvider$load$4\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,769:1\n1#2:770\n*E\n"})
+    @SourceDebugExtension({"SMAP\nAnikotoProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnikotoProvider.kt\ncom/anikoto/AnikotoProvider$load$4\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,484:1\n1#2:485\n*E\n"})
     static final class C00024 extends SuspendLambda implements Function2<AnimeLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $description;
         final /* synthetic */ List<Episode> $dubEpisodes;
@@ -1943,42 +1858,38 @@ public final class AnikotoProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:123:0x04f7  */
-    /* JADX WARN: Code duplicated, block: B:134:0x05a2 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:135:0x05a3  */
-    /* JADX WARN: Code duplicated, block: B:138:0x05cd  */
-    /* JADX WARN: Code duplicated, block: B:139:0x05d3 A[Catch: Exception -> 0x0706, TryCatch #12 {Exception -> 0x0706, blocks: (B:136:0x05c0, B:139:0x05d3, B:141:0x05dd), top: B:223:0x05c0 }] */
-    /* JADX WARN: Code duplicated, block: B:141:0x05dd A[Catch: Exception -> 0x0706, TRY_LEAVE, TryCatch #12 {Exception -> 0x0706, blocks: (B:136:0x05c0, B:139:0x05d3, B:141:0x05dd), top: B:223:0x05c0 }] */
-    /* JADX WARN: Code duplicated, block: B:147:0x064c A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:148:0x064d  */
-    /* JADX WARN: Code duplicated, block: B:151:0x0668  */
-    /* JADX WARN: Code duplicated, block: B:152:0x0682  */
-    /* JADX WARN: Code duplicated, block: B:159:0x06e3  */
+    /* JADX WARN: Code duplicated, block: B:106:0x0529 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:107:0x052a  */
+    /* JADX WARN: Code duplicated, block: B:110:0x0553  */
+    /* JADX WARN: Code duplicated, block: B:111:0x0559 A[Catch: Exception -> 0x068e, TryCatch #3 {Exception -> 0x068e, blocks: (B:108:0x0546, B:111:0x0559, B:113:0x0563), top: B:177:0x0546 }] */
+    /* JADX WARN: Code duplicated, block: B:113:0x0563 A[Catch: Exception -> 0x068e, TRY_LEAVE, TryCatch #3 {Exception -> 0x068e, blocks: (B:108:0x0546, B:111:0x0559, B:113:0x0563), top: B:177:0x0546 }] */
+    /* JADX WARN: Code duplicated, block: B:119:0x05d2 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:120:0x05d3  */
+    /* JADX WARN: Code duplicated, block: B:123:0x05ed  */
+    /* JADX WARN: Code duplicated, block: B:124:0x0608  */
+    /* JADX WARN: Code duplicated, block: B:131:0x066d  */
     /* JADX WARN: Code duplicated, block: B:7:0x001e  */
-    /* JADX WARN: Not initialized variable reg: 11, insn: 0x0175: MOVE (r15 I:??[OBJECT, ARRAY]) = (r11 I:??[OBJECT, ARRAY] A[D('linkIds' java.util.List)]), block:B:21:0x0172 */
-    /* JADX WARN: Not initialized variable reg: 23, insn: 0x0176: MOVE (r7 I:??[OBJECT, ARRAY] A[D('$result' java.lang.Object)]) = (r23 I:??[OBJECT, ARRAY] A[D('serverListJson' java.lang.String)]), block:B:21:0x0172 */
-    /* JADX WARN: Not initialized variable reg: 26, insn: 0x0178: MOVE (r17 I:??[OBJECT, ARRAY]) = (r26 I:??[OBJECT, ARRAY] A[D('referer' java.lang.String)]), block:B:21:0x0172 */
-    /* JADX WARN: Not initialized variable reg: 28, insn: 0x017a: MOVE (r16 I:??[OBJECT, ARRAY]) = (r28 I:??[OBJECT, ARRAY] A[D('ep' java.lang.String)]), block:B:21:0x0172 */
+    /* JADX WARN: Code duplicated, block: B:95:0x047e  */
+    /* JADX WARN: Not initialized variable reg: 11, insn: 0x0172: MOVE (r16 I:??[OBJECT, ARRAY]) = (r11 I:??[OBJECT, ARRAY] A[D('linkIds' java.util.List)]), block:B:21:0x0171 */
+    /* JADX WARN: Not initialized variable reg: 23, insn: 0x0180: MOVE (r7 I:??[OBJECT, ARRAY] A[D('$result' java.lang.Object)]) = (r23 I:??[OBJECT, ARRAY] A[D('serverListJson' java.lang.String)]), block:B:21:0x0171 */
+    /* JADX WARN: Not initialized variable reg: 25, insn: 0x0174: MOVE (r15 I:??[OBJECT, ARRAY]) = (r25 I:??[OBJECT, ARRAY] A[D('serverIds' java.lang.String)]), block:B:21:0x0171 */
+    /* JADX WARN: Not initialized variable reg: 26, insn: 0x0176: MOVE (r17 I:??[OBJECT, ARRAY]) = (r26 I:??[OBJECT, ARRAY] A[D('referer' java.lang.String)]), block:B:21:0x0171 */
+    /* JADX WARN: Not initialized variable reg: 28, insn: 0x0178: MOVE (r20 I:??[OBJECT, ARRAY]) = (r28 I:??[OBJECT, ARRAY] A[D('ep' java.lang.String)]), block:B:21:0x0171 */
     /* JADX WARN: Unreachable blocks removed: 2, instructions: 2 */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:148:0x064d -> B:219:0x0660). Please report as a decompilation issue!!! */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:173:0x078e -> B:121:0x04f1). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:120:0x05d3 -> B:197:0x05e5). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:145:0x070c -> B:93:0x0478). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
-    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r52, boolean r53, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r54, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r55, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r56) {
+    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r53, boolean r54, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r55, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r56, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r57) {
         /*
-            Method dump skipped, instruction units count: 2168
+            Method dump skipped, instruction units count: 2038
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.anikoto.AnikotoProvider.loadLinks(java.lang.String, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2379,7 +2290,7 @@ public final class AnikotoProvider extends MainAPI {
         String metaText = $this$toSearchResult.select(".meta, .info, .type, .right").text();
         final boolean hasDub = $this$toSearchResult.selectFirst(".dub, i.dub, .fa-microphone") != null || StringsKt.contains(metaText, "Dub", true);
         final boolean hasSub = ($this$toSearchResult.selectFirst(".sub, i.sub, .fa-closed-captioning") == null && !StringsKt.contains(metaText, "Sub", true) && hasDub) ? false : true;
-        return MainAPIKt.newAnimeSearchResponse$default(this, title, cleanHref, type, false, new Function1() { // from class: com.anikoto.AnikotoProvider$$ExternalSyntheticLambda4
+        return MainAPIKt.newAnimeSearchResponse$default(this, title, cleanHref, type, false, new Function1() { // from class: com.anikoto.AnikotoProvider$$ExternalSyntheticLambda3
             public final Object invoke(Object obj) {
                 return AnikotoProvider.toSearchResult$lambda$2(dataSrc, hasDub, hasSub, this, (AnimeSearchResponse) obj);
             }
@@ -2666,296 +2577,6 @@ public final class AnikotoProvider extends MainAPI {
         @Nullable
         public final String getKind() {
             return this.kind;
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || this.subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            this.subscriptionPopupShown = true;
-        } else {
-            this.subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.anikoto.AnikotoProvider$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    AnikotoProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.anikoto.AnikotoProvider$$ExternalSyntheticLambda10
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AnikotoProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.anikoto.AnikotoProvider$$ExternalSyntheticLambda11
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AnikotoProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || this.telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            this.telegramPopupShown = true;
-            return;
-        }
-        this.telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.anikoto.AnikotoProvider$$ExternalSyntheticLambda5
-            @Override // java.lang.Runnable
-            public final void run() {
-                AnikotoProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.anikoto.AnikotoProvider$$ExternalSyntheticLambda7
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.anikoto.AnikotoProvider$$ExternalSyntheticLambda8
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    AnikotoProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - this.lastBrowserOpenMs < this.BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        this.lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.anikoto.AnikotoProvider$$ExternalSyntheticLambda9
-            @Override // java.lang.Runnable
-            public final void run() {
-                AnikotoProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
         }
     }
 }

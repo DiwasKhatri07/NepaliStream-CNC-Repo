@@ -4,7 +4,7 @@ package nepali.stream.decoded.tamildhoolprovider
 object PluginMetadata {
     const val name: String = "TamilDhoolProvider"
     const val originalPluginClass: String = "com.cncverse.TamilDhoolProviderPlugin"
-    const val version: Int = 36
+    const val version: Int = 37
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

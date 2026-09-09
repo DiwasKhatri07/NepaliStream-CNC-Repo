@@ -1,24 +1,7 @@
 package com.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -41,7 +24,6 @@ import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvSeriesSearchResponse;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorLinkType;
@@ -49,7 +31,6 @@ import com.lagradost.cloudstream3.utils.Qualities;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
-import java.lang.reflect.Field;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -85,7 +66,6 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Reflection;
 import kotlin.jvm.internal.SourceDebugExtension;
 import kotlin.ranges.RangesKt;
-import kotlin.text.Charsets;
 import kotlin.text.Regex;
 import kotlin.text.StringsKt;
 import okhttp3.Interceptor;
@@ -94,24 +74,16 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: XonProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/XonProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u009e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0014\u0018\u0000 [2\u00020\u0001:\u0005[\\]^_B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001fH\u0002J\u000e\u0010*\u001a\u00020+H\u0082@¢\u0006\u0002\u0010,J\u000e\u0010-\u001a\u00020+H\u0086@¢\u0006\u0002\u0010,J\u0010\u0010.\u001a\u00020\u00052\u0006\u0010/\u001a\u00020\u0005H\u0002J\f\u00100\u001a\u00020\u0005*\u00020%H\u0002J\f\u00101\u001a\u00020\u0005*\u00020%H\u0002J\f\u00101\u001a\u00020\u0005*\u00020'H\u0002J\u001e\u00104\u001a\u0002062\u0006\u00107\u001a\u0002082\u0006\u00109\u001a\u00020:H\u0096@¢\u0006\u0002\u0010;J\u001e\u0010=\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0005\u0012\u0004\u0012\u00020\u00050>2\u0006\u0010?\u001a\u00020\u0005H\u0002J\u001c\u0010@\u001a\b\u0012\u0004\u0012\u00020A0$2\u0006\u0010?\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010BJ\u0018\u0010C\u001a\u0004\u0018\u00010D2\u0006\u0010/\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010BJF\u0010E\u001a\u00020\u000e2\u0006\u0010F\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u000e2\u0012\u0010H\u001a\u000e\u0012\u0004\u0012\u00020J\u0012\u0004\u0012\u00020+0I2\u0012\u0010K\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020+0IH\u0096@¢\u0006\u0002\u0010MJB\u0010N\u001a\u00020+2\u0006\u0010O\u001a\u00020\u00052\u0006\u0010P\u001a\u00020\u00052\u0006\u0010Q\u001a\u00020\u00052\u0006\u0010R\u001a\u00020\u00052\u0012\u0010K\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020+0IH\u0082@¢\u0006\u0002\u0010SJ&\u0010T\u001a\u00020L2\u0006\u0010U\u001a\u00020\u00052\u0006\u0010/\u001a\u00020\u00052\u0006\u0010V\u001a\u000208H\u0082@¢\u0006\u0002\u0010WJ\b\u0010X\u001a\u00020+H\u0002J\b\u0010Y\u001a\u00020+H\u0002J\u0010\u0010Z\u001a\u00020+2\u0006\u0010/\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010 \u001a\n \"*\u0004\u0018\u00010!0!X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020%0$X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020'0$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00102\u001a\b\u0012\u0004\u0012\u0002030$X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b4\u00105R\u0014\u0010<\u001a\b\u0012\u0004\u0012\u00020\u00050$X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006`"}, d2 = {"Lcom/cncverse/XonProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "apiKey", "callerName", "configExpireTime", "", "configFetched", "getHeaders", "", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "kotlin.jvm.PlatformType", "cachedMovies", "", "Lcom/cncverse/XonProvider$Movie;", "cachedEpisodes", "Lcom/cncverse/XonProvider$Episode;", "lastCacheTime", "cacheRefreshInterval", "fetchRemoteConfig", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "refreshCache", "formatUrl", "url", "bestPoster", "displayName", "mainPage", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "knownLanguages", "extractLanguageFromQuery", "Lkotlin/Pair;", "query", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "addVideoLinks", "basic", "sd", "hd", "fhd", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "makeLink", "label", "quality", "(Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "Movie", "MoviesResponse", "Episode", "EpisodesResponse", "XonProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nXonProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 XonProvider.kt\ncom/cncverse/XonProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 6 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,805:1\n1#2:806\n1#2:818\n1#2:831\n116#3:807\n54#3:808\n117#3:809\n61#3,8:810\n71#3:819\n116#3:820\n54#3:821\n117#3:822\n61#3,8:823\n71#3:832\n777#4:833\n873#4,2:834\n1586#4:836\n1661#4,3:837\n777#4:840\n873#4,2:841\n1586#4:843\n1661#4,3:844\n1586#4:847\n1661#4,3:848\n1512#4:851\n1538#4,3:852\n1541#4,3:862\n1586#4:866\n1661#4,3:867\n296#4:871\n1807#4,3:872\n297#4:875\n832#4:876\n862#4,2:877\n777#4:879\n873#4,2:880\n1915#4,2:882\n777#4:884\n873#4,2:885\n1915#4,2:887\n777#4:889\n873#4,2:890\n1586#4:892\n1661#4,3:893\n1205#4,2:896\n1282#4,4:898\n1586#4:902\n1661#4,3:903\n383#5,7:855\n221#6:865\n222#6:870\n*S KotlinDebug\n*F\n+ 1 XonProvider.kt\ncom/cncverse/XonProvider\n*L\n225#1:818\n230#1:831\n225#1:807\n225#1:808\n225#1:809\n225#1:810,8\n225#1:819\n230#1:820\n230#1:821\n230#1:822\n230#1:823,8\n230#1:832\n282#1:833\n282#1:834,2\n284#1:836\n284#1:837,3\n294#1:840\n294#1:841,2\n296#1:843\n296#1:844,3\n306#1:847\n306#1:848,3\n316#1:851\n316#1:852,3\n316#1:862,3\n318#1:866\n318#1:867,3\n350#1:871\n351#1:872,3\n350#1:875\n354#1:876\n354#1:877,2\n366#1:879\n366#1:880,2\n379#1:882,2\n388#1:884\n388#1:885,2\n398#1:887,2\n446#1:889\n446#1:890,2\n451#1:892\n451#1:893,3\n452#1:896,2\n452#1:898,4\n454#1:902\n454#1:903,3\n316#1:855,7\n317#1:865\n317#1:870\n*E\n"})
+@Metadata(d1 = {"\u0000\u009e\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0011\u0018\u0000 X2\u00020\u0001:\u0005XYZ[\\B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0014\u0010\u001e\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001fH\u0002J\u000e\u0010*\u001a\u00020+H\u0082@¢\u0006\u0002\u0010,J\u000e\u0010-\u001a\u00020+H\u0086@¢\u0006\u0002\u0010,J\u0010\u0010.\u001a\u00020\u00052\u0006\u0010/\u001a\u00020\u0005H\u0002J\f\u00100\u001a\u00020\u0005*\u00020%H\u0002J\f\u00101\u001a\u00020\u0005*\u00020%H\u0002J\f\u00101\u001a\u00020\u0005*\u00020'H\u0002J\u001e\u00104\u001a\u0002062\u0006\u00107\u001a\u0002082\u0006\u00109\u001a\u00020:H\u0096@¢\u0006\u0002\u0010;J\u001e\u0010=\u001a\u0010\u0012\u0006\u0012\u0004\u0018\u00010\u0005\u0012\u0004\u0012\u00020\u00050>2\u0006\u0010?\u001a\u00020\u0005H\u0002J\u001c\u0010@\u001a\b\u0012\u0004\u0012\u00020A0$2\u0006\u0010?\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010BJ\u0018\u0010C\u001a\u0004\u0018\u00010D2\u0006\u0010/\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010BJF\u0010E\u001a\u00020\u000e2\u0006\u0010F\u001a\u00020\u00052\u0006\u0010G\u001a\u00020\u000e2\u0012\u0010H\u001a\u000e\u0012\u0004\u0012\u00020J\u0012\u0004\u0012\u00020+0I2\u0012\u0010K\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020+0IH\u0096@¢\u0006\u0002\u0010MJB\u0010N\u001a\u00020+2\u0006\u0010O\u001a\u00020\u00052\u0006\u0010P\u001a\u00020\u00052\u0006\u0010Q\u001a\u00020\u00052\u0006\u0010R\u001a\u00020\u00052\u0012\u0010K\u001a\u000e\u0012\u0004\u0012\u00020L\u0012\u0004\u0012\u00020+0IH\u0082@¢\u0006\u0002\u0010SJ&\u0010T\u001a\u00020L2\u0006\u0010U\u001a\u00020\u00052\u0006\u0010/\u001a\u00020\u00052\u0006\u0010V\u001a\u000208H\u0082@¢\u0006\u0002\u0010WR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u0016\u0010 \u001a\n \"*\u0004\u0018\u00010!0!X\u0082\u0004¢\u0006\u0002\n\u0000R\u0014\u0010#\u001a\b\u0012\u0004\u0012\u00020%0$X\u0082\u000e¢\u0006\u0002\n\u0000R\u0014\u0010&\u001a\b\u0012\u0004\u0012\u00020'0$X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010(\u001a\u00020\u001cX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010)\u001a\u00020\u001cX\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u00102\u001a\b\u0012\u0004\u0012\u0002030$X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b4\u00105R\u0014\u0010<\u001a\b\u0012\u0004\u0012\u00020\u00050$X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006]"}, d2 = {"Lcom/cncverse/XonProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "apiKey", "callerName", "configExpireTime", "", "configFetched", "getHeaders", "", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "kotlin.jvm.PlatformType", "cachedMovies", "", "Lcom/cncverse/XonProvider$Movie;", "cachedEpisodes", "Lcom/cncverse/XonProvider$Episode;", "lastCacheTime", "cacheRefreshInterval", "fetchRemoteConfig", "", "(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "refreshCache", "formatUrl", "url", "bestPoster", "displayName", "mainPage", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "knownLanguages", "extractLanguageFromQuery", "Lkotlin/Pair;", "query", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "addVideoLinks", "basic", "sd", "hd", "fhd", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "makeLink", "label", "quality", "(Ljava/lang/String;Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "Movie", "MoviesResponse", "Episode", "EpisodesResponse", "XonProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nXonProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 XonProvider.kt\ncom/cncverse/XonProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 5 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 6 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,515:1\n1#2:516\n1#2:528\n1#2:541\n116#3:517\n54#3:518\n117#3:519\n61#3,8:520\n71#3:529\n116#3:530\n54#3:531\n117#3:532\n61#3,8:533\n71#3:542\n777#4:543\n873#4,2:544\n1586#4:546\n1661#4,3:547\n777#4:550\n873#4,2:551\n1586#4:553\n1661#4,3:554\n1586#4:557\n1661#4,3:558\n1512#4:561\n1538#4,3:562\n1541#4,3:572\n1586#4:576\n1661#4,3:577\n296#4:581\n1807#4,3:582\n297#4:585\n832#4:586\n862#4,2:587\n777#4:589\n873#4,2:590\n1915#4,2:592\n777#4:594\n873#4,2:595\n1915#4,2:597\n777#4:599\n873#4,2:600\n1586#4:602\n1661#4,3:603\n1205#4,2:606\n1282#4,4:608\n1586#4:612\n1661#4,3:613\n383#5,7:565\n221#6:575\n222#6:580\n*S KotlinDebug\n*F\n+ 1 XonProvider.kt\ncom/cncverse/XonProvider\n*L\n195#1:528\n200#1:541\n195#1:517\n195#1:518\n195#1:519\n195#1:520,8\n195#1:529\n200#1:530\n200#1:531\n200#1:532\n200#1:533,8\n200#1:542\n250#1:543\n250#1:544,2\n252#1:546\n252#1:547,3\n262#1:550\n262#1:551,2\n264#1:553\n264#1:554,3\n274#1:557\n274#1:558,3\n284#1:561\n284#1:562,3\n284#1:572,3\n286#1:576\n286#1:577,3\n318#1:581\n319#1:582,3\n318#1:585\n322#1:586\n322#1:587,2\n334#1:589\n334#1:590,2\n347#1:592,2\n356#1:594\n356#1:595,2\n366#1:597,2\n414#1:599\n414#1:600,2\n419#1:602\n419#1:603,3\n420#1:606,2\n420#1:608,4\n422#1:612\n422#1:613,3\n284#1:565,7\n285#1:575\n285#1:580\n*E\n"})
 public final class XonProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
     private long configExpireTime;
     private boolean configFetched;
     private long lastCacheTime;
@@ -152,7 +124,7 @@ public final class XonProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.XonProvider$addVideoLinks$1 */
     /* JADX INFO: compiled from: XonProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3}, l = {550, 551, 552, 553}, m = "addVideoLinks", n = {"basic", "sd", "hd", "fhd", "callback", "basic", "sd", "hd", "fhd", "callback", "basic", "sd", "hd", "fhd", "callback", "basic", "sd", "hd", "fhd", "callback"}, nl = {551, 552, 553, 554}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3}, l = {502, 503, 504, 505}, m = "addVideoLinks", n = {"basic", "sd", "hd", "fhd", "callback", "basic", "sd", "hd", "fhd", "callback", "basic", "sd", "hd", "fhd", "callback", "basic", "sd", "hd", "fhd", "callback"}, nl = {503, 504, 505, 506}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -178,7 +150,7 @@ public final class XonProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.XonProvider$fetchRemoteConfig$1 */
     /* JADX INFO: compiled from: XonProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {}, l = {193}, m = "fetchRemoteConfig", n = {}, nl = {194}, s = {}, v = 2)
+    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {}, l = {163}, m = "fetchRemoteConfig", n = {}, nl = {164}, s = {}, v = 2)
     static final class C00071 extends ContinuationImpl {
         int label;
         /* synthetic */ Object result;
@@ -198,7 +170,7 @@ public final class XonProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.XonProvider$getMainPage$1 */
     /* JADX INFO: compiled from: XonProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0, 0}, l = {275}, m = "getMainPage", n = {"request", "page"}, nl = {276}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0, 0}, l = {243}, m = "getMainPage", n = {"request", "page"}, nl = {244}, s = {"L$0", "I$0"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -220,7 +192,7 @@ public final class XonProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.XonProvider$load$1 */
     /* JADX INFO: compiled from: XonProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {412, 424, 468}, m = "load", n = {"url", "url", "str", "parts", "type", "movie", "id", "url", "str", "parts", "type", "ep", "showEpisodes", "seasonIds", "seasonNoMap", "episodeList", "showTitle", "langLabel", "displayTitle", "id"}, nl = {413, 442, 484}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {380, 392, 436}, m = "load", n = {"url", "url", "str", "parts", "type", "movie", "id", "url", "str", "parts", "type", "ep", "showEpisodes", "seasonIds", "seasonNoMap", "episodeList", "showTitle", "langLabel", "displayTitle", "id"}, nl = {381, 410, 452}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0"}, v = 2)
     static final class C00091 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -253,7 +225,7 @@ public final class XonProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.XonProvider$loadLinks$1 */
     /* JADX INFO: compiled from: XonProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6}, l = {512, 523, 524, 525, 530, 531, 532}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "str", "parts", "type", "ep", "isCasting", "id", "data", "subtitleCallback", "callback", "str", "parts", "type", "ep", "isCasting", "id", "data", "subtitleCallback", "callback", "str", "parts", "type", "ep", "isCasting", "id", "data", "subtitleCallback", "callback", "str", "parts", "type", "movie", "isCasting", "id", "data", "subtitleCallback", "callback", "str", "parts", "type", "movie", "isCasting", "id", "data", "subtitleCallback", "callback", "str", "parts", "type", "movie", "isCasting", "id"}, nl = {513, 524, 525, 528, 531, 532, 535}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6}, l = {464, 475, 476, 477, 482, 483, 484}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "str", "parts", "type", "ep", "isCasting", "id", "data", "subtitleCallback", "callback", "str", "parts", "type", "ep", "isCasting", "id", "data", "subtitleCallback", "callback", "str", "parts", "type", "ep", "isCasting", "id", "data", "subtitleCallback", "callback", "str", "parts", "type", "movie", "isCasting", "id", "data", "subtitleCallback", "callback", "str", "parts", "type", "movie", "isCasting", "id", "data", "subtitleCallback", "callback", "str", "parts", "type", "movie", "isCasting", "id"}, nl = {465, 476, 477, 480, 483, 484, 487}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0"}, v = 2)
     static final class C00121 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -282,7 +254,7 @@ public final class XonProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.XonProvider$refreshCache$1 */
     /* JADX INFO: compiled from: XonProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0, 1, 1, 2, 2, 2, 2}, l = {210, 224, 229}, m = "refreshCache", n = {"currentTime", "headers", "currentTime", "headers", "moviesRaw", "moviesResponse", "currentTime"}, nl = {213, 225, 230}, s = {"J$0", "L$0", "J$0", "L$0", "L$1", "L$2", "J$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0, 1, 1, 2, 2, 2, 2}, l = {180, 194, 199}, m = "refreshCache", n = {"currentTime", "headers", "currentTime", "headers", "moviesRaw", "moviesResponse", "currentTime"}, nl = {183, 195, 200}, s = {"J$0", "L$0", "J$0", "L$0", "L$1", "L$2", "J$0"}, v = 2)
     static final class C00141 extends ContinuationImpl {
         long J$0;
         Object L$0;
@@ -306,7 +278,7 @@ public final class XonProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.XonProvider$search$1 */
     /* JADX INFO: compiled from: XonProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0}, l = {360}, m = "search", n = {"query"}, nl = {361}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.XonProvider", f = "XonProvider.kt", i = {0}, l = {328}, m = "search", n = {"query"}, nl = {329}, s = {"L$0"}, v = 2)
     static final class C00151 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -325,65 +297,13 @@ public final class XonProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: XonProvider.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/cncverse/XonProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "XonProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nXonProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 XonProvider.kt\ncom/cncverse/XonProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,805:1\n1#2:806\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/cncverse/XonProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "XonProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                XonProvider.csGuardWasEverActive = true;
-            }
-            return XonProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.XonProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    XonProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -2123,7 +2043,7 @@ public final class XonProvider extends MainAPI {
         return this.mainPage;
     }
 
-    /* JADX WARN: Code duplicated, block: B:73:0x02d0  */
+    /* JADX WARN: Code duplicated, block: B:67:0x02ab  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
     @Nullable
@@ -2147,12 +2067,7 @@ public final class XonProvider extends MainAPI {
         switch (c00081.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 request2 = request;
                 c00081.L$0 = request2;
                 c00081.I$0 = page;
@@ -2273,29 +2188,24 @@ public final class XonProvider extends MainAPI {
                     Collection destination$iv$iv5 = new ArrayList();
                     for (Object element$iv$iv3 : $this$filter$iv2) {
                         Episode it3 = (Episode) element$iv$iv3;
+                        List trendingMovies2 = trendingMovies;
                         C00081 c00082 = c00081;
                         if (it3.getTrending() == 1) {
                             destination$iv$iv5.add(element$iv$iv3);
                         }
+                        trendingMovies = trendingMovies2;
                         c00081 = c00082;
                     }
                     Iterable $this$map$iv4 = CollectionsKt.take((List) destination$iv$iv5, 20);
-                    int $i$f$map = 0;
                     Collection destination$iv$iv6 = new ArrayList(CollectionsKt.collectionSizeOrDefault($this$map$iv4, 10));
                     for (Object item$iv$iv4 : $this$map$iv4) {
                         final Episode ep2 = (Episode) item$iv$iv4;
-                        String strDisplayName = displayName(ep2);
-                        Iterable $this$map$iv5 = $this$map$iv4;
-                        StringBuilder sbAppend = new StringBuilder().append("episode:");
-                        int $i$f$map2 = $i$f$map;
-                        int $i$f$map3 = ep2.getId();
-                        destination$iv$iv6.add(MainAPIKt.newTvSeriesSearchResponse$default(this, strDisplayName, sbAppend.append($i$f$map3).toString(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda1
+                        destination$iv$iv6.add(MainAPIKt.newTvSeriesSearchResponse$default(this, displayName(ep2), "episode:" + ep2.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda1
                             public final Object invoke(Object obj) {
                                 return XonProvider.getMainPage$lambda$3$0(ep2, this, (TvSeriesSearchResponse) obj);
                             }
                         }, 8, (Object) null));
-                        $this$map$iv4 = $this$map$iv5;
-                        $i$f$map = $i$f$map2;
+                        $this$map$iv4 = $this$map$iv4;
                     }
                     List trendingEpisodes = (List) destination$iv$iv6;
                     if (!trendingEpisodes.isEmpty()) {
@@ -2384,41 +2294,41 @@ public final class XonProvider extends MainAPI {
         return new Pair<>(lowerCase, remaining);
     }
 
-    /* JADX WARN: Code duplicated, block: B:100:0x01e2  */
     /* JADX WARN: Code duplicated, block: B:101:0x01e4  */
-    /* JADX WARN: Code duplicated, block: B:103:0x01e7  */
-    /* JADX WARN: Code duplicated, block: B:105:0x01f8  */
-    /* JADX WARN: Code duplicated, block: B:107:0x01fe  */
-    /* JADX WARN: Code duplicated, block: B:110:0x020b  */
-    /* JADX WARN: Code duplicated, block: B:112:0x020e  */
-    /* JADX WARN: Code duplicated, block: B:114:0x0214  */
-    /* JADX WARN: Code duplicated, block: B:117:0x0221  */
-    /* JADX WARN: Code duplicated, block: B:120:0x0225  */
-    /* JADX WARN: Code duplicated, block: B:121:0x0227  */
-    /* JADX WARN: Code duplicated, block: B:125:0x022d A[ADDED_TO_REGION] */
-    /* JADX WARN: Code duplicated, block: B:127:0x0231  */
-    /* JADX WARN: Code duplicated, block: B:129:0x0234  */
-    /* JADX WARN: Code duplicated, block: B:139:0x0133 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:143:0x0237 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:35:0x00ba  */
-    /* JADX WARN: Code duplicated, block: B:40:0x00c9  */
+    /* JADX WARN: Code duplicated, block: B:103:0x01ea  */
+    /* JADX WARN: Code duplicated, block: B:106:0x01f7  */
+    /* JADX WARN: Code duplicated, block: B:108:0x01fa  */
+    /* JADX WARN: Code duplicated, block: B:110:0x0200  */
+    /* JADX WARN: Code duplicated, block: B:113:0x020d  */
+    /* JADX WARN: Code duplicated, block: B:116:0x0211  */
+    /* JADX WARN: Code duplicated, block: B:117:0x0213  */
+    /* JADX WARN: Code duplicated, block: B:121:0x0219 A[ADDED_TO_REGION] */
+    /* JADX WARN: Code duplicated, block: B:123:0x021d  */
+    /* JADX WARN: Code duplicated, block: B:125:0x0220  */
+    /* JADX WARN: Code duplicated, block: B:135:0x011f A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:139:0x0223 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:31:0x00a6  */
+    /* JADX WARN: Code duplicated, block: B:36:0x00b5  */
+    /* JADX WARN: Code duplicated, block: B:37:0x00b7  */
+    /* JADX WARN: Code duplicated, block: B:39:0x00ba  */
     /* JADX WARN: Code duplicated, block: B:41:0x00cb  */
-    /* JADX WARN: Code duplicated, block: B:43:0x00ce  */
-    /* JADX WARN: Code duplicated, block: B:45:0x00df  */
-    /* JADX WARN: Code duplicated, block: B:47:0x00e5  */
-    /* JADX WARN: Code duplicated, block: B:50:0x00f2  */
-    /* JADX WARN: Code duplicated, block: B:52:0x00f5  */
-    /* JADX WARN: Code duplicated, block: B:54:0x00fb  */
-    /* JADX WARN: Code duplicated, block: B:57:0x0108  */
-    /* JADX WARN: Code duplicated, block: B:59:0x010b  */
-    /* JADX WARN: Code duplicated, block: B:61:0x0111  */
-    /* JADX WARN: Code duplicated, block: B:64:0x011e  */
-    /* JADX WARN: Code duplicated, block: B:67:0x0122  */
-    /* JADX WARN: Code duplicated, block: B:68:0x0124  */
-    /* JADX WARN: Code duplicated, block: B:72:0x012a A[ADDED_TO_REGION] */
-    /* JADX WARN: Code duplicated, block: B:75:0x0130  */
+    /* JADX WARN: Code duplicated, block: B:43:0x00d1  */
+    /* JADX WARN: Code duplicated, block: B:46:0x00de  */
+    /* JADX WARN: Code duplicated, block: B:48:0x00e1  */
+    /* JADX WARN: Code duplicated, block: B:50:0x00e7  */
+    /* JADX WARN: Code duplicated, block: B:53:0x00f4  */
+    /* JADX WARN: Code duplicated, block: B:55:0x00f7  */
+    /* JADX WARN: Code duplicated, block: B:57:0x00fd  */
+    /* JADX WARN: Code duplicated, block: B:60:0x010a  */
+    /* JADX WARN: Code duplicated, block: B:63:0x010e  */
+    /* JADX WARN: Code duplicated, block: B:64:0x0110  */
+    /* JADX WARN: Code duplicated, block: B:68:0x0116 A[ADDED_TO_REGION] */
+    /* JADX WARN: Code duplicated, block: B:71:0x011c  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:95:0x01d1  */
+    /* JADX WARN: Code duplicated, block: B:91:0x01bd  */
+    /* JADX WARN: Code duplicated, block: B:96:0x01ce  */
+    /* JADX WARN: Code duplicated, block: B:97:0x01d0  */
+    /* JADX WARN: Code duplicated, block: B:99:0x01d3  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
         C00151 c00151;
@@ -2462,10 +2372,6 @@ public final class XonProvider extends MainAPI {
         switch (c00151.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 c00151.L$0 = query;
                 c00151.label = 1;
                 if (refreshCache(c00151) == coroutine_suspended) {
@@ -2672,7 +2578,7 @@ public final class XonProvider extends MainAPI {
                 Iterable $this$forEach$iv = (List) destination$iv$iv;
                 for (Object element$iv : $this$forEach$iv) {
                     final Movie movie2 = (Movie) element$iv;
-                    results.add(MainAPIKt.newMovieSearchResponse$default(this, displayName(movie2), "movie:" + movie2.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda10
+                    results.add(MainAPIKt.newMovieSearchResponse$default(this, displayName(movie2), "movie:" + movie2.getId(), TvType.Movie, false, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda7
                         public final Object invoke(Object obj) {
                             return XonProvider.search$lambda$1$0(this.f$0, movie2, (MovieSearchResponse) obj);
                         }
@@ -2860,7 +2766,7 @@ public final class XonProvider extends MainAPI {
                 Iterable $this$forEach$iv3 = (List) destination$iv$iv2;
                 for (Object element$iv2 : $this$forEach$iv3) {
                     final Episode ep2 = (Episode) element$iv2;
-                    results.add(MainAPIKt.newTvSeriesSearchResponse$default(this, displayName(ep2), "episode:" + ep2.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda11
+                    results.add(MainAPIKt.newTvSeriesSearchResponse$default(this, displayName(ep2), "episode:" + ep2.getId(), TvType.TvSeries, false, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda8
                         public final Object invoke(Object obj) {
                             return XonProvider.search$lambda$3$0(ep2, this, (TvSeriesSearchResponse) obj);
                         }
@@ -3102,11 +3008,11 @@ public final class XonProvider extends MainAPI {
                         }
                         $result = $result2;
                     }
-                    showEpisodes = CollectionsKt.sortedWith((List) destination$iv$iv, ComparisonsKt.compareBy(new Function1[]{new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda6
+                    showEpisodes = CollectionsKt.sortedWith((List) destination$iv$iv, ComparisonsKt.compareBy(new Function1[]{new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda4
                         public final Object invoke(Object obj) {
                             return XonProvider.load$lambda$3((XonProvider.Episode) obj);
                         }
-                    }, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda7
+                    }, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda5
                         public final Object invoke(Object obj) {
                             return XonProvider.load$lambda$4((XonProvider.Episode) obj);
                         }
@@ -3137,7 +3043,7 @@ public final class XonProvider extends MainAPI {
                     for (Object item$iv$iv2 : $this$mapTo$iv$iv) {
                         Iterable $this$map$iv3 = $this$map$iv;
                         final Episode e = (Episode) item$iv$iv2;
-                        destination$iv$iv4.add(MainAPIKt.newEpisode(this, "episode:" + e.getId(), new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda8
+                        destination$iv$iv4.add(MainAPIKt.newEpisode(this, "episode:" + e.getId(), new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda6
                             public final Object invoke(Object obj) {
                                 return XonProvider.load$lambda$7$0(e, destination$iv$iv3, this, (Episode) obj);
                             }
@@ -3215,11 +3121,11 @@ public final class XonProvider extends MainAPI {
                     }
                     $result = $result3;
                 }
-                showEpisodes = CollectionsKt.sortedWith((List) destination$iv$iv, ComparisonsKt.compareBy(new Function1[]{new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda6
+                showEpisodes = CollectionsKt.sortedWith((List) destination$iv$iv, ComparisonsKt.compareBy(new Function1[]{new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda4
                     public final Object invoke(Object obj) {
                         return XonProvider.load$lambda$3((XonProvider.Episode) obj);
                     }
-                }, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda7
+                }, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda5
                     public final Object invoke(Object obj) {
                         return XonProvider.load$lambda$4((XonProvider.Episode) obj);
                     }
@@ -3250,7 +3156,7 @@ public final class XonProvider extends MainAPI {
                 while (r16.hasNext()) {
                     Iterable $this$map$iv5 = $this$map$iv;
                     final Episode e2 = (Episode) item$iv$iv2;
-                    destination$iv$iv4.add(MainAPIKt.newEpisode(this, "episode:" + e2.getId(), new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda8
+                    destination$iv$iv4.add(MainAPIKt.newEpisode(this, "episode:" + e2.getId(), new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda6
                         public final Object invoke(Object obj) {
                             return XonProvider.load$lambda$7$0(e2, destination$iv$iv3, this, (Episode) obj);
                         }
@@ -3422,11 +3328,11 @@ public final class XonProvider extends MainAPI {
                         }
                         $result = $result4;
                     }
-                    showEpisodes = CollectionsKt.sortedWith((List) destination$iv$iv, ComparisonsKt.compareBy(new Function1[]{new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda6
+                    showEpisodes = CollectionsKt.sortedWith((List) destination$iv$iv, ComparisonsKt.compareBy(new Function1[]{new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda4
                         public final Object invoke(Object obj) {
                             return XonProvider.load$lambda$3((XonProvider.Episode) obj);
                         }
-                    }, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda7
+                    }, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda5
                         public final Object invoke(Object obj) {
                             return XonProvider.load$lambda$4((XonProvider.Episode) obj);
                         }
@@ -3457,7 +3363,7 @@ public final class XonProvider extends MainAPI {
                     while (r16.hasNext()) {
                         Iterable $this$map$iv7 = $this$map$iv;
                         final Episode e3 = (Episode) item$iv$iv2;
-                        destination$iv$iv4.add(MainAPIKt.newEpisode(this, "episode:" + e3.getId(), new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda8
+                        destination$iv$iv4.add(MainAPIKt.newEpisode(this, "episode:" + e3.getId(), new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda6
                             public final Object invoke(Object obj) {
                                 return XonProvider.load$lambda$7$0(e3, destination$iv$iv3, this, (Episode) obj);
                             }
@@ -3535,11 +3441,11 @@ public final class XonProvider extends MainAPI {
                     }
                     $result = $result5;
                 }
-                showEpisodes = CollectionsKt.sortedWith((List) destination$iv$iv, ComparisonsKt.compareBy(new Function1[]{new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda6
+                showEpisodes = CollectionsKt.sortedWith((List) destination$iv$iv, ComparisonsKt.compareBy(new Function1[]{new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda4
                     public final Object invoke(Object obj) {
                         return XonProvider.load$lambda$3((XonProvider.Episode) obj);
                     }
-                }, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda7
+                }, new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda5
                     public final Object invoke(Object obj) {
                         return XonProvider.load$lambda$4((XonProvider.Episode) obj);
                     }
@@ -3570,7 +3476,7 @@ public final class XonProvider extends MainAPI {
                 while (r16.hasNext()) {
                     Iterable $this$map$iv9 = $this$map$iv;
                     final Episode e4 = (Episode) item$iv$iv2;
-                    destination$iv$iv4.add(MainAPIKt.newEpisode(this, "episode:" + e4.getId(), new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda8
+                    destination$iv$iv4.add(MainAPIKt.newEpisode(this, "episode:" + e4.getId(), new Function1() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda6
                         public final Object invoke(Object obj) {
                             return XonProvider.load$lambda$7$0(e4, destination$iv$iv3, this, (Episode) obj);
                         }
@@ -3652,7 +3558,7 @@ public final class XonProvider extends MainAPI {
     /* JADX INFO: compiled from: XonProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.XonProvider$load$2", f = "XonProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nXonProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 XonProvider.kt\ncom/cncverse/XonProvider$load$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,805:1\n1#2:806\n*E\n"})
+    @SourceDebugExtension({"SMAP\nXonProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 XonProvider.kt\ncom/cncverse/XonProvider$load$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,515:1\n1#2:516\n*E\n"})
     static final class C00102 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ Movie $movie;
         private /* synthetic */ Object L$0;
@@ -3854,73 +3760,75 @@ public final class XonProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:100:0x02d9  */
-    /* JADX WARN: Code duplicated, block: B:102:0x0308 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:104:0x030c  */
-    /* JADX WARN: Code duplicated, block: B:107:0x0316  */
-    /* JADX WARN: Code duplicated, block: B:111:0x0320  */
-    /* JADX WARN: Code duplicated, block: B:113:0x0324  */
-    /* JADX WARN: Code duplicated, block: B:115:0x035f A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:116:0x0360  */
-    /* JADX WARN: Code duplicated, block: B:118:0x0366  */
-    /* JADX WARN: Code duplicated, block: B:120:0x0374  */
-    /* JADX WARN: Code duplicated, block: B:123:0x0382  */
-    /* JADX WARN: Code duplicated, block: B:125:0x0390  */
-    /* JADX WARN: Code duplicated, block: B:126:0x0392  */
-    /* JADX WARN: Code duplicated, block: B:132:0x039b  */
-    /* JADX WARN: Code duplicated, block: B:134:0x03a2  */
-    /* JADX WARN: Code duplicated, block: B:136:0x03a9  */
-    /* JADX WARN: Code duplicated, block: B:139:0x03b1  */
-    /* JADX WARN: Code duplicated, block: B:142:0x03b9  */
-    /* JADX WARN: Code duplicated, block: B:145:0x03c1  */
-    /* JADX WARN: Code duplicated, block: B:148:0x03f0 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:149:0x03f1  */
-    /* JADX WARN: Code duplicated, block: B:152:0x0402  */
-    /* JADX WARN: Code duplicated, block: B:156:0x040b  */
-    /* JADX WARN: Code duplicated, block: B:158:0x040e  */
-    /* JADX WARN: Code duplicated, block: B:160:0x043d A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:162:0x0441  */
-    /* JADX WARN: Code duplicated, block: B:165:0x044b  */
-    /* JADX WARN: Code duplicated, block: B:169:0x0455  */
-    /* JADX WARN: Code duplicated, block: B:171:0x0459  */
-    /* JADX WARN: Code duplicated, block: B:173:0x0494 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:174:0x0495  */
-    /* JADX WARN: Code duplicated, block: B:178:0x049e  */
-    /* JADX WARN: Code duplicated, block: B:180:0x04a5  */
-    /* JADX WARN: Code duplicated, block: B:183:0x0253 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:184:0x0396 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:54:0x0203  */
-    /* JADX WARN: Code duplicated, block: B:56:0x0208  */
-    /* JADX WARN: Code duplicated, block: B:58:0x021c  */
-    /* JADX WARN: Code duplicated, block: B:60:0x022b  */
-    /* JADX WARN: Code duplicated, block: B:63:0x0239  */
-    /* JADX WARN: Code duplicated, block: B:65:0x024b  */
-    /* JADX WARN: Code duplicated, block: B:66:0x024d  */
-    /* JADX WARN: Code duplicated, block: B:73:0x025b  */
-    /* JADX WARN: Code duplicated, block: B:75:0x0262  */
-    /* JADX WARN: Code duplicated, block: B:77:0x026a  */
+    /* JADX WARN: Code duplicated, block: B:101:0x0328  */
+    /* JADX WARN: Code duplicated, block: B:103:0x032d  */
+    /* JADX WARN: Code duplicated, block: B:105:0x0334  */
+    /* JADX WARN: Code duplicated, block: B:108:0x033c  */
+    /* JADX WARN: Code duplicated, block: B:111:0x0344  */
+    /* JADX WARN: Code duplicated, block: B:114:0x034c  */
+    /* JADX WARN: Code duplicated, block: B:117:0x037b A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:118:0x037c  */
+    /* JADX WARN: Code duplicated, block: B:121:0x038e  */
+    /* JADX WARN: Code duplicated, block: B:125:0x0397  */
+    /* JADX WARN: Code duplicated, block: B:127:0x039a  */
+    /* JADX WARN: Code duplicated, block: B:129:0x03c9 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:131:0x03cd  */
+    /* JADX WARN: Code duplicated, block: B:134:0x03d7  */
+    /* JADX WARN: Code duplicated, block: B:136:0x03dd  */
+    /* JADX WARN: Code duplicated, block: B:138:0x03e1  */
+    /* JADX WARN: Code duplicated, block: B:140:0x041c A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:141:0x041d  */
+    /* JADX WARN: Code duplicated, block: B:145:0x0426  */
+    /* JADX WARN: Code duplicated, block: B:147:0x042b  */
+    /* JADX WARN: Code duplicated, block: B:149:0x01e0 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:150:0x01d8 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:152:0x0323 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:25:0x0187  */
+    /* JADX WARN: Code duplicated, block: B:27:0x018c  */
+    /* JADX WARN: Code duplicated, block: B:29:0x019e  */
+    /* JADX WARN: Code duplicated, block: B:31:0x01af  */
+    /* JADX WARN: Code duplicated, block: B:34:0x01bd  */
+    /* JADX WARN: Code duplicated, block: B:36:0x01d3  */
+    /* JADX WARN: Code duplicated, block: B:37:0x01d5  */
+    /* JADX WARN: Code duplicated, block: B:40:0x01db A[LOOP:0: B:32:0x01b7->B:40:0x01db, LOOP_END] */
+    /* JADX WARN: Code duplicated, block: B:44:0x01eb  */
+    /* JADX WARN: Code duplicated, block: B:46:0x01f0  */
+    /* JADX WARN: Code duplicated, block: B:48:0x01f7  */
+    /* JADX WARN: Code duplicated, block: B:51:0x01ff  */
+    /* JADX WARN: Code duplicated, block: B:54:0x0207  */
+    /* JADX WARN: Code duplicated, block: B:58:0x0210  */
+    /* JADX WARN: Code duplicated, block: B:61:0x0248 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:62:0x0249  */
+    /* JADX WARN: Code duplicated, block: B:65:0x025b  */
+    /* JADX WARN: Code duplicated, block: B:69:0x0264  */
+    /* JADX WARN: Code duplicated, block: B:71:0x0267  */
+    /* JADX WARN: Code duplicated, block: B:73:0x0296 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:75:0x029a  */
+    /* JADX WARN: Code duplicated, block: B:78:0x02a4  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:80:0x0272  */
-    /* JADX WARN: Code duplicated, block: B:83:0x027a  */
-    /* JADX WARN: Code duplicated, block: B:87:0x0283  */
-    /* JADX WARN: Code duplicated, block: B:90:0x02bb A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:91:0x02bc  */
-    /* JADX WARN: Code duplicated, block: B:94:0x02cd  */
-    /* JADX WARN: Code duplicated, block: B:98:0x02d6  */
-    /* JADX WARN: Instruction removed from duplicated block: B:58:0x021c, please report this as an issue */
+    /* JADX WARN: Code duplicated, block: B:80:0x02aa  */
+    /* JADX WARN: Code duplicated, block: B:82:0x02ae  */
+    /* JADX WARN: Code duplicated, block: B:84:0x02e9 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:85:0x02ea  */
+    /* JADX WARN: Code duplicated, block: B:87:0x02f0  */
+    /* JADX WARN: Code duplicated, block: B:89:0x0301  */
+    /* JADX WARN: Code duplicated, block: B:92:0x030f  */
+    /* JADX WARN: Code duplicated, block: B:94:0x031d  */
+    /* JADX WARN: Code duplicated, block: B:95:0x031f  */
+    /* JADX WARN: Instruction removed from duplicated block: B:29:0x019e, please report this as an issue */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
         C00121 c00121;
-        boolean z;
         String data2;
         Function1<? super SubtitleFile, Unit> function3;
-        boolean isCasting2;
         Function1<? super ExtractorLink, Unit> function4;
+        boolean isCasting2;
         String str;
         List parts;
         String type;
         Integer intOrNull;
         int id;
+        boolean z;
         boolean z2;
         Iterator<T> it;
         Object next;
@@ -3929,55 +3837,54 @@ public final class XonProvider extends MainAPI {
         String sd;
         String hd;
         String fhd;
-        String type2;
-        int id2;
-        Movie movie2;
-        boolean isCasting3;
-        String str2;
-        Function1<? super SubtitleFile, Unit> function5;
-        Function1<? super ExtractorLink, Unit> function6;
-        List parts2;
         String data3;
+        String str2;
+        String type2;
+        Movie movie2;
+        int id2;
+        boolean isCasting3;
+        Function1<? super ExtractorLink, Unit> function5;
+        List parts2;
         Movie it2;
         boolean z3;
         Iterator<T> it3;
-        Object next2;
+        int id3;
+        boolean z4;
+        Object obj;
         Episode ep;
-        String type3;
+        String basic2;
         String sd2;
         String hd2;
+        String type3;
+        String data4;
         String str3;
         String type4;
-        int id3;
         Episode ep2;
+        int id4;
         boolean isCasting4;
-        String str4;
-        Function1<? super SubtitleFile, Unit> function7;
-        Function1<? super ExtractorLink, Unit> function8;
+        Function1<? super ExtractorLink, Unit> function6;
         List parts3;
-        String data4;
+        Object next2;
         Episode it4;
-        boolean z4;
-        String aplayer1;
         boolean z5;
-        Function1<? super ExtractorLink, Unit> function9;
+        String aplayer1;
+        boolean z6;
+        Function1<? super ExtractorLink, Unit> function7;
         String data5;
         String aplayer2;
         String aplayer3;
-        boolean z6;
         String aplayer4;
-        String str5;
-        Function1<? super SubtitleFile, Unit> function10;
+        String str4;
+        Function1<? super SubtitleFile, Unit> function8;
         String xPlayer2;
         boolean z7;
-        Function1<? super ExtractorLink, Unit> function11;
+        Function1<? super ExtractorLink, Unit> function9;
         String data6;
         String xPlayer3;
         String xPlayer4;
-        boolean z8;
         String xPlayer5;
-        String str6;
-        Function1<? super SubtitleFile, Unit> function12;
+        String str5;
+        Function1<? super SubtitleFile, Unit> function10;
         if (continuation instanceof C00121) {
             c00121 = (C00121) continuation;
             if ((c00121.label & Integer.MIN_VALUE) != 0) {
@@ -3994,27 +3901,6 @@ public final class XonProvider extends MainAPI {
         switch (c00122.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                XonProvider $this$loadLinks_u24lambda_u240 = this;
-                final Context _ctx = context;
-                SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                long _nowSec = System.currentTimeMillis() / 1000;
-                boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                if (_isSubscribed) {
-                    z = false;
-                } else {
-                    if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda16
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                XonProvider.loadLinks$lambda$0$0(_ctx);
-                            }
-                        });
-                    }
-                    z = false;
-                    $this$loadLinks_u24lambda_u240.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                }
                 c00122.L$0 = data;
                 c00122.L$1 = function1;
                 c00122.L$2 = function2;
@@ -4025,12 +3911,12 @@ public final class XonProvider extends MainAPI {
                 }
                 data2 = data;
                 function3 = function1;
-                isCasting2 = isCasting;
                 function4 = function2;
+                isCasting2 = isCasting;
                 str = StringsKt.substringAfterLast$default(data2, "/", (String) null, 2, (Object) null);
                 parts = StringsKt.split$default(str, new String[]{":"}, false, 0, 6, (Object) null);
                 if (parts.size() != 2) {
-                    return Boxing.boxBoolean(z);
+                    return Boxing.boxBoolean(false);
                 }
                 type = (String) parts.get(0);
                 intOrNull = StringsKt.toIntOrNull((String) parts.get(1));
@@ -4040,120 +3926,377 @@ public final class XonProvider extends MainAPI {
                 id = intOrNull.intValue();
                 if (Intrinsics.areEqual(type, "episode")) {
                     it3 = this.cachedEpisodes.iterator();
-                    do {
+                    while (true) {
                         if (it3.hasNext()) {
                             next2 = it3.next();
                             it4 = (Episode) next2;
-                            z2 = true;
-                            if (it4.getId() == id) {
-                                z4 = true;
+                            z = true;
+                            id3 = id;
+                            z4 = false;
+                            if (it4.getId() == id3) {
+                                z5 = true;
                             } else {
-                                z4 = false;
+                                z5 = false;
+                            }
+                            if (z5) {
+                                obj = next2;
+                            } else {
+                                id = id3;
                             }
                         } else {
-                            z2 = true;
-                            next2 = null;
+                            id3 = id;
+                            z = true;
+                            z4 = false;
+                            obj = null;
                         }
-                        ep = (Episode) next2;
-                        if (ep == null) {
-                            return Boxing.boxBoolean(false);
-                        }
-                        type3 = ep.getBasic();
-                        if (type3 == null) {
-                            type3 = "";
-                        }
-                        sd2 = ep.getSd();
-                        if (sd2 == null) {
-                            sd2 = "";
-                        }
-                        hd2 = ep.getHd();
-                        if (hd2 == null) {
-                            hd2 = "";
-                        }
-                        String fhd2 = ep.getFhd();
-                        str3 = fhd2 != null ? fhd2 : "";
-                        c00122.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                    }
+                    ep = (Episode) obj;
+                    if (ep == null) {
+                        return Boxing.boxBoolean(z4);
+                    }
+                    basic2 = ep.getBasic();
+                    if (basic2 == null) {
+                        basic2 = "";
+                    }
+                    sd2 = ep.getSd();
+                    if (sd2 == null) {
+                        sd2 = "";
+                    }
+                    hd2 = ep.getHd();
+                    if (hd2 == null) {
+                        hd2 = "";
+                    }
+                    String fhd2 = ep.getFhd();
+                    type3 = fhd2 != null ? fhd2 : "";
+                    c00122.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                    c00122.L$1 = function3;
+                    c00122.L$2 = function4;
+                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str);
+                    c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts);
+                    c00122.L$5 = SpillingKt.nullOutSpilledVariable(type);
+                    c00122.L$6 = ep;
+                    c00122.Z$0 = isCasting2;
+                    c00122.I$0 = id3;
+                    c00122.label = 2;
+                    if (addVideoLinks(basic2, sd2, hd2, type3, function4, c00122) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    data4 = data2;
+                    str3 = str;
+                    type4 = type;
+                    ep2 = ep;
+                    id4 = id3;
+                    isCasting4 = isCasting2;
+                    function6 = function4;
+                    parts3 = parts;
+                    aplayer1 = ep2.getAplayer1();
+                    if (aplayer1 != null || aplayer1.length() == 0) {
+                        z6 = true;
+                    } else {
+                        z6 = false;
+                    }
+                    if (z6) {
+                        function7 = function6;
+                        data5 = data4;
+                    } else {
+                        aplayer2 = ep2.getAplayer1();
+                        c00122.L$0 = SpillingKt.nullOutSpilledVariable(data4);
                         c00122.L$1 = function3;
-                        c00122.L$2 = function4;
-                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str);
-                        c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts);
-                        c00122.L$5 = SpillingKt.nullOutSpilledVariable(type);
-                        c00122.L$6 = ep;
-                        c00122.Z$0 = isCasting2;
-                        c00122.I$0 = id;
-                        c00122.label = 2;
-                        if (addVideoLinks(type3, sd2, hd2, str3, function4, c00122) == coroutine_suspended) {
+                        c00122.L$2 = function6;
+                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str3);
+                        c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
+                        c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
+                        c00122.L$6 = ep2;
+                        c00122.Z$0 = isCasting4;
+                        c00122.I$0 = id4;
+                        c00122.label = 3;
+                        if (ExtractorApiKt.loadExtractor(aplayer2, function3, function6, c00122) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        type4 = type;
-                        id3 = id;
-                        ep2 = ep;
-                        isCasting4 = isCasting2;
-                        str4 = str;
-                        function7 = function3;
-                        function8 = function4;
-                        parts3 = parts;
-                        data4 = data2;
-                        aplayer1 = ep2.getAplayer1();
-                        if (aplayer1 != null || aplayer1.length() == 0) {
-                            z5 = true;
+                        function7 = function6;
+                        data5 = data4;
+                    }
+                    aplayer3 = ep2.getAplayer2();
+                    if (aplayer3 != null || aplayer3.length() == 0) {
+                        z4 = true;
+                    }
+                    if (!z4) {
+                        aplayer4 = ep2.getAplayer2();
+                        c00122.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                        c00122.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str3);
+                        c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
+                        c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
+                        c00122.L$6 = SpillingKt.nullOutSpilledVariable(ep2);
+                        c00122.Z$0 = isCasting4;
+                        c00122.I$0 = id4;
+                        c00122.label = 4;
+                        if (ExtractorApiKt.loadExtractor(aplayer4, function3, function7, c00122) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        str4 = str3;
+                        function8 = function3;
+                    }
+                    return Boxing.boxBoolean(z);
+                }
+                z = true;
+                z2 = false;
+                if (Intrinsics.areEqual(type, "movie")) {
+                    return Boxing.boxBoolean(false);
+                }
+                it = this.cachedMovies.iterator();
+                do {
+                    if (it.hasNext()) {
+                        next = it.next();
+                        it2 = (Movie) next;
+                        if (it2.getId() == id) {
+                            z3 = true;
                         } else {
-                            z5 = false;
+                            z3 = false;
                         }
-                        if (z5) {
-                            function9 = function8;
-                            data5 = data4;
-                        } else {
-                            aplayer2 = ep2.getAplayer1();
-                            c00122.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                            c00122.L$1 = function7;
-                            c00122.L$2 = function8;
-                            c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
-                            c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
-                            c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
-                            c00122.L$6 = ep2;
-                            c00122.Z$0 = isCasting4;
-                            c00122.I$0 = id3;
-                            c00122.label = 3;
-                            if (ExtractorApiKt.loadExtractor(aplayer2, function7, function8, c00122) == coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            function9 = function8;
-                            data5 = data4;
-                        }
-                        aplayer3 = ep2.getAplayer2();
-                        if (aplayer3 != null || aplayer3.length() == 0) {
-                            z6 = true;
-                        } else {
-                            z6 = false;
-                        }
-                        if (!z6) {
-                            aplayer4 = ep2.getAplayer2();
-                            c00122.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                            c00122.L$1 = SpillingKt.nullOutSpilledVariable(function7);
-                            c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
-                            c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
-                            c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
-                            c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
-                            c00122.L$6 = SpillingKt.nullOutSpilledVariable(ep2);
-                            c00122.Z$0 = isCasting4;
-                            c00122.I$0 = id3;
-                            c00122.label = 4;
-                            if (ExtractorApiKt.loadExtractor(aplayer4, function7, function9, c00122) == coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            str5 = str4;
-                            function10 = function7;
-                        }
-                        return Boxing.boxBoolean(z2);
-                    } while (!z4);
-                    ep = (Episode) next2;
-                    if (ep == null) {
+                    } else {
+                        next = null;
+                    }
+                    movie = (Movie) next;
+                    if (movie == null) {
                         return Boxing.boxBoolean(false);
                     }
-                    type3 = ep.getBasic();
-                    if (type3 == null) {
-                        type3 = "";
+                    basic = movie.getBasic();
+                    if (basic == null) {
+                        basic = "";
+                    }
+                    sd = movie.getSd();
+                    if (sd == null) {
+                        sd = "";
+                    }
+                    hd = movie.getHd();
+                    if (hd == null) {
+                        hd = "";
+                    }
+                    fhd = movie.getFhd();
+                    if (fhd == null) {
+                        fhd = "";
+                    }
+                    c00122.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                    c00122.L$1 = function3;
+                    c00122.L$2 = function4;
+                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str);
+                    c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts);
+                    c00122.L$5 = SpillingKt.nullOutSpilledVariable(type);
+                    c00122.L$6 = movie;
+                    c00122.Z$0 = isCasting2;
+                    c00122.I$0 = id;
+                    c00122.label = 5;
+                    if (addVideoLinks(basic, sd, hd, fhd, function4, c00122) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    data3 = data2;
+                    str2 = str;
+                    type2 = type;
+                    movie2 = movie;
+                    id2 = id;
+                    isCasting3 = isCasting2;
+                    function5 = function4;
+                    parts2 = parts;
+                    xPlayer2 = movie2.getXPlayer2();
+                    if (xPlayer2 != null || xPlayer2.length() == 0) {
+                        z7 = true;
+                    } else {
+                        z7 = false;
+                    }
+                    if (z7) {
+                        function9 = function5;
+                        data6 = data3;
+                    } else {
+                        xPlayer3 = movie2.getXPlayer2();
+                        c00122.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                        c00122.L$1 = function3;
+                        c00122.L$2 = function5;
+                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
+                        c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
+                        c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
+                        c00122.L$6 = movie2;
+                        c00122.Z$0 = isCasting3;
+                        c00122.I$0 = id2;
+                        c00122.label = 6;
+                        if (ExtractorApiKt.loadExtractor(xPlayer3, function3, function5, c00122) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        function9 = function5;
+                        data6 = data3;
+                    }
+                    xPlayer4 = movie2.getXPlayer3();
+                    if (xPlayer4 != null || xPlayer4.length() == 0) {
+                        z2 = true;
+                    }
+                    if (!z2) {
+                        xPlayer5 = movie2.getXPlayer3();
+                        c00122.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                        c00122.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
+                        c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
+                        c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
+                        c00122.L$6 = SpillingKt.nullOutSpilledVariable(movie2);
+                        c00122.Z$0 = isCasting3;
+                        c00122.I$0 = id2;
+                        c00122.label = 7;
+                        if (ExtractorApiKt.loadExtractor(xPlayer5, function3, function9, c00122) == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        str5 = str2;
+                        function10 = function3;
+                    }
+                    return Boxing.boxBoolean(z);
+                } while (!z3);
+                movie = (Movie) next;
+                if (movie == null) {
+                    return Boxing.boxBoolean(false);
+                }
+                basic = movie.getBasic();
+                if (basic == null) {
+                    basic = "";
+                }
+                sd = movie.getSd();
+                if (sd == null) {
+                    sd = "";
+                }
+                hd = movie.getHd();
+                if (hd == null) {
+                    hd = "";
+                }
+                fhd = movie.getFhd();
+                if (fhd == null) {
+                    fhd = "";
+                }
+                c00122.L$0 = SpillingKt.nullOutSpilledVariable(data2);
+                c00122.L$1 = function3;
+                c00122.L$2 = function4;
+                c00122.L$3 = SpillingKt.nullOutSpilledVariable(str);
+                c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts);
+                c00122.L$5 = SpillingKt.nullOutSpilledVariable(type);
+                c00122.L$6 = movie;
+                c00122.Z$0 = isCasting2;
+                c00122.I$0 = id;
+                c00122.label = 5;
+                if (addVideoLinks(basic, sd, hd, fhd, function4, c00122) == coroutine_suspended) {
+                    return coroutine_suspended;
+                }
+                data3 = data2;
+                str2 = str;
+                type2 = type;
+                movie2 = movie;
+                id2 = id;
+                isCasting3 = isCasting2;
+                function5 = function4;
+                parts2 = parts;
+                xPlayer2 = movie2.getXPlayer2();
+                if (xPlayer2 != null) {
+                    z7 = true;
+                } else {
+                    z7 = true;
+                }
+                if (z7) {
+                    xPlayer3 = movie2.getXPlayer2();
+                    c00122.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                    c00122.L$1 = function3;
+                    c00122.L$2 = function5;
+                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
+                    c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
+                    c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
+                    c00122.L$6 = movie2;
+                    c00122.Z$0 = isCasting3;
+                    c00122.I$0 = id2;
+                    c00122.label = 6;
+                    if (ExtractorApiKt.loadExtractor(xPlayer3, function3, function5, c00122) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    function9 = function5;
+                    data6 = data3;
+                } else {
+                    function9 = function5;
+                    data6 = data3;
+                }
+                xPlayer4 = movie2.getXPlayer3();
+                if (xPlayer4 != null) {
+                    z2 = true;
+                } else {
+                    z2 = true;
+                }
+                if (!z2) {
+                    xPlayer5 = movie2.getXPlayer3();
+                    c00122.L$0 = SpillingKt.nullOutSpilledVariable(data6);
+                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
+                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
+                    c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
+                    c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
+                    c00122.L$6 = SpillingKt.nullOutSpilledVariable(movie2);
+                    c00122.Z$0 = isCasting3;
+                    c00122.I$0 = id2;
+                    c00122.label = 7;
+                    if (ExtractorApiKt.loadExtractor(xPlayer5, function3, function9, c00122) == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    str5 = str2;
+                    function10 = function3;
+                }
+                return Boxing.boxBoolean(z);
+            case 1:
+                boolean isCasting5 = c00122.Z$0;
+                Function1<? super ExtractorLink, Unit> function11 = (Function1) c00122.L$2;
+                Function1<? super SubtitleFile, Unit> function12 = (Function1) c00122.L$1;
+                String data7 = (String) c00122.L$0;
+                ResultKt.throwOnFailure($result);
+                isCasting2 = isCasting5;
+                function4 = function11;
+                function3 = function12;
+                data2 = data7;
+                str = StringsKt.substringAfterLast$default(data2, "/", (String) null, 2, (Object) null);
+                parts = StringsKt.split$default(str, new String[]{":"}, false, 0, 6, (Object) null);
+                if (parts.size() != 2) {
+                    return Boxing.boxBoolean(false);
+                }
+                type = (String) parts.get(0);
+                intOrNull = StringsKt.toIntOrNull((String) parts.get(1));
+                if (intOrNull != null) {
+                    return Boxing.boxBoolean(false);
+                }
+                id = intOrNull.intValue();
+                if (Intrinsics.areEqual(type, "episode")) {
+                    it3 = this.cachedEpisodes.iterator();
+                    while (true) {
+                        if (it3.hasNext()) {
+                            next2 = it3.next();
+                            it4 = (Episode) next2;
+                            z = true;
+                            id3 = id;
+                            z4 = false;
+                            if (it4.getId() == id3) {
+                                z5 = true;
+                            } else {
+                                z5 = false;
+                            }
+                            if (z5) {
+                                obj = next2;
+                            } else {
+                                id = id3;
+                            }
+                        } else {
+                            id3 = id;
+                            z = true;
+                            z4 = false;
+                            obj = null;
+                        }
+                    }
+                    ep = (Episode) obj;
+                    if (ep == null) {
+                        return Boxing.boxBoolean(z4);
+                    }
+                    basic2 = ep.getBasic();
+                    if (basic2 == null) {
+                        basic2 = "";
                     }
                     sd2 = ep.getSd();
                     if (sd2 == null) {
@@ -4174,506 +4317,74 @@ public final class XonProvider extends MainAPI {
                     c00122.L$5 = SpillingKt.nullOutSpilledVariable(type);
                     c00122.L$6 = ep;
                     c00122.Z$0 = isCasting2;
-                    c00122.I$0 = id;
+                    c00122.I$0 = id3;
                     c00122.label = 2;
-                    if (addVideoLinks(type3, sd2, hd2, str3, function4, c00122) == coroutine_suspended) {
+                    if (addVideoLinks(basic2, sd2, hd2, type3, function4, c00122) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    type4 = type;
-                    id3 = id;
-                    ep2 = ep;
-                    isCasting4 = isCasting2;
-                    str4 = str;
-                    function7 = function3;
-                    function8 = function4;
-                    parts3 = parts;
                     data4 = data2;
+                    str3 = str;
+                    type4 = type;
+                    ep2 = ep;
+                    id4 = id3;
+                    isCasting4 = isCasting2;
+                    function6 = function4;
+                    parts3 = parts;
                     aplayer1 = ep2.getAplayer1();
                     if (aplayer1 != null) {
-                        z5 = true;
+                        z6 = true;
                     } else {
-                        z5 = true;
+                        z6 = true;
                     }
-                    if (z5) {
+                    if (z6) {
                         aplayer2 = ep2.getAplayer1();
                         c00122.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                        c00122.L$1 = function7;
-                        c00122.L$2 = function8;
-                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
+                        c00122.L$1 = function3;
+                        c00122.L$2 = function6;
+                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str3);
                         c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
                         c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
                         c00122.L$6 = ep2;
                         c00122.Z$0 = isCasting4;
-                        c00122.I$0 = id3;
+                        c00122.I$0 = id4;
                         c00122.label = 3;
-                        if (ExtractorApiKt.loadExtractor(aplayer2, function7, function8, c00122) == coroutine_suspended) {
+                        if (ExtractorApiKt.loadExtractor(aplayer2, function3, function6, c00122) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        function9 = function8;
+                        function7 = function6;
                         data5 = data4;
                     } else {
-                        function9 = function8;
+                        function7 = function6;
                         data5 = data4;
                     }
                     aplayer3 = ep2.getAplayer2();
                     if (aplayer3 != null) {
-                        z6 = true;
+                        z4 = true;
                     } else {
-                        z6 = true;
+                        z4 = true;
                     }
-                    if (!z6) {
+                    if (!z4) {
                         aplayer4 = ep2.getAplayer2();
                         c00122.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                        c00122.L$1 = SpillingKt.nullOutSpilledVariable(function7);
-                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
-                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
+                        c00122.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str3);
                         c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
                         c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
                         c00122.L$6 = SpillingKt.nullOutSpilledVariable(ep2);
                         c00122.Z$0 = isCasting4;
-                        c00122.I$0 = id3;
+                        c00122.I$0 = id4;
                         c00122.label = 4;
-                        if (ExtractorApiKt.loadExtractor(aplayer4, function7, function9, c00122) == coroutine_suspended) {
+                        if (ExtractorApiKt.loadExtractor(aplayer4, function3, function7, c00122) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        str5 = str4;
-                        function10 = function7;
+                        str4 = str3;
+                        function8 = function3;
                     }
-                    return Boxing.boxBoolean(z2);
-                }
-                z2 = true;
-                if (Intrinsics.areEqual(type, "movie")) {
-                    return Boxing.boxBoolean(false);
-                }
-                it = this.cachedMovies.iterator();
-                do {
-                    if (it.hasNext()) {
-                        next = it.next();
-                        it2 = (Movie) next;
-                        if (it2.getId() == id) {
-                            z3 = true;
-                        } else {
-                            z3 = false;
-                        }
-                    } else {
-                        next = null;
-                    }
-                    movie = (Movie) next;
-                    if (movie == null) {
-                        return Boxing.boxBoolean(false);
-                    }
-                    basic = movie.getBasic();
-                    if (basic == null) {
-                        basic = "";
-                    }
-                    sd = movie.getSd();
-                    if (sd == null) {
-                        sd = "";
-                    }
-                    hd = movie.getHd();
-                    if (hd == null) {
-                        hd = "";
-                    }
-                    fhd = movie.getFhd();
-                    if (fhd == null) {
-                        fhd = "";
-                    }
-                    c00122.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                    c00122.L$1 = function3;
-                    c00122.L$2 = function4;
-                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str);
-                    c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts);
-                    c00122.L$5 = SpillingKt.nullOutSpilledVariable(type);
-                    c00122.L$6 = movie;
-                    c00122.Z$0 = isCasting2;
-                    c00122.I$0 = id;
-                    c00122.label = 5;
-                    if (addVideoLinks(basic, sd, hd, fhd, function4, c00122) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    type2 = type;
-                    id2 = id;
-                    movie2 = movie;
-                    isCasting3 = isCasting2;
-                    str2 = str;
-                    function5 = function3;
-                    function6 = function4;
-                    parts2 = parts;
-                    data3 = data2;
-                    xPlayer2 = movie2.getXPlayer2();
-                    if (xPlayer2 != null || xPlayer2.length() == 0) {
-                        z7 = true;
-                    } else {
-                        z7 = false;
-                    }
-                    if (z7) {
-                        function11 = function6;
-                        data6 = data3;
-                    } else {
-                        xPlayer3 = movie2.getXPlayer2();
-                        c00122.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                        c00122.L$1 = function5;
-                        c00122.L$2 = function6;
-                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
-                        c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
-                        c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
-                        c00122.L$6 = movie2;
-                        c00122.Z$0 = isCasting3;
-                        c00122.I$0 = id2;
-                        c00122.label = 6;
-                        if (ExtractorApiKt.loadExtractor(xPlayer3, function5, function6, c00122) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        function11 = function6;
-                        data6 = data3;
-                    }
-                    xPlayer4 = movie2.getXPlayer3();
-                    if (xPlayer4 != null || xPlayer4.length() == 0) {
-                        z8 = true;
-                    } else {
-                        z8 = false;
-                    }
-                    if (!z8) {
-                        xPlayer5 = movie2.getXPlayer3();
-                        c00122.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                        c00122.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
-                        c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
-                        c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
-                        c00122.L$6 = SpillingKt.nullOutSpilledVariable(movie2);
-                        c00122.Z$0 = isCasting3;
-                        c00122.I$0 = id2;
-                        c00122.label = 7;
-                        if (ExtractorApiKt.loadExtractor(xPlayer5, function5, function11, c00122) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        str6 = str2;
-                        function12 = function5;
-                    }
-                    return Boxing.boxBoolean(z2);
-                } while (!z3);
-                movie = (Movie) next;
-                if (movie == null) {
-                    return Boxing.boxBoolean(false);
-                }
-                basic = movie.getBasic();
-                if (basic == null) {
-                    basic = "";
-                }
-                sd = movie.getSd();
-                if (sd == null) {
-                    sd = "";
-                }
-                hd = movie.getHd();
-                if (hd == null) {
-                    hd = "";
-                }
-                fhd = movie.getFhd();
-                if (fhd == null) {
-                    fhd = "";
-                }
-                c00122.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                c00122.L$1 = function3;
-                c00122.L$2 = function4;
-                c00122.L$3 = SpillingKt.nullOutSpilledVariable(str);
-                c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts);
-                c00122.L$5 = SpillingKt.nullOutSpilledVariable(type);
-                c00122.L$6 = movie;
-                c00122.Z$0 = isCasting2;
-                c00122.I$0 = id;
-                c00122.label = 5;
-                if (addVideoLinks(basic, sd, hd, fhd, function4, c00122) == coroutine_suspended) {
-                    return coroutine_suspended;
-                }
-                type2 = type;
-                id2 = id;
-                movie2 = movie;
-                isCasting3 = isCasting2;
-                str2 = str;
-                function5 = function3;
-                function6 = function4;
-                parts2 = parts;
-                data3 = data2;
-                xPlayer2 = movie2.getXPlayer2();
-                if (xPlayer2 != null) {
-                    z7 = true;
-                } else {
-                    z7 = true;
-                }
-                if (z7) {
-                    xPlayer3 = movie2.getXPlayer2();
-                    c00122.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                    c00122.L$1 = function5;
-                    c00122.L$2 = function6;
-                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
-                    c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
-                    c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
-                    c00122.L$6 = movie2;
-                    c00122.Z$0 = isCasting3;
-                    c00122.I$0 = id2;
-                    c00122.label = 6;
-                    if (ExtractorApiKt.loadExtractor(xPlayer3, function5, function6, c00122) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    function11 = function6;
-                    data6 = data3;
-                } else {
-                    function11 = function6;
-                    data6 = data3;
-                }
-                xPlayer4 = movie2.getXPlayer3();
-                if (xPlayer4 != null) {
-                    z8 = true;
-                } else {
-                    z8 = true;
-                }
-                if (!z8) {
-                    xPlayer5 = movie2.getXPlayer3();
-                    c00122.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function11);
-                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
-                    c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
-                    c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
-                    c00122.L$6 = SpillingKt.nullOutSpilledVariable(movie2);
-                    c00122.Z$0 = isCasting3;
-                    c00122.I$0 = id2;
-                    c00122.label = 7;
-                    if (ExtractorApiKt.loadExtractor(xPlayer5, function5, function11, c00122) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    str6 = str2;
-                    function12 = function5;
-                }
-                return Boxing.boxBoolean(z2);
-            case 1:
-                boolean isCasting5 = c00122.Z$0;
-                Function1<? super ExtractorLink, Unit> function13 = (Function1) c00122.L$2;
-                Function1<? super SubtitleFile, Unit> function14 = (Function1) c00122.L$1;
-                String data7 = (String) c00122.L$0;
-                ResultKt.throwOnFailure($result);
-                isCasting2 = isCasting5;
-                function3 = function14;
-                data2 = data7;
-                z = false;
-                function4 = function13;
-                str = StringsKt.substringAfterLast$default(data2, "/", (String) null, 2, (Object) null);
-                parts = StringsKt.split$default(str, new String[]{":"}, false, 0, 6, (Object) null);
-                if (parts.size() != 2) {
                     return Boxing.boxBoolean(z);
                 }
-                type = (String) parts.get(0);
-                intOrNull = StringsKt.toIntOrNull((String) parts.get(1));
-                if (intOrNull != null) {
-                    return Boxing.boxBoolean(false);
-                }
-                id = intOrNull.intValue();
-                if (Intrinsics.areEqual(type, "episode")) {
-                    it3 = this.cachedEpisodes.iterator();
-                    do {
-                        if (it3.hasNext()) {
-                            next2 = it3.next();
-                            it4 = (Episode) next2;
-                            z2 = true;
-                            if (it4.getId() == id) {
-                                z4 = true;
-                            } else {
-                                z4 = false;
-                            }
-                        } else {
-                            z2 = true;
-                            next2 = null;
-                        }
-                        ep = (Episode) next2;
-                        if (ep == null) {
-                            return Boxing.boxBoolean(false);
-                        }
-                        type3 = ep.getBasic();
-                        if (type3 == null) {
-                            type3 = "";
-                        }
-                        sd2 = ep.getSd();
-                        if (sd2 == null) {
-                            sd2 = "";
-                        }
-                        hd2 = ep.getHd();
-                        if (hd2 == null) {
-                            hd2 = "";
-                        }
-                        String fhd4 = ep.getFhd();
-                        if (fhd4 != null) {
-                        }
-                        c00122.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                        c00122.L$1 = function3;
-                        c00122.L$2 = function4;
-                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str);
-                        c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts);
-                        c00122.L$5 = SpillingKt.nullOutSpilledVariable(type);
-                        c00122.L$6 = ep;
-                        c00122.Z$0 = isCasting2;
-                        c00122.I$0 = id;
-                        c00122.label = 2;
-                        if (addVideoLinks(type3, sd2, hd2, str3, function4, c00122) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        type4 = type;
-                        id3 = id;
-                        ep2 = ep;
-                        isCasting4 = isCasting2;
-                        str4 = str;
-                        function7 = function3;
-                        function8 = function4;
-                        parts3 = parts;
-                        data4 = data2;
-                        aplayer1 = ep2.getAplayer1();
-                        if (aplayer1 != null) {
-                            z5 = true;
-                        } else {
-                            z5 = true;
-                        }
-                        if (z5) {
-                            aplayer2 = ep2.getAplayer1();
-                            c00122.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                            c00122.L$1 = function7;
-                            c00122.L$2 = function8;
-                            c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
-                            c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
-                            c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
-                            c00122.L$6 = ep2;
-                            c00122.Z$0 = isCasting4;
-                            c00122.I$0 = id3;
-                            c00122.label = 3;
-                            if (ExtractorApiKt.loadExtractor(aplayer2, function7, function8, c00122) == coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            function9 = function8;
-                            data5 = data4;
-                        } else {
-                            function9 = function8;
-                            data5 = data4;
-                        }
-                        aplayer3 = ep2.getAplayer2();
-                        if (aplayer3 != null) {
-                            z6 = true;
-                        } else {
-                            z6 = true;
-                        }
-                        if (!z6) {
-                            aplayer4 = ep2.getAplayer2();
-                            c00122.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                            c00122.L$1 = SpillingKt.nullOutSpilledVariable(function7);
-                            c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
-                            c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
-                            c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
-                            c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
-                            c00122.L$6 = SpillingKt.nullOutSpilledVariable(ep2);
-                            c00122.Z$0 = isCasting4;
-                            c00122.I$0 = id3;
-                            c00122.label = 4;
-                            if (ExtractorApiKt.loadExtractor(aplayer4, function7, function9, c00122) == coroutine_suspended) {
-                                return coroutine_suspended;
-                            }
-                            str5 = str4;
-                            function10 = function7;
-                        }
-                        return Boxing.boxBoolean(z2);
-                    } while (!z4);
-                    ep = (Episode) next2;
-                    if (ep == null) {
-                        return Boxing.boxBoolean(false);
-                    }
-                    type3 = ep.getBasic();
-                    if (type3 == null) {
-                        type3 = "";
-                    }
-                    sd2 = ep.getSd();
-                    if (sd2 == null) {
-                        sd2 = "";
-                    }
-                    hd2 = ep.getHd();
-                    if (hd2 == null) {
-                        hd2 = "";
-                    }
-                    String fhd5 = ep.getFhd();
-                    if (fhd5 != null) {
-                    }
-                    c00122.L$0 = SpillingKt.nullOutSpilledVariable(data2);
-                    c00122.L$1 = function3;
-                    c00122.L$2 = function4;
-                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str);
-                    c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts);
-                    c00122.L$5 = SpillingKt.nullOutSpilledVariable(type);
-                    c00122.L$6 = ep;
-                    c00122.Z$0 = isCasting2;
-                    c00122.I$0 = id;
-                    c00122.label = 2;
-                    if (addVideoLinks(type3, sd2, hd2, str3, function4, c00122) == coroutine_suspended) {
-                        return coroutine_suspended;
-                    }
-                    type4 = type;
-                    id3 = id;
-                    ep2 = ep;
-                    isCasting4 = isCasting2;
-                    str4 = str;
-                    function7 = function3;
-                    function8 = function4;
-                    parts3 = parts;
-                    data4 = data2;
-                    aplayer1 = ep2.getAplayer1();
-                    if (aplayer1 != null) {
-                        z5 = true;
-                    } else {
-                        z5 = true;
-                    }
-                    if (z5) {
-                        aplayer2 = ep2.getAplayer1();
-                        c00122.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                        c00122.L$1 = function7;
-                        c00122.L$2 = function8;
-                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
-                        c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
-                        c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
-                        c00122.L$6 = ep2;
-                        c00122.Z$0 = isCasting4;
-                        c00122.I$0 = id3;
-                        c00122.label = 3;
-                        if (ExtractorApiKt.loadExtractor(aplayer2, function7, function8, c00122) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        function9 = function8;
-                        data5 = data4;
-                    } else {
-                        function9 = function8;
-                        data5 = data4;
-                    }
-                    aplayer3 = ep2.getAplayer2();
-                    if (aplayer3 != null) {
-                        z6 = true;
-                    } else {
-                        z6 = true;
-                    }
-                    if (!z6) {
-                        aplayer4 = ep2.getAplayer2();
-                        c00122.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                        c00122.L$1 = SpillingKt.nullOutSpilledVariable(function7);
-                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
-                        c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
-                        c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
-                        c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
-                        c00122.L$6 = SpillingKt.nullOutSpilledVariable(ep2);
-                        c00122.Z$0 = isCasting4;
-                        c00122.I$0 = id3;
-                        c00122.label = 4;
-                        if (ExtractorApiKt.loadExtractor(aplayer4, function7, function9, c00122) == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        str5 = str4;
-                        function10 = function7;
-                    }
-                    return Boxing.boxBoolean(z2);
-                }
-                z2 = true;
+                z = true;
+                z2 = false;
                 if (Intrinsics.areEqual(type, "movie")) {
                     return Boxing.boxBoolean(false);
                 }
@@ -4723,15 +4434,14 @@ public final class XonProvider extends MainAPI {
                     if (addVideoLinks(basic, sd, hd, fhd, function4, c00122) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    type2 = type;
-                    id2 = id;
-                    movie2 = movie;
-                    isCasting3 = isCasting2;
-                    str2 = str;
-                    function5 = function3;
-                    function6 = function4;
-                    parts2 = parts;
                     data3 = data2;
+                    str2 = str;
+                    type2 = type;
+                    movie2 = movie;
+                    id2 = id;
+                    isCasting3 = isCasting2;
+                    function5 = function4;
+                    parts2 = parts;
                     xPlayer2 = movie2.getXPlayer2();
                     if (xPlayer2 != null) {
                         z7 = true;
@@ -4741,8 +4451,8 @@ public final class XonProvider extends MainAPI {
                     if (z7) {
                         xPlayer3 = movie2.getXPlayer2();
                         c00122.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                        c00122.L$1 = function5;
-                        c00122.L$2 = function6;
+                        c00122.L$1 = function3;
+                        c00122.L$2 = function5;
                         c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
                         c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
                         c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
@@ -4750,26 +4460,26 @@ public final class XonProvider extends MainAPI {
                         c00122.Z$0 = isCasting3;
                         c00122.I$0 = id2;
                         c00122.label = 6;
-                        if (ExtractorApiKt.loadExtractor(xPlayer3, function5, function6, c00122) == coroutine_suspended) {
+                        if (ExtractorApiKt.loadExtractor(xPlayer3, function3, function5, c00122) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        function11 = function6;
+                        function9 = function5;
                         data6 = data3;
                     } else {
-                        function11 = function6;
+                        function9 = function5;
                         data6 = data3;
                     }
                     xPlayer4 = movie2.getXPlayer3();
                     if (xPlayer4 != null) {
-                        z8 = true;
+                        z2 = true;
                     } else {
-                        z8 = true;
+                        z2 = true;
                     }
-                    if (!z8) {
+                    if (!z2) {
                         xPlayer5 = movie2.getXPlayer3();
                         c00122.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                        c00122.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                        c00122.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                        c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
                         c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
                         c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
                         c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
@@ -4777,13 +4487,13 @@ public final class XonProvider extends MainAPI {
                         c00122.Z$0 = isCasting3;
                         c00122.I$0 = id2;
                         c00122.label = 7;
-                        if (ExtractorApiKt.loadExtractor(xPlayer5, function5, function11, c00122) == coroutine_suspended) {
+                        if (ExtractorApiKt.loadExtractor(xPlayer5, function3, function9, c00122) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        str6 = str2;
-                        function12 = function5;
+                        str5 = str2;
+                        function10 = function3;
                     }
-                    return Boxing.boxBoolean(z2);
+                    return Boxing.boxBoolean(z);
                 } while (!z3);
                 movie = (Movie) next;
                 if (movie == null) {
@@ -4818,15 +4528,14 @@ public final class XonProvider extends MainAPI {
                 if (addVideoLinks(basic, sd, hd, fhd, function4, c00122) == coroutine_suspended) {
                     return coroutine_suspended;
                 }
-                type2 = type;
-                id2 = id;
-                movie2 = movie;
-                isCasting3 = isCasting2;
-                str2 = str;
-                function5 = function3;
-                function6 = function4;
-                parts2 = parts;
                 data3 = data2;
+                str2 = str;
+                type2 = type;
+                movie2 = movie;
+                id2 = id;
+                isCasting3 = isCasting2;
+                function5 = function4;
+                parts2 = parts;
                 xPlayer2 = movie2.getXPlayer2();
                 if (xPlayer2 != null) {
                     z7 = true;
@@ -4836,8 +4545,8 @@ public final class XonProvider extends MainAPI {
                 if (z7) {
                     xPlayer3 = movie2.getXPlayer2();
                     c00122.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                    c00122.L$1 = function5;
-                    c00122.L$2 = function6;
+                    c00122.L$1 = function3;
+                    c00122.L$2 = function5;
                     c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
                     c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
                     c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
@@ -4845,26 +4554,26 @@ public final class XonProvider extends MainAPI {
                     c00122.Z$0 = isCasting3;
                     c00122.I$0 = id2;
                     c00122.label = 6;
-                    if (ExtractorApiKt.loadExtractor(xPlayer3, function5, function6, c00122) == coroutine_suspended) {
+                    if (ExtractorApiKt.loadExtractor(xPlayer3, function3, function5, c00122) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    function11 = function6;
+                    function9 = function5;
                     data6 = data3;
                 } else {
-                    function11 = function6;
+                    function9 = function5;
                     data6 = data3;
                 }
                 xPlayer4 = movie2.getXPlayer3();
                 if (xPlayer4 != null) {
-                    z8 = true;
+                    z2 = true;
                 } else {
-                    z8 = true;
+                    z2 = true;
                 }
-                if (!z8) {
+                if (!z2) {
                     xPlayer5 = movie2.getXPlayer3();
                     c00122.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
                     c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
                     c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
                     c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
@@ -4872,124 +4581,126 @@ public final class XonProvider extends MainAPI {
                     c00122.Z$0 = isCasting3;
                     c00122.I$0 = id2;
                     c00122.label = 7;
-                    if (ExtractorApiKt.loadExtractor(xPlayer5, function5, function11, c00122) == coroutine_suspended) {
+                    if (ExtractorApiKt.loadExtractor(xPlayer5, function3, function9, c00122) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    str6 = str2;
-                    function12 = function5;
+                    str5 = str2;
+                    function10 = function3;
                 }
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(z);
             case 2:
-                id3 = c00122.I$0;
+                id4 = c00122.I$0;
                 isCasting4 = c00122.Z$0;
                 ep2 = (Episode) c00122.L$6;
                 type4 = (String) c00122.L$5;
                 parts3 = (List) c00122.L$4;
-                str4 = (String) c00122.L$3;
-                function8 = (Function1) c00122.L$2;
-                function7 = (Function1) c00122.L$1;
+                str3 = (String) c00122.L$3;
+                function6 = (Function1) c00122.L$2;
+                function3 = (Function1) c00122.L$1;
                 data4 = (String) c00122.L$0;
                 ResultKt.throwOnFailure($result);
-                z2 = true;
+                z = true;
+                z4 = false;
                 aplayer1 = ep2.getAplayer1();
                 if (aplayer1 != null) {
-                    z5 = true;
+                    z6 = true;
                 } else {
-                    z5 = true;
+                    z6 = true;
                 }
-                if (z5) {
+                if (z6) {
                     aplayer2 = ep2.getAplayer1();
                     c00122.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                    c00122.L$1 = function7;
-                    c00122.L$2 = function8;
-                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
+                    c00122.L$1 = function3;
+                    c00122.L$2 = function6;
+                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str3);
                     c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
                     c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
                     c00122.L$6 = ep2;
                     c00122.Z$0 = isCasting4;
-                    c00122.I$0 = id3;
+                    c00122.I$0 = id4;
                     c00122.label = 3;
-                    if (ExtractorApiKt.loadExtractor(aplayer2, function7, function8, c00122) == coroutine_suspended) {
+                    if (ExtractorApiKt.loadExtractor(aplayer2, function3, function6, c00122) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    function9 = function8;
+                    function7 = function6;
                     data5 = data4;
                 } else {
-                    function9 = function8;
+                    function7 = function6;
                     data5 = data4;
                 }
                 aplayer3 = ep2.getAplayer2();
                 if (aplayer3 != null) {
-                    z6 = true;
+                    z4 = true;
                 } else {
-                    z6 = true;
+                    z4 = true;
                 }
-                if (!z6) {
+                if (!z4) {
                     aplayer4 = ep2.getAplayer2();
                     c00122.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function7);
-                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
+                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str3);
                     c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
                     c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
                     c00122.L$6 = SpillingKt.nullOutSpilledVariable(ep2);
                     c00122.Z$0 = isCasting4;
-                    c00122.I$0 = id3;
+                    c00122.I$0 = id4;
                     c00122.label = 4;
-                    if (ExtractorApiKt.loadExtractor(aplayer4, function7, function9, c00122) == coroutine_suspended) {
+                    if (ExtractorApiKt.loadExtractor(aplayer4, function3, function7, c00122) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    str5 = str4;
-                    function10 = function7;
+                    str4 = str3;
+                    function8 = function3;
                 }
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(z);
             case 3:
-                id3 = c00122.I$0;
+                id4 = c00122.I$0;
                 isCasting4 = c00122.Z$0;
                 ep2 = (Episode) c00122.L$6;
                 type4 = (String) c00122.L$5;
                 parts3 = (List) c00122.L$4;
-                str4 = (String) c00122.L$3;
-                function8 = (Function1) c00122.L$2;
-                function7 = (Function1) c00122.L$1;
+                str3 = (String) c00122.L$3;
+                function6 = (Function1) c00122.L$2;
+                function3 = (Function1) c00122.L$1;
                 data4 = (String) c00122.L$0;
                 ResultKt.throwOnFailure($result);
-                z2 = true;
-                function9 = function8;
+                z = true;
+                z4 = false;
+                function7 = function6;
                 data5 = data4;
                 aplayer3 = ep2.getAplayer2();
                 if (aplayer3 != null) {
-                    z6 = true;
+                    z4 = true;
                 } else {
-                    z6 = true;
+                    z4 = true;
                 }
-                if (!z6) {
+                if (!z4) {
                     aplayer4 = ep2.getAplayer2();
                     c00122.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function7);
-                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
-                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str4);
+                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function7);
+                    c00122.L$3 = SpillingKt.nullOutSpilledVariable(str3);
                     c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts3);
                     c00122.L$5 = SpillingKt.nullOutSpilledVariable(type4);
                     c00122.L$6 = SpillingKt.nullOutSpilledVariable(ep2);
                     c00122.Z$0 = isCasting4;
-                    c00122.I$0 = id3;
+                    c00122.I$0 = id4;
                     c00122.label = 4;
-                    if (ExtractorApiKt.loadExtractor(aplayer4, function7, function9, c00122) == coroutine_suspended) {
+                    if (ExtractorApiKt.loadExtractor(aplayer4, function3, function7, c00122) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    str5 = str4;
-                    function10 = function7;
+                    str4 = str3;
+                    function8 = function3;
                 }
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(z);
             case 4:
-                int id4 = c00122.I$0;
-                boolean z9 = c00122.Z$0;
-                str5 = (String) c00122.L$3;
-                function10 = (Function1) c00122.L$1;
+                int id5 = c00122.I$0;
+                boolean z8 = c00122.Z$0;
+                str4 = (String) c00122.L$3;
+                function8 = (Function1) c00122.L$1;
                 ResultKt.throwOnFailure($result);
-                z2 = true;
-                return Boxing.boxBoolean(z2);
+                z = true;
+                return Boxing.boxBoolean(z);
             case 5:
                 id2 = c00122.I$0;
                 isCasting3 = c00122.Z$0;
@@ -4997,11 +4708,12 @@ public final class XonProvider extends MainAPI {
                 type2 = (String) c00122.L$5;
                 parts2 = (List) c00122.L$4;
                 str2 = (String) c00122.L$3;
-                function6 = (Function1) c00122.L$2;
-                function5 = (Function1) c00122.L$1;
+                function5 = (Function1) c00122.L$2;
+                function3 = (Function1) c00122.L$1;
                 data3 = (String) c00122.L$0;
                 ResultKt.throwOnFailure($result);
-                z2 = true;
+                z = true;
+                z2 = false;
                 xPlayer2 = movie2.getXPlayer2();
                 if (xPlayer2 != null) {
                     z7 = true;
@@ -5011,8 +4723,8 @@ public final class XonProvider extends MainAPI {
                 if (z7) {
                     xPlayer3 = movie2.getXPlayer2();
                     c00122.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                    c00122.L$1 = function5;
-                    c00122.L$2 = function6;
+                    c00122.L$1 = function3;
+                    c00122.L$2 = function5;
                     c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
                     c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
                     c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
@@ -5020,26 +4732,26 @@ public final class XonProvider extends MainAPI {
                     c00122.Z$0 = isCasting3;
                     c00122.I$0 = id2;
                     c00122.label = 6;
-                    if (ExtractorApiKt.loadExtractor(xPlayer3, function5, function6, c00122) == coroutine_suspended) {
+                    if (ExtractorApiKt.loadExtractor(xPlayer3, function3, function5, c00122) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    function11 = function6;
+                    function9 = function5;
                     data6 = data3;
                 } else {
-                    function11 = function6;
+                    function9 = function5;
                     data6 = data3;
                 }
                 xPlayer4 = movie2.getXPlayer3();
                 if (xPlayer4 != null) {
-                    z8 = true;
+                    z2 = true;
                 } else {
-                    z8 = true;
+                    z2 = true;
                 }
-                if (!z8) {
+                if (!z2) {
                     xPlayer5 = movie2.getXPlayer3();
                     c00122.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
                     c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
                     c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
                     c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
@@ -5047,13 +4759,13 @@ public final class XonProvider extends MainAPI {
                     c00122.Z$0 = isCasting3;
                     c00122.I$0 = id2;
                     c00122.label = 7;
-                    if (ExtractorApiKt.loadExtractor(xPlayer5, function5, function11, c00122) == coroutine_suspended) {
+                    if (ExtractorApiKt.loadExtractor(xPlayer5, function3, function9, c00122) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    str6 = str2;
-                    function12 = function5;
+                    str5 = str2;
+                    function10 = function3;
                 }
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(z);
             case 6:
                 id2 = c00122.I$0;
                 isCasting3 = c00122.Z$0;
@@ -5061,24 +4773,25 @@ public final class XonProvider extends MainAPI {
                 type2 = (String) c00122.L$5;
                 parts2 = (List) c00122.L$4;
                 str2 = (String) c00122.L$3;
-                function6 = (Function1) c00122.L$2;
-                function5 = (Function1) c00122.L$1;
+                function5 = (Function1) c00122.L$2;
+                function3 = (Function1) c00122.L$1;
                 data3 = (String) c00122.L$0;
                 ResultKt.throwOnFailure($result);
-                z2 = true;
-                function11 = function6;
+                z = true;
+                z2 = false;
+                function9 = function5;
                 data6 = data3;
                 xPlayer4 = movie2.getXPlayer3();
                 if (xPlayer4 != null) {
-                    z8 = true;
+                    z2 = true;
                 } else {
-                    z8 = true;
+                    z2 = true;
                 }
-                if (!z8) {
+                if (!z2) {
                     xPlayer5 = movie2.getXPlayer3();
                     c00122.L$0 = SpillingKt.nullOutSpilledVariable(data6);
-                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function5);
-                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function11);
+                    c00122.L$1 = SpillingKt.nullOutSpilledVariable(function3);
+                    c00122.L$2 = SpillingKt.nullOutSpilledVariable(function9);
                     c00122.L$3 = SpillingKt.nullOutSpilledVariable(str2);
                     c00122.L$4 = SpillingKt.nullOutSpilledVariable(parts2);
                     c00122.L$5 = SpillingKt.nullOutSpilledVariable(type2);
@@ -5086,29 +4799,24 @@ public final class XonProvider extends MainAPI {
                     c00122.Z$0 = isCasting3;
                     c00122.I$0 = id2;
                     c00122.label = 7;
-                    if (ExtractorApiKt.loadExtractor(xPlayer5, function5, function11, c00122) == coroutine_suspended) {
+                    if (ExtractorApiKt.loadExtractor(xPlayer5, function3, function9, c00122) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
-                    str6 = str2;
-                    function12 = function5;
+                    str5 = str2;
+                    function10 = function3;
                 }
-                return Boxing.boxBoolean(z2);
+                return Boxing.boxBoolean(z);
             case 7:
                 int i = c00122.I$0;
-                boolean z10 = c00122.Z$0;
-                str6 = (String) c00122.L$3;
-                function12 = (Function1) c00122.L$1;
+                boolean z9 = c00122.Z$0;
+                str5 = (String) c00122.L$3;
+                function10 = (Function1) c00122.L$1;
                 ResultKt.throwOnFailure($result);
-                z2 = true;
-                return Boxing.boxBoolean(z2);
+                z = true;
+                return Boxing.boxBoolean(z);
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -5580,295 +5288,5 @@ public final class XonProvider extends MainAPI {
     /* JADX INFO: Access modifiers changed from: private */
     public final Object makeLink(String label, String url, int quality, Continuation<? super ExtractorLink> continuation) {
         return ExtractorApiKt.newExtractorLink(getName(), getName() + " - " + label, url, ExtractorLinkType.VIDEO, new C00132(quality, null), continuation);
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda9
-                @Override // java.lang.Runnable
-                public final void run() {
-                    XonProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    XonProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda5
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    XonProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda12
-            @Override // java.lang.Runnable
-            public final void run() {
-                XonProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda13
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda14
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    XonProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.XonProvider$$ExternalSyntheticLambda15
-            @Override // java.lang.Runnable
-            public final void run() {
-                XonProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
-        }
     }
 }

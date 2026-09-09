@@ -4,7 +4,7 @@ package nepali.stream.decoded.animesuge
 object PluginMetadata {
     const val name: String = "AnimeSuge"
     const val originalPluginClass: String = "com.animesuge.provider.AnimeSugePlugin"
-    const val version: Int = 7
+    const val version: Int = 8
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

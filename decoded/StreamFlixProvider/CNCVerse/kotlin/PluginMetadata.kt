@@ -4,7 +4,7 @@ package nepali.stream.decoded.streamflixprovider
 object PluginMetadata {
     const val name: String = "StreamFlixProvider"
     const val originalPluginClass: String = "com.cncverse.StreamFlixProviderPlugin"
-    const val version: Int = 32
+    const val version: Int = 33
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

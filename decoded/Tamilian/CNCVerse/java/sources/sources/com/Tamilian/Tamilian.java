@@ -1,24 +1,7 @@
 package com.Tamilian;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
-import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -31,7 +14,6 @@ import com.lagradost.cloudstream3.TvType;
 import com.lagradost.cloudstream3.metaproviders.TmdbLink;
 import com.lagradost.cloudstream3.metaproviders.TmdbProvider;
 import com.lagradost.cloudstream3.mvvm.ArchComponentExtKt;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
@@ -62,7 +44,6 @@ import kotlin.jvm.internal.MagicApiIntrinsics;
 import kotlin.jvm.internal.Reflection;
 import kotlin.jvm.internal.SourceDebugExtension;
 import kotlin.reflect.KType;
-import kotlin.text.Charsets;
 import kotlin.text.StringsKt;
 import kotlinx.serialization.DeserializationStrategy;
 import kotlinx.serialization.KSerializer;
@@ -77,10 +58,9 @@ import org.jsoup.nodes.Element;
 
 /* JADX INFO: compiled from: Tamilian.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/Tamilian/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\b\u0018\u0000 42\u00020\u0001:\u0003456B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"JF\u0010#\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u000b2\u0012\u0010&\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020)0'2\u0012\u0010*\u001a\u000e\u0012\u0004\u0012\u00020+\u0012\u0004\u0012\u00020)0'H\u0096@¢\u0006\u0002\u0010,J\f\u0010-\u001a\u00020.*\u00020/H\u0002J\b\u00100\u001a\u00020)H\u0002J\b\u00101\u001a\u00020)H\u0002J\u0010\u00102\u001a\u00020)2\u0006\u00103\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u001a\u0010\u000e\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0007\"\u0004\b\u0010\u0010\tR\u0014\u0010\u0011\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\rR\u0014\u0010\u0013\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\rR\u0014\u0010\u0015\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\rR\u001a\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001b¨\u00067"}, d2 = {"Lcom/Tamilian/Tamilian;", "Lcom/lagradost/cloudstream3/metaproviders/TmdbProvider;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "instantLinkLoading", "getInstantLinkLoading", "useMetaLoadResponse", "getUseMetaLoadResponse", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toLinkData", "Lcom/Tamilian/Tamilian$LinkData;", "Lcom/lagradost/cloudstream3/metaproviders/TmdbLink;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "url", "Companion", "LinkData", "VideoData", "Tamilian_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nTamilian.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Tamilian.kt\ncom/Tamilian/Tamilian\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,402:1\n63#2:403\n64#2,15:405\n1#3:404\n1#3:422\n50#4:420\n43#4:421\n67#5,5:423\n*S KotlinDebug\n*F\n+ 1 Tamilian.kt\ncom/Tamilian/Tamilian\n*L\n81#1:403\n81#1:405,15\n81#1:404\n81#1:420\n81#1:421\n88#1:423,5\n*E\n"})
+@Metadata(d1 = {"\u0000^\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\u000b\n\u0002\b\f\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 02\u00020\u0001:\u0003012B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001c\u001a\u00020\u001d2\u0006\u0010\u001e\u001a\u00020\u001f2\u0006\u0010 \u001a\u00020!H\u0096@¢\u0006\u0002\u0010\"JF\u0010#\u001a\u00020\u000b2\u0006\u0010$\u001a\u00020\u00052\u0006\u0010%\u001a\u00020\u000b2\u0012\u0010&\u001a\u000e\u0012\u0004\u0012\u00020(\u0012\u0004\u0012\u00020)0'2\u0012\u0010*\u001a\u000e\u0012\u0004\u0012\u00020+\u0012\u0004\u0012\u00020)0'H\u0096@¢\u0006\u0002\u0010,J\f\u0010-\u001a\u00020.*\u00020/H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u0014\u0010\n\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\f\u0010\rR\u001a\u0010\u000e\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000f\u0010\u0007\"\u0004\b\u0010\u0010\tR\u0014\u0010\u0011\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0012\u0010\rR\u0014\u0010\u0013\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\rR\u0014\u0010\u0015\u001a\u00020\u000bX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0016\u0010\rR\u001a\u0010\u0017\u001a\b\u0012\u0004\u0012\u00020\u00190\u0018X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001a\u0010\u001b¨\u00063"}, d2 = {"Lcom/Tamilian/Tamilian;", "Lcom/lagradost/cloudstream3/metaproviders/TmdbProvider;", "<init>", "()V", "name", "", "getName", "()Ljava/lang/String;", "setName", "(Ljava/lang/String;)V", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "instantLinkLoading", "getInstantLinkLoading", "useMetaLoadResponse", "getUseMetaLoadResponse", "hasQuickSearch", "getHasQuickSearch", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toLinkData", "Lcom/Tamilian/Tamilian$LinkData;", "Lcom/lagradost/cloudstream3/metaproviders/TmdbLink;", "Companion", "LinkData", "VideoData", "Tamilian_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nTamilian.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Tamilian.kt\ncom/Tamilian/Tamilian\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 NiceResponse.kt\ncom/lagradost/nicehttp/NiceResponse\n*L\n1#1,136:1\n63#2:137\n64#2,15:139\n1#3:138\n1#3:156\n50#4:154\n43#4:155\n67#5,5:157\n*S KotlinDebug\n*F\n+ 1 Tamilian.kt\ncom/Tamilian/Tamilian\n*L\n58#1:137\n58#1:139,15\n58#1:138\n58#1:154\n58#1:155\n65#1:157,5\n*E\n"})
 public final class Tamilian extends TmdbProvider {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
@@ -89,14 +69,8 @@ public final class Tamilian extends TmdbProvider {
     @NotNull
     public static final String HOST = "https://embedojo.net";
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private String name = "Tamilian";
@@ -114,7 +88,7 @@ public final class Tamilian extends TmdbProvider {
     /* JADX INFO: renamed from: com.Tamilian.Tamilian$loadLinks$1 */
     /* JADX INFO: compiled from: Tamilian.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.Tamilian.Tamilian", f = "Tamilian.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {82, 87, 91}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mediaData", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "script", "token", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "script", "token", "m3u8", "headers", "it", "isCasting", "$i$a$-let-Tamilian$loadLinks$3"}, nl = {83, 88, 104}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.Tamilian.Tamilian", f = "Tamilian.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {59, 64, 68}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "mediaData", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "script", "token", "isCasting", "data", "subtitleCallback", "callback", "mediaData", "script", "token", "m3u8", "headers", "it", "isCasting", "$i$a$-let-Tamilian$loadLinks$2"}, nl = {60, 65, 81}, s = {"L$0", "L$1", "L$2", "L$3", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -182,7 +156,7 @@ public final class Tamilian extends TmdbProvider {
     }
 
     /* JADX INFO: compiled from: Tamilian.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0002\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000b\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000eX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0010X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000eX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0013"}, d2 = {"Lcom/Tamilian/Tamilian$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "HOST", "", "OMG10", "lastBrowserOpenMs", "", "telegramPopupShown", "", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "Tamilian_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+    @Metadata(d1 = {"\u0000\u001a\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\f"}, d2 = {"Lcom/Tamilian/Tamilian$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "HOST", "", "Tamilian_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -203,28 +177,26 @@ public final class Tamilian extends TmdbProvider {
 
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
-        showTelegramPopup();
-        showSubscriptionPopupIfNeeded();
+        DonationManager.INSTANCE.checkAndShow(getName());
         return super.getMainPage(page, request, continuation);
     }
 
-    /* JADX WARN: Code duplicated, block: B:76:0x025a  */
+    /* JADX WARN: Code duplicated, block: B:48:0x01e4  */
+    /* JADX WARN: Code duplicated, block: B:54:0x01f7  */
+    /* JADX WARN: Code duplicated, block: B:57:0x028b A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:58:0x028c  */
+    /* JADX WARN: Code duplicated, block: B:66:0x02ce  */
+    /* JADX WARN: Code duplicated, block: B:68:0x0327 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:69:0x0328  */
+    /* JADX WARN: Code duplicated, block: B:71:0x033b  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:82:0x026d  */
-    /* JADX WARN: Code duplicated, block: B:85:0x0301 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:86:0x0302  */
-    /* JADX WARN: Code duplicated, block: B:94:0x0344  */
-    /* JADX WARN: Code duplicated, block: B:96:0x039b A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:97:0x039c  */
-    /* JADX WARN: Code duplicated, block: B:99:0x03af  */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
         C00001 c00001;
         Object obj;
         Object objDecodeFromString;
-        int i;
-        boolean z;
         String str;
+        int i;
         C00001 c00002;
         Function1<? super SubtitleFile, Unit> function3;
         Function1<? super ExtractorLink, Unit> function4;
@@ -254,6 +226,7 @@ public final class Tamilian extends TmdbProvider {
         Object safe;
         VideoData m3u8;
         Map headers;
+        boolean z;
         Object objSafeApiCall;
         Map headers2;
         boolean isCasting5;
@@ -275,24 +248,6 @@ public final class Tamilian extends TmdbProvider {
         switch (c00004.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                Tamilian $this$loadLinks_u24lambda_u240 = this;
-                final Context _ctx = context;
-                SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                long _nowSec = System.currentTimeMillis() / 1000;
-                boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                if (!_isSubscribed) {
-                    if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.Tamilian.Tamilian$$ExternalSyntheticLambda5
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                Tamilian.loadLinks$lambda$0$0(_ctx);
-                            }
-                        });
-                    }
-                    $this$loadLinks_u24lambda_u240.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                }
                 AppUtils appUtils = AppUtils.INSTANCE;
                 try {
                     Result.Companion companion = Result.Companion;
@@ -338,7 +293,6 @@ public final class Tamilian extends TmdbProvider {
                     });
                 }
                 LinkData mediaData3 = toLinkData((TmdbLink) objDecodeFromString);
-                i = 2;
                 Requests app = MainActivityKt.getApp();
                 String str2 = "https://embedojo.net/tamil/tmdb/" + mediaData3.getTmdbId();
                 c00004.L$0 = SpillingKt.nullOutSpilledVariable(data);
@@ -347,8 +301,8 @@ public final class Tamilian extends TmdbProvider {
                 c00004.L$3 = SpillingKt.nullOutSpilledVariable(mediaData3);
                 c00004.Z$0 = isCasting;
                 c00004.label = 1;
-                z = true;
                 str = null;
+                i = 2;
                 Object obj4 = Requests.get$default(app, str2, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00004, 4094, (Object) null);
                 c00002 = c00004;
                 if (obj4 == coroutine_suspended) {
@@ -411,7 +365,8 @@ public final class Tamilian extends TmdbProvider {
                 headers = MapsKt.mapOf(TuplesKt.to("Origin", HOST));
                 if (m3u8 != null) {
                     Function1<? super ExtractorLink, Unit> function8 = function7;
-                    Tamilian$loadLinks$3$1 tamilian$loadLinks$3$1 = new Tamilian$loadLinks$3$1(function8, this, m3u8, headers, null);
+                    z = true;
+                    Tamilian$loadLinks$2$1 tamilian$loadLinks$2$1 = new Tamilian$loadLinks$2$1(function8, this, m3u8, headers, null);
                     c00003.L$0 = SpillingKt.nullOutSpilledVariable(data3);
                     c00003.L$1 = SpillingKt.nullOutSpilledVariable(function6);
                     c00003.L$2 = SpillingKt.nullOutSpilledVariable(function8);
@@ -424,7 +379,7 @@ public final class Tamilian extends TmdbProvider {
                     c00003.Z$0 = isCasting4;
                     c00003.I$0 = 0;
                     c00003.label = 3;
-                    objSafeApiCall = ArchComponentExtKt.safeApiCall(tamilian$loadLinks$3$1, c00003);
+                    objSafeApiCall = ArchComponentExtKt.safeApiCall(tamilian$loadLinks$2$1, c00003);
                     if (objSafeApiCall == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -433,6 +388,8 @@ public final class Tamilian extends TmdbProvider {
                     isCasting5 = isCasting4;
                     script3 = script2;
                     m3u9 = m3u8;
+                } else {
+                    z = true;
                 }
                 return Boxing.boxBoolean(z);
             case 1:
@@ -450,7 +407,6 @@ public final class Tamilian extends TmdbProvider {
                 function3 = function10;
                 data2 = data4;
                 i = 2;
-                z = true;
                 obj2 = $result;
                 elementSelectFirst = ((NiceResponse) obj2).getDocument().selectFirst("script:containsData(function(p,a,c,k,e,d))");
                 if (elementSelectFirst != null) {
@@ -498,7 +454,8 @@ public final class Tamilian extends TmdbProvider {
                 headers = MapsKt.mapOf(TuplesKt.to("Origin", HOST));
                 if (m3u8 != null) {
                     Function1<? super ExtractorLink, Unit> function11 = function7;
-                    Tamilian$loadLinks$3$1 tamilian$loadLinks$3$2 = new Tamilian$loadLinks$3$1(function11, this, m3u8, headers, null);
+                    z = true;
+                    Tamilian$loadLinks$2$1 tamilian$loadLinks$2$2 = new Tamilian$loadLinks$2$1(function11, this, m3u8, headers, null);
                     c00003.L$0 = SpillingKt.nullOutSpilledVariable(data3);
                     c00003.L$1 = SpillingKt.nullOutSpilledVariable(function6);
                     c00003.L$2 = SpillingKt.nullOutSpilledVariable(function11);
@@ -511,7 +468,7 @@ public final class Tamilian extends TmdbProvider {
                     c00003.Z$0 = isCasting4;
                     c00003.I$0 = 0;
                     c00003.label = 3;
-                    objSafeApiCall = ArchComponentExtKt.safeApiCall(tamilian$loadLinks$3$2, c00003);
+                    objSafeApiCall = ArchComponentExtKt.safeApiCall(tamilian$loadLinks$2$2, c00003);
                     if (objSafeApiCall == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -520,6 +477,8 @@ public final class Tamilian extends TmdbProvider {
                     isCasting5 = isCasting4;
                     script3 = script2;
                     m3u9 = m3u8;
+                } else {
+                    z = true;
                 }
                 return Boxing.boxBoolean(z);
             case 2:
@@ -534,7 +493,6 @@ public final class Tamilian extends TmdbProvider {
                 c00003 = c00004;
                 function6 = function12;
                 data3 = data5;
-                z = true;
                 mediaData2 = mediaData5;
                 token3 = token4;
                 isCasting4 = isCasting7;
@@ -547,7 +505,8 @@ public final class Tamilian extends TmdbProvider {
                 headers = MapsKt.mapOf(TuplesKt.to("Origin", HOST));
                 if (m3u8 != null) {
                     Function1<? super ExtractorLink, Unit> function13 = function7;
-                    Tamilian$loadLinks$3$1 tamilian$loadLinks$3$3 = new Tamilian$loadLinks$3$1(function13, this, m3u8, headers, null);
+                    z = true;
+                    Tamilian$loadLinks$2$1 tamilian$loadLinks$2$3 = new Tamilian$loadLinks$2$1(function13, this, m3u8, headers, null);
                     c00003.L$0 = SpillingKt.nullOutSpilledVariable(data3);
                     c00003.L$1 = SpillingKt.nullOutSpilledVariable(function6);
                     c00003.L$2 = SpillingKt.nullOutSpilledVariable(function13);
@@ -560,7 +519,7 @@ public final class Tamilian extends TmdbProvider {
                     c00003.Z$0 = isCasting4;
                     c00003.I$0 = 0;
                     c00003.label = 3;
-                    objSafeApiCall = ArchComponentExtKt.safeApiCall(tamilian$loadLinks$3$3, c00003);
+                    objSafeApiCall = ArchComponentExtKt.safeApiCall(tamilian$loadLinks$2$3, c00003);
                     if (objSafeApiCall == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -569,6 +528,8 @@ public final class Tamilian extends TmdbProvider {
                     isCasting5 = isCasting4;
                     script3 = script2;
                     m3u9 = m3u8;
+                } else {
+                    z = true;
                 }
                 return Boxing.boxBoolean(z);
             case 3:
@@ -585,11 +546,6 @@ public final class Tamilian extends TmdbProvider {
             default:
                 throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
         }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
     }
 
     private final LinkData toLinkData(TmdbLink $this$toLinkData) {
@@ -1192,296 +1148,6 @@ public final class Tamilian extends TmdbProvider {
         @NotNull
         public final String getCk() {
             return this.ck;
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.Tamilian.Tamilian$$ExternalSyntheticLambda2
-                @Override // java.lang.Runnable
-                public final void run() {
-                    Tamilian.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.Tamilian.Tamilian$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    Tamilian.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.Tamilian.Tamilian$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    Tamilian.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.Tamilian.Tamilian$$ExternalSyntheticLambda6
-            @Override // java.lang.Runnable
-            public final void run() {
-                Tamilian.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.Tamilian.Tamilian$$ExternalSyntheticLambda0
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.Tamilian.Tamilian$$ExternalSyntheticLambda1
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    Tamilian.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.Tamilian.Tamilian$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                Tamilian.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
         }
     }
 }

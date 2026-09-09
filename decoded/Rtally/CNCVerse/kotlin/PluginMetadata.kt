@@ -4,7 +4,7 @@ package nepali.stream.decoded.rtally
 object PluginMetadata {
     const val name: String = "Rtally"
     const val originalPluginClass: String = "com.cncverse.RtallyPlugin"
-    const val version: Int = 47
+    const val version: Int = 48
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

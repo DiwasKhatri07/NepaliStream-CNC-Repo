@@ -1,10 +1,8 @@
 package com.cncverse;
 
 import android.content.Context;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Base64;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lagradost.cloudstream3.HomePageList;
@@ -26,7 +24,6 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.cloudstream3.utils.Qualities;
 import java.io.Closeable;
-import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -93,7 +90,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: compiled from: PlayZTV.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/PlayZTVProvider/CNCVerse/java/classes.dex */
 @Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 G2\u00020\u0001:\u0002GHB\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0016\u0010%\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u0010'J\u000e\u0010(\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u000e\u0010)\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u0010\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u0003H\u0002J$\u0010,\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0012\u0010-\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eH\u0002J\u0018\u0010.\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0006\u0010/\u001a\u00020\u0003H\u0002J\u001e\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u000205H\u0096@¢\u0006\u0002\u00106J\u001c\u00107\u001a\b\u0012\u0004\u0012\u000209082\u0006\u0010:\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'J\u0016\u0010;\u001a\u00020<2\u0006\u0010&\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'JF\u0010=\u001a\u00020\u00132\u0006\u0010>\u001a\u00020\u00032\u0006\u0010?\u001a\u00020\u00132\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020C0A2\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020E\u0012\u0004\u0012\u00020C0AH\u0096@¢\u0006\u0002\u0010FR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR\u001a\u0010\u000f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\t\"\u0004\b\u0011\u0010\u000bR\u0014\u0010\u0012\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0015R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001f\u001a\u00020 8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b#\u0010$\u001a\u0004\b!\u0010\"¨\u0006I"}, d2 = {"Lcom/cncverse/PlayZTV;", "Lcom/lagradost/cloudstream3/MainAPI;", "customName", "", "customMainUrl", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "lang", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "customHttpClient", "Lokhttp3/OkHttpClient;", "getCustomHttpClient", "()Lokhttp3/OkHttpClient;", "customHttpClient$delegate", "Lkotlin/Lazy;", "getWithCustomHeaders", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "base64ToHexOrNull", "hexToBase64UrlOrNull", "decryptContent", "content", "getMpdStream", "customHeaders", "getDRMKeysFromLicenseServer", "kid", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "LoadData", "PlayZTVProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nPlayZTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlayZTV.kt\ncom/cncverse/PlayZTV\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,1167:1\n296#2,2:1168\n1586#2:1170\n1661#2,3:1171\n1642#2,10:1193\n1915#2:1203\n1916#2:1224\n1652#2:1225\n777#2:1226\n873#2,2:1227\n1924#2,3:1229\n296#2,2:1251\n1512#2:1253\n1538#2,3:1254\n1541#2,3:1264\n1586#2:1270\n1661#2,3:1271\n777#2:1275\n873#2,2:1276\n1586#2:1278\n1661#2,3:1279\n1586#2:1320\n1661#2,3:1321\n63#3:1174\n64#3,15:1176\n63#3:1204\n64#3,15:1206\n63#3:1232\n64#3,15:1234\n63#3:1282\n64#3,15:1284\n63#3:1301\n64#3,15:1303\n1#4:1175\n1#4:1205\n1#4:1223\n1#4:1233\n1#4:1283\n1#4:1302\n50#5:1191\n43#5:1192\n50#5:1221\n43#5:1222\n50#5:1249\n43#5:1250\n50#5:1299\n43#5:1300\n50#5:1318\n43#5:1319\n383#6,7:1257\n129#7:1267\n158#7,2:1268\n160#7:1274\n*S KotlinDebug\n*F\n+ 1 PlayZTV.kt\ncom/cncverse/PlayZTV\n*L\n131#1:1168,2\n187#1:1170\n187#1:1171,3\n212#1:1193,10\n212#1:1203\n212#1:1224\n212#1:1225\n216#1:1226\n216#1:1227,2\n225#1:1229,3\n318#1:1251,2\n333#1:1253\n333#1:1254,3\n333#1:1264,3\n335#1:1270\n335#1:1271,3\n365#1:1275\n365#1:1276,2\n365#1:1278\n365#1:1279,3\n485#1:1320\n485#1:1321,3\n211#1:1174\n211#1:1176,15\n214#1:1204\n214#1:1206,15\n315#1:1232\n315#1:1234,15\n385#1:1282\n385#1:1284,15\n411#1:1301\n411#1:1303,15\n211#1:1175\n214#1:1205\n212#1:1223\n315#1:1233\n385#1:1283\n411#1:1302\n211#1:1191\n211#1:1192\n214#1:1221\n214#1:1222\n315#1:1249\n315#1:1250\n385#1:1299\n385#1:1300\n411#1:1318\n411#1:1319\n333#1:1257,7\n333#1:1267\n333#1:1268,2\n333#1:1274\n*E\n"})
+@SourceDebugExtension({"SMAP\nPlayZTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlayZTV.kt\ncom/cncverse/PlayZTV\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,1143:1\n296#2,2:1144\n1586#2:1146\n1661#2,3:1147\n1642#2,10:1169\n1915#2:1179\n1916#2:1200\n1652#2:1201\n777#2:1202\n873#2,2:1203\n1924#2,3:1205\n296#2,2:1227\n1512#2:1229\n1538#2,3:1230\n1541#2,3:1240\n1586#2:1246\n1661#2,3:1247\n777#2:1251\n873#2,2:1252\n1586#2:1254\n1661#2,3:1255\n1586#2:1296\n1661#2,3:1297\n63#3:1150\n64#3,15:1152\n63#3:1180\n64#3,15:1182\n63#3:1208\n64#3,15:1210\n63#3:1258\n64#3,15:1260\n63#3:1277\n64#3,15:1279\n1#4:1151\n1#4:1181\n1#4:1199\n1#4:1209\n1#4:1259\n1#4:1278\n50#5:1167\n43#5:1168\n50#5:1197\n43#5:1198\n50#5:1225\n43#5:1226\n50#5:1275\n43#5:1276\n50#5:1294\n43#5:1295\n383#6,7:1233\n129#7:1243\n158#7,2:1244\n160#7:1250\n*S KotlinDebug\n*F\n+ 1 PlayZTV.kt\ncom/cncverse/PlayZTV\n*L\n106#1:1144,2\n162#1:1146\n162#1:1147,3\n187#1:1169,10\n187#1:1179\n187#1:1200\n187#1:1201\n191#1:1202\n191#1:1203,2\n200#1:1205,3\n293#1:1227,2\n309#1:1229\n309#1:1230,3\n309#1:1240,3\n311#1:1246\n311#1:1247,3\n341#1:1251\n341#1:1252,2\n341#1:1254\n341#1:1255,3\n461#1:1296\n461#1:1297,3\n186#1:1150\n186#1:1152,15\n189#1:1180\n189#1:1182,15\n290#1:1208\n290#1:1210,15\n361#1:1258\n361#1:1260,15\n387#1:1277\n387#1:1279,15\n186#1:1151\n189#1:1181\n187#1:1199\n290#1:1209\n361#1:1259\n387#1:1278\n186#1:1167\n186#1:1168\n189#1:1197\n189#1:1198\n290#1:1225\n290#1:1226\n361#1:1275\n361#1:1276\n387#1:1294\n387#1:1295\n309#1:1233,7\n309#1:1243\n309#1:1244,2\n309#1:1250\n*E\n"})
 public final class PlayZTV extends MainAPI {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
@@ -111,7 +108,6 @@ public final class PlayZTV extends MainAPI {
 
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
 
     /* JADX INFO: renamed from: customHttpClient$delegate, reason: from kotlin metadata */
     @NotNull
@@ -143,7 +139,7 @@ public final class PlayZTV extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PlayZTV$getMainPage$1 */
     /* JADX INFO: compiled from: PlayZTV.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayZTV", f = "PlayZTV.kt", i = {0, 0}, l = {330}, m = "getMainPage", n = {"request", "page"}, nl = {331}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PlayZTV", f = "PlayZTV.kt", i = {0, 0}, l = {306}, m = "getMainPage", n = {"request", "page"}, nl = {307}, s = {"L$0", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -165,7 +161,7 @@ public final class PlayZTV extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PlayZTV$loadLinks$1 */
     /* JADX INFO: compiled from: PlayZTV.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayZTV", f = "PlayZTV.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6}, l = {457, 496, 516, 534, 560, 583, 607}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "headers", "normalizedKey", "normalizedKid", "playerKey", "playerKid", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting"}, nl = {456, 495, 515, 533, 559, 582, 606}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PlayZTV", f = "PlayZTV.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6}, l = {433, 472, 492, 510, 536, 559, 583}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "headers", "normalizedKey", "normalizedKid", "playerKey", "playerKid", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting"}, nl = {432, 471, 491, 509, 535, 558, 582}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -201,7 +197,7 @@ public final class PlayZTV extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.PlayZTV$search$1 */
     /* JADX INFO: compiled from: PlayZTV.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.PlayZTV", f = "PlayZTV.kt", i = {0}, l = {362}, m = "search", n = {"query"}, nl = {363}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.PlayZTV", f = "PlayZTV.kt", i = {0}, l = {338}, m = "search", n = {"query"}, nl = {339}, s = {"L$0"}, v = 2)
     static final class C00111 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -247,65 +243,13 @@ public final class PlayZTV extends MainAPI {
     }
 
     /* JADX INFO: compiled from: PlayZTV.kt */
-    @Metadata(d1 = {"\u0000*\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0012X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0012X\u0086T¢\u0006\u0002\n\u0000¨\u0006\u0015"}, d2 = {"Lcom/cncverse/PlayZTV$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "EXT_M3U", "", "EXT_INF", "EXT_VLC_OPT", "PlayZTVProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nPlayZTV.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PlayZTV.kt\ncom/cncverse/PlayZTV$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1167:1\n1#2:1168\n*E\n"})
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lcom/cncverse/PlayZTV$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "EXT_M3U", "", "EXT_INF", "EXT_VLC_OPT", "PlayZTVProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                PlayZTV.csGuardWasEverActive = true;
-            }
-            return PlayZTV.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.PlayZTV$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    PlayZTV.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -1146,10 +1090,7 @@ public final class PlayZTV extends MainAPI {
         switch (c00011.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String mainUrl = getMainUrl();
                 c00011.L$0 = SpillingKt.nullOutSpilledVariable(request);
                 c00011.I$0 = page;
@@ -1275,10 +1216,6 @@ public final class PlayZTV extends MainAPI {
         switch (c00111.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 String mainUrl = playZTV.getMainUrl();
                 c00111.L$0 = query;
                 c00111.label = 1;

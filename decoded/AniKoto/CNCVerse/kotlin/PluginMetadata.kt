@@ -4,7 +4,7 @@ package nepali.stream.decoded.anikoto
 object PluginMetadata {
     const val name: String = "AniKoto"
     const val originalPluginClass: String = "com.anikoto.AnikotoPlugin"
-    const val version: Int = 7
+    const val version: Int = 8
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

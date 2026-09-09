@@ -1,24 +1,8 @@
 package com.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -44,7 +28,6 @@ import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvSeriesSearchResponse;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorLinkType;
@@ -53,7 +36,6 @@ import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.lang.reflect.Field;
 import java.net.URI;
 import java.nio.charset.Charset;
 import java.security.MessageDigest;
@@ -108,20 +90,12 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: CineTvProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/CineTvProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000®\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0014\u0018\u0000 g2\u00020\u0001:\u000eghijklmnopqrstB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u001b\u001a\u00020\u0005H\u0002J\b\u0010\u001f\u001a\u00020 H\u0002J\u0010\u0010)\u001a\u00020\u00052\u0006\u0010*\u001a\u00020\u0005H\u0002J\u0010\u0010+\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u0005H\u0002J\u0010\u0010-\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u0005H\u0002J \u0010/\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u00052\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u0005H\u0002J\u0010\u00102\u001a\u00020\u00052\u0006\u00103\u001a\u00020\u0005H\u0002J\u0010\u00104\u001a\u0002052\u0006\u00106\u001a\u000207H\u0016J\u0010\u00108\u001a\u00020\u00052\u0006\u00109\u001a\u00020\u0005H\u0002J\u0018\u0010:\u001a\u00020\u00052\b\b\u0002\u0010;\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010<J&\u0010=\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001d2\n\b\u0002\u0010.\u001a\u0004\u0018\u00010\u0005H\u0082@¢\u0006\u0002\u0010<J\u001a\u0010>\u001a\u0004\u0018\u00010?2\b\b\u0002\u0010@\u001a\u00020AH\u0082@¢\u0006\u0002\u0010BJ(\u0010C\u001a\n\u0012\u0004\u0012\u00020D\u0018\u00010\u001e2\u0006\u0010E\u001a\u00020A2\b\b\u0002\u0010@\u001a\u00020AH\u0082@¢\u0006\u0002\u0010FJ\"\u0010G\u001a\u0004\u0018\u00010?2\u0006\u0010H\u001a\u00020\u00052\b\b\u0002\u0010@\u001a\u00020AH\u0082@¢\u0006\u0002\u0010IJ\"\u0010J\u001a\u0004\u0018\u00010K2\u0006\u00100\u001a\u00020\u00052\b\b\u0002\u0010L\u001a\u00020AH\u0082@¢\u0006\u0002\u0010IJ\u001e\u0010O\u001a\u00020Q2\u0006\u0010R\u001a\u00020A2\u0006\u0010S\u001a\u00020TH\u0096@¢\u0006\u0002\u0010UJ\u001c\u0010V\u001a\b\u0012\u0004\u0012\u00020W0\u001e2\u0006\u0010X\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010<J\u0018\u0010Y\u001a\u0004\u0018\u00010Z2\u0006\u00103\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010<JF\u0010[\u001a\u00020\u000e2\u0006\u0010\\\u001a\u00020\u00052\u0006\u0010]\u001a\u00020\u000e2\u0012\u0010^\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020a0_2\u0012\u0010b\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020a0_H\u0096@¢\u0006\u0002\u0010cJ\b\u0010d\u001a\u00020aH\u0002J\b\u0010e\u001a\u00020aH\u0002J\u0010\u0010f\u001a\u00020a2\u0006\u00103\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u001c\u001a\u0014\u0012\u0004\u0012\u00020\u0005\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u001e0\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u0010\u0010&\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010M\u001a\b\u0012\u0004\u0012\u00020N0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bO\u0010P¨\u0006u"}, d2 = {"Lcom/cncverse/CineTvProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "random", "Ljava/security/SecureRandom;", "generateDeviceId", "brandModels", "", "", "randomBrandModel", "Lcom/cncverse/CineTvProvider$BrandModel;", "deviceId", "brandModel", "mobMfr", "mobModel", "gaid", "token", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "des3Decrypt", "encryptedText", "md5Hash", "text", "generateSign", "curTime", "generateP2pToken", "vodId", "timestamp", "signVideoUrl", "url", "getVideoInterceptor", "Lokhttp3/Interceptor;", "extractorLink", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "aesDecrypt", "encryptedBase64", "fetchDeviceToken", "invitedBy", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getHeaders", "searchRecommend", "Lcom/cncverse/CineTvProvider$ApiResponse;", "pageNumber", "", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "topicVodList", "Lcom/cncverse/CineTvProvider$VodItem;", "topicId", "(IILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "searchVod", "keyword", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVodInfo", "Lcom/cncverse/CineTvProvider$VodInfoResponse;", "audioType", "mainPage", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "BrandModel", "VodItem", "ApiResponse", "TopicResult", "TopicApiResponse", "InitResponse", "InitResult", "UserInfo", "VodCollection", "AudioTypeOption", "SeriesInfo", "VodInfoResult", "VodInfoResponse", "CineTvProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nCineTvProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CineTvProvider.kt\ncom/cncverse/CineTvProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1021:1\n1#2:1022\n1#2:1036\n1#2:1051\n1#2:1066\n1#2:1081\n1#2:1096\n221#3,2:1023\n221#3,2:1038\n221#3,2:1053\n221#3,2:1068\n221#3,2:1083\n116#4:1025\n54#4:1026\n117#4:1027\n61#4,8:1028\n71#4:1037\n116#4:1040\n54#4:1041\n117#4:1042\n61#4,8:1043\n71#4:1052\n116#4:1055\n54#4:1056\n117#4:1057\n61#4,8:1058\n71#4:1067\n116#4:1070\n54#4:1071\n117#4:1072\n61#4,8:1073\n71#4:1082\n116#4:1085\n54#4:1086\n117#4:1087\n61#4,8:1088\n71#4:1097\n1915#5,2:1098\n1915#5,2:1100\n1586#5:1102\n1661#5,3:1103\n1586#5:1106\n1661#5,3:1107\n1586#5:1110\n1661#5,3:1111\n*S KotlinDebug\n*F\n+ 1 CineTvProvider.kt\ncom/cncverse/CineTvProvider\n*L\n375#1:1036\n447#1:1051\n482#1:1066\n518#1:1081\n558#1:1096\n357#1:1023,2\n436#1:1038,2\n471#1:1053,2\n507#1:1068,2\n547#1:1083,2\n375#1:1025\n375#1:1026\n375#1:1027\n375#1:1028,8\n375#1:1037\n447#1:1040\n447#1:1041\n447#1:1042\n447#1:1043,8\n447#1:1052\n482#1:1055\n482#1:1056\n482#1:1057\n482#1:1058,8\n482#1:1067\n518#1:1070\n518#1:1071\n518#1:1072\n518#1:1073,8\n518#1:1082\n558#1:1085\n558#1:1086\n558#1:1087\n558#1:1088,8\n558#1:1097\n582#1:1098,2\n625#1:1100,2\n677#1:1102\n677#1:1103,3\n678#1:1106\n678#1:1107,3\n700#1:1110\n700#1:1111,3\n*E\n"})
+@Metadata(d1 = {"\u0000®\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010$\n\u0002\u0010 \n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0002\b\f\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\b\u0011\u0018\u0000 d2\u00020\u0001:\u000edefghijklmnopqB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\b\u0010\u001b\u001a\u00020\u0005H\u0002J\b\u0010\u001f\u001a\u00020 H\u0002J\u0010\u0010)\u001a\u00020\u00052\u0006\u0010*\u001a\u00020\u0005H\u0002J\u0010\u0010+\u001a\u00020\u00052\u0006\u0010,\u001a\u00020\u0005H\u0002J\u0010\u0010-\u001a\u00020\u00052\u0006\u0010.\u001a\u00020\u0005H\u0002J \u0010/\u001a\u00020\u00052\u0006\u0010!\u001a\u00020\u00052\u0006\u00100\u001a\u00020\u00052\u0006\u00101\u001a\u00020\u0005H\u0002J\u0010\u00102\u001a\u00020\u00052\u0006\u00103\u001a\u00020\u0005H\u0002J\u0010\u00104\u001a\u0002052\u0006\u00106\u001a\u000207H\u0016J\u0010\u00108\u001a\u00020\u00052\u0006\u00109\u001a\u00020\u0005H\u0002J\u0018\u0010:\u001a\u00020\u00052\b\b\u0002\u0010;\u001a\u00020\u0005H\u0082@¢\u0006\u0002\u0010<J&\u0010=\u001a\u000e\u0012\u0004\u0012\u00020\u0005\u0012\u0004\u0012\u00020\u00050\u001d2\n\b\u0002\u0010.\u001a\u0004\u0018\u00010\u0005H\u0082@¢\u0006\u0002\u0010<J\u001a\u0010>\u001a\u0004\u0018\u00010?2\b\b\u0002\u0010@\u001a\u00020AH\u0082@¢\u0006\u0002\u0010BJ(\u0010C\u001a\n\u0012\u0004\u0012\u00020D\u0018\u00010\u001e2\u0006\u0010E\u001a\u00020A2\b\b\u0002\u0010@\u001a\u00020AH\u0082@¢\u0006\u0002\u0010FJ\"\u0010G\u001a\u0004\u0018\u00010?2\u0006\u0010H\u001a\u00020\u00052\b\b\u0002\u0010@\u001a\u00020AH\u0082@¢\u0006\u0002\u0010IJ\"\u0010J\u001a\u0004\u0018\u00010K2\u0006\u00100\u001a\u00020\u00052\b\b\u0002\u0010L\u001a\u00020AH\u0082@¢\u0006\u0002\u0010IJ\u001e\u0010O\u001a\u00020Q2\u0006\u0010R\u001a\u00020A2\u0006\u0010S\u001a\u00020TH\u0096@¢\u0006\u0002\u0010UJ\u001c\u0010V\u001a\b\u0012\u0004\u0012\u00020W0\u001e2\u0006\u0010X\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010<J\u0018\u0010Y\u001a\u0004\u0018\u00010Z2\u0006\u00103\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010<JF\u0010[\u001a\u00020\u000e2\u0006\u0010\\\u001a\u00020\u00052\u0006\u0010]\u001a\u00020\u000e2\u0012\u0010^\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u00020a0_2\u0012\u0010b\u001a\u000e\u0012\u0004\u0012\u000207\u0012\u0004\u0012\u00020a0_H\u0096@¢\u0006\u0002\u0010cR\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u001a\u0010\u0014\u001a\b\u0012\u0004\u0012\u00020\u00160\u0015X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0018R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u0004¢\u0006\u0002\n\u0000R \u0010\u001c\u001a\u0014\u0012\u0004\u0012\u00020\u0005\u0012\n\u0012\b\u0012\u0004\u0012\u00020\u00050\u001e0\u001dX\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010!\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\"\u001a\u00020 X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0005X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020\u0005X\u0082D¢\u0006\u0002\n\u0000R\u0010\u0010&\u001a\u0004\u0018\u00010\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010'\u001a\u00020(X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010M\u001a\b\u0012\u0004\u0012\u00020N0\u001eX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bO\u0010P¨\u0006r"}, d2 = {"Lcom/cncverse/CineTvProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "random", "Ljava/security/SecureRandom;", "generateDeviceId", "brandModels", "", "", "randomBrandModel", "Lcom/cncverse/CineTvProvider$BrandModel;", "deviceId", "brandModel", "mobMfr", "mobModel", "gaid", "token", "mapper", "Lcom/fasterxml/jackson/databind/ObjectMapper;", "des3Decrypt", "encryptedText", "md5Hash", "text", "generateSign", "curTime", "generateP2pToken", "vodId", "timestamp", "signVideoUrl", "url", "getVideoInterceptor", "Lokhttp3/Interceptor;", "extractorLink", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "aesDecrypt", "encryptedBase64", "fetchDeviceToken", "invitedBy", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getHeaders", "searchRecommend", "Lcom/cncverse/CineTvProvider$ApiResponse;", "pageNumber", "", "(ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "topicVodList", "Lcom/cncverse/CineTvProvider$VodItem;", "topicId", "(IILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "searchVod", "keyword", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVodInfo", "Lcom/cncverse/CineTvProvider$VodInfoResponse;", "audioType", "mainPage", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "BrandModel", "VodItem", "ApiResponse", "TopicResult", "TopicApiResponse", "InitResponse", "InitResult", "UserInfo", "VodCollection", "AudioTypeOption", "SeriesInfo", "VodInfoResult", "VodInfoResponse", "CineTvProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nCineTvProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CineTvProvider.kt\ncom/cncverse/CineTvProvider\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,732:1\n1#2:733\n1#2:747\n1#2:762\n1#2:777\n1#2:792\n1#2:807\n221#3,2:734\n221#3,2:749\n221#3,2:764\n221#3,2:779\n221#3,2:794\n116#4:736\n54#4:737\n117#4:738\n61#4,8:739\n71#4:748\n116#4:751\n54#4:752\n117#4:753\n61#4,8:754\n71#4:763\n116#4:766\n54#4:767\n117#4:768\n61#4,8:769\n71#4:778\n116#4:781\n54#4:782\n117#4:783\n61#4,8:784\n71#4:793\n116#4:796\n54#4:797\n117#4:798\n61#4,8:799\n71#4:808\n1915#5,2:809\n1915#5,2:811\n1586#5:813\n1661#5,3:814\n1586#5:817\n1661#5,3:818\n1586#5:821\n1661#5,3:822\n*S KotlinDebug\n*F\n+ 1 CineTvProvider.kt\ncom/cncverse/CineTvProvider\n*L\n345#1:747\n417#1:762\n452#1:777\n488#1:792\n528#1:807\n327#1:734,2\n406#1:749,2\n441#1:764,2\n477#1:779,2\n517#1:794,2\n345#1:736\n345#1:737\n345#1:738\n345#1:739,8\n345#1:748\n417#1:751\n417#1:752\n417#1:753\n417#1:754,8\n417#1:763\n452#1:766\n452#1:767\n452#1:768\n452#1:769,8\n452#1:778\n488#1:781\n488#1:782\n488#1:783\n488#1:784,8\n488#1:793\n528#1:796\n528#1:797\n528#1:798\n528#1:799,8\n528#1:808\n551#1:809,2\n594#1:811,2\n646#1:813\n646#1:814,3\n647#1:817\n647#1:818,3\n669#1:821\n669#1:822,3\n*E\n"})
 public final class CineTvProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
-
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
 
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @Nullable
     private String token;
@@ -191,7 +165,7 @@ public final class CineTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CineTvProvider$getHeaders$1 */
     /* JADX INFO: compiled from: CineTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0}, l = {390}, m = "getHeaders", n = {"curTime", "timestamp"}, nl = {394}, s = {"L$0", "L$1"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0}, l = {360}, m = "getHeaders", n = {"curTime", "timestamp"}, nl = {364}, s = {"L$0", "L$1"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -214,7 +188,7 @@ public final class CineTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CineTvProvider$getMainPage$1 */
     /* JADX INFO: compiled from: CineTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 1, 1}, l = {575, 577}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {577, 574}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 1, 1}, l = {544, 546}, m = "getMainPage", n = {"request", "page", "request", "page"}, nl = {546, 543}, s = {"L$0", "I$0", "L$0", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -236,7 +210,7 @@ public final class CineTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CineTvProvider$getVodInfo$1 */
     /* JADX INFO: compiled from: CineTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0, 0}, l = {531}, m = "getVodInfo", n = {"vodId", "url", "curTime", "audioType"}, nl = {534}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0, 0}, l = {501}, m = "getVodInfo", n = {"vodId", "url", "curTime", "audioType"}, nl = {504}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
     static final class C00021 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -260,7 +234,7 @@ public final class CineTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CineTvProvider$load$1 */
     /* JADX INFO: compiled from: CineTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {669, 689, 708}, m = "load", n = {"url", "parts", "vodId", "typePid", "url", "parts", "vodId", "vodInfoResponse", "vodInfo", "name", "posterUrl", "year", "plot", "score", "tags", "actors", "movieData", "typePid", "url", "parts", "vodId", "vodInfoResponse", "vodInfo", "name", "posterUrl", "year", "plot", "score", "tags", "actors", "episodes", "typePid"}, nl = {670, 700, 717}, s = {"L$0", "L$1", "L$2", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {638, 658, 677}, m = "load", n = {"url", "parts", "vodId", "typePid", "url", "parts", "vodId", "vodInfoResponse", "vodInfo", "name", "posterUrl", "year", "plot", "score", "tags", "actors", "movieData", "typePid", "url", "parts", "vodId", "vodInfoResponse", "vodInfo", "name", "posterUrl", "year", "plot", "score", "tags", "actors", "episodes", "typePid"}, nl = {639, 669, 686}, s = {"L$0", "L$1", "L$2", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "I$0"}, v = 2)
     static final class C00031 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -294,7 +268,7 @@ public final class CineTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CineTvProvider$loadLinks$1 */
     /* JADX INFO: compiled from: CineTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {751, 764}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "vodId", "isCasting", "collection", "data", "subtitleCallback", "callback", "parts", "vodId", "vodInfoResponse", "vodInfo", "episode", "videoUrl", "signedUrl", "isCasting", "collection"}, nl = {752, 763}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {704, 717}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "vodId", "isCasting", "collection", "data", "subtitleCallback", "callback", "parts", "vodId", "vodInfoResponse", "vodInfo", "episode", "videoUrl", "signedUrl", "isCasting", "collection"}, nl = {705, 716}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0", "I$0"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -327,7 +301,7 @@ public final class CineTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CineTvProvider$search$1 */
     /* JADX INFO: compiled from: CineTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0}, l = {620}, m = "search", n = {"query"}, nl = {621}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0}, l = {589}, m = "search", n = {"query"}, nl = {590}, s = {"L$0"}, v = 2)
     static final class C00081 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -348,7 +322,7 @@ public final class CineTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CineTvProvider$searchRecommend$1 */
     /* JADX INFO: compiled from: CineTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0}, l = {426}, m = "searchRecommend", n = {"url", "curTime", "pageNumber"}, nl = {428}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0}, l = {396}, m = "searchRecommend", n = {"url", "curTime", "pageNumber"}, nl = {398}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00091 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -371,7 +345,7 @@ public final class CineTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CineTvProvider$searchVod$1 */
     /* JADX INFO: compiled from: CineTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0, 0}, l = {496}, m = "searchVod", n = {"keyword", "url", "curTime", "pageNumber"}, nl = {498}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0, 0}, l = {466}, m = "searchVod", n = {"keyword", "url", "curTime", "pageNumber"}, nl = {468}, s = {"L$0", "L$1", "L$2", "I$0"}, v = 2)
     static final class C00101 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -395,7 +369,7 @@ public final class CineTvProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.CineTvProvider$topicVodList$1 */
     /* JADX INFO: compiled from: CineTvProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0, 0}, l = {460}, m = "topicVodList", n = {"url", "curTime", "topicId", "pageNumber"}, nl = {462}, s = {"L$0", "L$1", "I$0", "I$1"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.CineTvProvider", f = "CineTvProvider.kt", i = {0, 0, 0, 0}, l = {430}, m = "topicVodList", n = {"url", "curTime", "topicId", "pageNumber"}, nl = {432}, s = {"L$0", "L$1", "I$0", "I$1"}, v = 2)
     static final class C00111 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -417,65 +391,13 @@ public final class CineTvProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: CineTvProvider.kt */
-    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0007\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0012X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0012X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0012X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0012X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0012X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u001aX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001b\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001aX\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001e"}, d2 = {"Lcom/cncverse/CineTvProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "SECRET_KEY_ENCRYPTED", "", "DES_KEY", "DES_IV", "AES_KEY", "AES_IV", "WS_SECRET", "OMG10", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "CineTvProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nCineTvProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CineTvProvider.kt\ncom/cncverse/CineTvProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1021:1\n1#2:1022\n*E\n"})
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0006\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000bX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000bX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u000f\u001a\u00020\u000bX\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u000bX\u0082D¢\u0006\u0002\n\u0000¨\u0006\u0011"}, d2 = {"Lcom/cncverse/CineTvProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "SECRET_KEY_ENCRYPTED", "", "DES_KEY", "DES_IV", "AES_KEY", "AES_IV", "WS_SECRET", "CineTvProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                CineTvProvider.csGuardWasEverActive = true;
-            }
-            return CineTvProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.CineTvProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    CineTvProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -527,7 +449,7 @@ public final class CineTvProvider extends MainAPI {
     private final String generateDeviceId() {
         byte[] bytes = new byte[16];
         this.random.nextBytes(bytes);
-        return ArraysKt.joinToString$default(bytes, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda2
+        return ArraysKt.joinToString$default(bytes, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda1
             public final Object invoke(Object obj) {
                 return CineTvProvider.generateDeviceId$lambda$0(((Byte) obj).byteValue());
             }
@@ -2220,7 +2142,7 @@ public final class CineTvProvider extends MainAPI {
 
     @NotNull
     public Interceptor getVideoInterceptor(@NotNull ExtractorLink extractorLink) {
-        return new Interceptor() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda13
+        return new Interceptor() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda5
             public final Response intercept(Interceptor.Chain chain) {
                 return CineTvProvider.getVideoInterceptor$lambda$0(this.f$0, chain);
             }
@@ -2801,13 +2723,14 @@ public final class CineTvProvider extends MainAPI {
     }
 
     /* JADX INFO: Thrown type has an unknown type hierarchy: com.fasterxml.jackson.databind.RuntimeJsonMappingException */
-    /* JADX WARN: Code duplicated, block: B:25:0x008d  */
-    /* JADX WARN: Code duplicated, block: B:32:0x00b4  */
-    /* JADX WARN: Code duplicated, block: B:35:0x00c2  */
-    /* JADX WARN: Code duplicated, block: B:37:0x00d1 A[DONT_GENERATE] */
-    /* JADX WARN: Code duplicated, block: B:38:0x00d4  */
-    /* JADX WARN: Code duplicated, block: B:39:0x010d  */
-    /* JADX WARN: Code duplicated, block: B:42:0x014c  */
+    /* JADX WARN: Code duplicated, block: B:21:0x0076  */
+    /* JADX WARN: Code duplicated, block: B:22:0x007b  */
+    /* JADX WARN: Code duplicated, block: B:29:0x00a0  */
+    /* JADX WARN: Code duplicated, block: B:32:0x00ae  */
+    /* JADX WARN: Code duplicated, block: B:34:0x00bd A[DONT_GENERATE] */
+    /* JADX WARN: Code duplicated, block: B:35:0x00c0  */
+    /* JADX WARN: Code duplicated, block: B:36:0x00f9  */
+    /* JADX WARN: Code duplicated, block: B:39:0x0138  */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws RuntimeJsonMappingException {
@@ -2815,6 +2738,7 @@ public final class CineTvProvider extends MainAPI {
         Object obj;
         Object objSearchRecommend;
         ApiResponse apiResponse;
+        Iterable result;
         List items;
         boolean z;
         final VodItem vod;
@@ -2832,16 +2756,10 @@ public final class CineTvProvider extends MainAPI {
         }
         Object $result = c00011.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        Iterable result = null;
         switch (c00011.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                cineTvProvider.showTelegramPopup();
-                cineTvProvider.showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(cineTvProvider.getName());
                 if (Intrinsics.areEqual(request2.getData(), "1")) {
                     c00011.L$0 = request2;
                     c00011.I$0 = page;
@@ -2853,6 +2771,8 @@ public final class CineTvProvider extends MainAPI {
                     apiResponse = (ApiResponse) objSearchRecommend;
                     if (apiResponse != null) {
                         result = apiResponse.getResult();
+                    } else {
+                        result = null;
                     }
                     items = new ArrayList();
                     if (result != null) {
@@ -2863,14 +2783,14 @@ public final class CineTvProvider extends MainAPI {
                             vod = (VodItem) element$iv;
                             switch (vod.getTypePid()) {
                                 case 1:
-                                    items.add(MainAPIKt.newMovieSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",1", TvType.Movie, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda10
+                                    items.add(MainAPIKt.newMovieSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",1", TvType.Movie, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda2
                                         public final Object invoke(Object obj2) {
                                             return CineTvProvider.getMainPage$lambda$0$0(vod, (MovieSearchResponse) obj2);
                                         }
                                     }, 8, (Object) null));
                                     break;
                                 case 2:
-                                    items.add(MainAPIKt.newTvSeriesSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",2", TvType.TvSeries, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda11
+                                    items.add(MainAPIKt.newTvSeriesSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",2", TvType.TvSeries, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda3
                                         public final Object invoke(Object obj2) {
                                             return CineTvProvider.getMainPage$lambda$0$1(vod, (TvSeriesSearchResponse) obj2);
                                         }
@@ -2901,14 +2821,14 @@ public final class CineTvProvider extends MainAPI {
                         vod = (VodItem) element$iv;
                         switch (vod.getTypePid()) {
                             case 1:
-                                items.add(MainAPIKt.newMovieSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",1", TvType.Movie, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda10
+                                items.add(MainAPIKt.newMovieSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",1", TvType.Movie, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda2
                                     public final Object invoke(Object obj2) {
                                         return CineTvProvider.getMainPage$lambda$0$0(vod, (MovieSearchResponse) obj2);
                                     }
                                 }, 8, (Object) null));
                                 break;
                             case 2:
-                                items.add(MainAPIKt.newTvSeriesSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",2", TvType.TvSeries, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda11
+                                items.add(MainAPIKt.newTvSeriesSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",2", TvType.TvSeries, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda3
                                     public final Object invoke(Object obj2) {
                                         return CineTvProvider.getMainPage$lambda$0$1(vod, (TvSeriesSearchResponse) obj2);
                                     }
@@ -2928,6 +2848,8 @@ public final class CineTvProvider extends MainAPI {
                 apiResponse = (ApiResponse) objSearchRecommend;
                 if (apiResponse != null) {
                     result = apiResponse.getResult();
+                } else {
+                    result = null;
                 }
                 items = new ArrayList();
                 if (result != null) {
@@ -2938,14 +2860,14 @@ public final class CineTvProvider extends MainAPI {
                         vod = (VodItem) element$iv;
                         switch (vod.getTypePid()) {
                             case 1:
-                                items.add(MainAPIKt.newMovieSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",1", TvType.Movie, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda10
+                                items.add(MainAPIKt.newMovieSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",1", TvType.Movie, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda2
                                     public final Object invoke(Object obj2) {
                                         return CineTvProvider.getMainPage$lambda$0$0(vod, (MovieSearchResponse) obj2);
                                     }
                                 }, 8, (Object) null));
                                 break;
                             case 2:
-                                items.add(MainAPIKt.newTvSeriesSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",2", TvType.TvSeries, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda11
+                                items.add(MainAPIKt.newTvSeriesSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",2", TvType.TvSeries, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda3
                                     public final Object invoke(Object obj2) {
                                         return CineTvProvider.getMainPage$lambda$0$1(vod, (TvSeriesSearchResponse) obj2);
                                     }
@@ -2972,14 +2894,14 @@ public final class CineTvProvider extends MainAPI {
                         vod = (VodItem) element$iv;
                         switch (vod.getTypePid()) {
                             case 1:
-                                items.add(MainAPIKt.newMovieSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",1", TvType.Movie, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda10
+                                items.add(MainAPIKt.newMovieSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",1", TvType.Movie, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda2
                                     public final Object invoke(Object obj2) {
                                         return CineTvProvider.getMainPage$lambda$0$0(vod, (MovieSearchResponse) obj2);
                                     }
                                 }, 8, (Object) null));
                                 break;
                             case 2:
-                                items.add(MainAPIKt.newTvSeriesSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",2", TvType.TvSeries, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda11
+                                items.add(MainAPIKt.newTvSeriesSearchResponse$default(cineTvProvider, vod.getVodName(), vod.getId() + ",2", TvType.TvSeries, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda3
                                     public final Object invoke(Object obj2) {
                                         return CineTvProvider.getMainPage$lambda$0$1(vod, (TvSeriesSearchResponse) obj2);
                                     }
@@ -3034,10 +2956,6 @@ public final class CineTvProvider extends MainAPI {
         switch (c00082.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 if (StringsKt.isBlank(query)) {
                     return CollectionsKt.emptyList();
                 }
@@ -3064,14 +2982,14 @@ public final class CineTvProvider extends MainAPI {
                 final VodItem vod = (VodItem) element$iv;
                 switch (vod.getTypePid()) {
                     case 1:
-                        items.add(MainAPIKt.newMovieSearchResponse$default(this, vod.getVodName(), vod.getId() + ",1", TvType.Movie, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda14
+                        items.add(MainAPIKt.newMovieSearchResponse$default(this, vod.getVodName(), vod.getId() + ",1", TvType.Movie, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda6
                             public final Object invoke(Object obj) {
                                 return CineTvProvider.search$lambda$0$0(vod, (MovieSearchResponse) obj);
                             }
                         }, 8, (Object) null));
                         break;
                     case 2:
-                        items.add(MainAPIKt.newTvSeriesSearchResponse$default(this, vod.getVodName(), vod.getId() + ",2", TvType.TvSeries, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda15
+                        items.add(MainAPIKt.newTvSeriesSearchResponse$default(this, vod.getVodName(), vod.getId() + ",2", TvType.TvSeries, false, new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda7
                             public final Object invoke(Object obj) {
                                 return CineTvProvider.search$lambda$0$1(vod, (TvSeriesSearchResponse) obj);
                             }
@@ -3348,7 +3266,7 @@ public final class CineTvProvider extends MainAPI {
                                 } else {
                                     iIntValue = 1;
                                 }
-                                destination$iv$iv.add(MainAPIKt.newEpisode(cineTvProvider, sbAppend2.append(iIntValue).toString(), new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda12
+                                destination$iv$iv.add(MainAPIKt.newEpisode(cineTvProvider, sbAppend2.append(iIntValue).toString(), new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda4
                                     public final Object invoke(Object obj2) {
                                         return CineTvProvider.load$lambda$4$0(collection4, (Episode) obj2);
                                     }
@@ -3511,7 +3429,7 @@ public final class CineTvProvider extends MainAPI {
                                 } else {
                                     iIntValue = 1;
                                 }
-                                destination$iv$iv.add(MainAPIKt.newEpisode(cineTvProvider2, sbAppend3.append(iIntValue).toString(), new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda12
+                                destination$iv$iv.add(MainAPIKt.newEpisode(cineTvProvider2, sbAppend3.append(iIntValue).toString(), new Function1() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda4
                                     public final Object invoke(Object obj2) {
                                         return CineTvProvider.load$lambda$4$0(collection5, (Episode) obj2);
                                     }
@@ -3717,16 +3635,16 @@ public final class CineTvProvider extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:62:0x01b1  */
-    /* JADX WARN: Code duplicated, block: B:65:0x01bd  */
-    /* JADX WARN: Code duplicated, block: B:71:0x01d8  */
-    /* JADX WARN: Code duplicated, block: B:79:0x01e7  */
+    /* JADX WARN: Code duplicated, block: B:34:0x0139  */
+    /* JADX WARN: Code duplicated, block: B:37:0x0145  */
+    /* JADX WARN: Code duplicated, block: B:43:0x0160  */
+    /* JADX WARN: Code duplicated, block: B:51:0x016f  */
+    /* JADX WARN: Code duplicated, block: B:53:0x0177  */
+    /* JADX WARN: Code duplicated, block: B:59:0x01ec A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:60:0x01ed  */
+    /* JADX WARN: Code duplicated, block: B:63:0x0205  */
+    /* JADX WARN: Code duplicated, block: B:68:0x0166 A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    /* JADX WARN: Code duplicated, block: B:81:0x01ef  */
-    /* JADX WARN: Code duplicated, block: B:87:0x0264 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:88:0x0265  */
-    /* JADX WARN: Code duplicated, block: B:91:0x027d  */
-    /* JADX WARN: Code duplicated, block: B:96:0x01de A[SYNTHETIC] */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) throws NoSuchAlgorithmException {
         C00061 c00061;
@@ -3766,24 +3684,6 @@ public final class CineTvProvider extends MainAPI {
         switch (c00062.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                CineTvProvider $this$loadLinks_u24lambda_u240 = this;
-                final Context _ctx = context;
-                SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                long _nowSec = System.currentTimeMillis() / 1000;
-                boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                if (!_isSubscribed) {
-                    if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda5
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                CineTvProvider.loadLinks$lambda$0$0(_ctx);
-                            }
-                        });
-                    }
-                    $this$loadLinks_u24lambda_u240.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                }
                 List parts2 = StringsKt.split$default(data, new String[]{"|"}, false, 0, 6, (Object) null);
                 if (parts2.size() != 2) {
                     return Boxing.boxBoolean(false);
@@ -3846,7 +3746,7 @@ public final class CineTvProvider extends MainAPI {
                                 String name = cineTvProvider.getName();
                                 String name2 = cineTvProvider.getName();
                                 ExtractorLinkType extractorLinkType = ExtractorLinkType.VIDEO;
-                                C00073 c00073 = cineTvProvider.new C00073(null);
+                                C00072 c00072 = cineTvProvider.new C00072(null);
                                 c00062.L$0 = SpillingKt.nullOutSpilledVariable(data2);
                                 c00062.L$1 = SpillingKt.nullOutSpilledVariable(function4);
                                 c00062.L$2 = SpillingKt.nullOutSpilledVariable(function3);
@@ -3861,7 +3761,7 @@ public final class CineTvProvider extends MainAPI {
                                 c00062.Z$0 = isCasting2;
                                 c00062.I$0 = collection;
                                 c00062.label = 2;
-                                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, signedUrl, extractorLinkType, c00073, c00062);
+                                objNewExtractorLink = ExtractorApiKt.newExtractorLink(name, name2, signedUrl, extractorLinkType, c00072, c00062);
                                 if (objNewExtractorLink == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
@@ -3879,7 +3779,7 @@ public final class CineTvProvider extends MainAPI {
                             String name3 = cineTvProvider.getName();
                             String name4 = cineTvProvider.getName();
                             ExtractorLinkType extractorLinkType2 = ExtractorLinkType.VIDEO;
-                            C00073 c00074 = cineTvProvider.new C00073(null);
+                            C00072 c00073 = cineTvProvider.new C00072(null);
                             c00062.L$0 = SpillingKt.nullOutSpilledVariable(data2);
                             c00062.L$1 = SpillingKt.nullOutSpilledVariable(function4);
                             c00062.L$2 = SpillingKt.nullOutSpilledVariable(function3);
@@ -3894,7 +3794,7 @@ public final class CineTvProvider extends MainAPI {
                             c00062.Z$0 = isCasting2;
                             c00062.I$0 = collection;
                             c00062.label = 2;
-                            objNewExtractorLink = ExtractorApiKt.newExtractorLink(name3, name4, signedUrl2, extractorLinkType2, c00074, c00062);
+                            objNewExtractorLink = ExtractorApiKt.newExtractorLink(name3, name4, signedUrl2, extractorLinkType2, c00073, c00062);
                             if (objNewExtractorLink == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -3957,7 +3857,7 @@ public final class CineTvProvider extends MainAPI {
                             String name5 = cineTvProvider.getName();
                             String name6 = cineTvProvider.getName();
                             ExtractorLinkType extractorLinkType3 = ExtractorLinkType.VIDEO;
-                            C00073 c00075 = cineTvProvider.new C00073(null);
+                            C00072 c00074 = cineTvProvider.new C00072(null);
                             c00062.L$0 = SpillingKt.nullOutSpilledVariable(data2);
                             c00062.L$1 = SpillingKt.nullOutSpilledVariable(function4);
                             c00062.L$2 = SpillingKt.nullOutSpilledVariable(function3);
@@ -3972,7 +3872,7 @@ public final class CineTvProvider extends MainAPI {
                             c00062.Z$0 = isCasting2;
                             c00062.I$0 = collection;
                             c00062.label = 2;
-                            objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, name6, signedUrl3, extractorLinkType3, c00075, c00062);
+                            objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, name6, signedUrl3, extractorLinkType3, c00074, c00062);
                             if (objNewExtractorLink == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -3991,7 +3891,7 @@ public final class CineTvProvider extends MainAPI {
                         String name7 = cineTvProvider.getName();
                         String name8 = cineTvProvider.getName();
                         ExtractorLinkType extractorLinkType4 = ExtractorLinkType.VIDEO;
-                        C00073 c00076 = cineTvProvider.new C00073(null);
+                        C00072 c00075 = cineTvProvider.new C00072(null);
                         c00062.L$0 = SpillingKt.nullOutSpilledVariable(data2);
                         c00062.L$1 = SpillingKt.nullOutSpilledVariable(function4);
                         c00062.L$2 = SpillingKt.nullOutSpilledVariable(function3);
@@ -4006,7 +3906,7 @@ public final class CineTvProvider extends MainAPI {
                         c00062.Z$0 = isCasting2;
                         c00062.I$0 = collection;
                         c00062.label = 2;
-                        objNewExtractorLink = ExtractorApiKt.newExtractorLink(name7, name8, signedUrl4, extractorLinkType4, c00076, c00062);
+                        objNewExtractorLink = ExtractorApiKt.newExtractorLink(name7, name8, signedUrl4, extractorLinkType4, c00075, c00062);
                         if (objNewExtractorLink == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -4031,27 +3931,22 @@ public final class CineTvProvider extends MainAPI {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
-    /* JADX INFO: renamed from: com.cncverse.CineTvProvider$loadLinks$3 */
+    /* JADX INFO: renamed from: com.cncverse.CineTvProvider$loadLinks$2 */
     /* JADX INFO: compiled from: CineTvProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.CineTvProvider$loadLinks$3", f = "CineTvProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00073 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.CineTvProvider$loadLinks$2", f = "CineTvProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00072 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         private /* synthetic */ Object L$0;
         int label;
 
-        C00073(Continuation<? super C00073> continuation) {
+        C00072(Continuation<? super C00072> continuation) {
             super(2, continuation);
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00073 = CineTvProvider.this.new C00073(continuation);
-            c00073.L$0 = obj;
-            return c00073;
+            Continuation<Unit> c00072 = CineTvProvider.this.new C00072(continuation);
+            c00072.L$0 = obj;
+            return c00072;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -4070,296 +3965,6 @@ public final class CineTvProvider extends MainAPI {
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda1
-                @Override // java.lang.Runnable
-                public final void run() {
-                    CineTvProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    CineTvProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda4
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    CineTvProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda6
-            @Override // java.lang.Runnable
-            public final void run() {
-                CineTvProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda8
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda9
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    CineTvProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.CineTvProvider$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                CineTvProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
         }
     }
 }

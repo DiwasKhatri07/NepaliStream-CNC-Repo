@@ -4,7 +4,7 @@ package nepali.stream.decoded.hdoprovider
 object PluginMetadata {
     const val name: String = "HDOProvider"
     const val originalPluginClass: String = "com.hdo.HDOProviderPlugin"
-    const val version: Int = 33
+    const val version: Int = 34
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import androidx.appcompat.app.AppCompatActivity;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lagradost.cloudstream3.CommonActivity;
@@ -37,7 +38,7 @@ import org.jetbrains.annotations.Nullable;
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/M3UPlaylistPlayerProvider/CNCVerse/java/classes.dex */
 @CloudstreamPlugin
 @Metadata(d1 = {"\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\b\u0007\u0018\u00002\u00020\u0001B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u0010\u0010\u0006\u001a\u00020\u00072\u0006\u0010\b\u001a\u00020\tH\u0016R\u0010\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0082\u0004¢\u0006\u0002\n\u0000¨\u0006\n"}, d2 = {"Lcom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayerPlugin;", "Lcom/lagradost/cloudstream3/plugins/Plugin;", "<init>", "()V", "sharedPref", "Landroid/content/SharedPreferences;", "load", "", "context", "Landroid/content/Context;", "M3UPlaylistPlayerProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nM3UPlaylistPlayerPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 M3UPlaylistPlayerPlugin.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayerPlugin\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,46:1\n63#2:47\n64#2,15:49\n1#3:48\n50#4:64\n43#4:65\n1915#5,2:66\n*S KotlinDebug\n*F\n+ 1 M3UPlaylistPlayerPlugin.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayerPlugin\n*L\n20#1:47\n20#1:49,15\n20#1:48\n20#1:64\n20#1:65\n26#1:66,2\n*E\n"})
+@SourceDebugExtension({"SMAP\nM3UPlaylistPlayerPlugin.kt\nKotlin\n*S Kotlin\n*F\n+ 1 M3UPlaylistPlayerPlugin.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayerPlugin\n+ 2 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 5 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,47:1\n63#2:48\n64#2,15:50\n1#3:49\n50#4:65\n43#4:66\n1915#5,2:67\n*S KotlinDebug\n*F\n+ 1 M3UPlaylistPlayerPlugin.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayerPlugin\n*L\n21#1:48\n21#1:50,15\n21#1:49\n21#1:65\n21#1:66\n27#1:67,2\n*E\n"})
 public final class M3UPlaylistPlayerPlugin extends Plugin {
 
     @Nullable
@@ -53,6 +54,7 @@ public final class M3UPlaylistPlayerPlugin extends Plugin {
         Object obj;
         Object objDecodeFromString;
         String string;
+        DonationManager.INSTANCE.setActivity(context);
         M3UPlaylistPlayer.INSTANCE.setContext(context);
         SharedPreferences sharedPreferences = this.sharedPref;
         String playlistsJson = "[]";

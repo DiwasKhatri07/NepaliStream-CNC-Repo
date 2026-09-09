@@ -1,24 +1,8 @@
 package com.cncverse.M3UPlaylistPlayer;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lagradost.cloudstream3.HomePageList;
@@ -33,7 +17,6 @@ import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvType;
 import com.lagradost.cloudstream3.mvvm.ArchComponentExtKt;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.DrmExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
@@ -41,7 +24,6 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.cloudstream3.utils.Qualities;
 import java.io.Closeable;
-import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -87,7 +69,6 @@ import kotlin.jvm.internal.SourceDebugExtension;
 import kotlin.reflect.KType;
 import kotlin.reflect.KTypeProjection;
 import kotlin.text.CharsKt;
-import kotlin.text.Charsets;
 import kotlin.text.MatchGroup;
 import kotlin.text.MatchGroupCollection;
 import kotlin.text.MatchResult;
@@ -110,10 +91,9 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/M3UPlaylistPlayerProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000~\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\n\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 M2\u00020\u0001:\u0002MNB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0016\u0010%\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u0010'J\u000e\u0010(\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u000e\u0010)\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u0010\u0010*\u001a\u00020+2\u0006\u0010&\u001a\u00020\u0003H\u0002J\u0010\u0010,\u001a\u00020\u00032\u0006\u0010-\u001a\u00020\u0003H\u0002J$\u0010.\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0012\u0010/\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eH\u0002J\u0018\u00100\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0006\u00101\u001a\u00020\u0003H\u0002J\u001e\u00102\u001a\u0002032\u0006\u00104\u001a\u0002052\u0006\u00106\u001a\u000207H\u0096@¢\u0006\u0002\u00108J\u001c\u00109\u001a\b\u0012\u0004\u0012\u00020;0:2\u0006\u0010<\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'J\u0016\u0010=\u001a\u00020>2\u0006\u0010&\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'JF\u0010?\u001a\u00020\u00132\u0006\u0010@\u001a\u00020\u00032\u0006\u0010A\u001a\u00020\u00132\u0012\u0010B\u001a\u000e\u0012\u0004\u0012\u00020D\u0012\u0004\u0012\u00020+0C2\u0012\u0010E\u001a\u000e\u0012\u0004\u0012\u00020F\u0012\u0004\u0012\u00020+0CH\u0096@¢\u0006\u0002\u0010GJ\u0012\u0010H\u001a\u0004\u0018\u00010I2\u0006\u0010J\u001a\u00020FH\u0016J\b\u0010K\u001a\u00020+H\u0002J\b\u0010L\u001a\u00020+H\u0002R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR\u001a\u0010\u000f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\t\"\u0004\b\u0011\u0010\u000bR\u0014\u0010\u0012\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0015R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001f\u001a\u00020 8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b#\u0010$\u001a\u0004\b!\u0010\"¨\u0006O"}, d2 = {"Lcom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer;", "Lcom/lagradost/cloudstream3/MainAPI;", "customName", "", "customMainUrl", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "lang", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "customHttpClient", "Lokhttp3/OkHttpClient;", "getCustomHttpClient", "()Lokhttp3/OkHttpClient;", "customHttpClient$delegate", "Lkotlin/Lazy;", "getWithCustomHeaders", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "base64ToHexOrNull", "hexToBase64UrlOrNull", "openInExternalBrowser", "", "decryptContent", "content", "getMpdStream", "customHeaders", "getDRMKeysFromLicenseServer", "kid", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVideoInterceptor", "Lokhttp3/Interceptor;", "extractorLink", "showTelegramPopup", "showSubscriptionPopupIfNeeded", "Companion", "LoadData", "M3UPlaylistPlayerProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nM3UPlaylistPlayer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 M3UPlaylistPlayer.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,1313:1\n296#2,2:1314\n1586#2:1316\n1661#2,3:1317\n296#2,2:1339\n1512#2:1341\n1538#2,3:1342\n1541#2,3:1352\n1586#2:1358\n1661#2,3:1359\n777#2:1363\n873#2,2:1364\n1586#2:1366\n1661#2,3:1367\n1586#2:1408\n1661#2,3:1409\n63#3:1320\n64#3,15:1322\n63#3:1370\n64#3,15:1372\n63#3:1389\n64#3,15:1391\n1#4:1321\n1#4:1371\n1#4:1390\n1#4:1412\n50#5:1337\n43#5:1338\n50#5:1387\n43#5:1388\n50#5:1406\n43#5:1407\n383#6,7:1345\n129#7:1355\n158#7,2:1356\n160#7:1362\n*S KotlinDebug\n*F\n+ 1 M3UPlaylistPlayer.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer\n*L\n138#1:1314,2\n194#1:1316\n194#1:1317,3\n301#1:1339,2\n315#1:1341\n315#1:1342,3\n315#1:1352,3\n317#1:1358\n317#1:1359,3\n347#1:1363\n347#1:1364,2\n347#1:1366\n347#1:1367,3\n486#1:1408\n486#1:1409,3\n298#1:1320\n298#1:1322,15\n368#1:1370\n368#1:1372,15\n412#1:1389\n412#1:1391,15\n298#1:1321\n368#1:1371\n412#1:1390\n298#1:1337\n298#1:1338\n368#1:1387\n368#1:1388\n412#1:1406\n412#1:1407\n315#1:1345,7\n315#1:1355\n315#1:1356,2\n315#1:1362\n*E\n"})
+@Metadata(d1 = {"\u0000z\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 J2\u00020\u0001:\u0002JKB\u0017\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0016\u0010%\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u0010'J\u000e\u0010(\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u000e\u0010)\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u0010\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u0003H\u0002J$\u0010,\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0012\u0010-\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eH\u0002J\u0018\u0010.\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0006\u0010/\u001a\u00020\u0003H\u0002J\u001e\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u000205H\u0096@¢\u0006\u0002\u00106J\u001c\u00107\u001a\b\u0012\u0004\u0012\u000209082\u0006\u0010:\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'J\u0016\u0010;\u001a\u00020<2\u0006\u0010&\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'JF\u0010=\u001a\u00020\u00132\u0006\u0010>\u001a\u00020\u00032\u0006\u0010?\u001a\u00020\u00132\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020C0A2\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020E\u0012\u0004\u0012\u00020C0AH\u0096@¢\u0006\u0002\u0010FJ\u0012\u0010G\u001a\u0004\u0018\u00010H2\u0006\u0010I\u001a\u00020EH\u0016R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR\u001a\u0010\u000f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\t\"\u0004\b\u0011\u0010\u000bR\u0014\u0010\u0012\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0015R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001f\u001a\u00020 8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b#\u0010$\u001a\u0004\b!\u0010\"¨\u0006L"}, d2 = {"Lcom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer;", "Lcom/lagradost/cloudstream3/MainAPI;", "customName", "", "customMainUrl", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "lang", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "customHttpClient", "Lokhttp3/OkHttpClient;", "getCustomHttpClient", "()Lokhttp3/OkHttpClient;", "customHttpClient$delegate", "Lkotlin/Lazy;", "getWithCustomHeaders", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "base64ToHexOrNull", "hexToBase64UrlOrNull", "decryptContent", "content", "getMpdStream", "customHeaders", "getDRMKeysFromLicenseServer", "kid", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "getVideoInterceptor", "Lokhttp3/Interceptor;", "extractorLink", "Companion", "LoadData", "M3UPlaylistPlayerProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nM3UPlaylistPlayer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 M3UPlaylistPlayer.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,1031:1\n296#2,2:1032\n1586#2:1034\n1661#2,3:1035\n296#2,2:1057\n1512#2:1059\n1538#2,3:1060\n1541#2,3:1070\n1586#2:1076\n1661#2,3:1077\n777#2:1081\n873#2,2:1082\n1586#2:1084\n1661#2,3:1085\n1586#2:1126\n1661#2,3:1127\n63#3:1038\n64#3,15:1040\n63#3:1088\n64#3,15:1090\n63#3:1107\n64#3,15:1109\n1#4:1039\n1#4:1089\n1#4:1108\n50#5:1055\n43#5:1056\n50#5:1105\n43#5:1106\n50#5:1124\n43#5:1125\n383#6,7:1063\n129#7:1073\n158#7,2:1074\n160#7:1080\n*S KotlinDebug\n*F\n+ 1 M3UPlaylistPlayer.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer\n*L\n108#1:1032,2\n164#1:1034\n164#1:1035,3\n254#1:1057,2\n267#1:1059\n267#1:1060,3\n267#1:1070,3\n269#1:1076\n269#1:1077,3\n299#1:1081\n299#1:1082,2\n299#1:1084\n299#1:1085,3\n422#1:1126\n422#1:1127,3\n251#1:1038\n251#1:1040,15\n320#1:1088\n320#1:1090,15\n348#1:1107\n348#1:1109,15\n251#1:1039\n320#1:1089\n348#1:1108\n251#1:1055\n251#1:1056\n320#1:1105\n320#1:1106\n348#1:1124\n348#1:1125\n267#1:1063,7\n267#1:1073\n267#1:1074,2\n267#1:1080\n*E\n"})
 public final class M3UPlaylistPlayer extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
@@ -128,15 +108,8 @@ public final class M3UPlaylistPlayer extends MainAPI {
     @NotNull
     public static final String EXT_VLC_OPT = "#EXTVLCOPT";
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private final String customMainUrl;
@@ -163,7 +136,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
 
     /* JADX INFO: renamed from: customHttpClient$delegate, reason: from kotlin metadata */
     @NotNull
-    private final Lazy customHttpClient = LazyKt.lazy(new Function0() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda4
+    private final Lazy customHttpClient = LazyKt.lazy(new Function0() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda1
         public final Object invoke() {
             return M3UPlaylistPlayer.customHttpClient_delegate$lambda$0(this.f$0);
         }
@@ -172,7 +145,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$getMainPage$1 */
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer", f = "M3UPlaylistPlayer.kt", i = {0, 0}, l = {312}, m = "getMainPage", n = {"request", "page"}, nl = {313}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer", f = "M3UPlaylistPlayer.kt", i = {0, 0}, l = {264}, m = "getMainPage", n = {"request", "page"}, nl = {265}, s = {"L$0", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -194,7 +167,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$1 */
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer", f = "M3UPlaylistPlayer.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6}, l = {458, 497, 517, 535, 561, 582, 605}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "headers", "normalizedKey", "normalizedKid", "playerKey", "playerKid", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "userAgent", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting"}, nl = {457, 496, 516, 534, 560, 581, 604}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer", f = "M3UPlaylistPlayer.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6}, l = {394, 433, 453, 471, 497, 518, 541}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "headers", "normalizedKey", "normalizedKid", "playerKey", "playerKid", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "userAgent", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting"}, nl = {393, 432, 452, 470, 496, 517, 540}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
     static final class C00051 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -230,7 +203,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$search$1 */
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer", f = "M3UPlaylistPlayer.kt", i = {0}, l = {344}, m = "search", n = {"query"}, nl = {345}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer", f = "M3UPlaylistPlayer.kt", i = {0}, l = {296}, m = "search", n = {"query"}, nl = {297}, s = {"L$0"}, v = 2)
     static final class C00131 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -256,65 +229,13 @@ public final class M3UPlaylistPlayer extends MainAPI {
     }
 
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
-    @Metadata(d1 = {"\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0002\b\u0004\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0012X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0014\u001a\u00020\u0012X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0017X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0018\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\u0017X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lcom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "EXT_M3U", "", "EXT_INF", "EXT_VLC_OPT", "OMG10", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "M3UPlaylistPlayerProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nM3UPlaylistPlayer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 M3UPlaylistPlayer.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1313:1\n1#2:1314\n*E\n"})
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lcom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "EXT_M3U", "", "EXT_INF", "EXT_VLC_OPT", "M3UPlaylistPlayerProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                M3UPlaylistPlayer.csGuardWasEverActive = true;
-            }
-            return M3UPlaylistPlayer.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    M3UPlaylistPlayer.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -461,7 +382,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
             int padding = (4 - (value.length() % 4)) % 4;
             String normalized = value + StringsKt.repeat("=", padding);
             byte[] decoded = Base64.decode(normalized, 0);
-            return ArraysKt.joinToString$default(decoded, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda5
+            return ArraysKt.joinToString$default(decoded, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda2
                 public final Object invoke(Object obj) {
                     return M3UPlaylistPlayer.base64ToHexOrNull$lambda$1(((Byte) obj).byteValue());
                 }
@@ -497,34 +418,6 @@ public final class M3UPlaylistPlayer extends MainAPI {
             }
         }
         return null;
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                M3UPlaylistPlayer.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
-        }
     }
 
     private final String decryptContent(String content) {
@@ -725,12 +618,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
         switch (c00011.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String mainUrl = getMainUrl();
                 c00011.L$0 = SpillingKt.nullOutSpilledVariable(request);
                 c00011.I$0 = page;
@@ -806,7 +694,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                 String cookie2 = cookie == null ? "" : cookie;
                 String licenseUrl = channel.getLicenseUrl();
                 String licenseUrl2 = licenseUrl == null ? "" : licenseUrl;
-                destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), channel.getHeaders())), TvType.Live, false, new Function1() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda1
+                destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), channel.getHeaders())), TvType.Live, false, new Function1() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda0
                     public final Object invoke(Object obj2) {
                         return M3UPlaylistPlayer.getMainPage$lambda$1$0$0(posterurl, channel, (LiveSearchResponse) obj2);
                     }
@@ -855,10 +743,6 @@ public final class M3UPlaylistPlayer extends MainAPI {
         switch (c00131.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 String mainUrl = getMainUrl();
                 c00131.L$0 = query;
                 c00131.label = 1;
@@ -909,7 +793,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
             String cookie2 = cookie == null ? "" : cookie;
             String licenseUrl = channel.getLicenseUrl();
             String licenseUrl2 = licenseUrl == null ? "" : licenseUrl;
-            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), channel.getHeaders())), TvType.Live, false, new Function1() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda7
+            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), channel.getHeaders())), TvType.Live, false, new Function1() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda3
                 public final Object invoke(Object obj) {
                     return M3UPlaylistPlayer.search$lambda$1$0(posterurl, channel, (LiveSearchResponse) obj);
                 }
@@ -1272,11 +1156,11 @@ public final class M3UPlaylistPlayer extends MainAPI {
         }
     }
 
-    /* JADX WARN: Code duplicated, block: B:102:0x0356  */
-    /* JADX WARN: Code duplicated, block: B:155:0x0456  */
-    /* JADX WARN: Code duplicated, block: B:158:0x045d  */
-    /* JADX WARN: Code duplicated, block: B:161:0x04da A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:162:0x04db  */
+    /* JADX WARN: Code duplicated, block: B:127:0x03da  */
+    /* JADX WARN: Code duplicated, block: B:130:0x03e1  */
+    /* JADX WARN: Code duplicated, block: B:133:0x045d A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:134:0x045e  */
+    /* JADX WARN: Code duplicated, block: B:74:0x02dd  */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
@@ -1308,9 +1192,9 @@ public final class M3UPlaylistPlayer extends MainAPI {
         LoadData loadData4;
         Function1<? super ExtractorLink, Unit> function10;
         String string;
+        LoadData loadData5;
         Function1<? super ExtractorLink, Unit> function11;
         Function1<? super SubtitleFile, Unit> function12;
-        LoadData loadData5;
         Object obj2;
         Function1<? super ExtractorLink, Unit> function13;
         Object objNewDrmExtractorLink;
@@ -1318,9 +1202,8 @@ public final class M3UPlaylistPlayer extends MainAPI {
         MatchGroupCollection groups;
         MatchGroup matchGroup;
         String normalizedKey;
-        String normalizedKid;
-        String mappedKey;
         String mpdKidHex;
+        String mappedKey;
         String playerKey;
         String playerKid;
         Object objNewDrmExtractorLink2;
@@ -1345,24 +1228,6 @@ public final class M3UPlaylistPlayer extends MainAPI {
         switch (c00052.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                M3UPlaylistPlayer $this$loadLinks_u24lambda_u240 = this;
-                final Context _ctx = context;
-                SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                long _nowSec = System.currentTimeMillis() / 1000;
-                boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                if (!_isSubscribed) {
-                    if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda6
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                M3UPlaylistPlayer.loadLinks$lambda$0$0(_ctx);
-                            }
-                        });
-                    }
-                    $this$loadLinks_u24lambda_u240.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                }
                 AppUtils appUtils = AppUtils.INSTANCE;
                 try {
                     Result.Companion companion = Result.Companion;
@@ -1424,7 +1289,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                         String name2 = getName();
                         String url = loadData6.getUrl();
                         ExtractorLinkType extractorLinkType = ExtractorLinkType.M3U8;
-                        C00107 c00107 = new C00107(headers, null);
+                        C00106 c00106 = new C00106(headers, null);
                         c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
                         c00052.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                         c00052.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1433,7 +1298,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                         c00052.L$5 = function15;
                         c00052.Z$0 = isCasting;
                         c00052.label = 5;
-                        objNewExtractorLink3 = ExtractorApiKt.newExtractorLink(name, name2, url, extractorLinkType, c00107, c00052);
+                        objNewExtractorLink3 = ExtractorApiKt.newExtractorLink(name, name2, url, extractorLinkType, c00106, c00052);
                         if (objNewExtractorLink3 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1456,7 +1321,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                         String name4 = getName();
                         String url2 = loadData6.getUrl();
                         ExtractorLinkType extractorLinkType2 = ExtractorLinkType.M3U8;
-                        C00118 c00118 = new C00118(headers2, null);
+                        C00117 c00117 = new C00117(headers2, null);
                         c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
                         c00052.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                         c00052.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1466,7 +1331,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                         c00052.L$6 = function15;
                         c00052.Z$0 = isCasting;
                         c00052.label = 6;
-                        objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name3, name4, url2, extractorLinkType2, c00118, c00052);
+                        objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name3, name4, url2, extractorLinkType2, c00117, c00052);
                         if (objNewExtractorLink2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1492,7 +1357,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                     String title = loadData6.getTitle();
                     String url3 = loadData6.getUrl();
                     ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
-                    C00129 c00129 = new C00129(headers3, null);
+                    C00128 c00128 = new C00128(headers3, null);
                     c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00052.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00052.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1501,7 +1366,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                     c00052.L$5 = function15;
                     c00052.Z$0 = isCasting;
                     c00052.label = 7;
-                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, title, url3, infer_type, c00129, c00052);
+                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, title, url3, infer_type, c00128, c00052);
                     if (objNewExtractorLink == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1537,13 +1402,12 @@ public final class M3UPlaylistPlayer extends MainAPI {
                     if (normalizedKey2 == null) {
                         normalizedKey2 = StringsKt.trim(loadData6.getKey()).toString();
                     }
-                    String normalizedKid2 = base64ToHexOrNull(loadData6.getKeyid());
-                    if (normalizedKid2 == null) {
-                        normalizedKid2 = StringsKt.trim(loadData6.getKeyid()).toString();
+                    String normalizedKid = base64ToHexOrNull(loadData6.getKeyid());
+                    if (normalizedKid == null) {
+                        normalizedKid = StringsKt.trim(loadData6.getKeyid()).toString();
                     }
                     if (!loadData6.getDrmKeys().isEmpty()) {
                         normalizedKey = normalizedKey2;
-                        normalizedKid = normalizedKid2;
                         MatchResult matchResultFind$default = Regex.find$default(new Regex("cenc:default_KID=[\"']([0-9a-fA-F\\-]{36})[\"']"), getMpdStream(loadData6.getUrl(), headers4), 0, 2, (Object) null);
                         if (matchResultFind$default == null || (groups2 = matchResultFind$default.getGroups()) == null || (matchGroup2 = groups2.get(1)) == null || (value = matchGroup2.getValue()) == null || (strReplace$default = StringsKt.replace$default(value, "-", "", false, 4, (Object) null)) == null) {
                             mpdKidHex = null;
@@ -1572,15 +1436,15 @@ public final class M3UPlaylistPlayer extends MainAPI {
                         String playerKey2 = loadData6.getUrl();
                         ExtractorLinkType infer_type2 = ExtractorApiKt.getINFER_TYPE();
                         UUID clearkey_uuid = ExtractorApiKt.getCLEARKEY_UUID();
-                        String normalizedKid3 = mpdKidHex;
-                        C00063 c00063 = new C00063(headers4, playerKey, playerKid, null);
+                        String normalizedKid2 = mpdKidHex;
+                        C00062 c00062 = new C00062(headers4, playerKey, playerKid, null);
                         c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
                         c00052.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                         c00052.L$2 = SpillingKt.nullOutSpilledVariable(function15);
                         c00052.L$3 = SpillingKt.nullOutSpilledVariable(loadData6);
                         c00052.L$4 = SpillingKt.nullOutSpilledVariable(headers4);
                         c00052.L$5 = SpillingKt.nullOutSpilledVariable(normalizedKey3);
-                        c00052.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid3);
+                        c00052.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid2);
                         c00052.L$7 = SpillingKt.nullOutSpilledVariable(playerKey);
                         c00052.L$8 = SpillingKt.nullOutSpilledVariable(playerKid);
                         c00052.L$9 = function15;
@@ -1588,7 +1452,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                         c00052.I$0 = i2;
                         c00052.I$1 = i3;
                         c00052.label = 1;
-                        objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name6, normalizedKey4, playerKey2, infer_type2, clearkey_uuid, c00063, c00052);
+                        objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name6, normalizedKey4, playerKey2, infer_type2, clearkey_uuid, c00062, c00052);
                         if (objNewDrmExtractorLink2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1596,9 +1460,8 @@ public final class M3UPlaylistPlayer extends MainAPI {
                         return Boxing.boxBoolean(true);
                     }
                     normalizedKey = normalizedKey2;
-                    normalizedKid = normalizedKid2;
-                    mappedKey = normalizedKey;
                     mpdKidHex = normalizedKid;
+                    mappedKey = normalizedKey;
                     playerKey = hexToBase64UrlOrNull(mappedKey);
                     if (playerKey == null) {
                         playerKey = mappedKey;
@@ -1613,15 +1476,15 @@ public final class M3UPlaylistPlayer extends MainAPI {
                     String playerKey3 = loadData6.getUrl();
                     ExtractorLinkType infer_type3 = ExtractorApiKt.getINFER_TYPE();
                     UUID clearkey_uuid2 = ExtractorApiKt.getCLEARKEY_UUID();
-                    String normalizedKid4 = mpdKidHex;
-                    C00063 c00064 = new C00063(headers4, playerKey, playerKid, null);
+                    String normalizedKid3 = mpdKidHex;
+                    C00062 c00063 = new C00062(headers4, playerKey, playerKid, null);
                     c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00052.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00052.L$2 = SpillingKt.nullOutSpilledVariable(function15);
                     c00052.L$3 = SpillingKt.nullOutSpilledVariable(loadData6);
                     c00052.L$4 = SpillingKt.nullOutSpilledVariable(headers4);
                     c00052.L$5 = SpillingKt.nullOutSpilledVariable(normalizedKey5);
-                    c00052.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid4);
+                    c00052.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid3);
                     c00052.L$7 = SpillingKt.nullOutSpilledVariable(playerKey);
                     c00052.L$8 = SpillingKt.nullOutSpilledVariable(playerKid);
                     c00052.L$9 = function15;
@@ -1629,7 +1492,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                     c00052.I$0 = i2;
                     c00052.I$1 = i3;
                     c00052.label = 1;
-                    objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name7, normalizedKey6, playerKey3, infer_type3, clearkey_uuid2, c00064, c00052);
+                    objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name7, normalizedKey6, playerKey3, infer_type3, clearkey_uuid2, c00063, c00052);
                     if (objNewDrmExtractorLink2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1642,7 +1505,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                     String name9 = getName();
                     String url4 = loadData6.getUrl();
                     ExtractorLinkType extractorLinkType3 = ExtractorLinkType.DASH;
-                    C00096 c00096 = new C00096(headers4, null);
+                    C00095 c00095 = new C00095(headers4, null);
                     c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00052.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00052.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1653,7 +1516,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                     c00052.I$0 = i2;
                     c00052.I$1 = i4;
                     c00052.label = 4;
-                    objNewExtractorLink4 = ExtractorApiKt.newExtractorLink(name8, name9, url4, extractorLinkType3, c00096, c00052);
+                    objNewExtractorLink4 = ExtractorApiKt.newExtractorLink(name8, name9, url4, extractorLinkType3, c00095, c00052);
                     if (objNewExtractorLink4 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1690,7 +1553,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                     String keyBase65 = loadData6.getUrl();
                     ExtractorLinkType infer_type4 = ExtractorApiKt.getINFER_TYPE();
                     UUID clearkey_uuid3 = ExtractorApiKt.getCLEARKEY_UUID();
-                    C00074 c00074 = new C00074(headers4, keyBase64, drmKidBase64, null);
+                    C00073 c00073 = new C00073(headers4, keyBase64, drmKidBase64, null);
                     c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00052.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00052.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1708,7 +1571,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                     c00052.I$0 = i2;
                     c00052.I$1 = i4;
                     c00052.label = 2;
-                    objNewDrmExtractorLink = ExtractorApiKt.newDrmExtractorLink(name10, drmKidBase65, keyBase65, infer_type4, clearkey_uuid3, c00074, c00052);
+                    objNewDrmExtractorLink = ExtractorApiKt.newDrmExtractorLink(name10, drmKidBase65, keyBase65, infer_type4, clearkey_uuid3, c00073, c00052);
                     if (objNewDrmExtractorLink == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1721,7 +1584,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
                 String url5 = loadData6.getUrl();
                 ExtractorLinkType infer_type5 = ExtractorApiKt.getINFER_TYPE();
                 UUID clearkey_uuid4 = ExtractorApiKt.getCLEARKEY_UUID();
-                C00085 c00085 = new C00085(headers4, loadData6, null);
+                C00084 c00084 = new C00084(headers4, loadData6, null);
                 c00052.L$0 = SpillingKt.nullOutSpilledVariable(data);
                 c00052.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                 c00052.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1739,13 +1602,13 @@ public final class M3UPlaylistPlayer extends MainAPI {
                 c00052.I$0 = i2;
                 c00052.I$1 = i4;
                 c00052.label = 3;
-                Object objNewDrmExtractorLink3 = ExtractorApiKt.newDrmExtractorLink(name11, name12, url5, infer_type5, clearkey_uuid4, c00085, c00052);
+                Object objNewDrmExtractorLink3 = ExtractorApiKt.newDrmExtractorLink(name11, name12, url5, infer_type5, clearkey_uuid4, c00084, c00052);
                 if (objNewDrmExtractorLink3 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
+                loadData5 = loadData6;
                 function11 = function15;
                 function12 = function1;
-                loadData5 = loadData6;
                 obj2 = objNewDrmExtractorLink3;
                 function13 = function11;
                 function11.invoke(obj2);
@@ -1835,16 +1698,11 @@ public final class M3UPlaylistPlayer extends MainAPI {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
-    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$3 */
+    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$2 */
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/DrmExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$3", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00063 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$2", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00062 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ String $playerKey;
         final /* synthetic */ String $playerKid;
@@ -1852,7 +1710,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00063(Map<String, String> map, String str, String str2, Continuation<? super C00063> continuation) {
+        C00062(Map<String, String> map, String str, String str2, Continuation<? super C00062> continuation) {
             super(2, continuation);
             this.$headers = map;
             this.$playerKey = str;
@@ -1860,9 +1718,9 @@ public final class M3UPlaylistPlayer extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00063 = new C00063(this.$headers, this.$playerKey, this.$playerKid, continuation);
-            c00063.L$0 = obj;
-            return c00063;
+            Continuation<Unit> c00062 = new C00062(this.$headers, this.$playerKey, this.$playerKid, continuation);
+            c00062.L$0 = obj;
+            return c00062;
         }
 
         public final Object invoke(DrmExtractorLink drmExtractorLink, Continuation<? super Unit> continuation) {
@@ -1888,11 +1746,11 @@ public final class M3UPlaylistPlayer extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$4 */
+    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$3 */
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/DrmExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$4", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00074 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$3", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00073 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $drmKidBase64;
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ String $keyBase64;
@@ -1900,7 +1758,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00074(Map<String, String> map, String str, String str2, Continuation<? super C00074> continuation) {
+        C00073(Map<String, String> map, String str, String str2, Continuation<? super C00073> continuation) {
             super(2, continuation);
             this.$headers = map;
             this.$keyBase64 = str;
@@ -1908,9 +1766,9 @@ public final class M3UPlaylistPlayer extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00074 = new C00074(this.$headers, this.$keyBase64, this.$drmKidBase64, continuation);
-            c00074.L$0 = obj;
-            return c00074;
+            Continuation<Unit> c00073 = new C00073(this.$headers, this.$keyBase64, this.$drmKidBase64, continuation);
+            c00073.L$0 = obj;
+            return c00073;
         }
 
         public final Object invoke(DrmExtractorLink drmExtractorLink, Continuation<? super Unit> continuation) {
@@ -1936,27 +1794,27 @@ public final class M3UPlaylistPlayer extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$5 */
+    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$4 */
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/DrmExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$5", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00085 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$4", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00084 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ LoadData $loadData;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00085(Map<String, String> map, LoadData loadData, Continuation<? super C00085> continuation) {
+        C00084(Map<String, String> map, LoadData loadData, Continuation<? super C00084> continuation) {
             super(2, continuation);
             this.$headers = map;
             this.$loadData = loadData;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00085 = new C00085(this.$headers, this.$loadData, continuation);
-            c00085.L$0 = obj;
-            return c00085;
+            Continuation<Unit> c00084 = new C00084(this.$headers, this.$loadData, continuation);
+            c00084.L$0 = obj;
+            return c00084;
         }
 
         public final Object invoke(DrmExtractorLink drmExtractorLink, Continuation<? super Unit> continuation) {
@@ -1981,25 +1839,68 @@ public final class M3UPlaylistPlayer extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$6 */
+    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$5 */
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$6", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00096 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$5", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00095 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00096(Map<String, String> map, Continuation<? super C00096> continuation) {
+        C00095(Map<String, String> map, Continuation<? super C00095> continuation) {
             super(2, continuation);
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00096 = new C00096(this.$headers, continuation);
-            c00096.L$0 = obj;
-            return c00096;
+            Continuation<Unit> c00095 = new C00095(this.$headers, continuation);
+            c00095.L$0 = obj;
+            return c00095;
+        }
+
+        public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
+            return create(extractorLink, continuation).invokeSuspend(Unit.INSTANCE);
+        }
+
+        public final Object invokeSuspend(Object $result) {
+            ExtractorLink $this$newExtractorLink = (ExtractorLink) this.L$0;
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            switch (this.label) {
+                case 0:
+                    ResultKt.throwOnFailure($result);
+                    $this$newExtractorLink.setReferer("");
+                    $this$newExtractorLink.setQuality(Qualities.Unknown.getValue());
+                    if (!this.$headers.isEmpty()) {
+                        $this$newExtractorLink.setHeaders(this.$headers);
+                    }
+                    return Unit.INSTANCE;
+                default:
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+        }
+    }
+
+    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$6 */
+    /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$6", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00106 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+        final /* synthetic */ Map<String, String> $headers;
+        private /* synthetic */ Object L$0;
+        int label;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        C00106(Map<String, String> map, Continuation<? super C00106> continuation) {
+            super(2, continuation);
+            this.$headers = map;
+        }
+
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            Continuation<Unit> c00106 = new C00106(this.$headers, continuation);
+            c00106.L$0 = obj;
+            return c00106;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -2028,64 +1929,21 @@ public final class M3UPlaylistPlayer extends MainAPI {
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$7", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00107 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00117 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00107(Map<String, String> map, Continuation<? super C00107> continuation) {
+        C00117(Map<String, String> map, Continuation<? super C00117> continuation) {
             super(2, continuation);
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00107 = new C00107(this.$headers, continuation);
-            c00107.L$0 = obj;
-            return c00107;
-        }
-
-        public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
-            return create(extractorLink, continuation).invokeSuspend(Unit.INSTANCE);
-        }
-
-        public final Object invokeSuspend(Object $result) {
-            ExtractorLink $this$newExtractorLink = (ExtractorLink) this.L$0;
-            IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            switch (this.label) {
-                case 0:
-                    ResultKt.throwOnFailure($result);
-                    $this$newExtractorLink.setReferer("");
-                    $this$newExtractorLink.setQuality(Qualities.Unknown.getValue());
-                    if (!this.$headers.isEmpty()) {
-                        $this$newExtractorLink.setHeaders(this.$headers);
-                    }
-                    return Unit.INSTANCE;
-                default:
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            }
-        }
-    }
-
-    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$8 */
-    /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$8", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00118 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
-        final /* synthetic */ Map<String, String> $headers;
-        private /* synthetic */ Object L$0;
-        int label;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00118(Map<String, String> map, Continuation<? super C00118> continuation) {
-            super(2, continuation);
-            this.$headers = map;
-        }
-
-        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00118 = new C00118(this.$headers, continuation);
-            c00118.L$0 = obj;
-            return c00118;
+            Continuation<Unit> c00117 = new C00117(this.$headers, continuation);
+            c00117.L$0 = obj;
+            return c00117;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -2108,25 +1966,25 @@ public final class M3UPlaylistPlayer extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$9 */
+    /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$8 */
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$9", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00129 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$loadLinks$8", f = "M3UPlaylistPlayer.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00128 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00129(Map<String, String> map, Continuation<? super C00129> continuation) {
+        C00128(Map<String, String> map, Continuation<? super C00128> continuation) {
             super(2, continuation);
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00129 = new C00129(this.$headers, continuation);
-            c00129.L$0 = obj;
-            return c00129;
+            Continuation<Unit> c00128 = new C00128(this.$headers, continuation);
+            c00128.L$0 = obj;
+            return c00128;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -2154,7 +2012,7 @@ public final class M3UPlaylistPlayer extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$getVideoInterceptor$1 */
     /* JADX INFO: compiled from: M3UPlaylistPlayer.kt */
     @Metadata(d1 = {"\u0000\u001d\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000*\u0001\u0000\b\n\u0018\u00002\u00020\u0001J\u0010\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0016R\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u000e¢\u0006\u0002\n\u0000¨\u0006\b"}, d2 = {"com/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer$getVideoInterceptor$1", "Lokhttp3/Interceptor;", "currentCookie", "", "intercept", "Lokhttp3/Response;", "chain", "Lokhttp3/Interceptor$Chain;", "M3UPlaylistPlayerProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nM3UPlaylistPlayer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 M3UPlaylistPlayer.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer$getVideoInterceptor$1\n+ 2 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1313:1\n221#2,2:1314\n1586#3:1316\n1661#3,3:1317\n1915#3,2:1320\n1915#3,2:1322\n*S KotlinDebug\n*F\n+ 1 M3UPlaylistPlayer.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer$getVideoInterceptor$1\n*L\n643#1:1314,2\n660#1:1316\n660#1:1317,3\n664#1:1320,2\n672#1:1322,2\n*E\n"})
+    @SourceDebugExtension({"SMAP\nM3UPlaylistPlayer.kt\nKotlin\n*S Kotlin\n*F\n+ 1 M3UPlaylistPlayer.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer$getVideoInterceptor$1\n+ 2 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1031:1\n221#2,2:1032\n1586#3:1034\n1661#3,3:1035\n1915#3,2:1038\n1915#3,2:1040\n*S KotlinDebug\n*F\n+ 1 M3UPlaylistPlayer.kt\ncom/cncverse/M3UPlaylistPlayer/M3UPlaylistPlayer$getVideoInterceptor$1\n*L\n579#1:1032,2\n596#1:1034\n596#1:1035,3\n600#1:1038,2\n608#1:1040,2\n*E\n"})
     public static final class C00021 implements Interceptor {
         final /* synthetic */ ExtractorLink $extractorLink;
         private String currentCookie;
@@ -2245,267 +2103,5 @@ public final class M3UPlaylistPlayer extends MainAPI {
     @Nullable
     public Interceptor getVideoInterceptor(@NotNull ExtractorLink extractorLink) {
         return new C00021(extractorLink);
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                M3UPlaylistPlayer.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda2
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda3
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    M3UPlaylistPlayer.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda11
-                @Override // java.lang.Runnable
-                public final void run() {
-                    M3UPlaylistPlayer.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda9
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    M3UPlaylistPlayer.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.M3UPlaylistPlayer.M3UPlaylistPlayer$$ExternalSyntheticLambda10
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    M3UPlaylistPlayer.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
     }
 }

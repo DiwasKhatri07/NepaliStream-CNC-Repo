@@ -1,24 +1,8 @@
 package com.cncverse.desiserials;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.lagradost.cloudstream3.Episode;
 import com.lagradost.cloudstream3.HomePageList;
 import com.lagradost.cloudstream3.HomePageResponse;
@@ -34,12 +18,10 @@ import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
 import com.lagradost.cloudstream3.TvSeriesSearchResponse;
 import com.lagradost.cloudstream3.TvType;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.nicehttp.NiceResponse;
 import com.lagradost.nicehttp.Requests;
 import com.lagradost.nicehttp.ResponseParser;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
@@ -83,24 +65,16 @@ import org.jsoup.select.Elements;
 
 /* JADX INFO: compiled from: DesiSerialsProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/DesiSerialsProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000\u0080\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0000\n\u0002\u0010\u001c\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\u0018\u0000 B2\u00020\u0001:\u0001BB\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\u000e\u0010&\u001a\u0004\u0018\u00010'*\u00020(H\u0002J\u001c\u0010)\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0018\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J>\u0010/\u001a\b\u0012\u0004\u0012\u0002H00\u001c\"\u0004\b\u0000\u00101\"\b\b\u0001\u00100*\u000202*\b\u0012\u0004\u0012\u0002H1032\u0014\u00104\u001a\u0010\u0012\u0004\u0012\u0002H1\u0012\u0006\u0012\u0004\u0018\u0001H005H\u0002JF\u00106\u001a\u00020\u000e2\u0006\u00107\u001a\u00020\u00052\u0006\u00108\u001a\u00020\u000e2\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020;052\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020;05H\u0096@¢\u0006\u0002\u0010>J\b\u0010?\u001a\u00020;H\u0002J\b\u0010@\u001a\u00020;H\u0002J\u0010\u0010A\u001a\u00020;2\u0006\u0010.\u001a\u00020\u0005H\u0002R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006C"}, d2 = {"Lcom/cncverse/desiserials/DesiSerialsProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "mapNotBlank", "R", "T", "", "", "transform", "Lkotlin/Function1;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "showSubscriptionPopupIfNeeded", "showTelegramPopup", "openInExternalBrowser", "Companion", "DesiSerialsProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nDesiSerialsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,718:1\n1642#2,10:719\n1915#2:729\n1916#2:731\n1652#2:732\n1586#2:734\n1661#2,3:735\n1642#2,10:738\n1915#2:748\n1916#2:750\n1652#2:751\n1915#2,2:752\n1642#2,10:754\n1915#2:764\n1916#2:766\n1652#2:767\n1586#2:768\n1661#2,3:769\n1642#2,10:773\n1915#2:783\n1916#2:785\n1652#2:786\n777#2:787\n873#2,2:788\n1586#2:790\n1661#2,3:791\n1586#2:794\n1661#2,3:795\n777#2:798\n873#2,2:799\n1915#2,2:801\n1586#2:822\n1661#2,3:823\n1915#2:826\n1915#2,2:827\n1915#2,2:829\n1915#2,2:831\n1915#2,2:833\n1916#2:835\n1915#2,2:836\n1#3:730\n1#3:733\n1#3:749\n1#3:765\n1#3:772\n1#3:784\n1#3:804\n1#3:838\n63#4:803\n64#4,15:805\n50#5:820\n43#5:821\n*S KotlinDebug\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider\n*L\n96#1:719,10\n96#1:729\n96#1:731\n96#1:732\n136#1:734\n136#1:735,3\n164#1:738,10\n164#1:748\n164#1:750\n164#1:751\n164#1:752,2\n195#1:754,10\n195#1:764\n195#1:766\n195#1:767\n197#1:768\n197#1:769,3\n244#1:773,10\n244#1:783\n244#1:785\n244#1:786\n244#1:787\n244#1:788,2\n448#1:790\n448#1:791,3\n449#1:794\n449#1:795,3\n449#1:798\n449#1:799,2\n455#1:801,2\n289#1:822\n289#1:823,3\n292#1:826\n317#1:827,2\n336#1:829,2\n365#1:831,2\n394#1:833,2\n292#1:835\n424#1:836,2\n96#1:730\n164#1:749\n195#1:765\n244#1:784\n463#1:804\n463#1:803\n463#1:805,15\n463#1:820\n463#1:821\n*E\n"})
+@Metadata(d1 = {"\u0000\u0080\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\b\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0010\u0000\n\u0002\u0010\u001c\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 ?2\u00020\u0001:\u0001?B\u0007¢\u0006\u0004\b\u0002\u0010\u0003J\u001e\u0010\u001e\u001a\u00020 2\u0006\u0010!\u001a\u00020\"2\u0006\u0010#\u001a\u00020$H\u0096@¢\u0006\u0002\u0010%J\u000e\u0010&\u001a\u0004\u0018\u00010'*\u00020(H\u0002J\u001c\u0010)\u001a\b\u0012\u0004\u0012\u00020'0\u001c2\u0006\u0010*\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J\u0018\u0010,\u001a\u0004\u0018\u00010-2\u0006\u0010.\u001a\u00020\u0005H\u0096@¢\u0006\u0002\u0010+J>\u0010/\u001a\b\u0012\u0004\u0012\u0002H00\u001c\"\u0004\b\u0000\u00101\"\b\b\u0001\u00100*\u000202*\b\u0012\u0004\u0012\u0002H1032\u0014\u00104\u001a\u0010\u0012\u0004\u0012\u0002H1\u0012\u0006\u0012\u0004\u0018\u0001H005H\u0002JF\u00106\u001a\u00020\u000e2\u0006\u00107\u001a\u00020\u00052\u0006\u00108\u001a\u00020\u000e2\u0012\u00109\u001a\u000e\u0012\u0004\u0012\u00020:\u0012\u0004\u0012\u00020;052\u0012\u0010<\u001a\u000e\u0012\u0004\u0012\u00020=\u0012\u0004\u0012\u00020;05H\u0096@¢\u0006\u0002\u0010>R\u001a\u0010\u0004\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u001a\u0010\n\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u000b\u0010\u0007\"\u0004\b\f\u0010\tR\u0014\u0010\r\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u000f\u0010\u0010R\u001a\u0010\u0011\u001a\u00020\u0005X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0012\u0010\u0007\"\u0004\b\u0013\u0010\tR\u0014\u0010\u0014\u001a\u00020\u000eX\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0015\u0010\u0010R\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u001a\u0010\u001b\u001a\b\u0012\u0004\u0012\u00020\u001d0\u001cX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001e\u0010\u001f¨\u0006@"}, d2 = {"Lcom/cncverse/desiserials/DesiSerialsProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "<init>", "()V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "hasDownloadSupport", "getHasDownloadSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "toSearchResult", "Lcom/lagradost/cloudstream3/SearchResponse;", "Lorg/jsoup/nodes/Element;", "search", "query", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "url", "mapNotBlank", "R", "T", "", "", "transform", "Lkotlin/Function1;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "DesiSerialsProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nDesiSerialsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n*L\n1#1,429:1\n1642#2,10:430\n1915#2:440\n1916#2:442\n1652#2:443\n1586#2:445\n1661#2,3:446\n1642#2,10:449\n1915#2:459\n1916#2:461\n1652#2:462\n1915#2,2:463\n1642#2,10:465\n1915#2:475\n1916#2:477\n1652#2:478\n1586#2:479\n1661#2,3:480\n1642#2,10:484\n1915#2:494\n1916#2:496\n1652#2:497\n777#2:498\n873#2,2:499\n1586#2:501\n1661#2,3:502\n1586#2:505\n1661#2,3:506\n777#2:509\n873#2,2:510\n1915#2,2:512\n1586#2:533\n1661#2,3:534\n1915#2:537\n1915#2,2:538\n1915#2,2:540\n1915#2,2:542\n1915#2,2:544\n1916#2:546\n1915#2,2:547\n1#3:441\n1#3:444\n1#3:460\n1#3:476\n1#3:483\n1#3:495\n1#3:515\n63#4:514\n64#4,15:516\n50#5:531\n43#5:532\n*S KotlinDebug\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider\n*L\n65#1:430,10\n65#1:440\n65#1:442\n65#1:443\n105#1:445\n105#1:446,3\n133#1:449,10\n133#1:459\n133#1:461\n133#1:462\n133#1:463,2\n164#1:465,10\n164#1:475\n164#1:477\n164#1:478\n166#1:479\n166#1:480,3\n213#1:484,10\n213#1:494\n213#1:496\n213#1:497\n213#1:498\n213#1:499,2\n401#1:501\n401#1:502,3\n402#1:505\n402#1:506,3\n402#1:509\n402#1:510,2\n408#1:512,2\n242#1:533\n242#1:534,3\n245#1:537\n270#1:538,2\n289#1:540,2\n318#1:542,2\n347#1:544,2\n245#1:546\n377#1:547,2\n65#1:441\n133#1:460\n164#1:476\n213#1:495\n416#1:515\n416#1:514\n416#1:516,15\n416#1:531\n416#1:532\n*E\n"})
 public final class DesiSerialsProvider extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
     public static final Companion INSTANCE = new Companion(null);
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     @NotNull
     private String mainUrl = "https://www.desi-serials.to";
@@ -122,7 +96,7 @@ public final class DesiSerialsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.desiserials.DesiSerialsProvider$getMainPage$1 */
     /* JADX INFO: compiled from: DesiSerialsProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider", f = "DesiSerialsProvider.kt", i = {0, 0, 0}, l = {85}, m = "getMainPage", n = {"request", "url", "page"}, nl = {88}, s = {"L$0", "L$1", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider", f = "DesiSerialsProvider.kt", i = {0, 0, 0}, l = {54}, m = "getMainPage", n = {"request", "url", "page"}, nl = {57}, s = {"L$0", "L$1", "I$0"}, v = 2)
     static final class C00001 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -145,7 +119,7 @@ public final class DesiSerialsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.desiserials.DesiSerialsProvider$load$1 */
     /* JADX INFO: compiled from: DesiSerialsProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider", f = "DesiSerialsProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {178, 202, 237}, m = "load", n = {"url", "url", "doc", "title", "posterRegex", "posterRaw", "poster", "episodes", "pages", "maxPage", "url", "doc", "title", "posterRegex", "posterRaw", "poster", "episodes", "pages", "maxPage"}, nl = {181, 222, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider", f = "DesiSerialsProvider.kt", i = {0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2}, l = {147, 171, 206}, m = "load", n = {"url", "url", "doc", "title", "posterRegex", "posterRaw", "poster", "episodes", "pages", "maxPage", "url", "doc", "title", "posterRegex", "posterRaw", "poster", "episodes", "pages", "maxPage"}, nl = {150, 191, -1}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "I$0"}, v = 2)
     static final class C00011 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -174,7 +148,7 @@ public final class DesiSerialsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.desiserials.DesiSerialsProvider$loadLinks$1 */
     /* JADX INFO: compiled from: DesiSerialsProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider", f = "DesiSerialsProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {445, 457, 464}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "doc", "iframes", "aLinks", "allLinks", "$this$forEach$iv", "element$iv", "it", "isCasting", "$i$f$forEach", "$i$a$-forEach-DesiSerialsProvider$loadLinks$3", "data", "subtitleCallback", "callback", "links", "isCasting"}, nl = {447, 458, 467}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider", f = "DesiSerialsProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2}, l = {398, 410, 417}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "isCasting", "data", "subtitleCallback", "callback", "doc", "iframes", "aLinks", "allLinks", "$this$forEach$iv", "element$iv", "it", "isCasting", "$i$f$forEach", "$i$a$-forEach-DesiSerialsProvider$loadLinks$2", "data", "subtitleCallback", "callback", "links", "isCasting"}, nl = {400, 411, 420}, s = {"L$0", "L$1", "L$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$9", "L$10", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "Z$0"}, v = 2)
     static final class C00041 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -208,7 +182,7 @@ public final class DesiSerialsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.desiserials.DesiSerialsProvider$search$1 */
     /* JADX INFO: compiled from: DesiSerialsProvider.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider", f = "DesiSerialsProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {137, 159}, m = "search", n = {"query", "queryLower", "seenUrls", "results", "homePageSlugs", "query", "queryLower", "seenUrls", "results", "homePageSlugs", "encodedQuery", "searchUrl"}, nl = {156, 162}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider", f = "DesiSerialsProvider.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1}, l = {106, 128}, m = "search", n = {"query", "queryLower", "seenUrls", "results", "homePageSlugs", "query", "queryLower", "seenUrls", "results", "homePageSlugs", "encodedQuery", "searchUrl"}, nl = {125, 131}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6"}, v = 2)
     static final class C00061 extends ContinuationImpl {
         Object L$0;
         Object L$1;
@@ -233,65 +207,13 @@ public final class DesiSerialsProvider extends MainAPI {
     }
 
     /* JADX INFO: compiled from: DesiSerialsProvider.kt */
-    @Metadata(d1 = {"\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0006\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\u0004\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u001c\u0010\f\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\u000e\"\u0004\b\u000f\u0010\u0010R\u000e\u0010\u0011\u001a\u00020\u0012X\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u0013\u001a\u00020\u0014X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0015\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0016\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0017\u001a\u00020\u0014X\u0082T¢\u0006\u0002\n\u0000¨\u0006\u0018"}, d2 = {"Lcom/cncverse/desiserials/DesiSerialsProvider$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "DesiSerialsProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nDesiSerialsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,718:1\n1#2:719\n*E\n"})
+    @Metadata(d1 = {"\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\t¨\u0006\n"}, d2 = {"Lcom/cncverse/desiserials/DesiSerialsProvider$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "DesiSerialsProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                DesiSerialsProvider.csGuardWasEverActive = true;
-            }
-            return DesiSerialsProvider.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.desiserials.DesiSerialsProvider$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    DesiSerialsProvider.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -370,12 +292,7 @@ public final class DesiSerialsProvider extends MainAPI {
         switch (c00001.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String url2 = page == 1 ? getMainUrl() + '/' + request.getData() + '/' : getMainUrl() + '/' + request.getData() + "/page/" + page + '/';
                 Requests app = MainActivityKt.getApp();
                 Map mapMapOf = MapsKt.mapOf(new Pair[]{TuplesKt.to("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"), TuplesKt.to("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8")});
@@ -424,7 +341,7 @@ public final class DesiSerialsProvider extends MainAPI {
             }
             String docTitle = strTitle;
             String firstText = StringsKt.take(document.text(), 50);
-            home.add(MainAPIKt.newTvSeriesSearchResponse$default(this, "Debug: " + docTitle + " | " + firstText, url, TvType.TvSeries, false, new Function1() { // from class: com.cncverse.desiserials.DesiSerialsProvider$$ExternalSyntheticLambda12
+            home.add(MainAPIKt.newTvSeriesSearchResponse$default(this, "Debug: " + docTitle + " | " + firstText, url, TvType.TvSeries, false, new Function1() { // from class: com.cncverse.desiserials.DesiSerialsProvider$$ExternalSyntheticLambda7
                 public final Object invoke(Object obj) {
                     return DesiSerialsProvider.getMainPage$lambda$2((TvSeriesSearchResponse) obj);
                 }
@@ -485,14 +402,14 @@ public final class DesiSerialsProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code duplicated, block: B:35:0x01d8 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:36:0x01d9  */
-    /* JADX WARN: Code duplicated, block: B:40:0x0208 A[Catch: Exception -> 0x025f, TryCatch #0 {Exception -> 0x025f, blocks: (B:37:0x01e0, B:38:0x0202, B:40:0x0208, B:42:0x0222, B:44:0x022c, B:45:0x023b, B:47:0x0241, B:49:0x0255), top: B:60:0x01e0 }] */
-    /* JADX WARN: Code duplicated, block: B:42:0x0222 A[Catch: Exception -> 0x025f, TryCatch #0 {Exception -> 0x025f, blocks: (B:37:0x01e0, B:38:0x0202, B:40:0x0208, B:42:0x0222, B:44:0x022c, B:45:0x023b, B:47:0x0241, B:49:0x0255), top: B:60:0x01e0 }] */
-    /* JADX WARN: Code duplicated, block: B:47:0x0241 A[Catch: Exception -> 0x025f, TryCatch #0 {Exception -> 0x025f, blocks: (B:37:0x01e0, B:38:0x0202, B:40:0x0208, B:42:0x0222, B:44:0x022c, B:45:0x023b, B:47:0x0241, B:49:0x0255), top: B:60:0x01e0 }] */
-    /* JADX WARN: Code duplicated, block: B:49:0x0255 A[Catch: Exception -> 0x025f, TRY_LEAVE, TryCatch #0 {Exception -> 0x025f, blocks: (B:37:0x01e0, B:38:0x0202, B:40:0x0208, B:42:0x0222, B:44:0x022c, B:45:0x023b, B:47:0x0241, B:49:0x0255), top: B:60:0x01e0 }] */
-    /* JADX WARN: Code duplicated, block: B:70:0x0229 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:73:0x0258 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:31:0x01c4 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:32:0x01c5  */
+    /* JADX WARN: Code duplicated, block: B:36:0x01f4 A[Catch: Exception -> 0x024b, TryCatch #1 {Exception -> 0x024b, blocks: (B:33:0x01cc, B:34:0x01ee, B:36:0x01f4, B:38:0x020e, B:40:0x0218, B:41:0x0227, B:43:0x022d, B:45:0x0241), top: B:58:0x01cc }] */
+    /* JADX WARN: Code duplicated, block: B:38:0x020e A[Catch: Exception -> 0x024b, TryCatch #1 {Exception -> 0x024b, blocks: (B:33:0x01cc, B:34:0x01ee, B:36:0x01f4, B:38:0x020e, B:40:0x0218, B:41:0x0227, B:43:0x022d, B:45:0x0241), top: B:58:0x01cc }] */
+    /* JADX WARN: Code duplicated, block: B:43:0x022d A[Catch: Exception -> 0x024b, TryCatch #1 {Exception -> 0x024b, blocks: (B:33:0x01cc, B:34:0x01ee, B:36:0x01f4, B:38:0x020e, B:40:0x0218, B:41:0x0227, B:43:0x022d, B:45:0x0241), top: B:58:0x01cc }] */
+    /* JADX WARN: Code duplicated, block: B:45:0x0241 A[Catch: Exception -> 0x024b, TRY_LEAVE, TryCatch #1 {Exception -> 0x024b, blocks: (B:33:0x01cc, B:34:0x01ee, B:36:0x01f4, B:38:0x020e, B:40:0x0218, B:41:0x0227, B:43:0x022d, B:45:0x0241), top: B:58:0x01cc }] */
+    /* JADX WARN: Code duplicated, block: B:66:0x0215 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:69:0x0244 A[SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
     @Nullable
     public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
@@ -526,10 +443,6 @@ public final class DesiSerialsProvider extends MainAPI {
         switch (c00062.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 String queryLower2 = StringsKt.trim(query).toString().toLowerCase(Locale.ROOT);
                 Intrinsics.checkNotNullExpressionValue(queryLower2, "toLowerCase(...)");
                 Set seenUrls3 = new LinkedHashSet();
@@ -710,8 +623,8 @@ public final class DesiSerialsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.desiserials.DesiSerialsProvider$search$2 */
     /* JADX INFO: compiled from: DesiSerialsProvider.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "slug", ""}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider$search$2", f = "DesiSerialsProvider.kt", i = {0, 0}, l = {140}, m = "invokeSuspend", n = {"slug", "url"}, nl = {143}, s = {"L$0", "L$1"}, v = 2)
-    @SourceDebugExtension({"SMAP\nDesiSerialsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider$search$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,718:1\n1642#2,10:719\n1915#2:729\n1916#2:731\n1652#2:732\n1915#2:733\n1916#2:735\n1#3:730\n1#3:734\n*S KotlinDebug\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider$search$2\n*L\n145#1:719,10\n145#1:729\n145#1:731\n145#1:732\n145#1:733\n145#1:735\n145#1:730\n*E\n"})
+    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider$search$2", f = "DesiSerialsProvider.kt", i = {0, 0}, l = {109}, m = "invokeSuspend", n = {"slug", "url"}, nl = {112}, s = {"L$0", "L$1"}, v = 2)
+    @SourceDebugExtension({"SMAP\nDesiSerialsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider$search$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,429:1\n1642#2,10:430\n1915#2:440\n1916#2:442\n1652#2:443\n1915#2:444\n1916#2:446\n1#3:441\n1#3:445\n*S KotlinDebug\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider$search$2\n*L\n114#1:430,10\n114#1:440\n114#1:442\n114#1:443\n114#1:444\n114#1:446\n114#1:441\n*E\n"})
     static final class C00072 extends SuspendLambda implements Function2<String, Continuation<? super Object>, Object> {
         final /* synthetic */ String $queryLower;
         final /* synthetic */ List<SearchResponse> $results;
@@ -1256,8 +1169,8 @@ public final class DesiSerialsProvider extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.desiserials.DesiSerialsProvider$load$2 */
     /* JADX INFO: compiled from: DesiSerialsProvider.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0004H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/Episode;", "pUrl", ""}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider$load$2", f = "DesiSerialsProvider.kt", i = {0}, l = {203}, m = "invokeSuspend", n = {"pUrl"}, nl = {206}, s = {"L$0"}, v = 2)
-    @SourceDebugExtension({"SMAP\nDesiSerialsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,718:1\n1642#2,10:719\n1915#2:729\n1916#2:731\n1652#2:732\n1#3:730\n*S KotlinDebug\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider$load$2\n*L\n209#1:719,10\n209#1:729\n209#1:731\n209#1:732\n209#1:730\n*E\n"})
+    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider$load$2", f = "DesiSerialsProvider.kt", i = {0}, l = {172}, m = "invokeSuspend", n = {"pUrl"}, nl = {175}, s = {"L$0"}, v = 2)
+    @SourceDebugExtension({"SMAP\nDesiSerialsProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider$load$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,429:1\n1642#2,10:430\n1915#2:440\n1916#2:442\n1652#2:443\n1#3:441\n*S KotlinDebug\n*F\n+ 1 DesiSerialsProvider.kt\ncom/cncverse/desiserials/DesiSerialsProvider$load$2\n*L\n178#1:430,10\n178#1:440\n178#1:442\n178#1:443\n178#1:441\n*E\n"})
     static final class C00022 extends SuspendLambda implements Function2<String, Continuation<? super List<? extends Episode>>, Object> {
         final /* synthetic */ Document $doc;
         final /* synthetic */ String $poster;
@@ -1480,28 +1393,23 @@ public final class DesiSerialsProvider extends MainAPI {
         return (List) destination$iv$iv2;
     }
 
+    /* JADX WARN: Code duplicated, block: B:61:0x02d9  */
+    /* JADX WARN: Code duplicated, block: B:63:0x0344 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:64:0x0345  */
     /* JADX WARN: Code duplicated, block: B:7:0x0020  */
-    /* JADX WARN: Code duplicated, block: B:89:0x0359  */
-    /* JADX WARN: Code duplicated, block: B:91:0x03c4 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:92:0x03c5  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:92:0x03c5 -> B:93:0x03d3). Please report as a decompilation issue!!! */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:64:0x0345 -> B:65:0x0357). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
-    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r29, boolean r30, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r31, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r32, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r33) {
+    public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r28, boolean r29, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r30, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r31, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r32) {
         /*
-            Method dump skipped, instruction units count: 1332
+            Method dump skipped, instruction units count: 1216
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.cncverse.desiserials.DesiSerialsProvider.loadLinks(java.lang.String, boolean, kotlin.jvm.functions.Function1, kotlin.jvm.functions.Function1, kotlin.coroutines.Continuation):java.lang.Object");
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1544,51 +1452,51 @@ public final class DesiSerialsProvider extends MainAPI {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final String loadLinks$handleIframe$lambda$2$0(MatchResult it) {
+    public static final String loadLinks$handleIframe$lambda$1$0(MatchResult it) {
         return (String) it.getGroupValues().get(1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final String loadLinks$handleIframe$lambda$2$2(MatchResult it) {
+    public static final String loadLinks$handleIframe$lambda$1$2(MatchResult it) {
         return (String) it.getGroupValues().get(1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final String loadLinks$handleIframe$lambda$2$4(MatchResult it) {
+    public static final String loadLinks$handleIframe$lambda$1$4(MatchResult it) {
         return (String) it.getGroupValues().get(1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final String loadLinks$handleIframe$lambda$2$6(MatchResult it) {
+    public static final String loadLinks$handleIframe$lambda$1$6(MatchResult it) {
         return (String) it.getGroupValues().get(1);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final String loadLinks$handleIframe$lambda$3(MatchResult it) {
+    public static final String loadLinks$handleIframe$lambda$2(MatchResult it) {
         return (String) it.getGroupValues().get(1);
     }
 
-    /* JADX INFO: renamed from: com.cncverse.desiserials.DesiSerialsProvider$loadLinks$4 */
+    /* JADX INFO: renamed from: com.cncverse.desiserials.DesiSerialsProvider$loadLinks$3 */
     /* JADX INFO: compiled from: DesiSerialsProvider.kt */
     @Metadata(d1 = {"\u0000\f\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "link", ""}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider$loadLinks$4", f = "DesiSerialsProvider.kt", i = {0}, l = {465}, m = "invokeSuspend", n = {"link"}, nl = {466}, s = {"L$0"}, v = 2)
-    static final class C00054 extends SuspendLambda implements Function2<String, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.desiserials.DesiSerialsProvider$loadLinks$3", f = "DesiSerialsProvider.kt", i = {0}, l = {418}, m = "invokeSuspend", n = {"link"}, nl = {419}, s = {"L$0"}, v = 2)
+    static final class C00053 extends SuspendLambda implements Function2<String, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ Function1<SubtitleFile, Unit> $subtitleCallback;
         /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00054(Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00054> continuation) {
+        C00053(Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super C00053> continuation) {
             super(2, continuation);
             this.$subtitleCallback = function1;
             this.$callback = function2;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00054 = DesiSerialsProvider.this.new C00054(this.$subtitleCallback, this.$callback, continuation);
-            c00054.L$0 = obj;
-            return c00054;
+            Continuation<Unit> c00053 = DesiSerialsProvider.this.new C00053(this.$subtitleCallback, this.$callback, continuation);
+            c00053.L$0 = obj;
+            return c00053;
         }
 
         public final Object invoke(String str, Continuation<? super Unit> continuation) {
@@ -1614,296 +1522,6 @@ public final class DesiSerialsProvider extends MainAPI {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
             return Unit.INSTANCE;
-        }
-    }
-
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.desiserials.DesiSerialsProvider$$ExternalSyntheticLambda15
-                @Override // java.lang.Runnable
-                public final void run() {
-                    DesiSerialsProvider.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹20/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.desiserials.DesiSerialsProvider$$ExternalSyntheticLambda9
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    DesiSerialsProvider.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.desiserials.DesiSerialsProvider$$ExternalSyntheticLambda10
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    DesiSerialsProvider.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null || telegramPopupShown) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.desiserials.DesiSerialsProvider$$ExternalSyntheticLambda8
-            @Override // java.lang.Runnable
-            public final void run() {
-                DesiSerialsProvider.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.desiserials.DesiSerialsProvider$$ExternalSyntheticLambda13
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.desiserials.DesiSerialsProvider$$ExternalSyntheticLambda14
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    DesiSerialsProvider.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        final Context ctx;
-        if (Globals.INSTANCE.isLayout(2) || (ctx = context) == null) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.desiserials.DesiSerialsProvider$$ExternalSyntheticLambda7
-            @Override // java.lang.Runnable
-            public final void run() {
-                DesiSerialsProvider.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
         }
     }
 }

@@ -4,7 +4,7 @@ package nepali.stream.decoded.mlsbdprovider
 object PluginMetadata {
     const val name: String = "MLSBDProvider"
     const val originalPluginClass: String = "com.cncverse.MlsbdPlugin"
-    const val version: Int = 30
+    const val version: Int = 31
     const val requiresResources: Boolean = false
     val tvTypes: List<String> = listOf()
 }

@@ -4,7 +4,7 @@ package nepali.stream.decoded.sportzxprovider
 object PluginMetadata {
     const val name: String = "SportzxProvider"
     const val originalPluginClass: String = "com.cncverse.SportzxPlugin"
-    const val version: Int = 19
+    const val version: Int = 20
     const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }

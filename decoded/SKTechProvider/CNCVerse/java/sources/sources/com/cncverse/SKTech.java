@@ -1,24 +1,8 @@
 package com.cncverse;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Base64;
-import android.view.View;
-import android.view.Window;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import com.cncverse.donation.DonationManager;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lagradost.cloudstream3.HomePageList;
@@ -33,7 +17,6 @@ import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvType;
 import com.lagradost.cloudstream3.mvvm.ArchComponentExtKt;
-import com.lagradost.cloudstream3.ui.settings.Globals;
 import com.lagradost.cloudstream3.utils.AppUtils;
 import com.lagradost.cloudstream3.utils.DrmExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorApiKt;
@@ -41,7 +24,6 @@ import com.lagradost.cloudstream3.utils.ExtractorLink;
 import com.lagradost.cloudstream3.utils.ExtractorLinkType;
 import com.lagradost.cloudstream3.utils.Qualities;
 import java.io.Closeable;
-import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -87,7 +69,6 @@ import kotlin.jvm.internal.SourceDebugExtension;
 import kotlin.reflect.KType;
 import kotlin.reflect.KTypeProjection;
 import kotlin.text.CharsKt;
-import kotlin.text.Charsets;
 import kotlin.text.MatchGroup;
 import kotlin.text.MatchGroupCollection;
 import kotlin.text.MatchResult;
@@ -108,10 +89,9 @@ import org.jetbrains.annotations.Nullable;
 
 /* JADX INFO: compiled from: SKTech.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/SKTechProvider/CNCVerse/java/classes.dex */
-@Metadata(d1 = {"\u0000t\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\b\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 J2\u00020\u0001:\u0002JKB\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0016\u0010%\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u0010'J\u000e\u0010(\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u000e\u0010)\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u0010\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u0003H\u0002J$\u0010,\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0012\u0010-\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eH\u0002J\u0018\u0010.\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0006\u0010/\u001a\u00020\u0003H\u0002J\u001e\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u000205H\u0096@¢\u0006\u0002\u00106J\u001c\u00107\u001a\b\u0012\u0004\u0012\u000209082\u0006\u0010:\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'J\u0016\u0010;\u001a\u00020<2\u0006\u0010&\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'J\b\u0010=\u001a\u00020>H\u0002J\b\u0010?\u001a\u00020>H\u0002J\u0010\u0010@\u001a\u00020>2\u0006\u0010&\u001a\u00020\u0003H\u0002JF\u0010A\u001a\u00020\u00132\u0006\u0010B\u001a\u00020\u00032\u0006\u0010C\u001a\u00020\u00132\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020F\u0012\u0004\u0012\u00020>0E2\u0012\u0010G\u001a\u000e\u0012\u0004\u0012\u00020H\u0012\u0004\u0012\u00020>0EH\u0096@¢\u0006\u0002\u0010IR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR\u001a\u0010\u000f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\t\"\u0004\b\u0011\u0010\u000bR\u0014\u0010\u0012\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0015R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001f\u001a\u00020 8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b#\u0010$\u001a\u0004\b!\u0010\"¨\u0006L"}, d2 = {"Lcom/cncverse/SKTech;", "Lcom/lagradost/cloudstream3/MainAPI;", "customName", "", "customMainUrl", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "lang", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "customHttpClient", "Lokhttp3/OkHttpClient;", "getCustomHttpClient", "()Lokhttp3/OkHttpClient;", "customHttpClient$delegate", "Lkotlin/Lazy;", "getWithCustomHeaders", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "base64ToHexOrNull", "hexToBase64UrlOrNull", "decryptContent", "content", "getMpdStream", "customHeaders", "getDRMKeysFromLicenseServer", "kid", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "showSubscriptionPopupIfNeeded", "", "showTelegramPopup", "openInExternalBrowser", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "LoadData", "SKTechProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nSKTech.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SKTech.kt\ncom/cncverse/SKTech\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,1379:1\n296#2,2:1380\n1586#2:1382\n1661#2,3:1383\n296#2,2:1405\n1512#2:1407\n1538#2,3:1408\n1541#2,3:1418\n1586#2:1424\n1661#2,3:1425\n777#2:1429\n873#2,2:1430\n1586#2:1432\n1661#2,3:1433\n1586#2:1474\n1661#2,3:1475\n63#3:1386\n64#3,15:1388\n63#3:1436\n64#3,15:1438\n63#3:1455\n64#3,15:1457\n1#4:1387\n1#4:1437\n1#4:1456\n1#4:1478\n50#5:1403\n43#5:1404\n50#5:1453\n43#5:1454\n50#5:1472\n43#5:1473\n383#6,7:1411\n129#7:1421\n158#7,2:1422\n160#7:1428\n*S KotlinDebug\n*F\n+ 1 SKTech.kt\ncom/cncverse/SKTech\n*L\n137#1:1380,2\n192#1:1382\n192#1:1383,3\n282#1:1405,2\n300#1:1407\n300#1:1408,3\n300#1:1418,3\n302#1:1424\n302#1:1425,3\n333#1:1429\n333#1:1430,2\n333#1:1432\n333#1:1433,3\n697#1:1474\n697#1:1475,3\n279#1:1386\n279#1:1388,15\n354#1:1436\n354#1:1438,15\n623#1:1455\n623#1:1457,15\n279#1:1387\n354#1:1437\n623#1:1456\n279#1:1403\n279#1:1404\n354#1:1453\n354#1:1454\n623#1:1472\n623#1:1473\n300#1:1411,7\n300#1:1421\n300#1:1422,2\n300#1:1428\n*E\n"})
+@Metadata(d1 = {"\u0000r\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\b\u000f\n\u0002\u0010\u000b\n\u0002\b\u0005\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010$\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0010\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0004\u0018\u0000 G2\u00020\u0001:\u0002GHB\u001b\u0012\b\b\u0002\u0010\u0002\u001a\u00020\u0003\u0012\b\b\u0002\u0010\u0004\u001a\u00020\u0003¢\u0006\u0004\b\u0005\u0010\u0006J\u0016\u0010%\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u0003H\u0082@¢\u0006\u0002\u0010'J\u000e\u0010(\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u000e\u0010)\u001a\u0004\u0018\u00010\u0003*\u00020\u0003H\u0002J\u0010\u0010*\u001a\u00020\u00032\u0006\u0010+\u001a\u00020\u0003H\u0002J$\u0010,\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0012\u0010-\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eH\u0002J\u0018\u0010.\u001a\u00020\u00032\u0006\u0010&\u001a\u00020\u00032\u0006\u0010/\u001a\u00020\u0003H\u0002J\u001e\u00100\u001a\u0002012\u0006\u00102\u001a\u0002032\u0006\u00104\u001a\u000205H\u0096@¢\u0006\u0002\u00106J\u001c\u00107\u001a\b\u0012\u0004\u0012\u000209082\u0006\u0010:\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'J\u0016\u0010;\u001a\u00020<2\u0006\u0010&\u001a\u00020\u0003H\u0096@¢\u0006\u0002\u0010'JF\u0010=\u001a\u00020\u00132\u0006\u0010>\u001a\u00020\u00032\u0006\u0010?\u001a\u00020\u00132\u0012\u0010@\u001a\u000e\u0012\u0004\u0012\u00020B\u0012\u0004\u0012\u00020C0A2\u0012\u0010D\u001a\u000e\u0012\u0004\u0012\u00020E\u0012\u0004\u0012\u00020C0AH\u0096@¢\u0006\u0002\u0010FR\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u0004\u001a\u00020\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0007\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR\u001a\u0010\u000f\u001a\u00020\u0003X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0010\u0010\t\"\u0004\b\u0011\u0010\u000bR\u0014\u0010\u0012\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0014\u0010\u0015R\u0014\u0010\u0016\u001a\u00020\u0013X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0017\u0010\u0015R\u001a\u0010\u0018\u001a\b\u0012\u0004\u0012\u00020\u001a0\u0019X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u001b\u0010\u001cR\u001a\u0010\u001d\u001a\u000e\u0012\u0004\u0012\u00020\u0003\u0012\u0004\u0012\u00020\u00030\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u001b\u0010\u001f\u001a\u00020 8BX\u0082\u0084\u0002¢\u0006\f\n\u0004\b#\u0010$\u001a\u0004\b!\u0010\"¨\u0006I"}, d2 = {"Lcom/cncverse/SKTech;", "Lcom/lagradost/cloudstream3/MainAPI;", "customName", "", "customMainUrl", "<init>", "(Ljava/lang/String;Ljava/lang/String;)V", "lang", "getLang", "()Ljava/lang/String;", "setLang", "(Ljava/lang/String;)V", "mainUrl", "getMainUrl", "setMainUrl", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "hasChromecastSupport", "getHasChromecastSupport", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "headers", "", "customHttpClient", "Lokhttp3/OkHttpClient;", "getCustomHttpClient", "()Lokhttp3/OkHttpClient;", "customHttpClient$delegate", "Lkotlin/Lazy;", "getWithCustomHeaders", "url", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "base64ToHexOrNull", "hexToBase64UrlOrNull", "decryptContent", "content", "getMpdStream", "customHeaders", "getDRMKeysFromLicenseServer", "kid", "getMainPage", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "", "Lcom/lagradost/cloudstream3/SearchResponse;", "query", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "LoadData", "SKTechProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nSKTech.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SKTech.kt\ncom/cncverse/SKTech\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 AppUtils.kt\ncom/lagradost/cloudstream3/utils/AppUtils\n+ 4 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 5 Extensions.kt\ncom/fasterxml/jackson/module/kotlin/ExtensionsKt\n+ 6 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 7 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n*L\n1#1,1105:1\n296#2,2:1106\n1586#2:1108\n1661#2,3:1109\n296#2,2:1131\n1512#2:1133\n1538#2,3:1134\n1541#2,3:1144\n1586#2:1150\n1661#2,3:1151\n777#2:1155\n873#2,2:1156\n1586#2:1158\n1661#2,3:1159\n1586#2:1200\n1661#2,3:1201\n63#3:1112\n64#3,15:1114\n63#3:1162\n64#3,15:1164\n63#3:1181\n64#3,15:1183\n1#4:1113\n1#4:1163\n1#4:1182\n50#5:1129\n43#5:1130\n50#5:1179\n43#5:1180\n50#5:1198\n43#5:1199\n383#6,7:1137\n129#7:1147\n158#7,2:1148\n160#7:1154\n*S KotlinDebug\n*F\n+ 1 SKTech.kt\ncom/cncverse/SKTech\n*L\n106#1:1106,2\n161#1:1108\n161#1:1109,3\n251#1:1131,2\n267#1:1133\n267#1:1134,3\n267#1:1144,3\n269#1:1150\n269#1:1151,3\n300#1:1155\n300#1:1156,2\n300#1:1158\n300#1:1159,3\n423#1:1200\n423#1:1201,3\n248#1:1112\n248#1:1114,15\n321#1:1162\n321#1:1164,15\n349#1:1181\n349#1:1183,15\n248#1:1113\n321#1:1163\n349#1:1182\n248#1:1129\n248#1:1130\n321#1:1179\n321#1:1180\n349#1:1198\n349#1:1199\n267#1:1137,7\n267#1:1147\n267#1:1148,2\n267#1:1154\n*E\n"})
 public final class SKTech extends MainAPI {
-    private static final long BROWSER_DEBOUNCE_MS = 10000;
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
     @NotNull
@@ -126,15 +106,8 @@ public final class SKTech extends MainAPI {
     @NotNull
     public static final String EXT_VLC_OPT = "#EXTVLCOPT";
 
-    @NotNull
-    private static final String OMG10 = "aHR0cHM6Ly9vbWcxMC5jb20vNC8xMTEwNDQ4OQ==";
-
     @Nullable
     private static Context context;
-    private static volatile boolean csGuardWasEverActive;
-    private static volatile long lastBrowserOpenMs;
-    private static volatile boolean subscriptionPopupShown;
-    private static volatile boolean telegramPopupShown;
 
     /* JADX INFO: renamed from: customHttpClient$delegate, reason: from kotlin metadata */
     @NotNull
@@ -166,7 +139,7 @@ public final class SKTech extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.SKTech$getMainPage$1 */
     /* JADX INFO: compiled from: SKTech.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SKTech", f = "SKTech.kt", i = {0, 0}, l = {297}, m = "getMainPage", n = {"request", "page"}, nl = {298}, s = {"L$0", "I$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.SKTech", f = "SKTech.kt", i = {0, 0}, l = {264}, m = "getMainPage", n = {"request", "page"}, nl = {265}, s = {"L$0", "I$0"}, v = 2)
     static final class C00351 extends ContinuationImpl {
         int I$0;
         Object L$0;
@@ -188,7 +161,7 @@ public final class SKTech extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$1 */
     /* JADX INFO: compiled from: SKTech.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SKTech", f = "SKTech.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6}, l = {669, 708, 728, 746, 772, 795, 819}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "headers", "normalizedKey", "normalizedKid", "playerKey", "playerKid", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting"}, nl = {668, 707, 727, 745, 771, 794, 818}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.SKTech", f = "SKTech.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6}, l = {395, 434, 454, 472, 498, 521, 545}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "loadData", "headers", "normalizedKey", "normalizedKid", "playerKey", "playerKid", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "mpdStr", "regex", "matchResult", "drmKid", "drmKidBytes", "drmKidBase64", "keyBase64", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "hasValidKeys", "hasLicenseUrl", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting", "data", "subtitleCallback", "callback", "loadData", "headers", "isCasting"}, nl = {394, 433, 453, 471, 497, 520, 544}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0"}, v = 2)
     static final class C00371 extends ContinuationImpl {
         int I$0;
         int I$1;
@@ -224,7 +197,7 @@ public final class SKTech extends MainAPI {
     /* JADX INFO: renamed from: com.cncverse.SKTech$search$1 */
     /* JADX INFO: compiled from: SKTech.kt */
     @Metadata(k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SKTech", f = "SKTech.kt", i = {0}, l = {330}, m = "search", n = {"query"}, nl = {331}, s = {"L$0"}, v = 2)
+    @DebugMetadata(c = "com.cncverse.SKTech", f = "SKTech.kt", i = {0}, l = {297}, m = "search", n = {"query"}, nl = {298}, s = {"L$0"}, v = 2)
     static final class C00451 extends ContinuationImpl {
         Object L$0;
         int label;
@@ -258,7 +231,7 @@ public final class SKTech extends MainAPI {
         this.hasChromecastSupport = true;
         this.supportedTypes = SetsKt.setOf(TvType.Live);
         this.headers = MapsKt.mapOf(new Pair[]{TuplesKt.to("accept", "*/*"), TuplesKt.to("Cache-Control", "no-cache, no-store"), TuplesKt.to("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:78.0) Gecko/20100101 Firefox/78.0")});
-        this.customHttpClient = LazyKt.lazy(new Function0() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda10
+        this.customHttpClient = LazyKt.lazy(new Function0() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda3
             public final Object invoke() {
                 return SKTech.customHttpClient_delegate$lambda$0(this.f$0);
             }
@@ -270,65 +243,13 @@ public final class SKTech extends MainAPI {
     }
 
     /* JADX INFO: compiled from: SKTech.kt */
-    @Metadata(d1 = {"\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010\u000b\n\u0002\b\u0003\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\t\n\u0002\b\f\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u0006\u0010\u0004\u001a\u00020\u0005J\u0006\u0010\u0007\u001a\u00020\u0005J\u0012\u0010\b\u001a\u00020\t2\b\u0010\n\u001a\u0004\u0018\u00010\u000bH\u0002R\u000e\u0010\u0006\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\rX\u0082T¢\u0006\u0002\n\u0000R\u000e\u0010\u000e\u001a\u00020\u000fX\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0010\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0011\u001a\u00020\u0005X\u0082\u000e¢\u0006\u0002\n\u0000R\u000e\u0010\u0012\u001a\u00020\u000fX\u0082T¢\u0006\u0002\n\u0000R\u001c\u0010\u0013\u001a\u0004\u0018\u00010\u000bX\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\u0015\"\u0004\b\u0016\u0010\u0017R\u000e\u0010\u0018\u001a\u00020\rX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0019\u001a\u00020\rX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u001a\u001a\u00020\rX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u001b"}, d2 = {"Lcom/cncverse/SKTech$Companion;", "", "<init>", "()V", "isCsGuardActive", "", "csGuardWasEverActive", "isCsGuardBlocked", "showCsGuardToast", "", "ctx", "Landroid/content/Context;", "OMG10", "", "lastBrowserOpenMs", "", "telegramPopupShown", "subscriptionPopupShown", "BROWSER_DEBOUNCE_MS", "context", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "EXT_M3U", "EXT_INF", "EXT_VLC_OPT", "SKTechProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nSKTech.kt\nKotlin\n*S Kotlin\n*F\n+ 1 SKTech.kt\ncom/cncverse/SKTech$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1379:1\n1#2:1380\n*E\n"})
+    @Metadata(d1 = {"\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0010\u000e\n\u0002\b\u0003\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003R\u001c\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0006\u0010\u0007\"\u0004\b\b\u0010\tR\u000e\u0010\n\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\f\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\r\u001a\u00020\u000bX\u0086T¢\u0006\u0002\n\u0000¨\u0006\u000e"}, d2 = {"Lcom/cncverse/SKTech$Companion;", "", "<init>", "()V", "context", "Landroid/content/Context;", "getContext", "()Landroid/content/Context;", "setContext", "(Landroid/content/Context;)V", "EXT_M3U", "", "EXT_INF", "EXT_VLC_OPT", "SKTechProvider_debug"}, k = 1, mv = {2, 3, 0}, xi = 48)
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
         }
 
         private Companion() {
-        }
-
-        /* JADX WARN: Code duplicated, block: B:11:0x0042  */
-        public final boolean isCsGuardActive() {
-            String name;
-            Class<?> cls;
-            String name2;
-            try {
-                Class<?> cls2 = Class.forName("android.app.ActivityThread");
-                Object thread = cls2.getMethod("currentActivityThread", new Class[0]).invoke(null, new Object[0]);
-                Field field = cls2.getDeclaredField("mInstrumentation");
-                field.setAccessible(true);
-                Object obj = field.get(thread);
-                if (obj == null || (cls = obj.getClass()) == null || (name2 = cls.getName()) == null) {
-                    name = "";
-                } else {
-                    name = name2.toLowerCase(Locale.ROOT);
-                    Intrinsics.checkNotNullExpressionValue(name, "toLowerCase(...)");
-                    if (name == null) {
-                        name = "";
-                    }
-                }
-                return StringsKt.contains$default(name, "guard", false, 2, (Object) null) || StringsKt.contains$default(name, "csguard", false, 2, (Object) null);
-            } catch (Throwable th) {
-                return false;
-            }
-        }
-
-        public final boolean isCsGuardBlocked() {
-            if (isCsGuardActive()) {
-                SKTech.csGuardWasEverActive = true;
-            }
-            return SKTech.csGuardWasEverActive;
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public final void showCsGuardToast(final Context ctx) {
-            if (ctx == null) {
-                return;
-            }
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.SKTech$Companion$$ExternalSyntheticLambda0
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SKTech.Companion.showCsGuardToast$lambda$0(ctx);
-                }
-            });
-        }
-
-        /* JADX INFO: Access modifiers changed from: private */
-        public static final void showCsGuardToast$lambda$0(Context $c) {
-            Toast.makeText($c, "🚫 CSGuard detected — Restart CloudStream after removing CSGuard to use CNCRepo", 1).show();
         }
 
         @Nullable
@@ -475,7 +396,7 @@ public final class SKTech extends MainAPI {
             int padding = (4 - (value.length() % 4)) % 4;
             String normalized = value + StringsKt.repeat("=", padding);
             byte[] decoded = Base64.decode(normalized, 0);
-            return ArraysKt.joinToString$default(decoded, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda5
+            return ArraysKt.joinToString$default(decoded, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda0
                 public final Object invoke(Object obj) {
                     return SKTech.base64ToHexOrNull$lambda$1(((Byte) obj).byteValue());
                 }
@@ -711,12 +632,7 @@ public final class SKTech extends MainAPI {
         switch (c00351.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return MainAPIKt.newHomePageResponse$default(CollectionsKt.emptyList(), (Boolean) null, 2, (Object) null);
-                }
-                showTelegramPopup();
-                showSubscriptionPopupIfNeeded();
+                DonationManager.INSTANCE.checkAndShow(getName());
                 String mainUrl = getMainUrl();
                 c00351.L$0 = SpillingKt.nullOutSpilledVariable(request);
                 c00351.I$0 = page;
@@ -792,7 +708,7 @@ public final class SKTech extends MainAPI {
                 String cookie2 = cookie == null ? "" : cookie;
                 String licenseUrl = channel.getLicenseUrl();
                 String licenseUrl2 = licenseUrl == null ? "" : licenseUrl;
-                destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), channel.getHeaders())), TvType.Live, false, new Function1() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda7
+                destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(this, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), channel.getHeaders())), TvType.Live, false, new Function1() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda2
                     public final Object invoke(Object obj2) {
                         return SKTech.getMainPage$lambda$1$0$0(posterurl, channel, (LiveSearchResponse) obj2);
                     }
@@ -842,10 +758,6 @@ public final class SKTech extends MainAPI {
         switch (c00451.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                if (INSTANCE.isCsGuardBlocked()) {
-                    INSTANCE.showCsGuardToast(context);
-                    return CollectionsKt.emptyList();
-                }
                 String mainUrl = sKTech.getMainUrl();
                 c00451.L$0 = query;
                 c00451.label = 1;
@@ -896,7 +808,7 @@ public final class SKTech extends MainAPI {
             String cookie2 = cookie == null ? "" : cookie;
             String licenseUrl = channel.getLicenseUrl();
             String licenseUrl2 = licenseUrl == null ? "" : licenseUrl;
-            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(sKTech, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), sKTech.headers)), TvType.Live, false, new Function1() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda6
+            destination$iv$iv2.add(MainAPIKt.newLiveSearchResponse$default(sKTech, channelname, AppUtils.INSTANCE.toJson(new LoadData(streamurl, channelname, posterurl, nation, key2, keyid2, userAgent2, cookie2, licenseUrl2, channel.getDrmKeys(), sKTech.headers)), TvType.Live, false, new Function1() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda1
                 public final Object invoke(Object obj) {
                     return SKTech.search$lambda$1$0(posterurl, channel, (LiveSearchResponse) obj);
                 }
@@ -1259,319 +1171,11 @@ public final class SKTech extends MainAPI {
         }
     }
 
-    private final void showSubscriptionPopupIfNeeded() {
-        final Context ctx = context;
-        if (ctx == null || subscriptionPopupShown) {
-            return;
-        }
-        try {
-            boolean isTV = Globals.INSTANCE.isLayout(2);
-            if (isTV) {
-                return;
-            }
-        } catch (Exception e) {
-        }
-        SharedPreferences sharedPreferences = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        boolean isSubscribed = Intrinsics.areEqual(sharedPreferences != null ? sharedPreferences.getString("mode", "ads") : null, "subscription");
-        if (isSubscribed) {
-            return;
-        }
-        SharedPreferences _dontShowPrefs = ctx.getSharedPreferences("CNCVerseSubscription", 0);
-        if (_dontShowPrefs.getBoolean("dont_show_ads_popup", false)) {
-            subscriptionPopupShown = true;
-        } else {
-            subscriptionPopupShown = true;
-            new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda3
-                @Override // java.lang.Runnable
-                public final void run() {
-                    SKTech.showSubscriptionPopupIfNeeded$lambda$0(ctx);
-                }
-            });
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u240);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setText("📺 You're in Ads Mode");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextColor(-1);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            it.bottomMargin = (int) (8 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242.setLayoutParams(it);
-            View divider = new View($ctx);
-            divider.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (12 * dp);
-            divider.setLayoutParams(it2);
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setText("All CNCVerse extensions currently run with ads.\n\nSubscribe to remove ads from just ₹30/month.\n\nManage via Settings > Extensions > CNCVerse Cloudstream Repo > Subscription Manager.");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Maybe Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            float f2 = 10;
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView subscribeTv = new TextView($ctx);
-            subscribeTv.setText("Subscribe Now");
-            subscribeTv.setTextColor(Color.parseColor("#A78BFA"));
-            subscribeTv.setTextSize(14.0f);
-            subscribeTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            subscribeTv.setPadding(p2, p2, 0, p2);
-            subscribeTv.setClickable(true);
-            subscribeTv.setFocusable(true);
-            LinearLayout $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248 = new LinearLayout($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setOrientation(0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setGravity(8388627);
-            LinearLayout.LayoutParams it4 = new LinearLayout.LayoutParams(-1, -2);
-            it4.bottomMargin = (int) (f2 * dp);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.setLayoutParams(it4);
-            final CheckBox $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249 = new CheckBox($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setChecked(false);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249.setButtonTintList(ColorStateList.valueOf(Color.parseColor("#A78BFA")));
-            TextView $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410 = new TextView($ctx);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setText("Don't show me again");
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setTextSize(13.0f);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410.setPadding((int) (6 * dp), 0, 0, 0);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249);
-            $this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u2410);
-            btnRow.addView(laterTv);
-            btnRow.addView(subscribeTv);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u242);
-            root.addView(divider);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u244);
-            root.addView($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u248);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda1
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    SKTech.showSubscriptionPopupIfNeeded$lambda$0$11($this$showSubscriptionPopupIfNeeded_u24lambda_u240_u249, $ctx, dialog, view);
-                }
-            });
-            subscribeTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda2
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    SKTech.showSubscriptionPopupIfNeeded$lambda$0$12(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$11(CheckBox $dontShowCb, Context $ctx, AlertDialog $dialog, View it) {
-        if ($dontShowCb.isChecked()) {
-            $ctx.getSharedPreferences("CNCVerseSubscription", 0).edit().putBoolean("dont_show_ads_popup", true).apply();
-        }
-        $dialog.dismiss();
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showSubscriptionPopupIfNeeded$lambda$0$12(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://cncverse-sub.pages.dev"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void showTelegramPopup() {
-        boolean isTV;
-        final Context ctx = context;
-        if (ctx == null || telegramPopupShown) {
-            return;
-        }
-        try {
-            isTV = Globals.INSTANCE.isLayout(2);
-        } catch (Exception e) {
-            isTV = false;
-        }
-        if (isTV) {
-            return;
-        }
-        SharedPreferences prefs = ctx.getSharedPreferences("cncverse_prefs", 0);
-        if (prefs.getBoolean("telegram_popup_shown", false)) {
-            telegramPopupShown = true;
-            return;
-        }
-        telegramPopupShown = true;
-        prefs.edit().putBoolean("telegram_popup_shown", true).apply();
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda0
-            @Override // java.lang.Runnable
-            public final void run() {
-                SKTech.showTelegramPopup$lambda$0(ctx);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0(final Context $ctx) {
-        try {
-            float dp = $ctx.getResources().getDisplayMetrics().density;
-            GradientDrawable $this$showTelegramPopup_u24lambda_u240_u240 = new GradientDrawable();
-            $this$showTelegramPopup_u24lambda_u240_u240.setColor(Color.parseColor("#1A1A2E"));
-            $this$showTelegramPopup_u24lambda_u240_u240.setCornerRadius(16.0f * dp);
-            LinearLayout root = new LinearLayout($ctx);
-            root.setOrientation(1);
-            float f = 24;
-            root.setPadding((int) (f * dp), (int) (20 * dp), (int) (f * dp), (int) (16 * dp));
-            root.setBackground($this$showTelegramPopup_u24lambda_u240_u240);
-            TextView $this$showTelegramPopup_u24lambda_u240_u242 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u242.setText("💬 Join CNCVerse Community");
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextColor(-1);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTextSize(17.0f);
-            $this$showTelegramPopup_u24lambda_u240_u242.setTypeface(Typeface.DEFAULT_BOLD);
-            LinearLayout.LayoutParams it = new LinearLayout.LayoutParams(-1, -2);
-            float f2 = 10;
-            it.bottomMargin = (int) (f2 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u242.setLayoutParams(it);
-            View dividerV = new View($ctx);
-            dividerV.setBackgroundColor(Color.parseColor("#2D2D4A"));
-            LinearLayout.LayoutParams it2 = new LinearLayout.LayoutParams(-1, 1);
-            it2.bottomMargin = (int) (14 * dp);
-            dividerV.setLayoutParams(it2);
-            TextView $this$showTelegramPopup_u24lambda_u240_u244 = new TextView($ctx);
-            $this$showTelegramPopup_u24lambda_u240_u244.setText("Join our Telegram group to discuss and share your opinion!");
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextColor(Color.parseColor("#A0A0A8"));
-            $this$showTelegramPopup_u24lambda_u240_u244.setTextSize(14.0f);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLineSpacing(0.0f, 1.4f);
-            LinearLayout.LayoutParams it3 = new LinearLayout.LayoutParams(-1, -2);
-            it3.bottomMargin = (int) (18 * dp);
-            $this$showTelegramPopup_u24lambda_u240_u244.setLayoutParams(it3);
-            LinearLayout btnRow = new LinearLayout($ctx);
-            btnRow.setOrientation(0);
-            btnRow.setGravity(8388613);
-            TextView laterTv = new TextView($ctx);
-            laterTv.setText("Later");
-            laterTv.setTextColor(Color.parseColor("#808090"));
-            laterTv.setTextSize(14.0f);
-            int p = (int) (f2 * dp);
-            laterTv.setPadding(p, p, p, p);
-            laterTv.setClickable(true);
-            laterTv.setFocusable(true);
-            TextView joinTv = new TextView($ctx);
-            joinTv.setText("Join Telegram");
-            joinTv.setTextColor(Color.parseColor("#5B9BF5"));
-            joinTv.setTextSize(14.0f);
-            joinTv.setTypeface(Typeface.DEFAULT_BOLD);
-            int p2 = (int) (f2 * dp);
-            joinTv.setPadding(p2, p2, 0, p2);
-            joinTv.setClickable(true);
-            joinTv.setFocusable(true);
-            btnRow.addView(laterTv);
-            btnRow.addView(joinTv);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u242);
-            root.addView(dividerV);
-            root.addView($this$showTelegramPopup_u24lambda_u240_u244);
-            root.addView(btnRow);
-            final AlertDialog dialog = new AlertDialog.Builder($ctx).setView(root).setCancelable(true).create();
-            Window window = dialog.getWindow();
-            if (window != null) {
-                window.setBackgroundDrawable(new ColorDrawable(0));
-            }
-            laterTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda8
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    dialog.dismiss();
-                }
-            });
-            joinTv.setOnClickListener(new View.OnClickListener() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda9
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    SKTech.showTelegramPopup$lambda$0$9(dialog, $ctx, view);
-                }
-            });
-            dialog.show();
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void showTelegramPopup$lambda$0$9(AlertDialog $dialog, Context $ctx, View it) {
-        $dialog.dismiss();
-        try {
-            Intent i = new Intent("android.intent.action.VIEW", Uri.parse("https://t.me/cncverse"));
-            i.addFlags(268435456);
-            $ctx.startActivity(i);
-        } catch (Exception e) {
-        }
-    }
-
-    private final void openInExternalBrowser(final String url) {
-        boolean isTV;
-        final Context ctx = context;
-        if (ctx == null) {
-            return;
-        }
-        try {
-            isTV = Globals.INSTANCE.isLayout(2);
-        } catch (Exception e) {
-            isTV = false;
-        }
-        if (isTV) {
-            return;
-        }
-        long now = System.currentTimeMillis();
-        if (now - lastBrowserOpenMs < BROWSER_DEBOUNCE_MS) {
-            return;
-        }
-        lastBrowserOpenMs = now;
-        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda4
-            @Override // java.lang.Runnable
-            public final void run() {
-                SKTech.openInExternalBrowser$lambda$0(ctx, url);
-            }
-        });
-    }
-
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void openInExternalBrowser$lambda$0(Context $ctx, String $url) {
-        try {
-            Intent $this$openInExternalBrowser_u24lambda_u240_u240 = new Intent("android.intent.action.VIEW", Uri.parse($url));
-            $this$openInExternalBrowser_u24lambda_u240_u240.addFlags(268435456);
-            $ctx.startActivity($this$openInExternalBrowser_u24lambda_u240_u240);
-        } catch (Exception e) {
-        }
-    }
-
-    /* JADX WARN: Code duplicated, block: B:101:0x034b  */
-    /* JADX WARN: Code duplicated, block: B:154:0x044b  */
-    /* JADX WARN: Code duplicated, block: B:157:0x0452  */
-    /* JADX WARN: Code duplicated, block: B:160:0x04cf A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:161:0x04d0  */
+    /* JADX WARN: Code duplicated, block: B:126:0x03cf  */
+    /* JADX WARN: Code duplicated, block: B:129:0x03d6  */
+    /* JADX WARN: Code duplicated, block: B:132:0x0452 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:133:0x0453  */
+    /* JADX WARN: Code duplicated, block: B:73:0x02d2  */
     /* JADX WARN: Code duplicated, block: B:7:0x001c  */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
@@ -1603,9 +1207,9 @@ public final class SKTech extends MainAPI {
         LoadData loadData4;
         Function1<? super ExtractorLink, Unit> function10;
         String string;
+        LoadData loadData5;
         Function1<? super ExtractorLink, Unit> function11;
         Function1<? super SubtitleFile, Unit> function12;
-        LoadData loadData5;
         Object obj2;
         Function1<? super ExtractorLink, Unit> function13;
         Object objNewDrmExtractorLink;
@@ -1613,9 +1217,8 @@ public final class SKTech extends MainAPI {
         MatchGroupCollection groups;
         MatchGroup matchGroup;
         String normalizedKey;
-        String normalizedKid;
-        String mappedKey;
         String mpdKidHex;
+        String mappedKey;
         String playerKey;
         String playerKid;
         Object objNewDrmExtractorLink2;
@@ -1640,24 +1243,6 @@ public final class SKTech extends MainAPI {
         switch (c00372.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
-                SKTech $this$loadLinks_u24lambda_u240 = this;
-                final Context _ctx = context;
-                SharedPreferences _prefs = _ctx != null ? _ctx.getSharedPreferences("CNCVerseSubscription", 0) : null;
-                String _mode = _prefs != null ? _prefs.getString("mode", "ads") : null;
-                long _expiresAt = _prefs != null ? _prefs.getLong("expires_at", 0L) : 0L;
-                long _nowSec = System.currentTimeMillis() / 1000;
-                boolean _isSubscribed = Intrinsics.areEqual(_mode, "subscription") && (_expiresAt == 0 || _expiresAt > _nowSec);
-                if (!_isSubscribed) {
-                    if (Intrinsics.areEqual(_mode, "subscription") && _expiresAt > 0 && _expiresAt <= _nowSec) {
-                        new Handler(Looper.getMainLooper()).post(new Runnable() { // from class: com.cncverse.SKTech$$ExternalSyntheticLambda11
-                            @Override // java.lang.Runnable
-                            public final void run() {
-                                SKTech.loadLinks$lambda$0$0(_ctx);
-                            }
-                        });
-                    }
-                    $this$loadLinks_u24lambda_u240.openInExternalBrowser(new String(Base64.decode(OMG10, 0), Charsets.UTF_8));
-                }
                 AppUtils appUtils = AppUtils.INSTANCE;
                 try {
                     Result.Companion companion = Result.Companion;
@@ -1717,7 +1302,7 @@ public final class SKTech extends MainAPI {
                         String name2 = getName();
                         String url = loadData6.getUrl();
                         ExtractorLinkType extractorLinkType = ExtractorLinkType.M3U8;
-                        C00427 c00427 = new C00427(headers, null);
+                        C00426 c00426 = new C00426(headers, null);
                         c00372.L$0 = SpillingKt.nullOutSpilledVariable(data);
                         c00372.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                         c00372.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1726,7 +1311,7 @@ public final class SKTech extends MainAPI {
                         c00372.L$5 = function15;
                         c00372.Z$0 = isCasting;
                         c00372.label = 5;
-                        objNewExtractorLink3 = ExtractorApiKt.newExtractorLink(name, name2, url, extractorLinkType, c00427, c00372);
+                        objNewExtractorLink3 = ExtractorApiKt.newExtractorLink(name, name2, url, extractorLinkType, c00426, c00372);
                         if (objNewExtractorLink3 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1748,7 +1333,7 @@ public final class SKTech extends MainAPI {
                         String name4 = getName();
                         String url2 = loadData6.getUrl();
                         ExtractorLinkType extractorLinkType2 = ExtractorLinkType.M3U8;
-                        C00438 c00438 = new C00438(headers2, null);
+                        C00437 c00437 = new C00437(headers2, null);
                         c00372.L$0 = SpillingKt.nullOutSpilledVariable(data);
                         c00372.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                         c00372.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1757,7 +1342,7 @@ public final class SKTech extends MainAPI {
                         c00372.L$5 = function15;
                         c00372.Z$0 = isCasting;
                         c00372.label = 6;
-                        objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name3, name4, url2, extractorLinkType2, c00438, c00372);
+                        objNewExtractorLink2 = ExtractorApiKt.newExtractorLink(name3, name4, url2, extractorLinkType2, c00437, c00372);
                         if (objNewExtractorLink2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1781,7 +1366,7 @@ public final class SKTech extends MainAPI {
                     String title = loadData6.getTitle();
                     String url3 = loadData6.getUrl();
                     ExtractorLinkType infer_type = ExtractorApiKt.getINFER_TYPE();
-                    C00449 c00449 = new C00449(headers3, null);
+                    C00448 c00448 = new C00448(headers3, null);
                     c00372.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00372.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00372.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1790,7 +1375,7 @@ public final class SKTech extends MainAPI {
                     c00372.L$5 = function15;
                     c00372.Z$0 = isCasting;
                     c00372.label = 7;
-                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, title, url3, infer_type, c00449, c00372);
+                    objNewExtractorLink = ExtractorApiKt.newExtractorLink(name5, title, url3, infer_type, c00448, c00372);
                     if (objNewExtractorLink == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1824,13 +1409,12 @@ public final class SKTech extends MainAPI {
                     if (normalizedKey2 == null) {
                         normalizedKey2 = StringsKt.trim(loadData6.getKey()).toString();
                     }
-                    String normalizedKid2 = base64ToHexOrNull(loadData6.getKeyid());
-                    if (normalizedKid2 == null) {
-                        normalizedKid2 = StringsKt.trim(loadData6.getKeyid()).toString();
+                    String normalizedKid = base64ToHexOrNull(loadData6.getKeyid());
+                    if (normalizedKid == null) {
+                        normalizedKid = StringsKt.trim(loadData6.getKeyid()).toString();
                     }
                     if (!loadData6.getDrmKeys().isEmpty()) {
                         normalizedKey = normalizedKey2;
-                        normalizedKid = normalizedKid2;
                         MatchResult matchResultFind$default = Regex.find$default(new Regex("cenc:default_KID=[\"']([0-9a-fA-F\\-]{36})[\"']"), getMpdStream(loadData6.getUrl(), headers4), 0, 2, (Object) null);
                         if (matchResultFind$default == null || (groups2 = matchResultFind$default.getGroups()) == null || (matchGroup2 = groups2.get(1)) == null || (value = matchGroup2.getValue()) == null || (strReplace$default = StringsKt.replace$default(value, "-", "", false, 4, (Object) null)) == null) {
                             mpdKidHex = null;
@@ -1859,15 +1443,15 @@ public final class SKTech extends MainAPI {
                         String playerKey2 = loadData6.getUrl();
                         ExtractorLinkType infer_type2 = ExtractorApiKt.getINFER_TYPE();
                         UUID clearkey_uuid = ExtractorApiKt.getCLEARKEY_UUID();
-                        String normalizedKid3 = mpdKidHex;
-                        C00383 c00383 = new C00383(headers4, playerKey, playerKid, null);
+                        String normalizedKid2 = mpdKidHex;
+                        C00382 c00382 = new C00382(headers4, playerKey, playerKid, null);
                         c00372.L$0 = SpillingKt.nullOutSpilledVariable(data);
                         c00372.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                         c00372.L$2 = SpillingKt.nullOutSpilledVariable(function15);
                         c00372.L$3 = SpillingKt.nullOutSpilledVariable(loadData6);
                         c00372.L$4 = SpillingKt.nullOutSpilledVariable(headers4);
                         c00372.L$5 = SpillingKt.nullOutSpilledVariable(normalizedKey3);
-                        c00372.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid3);
+                        c00372.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid2);
                         c00372.L$7 = SpillingKt.nullOutSpilledVariable(playerKey);
                         c00372.L$8 = SpillingKt.nullOutSpilledVariable(playerKid);
                         c00372.L$9 = function15;
@@ -1875,7 +1459,7 @@ public final class SKTech extends MainAPI {
                         c00372.I$0 = i2;
                         c00372.I$1 = i3;
                         c00372.label = 1;
-                        objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name6, normalizedKey4, playerKey2, infer_type2, clearkey_uuid, c00383, c00372);
+                        objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name6, normalizedKey4, playerKey2, infer_type2, clearkey_uuid, c00382, c00372);
                         if (objNewDrmExtractorLink2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -1883,9 +1467,8 @@ public final class SKTech extends MainAPI {
                         return Boxing.boxBoolean(true);
                     }
                     normalizedKey = normalizedKey2;
-                    normalizedKid = normalizedKid2;
-                    mappedKey = normalizedKey;
                     mpdKidHex = normalizedKid;
+                    mappedKey = normalizedKey;
                     playerKey = hexToBase64UrlOrNull(mappedKey);
                     if (playerKey == null) {
                         playerKey = mappedKey;
@@ -1900,15 +1483,15 @@ public final class SKTech extends MainAPI {
                     String playerKey3 = loadData6.getUrl();
                     ExtractorLinkType infer_type3 = ExtractorApiKt.getINFER_TYPE();
                     UUID clearkey_uuid2 = ExtractorApiKt.getCLEARKEY_UUID();
-                    String normalizedKid4 = mpdKidHex;
-                    C00383 c00384 = new C00383(headers4, playerKey, playerKid, null);
+                    String normalizedKid3 = mpdKidHex;
+                    C00382 c00383 = new C00382(headers4, playerKey, playerKid, null);
                     c00372.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00372.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00372.L$2 = SpillingKt.nullOutSpilledVariable(function15);
                     c00372.L$3 = SpillingKt.nullOutSpilledVariable(loadData6);
                     c00372.L$4 = SpillingKt.nullOutSpilledVariable(headers4);
                     c00372.L$5 = SpillingKt.nullOutSpilledVariable(normalizedKey5);
-                    c00372.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid4);
+                    c00372.L$6 = SpillingKt.nullOutSpilledVariable(normalizedKid3);
                     c00372.L$7 = SpillingKt.nullOutSpilledVariable(playerKey);
                     c00372.L$8 = SpillingKt.nullOutSpilledVariable(playerKid);
                     c00372.L$9 = function15;
@@ -1916,7 +1499,7 @@ public final class SKTech extends MainAPI {
                     c00372.I$0 = i2;
                     c00372.I$1 = i3;
                     c00372.label = 1;
-                    objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name7, normalizedKey6, playerKey3, infer_type3, clearkey_uuid2, c00384, c00372);
+                    objNewDrmExtractorLink2 = ExtractorApiKt.newDrmExtractorLink(name7, normalizedKey6, playerKey3, infer_type3, clearkey_uuid2, c00383, c00372);
                     if (objNewDrmExtractorLink2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1929,7 +1512,7 @@ public final class SKTech extends MainAPI {
                     String name9 = getName();
                     String url4 = loadData6.getUrl();
                     ExtractorLinkType extractorLinkType3 = ExtractorLinkType.DASH;
-                    C00416 c00416 = new C00416(headers4, null);
+                    C00415 c00415 = new C00415(headers4, null);
                     c00372.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00372.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00372.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1940,7 +1523,7 @@ public final class SKTech extends MainAPI {
                     c00372.I$0 = i2;
                     c00372.I$1 = i4;
                     c00372.label = 4;
-                    objNewExtractorLink4 = ExtractorApiKt.newExtractorLink(name8, name9, url4, extractorLinkType3, c00416, c00372);
+                    objNewExtractorLink4 = ExtractorApiKt.newExtractorLink(name8, name9, url4, extractorLinkType3, c00415, c00372);
                     if (objNewExtractorLink4 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1977,7 +1560,7 @@ public final class SKTech extends MainAPI {
                     String keyBase65 = loadData6.getUrl();
                     ExtractorLinkType infer_type4 = ExtractorApiKt.getINFER_TYPE();
                     UUID clearkey_uuid3 = ExtractorApiKt.getCLEARKEY_UUID();
-                    C00394 c00394 = new C00394(headers4, keyBase64, drmKidBase64, null);
+                    C00393 c00393 = new C00393(headers4, keyBase64, drmKidBase64, null);
                     c00372.L$0 = SpillingKt.nullOutSpilledVariable(data);
                     c00372.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                     c00372.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -1995,7 +1578,7 @@ public final class SKTech extends MainAPI {
                     c00372.I$0 = i2;
                     c00372.I$1 = i4;
                     c00372.label = 2;
-                    objNewDrmExtractorLink = ExtractorApiKt.newDrmExtractorLink(name10, drmKidBase65, keyBase65, infer_type4, clearkey_uuid3, c00394, c00372);
+                    objNewDrmExtractorLink = ExtractorApiKt.newDrmExtractorLink(name10, drmKidBase65, keyBase65, infer_type4, clearkey_uuid3, c00393, c00372);
                     if (objNewDrmExtractorLink == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -2008,7 +1591,7 @@ public final class SKTech extends MainAPI {
                 String url5 = loadData6.getUrl();
                 ExtractorLinkType infer_type5 = ExtractorApiKt.getINFER_TYPE();
                 UUID clearkey_uuid4 = ExtractorApiKt.getCLEARKEY_UUID();
-                C00405 c00405 = new C00405(headers4, loadData6, null);
+                C00404 c00404 = new C00404(headers4, loadData6, null);
                 c00372.L$0 = SpillingKt.nullOutSpilledVariable(data);
                 c00372.L$1 = SpillingKt.nullOutSpilledVariable(function1);
                 c00372.L$2 = SpillingKt.nullOutSpilledVariable(function15);
@@ -2026,13 +1609,13 @@ public final class SKTech extends MainAPI {
                 c00372.I$0 = i2;
                 c00372.I$1 = i4;
                 c00372.label = 3;
-                Object objNewDrmExtractorLink3 = ExtractorApiKt.newDrmExtractorLink(name11, name12, url5, infer_type5, clearkey_uuid4, c00405, c00372);
+                Object objNewDrmExtractorLink3 = ExtractorApiKt.newDrmExtractorLink(name11, name12, url5, infer_type5, clearkey_uuid4, c00404, c00372);
                 if (objNewDrmExtractorLink3 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
+                loadData5 = loadData6;
                 function11 = function15;
                 function12 = function1;
-                loadData5 = loadData6;
                 obj2 = objNewDrmExtractorLink3;
                 function13 = function11;
                 function11.invoke(obj2);
@@ -2122,16 +1705,11 @@ public final class SKTech extends MainAPI {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final void loadLinks$lambda$0$0(Context $_ctx) {
-        Toast.makeText($_ctx, "⚠️(Opening ads) Subscription expired. If you have renewed your subscription, please re-verify it in Subscription Manager.", 1).show();
-    }
-
-    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$3 */
+    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$2 */
     /* JADX INFO: compiled from: SKTech.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/DrmExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$3", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00383 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$2", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00382 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ String $playerKey;
         final /* synthetic */ String $playerKid;
@@ -2139,7 +1717,7 @@ public final class SKTech extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00383(Map<String, String> map, String str, String str2, Continuation<? super C00383> continuation) {
+        C00382(Map<String, String> map, String str, String str2, Continuation<? super C00382> continuation) {
             super(2, continuation);
             this.$headers = map;
             this.$playerKey = str;
@@ -2147,9 +1725,9 @@ public final class SKTech extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00383 = new C00383(this.$headers, this.$playerKey, this.$playerKid, continuation);
-            c00383.L$0 = obj;
-            return c00383;
+            Continuation<Unit> c00382 = new C00382(this.$headers, this.$playerKey, this.$playerKid, continuation);
+            c00382.L$0 = obj;
+            return c00382;
         }
 
         public final Object invoke(DrmExtractorLink drmExtractorLink, Continuation<? super Unit> continuation) {
@@ -2175,11 +1753,11 @@ public final class SKTech extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$4 */
+    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$3 */
     /* JADX INFO: compiled from: SKTech.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/DrmExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$4", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00394 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$3", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00393 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $drmKidBase64;
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ String $keyBase64;
@@ -2187,7 +1765,7 @@ public final class SKTech extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00394(Map<String, String> map, String str, String str2, Continuation<? super C00394> continuation) {
+        C00393(Map<String, String> map, String str, String str2, Continuation<? super C00393> continuation) {
             super(2, continuation);
             this.$headers = map;
             this.$keyBase64 = str;
@@ -2195,9 +1773,9 @@ public final class SKTech extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00394 = new C00394(this.$headers, this.$keyBase64, this.$drmKidBase64, continuation);
-            c00394.L$0 = obj;
-            return c00394;
+            Continuation<Unit> c00393 = new C00393(this.$headers, this.$keyBase64, this.$drmKidBase64, continuation);
+            c00393.L$0 = obj;
+            return c00393;
         }
 
         public final Object invoke(DrmExtractorLink drmExtractorLink, Continuation<? super Unit> continuation) {
@@ -2223,27 +1801,27 @@ public final class SKTech extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$5 */
+    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$4 */
     /* JADX INFO: compiled from: SKTech.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/DrmExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$5", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00405 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$4", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00404 extends SuspendLambda implements Function2<DrmExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         final /* synthetic */ LoadData $loadData;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00405(Map<String, String> map, LoadData loadData, Continuation<? super C00405> continuation) {
+        C00404(Map<String, String> map, LoadData loadData, Continuation<? super C00404> continuation) {
             super(2, continuation);
             this.$headers = map;
             this.$loadData = loadData;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00405 = new C00405(this.$headers, this.$loadData, continuation);
-            c00405.L$0 = obj;
-            return c00405;
+            Continuation<Unit> c00404 = new C00404(this.$headers, this.$loadData, continuation);
+            c00404.L$0 = obj;
+            return c00404;
         }
 
         public final Object invoke(DrmExtractorLink drmExtractorLink, Continuation<? super Unit> continuation) {
@@ -2268,25 +1846,68 @@ public final class SKTech extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$6 */
+    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$5 */
     /* JADX INFO: compiled from: SKTech.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$6", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00416 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$5", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00415 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00416(Map<String, String> map, Continuation<? super C00416> continuation) {
+        C00415(Map<String, String> map, Continuation<? super C00415> continuation) {
             super(2, continuation);
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00416 = new C00416(this.$headers, continuation);
-            c00416.L$0 = obj;
-            return c00416;
+            Continuation<Unit> c00415 = new C00415(this.$headers, continuation);
+            c00415.L$0 = obj;
+            return c00415;
+        }
+
+        public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
+            return create(extractorLink, continuation).invokeSuspend(Unit.INSTANCE);
+        }
+
+        public final Object invokeSuspend(Object $result) {
+            ExtractorLink $this$newExtractorLink = (ExtractorLink) this.L$0;
+            IntrinsicsKt.getCOROUTINE_SUSPENDED();
+            switch (this.label) {
+                case 0:
+                    ResultKt.throwOnFailure($result);
+                    $this$newExtractorLink.setReferer("");
+                    $this$newExtractorLink.setQuality(Qualities.Unknown.getValue());
+                    if (!this.$headers.isEmpty()) {
+                        $this$newExtractorLink.setHeaders(this.$headers);
+                    }
+                    return Unit.INSTANCE;
+                default:
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+        }
+    }
+
+    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$6 */
+    /* JADX INFO: compiled from: SKTech.kt */
+    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
+    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$6", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00426 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+        final /* synthetic */ Map<String, String> $headers;
+        private /* synthetic */ Object L$0;
+        int label;
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        C00426(Map<String, String> map, Continuation<? super C00426> continuation) {
+            super(2, continuation);
+            this.$headers = map;
+        }
+
+        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
+            Continuation<Unit> c00426 = new C00426(this.$headers, continuation);
+            c00426.L$0 = obj;
+            return c00426;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -2315,64 +1936,21 @@ public final class SKTech extends MainAPI {
     /* JADX INFO: compiled from: SKTech.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
     @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$7", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00427 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    static final class C00437 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00427(Map<String, String> map, Continuation<? super C00427> continuation) {
+        C00437(Map<String, String> map, Continuation<? super C00437> continuation) {
             super(2, continuation);
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00427 = new C00427(this.$headers, continuation);
-            c00427.L$0 = obj;
-            return c00427;
-        }
-
-        public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
-            return create(extractorLink, continuation).invokeSuspend(Unit.INSTANCE);
-        }
-
-        public final Object invokeSuspend(Object $result) {
-            ExtractorLink $this$newExtractorLink = (ExtractorLink) this.L$0;
-            IntrinsicsKt.getCOROUTINE_SUSPENDED();
-            switch (this.label) {
-                case 0:
-                    ResultKt.throwOnFailure($result);
-                    $this$newExtractorLink.setReferer("");
-                    $this$newExtractorLink.setQuality(Qualities.Unknown.getValue());
-                    if (!this.$headers.isEmpty()) {
-                        $this$newExtractorLink.setHeaders(this.$headers);
-                    }
-                    return Unit.INSTANCE;
-                default:
-                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-            }
-        }
-    }
-
-    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$8 */
-    /* JADX INFO: compiled from: SKTech.kt */
-    @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$8", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00438 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
-        final /* synthetic */ Map<String, String> $headers;
-        private /* synthetic */ Object L$0;
-        int label;
-
-        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00438(Map<String, String> map, Continuation<? super C00438> continuation) {
-            super(2, continuation);
-            this.$headers = map;
-        }
-
-        public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00438 = new C00438(this.$headers, continuation);
-            c00438.L$0 = obj;
-            return c00438;
+            Continuation<Unit> c00437 = new C00437(this.$headers, continuation);
+            c00437.L$0 = obj;
+            return c00437;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {
@@ -2395,25 +1973,25 @@ public final class SKTech extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$9 */
+    /* JADX INFO: renamed from: com.cncverse.SKTech$loadLinks$8 */
     /* JADX INFO: compiled from: SKTech.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;"}, k = 3, mv = {2, 3, 0}, xi = 48)
-    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$9", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    static final class C00449 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.cncverse.SKTech$loadLinks$8", f = "SKTech.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00448 extends SuspendLambda implements Function2<ExtractorLink, Continuation<? super Unit>, Object> {
         final /* synthetic */ Map<String, String> $headers;
         private /* synthetic */ Object L$0;
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00449(Map<String, String> map, Continuation<? super C00449> continuation) {
+        C00448(Map<String, String> map, Continuation<? super C00448> continuation) {
             super(2, continuation);
             this.$headers = map;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00449 = new C00449(this.$headers, continuation);
-            c00449.L$0 = obj;
-            return c00449;
+            Continuation<Unit> c00448 = new C00448(this.$headers, continuation);
+            c00448.L$0 = obj;
+            return c00448;
         }
 
         public final Object invoke(ExtractorLink extractorLink, Continuation<? super Unit> continuation) {

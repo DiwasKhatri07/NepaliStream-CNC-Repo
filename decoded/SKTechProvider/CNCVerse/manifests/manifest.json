@@ -1,6 +1,6 @@
 {
   "requiresResources": true,
-  "version": 52,
+  "version": 53,
   "pluginClassName": "com.cncverse.SKTechPlugin",
   "name": "SKTechProvider"
 }
