@@ -684,10 +684,11 @@ public class SuperStream extends TmdbProvider {
     /* JADX WARN: Code duplicated, block: B:57:0x02b1  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:54:0x0295 -> B:55:0x02ad). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-        java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
     static /* synthetic */ java.lang.Object getMainPage$suspendImpl(com.phisher98.SuperStream r28, int r29, com.lagradost.cloudstream3.MainPageRequest r30, kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.HomePageResponse> r31) {
         /*
@@ -1056,10 +1057,11 @@ public class SuperStream extends TmdbProvider {
     /* JADX WARN: Code duplicated, block: B:95:0x0741  */
     /* JADX WARN: Type inference failed for: r0v71, types: [java.lang.Throwable] */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:338:0x0f84 -> B:339:0x0fb7). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-        java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
     static /* synthetic */ java.lang.Object load$suspendImpl(com.phisher98.SuperStream r90, java.lang.String r91, kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r92) {
         /*
@@ -1557,10 +1559,11 @@ public class SuperStream extends TmdbProvider {
     /* JADX WARN: Code duplicated, block: B:40:0x039c A[LOOP:0: B:27:0x02b0->B:40:0x039c, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x001e  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:38:0x0378 -> B:39:0x038e). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-        java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
     @android.annotation.SuppressLint({"SuspiciousIndentation"})
     static /* synthetic */ java.lang.Object loadLinks$suspendImpl(com.phisher98.SuperStream r55, java.lang.String r56, boolean r57, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r58, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r59, kotlin.coroutines.Continuation<? super java.lang.Boolean> r60) {
