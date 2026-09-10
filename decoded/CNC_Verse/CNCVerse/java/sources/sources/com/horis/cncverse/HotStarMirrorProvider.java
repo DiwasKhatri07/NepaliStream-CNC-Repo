@@ -1841,7 +1841,7 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:55:0x03f2  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
-    public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
+    public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) throws Exception {
         C00171 c00171;
         HotStarMirrorProvider hotStarMirrorProvider;
         String data2;
