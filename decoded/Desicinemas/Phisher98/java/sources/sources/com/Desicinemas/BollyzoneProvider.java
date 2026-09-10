@@ -630,11 +630,10 @@ public final class BollyzoneProvider extends DesicinemasProvider {
     /* JADX WARN: Code duplicated, block: B:87:0x045b  */
     /* JADX WARN: Code duplicated, block: B:90:0x047a  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:66:0x03a2 -> B:67:0x03b3). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @Override // com.Desicinemas.DesicinemasProvider
     @org.jetbrains.annotations.Nullable

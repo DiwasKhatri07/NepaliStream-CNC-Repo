@@ -69,12 +69,12 @@ public final class UtilsKt {
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.zinkmovies.UtilsKt", f = "Utils.kt", i = {0}, l = {231}, m = "bypassShortlink", n = {"url"}, nl = {232}, s = {"L$0"}, v = 2)
-    static final class C00081 extends ContinuationImpl {
+    static final class C00101 extends ContinuationImpl {
         Object L$0;
         int label;
         /* synthetic */ Object result;
 
-        C00081(Continuation<? super C00081> continuation) {
+        C00101(Continuation<? super C00101> continuation) {
             super(continuation);
         }
 
@@ -90,7 +90,7 @@ public final class UtilsKt {
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.zinkmovies.UtilsKt", f = "Utils.kt", i = {0, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {89, 108, 123, 162}, m = "generateZinkLinks", n = {"url", "url", "firstDoc", "firstHtml", "ajaxEndpoint", "downloadBase", "randomId", "url", "firstDoc", "firstHtml", "ajaxEndpoint", "downloadBase", "token", "randomId", "generatedUrl", "url", "firstDoc", "firstHtml", "ajaxEndpoint", "downloadBase", "token", "randomId", "generatedUrl", "generatedDoc", "btn", "serverHandler", "workerId", "results"}, nl = {90, 119, 125, 176}, s = {"L$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12"}, v = 2)
-    static final class C00091 extends ContinuationImpl {
+    static final class C00111 extends ContinuationImpl {
         Object L$0;
         Object L$1;
         Object L$10;
@@ -107,7 +107,7 @@ public final class UtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C00091(Continuation<? super C00091> continuation) {
+        C00111(Continuation<? super C00111> continuation) {
             super(continuation);
         }
 
@@ -123,7 +123,7 @@ public final class UtilsKt {
     /* JADX INFO: compiled from: Utils.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.zinkmovies.UtilsKt", f = "Utils.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2}, l = {210, 215, 219}, m = "retry", n = {"block", "times", "delayMs", "it", "block", "times", "delayMs", "it", "block", "times", "delayMs"}, nl = {209, 216, 218}, s = {"L$0", "I$0", "J$0", "I$3", "L$0", "I$0", "J$0", "I$3", "L$0", "I$0", "J$0"}, v = 2)
-    static final class C00101<T> extends ContinuationImpl {
+    static final class C00121<T> extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -133,7 +133,7 @@ public final class UtilsKt {
         int label;
         /* synthetic */ Object result;
 
-        C00101(Continuation<? super C00101> continuation) {
+        C00121(Continuation<? super C00121> continuation) {
             super(continuation);
         }
 
@@ -198,113 +198,107 @@ public final class UtilsKt {
         return " (" + it + ')';
     }
 
-    /* JADX WARN: Code duplicated, block: B:101:0x0396 A[Catch: all -> 0x062b, TryCatch #5 {all -> 0x062b, blocks: (B:154:0x05f3, B:155:0x0605, B:157:0x060b, B:159:0x061e, B:160:0x0622, B:148:0x05b1, B:69:0x0281, B:70:0x02a1, B:72:0x02a7, B:77:0x0308, B:75:0x02dd, B:79:0x0318, B:81:0x0336, B:83:0x034e, B:85:0x0355, B:87:0x035f, B:89:0x0372, B:91:0x0379, B:93:0x0383, B:95:0x038a, B:101:0x0396, B:103:0x039b), top: B:198:0x0281 }] */
-    /* JADX WARN: Code duplicated, block: B:103:0x039b A[Catch: all -> 0x062b, TRY_LEAVE, TryCatch #5 {all -> 0x062b, blocks: (B:154:0x05f3, B:155:0x0605, B:157:0x060b, B:159:0x061e, B:160:0x0622, B:148:0x05b1, B:69:0x0281, B:70:0x02a1, B:72:0x02a7, B:77:0x0308, B:75:0x02dd, B:79:0x0318, B:81:0x0336, B:83:0x034e, B:85:0x0355, B:87:0x035f, B:89:0x0372, B:91:0x0379, B:93:0x0383, B:95:0x038a, B:101:0x0396, B:103:0x039b), top: B:198:0x0281 }] */
-    /* JADX WARN: Code duplicated, block: B:107:0x03a4  */
-    /* JADX WARN: Code duplicated, block: B:116:0x049c A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:117:0x049d  */
-    /* JADX WARN: Code duplicated, block: B:120:0x04d5  */
-    /* JADX WARN: Code duplicated, block: B:125:0x04e4  */
-    /* JADX WARN: Code duplicated, block: B:128:0x04f6  */
-    /* JADX WARN: Code duplicated, block: B:129:0x04f7  */
-    /* JADX WARN: Code duplicated, block: B:132:0x04ff A[Catch: all -> 0x0543, TRY_LEAVE, TryCatch #0 {all -> 0x0543, blocks: (B:118:0x04bb, B:126:0x04e7, B:130:0x04f9, B:132:0x04ff), top: B:190:0x04bb }] */
-    /* JADX WARN: Code duplicated, block: B:135:0x0518  */
-    /* JADX WARN: Code duplicated, block: B:149:0x05d1  */
-    /* JADX WARN: Code duplicated, block: B:150:0x05db  */
-    /* JADX WARN: Code duplicated, block: B:153:0x05ef  */
-    /* JADX WARN: Code duplicated, block: B:157:0x060b A[Catch: all -> 0x062b, TryCatch #5 {all -> 0x062b, blocks: (B:154:0x05f3, B:155:0x0605, B:157:0x060b, B:159:0x061e, B:160:0x0622, B:148:0x05b1, B:69:0x0281, B:70:0x02a1, B:72:0x02a7, B:77:0x0308, B:75:0x02dd, B:79:0x0318, B:81:0x0336, B:83:0x034e, B:85:0x0355, B:87:0x035f, B:89:0x0372, B:91:0x0379, B:93:0x0383, B:95:0x038a, B:101:0x0396, B:103:0x039b), top: B:198:0x0281 }] */
-    /* JADX WARN: Code duplicated, block: B:188:0x0671  */
-    /* JADX WARN: Code duplicated, block: B:202:0x03a7 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:220:0x061e A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:222:0x0605 A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:226:0x030c A[SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:227:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Code duplicated, block: B:60:0x01f6 A[Catch: all -> 0x0633, TryCatch #10 {all -> 0x0633, blocks: (B:58:0x01f2, B:60:0x01f6, B:62:0x01fb), top: B:208:0x01f2 }] */
-    /* JADX WARN: Code duplicated, block: B:62:0x01fb A[Catch: all -> 0x0633, TRY_LEAVE, TryCatch #10 {all -> 0x0633, blocks: (B:58:0x01f2, B:60:0x01f6, B:62:0x01fb), top: B:208:0x01f2 }] */
-    /* JADX WARN: Code duplicated, block: B:67:0x0270 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:68:0x0271  */
-    /* JADX WARN: Code duplicated, block: B:72:0x02a7 A[Catch: all -> 0x062b, TryCatch #5 {all -> 0x062b, blocks: (B:154:0x05f3, B:155:0x0605, B:157:0x060b, B:159:0x061e, B:160:0x0622, B:148:0x05b1, B:69:0x0281, B:70:0x02a1, B:72:0x02a7, B:77:0x0308, B:75:0x02dd, B:79:0x0318, B:81:0x0336, B:83:0x034e, B:85:0x0355, B:87:0x035f, B:89:0x0372, B:91:0x0379, B:93:0x0383, B:95:0x038a, B:101:0x0396, B:103:0x039b), top: B:198:0x0281 }] */
-    /* JADX WARN: Code duplicated, block: B:74:0x02d3  */
-    /* JADX WARN: Code duplicated, block: B:75:0x02dd A[Catch: all -> 0x062b, TryCatch #5 {all -> 0x062b, blocks: (B:154:0x05f3, B:155:0x0605, B:157:0x060b, B:159:0x061e, B:160:0x0622, B:148:0x05b1, B:69:0x0281, B:70:0x02a1, B:72:0x02a7, B:77:0x0308, B:75:0x02dd, B:79:0x0318, B:81:0x0336, B:83:0x034e, B:85:0x0355, B:87:0x035f, B:89:0x0372, B:91:0x0379, B:93:0x0383, B:95:0x038a, B:101:0x0396, B:103:0x039b), top: B:198:0x0281 }] */
-    /* JADX WARN: Code duplicated, block: B:77:0x0308 A[Catch: all -> 0x062b, TryCatch #5 {all -> 0x062b, blocks: (B:154:0x05f3, B:155:0x0605, B:157:0x060b, B:159:0x061e, B:160:0x0622, B:148:0x05b1, B:69:0x0281, B:70:0x02a1, B:72:0x02a7, B:77:0x0308, B:75:0x02dd, B:79:0x0318, B:81:0x0336, B:83:0x034e, B:85:0x0355, B:87:0x035f, B:89:0x0372, B:91:0x0379, B:93:0x0383, B:95:0x038a, B:101:0x0396, B:103:0x039b), top: B:198:0x0281 }] */
+    /* JADX WARN: Code duplicated, block: B:103:0x0345  */
+    /* JADX WARN: Code duplicated, block: B:105:0x0348 A[Catch: all -> 0x05f5, TRY_ENTER, TRY_LEAVE, TryCatch #9 {all -> 0x05f5, blocks: (B:66:0x0238, B:67:0x0258, B:79:0x02d5, B:81:0x02e8, B:89:0x0313, B:97:0x0337, B:105:0x0348), top: B:220:0x0238 }] */
+    /* JADX WARN: Code duplicated, block: B:107:0x034d A[Catch: all -> 0x02c9, TRY_ENTER, TRY_LEAVE, TryCatch #1 {all -> 0x02c9, blocks: (B:69:0x025e, B:74:0x02b9, B:72:0x0292, B:83:0x0300, B:85:0x0307, B:91:0x0325, B:93:0x032c, B:99:0x033c, B:107:0x034d), top: B:205:0x025e }] */
+    /* JADX WARN: Code duplicated, block: B:111:0x0356  */
+    /* JADX WARN: Code duplicated, block: B:120:0x0455 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:121:0x0456  */
+    /* JADX WARN: Code duplicated, block: B:124:0x048e  */
+    /* JADX WARN: Code duplicated, block: B:129:0x049d  */
+    /* JADX WARN: Code duplicated, block: B:132:0x04af  */
+    /* JADX WARN: Code duplicated, block: B:133:0x04b0  */
+    /* JADX WARN: Code duplicated, block: B:136:0x04b8 A[Catch: all -> 0x0505, TRY_LEAVE, TryCatch #0 {all -> 0x0505, blocks: (B:122:0x0474, B:130:0x04a0, B:134:0x04b2, B:136:0x04b8), top: B:203:0x0474 }] */
+    /* JADX WARN: Code duplicated, block: B:143:0x04dc  */
+    /* JADX WARN: Code duplicated, block: B:159:0x0594  */
+    /* JADX WARN: Code duplicated, block: B:160:0x05a0  */
+    /* JADX WARN: Code duplicated, block: B:163:0x05b6  */
+    /* JADX WARN: Code duplicated, block: B:167:0x05d4 A[Catch: all -> 0x0591, TryCatch #6 {all -> 0x0591, blocks: (B:164:0x05bc, B:165:0x05ce, B:167:0x05d4, B:169:0x05e7, B:170:0x05eb, B:156:0x0573), top: B:215:0x0573 }] */
+    /* JADX WARN: Code duplicated, block: B:201:0x0653  */
+    /* JADX WARN: Code duplicated, block: B:205:0x025e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:213:0x0359 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:240:0x05e7 A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:242:0x05ce A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:246:0x02bd A[SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:247:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:60:0x01cb A[Catch: all -> 0x00ba, TRY_ENTER, TRY_LEAVE, TryCatch #13 {all -> 0x00ba, blocks: (B:18:0x00a4, B:60:0x01cb), top: B:228:0x0027 }] */
+    /* JADX WARN: Code duplicated, block: B:62:0x01d0 A[Catch: all -> 0x05f9, TRY_ENTER, TRY_LEAVE, TryCatch #12 {all -> 0x05f9, blocks: (B:58:0x01c7, B:62:0x01d0), top: B:226:0x01c7 }] */
+    /* JADX WARN: Code duplicated, block: B:64:0x0227 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:65:0x0228  */
+    /* JADX WARN: Code duplicated, block: B:71:0x028a  */
+    /* JADX WARN: Code duplicated, block: B:72:0x0292 A[Catch: all -> 0x02c9, TryCatch #1 {all -> 0x02c9, blocks: (B:69:0x025e, B:74:0x02b9, B:72:0x0292, B:83:0x0300, B:85:0x0307, B:91:0x0325, B:93:0x032c, B:99:0x033c, B:107:0x034d), top: B:205:0x025e }] */
+    /* JADX WARN: Code duplicated, block: B:74:0x02b9 A[Catch: all -> 0x02c9, TRY_LEAVE, TryCatch #1 {all -> 0x02c9, blocks: (B:69:0x025e, B:74:0x02b9, B:72:0x0292, B:83:0x0300, B:85:0x0307, B:91:0x0325, B:93:0x032c, B:99:0x033c, B:107:0x034d), top: B:205:0x025e }] */
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
-    /* JADX WARN: Code duplicated, block: B:81:0x0336 A[Catch: all -> 0x062b, TryCatch #5 {all -> 0x062b, blocks: (B:154:0x05f3, B:155:0x0605, B:157:0x060b, B:159:0x061e, B:160:0x0622, B:148:0x05b1, B:69:0x0281, B:70:0x02a1, B:72:0x02a7, B:77:0x0308, B:75:0x02dd, B:79:0x0318, B:81:0x0336, B:83:0x034e, B:85:0x0355, B:87:0x035f, B:89:0x0372, B:91:0x0379, B:93:0x0383, B:95:0x038a, B:101:0x0396, B:103:0x039b), top: B:198:0x0281 }] */
-    /* JADX WARN: Code duplicated, block: B:83:0x034e A[Catch: all -> 0x062b, TryCatch #5 {all -> 0x062b, blocks: (B:154:0x05f3, B:155:0x0605, B:157:0x060b, B:159:0x061e, B:160:0x0622, B:148:0x05b1, B:69:0x0281, B:70:0x02a1, B:72:0x02a7, B:77:0x0308, B:75:0x02dd, B:79:0x0318, B:81:0x0336, B:83:0x034e, B:85:0x0355, B:87:0x035f, B:89:0x0372, B:91:0x0379, B:93:0x0383, B:95:0x038a, B:101:0x0396, B:103:0x039b), top: B:198:0x0281 }] */
-    /* JADX WARN: Code duplicated, block: B:86:0x035e  */
-    /* JADX WARN: Code duplicated, block: B:89:0x0372 A[Catch: all -> 0x062b, TryCatch #5 {all -> 0x062b, blocks: (B:154:0x05f3, B:155:0x0605, B:157:0x060b, B:159:0x061e, B:160:0x0622, B:148:0x05b1, B:69:0x0281, B:70:0x02a1, B:72:0x02a7, B:77:0x0308, B:75:0x02dd, B:79:0x0318, B:81:0x0336, B:83:0x034e, B:85:0x0355, B:87:0x035f, B:89:0x0372, B:91:0x0379, B:93:0x0383, B:95:0x038a, B:101:0x0396, B:103:0x039b), top: B:198:0x0281 }] */
-    /* JADX WARN: Code duplicated, block: B:92:0x0382  */
-    /* JADX WARN: Code duplicated, block: B:95:0x038a A[Catch: all -> 0x062b, TryCatch #5 {all -> 0x062b, blocks: (B:154:0x05f3, B:155:0x0605, B:157:0x060b, B:159:0x061e, B:160:0x0622, B:148:0x05b1, B:69:0x0281, B:70:0x02a1, B:72:0x02a7, B:77:0x0308, B:75:0x02dd, B:79:0x0318, B:81:0x0336, B:83:0x034e, B:85:0x0355, B:87:0x035f, B:89:0x0372, B:91:0x0379, B:93:0x0383, B:95:0x038a, B:101:0x0396, B:103:0x039b), top: B:198:0x0281 }] */
-    /* JADX WARN: Code duplicated, block: B:99:0x0393  */
-    /* JADX WARN: Not initialized variable reg: 4, insn: 0x0109: MOVE (r24 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY] A[D('url' java.lang.String)]), block:B:29:0x0107 */
+    /* JADX WARN: Code duplicated, block: B:81:0x02e8 A[Catch: all -> 0x05f5, TRY_LEAVE, TryCatch #9 {all -> 0x05f5, blocks: (B:66:0x0238, B:67:0x0258, B:79:0x02d5, B:81:0x02e8, B:89:0x0313, B:97:0x0337, B:105:0x0348), top: B:220:0x0238 }] */
+    /* JADX WARN: Code duplicated, block: B:83:0x0300 A[Catch: all -> 0x02c9, TRY_ENTER, TryCatch #1 {all -> 0x02c9, blocks: (B:69:0x025e, B:74:0x02b9, B:72:0x0292, B:83:0x0300, B:85:0x0307, B:91:0x0325, B:93:0x032c, B:99:0x033c, B:107:0x034d), top: B:205:0x025e }] */
+    /* JADX WARN: Code duplicated, block: B:87:0x030f  */
+    /* JADX WARN: Code duplicated, block: B:91:0x0325 A[Catch: all -> 0x02c9, TRY_ENTER, TryCatch #1 {all -> 0x02c9, blocks: (B:69:0x025e, B:74:0x02b9, B:72:0x0292, B:83:0x0300, B:85:0x0307, B:91:0x0325, B:93:0x032c, B:99:0x033c, B:107:0x034d), top: B:205:0x025e }] */
+    /* JADX WARN: Code duplicated, block: B:95:0x0334  */
+    /* JADX WARN: Code duplicated, block: B:99:0x033c A[Catch: all -> 0x02c9, TRY_ENTER, TRY_LEAVE, TryCatch #1 {all -> 0x02c9, blocks: (B:69:0x025e, B:74:0x02b9, B:72:0x0292, B:83:0x0300, B:85:0x0307, B:91:0x0325, B:93:0x032c, B:99:0x033c, B:107:0x034d), top: B:205:0x025e }] */
+    /* JADX WARN: Not initialized variable reg: 11, insn: 0x00bd: MOVE (r23 I:??[OBJECT, ARRAY]) = (r11 I:??[OBJECT, ARRAY] A[D('url' java.lang.String)]), block:B:21:0x00bb */
     @Nullable
     public static final Object generateZinkLinks(@NotNull String url, @NotNull Continuation<? super List<ZinkLink>> continuation) {
-        C00091 c00091;
+        C00111 c00111;
         Object obj;
         int i;
-        int i2;
+        Object objAppGet$default;
         String url2;
-        String url3;
+        String firstHtml;
         MatchResult matchResultFind$default;
         List groupValues;
         String randomId;
         String ajaxEndpoint;
         String downloadBase;
-        String randomId2;
         String ajaxEndpoint2;
-        String downloadBase2;
-        int i3;
-        String url4;
-        String firstHtml;
+        String randomId2;
+        Object objRetry$default;
+        String randomId3;
         Document firstDoc;
+        int i2;
+        String url3;
         String token;
-        String downloadBase3;
+        String downloadBase2;
         String generatedUrl;
-        char c;
-        String ajaxEndpoint3;
+        Object objAppGet$default2;
+        int i3;
         String firstHtml2;
+        String randomId4;
         Document firstDoc2;
-        String downloadBase4;
-        String firstHtml3;
-        int i4;
-        String downloadBase5;
+        String ajaxEndpoint3;
         String token2;
+        String downloadBase3;
+        String downloadBase4;
         Document generatedDoc;
         Iterable $this$mapNotNull$iv;
         int $i$f$mapNotNull;
         Collection destination$iv$iv;
         Iterable $this$mapNotNullTo$iv$iv;
-        int $i$f$mapNotNullTo;
-        Iterable $this$forEach$iv$iv$iv;
         List results;
         Element btn;
         MatchResult matchResultFind$default2;
-        String str;
         String workerId;
         MatchResult matchResultFind$default3;
         String serverHandler;
-        String str2;
+        String str;
         boolean z;
-        String str3;
+        String str2;
         boolean z2;
         List results2;
-        String serverHandler2;
-        int i5;
-        Document generatedDoc2;
-        String generatedUrl2;
-        String serverHandler3;
-        String randomId3;
+        int i4;
+        String randomId5;
         String token3;
-        String downloadBase6;
-        String firstHtml4;
+        String downloadBase5;
+        String ajaxEndpoint4;
+        String firstHtml3;
         Document firstDoc3;
         Element btn2;
-        String workerId2;
-        Element btn3;
-        Unit unit;
+        String generatedUrl2;
         String generatedUrl3;
+        Document generatedDoc2;
         String generatedUrl4;
-        String url5;
-        int i6;
+        Unit unit;
+        String url4;
+        int i5;
         List groupValues2;
         List groupValues3;
         Element element;
@@ -318,120 +312,111 @@ public final class UtilsKt {
         Unit unitOptString2;
         String it2;
         String it3;
-        int i7;
-        Unit unit2;
-        if (continuation instanceof C00091) {
-            c00091 = (C00091) continuation;
-            if ((c00091.label & Integer.MIN_VALUE) != 0) {
-                c00091.label -= Integer.MIN_VALUE;
+        int i6;
+        String str3;
+        if (continuation instanceof C00111) {
+            c00111 = (C00111) continuation;
+            if ((c00111.label & Integer.MIN_VALUE) != 0) {
+                c00111.label -= Integer.MIN_VALUE;
             } else {
-                c00091 = new C00091(continuation);
+                c00111 = new C00111(continuation);
             }
         } else {
-            c00091 = new C00091(continuation);
+            c00111 = new C00111(continuation);
         }
-        C00091 c00092 = c00091;
-        Object $result = c00092.result;
+        C00111 c00112 = c00111;
+        Object $result = c00112.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         try {
-            switch (c00092.label) {
+            switch (c00112.label) {
                 case 0:
                     ResultKt.throwOnFailure($result);
                     try {
                         Result.Companion companion = Result.Companion;
                         i = 0;
+                        Zinkmovies.Companion companion2 = Zinkmovies.INSTANCE;
+                        c00112.L$0 = SpillingKt.nullOutSpilledVariable(url);
+                        c00112.label = 1;
+                        objAppGet$default = Zinkmovies.Companion.appGet$default(companion2, url, null, 0, false, c00112, 14, null);
+                        if (objAppGet$default == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        url2 = url;
                         try {
-                            Requests app = MainActivityKt.getApp();
-                            c00092.L$0 = SpillingKt.nullOutSpilledVariable(url);
-                            c00092.label = 1;
-                            i2 = 0;
+                            Document firstDoc4 = ((NiceResponse) objAppGet$default).getDocument();
+                            firstHtml = firstDoc4.html();
+                            matchResultFind$default = Regex.find$default(RANDOM_ID_REGEX, firstHtml, 0, 2, (Object) null);
                             try {
-                                $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 4094, (Object) null);
-                                c00092 = c00092;
-                                if ($result == coroutine_suspended) {
-                                    return coroutine_suspended;
+                                if (matchResultFind$default != null || (groupValues = matchResultFind$default.getGroupValues()) == null || (randomId = (String) CollectionsKt.getOrNull(groupValues, 1)) == null) {
+                                    return CollectionsKt.emptyList();
                                 }
-                                url2 = url;
+                                MatchResult matchResultFind$default4 = Regex.find$default(AJAX_REGEX, firstHtml, 0, 2, (Object) null);
+                                if (matchResultFind$default4 == null || (ajaxEndpoint = matchResultFind$default4.getValue()) == null) {
+                                    return CollectionsKt.emptyList();
+                                }
+                                MatchResult matchResultFind$default5 = Regex.find$default(DL_REGEX, firstHtml, 0, 2, (Object) null);
+                                if (matchResultFind$default5 == null || (downloadBase = matchResultFind$default5.getValue()) == null) {
+                                    return CollectionsKt.emptyList();
+                                }
+                                UtilsKt$generateZinkLinks$2$token$1 utilsKt$generateZinkLinks$2$token$1 = new UtilsKt$generateZinkLinks$2$token$1(ajaxEndpoint, randomId, null);
+                                c00112.L$0 = SpillingKt.nullOutSpilledVariable(url2);
+                                c00112.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc4);
+                                c00112.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml);
+                                c00112.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint);
+                                c00112.L$4 = downloadBase;
+                                c00112.L$5 = SpillingKt.nullOutSpilledVariable(randomId);
+                                c00112.label = 2;
+                                ajaxEndpoint2 = ajaxEndpoint;
+                                randomId2 = randomId;
                                 try {
-                                    Document firstDoc4 = ((NiceResponse) $result).getDocument();
-                                    String firstHtml5 = firstDoc4.html();
-                                    url3 = null;
-                                    matchResultFind$default = Regex.find$default(RANDOM_ID_REGEX, firstHtml5, i2, 2, (Object) null);
-                                    if (matchResultFind$default != null || (groupValues = matchResultFind$default.getGroupValues()) == null || (randomId = (String) CollectionsKt.getOrNull(groupValues, 1)) == null) {
-                                        return CollectionsKt.emptyList();
-                                    }
-                                    MatchResult matchResultFind$default4 = Regex.find$default(AJAX_REGEX, firstHtml5, i2, 2, (Object) null);
-                                    if (matchResultFind$default4 == null || (ajaxEndpoint = matchResultFind$default4.getValue()) == null) {
-                                        return CollectionsKt.emptyList();
-                                    }
-                                    MatchResult matchResultFind$default5 = Regex.find$default(DL_REGEX, firstHtml5, i2, 2, (Object) null);
-                                    if (matchResultFind$default5 == null || (downloadBase = matchResultFind$default5.getValue()) == null) {
-                                        return CollectionsKt.emptyList();
-                                    }
-                                    UtilsKt$generateZinkLinks$2$token$1 utilsKt$generateZinkLinks$2$token$1 = new UtilsKt$generateZinkLinks$2$token$1(ajaxEndpoint, randomId, null);
-                                    c00092.L$0 = SpillingKt.nullOutSpilledVariable(url2);
-                                    c00092.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc4);
-                                    c00092.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml5);
-                                    c00092.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint);
-                                    c00092.L$4 = downloadBase;
-                                    c00092.L$5 = SpillingKt.nullOutSpilledVariable(randomId);
-                                    c00092.label = 2;
-                                    $result = retry$default(0, 0L, utilsKt$generateZinkLinks$2$token$1, c00092, 3, null);
-                                    if ($result == coroutine_suspended) {
+                                    objRetry$default = retry$default(0, 0L, utilsKt$generateZinkLinks$2$token$1, c00112, 3, null);
+                                    c00112 = c00112;
+                                    if (objRetry$default == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
-                                    randomId2 = randomId;
-                                    ajaxEndpoint2 = ajaxEndpoint;
-                                    downloadBase2 = downloadBase;
-                                    i3 = i;
-                                    url4 = url2;
-                                    firstHtml = firstHtml5;
+                                    randomId3 = downloadBase;
                                     firstDoc = firstDoc4;
+                                    i2 = i;
+                                    url3 = url2;
                                     try {
-                                        token = (String) $result;
+                                        token = (String) objRetry$default;
                                         if (token == null) {
                                             return CollectionsKt.emptyList();
                                         }
-                                        String generatedUrl5 = downloadBase2 + token;
-                                        Requests app2 = MainActivityKt.getApp();
-                                        c00092.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                                        c00092.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc);
-                                        c00092.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml);
-                                        c00092.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint2);
-                                        c00092.L$4 = SpillingKt.nullOutSpilledVariable(downloadBase2);
-                                        c00092.L$5 = SpillingKt.nullOutSpilledVariable(token);
-                                        c00092.L$6 = SpillingKt.nullOutSpilledVariable(randomId2);
-                                        c00092.L$7 = generatedUrl5;
-                                        c00092.label = 3;
-                                        downloadBase3 = downloadBase2;
+                                        String generatedUrl5 = randomId3 + token;
+                                        Zinkmovies.Companion companion3 = Zinkmovies.INSTANCE;
+                                        c00112.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                                        c00112.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc);
+                                        c00112.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml);
+                                        c00112.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint2);
+                                        c00112.L$4 = SpillingKt.nullOutSpilledVariable(randomId3);
+                                        c00112.L$5 = SpillingKt.nullOutSpilledVariable(token);
+                                        c00112.L$6 = SpillingKt.nullOutSpilledVariable(randomId2);
+                                        c00112.L$7 = generatedUrl5;
+                                        c00112.label = 3;
+                                        downloadBase2 = randomId3;
                                         generatedUrl = generatedUrl5;
-                                        C00091 c00093 = c00092;
-                                        c = 3;
+                                        objAppGet$default2 = Zinkmovies.Companion.appGet$default(companion3, generatedUrl, null, 0, false, c00112, 14, null);
+                                        if (objAppGet$default2 == coroutine_suspended) {
+                                            return coroutine_suspended;
+                                        }
+                                        i3 = i2;
+                                        firstHtml2 = firstHtml;
+                                        randomId4 = randomId2;
+                                        firstDoc2 = firstDoc;
+                                        ajaxEndpoint3 = ajaxEndpoint2;
+                                        token2 = token;
+                                        downloadBase3 = downloadBase2;
+                                        downloadBase4 = url3;
                                         try {
-                                            $result = Requests.get$default(app2, generatedUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00093, 4094, (Object) null);
-                                            c00092 = c00093;
-                                            if ($result == coroutine_suspended) {
-                                                return coroutine_suspended;
-                                            }
-                                            ajaxEndpoint3 = ajaxEndpoint2;
-                                            firstHtml2 = firstHtml;
-                                            firstDoc2 = firstDoc;
-                                            downloadBase4 = downloadBase3;
-                                            firstHtml3 = url4;
-                                            i4 = i3;
-                                            downloadBase5 = token;
-                                            token2 = randomId2;
-                                            try {
-                                                generatedDoc = ((NiceResponse) $result).getDocument();
-                                                $this$mapNotNull$iv = generatedDoc.select("#mirror-buttons a[href]");
-                                                $i$f$mapNotNull = 0;
-                                                destination$iv$iv = new ArrayList();
-                                                $this$mapNotNullTo$iv$iv = $this$mapNotNull$iv;
-                                                $i$f$mapNotNullTo = 0;
-                                                $this$forEach$iv$iv$iv = $this$mapNotNullTo$iv$iv;
-                                                for (Object element$iv$iv$iv : $this$forEach$iv$iv$iv) {
+                                            generatedDoc = ((NiceResponse) objAppGet$default2).getDocument();
+                                            $this$mapNotNull$iv = generatedDoc.select("#mirror-buttons a[href]");
+                                            $i$f$mapNotNull = 0;
+                                            destination$iv$iv = new ArrayList();
+                                            $this$mapNotNullTo$iv$iv = $this$mapNotNull$iv;
+                                            for (Object element$iv$iv$iv : $this$mapNotNullTo$iv$iv) {
+                                                try {
                                                     element = (Element) element$iv$iv$iv;
-                                                    Iterable $this$mapNotNull$iv2 = $this$mapNotNull$iv;
                                                     href = StringsKt.trim(element.attr("href")).toString();
                                                     if (StringsKt.isBlank(href)) {
                                                         zinkLink = null;
@@ -441,100 +426,93 @@ public final class UtilsKt {
                                                     if (zinkLink != null) {
                                                         destination$iv$iv.add(zinkLink);
                                                     }
+                                                    $this$mapNotNull$iv = $this$mapNotNull$iv;
                                                     $i$f$mapNotNull = $i$f$mapNotNull;
-                                                    $this$mapNotNull$iv = $this$mapNotNull$iv2;
                                                     $this$mapNotNullTo$iv$iv = $this$mapNotNullTo$iv$iv;
-                                                    $i$f$mapNotNullTo = $i$f$mapNotNullTo;
-                                                    $this$forEach$iv$iv$iv = $this$forEach$iv$iv$iv;
+                                                } catch (Throwable th) {
+                                                    th = th;
                                                 }
-                                                results = CollectionsKt.toMutableList((List) destination$iv$iv);
-                                                btn = generatedDoc.selectFirst("#worker-btn");
-                                                if (btn != null) {
-                                                    matchResultFind$default2 = Regex.find$default(WORKER_REGEX, btn.attr("onclick"), 0, 2, (Object) null);
-                                                    if (matchResultFind$default2 != null || (groupValues3 = matchResultFind$default2.getGroupValues()) == null) {
-                                                        str = null;
-                                                    } else {
-                                                        str = (String) CollectionsKt.getOrNull(groupValues3, 1);
-                                                    }
-                                                    workerId = str;
-                                                    matchResultFind$default3 = Regex.find$default(SERVER_HANDLER_REGEX, generatedDoc.html(), 0, 2, (Object) null);
-                                                    if (matchResultFind$default3 != null || (groupValues2 = matchResultFind$default3.getGroupValues()) == null) {
-                                                        serverHandler = null;
-                                                    } else {
-                                                        serverHandler = (String) CollectionsKt.getOrNull(groupValues2, 1);
-                                                    }
-                                                    str2 = workerId;
+                                            }
+                                            results = CollectionsKt.toMutableList((List) destination$iv$iv);
+                                            btn = generatedDoc.selectFirst("#worker-btn");
+                                            if (btn != null) {
+                                                matchResultFind$default2 = Regex.find$default(WORKER_REGEX, btn.attr("onclick"), 0, 2, (Object) null);
+                                                if (matchResultFind$default2 != null || (groupValues3 = matchResultFind$default2.getGroupValues()) == null) {
+                                                    workerId = null;
+                                                } else {
+                                                    workerId = (String) CollectionsKt.getOrNull(groupValues3, 1);
+                                                }
+                                                matchResultFind$default3 = Regex.find$default(SERVER_HANDLER_REGEX, generatedDoc.html(), 0, 2, (Object) null);
+                                                if (matchResultFind$default3 != null || (groupValues2 = matchResultFind$default3.getGroupValues()) == null) {
+                                                    serverHandler = null;
+                                                } else {
+                                                    serverHandler = (String) CollectionsKt.getOrNull(groupValues2, 1);
+                                                }
+                                                str = workerId;
+                                                if (str != null || StringsKt.isBlank(str)) {
+                                                    z = true;
+                                                } else {
+                                                    z = false;
+                                                }
+                                                if (!z) {
+                                                    str2 = serverHandler;
                                                     if (str2 != null || StringsKt.isBlank(str2)) {
-                                                        z = true;
+                                                        z2 = true;
                                                     } else {
-                                                        z = false;
+                                                        z2 = false;
                                                     }
-                                                    if (!z) {
-                                                        str3 = serverHandler;
-                                                        if (str3 != null || StringsKt.isBlank(str3)) {
-                                                            z2 = true;
-                                                        } else {
-                                                            z2 = false;
-                                                        }
-                                                        if (!z2) {
+                                                    if (!z2) {
+                                                        try {
+                                                            Result.Companion companion4 = Result.Companion;
                                                             try {
-                                                                Result.Companion companion2 = Result.Companion;
+                                                                Requests app = MainActivityKt.getApp();
+                                                                RequestBody requestBodyCreate$default = RequestBody.Companion.create$default(RequestBody.Companion, StringsKt.trimIndent("\n                                {\n                                    \"server\":\"worker\",\n                                    \"random_id\":\"" + workerId + "\"\n                                }\n                            "), (MediaType) null, 1, (Object) null);
+                                                                Map mapMapOf = MapsKt.mapOf(new Pair[]{TuplesKt.to("X-Requested-With", "XMLHttpRequest"), TuplesKt.to("Content-Type", "application/json"), TuplesKt.to("Origin", StringsKt.substringBefore$default(generatedUrl, "/dl/", (String) null, 2, (Object) null)), TuplesKt.to("Referer", generatedUrl)});
+                                                                c00112.L$0 = SpillingKt.nullOutSpilledVariable(downloadBase4);
+                                                                c00112.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc2);
+                                                                c00112.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml2);
+                                                                c00112.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint3);
+                                                                c00112.L$4 = SpillingKt.nullOutSpilledVariable(downloadBase3);
+                                                                c00112.L$5 = SpillingKt.nullOutSpilledVariable(token2);
+                                                                c00112.L$6 = SpillingKt.nullOutSpilledVariable(randomId4);
+                                                                c00112.L$7 = SpillingKt.nullOutSpilledVariable(generatedUrl);
+                                                                c00112.L$8 = SpillingKt.nullOutSpilledVariable(generatedDoc);
+                                                                c00112.L$9 = SpillingKt.nullOutSpilledVariable(btn);
+                                                                c00112.L$10 = SpillingKt.nullOutSpilledVariable(serverHandler);
+                                                                c00112.L$11 = SpillingKt.nullOutSpilledVariable(workerId);
+                                                                c00112.L$12 = results;
+                                                                c00112.label = 4;
+                                                                generatedUrl4 = generatedUrl;
+                                                                unit = null;
                                                                 try {
-                                                                    Requests app3 = MainActivityKt.getApp();
-                                                                    RequestBody requestBodyCreate$default = RequestBody.Companion.create$default(RequestBody.Companion, StringsKt.trimIndent("\n                                {\n                                    \"server\":\"worker\",\n                                    \"random_id\":\"" + workerId + "\"\n                                }\n                            "), (MediaType) null, 1, (Object) null);
-                                                                    Pair[] pairArr = new Pair[4];
-                                                                    pairArr[0] = TuplesKt.to("X-Requested-With", "XMLHttpRequest");
-                                                                    pairArr[1] = TuplesKt.to("Content-Type", "application/json");
-                                                                    pairArr[2] = TuplesKt.to("Origin", StringsKt.substringBefore$default(generatedUrl, "/dl/", (String) null, 2, (Object) null));
-                                                                    pairArr[c] = TuplesKt.to("Referer", generatedUrl);
-                                                                    Map mapMapOf = MapsKt.mapOf(pairArr);
-                                                                    c00092.L$0 = SpillingKt.nullOutSpilledVariable(firstHtml3);
-                                                                    c00092.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc2);
-                                                                    c00092.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml2);
-                                                                    c00092.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint3);
-                                                                    c00092.L$4 = SpillingKt.nullOutSpilledVariable(downloadBase4);
-                                                                    c00092.L$5 = SpillingKt.nullOutSpilledVariable(downloadBase5);
-                                                                    c00092.L$6 = SpillingKt.nullOutSpilledVariable(token2);
-                                                                    c00092.L$7 = SpillingKt.nullOutSpilledVariable(generatedUrl);
-                                                                    c00092.L$8 = SpillingKt.nullOutSpilledVariable(generatedDoc);
-                                                                    c00092.L$9 = SpillingKt.nullOutSpilledVariable(btn);
-                                                                    c00092.L$10 = SpillingKt.nullOutSpilledVariable(serverHandler);
-                                                                    c00092.L$11 = SpillingKt.nullOutSpilledVariable(workerId);
-                                                                    c00092.L$12 = results;
-                                                                    c00092.label = 4;
-                                                                    unit = null;
-                                                                    generatedUrl3 = generatedUrl;
-                                                                    generatedUrl4 = serverHandler;
+                                                                    $result = Requests.post$default(app, serverHandler, mapMapOf, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate$default, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00112, 65276, (Object) null);
+                                                                    if ($result == coroutine_suspended) {
+                                                                        return coroutine_suspended;
+                                                                    }
+                                                                    results2 = results;
+                                                                    url4 = downloadBase4;
+                                                                    i4 = i3;
+                                                                    randomId5 = randomId4;
+                                                                    token3 = token2;
+                                                                    downloadBase5 = downloadBase3;
+                                                                    ajaxEndpoint4 = ajaxEndpoint3;
+                                                                    firstHtml3 = firstHtml2;
+                                                                    firstDoc3 = firstDoc2;
+                                                                    btn2 = btn;
+                                                                    generatedUrl2 = null;
+                                                                    i5 = 0;
+                                                                    generatedUrl3 = generatedUrl4;
+                                                                    generatedDoc2 = generatedDoc;
                                                                     try {
-                                                                        $result = Requests.post$default(app3, generatedUrl4, mapMapOf, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate$default, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 65276, (Object) null);
-                                                                        if ($result == coroutine_suspended) {
-                                                                            return coroutine_suspended;
-                                                                        }
-                                                                        results2 = results;
-                                                                        serverHandler2 = generatedUrl4;
-                                                                        url5 = firstHtml3;
-                                                                        i5 = i4;
-                                                                        generatedDoc2 = generatedDoc;
-                                                                        generatedUrl2 = generatedUrl3;
-                                                                        serverHandler3 = ajaxEndpoint3;
-                                                                        randomId3 = token2;
-                                                                        token3 = downloadBase5;
-                                                                        downloadBase6 = downloadBase4;
-                                                                        i6 = 0;
-                                                                        firstHtml4 = firstHtml2;
-                                                                        firstDoc3 = firstDoc2;
-                                                                        btn2 = null;
-                                                                        workerId2 = workerId;
-                                                                        btn3 = btn;
-                                                                        try {
-                                                                            workerJson = new JSONObject(((NiceResponse) $result).getText());
-                                                                            unitOptString = workerJson.optString("url");
-                                                                            if (StringsKt.isBlank(unitOptString)) {
+                                                                        workerJson = new JSONObject(((NiceResponse) $result).getText());
+                                                                        unitOptString = workerJson.optString("url");
+                                                                        if (StringsKt.isBlank(unitOptString)) {
+                                                                            try {
+                                                                                unitOptString2 = workerJson.optString("download");
+                                                                            } catch (Throwable th2) {
+                                                                                th = th2;
                                                                                 try {
-                                                                                    unitOptString2 = workerJson.optString("download");
-                                                                                } catch (Throwable th) {
-                                                                                    th = th;
-                                                                                    Result.Companion companion3 = Result.Companion;
+                                                                                    Result.Companion companion5 = Result.Companion;
                                                                                     Result.constructor-impl(ResultKt.createFailure(th));
                                                                                     results = results2;
                                                                                     List $this$distinctBy$iv = results;
@@ -547,240 +525,234 @@ public final class UtilsKt {
                                                                                         }
                                                                                     }
                                                                                     obj = Result.constructor-impl(list$iv);
-                                                                                    if (Result.exceptionOrNull-impl(obj) == null) {
-                                                                                        return obj;
-                                                                                    }
-                                                                                    return CollectionsKt.emptyList();
+                                                                                    break;
+                                                                                } catch (Throwable th3) {
+                                                                                    th = th3;
+                                                                                    Result.Companion companion6 = Result.Companion;
+                                                                                    obj = Result.constructor-impl(ResultKt.createFailure(th));
                                                                                 }
-                                                                            } else {
-                                                                                unitOptString2 = unitOptString;
+                                                                                if (Result.exceptionOrNull-impl(obj) == null) {
+                                                                                    return obj;
+                                                                                }
+                                                                                return CollectionsKt.emptyList();
                                                                             }
-                                                                            it2 = (String) unitOptString2;
-                                                                            if (!StringsKt.isBlank(it2)) {
-                                                                                unitOptString2 = unit;
-                                                                            }
-                                                                            it3 = (String) unitOptString2;
-                                                                            if (it3 != null) {
-                                                                                i7 = i5;
+                                                                        } else {
+                                                                            unitOptString2 = unitOptString;
+                                                                        }
+                                                                        it2 = (String) unitOptString2;
+                                                                        if (!StringsKt.isBlank(it2)) {
+                                                                            unitOptString2 = unit;
+                                                                        }
+                                                                        it3 = (String) unitOptString2;
+                                                                        if (it3 != null) {
+                                                                            i6 = i4;
+                                                                            try {
+                                                                                str3 = generatedUrl2;
                                                                                 try {
                                                                                     results2.add(new ZinkLink("WORKER", it3));
-                                                                                    unit2 = Unit.INSTANCE;
-                                                                                } catch (Throwable th2) {
-                                                                                    th = th2;
-                                                                                    i5 = i7;
-                                                                                    Result.Companion companion4 = Result.Companion;
+                                                                                    unit = Unit.INSTANCE;
+                                                                                } catch (Throwable th4) {
+                                                                                    th = th4;
+                                                                                    i4 = i6;
+                                                                                    generatedUrl2 = str3;
+                                                                                    Result.Companion companion7 = Result.Companion;
                                                                                     Result.constructor-impl(ResultKt.createFailure(th));
                                                                                     results = results2;
                                                                                 }
-                                                                            } else {
-                                                                                i7 = i5;
-                                                                                unit2 = unit;
+                                                                            } catch (Throwable th5) {
+                                                                                th = th5;
+                                                                                i4 = i6;
+                                                                                Result.Companion companion8 = Result.Companion;
+                                                                                Result.constructor-impl(ResultKt.createFailure(th));
+                                                                                results = results2;
                                                                             }
-                                                                            Result.constructor-impl(unit2);
-                                                                            results = results2;
-                                                                        } catch (Throwable th3) {
-                                                                            th = th3;
+                                                                        } else {
+                                                                            i6 = i4;
+                                                                            str3 = generatedUrl2;
                                                                         }
-                                                                    } catch (Throwable th4) {
-                                                                        th = th4;
-                                                                        results2 = results;
-                                                                        serverHandler2 = generatedUrl4;
-                                                                        i5 = i4;
-                                                                        generatedDoc2 = generatedDoc;
-                                                                        generatedUrl2 = generatedUrl3;
-                                                                        serverHandler3 = ajaxEndpoint3;
-                                                                        randomId3 = token2;
-                                                                        token3 = downloadBase5;
-                                                                        downloadBase6 = downloadBase4;
-                                                                        firstHtml4 = firstHtml2;
-                                                                        firstDoc3 = firstDoc2;
-                                                                        btn2 = null;
-                                                                        workerId2 = workerId;
-                                                                        btn3 = btn;
-                                                                        Result.Companion companion5 = Result.Companion;
-                                                                        Result.constructor-impl(ResultKt.createFailure(th));
+                                                                        Result.constructor-impl(unit);
                                                                         results = results2;
-                                                                        List $this$distinctBy$iv2 = results;
-                                                                        set$iv = new HashSet();
-                                                                        list$iv = new ArrayList();
-                                                                        while (r8.hasNext()) {
-                                                                            it = (ZinkLink) e$iv;
-                                                                            if (set$iv.add(it.getUrl())) {
-                                                                                list$iv.add(e$iv);
-                                                                            }
-                                                                        }
-                                                                        obj = Result.constructor-impl(list$iv);
-                                                                        if (Result.exceptionOrNull-impl(obj) == null) {
-                                                                            return obj;
-                                                                        }
-                                                                        return CollectionsKt.emptyList();
+                                                                    } catch (Throwable th6) {
+                                                                        th = th6;
                                                                     }
-                                                                } catch (Throwable th5) {
-                                                                    th = th5;
-                                                                    String str4 = generatedUrl;
+                                                                } catch (Throwable th7) {
+                                                                    th = th7;
                                                                     results2 = results;
-                                                                    serverHandler2 = serverHandler;
-                                                                    i5 = i4;
-                                                                    generatedDoc2 = generatedDoc;
-                                                                    generatedUrl2 = str4;
-                                                                    serverHandler3 = ajaxEndpoint3;
-                                                                    randomId3 = token2;
-                                                                    token3 = downloadBase5;
-                                                                    downloadBase6 = downloadBase4;
-                                                                    firstHtml4 = firstHtml2;
+                                                                    i4 = i3;
+                                                                    randomId5 = randomId4;
+                                                                    token3 = token2;
+                                                                    downloadBase5 = downloadBase3;
+                                                                    ajaxEndpoint4 = ajaxEndpoint3;
+                                                                    firstHtml3 = firstHtml2;
                                                                     firstDoc3 = firstDoc2;
-                                                                    btn2 = null;
-                                                                    workerId2 = workerId;
-                                                                    btn3 = btn;
+                                                                    btn2 = btn;
+                                                                    generatedUrl2 = null;
+                                                                    generatedUrl3 = generatedUrl4;
+                                                                    generatedDoc2 = generatedDoc;
+                                                                    Result.Companion companion9 = Result.Companion;
+                                                                    Result.constructor-impl(ResultKt.createFailure(th));
+                                                                    results = results2;
+                                                                    List $this$distinctBy$iv2 = results;
+                                                                    set$iv = new HashSet();
+                                                                    list$iv = new ArrayList();
+                                                                    while (r8.hasNext()) {
+                                                                        it = (ZinkLink) e$iv;
+                                                                        if (set$iv.add(it.getUrl())) {
+                                                                            list$iv.add(e$iv);
+                                                                        }
+                                                                    }
+                                                                    obj = Result.constructor-impl(list$iv);
+                                                                    if (Result.exceptionOrNull-impl(obj) == null) {
+                                                                        return obj;
+                                                                    }
+                                                                    return CollectionsKt.emptyList();
                                                                 }
-                                                            } catch (Throwable th6) {
-                                                                th = th6;
-                                                                String str5 = generatedUrl;
+                                                            } catch (Throwable th8) {
+                                                                th = th8;
+                                                                String str4 = generatedUrl;
                                                                 results2 = results;
-                                                                serverHandler2 = serverHandler;
-                                                                i5 = i4;
-                                                                generatedDoc2 = generatedDoc;
-                                                                generatedUrl2 = str5;
-                                                                serverHandler3 = ajaxEndpoint3;
-                                                                randomId3 = token2;
-                                                                token3 = downloadBase5;
-                                                                downloadBase6 = downloadBase4;
-                                                                firstHtml4 = firstHtml2;
+                                                                i4 = i3;
+                                                                randomId5 = randomId4;
+                                                                token3 = token2;
+                                                                downloadBase5 = downloadBase3;
+                                                                ajaxEndpoint4 = ajaxEndpoint3;
+                                                                firstHtml3 = firstHtml2;
                                                                 firstDoc3 = firstDoc2;
-                                                                btn2 = null;
-                                                                workerId2 = workerId;
-                                                                btn3 = btn;
+                                                                btn2 = btn;
+                                                                generatedUrl2 = null;
+                                                                generatedUrl3 = str4;
+                                                                generatedDoc2 = generatedDoc;
                                                             }
-                                                            break;
+                                                        } catch (Throwable th9) {
+                                                            th = th9;
+                                                            String str5 = generatedUrl;
+                                                            results2 = results;
+                                                            i4 = i3;
+                                                            randomId5 = randomId4;
+                                                            token3 = token2;
+                                                            downloadBase5 = downloadBase3;
+                                                            ajaxEndpoint4 = ajaxEndpoint3;
+                                                            firstHtml3 = firstHtml2;
+                                                            firstDoc3 = firstDoc2;
+                                                            btn2 = btn;
+                                                            generatedUrl2 = null;
+                                                            generatedUrl3 = str5;
+                                                            generatedDoc2 = generatedDoc;
                                                         }
+                                                        break;
                                                     }
                                                 }
-                                                List $this$distinctBy$iv3 = results;
-                                                set$iv = new HashSet();
-                                                list$iv = new ArrayList();
-                                                while (r8.hasNext()) {
-                                                    it = (ZinkLink) e$iv;
-                                                    if (set$iv.add(it.getUrl())) {
-                                                        list$iv.add(e$iv);
-                                                    }
+                                            }
+                                            List $this$distinctBy$iv3 = results;
+                                            set$iv = new HashSet();
+                                            list$iv = new ArrayList();
+                                            while (r8.hasNext()) {
+                                                it = (ZinkLink) e$iv;
+                                                if (set$iv.add(it.getUrl())) {
+                                                    list$iv.add(e$iv);
                                                 }
-                                                obj = Result.constructor-impl(list$iv);
-                                                break;
-                                            } catch (Throwable th7) {
-                                                th = th7;
-                                                Result.Companion companion6 = Result.Companion;
-                                                obj = Result.constructor-impl(ResultKt.createFailure(th));
                                             }
-                                            if (Result.exceptionOrNull-impl(obj) == null) {
-                                                return obj;
-                                            }
-                                            return CollectionsKt.emptyList();
-                                        } catch (Throwable th8) {
-                                            th = th8;
-                                            Result.Companion companion7 = Result.Companion;
-                                            obj = Result.constructor-impl(ResultKt.createFailure(th));
+                                            obj = Result.constructor-impl(list$iv);
+                                            break;
+                                        } catch (Throwable th10) {
+                                            th = th10;
                                         }
-                                    } catch (Throwable th9) {
-                                        th = th9;
+                                        if (Result.exceptionOrNull-impl(obj) == null) {
+                                            return obj;
+                                        }
+                                        return CollectionsKt.emptyList();
+                                    } catch (Throwable th11) {
+                                        th = th11;
                                     }
-                                } catch (Throwable th10) {
-                                    th = th10;
-                                    Result.Companion companion8 = Result.Companion;
-                                    obj = Result.constructor-impl(ResultKt.createFailure(th));
-                                    if (Result.exceptionOrNull-impl(obj) == null) {
-                                        return obj;
-                                    }
-                                    return CollectionsKt.emptyList();
+                                } catch (Throwable th12) {
+                                    th = th12;
                                 }
-                            } catch (Throwable th11) {
-                                th = th11;
-                                Result.Companion companion9 = Result.Companion;
-                                obj = Result.constructor-impl(ResultKt.createFailure(th));
-                                if (Result.exceptionOrNull-impl(obj) == null) {
-                                    return obj;
-                                }
-                                return CollectionsKt.emptyList();
+                            } catch (Throwable th13) {
+                                th = th13;
                             }
-                        } catch (Throwable th12) {
-                            th = th12;
+                        } catch (Throwable th14) {
+                            th = th14;
                         }
-                    } catch (Throwable th13) {
-                        th = th13;
+                        Result.Companion companion10 = Result.Companion;
+                        obj = Result.constructor-impl(ResultKt.createFailure(th));
+                        if (Result.exceptionOrNull-impl(obj) == null) {
+                            return obj;
+                        }
+                        return CollectionsKt.emptyList();
+                    } catch (Throwable th15) {
+                        th = th15;
                     }
                     break;
                 case 1:
-                    String url6 = (String) c00092.L$0;
-                    ResultKt.throwOnFailure($result);
-                    i = 0;
-                    url2 = url6;
-                    i2 = 0;
-                    Document firstDoc5 = ((NiceResponse) $result).getDocument();
-                    String firstHtml6 = firstDoc5.html();
-                    url3 = null;
-                    matchResultFind$default = Regex.find$default(RANDOM_ID_REGEX, firstHtml6, i2, 2, (Object) null);
-                    if (matchResultFind$default != null) {
-                        break;
-                    }
-                    return CollectionsKt.emptyList();
-                case 2:
-                    String randomId4 = (String) c00092.L$5;
-                    String downloadBase7 = (String) c00092.L$4;
-                    String ajaxEndpoint4 = (String) c00092.L$3;
-                    String firstHtml7 = (String) c00092.L$2;
-                    Document firstDoc6 = (Document) c00092.L$1;
-                    String url7 = (String) c00092.L$0;
+                    String url5 = (String) c00112.L$0;
                     try {
                         ResultKt.throwOnFailure($result);
-                        i3 = 0;
-                        randomId2 = randomId4;
-                        downloadBase2 = downloadBase7;
-                        ajaxEndpoint2 = ajaxEndpoint4;
-                        url4 = url7;
-                        url3 = null;
-                        firstHtml = firstHtml7;
+                        i = 0;
+                        url2 = url5;
+                        objAppGet$default = $result;
+                        Document firstDoc5 = ((NiceResponse) objAppGet$default).getDocument();
+                        firstHtml = firstDoc5.html();
+                        matchResultFind$default = Regex.find$default(RANDOM_ID_REGEX, firstHtml, 0, 2, (Object) null);
+                        if (matchResultFind$default != null) {
+                        }
+                        return CollectionsKt.emptyList();
+                    } catch (Throwable th16) {
+                        th = th16;
+                    }
+                    break;
+                case 2:
+                    String randomId6 = (String) c00112.L$5;
+                    String downloadBase6 = (String) c00112.L$4;
+                    String ajaxEndpoint5 = (String) c00112.L$3;
+                    String firstHtml4 = (String) c00112.L$2;
+                    Document firstDoc6 = (Document) c00112.L$1;
+                    String url6 = (String) c00112.L$0;
+                    try {
+                        ResultKt.throwOnFailure($result);
+                        i2 = 0;
+                        randomId2 = randomId6;
+                        randomId3 = downloadBase6;
+                        ajaxEndpoint2 = ajaxEndpoint5;
+                        firstHtml = firstHtml4;
                         firstDoc = firstDoc6;
-                        token = (String) $result;
+                        objRetry$default = $result;
+                        url3 = url6;
+                        token = (String) objRetry$default;
                         if (token == null) {
                             return CollectionsKt.emptyList();
                         }
-                        String generatedUrl6 = downloadBase2 + token;
-                        Requests app4 = MainActivityKt.getApp();
-                        c00092.L$0 = SpillingKt.nullOutSpilledVariable(url4);
-                        c00092.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc);
-                        c00092.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml);
-                        c00092.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint2);
-                        c00092.L$4 = SpillingKt.nullOutSpilledVariable(downloadBase2);
-                        c00092.L$5 = SpillingKt.nullOutSpilledVariable(token);
-                        c00092.L$6 = SpillingKt.nullOutSpilledVariable(randomId2);
-                        c00092.L$7 = generatedUrl6;
-                        c00092.label = 3;
-                        downloadBase3 = downloadBase2;
+                        String generatedUrl6 = randomId3 + token;
+                        Zinkmovies.Companion companion11 = Zinkmovies.INSTANCE;
+                        c00112.L$0 = SpillingKt.nullOutSpilledVariable(url3);
+                        c00112.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc);
+                        c00112.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml);
+                        c00112.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint2);
+                        c00112.L$4 = SpillingKt.nullOutSpilledVariable(randomId3);
+                        c00112.L$5 = SpillingKt.nullOutSpilledVariable(token);
+                        c00112.L$6 = SpillingKt.nullOutSpilledVariable(randomId2);
+                        c00112.L$7 = generatedUrl6;
+                        c00112.label = 3;
+                        downloadBase2 = randomId3;
                         generatedUrl = generatedUrl6;
-                        C00091 c00094 = c00092;
-                        c = 3;
-                        $result = Requests.get$default(app4, generatedUrl, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00094, 4094, (Object) null);
-                        c00092 = c00094;
-                        if ($result == coroutine_suspended) {
+                        objAppGet$default2 = Zinkmovies.Companion.appGet$default(companion11, generatedUrl, null, 0, false, c00112, 14, null);
+                        if (objAppGet$default2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
-                        ajaxEndpoint3 = ajaxEndpoint2;
+                        i3 = i2;
                         firstHtml2 = firstHtml;
+                        randomId4 = randomId2;
                         firstDoc2 = firstDoc;
-                        downloadBase4 = downloadBase3;
-                        firstHtml3 = url4;
-                        i4 = i3;
-                        downloadBase5 = token;
-                        token2 = randomId2;
-                        generatedDoc = ((NiceResponse) $result).getDocument();
+                        ajaxEndpoint3 = ajaxEndpoint2;
+                        token2 = token;
+                        downloadBase3 = downloadBase2;
+                        downloadBase4 = url3;
+                        generatedDoc = ((NiceResponse) objAppGet$default2).getDocument();
                         $this$mapNotNull$iv = generatedDoc.select("#mirror-buttons a[href]");
                         $i$f$mapNotNull = 0;
                         destination$iv$iv = new ArrayList();
                         $this$mapNotNullTo$iv$iv = $this$mapNotNull$iv;
-                        $i$f$mapNotNullTo = 0;
-                        $this$forEach$iv$iv$iv = $this$mapNotNullTo$iv$iv;
-                        while (r12.hasNext()) {
+                        while (r18.hasNext()) {
                             element = (Element) element$iv$iv$iv;
-                            Iterable $this$mapNotNull$iv3 = $this$mapNotNull$iv;
                             href = StringsKt.trim(element.attr("href")).toString();
                             if (StringsKt.isBlank(href)) {
                                 zinkLink = null;
@@ -790,88 +762,77 @@ public final class UtilsKt {
                             if (zinkLink != null) {
                                 destination$iv$iv.add(zinkLink);
                             }
+                            $this$mapNotNull$iv = $this$mapNotNull$iv;
                             $i$f$mapNotNull = $i$f$mapNotNull;
-                            $this$mapNotNull$iv = $this$mapNotNull$iv3;
                             $this$mapNotNullTo$iv$iv = $this$mapNotNullTo$iv$iv;
-                            $i$f$mapNotNullTo = $i$f$mapNotNullTo;
-                            $this$forEach$iv$iv$iv = $this$forEach$iv$iv$iv;
                         }
                         results = CollectionsKt.toMutableList((List) destination$iv$iv);
                         btn = generatedDoc.selectFirst("#worker-btn");
                         if (btn != null) {
                             matchResultFind$default2 = Regex.find$default(WORKER_REGEX, btn.attr("onclick"), 0, 2, (Object) null);
                             if (matchResultFind$default2 != null) {
-                                str = null;
+                                workerId = null;
                             } else {
-                                str = null;
+                                workerId = null;
                             }
-                            workerId = str;
                             matchResultFind$default3 = Regex.find$default(SERVER_HANDLER_REGEX, generatedDoc.html(), 0, 2, (Object) null);
                             if (matchResultFind$default3 != null) {
                                 serverHandler = null;
                             } else {
                                 serverHandler = null;
                             }
-                            str2 = workerId;
-                            if (str2 != null) {
+                            str = workerId;
+                            if (str != null) {
                                 z = true;
                             } else {
                                 z = true;
                             }
                             if (!z) {
-                                str3 = serverHandler;
-                                if (str3 != null) {
+                                str2 = serverHandler;
+                                if (str2 != null) {
                                     z2 = true;
                                 } else {
                                     z2 = true;
                                 }
                                 if (!z2) {
-                                    Result.Companion companion10 = Result.Companion;
-                                    Requests app5 = MainActivityKt.getApp();
+                                    Result.Companion companion12 = Result.Companion;
+                                    Requests app2 = MainActivityKt.getApp();
                                     RequestBody requestBodyCreate$default2 = RequestBody.Companion.create$default(RequestBody.Companion, StringsKt.trimIndent("\n                                {\n                                    \"server\":\"worker\",\n                                    \"random_id\":\"" + workerId + "\"\n                                }\n                            "), (MediaType) null, 1, (Object) null);
-                                    Pair[] pairArr2 = new Pair[4];
-                                    pairArr2[0] = TuplesKt.to("X-Requested-With", "XMLHttpRequest");
-                                    pairArr2[1] = TuplesKt.to("Content-Type", "application/json");
-                                    pairArr2[2] = TuplesKt.to("Origin", StringsKt.substringBefore$default(generatedUrl, "/dl/", (String) null, 2, (Object) null));
-                                    pairArr2[c] = TuplesKt.to("Referer", generatedUrl);
-                                    Map mapMapOf2 = MapsKt.mapOf(pairArr2);
-                                    c00092.L$0 = SpillingKt.nullOutSpilledVariable(firstHtml3);
-                                    c00092.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc2);
-                                    c00092.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml2);
-                                    c00092.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint3);
-                                    c00092.L$4 = SpillingKt.nullOutSpilledVariable(downloadBase4);
-                                    c00092.L$5 = SpillingKt.nullOutSpilledVariable(downloadBase5);
-                                    c00092.L$6 = SpillingKt.nullOutSpilledVariable(token2);
-                                    c00092.L$7 = SpillingKt.nullOutSpilledVariable(generatedUrl);
-                                    c00092.L$8 = SpillingKt.nullOutSpilledVariable(generatedDoc);
-                                    c00092.L$9 = SpillingKt.nullOutSpilledVariable(btn);
-                                    c00092.L$10 = SpillingKt.nullOutSpilledVariable(serverHandler);
-                                    c00092.L$11 = SpillingKt.nullOutSpilledVariable(workerId);
-                                    c00092.L$12 = results;
-                                    c00092.label = 4;
+                                    Map mapMapOf2 = MapsKt.mapOf(new Pair[]{TuplesKt.to("X-Requested-With", "XMLHttpRequest"), TuplesKt.to("Content-Type", "application/json"), TuplesKt.to("Origin", StringsKt.substringBefore$default(generatedUrl, "/dl/", (String) null, 2, (Object) null)), TuplesKt.to("Referer", generatedUrl)});
+                                    c00112.L$0 = SpillingKt.nullOutSpilledVariable(downloadBase4);
+                                    c00112.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc2);
+                                    c00112.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml2);
+                                    c00112.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint3);
+                                    c00112.L$4 = SpillingKt.nullOutSpilledVariable(downloadBase3);
+                                    c00112.L$5 = SpillingKt.nullOutSpilledVariable(token2);
+                                    c00112.L$6 = SpillingKt.nullOutSpilledVariable(randomId4);
+                                    c00112.L$7 = SpillingKt.nullOutSpilledVariable(generatedUrl);
+                                    c00112.L$8 = SpillingKt.nullOutSpilledVariable(generatedDoc);
+                                    c00112.L$9 = SpillingKt.nullOutSpilledVariable(btn);
+                                    c00112.L$10 = SpillingKt.nullOutSpilledVariable(serverHandler);
+                                    c00112.L$11 = SpillingKt.nullOutSpilledVariable(workerId);
+                                    c00112.L$12 = results;
+                                    c00112.label = 4;
+                                    generatedUrl4 = generatedUrl;
                                     unit = null;
-                                    generatedUrl3 = generatedUrl;
-                                    generatedUrl4 = serverHandler;
-                                    $result = Requests.post$default(app5, generatedUrl4, mapMapOf2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate$default2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 65276, (Object) null);
+                                    $result = Requests.post$default(app2, serverHandler, mapMapOf2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate$default2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00112, 65276, (Object) null);
                                     if ($result == coroutine_suspended) {
                                         return coroutine_suspended;
                                     }
                                     results2 = results;
-                                    serverHandler2 = generatedUrl4;
-                                    url5 = firstHtml3;
-                                    i5 = i4;
-                                    generatedDoc2 = generatedDoc;
-                                    generatedUrl2 = generatedUrl3;
-                                    serverHandler3 = ajaxEndpoint3;
-                                    randomId3 = token2;
-                                    token3 = downloadBase5;
-                                    downloadBase6 = downloadBase4;
-                                    i6 = 0;
-                                    firstHtml4 = firstHtml2;
+                                    url4 = downloadBase4;
+                                    i4 = i3;
+                                    randomId5 = randomId4;
+                                    token3 = token2;
+                                    downloadBase5 = downloadBase3;
+                                    ajaxEndpoint4 = ajaxEndpoint3;
+                                    firstHtml3 = firstHtml2;
                                     firstDoc3 = firstDoc2;
-                                    btn2 = null;
-                                    workerId2 = workerId;
-                                    btn3 = btn;
+                                    btn2 = btn;
+                                    generatedUrl2 = null;
+                                    i5 = 0;
+                                    generatedUrl3 = generatedUrl4;
+                                    generatedDoc2 = generatedDoc;
                                     workerJson = new JSONObject(((NiceResponse) $result).getText());
                                     unitOptString = workerJson.optString("url");
                                     if (StringsKt.isBlank(unitOptString)) {
@@ -885,14 +846,15 @@ public final class UtilsKt {
                                     }
                                     it3 = (String) unitOptString2;
                                     if (it3 != null) {
-                                        i7 = i5;
+                                        i6 = i4;
+                                        str3 = generatedUrl2;
                                         results2.add(new ZinkLink("WORKER", it3));
-                                        unit2 = Unit.INSTANCE;
+                                        unit = Unit.INSTANCE;
                                     } else {
-                                        i7 = i5;
-                                        unit2 = unit;
+                                        i6 = i4;
+                                        str3 = generatedUrl2;
                                     }
-                                    Result.constructor-impl(unit2);
+                                    Result.constructor-impl(unit);
                                     results = results2;
                                     break;
                                 }
@@ -912,45 +874,41 @@ public final class UtilsKt {
                             return obj;
                         }
                         return CollectionsKt.emptyList();
-                    } catch (Throwable th14) {
-                        th = th14;
-                        Result.Companion companion11 = Result.Companion;
-                        obj = Result.constructor-impl(ResultKt.createFailure(th));
-                        if (Result.exceptionOrNull-impl(obj) == null) {
-                            return obj;
-                        }
-                        return CollectionsKt.emptyList();
+                    } catch (Throwable th17) {
+                        th = th17;
                     }
+                    Result.Companion companion13 = Result.Companion;
+                    obj = Result.constructor-impl(ResultKt.createFailure(th));
+                    if (Result.exceptionOrNull-impl(obj) == null) {
+                        return obj;
+                    }
+                    return CollectionsKt.emptyList();
                 case 3:
-                    String generatedUrl7 = (String) c00092.L$7;
-                    String randomId5 = (String) c00092.L$6;
-                    String token4 = (String) c00092.L$5;
-                    String downloadBase8 = (String) c00092.L$4;
-                    String ajaxEndpoint5 = (String) c00092.L$3;
-                    String firstHtml8 = (String) c00092.L$2;
-                    Document firstDoc7 = (Document) c00092.L$1;
-                    String url8 = (String) c00092.L$0;
+                    generatedUrl = (String) c00112.L$7;
+                    String randomId7 = (String) c00112.L$6;
+                    String token4 = (String) c00112.L$5;
+                    String downloadBase7 = (String) c00112.L$4;
+                    String ajaxEndpoint6 = (String) c00112.L$3;
+                    String firstHtml5 = (String) c00112.L$2;
+                    Document firstDoc7 = (Document) c00112.L$1;
+                    String url7 = (String) c00112.L$0;
                     ResultKt.throwOnFailure($result);
-                    i4 = 0;
-                    firstHtml3 = url8;
-                    generatedUrl = generatedUrl7;
-                    token2 = randomId5;
-                    downloadBase5 = token4;
-                    downloadBase4 = downloadBase8;
-                    ajaxEndpoint3 = ajaxEndpoint5;
-                    firstHtml2 = firstHtml8;
+                    i3 = 0;
+                    randomId4 = randomId7;
+                    token2 = token4;
+                    downloadBase3 = downloadBase7;
+                    ajaxEndpoint3 = ajaxEndpoint6;
+                    firstHtml2 = firstHtml5;
+                    objAppGet$default2 = $result;
                     firstDoc2 = firstDoc7;
-                    c = 3;
-                    generatedDoc = ((NiceResponse) $result).getDocument();
+                    downloadBase4 = url7;
+                    generatedDoc = ((NiceResponse) objAppGet$default2).getDocument();
                     $this$mapNotNull$iv = generatedDoc.select("#mirror-buttons a[href]");
                     $i$f$mapNotNull = 0;
                     destination$iv$iv = new ArrayList();
                     $this$mapNotNullTo$iv$iv = $this$mapNotNull$iv;
-                    $i$f$mapNotNullTo = 0;
-                    $this$forEach$iv$iv$iv = $this$mapNotNullTo$iv$iv;
-                    while (r12.hasNext()) {
+                    while (r18.hasNext()) {
                         element = (Element) element$iv$iv$iv;
-                        Iterable $this$mapNotNull$iv4 = $this$mapNotNull$iv;
                         href = StringsKt.trim(element.attr("href")).toString();
                         if (StringsKt.isBlank(href)) {
                             zinkLink = null;
@@ -960,88 +918,77 @@ public final class UtilsKt {
                         if (zinkLink != null) {
                             destination$iv$iv.add(zinkLink);
                         }
+                        $this$mapNotNull$iv = $this$mapNotNull$iv;
                         $i$f$mapNotNull = $i$f$mapNotNull;
-                        $this$mapNotNull$iv = $this$mapNotNull$iv4;
                         $this$mapNotNullTo$iv$iv = $this$mapNotNullTo$iv$iv;
-                        $i$f$mapNotNullTo = $i$f$mapNotNullTo;
-                        $this$forEach$iv$iv$iv = $this$forEach$iv$iv$iv;
                     }
                     results = CollectionsKt.toMutableList((List) destination$iv$iv);
                     btn = generatedDoc.selectFirst("#worker-btn");
                     if (btn != null) {
                         matchResultFind$default2 = Regex.find$default(WORKER_REGEX, btn.attr("onclick"), 0, 2, (Object) null);
                         if (matchResultFind$default2 != null) {
-                            str = null;
+                            workerId = null;
                         } else {
-                            str = null;
+                            workerId = null;
                         }
-                        workerId = str;
                         matchResultFind$default3 = Regex.find$default(SERVER_HANDLER_REGEX, generatedDoc.html(), 0, 2, (Object) null);
                         if (matchResultFind$default3 != null) {
                             serverHandler = null;
                         } else {
                             serverHandler = null;
                         }
-                        str2 = workerId;
-                        if (str2 != null) {
+                        str = workerId;
+                        if (str != null) {
                             z = true;
                         } else {
                             z = true;
                         }
                         if (!z) {
-                            str3 = serverHandler;
-                            if (str3 != null) {
+                            str2 = serverHandler;
+                            if (str2 != null) {
                                 z2 = true;
                             } else {
                                 z2 = true;
                             }
                             if (!z2) {
-                                Result.Companion companion12 = Result.Companion;
-                                Requests app6 = MainActivityKt.getApp();
+                                Result.Companion companion14 = Result.Companion;
+                                Requests app3 = MainActivityKt.getApp();
                                 RequestBody requestBodyCreate$default3 = RequestBody.Companion.create$default(RequestBody.Companion, StringsKt.trimIndent("\n                                {\n                                    \"server\":\"worker\",\n                                    \"random_id\":\"" + workerId + "\"\n                                }\n                            "), (MediaType) null, 1, (Object) null);
-                                Pair[] pairArr3 = new Pair[4];
-                                pairArr3[0] = TuplesKt.to("X-Requested-With", "XMLHttpRequest");
-                                pairArr3[1] = TuplesKt.to("Content-Type", "application/json");
-                                pairArr3[2] = TuplesKt.to("Origin", StringsKt.substringBefore$default(generatedUrl, "/dl/", (String) null, 2, (Object) null));
-                                pairArr3[c] = TuplesKt.to("Referer", generatedUrl);
-                                Map mapMapOf3 = MapsKt.mapOf(pairArr3);
-                                c00092.L$0 = SpillingKt.nullOutSpilledVariable(firstHtml3);
-                                c00092.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc2);
-                                c00092.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml2);
-                                c00092.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint3);
-                                c00092.L$4 = SpillingKt.nullOutSpilledVariable(downloadBase4);
-                                c00092.L$5 = SpillingKt.nullOutSpilledVariable(downloadBase5);
-                                c00092.L$6 = SpillingKt.nullOutSpilledVariable(token2);
-                                c00092.L$7 = SpillingKt.nullOutSpilledVariable(generatedUrl);
-                                c00092.L$8 = SpillingKt.nullOutSpilledVariable(generatedDoc);
-                                c00092.L$9 = SpillingKt.nullOutSpilledVariable(btn);
-                                c00092.L$10 = SpillingKt.nullOutSpilledVariable(serverHandler);
-                                c00092.L$11 = SpillingKt.nullOutSpilledVariable(workerId);
-                                c00092.L$12 = results;
-                                c00092.label = 4;
+                                Map mapMapOf3 = MapsKt.mapOf(new Pair[]{TuplesKt.to("X-Requested-With", "XMLHttpRequest"), TuplesKt.to("Content-Type", "application/json"), TuplesKt.to("Origin", StringsKt.substringBefore$default(generatedUrl, "/dl/", (String) null, 2, (Object) null)), TuplesKt.to("Referer", generatedUrl)});
+                                c00112.L$0 = SpillingKt.nullOutSpilledVariable(downloadBase4);
+                                c00112.L$1 = SpillingKt.nullOutSpilledVariable(firstDoc2);
+                                c00112.L$2 = SpillingKt.nullOutSpilledVariable(firstHtml2);
+                                c00112.L$3 = SpillingKt.nullOutSpilledVariable(ajaxEndpoint3);
+                                c00112.L$4 = SpillingKt.nullOutSpilledVariable(downloadBase3);
+                                c00112.L$5 = SpillingKt.nullOutSpilledVariable(token2);
+                                c00112.L$6 = SpillingKt.nullOutSpilledVariable(randomId4);
+                                c00112.L$7 = SpillingKt.nullOutSpilledVariable(generatedUrl);
+                                c00112.L$8 = SpillingKt.nullOutSpilledVariable(generatedDoc);
+                                c00112.L$9 = SpillingKt.nullOutSpilledVariable(btn);
+                                c00112.L$10 = SpillingKt.nullOutSpilledVariable(serverHandler);
+                                c00112.L$11 = SpillingKt.nullOutSpilledVariable(workerId);
+                                c00112.L$12 = results;
+                                c00112.label = 4;
+                                generatedUrl4 = generatedUrl;
                                 unit = null;
-                                generatedUrl3 = generatedUrl;
-                                generatedUrl4 = serverHandler;
-                                $result = Requests.post$default(app6, generatedUrl4, mapMapOf3, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate$default3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 65276, (Object) null);
+                                $result = Requests.post$default(app3, serverHandler, mapMapOf3, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate$default3, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00112, 65276, (Object) null);
                                 if ($result == coroutine_suspended) {
                                     return coroutine_suspended;
                                 }
                                 results2 = results;
-                                serverHandler2 = generatedUrl4;
-                                url5 = firstHtml3;
-                                i5 = i4;
-                                generatedDoc2 = generatedDoc;
-                                generatedUrl2 = generatedUrl3;
-                                serverHandler3 = ajaxEndpoint3;
-                                randomId3 = token2;
-                                token3 = downloadBase5;
-                                downloadBase6 = downloadBase4;
-                                i6 = 0;
-                                firstHtml4 = firstHtml2;
+                                url4 = downloadBase4;
+                                i4 = i3;
+                                randomId5 = randomId4;
+                                token3 = token2;
+                                downloadBase5 = downloadBase3;
+                                ajaxEndpoint4 = ajaxEndpoint3;
+                                firstHtml3 = firstHtml2;
                                 firstDoc3 = firstDoc2;
-                                btn2 = null;
-                                workerId2 = workerId;
-                                btn3 = btn;
+                                btn2 = btn;
+                                generatedUrl2 = null;
+                                i5 = 0;
+                                generatedUrl3 = generatedUrl4;
+                                generatedDoc2 = generatedDoc;
                                 workerJson = new JSONObject(((NiceResponse) $result).getText());
                                 unitOptString = workerJson.optString("url");
                                 if (StringsKt.isBlank(unitOptString)) {
@@ -1055,14 +1002,15 @@ public final class UtilsKt {
                                 }
                                 it3 = (String) unitOptString2;
                                 if (it3 != null) {
-                                    i7 = i5;
+                                    i6 = i4;
+                                    str3 = generatedUrl2;
                                     results2.add(new ZinkLink("WORKER", it3));
-                                    unit2 = Unit.INSTANCE;
+                                    unit = Unit.INSTANCE;
                                 } else {
-                                    i7 = i5;
-                                    unit2 = unit;
+                                    i6 = i4;
+                                    str3 = generatedUrl2;
                                 }
-                                Result.constructor-impl(unit2);
+                                Result.constructor-impl(unit);
                                 results = results2;
                                 break;
                             }
@@ -1083,24 +1031,22 @@ public final class UtilsKt {
                     }
                     return CollectionsKt.emptyList();
                 case 4:
-                    i5 = 0;
-                    btn2 = null;
-                    results2 = (List) c00092.L$12;
-                    workerId2 = (String) c00092.L$11;
-                    serverHandler2 = (String) c00092.L$10;
-                    btn3 = (Element) c00092.L$9;
-                    generatedDoc2 = (Document) c00092.L$8;
-                    generatedUrl2 = (String) c00092.L$7;
-                    randomId3 = (String) c00092.L$6;
-                    token3 = (String) c00092.L$5;
-                    downloadBase6 = (String) c00092.L$4;
-                    serverHandler3 = (String) c00092.L$3;
-                    firstHtml4 = (String) c00092.L$2;
-                    firstDoc3 = (Document) c00092.L$1;
-                    url5 = (String) c00092.L$0;
+                    i4 = 0;
+                    generatedUrl2 = null;
+                    results2 = (List) c00112.L$12;
+                    btn2 = (Element) c00112.L$9;
+                    generatedDoc2 = (Document) c00112.L$8;
+                    generatedUrl3 = (String) c00112.L$7;
+                    randomId5 = (String) c00112.L$6;
+                    token3 = (String) c00112.L$5;
+                    downloadBase5 = (String) c00112.L$4;
+                    ajaxEndpoint4 = (String) c00112.L$3;
+                    firstHtml3 = (String) c00112.L$2;
+                    firstDoc3 = (Document) c00112.L$1;
+                    url4 = (String) c00112.L$0;
                     try {
                         ResultKt.throwOnFailure($result);
-                        i6 = 0;
+                        i5 = 0;
                         unit = null;
                         workerJson = new JSONObject(((NiceResponse) $result).getText());
                         unitOptString = workerJson.optString("url");
@@ -1115,19 +1061,20 @@ public final class UtilsKt {
                         }
                         it3 = (String) unitOptString2;
                         if (it3 != null) {
-                            i7 = i5;
+                            i6 = i4;
+                            str3 = generatedUrl2;
                             results2.add(new ZinkLink("WORKER", it3));
-                            unit2 = Unit.INSTANCE;
+                            unit = Unit.INSTANCE;
                         } else {
-                            i7 = i5;
-                            unit2 = unit;
+                            i6 = i4;
+                            str3 = generatedUrl2;
                         }
-                        Result.constructor-impl(unit2);
+                        Result.constructor-impl(unit);
                         results = results2;
                         break;
-                    } catch (Throwable th15) {
-                        th = th15;
-                        Result.Companion companion13 = Result.Companion;
+                    } catch (Throwable th18) {
+                        th = th18;
+                        Result.Companion companion15 = Result.Companion;
                         Result.constructor-impl(ResultKt.createFailure(th));
                         results = results2;
                         List $this$distinctBy$iv6 = results;
@@ -1162,8 +1109,8 @@ public final class UtilsKt {
                 default:
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
-        } catch (Throwable th16) {
-            th = th16;
+        } catch (Throwable th19) {
+            th = th19;
         }
     }
 
@@ -1209,46 +1156,45 @@ public final class UtilsKt {
         return (matchResultFind$default == null || (groupValues = matchResultFind$default.getGroupValues()) == null || (str2 = (String) CollectionsKt.getOrNull(groupValues, 1)) == null || (intOrNull = StringsKt.toIntOrNull(str2)) == null) ? Qualities.Unknown.getValue() : intOrNull.intValue();
     }
 
-    /* JADX WARN: Code duplicated, block: B:31:0x00c4 A[Catch: all -> 0x0104, TryCatch #0 {all -> 0x0104, blocks: (B:29:0x00ac, B:31:0x00c4, B:34:0x00cc, B:50:0x00ff, B:37:0x00d9, B:39:0x00e5, B:40:0x00eb, B:42:0x00f0), top: B:63:0x00ac }] */
-    /* JADX WARN: Code duplicated, block: B:32:0x00c9  */
-    /* JADX WARN: Code duplicated, block: B:34:0x00cc A[Catch: all -> 0x0104, TryCatch #0 {all -> 0x0104, blocks: (B:29:0x00ac, B:31:0x00c4, B:34:0x00cc, B:50:0x00ff, B:37:0x00d9, B:39:0x00e5, B:40:0x00eb, B:42:0x00f0), top: B:63:0x00ac }] */
-    /* JADX WARN: Code duplicated, block: B:36:0x00d8  */
-    /* JADX WARN: Code duplicated, block: B:37:0x00d9 A[Catch: all -> 0x0104, TryCatch #0 {all -> 0x0104, blocks: (B:29:0x00ac, B:31:0x00c4, B:34:0x00cc, B:50:0x00ff, B:37:0x00d9, B:39:0x00e5, B:40:0x00eb, B:42:0x00f0), top: B:63:0x00ac }] */
-    /* JADX WARN: Code duplicated, block: B:39:0x00e5 A[Catch: all -> 0x0104, TryCatch #0 {all -> 0x0104, blocks: (B:29:0x00ac, B:31:0x00c4, B:34:0x00cc, B:50:0x00ff, B:37:0x00d9, B:39:0x00e5, B:40:0x00eb, B:42:0x00f0), top: B:63:0x00ac }] */
-    /* JADX WARN: Code duplicated, block: B:42:0x00f0 A[Catch: all -> 0x0104, TryCatch #0 {all -> 0x0104, blocks: (B:29:0x00ac, B:31:0x00c4, B:34:0x00cc, B:50:0x00ff, B:37:0x00d9, B:39:0x00e5, B:40:0x00eb, B:42:0x00f0), top: B:63:0x00ac }] */
-    /* JADX WARN: Code duplicated, block: B:46:0x00f9  */
-    /* JADX WARN: Code duplicated, block: B:48:0x00fc  */
-    /* JADX WARN: Code duplicated, block: B:49:0x00fe  */
-    /* JADX WARN: Code duplicated, block: B:61:0x0121  */
-    /* JADX WARN: Code duplicated, block: B:71:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Code duplicated, block: B:29:0x0091 A[Catch: all -> 0x0041, TryCatch #0 {all -> 0x0041, blocks: (B:13:0x003b, B:27:0x007b, B:29:0x0091, B:32:0x0099, B:47:0x00ca, B:35:0x00a6, B:37:0x00b2, B:38:0x00b8, B:40:0x00bd), top: B:56:0x003b }] */
+    /* JADX WARN: Code duplicated, block: B:30:0x0096  */
+    /* JADX WARN: Code duplicated, block: B:32:0x0099 A[Catch: all -> 0x0041, TryCatch #0 {all -> 0x0041, blocks: (B:13:0x003b, B:27:0x007b, B:29:0x0091, B:32:0x0099, B:47:0x00ca, B:35:0x00a6, B:37:0x00b2, B:38:0x00b8, B:40:0x00bd), top: B:56:0x003b }] */
+    /* JADX WARN: Code duplicated, block: B:34:0x00a5  */
+    /* JADX WARN: Code duplicated, block: B:35:0x00a6 A[Catch: all -> 0x0041, TryCatch #0 {all -> 0x0041, blocks: (B:13:0x003b, B:27:0x007b, B:29:0x0091, B:32:0x0099, B:47:0x00ca, B:35:0x00a6, B:37:0x00b2, B:38:0x00b8, B:40:0x00bd), top: B:56:0x003b }] */
+    /* JADX WARN: Code duplicated, block: B:37:0x00b2 A[Catch: all -> 0x0041, TryCatch #0 {all -> 0x0041, blocks: (B:13:0x003b, B:27:0x007b, B:29:0x0091, B:32:0x0099, B:47:0x00ca, B:35:0x00a6, B:37:0x00b2, B:38:0x00b8, B:40:0x00bd), top: B:56:0x003b }] */
+    /* JADX WARN: Code duplicated, block: B:40:0x00bd A[Catch: all -> 0x0041, TryCatch #0 {all -> 0x0041, blocks: (B:13:0x003b, B:27:0x007b, B:29:0x0091, B:32:0x0099, B:47:0x00ca, B:35:0x00a6, B:37:0x00b2, B:38:0x00b8, B:40:0x00bd), top: B:56:0x003b }] */
+    /* JADX WARN: Code duplicated, block: B:45:0x00c7  */
+    /* JADX WARN: Code duplicated, block: B:46:0x00c9  */
+    /* JADX WARN: Code duplicated, block: B:54:0x00e2  */
+    /* JADX WARN: Code duplicated, block: B:60:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
     public static final Object bypassShortlink(@NotNull String url, @NotNull Continuation<? super String> continuation) {
-        C00081 c00081;
+        C00101 c00101;
         String url2;
-        String link;
+        Object objAppGet$default;
         Object obj;
         String docText;
         MatchResult matchResultFind$default;
         String match;
-        Element elementSelectFirst;
+        String link;
         String str;
-        boolean z;
         String decodedUrl;
-        if (continuation instanceof C00081) {
-            c00081 = (C00081) continuation;
-            if ((c00081.label & Integer.MIN_VALUE) != 0) {
-                c00081.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00101) {
+            c00101 = (C00101) continuation;
+            if ((c00101.label & Integer.MIN_VALUE) != 0) {
+                c00101.label -= Integer.MIN_VALUE;
             } else {
-                c00081 = new C00081(continuation);
+                c00101 = new C00101(continuation);
             }
         } else {
-            c00081 = new C00081(continuation);
+            c00101 = new C00101(continuation);
         }
-        C00081 c00082 = c00081;
-        Object $result = c00082.result;
+        C00101 c00102 = c00101;
+        Object $result = c00102.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00082.label) {
+        boolean z = true;
+        switch (c00102.label) {
             case 0:
                 ResultKt.throwOnFailure($result);
                 if (!StringsKt.contains$default(url, "tpi.li", false, 2, (Object) null) && !StringsKt.contains$default(url, "oii.la", false, 2, (Object) null)) {
@@ -1256,115 +1202,88 @@ public final class UtilsKt {
                 }
                 try {
                     Result.Companion companion = Result.Companion;
-                    Requests app = MainActivityKt.getApp();
-                    c00082.L$0 = url;
-                    c00082.label = 1;
-                    link = null;
-                    try {
-                        $result = Requests.get$default(app, url, (Map) null, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 4094, (Object) null);
-                        if ($result == coroutine_suspended) {
-                            return coroutine_suspended;
-                        }
-                        url2 = url;
-                        try {
-                            docText = ((NiceResponse) $result).getText();
-                            Regex base64Regex = new Regex("aHR0c[a-zA-Z0-9+/=]+");
-                            matchResultFind$default = Regex.find$default(base64Regex, docText, 0, 2, link);
-                            if (matchResultFind$default != null) {
-                                match = matchResultFind$default.getValue();
-                            } else {
-                                match = link;
-                            }
-                            if (match != null) {
-                                decodedUrl = MainAPIKt.base64Decode(match);
-                                if (StringsKt.startsWith$default(decodedUrl, "http", false, 2, link)) {
-                                    Document parsedDoc = Jsoup.parse(docText);
-                                    elementSelectFirst = parsedDoc.selectFirst("a.get-link");
-                                    if (elementSelectFirst != null) {
-                                        link = elementSelectFirst.attr("href");
-                                    }
-                                    str = link;
-                                    if (str != null || StringsKt.isBlank(str)) {
-                                        z = true;
-                                    } else {
-                                        z = false;
-                                    }
-                                    if (z) {
-                                        decodedUrl = url2;
-                                    } else {
-                                        decodedUrl = link;
-                                    }
-                                }
-                            } else {
-                                Document parsedDoc2 = Jsoup.parse(docText);
-                                elementSelectFirst = parsedDoc2.selectFirst("a.get-link");
-                                if (elementSelectFirst != null) {
-                                    link = elementSelectFirst.attr("href");
-                                }
-                                str = link;
-                                if (str != null) {
-                                    z = true;
-                                } else {
-                                    z = true;
-                                }
-                                if (z) {
-                                    decodedUrl = link;
-                                } else {
-                                    decodedUrl = url2;
-                                }
-                            }
-                            obj = Result.constructor-impl(decodedUrl);
-                            break;
-                        } catch (Throwable th) {
-                            th = th;
-                            Result.Companion companion2 = Result.Companion;
-                            obj = Result.constructor-impl(ResultKt.createFailure(th));
-                        }
-                        if (Result.isFailure-impl(obj)) {
-                            return url2;
-                        }
-                        return obj;
-                    } catch (Throwable th2) {
-                        th = th2;
-                        url2 = url;
-                        Result.Companion companion3 = Result.Companion;
-                        obj = Result.constructor-impl(ResultKt.createFailure(th));
-                        if (Result.isFailure-impl(obj)) {
-                            return url2;
-                        }
-                        return obj;
+                    Zinkmovies.Companion companion2 = Zinkmovies.INSTANCE;
+                    c00102.L$0 = url;
+                    c00102.label = 1;
+                    objAppGet$default = Zinkmovies.Companion.appGet$default(companion2, url, null, 0, false, c00102, 14, null);
+                    if (objAppGet$default == coroutine_suspended) {
+                        return coroutine_suspended;
                     }
-                } catch (Throwable th3) {
-                    th = th3;
                     url2 = url;
-                }
-                break;
-            case 1:
-                url2 = (String) c00082.L$0;
-                try {
-                    ResultKt.throwOnFailure($result);
-                    link = null;
-                    docText = ((NiceResponse) $result).getText();
-                    Regex base64Regex2 = new Regex("aHR0c[a-zA-Z0-9+/=]+");
-                    matchResultFind$default = Regex.find$default(base64Regex2, docText, 0, 2, link);
+                    docText = ((NiceResponse) objAppGet$default).getText();
+                    Regex base64Regex = new Regex("aHR0c[a-zA-Z0-9+/=]+");
+                    matchResultFind$default = Regex.find$default(base64Regex, docText, 0, 2, (Object) null);
                     if (matchResultFind$default != null) {
                         match = matchResultFind$default.getValue();
                     } else {
-                        match = link;
+                        match = null;
                     }
                     if (match != null) {
                         decodedUrl = MainAPIKt.base64Decode(match);
-                        if (StringsKt.startsWith$default(decodedUrl, "http", false, 2, link)) {
+                        if (StringsKt.startsWith$default(decodedUrl, "http", false, 2, (Object) null)) {
+                            Document parsedDoc = Jsoup.parse(docText);
+                            Element elementSelectFirst = parsedDoc.selectFirst("a.get-link");
+                            link = elementSelectFirst != null ? elementSelectFirst.attr("href") : null;
+                            str = link;
+                            if (str != null && !StringsKt.isBlank(str)) {
+                                z = false;
+                            }
+                            if (z) {
+                                decodedUrl = url2;
+                            } else {
+                                decodedUrl = link;
+                            }
+                        }
+                    } else {
+                        Document parsedDoc2 = Jsoup.parse(docText);
+                        Element elementSelectFirst2 = parsedDoc2.selectFirst("a.get-link");
+                        if (elementSelectFirst2 != null) {
+                        }
+                        str = link;
+                        if (str != null) {
+                            z = false;
+                        }
+                        if (z) {
+                            decodedUrl = link;
+                        } else {
+                            decodedUrl = url2;
+                        }
+                    }
+                    obj = Result.constructor-impl(decodedUrl);
+                    if (Result.isFailure-impl(obj)) {
+                        return url2;
+                    }
+                    return obj;
+                } catch (Throwable th) {
+                    th = th;
+                    url2 = url;
+                    Result.Companion companion3 = Result.Companion;
+                    obj = Result.constructor-impl(ResultKt.createFailure(th));
+                }
+                break;
+            case 1:
+                url2 = (String) c00102.L$0;
+                try {
+                    ResultKt.throwOnFailure($result);
+                    objAppGet$default = $result;
+                    docText = ((NiceResponse) objAppGet$default).getText();
+                    Regex base64Regex2 = new Regex("aHR0c[a-zA-Z0-9+/=]+");
+                    matchResultFind$default = Regex.find$default(base64Regex2, docText, 0, 2, (Object) null);
+                    if (matchResultFind$default != null) {
+                        match = matchResultFind$default.getValue();
+                    } else {
+                        match = null;
+                    }
+                    if (match != null) {
+                        decodedUrl = MainAPIKt.base64Decode(match);
+                        if (StringsKt.startsWith$default(decodedUrl, "http", false, 2, (Object) null)) {
                             Document parsedDoc3 = Jsoup.parse(docText);
-                            elementSelectFirst = parsedDoc3.selectFirst("a.get-link");
-                            if (elementSelectFirst != null) {
-                                link = elementSelectFirst.attr("href");
+                            Element elementSelectFirst3 = parsedDoc3.selectFirst("a.get-link");
+                            if (elementSelectFirst3 != null) {
                             }
                             str = link;
                             if (str != null) {
-                                z = true;
-                            } else {
-                                z = true;
+                                z = false;
                             }
                             if (z) {
                                 decodedUrl = link;
@@ -1374,15 +1293,12 @@ public final class UtilsKt {
                         }
                     } else {
                         Document parsedDoc4 = Jsoup.parse(docText);
-                        elementSelectFirst = parsedDoc4.selectFirst("a.get-link");
-                        if (elementSelectFirst != null) {
-                            link = elementSelectFirst.attr("href");
+                        Element elementSelectFirst4 = parsedDoc4.selectFirst("a.get-link");
+                        if (elementSelectFirst4 != null) {
                         }
                         str = link;
                         if (str != null) {
-                            z = true;
-                        } else {
-                            z = true;
+                            z = false;
                         }
                         if (z) {
                             decodedUrl = link;
@@ -1392,14 +1308,10 @@ public final class UtilsKt {
                     }
                     obj = Result.constructor-impl(decodedUrl);
                     break;
-                } catch (Throwable th4) {
-                    th = th4;
+                } catch (Throwable th2) {
+                    th = th2;
                     Result.Companion companion4 = Result.Companion;
                     obj = Result.constructor-impl(ResultKt.createFailure(th));
-                    if (Result.isFailure-impl(obj)) {
-                        return url2;
-                    }
-                    return obj;
                 }
                 if (Result.isFailure-impl(obj)) {
                     return url2;

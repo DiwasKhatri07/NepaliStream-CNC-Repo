@@ -106,11 +106,10 @@ public final class C0198x6223a046 extends SuspendLambda implements Function2<Cor
         /* JADX WARN: Code duplicated, block: B:38:0x012f  */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:38:0x012f -> B:39:0x013c). Please report as a decompilation issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:40:0x0146 -> B:41:0x014c). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+            java.lang.StackOverflowError
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
             */
         public final java.lang.Object invokeSuspend(java.lang.Object r29) {
             /*

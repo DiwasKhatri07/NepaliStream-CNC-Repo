@@ -310,7 +310,7 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:25:0x015c A[LOOP:0: B:23:0x0156->B:25:0x015c, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
-    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) throws Exception {
+    public Object getMainPage(int page, @NotNull MainPageRequest request, @NotNull Continuation<? super HomePageResponse> continuation) {
         C00121 c00121;
         Object obj;
         int page2;
@@ -457,7 +457,7 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:25:0x0168 A[LOOP:0: B:23:0x0162->B:25:0x0168, LOOP_END] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     @Nullable
-    public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) throws Exception {
+    public Object search(@NotNull String query, @NotNull Continuation<? super List<? extends SearchResponse>> continuation) {
         C00191 c00191;
         Object obj;
         String query2;
@@ -611,7 +611,7 @@ public final class HotStarMirrorProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:86:0x04f2  */
     /* JADX WARN: Code duplicated, block: B:92:0x0524  */
     @Nullable
-    public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) throws Exception {
+    public Object load(@NotNull String url, @NotNull Continuation<? super LoadResponse> continuation) {
         C00141 c00141;
         String url2;
         Object obj;
@@ -1817,7 +1817,8 @@ public final class HotStarMirrorProvider extends MainAPI {
         	at java.base/java.util.HashMap.containsKey(HashMap.java:594)
         	at java.base/java.util.HashSet.contains(HashSet.java:205)
         	at jadx.core.dex.visitors.regions.maker.RegionStack.containsExit(RegionStack.java:106)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:55)
+        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:130)
+        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
@@ -2834,7 +2835,6 @@ public final class HotStarMirrorProvider extends MainAPI {
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:117)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         */
     @org.jetbrains.annotations.Nullable
     public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r37, boolean r38, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r39, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r40, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r41) {

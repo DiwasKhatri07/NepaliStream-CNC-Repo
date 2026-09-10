@@ -4,7 +4,7 @@ package nepali.stream.decoded.zinkmovies
 object PluginMetadata {
     const val name: String = "Zinkmovies"
     const val originalPluginClass: String = "com.zinkmovies.ZinkmoviesPlugin"
-    const val version: Int = 8
-    const val requiresResources: Boolean = false
+    const val version: Int = 9
+    const val requiresResources: Boolean = true
     val tvTypes: List<String> = listOf()
 }
