@@ -127,11 +127,10 @@ public class Gofile extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:85:0x04df A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:86:0x04e0  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:86:0x04e0 -> B:87:0x04ff). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     static /* synthetic */ java.lang.Object getUrl$suspendImpl(com.phisher98.Gofile r41, java.lang.String r42, java.lang.String r43, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r44, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r45, kotlin.coroutines.Continuation<? super kotlin.Unit> r46) {
         /*

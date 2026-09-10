@@ -409,10 +409,11 @@ public final class DonationManager {
         /* JADX WARN: Code duplicated, block: B:70:0x02b9  */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x0244 -> B:123:0x0247). Please report as a decompilation issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:60:0x0252 -> B:59:0x0249). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-            java.lang.StackOverflowError
-            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
             */
         public final java.lang.Object invokeSuspend(java.lang.Object r42) {
             /*
@@ -454,10 +455,11 @@ public final class DonationManager {
             /* JADX WARN: Code duplicated, block: B:31:0x007e  */
             /* JADX WARN: Code duplicated, block: B:34:0x0082  */
             /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:26:0x006e -> B:28:0x0071). Please report as a decompilation issue!!! */
-            /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-                java.lang.StackOverflowError
-                	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-                	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+            /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+                jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+                	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+                	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+                	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
                 */
             public final java.lang.Object invokeSuspend(java.lang.Object r11) {
                 /*
@@ -872,10 +874,11 @@ public final class DonationManager {
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Unreachable blocks removed: 2, instructions: 9 */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:34:0x0199 -> B:165:0x01a3). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-        java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
     public final java.lang.Object fetchBuyMeACoffeeMonthly(java.lang.String r60, kotlin.coroutines.Continuation<? super kotlin.Pair<java.lang.Double, java.lang.Integer>> r61) {
         /*

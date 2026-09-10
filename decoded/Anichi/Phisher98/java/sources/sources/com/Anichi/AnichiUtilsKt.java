@@ -691,11 +691,8 @@ public final class AnichiUtilsKt {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:54:0x0239 -> B:143:0x023c). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at java.base/java.util.HashMap.hash(HashMap.java:338)
-        	at java.base/java.util.HashMap.put(HashMap.java:610)
-        	at java.base/java.util.HashSet.add(HashSet.java:221)
-        	at jadx.core.utils.BlockUtils.addPredecessors(BlockUtils.java:703)
-        	at jadx.core.utils.BlockUtils.addPredecessors(BlockUtils.java:706)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public static final java.lang.Object getMkissaCryptoConfig(@org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super kotlin.Pair<java.lang.String, byte[]>> r38) {

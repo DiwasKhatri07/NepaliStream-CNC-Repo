@@ -5630,11 +5630,10 @@ public final class Anineko extends MainAPI {
             /* JADX WARN: Type inference failed for: r6v47 */
             /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:107:0x073b -> B:108:0x0752). Please report as a decompilation issue!!! */
             /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:86:0x05a5 -> B:87:0x05bc). Please report as a decompilation issue!!! */
-            /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-                jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-                	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-                	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-                	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+            /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+                java.lang.StackOverflowError
+                	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+                	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
                 */
             public final java.lang.Object invokeSuspend(java.lang.Object r35) {
                 /*
