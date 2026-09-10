@@ -38,8 +38,8 @@
     "file": "decoded/AniVortex/Phisher98/AniVortex.cs3",
     "source": "Phisher98",
     "plugin": "AniVortex",
-    "sha256": "ecc803b43feaafa6458f1c6697647ff1653750d60a7fcc09f73791e95c8933de",
-    "bytes": 139517
+    "sha256": "72ed6a08f6fd28f742875be0db8a88fe97b4c9db7f1761f17064e8bb4e789f31",
+    "bytes": 146563
   },
   {
     "file": "decoded/Anichi/Phisher98/Anichi.cs3",
@@ -493,8 +493,8 @@
     "file": "decoded/MovieBoxProvider/Phisher98/MovieBoxProvider.cs3",
     "source": "Phisher98",
     "plugin": "MovieBoxProvider",
-    "sha256": "35b0b0e027fdc2cde8b00012302531d7731976c90ca8c16b5fdb7faf0302020f",
-    "bytes": 112750
+    "sha256": "84e8ce43b6a3e40af2c8d13bbeb68c643d8af5aaf9f0ecc5dc878f5f9e3346de",
+    "bytes": 121456
   },
   {
     "file": "decoded/MovieBoxProviderIN/CNCVerse/MovieBoxProviderIN.cs3",
@@ -630,6 +630,13 @@
     "bytes": 32343
   },
   {
+    "file": "decoded/Reanime/Phisher98/Reanime.cs3",
+    "source": "Phisher98",
+    "plugin": "Reanime",
+    "sha256": "f6dcd2160746fb1b45c1ee29bbce503fe564bfb8d7252e90eaa942a073b42473",
+    "bytes": 113267
+  },
+  {
     "file": "decoded/RingZ/Phisher98/RingZ.cs3",
     "source": "Phisher98",
     "plugin": "RingZ",
@@ -675,8 +682,8 @@
     "file": "decoded/StreamPlay/Phisher98/StreamPlay.cs3",
     "source": "Phisher98",
     "plugin": "StreamPlay",
-    "sha256": "b4e772013274ba5224600c8a60b7f7c8e96091e998b5eb0f653fbb491d02d0ca",
-    "bytes": 1124426
+    "sha256": "da1b87c13278b6ba606cb8d2c503bb159481f8b7cb092e37191e179b1773d811",
+    "bytes": 1129481
   },
   {
     "file": "decoded/StremioAddon/Phisher98/StremioAddon.cs3",

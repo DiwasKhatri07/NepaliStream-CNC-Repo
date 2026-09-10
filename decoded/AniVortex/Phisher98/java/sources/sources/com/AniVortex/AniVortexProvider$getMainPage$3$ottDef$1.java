@@ -14,9 +14,9 @@ import kotlinx.coroutines.CoroutineScope;
 /* JADX INFO: compiled from: AniVortexProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/AniVortex/Phisher98/java/classes.dex */
 @Metadata(d1 = {"\u0000\u000e\n\u0000\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\b\u0012\u0004\u0012\u00020\u00020\u0001*\u00020\u0003H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/HomePageList;", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-@DebugMetadata(c = "com.AniVortex.AniVortexProvider$getMainPage$2$ottDef$1", f = "AniVortexProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {109}, m = "invokeSuspend", n = {"$this$async", "deferredList", "$this$mapNotNull$iv", "$this$mapNotNullTo$iv$iv", "destination$iv$iv", "$this$forEach$iv$iv$iv", "element$iv$iv$iv", "element$iv$iv", "it"}, nl = {736}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9"}, v = 2)
-@SourceDebugExtension({"SMAP\nAniVortexProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider$getMainPage$2$ottDef$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,726:1\n1795#2,10:727\n2068#2:737\n2069#2:739\n1805#2:740\n1#3:738\n*S KotlinDebug\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider$getMainPage$2$ottDef$1\n*L\n109#1:727,10\n109#1:737\n109#1:739\n109#1:740\n109#1:738\n*E\n"})
-final class AniVortexProvider$getMainPage$2$ottDef$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends HomePageList>>, Object> {
+@DebugMetadata(c = "com.AniVortex.AniVortexProvider$getMainPage$3$ottDef$1", f = "AniVortexProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0}, l = {110}, m = "invokeSuspend", n = {"$this$async", "deferredList", "$this$mapNotNull$iv", "$this$mapNotNullTo$iv$iv", "destination$iv$iv", "$this$forEach$iv$iv$iv", "element$iv$iv$iv", "element$iv$iv", "it"}, nl = {737}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$7", "L$8", "L$9"}, v = 2)
+@SourceDebugExtension({"SMAP\nAniVortexProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider$getMainPage$3$ottDef$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,727:1\n1795#2,10:728\n2068#2:738\n2069#2:740\n1805#2:741\n1#3:739\n*S KotlinDebug\n*F\n+ 1 AniVortexProvider.kt\ncom/AniVortex/AniVortexProvider$getMainPage$3$ottDef$1\n*L\n110#1:728,10\n110#1:738\n110#1:740\n110#1:741\n110#1:739\n*E\n"})
+final class AniVortexProvider$getMainPage$3$ottDef$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super List<? extends HomePageList>>, Object> {
     private /* synthetic */ Object L$0;
     Object L$1;
     Object L$2;
@@ -31,15 +31,15 @@ final class AniVortexProvider$getMainPage$2$ottDef$1 extends SuspendLambda imple
     final /* synthetic */ AniVortexProvider this$0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    AniVortexProvider$getMainPage$2$ottDef$1(AniVortexProvider aniVortexProvider, Continuation<? super AniVortexProvider$getMainPage$2$ottDef$1> continuation) {
+    AniVortexProvider$getMainPage$3$ottDef$1(AniVortexProvider aniVortexProvider, Continuation<? super AniVortexProvider$getMainPage$3$ottDef$1> continuation) {
         super(2, continuation);
         this.this$0 = aniVortexProvider;
     }
 
     public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-        Continuation<Unit> aniVortexProvider$getMainPage$2$ottDef$1 = new AniVortexProvider$getMainPage$2$ottDef$1(this.this$0, continuation);
-        aniVortexProvider$getMainPage$2$ottDef$1.L$0 = obj;
-        return aniVortexProvider$getMainPage$2$ottDef$1;
+        Continuation<Unit> aniVortexProvider$getMainPage$3$ottDef$1 = new AniVortexProvider$getMainPage$3$ottDef$1(this.this$0, continuation);
+        aniVortexProvider$getMainPage$3$ottDef$1.L$0 = obj;
+        return aniVortexProvider$getMainPage$3$ottDef$1;
     }
 
     public final Object invoke(CoroutineScope coroutineScope, Continuation<? super List<HomePageList>> continuation) {
@@ -61,6 +61,6 @@ final class AniVortexProvider$getMainPage$2$ottDef$1 extends SuspendLambda imple
             Method dump skipped, instruction units count: 466
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.AniVortex.AniVortexProvider$getMainPage$2$ottDef$1.invokeSuspend(java.lang.Object):java.lang.Object");
+        throw new UnsupportedOperationException("Method not decompiled: com.AniVortex.AniVortexProvider$getMainPage$3$ottDef$1.invokeSuspend(java.lang.Object):java.lang.Object");
     }
 }

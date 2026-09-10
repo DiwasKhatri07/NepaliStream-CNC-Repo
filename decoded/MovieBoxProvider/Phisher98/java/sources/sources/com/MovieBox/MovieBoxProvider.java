@@ -18,6 +18,7 @@ import com.lagradost.cloudstream3.MovieLoadResponse;
 import com.lagradost.cloudstream3.MovieSearchResponse;
 import com.lagradost.cloudstream3.ParCollectionsKt;
 import com.lagradost.cloudstream3.Score;
+import com.lagradost.cloudstream3.SearchResponse;
 import com.lagradost.cloudstream3.SearchResponseList;
 import com.lagradost.cloudstream3.SubtitleFile;
 import com.lagradost.cloudstream3.TvSeriesLoadResponse;
@@ -82,8 +83,8 @@ import org.json.JSONObject;
 
 /* JADX INFO: compiled from: MovieBoxProvider.kt */
 /* JADX INFO: loaded from: /home/runner/work/NepaliStream-CNC-Repo/NepaliStream-CNC-Repo/decoded/MovieBoxProvider/Phisher98/java/classes.dex */
-@Metadata(d1 = {"\u0000\u009c\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0012\n\u0002\b\u000f\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0010$\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 d2\u00020\u0001:\u0001dB\u0013\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u001f\u001a\u00020\u0007H\u0002J\u0010\u0010'\u001a\u00020\u00072\u0006\u0010(\u001a\u00020)H\u0002J\u0010\u0010*\u001a\u00020\u00072\u0006\u0010(\u001a\u00020\u0007H\u0002J\u0019\u0010+\u001a\u00020\u00072\n\b\u0002\u0010,\u001a\u0004\u0018\u00010&H\u0002¢\u0006\u0002\u0010-J>\u0010.\u001a\u00020\u00072\u0006\u0010/\u001a\u00020\u00072\b\u00100\u001a\u0004\u0018\u00010\u00072\b\u00101\u001a\u0004\u0018\u00010\u00072\u0006\u00102\u001a\u00020\u00072\b\u00103\u001a\u0004\u0018\u00010\u00072\u0006\u00104\u001a\u00020&H\u0002JS\u00105\u001a\u00020\u00072\u0006\u0010/\u001a\u00020\u00072\b\u00100\u001a\u0004\u0018\u00010\u00072\b\u00101\u001a\u0004\u0018\u00010\u00072\u0006\u00102\u001a\u00020\u00072\n\b\u0002\u00103\u001a\u0004\u0018\u00010\u00072\b\b\u0002\u00106\u001a\u00020\u00102\n\b\u0002\u0010,\u001a\u0004\u0018\u00010&H\u0002¢\u0006\u0002\u00107J\u0012\u00108\u001a\u0002092\b\u0010:\u001a\u0004\u0018\u00010\u0007H\u0002J\u0018\u0010;\u001a\u00020\u00072\b\b\u0002\u0010<\u001a\u00020\u0010H\u0082@¢\u0006\u0002\u0010=J\u0012\u0010>\u001a\u0002092\b\u0010?\u001a\u0004\u0018\u00010\u0007H\u0002JT\u0010@\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u00070A2\u0006\u0010/\u001a\u00020\u00072\u0006\u00102\u001a\u00020\u00072\b\b\u0002\u00101\u001a\u00020\u00072\b\b\u0002\u00100\u001a\u00020\u00072\n\b\u0002\u00103\u001a\u0004\u0018\u00010\u00072\b\b\u0002\u0010B\u001a\u00020\u0010H\u0082@¢\u0006\u0002\u0010CJ\u0014\u0010D\u001a\u0004\u0018\u00010\u00072\b\u0010E\u001a\u0004\u0018\u00010\u0007H\u0002J\u000e\u0010K\u001a\u00020\u00102\u0006\u0010L\u001a\u00020MJ\u001e\u0010I\u001a\u00020N2\u0006\u0010O\u001a\u00020P2\u0006\u0010Q\u001a\u00020RH\u0096@¢\u0006\u0002\u0010SJ\u001e\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020\u00072\u0006\u0010O\u001a\u00020PH\u0096@¢\u0006\u0002\u0010WJ\u0016\u0010X\u001a\u00020Y2\u0006\u00102\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010ZJF\u0010[\u001a\u00020\u00102\u0006\u0010\\\u001a\u00020\u00072\u0006\u0010]\u001a\u00020\u00102\u0012\u0010^\u001a\u000e\u0012\u0004\u0012\u00020`\u0012\u0004\u0012\u0002090_2\u0012\u0010a\u001a\u000e\u0012\u0004\u0012\u00020b\u0012\u0004\u0012\u0002090_H\u0096@¢\u0006\u0002\u0010cR\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR\u0014\u0010\u000f\u001a\u00020\u0010X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u001a\u0010\u0013\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\t\"\u0004\b\u0015\u0010\u000bR\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u000e\u0010\u001b\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010 \u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\tR\u000e\u0010\"\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010F\u001a\b\u0012\u0004\u0012\u00020H0GX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bI\u0010J¨\u0006e"}, d2 = {"Lcom/MovieBox/MovieBoxProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "sharedPref", "Landroid/content/SharedPreferences;", "<init>", "(Landroid/content/SharedPreferences;)V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "secretKeyDefault", "secretKeyAlt", "random", "Ljava/security/SecureRandom;", "generateDeviceId", "deviceId", "getDeviceId", "modernUserAgent", "modernClientInfo", "PREF_TOKEN_KEY", "tokenTimestamp", "", "md5", "input", "", "reverseString", "generateXClientToken", "hardcodedTimestamp", "(Ljava/lang/Long;)Ljava/lang/String;", "buildCanonicalString", "method", "accept", "contentType", "url", "body", "timestamp", "generateXTrSignature", "useAltKey", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Long;)Ljava/lang/String;", "saveToken", "", "token", "fetchAnonymousToken", "forceRefresh", "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "persistTokenFromXUser", "xUserHeader", "buildAuthHeaders", "", "useToken", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "extractPolicyResource", "signCookie", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "isNsfwItem", "item", "Lcom/fasterxml/jackson/databind/JsonNode;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "MovieBoxProvider"}, k = 1, mv = {2, 4, 0}, xi = 48)
-@SourceDebugExtension({"SMAP\nMovieBoxProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 6 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,1233:1\n1795#2,10:1234\n2068#2:1244\n2069#2:1246\n1805#2:1247\n1221#2:1248\n1739#2:1249\n1814#2,3:1250\n1960#2,3:1253\n1960#2,3:1256\n1960#2,3:1259\n1960#2,3:1262\n2068#2,2:1265\n1795#2,10:1267\n2068#2:1277\n2069#2:1279\n1805#2:1280\n1849#2,8:1281\n1795#2,10:1289\n2068#2:1299\n2069#2:1301\n1805#2:1302\n1849#2,8:1303\n1739#2:1311\n1814#2,3:1312\n2068#2,2:1315\n2068#2:1317\n2069#2:1325\n2068#2:1327\n296#2,2:1328\n2069#2:1337\n1#3:1245\n1#3:1278\n1#3:1300\n1#3:1330\n460#4,7:1318\n221#5:1326\n222#5:1338\n437#6:1331\n513#6,5:1332\n*S KotlinDebug\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider\n*L\n142#1:1234,10\n142#1:1244\n142#1:1246\n142#1:1247\n146#1:1248\n353#1:1249\n353#1:1250,3\n360#1:1253,3\n369#1:1256,3\n373#1:1259,3\n378#1:1262,3\n407#1:1265,2\n458#1:1267,10\n458#1:1277\n458#1:1279\n458#1:1280\n477#1:1281,8\n587#1:1289,10\n587#1:1299\n587#1:1301\n587#1:1302\n599#1:1303,8\n603#1:1311\n603#1:1312,3\n647#1:1315,2\n669#1:1317\n669#1:1325\n684#1:1327\n686#1:1328,2\n684#1:1337\n142#1:1245\n458#1:1278\n587#1:1300\n673#1:1318,7\n683#1:1326\n683#1:1338\n703#1:1331\n703#1:1332,5\n*E\n"})
+@Metadata(d1 = {"\u0000¤\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\u000b\n\u0002\b\u0006\n\u0002\u0010\"\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\b\u0007\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u0012\n\u0002\b\u000f\n\u0002\u0010\u0002\n\u0002\b\u0007\n\u0002\u0010$\n\u0002\b\u0005\n\u0002\u0010 \n\u0002\u0018\u0002\n\u0002\b\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0003\n\u0002\u0018\u0002\n\u0002\b\u0002\n\u0002\u0018\u0002\n\u0002\b\u0005\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\b\u0003\u0018\u0000 g2\u00020\u0001:\u0001gB\u0013\u0012\n\b\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u0003¢\u0006\u0004\b\u0004\u0010\u0005J\b\u0010\u001f\u001a\u00020\u0007H\u0002J\u0010\u0010'\u001a\u00020\u00072\u0006\u0010(\u001a\u00020)H\u0002J\u0010\u0010*\u001a\u00020\u00072\u0006\u0010(\u001a\u00020\u0007H\u0002J\u0019\u0010+\u001a\u00020\u00072\n\b\u0002\u0010,\u001a\u0004\u0018\u00010&H\u0002¢\u0006\u0002\u0010-J>\u0010.\u001a\u00020\u00072\u0006\u0010/\u001a\u00020\u00072\b\u00100\u001a\u0004\u0018\u00010\u00072\b\u00101\u001a\u0004\u0018\u00010\u00072\u0006\u00102\u001a\u00020\u00072\b\u00103\u001a\u0004\u0018\u00010\u00072\u0006\u00104\u001a\u00020&H\u0002JS\u00105\u001a\u00020\u00072\u0006\u0010/\u001a\u00020\u00072\b\u00100\u001a\u0004\u0018\u00010\u00072\b\u00101\u001a\u0004\u0018\u00010\u00072\u0006\u00102\u001a\u00020\u00072\n\b\u0002\u00103\u001a\u0004\u0018\u00010\u00072\b\b\u0002\u00106\u001a\u00020\u00102\n\b\u0002\u0010,\u001a\u0004\u0018\u00010&H\u0002¢\u0006\u0002\u00107J\u0012\u00108\u001a\u0002092\b\u0010:\u001a\u0004\u0018\u00010\u0007H\u0002J\u0018\u0010;\u001a\u00020\u00072\b\b\u0002\u0010<\u001a\u00020\u0010H\u0082@¢\u0006\u0002\u0010=J\u0012\u0010>\u001a\u0002092\b\u0010?\u001a\u0004\u0018\u00010\u0007H\u0002JT\u0010@\u001a\u000e\u0012\u0004\u0012\u00020\u0007\u0012\u0004\u0012\u00020\u00070A2\u0006\u0010/\u001a\u00020\u00072\u0006\u00102\u001a\u00020\u00072\b\b\u0002\u00101\u001a\u00020\u00072\b\b\u0002\u00100\u001a\u00020\u00072\n\b\u0002\u00103\u001a\u0004\u0018\u00010\u00072\b\b\u0002\u0010B\u001a\u00020\u0010H\u0082@¢\u0006\u0002\u0010CJ\u0014\u0010D\u001a\u0004\u0018\u00010\u00072\b\u0010E\u001a\u0004\u0018\u00010\u0007H\u0002J\u000e\u0010K\u001a\u00020\u00102\u0006\u0010L\u001a\u00020MJ\u001e\u0010I\u001a\u00020N2\u0006\u0010O\u001a\u00020P2\u0006\u0010Q\u001a\u00020RH\u0096@¢\u0006\u0002\u0010SJ\u001e\u0010T\u001a\u00020U2\u0006\u0010V\u001a\u00020\u00072\u0006\u0010O\u001a\u00020PH\u0096@¢\u0006\u0002\u0010WJ\u0016\u0010X\u001a\u00020Y2\u0006\u00102\u001a\u00020\u0007H\u0096@¢\u0006\u0002\u0010ZJ\u001c\u0010[\u001a\b\u0012\u0004\u0012\u00020\\0G2\u0006\u0010]\u001a\u00020\u0007H\u0082@¢\u0006\u0002\u0010ZJF\u0010^\u001a\u00020\u00102\u0006\u0010_\u001a\u00020\u00072\u0006\u0010`\u001a\u00020\u00102\u0012\u0010a\u001a\u000e\u0012\u0004\u0012\u00020c\u0012\u0004\u0012\u0002090b2\u0012\u0010d\u001a\u000e\u0012\u0004\u0012\u00020e\u0012\u0004\u0012\u0002090bH\u0096@¢\u0006\u0002\u0010fR\u0010\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0082\u0004¢\u0006\u0002\n\u0000R\u001a\u0010\u0006\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\b\u0010\t\"\u0004\b\n\u0010\u000bR\u001a\u0010\f\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\r\u0010\t\"\u0004\b\u000e\u0010\u000bR\u0014\u0010\u000f\u001a\u00020\u0010X\u0096D¢\u0006\b\n\u0000\u001a\u0004\b\u0011\u0010\u0012R\u001a\u0010\u0013\u001a\u00020\u0007X\u0096\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\u0014\u0010\t\"\u0004\b\u0015\u0010\u000bR\u001a\u0010\u0016\u001a\b\u0012\u0004\u0012\u00020\u00180\u0017X\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\b\u0019\u0010\u001aR\u000e\u0010\u001b\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001c\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010\u001d\u001a\u00020\u001eX\u0082\u0004¢\u0006\u0002\n\u0000R\u0011\u0010 \u001a\u00020\u0007¢\u0006\b\n\u0000\u001a\u0004\b!\u0010\tR\u000e\u0010\"\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010#\u001a\u00020\u0007X\u0082\u0004¢\u0006\u0002\n\u0000R\u000e\u0010$\u001a\u00020\u0007X\u0082D¢\u0006\u0002\n\u0000R\u000e\u0010%\u001a\u00020&X\u0082\u000e¢\u0006\u0002\n\u0000R\u001a\u0010F\u001a\b\u0012\u0004\u0012\u00020H0GX\u0096\u0004¢\u0006\b\n\u0000\u001a\u0004\bI\u0010J¨\u0006h"}, d2 = {"Lcom/MovieBox/MovieBoxProvider;", "Lcom/lagradost/cloudstream3/MainAPI;", "sharedPref", "Landroid/content/SharedPreferences;", "<init>", "(Landroid/content/SharedPreferences;)V", "mainUrl", "", "getMainUrl", "()Ljava/lang/String;", "setMainUrl", "(Ljava/lang/String;)V", "name", "getName", "setName", "hasMainPage", "", "getHasMainPage", "()Z", "lang", "getLang", "setLang", "supportedTypes", "", "Lcom/lagradost/cloudstream3/TvType;", "getSupportedTypes", "()Ljava/util/Set;", "secretKeyDefault", "secretKeyAlt", "random", "Ljava/security/SecureRandom;", "generateDeviceId", "deviceId", "getDeviceId", "modernUserAgent", "modernClientInfo", "PREF_TOKEN_KEY", "tokenTimestamp", "", "md5", "input", "", "reverseString", "generateXClientToken", "hardcodedTimestamp", "(Ljava/lang/Long;)Ljava/lang/String;", "buildCanonicalString", "method", "accept", "contentType", "url", "body", "timestamp", "generateXTrSignature", "useAltKey", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/Long;)Ljava/lang/String;", "saveToken", "", "token", "fetchAnonymousToken", "forceRefresh", "(ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "persistTokenFromXUser", "xUserHeader", "buildAuthHeaders", "", "useToken", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/coroutines/Continuation;)Ljava/lang/Object;", "extractPolicyResource", "signCookie", "mainPage", "", "Lcom/lagradost/cloudstream3/MainPageData;", "getMainPage", "()Ljava/util/List;", "isNsfwItem", "item", "Lcom/fasterxml/jackson/databind/JsonNode;", "Lcom/lagradost/cloudstream3/HomePageResponse;", "page", "", "request", "Lcom/lagradost/cloudstream3/MainPageRequest;", "(ILcom/lagradost/cloudstream3/MainPageRequest;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "search", "Lcom/lagradost/cloudstream3/SearchResponseList;", "query", "(Ljava/lang/String;ILkotlin/coroutines/Continuation;)Ljava/lang/Object;", "load", "Lcom/lagradost/cloudstream3/LoadResponse;", "(Ljava/lang/String;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "fetchRecommendations", "Lcom/lagradost/cloudstream3/SearchResponse;", "subjectId", "loadLinks", "data", "isCasting", "subtitleCallback", "Lkotlin/Function1;", "Lcom/lagradost/cloudstream3/SubtitleFile;", "callback", "Lcom/lagradost/cloudstream3/utils/ExtractorLink;", "(Ljava/lang/String;ZLkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;", "Companion", "MovieBoxProvider"}, k = 1, mv = {2, 4, 0}, xi = 48)
+@SourceDebugExtension({"SMAP\nMovieBoxProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n+ 5 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 6 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,1366:1\n1795#2,10:1367\n2068#2:1377\n2069#2:1379\n1805#2:1380\n1221#2:1381\n1739#2:1382\n1814#2,3:1383\n1960#2,3:1386\n1960#2,3:1389\n1960#2,3:1392\n1960#2,3:1395\n2068#2,2:1398\n1795#2,10:1400\n2068#2:1410\n2069#2:1412\n1805#2:1413\n1849#2,8:1414\n1795#2,10:1423\n2068#2:1433\n2069#2:1435\n1805#2:1436\n1849#2,8:1437\n1795#2,10:1445\n2068#2:1455\n2069#2:1457\n1805#2:1458\n1739#2:1459\n1814#2,3:1460\n2068#2,2:1463\n2068#2:1465\n2069#2:1473\n2068#2:1475\n296#2,2:1476\n2069#2:1484\n1849#2,8:1486\n1#3:1378\n1#3:1411\n1#3:1422\n1#3:1434\n1#3:1456\n460#4,7:1466\n221#5:1474\n222#5:1485\n437#6:1478\n513#6,5:1479\n*S KotlinDebug\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider\n*L\n142#1:1367,10\n142#1:1377\n142#1:1379\n142#1:1380\n146#1:1381\n353#1:1382\n353#1:1383,3\n360#1:1386,3\n369#1:1389,3\n373#1:1392,3\n378#1:1395,3\n407#1:1398,2\n458#1:1400,10\n458#1:1410\n458#1:1412\n458#1:1413\n477#1:1414,8\n613#1:1423,10\n613#1:1433\n613#1:1435\n613#1:1436\n622#1:1437,8\n630#1:1445,10\n630#1:1455\n630#1:1457\n630#1:1458\n637#1:1459\n637#1:1460,3\n674#1:1463,2\n696#1:1465\n696#1:1473\n711#1:1475\n713#1:1476,2\n711#1:1484\n858#1:1486,8\n142#1:1378\n458#1:1411\n613#1:1434\n630#1:1456\n700#1:1466,7\n710#1:1474\n710#1:1485\n730#1:1478\n730#1:1479,5\n*E\n"})
 public final class MovieBoxProvider extends MainAPI {
 
     /* JADX INFO: renamed from: Companion, reason: from kotlin metadata */
@@ -193,11 +194,37 @@ public final class MovieBoxProvider extends MainAPI {
         }
     }
 
+    /* JADX INFO: renamed from: com.MovieBox.MovieBoxProvider$fetchRecommendations$1 */
+    /* JADX INFO: compiled from: MovieBoxProvider.kt */
+    @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
+    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3}, l = {805, 811, 816, 822}, m = "fetchRecommendations", n = {"subjectId", "recUrl", "jsonBody", "requestBody", "subjectId", "recUrl", "jsonBody", "requestBody", "headers", "subjectId", "recUrl", "jsonBody", "requestBody", "headers", "response", "subjectId", "recUrl", "jsonBody", "requestBody", "headers", "response"}, nl = {811, 813, 822, 825}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5"}, v = 2)
+    static final class C00021 extends ContinuationImpl {
+        Object L$0;
+        Object L$1;
+        Object L$2;
+        Object L$3;
+        Object L$4;
+        Object L$5;
+        int label;
+        /* synthetic */ Object result;
+
+        C00021(Continuation<? super C00021> continuation) {
+            super(continuation);
+        }
+
+        @Nullable
+        public final Object invokeSuspend(@NotNull Object obj) {
+            this.result = obj;
+            this.label |= Integer.MIN_VALUE;
+            return MovieBoxProvider.this.fetchRecommendations(null, (Continuation) this);
+        }
+    }
+
     /* JADX INFO: renamed from: com.MovieBox.MovieBoxProvider$getMainPage$1 */
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.MovieBox.MovieBoxProvider", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7}, l = {425, 427, 432, 434, 442, 444, 447, 449}, m = "getMainPage", n = {"request", "url", "data1", "listParts", "channelId", "options", "classify", "country", "year", "genre", "sort", "jsonBody", "page", "perPage", "hideNsfw", "isRanking", "request", "url", "data1", "listParts", "channelId", "options", "classify", "country", "year", "genre", "sort", "jsonBody", "page", "perPage", "hideNsfw", "isRanking", "request", "url", "data1", "listParts", "channelId", "options", "classify", "country", "year", "genre", "sort", "jsonBody", "headers", "requestBody", "page", "perPage", "hideNsfw", "isRanking", "request", "url", "data1", "listParts", "channelId", "options", "classify", "country", "year", "genre", "sort", "jsonBody", "headers", "requestBody", "page", "perPage", "hideNsfw", "isRanking", "request", "url", "data1", "listParts", "channelId", "options", "classify", "country", "year", "genre", "sort", "jsonBody", "headers", "requestBody", "response", "page", "perPage", "hideNsfw", "isRanking", "request", "url", "data1", "listParts", "channelId", "options", "classify", "country", "year", "genre", "sort", "jsonBody", "headers", "requestBody", "response", "page", "perPage", "hideNsfw", "isRanking", "request", "url", "data1", "listParts", "channelId", "options", "classify", "country", "year", "genre", "sort", "jsonBody", "headers", "requestBody", "response", "page", "perPage", "hideNsfw", "isRanking", "request", "url", "data1", "listParts", "channelId", "options", "classify", "country", "year", "genre", "sort", "jsonBody", "headers", "requestBody", "response", "page", "perPage", "hideNsfw", "isRanking"}, nl = {427, 424, 434, 431, 444, 441, 449, 446}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "I$1", "I$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "I$0", "I$1", "I$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0", "I$1", "I$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "I$0", "I$1", "I$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "I$0", "I$1", "I$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "I$0", "I$1", "I$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "I$0", "I$1", "I$2", "Z$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "I$0", "I$1", "I$2", "Z$0"}, v = 2)
-    static final class C00021 extends ContinuationImpl {
+    static final class C00031 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -220,7 +247,7 @@ public final class MovieBoxProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00021(Continuation<? super C00021> continuation) {
+        C00031(Continuation<? super C00031> continuation) {
             super(continuation);
         }
 
@@ -235,9 +262,10 @@ public final class MovieBoxProvider extends MainAPI {
     /* JADX INFO: renamed from: com.MovieBox.MovieBoxProvider$load$1 */
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider", f = "MovieBoxProvider.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10}, l = {549, 550, 556, 557, 622, 628, 636, 658, 659, 735, 750}, m = "load", n = {"url", "id", "finalUrl", "url", "id", "finalUrl", "headers", "url", "id", "finalUrl", "headers", "response", "url", "id", "finalUrl", "headers", "response", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "subjectType", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "subjectType", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "subjectType", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "meta", "metaVideos", "Poster", "Background", "Description", "IMDBRating", "allSubjectIds", "episodeMap", "subjectId", "seasonUrl", "subjectType", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "meta", "metaVideos", "Poster", "Background", "Description", "IMDBRating", "allSubjectIds", "episodeMap", "subjectId", "seasonUrl", "seasonHeaders", "subjectType", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "meta", "metaVideos", "Poster", "Background", "Description", "IMDBRating", "allSubjectIds", "episodeMap", "episodes", "subjectType", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRating", "year", "coverUrl", "backgroundUrl", "actors", "tags", "durationMinutes", "type", "tmdbId", "imdbId", "logoUrl", "meta", "metaVideos", "Poster", "Background", "Description", "IMDBRating", "subjectType"}, nl = {550, 553, 557, 560, 628, 636, 637, 659, 660, 750, -1}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$34", "L$35", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$34", "L$35", "L$36", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "I$0"}, v = 2)
-    static final class C00031 extends ContinuationImpl {
+    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider", f = "MovieBoxProvider.kt", i = {0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12}, l = {549, 550, 556, 557, 601, 626, 651, 685, 686, 762, 764, 781, 783}, m = "load", n = {"url", "id", "finalUrl", "url", "id", "finalUrl", "headers", "url", "id", "finalUrl", "headers", "response", "url", "id", "finalUrl", "headers", "response", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRatingStr", "imdbRatingDouble", "year", "coverUrl", "backgroundUrl", "type", "subjectType", "isIndian", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRatingStr", "imdbRatingDouble", "year", "coverUrl", "backgroundUrl", "type", "tmdbId", "imdbId", "movieboxActors", "subjectType", "isIndian", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRatingStr", "imdbRatingDouble", "year", "coverUrl", "backgroundUrl", "type", "tmdbId", "imdbId", "movieboxActors", "meta", "metaVideos", "metaActors", "actors", "tags", "durationMinutes", "subjectType", "isIndian", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRatingStr", "imdbRatingDouble", "year", "coverUrl", "backgroundUrl", "type", "tmdbId", "imdbId", "movieboxActors", "meta", "metaVideos", "metaActors", "actors", "tags", "durationMinutes", "logoUrl", "Poster", "Background", "Description", "IMDBRating", "score", "contentRating", "allSubjectIds", "episodeMap", "subjectId", "seasonUrl", "subjectType", "isIndian", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRatingStr", "imdbRatingDouble", "year", "coverUrl", "backgroundUrl", "type", "tmdbId", "imdbId", "movieboxActors", "meta", "metaVideos", "metaActors", "actors", "tags", "durationMinutes", "logoUrl", "Poster", "Background", "Description", "IMDBRating", "score", "contentRating", "allSubjectIds", "episodeMap", "subjectId", "seasonUrl", "seasonHeaders", "subjectType", "isIndian", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRatingStr", "imdbRatingDouble", "year", "coverUrl", "backgroundUrl", "type", "tmdbId", "imdbId", "movieboxActors", "meta", "metaVideos", "metaActors", "actors", "tags", "durationMinutes", "logoUrl", "Poster", "Background", "Description", "IMDBRating", "score", "contentRating", "allSubjectIds", "episodeMap", "episodes", "subjectType", "isIndian", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRatingStr", "imdbRatingDouble", "year", "coverUrl", "backgroundUrl", "type", "tmdbId", "imdbId", "movieboxActors", "meta", "metaVideos", "metaActors", "actors", "tags", "durationMinutes", "logoUrl", "Poster", "Background", "Description", "IMDBRating", "score", "contentRating", "allSubjectIds", "episodeMap", "episodes", "recommendations", "subjectType", "isIndian", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRatingStr", "imdbRatingDouble", "year", "coverUrl", "backgroundUrl", "type", "tmdbId", "imdbId", "movieboxActors", "meta", "metaVideos", "metaActors", "actors", "tags", "durationMinutes", "logoUrl", "Poster", "Background", "Description", "IMDBRating", "score", "contentRating", "subjectType", "isIndian", "url", "id", "finalUrl", "headers", "response", "body", "mapper", "root", "data", "title", "description", "releaseDate", "duration", "genre", "imdbRatingStr", "imdbRatingDouble", "year", "coverUrl", "backgroundUrl", "type", "tmdbId", "imdbId", "movieboxActors", "meta", "metaVideos", "metaActors", "actors", "tags", "durationMinutes", "logoUrl", "Poster", "Background", "Description", "IMDBRating", "score", "contentRating", "recommendations", "subjectType", "isIndian"}, nl = {550, 553, 557, 560, 608, 627, 658, 686, 687, 764, 781, 783, -1}, s = {"L$0", "L$1", "L$2", "L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$39", "L$40", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$39", "L$40", "L$41", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "L$37", "L$38", "L$39", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$31", "L$32", "L$33", "L$34", "L$35", "L$36", "I$0", "I$1"}, v = 2)
+    static final class C00041 extends ContinuationImpl {
         int I$0;
+        int I$1;
         Object L$0;
         Object L$1;
         Object L$10;
@@ -269,7 +297,12 @@ public final class MovieBoxProvider extends MainAPI {
         Object L$34;
         Object L$35;
         Object L$36;
+        Object L$37;
+        Object L$38;
+        Object L$39;
         Object L$4;
+        Object L$40;
+        Object L$41;
         Object L$5;
         Object L$6;
         Object L$7;
@@ -278,7 +311,7 @@ public final class MovieBoxProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00031(Continuation<? super C00031> continuation) {
+        C00041(Continuation<? super C00041> continuation) {
             super(continuation);
         }
 
@@ -293,8 +326,8 @@ public final class MovieBoxProvider extends MainAPI {
     /* JADX INFO: renamed from: com.MovieBox.MovieBoxProvider$loadLinks$1 */
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {791, 792, 795, 796, 797, 826}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "subjectHeaders", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "subjectHeaders", "subjectResponse", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "subjectHeaders", "subjectResponse", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "subjectHeaders", "subjectResponse", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "subjectHeaders", "subjectResponse", "subjectIds", "originalLanguageName", "isCasting", "season", "episode"}, nl = {792, 794, 796, 797, 800, 976}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0", "I$0", "I$1"}, v = 2)
-    static final class C00061 extends ContinuationImpl {
+    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5}, l = {890, 891, 894, 895, 896, 925}, m = "loadLinks", n = {"data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "subjectHeaders", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "subjectHeaders", "subjectResponse", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "subjectHeaders", "subjectResponse", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "subjectHeaders", "subjectResponse", "isCasting", "season", "episode", "data", "subtitleCallback", "callback", "parts", "originalSubjectId", "subjectUrl", "subjectHeaders", "subjectResponse", "subjectIds", "originalLanguageName", "isCasting", "season", "episode"}, nl = {891, 893, 895, 896, 899, 1075}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "Z$0", "I$0", "I$1"}, v = 2)
+    static final class C00071 extends ContinuationImpl {
         int I$0;
         int I$1;
         Object L$0;
@@ -311,7 +344,7 @@ public final class MovieBoxProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00061(Continuation<? super C00061> continuation) {
+        C00071(Continuation<? super C00071> continuation) {
             super(continuation);
         }
 
@@ -327,7 +360,7 @@ public final class MovieBoxProvider extends MainAPI {
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.MovieBox.MovieBoxProvider", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3}, l = {495, 496, 501, 502}, m = "search", n = {"query", "url", "jsonBody", "requestBody", "page", "hideNsfw", "query", "url", "jsonBody", "requestBody", "headers", "page", "hideNsfw", "query", "url", "jsonBody", "requestBody", "headers", "response", "page", "hideNsfw", "query", "url", "jsonBody", "requestBody", "headers", "response", "page", "hideNsfw"}, nl = {496, 498, 502, 505}, s = {"L$0", "L$1", "L$2", "L$3", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1"}, v = 2)
-    static final class C00081 extends ContinuationImpl {
+    static final class C00091 extends ContinuationImpl {
         int I$0;
         int I$1;
         Object L$0;
@@ -339,7 +372,7 @@ public final class MovieBoxProvider extends MainAPI {
         int label;
         /* synthetic */ Object result;
 
-        C00081(Continuation<? super C00081> continuation) {
+        C00091(Continuation<? super C00091> continuation) {
             super(continuation);
         }
 
@@ -382,7 +415,7 @@ public final class MovieBoxProvider extends MainAPI {
 
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(d1 = {"\u0000&\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0003\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0002\b\b\n\u0002\u0010\t\n\u0002\b\u0002\n\u0002\u0010\u000b\n\u0000\b\u0086\u0003\u0018\u00002\u00020\u0001B\t\b\u0002¢\u0006\u0004\b\u0002\u0010\u0003J\u000e\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u0006J\u0010\u0010\u0011\u001a\u00020\u00122\b\u0010\u0010\u001a\u0004\u0018\u00010\u0006R\u0017\u0010\u0004\u001a\b\u0012\u0004\u0012\u00020\u00060\u0005¢\u0006\b\n\u0000\u001a\u0004\b\u0007\u0010\bR\u001c\u0010\t\u001a\u0004\u0018\u00010\u0006X\u0086\u000e¢\u0006\u000e\n\u0000\u001a\u0004\b\n\u0010\u000b\"\u0004\b\f\u0010\r¨\u0006\u0013"}, d2 = {"Lcom/MovieBox/MovieBoxProvider$Companion;", "", "<init>", "()V", "HOST_POOL", "", "", "getHOST_POOL", "()Ljava/util/List;", "bearerToken", "getBearerToken", "()Ljava/lang/String;", "setBearerToken", "(Ljava/lang/String;)V", "decodeJwtExpiry", "", "token", "isTokenValid", "", "MovieBoxProvider"}, k = 1, mv = {2, 4, 0}, xi = 48)
-    @SourceDebugExtension({"SMAP\nMovieBoxProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1233:1\n1#2:1234\n*E\n"})
+    @SourceDebugExtension({"SMAP\nMovieBoxProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1366:1\n1#2:1367\n*E\n"})
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -469,7 +502,7 @@ public final class MovieBoxProvider extends MainAPI {
     private final String generateDeviceId() {
         byte[] bytes = new byte[16];
         this.random.nextBytes(bytes);
-        return ArraysKt.joinToString$default(bytes, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.MovieBox.MovieBoxProvider$$ExternalSyntheticLambda2
+        return ArraysKt.joinToString$default(bytes, "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.MovieBox.MovieBoxProvider$$ExternalSyntheticLambda3
             public final Object invoke(Object obj) {
                 return MovieBoxProvider.generateDeviceId$lambda$0(((Byte) obj).byteValue());
             }
@@ -488,7 +521,7 @@ public final class MovieBoxProvider extends MainAPI {
     }
 
     private final String md5(byte[] input) {
-        return ArraysKt.joinToString$default(MessageDigest.getInstance("MD5").digest(input), "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.MovieBox.MovieBoxProvider$$ExternalSyntheticLambda3
+        return ArraysKt.joinToString$default(MessageDigest.getInstance("MD5").digest(input), "", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.MovieBox.MovieBoxProvider$$ExternalSyntheticLambda4
             public final Object invoke(Object obj) {
                 return MovieBoxProvider.md5$lambda$0(((Byte) obj).byteValue());
             }
@@ -572,7 +605,7 @@ public final class MovieBoxProvider extends MainAPI {
                     Pair it3 = (Pair) t2;
                     return ComparisonsKt.compareValues(str2, (String) it3.getFirst());
                 }
-            }), "&", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.MovieBox.MovieBoxProvider$$ExternalSyntheticLambda1
+            }), "&", (CharSequence) null, (CharSequence) null, 0, (CharSequence) null, new Function1() { // from class: com.MovieBox.MovieBoxProvider$$ExternalSyntheticLambda2
                 public final Object invoke(Object obj2) {
                     return MovieBoxProvider.buildCanonicalString$lambda$2((Pair) obj2);
                 }
@@ -1183,7 +1216,7 @@ public final class MovieBoxProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:99:0x08f4  */
     @Nullable
     public Object getMainPage(int i, @NotNull MainPageRequest mainPageRequest, @NotNull Continuation<? super HomePageResponse> continuation) {
-        C00021 c00021;
+        C00031 c00031;
         String str;
         List list;
         String str2;
@@ -1370,20 +1403,20 @@ public final class MovieBoxProvider extends MainAPI {
         MovieBoxProvider movieBoxProvider = this;
         int i33 = i;
         MainPageRequest mainPageRequest9 = mainPageRequest;
-        if (continuation instanceof C00021) {
-            c00021 = (C00021) continuation;
-            if ((c00021.label & Integer.MIN_VALUE) != 0) {
-                c00021.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00031) {
+            c00031 = (C00031) continuation;
+            if ((c00031.label & Integer.MIN_VALUE) != 0) {
+                c00031.label -= Integer.MIN_VALUE;
             } else {
-                c00021 = movieBoxProvider.new C00021(continuation);
+                c00031 = movieBoxProvider.new C00031(continuation);
             }
         } else {
-            c00021 = movieBoxProvider.new C00021(continuation);
+            c00031 = movieBoxProvider.new C00031(continuation);
         }
-        C00021 c00022 = c00021;
-        Object objPost$default = c00022.result;
+        C00031 c00032 = c00031;
+        Object objPost$default = c00032.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00022.label) {
+        switch (c00032.label) {
             case 0:
                 ResultKt.throwOnFailure(objPost$default);
                 DonationManager.INSTANCE.checkAndShow(movieBoxProvider.getName());
@@ -1456,23 +1489,23 @@ public final class MovieBoxProvider extends MainAPI {
                 str3 = "data";
                 String str82 = "{\"page\":" + i33 + ",\"perPage\":20,\"channelId\":\"" + str70 + "\",\"classify\":\"" + str77 + "\",\"country\":\"" + str78 + "\",\"year\":\"" + str79 + "\",\"genre\":\"" + str80 + "\",\"sort\":\"" + str81 + "\",\"restrictKid\":" + i34 + '}';
                 if (zStartsWith$default) {
-                    c00022.L$0 = mainPageRequest9;
-                    c00022.L$1 = str;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str2);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str70);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(linkedHashMap);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str77);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str78);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str79);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str80);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str81);
-                    c00022.L$11 = str82;
-                    c00022.I$0 = i33;
-                    c00022.I$1 = 20;
-                    c00022.I$2 = i34;
-                    c00022.Z$0 = zStartsWith$default;
-                    c00022.label = 1;
+                    c00032.L$0 = mainPageRequest9;
+                    c00032.L$1 = str;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str2);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str70);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(linkedHashMap);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str77);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str78);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str79);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str80);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str81);
+                    c00032.L$11 = str82;
+                    c00032.I$0 = i33;
+                    c00032.I$1 = 20;
+                    c00032.I$2 = i34;
+                    c00032.Z$0 = zStartsWith$default;
+                    c00032.label = 1;
                     String str83 = str78;
                     String str84 = str80;
                     String str85 = str79;
@@ -1482,7 +1515,7 @@ public final class MovieBoxProvider extends MainAPI {
                     jsonNode = null;
                     i4 = i34;
                     str13 = str;
-                    objBuildAuthHeaders$default = buildAuthHeaders$default(this, "GET", str13, null, null, null, false, c00022, 60, null);
+                    objBuildAuthHeaders$default = buildAuthHeaders$default(this, "GET", str13, null, null, null, false, c00032, 60, null);
                     if (objBuildAuthHeaders$default == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -1516,28 +1549,28 @@ public final class MovieBoxProvider extends MainAPI {
                     requestBodyCreate = RequestBody.Companion.create(str18, MediaType.Companion.get("application/json"));
                     if (z3) {
                         Requests app = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest2;
-                        c00022.L$1 = str22;
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str25);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list3);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str26);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map3);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str21);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str8);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str10);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str19);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                        c00022.L$11 = str18;
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                        c00022.L$13 = requestBodyCreate;
-                        c00022.I$0 = i7;
-                        c00022.I$1 = i8;
-                        c00022.I$2 = i6;
-                        c00022.Z$0 = z3;
-                        c00022.label = 3;
+                        c00032.L$0 = mainPageRequest2;
+                        c00032.L$1 = str22;
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str25);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list3);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str26);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map3);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str21);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str8);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str10);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str19);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                        c00032.L$11 = str18;
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                        c00032.L$13 = requestBodyCreate;
+                        c00032.I$0 = i7;
+                        c00032.I$1 = i8;
+                        c00032.I$2 = i6;
+                        c00032.Z$0 = z3;
+                        c00032.label = 3;
                         obj3 = coroutine_suspended;
                         i9 = i8;
-                        objPost$default = Requests.get$default(app, str22, map4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                        objPost$default = Requests.get$default(app, str22, map4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                         if (objPost$default == obj3) {
                             return obj3;
                         }
@@ -1571,26 +1604,26 @@ public final class MovieBoxProvider extends MainAPI {
                                 Unit unit = Unit.INSTANCE;
                             }
                             if (!z5) {
-                                c00022.L$0 = mainPageRequest5;
-                                c00022.L$1 = str36;
-                                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map5);
-                                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                                c00022.L$13 = requestBody3;
-                                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                                c00022.I$0 = i10;
-                                c00022.I$1 = i9;
-                                c00022.I$2 = i11;
-                                c00022.Z$0 = z5;
-                                c00022.label = 5;
+                                c00032.L$0 = mainPageRequest5;
+                                c00032.L$1 = str36;
+                                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map5);
+                                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str37);
+                                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                                c00032.L$13 = requestBody3;
+                                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                                c00032.I$0 = i10;
+                                c00032.I$1 = i9;
+                                c00032.I$2 = i11;
+                                c00032.Z$0 = z5;
+                                c00032.label = 5;
                                 i15 = i9;
                                 requestBody6 = requestBody3;
                                 str46 = str38;
@@ -1599,7 +1632,7 @@ public final class MovieBoxProvider extends MainAPI {
                                 str47 = str37;
                                 obj5 = obj4;
                                 z7 = z5;
-                                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00022, 60, null);
+                                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00032, 60, null);
                                 if (objBuildAuthHeaders$default3 == obj5) {
                                     return obj5;
                                 }
@@ -1637,28 +1670,28 @@ public final class MovieBoxProvider extends MainAPI {
                                 map14 = map12;
                                 if (z8) {
                                     Requests app2 = MainActivityKt.getApp();
-                                    c00022.L$0 = mainPageRequest6;
-                                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                                    c00022.I$0 = i21;
-                                    c00022.I$1 = i20;
-                                    c00022.I$2 = i12;
-                                    c00022.Z$0 = z8;
-                                    c00022.label = 7;
+                                    c00032.L$0 = mainPageRequest6;
+                                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                                    c00032.I$0 = i21;
+                                    c00032.I$1 = i20;
+                                    c00032.I$2 = i12;
+                                    c00032.Z$0 = z8;
+                                    c00032.label = 7;
                                     i26 = i12;
-                                    objPost$default = Requests.get$default(app2, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                                    objPost$default = Requests.get$default(app2, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                                     if (objPost$default == obj5) {
                                         return obj5;
                                     }
@@ -1684,29 +1717,29 @@ public final class MovieBoxProvider extends MainAPI {
                                     List list7 = list5;
                                     i22 = i12;
                                     Requests app3 = MainActivityKt.getApp();
-                                    c00022.L$0 = mainPageRequest6;
+                                    c00032.L$0 = mainPageRequest6;
                                     mainPageRequest7 = mainPageRequest6;
-                                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list7);
-                                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                                    c00022.I$0 = i21;
-                                    c00022.I$1 = i20;
-                                    c00022.I$2 = i22;
-                                    c00022.Z$0 = z8;
-                                    c00022.label = 8;
+                                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list7);
+                                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                                    c00032.I$0 = i21;
+                                    c00032.I$1 = i20;
+                                    c00032.I$2 = i22;
+                                    c00032.Z$0 = z8;
+                                    c00032.label = 8;
                                     requestBody9 = requestBody8;
-                                    objPost$default = Requests.post$default(app3, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                                    objPost$default = Requests.post$default(app3, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                                     if (objPost$default == obj5) {
                                         return obj5;
                                     }
@@ -1738,29 +1771,29 @@ public final class MovieBoxProvider extends MainAPI {
                                 i13 = i9;
                                 requestBody4 = requestBody3;
                                 obj5 = obj4;
-                                c00022.L$0 = mainPageRequest5;
-                                c00022.L$1 = str36;
-                                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map6);
-                                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str39);
-                                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str40);
-                                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                                c00022.L$13 = requestBody4;
-                                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                                c00022.I$0 = i10;
-                                c00022.I$1 = i13;
-                                c00022.I$2 = i12;
-                                c00022.Z$0 = z6;
-                                c00022.label = 6;
+                                c00032.L$0 = mainPageRequest5;
+                                c00032.L$1 = str36;
+                                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map6);
+                                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str39);
+                                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str40);
+                                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                                c00032.L$13 = requestBody4;
+                                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                                c00032.I$0 = i10;
+                                c00032.I$1 = i13;
+                                c00032.I$2 = i12;
+                                c00032.Z$0 = z6;
+                                c00032.label = 6;
                                 str41 = str35;
                                 movieBoxProvider = this;
-                                objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00022, 40, null);
+                                objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00032, 40, null);
                                 if (objBuildAuthHeaders$default2 == obj5) {
                                     return obj5;
                                 }
@@ -1795,28 +1828,28 @@ public final class MovieBoxProvider extends MainAPI {
                                 map14 = map12;
                                 if (z8) {
                                     Requests app4 = MainActivityKt.getApp();
-                                    c00022.L$0 = mainPageRequest6;
-                                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                                    c00022.I$0 = i21;
-                                    c00022.I$1 = i20;
-                                    c00022.I$2 = i12;
-                                    c00022.Z$0 = z8;
-                                    c00022.label = 7;
+                                    c00032.L$0 = mainPageRequest6;
+                                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                                    c00032.I$0 = i21;
+                                    c00032.I$1 = i20;
+                                    c00032.I$2 = i12;
+                                    c00032.Z$0 = z8;
+                                    c00032.label = 7;
                                     i26 = i12;
-                                    objPost$default = Requests.get$default(app4, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                                    objPost$default = Requests.get$default(app4, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                                     if (objPost$default == obj5) {
                                         return obj5;
                                     }
@@ -1842,29 +1875,29 @@ public final class MovieBoxProvider extends MainAPI {
                                     List list8 = list5;
                                     i22 = i12;
                                     Requests app5 = MainActivityKt.getApp();
-                                    c00022.L$0 = mainPageRequest6;
+                                    c00032.L$0 = mainPageRequest6;
                                     mainPageRequest7 = mainPageRequest6;
-                                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list8);
-                                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                                    c00022.I$0 = i21;
-                                    c00022.I$1 = i20;
-                                    c00022.I$2 = i22;
-                                    c00022.Z$0 = z8;
-                                    c00022.label = 8;
+                                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list8);
+                                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                                    c00032.I$0 = i21;
+                                    c00032.I$1 = i20;
+                                    c00032.I$2 = i22;
+                                    c00032.Z$0 = z8;
+                                    c00032.label = 8;
                                     requestBody9 = requestBody8;
-                                    objPost$default = Requests.post$default(app5, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                                    objPost$default = Requests.post$default(app5, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                                     if (objPost$default == obj5) {
                                         return obj5;
                                     }
@@ -1942,7 +1975,7 @@ public final class MovieBoxProvider extends MainAPI {
                                                                     tvType = TvType.Movie;
                                                                     break;
                                                             }
-                                                            movieSearchResponseNewMovieSearchResponse$default = MainAPIKt.newMovieSearchResponse$default(this, strSubstringBefore$default, strAsText2, tvType, false, new Function1() { // from class: com.MovieBox.MovieBoxProvider$$ExternalSyntheticLambda6
+                                                            movieSearchResponseNewMovieSearchResponse$default = MainAPIKt.newMovieSearchResponse$default(this, strSubstringBefore$default, strAsText2, tvType, false, new Function1() { // from class: com.MovieBox.MovieBoxProvider$$ExternalSyntheticLambda7
                                                                 public final Object invoke(Object obj8) {
                                                                     return MovieBoxProvider.getMainPage$lambda$1$0(strAsText3, jsonNode7, (MovieSearchResponse) obj8);
                                                                 }
@@ -2072,27 +2105,27 @@ public final class MovieBoxProvider extends MainAPI {
                     i9 = i8;
                     obj2 = coroutine_suspended;
                     Requests app6 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest2;
-                    c00022.L$1 = str22;
+                    c00032.L$0 = mainPageRequest2;
+                    c00032.L$1 = str22;
                     mainPageRequest3 = mainPageRequest2;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str25);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list3);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str26);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map3);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str21);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str8);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str10);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str19);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = str18;
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBodyCreate;
-                    c00022.I$0 = i7;
-                    c00022.I$1 = i9;
-                    c00022.I$2 = i6;
-                    c00022.Z$0 = z3;
-                    c00022.label = 4;
-                    objPost$default = Requests.post$default(app6, str22, map4, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str25);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list3);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str26);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map3);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str21);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str8);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str10);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str19);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = str18;
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBodyCreate;
+                    c00032.I$0 = i7;
+                    c00032.I$1 = i9;
+                    c00032.I$2 = i6;
+                    c00032.Z$0 = z3;
+                    c00032.label = 4;
+                    objPost$default = Requests.post$default(app6, str22, map4, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                     if (objPost$default == obj2) {
                         return obj2;
                     }
@@ -2135,29 +2168,29 @@ public final class MovieBoxProvider extends MainAPI {
                         i13 = i9;
                         requestBody4 = requestBody3;
                         obj5 = obj4;
-                        c00022.L$0 = mainPageRequest5;
-                        c00022.L$1 = str36;
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str39);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str40);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                        c00022.L$13 = requestBody4;
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                        c00022.I$0 = i10;
-                        c00022.I$1 = i13;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z6;
-                        c00022.label = 6;
+                        c00032.L$0 = mainPageRequest5;
+                        c00032.L$1 = str36;
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str39);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str40);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                        c00032.L$13 = requestBody4;
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                        c00032.I$0 = i10;
+                        c00032.I$1 = i13;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z6;
+                        c00032.label = 6;
                         str41 = str35;
                         movieBoxProvider = this;
-                        objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00022, 40, null);
+                        objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00032, 40, null);
                         if (objBuildAuthHeaders$default2 == obj5) {
                             return obj5;
                         }
@@ -2192,28 +2225,28 @@ public final class MovieBoxProvider extends MainAPI {
                         map14 = map12;
                         if (z8) {
                             Requests app7 = MainActivityKt.getApp();
-                            c00022.L$0 = mainPageRequest6;
-                            c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                            c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                            c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                            c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                            c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                            c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                            c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                            c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                            c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                            c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                            c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                            c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                            c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                            c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                            c00022.I$0 = i21;
-                            c00022.I$1 = i20;
-                            c00022.I$2 = i12;
-                            c00022.Z$0 = z8;
-                            c00022.label = 7;
+                            c00032.L$0 = mainPageRequest6;
+                            c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                            c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                            c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                            c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                            c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                            c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                            c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                            c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                            c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                            c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                            c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                            c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                            c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                            c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                            c00032.I$0 = i21;
+                            c00032.I$1 = i20;
+                            c00032.I$2 = i12;
+                            c00032.Z$0 = z8;
+                            c00032.label = 7;
                             i26 = i12;
-                            objPost$default = Requests.get$default(app7, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                            objPost$default = Requests.get$default(app7, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                             if (objPost$default == obj5) {
                                 return obj5;
                             }
@@ -2359,29 +2392,29 @@ public final class MovieBoxProvider extends MainAPI {
                         List list9 = list5;
                         i22 = i12;
                         Requests app8 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
+                        c00032.L$0 = mainPageRequest6;
                         mainPageRequest7 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list9);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i22;
-                        c00022.Z$0 = z8;
-                        c00022.label = 8;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list9);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i22;
+                        c00032.Z$0 = z8;
+                        c00032.label = 8;
                         requestBody9 = requestBody8;
-                        objPost$default = Requests.post$default(app8, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                        objPost$default = Requests.post$default(app8, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -2524,26 +2557,26 @@ public final class MovieBoxProvider extends MainAPI {
                         }
                         return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
                     }
-                    c00022.L$0 = mainPageRequest5;
-                    c00022.L$1 = str36;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map5);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBody3;
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                    c00022.I$0 = i10;
-                    c00022.I$1 = i9;
-                    c00022.I$2 = i11;
-                    c00022.Z$0 = z5;
-                    c00022.label = 5;
+                    c00032.L$0 = mainPageRequest5;
+                    c00032.L$1 = str36;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map5);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str37);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBody3;
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                    c00032.I$0 = i10;
+                    c00032.I$1 = i9;
+                    c00032.I$2 = i11;
+                    c00032.Z$0 = z5;
+                    c00032.label = 5;
                     i15 = i9;
                     requestBody6 = requestBody3;
                     str46 = str38;
@@ -2552,7 +2585,7 @@ public final class MovieBoxProvider extends MainAPI {
                     str47 = str37;
                     obj5 = obj4;
                     z7 = z5;
-                    objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00022, 60, null);
+                    objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00032, 60, null);
                     if (objBuildAuthHeaders$default3 == obj5) {
                         return obj5;
                     }
@@ -2590,28 +2623,28 @@ public final class MovieBoxProvider extends MainAPI {
                     map14 = map12;
                     if (z8) {
                         Requests app9 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z8;
-                        c00022.label = 7;
+                        c00032.L$0 = mainPageRequest6;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z8;
+                        c00032.label = 7;
                         i26 = i12;
-                        objPost$default = Requests.get$default(app9, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                        objPost$default = Requests.get$default(app9, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -2757,29 +2790,29 @@ public final class MovieBoxProvider extends MainAPI {
                     List list10 = list5;
                     i22 = i12;
                     Requests app10 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
+                    c00032.L$0 = mainPageRequest6;
                     mainPageRequest7 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list10);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i22;
-                    c00022.Z$0 = z8;
-                    c00022.label = 8;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list10);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i22;
+                    c00032.Z$0 = z8;
+                    c00032.label = 8;
                     requestBody9 = requestBody8;
-                    objPost$default = Requests.post$default(app10, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    objPost$default = Requests.post$default(app10, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -2930,26 +2963,26 @@ public final class MovieBoxProvider extends MainAPI {
                 jsonNode = null;
                 i2 = 20;
                 str5 = str;
-                c00022.L$0 = mainPageRequest9;
-                c00022.L$1 = str5;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str2);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str70);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(linkedHashMap);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str4);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str90);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str92);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str91);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str93);
-                c00022.L$11 = str82;
-                c00022.I$0 = i33;
-                c00022.I$1 = 20;
-                c00022.I$2 = i34;
-                c00022.Z$0 = zStartsWith$default;
-                c00022.label = 2;
+                c00032.L$0 = mainPageRequest9;
+                c00032.L$1 = str5;
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str2);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str70);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(linkedHashMap);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str4);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str90);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str92);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str91);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str93);
+                c00032.L$11 = str82;
+                c00032.I$0 = i33;
+                c00032.I$1 = 20;
+                c00032.I$2 = i34;
+                c00032.Z$0 = zStartsWith$default;
+                c00032.label = 2;
                 z = zStartsWith$default;
                 movieBoxProvider = this;
-                Object objBuildAuthHeaders$default4 = buildAuthHeaders$default(movieBoxProvider, "POST", str5, "application/json; charset=utf-8", null, str82, false, c00022, 40, null);
+                Object objBuildAuthHeaders$default4 = buildAuthHeaders$default(movieBoxProvider, "POST", str5, "application/json; charset=utf-8", null, str82, false, c00032, 40, null);
                 if (objBuildAuthHeaders$default4 == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -2983,28 +3016,28 @@ public final class MovieBoxProvider extends MainAPI {
                 requestBodyCreate = RequestBody.Companion.create(str18, MediaType.Companion.get("application/json"));
                 if (z3) {
                     Requests app11 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest2;
-                    c00022.L$1 = str22;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str25);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list3);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str26);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map3);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str21);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str8);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str10);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str19);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = str18;
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBodyCreate;
-                    c00022.I$0 = i7;
-                    c00022.I$1 = i8;
-                    c00022.I$2 = i6;
-                    c00022.Z$0 = z3;
-                    c00022.label = 3;
+                    c00032.L$0 = mainPageRequest2;
+                    c00032.L$1 = str22;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str25);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list3);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str26);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map3);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str21);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str8);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str10);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str19);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = str18;
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBodyCreate;
+                    c00032.I$0 = i7;
+                    c00032.I$1 = i8;
+                    c00032.I$2 = i6;
+                    c00032.Z$0 = z3;
+                    c00032.label = 3;
                     obj3 = coroutine_suspended;
                     i9 = i8;
-                    objPost$default = Requests.get$default(app11, str22, map4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                    objPost$default = Requests.get$default(app11, str22, map4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                     if (objPost$default == obj3) {
                         return obj3;
                     }
@@ -3047,29 +3080,29 @@ public final class MovieBoxProvider extends MainAPI {
                         i13 = i9;
                         requestBody4 = requestBody3;
                         obj5 = obj4;
-                        c00022.L$0 = mainPageRequest5;
-                        c00022.L$1 = str36;
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str39);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str40);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                        c00022.L$13 = requestBody4;
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                        c00022.I$0 = i10;
-                        c00022.I$1 = i13;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z6;
-                        c00022.label = 6;
+                        c00032.L$0 = mainPageRequest5;
+                        c00032.L$1 = str36;
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str39);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str40);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                        c00032.L$13 = requestBody4;
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                        c00032.I$0 = i10;
+                        c00032.I$1 = i13;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z6;
+                        c00032.label = 6;
                         str41 = str35;
                         movieBoxProvider = this;
-                        objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00022, 40, null);
+                        objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00032, 40, null);
                         if (objBuildAuthHeaders$default2 == obj5) {
                             return obj5;
                         }
@@ -3104,28 +3137,28 @@ public final class MovieBoxProvider extends MainAPI {
                         map14 = map12;
                         if (z8) {
                             Requests app12 = MainActivityKt.getApp();
-                            c00022.L$0 = mainPageRequest6;
-                            c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                            c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                            c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                            c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                            c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                            c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                            c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                            c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                            c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                            c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                            c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                            c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                            c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                            c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                            c00022.I$0 = i21;
-                            c00022.I$1 = i20;
-                            c00022.I$2 = i12;
-                            c00022.Z$0 = z8;
-                            c00022.label = 7;
+                            c00032.L$0 = mainPageRequest6;
+                            c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                            c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                            c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                            c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                            c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                            c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                            c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                            c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                            c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                            c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                            c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                            c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                            c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                            c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                            c00032.I$0 = i21;
+                            c00032.I$1 = i20;
+                            c00032.I$2 = i12;
+                            c00032.Z$0 = z8;
+                            c00032.label = 7;
                             i26 = i12;
-                            objPost$default = Requests.get$default(app12, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                            objPost$default = Requests.get$default(app12, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                             if (objPost$default == obj5) {
                                 return obj5;
                             }
@@ -3271,29 +3304,29 @@ public final class MovieBoxProvider extends MainAPI {
                         List list11 = list5;
                         i22 = i12;
                         Requests app13 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
+                        c00032.L$0 = mainPageRequest6;
                         mainPageRequest7 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list11);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i22;
-                        c00022.Z$0 = z8;
-                        c00022.label = 8;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list11);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i22;
+                        c00032.Z$0 = z8;
+                        c00032.label = 8;
                         requestBody9 = requestBody8;
-                        objPost$default = Requests.post$default(app13, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                        objPost$default = Requests.post$default(app13, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -3436,26 +3469,26 @@ public final class MovieBoxProvider extends MainAPI {
                         }
                         return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
                     }
-                    c00022.L$0 = mainPageRequest5;
-                    c00022.L$1 = str36;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map5);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBody3;
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                    c00022.I$0 = i10;
-                    c00022.I$1 = i9;
-                    c00022.I$2 = i11;
-                    c00022.Z$0 = z5;
-                    c00022.label = 5;
+                    c00032.L$0 = mainPageRequest5;
+                    c00032.L$1 = str36;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map5);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str37);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBody3;
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                    c00032.I$0 = i10;
+                    c00032.I$1 = i9;
+                    c00032.I$2 = i11;
+                    c00032.Z$0 = z5;
+                    c00032.label = 5;
                     i15 = i9;
                     requestBody6 = requestBody3;
                     str46 = str38;
@@ -3464,7 +3497,7 @@ public final class MovieBoxProvider extends MainAPI {
                     str47 = str37;
                     obj5 = obj4;
                     z7 = z5;
-                    objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00022, 60, null);
+                    objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00032, 60, null);
                     if (objBuildAuthHeaders$default3 == obj5) {
                         return obj5;
                     }
@@ -3502,28 +3535,28 @@ public final class MovieBoxProvider extends MainAPI {
                     map14 = map12;
                     if (z8) {
                         Requests app14 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z8;
-                        c00022.label = 7;
+                        c00032.L$0 = mainPageRequest6;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z8;
+                        c00032.label = 7;
                         i26 = i12;
-                        objPost$default = Requests.get$default(app14, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                        objPost$default = Requests.get$default(app14, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -3669,29 +3702,29 @@ public final class MovieBoxProvider extends MainAPI {
                     List list12 = list5;
                     i22 = i12;
                     Requests app15 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
+                    c00032.L$0 = mainPageRequest6;
                     mainPageRequest7 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list12);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i22;
-                    c00022.Z$0 = z8;
-                    c00022.label = 8;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list12);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i22;
+                    c00032.Z$0 = z8;
+                    c00032.label = 8;
                     requestBody9 = requestBody8;
-                    objPost$default = Requests.post$default(app15, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    objPost$default = Requests.post$default(app15, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -3837,27 +3870,27 @@ public final class MovieBoxProvider extends MainAPI {
                 i9 = i8;
                 obj2 = coroutine_suspended;
                 Requests app16 = MainActivityKt.getApp();
-                c00022.L$0 = mainPageRequest2;
-                c00022.L$1 = str22;
+                c00032.L$0 = mainPageRequest2;
+                c00032.L$1 = str22;
                 mainPageRequest3 = mainPageRequest2;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str25);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list3);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str26);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map3);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str21);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str8);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str10);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str19);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                c00022.L$11 = str18;
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                c00022.L$13 = requestBodyCreate;
-                c00022.I$0 = i7;
-                c00022.I$1 = i9;
-                c00022.I$2 = i6;
-                c00022.Z$0 = z3;
-                c00022.label = 4;
-                objPost$default = Requests.post$default(app16, str22, map4, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str25);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list3);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str26);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map3);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str21);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str8);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str10);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str19);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                c00032.L$11 = str18;
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                c00032.L$13 = requestBodyCreate;
+                c00032.I$0 = i7;
+                c00032.I$1 = i9;
+                c00032.I$2 = i6;
+                c00032.Z$0 = z3;
+                c00032.label = 4;
+                objPost$default = Requests.post$default(app16, str22, map4, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                 if (objPost$default == obj2) {
                     return obj2;
                 }
@@ -3900,29 +3933,29 @@ public final class MovieBoxProvider extends MainAPI {
                     i13 = i9;
                     requestBody4 = requestBody3;
                     obj5 = obj4;
-                    c00022.L$0 = mainPageRequest5;
-                    c00022.L$1 = str36;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map6);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str39);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str40);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBody4;
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                    c00022.I$0 = i10;
-                    c00022.I$1 = i13;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z6;
-                    c00022.label = 6;
+                    c00032.L$0 = mainPageRequest5;
+                    c00032.L$1 = str36;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map6);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str39);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str40);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBody4;
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                    c00032.I$0 = i10;
+                    c00032.I$1 = i13;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z6;
+                    c00032.label = 6;
                     str41 = str35;
                     movieBoxProvider = this;
-                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00022, 40, null);
+                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00032, 40, null);
                     if (objBuildAuthHeaders$default2 == obj5) {
                         return obj5;
                     }
@@ -3957,28 +3990,28 @@ public final class MovieBoxProvider extends MainAPI {
                     map14 = map12;
                     if (z8) {
                         Requests app17 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z8;
-                        c00022.label = 7;
+                        c00032.L$0 = mainPageRequest6;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z8;
+                        c00032.label = 7;
                         i26 = i12;
-                        objPost$default = Requests.get$default(app17, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                        objPost$default = Requests.get$default(app17, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -4124,29 +4157,29 @@ public final class MovieBoxProvider extends MainAPI {
                     List list13 = list5;
                     i22 = i12;
                     Requests app18 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
+                    c00032.L$0 = mainPageRequest6;
                     mainPageRequest7 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list13);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i22;
-                    c00022.Z$0 = z8;
-                    c00022.label = 8;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list13);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i22;
+                    c00032.Z$0 = z8;
+                    c00032.label = 8;
                     requestBody9 = requestBody8;
-                    objPost$default = Requests.post$default(app18, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    objPost$default = Requests.post$default(app18, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -4289,26 +4322,26 @@ public final class MovieBoxProvider extends MainAPI {
                     }
                     return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
                 }
-                c00022.L$0 = mainPageRequest5;
-                c00022.L$1 = str36;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map5);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                c00022.L$13 = requestBody3;
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                c00022.I$0 = i10;
-                c00022.I$1 = i9;
-                c00022.I$2 = i11;
-                c00022.Z$0 = z5;
-                c00022.label = 5;
+                c00032.L$0 = mainPageRequest5;
+                c00032.L$1 = str36;
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map5);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str37);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                c00032.L$13 = requestBody3;
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                c00032.I$0 = i10;
+                c00032.I$1 = i9;
+                c00032.I$2 = i11;
+                c00032.Z$0 = z5;
+                c00032.label = 5;
                 i15 = i9;
                 requestBody6 = requestBody3;
                 str46 = str38;
@@ -4317,7 +4350,7 @@ public final class MovieBoxProvider extends MainAPI {
                 str47 = str37;
                 obj5 = obj4;
                 z7 = z5;
-                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00022, 60, null);
+                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00032, 60, null);
                 if (objBuildAuthHeaders$default3 == obj5) {
                     return obj5;
                 }
@@ -4355,28 +4388,28 @@ public final class MovieBoxProvider extends MainAPI {
                 map14 = map12;
                 if (z8) {
                     Requests app19 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z8;
-                    c00022.label = 7;
+                    c00032.L$0 = mainPageRequest6;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z8;
+                    c00032.label = 7;
                     i26 = i12;
-                    objPost$default = Requests.get$default(app19, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                    objPost$default = Requests.get$default(app19, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -4522,29 +4555,29 @@ public final class MovieBoxProvider extends MainAPI {
                 List list14 = list5;
                 i22 = i12;
                 Requests app110 = MainActivityKt.getApp();
-                c00022.L$0 = mainPageRequest6;
+                c00032.L$0 = mainPageRequest6;
                 mainPageRequest7 = mainPageRequest6;
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list14);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                c00022.I$0 = i21;
-                c00022.I$1 = i20;
-                c00022.I$2 = i22;
-                c00022.Z$0 = z8;
-                c00022.label = 8;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list14);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                c00032.I$0 = i21;
+                c00032.I$1 = i20;
+                c00032.I$2 = i22;
+                c00032.Z$0 = z8;
+                c00032.label = 8;
                 requestBody9 = requestBody8;
-                objPost$default = Requests.post$default(app110, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                objPost$default = Requests.post$default(app110, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                 if (objPost$default == obj5) {
                     return obj5;
                 }
@@ -4687,22 +4720,22 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
             case 1:
-                boolean z10 = c00022.Z$0;
-                int i40 = c00022.I$2;
-                i5 = c00022.I$1;
-                int i41 = c00022.I$0;
-                str14 = (String) c00022.L$11;
-                str15 = (String) c00022.L$10;
-                str16 = (String) c00022.L$9;
-                str10 = (String) c00022.L$8;
-                str8 = (String) c00022.L$7;
-                String str94 = (String) c00022.L$6;
-                Map map16 = (Map) c00022.L$5;
-                str17 = (String) c00022.L$4;
-                List list15 = (List) c00022.L$3;
-                String str95 = (String) c00022.L$2;
-                String str96 = (String) c00022.L$1;
-                MainPageRequest mainPageRequest10 = (MainPageRequest) c00022.L$0;
+                boolean z10 = c00032.Z$0;
+                int i40 = c00032.I$2;
+                i5 = c00032.I$1;
+                int i41 = c00032.I$0;
+                str14 = (String) c00032.L$11;
+                str15 = (String) c00032.L$10;
+                str16 = (String) c00032.L$9;
+                str10 = (String) c00032.L$8;
+                str8 = (String) c00032.L$7;
+                String str94 = (String) c00032.L$6;
+                Map map16 = (Map) c00032.L$5;
+                str17 = (String) c00032.L$4;
+                List list15 = (List) c00032.L$3;
+                String str95 = (String) c00032.L$2;
+                String str96 = (String) c00032.L$1;
+                MainPageRequest mainPageRequest10 = (MainPageRequest) c00032.L$0;
                 ResultKt.throwOnFailure(objPost$default);
                 str12 = str94;
                 mainPageRequest9 = mainPageRequest10;
@@ -4739,28 +4772,28 @@ public final class MovieBoxProvider extends MainAPI {
                 requestBodyCreate = RequestBody.Companion.create(str18, MediaType.Companion.get("application/json"));
                 if (z3) {
                     Requests app111 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest2;
-                    c00022.L$1 = str22;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str25);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list3);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str26);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map3);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str21);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str8);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str10);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str19);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = str18;
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBodyCreate;
-                    c00022.I$0 = i7;
-                    c00022.I$1 = i8;
-                    c00022.I$2 = i6;
-                    c00022.Z$0 = z3;
-                    c00022.label = 3;
+                    c00032.L$0 = mainPageRequest2;
+                    c00032.L$1 = str22;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str25);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list3);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str26);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map3);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str21);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str8);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str10);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str19);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = str18;
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBodyCreate;
+                    c00032.I$0 = i7;
+                    c00032.I$1 = i8;
+                    c00032.I$2 = i6;
+                    c00032.Z$0 = z3;
+                    c00032.label = 3;
                     obj3 = coroutine_suspended;
                     i9 = i8;
-                    objPost$default = Requests.get$default(app111, str22, map4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                    objPost$default = Requests.get$default(app111, str22, map4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                     if (objPost$default == obj3) {
                         return obj3;
                     }
@@ -4804,29 +4837,29 @@ public final class MovieBoxProvider extends MainAPI {
                         i13 = i9;
                         requestBody4 = requestBody3;
                         obj5 = obj4;
-                        c00022.L$0 = mainPageRequest5;
-                        c00022.L$1 = str36;
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str39);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str40);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                        c00022.L$13 = requestBody4;
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                        c00022.I$0 = i10;
-                        c00022.I$1 = i13;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z6;
-                        c00022.label = 6;
+                        c00032.L$0 = mainPageRequest5;
+                        c00032.L$1 = str36;
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str39);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str40);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                        c00032.L$13 = requestBody4;
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                        c00032.I$0 = i10;
+                        c00032.I$1 = i13;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z6;
+                        c00032.label = 6;
                         str41 = str35;
                         movieBoxProvider = this;
-                        objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00022, 40, null);
+                        objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00032, 40, null);
                         if (objBuildAuthHeaders$default2 == obj5) {
                             return obj5;
                         }
@@ -4861,28 +4894,28 @@ public final class MovieBoxProvider extends MainAPI {
                         map14 = map12;
                         if (z8) {
                             Requests app112 = MainActivityKt.getApp();
-                            c00022.L$0 = mainPageRequest6;
-                            c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                            c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                            c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                            c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                            c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                            c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                            c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                            c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                            c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                            c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                            c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                            c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                            c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                            c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                            c00022.I$0 = i21;
-                            c00022.I$1 = i20;
-                            c00022.I$2 = i12;
-                            c00022.Z$0 = z8;
-                            c00022.label = 7;
+                            c00032.L$0 = mainPageRequest6;
+                            c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                            c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                            c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                            c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                            c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                            c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                            c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                            c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                            c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                            c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                            c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                            c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                            c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                            c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                            c00032.I$0 = i21;
+                            c00032.I$1 = i20;
+                            c00032.I$2 = i12;
+                            c00032.Z$0 = z8;
+                            c00032.label = 7;
                             i26 = i12;
-                            objPost$default = Requests.get$default(app112, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                            objPost$default = Requests.get$default(app112, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                             if (objPost$default == obj5) {
                                 return obj5;
                             }
@@ -5028,29 +5061,29 @@ public final class MovieBoxProvider extends MainAPI {
                         List list16 = list5;
                         i22 = i12;
                         Requests app113 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
+                        c00032.L$0 = mainPageRequest6;
                         mainPageRequest7 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list16);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i22;
-                        c00022.Z$0 = z8;
-                        c00022.label = 8;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list16);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i22;
+                        c00032.Z$0 = z8;
+                        c00032.label = 8;
                         requestBody9 = requestBody8;
-                        objPost$default = Requests.post$default(app113, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                        objPost$default = Requests.post$default(app113, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -5193,26 +5226,26 @@ public final class MovieBoxProvider extends MainAPI {
                         }
                         return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
                     }
-                    c00022.L$0 = mainPageRequest5;
-                    c00022.L$1 = str36;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map5);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBody3;
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                    c00022.I$0 = i10;
-                    c00022.I$1 = i9;
-                    c00022.I$2 = i11;
-                    c00022.Z$0 = z5;
-                    c00022.label = 5;
+                    c00032.L$0 = mainPageRequest5;
+                    c00032.L$1 = str36;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map5);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str37);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBody3;
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                    c00032.I$0 = i10;
+                    c00032.I$1 = i9;
+                    c00032.I$2 = i11;
+                    c00032.Z$0 = z5;
+                    c00032.label = 5;
                     i15 = i9;
                     requestBody6 = requestBody3;
                     str46 = str38;
@@ -5221,7 +5254,7 @@ public final class MovieBoxProvider extends MainAPI {
                     str47 = str37;
                     obj5 = obj4;
                     z7 = z5;
-                    objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00022, 60, null);
+                    objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00032, 60, null);
                     if (objBuildAuthHeaders$default3 == obj5) {
                         return obj5;
                     }
@@ -5259,28 +5292,28 @@ public final class MovieBoxProvider extends MainAPI {
                     map14 = map12;
                     if (z8) {
                         Requests app114 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z8;
-                        c00022.label = 7;
+                        c00032.L$0 = mainPageRequest6;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z8;
+                        c00032.label = 7;
                         i26 = i12;
-                        objPost$default = Requests.get$default(app114, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                        objPost$default = Requests.get$default(app114, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -5426,29 +5459,29 @@ public final class MovieBoxProvider extends MainAPI {
                     List list17 = list5;
                     i22 = i12;
                     Requests app115 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
+                    c00032.L$0 = mainPageRequest6;
                     mainPageRequest7 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list17);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i22;
-                    c00022.Z$0 = z8;
-                    c00022.label = 8;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list17);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i22;
+                    c00032.Z$0 = z8;
+                    c00032.label = 8;
                     requestBody9 = requestBody8;
-                    objPost$default = Requests.post$default(app115, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    objPost$default = Requests.post$default(app115, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -5594,27 +5627,27 @@ public final class MovieBoxProvider extends MainAPI {
                 i9 = i8;
                 obj2 = coroutine_suspended;
                 Requests app116 = MainActivityKt.getApp();
-                c00022.L$0 = mainPageRequest2;
-                c00022.L$1 = str22;
+                c00032.L$0 = mainPageRequest2;
+                c00032.L$1 = str22;
                 mainPageRequest3 = mainPageRequest2;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str25);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list3);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str26);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map3);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str21);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str8);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str10);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str19);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                c00022.L$11 = str18;
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                c00022.L$13 = requestBodyCreate;
-                c00022.I$0 = i7;
-                c00022.I$1 = i9;
-                c00022.I$2 = i6;
-                c00022.Z$0 = z3;
-                c00022.label = 4;
-                objPost$default = Requests.post$default(app116, str22, map4, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str25);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list3);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str26);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map3);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str21);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str8);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str10);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str19);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                c00032.L$11 = str18;
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                c00032.L$13 = requestBodyCreate;
+                c00032.I$0 = i7;
+                c00032.I$1 = i9;
+                c00032.I$2 = i6;
+                c00032.Z$0 = z3;
+                c00032.label = 4;
+                objPost$default = Requests.post$default(app116, str22, map4, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                 if (objPost$default == obj2) {
                     return obj2;
                 }
@@ -5658,29 +5691,29 @@ public final class MovieBoxProvider extends MainAPI {
                     i13 = i9;
                     requestBody4 = requestBody3;
                     obj5 = obj4;
-                    c00022.L$0 = mainPageRequest5;
-                    c00022.L$1 = str36;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map6);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str39);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str40);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBody4;
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                    c00022.I$0 = i10;
-                    c00022.I$1 = i13;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z6;
-                    c00022.label = 6;
+                    c00032.L$0 = mainPageRequest5;
+                    c00032.L$1 = str36;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map6);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str39);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str40);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBody4;
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                    c00032.I$0 = i10;
+                    c00032.I$1 = i13;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z6;
+                    c00032.label = 6;
                     str41 = str35;
                     movieBoxProvider = this;
-                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00022, 40, null);
+                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00032, 40, null);
                     if (objBuildAuthHeaders$default2 == obj5) {
                         return obj5;
                     }
@@ -5715,28 +5748,28 @@ public final class MovieBoxProvider extends MainAPI {
                     map14 = map12;
                     if (z8) {
                         Requests app117 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z8;
-                        c00022.label = 7;
+                        c00032.L$0 = mainPageRequest6;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z8;
+                        c00032.label = 7;
                         i26 = i12;
-                        objPost$default = Requests.get$default(app117, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                        objPost$default = Requests.get$default(app117, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -5882,29 +5915,29 @@ public final class MovieBoxProvider extends MainAPI {
                     List list18 = list5;
                     i22 = i12;
                     Requests app118 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
+                    c00032.L$0 = mainPageRequest6;
                     mainPageRequest7 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list18);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i22;
-                    c00022.Z$0 = z8;
-                    c00022.label = 8;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list18);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i22;
+                    c00032.Z$0 = z8;
+                    c00032.label = 8;
                     requestBody9 = requestBody8;
-                    objPost$default = Requests.post$default(app118, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    objPost$default = Requests.post$default(app118, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -6047,26 +6080,26 @@ public final class MovieBoxProvider extends MainAPI {
                     }
                     return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
                 }
-                c00022.L$0 = mainPageRequest5;
-                c00022.L$1 = str36;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map5);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                c00022.L$13 = requestBody3;
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                c00022.I$0 = i10;
-                c00022.I$1 = i9;
-                c00022.I$2 = i11;
-                c00022.Z$0 = z5;
-                c00022.label = 5;
+                c00032.L$0 = mainPageRequest5;
+                c00032.L$1 = str36;
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map5);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str37);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                c00032.L$13 = requestBody3;
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                c00032.I$0 = i10;
+                c00032.I$1 = i9;
+                c00032.I$2 = i11;
+                c00032.Z$0 = z5;
+                c00032.label = 5;
                 i15 = i9;
                 requestBody6 = requestBody3;
                 str46 = str38;
@@ -6075,7 +6108,7 @@ public final class MovieBoxProvider extends MainAPI {
                 str47 = str37;
                 obj5 = obj4;
                 z7 = z5;
-                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00022, 60, null);
+                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00032, 60, null);
                 if (objBuildAuthHeaders$default3 == obj5) {
                     return obj5;
                 }
@@ -6113,28 +6146,28 @@ public final class MovieBoxProvider extends MainAPI {
                 map14 = map12;
                 if (z8) {
                     Requests app119 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z8;
-                    c00022.label = 7;
+                    c00032.L$0 = mainPageRequest6;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z8;
+                    c00032.label = 7;
                     i26 = i12;
-                    objPost$default = Requests.get$default(app119, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                    objPost$default = Requests.get$default(app119, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -6280,29 +6313,29 @@ public final class MovieBoxProvider extends MainAPI {
                 List list19 = list5;
                 i22 = i12;
                 Requests app1110 = MainActivityKt.getApp();
-                c00022.L$0 = mainPageRequest6;
+                c00032.L$0 = mainPageRequest6;
                 mainPageRequest7 = mainPageRequest6;
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list19);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                c00022.I$0 = i21;
-                c00022.I$1 = i20;
-                c00022.I$2 = i22;
-                c00022.Z$0 = z8;
-                c00022.label = 8;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list19);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                c00032.I$0 = i21;
+                c00032.I$1 = i20;
+                c00032.I$2 = i22;
+                c00032.Z$0 = z8;
+                c00032.label = 8;
                 requestBody9 = requestBody8;
-                objPost$default = Requests.post$default(app1110, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                objPost$default = Requests.post$default(app1110, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                 if (objPost$default == obj5) {
                     return obj5;
                 }
@@ -6445,22 +6478,22 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
             case 2:
-                boolean z11 = c00022.Z$0;
-                int i42 = c00022.I$2;
-                int i43 = c00022.I$1;
-                int i44 = c00022.I$0;
-                str6 = (String) c00022.L$11;
-                str7 = (String) c00022.L$10;
-                str9 = (String) c00022.L$9;
-                str10 = (String) c00022.L$8;
-                str8 = (String) c00022.L$7;
-                String str97 = (String) c00022.L$6;
-                Map map17 = (Map) c00022.L$5;
-                str11 = (String) c00022.L$4;
-                List list20 = (List) c00022.L$3;
-                String str98 = (String) c00022.L$2;
-                String str99 = (String) c00022.L$1;
-                MainPageRequest mainPageRequest11 = (MainPageRequest) c00022.L$0;
+                boolean z11 = c00032.Z$0;
+                int i42 = c00032.I$2;
+                int i43 = c00032.I$1;
+                int i44 = c00032.I$0;
+                str6 = (String) c00032.L$11;
+                str7 = (String) c00032.L$10;
+                str9 = (String) c00032.L$9;
+                str10 = (String) c00032.L$8;
+                str8 = (String) c00032.L$7;
+                String str97 = (String) c00032.L$6;
+                Map map17 = (Map) c00032.L$5;
+                str11 = (String) c00032.L$4;
+                List list20 = (List) c00032.L$3;
+                String str98 = (String) c00032.L$2;
+                String str99 = (String) c00032.L$1;
+                MainPageRequest mainPageRequest11 = (MainPageRequest) c00032.L$0;
                 ResultKt.throwOnFailure(objPost$default);
                 z = z11;
                 map = map17;
@@ -6496,28 +6529,28 @@ public final class MovieBoxProvider extends MainAPI {
                 requestBodyCreate = RequestBody.Companion.create(str18, MediaType.Companion.get("application/json"));
                 if (z3) {
                     Requests app1111 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest2;
-                    c00022.L$1 = str22;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str25);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list3);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str26);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map3);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str21);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str8);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str10);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str19);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = str18;
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBodyCreate;
-                    c00022.I$0 = i7;
-                    c00022.I$1 = i8;
-                    c00022.I$2 = i6;
-                    c00022.Z$0 = z3;
-                    c00022.label = 3;
+                    c00032.L$0 = mainPageRequest2;
+                    c00032.L$1 = str22;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str25);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list3);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str26);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map3);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str21);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str8);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str10);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str19);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = str18;
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBodyCreate;
+                    c00032.I$0 = i7;
+                    c00032.I$1 = i8;
+                    c00032.I$2 = i6;
+                    c00032.Z$0 = z3;
+                    c00032.label = 3;
                     obj3 = coroutine_suspended;
                     i9 = i8;
-                    objPost$default = Requests.get$default(app1111, str22, map4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                    objPost$default = Requests.get$default(app1111, str22, map4, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                     if (objPost$default == obj3) {
                         return obj3;
                     }
@@ -6561,29 +6594,29 @@ public final class MovieBoxProvider extends MainAPI {
                         i13 = i9;
                         requestBody4 = requestBody3;
                         obj5 = obj4;
-                        c00022.L$0 = mainPageRequest5;
-                        c00022.L$1 = str36;
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map6);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str39);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str40);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                        c00022.L$13 = requestBody4;
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                        c00022.I$0 = i10;
-                        c00022.I$1 = i13;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z6;
-                        c00022.label = 6;
+                        c00032.L$0 = mainPageRequest5;
+                        c00032.L$1 = str36;
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map6);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str39);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str40);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                        c00032.L$13 = requestBody4;
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                        c00032.I$0 = i10;
+                        c00032.I$1 = i13;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z6;
+                        c00032.label = 6;
                         str41 = str35;
                         movieBoxProvider = this;
-                        objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00022, 40, null);
+                        objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00032, 40, null);
                         if (objBuildAuthHeaders$default2 == obj5) {
                             return obj5;
                         }
@@ -6618,28 +6651,28 @@ public final class MovieBoxProvider extends MainAPI {
                         map14 = map12;
                         if (z8) {
                             Requests app1112 = MainActivityKt.getApp();
-                            c00022.L$0 = mainPageRequest6;
-                            c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                            c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                            c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                            c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                            c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                            c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                            c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                            c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                            c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                            c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                            c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                            c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                            c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                            c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                            c00022.I$0 = i21;
-                            c00022.I$1 = i20;
-                            c00022.I$2 = i12;
-                            c00022.Z$0 = z8;
-                            c00022.label = 7;
+                            c00032.L$0 = mainPageRequest6;
+                            c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                            c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                            c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                            c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                            c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                            c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                            c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                            c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                            c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                            c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                            c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                            c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                            c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                            c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                            c00032.I$0 = i21;
+                            c00032.I$1 = i20;
+                            c00032.I$2 = i12;
+                            c00032.Z$0 = z8;
+                            c00032.label = 7;
                             i26 = i12;
-                            objPost$default = Requests.get$default(app1112, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                            objPost$default = Requests.get$default(app1112, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                             if (objPost$default == obj5) {
                                 return obj5;
                             }
@@ -6785,29 +6818,29 @@ public final class MovieBoxProvider extends MainAPI {
                         List list110 = list5;
                         i22 = i12;
                         Requests app1113 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
+                        c00032.L$0 = mainPageRequest6;
                         mainPageRequest7 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list110);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i22;
-                        c00022.Z$0 = z8;
-                        c00022.label = 8;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list110);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i22;
+                        c00032.Z$0 = z8;
+                        c00032.label = 8;
                         requestBody9 = requestBody8;
-                        objPost$default = Requests.post$default(app1113, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                        objPost$default = Requests.post$default(app1113, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -6950,26 +6983,26 @@ public final class MovieBoxProvider extends MainAPI {
                         }
                         return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
                     }
-                    c00022.L$0 = mainPageRequest5;
-                    c00022.L$1 = str36;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map5);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBody3;
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                    c00022.I$0 = i10;
-                    c00022.I$1 = i9;
-                    c00022.I$2 = i11;
-                    c00022.Z$0 = z5;
-                    c00022.label = 5;
+                    c00032.L$0 = mainPageRequest5;
+                    c00032.L$1 = str36;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map5);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str37);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBody3;
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                    c00032.I$0 = i10;
+                    c00032.I$1 = i9;
+                    c00032.I$2 = i11;
+                    c00032.Z$0 = z5;
+                    c00032.label = 5;
                     i15 = i9;
                     requestBody6 = requestBody3;
                     str46 = str38;
@@ -6978,7 +7011,7 @@ public final class MovieBoxProvider extends MainAPI {
                     str47 = str37;
                     obj5 = obj4;
                     z7 = z5;
-                    objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00022, 60, null);
+                    objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00032, 60, null);
                     if (objBuildAuthHeaders$default3 == obj5) {
                         return obj5;
                     }
@@ -7016,28 +7049,28 @@ public final class MovieBoxProvider extends MainAPI {
                     map14 = map12;
                     if (z8) {
                         Requests app1114 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z8;
-                        c00022.label = 7;
+                        c00032.L$0 = mainPageRequest6;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z8;
+                        c00032.label = 7;
                         i26 = i12;
-                        objPost$default = Requests.get$default(app1114, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                        objPost$default = Requests.get$default(app1114, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -7183,29 +7216,29 @@ public final class MovieBoxProvider extends MainAPI {
                     List list111 = list5;
                     i22 = i12;
                     Requests app1115 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
+                    c00032.L$0 = mainPageRequest6;
                     mainPageRequest7 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list111);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i22;
-                    c00022.Z$0 = z8;
-                    c00022.label = 8;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list111);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i22;
+                    c00032.Z$0 = z8;
+                    c00032.label = 8;
                     requestBody9 = requestBody8;
-                    objPost$default = Requests.post$default(app1115, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    objPost$default = Requests.post$default(app1115, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -7351,27 +7384,27 @@ public final class MovieBoxProvider extends MainAPI {
                 i9 = i8;
                 obj2 = coroutine_suspended;
                 Requests app1116 = MainActivityKt.getApp();
-                c00022.L$0 = mainPageRequest2;
-                c00022.L$1 = str22;
+                c00032.L$0 = mainPageRequest2;
+                c00032.L$1 = str22;
                 mainPageRequest3 = mainPageRequest2;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str25);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list3);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str26);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map3);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str21);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str8);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str10);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str19);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                c00022.L$11 = str18;
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                c00022.L$13 = requestBodyCreate;
-                c00022.I$0 = i7;
-                c00022.I$1 = i9;
-                c00022.I$2 = i6;
-                c00022.Z$0 = z3;
-                c00022.label = 4;
-                objPost$default = Requests.post$default(app1116, str22, map4, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str25);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list3);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str26);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map3);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str21);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str8);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str10);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str19);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                c00032.L$11 = str18;
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                c00032.L$13 = requestBodyCreate;
+                c00032.I$0 = i7;
+                c00032.I$1 = i9;
+                c00032.I$2 = i6;
+                c00032.Z$0 = z3;
+                c00032.label = 4;
+                objPost$default = Requests.post$default(app1116, str22, map4, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBodyCreate, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                 if (objPost$default == obj2) {
                     return obj2;
                 }
@@ -7415,29 +7448,29 @@ public final class MovieBoxProvider extends MainAPI {
                     i13 = i9;
                     requestBody4 = requestBody3;
                     obj5 = obj4;
-                    c00022.L$0 = mainPageRequest5;
-                    c00022.L$1 = str36;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map6);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str39);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str40);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBody4;
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                    c00022.I$0 = i10;
-                    c00022.I$1 = i13;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z6;
-                    c00022.label = 6;
+                    c00032.L$0 = mainPageRequest5;
+                    c00032.L$1 = str36;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map6);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str39);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str40);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBody4;
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                    c00032.I$0 = i10;
+                    c00032.I$1 = i13;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z6;
+                    c00032.label = 6;
                     str41 = str35;
                     movieBoxProvider = this;
-                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00022, 40, null);
+                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00032, 40, null);
                     if (objBuildAuthHeaders$default2 == obj5) {
                         return obj5;
                     }
@@ -7472,28 +7505,28 @@ public final class MovieBoxProvider extends MainAPI {
                     map14 = map12;
                     if (z8) {
                         Requests app1117 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z8;
-                        c00022.label = 7;
+                        c00032.L$0 = mainPageRequest6;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z8;
+                        c00032.label = 7;
                         i26 = i12;
-                        objPost$default = Requests.get$default(app1117, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                        objPost$default = Requests.get$default(app1117, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -7639,29 +7672,29 @@ public final class MovieBoxProvider extends MainAPI {
                     List list112 = list5;
                     i22 = i12;
                     Requests app1118 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
+                    c00032.L$0 = mainPageRequest6;
                     mainPageRequest7 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list112);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i22;
-                    c00022.Z$0 = z8;
-                    c00022.label = 8;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list112);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i22;
+                    c00032.Z$0 = z8;
+                    c00032.label = 8;
                     requestBody9 = requestBody8;
-                    objPost$default = Requests.post$default(app1118, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    objPost$default = Requests.post$default(app1118, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -7804,26 +7837,26 @@ public final class MovieBoxProvider extends MainAPI {
                     }
                     return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
                 }
-                c00022.L$0 = mainPageRequest5;
-                c00022.L$1 = str36;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map5);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                c00022.L$13 = requestBody3;
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                c00022.I$0 = i10;
-                c00022.I$1 = i9;
-                c00022.I$2 = i11;
-                c00022.Z$0 = z5;
-                c00022.label = 5;
+                c00032.L$0 = mainPageRequest5;
+                c00032.L$1 = str36;
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map5);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str37);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                c00032.L$13 = requestBody3;
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                c00032.I$0 = i10;
+                c00032.I$1 = i9;
+                c00032.I$2 = i11;
+                c00032.Z$0 = z5;
+                c00032.label = 5;
                 i15 = i9;
                 requestBody6 = requestBody3;
                 str46 = str38;
@@ -7832,7 +7865,7 @@ public final class MovieBoxProvider extends MainAPI {
                 str47 = str37;
                 obj5 = obj4;
                 z7 = z5;
-                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00022, 60, null);
+                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00032, 60, null);
                 if (objBuildAuthHeaders$default3 == obj5) {
                     return obj5;
                 }
@@ -7870,28 +7903,28 @@ public final class MovieBoxProvider extends MainAPI {
                 map14 = map12;
                 if (z8) {
                     Requests app1119 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z8;
-                    c00022.label = 7;
+                    c00032.L$0 = mainPageRequest6;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z8;
+                    c00032.label = 7;
                     i26 = i12;
-                    objPost$default = Requests.get$default(app1119, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                    objPost$default = Requests.get$default(app1119, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -8037,29 +8070,29 @@ public final class MovieBoxProvider extends MainAPI {
                 List list113 = list5;
                 i22 = i12;
                 Requests app11110 = MainActivityKt.getApp();
-                c00022.L$0 = mainPageRequest6;
+                c00032.L$0 = mainPageRequest6;
                 mainPageRequest7 = mainPageRequest6;
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list113);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                c00022.I$0 = i21;
-                c00022.I$1 = i20;
-                c00022.I$2 = i22;
-                c00022.Z$0 = z8;
-                c00022.label = 8;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list113);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                c00032.I$0 = i21;
+                c00032.I$1 = i20;
+                c00032.I$2 = i22;
+                c00032.Z$0 = z8;
+                c00032.label = 8;
                 requestBody9 = requestBody8;
-                objPost$default = Requests.post$default(app11110, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                objPost$default = Requests.post$default(app11110, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                 if (objPost$default == obj5) {
                     return obj5;
                 }
@@ -8202,24 +8235,24 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
             case 3:
-                boolean z12 = c00022.Z$0;
-                int i45 = c00022.I$2;
-                i9 = c00022.I$1;
-                int i46 = c00022.I$0;
-                RequestBody requestBody12 = (RequestBody) c00022.L$13;
-                Map map18 = (Map) c00022.L$12;
-                str34 = (String) c00022.L$11;
-                String str100 = (String) c00022.L$10;
-                str33 = (String) c00022.L$9;
-                String str101 = (String) c00022.L$8;
-                str29 = (String) c00022.L$7;
-                str28 = (String) c00022.L$6;
-                Map map19 = (Map) c00022.L$5;
-                str32 = (String) c00022.L$4;
-                list4 = (List) c00022.L$3;
-                str27 = (String) c00022.L$2;
-                String str102 = (String) c00022.L$1;
-                MainPageRequest mainPageRequest12 = (MainPageRequest) c00022.L$0;
+                boolean z12 = c00032.Z$0;
+                int i45 = c00032.I$2;
+                i9 = c00032.I$1;
+                int i46 = c00032.I$0;
+                RequestBody requestBody12 = (RequestBody) c00032.L$13;
+                Map map18 = (Map) c00032.L$12;
+                str34 = (String) c00032.L$11;
+                String str100 = (String) c00032.L$10;
+                str33 = (String) c00032.L$9;
+                String str101 = (String) c00032.L$8;
+                str29 = (String) c00032.L$7;
+                str28 = (String) c00032.L$6;
+                Map map19 = (Map) c00032.L$5;
+                str32 = (String) c00032.L$4;
+                list4 = (List) c00032.L$3;
+                str27 = (String) c00032.L$2;
+                String str102 = (String) c00032.L$1;
+                MainPageRequest mainPageRequest12 = (MainPageRequest) c00032.L$0;
                 ResultKt.throwOnFailure(objPost$default);
                 z3 = z12;
                 i6 = i45;
@@ -8264,29 +8297,29 @@ public final class MovieBoxProvider extends MainAPI {
                     i13 = i9;
                     requestBody4 = requestBody3;
                     obj5 = obj4;
-                    c00022.L$0 = mainPageRequest5;
-                    c00022.L$1 = str36;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map6);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str39);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str40);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBody4;
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                    c00022.I$0 = i10;
-                    c00022.I$1 = i13;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z6;
-                    c00022.label = 6;
+                    c00032.L$0 = mainPageRequest5;
+                    c00032.L$1 = str36;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map6);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str39);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str40);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBody4;
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                    c00032.I$0 = i10;
+                    c00032.I$1 = i13;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z6;
+                    c00032.label = 6;
                     str41 = str35;
                     movieBoxProvider = this;
-                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00022, 40, null);
+                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00032, 40, null);
                     if (objBuildAuthHeaders$default2 == obj5) {
                         return obj5;
                     }
@@ -8321,28 +8354,28 @@ public final class MovieBoxProvider extends MainAPI {
                     map14 = map12;
                     if (z8) {
                         Requests app11111 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z8;
-                        c00022.label = 7;
+                        c00032.L$0 = mainPageRequest6;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z8;
+                        c00032.label = 7;
                         i26 = i12;
-                        objPost$default = Requests.get$default(app11111, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                        objPost$default = Requests.get$default(app11111, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -8488,29 +8521,29 @@ public final class MovieBoxProvider extends MainAPI {
                     List list114 = list5;
                     i22 = i12;
                     Requests app11112 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
+                    c00032.L$0 = mainPageRequest6;
                     mainPageRequest7 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list114);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i22;
-                    c00022.Z$0 = z8;
-                    c00022.label = 8;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list114);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i22;
+                    c00032.Z$0 = z8;
+                    c00032.label = 8;
                     requestBody9 = requestBody8;
-                    objPost$default = Requests.post$default(app11112, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    objPost$default = Requests.post$default(app11112, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -8653,26 +8686,26 @@ public final class MovieBoxProvider extends MainAPI {
                     }
                     return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
                 }
-                c00022.L$0 = mainPageRequest5;
-                c00022.L$1 = str36;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map5);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                c00022.L$13 = requestBody3;
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                c00022.I$0 = i10;
-                c00022.I$1 = i9;
-                c00022.I$2 = i11;
-                c00022.Z$0 = z5;
-                c00022.label = 5;
+                c00032.L$0 = mainPageRequest5;
+                c00032.L$1 = str36;
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map5);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str37);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                c00032.L$13 = requestBody3;
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                c00032.I$0 = i10;
+                c00032.I$1 = i9;
+                c00032.I$2 = i11;
+                c00032.Z$0 = z5;
+                c00032.label = 5;
                 i15 = i9;
                 requestBody6 = requestBody3;
                 str46 = str38;
@@ -8681,7 +8714,7 @@ public final class MovieBoxProvider extends MainAPI {
                 str47 = str37;
                 obj5 = obj4;
                 z7 = z5;
-                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00022, 60, null);
+                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00032, 60, null);
                 if (objBuildAuthHeaders$default3 == obj5) {
                     return obj5;
                 }
@@ -8719,28 +8752,28 @@ public final class MovieBoxProvider extends MainAPI {
                 map14 = map12;
                 if (z8) {
                     Requests app11113 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z8;
-                    c00022.label = 7;
+                    c00032.L$0 = mainPageRequest6;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z8;
+                    c00032.label = 7;
                     i26 = i12;
-                    objPost$default = Requests.get$default(app11113, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                    objPost$default = Requests.get$default(app11113, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -8886,29 +8919,29 @@ public final class MovieBoxProvider extends MainAPI {
                 List list115 = list5;
                 i22 = i12;
                 Requests app11114 = MainActivityKt.getApp();
-                c00022.L$0 = mainPageRequest6;
+                c00032.L$0 = mainPageRequest6;
                 mainPageRequest7 = mainPageRequest6;
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list115);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                c00022.I$0 = i21;
-                c00022.I$1 = i20;
-                c00022.I$2 = i22;
-                c00022.Z$0 = z8;
-                c00022.label = 8;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list115);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                c00032.I$0 = i21;
+                c00032.I$1 = i20;
+                c00032.I$2 = i22;
+                c00032.Z$0 = z8;
+                c00032.label = 8;
                 requestBody9 = requestBody8;
-                objPost$default = Requests.post$default(app11114, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                objPost$default = Requests.post$default(app11114, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                 if (objPost$default == obj5) {
                     return obj5;
                 }
@@ -9051,24 +9084,24 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
             case 4:
-                z4 = c00022.Z$0;
-                int i47 = c00022.I$2;
-                i9 = c00022.I$1;
-                int i48 = c00022.I$0;
-                RequestBody requestBody13 = (RequestBody) c00022.L$13;
-                Map map20 = (Map) c00022.L$12;
-                str30 = (String) c00022.L$11;
-                String str103 = (String) c00022.L$10;
-                str31 = (String) c00022.L$9;
-                String str104 = (String) c00022.L$8;
-                str29 = (String) c00022.L$7;
-                str28 = (String) c00022.L$6;
-                Map map21 = (Map) c00022.L$5;
-                str32 = (String) c00022.L$4;
-                list4 = (List) c00022.L$3;
-                str27 = (String) c00022.L$2;
-                String str105 = (String) c00022.L$1;
-                MainPageRequest mainPageRequest13 = (MainPageRequest) c00022.L$0;
+                z4 = c00032.Z$0;
+                int i47 = c00032.I$2;
+                i9 = c00032.I$1;
+                int i48 = c00032.I$0;
+                RequestBody requestBody13 = (RequestBody) c00032.L$13;
+                Map map20 = (Map) c00032.L$12;
+                str30 = (String) c00032.L$11;
+                String str103 = (String) c00032.L$10;
+                str31 = (String) c00032.L$9;
+                String str104 = (String) c00032.L$8;
+                str29 = (String) c00032.L$7;
+                str28 = (String) c00032.L$6;
+                Map map21 = (Map) c00032.L$5;
+                str32 = (String) c00032.L$4;
+                list4 = (List) c00032.L$3;
+                str27 = (String) c00032.L$2;
+                String str105 = (String) c00032.L$1;
+                MainPageRequest mainPageRequest13 = (MainPageRequest) c00032.L$0;
                 ResultKt.throwOnFailure(objPost$default);
                 mainPageRequest3 = mainPageRequest13;
                 i6 = i47;
@@ -9112,29 +9145,29 @@ public final class MovieBoxProvider extends MainAPI {
                     i13 = i9;
                     requestBody4 = requestBody3;
                     obj5 = obj4;
-                    c00022.L$0 = mainPageRequest5;
-                    c00022.L$1 = str36;
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map6);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str39);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str40);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                    c00022.L$13 = requestBody4;
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                    c00022.I$0 = i10;
-                    c00022.I$1 = i13;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z6;
-                    c00022.label = 6;
+                    c00032.L$0 = mainPageRequest5;
+                    c00032.L$1 = str36;
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map6);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str39);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str40);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                    c00032.L$13 = requestBody4;
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                    c00032.I$0 = i10;
+                    c00032.I$1 = i13;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z6;
+                    c00032.label = 6;
                     str41 = str35;
                     movieBoxProvider = this;
-                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00022, 40, null);
+                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(movieBoxProvider, "POST", str36, "application/json; charset=utf-8", null, str41, false, c00032, 40, null);
                     if (objBuildAuthHeaders$default2 == obj5) {
                         return obj5;
                     }
@@ -9169,28 +9202,28 @@ public final class MovieBoxProvider extends MainAPI {
                     map14 = map12;
                     if (z8) {
                         Requests app11115 = MainActivityKt.getApp();
-                        c00022.L$0 = mainPageRequest6;
-                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                        c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                        c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                        c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                        c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                        c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                        c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                        c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                        c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                        c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                        c00022.I$0 = i21;
-                        c00022.I$1 = i20;
-                        c00022.I$2 = i12;
-                        c00022.Z$0 = z8;
-                        c00022.label = 7;
+                        c00032.L$0 = mainPageRequest6;
+                        c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                        c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                        c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                        c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                        c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                        c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                        c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                        c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                        c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                        c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                        c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                        c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                        c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                        c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                        c00032.I$0 = i21;
+                        c00032.I$1 = i20;
+                        c00032.I$2 = i12;
+                        c00032.Z$0 = z8;
+                        c00032.label = 7;
                         i26 = i12;
-                        objPost$default = Requests.get$default(app11115, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                        objPost$default = Requests.get$default(app11115, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                         if (objPost$default == obj5) {
                             return obj5;
                         }
@@ -9336,29 +9369,29 @@ public final class MovieBoxProvider extends MainAPI {
                     List list116 = list5;
                     i22 = i12;
                     Requests app11116 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
+                    c00032.L$0 = mainPageRequest6;
                     mainPageRequest7 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list116);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i22;
-                    c00022.Z$0 = z8;
-                    c00022.label = 8;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list116);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i22;
+                    c00032.Z$0 = z8;
+                    c00032.label = 8;
                     requestBody9 = requestBody8;
-                    objPost$default = Requests.post$default(app11116, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    objPost$default = Requests.post$default(app11116, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -9501,26 +9534,26 @@ public final class MovieBoxProvider extends MainAPI {
                     }
                     return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
                 }
-                c00022.L$0 = mainPageRequest5;
-                c00022.L$1 = str36;
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str27);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list4);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str32);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map5);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str28);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str29);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str37);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str38);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str20);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str35);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map4);
-                c00022.L$13 = requestBody3;
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                c00022.I$0 = i10;
-                c00022.I$1 = i9;
-                c00022.I$2 = i11;
-                c00022.Z$0 = z5;
-                c00022.label = 5;
+                c00032.L$0 = mainPageRequest5;
+                c00032.L$1 = str36;
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str27);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list4);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str32);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map5);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str28);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str29);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str37);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str38);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str20);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str35);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map4);
+                c00032.L$13 = requestBody3;
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                c00032.I$0 = i10;
+                c00032.I$1 = i9;
+                c00032.I$2 = i11;
+                c00032.Z$0 = z5;
+                c00032.label = 5;
                 i15 = i9;
                 requestBody6 = requestBody3;
                 str46 = str38;
@@ -9529,7 +9562,7 @@ public final class MovieBoxProvider extends MainAPI {
                 str47 = str37;
                 obj5 = obj4;
                 z7 = z5;
-                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00022, 60, null);
+                objBuildAuthHeaders$default3 = buildAuthHeaders$default(movieBoxProvider, "GET", str36, null, null, null, false, c00032, 60, null);
                 if (objBuildAuthHeaders$default3 == obj5) {
                     return obj5;
                 }
@@ -9567,28 +9600,28 @@ public final class MovieBoxProvider extends MainAPI {
                 map14 = map12;
                 if (z8) {
                     Requests app11117 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z8;
-                    c00022.label = 7;
+                    c00032.L$0 = mainPageRequest6;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z8;
+                    c00032.label = 7;
                     i26 = i12;
-                    objPost$default = Requests.get$default(app11117, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                    objPost$default = Requests.get$default(app11117, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -9734,29 +9767,29 @@ public final class MovieBoxProvider extends MainAPI {
                 List list117 = list5;
                 i22 = i12;
                 Requests app11118 = MainActivityKt.getApp();
-                c00022.L$0 = mainPageRequest6;
+                c00032.L$0 = mainPageRequest6;
                 mainPageRequest7 = mainPageRequest6;
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list117);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                c00022.I$0 = i21;
-                c00022.I$1 = i20;
-                c00022.I$2 = i22;
-                c00022.Z$0 = z8;
-                c00022.label = 8;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list117);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                c00032.I$0 = i21;
+                c00032.I$1 = i20;
+                c00032.I$2 = i22;
+                c00032.Z$0 = z8;
+                c00032.label = 8;
                 requestBody9 = requestBody8;
-                objPost$default = Requests.post$default(app11118, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                objPost$default = Requests.post$default(app11118, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                 if (objPost$default == obj5) {
                     return obj5;
                 }
@@ -9899,25 +9932,25 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
             case 5:
-                boolean z13 = c00022.Z$0;
-                int i49 = c00022.I$2;
-                i17 = c00022.I$1;
-                int i50 = c00022.I$0;
-                niceResponse4 = (NiceResponse) c00022.L$14;
-                requestBody7 = (RequestBody) c00022.L$13;
-                map11 = (Map) c00022.L$12;
-                str49 = (String) c00022.L$11;
-                str50 = (String) c00022.L$10;
-                String str106 = (String) c00022.L$9;
-                String str107 = (String) c00022.L$8;
-                String str108 = (String) c00022.L$7;
-                String str109 = (String) c00022.L$6;
-                Map map22 = (Map) c00022.L$5;
-                String str110 = (String) c00022.L$4;
-                List list21 = (List) c00022.L$3;
-                String str111 = (String) c00022.L$2;
-                String str112 = (String) c00022.L$1;
-                MainPageRequest mainPageRequest14 = (MainPageRequest) c00022.L$0;
+                boolean z13 = c00032.Z$0;
+                int i49 = c00032.I$2;
+                i17 = c00032.I$1;
+                int i50 = c00032.I$0;
+                niceResponse4 = (NiceResponse) c00032.L$14;
+                requestBody7 = (RequestBody) c00032.L$13;
+                map11 = (Map) c00032.L$12;
+                str49 = (String) c00032.L$11;
+                str50 = (String) c00032.L$10;
+                String str106 = (String) c00032.L$9;
+                String str107 = (String) c00032.L$8;
+                String str108 = (String) c00032.L$7;
+                String str109 = (String) c00032.L$6;
+                Map map22 = (Map) c00032.L$5;
+                String str110 = (String) c00032.L$4;
+                List list21 = (List) c00032.L$3;
+                String str111 = (String) c00032.L$2;
+                String str112 = (String) c00032.L$1;
+                MainPageRequest mainPageRequest14 = (MainPageRequest) c00032.L$0;
                 ResultKt.throwOnFailure(objPost$default);
                 z7 = z13;
                 str51 = str107;
@@ -9958,28 +9991,28 @@ public final class MovieBoxProvider extends MainAPI {
                 map14 = map12;
                 if (z8) {
                     Requests app11119 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z8;
-                    c00022.label = 7;
+                    c00032.L$0 = mainPageRequest6;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z8;
+                    c00032.label = 7;
                     i26 = i12;
-                    objPost$default = Requests.get$default(app11119, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                    objPost$default = Requests.get$default(app11119, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -10125,29 +10158,29 @@ public final class MovieBoxProvider extends MainAPI {
                 List list118 = list5;
                 i22 = i12;
                 Requests app111110 = MainActivityKt.getApp();
-                c00022.L$0 = mainPageRequest6;
+                c00032.L$0 = mainPageRequest6;
                 mainPageRequest7 = mainPageRequest6;
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list118);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                c00022.I$0 = i21;
-                c00022.I$1 = i20;
-                c00022.I$2 = i22;
-                c00022.Z$0 = z8;
-                c00022.label = 8;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list118);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                c00032.I$0 = i21;
+                c00032.I$1 = i20;
+                c00032.I$2 = i22;
+                c00032.Z$0 = z8;
+                c00032.label = 8;
                 requestBody9 = requestBody8;
-                objPost$default = Requests.post$default(app111110, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                objPost$default = Requests.post$default(app111110, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                 if (objPost$default == obj5) {
                     return obj5;
                 }
@@ -10290,25 +10323,25 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
             case 6:
-                boolean z14 = c00022.Z$0;
-                int i51 = c00022.I$2;
-                int i52 = c00022.I$1;
-                int i53 = c00022.I$0;
-                niceResponse3 = (NiceResponse) c00022.L$14;
-                requestBody5 = (RequestBody) c00022.L$13;
-                map7 = (Map) c00022.L$12;
-                str43 = (String) c00022.L$11;
-                str44 = (String) c00022.L$10;
-                String str113 = (String) c00022.L$9;
-                String str114 = (String) c00022.L$8;
-                String str115 = (String) c00022.L$7;
-                String str116 = (String) c00022.L$6;
-                Map map23 = (Map) c00022.L$5;
-                String str117 = (String) c00022.L$4;
-                List list22 = (List) c00022.L$3;
-                String str118 = (String) c00022.L$2;
-                String str119 = (String) c00022.L$1;
-                MainPageRequest mainPageRequest15 = (MainPageRequest) c00022.L$0;
+                boolean z14 = c00032.Z$0;
+                int i51 = c00032.I$2;
+                int i52 = c00032.I$1;
+                int i53 = c00032.I$0;
+                niceResponse3 = (NiceResponse) c00032.L$14;
+                requestBody5 = (RequestBody) c00032.L$13;
+                map7 = (Map) c00032.L$12;
+                str43 = (String) c00032.L$11;
+                str44 = (String) c00032.L$10;
+                String str113 = (String) c00032.L$9;
+                String str114 = (String) c00032.L$8;
+                String str115 = (String) c00032.L$7;
+                String str116 = (String) c00032.L$6;
+                Map map23 = (Map) c00032.L$5;
+                String str117 = (String) c00032.L$4;
+                List list22 = (List) c00032.L$3;
+                String str118 = (String) c00032.L$2;
+                String str119 = (String) c00032.L$1;
+                MainPageRequest mainPageRequest15 = (MainPageRequest) c00032.L$0;
                 ResultKt.throwOnFailure(objPost$default);
                 mainPageRequest5 = mainPageRequest15;
                 str3 = "data";
@@ -10349,28 +10382,28 @@ public final class MovieBoxProvider extends MainAPI {
                 map14 = map12;
                 if (z8) {
                     Requests app111111 = MainActivityKt.getApp();
-                    c00022.L$0 = mainPageRequest6;
-                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(list5);
-                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                    c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                    c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                    c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                    c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                    c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                    c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                    c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                    c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                    c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                    c00022.I$0 = i21;
-                    c00022.I$1 = i20;
-                    c00022.I$2 = i12;
-                    c00022.Z$0 = z8;
-                    c00022.label = 7;
+                    c00032.L$0 = mainPageRequest6;
+                    c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                    c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                    c00032.L$3 = SpillingKt.nullOutSpilledVariable(list5);
+                    c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                    c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                    c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                    c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                    c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                    c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                    c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                    c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                    c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                    c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                    c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                    c00032.I$0 = i21;
+                    c00032.I$1 = i20;
+                    c00032.I$2 = i12;
+                    c00032.Z$0 = z8;
+                    c00032.label = 7;
                     i26 = i12;
-                    objPost$default = Requests.get$default(app111111, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 4092, (Object) null);
+                    objPost$default = Requests.get$default(app111111, str56, map14, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 4092, (Object) null);
                     if (objPost$default == obj5) {
                         return obj5;
                     }
@@ -10516,29 +10549,29 @@ public final class MovieBoxProvider extends MainAPI {
                 List list119 = list5;
                 i22 = i12;
                 Requests app111112 = MainActivityKt.getApp();
-                c00022.L$0 = mainPageRequest6;
+                c00032.L$0 = mainPageRequest6;
                 mainPageRequest7 = mainPageRequest6;
-                c00022.L$1 = SpillingKt.nullOutSpilledVariable(str56);
-                c00022.L$2 = SpillingKt.nullOutSpilledVariable(str60);
-                c00022.L$3 = SpillingKt.nullOutSpilledVariable(list119);
-                c00022.L$4 = SpillingKt.nullOutSpilledVariable(str61);
-                c00022.L$5 = SpillingKt.nullOutSpilledVariable(map13);
-                c00022.L$6 = SpillingKt.nullOutSpilledVariable(str59);
-                c00022.L$7 = SpillingKt.nullOutSpilledVariable(str58);
-                c00022.L$8 = SpillingKt.nullOutSpilledVariable(str54);
-                c00022.L$9 = SpillingKt.nullOutSpilledVariable(str57);
-                c00022.L$10 = SpillingKt.nullOutSpilledVariable(str55);
-                c00022.L$11 = SpillingKt.nullOutSpilledVariable(str53);
-                c00022.L$12 = SpillingKt.nullOutSpilledVariable(map14);
-                c00022.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
-                c00022.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
-                c00022.I$0 = i21;
-                c00022.I$1 = i20;
-                c00022.I$2 = i22;
-                c00022.Z$0 = z8;
-                c00022.label = 8;
+                c00032.L$1 = SpillingKt.nullOutSpilledVariable(str56);
+                c00032.L$2 = SpillingKt.nullOutSpilledVariable(str60);
+                c00032.L$3 = SpillingKt.nullOutSpilledVariable(list119);
+                c00032.L$4 = SpillingKt.nullOutSpilledVariable(str61);
+                c00032.L$5 = SpillingKt.nullOutSpilledVariable(map13);
+                c00032.L$6 = SpillingKt.nullOutSpilledVariable(str59);
+                c00032.L$7 = SpillingKt.nullOutSpilledVariable(str58);
+                c00032.L$8 = SpillingKt.nullOutSpilledVariable(str54);
+                c00032.L$9 = SpillingKt.nullOutSpilledVariable(str57);
+                c00032.L$10 = SpillingKt.nullOutSpilledVariable(str55);
+                c00032.L$11 = SpillingKt.nullOutSpilledVariable(str53);
+                c00032.L$12 = SpillingKt.nullOutSpilledVariable(map14);
+                c00032.L$13 = SpillingKt.nullOutSpilledVariable(requestBody8);
+                c00032.L$14 = SpillingKt.nullOutSpilledVariable(niceResponse5);
+                c00032.I$0 = i21;
+                c00032.I$1 = i20;
+                c00032.I$2 = i22;
+                c00032.Z$0 = z8;
+                c00032.label = 8;
                 requestBody9 = requestBody8;
-                objPost$default = Requests.post$default(app111112, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                objPost$default = Requests.post$default(app111112, str56, map14, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody9, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00032, 65276, (Object) null);
                 if (objPost$default == obj5) {
                     return obj5;
                 }
@@ -10681,22 +10714,22 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
             case 7:
-                boolean z15 = c00022.Z$0;
-                i26 = c00022.I$2;
-                int i54 = c00022.I$1;
-                int i55 = c00022.I$0;
-                RequestBody requestBody14 = (RequestBody) c00022.L$13;
-                map15 = (Map) c00022.L$12;
-                String str120 = (String) c00022.L$11;
-                str65 = (String) c00022.L$10;
-                String str121 = (String) c00022.L$9;
+                boolean z15 = c00032.Z$0;
+                i26 = c00032.I$2;
+                int i54 = c00032.I$1;
+                int i55 = c00032.I$0;
+                RequestBody requestBody14 = (RequestBody) c00032.L$13;
+                map15 = (Map) c00032.L$12;
+                String str120 = (String) c00032.L$11;
+                str65 = (String) c00032.L$10;
+                String str121 = (String) c00032.L$9;
                 i28 = i55;
-                String str122 = (String) c00022.L$8;
-                String str123 = (String) c00022.L$6;
-                Map map24 = (Map) c00022.L$5;
-                String str124 = (String) c00022.L$4;
-                String str125 = (String) c00022.L$1;
-                MainPageRequest mainPageRequest16 = (MainPageRequest) c00022.L$0;
+                String str122 = (String) c00032.L$8;
+                String str123 = (String) c00032.L$6;
+                Map map24 = (Map) c00032.L$5;
+                String str124 = (String) c00032.L$4;
+                String str125 = (String) c00032.L$1;
+                MainPageRequest mainPageRequest16 = (MainPageRequest) c00032.L$0;
                 ResultKt.throwOnFailure(objPost$default);
                 z8 = z15;
                 requestBody8 = requestBody14;
@@ -10843,21 +10876,21 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newHomePageResponse$default(CollectionsKt.listOf(new HomePageList(mainPageRequest5.getName(), arrayListEmptyList, false, 4, (DefaultConstructorMarker) null)), (Boolean) null, 2, (Object) null);
             case 8:
-                z9 = c00022.Z$0;
-                i25 = c00022.I$2;
-                i24 = c00022.I$1;
-                int i56 = c00022.I$0;
-                requestBody10 = (RequestBody) c00022.L$13;
-                String str126 = (String) c00022.L$11;
-                str63 = (String) c00022.L$10;
-                String str127 = (String) c00022.L$9;
+                z9 = c00032.Z$0;
+                i25 = c00032.I$2;
+                i24 = c00032.I$1;
+                int i56 = c00032.I$0;
+                requestBody10 = (RequestBody) c00032.L$13;
+                String str126 = (String) c00032.L$11;
+                str63 = (String) c00032.L$10;
+                String str127 = (String) c00032.L$9;
                 i23 = i56;
-                String str128 = (String) c00022.L$8;
-                String str129 = (String) c00022.L$6;
-                Map map25 = (Map) c00022.L$5;
-                String str130 = (String) c00022.L$4;
-                String str131 = (String) c00022.L$1;
-                MainPageRequest mainPageRequest17 = (MainPageRequest) c00022.L$0;
+                String str128 = (String) c00032.L$8;
+                String str129 = (String) c00032.L$6;
+                Map map25 = (Map) c00032.L$5;
+                String str130 = (String) c00032.L$4;
+                String str131 = (String) c00032.L$1;
+                MainPageRequest mainPageRequest17 = (MainPageRequest) c00032.L$0;
                 ResultKt.throwOnFailure(objPost$default);
                 mainPageRequest7 = mainPageRequest17;
                 str53 = str126;
@@ -11032,7 +11065,7 @@ public final class MovieBoxProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:94:0x03b7 A[ADDED_TO_REGION, REMOVE] */
     @Nullable
     public Object search(@NotNull String str, int i, @NotNull Continuation<? super SearchResponseList> continuation) {
-        C00081 c00081;
+        C00091 c00091;
         String str2;
         Object objBuildAuthHeaders$default;
         String str3;
@@ -11079,35 +11112,35 @@ public final class MovieBoxProvider extends MainAPI {
         int iAsInt;
         TvType tvType;
         this = this;
-        if (continuation instanceof C00081) {
-            c00081 = (C00081) continuation;
-            if ((c00081.label & Integer.MIN_VALUE) != 0) {
-                c00081.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00091) {
+            c00091 = (C00091) continuation;
+            if ((c00091.label & Integer.MIN_VALUE) != 0) {
+                c00091.label -= Integer.MIN_VALUE;
             } else {
-                c00081 = this.new C00081(continuation);
+                c00091 = this.new C00091(continuation);
             }
         } else {
-            c00081 = this.new C00081(continuation);
+            c00091 = this.new C00091(continuation);
         }
-        C00081 c00082 = c00081;
-        Object objPost$default2 = c00082.result;
+        C00091 c00092 = c00091;
+        Object objPost$default2 = c00092.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        switch (c00082.label) {
+        switch (c00092.label) {
             case 0:
                 ResultKt.throwOnFailure(objPost$default2);
                 String str14 = this.getMainUrl() + "/wefeed-mobile-bff/subject-api/search/v2";
                 int i8 = !MainAPI.Companion.getSettingsForProvider().getEnableAdult() ? 1 : 0;
                 String str15 = "{\"page\": " + i + ", \"perPage\": 20, \"keyword\": \"" + str + "\", \"restrictKid\": " + i8 + '}';
                 RequestBody requestBodyCreate = RequestBody.Companion.create(str15, MediaType.Companion.get("application/json"));
-                c00082.L$0 = SpillingKt.nullOutSpilledVariable(str);
-                c00082.L$1 = str14;
-                c00082.L$2 = str15;
-                c00082.L$3 = requestBodyCreate;
-                c00082.I$0 = i;
-                c00082.I$1 = i8;
-                c00082.label = 1;
+                c00092.L$0 = SpillingKt.nullOutSpilledVariable(str);
+                c00092.L$1 = str14;
+                c00092.L$2 = str15;
+                c00092.L$3 = requestBodyCreate;
+                c00092.I$0 = i;
+                c00092.I$1 = i8;
+                c00092.label = 1;
                 str2 = str15;
-                objBuildAuthHeaders$default = buildAuthHeaders$default(this, "POST", str14, "application/json; charset=utf-8", null, str2, false, c00082, 40, null);
+                objBuildAuthHeaders$default = buildAuthHeaders$default(this, "POST", str14, "application/json; charset=utf-8", null, str2, false, c00092, 40, null);
                 if (objBuildAuthHeaders$default == coroutine_suspended) {
                     return coroutine_suspended;
                 }
@@ -11118,19 +11151,19 @@ public final class MovieBoxProvider extends MainAPI {
                 i3 = i8;
                 Map map4 = (Map) objBuildAuthHeaders$default;
                 Requests app = MainActivityKt.getApp();
-                c00082.L$0 = SpillingKt.nullOutSpilledVariable(str3);
-                c00082.L$1 = str4;
-                c00082.L$2 = str2;
-                c00082.L$3 = requestBody;
-                c00082.L$4 = SpillingKt.nullOutSpilledVariable(map4);
-                c00082.I$0 = i2;
-                c00082.I$1 = i3;
-                c00082.label = 2;
+                c00092.L$0 = SpillingKt.nullOutSpilledVariable(str3);
+                c00092.L$1 = str4;
+                c00092.L$2 = str2;
+                c00092.L$3 = requestBody;
+                c00092.L$4 = SpillingKt.nullOutSpilledVariable(map4);
+                c00092.I$0 = i2;
+                c00092.I$1 = i3;
+                c00092.label = 2;
                 map = map4;
                 requestBody2 = requestBody;
                 obj = coroutine_suspended;
                 str5 = str4;
-                objPost$default = Requests.post$default(app, str5, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 65276, (Object) null);
+                objPost$default = Requests.post$default(app, str5, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 65276, (Object) null);
                 if (objPost$default == obj) {
                     return obj;
                 }
@@ -11147,17 +11180,17 @@ public final class MovieBoxProvider extends MainAPI {
                     if (sharedPreferences != null && (editorEdit = sharedPreferences.edit()) != null && (editorRemove = editorEdit.remove(this.PREF_TOKEN_KEY)) != null) {
                         editorRemove.apply();
                     }
-                    c00082.L$0 = SpillingKt.nullOutSpilledVariable(str7);
-                    c00082.L$1 = str6;
-                    c00082.L$2 = SpillingKt.nullOutSpilledVariable(str2);
-                    c00082.L$3 = requestBody3;
-                    c00082.L$4 = SpillingKt.nullOutSpilledVariable(map);
-                    c00082.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse);
-                    c00082.I$0 = i5;
-                    c00082.I$1 = i4;
-                    c00082.label = 3;
+                    c00092.L$0 = SpillingKt.nullOutSpilledVariable(str7);
+                    c00092.L$1 = str6;
+                    c00092.L$2 = SpillingKt.nullOutSpilledVariable(str2);
+                    c00092.L$3 = requestBody3;
+                    c00092.L$4 = SpillingKt.nullOutSpilledVariable(map);
+                    c00092.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse);
+                    c00092.I$0 = i5;
+                    c00092.I$1 = i4;
+                    c00092.label = 3;
                     obj3 = obj;
-                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "POST", str6, "application/json; charset=utf-8", null, str2, false, c00082, 40, null);
+                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "POST", str6, "application/json; charset=utf-8", null, str2, false, c00092, 40, null);
                     if (objBuildAuthHeaders$default2 == obj3) {
                         return obj3;
                     }
@@ -11172,16 +11205,16 @@ public final class MovieBoxProvider extends MainAPI {
                     str10 = str7;
                     map2 = (Map) objPost$default2;
                     Requests app2 = MainActivityKt.getApp();
-                    c00082.L$0 = SpillingKt.nullOutSpilledVariable(str10);
-                    c00082.L$1 = SpillingKt.nullOutSpilledVariable(str9);
-                    c00082.L$2 = SpillingKt.nullOutSpilledVariable(str8);
-                    c00082.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
-                    c00082.L$4 = SpillingKt.nullOutSpilledVariable(map2);
-                    c00082.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                    c00082.I$0 = i7;
-                    c00082.I$1 = i6;
-                    c00082.label = 4;
-                    objPost$default2 = Requests.post$default(app2, str9, map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 65276, (Object) null);
+                    c00092.L$0 = SpillingKt.nullOutSpilledVariable(str10);
+                    c00092.L$1 = SpillingKt.nullOutSpilledVariable(str9);
+                    c00092.L$2 = SpillingKt.nullOutSpilledVariable(str8);
+                    c00092.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
+                    c00092.L$4 = SpillingKt.nullOutSpilledVariable(map2);
+                    c00092.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                    c00092.I$0 = i7;
+                    c00092.I$1 = i6;
+                    c00092.label = 4;
+                    objPost$default2 = Requests.post$default(app2, str9, map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 65276, (Object) null);
                     if (objPost$default2 == obj3) {
                         return obj3;
                     }
@@ -11279,30 +11312,30 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.toNewSearchResponseList$default(arrayList, (Boolean) null, 1, (Object) null);
             case 1:
-                int i10 = c00082.I$1;
-                i2 = c00082.I$0;
-                requestBody = (RequestBody) c00082.L$3;
-                str2 = (String) c00082.L$2;
-                str4 = (String) c00082.L$1;
-                str3 = (String) c00082.L$0;
+                int i10 = c00092.I$1;
+                i2 = c00092.I$0;
+                requestBody = (RequestBody) c00092.L$3;
+                str2 = (String) c00092.L$2;
+                str4 = (String) c00092.L$1;
+                str3 = (String) c00092.L$0;
                 ResultKt.throwOnFailure(objPost$default2);
                 i3 = i10;
                 objBuildAuthHeaders$default = objPost$default2;
                 Map map5 = (Map) objBuildAuthHeaders$default;
                 Requests app3 = MainActivityKt.getApp();
-                c00082.L$0 = SpillingKt.nullOutSpilledVariable(str3);
-                c00082.L$1 = str4;
-                c00082.L$2 = str2;
-                c00082.L$3 = requestBody;
-                c00082.L$4 = SpillingKt.nullOutSpilledVariable(map5);
-                c00082.I$0 = i2;
-                c00082.I$1 = i3;
-                c00082.label = 2;
+                c00092.L$0 = SpillingKt.nullOutSpilledVariable(str3);
+                c00092.L$1 = str4;
+                c00092.L$2 = str2;
+                c00092.L$3 = requestBody;
+                c00092.L$4 = SpillingKt.nullOutSpilledVariable(map5);
+                c00092.I$0 = i2;
+                c00092.I$1 = i3;
+                c00092.label = 2;
                 map = map5;
                 requestBody2 = requestBody;
                 obj = coroutine_suspended;
                 str5 = str4;
-                objPost$default = Requests.post$default(app3, str5, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 65276, (Object) null);
+                objPost$default = Requests.post$default(app3, str5, map, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 65276, (Object) null);
                 if (objPost$default == obj) {
                     return obj;
                 }
@@ -11321,17 +11354,17 @@ public final class MovieBoxProvider extends MainAPI {
                 if (sharedPreferences != null) {
                     editorRemove.apply();
                 }
-                c00082.L$0 = SpillingKt.nullOutSpilledVariable(str7);
-                c00082.L$1 = str6;
-                c00082.L$2 = SpillingKt.nullOutSpilledVariable(str2);
-                c00082.L$3 = requestBody3;
-                c00082.L$4 = SpillingKt.nullOutSpilledVariable(map);
-                c00082.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse);
-                c00082.I$0 = i5;
-                c00082.I$1 = i4;
-                c00082.label = 3;
+                c00092.L$0 = SpillingKt.nullOutSpilledVariable(str7);
+                c00092.L$1 = str6;
+                c00092.L$2 = SpillingKt.nullOutSpilledVariable(str2);
+                c00092.L$3 = requestBody3;
+                c00092.L$4 = SpillingKt.nullOutSpilledVariable(map);
+                c00092.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse);
+                c00092.I$0 = i5;
+                c00092.I$1 = i4;
+                c00092.label = 3;
                 obj3 = obj;
-                objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "POST", str6, "application/json; charset=utf-8", null, str2, false, c00082, 40, null);
+                objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "POST", str6, "application/json; charset=utf-8", null, str2, false, c00092, 40, null);
                 if (objBuildAuthHeaders$default2 == obj3) {
                     return obj3;
                 }
@@ -11346,16 +11379,16 @@ public final class MovieBoxProvider extends MainAPI {
                 str10 = str7;
                 map2 = (Map) objPost$default2;
                 Requests app4 = MainActivityKt.getApp();
-                c00082.L$0 = SpillingKt.nullOutSpilledVariable(str10);
-                c00082.L$1 = SpillingKt.nullOutSpilledVariable(str9);
-                c00082.L$2 = SpillingKt.nullOutSpilledVariable(str8);
-                c00082.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
-                c00082.L$4 = SpillingKt.nullOutSpilledVariable(map2);
-                c00082.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                c00082.I$0 = i7;
-                c00082.I$1 = i6;
-                c00082.label = 4;
-                objPost$default2 = Requests.post$default(app4, str9, map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 65276, (Object) null);
+                c00092.L$0 = SpillingKt.nullOutSpilledVariable(str10);
+                c00092.L$1 = SpillingKt.nullOutSpilledVariable(str9);
+                c00092.L$2 = SpillingKt.nullOutSpilledVariable(str8);
+                c00092.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
+                c00092.L$4 = SpillingKt.nullOutSpilledVariable(map2);
+                c00092.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                c00092.I$0 = i7;
+                c00092.I$1 = i6;
+                c00092.label = 4;
+                objPost$default2 = Requests.post$default(app4, str9, map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 65276, (Object) null);
                 if (objPost$default2 == obj3) {
                     return obj3;
                 }
@@ -11375,13 +11408,13 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newSearchResponseList$default(CollectionsKt.emptyList(), bool, 2, bool);
             case 2:
-                int i12 = c00082.I$1;
-                int i13 = c00082.I$0;
-                Map map6 = (Map) c00082.L$4;
-                RequestBody requestBody6 = (RequestBody) c00082.L$3;
-                String str16 = (String) c00082.L$2;
-                String str17 = (String) c00082.L$1;
-                String str18 = (String) c00082.L$0;
+                int i12 = c00092.I$1;
+                int i13 = c00092.I$0;
+                Map map6 = (Map) c00092.L$4;
+                RequestBody requestBody6 = (RequestBody) c00092.L$3;
+                String str16 = (String) c00092.L$2;
+                String str17 = (String) c00092.L$1;
+                String str18 = (String) c00092.L$0;
                 ResultKt.throwOnFailure(objPost$default2);
                 map = map6;
                 requestBody3 = requestBody6;
@@ -11401,17 +11434,17 @@ public final class MovieBoxProvider extends MainAPI {
                 if (sharedPreferences != null) {
                     editorRemove.apply();
                 }
-                c00082.L$0 = SpillingKt.nullOutSpilledVariable(str7);
-                c00082.L$1 = str6;
-                c00082.L$2 = SpillingKt.nullOutSpilledVariable(str2);
-                c00082.L$3 = requestBody3;
-                c00082.L$4 = SpillingKt.nullOutSpilledVariable(map);
-                c00082.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse);
-                c00082.I$0 = i5;
-                c00082.I$1 = i4;
-                c00082.label = 3;
+                c00092.L$0 = SpillingKt.nullOutSpilledVariable(str7);
+                c00092.L$1 = str6;
+                c00092.L$2 = SpillingKt.nullOutSpilledVariable(str2);
+                c00092.L$3 = requestBody3;
+                c00092.L$4 = SpillingKt.nullOutSpilledVariable(map);
+                c00092.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse);
+                c00092.I$0 = i5;
+                c00092.I$1 = i4;
+                c00092.label = 3;
                 obj3 = obj;
-                objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "POST", str6, "application/json; charset=utf-8", null, str2, false, c00082, 40, null);
+                objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "POST", str6, "application/json; charset=utf-8", null, str2, false, c00092, 40, null);
                 if (objBuildAuthHeaders$default2 == obj3) {
                     return obj3;
                 }
@@ -11426,16 +11459,16 @@ public final class MovieBoxProvider extends MainAPI {
                 str10 = str7;
                 map2 = (Map) objPost$default2;
                 Requests app5 = MainActivityKt.getApp();
-                c00082.L$0 = SpillingKt.nullOutSpilledVariable(str10);
-                c00082.L$1 = SpillingKt.nullOutSpilledVariable(str9);
-                c00082.L$2 = SpillingKt.nullOutSpilledVariable(str8);
-                c00082.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
-                c00082.L$4 = SpillingKt.nullOutSpilledVariable(map2);
-                c00082.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                c00082.I$0 = i7;
-                c00082.I$1 = i6;
-                c00082.label = 4;
-                objPost$default2 = Requests.post$default(app5, str9, map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 65276, (Object) null);
+                c00092.L$0 = SpillingKt.nullOutSpilledVariable(str10);
+                c00092.L$1 = SpillingKt.nullOutSpilledVariable(str9);
+                c00092.L$2 = SpillingKt.nullOutSpilledVariable(str8);
+                c00092.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
+                c00092.L$4 = SpillingKt.nullOutSpilledVariable(map2);
+                c00092.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                c00092.I$0 = i7;
+                c00092.I$1 = i6;
+                c00092.label = 4;
+                objPost$default2 = Requests.post$default(app5, str9, map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 65276, (Object) null);
                 if (objPost$default2 == obj3) {
                     return obj3;
                 }
@@ -11455,13 +11488,13 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newSearchResponseList$default(CollectionsKt.emptyList(), bool, 2, bool);
             case 3:
-                i6 = c00082.I$1;
-                i7 = c00082.I$0;
-                niceResponse2 = (NiceResponse) c00082.L$5;
-                RequestBody requestBody7 = (RequestBody) c00082.L$3;
-                str8 = (String) c00082.L$2;
-                String str19 = (String) c00082.L$1;
-                String str20 = (String) c00082.L$0;
+                i6 = c00092.I$1;
+                i7 = c00092.I$0;
+                niceResponse2 = (NiceResponse) c00092.L$5;
+                RequestBody requestBody7 = (RequestBody) c00092.L$3;
+                str8 = (String) c00092.L$2;
+                String str19 = (String) c00092.L$1;
+                String str20 = (String) c00092.L$0;
                 ResultKt.throwOnFailure(objPost$default2);
                 requestBody4 = requestBody7;
                 str10 = str20;
@@ -11469,16 +11502,16 @@ public final class MovieBoxProvider extends MainAPI {
                 str9 = str19;
                 map2 = (Map) objPost$default2;
                 Requests app6 = MainActivityKt.getApp();
-                c00082.L$0 = SpillingKt.nullOutSpilledVariable(str10);
-                c00082.L$1 = SpillingKt.nullOutSpilledVariable(str9);
-                c00082.L$2 = SpillingKt.nullOutSpilledVariable(str8);
-                c00082.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
-                c00082.L$4 = SpillingKt.nullOutSpilledVariable(map2);
-                c00082.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse2);
-                c00082.I$0 = i7;
-                c00082.I$1 = i6;
-                c00082.label = 4;
-                objPost$default2 = Requests.post$default(app6, str9, map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00082, 65276, (Object) null);
+                c00092.L$0 = SpillingKt.nullOutSpilledVariable(str10);
+                c00092.L$1 = SpillingKt.nullOutSpilledVariable(str9);
+                c00092.L$2 = SpillingKt.nullOutSpilledVariable(str8);
+                c00092.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
+                c00092.L$4 = SpillingKt.nullOutSpilledVariable(map2);
+                c00092.L$5 = SpillingKt.nullOutSpilledVariable(niceResponse2);
+                c00092.I$0 = i7;
+                c00092.I$1 = i6;
+                c00092.label = 4;
+                objPost$default2 = Requests.post$default(app6, str9, map2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00092, 65276, (Object) null);
                 if (objPost$default2 == obj3) {
                     return obj3;
                 }
@@ -11498,13 +11531,13 @@ public final class MovieBoxProvider extends MainAPI {
                 }
                 return MainAPIKt.newSearchResponseList$default(CollectionsKt.emptyList(), bool, 2, bool);
             case 4:
-                i6 = c00082.I$1;
-                i7 = c00082.I$0;
-                map3 = (Map) c00082.L$4;
-                requestBody5 = (RequestBody) c00082.L$3;
-                str8 = (String) c00082.L$2;
-                str12 = (String) c00082.L$1;
-                str11 = (String) c00082.L$0;
+                i6 = c00092.I$1;
+                i7 = c00092.I$0;
+                map3 = (Map) c00092.L$4;
+                requestBody5 = (RequestBody) c00092.L$3;
+                str8 = (String) c00092.L$2;
+                str12 = (String) c00092.L$1;
+                str11 = (String) c00092.L$0;
                 ResultKt.throwOnFailure(objPost$default2);
                 niceResponse = (NiceResponse) objPost$default2;
                 str6 = str12;
@@ -11530,37 +11563,56 @@ public final class MovieBoxProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX WARN: Code duplicated, block: B:151:0x0a5c  */
-    /* JADX WARN: Code duplicated, block: B:152:0x0a65  */
-    /* JADX WARN: Code duplicated, block: B:290:0x0f31  */
-    /* JADX WARN: Code duplicated, block: B:292:0x1022 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:293:0x1023  */
-    /* JADX WARN: Code duplicated, block: B:296:0x1141 A[RETURN] */
-    /* JADX WARN: Code duplicated, block: B:297:0x1142  */
-    /* JADX WARN: Code duplicated, block: B:300:0x1189  */
-    /* JADX WARN: Code duplicated, block: B:302:0x119b  */
-    /* JADX WARN: Code duplicated, block: B:303:0x11a4  */
-    /* JADX WARN: Code duplicated, block: B:305:0x11a9  */
-    /* JADX WARN: Code duplicated, block: B:332:0x124f A[ADDED_TO_REGION, REMOVE] */
-    /* JADX WARN: Code duplicated, block: B:334:0x1256  */
+    /* JADX WARN: Code duplicated, block: B:188:0x0e38  */
+    /* JADX WARN: Code duplicated, block: B:195:0x0e53  */
+    /* JADX WARN: Code duplicated, block: B:197:0x0e56  */
+    /* JADX WARN: Code duplicated, block: B:204:0x0e73  */
+    /* JADX WARN: Code duplicated, block: B:207:0x0e77  */
+    /* JADX WARN: Code duplicated, block: B:208:0x0e79  */
+    /* JADX WARN: Code duplicated, block: B:287:0x1177  */
+    /* JADX WARN: Code duplicated, block: B:289:0x117b  */
+    /* JADX WARN: Code duplicated, block: B:290:0x1181  */
+    /* JADX WARN: Code duplicated, block: B:303:0x11b8  */
+    /* JADX WARN: Code duplicated, block: B:307:0x11c6  */
+    /* JADX WARN: Code duplicated, block: B:318:0x11ea  */
+    /* JADX WARN: Code duplicated, block: B:324:0x1214  */
+    /* JADX WARN: Code duplicated, block: B:416:0x14ec  */
+    /* JADX WARN: Code duplicated, block: B:418:0x14f0  */
+    /* JADX WARN: Code duplicated, block: B:419:0x14f5  */
+    /* JADX WARN: Code duplicated, block: B:423:0x1520  */
+    /* JADX WARN: Code duplicated, block: B:424:0x1529  */
+    /* JADX WARN: Code duplicated, block: B:644:0x1b96  */
+    /* JADX WARN: Code duplicated, block: B:646:0x1cd3 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:647:0x1cd4  */
+    /* JADX WARN: Code duplicated, block: B:650:0x1e1a A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:651:0x1e1b  */
+    /* JADX WARN: Code duplicated, block: B:654:0x1e6f  */
+    /* JADX WARN: Code duplicated, block: B:656:0x1e81  */
+    /* JADX WARN: Code duplicated, block: B:657:0x1e8a  */
+    /* JADX WARN: Code duplicated, block: B:659:0x1e8f  */
+    /* JADX WARN: Code duplicated, block: B:686:0x1f35 A[ADDED_TO_REGION, REMOVE] */
+    /* JADX WARN: Code duplicated, block: B:688:0x1f3c  */
     /* JADX WARN: Code duplicated, block: B:7:0x001a  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:297:0x1142 -> B:298:0x117b). Please report as a decompilation issue!!! */
+    /* JADX WARN: Code duplicated, block: B:932:0x121a A[SYNTHETIC] */
+    /* JADX WARN: Path cross not found for [B:214:0x0e8d, B:221:0x0eb9], limit reached: 904 */
+    /* JADX WARN: Unreachable blocks removed: 2, instructions: 14 */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:651:0x1e1b -> B:652:0x1e61). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
-    public java.lang.Object load(@org.jetbrains.annotations.NotNull java.lang.String r91, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r92) {
+    public java.lang.Object load(@org.jetbrains.annotations.NotNull java.lang.String r98, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super com.lagradost.cloudstream3.LoadResponse> r99) {
         /*
-            Method dump skipped, instruction units count: 6156
+            Method dump skipped, instruction units count: 10142
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.MovieBox.MovieBoxProvider.load(java.lang.String, kotlin.coroutines.Continuation):java.lang.Object");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final Unit load$lambda$6$0$5(String $epName, int $seasonNumber, int $episodeNumber, String $epThumb, String $epDesc, Integer $runtime, String $aired, Episode $this$newEpisode) {
+    public static final Unit load$lambda$15$0$5(String $epName, int $seasonNumber, int $episodeNumber, String $epThumb, String $epDesc, Integer $runtime, String $aired, Episode $this$newEpisode) {
         $this$newEpisode.setName($epName);
         $this$newEpisode.setSeason(Integer.valueOf($seasonNumber));
         $this$newEpisode.setEpisode(Integer.valueOf($episodeNumber));
@@ -11571,7 +11623,7 @@ public final class MovieBoxProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    static final Unit load$lambda$7(String $coverUrl, Episode $this$newEpisode) {
+    static final Unit load$lambda$16(String $coverUrl, Episode $this$newEpisode) {
         $this$newEpisode.setName("Episode 1");
         $this$newEpisode.setSeason(1);
         $this$newEpisode.setEpisode(1);
@@ -11579,24 +11631,24 @@ public final class MovieBoxProvider extends MainAPI {
         return Unit.INSTANCE;
     }
 
-    /* JADX INFO: renamed from: com.MovieBox.MovieBoxProvider$load$6 */
+    /* JADX INFO: renamed from: com.MovieBox.MovieBoxProvider$load$7 */
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/TvSeriesLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider$load$6", f = "MovieBoxProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nMovieBoxProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider$load$6\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1233:1\n1#2:1234\n*E\n"})
-    static final class C00046 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider$load$7", f = "MovieBoxProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00057 extends SuspendLambda implements Function2<TvSeriesLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $Background;
         final /* synthetic */ String $Description;
-        final /* synthetic */ String $IMDBRating;
         final /* synthetic */ String $Poster;
         final /* synthetic */ List<ActorData> $actors;
         final /* synthetic */ String $backgroundUrl;
+        final /* synthetic */ String $contentRating;
         final /* synthetic */ String $coverUrl;
         final /* synthetic */ String $description;
         final /* synthetic */ Integer $durationMinutes;
         final /* synthetic */ String $imdbId;
-        final /* synthetic */ Integer $imdbRating;
         final /* synthetic */ String $logoUrl;
+        final /* synthetic */ List<SearchResponse> $recommendations;
+        final /* synthetic */ Score $score;
         final /* synthetic */ List<String> $tags;
         final /* synthetic */ Integer $tmdbId;
         final /* synthetic */ Integer $year;
@@ -11604,7 +11656,7 @@ public final class MovieBoxProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00046(String str, String str2, String str3, String str4, String str5, String str6, String str7, Integer num, List<String> list, List<ActorData> list2, String str8, Integer num2, Integer num3, String str9, Integer num4, Continuation<? super C00046> continuation) {
+        C00057(String str, String str2, String str3, String str4, String str5, String str6, String str7, Integer num, List<String> list, List<ActorData> list2, Score score, String str8, Integer num2, List<? extends SearchResponse> list3, String str9, Integer num3, Continuation<? super C00057> continuation) {
             super(2, continuation);
             this.$coverUrl = str;
             this.$Poster = str2;
@@ -11616,17 +11668,18 @@ public final class MovieBoxProvider extends MainAPI {
             this.$year = num;
             this.$tags = list;
             this.$actors = list2;
-            this.$IMDBRating = str8;
-            this.$imdbRating = num2;
-            this.$durationMinutes = num3;
+            this.$score = score;
+            this.$contentRating = str8;
+            this.$durationMinutes = num2;
+            this.$recommendations = list3;
             this.$imdbId = str9;
-            this.$tmdbId = num4;
+            this.$tmdbId = num3;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00046 = new C00046(this.$coverUrl, this.$Poster, this.$Background, this.$backgroundUrl, this.$logoUrl, this.$Description, this.$description, this.$year, this.$tags, this.$actors, this.$IMDBRating, this.$imdbRating, this.$durationMinutes, this.$imdbId, this.$tmdbId, continuation);
-            c00046.L$0 = obj;
-            return c00046;
+            Continuation<Unit> c00057 = new C00057(this.$coverUrl, this.$Poster, this.$Background, this.$backgroundUrl, this.$logoUrl, this.$Description, this.$description, this.$year, this.$tags, this.$actors, this.$score, this.$contentRating, this.$durationMinutes, this.$recommendations, this.$imdbId, this.$tmdbId, continuation);
+            c00057.L$0 = obj;
+            return c00057;
         }
 
         public final Object invoke(TvSeriesLoadResponse tvSeriesLoadResponse, Continuation<? super Unit> continuation) {
@@ -11662,18 +11715,10 @@ public final class MovieBoxProvider extends MainAPI {
                     loadResponse.setYear(this.$year);
                     loadResponse.setTags(this.$tags);
                     loadResponse.setActors(this.$actors);
-                    Score scoreFrom10 = Score.Companion.from10(this.$IMDBRating);
-                    if (scoreFrom10 == null) {
-                        Integer num = this.$imdbRating;
-                        if (num != null) {
-                            int it = num.intValue();
-                            scoreFrom10 = Score.Companion.from10(Boxing.boxInt(it));
-                        } else {
-                            scoreFrom10 = null;
-                        }
-                    }
-                    loadResponse.setScore(scoreFrom10);
+                    loadResponse.setScore(this.$score);
+                    loadResponse.setContentRating(this.$contentRating);
                     loadResponse.setDuration(this.$durationMinutes);
+                    loadResponse.setRecommendations(this.$recommendations);
                     LoadResponse.Companion.addImdbId(loadResponse, this.$imdbId);
                     LoadResponse.Companion.addTMDbId(loadResponse, String.valueOf(this.$tmdbId));
                     return Unit.INSTANCE;
@@ -11683,24 +11728,24 @@ public final class MovieBoxProvider extends MainAPI {
         }
     }
 
-    /* JADX INFO: renamed from: com.MovieBox.MovieBoxProvider$load$7 */
+    /* JADX INFO: renamed from: com.MovieBox.MovieBoxProvider$load$8 */
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lcom/lagradost/cloudstream3/MovieLoadResponse;"}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider$load$7", f = "MovieBoxProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
-    @SourceDebugExtension({"SMAP\nMovieBoxProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider$load$7\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1233:1\n1#2:1234\n*E\n"})
-    static final class C00057 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider$load$8", f = "MovieBoxProvider.kt", i = {}, l = {}, m = "invokeSuspend", n = {}, nl = {}, s = {}, v = 2)
+    static final class C00068 extends SuspendLambda implements Function2<MovieLoadResponse, Continuation<? super Unit>, Object> {
         final /* synthetic */ String $Background;
         final /* synthetic */ String $Description;
-        final /* synthetic */ String $IMDBRating;
         final /* synthetic */ String $Poster;
         final /* synthetic */ List<ActorData> $actors;
         final /* synthetic */ String $backgroundUrl;
+        final /* synthetic */ String $contentRating;
         final /* synthetic */ String $coverUrl;
         final /* synthetic */ String $description;
         final /* synthetic */ Integer $durationMinutes;
         final /* synthetic */ String $imdbId;
-        final /* synthetic */ Integer $imdbRating;
         final /* synthetic */ String $logoUrl;
+        final /* synthetic */ List<SearchResponse> $recommendations;
+        final /* synthetic */ Score $score;
         final /* synthetic */ List<String> $tags;
         final /* synthetic */ Integer $tmdbId;
         final /* synthetic */ Integer $year;
@@ -11708,7 +11753,7 @@ public final class MovieBoxProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00057(String str, String str2, String str3, String str4, String str5, String str6, String str7, Integer num, List<String> list, List<ActorData> list2, String str8, Integer num2, Integer num3, String str9, Integer num4, Continuation<? super C00057> continuation) {
+        C00068(String str, String str2, String str3, String str4, String str5, String str6, String str7, Integer num, List<String> list, List<ActorData> list2, Score score, String str8, Integer num2, List<? extends SearchResponse> list3, String str9, Integer num3, Continuation<? super C00068> continuation) {
             super(2, continuation);
             this.$coverUrl = str;
             this.$Poster = str2;
@@ -11720,17 +11765,18 @@ public final class MovieBoxProvider extends MainAPI {
             this.$year = num;
             this.$tags = list;
             this.$actors = list2;
-            this.$IMDBRating = str8;
-            this.$imdbRating = num2;
-            this.$durationMinutes = num3;
+            this.$score = score;
+            this.$contentRating = str8;
+            this.$durationMinutes = num2;
+            this.$recommendations = list3;
             this.$imdbId = str9;
-            this.$tmdbId = num4;
+            this.$tmdbId = num3;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00057 = new C00057(this.$coverUrl, this.$Poster, this.$Background, this.$backgroundUrl, this.$logoUrl, this.$Description, this.$description, this.$year, this.$tags, this.$actors, this.$IMDBRating, this.$imdbRating, this.$durationMinutes, this.$imdbId, this.$tmdbId, continuation);
-            c00057.L$0 = obj;
-            return c00057;
+            Continuation<Unit> c00068 = new C00068(this.$coverUrl, this.$Poster, this.$Background, this.$backgroundUrl, this.$logoUrl, this.$Description, this.$description, this.$year, this.$tags, this.$actors, this.$score, this.$contentRating, this.$durationMinutes, this.$recommendations, this.$imdbId, this.$tmdbId, continuation);
+            c00068.L$0 = obj;
+            return c00068;
         }
 
         public final Object invoke(MovieLoadResponse movieLoadResponse, Continuation<? super Unit> continuation) {
@@ -11766,18 +11812,10 @@ public final class MovieBoxProvider extends MainAPI {
                     loadResponse.setYear(this.$year);
                     loadResponse.setTags(this.$tags);
                     loadResponse.setActors(this.$actors);
-                    Score scoreFrom10 = Score.Companion.from10(this.$IMDBRating);
-                    if (scoreFrom10 == null) {
-                        Integer num = this.$imdbRating;
-                        if (num != null) {
-                            int it = num.intValue();
-                            scoreFrom10 = Score.Companion.from10(Boxing.boxInt(it));
-                        } else {
-                            scoreFrom10 = null;
-                        }
-                    }
-                    loadResponse.setScore(scoreFrom10);
+                    loadResponse.setScore(this.$score);
+                    loadResponse.setContentRating(this.$contentRating);
                     loadResponse.setDuration(this.$durationMinutes);
+                    loadResponse.setRecommendations(this.$recommendations);
                     LoadResponse.Companion.addImdbId(loadResponse, this.$imdbId);
                     LoadResponse.Companion.addTMDbId(loadResponse, String.valueOf(this.$tmdbId));
                     return Unit.INSTANCE;
@@ -11785,6 +11823,490 @@ public final class MovieBoxProvider extends MainAPI {
                     throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
             }
         }
+    }
+
+    /* JADX INFO: Access modifiers changed from: private */
+    /* JADX WARN: Code duplicated, block: B:130:0x03a2 A[ADDED_TO_REGION, REMOVE] */
+    /* JADX WARN: Code duplicated, block: B:41:0x017c A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:42:0x017d  */
+    /* JADX WARN: Code duplicated, block: B:45:0x0190 A[Catch: Exception -> 0x03b4, TryCatch #8 {Exception -> 0x03b4, blocks: (B:68:0x0259, B:70:0x0261, B:72:0x0266, B:74:0x0287, B:131:0x03a4, B:77:0x0293, B:79:0x0299, B:81:0x029e, B:82:0x02a9, B:84:0x02af, B:86:0x02bb, B:88:0x02c3, B:91:0x02cd, B:93:0x02d3, B:95:0x02db, B:97:0x02e1, B:100:0x02f0, B:102:0x02f8, B:104:0x0300, B:106:0x0306, B:108:0x030e, B:110:0x0314, B:111:0x0317, B:116:0x032b, B:112:0x031a, B:113:0x031f, B:114:0x0324, B:123:0x036b, B:124:0x037f, B:126:0x0385, B:128:0x039a, B:129:0x039e, B:43:0x0184, B:45:0x0190, B:49:0x019d, B:51:0x01a5, B:53:0x01ab, B:55:0x01b3, B:56:0x01b6), top: B:166:0x0184 }] */
+    /* JADX WARN: Code duplicated, block: B:51:0x01a5 A[Catch: Exception -> 0x03b4, TryCatch #8 {Exception -> 0x03b4, blocks: (B:68:0x0259, B:70:0x0261, B:72:0x0266, B:74:0x0287, B:131:0x03a4, B:77:0x0293, B:79:0x0299, B:81:0x029e, B:82:0x02a9, B:84:0x02af, B:86:0x02bb, B:88:0x02c3, B:91:0x02cd, B:93:0x02d3, B:95:0x02db, B:97:0x02e1, B:100:0x02f0, B:102:0x02f8, B:104:0x0300, B:106:0x0306, B:108:0x030e, B:110:0x0314, B:111:0x0317, B:116:0x032b, B:112:0x031a, B:113:0x031f, B:114:0x0324, B:123:0x036b, B:124:0x037f, B:126:0x0385, B:128:0x039a, B:129:0x039e, B:43:0x0184, B:45:0x0190, B:49:0x019d, B:51:0x01a5, B:53:0x01ab, B:55:0x01b3, B:56:0x01b6), top: B:166:0x0184 }] */
+    /* JADX WARN: Code duplicated, block: B:58:0x01ee A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:59:0x01ef  */
+    /* JADX WARN: Code duplicated, block: B:64:0x0249 A[RETURN] */
+    /* JADX WARN: Code duplicated, block: B:65:0x024a  */
+    /* JADX WARN: Code duplicated, block: B:70:0x0261 A[Catch: Exception -> 0x03b4, TryCatch #8 {Exception -> 0x03b4, blocks: (B:68:0x0259, B:70:0x0261, B:72:0x0266, B:74:0x0287, B:131:0x03a4, B:77:0x0293, B:79:0x0299, B:81:0x029e, B:82:0x02a9, B:84:0x02af, B:86:0x02bb, B:88:0x02c3, B:91:0x02cd, B:93:0x02d3, B:95:0x02db, B:97:0x02e1, B:100:0x02f0, B:102:0x02f8, B:104:0x0300, B:106:0x0306, B:108:0x030e, B:110:0x0314, B:111:0x0317, B:116:0x032b, B:112:0x031a, B:113:0x031f, B:114:0x0324, B:123:0x036b, B:124:0x037f, B:126:0x0385, B:128:0x039a, B:129:0x039e, B:43:0x0184, B:45:0x0190, B:49:0x019d, B:51:0x01a5, B:53:0x01ab, B:55:0x01b3, B:56:0x01b6), top: B:166:0x0184 }] */
+    /* JADX WARN: Code duplicated, block: B:72:0x0266 A[Catch: Exception -> 0x03b4, TryCatch #8 {Exception -> 0x03b4, blocks: (B:68:0x0259, B:70:0x0261, B:72:0x0266, B:74:0x0287, B:131:0x03a4, B:77:0x0293, B:79:0x0299, B:81:0x029e, B:82:0x02a9, B:84:0x02af, B:86:0x02bb, B:88:0x02c3, B:91:0x02cd, B:93:0x02d3, B:95:0x02db, B:97:0x02e1, B:100:0x02f0, B:102:0x02f8, B:104:0x0300, B:106:0x0306, B:108:0x030e, B:110:0x0314, B:111:0x0317, B:116:0x032b, B:112:0x031a, B:113:0x031f, B:114:0x0324, B:123:0x036b, B:124:0x037f, B:126:0x0385, B:128:0x039a, B:129:0x039e, B:43:0x0184, B:45:0x0190, B:49:0x019d, B:51:0x01a5, B:53:0x01ab, B:55:0x01b3, B:56:0x01b6), top: B:166:0x0184 }] */
+    /* JADX WARN: Code duplicated, block: B:74:0x0287 A[Catch: Exception -> 0x03b4, TryCatch #8 {Exception -> 0x03b4, blocks: (B:68:0x0259, B:70:0x0261, B:72:0x0266, B:74:0x0287, B:131:0x03a4, B:77:0x0293, B:79:0x0299, B:81:0x029e, B:82:0x02a9, B:84:0x02af, B:86:0x02bb, B:88:0x02c3, B:91:0x02cd, B:93:0x02d3, B:95:0x02db, B:97:0x02e1, B:100:0x02f0, B:102:0x02f8, B:104:0x0300, B:106:0x0306, B:108:0x030e, B:110:0x0314, B:111:0x0317, B:116:0x032b, B:112:0x031a, B:113:0x031f, B:114:0x0324, B:123:0x036b, B:124:0x037f, B:126:0x0385, B:128:0x039a, B:129:0x039e, B:43:0x0184, B:45:0x0190, B:49:0x019d, B:51:0x01a5, B:53:0x01ab, B:55:0x01b3, B:56:0x01b6), top: B:166:0x0184 }] */
+    /* JADX WARN: Code duplicated, block: B:7:0x001a  */
+    /* JADX WARN: Not initialized variable reg: 7, insn: 0x00a8: MOVE (r13 I:??[OBJECT, ARRAY] A[D('$result' java.lang.Object)]) = (r7 I:??[OBJECT, ARRAY] A[D('subjectId' java.lang.String)]), block:B:24:0x00a6 */
+    public final Object fetchRecommendations(String subjectId, Continuation<? super List<? extends SearchResponse>> continuation) {
+        C00021 c00021;
+        Object objBuildAuthHeaders$default;
+        String recUrl;
+        String jsonBody;
+        String jsonBody2;
+        RequestBody requestBody;
+        Map headers;
+        RequestBody requestBody2;
+        String recUrl2;
+        Object objPost$default;
+        String recUrl3;
+        Object obj;
+        String subjectId2;
+        String recUrl4;
+        RequestBody requestBody3;
+        NiceResponse response;
+        SharedPreferences sharedPreferences;
+        String str;
+        Object objBuildAuthHeaders$default2;
+        String subjectId3;
+        RequestBody requestBody4;
+        String recUrl5;
+        NiceResponse response2;
+        String jsonBody3;
+        SharedPreferences.Editor editorEdit;
+        SharedPreferences.Editor editorRemove;
+        Map headers2;
+        String subjectId4;
+        String recUrl6;
+        Map headers3;
+        RequestBody requestBody5;
+        JsonNode jsonNode;
+        JsonNode<JsonNode> items;
+        String itemId;
+        JsonNode root;
+        String strAsText;
+        TvType type;
+        JsonNode jsonNode2;
+        if (continuation instanceof C00021) {
+            c00021 = (C00021) continuation;
+            if ((c00021.label & Integer.MIN_VALUE) != 0) {
+                c00021.label -= Integer.MIN_VALUE;
+            } else {
+                c00021 = new C00021(continuation);
+            }
+        } else {
+            c00021 = new C00021(continuation);
+        }
+        C00021 c00022 = c00021;
+        Object $result = c00022.result;
+        Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
+        try {
+            switch (c00022.label) {
+                case 0:
+                    ResultKt.throwOnFailure($result);
+                    try {
+                        String recUrl7 = getMainUrl() + "/wefeed-mobile-bff/subject-api/detail-rec";
+                        String jsonBody4 = "{\"subjectId\":\"" + subjectId + "\",\"page\":1,\"perPage\":20}";
+                        RequestBody requestBody6 = RequestBody.Companion.create(jsonBody4, MediaType.Companion.get("application/json"));
+                        c00022.L$0 = subjectId;
+                        c00022.L$1 = recUrl7;
+                        c00022.L$2 = jsonBody4;
+                        c00022.L$3 = requestBody6;
+                        c00022.label = 1;
+                        objBuildAuthHeaders$default = buildAuthHeaders$default(this, "POST", recUrl7, "application/json; charset=utf-8", null, jsonBody4, false, c00022, 40, null);
+                        if (objBuildAuthHeaders$default == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        recUrl = recUrl7;
+                        jsonBody = jsonBody4;
+                        jsonBody2 = subjectId;
+                        requestBody = requestBody6;
+                        try {
+                            Map headers4 = (Map) objBuildAuthHeaders$default;
+                            try {
+                                Requests app = MainActivityKt.getApp();
+                                c00022.L$0 = jsonBody2;
+                                c00022.L$1 = recUrl;
+                                c00022.L$2 = jsonBody;
+                                c00022.L$3 = requestBody;
+                                c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers4);
+                                c00022.label = 2;
+                                headers = headers4;
+                                requestBody2 = requestBody;
+                                recUrl2 = recUrl;
+                                try {
+                                    objPost$default = Requests.post$default(app, recUrl2, headers, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                                    if (objPost$default == coroutine_suspended) {
+                                        return coroutine_suspended;
+                                    }
+                                    String str2 = jsonBody2;
+                                    recUrl3 = jsonBody;
+                                    obj = objPost$default;
+                                    subjectId2 = str2;
+                                    recUrl4 = recUrl2;
+                                    requestBody3 = requestBody2;
+                                    try {
+                                        response = (NiceResponse) obj;
+                                        if (response.getCode() != 401 || response.getCode() == 441) {
+                                            bearerToken = null;
+                                            sharedPreferences = this.sharedPref;
+                                            if (sharedPreferences != null && (editorEdit = sharedPreferences.edit()) != null && (editorRemove = editorEdit.remove(this.PREF_TOKEN_KEY)) != null) {
+                                                editorRemove.apply();
+                                            }
+                                            c00022.L$0 = subjectId2;
+                                            c00022.L$1 = recUrl4;
+                                            c00022.L$2 = SpillingKt.nullOutSpilledVariable(recUrl3);
+                                            c00022.L$3 = requestBody3;
+                                            c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers);
+                                            c00022.L$5 = SpillingKt.nullOutSpilledVariable(response);
+                                            c00022.label = 3;
+                                            str = null;
+                                            objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "POST", recUrl4, "application/json; charset=utf-8", null, recUrl3, false, c00022, 40, null);
+                                            if (objBuildAuthHeaders$default2 == coroutine_suspended) {
+                                                return coroutine_suspended;
+                                            }
+                                            subjectId3 = subjectId2;
+                                            requestBody4 = requestBody3;
+                                            $result = objBuildAuthHeaders$default2;
+                                            recUrl5 = recUrl4;
+                                            response2 = response;
+                                            jsonBody3 = recUrl3;
+                                            try {
+                                                headers2 = (Map) $result;
+                                                Requests app2 = MainActivityKt.getApp();
+                                                c00022.L$0 = subjectId3;
+                                                c00022.L$1 = SpillingKt.nullOutSpilledVariable(recUrl5);
+                                                c00022.L$2 = SpillingKt.nullOutSpilledVariable(jsonBody3);
+                                                c00022.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
+                                                c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers2);
+                                                c00022.L$5 = SpillingKt.nullOutSpilledVariable(response2);
+                                                c00022.label = 4;
+                                                try {
+                                                    $result = Requests.post$default(app2, recUrl5, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                                                    if ($result == coroutine_suspended) {
+                                                        return coroutine_suspended;
+                                                    }
+                                                    subjectId4 = subjectId3;
+                                                    recUrl6 = recUrl5;
+                                                    headers3 = headers2;
+                                                    requestBody5 = requestBody4;
+                                                    try {
+                                                        response = (NiceResponse) $result;
+                                                        subjectId2 = subjectId4;
+                                                    } catch (Exception e) {
+                                                        return CollectionsKt.emptyList();
+                                                    }
+                                                } catch (Exception e2) {
+                                                    return CollectionsKt.emptyList();
+                                                }
+                                            } catch (Exception e3) {
+                                            }
+                                        } else {
+                                            str = null;
+                                        }
+                                        if (response.getCode() != 200) {
+                                            return CollectionsKt.emptyList();
+                                        }
+                                        persistTokenFromXUser(response.getHeaders().get("x-user"));
+                                        JsonNode root2 = MainAPIKt.getMapper().readTree(response.getText());
+                                        jsonNode = root2.get("data");
+                                        if (jsonNode != null || (items = jsonNode.get("items")) == null) {
+                                            return CollectionsKt.emptyList();
+                                        }
+                                        if (!items.isArray()) {
+                                            return CollectionsKt.emptyList();
+                                        }
+                                        List list = new ArrayList();
+                                        for (final JsonNode item : items) {
+                                            if (!isNsfwItem(item)) {
+                                                JsonNode jsonNode3 = item.get("subjectId");
+                                                if (jsonNode3 == null || (itemId = jsonNode3.asText()) == null) {
+                                                    root2 = root2;
+                                                } else if (!Intrinsics.areEqual(itemId, subjectId2)) {
+                                                    JsonNode jsonNode4 = item.get("title");
+                                                    if (jsonNode4 == null || (strAsText = jsonNode4.asText()) == null) {
+                                                        root = root2;
+                                                        root2 = root;
+                                                    } else {
+                                                        root = root2;
+                                                        String title = StringsKt.substringBefore$default(strAsText, "[", str, 2, str);
+                                                        if (title == null) {
+                                                            root2 = root;
+                                                        } else {
+                                                            JsonNode jsonNode5 = item.get("cover");
+                                                            final String coverImg = (jsonNode5 == null || (jsonNode2 = jsonNode5.get("url")) == null) ? str : jsonNode2.asText();
+                                                            JsonNode jsonNode6 = item.get("subjectType");
+                                                            int subjectType = jsonNode6 != null ? jsonNode6.asInt() : 1;
+                                                            switch (subjectType) {
+                                                                case 1:
+                                                                    type = TvType.Movie;
+                                                                    break;
+                                                                case 2:
+                                                                    type = TvType.TvSeries;
+                                                                    break;
+                                                                case 7:
+                                                                    type = TvType.TvSeries;
+                                                                    break;
+                                                                default:
+                                                                    type = TvType.Movie;
+                                                                    break;
+                                                            }
+                                                            list.add(MainAPIKt.newMovieSearchResponse$default(this, title, itemId, type, false, new Function1() { // from class: com.MovieBox.MovieBoxProvider$$ExternalSyntheticLambda1
+                                                                public final Object invoke(Object obj2) {
+                                                                    return MovieBoxProvider.fetchRecommendations$lambda$0(coverImg, item, (MovieSearchResponse) obj2);
+                                                                }
+                                                            }, 8, (Object) null));
+                                                            root2 = root;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        List $this$distinctBy$iv = list;
+                                        HashSet set$iv = new HashSet();
+                                        ArrayList list$iv = new ArrayList();
+                                        for (Object e$iv : $this$distinctBy$iv) {
+                                            SearchResponse it = (SearchResponse) e$iv;
+                                            if (set$iv.add(it.getUrl())) {
+                                                list$iv.add(e$iv);
+                                            }
+                                        }
+                                        return list$iv;
+                                    } catch (Exception e4) {
+                                        return CollectionsKt.emptyList();
+                                    }
+                                } catch (Exception e5) {
+                                    return CollectionsKt.emptyList();
+                                }
+                            } catch (Exception e6) {
+                            }
+                        } catch (Exception e7) {
+                        }
+                    } catch (Exception e8) {
+                        return CollectionsKt.emptyList();
+                    }
+                    break;
+                case 1:
+                    RequestBody requestBody7 = (RequestBody) c00022.L$3;
+                    jsonBody = (String) c00022.L$2;
+                    recUrl = (String) c00022.L$1;
+                    jsonBody2 = (String) c00022.L$0;
+                    try {
+                        ResultKt.throwOnFailure($result);
+                        requestBody = requestBody7;
+                        objBuildAuthHeaders$default = $result;
+                        Map headers5 = (Map) objBuildAuthHeaders$default;
+                        Requests app3 = MainActivityKt.getApp();
+                        c00022.L$0 = jsonBody2;
+                        c00022.L$1 = recUrl;
+                        c00022.L$2 = jsonBody;
+                        c00022.L$3 = requestBody;
+                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers5);
+                        c00022.label = 2;
+                        headers = headers5;
+                        requestBody2 = requestBody;
+                        recUrl2 = recUrl;
+                        objPost$default = Requests.post$default(app3, recUrl2, headers, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody2, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                        if (objPost$default == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        String str3 = jsonBody2;
+                        recUrl3 = jsonBody;
+                        obj = objPost$default;
+                        subjectId2 = str3;
+                        recUrl4 = recUrl2;
+                        requestBody3 = requestBody2;
+                        response = (NiceResponse) obj;
+                        if (response.getCode() != 401) {
+                        }
+                        bearerToken = null;
+                        sharedPreferences = this.sharedPref;
+                        if (sharedPreferences != null) {
+                            editorRemove.apply();
+                        }
+                        c00022.L$0 = subjectId2;
+                        c00022.L$1 = recUrl4;
+                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(recUrl3);
+                        c00022.L$3 = requestBody3;
+                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers);
+                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(response);
+                        c00022.label = 3;
+                        str = null;
+                        objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "POST", recUrl4, "application/json; charset=utf-8", null, recUrl3, false, c00022, 40, null);
+                        if (objBuildAuthHeaders$default2 == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        subjectId3 = subjectId2;
+                        requestBody4 = requestBody3;
+                        $result = objBuildAuthHeaders$default2;
+                        recUrl5 = recUrl4;
+                        response2 = response;
+                        jsonBody3 = recUrl3;
+                        headers2 = (Map) $result;
+                        Requests app4 = MainActivityKt.getApp();
+                        c00022.L$0 = subjectId3;
+                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(recUrl5);
+                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(jsonBody3);
+                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
+                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers2);
+                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(response2);
+                        c00022.label = 4;
+                        $result = Requests.post$default(app4, recUrl5, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                        if ($result == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        subjectId4 = subjectId3;
+                        recUrl6 = recUrl5;
+                        headers3 = headers2;
+                        requestBody5 = requestBody4;
+                        response = (NiceResponse) $result;
+                        subjectId2 = subjectId4;
+                        if (response.getCode() != 200) {
+                            return CollectionsKt.emptyList();
+                        }
+                        persistTokenFromXUser(response.getHeaders().get("x-user"));
+                        JsonNode root3 = MainAPIKt.getMapper().readTree(response.getText());
+                        jsonNode = root3.get("data");
+                        if (jsonNode != null) {
+                        }
+                        return CollectionsKt.emptyList();
+                    } catch (Exception e9) {
+                        return CollectionsKt.emptyList();
+                    }
+                case 2:
+                    Map headers6 = (Map) c00022.L$4;
+                    RequestBody requestBody8 = (RequestBody) c00022.L$3;
+                    String jsonBody5 = (String) c00022.L$2;
+                    String recUrl8 = (String) c00022.L$1;
+                    String subjectId5 = (String) c00022.L$0;
+                    ResultKt.throwOnFailure($result);
+                    headers = headers6;
+                    requestBody3 = requestBody8;
+                    recUrl4 = recUrl8;
+                    obj = $result;
+                    recUrl3 = jsonBody5;
+                    subjectId2 = subjectId5;
+                    response = (NiceResponse) obj;
+                    if (response.getCode() != 401) {
+                    }
+                    bearerToken = null;
+                    sharedPreferences = this.sharedPref;
+                    if (sharedPreferences != null) {
+                        editorRemove.apply();
+                    }
+                    c00022.L$0 = subjectId2;
+                    c00022.L$1 = recUrl4;
+                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(recUrl3);
+                    c00022.L$3 = requestBody3;
+                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers);
+                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(response);
+                    c00022.label = 3;
+                    str = null;
+                    objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "POST", recUrl4, "application/json; charset=utf-8", null, recUrl3, false, c00022, 40, null);
+                    if (objBuildAuthHeaders$default2 == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    subjectId3 = subjectId2;
+                    requestBody4 = requestBody3;
+                    $result = objBuildAuthHeaders$default2;
+                    recUrl5 = recUrl4;
+                    response2 = response;
+                    jsonBody3 = recUrl3;
+                    headers2 = (Map) $result;
+                    Requests app5 = MainActivityKt.getApp();
+                    c00022.L$0 = subjectId3;
+                    c00022.L$1 = SpillingKt.nullOutSpilledVariable(recUrl5);
+                    c00022.L$2 = SpillingKt.nullOutSpilledVariable(jsonBody3);
+                    c00022.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
+                    c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers2);
+                    c00022.L$5 = SpillingKt.nullOutSpilledVariable(response2);
+                    c00022.label = 4;
+                    $result = Requests.post$default(app5, recUrl5, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                    if ($result == coroutine_suspended) {
+                        return coroutine_suspended;
+                    }
+                    subjectId4 = subjectId3;
+                    recUrl6 = recUrl5;
+                    headers3 = headers2;
+                    requestBody5 = requestBody4;
+                    response = (NiceResponse) $result;
+                    subjectId2 = subjectId4;
+                    if (response.getCode() != 200) {
+                        return CollectionsKt.emptyList();
+                    }
+                    persistTokenFromXUser(response.getHeaders().get("x-user"));
+                    JsonNode root4 = MainAPIKt.getMapper().readTree(response.getText());
+                    jsonNode = root4.get("data");
+                    if (jsonNode != null) {
+                    }
+                    return CollectionsKt.emptyList();
+                case 3:
+                    response2 = (NiceResponse) c00022.L$5;
+                    RequestBody requestBody9 = (RequestBody) c00022.L$3;
+                    String jsonBody6 = (String) c00022.L$2;
+                    String recUrl9 = (String) c00022.L$1;
+                    subjectId3 = (String) c00022.L$0;
+                    try {
+                        ResultKt.throwOnFailure($result);
+                        str = null;
+                        requestBody4 = requestBody9;
+                        recUrl5 = recUrl9;
+                        jsonBody3 = jsonBody6;
+                        headers2 = (Map) $result;
+                        Requests app6 = MainActivityKt.getApp();
+                        c00022.L$0 = subjectId3;
+                        c00022.L$1 = SpillingKt.nullOutSpilledVariable(recUrl5);
+                        c00022.L$2 = SpillingKt.nullOutSpilledVariable(jsonBody3);
+                        c00022.L$3 = SpillingKt.nullOutSpilledVariable(requestBody4);
+                        c00022.L$4 = SpillingKt.nullOutSpilledVariable(headers2);
+                        c00022.L$5 = SpillingKt.nullOutSpilledVariable(response2);
+                        c00022.label = 4;
+                        $result = Requests.post$default(app6, recUrl5, headers2, (String) null, (Map) null, (Map) null, (Map) null, (List) null, (Object) null, requestBody4, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00022, 65276, (Object) null);
+                        if ($result == coroutine_suspended) {
+                            return coroutine_suspended;
+                        }
+                        subjectId4 = subjectId3;
+                        recUrl6 = recUrl5;
+                        headers3 = headers2;
+                        requestBody5 = requestBody4;
+                        response = (NiceResponse) $result;
+                        subjectId2 = subjectId4;
+                        if (response.getCode() != 200) {
+                            return CollectionsKt.emptyList();
+                        }
+                        persistTokenFromXUser(response.getHeaders().get("x-user"));
+                        JsonNode root5 = MainAPIKt.getMapper().readTree(response.getText());
+                        jsonNode = root5.get("data");
+                        if (jsonNode != null) {
+                        }
+                        return CollectionsKt.emptyList();
+                    } catch (Exception e10) {
+                        return CollectionsKt.emptyList();
+                    }
+                case 4:
+                    headers3 = (Map) c00022.L$4;
+                    requestBody5 = (RequestBody) c00022.L$3;
+                    jsonBody3 = (String) c00022.L$2;
+                    recUrl6 = (String) c00022.L$1;
+                    subjectId4 = (String) c00022.L$0;
+                    ResultKt.throwOnFailure($result);
+                    str = null;
+                    response = (NiceResponse) $result;
+                    subjectId2 = subjectId4;
+                    if (response.getCode() != 200) {
+                        return CollectionsKt.emptyList();
+                    }
+                    persistTokenFromXUser(response.getHeaders().get("x-user"));
+                    JsonNode root6 = MainAPIKt.getMapper().readTree(response.getText());
+                    jsonNode = root6.get("data");
+                    if (jsonNode != null) {
+                    }
+                    return CollectionsKt.emptyList();
+                default:
+                    throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+            }
+        } catch (Exception e11) {
+        }
+    }
+
+    static final Unit fetchRecommendations$lambda$0(String $coverImg, JsonNode $item, MovieSearchResponse $this$newMovieSearchResponse) {
+        $this$newMovieSearchResponse.setPosterUrl($coverImg);
+        Score.Companion companion = Score.Companion;
+        JsonNode jsonNode = $item.get("imdbRatingValue");
+        $this$newMovieSearchResponse.setScore(companion.from10(jsonNode != null ? jsonNode.asText() : null));
+        return Unit.INSTANCE;
     }
 
     /* JADX WARN: Code duplicated, block: B:100:0x03b1  */
@@ -11809,7 +12331,7 @@ public final class MovieBoxProvider extends MainAPI {
     /* JADX WARN: Not initialized variable reg: 15, insn: 0x012f: MOVE (r14 I:??[OBJECT, ARRAY] A[D('subtitleCallback' kotlin.jvm.functions.Function1)]) = (r15 I:??[OBJECT, ARRAY] A[D('data' java.lang.String)]), block:B:27:0x012b */
     @Nullable
     public Object loadLinks(@NotNull String data, boolean isCasting, @NotNull Function1<? super SubtitleFile, Unit> function1, @NotNull Function1<? super ExtractorLink, Unit> function2, @NotNull Continuation<? super Boolean> continuation) {
-        C00061 c00061;
+        C00071 c00071;
         boolean z;
         String originalSubjectId;
         boolean isCasting2;
@@ -11883,24 +12405,24 @@ public final class MovieBoxProvider extends MainAPI {
         JsonNode subjectData;
         JsonNode<JsonNode> dubs;
         JsonNode subjectData2;
-        C00072 c00072;
+        C00082 c00082;
         Function1<? super SubtitleFile, Unit> function14;
         Function1<? super ExtractorLink, Unit> function15;
-        if (continuation instanceof C00061) {
-            c00061 = (C00061) continuation;
-            if ((c00061.label & Integer.MIN_VALUE) != 0) {
-                c00061.label -= Integer.MIN_VALUE;
+        if (continuation instanceof C00071) {
+            c00071 = (C00071) continuation;
+            if ((c00071.label & Integer.MIN_VALUE) != 0) {
+                c00071.label -= Integer.MIN_VALUE;
             } else {
-                c00061 = new C00061(continuation);
+                c00071 = new C00071(continuation);
             }
         } else {
-            c00061 = new C00061(continuation);
+            c00071 = new C00071(continuation);
         }
-        C00061 c00062 = c00061;
-        Object $result2 = c00062.result;
+        C00071 c00072 = c00071;
+        Object $result2 = c00072.result;
         Object coroutine_suspended = IntrinsicsKt.getCOROUTINE_SUSPENDED();
         try {
-            switch (c00062.label) {
+            switch (c00072.label) {
                 case 0:
                     ResultKt.throwOnFailure($result2);
                     try {
@@ -11917,20 +12439,20 @@ public final class MovieBoxProvider extends MainAPI {
                             int season8 = (parts4.size() <= 1 || (intOrNull2 = StringsKt.toIntOrNull((String) parts4.get(1))) == null) ? 0 : intOrNull2.intValue();
                             int episode7 = (parts4.size() > 2 && (intOrNull = StringsKt.toIntOrNull((String) parts4.get(2))) != null) ? intOrNull.intValue() : 0;
                             String subjectUrl6 = getMainUrl() + "/wefeed-mobile-bff/subject-api/get?subjectId=" + originalSubjectId;
-                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data);
-                            c00062.L$1 = function1;
-                            c00062.L$2 = function2;
-                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts4);
-                            c00062.L$4 = originalSubjectId;
-                            c00062.L$5 = subjectUrl6;
-                            c00062.Z$0 = isCasting;
-                            c00062.I$0 = season8;
-                            c00062.I$1 = episode7;
-                            c00062.label = 1;
+                            c00072.L$0 = SpillingKt.nullOutSpilledVariable(data);
+                            c00072.L$1 = function1;
+                            c00072.L$2 = function2;
+                            c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts4);
+                            c00072.L$4 = originalSubjectId;
+                            c00072.L$5 = subjectUrl6;
+                            c00072.Z$0 = isCasting;
+                            c00072.I$0 = season8;
+                            c00072.I$1 = episode7;
+                            c00072.label = 1;
                             int episode8 = episode7;
                             int season9 = season8;
                             String originalSubjectId8 = originalSubjectId;
-                            Object objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "GET", subjectUrl6, null, null, null, false, c00062, 60, null);
+                            Object objBuildAuthHeaders$default2 = buildAuthHeaders$default(this, "GET", subjectUrl6, null, null, null, false, c00072, 60, null);
                             if (objBuildAuthHeaders$default2 == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
@@ -11948,20 +12470,20 @@ public final class MovieBoxProvider extends MainAPI {
                                 subjectHeaders = (Map) obj;
                                 try {
                                     Requests app = MainActivityKt.getApp();
-                                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                                    c00062.L$1 = function3;
-                                    c00062.L$2 = function4;
-                                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                                    c00062.L$4 = originalSubjectId2;
-                                    c00062.L$5 = data2;
-                                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders);
-                                    c00062.Z$0 = isCasting2;
-                                    c00062.I$0 = season;
-                                    c00062.I$1 = episode;
-                                    c00062.label = 2;
+                                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                                    c00072.L$1 = function3;
+                                    c00072.L$2 = function4;
+                                    c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                                    c00072.L$4 = originalSubjectId2;
+                                    c00072.L$5 = data2;
+                                    c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders);
+                                    c00072.Z$0 = isCasting2;
+                                    c00072.I$0 = season;
+                                    c00072.I$1 = episode;
+                                    c00072.label = 2;
                                     jsonNode = null;
                                     try {
-                                        obj2 = Requests.get$default(app, data2, subjectHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00062, 4092, (Object) null);
+                                        obj2 = Requests.get$default(app, data2, subjectHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00072, 4092, (Object) null);
                                         if (obj2 == coroutine_suspended) {
                                             return coroutine_suspended;
                                         }
@@ -12031,22 +12553,22 @@ public final class MovieBoxProvider extends MainAPI {
                                                                     int episode9 = season2;
                                                                     Map subjectHeaders7 = subjectHeaders3;
                                                                     z = false;
-                                                                    c00072 = new C00072(season10, episode9, function5, function6, null);
-                                                                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                                                                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                                                                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                                                                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
-                                                                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
-                                                                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
-                                                                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders7);
-                                                                    c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
-                                                                    c00062.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
-                                                                    c00062.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode5);
-                                                                    c00062.Z$0 = isCasting3;
-                                                                    c00062.I$0 = season10;
-                                                                    c00062.I$1 = episode9;
-                                                                    c00062.label = 6;
-                                                                    if (ParCollectionsKt.amap(subjectIds, c00072, c00062) == coroutine_suspended) {
+                                                                    c00082 = new C00082(season10, episode9, function5, function6, null);
+                                                                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                                                                    c00072.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                                                                    c00072.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                                                                    c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
+                                                                    c00072.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
+                                                                    c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
+                                                                    c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders7);
+                                                                    c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
+                                                                    c00072.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
+                                                                    c00072.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode5);
+                                                                    c00072.Z$0 = isCasting3;
+                                                                    c00072.I$0 = season10;
+                                                                    c00072.I$1 = episode9;
+                                                                    c00072.label = 6;
+                                                                    if (ParCollectionsKt.amap(subjectIds, c00082, c00072) == coroutine_suspended) {
                                                                         return coroutine_suspended;
                                                                     }
                                                                     function14 = function6;
@@ -12061,22 +12583,22 @@ public final class MovieBoxProvider extends MainAPI {
                                                                     return Boxing.boxBoolean(z);
                                                                 }
                                                             }
-                                                            c00072 = new C00072(season10, episode9, function5, function6, null);
-                                                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                                                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                                                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                                                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
-                                                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
-                                                            c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
-                                                            c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders7);
-                                                            c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
-                                                            c00062.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
-                                                            c00062.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode5);
-                                                            c00062.Z$0 = isCasting3;
-                                                            c00062.I$0 = season10;
-                                                            c00062.I$1 = episode9;
-                                                            c00062.label = 6;
-                                                            if (ParCollectionsKt.amap(subjectIds, c00072, c00062) == coroutine_suspended) {
+                                                            c00082 = new C00082(season10, episode9, function5, function6, null);
+                                                            c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                                                            c00072.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                                                            c00072.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                                                            c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
+                                                            c00072.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
+                                                            c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
+                                                            c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders7);
+                                                            c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
+                                                            c00072.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
+                                                            c00072.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode5);
+                                                            c00072.Z$0 = isCasting3;
+                                                            c00072.I$0 = season10;
+                                                            c00072.I$1 = episode9;
+                                                            c00072.label = 6;
+                                                            if (ParCollectionsKt.amap(subjectIds, c00082, c00072) == coroutine_suspended) {
                                                                 return coroutine_suspended;
                                                             }
                                                             function14 = function6;
@@ -12100,19 +12622,19 @@ public final class MovieBoxProvider extends MainAPI {
                                                     return Boxing.boxBoolean(z);
                                                 }
                                             }
-                                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                                            c00062.L$1 = function3;
-                                            c00062.L$2 = function4;
-                                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                                            c00062.L$4 = $result;
-                                            c00062.L$5 = subjectUrl;
-                                            c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders2);
-                                            c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse);
-                                            c00062.Z$0 = isCasting2;
-                                            c00062.I$0 = season;
-                                            c00062.I$1 = episode2;
-                                            c00062.label = 3;
-                                            if (fetchAnonymousToken(true, c00062) == coroutine_suspended) {
+                                            c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                                            c00072.L$1 = function3;
+                                            c00072.L$2 = function4;
+                                            c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                                            c00072.L$4 = $result;
+                                            c00072.L$5 = subjectUrl;
+                                            c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders2);
+                                            c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse);
+                                            c00072.Z$0 = isCasting2;
+                                            c00072.I$0 = season;
+                                            c00072.I$1 = episode2;
+                                            c00072.label = 3;
+                                            if (fetchAnonymousToken(true, c00072) == coroutine_suspended) {
                                                 return coroutine_suspended;
                                             }
                                             season3 = episode2;
@@ -12124,18 +12646,18 @@ public final class MovieBoxProvider extends MainAPI {
                                             season4 = season;
                                             function8 = function3;
                                             try {
-                                                c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                                                c00062.L$1 = function8;
-                                                c00062.L$2 = function7;
-                                                c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                                                c00062.L$4 = originalSubjectId4;
-                                                c00062.L$5 = subjectUrl;
-                                                c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders4);
-                                                c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse3);
-                                                c00062.Z$0 = isCasting4;
-                                                c00062.I$0 = season4;
-                                                c00062.I$1 = season3;
-                                                c00062.label = 4;
+                                                c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                                                c00072.L$1 = function8;
+                                                c00072.L$2 = function7;
+                                                c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                                                c00072.L$4 = originalSubjectId4;
+                                                c00072.L$5 = subjectUrl;
+                                                c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders4);
+                                                c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse3);
+                                                c00072.Z$0 = isCasting4;
+                                                c00072.I$0 = season4;
+                                                c00072.I$1 = season3;
+                                                c00072.label = 4;
                                                 season5 = season4;
                                                 originalSubjectId5 = originalSubjectId4;
                                                 function9 = function7;
@@ -12143,7 +12665,7 @@ public final class MovieBoxProvider extends MainAPI {
                                                 subjectUrl3 = subjectUrl;
                                                 z2 = true;
                                                 try {
-                                                    objBuildAuthHeaders$default = buildAuthHeaders$default(this, "GET", subjectUrl3, null, null, null, false, c00062, 60, null);
+                                                    objBuildAuthHeaders$default = buildAuthHeaders$default(this, "GET", subjectUrl3, null, null, null, false, c00072, 60, null);
                                                     if (objBuildAuthHeaders$default == coroutine_suspended) {
                                                         return coroutine_suspended;
                                                     }
@@ -12161,20 +12683,20 @@ public final class MovieBoxProvider extends MainAPI {
                                                     try {
                                                         subjectHeaders5 = (Map) $result2;
                                                         Requests app2 = MainActivityKt.getApp();
-                                                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                                                        c00062.L$1 = function10;
-                                                        c00062.L$2 = function11;
-                                                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                                                        c00062.L$4 = originalSubjectId6;
-                                                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl4);
-                                                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders5);
-                                                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse4);
-                                                        c00062.Z$0 = isCasting5;
-                                                        c00062.I$0 = season6;
-                                                        c00062.I$1 = episode5;
-                                                        c00062.label = 5;
+                                                        c00072.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                                                        c00072.L$1 = function10;
+                                                        c00072.L$2 = function11;
+                                                        c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                                                        c00072.L$4 = originalSubjectId6;
+                                                        c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl4);
+                                                        c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders5);
+                                                        c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse4);
+                                                        c00072.Z$0 = isCasting5;
+                                                        c00072.I$0 = season6;
+                                                        c00072.I$1 = episode5;
+                                                        c00072.label = 5;
                                                         try {
-                                                            $result2 = Requests.get$default(app2, subjectUrl4, subjectHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00062, 4092, (Object) null);
+                                                            $result2 = Requests.get$default(app2, subjectUrl4, subjectHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00072, 4092, (Object) null);
                                                             if ($result2 == coroutine_suspended) {
                                                                 return coroutine_suspended;
                                                             }
@@ -12222,22 +12744,22 @@ public final class MovieBoxProvider extends MainAPI {
                                                                 int episode11 = season2;
                                                                 Map subjectHeaders9 = subjectHeaders3;
                                                                 z = false;
-                                                                c00072 = new C00072(season11, episode11, function5, function6, null);
-                                                                c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                                                                c00062.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                                                                c00062.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                                                                c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
-                                                                c00062.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
-                                                                c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
-                                                                c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders9);
-                                                                c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
-                                                                c00062.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
-                                                                c00062.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode8);
-                                                                c00062.Z$0 = isCasting3;
-                                                                c00062.I$0 = season11;
-                                                                c00062.I$1 = episode11;
-                                                                c00062.label = 6;
-                                                                if (ParCollectionsKt.amap(subjectIds, c00072, c00062) == coroutine_suspended) {
+                                                                c00082 = new C00082(season11, episode11, function5, function6, null);
+                                                                c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                                                                c00072.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                                                                c00072.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                                                                c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
+                                                                c00072.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
+                                                                c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
+                                                                c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders9);
+                                                                c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
+                                                                c00072.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
+                                                                c00072.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode8);
+                                                                c00072.Z$0 = isCasting3;
+                                                                c00072.I$0 = season11;
+                                                                c00072.I$1 = episode11;
+                                                                c00072.label = 6;
+                                                                if (ParCollectionsKt.amap(subjectIds, c00082, c00072) == coroutine_suspended) {
                                                                     return coroutine_suspended;
                                                                 }
                                                                 function14 = function6;
@@ -12283,15 +12805,15 @@ public final class MovieBoxProvider extends MainAPI {
                     }
                     break;
                 case 1:
-                    int episode12 = c00062.I$1;
-                    int season12 = c00062.I$0;
-                    isCasting2 = c00062.Z$0;
-                    String subjectUrl7 = (String) c00062.L$5;
-                    String originalSubjectId9 = (String) c00062.L$4;
-                    List parts5 = (List) c00062.L$3;
-                    function4 = (Function1) c00062.L$2;
-                    function3 = (Function1) c00062.L$1;
-                    String data7 = (String) c00062.L$0;
+                    int episode12 = c00072.I$1;
+                    int season12 = c00072.I$0;
+                    isCasting2 = c00072.Z$0;
+                    String subjectUrl7 = (String) c00072.L$5;
+                    String originalSubjectId9 = (String) c00072.L$4;
+                    List parts5 = (List) c00072.L$3;
+                    function4 = (Function1) c00072.L$2;
+                    function3 = (Function1) c00072.L$1;
+                    String data7 = (String) c00072.L$0;
                     try {
                         ResultKt.throwOnFailure($result2);
                         episode = episode12;
@@ -12303,19 +12825,19 @@ public final class MovieBoxProvider extends MainAPI {
                         obj = $result2;
                         subjectHeaders = (Map) obj;
                         Requests app3 = MainActivityKt.getApp();
-                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data3);
-                        c00062.L$1 = function3;
-                        c00062.L$2 = function4;
-                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                        c00062.L$4 = originalSubjectId2;
-                        c00062.L$5 = data2;
-                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders);
-                        c00062.Z$0 = isCasting2;
-                        c00062.I$0 = season;
-                        c00062.I$1 = episode;
-                        c00062.label = 2;
+                        c00072.L$0 = SpillingKt.nullOutSpilledVariable(data3);
+                        c00072.L$1 = function3;
+                        c00072.L$2 = function4;
+                        c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                        c00072.L$4 = originalSubjectId2;
+                        c00072.L$5 = data2;
+                        c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders);
+                        c00072.Z$0 = isCasting2;
+                        c00072.I$0 = season;
+                        c00072.I$1 = episode;
+                        c00072.label = 2;
                         jsonNode = null;
-                        obj2 = Requests.get$default(app3, data2, subjectHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00062, 4092, (Object) null);
+                        obj2 = Requests.get$default(app3, data2, subjectHeaders, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00072, 4092, (Object) null);
                         if (obj2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -12364,41 +12886,41 @@ public final class MovieBoxProvider extends MainAPI {
                             int episode13 = season2;
                             Map subjectHeaders10 = subjectHeaders3;
                             z = false;
-                            c00072 = new C00072(season13, episode13, function5, function6, null);
-                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
-                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
-                            c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
-                            c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders10);
-                            c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
-                            c00062.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
-                            c00062.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode10);
-                            c00062.Z$0 = isCasting3;
-                            c00062.I$0 = season13;
-                            c00062.I$1 = episode13;
-                            c00062.label = 6;
-                            if (ParCollectionsKt.amap(subjectIds, c00072, c00062) == coroutine_suspended) {
+                            c00082 = new C00082(season13, episode13, function5, function6, null);
+                            c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                            c00072.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                            c00072.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                            c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
+                            c00072.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
+                            c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
+                            c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders10);
+                            c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
+                            c00072.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
+                            c00072.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode10);
+                            c00072.Z$0 = isCasting3;
+                            c00072.I$0 = season13;
+                            c00072.I$1 = episode13;
+                            c00072.label = 6;
+                            if (ParCollectionsKt.amap(subjectIds, c00082, c00072) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                             function14 = function6;
                             function15 = function5;
                             return Boxing.boxBoolean(z2);
                         }
-                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                        c00062.L$1 = function3;
-                        c00062.L$2 = function4;
-                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                        c00062.L$4 = $result;
-                        c00062.L$5 = subjectUrl;
-                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders2);
-                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse);
-                        c00062.Z$0 = isCasting2;
-                        c00062.I$0 = season;
-                        c00062.I$1 = episode2;
-                        c00062.label = 3;
-                        if (fetchAnonymousToken(true, c00062) == coroutine_suspended) {
+                        c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                        c00072.L$1 = function3;
+                        c00072.L$2 = function4;
+                        c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                        c00072.L$4 = $result;
+                        c00072.L$5 = subjectUrl;
+                        c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders2);
+                        c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse);
+                        c00072.Z$0 = isCasting2;
+                        c00072.I$0 = season;
+                        c00072.I$1 = episode2;
+                        c00072.label = 3;
+                        if (fetchAnonymousToken(true, c00072) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         season3 = episode2;
@@ -12409,25 +12931,25 @@ public final class MovieBoxProvider extends MainAPI {
                         isCasting4 = isCasting2;
                         season4 = season;
                         function8 = function3;
-                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                        c00062.L$1 = function8;
-                        c00062.L$2 = function7;
-                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                        c00062.L$4 = originalSubjectId4;
-                        c00062.L$5 = subjectUrl;
-                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders4);
-                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse3);
-                        c00062.Z$0 = isCasting4;
-                        c00062.I$0 = season4;
-                        c00062.I$1 = season3;
-                        c00062.label = 4;
+                        c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                        c00072.L$1 = function8;
+                        c00072.L$2 = function7;
+                        c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                        c00072.L$4 = originalSubjectId4;
+                        c00072.L$5 = subjectUrl;
+                        c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders4);
+                        c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse3);
+                        c00072.Z$0 = isCasting4;
+                        c00072.I$0 = season4;
+                        c00072.I$1 = season3;
+                        c00072.label = 4;
                         season5 = season4;
                         originalSubjectId5 = originalSubjectId4;
                         function9 = function7;
                         episode4 = season3;
                         subjectUrl3 = subjectUrl;
                         z2 = true;
-                        objBuildAuthHeaders$default = buildAuthHeaders$default(this, "GET", subjectUrl3, null, null, null, false, c00062, 60, null);
+                        objBuildAuthHeaders$default = buildAuthHeaders$default(this, "GET", subjectUrl3, null, null, null, false, c00072, 60, null);
                         if (objBuildAuthHeaders$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -12444,19 +12966,19 @@ public final class MovieBoxProvider extends MainAPI {
                         data5 = data4;
                         subjectHeaders5 = (Map) $result2;
                         Requests app4 = MainActivityKt.getApp();
-                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                        c00062.L$1 = function10;
-                        c00062.L$2 = function11;
-                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                        c00062.L$4 = originalSubjectId6;
-                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl4);
-                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders5);
-                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse4);
-                        c00062.Z$0 = isCasting5;
-                        c00062.I$0 = season6;
-                        c00062.I$1 = episode5;
-                        c00062.label = 5;
-                        $result2 = Requests.get$default(app4, subjectUrl4, subjectHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00062, 4092, (Object) null);
+                        c00072.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                        c00072.L$1 = function10;
+                        c00072.L$2 = function11;
+                        c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                        c00072.L$4 = originalSubjectId6;
+                        c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl4);
+                        c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders5);
+                        c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse4);
+                        c00072.Z$0 = isCasting5;
+                        c00072.I$0 = season6;
+                        c00072.I$1 = episode5;
+                        c00072.label = 5;
+                        $result2 = Requests.get$default(app4, subjectUrl4, subjectHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00072, 4092, (Object) null);
                         if ($result2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -12504,22 +13026,22 @@ public final class MovieBoxProvider extends MainAPI {
                         int episode14 = season2;
                         Map subjectHeaders11 = subjectHeaders3;
                         z = false;
-                        c00072 = new C00072(season14, episode14, function5, function6, null);
-                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
-                        c00062.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
-                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
-                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders11);
-                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
-                        c00062.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
-                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode12);
-                        c00062.Z$0 = isCasting3;
-                        c00062.I$0 = season14;
-                        c00062.I$1 = episode14;
-                        c00062.label = 6;
-                        if (ParCollectionsKt.amap(subjectIds, c00072, c00062) == coroutine_suspended) {
+                        c00082 = new C00082(season14, episode14, function5, function6, null);
+                        c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                        c00072.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                        c00072.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                        c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
+                        c00072.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
+                        c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
+                        c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders11);
+                        c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
+                        c00072.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
+                        c00072.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode12);
+                        c00072.Z$0 = isCasting3;
+                        c00072.I$0 = season14;
+                        c00072.I$1 = episode14;
+                        c00072.label = 6;
+                        if (ParCollectionsKt.amap(subjectIds, c00082, c00072) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         function14 = function6;
@@ -12530,16 +13052,16 @@ public final class MovieBoxProvider extends MainAPI {
                         return Boxing.boxBoolean(z);
                     }
                 case 2:
-                    episode2 = c00062.I$1;
-                    int season15 = c00062.I$0;
-                    isCasting2 = c00062.Z$0;
-                    subjectHeaders2 = (Map) c00062.L$6;
-                    String subjectUrl8 = (String) c00062.L$5;
-                    String originalSubjectId10 = (String) c00062.L$4;
-                    List parts6 = (List) c00062.L$3;
-                    Function1<? super ExtractorLink, Unit> function18 = (Function1) c00062.L$2;
-                    Function1<? super SubtitleFile, Unit> function19 = (Function1) c00062.L$1;
-                    data4 = (String) c00062.L$0;
+                    episode2 = c00072.I$1;
+                    int season15 = c00072.I$0;
+                    isCasting2 = c00072.Z$0;
+                    subjectHeaders2 = (Map) c00072.L$6;
+                    String subjectUrl8 = (String) c00072.L$5;
+                    String originalSubjectId10 = (String) c00072.L$4;
+                    List parts6 = (List) c00072.L$3;
+                    Function1<? super ExtractorLink, Unit> function18 = (Function1) c00072.L$2;
+                    Function1<? super SubtitleFile, Unit> function19 = (Function1) c00072.L$1;
+                    data4 = (String) c00072.L$0;
                     try {
                         ResultKt.throwOnFailure($result2);
                         parts = parts6;
@@ -12589,41 +13111,41 @@ public final class MovieBoxProvider extends MainAPI {
                             int episode15 = season2;
                             Map subjectHeaders12 = subjectHeaders3;
                             z = false;
-                            c00072 = new C00072(season16, episode15, function5, function6, null);
-                            c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                            c00062.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                            c00062.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                            c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
-                            c00062.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
-                            c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
-                            c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders12);
-                            c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
-                            c00062.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
-                            c00062.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode14);
-                            c00062.Z$0 = isCasting3;
-                            c00062.I$0 = season16;
-                            c00062.I$1 = episode15;
-                            c00062.label = 6;
-                            if (ParCollectionsKt.amap(subjectIds, c00072, c00062) == coroutine_suspended) {
+                            c00082 = new C00082(season16, episode15, function5, function6, null);
+                            c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                            c00072.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                            c00072.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                            c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
+                            c00072.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
+                            c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
+                            c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders12);
+                            c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
+                            c00072.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
+                            c00072.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode14);
+                            c00072.Z$0 = isCasting3;
+                            c00072.I$0 = season16;
+                            c00072.I$1 = episode15;
+                            c00072.label = 6;
+                            if (ParCollectionsKt.amap(subjectIds, c00082, c00072) == coroutine_suspended) {
                                 return coroutine_suspended;
                             }
                             function14 = function6;
                             function15 = function5;
                             return Boxing.boxBoolean(z2);
                         }
-                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                        c00062.L$1 = function3;
-                        c00062.L$2 = function4;
-                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                        c00062.L$4 = $result;
-                        c00062.L$5 = subjectUrl;
-                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders2);
-                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse);
-                        c00062.Z$0 = isCasting2;
-                        c00062.I$0 = season;
-                        c00062.I$1 = episode2;
-                        c00062.label = 3;
-                        if (fetchAnonymousToken(true, c00062) == coroutine_suspended) {
+                        c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                        c00072.L$1 = function3;
+                        c00072.L$2 = function4;
+                        c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                        c00072.L$4 = $result;
+                        c00072.L$5 = subjectUrl;
+                        c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders2);
+                        c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse);
+                        c00072.Z$0 = isCasting2;
+                        c00072.I$0 = season;
+                        c00072.I$1 = episode2;
+                        c00072.label = 3;
+                        if (fetchAnonymousToken(true, c00072) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         season3 = episode2;
@@ -12634,25 +13156,25 @@ public final class MovieBoxProvider extends MainAPI {
                         isCasting4 = isCasting2;
                         season4 = season;
                         function8 = function3;
-                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                        c00062.L$1 = function8;
-                        c00062.L$2 = function7;
-                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                        c00062.L$4 = originalSubjectId4;
-                        c00062.L$5 = subjectUrl;
-                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders4);
-                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse3);
-                        c00062.Z$0 = isCasting4;
-                        c00062.I$0 = season4;
-                        c00062.I$1 = season3;
-                        c00062.label = 4;
+                        c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                        c00072.L$1 = function8;
+                        c00072.L$2 = function7;
+                        c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                        c00072.L$4 = originalSubjectId4;
+                        c00072.L$5 = subjectUrl;
+                        c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders4);
+                        c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse3);
+                        c00072.Z$0 = isCasting4;
+                        c00072.I$0 = season4;
+                        c00072.I$1 = season3;
+                        c00072.label = 4;
                         season5 = season4;
                         originalSubjectId5 = originalSubjectId4;
                         function9 = function7;
                         episode4 = season3;
                         subjectUrl3 = subjectUrl;
                         z2 = true;
-                        objBuildAuthHeaders$default = buildAuthHeaders$default(this, "GET", subjectUrl3, null, null, null, false, c00062, 60, null);
+                        objBuildAuthHeaders$default = buildAuthHeaders$default(this, "GET", subjectUrl3, null, null, null, false, c00072, 60, null);
                         if (objBuildAuthHeaders$default == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -12669,19 +13191,19 @@ public final class MovieBoxProvider extends MainAPI {
                         data5 = data4;
                         subjectHeaders5 = (Map) $result2;
                         Requests app5 = MainActivityKt.getApp();
-                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                        c00062.L$1 = function10;
-                        c00062.L$2 = function11;
-                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                        c00062.L$4 = originalSubjectId6;
-                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl4);
-                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders5);
-                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse4);
-                        c00062.Z$0 = isCasting5;
-                        c00062.I$0 = season6;
-                        c00062.I$1 = episode5;
-                        c00062.label = 5;
-                        $result2 = Requests.get$default(app5, subjectUrl4, subjectHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00062, 4092, (Object) null);
+                        c00072.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                        c00072.L$1 = function10;
+                        c00072.L$2 = function11;
+                        c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                        c00072.L$4 = originalSubjectId6;
+                        c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl4);
+                        c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders5);
+                        c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse4);
+                        c00072.Z$0 = isCasting5;
+                        c00072.I$0 = season6;
+                        c00072.I$1 = episode5;
+                        c00072.label = 5;
+                        $result2 = Requests.get$default(app5, subjectUrl4, subjectHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00072, 4092, (Object) null);
                         if ($result2 == coroutine_suspended) {
                             return coroutine_suspended;
                         }
@@ -12729,22 +13251,22 @@ public final class MovieBoxProvider extends MainAPI {
                         int episode16 = season2;
                         Map subjectHeaders13 = subjectHeaders3;
                         z = false;
-                        c00072 = new C00072(season17, episode16, function5, function6, null);
-                        c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                        c00062.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                        c00062.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                        c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
-                        c00062.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
-                        c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
-                        c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders13);
-                        c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
-                        c00062.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
-                        c00062.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode16);
-                        c00062.Z$0 = isCasting3;
-                        c00062.I$0 = season17;
-                        c00062.I$1 = episode16;
-                        c00062.label = 6;
-                        if (ParCollectionsKt.amap(subjectIds, c00072, c00062) == coroutine_suspended) {
+                        c00082 = new C00082(season17, episode16, function5, function6, null);
+                        c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                        c00072.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                        c00072.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                        c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
+                        c00072.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
+                        c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
+                        c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders13);
+                        c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
+                        c00072.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
+                        c00072.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode16);
+                        c00072.Z$0 = isCasting3;
+                        c00072.I$0 = season17;
+                        c00072.I$1 = episode16;
+                        c00072.label = 6;
+                        if (ParCollectionsKt.amap(subjectIds, c00082, c00072) == coroutine_suspended) {
                             return coroutine_suspended;
                         }
                         function14 = function6;
@@ -12755,17 +13277,17 @@ public final class MovieBoxProvider extends MainAPI {
                         return Boxing.boxBoolean(z);
                     }
                 case 3:
-                    int episode17 = c00062.I$1;
-                    int season18 = c00062.I$0;
-                    boolean isCasting6 = c00062.Z$0;
-                    NiceResponse subjectResponse5 = (NiceResponse) c00062.L$7;
-                    Map subjectHeaders14 = (Map) c00062.L$6;
-                    subjectUrl = (String) c00062.L$5;
-                    String originalSubjectId11 = (String) c00062.L$4;
-                    List parts7 = (List) c00062.L$3;
-                    Function1<? super ExtractorLink, Unit> function20 = (Function1) c00062.L$2;
-                    Function1<? super SubtitleFile, Unit> function21 = (Function1) c00062.L$1;
-                    String data8 = (String) c00062.L$0;
+                    int episode17 = c00072.I$1;
+                    int season18 = c00072.I$0;
+                    boolean isCasting6 = c00072.Z$0;
+                    NiceResponse subjectResponse5 = (NiceResponse) c00072.L$7;
+                    Map subjectHeaders14 = (Map) c00072.L$6;
+                    subjectUrl = (String) c00072.L$5;
+                    String originalSubjectId11 = (String) c00072.L$4;
+                    List parts7 = (List) c00072.L$3;
+                    Function1<? super ExtractorLink, Unit> function20 = (Function1) c00072.L$2;
+                    Function1<? super SubtitleFile, Unit> function21 = (Function1) c00072.L$1;
+                    String data8 = (String) c00072.L$0;
                     ResultKt.throwOnFailure($result2);
                     subjectResponse3 = subjectResponse5;
                     subjectHeaders4 = subjectHeaders14;
@@ -12778,25 +13300,25 @@ public final class MovieBoxProvider extends MainAPI {
                     function7 = function20;
                     function8 = function21;
                     data4 = data8;
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                    c00062.L$1 = function8;
-                    c00062.L$2 = function7;
-                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                    c00062.L$4 = originalSubjectId4;
-                    c00062.L$5 = subjectUrl;
-                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders4);
-                    c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse3);
-                    c00062.Z$0 = isCasting4;
-                    c00062.I$0 = season4;
-                    c00062.I$1 = season3;
-                    c00062.label = 4;
+                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00072.L$1 = function8;
+                    c00072.L$2 = function7;
+                    c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                    c00072.L$4 = originalSubjectId4;
+                    c00072.L$5 = subjectUrl;
+                    c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders4);
+                    c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse3);
+                    c00072.Z$0 = isCasting4;
+                    c00072.I$0 = season4;
+                    c00072.I$1 = season3;
+                    c00072.label = 4;
                     season5 = season4;
                     originalSubjectId5 = originalSubjectId4;
                     function9 = function7;
                     episode4 = season3;
                     subjectUrl3 = subjectUrl;
                     z2 = true;
-                    objBuildAuthHeaders$default = buildAuthHeaders$default(this, "GET", subjectUrl3, null, null, null, false, c00062, 60, null);
+                    objBuildAuthHeaders$default = buildAuthHeaders$default(this, "GET", subjectUrl3, null, null, null, false, c00072, 60, null);
                     if (objBuildAuthHeaders$default == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -12813,19 +13335,19 @@ public final class MovieBoxProvider extends MainAPI {
                     data5 = data4;
                     subjectHeaders5 = (Map) $result2;
                     Requests app6 = MainActivityKt.getApp();
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00062.L$1 = function10;
-                    c00062.L$2 = function11;
-                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                    c00062.L$4 = originalSubjectId6;
-                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl4);
-                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders5);
-                    c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse4);
-                    c00062.Z$0 = isCasting5;
-                    c00062.I$0 = season6;
-                    c00062.I$1 = episode5;
-                    c00062.label = 5;
-                    $result2 = Requests.get$default(app6, subjectUrl4, subjectHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00062, 4092, (Object) null);
+                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                    c00072.L$1 = function10;
+                    c00072.L$2 = function11;
+                    c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                    c00072.L$4 = originalSubjectId6;
+                    c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl4);
+                    c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders5);
+                    c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse4);
+                    c00072.Z$0 = isCasting5;
+                    c00072.I$0 = season6;
+                    c00072.I$1 = episode5;
+                    c00072.label = 5;
+                    $result2 = Requests.get$default(app6, subjectUrl4, subjectHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00072, 4092, (Object) null);
                     if ($result2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -12873,38 +13395,38 @@ public final class MovieBoxProvider extends MainAPI {
                     int episode18 = season2;
                     Map subjectHeaders15 = subjectHeaders3;
                     z = false;
-                    c00072 = new C00072(season19, episode18, function5, function6, null);
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
-                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
-                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
-                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders15);
-                    c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
-                    c00062.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
-                    c00062.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode18);
-                    c00062.Z$0 = isCasting3;
-                    c00062.I$0 = season19;
-                    c00062.I$1 = episode18;
-                    c00062.label = 6;
-                    if (ParCollectionsKt.amap(subjectIds, c00072, c00062) == coroutine_suspended) {
+                    c00082 = new C00082(season19, episode18, function5, function6, null);
+                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00072.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                    c00072.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                    c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
+                    c00072.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
+                    c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
+                    c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders15);
+                    c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
+                    c00072.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
+                    c00072.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode18);
+                    c00072.Z$0 = isCasting3;
+                    c00072.I$0 = season19;
+                    c00072.I$1 = episode18;
+                    c00072.label = 6;
+                    if (ParCollectionsKt.amap(subjectIds, c00082, c00072) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                     function14 = function6;
                     function15 = function5;
                     return Boxing.boxBoolean(z2);
                 case 4:
-                    int episode19 = c00062.I$1;
-                    int season20 = c00062.I$0;
-                    isCasting5 = c00062.Z$0;
-                    NiceResponse subjectResponse6 = (NiceResponse) c00062.L$7;
-                    String subjectUrl9 = (String) c00062.L$5;
-                    String originalSubjectId12 = (String) c00062.L$4;
-                    List parts8 = (List) c00062.L$3;
-                    Function1<? super ExtractorLink, Unit> function22 = (Function1) c00062.L$2;
-                    Function1<? super SubtitleFile, Unit> function23 = (Function1) c00062.L$1;
-                    String data9 = (String) c00062.L$0;
+                    int episode19 = c00072.I$1;
+                    int season20 = c00072.I$0;
+                    isCasting5 = c00072.Z$0;
+                    NiceResponse subjectResponse6 = (NiceResponse) c00072.L$7;
+                    String subjectUrl9 = (String) c00072.L$5;
+                    String originalSubjectId12 = (String) c00072.L$4;
+                    List parts8 = (List) c00072.L$3;
+                    Function1<? super ExtractorLink, Unit> function22 = (Function1) c00072.L$2;
+                    Function1<? super SubtitleFile, Unit> function23 = (Function1) c00072.L$1;
+                    String data9 = (String) c00072.L$0;
                     ResultKt.throwOnFailure($result2);
                     parts = parts8;
                     jsonNode = null;
@@ -12919,19 +13441,19 @@ public final class MovieBoxProvider extends MainAPI {
                     function10 = function23;
                     subjectHeaders5 = (Map) $result2;
                     Requests app7 = MainActivityKt.getApp();
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data5);
-                    c00062.L$1 = function10;
-                    c00062.L$2 = function11;
-                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts);
-                    c00062.L$4 = originalSubjectId6;
-                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl4);
-                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders5);
-                    c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse4);
-                    c00062.Z$0 = isCasting5;
-                    c00062.I$0 = season6;
-                    c00062.I$1 = episode5;
-                    c00062.label = 5;
-                    $result2 = Requests.get$default(app7, subjectUrl4, subjectHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00062, 4092, (Object) null);
+                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(data5);
+                    c00072.L$1 = function10;
+                    c00072.L$2 = function11;
+                    c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts);
+                    c00072.L$4 = originalSubjectId6;
+                    c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl4);
+                    c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders5);
+                    c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse4);
+                    c00072.Z$0 = isCasting5;
+                    c00072.I$0 = season6;
+                    c00072.I$1 = episode5;
+                    c00072.label = 5;
+                    $result2 = Requests.get$default(app7, subjectUrl4, subjectHeaders5, (String) null, (Map) null, (Map) null, false, 0, (TimeUnit) null, 0L, (Interceptor) null, false, (ResponseParser) null, c00072, 4092, (Object) null);
                     if ($result2 == coroutine_suspended) {
                         return coroutine_suspended;
                     }
@@ -12979,38 +13501,38 @@ public final class MovieBoxProvider extends MainAPI {
                     int episode110 = season2;
                     Map subjectHeaders16 = subjectHeaders3;
                     z = false;
-                    c00072 = new C00072(season110, episode110, function5, function6, null);
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
-                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
-                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
-                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders16);
-                    c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
-                    c00062.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
-                    c00062.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode110);
-                    c00062.Z$0 = isCasting3;
-                    c00062.I$0 = season110;
-                    c00062.I$1 = episode110;
-                    c00062.label = 6;
-                    if (ParCollectionsKt.amap(subjectIds, c00072, c00062) == coroutine_suspended) {
+                    c00082 = new C00082(season110, episode110, function5, function6, null);
+                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00072.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                    c00072.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                    c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
+                    c00072.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
+                    c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
+                    c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders16);
+                    c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
+                    c00072.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
+                    c00072.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode110);
+                    c00072.Z$0 = isCasting3;
+                    c00072.I$0 = season110;
+                    c00072.I$1 = episode110;
+                    c00072.label = 6;
+                    if (ParCollectionsKt.amap(subjectIds, c00082, c00072) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                     function14 = function6;
                     function15 = function5;
                     return Boxing.boxBoolean(z2);
                 case 5:
-                    episode6 = c00062.I$1;
-                    season7 = c00062.I$0;
-                    isCasting5 = c00062.Z$0;
-                    subjectHeaders6 = (Map) c00062.L$6;
-                    subjectUrl5 = (String) c00062.L$5;
-                    originalSubjectId7 = (String) c00062.L$4;
-                    parts3 = (List) c00062.L$3;
-                    function13 = (Function1) c00062.L$2;
-                    function12 = (Function1) c00062.L$1;
-                    data6 = (String) c00062.L$0;
+                    episode6 = c00072.I$1;
+                    season7 = c00072.I$0;
+                    isCasting5 = c00072.Z$0;
+                    subjectHeaders6 = (Map) c00072.L$6;
+                    subjectUrl5 = (String) c00072.L$5;
+                    originalSubjectId7 = (String) c00072.L$4;
+                    parts3 = (List) c00072.L$3;
+                    function13 = (Function1) c00072.L$2;
+                    function12 = (Function1) c00072.L$1;
+                    data6 = (String) c00072.L$0;
                     ResultKt.throwOnFailure($result2);
                     jsonNode = null;
                     z2 = true;
@@ -13049,33 +13571,33 @@ public final class MovieBoxProvider extends MainAPI {
                     int episode111 = season2;
                     Map subjectHeaders17 = subjectHeaders3;
                     z = false;
-                    c00072 = new C00072(season111, episode111, function5, function6, null);
-                    c00062.L$0 = SpillingKt.nullOutSpilledVariable(data4);
-                    c00062.L$1 = SpillingKt.nullOutSpilledVariable(function6);
-                    c00062.L$2 = SpillingKt.nullOutSpilledVariable(function5);
-                    c00062.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
-                    c00062.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
-                    c00062.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
-                    c00062.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders17);
-                    c00062.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
-                    c00062.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
-                    c00062.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode112);
-                    c00062.Z$0 = isCasting3;
-                    c00062.I$0 = season111;
-                    c00062.I$1 = episode111;
-                    c00062.label = 6;
-                    if (ParCollectionsKt.amap(subjectIds, c00072, c00062) == coroutine_suspended) {
+                    c00082 = new C00082(season111, episode111, function5, function6, null);
+                    c00072.L$0 = SpillingKt.nullOutSpilledVariable(data4);
+                    c00072.L$1 = SpillingKt.nullOutSpilledVariable(function6);
+                    c00072.L$2 = SpillingKt.nullOutSpilledVariable(function5);
+                    c00072.L$3 = SpillingKt.nullOutSpilledVariable(parts2);
+                    c00072.L$4 = SpillingKt.nullOutSpilledVariable(originalSubjectId3);
+                    c00072.L$5 = SpillingKt.nullOutSpilledVariable(subjectUrl2);
+                    c00072.L$6 = SpillingKt.nullOutSpilledVariable(subjectHeaders17);
+                    c00072.L$7 = SpillingKt.nullOutSpilledVariable(subjectResponse2);
+                    c00072.L$8 = SpillingKt.nullOutSpilledVariable(subjectIds);
+                    c00072.L$9 = SpillingKt.nullOutSpilledVariable(jsonNode112);
+                    c00072.Z$0 = isCasting3;
+                    c00072.I$0 = season111;
+                    c00072.I$1 = episode111;
+                    c00072.label = 6;
+                    if (ParCollectionsKt.amap(subjectIds, c00082, c00072) == coroutine_suspended) {
                         return coroutine_suspended;
                     }
                     function14 = function6;
                     function15 = function5;
                     return Boxing.boxBoolean(z2);
                 case 6:
-                    int i7 = c00062.I$1;
-                    int i8 = c00062.I$0;
-                    boolean z3 = c00062.Z$0;
-                    function15 = (Function1) c00062.L$2;
-                    function14 = (Function1) c00062.L$1;
+                    int i7 = c00072.I$1;
+                    int i8 = c00072.I$0;
+                    boolean z3 = c00072.Z$0;
+                    function15 = (Function1) c00072.L$2;
+                    function14 = (Function1) c00072.L$1;
                     try {
                         ResultKt.throwOnFailure($result2);
                         z = false;
@@ -13096,9 +13618,9 @@ public final class MovieBoxProvider extends MainAPI {
     /* JADX INFO: renamed from: com.MovieBox.MovieBoxProvider$loadLinks$2 */
     /* JADX INFO: compiled from: MovieBoxProvider.kt */
     @Metadata(d1 = {"\u0000\u0010\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u00012\u0012\u0010\u0002\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00040\u0003H\n"}, d2 = {"<anonymous>", "", "<destruct>", "Lkotlin/Pair;", ""}, k = 3, mv = {2, 4, 0}, xi = 48)
-    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider$loadLinks$2", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14}, l = {829, 830, 833, 834, 835, 865, 893, 894, 905, 914, 915, 926, 937, 938, 952}, m = "invokeSuspend", n = {"<destruct>", "subjectId", "language", "playUrl", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "subHeaders", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "subHeaders", "subResponse", "subRoot", "extCaptions", "caption", "captionUrl", "lang", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "subHeaders", "subResponse", "subRoot", "extCaptions", "subLink1", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "subHeaders", "subResponse", "subRoot", "extCaptions", "subLink1", "subHeaders1", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "subHeaders", "subResponse", "subRoot", "extCaptions", "subLink1", "subHeaders1", "subResponse1", "subRoot1", "extCaptions1", "caption", "captionUrl", "lang", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "fallbackUrl", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "fallbackUrl", "fallbackHeaders", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "fallbackUrl", "fallbackHeaders", "fallbackResponse", "fallbackRoot", "detectors", "$this$forEach$iv", "element$iv", "detector", "$this$forEach$iv", "element$iv", "video", "se", "link", "ep", "quality"}, nl = {830, 832, 834, 835, 838, 864, 894, 895, 904, 915, 916, 925, 938, 940, 951}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$27", "L$28", "L$29", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$32", "L$33", "L$34", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$19", "L$20", "L$21", "L$23", "L$24", "L$25", "L$26", "L$27", "I$2"}, v = 2)
-    @SourceDebugExtension({"SMAP\nMovieBoxProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider$loadLinks$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1233:1\n2068#2:1234\n2068#2,2:1235\n2069#2:1237\n*S KotlinDebug\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider$loadLinks$2\n*L\n943#1:1234\n944#1:1235,2\n943#1:1237\n*E\n"})
-    static final class C00072 extends SuspendLambda implements Function2<Pair<? extends String, ? extends String>, Continuation<? super Unit>, Object> {
+    @DebugMetadata(c = "com.MovieBox.MovieBoxProvider$loadLinks$2", f = "MovieBoxProvider.kt", i = {0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14, 14}, l = {928, 929, 932, 933, 934, 964, 992, 993, 1004, 1013, 1014, 1025, 1036, 1037, 1051}, m = "invokeSuspend", n = {"<destruct>", "subjectId", "language", "playUrl", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "subHeaders", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "subHeaders", "subResponse", "subRoot", "extCaptions", "caption", "captionUrl", "lang", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "subHeaders", "subResponse", "subRoot", "extCaptions", "subLink1", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "subHeaders", "subResponse", "subRoot", "extCaptions", "subLink1", "subHeaders1", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "stream", "rawStreamUrl", "format", "resolutions", "signCookieRaw", "signCookie", "streamId", "quality", "policyUrl", "finalStreamUrl", "subLink", "subHeaders", "subResponse", "subRoot", "extCaptions", "subLink1", "subHeaders1", "subResponse1", "subRoot1", "extCaptions1", "caption", "captionUrl", "lang", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "fallbackUrl", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "fallbackUrl", "fallbackHeaders", "<destruct>", "subjectId", "language", "playUrl", "playHeaders", "response", "responseBody", "root", "playData", "streams", "fallbackUrl", "fallbackHeaders", "fallbackResponse", "fallbackRoot", "detectors", "$this$forEach$iv", "element$iv", "detector", "$this$forEach$iv", "element$iv", "video", "se", "link", "ep", "quality"}, nl = {929, 931, 933, 934, 937, 963, 993, 994, 1003, 1014, 1015, 1024, 1037, 1039, 1050}, s = {"L$0", "L$1", "L$2", "L$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$27", "L$28", "L$29", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$11", "L$12", "L$13", "L$14", "L$15", "L$16", "L$17", "L$18", "L$19", "L$20", "L$21", "L$22", "L$23", "L$24", "L$25", "L$26", "L$27", "L$28", "L$29", "L$30", "L$32", "L$33", "L$34", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "L$7", "L$8", "L$9", "L$10", "L$11", "L$12", "L$13", "L$14", "L$15", "L$19", "L$20", "L$21", "L$23", "L$24", "L$25", "L$26", "L$27", "I$2"}, v = 2)
+    @SourceDebugExtension({"SMAP\nMovieBoxProvider.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider$loadLinks$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,1366:1\n2068#2:1367\n2068#2,2:1368\n2069#2:1370\n*S KotlinDebug\n*F\n+ 1 MovieBoxProvider.kt\ncom/MovieBox/MovieBoxProvider$loadLinks$2\n*L\n1042#1:1367\n1043#1:1368,2\n1042#1:1370\n*E\n"})
+    static final class C00082 extends SuspendLambda implements Function2<Pair<? extends String, ? extends String>, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function1<ExtractorLink, Unit> $callback;
         final /* synthetic */ int $episode;
         final /* synthetic */ int $season;
@@ -13145,7 +13667,7 @@ public final class MovieBoxProvider extends MainAPI {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00072(int i, int i2, Function1<? super ExtractorLink, Unit> function1, Function1<? super SubtitleFile, Unit> function2, Continuation<? super C00072> continuation) {
+        C00082(int i, int i2, Function1<? super ExtractorLink, Unit> function1, Function1<? super SubtitleFile, Unit> function2, Continuation<? super C00082> continuation) {
             super(2, continuation);
             this.$season = i;
             this.$episode = i2;
@@ -13154,9 +13676,9 @@ public final class MovieBoxProvider extends MainAPI {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            Continuation<Unit> c00072 = MovieBoxProvider.this.new C00072(this.$season, this.$episode, this.$callback, this.$subtitleCallback, continuation);
-            c00072.L$0 = obj;
-            return c00072;
+            Continuation<Unit> c00082 = MovieBoxProvider.this.new C00082(this.$season, this.$episode, this.$callback, this.$subtitleCallback, continuation);
+            c00082.L$0 = obj;
+            return c00082;
         }
 
         public final Object invoke(Pair<String, String> pair, Continuation<? super Unit> continuation) {
@@ -13187,7 +13709,7 @@ public final class MovieBoxProvider extends MainAPI {
                 Method dump skipped, instruction units count: 7212
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.MovieBox.MovieBoxProvider.C00072.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.MovieBox.MovieBoxProvider.C00082.invokeSuspend(java.lang.Object):java.lang.Object");
         }
 
         /* JADX INFO: renamed from: com.MovieBox.MovieBoxProvider$loadLinks$2$1, reason: invalid class name */

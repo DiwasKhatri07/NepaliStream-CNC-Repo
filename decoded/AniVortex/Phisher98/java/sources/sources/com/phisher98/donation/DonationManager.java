@@ -113,7 +113,7 @@ public final class DonationManager {
     /* JADX INFO: compiled from: DonationManager.kt */
     @Metadata(k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.donation.DonationManager", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}, l = {416, 464}, m = "fetchBuyMeACoffeeMonthly", n = {"accessToken", "now", "monthTotal", "supportersCount", "dateFormat", "currentYear", "currentMonth", "page", "hasMore", "accessToken", "now", "monthTotal", "supportersCount", "dateFormat", "$this$fetchBuyMeACoffeeMonthly_u24lambda_u244", "currentYear", "currentMonth", "page", "hasMore"}, nl = {425, 473}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "I$0", "I$1", "I$2", "I$3", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "I$0", "I$1", "I$2", "I$3"}, v = 2)
-    static final class C00251 extends ContinuationImpl {
+    static final class C00311 extends ContinuationImpl {
         int I$0;
         int I$1;
         int I$2;
@@ -127,7 +127,7 @@ public final class DonationManager {
         int label;
         /* synthetic */ Object result;
 
-        C00251(Continuation<? super C00251> continuation) {
+        C00311(Continuation<? super C00311> continuation) {
             super(continuation);
         }
 
@@ -357,7 +357,7 @@ public final class DonationManager {
             if (now - lastTriggerTime >= 60000 && !INSTANCE.isCooldownActive(appContext)) {
                 lastTriggerTime = now;
                 Unit unit = Unit.INSTANCE;
-                BuildersKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), (CoroutineContext) null, (CoroutineStart) null, new C00242(appContext, currentMonth, providerName, null), 3, (Object) null);
+                BuildersKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), (CoroutineContext) null, (CoroutineStart) null, new C00302(appContext, currentMonth, providerName, null), 3, (Object) null);
             }
         }
     }
@@ -367,7 +367,7 @@ public final class DonationManager {
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.donation.DonationManager$checkAndShow$2", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3}, l = {177, 196, 197, 250}, m = "invokeSuspend", n = {"prefs", "cachedMonth", "currentAmount", "supportersCount", "token", "hasCachedData", "fetchSucceeded", "prefs", "cachedMonth", "currentAmount", "supportersCount", "token", "hasCachedData", "fetchSucceeded", "attempt", "prefs", "cachedMonth", "currentAmount", "supportersCount", "token", "hasCachedData", "fetchSucceeded", "attempt", "prefs", "cachedMonth", "currentAmount", "supportersCount", "token", "dynamicTitle", "config", "hasCachedData", "fetchSucceeded", "isGoalAchieved"}, nl = {178, 197, 198, 285}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "Z$0", "I$0", "I$1", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "Z$0", "I$0", "I$1"}, v = 2)
     @SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$checkAndShow$2\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,492:1\n40#2,11:493\n40#2,11:504\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$checkAndShow$2\n*L\n184#1:493,11\n202#1:504,11\n*E\n"})
-    static final class C00242 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    static final class C00302 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Context $appContext;
         final /* synthetic */ String $currentMonth;
         final /* synthetic */ String $providerName;
@@ -384,7 +384,7 @@ public final class DonationManager {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00242(Context context, String str, String str2, Continuation<? super C00242> continuation) {
+        C00302(Context context, String str, String str2, Continuation<? super C00302> continuation) {
             super(2, continuation);
             this.$appContext = context;
             this.$currentMonth = str;
@@ -392,7 +392,7 @@ public final class DonationManager {
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C00242(this.$appContext, this.$currentMonth, this.$providerName, continuation);
+            return new C00302(this.$appContext, this.$currentMonth, this.$providerName, continuation);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -419,7 +419,7 @@ public final class DonationManager {
                 Method dump skipped, instruction units count: 1042
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.donation.DonationManager.C00242.invokeSuspend(java.lang.Object):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: com.phisher98.donation.DonationManager.C00302.invokeSuspend(java.lang.Object):java.lang.Object");
         }
 
         /* JADX INFO: renamed from: com.phisher98.donation.DonationManager$checkAndShow$2$3, reason: invalid class name */
@@ -464,7 +464,7 @@ public final class DonationManager {
                     Method dump skipped, instruction units count: 244
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: com.phisher98.donation.DonationManager.C00242.AnonymousClass3.invokeSuspend(java.lang.Object):java.lang.Object");
+                throw new UnsupportedOperationException("Method not decompiled: com.phisher98.donation.DonationManager.C00302.AnonymousClass3.invokeSuspend(java.lang.Object):java.lang.Object");
             }
 
             static final Unit invokeSuspend$lambda$0() {
@@ -479,7 +479,7 @@ public final class DonationManager {
     @Metadata(d1 = {"\u0000\n\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\n"}, d2 = {"<anonymous>", "", "Lkotlinx/coroutines/CoroutineScope;"}, k = 3, mv = {2, 4, 0}, xi = 48)
     @DebugMetadata(c = "com.phisher98.donation.DonationManager$showNow$1", f = "DonationManager.kt", i = {0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 2}, l = {305, 344, 359}, m = "invokeSuspend", n = {"currentMonth", "prefs", "currentAmount", "supportersCount", "token", "currentMonth", "prefs", "currentAmount", "supportersCount", "token", "dynamicTitle", "config", "isGoalAchieved", "<unused var>"}, nl = {306, 358, 384}, s = {"L$0", "L$1", "L$2", "L$3", "L$4", "L$0", "L$1", "L$2", "L$3", "L$4", "L$5", "L$6", "I$0", "L$0"}, v = 2)
     @SourceDebugExtension({"SMAP\nDonationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$showNow$1\n+ 2 SharedPreferences.kt\nandroidx/core/content/SharedPreferencesKt\n*L\n1#1,492:1\n40#2,11:493\n*S KotlinDebug\n*F\n+ 1 DonationManager.kt\ncom/phisher98/donation/DonationManager$showNow$1\n*L\n309#1:493,11\n*E\n"})
-    static final class C00261 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    static final class C00321 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ AppCompatActivity $activity;
         final /* synthetic */ String $providerName;
         int I$0;
@@ -493,14 +493,14 @@ public final class DonationManager {
         int label;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C00261(AppCompatActivity appCompatActivity, String str, Continuation<? super C00261> continuation) {
+        C00321(AppCompatActivity appCompatActivity, String str, Continuation<? super C00321> continuation) {
             super(2, continuation);
             this.$activity = appCompatActivity;
             this.$providerName = str;
         }
 
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C00261(this.$activity, this.$providerName, continuation);
+            return new C00321(this.$activity, this.$providerName, continuation);
         }
 
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
@@ -758,7 +758,7 @@ public final class DonationManager {
                         DonationManager.INSTANCE.setDialogShowing(true);
                         Fragment donationDialogFragment = new DonationDialogFragment(this.$config, new Function0() { // from class: com.phisher98.donation.DonationManager$showNow$1$2$$ExternalSyntheticLambda0
                             public final Object invoke() {
-                                return DonationManager.C00261.AnonymousClass2.invokeSuspend$lambda$0();
+                                return DonationManager.C00321.AnonymousClass2.invokeSuspend$lambda$0();
                             }
                         });
                         FragmentTransaction ft = fm.beginTransaction();
@@ -818,7 +818,7 @@ public final class DonationManager {
                         DonationManager.INSTANCE.setDialogShowing(true);
                         Fragment donationDialogFragment = new DonationDialogFragment(new DonationConfig(false, this.$providerName, DonationManager.INSTANCE.getCurrentMonthName(), DonationManager.INSTANCE.getGoalTitle(), null, null, 0.0d, 0.0d, 0, DonationManager.INSTANCE.getPrimaryDonateUrl(), DonationManager.INSTANCE.getPrimaryButtonText(), null, null, DonationManager.INSTANCE.getAdSupportUrl(), DonationManager.INSTANCE.getAdSupportButtonText(), 0, null, 104945, null), new Function0() { // from class: com.phisher98.donation.DonationManager$showNow$1$4$$ExternalSyntheticLambda0
                             public final Object invoke() {
-                                return DonationManager.C00261.AnonymousClass4.invokeSuspend$lambda$0();
+                                return DonationManager.C00321.AnonymousClass4.invokeSuspend$lambda$0();
                             }
                         });
                         FragmentTransaction ft = fm.beginTransaction();
@@ -845,7 +845,7 @@ public final class DonationManager {
     }
 
     public final void showNow(@NotNull AppCompatActivity activity, @NotNull String providerName) {
-        BuildersKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), (CoroutineContext) null, (CoroutineStart) null, new C00261(activity, providerName, null), 3, (Object) null);
+        BuildersKt.launch$default(CoroutineScopeKt.CoroutineScope(Dispatchers.getIO()), (CoroutineContext) null, (CoroutineStart) null, new C00321(activity, providerName, null), 3, (Object) null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

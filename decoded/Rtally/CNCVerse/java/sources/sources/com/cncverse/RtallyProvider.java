@@ -1436,8 +1436,15 @@ public final class RtallyProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x01e2 -> B:57:0x01ef). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.attributes.AttrNode.contains(AttrNode.java:98)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:60)
+        	at java.base/java.util.HashMap.putVal(HashMap.java:627)
+        	at java.base/java.util.HashMap.put(HashMap.java:610)
+        	at java.base/java.util.HashSet.add(HashSet.java:221)
+        	at java.base/java.util.AbstractCollection.addAll(AbstractCollection.java:336)
+        	at java.base/java.util.HashSet.<init>(HashSet.java:121)
+        	at jadx.core.dex.visitors.regions.maker.RegionStack$State.<init>(RegionStack.java:39)
+        	at jadx.core.dex.visitors.regions.maker.RegionStack$State.copyWith(RegionStack.java:44)
+        	at jadx.core.dex.visitors.regions.maker.RegionStack.push(RegionStack.java:69)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:103)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
@@ -2452,13 +2459,6 @@ public final class RtallyProvider extends MainAPI {
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         */
     public final java.lang.Object resolveDownloadPage(java.lang.String r22, java.lang.String r23, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r24, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r25, kotlin.coroutines.Continuation<? super kotlin.Unit> r26) {
         /*

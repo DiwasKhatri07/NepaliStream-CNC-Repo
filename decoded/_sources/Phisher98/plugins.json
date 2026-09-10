@@ -368,14 +368,14 @@
     {
         "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/AniVortex.cs3",
         "status": 1,
-        "version": 9,
+        "version": 10,
         "name": "AniVortex",
         "internalName": "AniVortex",
         "authors": [
             "Phisher98"
         ],
         "description": "AniVortex \u2014 Anime, movies & TV series streaming",
-        "fileSize": 139517,
+        "fileSize": 146563,
         "repositoryUrl": "https://github.com/phisher98/cloudstream-extensions-phisher",
         "language": "hi",
         "tvTypes": [
@@ -387,7 +387,7 @@
         ],
         "iconUrl": "https://anivortex.in/images/anivortex_logo_transparent.webp",
         "apiVersion": 1,
-        "fileHash": "sha256-ecc803b43feaafa6458f1c6697647ff1653750d60a7fcc09f73791e95c8933de"
+        "fileHash": "sha256-72ed6a08f6fd28f742875be0db8a88fe97b4c9db7f1761f17064e8bb4e789f31"
     },
     {
         "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/Aniworld.cs3",
@@ -1074,14 +1074,14 @@
     {
         "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/MovieBoxProvider.cs3",
         "status": 1,
-        "version": 30,
+        "version": 31,
         "name": "MovieBoxProvider",
         "internalName": "MovieBoxProvider",
         "authors": [
             "NivinCNC,Phisher98"
         ],
         "description": "Multi Language Movies and Series Provider",
-        "fileSize": 112750,
+        "fileSize": 121456,
         "repositoryUrl": "https://github.com/phisher98/cloudstream-extensions-phisher",
         "language": "hi",
         "tvTypes": [
@@ -1090,7 +1090,7 @@
         ],
         "iconUrl": "https://raw.githubusercontent.com/phisher98/TVVVV/refs/heads/main/Icons/moviebox.png",
         "apiVersion": 1,
-        "fileHash": "sha256-35b0b0e027fdc2cde8b00012302531d7731976c90ca8c16b5fdb7faf0302020f"
+        "fileHash": "sha256-84e8ce43b6a3e40af2c8d13bbeb68c643d8af5aaf9f0ecc5dc878f5f9e3346de"
     },
     {
         "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/Movies4u.cs3",
@@ -1367,6 +1367,27 @@
         "fileHash": "sha256-03c98c58901a94fc80d82e7996e50e27030c080fd8d3c0e9499770e391326ecb"
     },
     {
+        "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/Reanime.cs3",
+        "status": 1,
+        "version": 2,
+        "name": "Reanime",
+        "internalName": "Reanime",
+        "authors": [
+            "Phisher98"
+        ],
+        "fileSize": 113267,
+        "repositoryUrl": "https://github.com/phisher98/cloudstream-extensions-phisher",
+        "language": "en",
+        "tvTypes": [
+            "AnimeMovie",
+            "Anime",
+            "OVA"
+        ],
+        "iconUrl": "https://reanime.to/favicon.ico",
+        "apiVersion": 1,
+        "fileHash": "sha256-f6dcd2160746fb1b45c1ee29bbce503fe564bfb8d7252e90eaa942a073b42473"
+    },
+    {
         "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/RingZ.cs3",
         "status": 1,
         "version": 12,
@@ -1422,7 +1443,7 @@
             "Hexated"
         ],
         "description": "#1 best extention based on MultiAPI",
-        "fileSize": 1124426,
+        "fileSize": 1129481,
         "repositoryUrl": "https://github.com/phisher98/cloudstream-extensions-phisher",
         "language": "en",
         "tvTypes": [
@@ -1435,7 +1456,7 @@
         ],
         "iconUrl": "https://i3.wp.com/yt3.googleusercontent.com/ytc/AIdro_nCBArSmvOc6o-k2hTYpLtQMPrKqGtAw_nC20rxm70akA=s900-c-k-c0x00ffffff-no-rj?ssl=1",
         "apiVersion": 1,
-        "fileHash": "sha256-b4e772013274ba5224600c8a60b7f7c8e96091e998b5eb0f653fbb491d02d0ca"
+        "fileHash": "sha256-da1b87c13278b6ba606cb8d2c503bb159481f8b7cb092e37191e179b1773d811"
     },
     {
         "url": "https://raw.githubusercontent.com/phisher98/cloudstream-extensions-phisher/builds/StremioAddon.cs3",

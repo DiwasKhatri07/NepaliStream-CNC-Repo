@@ -132,11 +132,10 @@ final class AnichiExtractors$invokeInternalSources$2$4$1 extends SuspendLambda i
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:142:0x07b3 -> B:143:0x07cb). Please report as a decompilation issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:146:0x07fd -> B:147:0x080d). Please report as a decompilation issue!!! */
         /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:78:0x041f -> B:147:0x080d). Please report as a decompilation issue!!! */
-        /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-            jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-            	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-            	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-            	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+            java.lang.StackOverflowError
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+            	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
             */
         public final java.lang.Object invokeSuspend(java.lang.Object r37) {
             /*
@@ -151,11 +150,10 @@ final class AnichiExtractors$invokeInternalSources$2$4$1 extends SuspendLambda i
     /* JADX WARN: Code duplicated, block: B:61:0x0247 A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:62:0x0248  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:62:0x0248 -> B:80:0x025a). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     public final java.lang.Object invokeSuspend(java.lang.Object r35) {
         /*

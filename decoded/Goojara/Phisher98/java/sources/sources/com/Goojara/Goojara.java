@@ -552,8 +552,7 @@ public final class Goojara extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:236:0x0b08 -> B:237:0x0b30). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.nodes.BlockNode.isDominator(BlockNode.java:178)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:746)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
