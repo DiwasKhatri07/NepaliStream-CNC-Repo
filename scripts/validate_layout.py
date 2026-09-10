@@ -19,5 +19,5 @@ try:
     if len(index)!=len(archives): errors.append('decoded-index count mismatch')
 except Exception as exc: errors.append(f'index error: {exc}')
 if errors:
-    print('VALIDATION FAILED'); print('\n'.join('- '+e for e in errors)); raise SystemExit(1)
+    print('VALIDATION FAILED DUE TO THE AUTOMATION FAILING ISSSUE'); print('\n'.join('- '+e for e in errors)); raise SystemExit(1)
 print(f'LAYOUT OK: {len(archives)} archives, {len(metadata)} Kotlin files, {len(manifests)} manifests, {len(java)} Java files')
