@@ -87,7 +87,8 @@ public final class Abyass extends ExtractorApi {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:51:0x039d -> B:52:0x03b3). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.dex.nodes.BlockNode.isDominator(BlockNode.java:178)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:746)
         	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable

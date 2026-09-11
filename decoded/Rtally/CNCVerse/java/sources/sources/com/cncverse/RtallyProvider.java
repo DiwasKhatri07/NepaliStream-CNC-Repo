@@ -1436,10 +1436,9 @@ public final class RtallyProvider extends MainAPI {
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:56:0x01e2 -> B:57:0x01ef). Please report as a decompilation issue!!! */
     /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
         java.lang.StackOverflowError
-        	at jadx.core.dex.attributes.AttrNode.contains(AttrNode.java:98)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:82)
-        	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
-        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
+        	at jadx.core.utils.BlockUtils.getLastInsn(BlockUtils.java:217)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.makeIfInfo(IfRegionMaker.java:156)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:64)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
@@ -2459,6 +2458,7 @@ public final class RtallyProvider extends MainAPI {
         	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.traverse(RegionMaker.java:109)
         	at jadx.core.dex.visitors.regions.maker.RegionMaker.makeRegion(RegionMaker.java:69)
+        	at jadx.core.dex.visitors.regions.maker.IfRegionMaker.process(IfRegionMaker.java:111)
         */
     public final java.lang.Object resolveDownloadPage(java.lang.String r22, java.lang.String r23, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r24, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r25, kotlin.coroutines.Continuation<? super kotlin.Unit> r26) {
         /*
@@ -2526,11 +2526,10 @@ public final class RtallyProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:51:0x01d4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:45:0x0238 -> B:46:0x0242). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached at block B:33:0x019b
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     @org.jetbrains.annotations.Nullable
     public java.lang.Object loadLinks(@org.jetbrains.annotations.NotNull java.lang.String r26, boolean r27, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r28, @org.jetbrains.annotations.NotNull kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r29, @org.jetbrains.annotations.NotNull kotlin.coroutines.Continuation<? super java.lang.Boolean> r30) {

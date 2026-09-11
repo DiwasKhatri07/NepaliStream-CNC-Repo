@@ -145,10 +145,11 @@ public class HubCloud extends ExtractorApi {
     /* JADX WARN: Code duplicated, block: B:192:0x145c  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:183:0x1320 -> B:194:0x14ba). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
-        java.lang.StackOverflowError
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:731)
-        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
         */
     static /* synthetic */ java.lang.Object getUrl$suspendImpl(com.cinefreak.HubCloud r58, java.lang.String r59, java.lang.String r60, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.SubtitleFile, kotlin.Unit> r61, kotlin.jvm.functions.Function1<? super com.lagradost.cloudstream3.utils.ExtractorLink, kotlin.Unit> r62, kotlin.coroutines.Continuation<? super kotlin.Unit> r63) {
         /*

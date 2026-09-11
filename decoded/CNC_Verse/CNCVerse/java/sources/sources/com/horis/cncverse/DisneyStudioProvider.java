@@ -1730,7 +1730,7 @@ public class DisneyStudioProvider extends MainAPI {
     /* JADX WARN: Code duplicated, block: B:54:0x041b A[RETURN] */
     /* JADX WARN: Code duplicated, block: B:55:0x041c  */
     /* JADX WARN: Code duplicated, block: B:7:0x0018  */
-    static /* synthetic */ Object loadLinks$suspendImpl(DisneyStudioProvider $this, String data, boolean isCasting, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Boolean> continuation) throws Exception {
+    static /* synthetic */ Object loadLinks$suspendImpl(DisneyStudioProvider $this, String data, boolean isCasting, Function1<? super SubtitleFile, Unit> function1, Function1<? super ExtractorLink, Unit> function2, Continuation<? super Boolean> continuation) {
         C00081 c00081;
         String data2;
         Function1<? super ExtractorLink, Unit> function3;

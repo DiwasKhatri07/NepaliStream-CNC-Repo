@@ -1125,11 +1125,11 @@ public final class UtilsKt {
     /* JADX WARN: Code duplicated, block: B:47:0x0124  */
     /* JADX WARN: Code duplicated, block: B:7:0x0016  */
     /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:47:0x0124 -> B:48:0x0130). Please report as a decompilation issue!!! */
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions stack size limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+    /*  JADX ERROR: StackOverflowError in pass: RegionMakerVisitor
+        java.lang.StackOverflowError
+        	at jadx.core.dex.nodes.BlockNode.isDominator(BlockNode.java:178)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:746)
+        	at jadx.core.utils.BlockUtils.traverseSuccessorsUntil(BlockUtils.java:749)
         */
     public static final <T> java.lang.Object retry(int r20, long r21, kotlin.jvm.functions.Function1<? super kotlin.coroutines.Continuation<? super T>, ? extends java.lang.Object> r23, kotlin.coroutines.Continuation<? super T> r24) {
         /*
