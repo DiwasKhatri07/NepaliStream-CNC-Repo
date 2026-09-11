@@ -1,13 +1,13 @@
 {
-  "updated_utc": "2026-09-11 01:09:33 UTC",
-  "latest_decode_run": "34543927443",
+  "updated_utc": "2026-09-11 06:01:32 UTC",
+  "latest_decode_run": "34559663669",
   "latest_decode_status": "completed",
   "latest_decode_conclusion": "success",
   "cs3_archives": 119,
   "kotlin_files": 119,
   "kotlin_lines": 1190,
   "java_files": 3132,
-  "java_lines": 1186741,
-  "total_code_lines": 1187931,
+  "java_lines": 1185716,
+  "total_code_lines": 1186906,
   "comment_lines": 54677
 }
