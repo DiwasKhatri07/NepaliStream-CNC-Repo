@@ -4,10 +4,10 @@
 
 | Metric | Value |
 |---|---:|
-| Last monitor update (UTC) | 2026-09-12 13:42:32 UTC |
-| Latest decode workflow | [34696416756](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/runs/34696416756) |
-| Latest workflow status | **completed** |
-| Latest workflow conclusion | **failure** |
+| Last monitor update (UTC) | 2026-09-12 16:31:50 UTC |
+| Latest decode workflow | [34705255359](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/runs/34705255359) |
+| Latest workflow status | **in_progress** |
+| Latest workflow conclusion | **** |
 | Decoded  archives | 119 |
 | Kotlin files | 119 |
 | Kotlin lines | 1190 |
