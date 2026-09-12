@@ -1,8 +1,8 @@
 {
-  "updated_utc": "2026-09-12 18:43:03 UTC",
+  "updated_utc": "2026-09-12 21:00:22 UTC",
   "latest_decode_run": "34711827904",
-  "latest_decode_status": "in_progress",
-  "latest_decode_conclusion": "",
+  "latest_decode_status": "completed",
+  "latest_decode_conclusion": "failure",
   "cs3_archives": 119,
   "kotlin_files": 119,
   "kotlin_lines": 1190,
