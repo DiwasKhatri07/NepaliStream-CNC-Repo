@@ -4,8 +4,8 @@
 
 | Metric | Value |
 |---|---:|
-| Last monitor update (UTC) | 2026-11-06 23:23:02 UTC |
-| Latest decode workflow | [42290839802](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/runs/42290839802) |
+| Last monitor update (UTC) | 2026-11-07 03:01:27 UTC |
+| Latest decode workflow | [42319863436](https://github.com/DiwasKhatri07/NepaliStream-CNC-Repo/actions/runs/42319863436) |
 | Latest workflow status | **completed** |
 | Latest workflow conclusion | **failure** |
 | Decoded  archives | 119 |
